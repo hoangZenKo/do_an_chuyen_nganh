@@ -1,0 +1,109 @@
+@startuml
+title Sơ đồ Use Case tổng quan - Hệ thống quản lý nhà trọ
+
+left to right direction
+skinparam shadowing false
+skinparam defaultFontName Arial
+skinparam packageStyle rectangle
+skinparam usecase {
+  BackgroundColor White
+  BorderColor Black
+  FontSize 11
+  FontStyle bold
+}
+skinparam rectangle {
+  BorderColor Black
+  FontStyle bold
+}
+
+actor "ADMIN" as Admin
+actor "CHỦ TRỌ" as Landlord
+actor "NGƯỜI THUÊ\nPHÒNG" as Tenant
+
+rectangle "Biên hệ thống: Hệ thống quản lý nhà trọ" {
+  usecase "UC-SYS-01\nĐăng nhập" as UC_SYS_01
+  usecase "UC-SYS-02\nĐăng xuất" as UC_SYS_02
+
+  usecase "UC-ADM-01\nXem tổng quan hệ thống" as UC_ADM_01
+  usecase "UC-ADM-02\nQuản lý tài khoản chủ trọ" as UC_ADM_02
+  usecase "UC-ADM-03\nQuản lý khu trọ toàn hệ thống" as UC_ADM_03
+
+  usecase "UC-OPT-01\nXem dashboard vận hành" as UC_OPT_01
+  usecase "UC-OPT-02\nQuản lý khu trọ" as UC_OPT_02
+  usecase "UC-OPT-03\nQuản lý phòng" as UC_OPT_03
+  usecase "UC-OPT-04\nQuản lý hồ sơ người thuê" as UC_OPT_04
+  usecase "UC-OPT-05\nQuản lý hợp đồng thuê" as UC_OPT_05
+  usecase "UC-OPT-06\nQuản lý bảo trì" as UC_OPT_06
+
+  usecase "UC-BIL-01\nGhi chỉ số điện nước" as UC_BIL_01
+  usecase "UC-BIL-02\nLập hóa đơn" as UC_BIL_02
+  usecase "UC-BIL-03\nGhi nhận thanh toán" as UC_BIL_03
+  usecase "UC-BIL-04\nDuyệt minh chứng thanh toán" as UC_BIL_04
+  usecase "UC-BIL-05\nQuản lý chi phí vận hành" as UC_BIL_05
+  usecase "UC-BIL-06\nXem báo cáo tháng" as UC_BIL_06
+  usecase "UC-BIL-07\nGửi thông báo / nhắc nợ" as UC_BIL_07
+
+  usecase "UC-TEN-01\nXem thông tin thuê phòng" as UC_TEN_01
+  usecase "UC-TEN-02\nXem hợp đồng thuê" as UC_TEN_02
+  usecase "UC-TEN-03\nXem hóa đơn" as UC_TEN_03
+  usecase "UC-TEN-04\nGửi minh chứng thanh toán" as UC_TEN_04
+  usecase "UC-TEN-05\nGửi yêu cầu bảo trì" as UC_TEN_05
+  usecase "UC-TEN-06\nXem thông báo" as UC_TEN_06
+
+  UC_SYS_01 -[hidden]down- UC_SYS_02
+  UC_SYS_02 -[hidden]down- UC_ADM_01
+  UC_ADM_01 -[hidden]down- UC_ADM_02
+  UC_ADM_02 -[hidden]down- UC_ADM_03
+  UC_ADM_03 -[hidden]down- UC_OPT_01
+  UC_OPT_01 -[hidden]down- UC_OPT_02
+  UC_OPT_02 -[hidden]down- UC_OPT_03
+  UC_OPT_03 -[hidden]down- UC_OPT_04
+  UC_OPT_04 -[hidden]down- UC_OPT_05
+  UC_OPT_05 -[hidden]down- UC_OPT_06
+  UC_OPT_06 -[hidden]down- UC_BIL_01
+  UC_BIL_01 -[hidden]down- UC_BIL_02
+  UC_BIL_02 -[hidden]down- UC_BIL_03
+  UC_BIL_03 -[hidden]down- UC_BIL_04
+  UC_BIL_04 -[hidden]down- UC_BIL_05
+  UC_BIL_05 -[hidden]down- UC_BIL_06
+  UC_BIL_06 -[hidden]down- UC_BIL_07
+  UC_BIL_07 -[hidden]down- UC_TEN_01
+  UC_TEN_01 -[hidden]down- UC_TEN_02
+  UC_TEN_02 -[hidden]down- UC_TEN_03
+  UC_TEN_03 -[hidden]down- UC_TEN_04
+  UC_TEN_04 -[hidden]down- UC_TEN_05
+  UC_TEN_05 -[hidden]down- UC_TEN_06
+}
+
+Admin -- UC_SYS_01
+Admin -- UC_SYS_02
+Admin -- UC_ADM_01
+Admin -- UC_ADM_02
+Admin -- UC_ADM_03
+
+Landlord -- UC_SYS_01
+Landlord -- UC_SYS_02
+Landlord -- UC_OPT_01
+Landlord -- UC_OPT_02
+Landlord -- UC_OPT_03
+Landlord -- UC_OPT_04
+Landlord -- UC_OPT_05
+Landlord -- UC_OPT_06
+Landlord -- UC_BIL_01
+Landlord -- UC_BIL_02
+Landlord -- UC_BIL_03
+Landlord -- UC_BIL_04
+Landlord -- UC_BIL_05
+Landlord -- UC_BIL_06
+Landlord -- UC_BIL_07
+
+Tenant -- UC_SYS_01
+Tenant -- UC_SYS_02
+Tenant -- UC_TEN_01
+Tenant -- UC_TEN_02
+Tenant -- UC_TEN_03
+Tenant -- UC_TEN_04
+Tenant -- UC_TEN_05
+Tenant -- UC_TEN_06
+
+@enduml

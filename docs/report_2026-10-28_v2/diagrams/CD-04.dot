@@ -1,0 +1,25 @@
+digraph G {
+graph [bgcolor="white",rankdir=LR,nodesep=0.35,ranksep=0.85,pad=0.15,splines=polyline];
+node [fontname="Times New Roman", fontsize=17, color="black", fontcolor="black", style="filled", fillcolor="white", penwidth=1.1];
+edge [fontname="Times New Roman", fontsize=14, color="black", arrowsize=0.7, penwidth=0.9];
+User [shape=plain,label=<<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0" CELLPADDING="5"><TR><TD><B>User</B></TD></TR><TR><TD BORDER="1" SIDES="T"></TD></TR><TR><TD ALIGN="LEFT">id: String</TD></TR><TR><TD ALIGN="LEFT">sessionVersion: Int</TD></TR><TR><TD ALIGN="LEFT">fullName: String</TD></TR><TR><TD ALIGN="LEFT">email: String</TD></TR><TR><TD ALIGN="LEFT">phone: String?</TD></TR></TABLE>>];
+Tenant [shape=plain,label=<<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0" CELLPADDING="5"><TR><TD><B>Tenant</B></TD></TR><TR><TD BORDER="1" SIDES="T"></TD></TR><TR><TD ALIGN="LEFT">id: String</TD></TR><TR><TD ALIGN="LEFT">landlordId: String</TD></TR><TR><TD ALIGN="LEFT">userId: String?</TD></TR><TR><TD ALIGN="LEFT">fullName: String</TD></TR><TR><TD ALIGN="LEFT">phone: String?</TD></TR></TABLE>>];
+Room [shape=plain,label=<<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0" CELLPADDING="5"><TR><TD><B>Room</B></TD></TR><TR><TD BORDER="1" SIDES="T"></TD></TR><TR><TD ALIGN="LEFT">id: String</TD></TR><TR><TD ALIGN="LEFT">status: RoomStatus</TD></TR><TR><TD ALIGN="LEFT">propertyId: String</TD></TR><TR><TD ALIGN="LEFT">name: String</TD></TR><TR><TD ALIGN="LEFT">floor: Int?</TD></TR></TABLE>>];
+Lease [shape=plain,label=<<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0" CELLPADDING="5"><TR><TD><B>Lease</B></TD></TR><TR><TD BORDER="1" SIDES="T"></TD></TR><TR><TD ALIGN="LEFT">id: String</TD></TR><TR><TD ALIGN="LEFT">tenantId: String</TD></TR><TR><TD ALIGN="LEFT">roomId: String</TD></TR><TR><TD ALIGN="LEFT">status: LeaseStatus</TD></TR><TR><TD ALIGN="LEFT">startDate: DateTime</TD></TR></TABLE>>];
+TenantOccupant [shape=plain,label=<<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0" CELLPADDING="5"><TR><TD><B>TenantOccupant</B></TD></TR><TR><TD BORDER="1" SIDES="T"></TD></TR><TR><TD ALIGN="LEFT">id: String</TD></TR><TR><TD ALIGN="LEFT">tenantId: String</TD></TR><TR><TD ALIGN="LEFT">leaseId: String</TD></TR><TR><TD ALIGN="LEFT">fullName: String</TD></TR><TR><TD ALIGN="LEFT">phone: String?</TD></TR></TABLE>>];
+TenantLifecycleRequest [shape=plain,label=<<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0" CELLPADDING="5"><TR><TD><B>TenantLifecycleRequest</B></TD></TR><TR><TD BORDER="1" SIDES="T"></TD></TR><TR><TD ALIGN="LEFT">id: String</TD></TR><TR><TD ALIGN="LEFT">landlordId: String</TD></TR><TR><TD ALIGN="LEFT">tenantId: String</TD></TR><TR><TD ALIGN="LEFT">leaseId: String?</TD></TR><TR><TD ALIGN="LEFT">status: TenantLifecycleRequestStatus</TD></TR></TABLE>>];
+TenantLifecycleExecution [shape=plain,label=<<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0" CELLPADDING="5"><TR><TD><B>TenantLifecycleExecution</B></TD></TR><TR><TD BORDER="1" SIDES="T"></TD></TR><TR><TD ALIGN="LEFT">id: String</TD></TR><TR><TD ALIGN="LEFT">requestId: String</TD></TR><TR><TD ALIGN="LEFT">requestKey: String</TD></TR><TR><TD ALIGN="LEFT">requestHash: String</TD></TR><TR><TD ALIGN="LEFT">resultLeaseId: String?</TD></TR></TABLE>>];
+LeaseHandover [shape=plain,label=<<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0" CELLPADDING="5"><TR><TD><B>LeaseHandover</B></TD></TR><TR><TD BORDER="1" SIDES="T"></TD></TR><TR><TD ALIGN="LEFT">id: String</TD></TR><TR><TD ALIGN="LEFT">leaseId: String</TD></TR><TR><TD ALIGN="LEFT">version: Int</TD></TR><TR><TD ALIGN="LEFT">electricity: Int</TD></TR><TR><TD ALIGN="LEFT">water: Int</TD></TR></TABLE>>];
+Tenant -> User [dir=none,label="landlord",taillabel="0..*",headlabel="1",labeldistance=2.1];
+Tenant -> User [dir=none,label="user",taillabel="0..1",headlabel="0..1",labeldistance=2.1];
+TenantOccupant -> Tenant [dir=none,label="tenant",taillabel="0..*",headlabel="1",labeldistance=2.1];
+TenantOccupant -> Lease [dir=none,label="lease",taillabel="0..*",headlabel="1",labeldistance=2.1];
+TenantLifecycleRequest -> Tenant [dir=none,label="tenant",taillabel="0..*",headlabel="1",labeldistance=2.1];
+TenantLifecycleRequest -> Lease [dir=none,label="lease",taillabel="0..*",headlabel="0..1",labeldistance=2.1];
+TenantLifecycleRequest -> Room [dir=none,label="requestedRoom",taillabel="0..*",headlabel="0..1",labeldistance=2.1];
+TenantLifecycleRequest -> User [dir=none,label="landlord",taillabel="0..*",headlabel="1",labeldistance=2.1];
+TenantLifecycleExecution -> TenantLifecycleRequest [dir=none,label="request",taillabel="0..1",headlabel="1",labeldistance=2.1];
+Lease -> Room [dir=none,label="room",taillabel="0..*",headlabel="1",labeldistance=2.1];
+Lease -> Tenant [dir=none,label="tenant",taillabel="0..*",headlabel="1",labeldistance=2.1];
+LeaseHandover -> Lease [dir=none,label="lease",taillabel="0..1",headlabel="1",labeldistance=2.1];
+}

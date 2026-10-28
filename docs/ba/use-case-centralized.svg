@@ -1,0 +1,127 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2400" height="1500" viewBox="0 0 2400 1500">
+  <defs>
+    <pattern id="grid" width="18" height="18" patternUnits="userSpaceOnUse">
+      <path d="M 18 0 L 0 0 0 18" fill="none" stroke="#e5e7eb" stroke-width="1"/>
+    </pattern>
+    <style>
+      .bg { fill: #ffffff; }
+      .grid { fill: url(#grid); }
+      .title { font: 700 34px Arial, sans-serif; fill: #111827; text-anchor: middle; }
+      .boundary { fill: rgba(255,255,255,0.74); stroke: #111827; stroke-width: 2.4; }
+      .boundary-title { font: 700 18px Arial, sans-serif; fill: #111827; text-anchor: middle; }
+      .uc-text { font: 700 15px Arial, sans-serif; fill: #111827; text-anchor: middle; dominant-baseline: middle; }
+      .actor-label { font: 700 17px Arial, sans-serif; fill: #111827; text-anchor: middle; }
+      .actor-line { stroke: #111827; stroke-width: 3; fill: none; stroke-linecap: round; stroke-linejoin: round; }
+      .assoc { stroke: #94a3b8; stroke-width: 1.25; fill: none; opacity: 0.55; }
+      .sys { fill: #fff; stroke: #ef4444; stroke-width: 2.1; }
+      .admin { fill: #fff; stroke: #64748b; stroke-width: 2.1; }
+      .operation { fill: #fff; stroke: #f59e0b; stroke-width: 2.1; }
+      .billing { fill: #fff; stroke: #3b82f6; stroke-width: 2.1; }
+      .tenant { fill: #fff; stroke: #22c55e; stroke-width: 2.1; }
+    </style>
+  </defs>
+
+  <rect class="bg" width="2400" height="1500"/>
+  <rect class="grid" width="2400" height="1500"/>
+  <text class="title" x="1200" y="72">Sơ đồ Use Case tổng quan - Hệ thống quản lý nhà trọ</text>
+  <rect class="boundary" x="420" y="120" width="1320" height="1320"/>
+  <text class="boundary-title" x="1080" y="158">Biên hệ thống: Hệ thống quản lý nhà trọ</text>
+
+  <ellipse id="UC_SYS_01" class="sys" cx="1080" cy="220" rx="490" ry="24"/>
+  <text class="uc-text" x="1080" y="220">UC-SYS-01 Đăng nhập</text>
+  <ellipse id="UC_SYS_02" class="sys" cx="1080" cy="268" rx="490" ry="24"/>
+  <text class="uc-text" x="1080" y="268">UC-SYS-02 Đăng xuất</text>
+  <ellipse id="UC_ADM_01" class="admin" cx="1080" cy="334" rx="490" ry="24"/>
+  <text class="uc-text" x="1080" y="334">UC-ADM-01 Xem tổng quan hệ thống</text>
+  <ellipse id="UC_ADM_02" class="admin" cx="1080" cy="382" rx="490" ry="24"/>
+  <text class="uc-text" x="1080" y="382">UC-ADM-02 Quản lý tài khoản chủ trọ</text>
+  <ellipse id="UC_ADM_03" class="admin" cx="1080" cy="430" rx="490" ry="24"/>
+  <text class="uc-text" x="1080" y="430">UC-ADM-03 Quản lý khu trọ toàn hệ thống</text>
+  <ellipse id="UC_OPT_01" class="operation" cx="1080" cy="502" rx="490" ry="24"/>
+  <text class="uc-text" x="1080" y="502">UC-OPT-01 Xem dashboard vận hành</text>
+  <ellipse id="UC_OPT_02" class="operation" cx="1080" cy="550" rx="490" ry="24"/>
+  <text class="uc-text" x="1080" y="550">UC-OPT-02 Quản lý khu trọ</text>
+  <ellipse id="UC_OPT_03" class="operation" cx="1080" cy="598" rx="490" ry="24"/>
+  <text class="uc-text" x="1080" y="598">UC-OPT-03 Quản lý phòng</text>
+  <ellipse id="UC_OPT_04" class="operation" cx="1080" cy="646" rx="490" ry="24"/>
+  <text class="uc-text" x="1080" y="646">UC-OPT-04 Quản lý hồ sơ người thuê</text>
+  <ellipse id="UC_OPT_05" class="operation" cx="1080" cy="694" rx="490" ry="24"/>
+  <text class="uc-text" x="1080" y="694">UC-OPT-05 Quản lý hợp đồng thuê</text>
+  <ellipse id="UC_OPT_06" class="operation" cx="1080" cy="742" rx="490" ry="24"/>
+  <text class="uc-text" x="1080" y="742">UC-OPT-06 Quản lý bảo trì</text>
+  <ellipse id="UC_BIL_01" class="billing" cx="1080" cy="814" rx="490" ry="24"/>
+  <text class="uc-text" x="1080" y="814">UC-BIL-01 Ghi chỉ số điện nước</text>
+  <ellipse id="UC_BIL_02" class="billing" cx="1080" cy="862" rx="490" ry="24"/>
+  <text class="uc-text" x="1080" y="862">UC-BIL-02 Lập hóa đơn</text>
+  <ellipse id="UC_BIL_03" class="billing" cx="1080" cy="910" rx="490" ry="24"/>
+  <text class="uc-text" x="1080" y="910">UC-BIL-03 Ghi nhận thanh toán</text>
+  <ellipse id="UC_BIL_04" class="billing" cx="1080" cy="958" rx="490" ry="24"/>
+  <text class="uc-text" x="1080" y="958">UC-BIL-04 Duyệt minh chứng thanh toán</text>
+  <ellipse id="UC_BIL_05" class="billing" cx="1080" cy="1006" rx="490" ry="24"/>
+  <text class="uc-text" x="1080" y="1006">UC-BIL-05 Quản lý chi phí vận hành</text>
+  <ellipse id="UC_BIL_06" class="billing" cx="1080" cy="1054" rx="490" ry="24"/>
+  <text class="uc-text" x="1080" y="1054">UC-BIL-06 Xem báo cáo tháng</text>
+  <ellipse id="UC_BIL_07" class="billing" cx="1080" cy="1102" rx="490" ry="24"/>
+  <text class="uc-text" x="1080" y="1102">UC-BIL-07 Gửi thông báo / nhắc nợ</text>
+  <ellipse id="UC_TEN_01" class="tenant" cx="1080" cy="1174" rx="490" ry="24"/>
+  <text class="uc-text" x="1080" y="1174">UC-TEN-01 Xem thông tin thuê phòng</text>
+  <ellipse id="UC_TEN_02" class="tenant" cx="1080" cy="1222" rx="490" ry="24"/>
+  <text class="uc-text" x="1080" y="1222">UC-TEN-02 Xem hợp đồng thuê</text>
+  <ellipse id="UC_TEN_03" class="tenant" cx="1080" cy="1270" rx="490" ry="24"/>
+  <text class="uc-text" x="1080" y="1270">UC-TEN-03 Xem hóa đơn</text>
+  <ellipse id="UC_TEN_04" class="tenant" cx="1080" cy="1318" rx="490" ry="24"/>
+  <text class="uc-text" x="1080" y="1318">UC-TEN-04 Gửi minh chứng thanh toán</text>
+  <ellipse id="UC_TEN_05" class="tenant" cx="1080" cy="1366" rx="490" ry="24"/>
+  <text class="uc-text" x="1080" y="1366">UC-TEN-05 Gửi yêu cầu bảo trì</text>
+  <ellipse id="UC_TEN_06" class="tenant" cx="1080" cy="1414" rx="490" ry="24"/>
+  <text class="uc-text" x="1080" y="1414">UC-TEN-06 Xem thông báo</text>
+
+  <g transform="translate(170 650)">
+    <circle class="actor-line" cx="0" cy="0" r="27"/>
+    <path class="actor-line" d="M0 27 L0 105 M-55 58 L55 58 M0 105 L-48 176 M0 105 L48 176"/>
+    <text class="actor-label" x="0" y="226">ADMIN</text>
+  </g>
+  <g transform="translate(2160 430)">
+    <circle class="actor-line" cx="0" cy="0" r="27"/>
+    <path class="actor-line" d="M0 27 L0 105 M-55 58 L55 58 M0 105 L-48 176 M0 105 L48 176"/>
+    <text class="actor-label" x="0" y="226">CHỦ TRỌ</text>
+  </g>
+  <g transform="translate(2160 1080)">
+    <circle class="actor-line" cx="0" cy="0" r="27"/>
+    <path class="actor-line" d="M0 27 L0 105 M-55 58 L55 58 M0 105 L-48 176 M0 105 L48 176"/>
+    <text class="actor-label" x="0" y="226">NGƯỜI THUÊ</text>
+    <text class="actor-label" x="0" y="250">PHÒNG</text>
+  </g>
+
+  <line class="assoc" x1="225" y1="708" x2="590" y2="220"/>
+  <line class="assoc" x1="225" y1="708" x2="590" y2="268"/>
+  <line class="assoc" x1="225" y1="708" x2="590" y2="334"/>
+  <line class="assoc" x1="225" y1="708" x2="590" y2="382"/>
+  <line class="assoc" x1="225" y1="708" x2="590" y2="430"/>
+
+  <line class="assoc" x1="2105" y1="488" x2="1570" y2="220"/>
+  <line class="assoc" x1="2105" y1="488" x2="1570" y2="268"/>
+  <line class="assoc" x1="2105" y1="488" x2="1570" y2="502"/>
+  <line class="assoc" x1="2105" y1="488" x2="1570" y2="550"/>
+  <line class="assoc" x1="2105" y1="488" x2="1570" y2="598"/>
+  <line class="assoc" x1="2105" y1="488" x2="1570" y2="646"/>
+  <line class="assoc" x1="2105" y1="488" x2="1570" y2="694"/>
+  <line class="assoc" x1="2105" y1="488" x2="1570" y2="742"/>
+  <line class="assoc" x1="2105" y1="488" x2="1570" y2="814"/>
+  <line class="assoc" x1="2105" y1="488" x2="1570" y2="862"/>
+  <line class="assoc" x1="2105" y1="488" x2="1570" y2="910"/>
+  <line class="assoc" x1="2105" y1="488" x2="1570" y2="958"/>
+  <line class="assoc" x1="2105" y1="488" x2="1570" y2="1006"/>
+  <line class="assoc" x1="2105" y1="488" x2="1570" y2="1054"/>
+  <line class="assoc" x1="2105" y1="488" x2="1570" y2="1102"/>
+
+  <line class="assoc" x1="2105" y1="1138" x2="1570" y2="220"/>
+  <line class="assoc" x1="2105" y1="1138" x2="1570" y2="268"/>
+  <line class="assoc" x1="2105" y1="1138" x2="1570" y2="1174"/>
+  <line class="assoc" x1="2105" y1="1138" x2="1570" y2="1222"/>
+  <line class="assoc" x1="2105" y1="1138" x2="1570" y2="1270"/>
+  <line class="assoc" x1="2105" y1="1138" x2="1570" y2="1318"/>
+  <line class="assoc" x1="2105" y1="1138" x2="1570" y2="1366"/>
+  <line class="assoc" x1="2105" y1="1138" x2="1570" y2="1414"/>
+
+</svg>

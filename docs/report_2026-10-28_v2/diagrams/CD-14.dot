@@ -1,0 +1,20 @@
+digraph G {
+graph [bgcolor="white",rankdir=LR,nodesep=0.35,ranksep=0.85,pad=0.15,splines=polyline];
+node [fontname="Times New Roman", fontsize=17, color="black", fontcolor="black", style="filled", fillcolor="white", penwidth=1.1];
+edge [fontname="Times New Roman", fontsize=14, color="black", arrowsize=0.7, penwidth=0.9];
+User [shape=plain,label=<<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0" CELLPADDING="5"><TR><TD><B>User</B></TD></TR><TR><TD BORDER="1" SIDES="T"></TD></TR><TR><TD ALIGN="LEFT">id: String</TD></TR><TR><TD ALIGN="LEFT">sessionVersion: Int</TD></TR><TR><TD ALIGN="LEFT">fullName: String</TD></TR><TR><TD ALIGN="LEFT">email: String</TD></TR><TR><TD ALIGN="LEFT">phone: String?</TD></TR></TABLE>>];
+Property [shape=plain,label=<<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0" CELLPADDING="5"><TR><TD><B>Property</B></TD></TR><TR><TD BORDER="1" SIDES="T"></TD></TR><TR><TD ALIGN="LEFT">id: String</TD></TR><TR><TD ALIGN="LEFT">landlordId: String</TD></TR><TR><TD ALIGN="LEFT">name: String</TD></TR><TR><TD ALIGN="LEFT">address: String</TD></TR><TR><TD ALIGN="LEFT">isArchived: Boolean</TD></TR></TABLE>>];
+BillingAutomation [shape=plain,label=<<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0" CELLPADDING="5"><TR><TD><B>BillingAutomation</B></TD></TR><TR><TD BORDER="1" SIDES="T"></TD></TR><TR><TD ALIGN="LEFT">id: String</TD></TR><TR><TD ALIGN="LEFT">landlordId: String</TD></TR><TR><TD ALIGN="LEFT">propertyId: String</TD></TR><TR><TD ALIGN="LEFT">isEnabled: Boolean</TD></TR><TR><TD ALIGN="LEFT">invoiceDay: Int</TD></TR></TABLE>>];
+TenantGroup [shape=plain,label=<<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0" CELLPADDING="5"><TR><TD><B>TenantGroup</B></TD></TR><TR><TD BORDER="1" SIDES="T"></TD></TR><TR><TD ALIGN="LEFT">id: String</TD></TR><TR><TD ALIGN="LEFT">landlordId: String</TD></TR><TR><TD ALIGN="LEFT">name: String</TD></TR><TR><TD ALIGN="LEFT">tenantIds: String[]</TD></TR><TR><TD ALIGN="LEFT">createdAt: DateTime</TD></TR></TABLE>>];
+AnnouncementTemplate [shape=plain,label=<<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0" CELLPADDING="5"><TR><TD><B>AnnouncementTemplate</B></TD></TR><TR><TD BORDER="1" SIDES="T"></TD></TR><TR><TD ALIGN="LEFT">id: String</TD></TR><TR><TD ALIGN="LEFT">landlordId: String</TD></TR><TR><TD ALIGN="LEFT">name: String</TD></TR><TR><TD ALIGN="LEFT">title: String</TD></TR><TR><TD ALIGN="LEFT">body: String</TD></TR></TABLE>>];
+Announcement [shape=plain,label=<<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0" CELLPADDING="5"><TR><TD><B>Announcement</B></TD></TR><TR><TD BORDER="1" SIDES="T"></TD></TR><TR><TD ALIGN="LEFT">id: String</TD></TR><TR><TD ALIGN="LEFT">landlordId: String</TD></TR><TR><TD ALIGN="LEFT">roomId: String?</TD></TR><TR><TD ALIGN="LEFT">status: AnnouncementStatus</TD></TR><TR><TD ALIGN="LEFT">propertyId: String?</TD></TR></TABLE>>];
+NotificationRead [shape=plain,label=<<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0" CELLPADDING="5"><TR><TD><B>NotificationRead</B></TD></TR><TR><TD BORDER="1" SIDES="T"></TD></TR><TR><TD ALIGN="LEFT">id: String</TD></TR><TR><TD ALIGN="LEFT">userId: String</TD></TR><TR><TD ALIGN="LEFT">notificationId: String</TD></TR><TR><TD ALIGN="LEFT">readAt: DateTime</TD></TR></TABLE>>];
+Property -> User [dir=none,label="landlord",taillabel="0..*",headlabel="1",labeldistance=2.1];
+NotificationRead -> User [dir=none,label="user",taillabel="0..*",headlabel="1",labeldistance=2.1];
+BillingAutomation -> User [dir=none,label="landlord",taillabel="0..*",headlabel="1",labeldistance=2.1];
+BillingAutomation -> Property [dir=none,label="property",taillabel="0..1",headlabel="1",labeldistance=2.1];
+TenantGroup -> User [dir=none,label="landlord",taillabel="0..*",headlabel="1",labeldistance=2.1];
+AnnouncementTemplate -> User [dir=none,label="landlord",taillabel="0..*",headlabel="1",labeldistance=2.1];
+Announcement -> User [dir=none,label="landlord",taillabel="0..*",headlabel="1",labeldistance=2.1];
+Announcement -> Property [dir=none,label="property",taillabel="0..*",headlabel="0..1",labeldistance=2.1];
+}

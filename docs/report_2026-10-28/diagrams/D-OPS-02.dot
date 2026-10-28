@@ -1,0 +1,10 @@
+digraph G {
+graph [bgcolor="white", rankdir=LR, nodesep=0.30, ranksep=0.65, pad=0.2, splines=polyline];
+node [fontname="Times New Roman", fontsize=17, color="black", fontcolor="black", style="filled", fillcolor="white", penwidth=1.1];
+edge [fontname="Times New Roman", fontsize=14, color="black", arrowsize=0.7, penwidth=0.9];
+actor0 [shape=box,label="«actor»\nChủ trọ"];
+subgraph cluster_system { label="Rental Room Management · Bảo trì và vận hành";fontname="Times New Roman";fontsize=18;color="black";
+u0 [shape=ellipse,label="UC-OPS-08\nTra cứu lượt gửi và gửi nhắc\nZalo",margin="0.12,0.08"];
+}
+actor0 -> u0 [arrowhead=none];
+}

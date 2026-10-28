@@ -1,0 +1,73 @@
+import { StaffPermission } from '../common/permissions.constants';
+
+export const STAFF_PRESETS = [
+  'operator',
+  'accountant',
+  'maintenance',
+  'viewer',
+  'custom',
+] as const;
+
+export type StaffPreset = (typeof STAFF_PRESETS)[number];
+
+export const STAFF_PRESET_PERMISSIONS: Record<StaffPreset, StaffPermission[]> = {
+  operator: [
+    'property.view',
+    'room.view',
+    'room.manage',
+    'tenant.view',
+    'tenant.manage',
+    'lease.view',
+    'lease.manage',
+    'maintenance.view',
+    'maintenance.manage',
+    'maintenance.complete',
+    'report.view',
+    'report.export',
+    'audit.view',
+    'notification.view',
+    'operation.view',
+  ],
+  accountant: [
+    'property.view',
+    'room.view',
+    'tenant.view',
+    'lease.view',
+    'billing.view',
+    'billing.create',
+    'billing.record_payment',
+    'billing.approve_payment_proof',
+    'expense.view',
+    'expense.manage',
+    'report.view',
+    'report.export',
+    'audit.view',
+    'notification.view',
+    'operation.view',
+  ],
+  maintenance: [
+    'property.view',
+    'room.view',
+    'tenant.view',
+    'maintenance.view',
+    'maintenance.manage',
+    'maintenance.complete',
+    'notification.view',
+    'operation.view',
+  ],
+  viewer: [
+    'property.view',
+    'room.view',
+    'tenant.view',
+    'lease.view',
+    'billing.view',
+    'expense.view',
+    'maintenance.view',
+    'report.view',
+    'report.export',
+    'audit.view',
+    'notification.view',
+    'operation.view',
+  ],
+  custom: [],
+};

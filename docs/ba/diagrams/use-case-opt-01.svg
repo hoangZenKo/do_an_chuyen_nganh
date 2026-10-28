@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='utf-8'?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="997" viewBox="0 0 1000 997" role="img" aria-labelledby="diagram-title diagram-description">
+  <title id="diagram-title">D-OPT-01 Tổng quan vận hành và quản lý khu trọ</title>
+  <desc id="diagram-description">Actor nằm ngoài biên hệ thống. Đường liền biểu thị actor tham gia UC. Khung nét đứt chỉ nhóm phân rã theo UC tổng quan. Các UC: UC-OPT-01, UC-OPT-02.01, UC-OPT-02.02, UC-OPT-02.03, UC-OPT-02.04, UC-OPT-02.05</desc>
+  <rect x="210" y="28" width="755" height="885" fill="none" stroke="#39414B" stroke-width="1.2" />
+  <text x="587.5" y="58" text-anchor="middle" dominant-baseline="central" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#222222">Hệ thống quản lý nhà trọ</text>
+  <polyline points="116.00,150.00 320.00,177.00" fill="none" stroke="#737B85" stroke-width="1.4" />
+  <rect x="248" y="91" width="693" height="166" fill="none" stroke="#A7AFB8" stroke-width="1.2" stroke-dasharray="7 5" />
+  <text x="264" y="115" text-anchor="start" dominant-baseline="central" font-family="Arial, sans-serif" font-size="21" font-weight="bold" fill="#222222">UC-OPT-01 Xem dashboard vận hành</text>
+  <circle cx="90" cy="123.0" r="13" fill="white" stroke="#222222" stroke-width="1.6" />
+  <polyline points="90,136.0 90,173.0" fill="none" stroke="#222222" stroke-width="1.6" />
+  <polyline points="65,150.0 115,150.0" fill="none" stroke="#222222" stroke-width="1.6" />
+  <polyline points="90,173.0 68,197.0" fill="none" stroke="#222222" stroke-width="1.6" />
+  <polyline points="90,173.0 112,197.0" fill="none" stroke="#222222" stroke-width="1.6" />
+  <text x="90" y="218.0" text-anchor="middle" dominant-baseline="central" font-family="Arial, sans-serif" font-size="23" font-weight="bold" fill="#222222">Chủ trọ</text>
+  <ellipse cx="610" cy="177" rx="290.0" ry="49.0" fill="white" stroke="#303740" stroke-width="1.6" data-uc-id="UC-OPT-01" />
+  <text x="610" y="161" text-anchor="middle" dominant-baseline="central" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#43505F">UC-OPT-01</text>
+  <text x="610" y="192" text-anchor="middle" dominant-baseline="central" font-family="Arial, sans-serif" font-size="24" font-weight="normal" fill="#222222">Xem tổng quan vận hành</text>
+  <polyline points="116.00,560.00 320.00,363.00" fill="none" stroke="#737B85" stroke-width="1.4" />
+  <polyline points="116.00,560.00 320.00,475.00" fill="none" stroke="#737B85" stroke-width="1.4" />
+  <polyline points="116.00,560.00 320.00,587.00" fill="none" stroke="#737B85" stroke-width="1.4" />
+  <polyline points="116.00,560.00 320.00,699.00" fill="none" stroke="#737B85" stroke-width="1.4" />
+  <polyline points="116.00,560.00 320.00,811.00" fill="none" stroke="#737B85" stroke-width="1.4" />
+  <rect x="248" y="277" width="693" height="614" fill="none" stroke="#A7AFB8" stroke-width="1.2" stroke-dasharray="7 5" />
+  <text x="264" y="301" text-anchor="start" dominant-baseline="central" font-family="Arial, sans-serif" font-size="21" font-weight="bold" fill="#222222">UC-OPT-02 Quản lý khu trọ</text>
+  <circle cx="90" cy="533.0" r="13" fill="white" stroke="#222222" stroke-width="1.6" />
+  <polyline points="90,546.0 90,583.0" fill="none" stroke="#222222" stroke-width="1.6" />
+  <polyline points="65,560.0 115,560.0" fill="none" stroke="#222222" stroke-width="1.6" />
+  <polyline points="90,583.0 68,607.0" fill="none" stroke="#222222" stroke-width="1.6" />
+  <polyline points="90,583.0 112,607.0" fill="none" stroke="#222222" stroke-width="1.6" />
+  <text x="90" y="628.0" text-anchor="middle" dominant-baseline="central" font-family="Arial, sans-serif" font-size="23" font-weight="bold" fill="#222222">Chủ trọ</text>
+  <ellipse cx="610" cy="363" rx="290.0" ry="49.0" fill="white" stroke="#303740" stroke-width="1.6" data-uc-id="UC-OPT-02.01" />
+  <text x="610" y="347" text-anchor="middle" dominant-baseline="central" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#43505F">UC-OPT-02.01</text>
+  <text x="610" y="378" text-anchor="middle" dominant-baseline="central" font-family="Arial, sans-serif" font-size="24" font-weight="normal" fill="#222222">Tra cứu và chọn khu trọ</text>
+  <ellipse cx="610" cy="475" rx="290.0" ry="49.0" fill="white" stroke="#303740" stroke-width="1.6" data-uc-id="UC-OPT-02.02" />
+  <text x="610" y="459" text-anchor="middle" dominant-baseline="central" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#43505F">UC-OPT-02.02</text>
+  <text x="610" y="490" text-anchor="middle" dominant-baseline="central" font-family="Arial, sans-serif" font-size="24" font-weight="normal" fill="#222222">Tạo khu trọ</text>
+  <ellipse cx="610" cy="587" rx="290.0" ry="49.0" fill="white" stroke="#303740" stroke-width="1.6" data-uc-id="UC-OPT-02.03" />
+  <text x="610" y="571" text-anchor="middle" dominant-baseline="central" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#43505F">UC-OPT-02.03</text>
+  <text x="610" y="602" text-anchor="middle" dominant-baseline="central" font-family="Arial, sans-serif" font-size="24" font-weight="normal" fill="#222222">Cập nhật thông tin khu trọ</text>
+  <ellipse cx="610" cy="699" rx="290.0" ry="49.0" fill="white" stroke="#303740" stroke-width="1.6" data-uc-id="UC-OPT-02.04" />
+  <text x="610" y="683" text-anchor="middle" dominant-baseline="central" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#43505F">UC-OPT-02.04</text>
+  <text x="610" y="714" text-anchor="middle" dominant-baseline="central" font-family="Arial, sans-serif" font-size="24" font-weight="normal" fill="#222222">Lưu trữ hoặc khôi phục khu trọ</text>
+  <ellipse cx="610" cy="811" rx="290.0" ry="49.0" fill="white" stroke="#303740" stroke-width="1.6" data-uc-id="UC-OPT-02.05" />
+  <text x="610" y="795" text-anchor="middle" dominant-baseline="central" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#43505F">UC-OPT-02.05</text>
+  <text x="610" y="826" text-anchor="middle" dominant-baseline="central" font-family="Arial, sans-serif" font-size="24" font-weight="normal" fill="#222222">Xóa khu trọ chưa có phòng</text>
+  <text x="500" y="946" text-anchor="middle" dominant-baseline="central" font-family="Arial, sans-serif" font-size="20" font-weight="normal" fill="#222222">Đường liền là liên kết actor với UC   Khung nét đứt là nhóm UC tổng quan</text>
+</svg>

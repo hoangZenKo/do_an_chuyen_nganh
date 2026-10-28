@@ -1,0 +1,51 @@
+@startuml
+hide empty methods
+skinparam classAttributeIconSize 0
+skinparam shadowing false
+skinparam defaultFontName Arial
+title OD-01 Đối tượng tài khoản và hợp đồng\nCác đối tượng, giá trị thuộc tính và liên kết tại một thời điểm của hệ thống.
+object "chuTro01 : User" as chuTro01 {
+  id = "ct01"
+  fullName = "Chủ trọ minh họa"
+  role = LANDLORD
+  isActive = true
+}
+object "khuA : Property" as khuA {
+  id = "khuA"
+  name = "Khu trọ A"
+  isArchived = false
+}
+object "phongA01 : Room" as phongA01 {
+  id = "phongA01"
+  name = "A01"
+  basePrice = 3000000
+  status = OCCUPIED
+  isActive = true
+}
+object "taiKhoanThue01 : User" as taiKhoanThue01 {
+  id = "tk01"
+  role = TENANT
+  isActive = true
+}
+object "hoSo01 : Tenant" as hoSo01 {
+  id = "hoSo01"
+  fullName = "Người thuê minh họa"
+  isActive = true
+}
+object "hopDong01 : Lease" as hopDong01 {
+  id = "hopDong01"
+  startDate = "2026-10-01"
+  monthlyRent = 3000000
+  deposit = 0
+  status = ACTIVE
+}
+khuA -- chuTro01 : landlord
+phongA01 -- khuA : property
+hoSo01 -- chuTro01 : landlord
+hoSo01 -- taiKhoanThue01 : user
+hopDong01 -- phongA01 : room
+hopDong01 -- hoSo01 : tenant
+legend bottom
+Snapshot giả định: 06/10/2026; các hình OD là góc nhìn của cùng dữ liệu.
+endlegend
+@enduml

@@ -1,0 +1,21 @@
+{
+  "result": "PASS",
+  "scenarios": 10,
+  "useCases": 15,
+  "figures": 22,
+  "messages": 315,
+  "drawioCells": 1829,
+  "fragments": {
+    "alt": 36,
+    "opt": 4,
+    "loop": 3,
+    "break": 5
+  },
+  "wordFigures": 22,
+  "wordTables": 34,
+  "businessLabelsChecked": 515,
+  "implementationMessageRows": 247,
+  "componentLifelinesVerified": 43,
+  "onImageImplementationDetails": 0,
+  "geometryOverflows": 0
+}

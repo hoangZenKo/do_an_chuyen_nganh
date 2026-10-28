@@ -1,0 +1,52 @@
+@startuml
+hide empty methods
+skinparam classAttributeIconSize 0
+skinparam shadowing false
+skinparam defaultFontName Arial
+title CD-01 Tài khoản và hồ sơ Người thuê
+class User {
+  id: String {id}
+  fullName: String
+  email: String {unique}
+  phone: String [0..1]
+  role: UserRole
+  isActive: Boolean
+}
+class Tenant {
+  id: String {id}
+  fullName: String
+  phone: String [0..1]
+  idNumber: String [0..1]
+  isActive: Boolean
+}
+class TenantInvite {
+  id: String {id}
+  email: String
+  expiresAt: DateTime
+  acceptedAt: DateTime [0..1]
+}
+class RefreshToken {
+  id: String {id}
+  expiresAt: DateTime
+  revokedAt: DateTime [0..1]
+}
+enum UserRole {
+  LANDLORD
+  ADMIN
+  TENANT
+  STAFF
+}
+Tenant "0..*\ntenants" -- "1\nlandlord" User
+Tenant "0..1\ntenantProfile" -- "0..1\nuser" User
+TenantInvite "0..*\ntenantInvites" -- "1\nlandlord" User
+TenantInvite "0..*\ninvites" -- "1\ntenant" Tenant
+RefreshToken "0..*\nrefreshTokens" -- "1\nuser" User
+note right of Tenant
+Hồ sơ ≠ tài khoản
+Tenant.user: tùy chọn, duy nhất.
+Tenant.landlord: Chủ trọ quản lý.
+end note
+legend bottom
+Đường liền: association. <<IDRef>>: chỉ tham chiếu bằng mã, không phải association.
+endlegend
+@enduml

@@ -1,0 +1,3591 @@
+{
+  "schema": "backend/prisma/schema.prisma",
+  "schema_sha256": "a09a28988b7c6d9872328658cd1b37fd32548a1a0b11cfdc3ee58845f0ac0ec5",
+  "models": {
+    "User": {
+      "fields": {
+        "id": {
+          "type": "String",
+          "attributes": "@id @default(uuid())"
+        },
+        "fullName": {
+          "type": "String",
+          "attributes": ""
+        },
+        "email": {
+          "type": "String",
+          "attributes": "@unique"
+        },
+        "phone": {
+          "type": "String?",
+          "attributes": ""
+        },
+        "passwordHash": {
+          "type": "String",
+          "attributes": ""
+        },
+        "role": {
+          "type": "UserRole",
+          "attributes": "@default(LANDLORD)"
+        },
+        "isActive": {
+          "type": "Boolean",
+          "attributes": "@default(true)"
+        },
+        "refreshTokens": {
+          "type": "RefreshToken[]",
+          "attributes": ""
+        },
+        "properties": {
+          "type": "Property[]",
+          "attributes": ""
+        },
+        "tenants": {
+          "type": "Tenant[]",
+          "attributes": "@relation(\"LandlordTenants\")"
+        },
+        "tenantProfile": {
+          "type": "Tenant?",
+          "attributes": "@relation(\"TenantUser\")"
+        },
+        "staffProfile": {
+          "type": "StaffProfile?",
+          "attributes": "@relation(\"StaffUser\")"
+        },
+        "staffMembers": {
+          "type": "StaffProfile[]",
+          "attributes": "@relation(\"LandlordStaff\")"
+        },
+        "staffInvites": {
+          "type": "StaffInvite[]",
+          "attributes": "@relation(\"LandlordStaffInvites\")"
+        },
+        "tenantInvites": {
+          "type": "TenantInvite[]",
+          "attributes": ""
+        },
+        "notificationReads": {
+          "type": "NotificationRead[]",
+          "attributes": ""
+        },
+        "maintenanceComments": {
+          "type": "MaintenanceComment[]",
+          "attributes": ""
+        },
+        "reviewedPaymentProofs": {
+          "type": "PaymentProof[]",
+          "attributes": "@relation(\"PaymentProofReviewer\")"
+        },
+        "depositTransactions": {
+          "type": "DepositTransaction[]",
+          "attributes": ""
+        },
+        "leaseChanges": {
+          "type": "LeaseChange[]",
+          "attributes": ""
+        },
+        "auditLogsAsLandlord": {
+          "type": "AuditLog[]",
+          "attributes": "@relation(\"LandlordAuditLogs\")"
+        },
+        "auditLogsAsActor": {
+          "type": "AuditLog[]",
+          "attributes": "@relation(\"ActorAuditLogs\")"
+        },
+        "billingAutomations": {
+          "type": "BillingAutomation[]",
+          "attributes": ""
+        },
+        "expenses": {
+          "type": "Expense[]",
+          "attributes": ""
+        },
+        "maintenanceTickets": {
+          "type": "MaintenanceTicket[]",
+          "attributes": ""
+        },
+        "createdAt": {
+          "type": "DateTime",
+          "attributes": "@default(now())"
+        },
+        "updatedAt": {
+          "type": "DateTime",
+          "attributes": "@updatedAt"
+        }
+      },
+      "line": 99,
+      "label": "Tài khoản người dùng",
+      "description": "Xác định danh tính đăng nhập và vai trò; một tài khoản không đồng nhất với hồ sơ Người thuê.",
+      "selected_fields": [
+        "id",
+        "fullName",
+        "email",
+        "phone",
+        "role",
+        "isActive"
+      ],
+      "use_cases": [
+        "UC-SYS-01",
+        "UC-SYS-02",
+        "UC-ADM-02.01",
+        "UC-ADM-02.02",
+        "UC-ADM-02.03",
+        "UC-ADM-02.04"
+      ]
+    },
+    "StaffProfile": {
+      "fields": {
+        "id": {
+          "type": "String",
+          "attributes": "@id @default(uuid())"
+        },
+        "userId": {
+          "type": "String",
+          "attributes": "@unique"
+        },
+        "landlordId": {
+          "type": "String",
+          "attributes": ""
+        },
+        "fullName": {
+          "type": "String",
+          "attributes": ""
+        },
+        "phone": {
+          "type": "String?",
+          "attributes": ""
+        },
+        "preset": {
+          "type": "String?",
+          "attributes": ""
+        },
+        "permissions": {
+          "type": "String[]",
+          "attributes": "@default([])"
+        },
+        "isActive": {
+          "type": "Boolean",
+          "attributes": "@default(true)"
+        },
+        "user": {
+          "type": "User",
+          "attributes": "@relation(\"StaffUser\", fields: [userId], references: [id], onDelete: Cascade)"
+        },
+        "landlord": {
+          "type": "User",
+          "attributes": "@relation(\"LandlordStaff\", fields: [landlordId], references: [id], onDelete: Cascade)"
+        },
+        "createdAt": {
+          "type": "DateTime",
+          "attributes": "@default(now())"
+        },
+        "updatedAt": {
+          "type": "DateTime",
+          "attributes": "@updatedAt"
+        }
+      },
+      "line": 131
+    },
+    "StaffInvite": {
+      "fields": {
+        "id": {
+          "type": "String",
+          "attributes": "@id @default(uuid())"
+        },
+        "landlordId": {
+          "type": "String",
+          "attributes": ""
+        },
+        "email": {
+          "type": "String",
+          "attributes": ""
+        },
+        "fullName": {
+          "type": "String",
+          "attributes": ""
+        },
+        "phone": {
+          "type": "String?",
+          "attributes": ""
+        },
+        "preset": {
+          "type": "String?",
+          "attributes": ""
+        },
+        "permissions": {
+          "type": "String[]",
+          "attributes": "@default([])"
+        },
+        "tokenHash": {
+          "type": "String",
+          "attributes": "@unique"
+        },
+        "expiresAt": {
+          "type": "DateTime",
+          "attributes": ""
+        },
+        "acceptedAt": {
+          "type": "DateTime?",
+          "attributes": ""
+        },
+        "landlord": {
+          "type": "User",
+          "attributes": "@relation(\"LandlordStaffInvites\", fields: [landlordId], references: [id], onDelete: Cascade)"
+        },
+        "createdAt": {
+          "type": "DateTime",
+          "attributes": "@default(now())"
+        }
+      },
+      "line": 149
+    },
+    "AuditLog": {
+      "fields": {
+        "id": {
+          "type": "String",
+          "attributes": "@id @default(uuid())"
+        },
+        "landlordId": {
+          "type": "String?",
+          "attributes": ""
+        },
+        "actorId": {
+          "type": "String?",
+          "attributes": ""
+        },
+        "actorRole": {
+          "type": "UserRole",
+          "attributes": ""
+        },
+        "action": {
+          "type": "String",
+          "attributes": ""
+        },
+        "resourceType": {
+          "type": "String",
+          "attributes": ""
+        },
+        "resourceId": {
+          "type": "String?",
+          "attributes": ""
+        },
+        "summary": {
+          "type": "String",
+          "attributes": ""
+        },
+        "metadata": {
+          "type": "Json?",
+          "attributes": ""
+        },
+        "landlord": {
+          "type": "User?",
+          "attributes": "@relation(\"LandlordAuditLogs\", fields: [landlordId], references: [id], onDelete: SetNull)"
+        },
+        "actor": {
+          "type": "User?",
+          "attributes": "@relation(\"ActorAuditLogs\", fields: [actorId], references: [id], onDelete: SetNull)"
+        },
+        "createdAt": {
+          "type": "DateTime",
+          "attributes": "@default(now())"
+        }
+      },
+      "line": 168,
+      "label": "Nhật ký thao tác",
+      "description": "Ghi người thực hiện, vai trò, phạm vi Chủ trọ và đối tượng được mô tả bằng loại cùng mã.",
+      "selected_fields": [
+        "id",
+        "actorRole",
+        "action",
+        "resourceType",
+        "resourceId",
+        "summary",
+        "createdAt"
+      ],
+      "use_cases": [
+        "UC-ADM-02.04",
+        "UC-OPT-05.02",
+        "UC-BIL-03.01"
+      ]
+    },
+    "Property": {
+      "fields": {
+        "id": {
+          "type": "String",
+          "attributes": "@id @default(uuid())"
+        },
+        "landlordId": {
+          "type": "String",
+          "attributes": ""
+        },
+        "name": {
+          "type": "String",
+          "attributes": ""
+        },
+        "address": {
+          "type": "String",
+          "attributes": "@default(\"\")"
+        },
+        "isArchived": {
+          "type": "Boolean",
+          "attributes": "@default(false)"
+        },
+        "landlord": {
+          "type": "User",
+          "attributes": "@relation(fields: [landlordId], references: [id], onDelete: Cascade)"
+        },
+        "rooms": {
+          "type": "Room[]",
+          "attributes": ""
+        },
+        "billingAutomation": {
+          "type": "BillingAutomation?",
+          "attributes": ""
+        },
+        "expenses": {
+          "type": "Expense[]",
+          "attributes": ""
+        },
+        "maintenanceTickets": {
+          "type": "MaintenanceTicket[]",
+          "attributes": ""
+        },
+        "createdAt": {
+          "type": "DateTime",
+          "attributes": "@default(now())"
+        },
+        "updatedAt": {
+          "type": "DateTime",
+          "attributes": "@updatedAt"
+        }
+      },
+      "line": 189,
+      "label": "Khu trọ",
+      "description": "Nhóm các phòng thuộc một Chủ trọ và ghi nhận tình trạng lưu trữ của khu trọ.",
+      "selected_fields": [
+        "id",
+        "name",
+        "address",
+        "isArchived"
+      ],
+      "use_cases": [
+        "UC-OPT-02.01",
+        "UC-OPT-02.02",
+        "UC-OPT-02.03",
+        "UC-OPT-02.04",
+        "UC-OPT-02.05"
+      ]
+    },
+    "Room": {
+      "fields": {
+        "id": {
+          "type": "String",
+          "attributes": "@id @default(uuid())"
+        },
+        "propertyId": {
+          "type": "String",
+          "attributes": ""
+        },
+        "name": {
+          "type": "String",
+          "attributes": ""
+        },
+        "floor": {
+          "type": "Int?",
+          "attributes": ""
+        },
+        "areaSqm": {
+          "type": "Float?",
+          "attributes": ""
+        },
+        "basePrice": {
+          "type": "Int",
+          "attributes": "@default(0)"
+        },
+        "status": {
+          "type": "RoomStatus",
+          "attributes": "@default(VACANT)"
+        },
+        "isActive": {
+          "type": "Boolean",
+          "attributes": "@default(true)"
+        },
+        "capacity": {
+          "type": "Int?",
+          "attributes": ""
+        },
+        "amenities": {
+          "type": "String[]",
+          "attributes": "@default([])"
+        },
+        "imageUrl": {
+          "type": "String?",
+          "attributes": ""
+        },
+        "tenantName": {
+          "type": "String?",
+          "attributes": ""
+        },
+        "note": {
+          "type": "String?",
+          "attributes": ""
+        },
+        "property": {
+          "type": "Property",
+          "attributes": "@relation(fields: [propertyId], references: [id], onDelete: Cascade)"
+        },
+        "leases": {
+          "type": "Lease[]",
+          "attributes": ""
+        },
+        "assets": {
+          "type": "RoomAsset[]",
+          "attributes": ""
+        },
+        "inspections": {
+          "type": "RoomInspection[]",
+          "attributes": ""
+        },
+        "serviceFees": {
+          "type": "RoomServiceFee[]",
+          "attributes": ""
+        },
+        "meterReadings": {
+          "type": "MeterReading[]",
+          "attributes": ""
+        },
+        "invoices": {
+          "type": "Invoice[]",
+          "attributes": ""
+        },
+        "expenses": {
+          "type": "Expense[]",
+          "attributes": ""
+        },
+        "maintenanceTickets": {
+          "type": "MaintenanceTicket[]",
+          "attributes": ""
+        },
+        "createdAt": {
+          "type": "DateTime",
+          "attributes": "@default(now())"
+        },
+        "updatedAt": {
+          "type": "DateTime",
+          "attributes": "@updatedAt"
+        }
+      },
+      "line": 207,
+      "label": "Phòng trọ",
+      "description": "Ghi thông tin phòng, giá tham khảo và trạng thái vận hành; trạng thái sử dụng được quản lý riêng.",
+      "selected_fields": [
+        "id",
+        "name",
+        "basePrice",
+        "status",
+        "isActive",
+        "capacity"
+      ],
+      "use_cases": [
+        "UC-OPT-03.01",
+        "UC-OPT-03.02",
+        "UC-OPT-03.03",
+        "UC-OPT-03.04",
+        "UC-OPT-03.05",
+        "UC-OPT-03.06"
+      ]
+    },
+    "RoomAsset": {
+      "fields": {
+        "id": {
+          "type": "String",
+          "attributes": "@id @default(uuid())"
+        },
+        "roomId": {
+          "type": "String",
+          "attributes": ""
+        },
+        "name": {
+          "type": "String",
+          "attributes": ""
+        },
+        "quantity": {
+          "type": "Int",
+          "attributes": "@default(1)"
+        },
+        "condition": {
+          "type": "String",
+          "attributes": "@default(\"good\")"
+        },
+        "value": {
+          "type": "Int?",
+          "attributes": ""
+        },
+        "purchasedAt": {
+          "type": "DateTime?",
+          "attributes": ""
+        },
+        "note": {
+          "type": "String?",
+          "attributes": ""
+        },
+        "imageUrl": {
+          "type": "String?",
+          "attributes": ""
+        },
+        "room": {
+          "type": "Room",
+          "attributes": "@relation(fields: [roomId], references: [id], onDelete: Cascade)"
+        },
+        "createdAt": {
+          "type": "DateTime",
+          "attributes": "@default(now())"
+        },
+        "updatedAt": {
+          "type": "DateTime",
+          "attributes": "@updatedAt"
+        }
+      },
+      "line": 237,
+      "label": "Tài sản phòng",
+      "description": "Theo dõi tài sản, số lượng, tình trạng và giá trị của tài sản trong một phòng.",
+      "selected_fields": [
+        "id",
+        "name",
+        "quantity",
+        "condition",
+        "value"
+      ],
+      "use_cases": [
+        "UC-OPT-03.07"
+      ]
+    },
+    "RoomInspection": {
+      "fields": {
+        "id": {
+          "type": "String",
+          "attributes": "@id @default(uuid())"
+        },
+        "roomId": {
+          "type": "String",
+          "attributes": ""
+        },
+        "title": {
+          "type": "String",
+          "attributes": ""
+        },
+        "dueAt": {
+          "type": "DateTime",
+          "attributes": ""
+        },
+        "completedAt": {
+          "type": "DateTime?",
+          "attributes": ""
+        },
+        "note": {
+          "type": "String?",
+          "attributes": ""
+        },
+        "room": {
+          "type": "Room",
+          "attributes": "@relation(fields: [roomId], references: [id], onDelete: Cascade)"
+        },
+        "createdAt": {
+          "type": "DateTime",
+          "attributes": "@default(now())"
+        },
+        "updatedAt": {
+          "type": "DateTime",
+          "attributes": "@updatedAt"
+        }
+      },
+      "line": 254,
+      "label": "Lịch kiểm tra phòng",
+      "description": "Lưu nội dung kiểm tra, ngày dự kiến và thời điểm hoàn tất của một phòng.",
+      "selected_fields": [
+        "id",
+        "title",
+        "dueAt",
+        "completedAt"
+      ],
+      "use_cases": [
+        "UC-OPT-03.09"
+      ]
+    },
+    "RoomServiceFee": {
+      "fields": {
+        "id": {
+          "type": "String",
+          "attributes": "@id @default(uuid())"
+        },
+        "roomId": {
+          "type": "String",
+          "attributes": ""
+        },
+        "name": {
+          "type": "String",
+          "attributes": ""
+        },
+        "amount": {
+          "type": "Int",
+          "attributes": ""
+        },
+        "isActive": {
+          "type": "Boolean",
+          "attributes": "@default(true)"
+        },
+        "note": {
+          "type": "String?",
+          "attributes": ""
+        },
+        "room": {
+          "type": "Room",
+          "attributes": "@relation(fields: [roomId], references: [id], onDelete: Cascade)"
+        },
+        "createdAt": {
+          "type": "DateTime",
+          "attributes": "@default(now())"
+        },
+        "updatedAt": {
+          "type": "DateTime",
+          "attributes": "@updatedAt"
+        }
+      },
+      "line": 270,
+      "label": "Phí dịch vụ phòng",
+      "description": "Ghi khoản phí dịch vụ và tình trạng áp dụng theo từng phòng.",
+      "selected_fields": [
+        "id",
+        "name",
+        "amount",
+        "isActive",
+        "note"
+      ],
+      "use_cases": [
+        "UC-OPT-03.08"
+      ]
+    },
+    "Tenant": {
+      "fields": {
+        "id": {
+          "type": "String",
+          "attributes": "@id @default(uuid())"
+        },
+        "landlordId": {
+          "type": "String",
+          "attributes": ""
+        },
+        "userId": {
+          "type": "String?",
+          "attributes": "@unique"
+        },
+        "fullName": {
+          "type": "String",
+          "attributes": ""
+        },
+        "phone": {
+          "type": "String?",
+          "attributes": ""
+        },
+        "idNumber": {
+          "type": "String?",
+          "attributes": ""
+        },
+        "note": {
+          "type": "String?",
+          "attributes": ""
+        },
+        "isActive": {
+          "type": "Boolean",
+          "attributes": "@default(true)"
+        },
+        "landlord": {
+          "type": "User",
+          "attributes": "@relation(\"LandlordTenants\", fields: [landlordId], references: [id], onDelete: Cascade)"
+        },
+        "user": {
+          "type": "User?",
+          "attributes": "@relation(\"TenantUser\", fields: [userId], references: [id], onDelete: SetNull)"
+        },
+        "leases": {
+          "type": "Lease[]",
+          "attributes": ""
+        },
+        "invoices": {
+          "type": "Invoice[]",
+          "attributes": ""
+        },
+        "invites": {
+          "type": "TenantInvite[]",
+          "attributes": ""
+        },
+        "paymentProofs": {
+          "type": "PaymentProof[]",
+          "attributes": ""
+        },
+        "createdAt": {
+          "type": "DateTime",
+          "attributes": "@default(now())"
+        },
+        "updatedAt": {
+          "type": "DateTime",
+          "attributes": "@updatedAt"
+        }
+      },
+      "line": 285,
+      "label": "Hồ sơ Người thuê",
+      "description": "Lưu thông tin người thuê do Chủ trọ quản lý; có thể chưa liên kết tài khoản truy cập.",
+      "selected_fields": [
+        "id",
+        "fullName",
+        "phone",
+        "idNumber",
+        "isActive"
+      ],
+      "use_cases": [
+        "UC-OPT-04.01",
+        "UC-OPT-04.02",
+        "UC-OPT-04.03",
+        "UC-OPT-04.04",
+        "UC-OPT-04.05",
+        "UC-OPT-04.06",
+        "UC-TEN-01"
+      ]
+    },
+    "TenantInvite": {
+      "fields": {
+        "id": {
+          "type": "String",
+          "attributes": "@id @default(uuid())"
+        },
+        "landlordId": {
+          "type": "String",
+          "attributes": ""
+        },
+        "tenantId": {
+          "type": "String",
+          "attributes": ""
+        },
+        "email": {
+          "type": "String",
+          "attributes": ""
+        },
+        "tokenHash": {
+          "type": "String",
+          "attributes": "@unique"
+        },
+        "expiresAt": {
+          "type": "DateTime",
+          "attributes": ""
+        },
+        "acceptedAt": {
+          "type": "DateTime?",
+          "attributes": ""
+        },
+        "landlord": {
+          "type": "User",
+          "attributes": "@relation(fields: [landlordId], references: [id], onDelete: Cascade)"
+        },
+        "tenant": {
+          "type": "Tenant",
+          "attributes": "@relation(fields: [tenantId], references: [id], onDelete: Cascade)"
+        },
+        "createdAt": {
+          "type": "DateTime",
+          "attributes": "@default(now())"
+        }
+      },
+      "line": 308,
+      "label": "Lời mời kích hoạt",
+      "description": "Ghi lời mời gắn với hồ sơ Người thuê, email được mời, hạn sử dụng và thời điểm chấp nhận.",
+      "selected_fields": [
+        "id",
+        "email",
+        "expiresAt",
+        "acceptedAt"
+      ],
+      "use_cases": [
+        "UC-OPT-04.06",
+        "UC-SYS-01.01"
+      ]
+    },
+    "Lease": {
+      "fields": {
+        "id": {
+          "type": "String",
+          "attributes": "@id @default(uuid())"
+        },
+        "roomId": {
+          "type": "String",
+          "attributes": ""
+        },
+        "tenantId": {
+          "type": "String",
+          "attributes": ""
+        },
+        "startDate": {
+          "type": "DateTime",
+          "attributes": ""
+        },
+        "endDate": {
+          "type": "DateTime?",
+          "attributes": ""
+        },
+        "monthlyRent": {
+          "type": "Int",
+          "attributes": ""
+        },
+        "deposit": {
+          "type": "Int",
+          "attributes": "@default(0)"
+        },
+        "status": {
+          "type": "LeaseStatus",
+          "attributes": "@default(ACTIVE)"
+        },
+        "room": {
+          "type": "Room",
+          "attributes": "@relation(fields: [roomId], references: [id], onDelete: Cascade)"
+        },
+        "tenant": {
+          "type": "Tenant",
+          "attributes": "@relation(fields: [tenantId], references: [id], onDelete: Cascade)"
+        },
+        "invoices": {
+          "type": "Invoice[]",
+          "attributes": ""
+        },
+        "depositTransactions": {
+          "type": "DepositTransaction[]",
+          "attributes": ""
+        },
+        "changes": {
+          "type": "LeaseChange[]",
+          "attributes": ""
+        },
+        "createdAt": {
+          "type": "DateTime",
+          "attributes": "@default(now())"
+        },
+        "updatedAt": {
+          "type": "DateTime",
+          "attributes": "@updatedAt"
+        }
+      },
+      "line": 326,
+      "label": "Hợp đồng thuê",
+      "description": "Liên kết một phòng với một hồ sơ Người thuê và ghi điều khoản thuê, tình trạng hiệu lực.",
+      "selected_fields": [
+        "id",
+        "startDate",
+        "endDate",
+        "monthlyRent",
+        "deposit",
+        "status"
+      ],
+      "use_cases": [
+        "UC-OPT-05.01",
+        "UC-OPT-05.02",
+        "UC-OPT-05.03",
+        "UC-OPT-05.04",
+        "UC-OPT-05.05",
+        "UC-TEN-02"
+      ]
+    },
+    "DepositTransaction": {
+      "fields": {
+        "id": {
+          "type": "String",
+          "attributes": "@id @default(uuid())"
+        },
+        "leaseId": {
+          "type": "String",
+          "attributes": ""
+        },
+        "landlordId": {
+          "type": "String",
+          "attributes": ""
+        },
+        "type": {
+          "type": "DepositTransactionType",
+          "attributes": ""
+        },
+        "amount": {
+          "type": "Int",
+          "attributes": ""
+        },
+        "occurredAt": {
+          "type": "DateTime",
+          "attributes": "@default(now())"
+        },
+        "note": {
+          "type": "String?",
+          "attributes": ""
+        },
+        "lease": {
+          "type": "Lease",
+          "attributes": "@relation(fields: [leaseId], references: [id], onDelete: Cascade)"
+        },
+        "landlord": {
+          "type": "User",
+          "attributes": "@relation(fields: [landlordId], references: [id], onDelete: Cascade)"
+        },
+        "createdAt": {
+          "type": "DateTime",
+          "attributes": "@default(now())"
+        }
+      },
+      "line": 348,
+      "label": "Giao dịch tiền cọc",
+      "description": "Theo dõi giao dịch thu, hoàn, khấu trừ hoặc điều chỉnh cọc; không đồng nhất với tiền cọc thỏa thuận.",
+      "selected_fields": [
+        "id",
+        "type",
+        "amount",
+        "occurredAt",
+        "note"
+      ],
+      "use_cases": [
+        "UC-OPT-05.06"
+      ]
+    },
+    "LeaseChange": {
+      "fields": {
+        "id": {
+          "type": "String",
+          "attributes": "@id @default(uuid())"
+        },
+        "leaseId": {
+          "type": "String",
+          "attributes": ""
+        },
+        "landlordId": {
+          "type": "String",
+          "attributes": ""
+        },
+        "changeType": {
+          "type": "String",
+          "attributes": ""
+        },
+        "previousValues": {
+          "type": "Json",
+          "attributes": ""
+        },
+        "newValues": {
+          "type": "Json",
+          "attributes": ""
+        },
+        "note": {
+          "type": "String?",
+          "attributes": ""
+        },
+        "createdAt": {
+          "type": "DateTime",
+          "attributes": "@default(now())"
+        },
+        "lease": {
+          "type": "Lease",
+          "attributes": "@relation(fields: [leaseId], references: [id], onDelete: Cascade)"
+        },
+        "landlord": {
+          "type": "User",
+          "attributes": "@relation(fields: [landlordId], references: [id], onDelete: Cascade)"
+        }
+      },
+      "line": 366,
+      "label": "Lịch sử thay đổi hợp đồng",
+      "description": "Lưu loại thay đổi, giá trị trước và sau cùng thời điểm ghi nhận.",
+      "selected_fields": [
+        "id",
+        "changeType",
+        "previousValues",
+        "newValues",
+        "note",
+        "createdAt"
+      ],
+      "use_cases": [
+        "UC-OPT-05.01",
+        "UC-OPT-05.03",
+        "UC-OPT-05.04"
+      ]
+    },
+    "NotificationRead": {
+      "fields": {
+        "id": {
+          "type": "String",
+          "attributes": "@id @default(uuid())"
+        },
+        "userId": {
+          "type": "String",
+          "attributes": ""
+        },
+        "notificationId": {
+          "type": "String",
+          "attributes": ""
+        },
+        "readAt": {
+          "type": "DateTime",
+          "attributes": "@default(now())"
+        },
+        "user": {
+          "type": "User",
+          "attributes": "@relation(fields: [userId], references: [id], onDelete: Cascade)"
+        }
+      },
+      "line": 383,
+      "label": "Dấu đã đọc thông báo",
+      "description": "Ghi mã thông báo đã đọc cho từng tài khoản; không phải quan hệ đến một lớp Notification riêng.",
+      "selected_fields": [
+        "id",
+        "notificationId",
+        "readAt"
+      ],
+      "use_cases": [
+        "UC-BIL-07.01",
+        "UC-TEN-06"
+      ]
+    },
+    "NotificationDelivery": {
+      "fields": {
+        "id": {
+          "type": "String",
+          "attributes": "@id @default(uuid())"
+        },
+        "landlordId": {
+          "type": "String",
+          "attributes": ""
+        },
+        "tenantId": {
+          "type": "String?",
+          "attributes": ""
+        },
+        "invoiceId": {
+          "type": "String?",
+          "attributes": ""
+        },
+        "channel": {
+          "type": "NotificationDeliveryChannel",
+          "attributes": ""
+        },
+        "purpose": {
+          "type": "String",
+          "attributes": ""
+        },
+        "recipient": {
+          "type": "String",
+          "attributes": ""
+        },
+        "templateId": {
+          "type": "String?",
+          "attributes": ""
+        },
+        "status": {
+          "type": "NotificationDeliveryStatus",
+          "attributes": "@default(PENDING)"
+        },
+        "payload": {
+          "type": "Json?",
+          "attributes": ""
+        },
+        "providerMessageId": {
+          "type": "String?",
+          "attributes": ""
+        },
+        "errorCode": {
+          "type": "String?",
+          "attributes": ""
+        },
+        "errorMessage": {
+          "type": "String?",
+          "attributes": ""
+        },
+        "sentAt": {
+          "type": "DateTime?",
+          "attributes": ""
+        },
+        "createdAt": {
+          "type": "DateTime",
+          "attributes": "@default(now())"
+        },
+        "updatedAt": {
+          "type": "DateTime",
+          "attributes": "@updatedAt"
+        }
+      },
+      "line": 394,
+      "label": "Lượt gửi thông báo",
+      "description": "Ghi người nhận, kênh, mục đích và kết quả gửi; các mã liên quan chưa khai báo quan hệ trực tiếp.",
+      "selected_fields": [
+        "id",
+        "landlordId",
+        "tenantId",
+        "invoiceId",
+        "channel",
+        "purpose",
+        "recipient",
+        "status",
+        "sentAt",
+        "errorCode"
+      ],
+      "use_cases": [
+        "UC-BIL-07.02"
+      ]
+    },
+    "MeterReading": {
+      "fields": {
+        "id": {
+          "type": "String",
+          "attributes": "@id @default(uuid())"
+        },
+        "roomId": {
+          "type": "String",
+          "attributes": ""
+        },
+        "utilityType": {
+          "type": "UtilityType",
+          "attributes": ""
+        },
+        "billingMonth": {
+          "type": "DateTime",
+          "attributes": ""
+        },
+        "previousReading": {
+          "type": "Int",
+          "attributes": ""
+        },
+        "currentReading": {
+          "type": "Int",
+          "attributes": ""
+        },
+        "unitPrice": {
+          "type": "Int",
+          "attributes": ""
+        },
+        "usage": {
+          "type": "Int",
+          "attributes": ""
+        },
+        "amount": {
+          "type": "Int",
+          "attributes": ""
+        },
+        "note": {
+          "type": "String?",
+          "attributes": ""
+        },
+        "room": {
+          "type": "Room",
+          "attributes": "@relation(fields: [roomId], references: [id], onDelete: Cascade)"
+        },
+        "createdAt": {
+          "type": "DateTime",
+          "attributes": "@default(now())"
+        },
+        "updatedAt": {
+          "type": "DateTime",
+          "attributes": "@updatedAt"
+        }
+      },
+      "line": 421,
+      "label": "Chỉ số dịch vụ",
+      "description": "Mỗi bản ghi lưu một loại dịch vụ điện hoặc nước của một phòng trong một kỳ.",
+      "selected_fields": [
+        "id",
+        "utilityType",
+        "billingMonth",
+        "previousReading",
+        "currentReading",
+        "unitPrice",
+        "usage",
+        "amount"
+      ],
+      "use_cases": [
+        "UC-BIL-01",
+        "UC-BIL-02.01",
+        "UC-BIL-02.02"
+      ]
+    },
+    "Invoice": {
+      "fields": {
+        "id": {
+          "type": "String",
+          "attributes": "@id @default(uuid())"
+        },
+        "leaseId": {
+          "type": "String",
+          "attributes": ""
+        },
+        "roomId": {
+          "type": "String",
+          "attributes": ""
+        },
+        "tenantId": {
+          "type": "String",
+          "attributes": ""
+        },
+        "billingMonth": {
+          "type": "DateTime",
+          "attributes": ""
+        },
+        "rentAmount": {
+          "type": "Int",
+          "attributes": ""
+        },
+        "electricityAmount": {
+          "type": "Int",
+          "attributes": "@default(0)"
+        },
+        "waterAmount": {
+          "type": "Int",
+          "attributes": "@default(0)"
+        },
+        "otherAmount": {
+          "type": "Int",
+          "attributes": "@default(0)"
+        },
+        "totalAmount": {
+          "type": "Int",
+          "attributes": ""
+        },
+        "paidAmount": {
+          "type": "Int",
+          "attributes": "@default(0)"
+        },
+        "status": {
+          "type": "InvoiceStatus",
+          "attributes": "@default(UNPAID)"
+        },
+        "dueDate": {
+          "type": "DateTime?",
+          "attributes": ""
+        },
+        "issuedAt": {
+          "type": "DateTime",
+          "attributes": "@default(now())"
+        },
+        "note": {
+          "type": "String?",
+          "attributes": ""
+        },
+        "cancelledAt": {
+          "type": "DateTime?",
+          "attributes": ""
+        },
+        "cancelledNote": {
+          "type": "String?",
+          "attributes": ""
+        },
+        "lease": {
+          "type": "Lease",
+          "attributes": "@relation(fields: [leaseId], references: [id], onDelete: Cascade)"
+        },
+        "room": {
+          "type": "Room",
+          "attributes": "@relation(fields: [roomId], references: [id], onDelete: Cascade)"
+        },
+        "tenant": {
+          "type": "Tenant",
+          "attributes": "@relation(fields: [tenantId], references: [id], onDelete: Cascade)"
+        },
+        "payments": {
+          "type": "Payment[]",
+          "attributes": ""
+        },
+        "paymentProofs": {
+          "type": "PaymentProof[]",
+          "attributes": ""
+        },
+        "createdAt": {
+          "type": "DateTime",
+          "attributes": "@default(now())"
+        },
+        "updatedAt": {
+          "type": "DateTime",
+          "attributes": "@updatedAt"
+        }
+      },
+      "line": 441,
+      "label": "Hóa đơn",
+      "description": "Ghi các thành phần tiền và tình trạng thu tiền của một hợp đồng theo kỳ tính.",
+      "selected_fields": [
+        "id",
+        "billingMonth",
+        "rentAmount",
+        "electricityAmount",
+        "waterAmount",
+        "otherAmount",
+        "totalAmount",
+        "paidAmount",
+        "status",
+        "dueDate"
+      ],
+      "use_cases": [
+        "UC-BIL-02.01",
+        "UC-BIL-02.02",
+        "UC-BIL-02.03",
+        "UC-BIL-02.04",
+        "UC-BIL-02.05",
+        "UC-BIL-02.06",
+        "UC-TEN-03"
+      ]
+    },
+    "PaymentProof": {
+      "fields": {
+        "id": {
+          "type": "String",
+          "attributes": "@id @default(uuid())"
+        },
+        "invoiceId": {
+          "type": "String",
+          "attributes": ""
+        },
+        "tenantId": {
+          "type": "String",
+          "attributes": ""
+        },
+        "amount": {
+          "type": "Int",
+          "attributes": ""
+        },
+        "method": {
+          "type": "PaymentMethod",
+          "attributes": "@default(BANK_TRANSFER)"
+        },
+        "note": {
+          "type": "String?",
+          "attributes": ""
+        },
+        "proofImageUrls": {
+          "type": "String[]",
+          "attributes": "@default([])"
+        },
+        "status": {
+          "type": "PaymentProofStatus",
+          "attributes": "@default(PENDING)"
+        },
+        "submittedAt": {
+          "type": "DateTime",
+          "attributes": "@default(now())"
+        },
+        "reviewedAt": {
+          "type": "DateTime?",
+          "attributes": ""
+        },
+        "reviewedById": {
+          "type": "String?",
+          "attributes": ""
+        },
+        "reviewNote": {
+          "type": "String?",
+          "attributes": ""
+        },
+        "invoice": {
+          "type": "Invoice",
+          "attributes": "@relation(fields: [invoiceId], references: [id], onDelete: Cascade)"
+        },
+        "tenant": {
+          "type": "Tenant",
+          "attributes": "@relation(fields: [tenantId], references: [id], onDelete: Cascade)"
+        },
+        "reviewedBy": {
+          "type": "User?",
+          "attributes": "@relation(\"PaymentProofReviewer\", fields: [reviewedById], references: [id], onDelete: SetNull)"
+        }
+      },
+      "line": 474,
+      "label": "Minh chứng thanh toán",
+      "description": "Ghi thông tin Người thuê gửi để đối soát và quyết định duyệt; chưa đồng nghĩa tiền đã thu.",
+      "selected_fields": [
+        "id",
+        "amount",
+        "method",
+        "status",
+        "submittedAt",
+        "reviewedAt",
+        "reviewNote",
+        "proofImageUrls"
+      ],
+      "use_cases": [
+        "UC-TEN-04",
+        "UC-BIL-04"
+      ]
+    },
+    "Payment": {
+      "fields": {
+        "id": {
+          "type": "String",
+          "attributes": "@id @default(uuid())"
+        },
+        "invoiceId": {
+          "type": "String",
+          "attributes": ""
+        },
+        "amount": {
+          "type": "Int",
+          "attributes": ""
+        },
+        "method": {
+          "type": "PaymentMethod",
+          "attributes": "@default(CASH)"
+        },
+        "type": {
+          "type": "PaymentType",
+          "attributes": "@default(PAYMENT)"
+        },
+        "reversalOfPaymentId": {
+          "type": "String?",
+          "attributes": "@unique"
+        },
+        "paidAt": {
+          "type": "DateTime",
+          "attributes": "@default(now())"
+        },
+        "note": {
+          "type": "String?",
+          "attributes": ""
+        },
+        "invoice": {
+          "type": "Invoice",
+          "attributes": "@relation(fields: [invoiceId], references: [id], onDelete: Cascade)"
+        },
+        "reversalOfPayment": {
+          "type": "Payment?",
+          "attributes": "@relation(\"PaymentReversal\", fields: [reversalOfPaymentId], references: [id], onDelete: Cascade)"
+        },
+        "reversalPayment": {
+          "type": "Payment?",
+          "attributes": "@relation(\"PaymentReversal\")"
+        },
+        "createdAt": {
+          "type": "DateTime",
+          "attributes": "@default(now())"
+        }
+      },
+      "line": 497,
+      "label": "Khoản thanh toán",
+      "description": "Ghi tiền đã thu hoặc khoản đảo của một khoản thu; giữ liên kết với hóa đơn.",
+      "selected_fields": [
+        "id",
+        "amount",
+        "method",
+        "type",
+        "paidAt"
+      ],
+      "use_cases": [
+        "UC-BIL-03.01",
+        "UC-BIL-03.02",
+        "UC-BIL-04"
+      ]
+    },
+    "BillingAutomation": {
+      "fields": {
+        "id": {
+          "type": "String",
+          "attributes": "@id @default(uuid())"
+        },
+        "landlordId": {
+          "type": "String",
+          "attributes": ""
+        },
+        "propertyId": {
+          "type": "String",
+          "attributes": "@unique"
+        },
+        "isEnabled": {
+          "type": "Boolean",
+          "attributes": "@default(false)"
+        },
+        "invoiceDay": {
+          "type": "Int",
+          "attributes": "@default(1)"
+        },
+        "dueDay": {
+          "type": "Int",
+          "attributes": "@default(10)"
+        },
+        "lastRunMonth": {
+          "type": "DateTime?",
+          "attributes": ""
+        },
+        "lastRunAt": {
+          "type": "DateTime?",
+          "attributes": ""
+        },
+        "landlord": {
+          "type": "User",
+          "attributes": "@relation(fields: [landlordId], references: [id], onDelete: Cascade)"
+        },
+        "property": {
+          "type": "Property",
+          "attributes": "@relation(fields: [propertyId], references: [id], onDelete: Cascade)"
+        },
+        "createdAt": {
+          "type": "DateTime",
+          "attributes": "@default(now())"
+        },
+        "updatedAt": {
+          "type": "DateTime",
+          "attributes": "@updatedAt"
+        }
+      },
+      "line": 516,
+      "label": "Cấu hình lập hóa đơn định kỳ",
+      "description": "Ghi bật tắt, ngày lập, ngày đến hạn và thông tin lần chạy theo khu trọ.",
+      "selected_fields": [
+        "id",
+        "isEnabled",
+        "invoiceDay",
+        "dueDay",
+        "lastRunMonth",
+        "lastRunAt"
+      ],
+      "use_cases": [
+        "UC-BIL-02.07"
+      ]
+    },
+    "Expense": {
+      "fields": {
+        "id": {
+          "type": "String",
+          "attributes": "@id @default(uuid())"
+        },
+        "landlordId": {
+          "type": "String",
+          "attributes": ""
+        },
+        "propertyId": {
+          "type": "String",
+          "attributes": ""
+        },
+        "roomId": {
+          "type": "String?",
+          "attributes": ""
+        },
+        "category": {
+          "type": "ExpenseCategory",
+          "attributes": ""
+        },
+        "amount": {
+          "type": "Int",
+          "attributes": ""
+        },
+        "expenseDate": {
+          "type": "DateTime",
+          "attributes": ""
+        },
+        "title": {
+          "type": "String",
+          "attributes": ""
+        },
+        "note": {
+          "type": "String?",
+          "attributes": ""
+        },
+        "receiptUrl": {
+          "type": "String?",
+          "attributes": ""
+        },
+        "landlord": {
+          "type": "User",
+          "attributes": "@relation(fields: [landlordId], references: [id], onDelete: Cascade)"
+        },
+        "property": {
+          "type": "Property",
+          "attributes": "@relation(fields: [propertyId], references: [id], onDelete: Cascade)"
+        },
+        "room": {
+          "type": "Room?",
+          "attributes": "@relation(fields: [roomId], references: [id], onDelete: SetNull)"
+        },
+        "maintenanceTickets": {
+          "type": "MaintenanceTicket[]",
+          "attributes": ""
+        },
+        "createdAt": {
+          "type": "DateTime",
+          "attributes": "@default(now())"
+        },
+        "updatedAt": {
+          "type": "DateTime",
+          "attributes": "@updatedAt"
+        }
+      },
+      "line": 535,
+      "label": "Khoản chi vận hành",
+      "description": "Lưu chi phí của khu trọ; có thể gắn thêm phòng và được liên kết từ yêu cầu bảo trì.",
+      "selected_fields": [
+        "id",
+        "category",
+        "amount",
+        "expenseDate",
+        "title"
+      ],
+      "use_cases": [
+        "UC-BIL-05.01",
+        "UC-BIL-05.02",
+        "UC-BIL-05.03",
+        "UC-OPT-06.04"
+      ]
+    },
+    "MaintenanceTicket": {
+      "fields": {
+        "id": {
+          "type": "String",
+          "attributes": "@id @default(uuid())"
+        },
+        "landlordId": {
+          "type": "String",
+          "attributes": ""
+        },
+        "propertyId": {
+          "type": "String",
+          "attributes": ""
+        },
+        "roomId": {
+          "type": "String",
+          "attributes": ""
+        },
+        "status": {
+          "type": "MaintenanceStatus",
+          "attributes": "@default(OPEN)"
+        },
+        "priority": {
+          "type": "MaintenancePriority",
+          "attributes": "@default(MEDIUM)"
+        },
+        "title": {
+          "type": "String",
+          "attributes": ""
+        },
+        "description": {
+          "type": "String?",
+          "attributes": ""
+        },
+        "reportedAt": {
+          "type": "DateTime",
+          "attributes": "@default(now())"
+        },
+        "startedAt": {
+          "type": "DateTime?",
+          "attributes": ""
+        },
+        "completedAt": {
+          "type": "DateTime?",
+          "attributes": ""
+        },
+        "estimatedCost": {
+          "type": "Int?",
+          "attributes": ""
+        },
+        "actualCost": {
+          "type": "Int?",
+          "attributes": ""
+        },
+        "note": {
+          "type": "String?",
+          "attributes": ""
+        },
+        "imageUrls": {
+          "type": "String[]",
+          "attributes": "@default([])"
+        },
+        "expenseId": {
+          "type": "String?",
+          "attributes": ""
+        },
+        "comments": {
+          "type": "MaintenanceComment[]",
+          "attributes": ""
+        },
+        "landlord": {
+          "type": "User",
+          "attributes": "@relation(fields: [landlordId], references: [id], onDelete: Cascade)"
+        },
+        "property": {
+          "type": "Property",
+          "attributes": "@relation(fields: [propertyId], references: [id], onDelete: Cascade)"
+        },
+        "room": {
+          "type": "Room",
+          "attributes": "@relation(fields: [roomId], references: [id], onDelete: Cascade)"
+        },
+        "expense": {
+          "type": "Expense?",
+          "attributes": "@relation(fields: [expenseId], references: [id], onDelete: SetNull)"
+        },
+        "createdAt": {
+          "type": "DateTime",
+          "attributes": "@default(now())"
+        },
+        "updatedAt": {
+          "type": "DateTime",
+          "attributes": "@updatedAt"
+        }
+      },
+      "line": 560,
+      "label": "Yêu cầu bảo trì",
+      "description": "Ghi sự cố, trạng thái, ngày xử lý và chi phí theo phòng, khu trọ; không có liên kết trực tiếp đến Tenant.",
+      "selected_fields": [
+        "id",
+        "title",
+        "status",
+        "priority",
+        "reportedAt",
+        "actualCost"
+      ],
+      "use_cases": [
+        "UC-OPT-06.01",
+        "UC-OPT-06.02",
+        "UC-OPT-06.03",
+        "UC-OPT-06.04",
+        "UC-TEN-05.01",
+        "UC-TEN-05.02"
+      ]
+    },
+    "MaintenanceComment": {
+      "fields": {
+        "id": {
+          "type": "String",
+          "attributes": "@id @default(uuid())"
+        },
+        "ticketId": {
+          "type": "String",
+          "attributes": ""
+        },
+        "authorId": {
+          "type": "String",
+          "attributes": ""
+        },
+        "authorRole": {
+          "type": "UserRole",
+          "attributes": ""
+        },
+        "body": {
+          "type": "String",
+          "attributes": ""
+        },
+        "imageUrls": {
+          "type": "String[]",
+          "attributes": "@default([])"
+        },
+        "ticket": {
+          "type": "MaintenanceTicket",
+          "attributes": "@relation(fields: [ticketId], references: [id], onDelete: Cascade)"
+        },
+        "author": {
+          "type": "User",
+          "attributes": "@relation(fields: [authorId], references: [id], onDelete: Cascade)"
+        },
+        "createdAt": {
+          "type": "DateTime",
+          "attributes": "@default(now())"
+        }
+      },
+      "line": 593,
+      "label": "Trao đổi bảo trì",
+      "description": "Lưu nội dung phản hồi, ảnh và tác giả là tài khoản người dùng trong một yêu cầu bảo trì.",
+      "selected_fields": [
+        "id",
+        "body",
+        "authorRole",
+        "imageUrls",
+        "createdAt"
+      ],
+      "use_cases": [
+        "UC-TEN-05.02",
+        "UC-OPT-06.01"
+      ]
+    },
+    "RefreshToken": {
+      "fields": {
+        "id": {
+          "type": "String",
+          "attributes": "@id @default(uuid())"
+        },
+        "userId": {
+          "type": "String",
+          "attributes": ""
+        },
+        "tokenHash": {
+          "type": "String",
+          "attributes": "@unique"
+        },
+        "expiresAt": {
+          "type": "DateTime",
+          "attributes": ""
+        },
+        "revokedAt": {
+          "type": "DateTime?",
+          "attributes": ""
+        },
+        "replacedByTokenId": {
+          "type": "String?",
+          "attributes": ""
+        },
+        "user": {
+          "type": "User",
+          "attributes": "@relation(fields: [userId], references: [id], onDelete: Cascade)"
+        },
+        "createdAt": {
+          "type": "DateTime",
+          "attributes": "@default(now())"
+        }
+      },
+      "line": 609,
+      "label": "Phiên làm mới đăng nhập",
+      "description": "Lưu thông tin phiên làm mới của một tài khoản, phục vụ duy trì và thu hồi phiên.",
+      "selected_fields": [
+        "id",
+        "expiresAt",
+        "revokedAt"
+      ],
+      "use_cases": [
+        "UC-SYS-01",
+        "UC-SYS-02"
+      ]
+    }
+  },
+  "included": [
+    "User",
+    "AuditLog",
+    "Property",
+    "Room",
+    "RoomAsset",
+    "RoomInspection",
+    "RoomServiceFee",
+    "Tenant",
+    "TenantInvite",
+    "Lease",
+    "DepositTransaction",
+    "LeaseChange",
+    "NotificationRead",
+    "NotificationDelivery",
+    "MeterReading",
+    "Invoice",
+    "PaymentProof",
+    "Payment",
+    "BillingAutomation",
+    "Expense",
+    "MaintenanceTicket",
+    "MaintenanceComment",
+    "RefreshToken"
+  ],
+  "excluded": [
+    "StaffProfile",
+    "StaffInvite"
+  ],
+  "enums": {
+    "UserRole": [
+      "LANDLORD",
+      "ADMIN",
+      "TENANT",
+      "STAFF"
+    ],
+    "RoomStatus": [
+      "OCCUPIED",
+      "VACANT",
+      "MAINTENANCE"
+    ],
+    "LeaseStatus": [
+      "ACTIVE",
+      "ENDED"
+    ],
+    "UtilityType": [
+      "ELECTRICITY",
+      "WATER"
+    ],
+    "InvoiceStatus": [
+      "UNPAID",
+      "PARTIAL",
+      "PAID",
+      "CANCELLED"
+    ],
+    "PaymentMethod": [
+      "CASH",
+      "BANK_TRANSFER",
+      "OTHER"
+    ],
+    "PaymentType": [
+      "PAYMENT",
+      "REVERSAL"
+    ],
+    "PaymentProofStatus": [
+      "PENDING",
+      "APPROVED",
+      "REJECTED"
+    ],
+    "NotificationDeliveryChannel": [
+      "ZALO"
+    ],
+    "NotificationDeliveryStatus": [
+      "PENDING",
+      "SENT",
+      "FAILED",
+      "SKIPPED"
+    ],
+    "DepositTransactionType": [
+      "COLLECTED",
+      "REFUNDED",
+      "DEDUCTED",
+      "ADJUSTMENT"
+    ],
+    "ExpenseCategory": [
+      "REPAIR",
+      "UTILITIES",
+      "INTERNET",
+      "CLEANING",
+      "FURNITURE",
+      "SALARY",
+      "TAX",
+      "OTHER"
+    ],
+    "MaintenanceStatus": [
+      "OPEN",
+      "IN_PROGRESS",
+      "DONE",
+      "CANCELLED"
+    ],
+    "MaintenancePriority": [
+      "LOW",
+      "MEDIUM",
+      "URGENT"
+    ]
+  },
+  "associations": [
+    {
+      "id": "AuditLog.landlord",
+      "source": "AuditLog",
+      "target": "User",
+      "field": "landlord",
+      "foreign_keys": [
+        "landlordId"
+      ],
+      "source_multiplicity": "0..*",
+      "target_multiplicity": "0..1"
+    },
+    {
+      "id": "AuditLog.actor",
+      "source": "AuditLog",
+      "target": "User",
+      "field": "actor",
+      "foreign_keys": [
+        "actorId"
+      ],
+      "source_multiplicity": "0..*",
+      "target_multiplicity": "0..1"
+    },
+    {
+      "id": "Property.landlord",
+      "source": "Property",
+      "target": "User",
+      "field": "landlord",
+      "foreign_keys": [
+        "landlordId"
+      ],
+      "source_multiplicity": "0..*",
+      "target_multiplicity": "1"
+    },
+    {
+      "id": "Room.property",
+      "source": "Room",
+      "target": "Property",
+      "field": "property",
+      "foreign_keys": [
+        "propertyId"
+      ],
+      "source_multiplicity": "0..*",
+      "target_multiplicity": "1"
+    },
+    {
+      "id": "RoomAsset.room",
+      "source": "RoomAsset",
+      "target": "Room",
+      "field": "room",
+      "foreign_keys": [
+        "roomId"
+      ],
+      "source_multiplicity": "0..*",
+      "target_multiplicity": "1"
+    },
+    {
+      "id": "RoomInspection.room",
+      "source": "RoomInspection",
+      "target": "Room",
+      "field": "room",
+      "foreign_keys": [
+        "roomId"
+      ],
+      "source_multiplicity": "0..*",
+      "target_multiplicity": "1"
+    },
+    {
+      "id": "RoomServiceFee.room",
+      "source": "RoomServiceFee",
+      "target": "Room",
+      "field": "room",
+      "foreign_keys": [
+        "roomId"
+      ],
+      "source_multiplicity": "0..*",
+      "target_multiplicity": "1"
+    },
+    {
+      "id": "Tenant.landlord",
+      "source": "Tenant",
+      "target": "User",
+      "field": "landlord",
+      "foreign_keys": [
+        "landlordId"
+      ],
+      "source_multiplicity": "0..*",
+      "target_multiplicity": "1"
+    },
+    {
+      "id": "Tenant.user",
+      "source": "Tenant",
+      "target": "User",
+      "field": "user",
+      "foreign_keys": [
+        "userId"
+      ],
+      "source_multiplicity": "0..1",
+      "target_multiplicity": "0..1"
+    },
+    {
+      "id": "TenantInvite.landlord",
+      "source": "TenantInvite",
+      "target": "User",
+      "field": "landlord",
+      "foreign_keys": [
+        "landlordId"
+      ],
+      "source_multiplicity": "0..*",
+      "target_multiplicity": "1"
+    },
+    {
+      "id": "TenantInvite.tenant",
+      "source": "TenantInvite",
+      "target": "Tenant",
+      "field": "tenant",
+      "foreign_keys": [
+        "tenantId"
+      ],
+      "source_multiplicity": "0..*",
+      "target_multiplicity": "1"
+    },
+    {
+      "id": "Lease.room",
+      "source": "Lease",
+      "target": "Room",
+      "field": "room",
+      "foreign_keys": [
+        "roomId"
+      ],
+      "source_multiplicity": "0..*",
+      "target_multiplicity": "1"
+    },
+    {
+      "id": "Lease.tenant",
+      "source": "Lease",
+      "target": "Tenant",
+      "field": "tenant",
+      "foreign_keys": [
+        "tenantId"
+      ],
+      "source_multiplicity": "0..*",
+      "target_multiplicity": "1"
+    },
+    {
+      "id": "DepositTransaction.lease",
+      "source": "DepositTransaction",
+      "target": "Lease",
+      "field": "lease",
+      "foreign_keys": [
+        "leaseId"
+      ],
+      "source_multiplicity": "0..*",
+      "target_multiplicity": "1"
+    },
+    {
+      "id": "DepositTransaction.landlord",
+      "source": "DepositTransaction",
+      "target": "User",
+      "field": "landlord",
+      "foreign_keys": [
+        "landlordId"
+      ],
+      "source_multiplicity": "0..*",
+      "target_multiplicity": "1"
+    },
+    {
+      "id": "LeaseChange.lease",
+      "source": "LeaseChange",
+      "target": "Lease",
+      "field": "lease",
+      "foreign_keys": [
+        "leaseId"
+      ],
+      "source_multiplicity": "0..*",
+      "target_multiplicity": "1"
+    },
+    {
+      "id": "LeaseChange.landlord",
+      "source": "LeaseChange",
+      "target": "User",
+      "field": "landlord",
+      "foreign_keys": [
+        "landlordId"
+      ],
+      "source_multiplicity": "0..*",
+      "target_multiplicity": "1"
+    },
+    {
+      "id": "NotificationRead.user",
+      "source": "NotificationRead",
+      "target": "User",
+      "field": "user",
+      "foreign_keys": [
+        "userId"
+      ],
+      "source_multiplicity": "0..*",
+      "target_multiplicity": "1"
+    },
+    {
+      "id": "MeterReading.room",
+      "source": "MeterReading",
+      "target": "Room",
+      "field": "room",
+      "foreign_keys": [
+        "roomId"
+      ],
+      "source_multiplicity": "0..*",
+      "target_multiplicity": "1"
+    },
+    {
+      "id": "Invoice.lease",
+      "source": "Invoice",
+      "target": "Lease",
+      "field": "lease",
+      "foreign_keys": [
+        "leaseId"
+      ],
+      "source_multiplicity": "0..*",
+      "target_multiplicity": "1"
+    },
+    {
+      "id": "Invoice.room",
+      "source": "Invoice",
+      "target": "Room",
+      "field": "room",
+      "foreign_keys": [
+        "roomId"
+      ],
+      "source_multiplicity": "0..*",
+      "target_multiplicity": "1"
+    },
+    {
+      "id": "Invoice.tenant",
+      "source": "Invoice",
+      "target": "Tenant",
+      "field": "tenant",
+      "foreign_keys": [
+        "tenantId"
+      ],
+      "source_multiplicity": "0..*",
+      "target_multiplicity": "1"
+    },
+    {
+      "id": "PaymentProof.invoice",
+      "source": "PaymentProof",
+      "target": "Invoice",
+      "field": "invoice",
+      "foreign_keys": [
+        "invoiceId"
+      ],
+      "source_multiplicity": "0..*",
+      "target_multiplicity": "1"
+    },
+    {
+      "id": "PaymentProof.tenant",
+      "source": "PaymentProof",
+      "target": "Tenant",
+      "field": "tenant",
+      "foreign_keys": [
+        "tenantId"
+      ],
+      "source_multiplicity": "0..*",
+      "target_multiplicity": "1"
+    },
+    {
+      "id": "PaymentProof.reviewedBy",
+      "source": "PaymentProof",
+      "target": "User",
+      "field": "reviewedBy",
+      "foreign_keys": [
+        "reviewedById"
+      ],
+      "source_multiplicity": "0..*",
+      "target_multiplicity": "0..1"
+    },
+    {
+      "id": "Payment.invoice",
+      "source": "Payment",
+      "target": "Invoice",
+      "field": "invoice",
+      "foreign_keys": [
+        "invoiceId"
+      ],
+      "source_multiplicity": "0..*",
+      "target_multiplicity": "1"
+    },
+    {
+      "id": "Payment.reversalOfPayment",
+      "source": "Payment",
+      "target": "Payment",
+      "field": "reversalOfPayment",
+      "foreign_keys": [
+        "reversalOfPaymentId"
+      ],
+      "source_multiplicity": "0..1",
+      "target_multiplicity": "0..1"
+    },
+    {
+      "id": "BillingAutomation.landlord",
+      "source": "BillingAutomation",
+      "target": "User",
+      "field": "landlord",
+      "foreign_keys": [
+        "landlordId"
+      ],
+      "source_multiplicity": "0..*",
+      "target_multiplicity": "1"
+    },
+    {
+      "id": "BillingAutomation.property",
+      "source": "BillingAutomation",
+      "target": "Property",
+      "field": "property",
+      "foreign_keys": [
+        "propertyId"
+      ],
+      "source_multiplicity": "0..1",
+      "target_multiplicity": "1"
+    },
+    {
+      "id": "Expense.landlord",
+      "source": "Expense",
+      "target": "User",
+      "field": "landlord",
+      "foreign_keys": [
+        "landlordId"
+      ],
+      "source_multiplicity": "0..*",
+      "target_multiplicity": "1"
+    },
+    {
+      "id": "Expense.property",
+      "source": "Expense",
+      "target": "Property",
+      "field": "property",
+      "foreign_keys": [
+        "propertyId"
+      ],
+      "source_multiplicity": "0..*",
+      "target_multiplicity": "1"
+    },
+    {
+      "id": "Expense.room",
+      "source": "Expense",
+      "target": "Room",
+      "field": "room",
+      "foreign_keys": [
+        "roomId"
+      ],
+      "source_multiplicity": "0..*",
+      "target_multiplicity": "0..1"
+    },
+    {
+      "id": "MaintenanceTicket.landlord",
+      "source": "MaintenanceTicket",
+      "target": "User",
+      "field": "landlord",
+      "foreign_keys": [
+        "landlordId"
+      ],
+      "source_multiplicity": "0..*",
+      "target_multiplicity": "1"
+    },
+    {
+      "id": "MaintenanceTicket.property",
+      "source": "MaintenanceTicket",
+      "target": "Property",
+      "field": "property",
+      "foreign_keys": [
+        "propertyId"
+      ],
+      "source_multiplicity": "0..*",
+      "target_multiplicity": "1"
+    },
+    {
+      "id": "MaintenanceTicket.room",
+      "source": "MaintenanceTicket",
+      "target": "Room",
+      "field": "room",
+      "foreign_keys": [
+        "roomId"
+      ],
+      "source_multiplicity": "0..*",
+      "target_multiplicity": "1"
+    },
+    {
+      "id": "MaintenanceTicket.expense",
+      "source": "MaintenanceTicket",
+      "target": "Expense",
+      "field": "expense",
+      "foreign_keys": [
+        "expenseId"
+      ],
+      "source_multiplicity": "0..*",
+      "target_multiplicity": "0..1"
+    },
+    {
+      "id": "MaintenanceComment.ticket",
+      "source": "MaintenanceComment",
+      "target": "MaintenanceTicket",
+      "field": "ticket",
+      "foreign_keys": [
+        "ticketId"
+      ],
+      "source_multiplicity": "0..*",
+      "target_multiplicity": "1"
+    },
+    {
+      "id": "MaintenanceComment.author",
+      "source": "MaintenanceComment",
+      "target": "User",
+      "field": "author",
+      "foreign_keys": [
+        "authorId"
+      ],
+      "source_multiplicity": "0..*",
+      "target_multiplicity": "1"
+    },
+    {
+      "id": "RefreshToken.user",
+      "source": "RefreshToken",
+      "target": "User",
+      "field": "user",
+      "foreign_keys": [
+        "userId"
+      ],
+      "source_multiplicity": "0..*",
+      "target_multiplicity": "1"
+    }
+  ],
+  "diagrams": [
+    {
+      "id": "CD-00",
+      "title": "Sơ đồ lớp miền nghiệp vụ tổng quan (Domain Class Diagram)",
+      "owned": [
+        "User",
+        "Property",
+        "Room",
+        "MeterReading",
+        "Tenant",
+        "Lease",
+        "Invoice",
+        "Payment",
+        "DepositTransaction",
+        "MaintenanceTicket",
+        "Expense",
+        "PaymentProof",
+        "BillingAutomation"
+      ],
+      "references": [],
+      "nodes": [
+        "User",
+        "Property",
+        "Room",
+        "MeterReading",
+        "Tenant",
+        "Lease",
+        "Invoice",
+        "Payment",
+        "DepositTransaction",
+        "MaintenanceTicket",
+        "Expense",
+        "PaymentProof",
+        "BillingAutomation"
+      ],
+      "slots": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        13
+      ],
+      "associations": [
+        {
+          "id": "Property.landlord",
+          "source": "Property",
+          "target": "User",
+          "field": "landlord",
+          "foreign_keys": [
+            "landlordId"
+          ],
+          "source_multiplicity": "0..*",
+          "target_multiplicity": "1"
+        },
+        {
+          "id": "Room.property",
+          "source": "Room",
+          "target": "Property",
+          "field": "property",
+          "foreign_keys": [
+            "propertyId"
+          ],
+          "source_multiplicity": "0..*",
+          "target_multiplicity": "1"
+        },
+        {
+          "id": "Tenant.landlord",
+          "source": "Tenant",
+          "target": "User",
+          "field": "landlord",
+          "foreign_keys": [
+            "landlordId"
+          ],
+          "source_multiplicity": "0..*",
+          "target_multiplicity": "1"
+        },
+        {
+          "id": "Lease.room",
+          "source": "Lease",
+          "target": "Room",
+          "field": "room",
+          "foreign_keys": [
+            "roomId"
+          ],
+          "source_multiplicity": "0..*",
+          "target_multiplicity": "1"
+        },
+        {
+          "id": "Lease.tenant",
+          "source": "Lease",
+          "target": "Tenant",
+          "field": "tenant",
+          "foreign_keys": [
+            "tenantId"
+          ],
+          "source_multiplicity": "0..*",
+          "target_multiplicity": "1"
+        },
+        {
+          "id": "DepositTransaction.lease",
+          "source": "DepositTransaction",
+          "target": "Lease",
+          "field": "lease",
+          "foreign_keys": [
+            "leaseId"
+          ],
+          "source_multiplicity": "0..*",
+          "target_multiplicity": "1"
+        },
+        {
+          "id": "MeterReading.room",
+          "source": "MeterReading",
+          "target": "Room",
+          "field": "room",
+          "foreign_keys": [
+            "roomId"
+          ],
+          "source_multiplicity": "0..*",
+          "target_multiplicity": "1"
+        },
+        {
+          "id": "Invoice.lease",
+          "source": "Invoice",
+          "target": "Lease",
+          "field": "lease",
+          "foreign_keys": [
+            "leaseId"
+          ],
+          "source_multiplicity": "0..*",
+          "target_multiplicity": "1"
+        },
+        {
+          "id": "PaymentProof.invoice",
+          "source": "PaymentProof",
+          "target": "Invoice",
+          "field": "invoice",
+          "foreign_keys": [
+            "invoiceId"
+          ],
+          "source_multiplicity": "0..*",
+          "target_multiplicity": "1"
+        },
+        {
+          "id": "Payment.invoice",
+          "source": "Payment",
+          "target": "Invoice",
+          "field": "invoice",
+          "foreign_keys": [
+            "invoiceId"
+          ],
+          "source_multiplicity": "0..*",
+          "target_multiplicity": "1"
+        },
+        {
+          "id": "BillingAutomation.property",
+          "source": "BillingAutomation",
+          "target": "Property",
+          "field": "property",
+          "foreign_keys": [
+            "propertyId"
+          ],
+          "source_multiplicity": "0..1",
+          "target_multiplicity": "1"
+        },
+        {
+          "id": "Expense.property",
+          "source": "Expense",
+          "target": "Property",
+          "field": "property",
+          "foreign_keys": [
+            "propertyId"
+          ],
+          "source_multiplicity": "0..*",
+          "target_multiplicity": "1"
+        },
+        {
+          "id": "MaintenanceTicket.room",
+          "source": "MaintenanceTicket",
+          "target": "Room",
+          "field": "room",
+          "foreign_keys": [
+            "roomId"
+          ],
+          "source_multiplicity": "0..*",
+          "target_multiplicity": "1"
+        },
+        {
+          "id": "MaintenanceTicket.expense",
+          "source": "MaintenanceTicket",
+          "target": "Expense",
+          "field": "expense",
+          "foreign_keys": [
+            "expenseId"
+          ],
+          "source_multiplicity": "0..*",
+          "target_multiplicity": "0..1"
+        }
+      ],
+      "overview": true,
+      "dependencies": []
+    },
+    {
+      "id": "CD-01",
+      "title": "Tài khoản và hồ sơ Người thuê",
+      "owned": [
+        "User",
+        "Tenant",
+        "TenantInvite",
+        "RefreshToken"
+      ],
+      "references": [],
+      "nodes": [
+        "User",
+        "Tenant",
+        "TenantInvite",
+        "RefreshToken"
+      ],
+      "slots": [
+        0,
+        1,
+        4,
+        3
+      ],
+      "associations": [
+        {
+          "id": "Tenant.landlord",
+          "source": "Tenant",
+          "target": "User",
+          "field": "landlord",
+          "foreign_keys": [
+            "landlordId"
+          ],
+          "source_multiplicity": "0..*",
+          "target_multiplicity": "1"
+        },
+        {
+          "id": "Tenant.user",
+          "source": "Tenant",
+          "target": "User",
+          "field": "user",
+          "foreign_keys": [
+            "userId"
+          ],
+          "source_multiplicity": "0..1",
+          "target_multiplicity": "0..1"
+        },
+        {
+          "id": "TenantInvite.landlord",
+          "source": "TenantInvite",
+          "target": "User",
+          "field": "landlord",
+          "foreign_keys": [
+            "landlordId"
+          ],
+          "source_multiplicity": "0..*",
+          "target_multiplicity": "1"
+        },
+        {
+          "id": "TenantInvite.tenant",
+          "source": "TenantInvite",
+          "target": "Tenant",
+          "field": "tenant",
+          "foreign_keys": [
+            "tenantId"
+          ],
+          "source_multiplicity": "0..*",
+          "target_multiplicity": "1"
+        },
+        {
+          "id": "RefreshToken.user",
+          "source": "RefreshToken",
+          "target": "User",
+          "field": "user",
+          "foreign_keys": [
+            "userId"
+          ],
+          "source_multiplicity": "0..*",
+          "target_multiplicity": "1"
+        }
+      ],
+      "overview": false,
+      "dependencies": []
+    },
+    {
+      "id": "CD-02",
+      "title": "Khu trọ và phòng",
+      "owned": [
+        "Property",
+        "Room",
+        "RoomAsset",
+        "RoomInspection",
+        "RoomServiceFee"
+      ],
+      "references": [
+        "User"
+      ],
+      "nodes": [
+        "Property",
+        "Room",
+        "RoomAsset",
+        "RoomInspection",
+        "RoomServiceFee",
+        "User"
+      ],
+      "slots": [
+        1,
+        4,
+        5,
+        3,
+        2,
+        0
+      ],
+      "associations": [
+        {
+          "id": "Property.landlord",
+          "source": "Property",
+          "target": "User",
+          "field": "landlord",
+          "foreign_keys": [
+            "landlordId"
+          ],
+          "source_multiplicity": "0..*",
+          "target_multiplicity": "1"
+        },
+        {
+          "id": "Room.property",
+          "source": "Room",
+          "target": "Property",
+          "field": "property",
+          "foreign_keys": [
+            "propertyId"
+          ],
+          "source_multiplicity": "0..*",
+          "target_multiplicity": "1"
+        },
+        {
+          "id": "RoomAsset.room",
+          "source": "RoomAsset",
+          "target": "Room",
+          "field": "room",
+          "foreign_keys": [
+            "roomId"
+          ],
+          "source_multiplicity": "0..*",
+          "target_multiplicity": "1"
+        },
+        {
+          "id": "RoomInspection.room",
+          "source": "RoomInspection",
+          "target": "Room",
+          "field": "room",
+          "foreign_keys": [
+            "roomId"
+          ],
+          "source_multiplicity": "0..*",
+          "target_multiplicity": "1"
+        },
+        {
+          "id": "RoomServiceFee.room",
+          "source": "RoomServiceFee",
+          "target": "Room",
+          "field": "room",
+          "foreign_keys": [
+            "roomId"
+          ],
+          "source_multiplicity": "0..*",
+          "target_multiplicity": "1"
+        }
+      ],
+      "overview": false,
+      "dependencies": []
+    },
+    {
+      "id": "CD-03",
+      "title": "Hợp đồng và tiền cọc",
+      "owned": [
+        "Lease",
+        "LeaseChange",
+        "DepositTransaction"
+      ],
+      "references": [
+        "User",
+        "Room",
+        "Tenant"
+      ],
+      "nodes": [
+        "Lease",
+        "LeaseChange",
+        "DepositTransaction",
+        "User",
+        "Room",
+        "Tenant"
+      ],
+      "slots": [
+        4,
+        5,
+        3,
+        0,
+        1,
+        2
+      ],
+      "associations": [
+        {
+          "id": "Lease.room",
+          "source": "Lease",
+          "target": "Room",
+          "field": "room",
+          "foreign_keys": [
+            "roomId"
+          ],
+          "source_multiplicity": "0..*",
+          "target_multiplicity": "1"
+        },
+        {
+          "id": "Lease.tenant",
+          "source": "Lease",
+          "target": "Tenant",
+          "field": "tenant",
+          "foreign_keys": [
+            "tenantId"
+          ],
+          "source_multiplicity": "0..*",
+          "target_multiplicity": "1"
+        },
+        {
+          "id": "DepositTransaction.lease",
+          "source": "DepositTransaction",
+          "target": "Lease",
+          "field": "lease",
+          "foreign_keys": [
+            "leaseId"
+          ],
+          "source_multiplicity": "0..*",
+          "target_multiplicity": "1"
+        },
+        {
+          "id": "DepositTransaction.landlord",
+          "source": "DepositTransaction",
+          "target": "User",
+          "field": "landlord",
+          "foreign_keys": [
+            "landlordId"
+          ],
+          "source_multiplicity": "0..*",
+          "target_multiplicity": "1"
+        },
+        {
+          "id": "LeaseChange.lease",
+          "source": "LeaseChange",
+          "target": "Lease",
+          "field": "lease",
+          "foreign_keys": [
+            "leaseId"
+          ],
+          "source_multiplicity": "0..*",
+          "target_multiplicity": "1"
+        },
+        {
+          "id": "LeaseChange.landlord",
+          "source": "LeaseChange",
+          "target": "User",
+          "field": "landlord",
+          "foreign_keys": [
+            "landlordId"
+          ],
+          "source_multiplicity": "0..*",
+          "target_multiplicity": "1"
+        }
+      ],
+      "overview": false,
+      "dependencies": []
+    },
+    {
+      "id": "CD-04A",
+      "title": "Chỉ số và hóa đơn",
+      "owned": [
+        "MeterReading",
+        "Invoice"
+      ],
+      "references": [
+        "Room",
+        "Lease",
+        "Tenant"
+      ],
+      "nodes": [
+        "MeterReading",
+        "Invoice",
+        "Room",
+        "Lease",
+        "Tenant"
+      ],
+      "slots": [
+        3,
+        4,
+        0,
+        1,
+        2
+      ],
+      "associations": [
+        {
+          "id": "MeterReading.room",
+          "source": "MeterReading",
+          "target": "Room",
+          "field": "room",
+          "foreign_keys": [
+            "roomId"
+          ],
+          "source_multiplicity": "0..*",
+          "target_multiplicity": "1"
+        },
+        {
+          "id": "Invoice.lease",
+          "source": "Invoice",
+          "target": "Lease",
+          "field": "lease",
+          "foreign_keys": [
+            "leaseId"
+          ],
+          "source_multiplicity": "0..*",
+          "target_multiplicity": "1"
+        },
+        {
+          "id": "Invoice.room",
+          "source": "Invoice",
+          "target": "Room",
+          "field": "room",
+          "foreign_keys": [
+            "roomId"
+          ],
+          "source_multiplicity": "0..*",
+          "target_multiplicity": "1"
+        },
+        {
+          "id": "Invoice.tenant",
+          "source": "Invoice",
+          "target": "Tenant",
+          "field": "tenant",
+          "foreign_keys": [
+            "tenantId"
+          ],
+          "source_multiplicity": "0..*",
+          "target_multiplicity": "1"
+        }
+      ],
+      "overview": false,
+      "dependencies": []
+    },
+    {
+      "id": "CD-04B",
+      "title": "Thanh toán và minh chứng",
+      "owned": [
+        "Payment",
+        "PaymentProof"
+      ],
+      "references": [
+        "User",
+        "Invoice",
+        "Tenant"
+      ],
+      "nodes": [
+        "Payment",
+        "PaymentProof",
+        "User",
+        "Invoice",
+        "Tenant"
+      ],
+      "slots": [
+        3,
+        5,
+        1,
+        4,
+        2
+      ],
+      "associations": [
+        {
+          "id": "PaymentProof.invoice",
+          "source": "PaymentProof",
+          "target": "Invoice",
+          "field": "invoice",
+          "foreign_keys": [
+            "invoiceId"
+          ],
+          "source_multiplicity": "0..*",
+          "target_multiplicity": "1"
+        },
+        {
+          "id": "PaymentProof.tenant",
+          "source": "PaymentProof",
+          "target": "Tenant",
+          "field": "tenant",
+          "foreign_keys": [
+            "tenantId"
+          ],
+          "source_multiplicity": "0..*",
+          "target_multiplicity": "1"
+        },
+        {
+          "id": "PaymentProof.reviewedBy",
+          "source": "PaymentProof",
+          "target": "User",
+          "field": "reviewedBy",
+          "foreign_keys": [
+            "reviewedById"
+          ],
+          "source_multiplicity": "0..*",
+          "target_multiplicity": "0..1"
+        },
+        {
+          "id": "Payment.invoice",
+          "source": "Payment",
+          "target": "Invoice",
+          "field": "invoice",
+          "foreign_keys": [
+            "invoiceId"
+          ],
+          "source_multiplicity": "0..*",
+          "target_multiplicity": "1"
+        },
+        {
+          "id": "Payment.reversalOfPayment",
+          "source": "Payment",
+          "target": "Payment",
+          "field": "reversalOfPayment",
+          "foreign_keys": [
+            "reversalOfPaymentId"
+          ],
+          "source_multiplicity": "0..1",
+          "target_multiplicity": "0..1"
+        }
+      ],
+      "overview": false,
+      "dependencies": []
+    },
+    {
+      "id": "CD-04C",
+      "title": "Lập hóa đơn định kỳ",
+      "owned": [
+        "BillingAutomation"
+      ],
+      "references": [
+        "User",
+        "Property"
+      ],
+      "nodes": [
+        "BillingAutomation",
+        "User",
+        "Property"
+      ],
+      "slots": [
+        1,
+        0,
+        2
+      ],
+      "associations": [
+        {
+          "id": "BillingAutomation.landlord",
+          "source": "BillingAutomation",
+          "target": "User",
+          "field": "landlord",
+          "foreign_keys": [
+            "landlordId"
+          ],
+          "source_multiplicity": "0..*",
+          "target_multiplicity": "1"
+        },
+        {
+          "id": "BillingAutomation.property",
+          "source": "BillingAutomation",
+          "target": "Property",
+          "field": "property",
+          "foreign_keys": [
+            "propertyId"
+          ],
+          "source_multiplicity": "0..1",
+          "target_multiplicity": "1"
+        }
+      ],
+      "overview": false,
+      "dependencies": []
+    },
+    {
+      "id": "CD-05",
+      "title": "Bảo trì và chi phí",
+      "owned": [
+        "Expense",
+        "MaintenanceTicket",
+        "MaintenanceComment"
+      ],
+      "references": [
+        "User",
+        "Property",
+        "Room"
+      ],
+      "nodes": [
+        "Expense",
+        "MaintenanceTicket",
+        "MaintenanceComment",
+        "User",
+        "Property",
+        "Room"
+      ],
+      "slots": [
+        3,
+        4,
+        5,
+        0,
+        1,
+        2
+      ],
+      "associations": [
+        {
+          "id": "Expense.landlord",
+          "source": "Expense",
+          "target": "User",
+          "field": "landlord",
+          "foreign_keys": [
+            "landlordId"
+          ],
+          "source_multiplicity": "0..*",
+          "target_multiplicity": "1"
+        },
+        {
+          "id": "Expense.property",
+          "source": "Expense",
+          "target": "Property",
+          "field": "property",
+          "foreign_keys": [
+            "propertyId"
+          ],
+          "source_multiplicity": "0..*",
+          "target_multiplicity": "1"
+        },
+        {
+          "id": "Expense.room",
+          "source": "Expense",
+          "target": "Room",
+          "field": "room",
+          "foreign_keys": [
+            "roomId"
+          ],
+          "source_multiplicity": "0..*",
+          "target_multiplicity": "0..1"
+        },
+        {
+          "id": "MaintenanceTicket.landlord",
+          "source": "MaintenanceTicket",
+          "target": "User",
+          "field": "landlord",
+          "foreign_keys": [
+            "landlordId"
+          ],
+          "source_multiplicity": "0..*",
+          "target_multiplicity": "1"
+        },
+        {
+          "id": "MaintenanceTicket.property",
+          "source": "MaintenanceTicket",
+          "target": "Property",
+          "field": "property",
+          "foreign_keys": [
+            "propertyId"
+          ],
+          "source_multiplicity": "0..*",
+          "target_multiplicity": "1"
+        },
+        {
+          "id": "MaintenanceTicket.room",
+          "source": "MaintenanceTicket",
+          "target": "Room",
+          "field": "room",
+          "foreign_keys": [
+            "roomId"
+          ],
+          "source_multiplicity": "0..*",
+          "target_multiplicity": "1"
+        },
+        {
+          "id": "MaintenanceTicket.expense",
+          "source": "MaintenanceTicket",
+          "target": "Expense",
+          "field": "expense",
+          "foreign_keys": [
+            "expenseId"
+          ],
+          "source_multiplicity": "0..*",
+          "target_multiplicity": "0..1"
+        },
+        {
+          "id": "MaintenanceComment.ticket",
+          "source": "MaintenanceComment",
+          "target": "MaintenanceTicket",
+          "field": "ticket",
+          "foreign_keys": [
+            "ticketId"
+          ],
+          "source_multiplicity": "0..*",
+          "target_multiplicity": "1"
+        },
+        {
+          "id": "MaintenanceComment.author",
+          "source": "MaintenanceComment",
+          "target": "User",
+          "field": "author",
+          "foreign_keys": [
+            "authorId"
+          ],
+          "source_multiplicity": "0..*",
+          "target_multiplicity": "1"
+        }
+      ],
+      "overview": false,
+      "dependencies": []
+    },
+    {
+      "id": "CD-06",
+      "title": "Thông báo và nhật ký",
+      "owned": [
+        "NotificationRead",
+        "NotificationDelivery",
+        "AuditLog"
+      ],
+      "references": [
+        "User"
+      ],
+      "nodes": [
+        "User",
+        "AuditLog",
+        "NotificationRead",
+        "NotificationDelivery"
+      ],
+      "slots": [
+        3,
+        5,
+        4,
+        1,
+        0,
+        2
+      ],
+      "associations": [
+        {
+          "id": "AuditLog.landlord",
+          "source": "AuditLog",
+          "target": "User",
+          "field": "landlord",
+          "foreign_keys": [
+            "landlordId"
+          ],
+          "source_multiplicity": "0..*",
+          "target_multiplicity": "0..1"
+        },
+        {
+          "id": "AuditLog.actor",
+          "source": "AuditLog",
+          "target": "User",
+          "field": "actor",
+          "foreign_keys": [
+            "actorId"
+          ],
+          "source_multiplicity": "0..*",
+          "target_multiplicity": "0..1"
+        },
+        {
+          "id": "NotificationRead.user",
+          "source": "NotificationRead",
+          "target": "User",
+          "field": "user",
+          "foreign_keys": [
+            "userId"
+          ],
+          "source_multiplicity": "0..*",
+          "target_multiplicity": "1"
+        }
+      ],
+      "overview": false,
+      "dependencies": []
+    },
+    {
+      "id": "OD-01",
+      "title": "Đối tượng tài khoản và hợp đồng",
+      "nodes": [
+        "chuTro01",
+        "khuA",
+        "phongA01",
+        "taiKhoanThue01",
+        "hoSo01",
+        "hopDong01"
+      ],
+      "slots": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "references": [],
+      "object": true,
+      "associations": [
+        {
+          "source": "khuA",
+          "target": "chuTro01",
+          "field": "landlord",
+          "id": "khuA.landlord"
+        },
+        {
+          "source": "phongA01",
+          "target": "khuA",
+          "field": "property",
+          "id": "phongA01.property"
+        },
+        {
+          "source": "hoSo01",
+          "target": "chuTro01",
+          "field": "landlord",
+          "id": "hoSo01.landlord"
+        },
+        {
+          "source": "hoSo01",
+          "target": "taiKhoanThue01",
+          "field": "user",
+          "id": "hoSo01.user"
+        },
+        {
+          "source": "hopDong01",
+          "target": "phongA01",
+          "field": "room",
+          "id": "hopDong01.room"
+        },
+        {
+          "source": "hopDong01",
+          "target": "hoSo01",
+          "field": "tenant",
+          "id": "hopDong01.tenant"
+        }
+      ],
+      "dependencies": []
+    },
+    {
+      "id": "OD-02",
+      "title": "Đối tượng hóa đơn và thanh toán",
+      "nodes": [
+        "phongA01",
+        "hopDong01",
+        "hoSo01",
+        "chiSoDien01",
+        "hoaDon01",
+        "chiSoNuoc01",
+        "khoanThu01",
+        "minhChung01"
+      ],
+      "slots": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        8
+      ],
+      "references": [
+        "phongA01",
+        "hopDong01",
+        "hoSo01"
+      ],
+      "object": true,
+      "associations": [
+        {
+          "source": "hopDong01",
+          "target": "phongA01",
+          "field": "room",
+          "id": "hopDong01.room"
+        },
+        {
+          "source": "hopDong01",
+          "target": "hoSo01",
+          "field": "tenant",
+          "id": "hopDong01.tenant"
+        },
+        {
+          "source": "chiSoDien01",
+          "target": "phongA01",
+          "field": "room",
+          "id": "chiSoDien01.room"
+        },
+        {
+          "source": "hoaDon01",
+          "target": "hopDong01",
+          "field": "lease",
+          "id": "hoaDon01.lease"
+        },
+        {
+          "source": "hoaDon01",
+          "target": "phongA01",
+          "field": "room",
+          "id": "hoaDon01.room"
+        },
+        {
+          "source": "hoaDon01",
+          "target": "hoSo01",
+          "field": "tenant",
+          "id": "hoaDon01.tenant"
+        },
+        {
+          "source": "chiSoNuoc01",
+          "target": "phongA01",
+          "field": "room",
+          "id": "chiSoNuoc01.room"
+        },
+        {
+          "source": "khoanThu01",
+          "target": "hoaDon01",
+          "field": "invoice",
+          "id": "khoanThu01.invoice"
+        },
+        {
+          "source": "minhChung01",
+          "target": "hoaDon01",
+          "field": "invoice",
+          "id": "minhChung01.invoice"
+        },
+        {
+          "source": "minhChung01",
+          "target": "hoSo01",
+          "field": "tenant",
+          "id": "minhChung01.tenant"
+        }
+      ],
+      "dependencies": []
+    }
+  ],
+  "snapshot": {
+    "chuTro01": {
+      "class": "User",
+      "slots": {
+        "id": "ct01",
+        "fullName": "Chủ trọ minh họa",
+        "role": "LANDLORD",
+        "isActive": true
+      }
+    },
+    "taiKhoanThue01": {
+      "class": "User",
+      "slots": {
+        "id": "tk01",
+        "role": "TENANT",
+        "isActive": true
+      }
+    },
+    "khuA": {
+      "class": "Property",
+      "slots": {
+        "id": "khuA",
+        "name": "Khu trọ A",
+        "isArchived": false
+      },
+      "links": {
+        "landlord": "chuTro01"
+      }
+    },
+    "phongA01": {
+      "class": "Room",
+      "slots": {
+        "id": "phongA01",
+        "name": "A01",
+        "basePrice": 3000000,
+        "status": "OCCUPIED",
+        "isActive": true
+      },
+      "links": {
+        "property": "khuA"
+      }
+    },
+    "hoSo01": {
+      "class": "Tenant",
+      "slots": {
+        "id": "hoSo01",
+        "fullName": "Người thuê minh họa",
+        "isActive": true
+      },
+      "links": {
+        "landlord": "chuTro01",
+        "user": "taiKhoanThue01"
+      }
+    },
+    "hopDong01": {
+      "class": "Lease",
+      "slots": {
+        "id": "hopDong01",
+        "startDate": "2026-10-01",
+        "monthlyRent": 3000000,
+        "deposit": 0,
+        "status": "ACTIVE"
+      },
+      "links": {
+        "room": "phongA01",
+        "tenant": "hoSo01"
+      }
+    },
+    "chiSoDien01": {
+      "class": "MeterReading",
+      "slots": {
+        "utilityType": "ELECTRICITY",
+        "previousReading": 1000,
+        "currentReading": 1020,
+        "unitPrice": 3500,
+        "usage": 20,
+        "amount": 70000,
+        "billingMonth": "2026-10-01"
+      },
+      "links": {
+        "room": "phongA01"
+      }
+    },
+    "chiSoNuoc01": {
+      "class": "MeterReading",
+      "slots": {
+        "utilityType": "WATER",
+        "previousReading": 20,
+        "currentReading": 25,
+        "unitPrice": 10000,
+        "usage": 5,
+        "amount": 50000,
+        "billingMonth": "2026-10-01"
+      },
+      "links": {
+        "room": "phongA01"
+      }
+    },
+    "hoaDon01": {
+      "class": "Invoice",
+      "slots": {
+        "billingMonth": "2026-10-01",
+        "rentAmount": 3000000,
+        "electricityAmount": 70000,
+        "waterAmount": 50000,
+        "otherAmount": 0,
+        "totalAmount": 3120000,
+        "paidAmount": 2000000,
+        "status": "PARTIAL",
+        "dueDate": "2026-10-10"
+      },
+      "links": {
+        "lease": "hopDong01",
+        "room": "phongA01",
+        "tenant": "hoSo01"
+      }
+    },
+    "khoanThu01": {
+      "class": "Payment",
+      "slots": {
+        "amount": 2000000,
+        "method": "BANK_TRANSFER",
+        "type": "PAYMENT",
+        "paidAt": "2026-10-05"
+      },
+      "links": {
+        "invoice": "hoaDon01"
+      }
+    },
+    "minhChung01": {
+      "class": "PaymentProof",
+      "slots": {
+        "amount": 1120000,
+        "method": "BANK_TRANSFER",
+        "status": "PENDING",
+        "submittedAt": "2026-10-06"
+      },
+      "links": {
+        "invoice": "hoaDon01",
+        "tenant": "hoSo01"
+      }
+    }
+  },
+  "presentation_revision": "2026-10-07",
+  "id_references": [
+    {
+      "source": "NotificationDelivery",
+      "field": "landlordId",
+      "target": "User",
+      "optional": false,
+      "notation": "IDRef note; no UML relationship"
+    },
+    {
+      "source": "NotificationDelivery",
+      "field": "tenantId",
+      "target": "Tenant",
+      "optional": true,
+      "notation": "IDRef note; no UML relationship"
+    },
+    {
+      "source": "NotificationDelivery",
+      "field": "invoiceId",
+      "target": "Invoice",
+      "optional": true,
+      "notation": "IDRef note; no UML relationship"
+    }
+  ]
+}

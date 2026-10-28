@@ -1,0 +1,337 @@
+[
+  {
+    "old_id": "UC-SYS-01",
+    "old_title": "Đăng nhập",
+    "new_refs": "UC-SYS-03, UC-SYS-04"
+  },
+  {
+    "old_id": "UC-SYS-01.01",
+    "old_title": "Kích hoạt tài khoản người thuê từ lời mời",
+    "new_refs": "UC-SYS-08"
+  },
+  {
+    "old_id": "UC-SYS-02",
+    "old_title": "Đăng xuất",
+    "new_refs": "UC-SYS-05.1"
+  },
+  {
+    "old_id": "UC-ADM-01",
+    "old_title": "Xem tổng quan hệ thống",
+    "new_refs": "UC-ADM-01"
+  },
+  {
+    "old_id": "UC-ADM-02.01",
+    "old_title": "Tra cứu tài khoản chủ trọ",
+    "new_refs": "UC-ADM-02"
+  },
+  {
+    "old_id": "UC-ADM-02.02",
+    "old_title": "Tạo tài khoản chủ trọ",
+    "new_refs": "UC-ADM-03.1"
+  },
+  {
+    "old_id": "UC-ADM-02.03",
+    "old_title": "Cập nhật thông tin tài khoản chủ trọ",
+    "new_refs": "UC-ADM-03.2"
+  },
+  {
+    "old_id": "UC-ADM-02.04",
+    "old_title": "Khóa hoặc mở khóa tài khoản chủ trọ",
+    "new_refs": "UC-ADM-04.1, UC-ADM-04.2"
+  },
+  {
+    "old_id": "UC-ADM-03.01",
+    "old_title": "Tra cứu khu trọ toàn hệ thống",
+    "new_refs": "UC-ADM-08"
+  },
+  {
+    "old_id": "UC-ADM-03.02",
+    "old_title": "Tạo khu trọ cho chủ trọ",
+    "new_refs": "UC-ADM-09"
+  },
+  {
+    "old_id": "UC-ADM-03.03",
+    "old_title": "Cập nhật thông tin khu trọ toàn hệ thống",
+    "new_refs": "UC-ADM-09"
+  },
+  {
+    "old_id": "UC-OPT-01",
+    "old_title": "Xem tổng quan vận hành",
+    "new_refs": "UC-OPT-01"
+  },
+  {
+    "old_id": "UC-OPT-02.01",
+    "old_title": "Tra cứu và chọn khu trọ",
+    "new_refs": "UC-OPT-02"
+  },
+  {
+    "old_id": "UC-OPT-02.02",
+    "old_title": "Tạo khu trọ",
+    "new_refs": "UC-OPT-03.1"
+  },
+  {
+    "old_id": "UC-OPT-02.03",
+    "old_title": "Cập nhật thông tin khu trọ",
+    "new_refs": "UC-OPT-03.2"
+  },
+  {
+    "old_id": "UC-OPT-02.04",
+    "old_title": "Lưu trữ hoặc khôi phục khu trọ",
+    "new_refs": "UC-OPT-04.1, UC-OPT-04.2"
+  },
+  {
+    "old_id": "UC-OPT-02.05",
+    "old_title": "Xóa khu trọ chưa có phòng",
+    "new_refs": "UC-OPT-04.3"
+  },
+  {
+    "old_id": "UC-OPT-03.01",
+    "old_title": "Tra cứu phòng",
+    "new_refs": "UC-OPT-05"
+  },
+  {
+    "old_id": "UC-OPT-03.02",
+    "old_title": "Tạo phòng",
+    "new_refs": "UC-OPT-06.1"
+  },
+  {
+    "old_id": "UC-OPT-03.03",
+    "old_title": "Cập nhật thông tin phòng",
+    "new_refs": "UC-OPT-06.2"
+  },
+  {
+    "old_id": "UC-OPT-03.04",
+    "old_title": "Chuyển trạng thái trống hoặc bảo trì của phòng",
+    "new_refs": "UC-OPT-07.1"
+  },
+  {
+    "old_id": "UC-OPT-03.05",
+    "old_title": "Vô hiệu hóa hoặc khôi phục phòng",
+    "new_refs": "UC-OPT-07.2"
+  },
+  {
+    "old_id": "UC-OPT-03.06",
+    "old_title": "Xóa phòng chưa phát sinh nghiệp vụ",
+    "new_refs": "UC-OPT-07.3"
+  },
+  {
+    "old_id": "UC-OPT-03.07",
+    "old_title": "Quản lý tài sản phòng",
+    "new_refs": "UC-OPT-08.1"
+  },
+  {
+    "old_id": "UC-OPT-03.08",
+    "old_title": "Quản lý phí dịch vụ phòng",
+    "new_refs": "UC-OPT-08.2, UC-BIL-15"
+  },
+  {
+    "old_id": "UC-OPT-03.09",
+    "old_title": "Theo dõi lịch kiểm tra phòng",
+    "new_refs": "UC-OPT-09"
+  },
+  {
+    "old_id": "UC-OPT-04.01",
+    "old_title": "Tra cứu hồ sơ người thuê",
+    "new_refs": "UC-TNT-01"
+  },
+  {
+    "old_id": "UC-OPT-04.02",
+    "old_title": "Tạo hồ sơ người thuê",
+    "new_refs": "UC-TNT-02.1"
+  },
+  {
+    "old_id": "UC-OPT-04.03",
+    "old_title": "Cập nhật hồ sơ người thuê",
+    "new_refs": "UC-TNT-02.2"
+  },
+  {
+    "old_id": "UC-OPT-04.04",
+    "old_title": "Vô hiệu hóa hoặc khôi phục hồ sơ người thuê",
+    "new_refs": "UC-TNT-02.3"
+  },
+  {
+    "old_id": "UC-OPT-04.05",
+    "old_title": "Xóa hồ sơ người thuê chưa phát sinh nghiệp vụ",
+    "new_refs": "UC-TNT-02.4"
+  },
+  {
+    "old_id": "UC-OPT-04.06",
+    "old_title": "Mời người thuê kích hoạt tài khoản",
+    "new_refs": "UC-TNT-03"
+  },
+  {
+    "old_id": "UC-OPT-05.01",
+    "old_title": "Tra cứu hợp đồng và lịch sử thuê",
+    "new_refs": "UC-TNT-04"
+  },
+  {
+    "old_id": "UC-OPT-05.02",
+    "old_title": "Tạo hợp đồng thuê phòng",
+    "new_refs": "UC-TNT-05"
+  },
+  {
+    "old_id": "UC-OPT-05.03",
+    "old_title": "Cập nhật điều khoản hợp đồng",
+    "new_refs": "UC-TNT-06.1"
+  },
+  {
+    "old_id": "UC-OPT-05.04",
+    "old_title": "Gia hạn hợp đồng",
+    "new_refs": "UC-TNT-06.2"
+  },
+  {
+    "old_id": "UC-OPT-05.05",
+    "old_title": "Kết thúc hợp đồng",
+    "new_refs": "UC-TNT-06.3, UC-TNT-08"
+  },
+  {
+    "old_id": "UC-OPT-05.06",
+    "old_title": "Ghi nhận thu, hoàn hoặc khấu trừ tiền cọc",
+    "new_refs": "UC-TNT-07, UC-TNT-09"
+  },
+  {
+    "old_id": "UC-OPT-06.01",
+    "old_title": "Tra cứu yêu cầu bảo trì",
+    "new_refs": "UC-OPS-01"
+  },
+  {
+    "old_id": "UC-OPT-06.02",
+    "old_title": "Tạo yêu cầu bảo trì",
+    "new_refs": "UC-OPS-01"
+  },
+  {
+    "old_id": "UC-OPT-06.03",
+    "old_title": "Cập nhật nội dung và tiến độ bảo trì",
+    "new_refs": "UC-OPS-02"
+  },
+  {
+    "old_id": "UC-OPT-06.04",
+    "old_title": "Hoàn tất bảo trì và ghi nhận chi phí",
+    "new_refs": "UC-OPS-03"
+  },
+  {
+    "old_id": "UC-BIL-01",
+    "old_title": "Ghi chỉ số điện nước",
+    "new_refs": "UC-BIL-01"
+  },
+  {
+    "old_id": "UC-BIL-02.01",
+    "old_title": "Lập hóa đơn cho một hợp đồng",
+    "new_refs": "UC-BIL-02"
+  },
+  {
+    "old_id": "UC-BIL-02.02",
+    "old_title": "Lập hóa đơn hàng loạt",
+    "new_refs": "UC-BIL-03"
+  },
+  {
+    "old_id": "UC-BIL-02.03",
+    "old_title": "Tra cứu hóa đơn và công nợ",
+    "new_refs": "UC-BIL-04"
+  },
+  {
+    "old_id": "UC-BIL-02.04",
+    "old_title": "Điều chỉnh hóa đơn chưa thu tiền",
+    "new_refs": "UC-BIL-05, UC-BIL-06, UC-BIL-07"
+  },
+  {
+    "old_id": "UC-BIL-02.05",
+    "old_title": "Hủy hóa đơn",
+    "new_refs": "UC-BIL-08.1"
+  },
+  {
+    "old_id": "UC-BIL-02.06",
+    "old_title": "Xuất hoặc chia sẻ hóa đơn",
+    "new_refs": "UC-BIL-08.2"
+  },
+  {
+    "old_id": "UC-BIL-02.07",
+    "old_title": "Cấu hình lập hóa đơn định kỳ",
+    "new_refs": "UC-BIL-17.1, UC-BIL-17.2"
+  },
+  {
+    "old_id": "UC-BIL-03.01",
+    "old_title": "Ghi nhận thanh toán hóa đơn",
+    "new_refs": "UC-BIL-09, UC-BIL-10, UC-BIL-11"
+  },
+  {
+    "old_id": "UC-BIL-03.02",
+    "old_title": "Đảo khoản thanh toán đã ghi nhận",
+    "new_refs": "UC-BIL-12"
+  },
+  {
+    "old_id": "UC-BIL-04",
+    "old_title": "Duyệt hoặc từ chối minh chứng thanh toán",
+    "new_refs": "UC-BIL-14"
+  },
+  {
+    "old_id": "UC-BIL-05.01",
+    "old_title": "Tra cứu chi phí vận hành",
+    "new_refs": "UC-BIL-19"
+  },
+  {
+    "old_id": "UC-BIL-05.02",
+    "old_title": "Ghi nhận chi phí vận hành",
+    "new_refs": "UC-BIL-19"
+  },
+  {
+    "old_id": "UC-BIL-05.03",
+    "old_title": "Cập nhật khoản chi",
+    "new_refs": "UC-BIL-19"
+  },
+  {
+    "old_id": "UC-BIL-06.01",
+    "old_title": "Xem báo cáo tháng",
+    "new_refs": "UC-BIL-20"
+  },
+  {
+    "old_id": "UC-BIL-06.02",
+    "old_title": "Xuất báo cáo tháng",
+    "new_refs": "UC-BIL-21"
+  },
+  {
+    "old_id": "UC-BIL-07.01",
+    "old_title": "Theo dõi thông báo và việc cần xử lý",
+    "new_refs": "UC-OPS-04"
+  },
+  {
+    "old_id": "UC-BIL-07.02",
+    "old_title": "Gửi thông báo hoặc nhắc thanh toán",
+    "new_refs": "UC-OPS-07, UC-OPS-08"
+  },
+  {
+    "old_id": "UC-TEN-01",
+    "old_title": "Xem thông tin thuê phòng",
+    "new_refs": "UC-TEN-01"
+  },
+  {
+    "old_id": "UC-TEN-02",
+    "old_title": "Xem hợp đồng thuê của mình",
+    "new_refs": "UC-TEN-02"
+  },
+  {
+    "old_id": "UC-TEN-03",
+    "old_title": "Xem và xuất hóa đơn của mình",
+    "new_refs": "UC-TEN-03"
+  },
+  {
+    "old_id": "UC-TEN-04",
+    "old_title": "Gửi minh chứng thanh toán",
+    "new_refs": "UC-TEN-04"
+  },
+  {
+    "old_id": "UC-TEN-05.01",
+    "old_title": "Gửi yêu cầu bảo trì",
+    "new_refs": "UC-TEN-06"
+  },
+  {
+    "old_id": "UC-TEN-05.02",
+    "old_title": "Theo dõi và phản hồi yêu cầu bảo trì",
+    "new_refs": "UC-TEN-06"
+  },
+  {
+    "old_id": "UC-TEN-06",
+    "old_title": "Xem và đánh dấu thông báo đã đọc",
+    "new_refs": "UC-TEN-09"
+  }
+]

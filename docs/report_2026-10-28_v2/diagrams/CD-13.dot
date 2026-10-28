@@ -1,0 +1,19 @@
+digraph G {
+graph [bgcolor="white",rankdir=LR,nodesep=0.35,ranksep=0.85,pad=0.15,splines=polyline];
+node [fontname="Times New Roman", fontsize=17, color="black", fontcolor="black", style="filled", fillcolor="white", penwidth=1.1];
+edge [fontname="Times New Roman", fontsize=14, color="black", arrowsize=0.7, penwidth=0.9];
+User [shape=plain,label=<<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0" CELLPADDING="5"><TR><TD><B>User</B></TD></TR><TR><TD BORDER="1" SIDES="T"></TD></TR><TR><TD ALIGN="LEFT">id: String</TD></TR><TR><TD ALIGN="LEFT">sessionVersion: Int</TD></TR><TR><TD ALIGN="LEFT">fullName: String</TD></TR><TR><TD ALIGN="LEFT">email: String</TD></TR><TR><TD ALIGN="LEFT">phone: String?</TD></TR></TABLE>>];
+Tenant [shape=plain,label=<<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0" CELLPADDING="5"><TR><TD><B>Tenant</B></TD></TR><TR><TD BORDER="1" SIDES="T"></TD></TR><TR><TD ALIGN="LEFT">id: String</TD></TR><TR><TD ALIGN="LEFT">landlordId: String</TD></TR><TR><TD ALIGN="LEFT">userId: String?</TD></TR><TR><TD ALIGN="LEFT">fullName: String</TD></TR><TR><TD ALIGN="LEFT">phone: String?</TD></TR></TABLE>>];
+TenantInvite [shape=plain,label=<<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0" CELLPADDING="5"><TR><TD><B>TenantInvite</B></TD></TR><TR><TD BORDER="1" SIDES="T"></TD></TR><TR><TD ALIGN="LEFT">id: String</TD></TR><TR><TD ALIGN="LEFT">landlordId: String</TD></TR><TR><TD ALIGN="LEFT">tenantId: String</TD></TR><TR><TD ALIGN="LEFT">email: String</TD></TR><TR><TD ALIGN="LEFT">tokenHash: String</TD></TR></TABLE>>];
+UploadedFile [shape=plain,label=<<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0" CELLPADDING="5"><TR><TD><B>UploadedFile</B></TD></TR><TR><TD BORDER="1" SIDES="T"></TD></TR><TR><TD ALIGN="LEFT">filename: String</TD></TR><TR><TD ALIGN="LEFT">ownerId: String</TD></TR><TR><TD ALIGN="LEFT">mimeType: String</TD></TR><TR><TD ALIGN="LEFT">purpose: String</TD></TR><TR><TD ALIGN="LEFT">createdAt: DateTime</TD></TR></TABLE>>];
+HousingNotification [shape=plain,label=<<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0" CELLPADDING="5"><TR><TD><B>HousingNotification</B></TD></TR><TR><TD BORDER="1" SIDES="T"></TD></TR><TR><TD ALIGN="LEFT">id: String</TD></TR><TR><TD ALIGN="LEFT">userId: String</TD></TR><TR><TD ALIGN="LEFT">viewingId: String</TD></TR><TR><TD ALIGN="LEFT">message: String</TD></TR><TR><TD ALIGN="LEFT">readAt: DateTime?</TD></TR></TABLE>>];
+PilotFeedback [shape=plain,label=<<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0" CELLPADDING="5"><TR><TD><B>PilotFeedback</B></TD></TR><TR><TD BORDER="1" SIDES="T"></TD></TR><TR><TD ALIGN="LEFT">id: String</TD></TR><TR><TD ALIGN="LEFT">userId: String</TD></TR><TR><TD ALIGN="LEFT">stage: String</TD></TR><TR><TD ALIGN="LEFT">area: String</TD></TR><TR><TD ALIGN="LEFT">rating: Int</TD></TR></TABLE>>];
+SchoolCampus [shape=plain,label=<<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0" CELLPADDING="5"><TR><TD><B>SchoolCampus</B></TD></TR><TR><TD BORDER="1" SIDES="T"></TD></TR><TR><TD ALIGN="LEFT">id: String</TD></TR><TR><TD ALIGN="LEFT">name: String</TD></TR><TR><TD ALIGN="LEFT">campus: String</TD></TR><TR><TD ALIGN="LEFT">city: String</TD></TR><TR><TD ALIGN="LEFT">address: String</TD></TR></TABLE>>];
+HousingNotification -> User [dir=none,label="user",taillabel="0..*",headlabel="1",labeldistance=2.1];
+PilotFeedback -> User [dir=none,label="user",taillabel="0..*",headlabel="1",labeldistance=2.1];
+UploadedFile -> User [dir=none,label="owner",taillabel="0..*",headlabel="1",labeldistance=2.1];
+Tenant -> User [dir=none,label="landlord",taillabel="0..*",headlabel="1",labeldistance=2.1];
+Tenant -> User [dir=none,label="user",taillabel="0..1",headlabel="0..1",labeldistance=2.1];
+TenantInvite -> User [dir=none,label="landlord",taillabel="0..*",headlabel="1",labeldistance=2.1];
+TenantInvite -> Tenant [dir=none,label="tenant",taillabel="0..*",headlabel="1",labeldistance=2.1];
+}

@@ -1,0 +1,136 @@
+<mxfile host="app.diagrams.net" modified="2026-09-25T05:15:00.000Z" agent="Codex" version="24.7.17">
+  <diagram id="use-case-centralized" name="Use Case Centralized">
+    <mxGraphModel dx="2400" dy="1500" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="2400" pageHeight="1500" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+        <mxCell id="title" value="Sơ đồ Use Case tổng quan - Hệ thống quản lý nhà trọ" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=30;fontStyle=1;fontColor=#111827;" vertex="1" parent="1">
+          <mxGeometry x="520" y="30" width="1360" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="boundary" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#111827;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="420" y="120" width="1320" height="1320" as="geometry"/>
+        </mxCell>
+        <mxCell id="boundary_title" value="Biên hệ thống: Hệ thống quản lý nhà trọ" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=16;fontStyle=1;fontColor=#111827;" vertex="1" parent="1">
+          <mxGeometry x="610" y="135" width="940" height="30" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="UC_SYS_01" value="UC-SYS-01 Đăng nhập" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#ffffff;strokeColor=#ef4444;strokeWidth=2;fontSize=13;fontStyle=1;fontColor=#111827;" vertex="1" parent="1">
+          <mxGeometry x="590" y="196" width="980" height="48" as="geometry"/>
+        </mxCell>
+        <mxCell id="UC_SYS_02" value="UC-SYS-02 Đăng xuất" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#ffffff;strokeColor=#ef4444;strokeWidth=2;fontSize=13;fontStyle=1;fontColor=#111827;" vertex="1" parent="1">
+          <mxGeometry x="590" y="244" width="980" height="48" as="geometry"/>
+        </mxCell>
+        <mxCell id="UC_ADM_01" value="UC-ADM-01 Xem tổng quan hệ thống" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#ffffff;strokeColor=#64748b;strokeWidth=2;fontSize=13;fontStyle=1;fontColor=#111827;" vertex="1" parent="1">
+          <mxGeometry x="590" y="310" width="980" height="48" as="geometry"/>
+        </mxCell>
+        <mxCell id="UC_ADM_02" value="UC-ADM-02 Quản lý tài khoản chủ trọ" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#ffffff;strokeColor=#64748b;strokeWidth=2;fontSize=13;fontStyle=1;fontColor=#111827;" vertex="1" parent="1">
+          <mxGeometry x="590" y="358" width="980" height="48" as="geometry"/>
+        </mxCell>
+        <mxCell id="UC_ADM_03" value="UC-ADM-03 Quản lý khu trọ toàn hệ thống" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#ffffff;strokeColor=#64748b;strokeWidth=2;fontSize=13;fontStyle=1;fontColor=#111827;" vertex="1" parent="1">
+          <mxGeometry x="590" y="406" width="980" height="48" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="UC_OPT_01" value="UC-OPT-01 Xem dashboard vận hành" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#ffffff;strokeColor=#f59e0b;strokeWidth=2;fontSize=13;fontStyle=1;fontColor=#111827;" vertex="1" parent="1">
+          <mxGeometry x="590" y="478" width="980" height="48" as="geometry"/>
+        </mxCell>
+        <mxCell id="UC_OPT_02" value="UC-OPT-02 Quản lý khu trọ" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#ffffff;strokeColor=#f59e0b;strokeWidth=2;fontSize=13;fontStyle=1;fontColor=#111827;" vertex="1" parent="1">
+          <mxGeometry x="590" y="526" width="980" height="48" as="geometry"/>
+        </mxCell>
+        <mxCell id="UC_OPT_03" value="UC-OPT-03 Quản lý phòng" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#ffffff;strokeColor=#f59e0b;strokeWidth=2;fontSize=13;fontStyle=1;fontColor=#111827;" vertex="1" parent="1">
+          <mxGeometry x="590" y="574" width="980" height="48" as="geometry"/>
+        </mxCell>
+        <mxCell id="UC_OPT_04" value="UC-OPT-04 Quản lý hồ sơ người thuê" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#ffffff;strokeColor=#f59e0b;strokeWidth=2;fontSize=13;fontStyle=1;fontColor=#111827;" vertex="1" parent="1">
+          <mxGeometry x="590" y="622" width="980" height="48" as="geometry"/>
+        </mxCell>
+        <mxCell id="UC_OPT_05" value="UC-OPT-05 Quản lý hợp đồng thuê" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#ffffff;strokeColor=#f59e0b;strokeWidth=2;fontSize=13;fontStyle=1;fontColor=#111827;" vertex="1" parent="1">
+          <mxGeometry x="590" y="670" width="980" height="48" as="geometry"/>
+        </mxCell>
+        <mxCell id="UC_OPT_06" value="UC-OPT-06 Quản lý bảo trì" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#ffffff;strokeColor=#f59e0b;strokeWidth=2;fontSize=13;fontStyle=1;fontColor=#111827;" vertex="1" parent="1">
+          <mxGeometry x="590" y="718" width="980" height="48" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="UC_BIL_01" value="UC-BIL-01 Ghi chỉ số điện nước" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#ffffff;strokeColor=#3b82f6;strokeWidth=2;fontSize=13;fontStyle=1;fontColor=#111827;" vertex="1" parent="1">
+          <mxGeometry x="590" y="790" width="980" height="48" as="geometry"/>
+        </mxCell>
+        <mxCell id="UC_BIL_02" value="UC-BIL-02 Lập hóa đơn" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#ffffff;strokeColor=#3b82f6;strokeWidth=2;fontSize=13;fontStyle=1;fontColor=#111827;" vertex="1" parent="1">
+          <mxGeometry x="590" y="838" width="980" height="48" as="geometry"/>
+        </mxCell>
+        <mxCell id="UC_BIL_03" value="UC-BIL-03 Ghi nhận thanh toán" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#ffffff;strokeColor=#3b82f6;strokeWidth=2;fontSize=13;fontStyle=1;fontColor=#111827;" vertex="1" parent="1">
+          <mxGeometry x="590" y="886" width="980" height="48" as="geometry"/>
+        </mxCell>
+        <mxCell id="UC_BIL_04" value="UC-BIL-04 Duyệt minh chứng thanh toán" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#ffffff;strokeColor=#3b82f6;strokeWidth=2;fontSize=13;fontStyle=1;fontColor=#111827;" vertex="1" parent="1">
+          <mxGeometry x="590" y="934" width="980" height="48" as="geometry"/>
+        </mxCell>
+        <mxCell id="UC_BIL_05" value="UC-BIL-05 Quản lý chi phí vận hành" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#ffffff;strokeColor=#3b82f6;strokeWidth=2;fontSize=13;fontStyle=1;fontColor=#111827;" vertex="1" parent="1">
+          <mxGeometry x="590" y="982" width="980" height="48" as="geometry"/>
+        </mxCell>
+        <mxCell id="UC_BIL_06" value="UC-BIL-06 Xem báo cáo tháng" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#ffffff;strokeColor=#3b82f6;strokeWidth=2;fontSize=13;fontStyle=1;fontColor=#111827;" vertex="1" parent="1">
+          <mxGeometry x="590" y="1030" width="980" height="48" as="geometry"/>
+        </mxCell>
+        <mxCell id="UC_BIL_07" value="UC-BIL-07 Gửi thông báo / nhắc nợ" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#ffffff;strokeColor=#3b82f6;strokeWidth=2;fontSize=13;fontStyle=1;fontColor=#111827;" vertex="1" parent="1">
+          <mxGeometry x="590" y="1078" width="980" height="48" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="UC_TEN_01" value="UC-TEN-01 Xem thông tin thuê phòng" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#ffffff;strokeColor=#22c55e;strokeWidth=2;fontSize=13;fontStyle=1;fontColor=#111827;" vertex="1" parent="1">
+          <mxGeometry x="590" y="1150" width="980" height="48" as="geometry"/>
+        </mxCell>
+        <mxCell id="UC_TEN_02" value="UC-TEN-02 Xem hợp đồng thuê" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#ffffff;strokeColor=#22c55e;strokeWidth=2;fontSize=13;fontStyle=1;fontColor=#111827;" vertex="1" parent="1">
+          <mxGeometry x="590" y="1198" width="980" height="48" as="geometry"/>
+        </mxCell>
+        <mxCell id="UC_TEN_03" value="UC-TEN-03 Xem hóa đơn" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#ffffff;strokeColor=#22c55e;strokeWidth=2;fontSize=13;fontStyle=1;fontColor=#111827;" vertex="1" parent="1">
+          <mxGeometry x="590" y="1246" width="980" height="48" as="geometry"/>
+        </mxCell>
+        <mxCell id="UC_TEN_04" value="UC-TEN-04 Gửi minh chứng thanh toán" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#ffffff;strokeColor=#22c55e;strokeWidth=2;fontSize=13;fontStyle=1;fontColor=#111827;" vertex="1" parent="1">
+          <mxGeometry x="590" y="1294" width="980" height="48" as="geometry"/>
+        </mxCell>
+        <mxCell id="UC_TEN_05" value="UC-TEN-05 Gửi yêu cầu bảo trì" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#ffffff;strokeColor=#22c55e;strokeWidth=2;fontSize=13;fontStyle=1;fontColor=#111827;" vertex="1" parent="1">
+          <mxGeometry x="590" y="1342" width="980" height="48" as="geometry"/>
+        </mxCell>
+        <mxCell id="UC_TEN_06" value="UC-TEN-06 Xem thông báo" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#ffffff;strokeColor=#22c55e;strokeWidth=2;fontSize=13;fontStyle=1;fontColor=#111827;" vertex="1" parent="1">
+          <mxGeometry x="590" y="1390" width="980" height="48" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="actor_admin" value="ADMIN" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;fontSize=17;fontStyle=1;strokeColor=#111827;fontColor=#111827;" vertex="1" parent="1">
+          <mxGeometry x="90" y="600" width="160" height="210" as="geometry"/>
+        </mxCell>
+        <mxCell id="actor_landlord" value="CHỦ TRỌ" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;fontSize=17;fontStyle=1;strokeColor=#111827;fontColor=#111827;" vertex="1" parent="1">
+          <mxGeometry x="2080" y="380" width="160" height="210" as="geometry"/>
+        </mxCell>
+        <mxCell id="actor_tenant" value="NGƯỜI THUÊ&lt;br&gt;PHÒNG" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;fontSize=17;fontStyle=1;strokeColor=#111827;fontColor=#111827;" vertex="1" parent="1">
+          <mxGeometry x="2080" y="1030" width="160" height="230" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="edge_admin_login" value="" style="edgeStyle=none;rounded=0;html=1;endArrow=none;strokeColor=#94a3b8;strokeWidth=1;opacity=55;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="actor_admin" target="UC_SYS_01"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="edge_admin_logout" value="" style="edgeStyle=none;rounded=0;html=1;endArrow=none;strokeColor=#94a3b8;strokeWidth=1;opacity=55;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="actor_admin" target="UC_SYS_02"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="edge_admin_overview" value="" style="edgeStyle=none;rounded=0;html=1;endArrow=none;strokeColor=#94a3b8;strokeWidth=1;opacity=55;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="actor_admin" target="UC_ADM_01"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="edge_admin_landlord" value="" style="edgeStyle=none;rounded=0;html=1;endArrow=none;strokeColor=#94a3b8;strokeWidth=1;opacity=55;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="actor_admin" target="UC_ADM_02"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="edge_admin_property" value="" style="edgeStyle=none;rounded=0;html=1;endArrow=none;strokeColor=#94a3b8;strokeWidth=1;opacity=55;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="actor_admin" target="UC_ADM_03"><mxGeometry relative="1" as="geometry"/></mxCell>
+
+        <mxCell id="edge_landlord_login" value="" style="edgeStyle=none;rounded=0;html=1;endArrow=none;strokeColor=#94a3b8;strokeWidth=1;opacity=55;exitX=0;exitY=0.5;entryX=1;entryY=0.5;" edge="1" parent="1" source="actor_landlord" target="UC_SYS_01"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="edge_landlord_logout" value="" style="edgeStyle=none;rounded=0;html=1;endArrow=none;strokeColor=#94a3b8;strokeWidth=1;opacity=55;exitX=0;exitY=0.5;entryX=1;entryY=0.5;" edge="1" parent="1" source="actor_landlord" target="UC_SYS_02"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="edge_landlord_dashboard" value="" style="edgeStyle=none;rounded=0;html=1;endArrow=none;strokeColor=#94a3b8;strokeWidth=1;opacity=55;exitX=0;exitY=0.5;entryX=1;entryY=0.5;" edge="1" parent="1" source="actor_landlord" target="UC_OPT_01"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="edge_landlord_property" value="" style="edgeStyle=none;rounded=0;html=1;endArrow=none;strokeColor=#94a3b8;strokeWidth=1;opacity=55;exitX=0;exitY=0.5;entryX=1;entryY=0.5;" edge="1" parent="1" source="actor_landlord" target="UC_OPT_02"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="edge_landlord_room" value="" style="edgeStyle=none;rounded=0;html=1;endArrow=none;strokeColor=#94a3b8;strokeWidth=1;opacity=55;exitX=0;exitY=0.5;entryX=1;entryY=0.5;" edge="1" parent="1" source="actor_landlord" target="UC_OPT_03"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="edge_landlord_tenant" value="" style="edgeStyle=none;rounded=0;html=1;endArrow=none;strokeColor=#94a3b8;strokeWidth=1;opacity=55;exitX=0;exitY=0.5;entryX=1;entryY=0.5;" edge="1" parent="1" source="actor_landlord" target="UC_OPT_04"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="edge_landlord_lease" value="" style="edgeStyle=none;rounded=0;html=1;endArrow=none;strokeColor=#94a3b8;strokeWidth=1;opacity=55;exitX=0;exitY=0.5;entryX=1;entryY=0.5;" edge="1" parent="1" source="actor_landlord" target="UC_OPT_05"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="edge_landlord_maintenance" value="" style="edgeStyle=none;rounded=0;html=1;endArrow=none;strokeColor=#94a3b8;strokeWidth=1;opacity=55;exitX=0;exitY=0.5;entryX=1;entryY=0.5;" edge="1" parent="1" source="actor_landlord" target="UC_OPT_06"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="edge_landlord_meter" value="" style="edgeStyle=none;rounded=0;html=1;endArrow=none;strokeColor=#94a3b8;strokeWidth=1;opacity=55;exitX=0;exitY=0.5;entryX=1;entryY=0.5;" edge="1" parent="1" source="actor_landlord" target="UC_BIL_01"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="edge_landlord_invoice" value="" style="edgeStyle=none;rounded=0;html=1;endArrow=none;strokeColor=#94a3b8;strokeWidth=1;opacity=55;exitX=0;exitY=0.5;entryX=1;entryY=0.5;" edge="1" parent="1" source="actor_landlord" target="UC_BIL_02"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="edge_landlord_payment" value="" style="edgeStyle=none;rounded=0;html=1;endArrow=none;strokeColor=#94a3b8;strokeWidth=1;opacity=55;exitX=0;exitY=0.5;entryX=1;entryY=0.5;" edge="1" parent="1" source="actor_landlord" target="UC_BIL_03"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="edge_landlord_proof" value="" style="edgeStyle=none;rounded=0;html=1;endArrow=none;strokeColor=#94a3b8;strokeWidth=1;opacity=55;exitX=0;exitY=0.5;entryX=1;entryY=0.5;" edge="1" parent="1" source="actor_landlord" target="UC_BIL_04"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="edge_landlord_expense" value="" style="edgeStyle=none;rounded=0;html=1;endArrow=none;strokeColor=#94a3b8;strokeWidth=1;opacity=55;exitX=0;exitY=0.5;entryX=1;entryY=0.5;" edge="1" parent="1" source="actor_landlord" target="UC_BIL_05"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="edge_landlord_report" value="" style="edgeStyle=none;rounded=0;html=1;endArrow=none;strokeColor=#94a3b8;strokeWidth=1;opacity=55;exitX=0;exitY=0.5;entryX=1;entryY=0.5;" edge="1" parent="1" source="actor_landlord" target="UC_BIL_06"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="edge_landlord_notify" value="" style="edgeStyle=none;rounded=0;html=1;endArrow=none;strokeColor=#94a3b8;strokeWidth=1;opacity=55;exitX=0;exitY=0.5;entryX=1;entryY=0.5;" edge="1" parent="1" source="actor_landlord" target="UC_BIL_07"><mxGeometry relative="1" as="geometry"/></mxCell>
+
+        <mxCell id="edge_tenant_login" value="" style="edgeStyle=none;rounded=0;html=1;endArrow=none;strokeColor=#94a3b8;strokeWidth=1;opacity=55;exitX=0;exitY=0.5;entryX=1;entryY=0.5;" edge="1" parent="1" source="actor_tenant" target="UC_SYS_01"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="edge_tenant_logout" value="" style="edgeStyle=none;rounded=0;html=1;endArrow=none;strokeColor=#94a3b8;strokeWidth=1;opacity=55;exitX=0;exitY=0.5;entryX=1;entryY=0.5;" edge="1" parent="1" source="actor_tenant" target="UC_SYS_02"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="edge_tenant_info" value="" style="edgeStyle=none;rounded=0;html=1;endArrow=none;strokeColor=#94a3b8;strokeWidth=1;opacity=55;exitX=0;exitY=0.5;entryX=1;entryY=0.5;" edge="1" parent="1" source="actor_tenant" target="UC_TEN_01"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="edge_tenant_lease" value="" style="edgeStyle=none;rounded=0;html=1;endArrow=none;strokeColor=#94a3b8;strokeWidth=1;opacity=55;exitX=0;exitY=0.5;entryX=1;entryY=0.5;" edge="1" parent="1" source="actor_tenant" target="UC_TEN_02"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="edge_tenant_invoice" value="" style="edgeStyle=none;rounded=0;html=1;endArrow=none;strokeColor=#94a3b8;strokeWidth=1;opacity=55;exitX=0;exitY=0.5;entryX=1;entryY=0.5;" edge="1" parent="1" source="actor_tenant" target="UC_TEN_03"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="edge_tenant_proof" value="" style="edgeStyle=none;rounded=0;html=1;endArrow=none;strokeColor=#94a3b8;strokeWidth=1;opacity=55;exitX=0;exitY=0.5;entryX=1;entryY=0.5;" edge="1" parent="1" source="actor_tenant" target="UC_TEN_04"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="edge_tenant_maintenance" value="" style="edgeStyle=none;rounded=0;html=1;endArrow=none;strokeColor=#94a3b8;strokeWidth=1;opacity=55;exitX=0;exitY=0.5;entryX=1;entryY=0.5;" edge="1" parent="1" source="actor_tenant" target="UC_TEN_05"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="edge_tenant_notify" value="" style="edgeStyle=none;rounded=0;html=1;endArrow=none;strokeColor=#94a3b8;strokeWidth=1;opacity=55;exitX=0;exitY=0.5;entryX=1;entryY=0.5;" edge="1" parent="1" source="actor_tenant" target="UC_TEN_06"><mxGeometry relative="1" as="geometry"/></mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

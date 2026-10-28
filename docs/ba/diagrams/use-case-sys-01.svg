@@ -1,0 +1,45 @@
+<?xml version='1.0' encoding='utf-8'?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="810" viewBox="0 0 1000 810" role="img" aria-labelledby="diagram-title diagram-description">
+  <title id="diagram-title">D-SYS-01 Xác thực và phiên làm việc</title>
+  <desc id="diagram-description">Actor nằm ngoài biên hệ thống. Đường liền biểu thị actor tham gia UC. Khung nét đứt chỉ nhóm phân rã theo UC tổng quan. Các UC: UC-SYS-01, UC-SYS-01.01, UC-SYS-02</desc>
+  <rect x="215" y="35" width="750" height="698" fill="none" stroke="#39414B" stroke-width="1.2" />
+  <text x="590" y="63" text-anchor="middle" dominant-baseline="central" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#222222">Hệ thống quản lý nhà trọ</text>
+  <polyline points="116.00,185.00 310.00,205.00" fill="none" stroke="#737B85" stroke-width="1.4" />
+  <polyline points="116.00,185.00 310.00,385.00" fill="none" stroke="#737B85" stroke-width="1.4" />
+  <polyline points="116.00,385.00 310.00,205.00" fill="none" stroke="#737B85" stroke-width="1.4" />
+  <polyline points="116.00,385.00 310.00,385.00" fill="none" stroke="#737B85" stroke-width="1.4" />
+  <polyline points="116.00,595.00 310.00,205.00" fill="none" stroke="#737B85" stroke-width="1.4" />
+  <polyline points="116.00,595.00 310.00,565.00" fill="none" stroke="#737B85" stroke-width="1.4" />
+  <polyline points="116.00,595.00 310.00,385.00" fill="none" stroke="#737B85" stroke-width="1.4" />
+  <circle cx="90" cy="158" r="13" fill="white" stroke="#222222" stroke-width="1.6" />
+  <polyline points="90,171 90,208" fill="none" stroke="#222222" stroke-width="1.6" />
+  <polyline points="65,185 115,185" fill="none" stroke="#222222" stroke-width="1.6" />
+  <polyline points="90,208 68,232" fill="none" stroke="#222222" stroke-width="1.6" />
+  <polyline points="90,208 112,232" fill="none" stroke="#222222" stroke-width="1.6" />
+  <text x="90" y="253" text-anchor="middle" dominant-baseline="central" font-family="Arial, sans-serif" font-size="23" font-weight="bold" fill="#222222">Admin hệ</text>
+  <text x="90" y="279" text-anchor="middle" dominant-baseline="central" font-family="Arial, sans-serif" font-size="23" font-weight="bold" fill="#222222">thống</text>
+  <circle cx="90" cy="358" r="13" fill="white" stroke="#222222" stroke-width="1.6" />
+  <polyline points="90,371 90,408" fill="none" stroke="#222222" stroke-width="1.6" />
+  <polyline points="65,385 115,385" fill="none" stroke="#222222" stroke-width="1.6" />
+  <polyline points="90,408 68,432" fill="none" stroke="#222222" stroke-width="1.6" />
+  <polyline points="90,408 112,432" fill="none" stroke="#222222" stroke-width="1.6" />
+  <text x="90" y="453" text-anchor="middle" dominant-baseline="central" font-family="Arial, sans-serif" font-size="23" font-weight="bold" fill="#222222">Chủ trọ</text>
+  <circle cx="90" cy="568" r="13" fill="white" stroke="#222222" stroke-width="1.6" />
+  <polyline points="90,581 90,618" fill="none" stroke="#222222" stroke-width="1.6" />
+  <polyline points="65,595 115,595" fill="none" stroke="#222222" stroke-width="1.6" />
+  <polyline points="90,618 68,642" fill="none" stroke="#222222" stroke-width="1.6" />
+  <polyline points="90,618 112,642" fill="none" stroke="#222222" stroke-width="1.6" />
+  <text x="90" y="663" text-anchor="middle" dominant-baseline="central" font-family="Arial, sans-serif" font-size="23" font-weight="bold" fill="#222222">Người thuê</text>
+  <ellipse cx="600" cy="205" rx="290.0" ry="49.0" fill="white" stroke="#303740" stroke-width="1.6" data-uc-id="UC-SYS-01" />
+  <text x="600" y="189" text-anchor="middle" dominant-baseline="central" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#43505F">UC-SYS-01</text>
+  <text x="600" y="220" text-anchor="middle" dominant-baseline="central" font-family="Arial, sans-serif" font-size="24" font-weight="normal" fill="#222222">Đăng nhập</text>
+  <ellipse cx="600" cy="565" rx="290.0" ry="49.0" fill="white" stroke="#303740" stroke-width="1.6" data-uc-id="UC-SYS-01.01" />
+  <text x="600" y="536" text-anchor="middle" dominant-baseline="central" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#43505F">UC-SYS-01.01</text>
+  <text x="600" y="565" text-anchor="middle" dominant-baseline="central" font-family="Arial, sans-serif" font-size="24" font-weight="normal" fill="#222222">Kích hoạt tài khoản người thuê từ lời</text>
+  <text x="600" y="593" text-anchor="middle" dominant-baseline="central" font-family="Arial, sans-serif" font-size="24" font-weight="normal" fill="#222222">mời</text>
+  <ellipse cx="600" cy="385" rx="290.0" ry="49.0" fill="white" stroke="#303740" stroke-width="1.6" data-uc-id="UC-SYS-02" />
+  <text x="600" y="369" text-anchor="middle" dominant-baseline="central" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#43505F">UC-SYS-02</text>
+  <text x="600" y="400" text-anchor="middle" dominant-baseline="central" font-family="Arial, sans-serif" font-size="24" font-weight="normal" fill="#222222">Đăng xuất</text>
+  <text x="590" y="663" text-anchor="middle" dominant-baseline="central" font-family="Arial, sans-serif" font-size="21" font-weight="normal" fill="#222222">Kích hoạt tài khoản chỉ dành cho Người thuê được mời</text>
+  <text x="500" y="759" text-anchor="middle" dominant-baseline="central" font-family="Arial, sans-serif" font-size="20" font-weight="normal" fill="#222222">Đường liền là liên kết actor với UC   Phân nhóm theo danh mục UC tổng quan</text>
+</svg>

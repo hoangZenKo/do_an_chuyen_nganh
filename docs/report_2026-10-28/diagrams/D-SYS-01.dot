@@ -1,0 +1,24 @@
+digraph G {
+graph [bgcolor="white", rankdir=LR, nodesep=0.30, ranksep=0.65, pad=0.2, splines=polyline];
+node [fontname="Times New Roman", fontsize=17, color="black", fontcolor="black", style="filled", fillcolor="white", penwidth=1.1];
+edge [fontname="Times New Roman", fontsize=14, color="black", arrowsize=0.7, penwidth=0.9];
+actor0 [shape=box,label="«actor»\nKhách đăng ký chủ trọ"];
+actor1 [shape=box,label="«actor»\nKhách đăng ký tìm\nphòng"];
+actor2 [shape=box,label="«actor»\nNgười dùng có tài\nkhoản"];
+subgraph cluster_system { label="Rental Room Management · Tài khoản và phiên làm việc";fontname="Times New Roman";fontsize=18;color="black";
+u0 [shape=ellipse,label="UC-SYS-01\nĐăng ký tài khoản chủ trọ",margin="0.12,0.08"];
+u1 [shape=ellipse,label="UC-SYS-02\nĐăng ký tài khoản người tìm\nphòng",margin="0.12,0.08"];
+u2 [shape=ellipse,label="UC-SYS-03\nĐăng nhập và điều hướng theo\nvai trò",margin="0.12,0.08"];
+u3 [shape=ellipse,label="UC-SYS-04\nKhôi phục phiên và làm mới\ntoken",margin="0.12,0.08"];
+u4 [shape=ellipse,label="UC-SYS-05.1\nĐăng xuất phiên hiện tại",margin="0.12,0.08"];
+u5 [shape=ellipse,label="UC-SYS-05.2\nXem và thu hồi phiên trên\nthiết bị khác",margin="0.12,0.08"];
+u6 [shape=ellipse,label="UC-SYS-06\nKhôi phục mật khẩu qua liên\nkết dùng một lần",margin="0.12,0.08"];
+}
+actor0 -> u0 [arrowhead=none];
+actor1 -> u1 [arrowhead=none];
+actor2 -> u2 [arrowhead=none];
+actor2 -> u3 [arrowhead=none];
+actor2 -> u4 [arrowhead=none];
+actor2 -> u5 [arrowhead=none];
+actor2 -> u6 [arrowhead=none];
+}

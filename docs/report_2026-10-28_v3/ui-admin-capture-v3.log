@@ -1,0 +1,64 @@
+00:00 +0: loading /tmp/rental-report-v3-20261028/capture-admin-v3/admin_workspace_flow_test.dart
+00:00 +0: /tmp/rental-report-v3-20261028/capture-admin-v3/admin_workspace_flow_test.dart: (setUpAll)
+00:00 +0: /tmp/rental-report-v3-20261028/capture-admin-v3/admin_workspace_flow_test.dart: real dashboard fits 390.0 with enlarged mobile text
+00:00 +1: /tmp/rental-report-v3-20261028/capture-admin-v3/admin_workspace_flow_test.dart: real dashboard fits 1440.0 with enlarged mobile text
+00:00 +2: /tmp/rental-report-v3-20261028/capture-admin-v3/admin_workspace_flow_test.dart: partial data remains actionable without reporting a false empty queue
+00:00 +3: /tmp/rental-report-v3-20261028/capture-admin-v3/admin_workspace_flow_test.dart: full dashboard fits a 320px phone with 200 percent text
+00:01 +4: /tmp/rental-report-v3-20261028/capture-admin-v3/admin_workspace_flow_test.dart: a failed source can retry and recover
+00:01 +5: /tmp/rental-report-v3-20261028/capture-admin-v3/admin_workspace_flow_test.dart: loading resolves to an empty state without stale results
+00:01 +6: /tmp/rental-report-v3-20261028/capture-admin-v3/admin_workspace_flow_test.dart: revoked finance permission hides both navigation and stale queue data
+00:01 +7: /tmp/rental-report-v3-20261028/capture-admin-v3/admin_workspace_flow_test.dart: session change suppresses old counts and command results
+00:01 +8: /tmp/rental-report-v3-20261028/capture-admin-v3/admin_workspace_flow_test.dart: dashboard switches periods and exposes chart point details
+00:01 +9: /tmp/rental-report-v3-20261028/capture-admin-v3/admin_workspace_flow_test.dart: new overview removes finance metrics when rights are revoked
+00:01 +10: /tmp/rental-report-v3-20261028/capture-admin-v3/admin_workspace_flow_test.dart: report overview is separate from scheduled reports
+00:01 +11: /tmp/rental-report-v3-20261028/capture-admin-v3/admin_workspace_flow_test.dart: global search carries the encoded query and responds to query changes
+00:01 +12: /tmp/rental-report-v3-20261028/capture-admin-v3/admin_workspace_flow_test.dart: notification badge navigates to the existing notification center
+00:01 +13: /tmp/rental-report-v3-20261028/capture-admin-v3/admin_workspace_flow_test.dart: command palette supports keyboard selection and respects permissions
+00:02 +14: /tmp/rental-report-v3-20261028/capture-admin-v3/admin_workspace_flow_test.dart: renders an actionable 401 state without raw server details
+00:02 +15: /tmp/rental-report-v3-20261028/capture-admin-v3/admin_workspace_flow_test.dart: renders an actionable 403 state without raw server details
+00:02 +16: /tmp/rental-report-v3-20261028/capture-admin-v3/admin_workspace_flow_test.dart: renders an actionable 409 state without raw server details
+00:02 +17: /tmp/rental-report-v3-20261028/capture-admin-v3/admin_workspace_flow_test.dart: (tearDownAll)
+00:02 +17: loading /tmp/rental-report-v3-20261028/capture-admin-v3/admin_accounts_panel_test.dart
+00:02 +17: /tmp/rental-report-v3-20261028/capture-admin-v3/admin_accounts_panel_test.dart: (setUpAll)
+00:02 +17: /tmp/rental-report-v3-20261028/capture-admin-v3/admin_accounts_panel_test.dart: search debounces; role filter resets pagination
+00:03 +18: /tmp/rental-report-v3-20261028/capture-admin-v3/admin_accounts_panel_test.dart: no request without capability or authenticated owner
+00:03 +19: /tmp/rental-report-v3-20261028/capture-admin-v3/admin_accounts_panel_test.dart: logout hides loaded data and does not request another page
+00:03 +20: /tmp/rental-report-v3-20261028/capture-admin-v3/admin_accounts_panel_test.dart: unauthenticated panel never starts an account request
+00:03 +21: /tmp/rental-report-v3-20261028/capture-admin-v3/admin_accounts_panel_test.dart: late list response cannot render after a session change
+00:03 +22: /tmp/rental-report-v3-20261028/capture-admin-v3/admin_accounts_panel_test.dart: date range sends Vietnam calendar boundaries and can be cleared
+00:03 +23: /tmp/rental-report-v3-20261028/capture-admin-v3/admin_accounts_panel_test.dart: returning from detail preserves the selected list page
+00:03 +24: /tmp/rental-report-v3-20261028/capture-admin-v3/admin_accounts_panel_test.dart: mobile enlarged text has no overflow; errors can retry
+00:03 +25: /tmp/rental-report-v3-20261028/capture-admin-v3/admin_accounts_panel_test.dart: (tearDownAll)
+00:03 +25: loading /tmp/rental-report-v3-20261028/capture-admin-v3/admin_account_detail_panel_test.dart
+00:04 +25: /tmp/rental-report-v3-20261028/capture-admin-v3/admin_account_detail_panel_test.dart: (setUpAll)
+00:04 +25: /tmp/rental-report-v3-20261028/capture-admin-v3/admin_account_detail_panel_test.dart: detail shows counts and history; suspend binds current version
+00:04 +26: /tmp/rental-report-v3-20261028/capture-admin-v3/admin_account_detail_panel_test.dart: conflict requires reload, does not automatically retry mutation
+00:04 +27: /tmp/rental-report-v3-20261028/capture-admin-v3/admin_account_detail_panel_test.dart: PII dialog vanishes immediately when session changes
+00:04 +28: /tmp/rental-report-v3-20261028/capture-admin-v3/admin_account_detail_panel_test.dart: revoking permission closes an open confirmation without issuing a command
+00:04 +29: /tmp/rental-report-v3-20261028/capture-admin-v3/admin_account_detail_panel_test.dart: read-only admin cannot mutate; missing account has specific state
+00:04 +30: /tmp/rental-report-v3-20261028/capture-admin-v3/admin_account_detail_panel_test.dart: detail renders on a narrow screen at 200 percent text
+00:04 +31: /tmp/rental-report-v3-20261028/capture-admin-v3/admin_account_detail_panel_test.dart: read-only view exposes no mutation or unmasked contacts
+00:04 +32: /tmp/rental-report-v3-20261028/capture-admin-v3/admin_account_detail_panel_test.dart: restore binds version and inactive accounts cannot reset
+00:04 +33: /tmp/rental-report-v3-20261028/capture-admin-v3/admin_account_detail_panel_test.dart: revoke and reset confirm reasons and reload detail
+00:05 +34: /tmp/rental-report-v3-20261028/capture-admin-v3/admin_account_detail_panel_test.dart: pending mutation disables actions; late result cannot restore old UI
+00:05 +35: /tmp/rental-report-v3-20261028/capture-admin-v3/admin_account_detail_panel_test.dart: private contacts stay hidden after app backgrounding
+00:05 +36: /tmp/rental-report-v3-20261028/capture-admin-v3/admin_account_detail_panel_test.dart: restored permission cannot resurrect an old PII reveal
+00:05 +37: /tmp/rental-report-v3-20261028/capture-admin-v3/admin_account_detail_panel_test.dart: PII arriving after backgrounding starts hidden
+00:05 +38: /tmp/rental-report-v3-20261028/capture-admin-v3/admin_account_detail_panel_test.dart: (tearDownAll)
+00:05 +38: loading /tmp/rental-report-v3-20261028/capture-admin-v3/admin_inventory_panel_test.dart
+00:05 +38: /tmp/rental-report-v3-20261028/capture-admin-v3/admin_inventory_panel_test.dart: (setUpAll)
+00:05 +38: /tmp/rental-report-v3-20261028/capture-admin-v3/admin_inventory_panel_test.dart: properties debounce and filters reset pagination; viewer cannot edit
+00:06 +39: /tmp/rental-report-v3-20261028/capture-admin-v3/admin_inventory_panel_test.dart: no inventory fetch without rights; old response hidden on identity change
+00:06 +40: /tmp/rental-report-v3-20261028/capture-admin-v3/admin_inventory_panel_test.dart: rooms validate internal prices and preserve property scope
+00:06 +41: /tmp/rental-report-v3-20261028/capture-admin-v3/admin_inventory_panel_test.dart: detail shows bounded preview and complete counts; direct form is gated
+00:06 +42: /tmp/rental-report-v3-20261028/capture-admin-v3/admin_inventory_panel_test.dart: room filter and cards fit 320px with 200 percent text
+00:06 +43: /tmp/rental-report-v3-20261028/capture-admin-v3/admin_inventory_panel_test.dart: permissions revoked hide room data; manager actions are separately authorized
+00:06 +44: /tmp/rental-report-v3-20261028/capture-admin-v3/admin_inventory_panel_test.dart: pending action forwards exact target to real moderation workspace and refreshes on return
+00:06 +45: /tmp/rental-report-v3-20261028/capture-admin-v3/admin_inventory_panel_test.dart: 320px property and detail previews fit at 200 percent text
+00:07 +46: /tmp/rental-report-v3-20261028/capture-admin-v3/admin_inventory_panel_test.dart: property form controller refuses direct writes without management capability
+00:07 +47: /tmp/rental-report-v3-20261028/capture-admin-v3/admin_inventory_panel_test.dart: inventory route guards allow viewers but keep form and moderation restricted
+00:07 +48: /tmp/rental-report-v3-20261028/capture-admin-v3/admin_inventory_panel_test.dart: moderation URL targets one listing without unescaped query values
+00:07 +49: /tmp/rental-report-v3-20261028/capture-admin-v3/admin_inventory_panel_test.dart: inventory shell preserves query on detail/back at 1440.0px
+00:07 +50: /tmp/rental-report-v3-20261028/capture-admin-v3/admin_inventory_panel_test.dart: inventory shell preserves query on detail/back at 320.0px
+00:07 +51: /tmp/rental-report-v3-20261028/capture-admin-v3/admin_inventory_panel_test.dart: (tearDownAll)
+00:07 +51: All tests passed!

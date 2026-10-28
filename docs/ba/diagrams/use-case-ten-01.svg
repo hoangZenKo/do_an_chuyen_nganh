@@ -1,0 +1,42 @@
+<?xml version='1.0' encoding='utf-8'?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="970" viewBox="0 0 1000 970" role="img" aria-labelledby="diagram-title diagram-description">
+  <title id="diagram-title">D-TEN-01 Cổng thông tin Người thuê</title>
+  <desc id="diagram-description">Actor nằm ngoài biên hệ thống. Đường liền biểu thị actor tham gia UC. Khung nét đứt chỉ nhóm phân rã theo UC tổng quan. Các UC: UC-TEN-01, UC-TEN-02, UC-TEN-03, UC-TEN-04, UC-TEN-05.01, UC-TEN-05.02, UC-TEN-06</desc>
+  <rect x="210" y="28" width="755" height="858" fill="none" stroke="#39414B" stroke-width="1.2" />
+  <text x="590" y="58" text-anchor="middle" dominant-baseline="central" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#222222">Hệ thống quản lý nhà trọ</text>
+  <polyline points="116.00,410.00 320.00,143.00" fill="none" stroke="#737B85" stroke-width="1.4" />
+  <polyline points="116.00,410.00 320.00,251.00" fill="none" stroke="#737B85" stroke-width="1.4" />
+  <polyline points="116.00,410.00 320.00,359.00" fill="none" stroke="#737B85" stroke-width="1.4" />
+  <polyline points="116.00,410.00 320.00,467.00" fill="none" stroke="#737B85" stroke-width="1.4" />
+  <polyline points="116.00,410.00 320.00,575.00" fill="none" stroke="#737B85" stroke-width="1.4" />
+  <polyline points="116.00,410.00 320.00,683.00" fill="none" stroke="#737B85" stroke-width="1.4" />
+  <polyline points="116.00,410.00 320.00,791.00" fill="none" stroke="#737B85" stroke-width="1.4" />
+  <circle cx="90" cy="383" r="13" fill="white" stroke="#222222" stroke-width="1.6" />
+  <polyline points="90,396 90,433" fill="none" stroke="#222222" stroke-width="1.6" />
+  <polyline points="65,410 115,410" fill="none" stroke="#222222" stroke-width="1.6" />
+  <polyline points="90,433 68,457" fill="none" stroke="#222222" stroke-width="1.6" />
+  <polyline points="90,433 112,457" fill="none" stroke="#222222" stroke-width="1.6" />
+  <text x="90" y="478" text-anchor="middle" dominant-baseline="central" font-family="Arial, sans-serif" font-size="23" font-weight="bold" fill="#222222">Người thuê</text>
+  <ellipse cx="610" cy="143" rx="290.0" ry="49.0" fill="white" stroke="#303740" stroke-width="1.6" data-uc-id="UC-TEN-01" />
+  <text x="610" y="127" text-anchor="middle" dominant-baseline="central" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#43505F">UC-TEN-01</text>
+  <text x="610" y="158" text-anchor="middle" dominant-baseline="central" font-family="Arial, sans-serif" font-size="24" font-weight="normal" fill="#222222">Xem thông tin thuê phòng</text>
+  <ellipse cx="610" cy="251" rx="290.0" ry="49.0" fill="white" stroke="#303740" stroke-width="1.6" data-uc-id="UC-TEN-02" />
+  <text x="610" y="235" text-anchor="middle" dominant-baseline="central" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#43505F">UC-TEN-02</text>
+  <text x="610" y="266" text-anchor="middle" dominant-baseline="central" font-family="Arial, sans-serif" font-size="24" font-weight="normal" fill="#222222">Xem hợp đồng thuê của mình</text>
+  <ellipse cx="610" cy="359" rx="290.0" ry="49.0" fill="white" stroke="#303740" stroke-width="1.6" data-uc-id="UC-TEN-03" />
+  <text x="610" y="343" text-anchor="middle" dominant-baseline="central" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#43505F">UC-TEN-03</text>
+  <text x="610" y="374" text-anchor="middle" dominant-baseline="central" font-family="Arial, sans-serif" font-size="24" font-weight="normal" fill="#222222">Xem và xuất hóa đơn của mình</text>
+  <ellipse cx="610" cy="467" rx="290.0" ry="49.0" fill="white" stroke="#303740" stroke-width="1.6" data-uc-id="UC-TEN-04" />
+  <text x="610" y="451" text-anchor="middle" dominant-baseline="central" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#43505F">UC-TEN-04</text>
+  <text x="610" y="482" text-anchor="middle" dominant-baseline="central" font-family="Arial, sans-serif" font-size="24" font-weight="normal" fill="#222222">Gửi minh chứng thanh toán</text>
+  <ellipse cx="610" cy="575" rx="290.0" ry="49.0" fill="white" stroke="#303740" stroke-width="1.6" data-uc-id="UC-TEN-05.01" />
+  <text x="610" y="559" text-anchor="middle" dominant-baseline="central" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#43505F">UC-TEN-05.01</text>
+  <text x="610" y="590" text-anchor="middle" dominant-baseline="central" font-family="Arial, sans-serif" font-size="24" font-weight="normal" fill="#222222">Gửi yêu cầu bảo trì</text>
+  <ellipse cx="610" cy="683" rx="290.0" ry="49.0" fill="white" stroke="#303740" stroke-width="1.6" data-uc-id="UC-TEN-05.02" />
+  <text x="610" y="667" text-anchor="middle" dominant-baseline="central" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#43505F">UC-TEN-05.02</text>
+  <text x="610" y="698" text-anchor="middle" dominant-baseline="central" font-family="Arial, sans-serif" font-size="24" font-weight="normal" fill="#222222">Theo dõi và phản hồi yêu cầu bảo trì</text>
+  <ellipse cx="610" cy="791" rx="290.0" ry="49.0" fill="white" stroke="#303740" stroke-width="1.6" data-uc-id="UC-TEN-06" />
+  <text x="610" y="775" text-anchor="middle" dominant-baseline="central" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#43505F">UC-TEN-06</text>
+  <text x="610" y="806" text-anchor="middle" dominant-baseline="central" font-family="Arial, sans-serif" font-size="24" font-weight="normal" fill="#222222">Xem và đánh dấu thông báo đã đọc</text>
+  <text x="500" y="919" text-anchor="middle" dominant-baseline="central" font-family="Arial, sans-serif" font-size="20" font-weight="normal" fill="#222222">Đường liền là liên kết actor với UC   Phân nhóm theo danh mục UC tổng quan</text>
+</svg>

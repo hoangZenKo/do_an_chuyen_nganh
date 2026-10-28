@@ -1,0 +1,50 @@
+00:00 +0: loading /Users/hoang/Rental_room_management/test/features/auth/account_access_test.dart
+00:00 +0: /Users/hoang/Rental_room_management/test/features/auth/session_cache_isolation_test.dart: password change clears the local session and returns to unauthenticated state
+00:00 +1: /Users/hoang/Rental_room_management/test/features/auth/register_screen_test.dart: password errors identify missing rules without changing legacy login
+00:00 +2: /Users/hoang/Rental_room_management/test/features/auth/session_cache_isolation_test.dart: property cache reloads when a different account signs in
+00:00 +3: /Users/hoang/Rental_room_management/test/features/auth/register_screen_test.dart: purpose selector matches the light authentication fields
+00:00 +4: /Users/hoang/Rental_room_management/test/features/auth/register_screen_test.dart: purpose selector matches the light authentication fields
+00:00 +5: /Users/hoang/Rental_room_management/test/features/auth/register_screen_test.dart: purpose selector matches the light authentication fields
+00:00 +6: /Users/hoang/Rental_room_management/test/features/auth/register_screen_test.dart: purpose selector matches the light authentication fields
+00:00 +7: /Users/hoang/Rental_room_management/test/features/auth/register_screen_test.dart: purpose selector matches the light authentication fields
+00:00 +8: /Users/hoang/Rental_room_management/test/features/auth/register_screen_test.dart: purpose selector matches the light authentication fields
+00:00 +9: /Users/hoang/Rental_room_management/test/features/auth/register_screen_test.dart: purpose selector matches the light authentication fields
+00:00 +10: /Users/hoang/Rental_room_management/test/features/auth/register_screen_test.dart: purpose selector matches the light authentication fields
+00:00 +11: /Users/hoang/Rental_room_management/test/features/auth/register_screen_test.dart: purpose selector matches the light authentication fields
+00:00 +12: /Users/hoang/Rental_room_management/test/features/auth/register_screen_test.dart: purpose selector matches the light authentication fields
+00:00 +13: /Users/hoang/Rental_room_management/test/features/auth/register_screen_test.dart: purpose selector matches the light authentication fields
+00:00 +14: /Users/hoang/Rental_room_management/test/features/auth/register_screen_test.dart: purpose selector matches the light authentication fields
+00:00 +15: /Users/hoang/Rental_room_management/test/features/auth/register_screen_test.dart: purpose selector matches the light authentication fields
+00:00 +16: /Users/hoang/Rental_room_management/test/features/auth/register_screen_test.dart: purpose selector matches the light authentication fields
+00:00 +17: /Users/hoang/Rental_room_management/test/features/auth/register_screen_test.dart: purpose selector matches the light authentication fields
+00:00 +18: /Users/hoang/Rental_room_management/test/features/auth/register_screen_test.dart: purpose selector matches the light authentication fields
+00:00 +19: /Users/hoang/Rental_room_management/test/features/auth/register_screen_test.dart: purpose selector matches the light authentication fields
+00:00 +20: /Users/hoang/Rental_room_management/test/features/auth/register_screen_test.dart: purpose selector matches the light authentication fields
+00:00 +21: /Users/hoang/Rental_room_management/test/features/auth/register_screen_test.dart: purpose selector matches the light authentication fields
+00:00 +22: /Users/hoang/Rental_room_management/test/features/auth/register_screen_test.dart: purpose selector matches the light authentication fields
+00:00 +23: /Users/hoang/Rental_room_management/test/features/auth/register_screen_test.dart: purpose selector matches the light authentication fields
+00:00 +24: /Users/hoang/Rental_room_management/test/features/auth/register_screen_test.dart: purpose selector matches the light authentication fields
+00:00 +25: /Users/hoang/Rental_room_management/test/features/auth/register_screen_test.dart: purpose selector matches the light authentication fields
+00:00 +26: /Users/hoang/Rental_room_management/test/features/auth/register_screen_test.dart: purpose selector matches the light authentication fields
+00:00 +27: /Users/hoang/Rental_room_management/test/features/auth/register_screen_test.dart: purpose selector matches the light authentication fields
+00:00 +28: /Users/hoang/Rental_room_management/test/features/auth/register_screen_test.dart: purpose selector matches the light authentication fields
+00:00 +29: /Users/hoang/Rental_room_management/test/features/auth/register_screen_test.dart: purpose selector matches the light authentication fields
+00:00 +30: /Users/hoang/Rental_room_management/test/features/auth/account_access_test.dart: recovery validates email and does not duplicate an in-flight request
+00:00 +31: /Users/hoang/Rental_room_management/test/features/auth/account_access_test.dart: recovery validates email and does not duplicate an in-flight request
+00:00 +32: /Users/hoang/Rental_room_management/test/features/auth/account_access_test.dart: recovery validates email and does not duplicate an in-flight request
+00:00 +33: /Users/hoang/Rental_room_management/test/features/auth/account_access_test.dart: recovery validates email and does not duplicate an in-flight request
+00:00 +34: /Users/hoang/Rental_room_management/test/features/auth/account_access_test.dart: recovery validates email and does not duplicate an in-flight request
+00:00 +35: /Users/hoang/Rental_room_management/test/features/auth/account_access_test.dart: recovery validates email and does not duplicate an in-flight request
+00:00 +36: /Users/hoang/Rental_room_management/test/features/auth/register_screen_test.dart: purpose menu allows switching between both account types
+00:00 +37: /Users/hoang/Rental_room_management/test/features/auth/register_screen_test.dart: purpose selector fits a narrow phone
+00:00 +38: /Users/hoang/Rental_room_management/test/features/auth/register_screen_test.dart: shows password and phone warnings while entering invalid data
+00:01 +39: /Users/hoang/Rental_room_management/test/features/auth/register_screen_test.dart: updates password errors and dependent confirmation while typing
+00:01 +40: /Users/hoang/Rental_room_management/test/features/auth/register_screen_test.dart: registers seeker with normalized phone
+00:01 +41: /Users/hoang/Rental_room_management/test/features/auth/register_screen_test.dart: registers landlord with normalized phone
+00:01 +42: /Users/hoang/Rental_room_management/test/features/auth/register_screen_test.dart: explains duplicate email visibly and allows correcting it
+00:01 +43: /Users/hoang/Rental_room_management/test/features/auth/register_screen_test.dart: explains RATE_LIMITED without hiding the failure
+00:01 +44: /Users/hoang/Rental_room_management/test/features/auth/register_screen_test.dart: explains INTERNAL_SERVER_ERROR without hiding the failure
+00:02 +45: /Users/hoang/Rental_room_management/test/features/auth/register_screen_test.dart: does not send a request for invalid password or phone
+00:02 +46: /Users/hoang/Rental_room_management/test/features/auth/register_screen_test.dart: validates empty fields on submit without sending a request
+00:02 +47: /Users/hoang/Rental_room_management/test/features/auth/register_screen_test.dart: rejects overlong names and preserves existing international phones
+00:02 +48: All tests passed!

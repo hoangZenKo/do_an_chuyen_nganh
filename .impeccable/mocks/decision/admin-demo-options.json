@@ -1,0 +1,46 @@
+{
+  "title": "Chọn giao diện Admin Console",
+  "question": "Ba bản demo bố cục cho Rental Room Management. Chỉ minh họa giao diện, không kết nối API hoặc thay đổi code Flutter. Mở rộng từng bản để xem chi tiết rồi chọn hướng bạn muốn.",
+  "options": [
+    {
+      "id": "admin-command",
+      "kind": "assigned",
+      "label": "A — Command Center",
+      "kicker": "THE ROLL",
+      "thesis": "Hàng đợi ưu tiên làm trung tâm, tình trạng hệ thống và audit ở cạnh phải.",
+      "palette": ["#f5f7f3", "#142b24", "#21865b", "#cce5d5"],
+      "materials": ["Manrope", "nền sáng", "sidebar xanh đậm"],
+      "viewport": "Tổng quan vận hành, 3 mục quá SLA và danh sách cần xem trong một màn hình.",
+      "risk": "Phù hợp tác vụ tổng hợp; bảng nhiều cột cần mở ở màn hình chuyên biệt.",
+      "html": ".impeccable/mocks/decision/admin-command.html",
+      "htmlFrame": "1440x900"
+    },
+    {
+      "id": "admin-inbox",
+      "kind": "dealt",
+      "label": "B — Inbox-first",
+      "thesis": "Duyệt danh sách bên trái và đọc ngữ cảnh bên phải, hạn chế chuyển trang.",
+      "palette": ["#f5f7f3", "#142b24", "#21865b", "#cce5d5"],
+      "materials": ["Manrope", "top navigation", "master–detail"],
+      "viewport": "Hộp việc hỗ trợ và kiểm duyệt, SLA, hồ sơ liên quan và audit cùng ngữ cảnh.",
+      "risk": "Tối ưu xử lý hồ sơ; góc nhìn tổng thể nền tảng ít nổi bật hơn.",
+      "html": ".impeccable/mocks/decision/admin-inbox.html",
+      "htmlFrame": "1440x900"
+    },
+    {
+      "id": "admin-dense",
+      "kind": "dealt",
+      "label": "C — Data Desk",
+      "thesis": "Bảng dữ liệu dẫn đầu, bộ lọc rõ ràng và mật độ thông tin cao cho admin thường xuyên.",
+      "palette": ["#f5f7f3", "#142b24", "#21865b", "#cce5d5"],
+      "materials": ["Manrope", "compact navigation", "bảng tra cứu"],
+      "viewport": "Tài khoản, vai trò, trạng thái, phạm vi và hoạt động cuối trong bảng có phân trang.",
+      "risk": "Tra cứu nhanh trên desktop; trên điện thoại cần chuyển từng dòng thành hồ sơ.",
+      "html": ".impeccable/mocks/decision/admin-dense.html",
+      "htmlFrame": "1440x900"
+    }
+  ],
+  "buildPath": { "value": "code", "toggle": false },
+  "reroll": true,
+  "steer": true
+}

@@ -1,0 +1,664 @@
+{
+  "scenarios": 10,
+  "figures": 22,
+  "diagrams": [
+    {
+      "id": "SD-01A",
+      "scenario": "SD-01",
+      "file": "sd-01a-credentials",
+      "width": 1760,
+      "height": 1542,
+      "messages": 13,
+      "fragments": [
+        {
+          "kind": "alt",
+          "guards": [
+            "Mật khẩu không khớp",
+            "Mật khẩu khớp"
+          ]
+        },
+        {
+          "kind": "alt",
+          "guards": [
+            "Không tồn tại hoặc bị khóa",
+            "Tài khoản hoạt động"
+          ]
+        },
+        {
+          "kind": "alt",
+          "guards": [
+            "Biểu mẫu thiếu hoặc sai định dạng",
+            "Biểu mẫu hợp lệ"
+          ]
+        }
+      ],
+      "sha256": {
+        "svg": "1fd86440bb83f0536511f0f5c396db2106bca8a72abc5ecc32e70c42d23a25fb",
+        "png": "5237c3aaa0ab2fe12accb04f9dd751ebc3b6bd0789ee23678ef8f8863a3b7085",
+        "drawio": "ff76216f488e955522f4aa99b6cda9b4fb7af154a6a295b4cd53932042d2c3e6"
+      }
+    },
+    {
+      "id": "SD-01B",
+      "scenario": "SD-01",
+      "file": "sd-01b-restore-session",
+      "width": 1760,
+      "height": 2103,
+      "messages": 17,
+      "fragments": [
+        {
+          "kind": "alt",
+          "guards": [
+            "Gia hạn phiên thành công",
+            "Yêu cầu gia hạn bị từ chối",
+            "Không hoàn tất gia hạn do lỗi khác"
+          ]
+        },
+        {
+          "kind": "alt",
+          "guards": [
+            "Phiên đăng nhập còn hợp lệ",
+            "Thông tin phiên không còn hợp lệ",
+            "Không xác minh được phiên do lỗi khác"
+          ]
+        },
+        {
+          "kind": "alt",
+          "guards": [
+            "Không có phiên lưu",
+            "Có phiên lưu"
+          ]
+        }
+      ],
+      "sha256": {
+        "svg": "3b80a545c3576a9a8aaae7c8e9c984f2e4ef7f15ecc6472de339d5902186f0f6",
+        "png": "de6036ffa69e34deaa639142509b50299b188acade157bc7205f96d462d93368",
+        "drawio": "5566d7a2317c20c70261aebd498062c8fa02b6169384ffa8e0ddbd97d974f490"
+      }
+    },
+    {
+      "id": "SD-01C",
+      "scenario": "SD-01",
+      "file": "sd-01c-session-routing",
+      "width": 1760,
+      "height": 1596,
+      "messages": 14,
+      "fragments": [
+        {
+          "kind": "alt",
+          "guards": [
+            "Người dùng là Admin",
+            "Người dùng là Chủ trọ",
+            "Người dùng là Người thuê"
+          ]
+        }
+      ],
+      "sha256": {
+        "svg": "fe3e9763aba1d754d248451df9dc6a7e3c043b2483fc5c74b93ecb1fc8285428",
+        "png": "6b5429329b85f53db8637dba1164357e8b03d9a5c8743de96ef22c4a9e690911",
+        "drawio": "48bb3c4130fb247f44ffd0b7788c3ea32da7d9a9578efe6aba08a36c0685c7bc"
+      }
+    },
+    {
+      "id": "SD-02A",
+      "scenario": "SD-02",
+      "file": "sd-02a-create-invite",
+      "width": 1760,
+      "height": 1650,
+      "messages": 18,
+      "fragments": [
+        {
+          "kind": "alt",
+          "guards": [
+            "Email đã đăng ký",
+            "Email chưa đăng ký"
+          ]
+        },
+        {
+          "kind": "alt",
+          "guards": [
+            "Hồ sơ ngoài phạm vi quản lý, đã ngừng sử dụng hoặc đã có tài khoản",
+            "Hồ sơ hợp lệ"
+          ]
+        }
+      ],
+      "sha256": {
+        "svg": "23c09d722a56f41e8264b3ef15b61b1b9ea937ff339aa6fb31239a46a7e4ebbd",
+        "png": "7f37c5844e70e977d38960fdc406d07ef64e7754ef2f3b90fe35df82f0f14131",
+        "drawio": "78db26f737d72ab2ef7921baaf85ce963d3d61cb1b9b0bbb2079ac88a27bd842"
+      }
+    },
+    {
+      "id": "SD-02B",
+      "scenario": "SD-02",
+      "file": "sd-02b-accept-invite",
+      "width": 1760,
+      "height": 2029,
+      "messages": 20,
+      "fragments": [
+        {
+          "kind": "alt",
+          "guards": [
+            "Email đã được đăng ký",
+            "Tài khoản được tạo thành công"
+          ]
+        },
+        {
+          "kind": "alt",
+          "guards": [
+            "Mã mời sai, hết hạn, đã dùng hoặc hồ sơ đã có tài khoản",
+            "Lời mời còn hiệu lực"
+          ]
+        }
+      ],
+      "sha256": {
+        "svg": "343c8060c6e423a3593b1d828adcf7bd0f02307f9cbeaa1b22b1118250bed620",
+        "png": "dc61b690818185df4d57aaacd9148454450f2a7c9492d9119b7af7bb982e999e",
+        "drawio": "3a8ba62a6adf62ee32062eba3d8d7999f7d072814e4cb22a1b50e6a7d9f60aeb"
+      }
+    },
+    {
+      "id": "SD-03A",
+      "scenario": "SD-03",
+      "file": "sd-03a-create-landlord",
+      "width": 1760,
+      "height": 1319,
+      "messages": 13,
+      "fragments": [
+        {
+          "kind": "alt",
+          "guards": [
+            "Email đã được sử dụng",
+            "Tạo thành công"
+          ]
+        }
+      ],
+      "sha256": {
+        "svg": "805cce518aa1a520db0ce103436960f54fdd3c30813224034637084f09dd6435",
+        "png": "e1038f51916999b125a550297f207c4932a42d529da3a4cf2304972592a2848e",
+        "drawio": "9287913197df2e701b3c0b38e28d18a465fadcd6d2a8b01b63fc76c614fb0dbb"
+      }
+    },
+    {
+      "id": "SD-04A",
+      "scenario": "SD-04",
+      "file": "sd-04a-lease-validation",
+      "width": 1760,
+      "height": 1449,
+      "messages": 13,
+      "fragments": [
+        {
+          "kind": "alt",
+          "guards": [
+            "Không tìm thấy hồ sơ người thuê hoặc hồ sơ đã ngừng sử dụng",
+            "Hồ sơ người thuê hợp lệ"
+          ]
+        },
+        {
+          "kind": "alt",
+          "guards": [
+            "Không tìm thấy phòng, phòng đã ngừng sử dụng hoặc khu trọ đã lưu trữ",
+            "Phòng hợp lệ"
+          ]
+        }
+      ],
+      "sha256": {
+        "svg": "e8720b13168fed665dd77a1816f3e1bdda93bbebe1bcc233796263aae8df401b",
+        "png": "7ccd718de8652a8e31dec8bef8d3289ab0fd8b5f3017dfe0097bd178b9507a0f",
+        "drawio": "2c35ac89b0eb1f9b22b4578d60abb8952b9153fe6210dcc7fb5021d744f93f37"
+      }
+    },
+    {
+      "id": "SD-04B",
+      "scenario": "SD-04",
+      "file": "sd-04b-lease-persistence",
+      "width": 1760,
+      "height": 1522,
+      "messages": 14,
+      "fragments": [
+        {
+          "kind": "opt",
+          "guards": [
+            "Tiền cọc > 0"
+          ]
+        },
+        {
+          "kind": "alt",
+          "guards": [
+            "Phòng đã có hợp đồng hiệu lực",
+            "Phòng chưa có hợp đồng hiệu lực"
+          ]
+        }
+      ],
+      "sha256": {
+        "svg": "94d24f56d644d0d0b0180e04887e80d4b987658430551b905a3550a6f79931e3",
+        "png": "03cdea8a6999320a405f32bd12ceda7668e2bd5477dbb1ea8d7f14df7451df4a",
+        "drawio": "7be8404eccacebba085ac49046d843b620e748fcf00d405f99ff8071b5598b86"
+      }
+    },
+    {
+      "id": "SD-05A",
+      "scenario": "SD-05",
+      "file": "sd-05a-end-lease",
+      "width": 1760,
+      "height": 1810,
+      "messages": 17,
+      "fragments": [
+        {
+          "kind": "alt",
+          "guards": [
+            "Không còn hợp đồng hiệu lực của phòng",
+            "Phòng còn hợp đồng hiệu lực khác"
+          ]
+        },
+        {
+          "kind": "alt",
+          "guards": [
+            "Không tìm thấy trong phạm vi",
+            "Tìm thấy hợp đồng"
+          ]
+        }
+      ],
+      "sha256": {
+        "svg": "49f3e8321570f4b61b03967f574ec1a8e1e9ec8a4e9943a01562ff5c23de51c9",
+        "png": "5a787af0f22f38917bba25155f31de05e2cee3743c7863ffe6fcf8521ae4ebfa",
+        "drawio": "41f958f0161f2bfef2ef4f44ae381ffba3840648cce74603ad863cb067777b18"
+      }
+    },
+    {
+      "id": "SD-06A",
+      "scenario": "SD-06",
+      "file": "sd-06a-invoice-validation",
+      "width": 1760,
+      "height": 1369,
+      "messages": 11,
+      "fragments": [
+        {
+          "kind": "alt",
+          "guards": [
+            "Kỳ hoặc chỉ số không hợp lệ",
+            "Dữ liệu hợp lệ"
+          ]
+        },
+        {
+          "kind": "alt",
+          "guards": [
+            "Không tìm thấy hợp đồng hoặc hợp đồng đã hết hiệu lực",
+            "Hợp đồng có hiệu lực"
+          ]
+        }
+      ],
+      "sha256": {
+        "svg": "4f9c145b5fa8f41c61455f0a6fa49e93b7dfc4d44ef17631048d2ff66399a329",
+        "png": "b177af351a792a35b83a3bc9670e1892985265792338c5bd2b513661def00d73",
+        "drawio": "9f3fac6c07a7274ed6b0f4375ec8eaf32057aa2f0aa0cc910d9068056822e1ab"
+      }
+    },
+    {
+      "id": "SD-06B",
+      "scenario": "SD-06",
+      "file": "sd-06b-invoice-persistence",
+      "width": 1760,
+      "height": 1887,
+      "messages": 19,
+      "fragments": [
+        {
+          "kind": "break",
+          "guards": [
+            "Chỉ số của phòng và kỳ đã được ghi"
+          ]
+        },
+        {
+          "kind": "loop",
+          "guards": [
+            "Với mỗi loại chỉ số điện hoặc nước được gửi"
+          ]
+        },
+        {
+          "kind": "alt",
+          "guards": [
+            "Hợp đồng đã có hóa đơn trong kỳ",
+            "Ghi nhận dữ liệu thành công"
+          ]
+        }
+      ],
+      "sha256": {
+        "svg": "e5fe5b11d3c3e37d5c17856191e3e5ff1153c218c49ba759643665c552ac9f53",
+        "png": "6424c178173d46183c8e50d1616d2c9669dae77277b7c6842bd9e0da6f01ae03",
+        "drawio": "71fbaec08a26d3fc6bbe778e984af8eaf61a2d65cfcb6f4df79342095917b5d1"
+      }
+    },
+    {
+      "id": "SD-07A",
+      "scenario": "SD-07",
+      "file": "sd-07a-payment-checks",
+      "width": 1760,
+      "height": 1133,
+      "messages": 10,
+      "fragments": [
+        {
+          "kind": "alt",
+          "guards": [
+            "Không tìm thấy hóa đơn, hóa đơn đã hủy, đã thanh toán đủ hoặc khoản thu vượt số còn phải thu",
+            "Số tiền thanh toán hợp lệ và không vượt số còn phải thu"
+          ]
+        }
+      ],
+      "sha256": {
+        "svg": "253592e3cf243b6831cf60b50968b22b990385b724c2eacfb66463d8aea17af2",
+        "png": "0cbc94523098d2706d4034dce4ae4ff0300e9e4289e75833c41da4d38813d05d",
+        "drawio": "c9e3f2f4af1043a277131cb6f83889b745bb70c88c4a205ddd425dd37d146e20"
+      }
+    },
+    {
+      "id": "SD-07B",
+      "scenario": "SD-07",
+      "file": "sd-07b-payment-status",
+      "width": 1760,
+      "height": 1100,
+      "messages": 9,
+      "fragments": [
+        {
+          "kind": "alt",
+          "guards": [
+            "Tổng tiền đã thanh toán < Tổng tiền hóa đơn",
+            "Tổng tiền đã thanh toán = Tổng tiền hóa đơn"
+          ]
+        }
+      ],
+      "sha256": {
+        "svg": "3a8ce231e7439b5cedceb99ff0d49977eb450b3c4554dcbc3dc602f6f993095e",
+        "png": "b6202813286d6071d6348f8c92e2bdb1db54e6133287b48800d79674b9f62d3c",
+        "drawio": "5980322a6765bb89172e202dea7ed6f071de3f10f1f3eadbdc163f4a8bb1697b"
+      }
+    },
+    {
+      "id": "SD-08A",
+      "scenario": "SD-08",
+      "file": "sd-08a-proof-upload",
+      "width": 1420,
+      "height": 1179,
+      "messages": 9,
+      "fragments": [
+        {
+          "kind": "alt",
+          "guards": [
+            "Không có tệp, loại tệp không được hỗ trợ hoặc tệp vượt giới hạn dung lượng",
+            "Tệp hợp lệ"
+          ]
+        },
+        {
+          "kind": "loop",
+          "guards": [
+            "Mỗi tệp do người thuê chọn"
+          ]
+        },
+        {
+          "kind": "alt",
+          "guards": [
+            "Số tiền không hợp lệ hoặc chưa đính kèm tệp",
+            "Biểu mẫu hợp lệ"
+          ]
+        }
+      ],
+      "sha256": {
+        "svg": "9ed4aa2333095134a851994401b142ba044bef2d9c9f4d0a834793b9f57afe46",
+        "png": "54069ee7e3ed7688cf2e8c945a98a762a2f61860bdbf817617d49693f6d6bbc2",
+        "drawio": "ef9d1e243d403d9b0d69109aaf8beac16e75856fafefbfcecef499b5c4913fe8"
+      }
+    },
+    {
+      "id": "SD-08B",
+      "scenario": "SD-08",
+      "file": "sd-08b-submit-proof",
+      "width": 1760,
+      "height": 1947,
+      "messages": 21,
+      "fragments": [
+        {
+          "kind": "break",
+          "guards": [
+            "Không có hồ sơ Người thuê đang dùng"
+          ]
+        },
+        {
+          "kind": "alt",
+          "guards": [
+            "Số tiền minh chứng vượt số còn phải thu sau khi trừ phần chờ duyệt",
+            "Số tiền trong hạn mức"
+          ]
+        },
+        {
+          "kind": "alt",
+          "guards": [
+            "Hóa đơn không thuộc người thuê, đã hủy hoặc không còn số phải thu",
+            "Hóa đơn còn số phải thu"
+          ]
+        }
+      ],
+      "sha256": {
+        "svg": "2ce39d4081d01862638f4375daad36da4e3254509d07b69750d694d9789cc4d9",
+        "png": "23bc4eece49e79dbb8e88b3ed4041efb100500319ac1712b9b30c6d2d91d62b8",
+        "drawio": "9c307bb35c08f378ebdf946a9e14ec3d5f8cdcdf8f25dedf3a0af4bf5a09ed41"
+      }
+    },
+    {
+      "id": "SD-08C",
+      "scenario": "SD-08",
+      "file": "sd-08c-review-proof",
+      "width": 1760,
+      "height": 1730,
+      "messages": 14,
+      "fragments": [
+        {
+          "kind": "alt",
+          "guards": [
+            "Chủ trọ chọn từ chối",
+            "Chủ trọ chọn chấp thuận"
+          ]
+        },
+        {
+          "kind": "alt",
+          "guards": [
+            "Không tìm thấy minh chứng hoặc minh chứng đã được xét duyệt",
+            "Minh chứng đang chờ duyệt"
+          ]
+        }
+      ],
+      "sha256": {
+        "svg": "6e4c16780dd43ee3b2e26560bf09b4d77fd1c30ea5d733baba8f4cd741e239cd",
+        "png": "d64e364b9c78cc9cd53c1fa9d3e568660c26489b5cdbf06fa2dadbda984d096c",
+        "drawio": "773443b954c788c6fcbb596b83cb3db5a061dbeeb9ec9c7e5102dda66b6cd565"
+      }
+    },
+    {
+      "id": "SD-08D",
+      "scenario": "SD-08",
+      "file": "sd-08d-approve-proof",
+      "width": 1760,
+      "height": 1416,
+      "messages": 10,
+      "fragments": [
+        {
+          "kind": "break",
+          "guards": [
+            "Không tìm thấy hóa đơn, hóa đơn đã hủy, đã thanh toán đủ hoặc minh chứng vượt số còn phải thu"
+          ]
+        },
+        {
+          "kind": "alt",
+          "guards": [
+            "Tổng tiền đã thanh toán < Tổng tiền hóa đơn",
+            "Tổng tiền đã thanh toán = Tổng tiền hóa đơn"
+          ]
+        },
+        {
+          "kind": "alt",
+          "guards": [
+            "Không tìm thấy hóa đơn, hóa đơn đã hủy, đã thanh toán đủ hoặc minh chứng vượt số còn phải thu",
+            "Hóa đơn cho phép thu"
+          ]
+        }
+      ],
+      "sha256": {
+        "svg": "45ea934b4599e380e0e0197d121f1587f77e18d41938d78609fae89dc7e66b02",
+        "png": "799dd5f51bdebcaba220862cd79a2f28e8fb200ea1bab3222a3218be188deaa9",
+        "drawio": "e7e817bc3509728180b5c90d7ba9aa79983b1c685dacd865534f5bde82d65a4a"
+      }
+    },
+    {
+      "id": "SD-09A",
+      "scenario": "SD-09",
+      "file": "sd-09a-request-maintenance",
+      "width": 1760,
+      "height": 1614,
+      "messages": 16,
+      "fragments": [
+        {
+          "kind": "opt",
+          "guards": [
+            "Người thuê đính kèm ảnh"
+          ]
+        },
+        {
+          "kind": "break",
+          "guards": [
+            "Không có hồ sơ Người thuê đang dùng"
+          ]
+        },
+        {
+          "kind": "alt",
+          "guards": [
+            "Không có hợp đồng hiệu lực",
+            "Có hợp đồng hiệu lực"
+          ]
+        }
+      ],
+      "sha256": {
+        "svg": "37dd8a8c17e1bd52cbb1d62a039a606d52f201dae6cf74a7d40a678bc08f92ff",
+        "png": "609f8a1e3bbdc4b6e2e6fa6847144472e02b9e087ee4014059de7a1a7243247b",
+        "drawio": "667974655788e26ef004e024eee5674fe46fd70f614cc1d324e6f3ce893ec07a"
+      }
+    },
+    {
+      "id": "SD-09B",
+      "scenario": "SD-09",
+      "file": "sd-09b-process-maintenance",
+      "width": 1760,
+      "height": 1686,
+      "messages": 15,
+      "fragments": [
+        {
+          "kind": "alt",
+          "guards": [
+            "Chuyển sang Đang xử lý và chưa ghi thời điểm bắt đầu",
+            "Chuyển sang Hoàn tất và chưa ghi thời điểm hoàn tất",
+            "Trạng thái hợp lệ khác hoặc đã có mốc"
+          ]
+        },
+        {
+          "kind": "alt",
+          "guards": [
+            "Yêu cầu ngoài phạm vi quản lý hoặc trạng thái không hợp lệ",
+            "Yêu cầu và trạng thái hợp lệ"
+          ]
+        }
+      ],
+      "sha256": {
+        "svg": "ec5dc1d40b451fd212af54ff8636fd53086ee6555a8be4fe101b502ad15ab547",
+        "png": "02fcbbde2d14143c8f92646f21742b914594ba731456dd7dcfbb05f44fed6c60",
+        "drawio": "371264f021207f346a13506998debef56e0fe5d4c174c10f99e7907d4ca22cd3"
+      }
+    },
+    {
+      "id": "SD-09C",
+      "scenario": "SD-09",
+      "file": "sd-09c-complete-maintenance",
+      "width": 1760,
+      "height": 1719,
+      "messages": 16,
+      "fragments": [
+        {
+          "kind": "opt",
+          "guards": [
+            "Chọn ghi khoản chi, chi phí > 0 và chưa có khoản chi liên kết"
+          ]
+        },
+        {
+          "kind": "alt",
+          "guards": [
+            "Không tìm thấy yêu cầu hoặc chi phí hay ngày hoàn tất không hợp lệ",
+            "Dữ liệu hợp lệ"
+          ]
+        }
+      ],
+      "sha256": {
+        "svg": "c44826866dd79c13933255949b33496a0c1654ae0a9f27a24d6ded7b02935822",
+        "png": "496aae2d4673202e8205c01a2e1c71b70ba8a2db9dfa96d110b62be0edc50ea8",
+        "drawio": "03883ffec36b6441c7d3163d92a06f162ec014a9729d4f1e53f5d6db76b2d58b"
+      }
+    },
+    {
+      "id": "SD-10A",
+      "scenario": "SD-10",
+      "file": "sd-10a-monthly-report",
+      "width": 1760,
+      "height": 1577,
+      "messages": 15,
+      "fragments": [
+        {
+          "kind": "break",
+          "guards": [
+            "Khu không thuộc quyền hoặc đã lưu trữ"
+          ]
+        },
+        {
+          "kind": "opt",
+          "guards": [
+            "Có chọn khu trọ riêng"
+          ]
+        },
+        {
+          "kind": "alt",
+          "guards": [
+            "Kỳ có dữ liệu tài chính",
+            "Không có phát sinh trong kỳ"
+          ]
+        }
+      ],
+      "sha256": {
+        "svg": "68f8b2d104a356d8b865cbe5630499e36679a6281329de4cfe208cde53e6ca74",
+        "png": "edea4efee866b6978a512b1bf492877471b2deb49bdacbe1339ebf65884b7941",
+        "drawio": "4d5a1d813155fb4948cd983814490db99f9bc1df29227fdf64ff836b557b3937"
+      }
+    },
+    {
+      "id": "SD-10B",
+      "scenario": "SD-10",
+      "file": "sd-10b-export-csv",
+      "width": 1760,
+      "height": 1381,
+      "messages": 11,
+      "fragments": [
+        {
+          "kind": "loop",
+          "guards": [
+            "Với mỗi ô CSV cần định dạng ký tự đặc biệt"
+          ]
+        },
+        {
+          "kind": "alt",
+          "guards": [
+            "Tổng hợp báo cáo thất bại",
+            "Tổng hợp thành công"
+          ]
+        }
+      ],
+      "sha256": {
+        "svg": "14799b2de4c5eeeb33aec4cbef2aebdf948babf829cdb914f7389b5bd518e95c",
+        "png": "03e5427d85fd15a6903a5a89a9b19ca4cac6ab04fef4e71586b9e6b7563a7517",
+        "drawio": "08269b083703a2287411c912511a3c5a3de01c76fe08d19ce6ab10b3a9bbb901"
+      }
+    }
+  ]
+}

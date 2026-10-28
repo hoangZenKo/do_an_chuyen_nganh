@@ -1,0 +1,34 @@
+@startuml
+hide empty methods
+skinparam classAttributeIconSize 0
+skinparam shadowing false
+skinparam defaultFontName Arial
+title CD-04C Lập hóa đơn định kỳ
+class BillingAutomation {
+  id: String {id}
+  isEnabled: Boolean
+  invoiceDay: Int
+  dueDay: Int
+  lastRunMonth: DateTime [0..1]
+  lastRunAt: DateTime [0..1]
+}
+class User <<reference>> {
+  id: String {id}
+  fullName: String
+}
+class Property <<reference>> {
+  id: String {id}
+  name: String
+}
+BillingAutomation "0..*\nbillingAutomations" -- "1\nlandlord" User
+BillingAutomation "0..1\nbillingAutomation" -- "1\nproperty" Property
+note right of BillingAutomation
+Cấu hình theo khu trọ
+Property có tối đa một cấu hình.
+Lưu cấu hình ≠ đã chạy lịch.
+Vận hành lịch cần được xác nhận.
+end note
+legend bottom
+Đường liền: association. <<IDRef>>: chỉ tham chiếu bằng mã, không phải association.
+endlegend
+@enduml

@@ -1,0 +1,21 @@
+digraph G {
+graph [bgcolor="white", rankdir=LR, nodesep=0.30, ranksep=0.65, pad=0.2, splines=polyline];
+node [fontname="Times New Roman", fontsize=17, color="black", fontcolor="black", style="filled", fillcolor="white", penwidth=1.1];
+edge [fontname="Times New Roman", fontsize=14, color="black", arrowsize=0.7, penwidth=0.9];
+actor0 [shape=box,label="«actor»\nAdmin có capability"];
+actor1 [shape=box,label="«actor»\nChủ trọ"];
+subgraph cluster_system { label="Rental Room Management · Hỗ trợ và quản trị vận hành";fontname="Times New Roman";fontsize=18;color="black";
+u0 [shape=ellipse,label="UC-SUP-01\nTạo và xử lý hồ sơ hỗ trợ nền\ntảng",margin="0.12,0.08"];
+u1 [shape=ellipse,label="UC-SUP-02\nPhân công tự động SLA và\nescalation hỗ trợ",margin="0.12,0.08"];
+u2 [shape=ellipse,label="UC-SUP-03\nQuản lý tệp mẫu trả lời và bộ\nlọc hỗ trợ",margin="0.12,0.08"];
+u3 [shape=ellipse,label="UC-SUP-04\nQuản lý trung tâm thông báo\nAdmin",margin="0.12,0.08"];
+u4 [shape=ellipse,label="UC-SUP-05\nGiám sát hàng đợi sự cố và\nphục hồi worker",margin="0.12,0.08"];
+u5 [shape=ellipse,label="UC-SUP-06\nHỏi trợ lý AI theo phạm vi\nchủ trọ",margin="0.12,0.08"];
+}
+actor0 -> u0 [arrowhead=none];
+actor0 -> u1 [arrowhead=none];
+actor0 -> u2 [arrowhead=none];
+actor0 -> u3 [arrowhead=none];
+actor0 -> u4 [arrowhead=none];
+actor1 -> u5 [arrowhead=none];
+}

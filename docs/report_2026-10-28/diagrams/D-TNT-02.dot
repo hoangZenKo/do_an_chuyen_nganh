@@ -1,0 +1,28 @@
+digraph G {
+graph [bgcolor="white", rankdir=LR, nodesep=0.30, ranksep=0.65, pad=0.2, splines=polyline];
+node [fontname="Times New Roman", fontsize=17, color="black", fontcolor="black", style="filled", fillcolor="white", penwidth=1.1];
+edge [fontname="Times New Roman", fontsize=14, color="black", arrowsize=0.7, penwidth=0.9];
+actor0 [shape=box,label="«actor»\nChủ trọ"];
+actor1 [shape=box,label="«actor»\nStaff đúng quyền/scope"];
+subgraph cluster_system { label="Rental Room Management · Hồ sơ người thuê và hợp đồng";fontname="Times New Roman";fontsize=18;color="black";
+u0 [shape=ellipse,label="UC-TNT-05\nTạo hợp đồng thuê và ghi nhận\ncọc ban đầu",margin="0.12,0.08"];
+u1 [shape=ellipse,label="UC-TNT-06.1\nCập nhật điều khoản hợp đồng",margin="0.12,0.08"];
+u2 [shape=ellipse,label="UC-TNT-06.2\nGia hạn hợp đồng thuê",margin="0.12,0.08"];
+u3 [shape=ellipse,label="UC-TNT-06.3\nKết thúc hợp đồng thuê",margin="0.12,0.08"];
+u4 [shape=ellipse,label="UC-TNT-07\nTra cứu và ghi giao dịch tiền\ncọc",margin="0.12,0.08"];
+u5 [shape=ellipse,label="UC-TNT-08\nXem trước và xác nhận quyết\ntoán trả phòng",margin="0.12,0.08"];
+u6 [shape=ellipse,label="UC-TNT-09\nGhi nhận hoàn tiền quyết toán",margin="0.12,0.08"];
+}
+actor0 -> u0 [arrowhead=none];
+actor1 -> u0 [arrowhead=none];
+actor0 -> u1 [arrowhead=none];
+actor1 -> u1 [arrowhead=none];
+actor0 -> u2 [arrowhead=none];
+actor1 -> u2 [arrowhead=none];
+actor0 -> u3 [arrowhead=none];
+actor1 -> u3 [arrowhead=none];
+actor0 -> u4 [arrowhead=none];
+actor1 -> u4 [arrowhead=none];
+actor0 -> u5 [arrowhead=none];
+actor0 -> u6 [arrowhead=none];
+}

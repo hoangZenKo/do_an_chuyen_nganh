@@ -1,0 +1,30 @@
+digraph G {
+graph [bgcolor="white", rankdir=LR, nodesep=0.30, ranksep=0.65, pad=0.2, splines=polyline];
+node [fontname="Times New Roman", fontsize=17, color="black", fontcolor="black", style="filled", fillcolor="white", penwidth=1.1];
+edge [fontname="Times New Roman", fontsize=14, color="black", arrowsize=0.7, penwidth=0.9];
+actor0 [shape=box,label="«actor»\nChủ trọ"];
+actor1 [shape=box,label="«actor»\nStaff đúng quyền/scope"];
+subgraph cluster_system { label="Rental Room Management · Hóa đơn và sổ thu chi";fontname="Times New Roman";fontsize=18;color="black";
+u0 [shape=ellipse,label="UC-BIL-01\nGhi chỉ số điện nước theo kỳ",margin="0.12,0.08"];
+u1 [shape=ellipse,label="UC-BIL-02\nXem trước và lập hóa đơn một\nhợp đồng",margin="0.12,0.08"];
+u2 [shape=ellipse,label="UC-BIL-03\nLập hóa đơn hàng loạt và kiểm\ntra trước",margin="0.12,0.08"];
+u3 [shape=ellipse,label="UC-BIL-04\nTra cứu hóa đơn và tuổi nợ",margin="0.12,0.08"];
+u4 [shape=ellipse,label="UC-BIL-05\nSửa hạn thanh toán hoặc ghi\nchú hóa đơn",margin="0.12,0.08"];
+u5 [shape=ellipse,label="UC-BIL-06\nThay thế hóa đơn chưa có lịch\nsử thanh toán",margin="0.12,0.08"];
+u6 [shape=ellipse,label="UC-BIL-07\nPhát hành credit note hoặc\ndebit note",margin="0.12,0.08"];
+}
+actor0 -> u0 [arrowhead=none];
+actor1 -> u0 [arrowhead=none];
+actor0 -> u1 [arrowhead=none];
+actor1 -> u1 [arrowhead=none];
+actor0 -> u2 [arrowhead=none];
+actor1 -> u2 [arrowhead=none];
+actor0 -> u3 [arrowhead=none];
+actor1 -> u3 [arrowhead=none];
+actor0 -> u4 [arrowhead=none];
+actor1 -> u4 [arrowhead=none];
+actor0 -> u5 [arrowhead=none];
+actor1 -> u5 [arrowhead=none];
+actor0 -> u6 [arrowhead=none];
+actor1 -> u6 [arrowhead=none];
+}

@@ -1,0 +1,115 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2400" height="1500" viewBox="0 0 2400 1500" role="img" aria-labelledby="title desc">
+<title id="title">Sơ đồ Use Case tổng quan - Hệ thống quản lý nhà trọ</title>
+<desc id="desc">Sơ đồ Use Case tổng quan theo UML học thuật, chia nhóm nghiệp vụ và dùng straight connectors.</desc>
+<defs>
+  <marker id="open-arrow" markerWidth="12" markerHeight="12" refX="11" refY="6" orient="auto" markerUnits="strokeWidth"><path d="M 1 1 L 11 6 L 1 11" fill="none" stroke="#000000" stroke-width="1"/></marker>
+  <style>.assoc{stroke:#000;stroke-width:1;fill:none}.dep{stroke:#000;stroke-width:1;fill:none;stroke-dasharray:7 5;marker-end:url(#open-arrow)}text{fill:#000}</style>
+</defs>
+<rect width="2400" height="1500" fill="#ffffff"/>
+<rect x="260" y="50" width="1880" height="1380" fill="#ffffff" stroke="#000000" stroke-width="1"/>
+<text x="1200.0" y="88" font-family="Times New Roman, Times, serif" font-size="20" font-weight="bold" text-anchor="middle">Hệ thống quản lý nhà trọ</text>
+<rect x="330" y="120" width="620" height="330" fill="#ffffff" stroke="#000000" stroke-width="1"/>
+<text x="640.0" y="147" font-family="Times New Roman, Times, serif" font-size="16" font-weight="bold" text-anchor="middle">Quản trị hệ thống</text>
+<rect x="1010" y="120" width="380" height="180" fill="#ffffff" stroke="#000000" stroke-width="1"/>
+<text x="1200.0" y="147" font-family="Times New Roman, Times, serif" font-size="16" font-weight="bold" text-anchor="middle">Xác thực</text>
+<rect x="330" y="520" width="620" height="550" fill="#ffffff" stroke="#000000" stroke-width="1"/>
+<text x="640.0" y="547" font-family="Times New Roman, Times, serif" font-size="16" font-weight="bold" text-anchor="middle">Quản lý vận hành nhà trọ</text>
+<rect x="990" y="520" width="520" height="550" fill="#ffffff" stroke="#000000" stroke-width="1"/>
+<text x="1250.0" y="547" font-family="Times New Roman, Times, serif" font-size="16" font-weight="bold" text-anchor="middle">Tài chính và hóa đơn</text>
+<rect x="1550" y="300" width="520" height="640" fill="#ffffff" stroke="#000000" stroke-width="1"/>
+<text x="1810.0" y="327" font-family="Times New Roman, Times, serif" font-size="16" font-weight="bold" text-anchor="middle">Cổng người thuê</text>
+<rect x="990" y="1120" width="1080" height="270" fill="#ffffff" stroke="#000000" stroke-width="1"/>
+<text x="1530.0" y="1147" font-family="Times New Roman, Times, serif" font-size="16" font-weight="bold" text-anchor="middle">Bảo trì và thông báo</text>
+<line class="assoc" x1="150.0" y1="240.0" x2="1110.0" y2="225.0"/>
+<line class="assoc" x1="150.0" y1="240.0" x2="525.0" y2="219.0"/>
+<line class="assoc" x1="150.0" y1="240.0" x2="525.0" y2="319.0"/>
+<line class="assoc" x1="150.0" y1="240.0" x2="525.0" y2="419.0"/>
+<line class="assoc" x1="150.0" y1="825.0" x2="1110.0" y2="225.0"/>
+<line class="assoc" x1="150.0" y1="825.0" x2="525.0" y2="625.0"/>
+<line class="assoc" x1="150.0" y1="825.0" x2="525.0" y2="705.0"/>
+<line class="assoc" x1="150.0" y1="825.0" x2="525.0" y2="789.0"/>
+<line class="assoc" x1="150.0" y1="825.0" x2="525.0" y2="879.0"/>
+<line class="assoc" x1="150.0" y1="825.0" x2="525.0" y2="969.0"/>
+<line class="assoc" x1="150.0" y1="825.0" x2="1135.0" y2="629.0"/>
+<line class="assoc" x1="150.0" y1="825.0" x2="1135.0" y2="715.0"/>
+<line class="assoc" x1="150.0" y1="825.0" x2="1125.0" y2="802.0"/>
+<line class="assoc" x1="150.0" y1="825.0" x2="1130.0" y2="899.0"/>
+<line class="assoc" x1="150.0" y1="825.0" x2="1135.0" y2="989.0"/>
+<line class="assoc" x1="150.0" y1="825.0" x2="1100.0" y2="1224.0"/>
+<line class="assoc" x1="150.0" y1="825.0" x2="1100.0" y2="1319.0"/>
+<line class="assoc" x1="2250.0" y1="780.0" x2="1290.0" y2="225.0"/>
+<line class="assoc" x1="2250.0" y1="780.0" x2="1935.0" y2="414.0"/>
+<line class="assoc" x1="2250.0" y1="780.0" x2="1935.0" y2="524.0"/>
+<line class="assoc" x1="2250.0" y1="780.0" x2="1922.0" y2="630.0"/>
+<line class="assoc" x1="2250.0" y1="780.0" x2="1922.0" y2="737.0"/>
+<line class="assoc" x1="2250.0" y1="780.0" x2="1935.0" y2="844.0"/>
+<line class="assoc" x1="2250.0" y1="780.0" x2="1945.0" y2="1224.0"/>
+<line class="assoc" x1="2250.0" y1="780.0" x2="1932.0" y2="1318.0"/>
+<line class="dep" x1="1812.5" y1="810.0" x2="1812.0" y2="769.0"/>
+<rect x="1840.5" y="779.5" width="88" height="18" fill="#ffffff" stroke="none"/>
+<text x="1884.5" y="793.5" font-family="Times New Roman, Times, serif" font-size="13" text-anchor="middle">&lt;&lt;extend&gt;&gt;</text>
+<circle cx="110.0" cy="200" r="18" fill="#ffffff" stroke="#000000" stroke-width="1.4"/>
+<line x1="110.0" y1="218" x2="110.0" y2="266" stroke="#000000" stroke-width="1.4"/>
+<line x1="76.0" y1="238" x2="144.0" y2="238" stroke="#000000" stroke-width="1.4"/>
+<line x1="110.0" y1="266" x2="82.0" y2="306" stroke="#000000" stroke-width="1.4"/>
+<line x1="110.0" y1="266" x2="138.0" y2="306" stroke="#000000" stroke-width="1.4"/>
+<text x="110.0" y="333" font-family="Times New Roman, Times, serif" font-size="16" text-anchor="middle">Admin hệ thống</text>
+<circle cx="110.0" cy="785" r="18" fill="#ffffff" stroke="#000000" stroke-width="1.4"/>
+<line x1="110.0" y1="803" x2="110.0" y2="851" stroke="#000000" stroke-width="1.4"/>
+<line x1="76.0" y1="823" x2="144.0" y2="823" stroke="#000000" stroke-width="1.4"/>
+<line x1="110.0" y1="851" x2="82.0" y2="891" stroke="#000000" stroke-width="1.4"/>
+<line x1="110.0" y1="851" x2="138.0" y2="891" stroke="#000000" stroke-width="1.4"/>
+<text x="110.0" y="918" font-family="Times New Roman, Times, serif" font-size="16" text-anchor="middle">Chủ trọ</text>
+<circle cx="2290.0" cy="740" r="18" fill="#ffffff" stroke="#000000" stroke-width="1.4"/>
+<line x1="2290.0" y1="758" x2="2290.0" y2="806" stroke="#000000" stroke-width="1.4"/>
+<line x1="2256.0" y1="778" x2="2324.0" y2="778" stroke="#000000" stroke-width="1.4"/>
+<line x1="2290.0" y1="806" x2="2262.0" y2="846" stroke="#000000" stroke-width="1.4"/>
+<line x1="2290.0" y1="806" x2="2318.0" y2="846" stroke="#000000" stroke-width="1.4"/>
+<text x="2290.0" y="873" font-family="Times New Roman, Times, serif" font-size="16" text-anchor="middle">Người thuê</text>
+<ellipse cx="640.0" cy="219.0" rx="115.0" ry="34.0" fill="#ffffff" stroke="#000000" stroke-width="1"/>
+<text x="640.0" y="215.0" font-family="Times New Roman, Times, serif" font-size="15" text-anchor="middle"><tspan x="640.0" dy="0">Quản lý tài khoản</tspan><tspan x="640.0" dy="18">chủ trọ</tspan></text>
+<ellipse cx="640.0" cy="319.0" rx="115.0" ry="34.0" fill="#ffffff" stroke="#000000" stroke-width="1"/>
+<text x="640.0" y="315.0" font-family="Times New Roman, Times, serif" font-size="15" text-anchor="middle"><tspan x="640.0" dy="0">Quản lý khu trọ</tspan><tspan x="640.0" dy="18">toàn hệ thống</tspan></text>
+<ellipse cx="640.0" cy="419.0" rx="115.0" ry="34.0" fill="#ffffff" stroke="#000000" stroke-width="1"/>
+<text x="640.0" y="415.0" font-family="Times New Roman, Times, serif" font-size="15" text-anchor="middle"><tspan x="640.0" dy="0">Xem tổng quan</tspan><tspan x="640.0" dy="18">hệ thống</tspan></text>
+<ellipse cx="1200.0" cy="225.0" rx="90.0" ry="30.0" fill="#ffffff" stroke="#000000" stroke-width="1"/>
+<text x="1200.0" y="230.0" font-family="Times New Roman, Times, serif" font-size="15" text-anchor="middle">Đăng nhập</text>
+<ellipse cx="640.0" cy="625.0" rx="115.0" ry="30.0" fill="#ffffff" stroke="#000000" stroke-width="1"/>
+<text x="640.0" y="630.0" font-family="Times New Roman, Times, serif" font-size="15" text-anchor="middle">Quản lý khu trọ</text>
+<ellipse cx="640.0" cy="705.0" rx="115.0" ry="30.0" fill="#ffffff" stroke="#000000" stroke-width="1"/>
+<text x="640.0" y="710.0" font-family="Times New Roman, Times, serif" font-size="15" text-anchor="middle">Quản lý phòng</text>
+<ellipse cx="640.0" cy="789.0" rx="115.0" ry="34.0" fill="#ffffff" stroke="#000000" stroke-width="1"/>
+<text x="640.0" y="785.0" font-family="Times New Roman, Times, serif" font-size="15" text-anchor="middle"><tspan x="640.0" dy="0">Quản lý hồ sơ</tspan><tspan x="640.0" dy="18">người thuê</tspan></text>
+<ellipse cx="640.0" cy="879.0" rx="115.0" ry="34.0" fill="#ffffff" stroke="#000000" stroke-width="1"/>
+<text x="640.0" y="875.0" font-family="Times New Roman, Times, serif" font-size="15" text-anchor="middle"><tspan x="640.0" dy="0">Quản lý hợp đồng</tspan><tspan x="640.0" dy="18">thuê</tspan></text>
+<ellipse cx="640.0" cy="969.0" rx="115.0" ry="34.0" fill="#ffffff" stroke="#000000" stroke-width="1"/>
+<text x="640.0" y="965.0" font-family="Times New Roman, Times, serif" font-size="15" text-anchor="middle"><tspan x="640.0" dy="0">Phân quyền</tspan><tspan x="640.0" dy="18">nhân viên</tspan></text>
+<ellipse cx="1250.0" cy="629.0" rx="115.0" ry="34.0" fill="#ffffff" stroke="#000000" stroke-width="1"/>
+<text x="1250.0" y="625.0" font-family="Times New Roman, Times, serif" font-size="15" text-anchor="middle"><tspan x="1250.0" dy="0">Ghi chỉ số</tspan><tspan x="1250.0" dy="18">điện nước</tspan></text>
+<ellipse cx="1250.0" cy="715.0" rx="115.0" ry="30.0" fill="#ffffff" stroke="#000000" stroke-width="1"/>
+<text x="1250.0" y="720.0" font-family="Times New Roman, Times, serif" font-size="15" text-anchor="middle">Lập hóa đơn</text>
+<ellipse cx="1250.0" cy="802.0" rx="125.0" ry="37.0" fill="#ffffff" stroke="#000000" stroke-width="1"/>
+<text x="1250.0" y="798.0" font-family="Times New Roman, Times, serif" font-size="15" text-anchor="middle"><tspan x="1250.0" dy="0">Theo dõi, xác nhận</tspan><tspan x="1250.0" dy="18">thanh toán</tspan></text>
+<ellipse cx="1250.0" cy="899.0" rx="120.0" ry="34.0" fill="#ffffff" stroke="#000000" stroke-width="1"/>
+<text x="1250.0" y="895.0" font-family="Times New Roman, Times, serif" font-size="15" text-anchor="middle"><tspan x="1250.0" dy="0">Ghi nhận chi phí</tspan><tspan x="1250.0" dy="18">vận hành</tspan></text>
+<ellipse cx="1250.0" cy="989.0" rx="115.0" ry="34.0" fill="#ffffff" stroke="#000000" stroke-width="1"/>
+<text x="1250.0" y="985.0" font-family="Times New Roman, Times, serif" font-size="15" text-anchor="middle"><tspan x="1250.0" dy="0">Xem báo cáo</tspan><tspan x="1250.0" dy="18">thống kê</tspan></text>
+<ellipse cx="1812.5" cy="414.0" rx="122.5" ry="34.0" fill="#ffffff" stroke="#000000" stroke-width="1"/>
+<text x="1812.5" y="410.0" font-family="Times New Roman, Times, serif" font-size="15" text-anchor="middle"><tspan x="1812.5" dy="0">Xem thông tin</tspan><tspan x="1812.5" dy="18">thuê phòng</tspan></text>
+<ellipse cx="1812.5" cy="524.0" rx="122.5" ry="34.0" fill="#ffffff" stroke="#000000" stroke-width="1"/>
+<text x="1812.5" y="520.0" font-family="Times New Roman, Times, serif" font-size="15" text-anchor="middle"><tspan x="1812.5" dy="0">Xem hợp đồng</tspan><tspan x="1812.5" dy="18">thuê</tspan></text>
+<ellipse cx="1812.0" cy="630.0" rx="110.0" ry="30.0" fill="#ffffff" stroke="#000000" stroke-width="1"/>
+<text x="1812.0" y="635.0" font-family="Times New Roman, Times, serif" font-size="15" text-anchor="middle">Xem hóa đơn</text>
+<ellipse cx="1812.0" cy="737.0" rx="110.0" ry="32.0" fill="#ffffff" stroke="#000000" stroke-width="1"/>
+<text x="1812.0" y="733.0" font-family="Times New Roman, Times, serif" font-size="15" text-anchor="middle"><tspan x="1812.0" dy="0">Thanh toán</tspan><tspan x="1812.0" dy="18">hóa đơn</tspan></text>
+<ellipse cx="1812.5" cy="844.0" rx="122.5" ry="34.0" fill="#ffffff" stroke="#000000" stroke-width="1"/>
+<text x="1812.5" y="840.0" font-family="Times New Roman, Times, serif" font-size="15" text-anchor="middle"><tspan x="1812.5" dy="0">Gửi minh chứng</tspan><tspan x="1812.5" dy="18">thanh toán</tspan></text>
+<ellipse cx="1220.0" cy="1224.0" rx="120.0" ry="34.0" fill="#ffffff" stroke="#000000" stroke-width="1"/>
+<text x="1220.0" y="1220.0" font-family="Times New Roman, Times, serif" font-size="15" text-anchor="middle"><tspan x="1220.0" dy="0">Xử lý yêu cầu</tspan><tspan x="1220.0" dy="18">bảo trì</tspan></text>
+<ellipse cx="1220.0" cy="1319.0" rx="120.0" ry="34.0" fill="#ffffff" stroke="#000000" stroke-width="1"/>
+<text x="1220.0" y="1315.0" font-family="Times New Roman, Times, serif" font-size="15" text-anchor="middle"><tspan x="1220.0" dy="0">Gửi thông báo</tspan><tspan x="1220.0" dy="18">nhắc hạn</tspan></text>
+<ellipse cx="1822.5" cy="1224.0" rx="122.5" ry="34.0" fill="#ffffff" stroke="#000000" stroke-width="1"/>
+<text x="1822.5" y="1220.0" font-family="Times New Roman, Times, serif" font-size="15" text-anchor="middle"><tspan x="1822.5" dy="0">Gửi yêu cầu</tspan><tspan x="1822.5" dy="18">bảo trì</tspan></text>
+<ellipse cx="1822.0" cy="1318.0" rx="110.0" ry="30.0" fill="#ffffff" stroke="#000000" stroke-width="1"/>
+<text x="1822.0" y="1323.0" font-family="Times New Roman, Times, serif" font-size="15" text-anchor="middle">Xem thông báo</text>
+</svg>

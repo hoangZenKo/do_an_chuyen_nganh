@@ -1,0 +1,22 @@
+digraph G {
+graph [bgcolor="white", rankdir=LR, nodesep=0.30, ranksep=0.65, pad=0.2, splines=polyline];
+node [fontname="Times New Roman", fontsize=17, color="black", fontcolor="black", style="filled", fillcolor="white", penwidth=1.1];
+edge [fontname="Times New Roman", fontsize=14, color="black", arrowsize=0.7, penwidth=0.9];
+actor0 [shape=box,label="«actor»\nAdmin có capability"];
+subgraph cluster_system { label="Rental Room Management · Quản trị và quản lý nền tảng";fontname="Times New Roman";fontsize=18;color="black";
+u0 [shape=ellipse,label="UC-ADM-01\nXem tổng quan quản trị và\nphân tích nền tảng",margin="0.12,0.08"];
+u1 [shape=ellipse,label="UC-ADM-02\nTra cứu và xem chi tiết tài\nkhoản nền tảng",margin="0.12,0.08"];
+u2 [shape=ellipse,label="UC-ADM-03.1\nTạo hoặc mời tài khoản chủ\ntrọ",margin="0.12,0.08"];
+u3 [shape=ellipse,label="UC-ADM-03.2\nCập nhật hồ sơ tài khoản chủ\ntrọ",margin="0.12,0.08"];
+u4 [shape=ellipse,label="UC-ADM-04.1\nĐình chỉ tài khoản và vô hiệu\nphiên",margin="0.12,0.08"];
+u5 [shape=ellipse,label="UC-ADM-04.2\nKhôi phục tài khoản bị đình\nchỉ",margin="0.12,0.08"];
+u6 [shape=ellipse,label="UC-ADM-04.3\nThu hồi các phiên truy cập\ncủa tài khoản",margin="0.12,0.08"];
+}
+actor0 -> u0 [arrowhead=none];
+actor0 -> u1 [arrowhead=none];
+actor0 -> u2 [arrowhead=none];
+actor0 -> u3 [arrowhead=none];
+actor0 -> u4 [arrowhead=none];
+actor0 -> u5 [arrowhead=none];
+actor0 -> u6 [arrowhead=none];
+}

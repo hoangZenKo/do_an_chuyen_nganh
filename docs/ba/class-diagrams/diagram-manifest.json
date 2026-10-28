@@ -1,0 +1,5645 @@
+[
+  {
+    "id": "CD-00",
+    "title": "Tổng quan các lớp nghiệp vụ",
+    "filename": "cd-00",
+    "width": 1460,
+    "height": 880,
+    "nodes": [
+      {
+        "id": "User",
+        "title": "User",
+        "lines": [
+          "id: String {id}",
+          "fullName: String"
+        ],
+        "fields": [
+          "id",
+          "fullName"
+        ],
+        "x": 40,
+        "y": 120,
+        "width": 270,
+        "height": 110,
+        "header": 44,
+        "reference": false,
+        "object": false
+      },
+      {
+        "id": "Property",
+        "title": "Property",
+        "lines": [
+          "id: String {id}",
+          "name: String"
+        ],
+        "fields": [
+          "id",
+          "name"
+        ],
+        "x": 410,
+        "y": 120,
+        "width": 270,
+        "height": 110,
+        "header": 44,
+        "reference": false,
+        "object": false
+      },
+      {
+        "id": "Room",
+        "title": "Room",
+        "lines": [
+          "id: String {id}",
+          "name: String"
+        ],
+        "fields": [
+          "id",
+          "name"
+        ],
+        "x": 780,
+        "y": 120,
+        "width": 270,
+        "height": 110,
+        "header": 44,
+        "reference": false,
+        "object": false
+      },
+      {
+        "id": "MeterReading",
+        "title": "MeterReading",
+        "lines": [
+          "id: String {id}",
+          "utilityType: UtilityType"
+        ],
+        "fields": [
+          "id",
+          "utilityType"
+        ],
+        "x": 1150,
+        "y": 120,
+        "width": 270,
+        "height": 110,
+        "header": 44,
+        "reference": false,
+        "object": false
+      },
+      {
+        "id": "Tenant",
+        "title": "Tenant",
+        "lines": [
+          "id: String {id}",
+          "fullName: String"
+        ],
+        "fields": [
+          "id",
+          "fullName"
+        ],
+        "x": 40,
+        "y": 300,
+        "width": 270,
+        "height": 110,
+        "header": 44,
+        "reference": false,
+        "object": false
+      },
+      {
+        "id": "Lease",
+        "title": "Lease",
+        "lines": [
+          "id: String {id}",
+          "startDate: DateTime"
+        ],
+        "fields": [
+          "id",
+          "startDate"
+        ],
+        "x": 410,
+        "y": 300,
+        "width": 270,
+        "height": 110,
+        "header": 44,
+        "reference": false,
+        "object": false
+      },
+      {
+        "id": "Invoice",
+        "title": "Invoice",
+        "lines": [
+          "id: String {id}",
+          "billingMonth: DateTime"
+        ],
+        "fields": [
+          "id",
+          "billingMonth"
+        ],
+        "x": 780,
+        "y": 300,
+        "width": 270,
+        "height": 110,
+        "header": 44,
+        "reference": false,
+        "object": false
+      },
+      {
+        "id": "Payment",
+        "title": "Payment",
+        "lines": [
+          "id: String {id}",
+          "amount: Int"
+        ],
+        "fields": [
+          "id",
+          "amount"
+        ],
+        "x": 1150,
+        "y": 300,
+        "width": 270,
+        "height": 110,
+        "header": 44,
+        "reference": false,
+        "object": false
+      },
+      {
+        "id": "DepositTransaction",
+        "title": "DepositTransaction",
+        "lines": [
+          "id: String {id}",
+          "type: DepositTransactionType"
+        ],
+        "fields": [
+          "id",
+          "type"
+        ],
+        "x": 40,
+        "y": 480,
+        "width": 270,
+        "height": 110,
+        "header": 44,
+        "reference": false,
+        "object": false
+      },
+      {
+        "id": "MaintenanceTicket",
+        "title": "MaintenanceTicket",
+        "lines": [
+          "id: String {id}",
+          "title: String"
+        ],
+        "fields": [
+          "id",
+          "title"
+        ],
+        "x": 410,
+        "y": 480,
+        "width": 270,
+        "height": 110,
+        "header": 44,
+        "reference": false,
+        "object": false
+      },
+      {
+        "id": "Expense",
+        "title": "Expense",
+        "lines": [
+          "id: String {id}",
+          "category: ExpenseCategory"
+        ],
+        "fields": [
+          "id",
+          "category"
+        ],
+        "x": 780,
+        "y": 480,
+        "width": 270,
+        "height": 110,
+        "header": 44,
+        "reference": false,
+        "object": false
+      },
+      {
+        "id": "PaymentProof",
+        "title": "PaymentProof",
+        "lines": [
+          "id: String {id}",
+          "amount: Int"
+        ],
+        "fields": [
+          "id",
+          "amount"
+        ],
+        "x": 1150,
+        "y": 480,
+        "width": 270,
+        "height": 110,
+        "header": 44,
+        "reference": false,
+        "object": false
+      },
+      {
+        "id": "BillingAutomation",
+        "title": "BillingAutomation",
+        "lines": [
+          "id: String {id}",
+          "isEnabled: Boolean"
+        ],
+        "fields": [
+          "id",
+          "isEnabled"
+        ],
+        "x": 410,
+        "y": 660,
+        "width": 270,
+        "height": 110,
+        "header": 44,
+        "reference": false,
+        "object": false
+      }
+    ],
+    "routes": [
+      {
+        "source": "Property",
+        "target": "User",
+        "field": "landlord",
+        "points": [
+          [
+            410,
+            180
+          ],
+          [
+            390,
+            180
+          ],
+          [
+            330,
+            180
+          ],
+          [
+            310,
+            180
+          ]
+        ],
+        "dependency": false,
+        "source_multiplicity": "0..*",
+        "target_multiplicity": "1"
+      },
+      {
+        "source": "Room",
+        "target": "Property",
+        "field": "property",
+        "points": [
+          [
+            780,
+            160
+          ],
+          [
+            760,
+            160
+          ],
+          [
+            700,
+            160
+          ],
+          [
+            680,
+            160
+          ]
+        ],
+        "dependency": false,
+        "source_multiplicity": "0..*",
+        "target_multiplicity": "1"
+      },
+      {
+        "source": "Tenant",
+        "target": "User",
+        "field": "landlord",
+        "points": [
+          [
+            180,
+            300
+          ],
+          [
+            180,
+            280
+          ],
+          [
+            180,
+            250
+          ],
+          [
+            180,
+            230
+          ]
+        ],
+        "dependency": false,
+        "source_multiplicity": "0..*",
+        "target_multiplicity": "1"
+      },
+      {
+        "source": "Lease",
+        "target": "Room",
+        "field": "room",
+        "points": [
+          [
+            680,
+            340
+          ],
+          [
+            700,
+            340
+          ],
+          [
+            700,
+            180
+          ],
+          [
+            760,
+            180
+          ],
+          [
+            780,
+            180
+          ]
+        ],
+        "dependency": false,
+        "source_multiplicity": "0..*",
+        "target_multiplicity": "1"
+      },
+      {
+        "source": "Lease",
+        "target": "Tenant",
+        "field": "tenant",
+        "points": [
+          [
+            410,
+            340
+          ],
+          [
+            390,
+            340
+          ],
+          [
+            330,
+            340
+          ],
+          [
+            330,
+            360
+          ],
+          [
+            310,
+            360
+          ]
+        ],
+        "dependency": false,
+        "source_multiplicity": "0..*",
+        "target_multiplicity": "1"
+      },
+      {
+        "source": "DepositTransaction",
+        "target": "Lease",
+        "field": "lease",
+        "points": [
+          [
+            310,
+            540
+          ],
+          [
+            330,
+            540
+          ],
+          [
+            330,
+            370
+          ],
+          [
+            390,
+            370
+          ],
+          [
+            410,
+            370
+          ]
+        ],
+        "dependency": false,
+        "source_multiplicity": "0..*",
+        "target_multiplicity": "1"
+      },
+      {
+        "source": "MeterReading",
+        "target": "Room",
+        "field": "room",
+        "points": [
+          [
+            1150,
+            180
+          ],
+          [
+            1130,
+            180
+          ],
+          [
+            1070,
+            180
+          ],
+          [
+            1050,
+            180
+          ]
+        ],
+        "dependency": false,
+        "source_multiplicity": "0..*",
+        "target_multiplicity": "1"
+      },
+      {
+        "source": "Invoice",
+        "target": "Lease",
+        "field": "lease",
+        "points": [
+          [
+            780,
+            360
+          ],
+          [
+            760,
+            360
+          ],
+          [
+            700,
+            360
+          ],
+          [
+            700,
+            370
+          ],
+          [
+            680,
+            370
+          ]
+        ],
+        "dependency": false,
+        "source_multiplicity": "0..*",
+        "target_multiplicity": "1"
+      },
+      {
+        "source": "PaymentProof",
+        "target": "Invoice",
+        "field": "invoice",
+        "points": [
+          [
+            1150,
+            540
+          ],
+          [
+            1130,
+            540
+          ],
+          [
+            1130,
+            340
+          ],
+          [
+            1070,
+            340
+          ],
+          [
+            1050,
+            340
+          ]
+        ],
+        "dependency": false,
+        "source_multiplicity": "0..*",
+        "target_multiplicity": "1"
+      },
+      {
+        "source": "Payment",
+        "target": "Invoice",
+        "field": "invoice",
+        "points": [
+          [
+            1150,
+            360
+          ],
+          [
+            1130,
+            360
+          ],
+          [
+            1070,
+            360
+          ],
+          [
+            1070,
+            370
+          ],
+          [
+            1050,
+            370
+          ]
+        ],
+        "dependency": false,
+        "source_multiplicity": "0..*",
+        "target_multiplicity": "1"
+      },
+      {
+        "source": "BillingAutomation",
+        "target": "Property",
+        "field": "property",
+        "points": [
+          [
+            540,
+            660
+          ],
+          [
+            540,
+            640
+          ],
+          [
+            400,
+            640
+          ],
+          [
+            400,
+            250
+          ],
+          [
+            540,
+            250
+          ],
+          [
+            540,
+            230
+          ]
+        ],
+        "dependency": false,
+        "source_multiplicity": "0..1",
+        "target_multiplicity": "1"
+      },
+      {
+        "source": "Expense",
+        "target": "Property",
+        "field": "property",
+        "points": [
+          [
+            780,
+            520
+          ],
+          [
+            760,
+            520
+          ],
+          [
+            690,
+            520
+          ],
+          [
+            690,
+            190
+          ],
+          [
+            700,
+            190
+          ],
+          [
+            680,
+            190
+          ]
+        ],
+        "dependency": false,
+        "source_multiplicity": "0..*",
+        "target_multiplicity": "1"
+      },
+      {
+        "source": "MaintenanceTicket",
+        "target": "Room",
+        "field": "room",
+        "points": [
+          [
+            680,
+            520
+          ],
+          [
+            700,
+            520
+          ],
+          [
+            700,
+            380
+          ],
+          [
+            770,
+            380
+          ],
+          [
+            770,
+            190
+          ],
+          [
+            760,
+            190
+          ],
+          [
+            780,
+            190
+          ]
+        ],
+        "dependency": false,
+        "source_multiplicity": "0..*",
+        "target_multiplicity": "1"
+      },
+      {
+        "source": "MaintenanceTicket",
+        "target": "Expense",
+        "field": "expense",
+        "points": [
+          [
+            680,
+            550
+          ],
+          [
+            700,
+            550
+          ],
+          [
+            760,
+            550
+          ],
+          [
+            780,
+            550
+          ]
+        ],
+        "dependency": false,
+        "source_multiplicity": "0..*",
+        "target_multiplicity": "0..1"
+      }
+    ],
+    "labels": [
+      {
+        "text": "0..*",
+        "bounds": [
+          368.0,
+          137.5,
+          404.0,
+          162.5
+        ],
+        "edge": 1,
+        "kind": "multiplicity"
+      },
+      {
+        "text": "1",
+        "bounds": [
+          324.5,
+          137.5,
+          343.5,
+          162.5
+        ],
+        "edge": 1,
+        "kind": "multiplicity"
+      },
+      {
+        "text": "0..*",
+        "bounds": [
+          738.0,
+          117.5,
+          774.0,
+          142.5
+        ],
+        "edge": 2,
+        "kind": "multiplicity"
+      },
+      {
+        "text": "1",
+        "bounds": [
+          694.5,
+          117.5,
+          713.5,
+          142.5
+        ],
+        "edge": 2,
+        "kind": "multiplicity"
+      },
+      {
+        "text": "0..*",
+        "bounds": [
+          132.0,
+          263.5,
+          168.0,
+          288.5
+        ],
+        "edge": 3,
+        "kind": "multiplicity"
+      },
+      {
+        "text": "1",
+        "bounds": [
+          200.5,
+          241.5,
+          219.5,
+          266.5
+        ],
+        "edge": 3,
+        "kind": "multiplicity"
+      },
+      {
+        "text": "0..*",
+        "bounds": [
+          686.0,
+          297.5,
+          722.0,
+          322.5
+        ],
+        "edge": 4,
+        "kind": "multiplicity"
+      },
+      {
+        "text": "1",
+        "bounds": [
+          746.5,
+          197.5,
+          765.5,
+          222.5
+        ],
+        "edge": 4,
+        "kind": "multiplicity"
+      },
+      {
+        "text": "0..*",
+        "bounds": [
+          368.0,
+          297.5,
+          404.0,
+          322.5
+        ],
+        "edge": 5,
+        "kind": "multiplicity"
+      },
+      {
+        "text": "1",
+        "bounds": [
+          324.5,
+          317.5,
+          343.5,
+          342.5
+        ],
+        "edge": 5,
+        "kind": "multiplicity"
+      },
+      {
+        "text": "0..*",
+        "bounds": [
+          316.0,
+          497.5,
+          352.0,
+          522.5
+        ],
+        "edge": 6,
+        "kind": "multiplicity"
+      },
+      {
+        "text": "1",
+        "bounds": [
+          376.5,
+          327.5,
+          395.5,
+          352.5
+        ],
+        "edge": 6,
+        "kind": "multiplicity"
+      },
+      {
+        "text": "0..*",
+        "bounds": [
+          1108.0,
+          137.5,
+          1144.0,
+          162.5
+        ],
+        "edge": 7,
+        "kind": "multiplicity"
+      },
+      {
+        "text": "1",
+        "bounds": [
+          1064.5,
+          137.5,
+          1083.5,
+          162.5
+        ],
+        "edge": 7,
+        "kind": "multiplicity"
+      },
+      {
+        "text": "0..*",
+        "bounds": [
+          738.0,
+          317.5,
+          774.0,
+          342.5
+        ],
+        "edge": 8,
+        "kind": "multiplicity"
+      },
+      {
+        "text": "1",
+        "bounds": [
+          694.5,
+          327.5,
+          713.5,
+          352.5
+        ],
+        "edge": 8,
+        "kind": "multiplicity"
+      },
+      {
+        "text": "0..*",
+        "bounds": [
+          1108.0,
+          497.5,
+          1144.0,
+          522.5
+        ],
+        "edge": 9,
+        "kind": "multiplicity"
+      },
+      {
+        "text": "1",
+        "bounds": [
+          1064.5,
+          297.5,
+          1083.5,
+          322.5
+        ],
+        "edge": 9,
+        "kind": "multiplicity"
+      },
+      {
+        "text": "0..*",
+        "bounds": [
+          1108.0,
+          317.5,
+          1144.0,
+          342.5
+        ],
+        "edge": 10,
+        "kind": "multiplicity"
+      },
+      {
+        "text": "1",
+        "bounds": [
+          1064.5,
+          327.5,
+          1083.5,
+          352.5
+        ],
+        "edge": 10,
+        "kind": "multiplicity"
+      },
+      {
+        "text": "0..1",
+        "bounds": [
+          491.0,
+          623.5,
+          529.0,
+          648.5
+        ],
+        "edge": 11,
+        "kind": "multiplicity"
+      },
+      {
+        "text": "1",
+        "bounds": [
+          500.5,
+          241.5,
+          519.5,
+          266.5
+        ],
+        "edge": 11,
+        "kind": "multiplicity"
+      },
+      {
+        "text": "0..*",
+        "bounds": [
+          738.0,
+          477.5,
+          774.0,
+          502.5
+        ],
+        "edge": 12,
+        "kind": "multiplicity"
+      },
+      {
+        "text": "1",
+        "bounds": [
+          694.5,
+          147.5,
+          713.5,
+          172.5
+        ],
+        "edge": 12,
+        "kind": "multiplicity"
+      },
+      {
+        "text": "0..*",
+        "bounds": [
+          686.0,
+          477.5,
+          722.0,
+          502.5
+        ],
+        "edge": 13,
+        "kind": "multiplicity"
+      },
+      {
+        "text": "1",
+        "bounds": [
+          746.5,
+          147.5,
+          765.5,
+          172.5
+        ],
+        "edge": 13,
+        "kind": "multiplicity"
+      },
+      {
+        "text": "0..*",
+        "bounds": [
+          686.0,
+          507.5,
+          722.0,
+          532.5
+        ],
+        "edge": 14,
+        "kind": "multiplicity"
+      },
+      {
+        "text": "0..1",
+        "bounds": [
+          737.0,
+          507.5,
+          775.0,
+          532.5
+        ],
+        "edge": 14,
+        "kind": "multiplicity"
+      },
+      {
+        "text": "landlord",
+        "bounds": [
+          325.5,
+          167.5,
+          394.5,
+          192.5
+        ],
+        "edge": 1,
+        "kind": "role"
+      },
+      {
+        "text": "property",
+        "bounds": [
+          685.0,
+          232.5,
+          757.0,
+          257.5
+        ],
+        "edge": 2,
+        "kind": "role"
+      },
+      {
+        "text": "landlord",
+        "bounds": [
+          225.0,
+          259.5,
+          294.0,
+          284.5
+        ],
+        "edge": 3,
+        "kind": "role"
+      },
+      {
+        "text": "room",
+        "bounds": [
+          727.0,
+          272.5,
+          775.0,
+          297.5
+        ],
+        "edge": 4,
+        "kind": "role"
+      },
+      {
+        "text": "tenant",
+        "bounds": [
+          315.0,
+          389.5,
+          371.0,
+          414.5
+        ],
+        "edge": 5,
+        "kind": "role"
+      },
+      {
+        "text": "lease",
+        "bounds": [
+          320.0,
+          357.5,
+          370.0,
+          382.5
+        ],
+        "edge": 6,
+        "kind": "role"
+      },
+      {
+        "text": "room",
+        "bounds": [
+          1091.0,
+          167.5,
+          1139.0,
+          192.5
+        ],
+        "edge": 7,
+        "kind": "role"
+      },
+      {
+        "text": "lease",
+        "bounds": [
+          720.0,
+          347.5,
+          770.0,
+          372.5
+        ],
+        "edge": 8,
+        "kind": "role"
+      },
+      {
+        "text": "invoice",
+        "bounds": [
+          1098.5,
+          427.5,
+          1161.5,
+          452.5
+        ],
+        "edge": 9,
+        "kind": "role"
+      },
+      {
+        "text": "invoice",
+        "bounds": [
+          1055.0,
+          399.5,
+          1118.0,
+          424.5
+        ],
+        "edge": 10,
+        "kind": "role"
+      },
+      {
+        "text": "property",
+        "bounds": [
+          399.0,
+          237.5,
+          471.0,
+          262.5
+        ],
+        "edge": 11,
+        "kind": "role"
+      },
+      {
+        "text": "property",
+        "bounds": [
+          654.0,
+          425.0,
+          726.0,
+          450.0
+        ],
+        "edge": 12,
+        "kind": "role"
+      },
+      {
+        "text": "room",
+        "bounds": [
+          657.0,
+          262.5,
+          705.0,
+          287.5
+        ],
+        "edge": 13,
+        "kind": "role"
+      },
+      {
+        "text": "expense",
+        "bounds": [
+          693.5,
+          537.5,
+          766.5,
+          562.5
+        ],
+        "edge": 14,
+        "kind": "role"
+      }
+    ],
+    "object": false,
+    "notes": [],
+    "attribute_size": 19,
+    "label_size": 17,
+    "line_step": 26
+  },
+  {
+    "id": "CD-01",
+    "title": "Tài khoản và hồ sơ Người thuê",
+    "filename": "cd-01",
+    "width": 920,
+    "height": 805,
+    "nodes": [
+      {
+        "id": "User",
+        "title": "User",
+        "lines": [
+          "id: String {id}",
+          "fullName: String",
+          "email: String {unique}",
+          "phone: String [0..1]",
+          "role: UserRole",
+          "isActive: Boolean"
+        ],
+        "fields": [
+          "id",
+          "fullName",
+          "email",
+          "phone",
+          "role",
+          "isActive"
+        ],
+        "x": 40,
+        "y": 120,
+        "width": 320,
+        "height": 214,
+        "header": 44,
+        "reference": false,
+        "object": false
+      },
+      {
+        "id": "Tenant",
+        "title": "Tenant",
+        "lines": [
+          "id: String {id}",
+          "fullName: String",
+          "phone: String [0..1]",
+          "idNumber: String [0..1]",
+          "isActive: Boolean"
+        ],
+        "fields": [
+          "id",
+          "fullName",
+          "phone",
+          "idNumber",
+          "isActive"
+        ],
+        "x": 560,
+        "y": 120,
+        "width": 320,
+        "height": 188,
+        "header": 44,
+        "reference": false,
+        "object": false
+      },
+      {
+        "id": "TenantInvite",
+        "title": "TenantInvite",
+        "lines": [
+          "id: String {id}",
+          "email: String",
+          "expiresAt: DateTime",
+          "acceptedAt: DateTime [0..1]"
+        ],
+        "fields": [
+          "id",
+          "email",
+          "expiresAt",
+          "acceptedAt"
+        ],
+        "x": 560,
+        "y": 460,
+        "width": 320,
+        "height": 162,
+        "header": 44,
+        "reference": false,
+        "object": false
+      },
+      {
+        "id": "RefreshToken",
+        "title": "RefreshToken",
+        "lines": [
+          "id: String {id}",
+          "expiresAt: DateTime",
+          "revokedAt: DateTime [0..1]"
+        ],
+        "fields": [
+          "id",
+          "expiresAt",
+          "revokedAt"
+        ],
+        "x": 40,
+        "y": 460,
+        "width": 320,
+        "height": 136,
+        "header": 44,
+        "reference": false,
+        "object": false
+      }
+    ],
+    "routes": [
+      {
+        "source": "Tenant",
+        "target": "User",
+        "field": "landlord",
+        "points": [
+          [
+            560,
+            190
+          ],
+          [
+            540,
+            190
+          ],
+          [
+            540,
+            180
+          ],
+          [
+            380,
+            180
+          ],
+          [
+            360,
+            180
+          ]
+        ],
+        "dependency": false,
+        "source_multiplicity": "0..*",
+        "target_multiplicity": "1"
+      },
+      {
+        "source": "Tenant",
+        "target": "User",
+        "field": "user",
+        "points": [
+          [
+            560,
+            240
+          ],
+          [
+            540,
+            240
+          ],
+          [
+            540,
+            230
+          ],
+          [
+            380,
+            230
+          ],
+          [
+            360,
+            230
+          ]
+        ],
+        "dependency": false,
+        "source_multiplicity": "0..1",
+        "target_multiplicity": "0..1"
+      },
+      {
+        "source": "TenantInvite",
+        "target": "User",
+        "field": "landlord",
+        "points": [
+          [
+            560,
+            550
+          ],
+          [
+            540,
+            550
+          ],
+          [
+            540,
+            270
+          ],
+          [
+            380,
+            270
+          ],
+          [
+            360,
+            270
+          ]
+        ],
+        "dependency": false,
+        "source_multiplicity": "0..*",
+        "target_multiplicity": "1"
+      },
+      {
+        "source": "TenantInvite",
+        "target": "Tenant",
+        "field": "tenant",
+        "points": [
+          [
+            720,
+            460
+          ],
+          [
+            720,
+            440
+          ],
+          [
+            720,
+            330
+          ],
+          [
+            720,
+            308
+          ]
+        ],
+        "dependency": false,
+        "source_multiplicity": "0..*",
+        "target_multiplicity": "1"
+      },
+      {
+        "source": "RefreshToken",
+        "target": "User",
+        "field": "user",
+        "points": [
+          [
+            200,
+            460
+          ],
+          [
+            200,
+            440
+          ],
+          [
+            200,
+            350
+          ],
+          [
+            200,
+            334
+          ]
+        ],
+        "dependency": false,
+        "source_multiplicity": "0..*",
+        "target_multiplicity": "1"
+      }
+    ],
+    "labels": [
+      {
+        "text": "0..*",
+        "bounds": [
+          518.0,
+          147.5,
+          554.0,
+          172.5
+        ],
+        "edge": 1,
+        "kind": "multiplicity"
+      },
+      {
+        "text": "1",
+        "bounds": [
+          374.5,
+          137.5,
+          393.5,
+          162.5
+        ],
+        "edge": 1,
+        "kind": "multiplicity"
+      },
+      {
+        "text": "0..1",
+        "bounds": [
+          517.0,
+          197.5,
+          555.0,
+          222.5
+        ],
+        "edge": 2,
+        "kind": "multiplicity"
+      },
+      {
+        "text": "0..1",
+        "bounds": [
+          365.0,
+          187.5,
+          403.0,
+          212.5
+        ],
+        "edge": 2,
+        "kind": "multiplicity"
+      },
+      {
+        "text": "0..*",
+        "bounds": [
+          518.0,
+          507.5,
+          554.0,
+          532.5
+        ],
+        "edge": 3,
+        "kind": "multiplicity"
+      },
+      {
+        "text": "1",
+        "bounds": [
+          374.5,
+          227.5,
+          393.5,
+          252.5
+        ],
+        "edge": 3,
+        "kind": "multiplicity"
+      },
+      {
+        "text": "0..*",
+        "bounds": [
+          672.0,
+          423.5,
+          708.0,
+          448.5
+        ],
+        "edge": 4,
+        "kind": "multiplicity"
+      },
+      {
+        "text": "1",
+        "bounds": [
+          680.5,
+          319.5,
+          699.5,
+          344.5
+        ],
+        "edge": 4,
+        "kind": "multiplicity"
+      },
+      {
+        "text": "0..*",
+        "bounds": [
+          152.0,
+          423.5,
+          188.0,
+          448.5
+        ],
+        "edge": 5,
+        "kind": "multiplicity"
+      },
+      {
+        "text": "1",
+        "bounds": [
+          160.5,
+          345.5,
+          179.5,
+          370.5
+        ],
+        "edge": 5,
+        "kind": "multiplicity"
+      },
+      {
+        "text": "landlord",
+        "bounds": [
+          425.5,
+          167.5,
+          494.5,
+          192.5
+        ],
+        "edge": 1,
+        "kind": "role"
+      },
+      {
+        "text": "user",
+        "bounds": [
+          438.5,
+          217.5,
+          481.5,
+          242.5
+        ],
+        "edge": 2,
+        "kind": "role"
+      },
+      {
+        "text": "landlord",
+        "bounds": [
+          465.5,
+          257.5,
+          534.5,
+          282.5
+        ],
+        "edge": 3,
+        "kind": "role"
+      },
+      {
+        "text": "tenant",
+        "bounds": [
+          692.0,
+          372.5,
+          748.0,
+          397.5
+        ],
+        "edge": 4,
+        "kind": "role"
+      },
+      {
+        "text": "user",
+        "bounds": [
+          178.5,
+          382.5,
+          221.5,
+          407.5
+        ],
+        "edge": 5,
+        "kind": "role"
+      }
+    ],
+    "object": false,
+    "notes": [
+      {
+        "id": "account-note",
+        "class": "Tenant",
+        "title": "Hồ sơ ≠ tài khoản",
+        "lines": [
+          "Tenant.user: tùy chọn, duy nhất.",
+          "Tenant.landlord: Chủ trọ quản lý."
+        ],
+        "x": 350,
+        "y": 650,
+        "width": 520,
+        "height": 95
+      }
+    ],
+    "attribute_size": 19,
+    "label_size": 17,
+    "line_step": 26
+  },
+  {
+    "id": "CD-02",
+    "title": "Khu trọ và phòng",
+    "filename": "cd-02",
+    "width": 1260,
+    "height": 790,
+    "nodes": [
+      {
+        "id": "Property",
+        "title": "Property",
+        "lines": [
+          "id: String {id}",
+          "name: String",
+          "address: String",
+          "isArchived: Boolean"
+        ],
+        "fields": [
+          "id",
+          "name",
+          "address",
+          "isArchived"
+        ],
+        "x": 470,
+        "y": 120,
+        "width": 320,
+        "height": 162,
+        "header": 44,
+        "reference": false,
+        "object": false
+      },
+      {
+        "id": "Room",
+        "title": "Room",
+        "lines": [
+          "id: String {id}",
+          "name: String",
+          "basePrice: Int",
+          "status: RoomStatus",
+          "isActive: Boolean",
+          "capacity: Int [0..1]"
+        ],
+        "fields": [
+          "id",
+          "name",
+          "basePrice",
+          "status",
+          "isActive",
+          "capacity"
+        ],
+        "x": 470,
+        "y": 460,
+        "width": 320,
+        "height": 214,
+        "header": 44,
+        "reference": false,
+        "object": false
+      },
+      {
+        "id": "RoomAsset",
+        "title": "RoomAsset",
+        "lines": [
+          "id: String {id}",
+          "name: String",
+          "quantity: Int",
+          "condition: String",
+          "value: Int [0..1]"
+        ],
+        "fields": [
+          "id",
+          "name",
+          "quantity",
+          "condition",
+          "value"
+        ],
+        "x": 900,
+        "y": 460,
+        "width": 320,
+        "height": 188,
+        "header": 44,
+        "reference": false,
+        "object": false
+      },
+      {
+        "id": "RoomInspection",
+        "title": "RoomInspection",
+        "lines": [
+          "id: String {id}",
+          "title: String",
+          "dueAt: DateTime",
+          "completedAt: DateTime [0..1]"
+        ],
+        "fields": [
+          "id",
+          "title",
+          "dueAt",
+          "completedAt"
+        ],
+        "x": 40,
+        "y": 460,
+        "width": 320,
+        "height": 162,
+        "header": 44,
+        "reference": false,
+        "object": false
+      },
+      {
+        "id": "RoomServiceFee",
+        "title": "RoomServiceFee",
+        "lines": [
+          "id: String {id}",
+          "name: String",
+          "amount: Int",
+          "isActive: Boolean",
+          "note: String [0..1]"
+        ],
+        "fields": [
+          "id",
+          "name",
+          "amount",
+          "isActive",
+          "note"
+        ],
+        "x": 900,
+        "y": 120,
+        "width": 320,
+        "height": 188,
+        "header": 44,
+        "reference": false,
+        "object": false
+      },
+      {
+        "id": "User",
+        "title": "User",
+        "lines": [
+          "id: String {id}",
+          "fullName: String"
+        ],
+        "fields": [
+          "id",
+          "fullName"
+        ],
+        "x": 40,
+        "y": 120,
+        "width": 320,
+        "height": 126,
+        "header": 60,
+        "reference": true,
+        "object": false
+      }
+    ],
+    "routes": [
+      {
+        "source": "Property",
+        "target": "User",
+        "field": "landlord",
+        "points": [
+          [
+            470,
+            200
+          ],
+          [
+            450,
+            200
+          ],
+          [
+            450,
+            180
+          ],
+          [
+            380,
+            180
+          ],
+          [
+            360,
+            180
+          ]
+        ],
+        "dependency": false,
+        "source_multiplicity": "0..*",
+        "target_multiplicity": "1"
+      },
+      {
+        "source": "Room",
+        "target": "Property",
+        "field": "property",
+        "points": [
+          [
+            630,
+            460
+          ],
+          [
+            630,
+            440
+          ],
+          [
+            630,
+            300
+          ],
+          [
+            630,
+            282
+          ]
+        ],
+        "dependency": false,
+        "source_multiplicity": "0..*",
+        "target_multiplicity": "1"
+      },
+      {
+        "source": "RoomAsset",
+        "target": "Room",
+        "field": "room",
+        "points": [
+          [
+            900,
+            550
+          ],
+          [
+            880,
+            550
+          ],
+          [
+            880,
+            540
+          ],
+          [
+            810,
+            540
+          ],
+          [
+            790,
+            540
+          ]
+        ],
+        "dependency": false,
+        "source_multiplicity": "0..*",
+        "target_multiplicity": "1"
+      },
+      {
+        "source": "RoomInspection",
+        "target": "Room",
+        "field": "room",
+        "points": [
+          [
+            360,
+            540
+          ],
+          [
+            380,
+            540
+          ],
+          [
+            380,
+            570
+          ],
+          [
+            450,
+            570
+          ],
+          [
+            470,
+            570
+          ]
+        ],
+        "dependency": false,
+        "source_multiplicity": "0..*",
+        "target_multiplicity": "1"
+      },
+      {
+        "source": "RoomServiceFee",
+        "target": "Room",
+        "field": "room",
+        "points": [
+          [
+            900,
+            210
+          ],
+          [
+            880,
+            210
+          ],
+          [
+            800,
+            210
+          ],
+          [
+            800,
+            600
+          ],
+          [
+            810,
+            600
+          ],
+          [
+            790,
+            600
+          ]
+        ],
+        "dependency": false,
+        "source_multiplicity": "0..*",
+        "target_multiplicity": "1"
+      }
+    ],
+    "labels": [
+      {
+        "text": "0..*",
+        "bounds": [
+          428.0,
+          157.5,
+          464.0,
+          182.5
+        ],
+        "edge": 1,
+        "kind": "multiplicity"
+      },
+      {
+        "text": "1",
+        "bounds": [
+          374.5,
+          137.5,
+          393.5,
+          162.5
+        ],
+        "edge": 1,
+        "kind": "multiplicity"
+      },
+      {
+        "text": "0..*",
+        "bounds": [
+          582.0,
+          423.5,
+          618.0,
+          448.5
+        ],
+        "edge": 2,
+        "kind": "multiplicity"
+      },
+      {
+        "text": "1",
+        "bounds": [
+          590.5,
+          293.5,
+          609.5,
+          318.5
+        ],
+        "edge": 2,
+        "kind": "multiplicity"
+      },
+      {
+        "text": "0..*",
+        "bounds": [
+          858.0,
+          507.5,
+          894.0,
+          532.5
+        ],
+        "edge": 3,
+        "kind": "multiplicity"
+      },
+      {
+        "text": "1",
+        "bounds": [
+          804.5,
+          497.5,
+          823.5,
+          522.5
+        ],
+        "edge": 3,
+        "kind": "multiplicity"
+      },
+      {
+        "text": "0..*",
+        "bounds": [
+          366.0,
+          497.5,
+          402.0,
+          522.5
+        ],
+        "edge": 4,
+        "kind": "multiplicity"
+      },
+      {
+        "text": "1",
+        "bounds": [
+          436.5,
+          527.5,
+          455.5,
+          552.5
+        ],
+        "edge": 4,
+        "kind": "multiplicity"
+      },
+      {
+        "text": "0..*",
+        "bounds": [
+          858.0,
+          167.5,
+          894.0,
+          192.5
+        ],
+        "edge": 5,
+        "kind": "multiplicity"
+      },
+      {
+        "text": "1",
+        "bounds": [
+          804.5,
+          557.5,
+          823.5,
+          582.5
+        ],
+        "edge": 5,
+        "kind": "multiplicity"
+      },
+      {
+        "text": "landlord",
+        "bounds": [
+          365.0,
+          209.5,
+          434.0,
+          234.5
+        ],
+        "edge": 1,
+        "kind": "role"
+      },
+      {
+        "text": "property",
+        "bounds": [
+          594.0,
+          392.5,
+          666.0,
+          417.5
+        ],
+        "edge": 2,
+        "kind": "role"
+      },
+      {
+        "text": "room",
+        "bounds": [
+          803.5,
+          527.5,
+          851.5,
+          552.5
+        ],
+        "edge": 3,
+        "kind": "role"
+      },
+      {
+        "text": "room",
+        "bounds": [
+          373.5,
+          557.5,
+          421.5,
+          582.5
+        ],
+        "edge": 4,
+        "kind": "role"
+      },
+      {
+        "text": "room",
+        "bounds": [
+          776.0,
+          295.0,
+          824.0,
+          320.0
+        ],
+        "edge": 5,
+        "kind": "role"
+      }
+    ],
+    "object": false,
+    "notes": [],
+    "attribute_size": 19,
+    "label_size": 17,
+    "line_step": 26
+  },
+  {
+    "id": "CD-03",
+    "title": "Hợp đồng và tiền cọc",
+    "filename": "cd-03",
+    "width": 1260,
+    "height": 790,
+    "nodes": [
+      {
+        "id": "Lease",
+        "title": "Lease",
+        "lines": [
+          "id: String {id}",
+          "startDate: DateTime",
+          "endDate: DateTime [0..1]",
+          "monthlyRent: Int",
+          "deposit: Int",
+          "status: LeaseStatus"
+        ],
+        "fields": [
+          "id",
+          "startDate",
+          "endDate",
+          "monthlyRent",
+          "deposit",
+          "status"
+        ],
+        "x": 470,
+        "y": 460,
+        "width": 320,
+        "height": 214,
+        "header": 44,
+        "reference": false,
+        "object": false
+      },
+      {
+        "id": "LeaseChange",
+        "title": "LeaseChange",
+        "lines": [
+          "id: String {id}",
+          "changeType: String",
+          "previousValues: Json",
+          "newValues: Json",
+          "note: String [0..1]",
+          "createdAt: DateTime"
+        ],
+        "fields": [
+          "id",
+          "changeType",
+          "previousValues",
+          "newValues",
+          "note",
+          "createdAt"
+        ],
+        "x": 900,
+        "y": 460,
+        "width": 320,
+        "height": 214,
+        "header": 44,
+        "reference": false,
+        "object": false
+      },
+      {
+        "id": "DepositTransaction",
+        "title": "DepositTransaction",
+        "lines": [
+          "id: String {id}",
+          "type: DepositTransactionType",
+          "amount: Int",
+          "occurredAt: DateTime",
+          "note: String [0..1]"
+        ],
+        "fields": [
+          "id",
+          "type",
+          "amount",
+          "occurredAt",
+          "note"
+        ],
+        "x": 40,
+        "y": 460,
+        "width": 320,
+        "height": 188,
+        "header": 44,
+        "reference": false,
+        "object": false
+      },
+      {
+        "id": "User",
+        "title": "User",
+        "lines": [
+          "id: String {id}",
+          "fullName: String"
+        ],
+        "fields": [
+          "id",
+          "fullName"
+        ],
+        "x": 40,
+        "y": 120,
+        "width": 320,
+        "height": 126,
+        "header": 60,
+        "reference": true,
+        "object": false
+      },
+      {
+        "id": "Room",
+        "title": "Room",
+        "lines": [
+          "id: String {id}",
+          "name: String"
+        ],
+        "fields": [
+          "id",
+          "name"
+        ],
+        "x": 470,
+        "y": 120,
+        "width": 320,
+        "height": 126,
+        "header": 60,
+        "reference": true,
+        "object": false
+      },
+      {
+        "id": "Tenant",
+        "title": "Tenant",
+        "lines": [
+          "id: String {id}",
+          "fullName: String"
+        ],
+        "fields": [
+          "id",
+          "fullName"
+        ],
+        "x": 900,
+        "y": 120,
+        "width": 320,
+        "height": 126,
+        "header": 60,
+        "reference": true,
+        "object": false
+      }
+    ],
+    "routes": [
+      {
+        "source": "Lease",
+        "target": "Room",
+        "field": "room",
+        "points": [
+          [
+            630,
+            460
+          ],
+          [
+            630,
+            440
+          ],
+          [
+            630,
+            270
+          ],
+          [
+            630,
+            246
+          ]
+        ],
+        "dependency": false,
+        "source_multiplicity": "0..*",
+        "target_multiplicity": "1"
+      },
+      {
+        "source": "Lease",
+        "target": "Tenant",
+        "field": "tenant",
+        "points": [
+          [
+            790,
+            540
+          ],
+          [
+            810,
+            540
+          ],
+          [
+            810,
+            180
+          ],
+          [
+            880,
+            180
+          ],
+          [
+            900,
+            180
+          ]
+        ],
+        "dependency": false,
+        "source_multiplicity": "0..*",
+        "target_multiplicity": "1"
+      },
+      {
+        "source": "DepositTransaction",
+        "target": "Lease",
+        "field": "lease",
+        "points": [
+          [
+            360,
+            550
+          ],
+          [
+            380,
+            550
+          ],
+          [
+            380,
+            570
+          ],
+          [
+            450,
+            570
+          ],
+          [
+            470,
+            570
+          ]
+        ],
+        "dependency": false,
+        "source_multiplicity": "0..*",
+        "target_multiplicity": "1"
+      },
+      {
+        "source": "DepositTransaction",
+        "target": "User",
+        "field": "landlord",
+        "points": [
+          [
+            200,
+            460
+          ],
+          [
+            200,
+            440
+          ],
+          [
+            200,
+            270
+          ],
+          [
+            200,
+            246
+          ]
+        ],
+        "dependency": false,
+        "source_multiplicity": "0..*",
+        "target_multiplicity": "1"
+      },
+      {
+        "source": "LeaseChange",
+        "target": "Lease",
+        "field": "lease",
+        "points": [
+          [
+            900,
+            540
+          ],
+          [
+            880,
+            540
+          ],
+          [
+            880,
+            600
+          ],
+          [
+            810,
+            600
+          ],
+          [
+            790,
+            600
+          ]
+        ],
+        "dependency": false,
+        "source_multiplicity": "0..*",
+        "target_multiplicity": "1"
+      },
+      {
+        "source": "LeaseChange",
+        "target": "User",
+        "field": "landlord",
+        "points": [
+          [
+            900,
+            600
+          ],
+          [
+            880,
+            600
+          ],
+          [
+            880,
+            610
+          ],
+          [
+            800,
+            610
+          ],
+          [
+            800,
+            260
+          ],
+          [
+            380,
+            260
+          ],
+          [
+            380,
+            180
+          ],
+          [
+            360,
+            180
+          ]
+        ],
+        "dependency": false,
+        "source_multiplicity": "0..*",
+        "target_multiplicity": "1"
+      }
+    ],
+    "labels": [
+      {
+        "text": "0..*",
+        "bounds": [
+          582.0,
+          423.5,
+          618.0,
+          448.5
+        ],
+        "edge": 1,
+        "kind": "multiplicity"
+      },
+      {
+        "text": "1",
+        "bounds": [
+          590.5,
+          257.5,
+          609.5,
+          282.5
+        ],
+        "edge": 1,
+        "kind": "multiplicity"
+      },
+      {
+        "text": "0..*",
+        "bounds": [
+          796.0,
+          497.5,
+          832.0,
+          522.5
+        ],
+        "edge": 2,
+        "kind": "multiplicity"
+      },
+      {
+        "text": "1",
+        "bounds": [
+          866.5,
+          137.5,
+          885.5,
+          162.5
+        ],
+        "edge": 2,
+        "kind": "multiplicity"
+      },
+      {
+        "text": "0..*",
+        "bounds": [
+          366.0,
+          507.5,
+          402.0,
+          532.5
+        ],
+        "edge": 3,
+        "kind": "multiplicity"
+      },
+      {
+        "text": "1",
+        "bounds": [
+          436.5,
+          527.5,
+          455.5,
+          552.5
+        ],
+        "edge": 3,
+        "kind": "multiplicity"
+      },
+      {
+        "text": "0..*",
+        "bounds": [
+          152.0,
+          423.5,
+          188.0,
+          448.5
+        ],
+        "edge": 4,
+        "kind": "multiplicity"
+      },
+      {
+        "text": "1",
+        "bounds": [
+          160.5,
+          257.5,
+          179.5,
+          282.5
+        ],
+        "edge": 4,
+        "kind": "multiplicity"
+      },
+      {
+        "text": "0..*",
+        "bounds": [
+          858.0,
+          497.5,
+          894.0,
+          522.5
+        ],
+        "edge": 5,
+        "kind": "multiplicity"
+      },
+      {
+        "text": "1",
+        "bounds": [
+          804.5,
+          557.5,
+          823.5,
+          582.5
+        ],
+        "edge": 5,
+        "kind": "multiplicity"
+      },
+      {
+        "text": "0..*",
+        "bounds": [
+          858.0,
+          557.5,
+          894.0,
+          582.5
+        ],
+        "edge": 6,
+        "kind": "multiplicity"
+      },
+      {
+        "text": "1",
+        "bounds": [
+          374.5,
+          137.5,
+          393.5,
+          162.5
+        ],
+        "edge": 6,
+        "kind": "multiplicity"
+      },
+      {
+        "text": "room",
+        "bounds": [
+          606.0,
+          385.0,
+          654.0,
+          410.0
+        ],
+        "edge": 1,
+        "kind": "role"
+      },
+      {
+        "text": "tenant",
+        "bounds": [
+          799.5,
+          167.5,
+          855.5,
+          192.5
+        ],
+        "edge": 2,
+        "kind": "role"
+      },
+      {
+        "text": "lease",
+        "bounds": [
+          372.5,
+          557.5,
+          422.5,
+          582.5
+        ],
+        "edge": 3,
+        "kind": "role"
+      },
+      {
+        "text": "landlord",
+        "bounds": [
+          165.5,
+          385.0,
+          234.5,
+          410.0
+        ],
+        "edge": 4,
+        "kind": "role"
+      },
+      {
+        "text": "lease",
+        "bounds": [
+          837.5,
+          587.5,
+          887.5,
+          612.5
+        ],
+        "edge": 5,
+        "kind": "role"
+      },
+      {
+        "text": "landlord",
+        "bounds": [
+          765.5,
+          422.5,
+          834.5,
+          447.5
+        ],
+        "edge": 6,
+        "kind": "role"
+      }
+    ],
+    "object": false,
+    "notes": [],
+    "attribute_size": 19,
+    "label_size": 17,
+    "line_step": 26
+  },
+  {
+    "id": "CD-04A",
+    "title": "Chỉ số và hóa đơn",
+    "filename": "cd-04a",
+    "width": 1260,
+    "height": 860,
+    "nodes": [
+      {
+        "id": "MeterReading",
+        "title": "MeterReading",
+        "lines": [
+          "id: String {id}",
+          "utilityType: UtilityType",
+          "billingMonth: DateTime",
+          "previousReading: Int",
+          "currentReading: Int",
+          "unitPrice: Int",
+          "usage: Int",
+          "amount: Int"
+        ],
+        "fields": [
+          "id",
+          "utilityType",
+          "billingMonth",
+          "previousReading",
+          "currentReading",
+          "unitPrice",
+          "usage",
+          "amount"
+        ],
+        "x": 40,
+        "y": 460,
+        "width": 320,
+        "height": 266,
+        "header": 44,
+        "reference": false,
+        "object": false
+      },
+      {
+        "id": "Invoice",
+        "title": "Invoice",
+        "lines": [
+          "id: String {id}",
+          "billingMonth: DateTime",
+          "rentAmount: Int",
+          "electricityAmount: Int",
+          "waterAmount: Int",
+          "otherAmount: Int",
+          "totalAmount: Int",
+          "paidAmount: Int",
+          "status: InvoiceStatus",
+          "dueDate: DateTime [0..1]"
+        ],
+        "fields": [
+          "id",
+          "billingMonth",
+          "rentAmount",
+          "electricityAmount",
+          "waterAmount",
+          "otherAmount",
+          "totalAmount",
+          "paidAmount",
+          "status",
+          "dueDate"
+        ],
+        "x": 470,
+        "y": 460,
+        "width": 320,
+        "height": 318,
+        "header": 44,
+        "reference": false,
+        "object": false
+      },
+      {
+        "id": "Room",
+        "title": "Room",
+        "lines": [
+          "id: String {id}",
+          "name: String"
+        ],
+        "fields": [
+          "id",
+          "name"
+        ],
+        "x": 40,
+        "y": 120,
+        "width": 320,
+        "height": 126,
+        "header": 60,
+        "reference": true,
+        "object": false
+      },
+      {
+        "id": "Lease",
+        "title": "Lease",
+        "lines": [
+          "id: String {id}",
+          "status: LeaseStatus"
+        ],
+        "fields": [
+          "id",
+          "status"
+        ],
+        "x": 470,
+        "y": 120,
+        "width": 320,
+        "height": 126,
+        "header": 60,
+        "reference": true,
+        "object": false
+      },
+      {
+        "id": "Tenant",
+        "title": "Tenant",
+        "lines": [
+          "id: String {id}",
+          "fullName: String"
+        ],
+        "fields": [
+          "id",
+          "fullName"
+        ],
+        "x": 900,
+        "y": 120,
+        "width": 320,
+        "height": 126,
+        "header": 60,
+        "reference": true,
+        "object": false
+      }
+    ],
+    "routes": [
+      {
+        "source": "MeterReading",
+        "target": "Room",
+        "field": "room",
+        "points": [
+          [
+            200,
+            460
+          ],
+          [
+            200,
+            440
+          ],
+          [
+            200,
+            270
+          ],
+          [
+            200,
+            246
+          ]
+        ],
+        "dependency": false,
+        "source_multiplicity": "0..*",
+        "target_multiplicity": "1"
+      },
+      {
+        "source": "Invoice",
+        "target": "Lease",
+        "field": "lease",
+        "points": [
+          [
+            630,
+            460
+          ],
+          [
+            630,
+            440
+          ],
+          [
+            630,
+            270
+          ],
+          [
+            630,
+            246
+          ]
+        ],
+        "dependency": false,
+        "source_multiplicity": "0..*",
+        "target_multiplicity": "1"
+      },
+      {
+        "source": "Invoice",
+        "target": "Room",
+        "field": "room",
+        "points": [
+          [
+            470,
+            570
+          ],
+          [
+            450,
+            570
+          ],
+          [
+            450,
+            180
+          ],
+          [
+            380,
+            180
+          ],
+          [
+            360,
+            180
+          ]
+        ],
+        "dependency": false,
+        "source_multiplicity": "0..*",
+        "target_multiplicity": "1"
+      },
+      {
+        "source": "Invoice",
+        "target": "Tenant",
+        "field": "tenant",
+        "points": [
+          [
+            790,
+            570
+          ],
+          [
+            810,
+            570
+          ],
+          [
+            810,
+            180
+          ],
+          [
+            880,
+            180
+          ],
+          [
+            900,
+            180
+          ]
+        ],
+        "dependency": false,
+        "source_multiplicity": "0..*",
+        "target_multiplicity": "1"
+      }
+    ],
+    "labels": [
+      {
+        "text": "0..*",
+        "bounds": [
+          152.0,
+          423.5,
+          188.0,
+          448.5
+        ],
+        "edge": 1,
+        "kind": "multiplicity"
+      },
+      {
+        "text": "1",
+        "bounds": [
+          160.5,
+          257.5,
+          179.5,
+          282.5
+        ],
+        "edge": 1,
+        "kind": "multiplicity"
+      },
+      {
+        "text": "0..*",
+        "bounds": [
+          582.0,
+          423.5,
+          618.0,
+          448.5
+        ],
+        "edge": 2,
+        "kind": "multiplicity"
+      },
+      {
+        "text": "1",
+        "bounds": [
+          590.5,
+          257.5,
+          609.5,
+          282.5
+        ],
+        "edge": 2,
+        "kind": "multiplicity"
+      },
+      {
+        "text": "0..*",
+        "bounds": [
+          428.0,
+          527.5,
+          464.0,
+          552.5
+        ],
+        "edge": 3,
+        "kind": "multiplicity"
+      },
+      {
+        "text": "1",
+        "bounds": [
+          374.5,
+          137.5,
+          393.5,
+          162.5
+        ],
+        "edge": 3,
+        "kind": "multiplicity"
+      },
+      {
+        "text": "0..*",
+        "bounds": [
+          796.0,
+          527.5,
+          832.0,
+          552.5
+        ],
+        "edge": 4,
+        "kind": "multiplicity"
+      },
+      {
+        "text": "1",
+        "bounds": [
+          866.5,
+          137.5,
+          885.5,
+          162.5
+        ],
+        "edge": 4,
+        "kind": "multiplicity"
+      },
+      {
+        "text": "room",
+        "bounds": [
+          176.0,
+          385.0,
+          224.0,
+          410.0
+        ],
+        "edge": 1,
+        "kind": "role"
+      },
+      {
+        "text": "lease",
+        "bounds": [
+          605.0,
+          385.0,
+          655.0,
+          410.0
+        ],
+        "edge": 2,
+        "kind": "role"
+      },
+      {
+        "text": "room",
+        "bounds": [
+          408.5,
+          167.5,
+          456.5,
+          192.5
+        ],
+        "edge": 3,
+        "kind": "role"
+      },
+      {
+        "text": "tenant",
+        "bounds": [
+          799.5,
+          167.5,
+          855.5,
+          192.5
+        ],
+        "edge": 4,
+        "kind": "role"
+      }
+    ],
+    "object": false,
+    "notes": [
+      {
+        "id": "invoice-unique",
+        "class": "Invoice",
+        "title": "Invoice",
+        "lines": [
+          "{unique: lease, billingMonth}"
+        ],
+        "x": 900,
+        "y": 470,
+        "width": 320,
+        "height": 80
+      },
+      {
+        "id": "meter-unique",
+        "class": "MeterReading",
+        "title": "MeterReading",
+        "lines": [
+          "{unique: room, utilityType,",
+          " billingMonth}"
+        ],
+        "x": 900,
+        "y": 585,
+        "width": 320,
+        "height": 105
+      }
+    ],
+    "attribute_size": 19,
+    "label_size": 17,
+    "line_step": 26
+  },
+  {
+    "id": "CD-04B",
+    "title": "Thanh toán và minh chứng",
+    "filename": "cd-04b",
+    "width": 1260,
+    "height": 870,
+    "nodes": [
+      {
+        "id": "Payment",
+        "title": "Payment",
+        "lines": [
+          "id: String {id}",
+          "amount: Int",
+          "method: PaymentMethod",
+          "type: PaymentType",
+          "paidAt: DateTime"
+        ],
+        "fields": [
+          "id",
+          "amount",
+          "method",
+          "type",
+          "paidAt"
+        ],
+        "x": 40,
+        "y": 460,
+        "width": 320,
+        "height": 188,
+        "header": 44,
+        "reference": false,
+        "object": false
+      },
+      {
+        "id": "PaymentProof",
+        "title": "PaymentProof",
+        "lines": [
+          "id: String {id}",
+          "amount: Int",
+          "method: PaymentMethod",
+          "status: PaymentProofStatus",
+          "submittedAt: DateTime",
+          "reviewedAt: DateTime [0..1]",
+          "reviewNote: String [0..1]",
+          "proofImageUrls: String [0..*]"
+        ],
+        "fields": [
+          "id",
+          "amount",
+          "method",
+          "status",
+          "submittedAt",
+          "reviewedAt",
+          "reviewNote",
+          "proofImageUrls"
+        ],
+        "x": 900,
+        "y": 460,
+        "width": 320,
+        "height": 266,
+        "header": 44,
+        "reference": false,
+        "object": false
+      },
+      {
+        "id": "User",
+        "title": "User",
+        "lines": [
+          "id: String {id}",
+          "fullName: String"
+        ],
+        "fields": [
+          "id",
+          "fullName"
+        ],
+        "x": 470,
+        "y": 120,
+        "width": 320,
+        "height": 126,
+        "header": 60,
+        "reference": true,
+        "object": false
+      },
+      {
+        "id": "Invoice",
+        "title": "Invoice",
+        "lines": [
+          "id: String {id}",
+          "status: InvoiceStatus"
+        ],
+        "fields": [
+          "id",
+          "status"
+        ],
+        "x": 470,
+        "y": 460,
+        "width": 320,
+        "height": 126,
+        "header": 60,
+        "reference": true,
+        "object": false
+      },
+      {
+        "id": "Tenant",
+        "title": "Tenant",
+        "lines": [
+          "id: String {id}",
+          "fullName: String"
+        ],
+        "fields": [
+          "id",
+          "fullName"
+        ],
+        "x": 900,
+        "y": 120,
+        "width": 320,
+        "height": 126,
+        "header": 60,
+        "reference": true,
+        "object": false
+      }
+    ],
+    "routes": [
+      {
+        "source": "PaymentProof",
+        "target": "Invoice",
+        "field": "invoice",
+        "points": [
+          [
+            900,
+            520
+          ],
+          [
+            790,
+            520
+          ]
+        ],
+        "dependency": false,
+        "source_multiplicity": "0..*",
+        "target_multiplicity": "1"
+      },
+      {
+        "source": "PaymentProof",
+        "target": "Tenant",
+        "field": "tenant",
+        "points": [
+          [
+            1060,
+            460
+          ],
+          [
+            1060,
+            440
+          ],
+          [
+            1060,
+            270
+          ],
+          [
+            1060,
+            246
+          ]
+        ],
+        "dependency": false,
+        "source_multiplicity": "0..*",
+        "target_multiplicity": "1"
+      },
+      {
+        "source": "PaymentProof",
+        "target": "User",
+        "field": "reviewedBy",
+        "points": [
+          [
+            940,
+            460
+          ],
+          [
+            940,
+            310
+          ],
+          [
+            630,
+            310
+          ],
+          [
+            630,
+            246
+          ]
+        ],
+        "dependency": false,
+        "source_multiplicity": "0..*",
+        "target_multiplicity": "0..1"
+      },
+      {
+        "source": "Payment",
+        "target": "Invoice",
+        "field": "invoice",
+        "points": [
+          [
+            360,
+            570
+          ],
+          [
+            380,
+            570
+          ],
+          [
+            380,
+            520
+          ],
+          [
+            450,
+            520
+          ],
+          [
+            470,
+            520
+          ]
+        ],
+        "dependency": false,
+        "source_multiplicity": "0..*",
+        "target_multiplicity": "1"
+      },
+      {
+        "source": "Payment",
+        "target": "Payment",
+        "field": "reversalOfPayment",
+        "points": [
+          [
+            90,
+            648
+          ],
+          [
+            90,
+            730
+          ],
+          [
+            310,
+            730
+          ],
+          [
+            310,
+            648
+          ]
+        ],
+        "dependency": false,
+        "source_multiplicity": "0..1",
+        "target_multiplicity": "0..1"
+      }
+    ],
+    "labels": [
+      {
+        "text": "0..*",
+        "bounds": [
+          858.0,
+          477.5,
+          894.0,
+          502.5
+        ],
+        "edge": 1,
+        "kind": "multiplicity"
+      },
+      {
+        "text": "1",
+        "bounds": [
+          804.5,
+          477.5,
+          823.5,
+          502.5
+        ],
+        "edge": 1,
+        "kind": "multiplicity"
+      },
+      {
+        "text": "0..*",
+        "bounds": [
+          1012.0,
+          423.5,
+          1048.0,
+          448.5
+        ],
+        "edge": 2,
+        "kind": "multiplicity"
+      },
+      {
+        "text": "1",
+        "bounds": [
+          1020.5,
+          257.5,
+          1039.5,
+          282.5
+        ],
+        "edge": 2,
+        "kind": "multiplicity"
+      },
+      {
+        "text": "0..*",
+        "bounds": [
+          892.0,
+          423.5,
+          928.0,
+          448.5
+        ],
+        "edge": 3,
+        "kind": "multiplicity"
+      },
+      {
+        "text": "0..1",
+        "bounds": [
+          581.0,
+          257.5,
+          619.0,
+          282.5
+        ],
+        "edge": 3,
+        "kind": "multiplicity"
+      },
+      {
+        "text": "0..*",
+        "bounds": [
+          366.0,
+          527.5,
+          402.0,
+          552.5
+        ],
+        "edge": 4,
+        "kind": "multiplicity"
+      },
+      {
+        "text": "1",
+        "bounds": [
+          436.5,
+          477.5,
+          455.5,
+          502.5
+        ],
+        "edge": 4,
+        "kind": "multiplicity"
+      },
+      {
+        "text": "0..1",
+        "bounds": [
+          41.0,
+          659.5,
+          79.0,
+          684.5
+        ],
+        "edge": 5,
+        "kind": "multiplicity"
+      },
+      {
+        "text": "0..1",
+        "bounds": [
+          261.0,
+          659.5,
+          299.0,
+          684.5
+        ],
+        "edge": 5,
+        "kind": "multiplicity"
+      },
+      {
+        "text": "invoice",
+        "bounds": [
+          813.5,
+          507.5,
+          876.5,
+          532.5
+        ],
+        "edge": 1,
+        "kind": "role"
+      },
+      {
+        "text": "tenant",
+        "bounds": [
+          1032.0,
+          385.0,
+          1088.0,
+          410.0
+        ],
+        "edge": 2,
+        "kind": "role"
+      },
+      {
+        "text": "reviewedBy",
+        "bounds": [
+          814.0,
+          297.5,
+          911.0,
+          322.5
+        ],
+        "edge": 3,
+        "kind": "role"
+      },
+      {
+        "text": "invoice",
+        "bounds": [
+          402.0,
+          572.5,
+          465.0,
+          597.5
+        ],
+        "edge": 4,
+        "kind": "role"
+      },
+      {
+        "text": "reversalPayment",
+        "bounds": [
+          21.5,
+          697.0,
+          158.5,
+          722.0
+        ],
+        "edge": 5,
+        "kind": "role"
+      },
+      {
+        "text": "reversalOfPayment",
+        "bounds": [
+          232.5,
+          697.0,
+          387.5,
+          722.0
+        ],
+        "edge": 5,
+        "kind": "role"
+      }
+    ],
+    "object": false,
+    "notes": [],
+    "attribute_size": 19,
+    "label_size": 17,
+    "line_step": 26
+  },
+  {
+    "id": "CD-04C",
+    "title": "Lập hóa đơn định kỳ",
+    "filename": "cd-04c",
+    "width": 1260,
+    "height": 550,
+    "nodes": [
+      {
+        "id": "BillingAutomation",
+        "title": "BillingAutomation",
+        "lines": [
+          "id: String {id}",
+          "isEnabled: Boolean",
+          "invoiceDay: Int",
+          "dueDay: Int",
+          "lastRunMonth: DateTime [0..1]",
+          "lastRunAt: DateTime [0..1]"
+        ],
+        "fields": [
+          "id",
+          "isEnabled",
+          "invoiceDay",
+          "dueDay",
+          "lastRunMonth",
+          "lastRunAt"
+        ],
+        "x": 470,
+        "y": 120,
+        "width": 320,
+        "height": 214,
+        "header": 44,
+        "reference": false,
+        "object": false
+      },
+      {
+        "id": "User",
+        "title": "User",
+        "lines": [
+          "id: String {id}",
+          "fullName: String"
+        ],
+        "fields": [
+          "id",
+          "fullName"
+        ],
+        "x": 40,
+        "y": 120,
+        "width": 320,
+        "height": 126,
+        "header": 60,
+        "reference": true,
+        "object": false
+      },
+      {
+        "id": "Property",
+        "title": "Property",
+        "lines": [
+          "id: String {id}",
+          "name: String"
+        ],
+        "fields": [
+          "id",
+          "name"
+        ],
+        "x": 900,
+        "y": 120,
+        "width": 320,
+        "height": 126,
+        "header": 60,
+        "reference": true,
+        "object": false
+      }
+    ],
+    "routes": [
+      {
+        "source": "BillingAutomation",
+        "target": "User",
+        "field": "landlord",
+        "points": [
+          [
+            470,
+            230
+          ],
+          [
+            450,
+            230
+          ],
+          [
+            450,
+            180
+          ],
+          [
+            380,
+            180
+          ],
+          [
+            360,
+            180
+          ]
+        ],
+        "dependency": false,
+        "source_multiplicity": "0..*",
+        "target_multiplicity": "1"
+      },
+      {
+        "source": "BillingAutomation",
+        "target": "Property",
+        "field": "property",
+        "points": [
+          [
+            790,
+            230
+          ],
+          [
+            810,
+            230
+          ],
+          [
+            810,
+            180
+          ],
+          [
+            880,
+            180
+          ],
+          [
+            900,
+            180
+          ]
+        ],
+        "dependency": false,
+        "source_multiplicity": "0..1",
+        "target_multiplicity": "1"
+      }
+    ],
+    "labels": [
+      {
+        "text": "0..*",
+        "bounds": [
+          428.0,
+          187.5,
+          464.0,
+          212.5
+        ],
+        "edge": 1,
+        "kind": "multiplicity"
+      },
+      {
+        "text": "1",
+        "bounds": [
+          374.5,
+          137.5,
+          393.5,
+          162.5
+        ],
+        "edge": 1,
+        "kind": "multiplicity"
+      },
+      {
+        "text": "0..1",
+        "bounds": [
+          795.0,
+          187.5,
+          833.0,
+          212.5
+        ],
+        "edge": 2,
+        "kind": "multiplicity"
+      },
+      {
+        "text": "1",
+        "bounds": [
+          866.5,
+          137.5,
+          885.5,
+          162.5
+        ],
+        "edge": 2,
+        "kind": "multiplicity"
+      },
+      {
+        "text": "landlord",
+        "bounds": [
+          365.0,
+          232.5,
+          434.0,
+          257.5
+        ],
+        "edge": 1,
+        "kind": "role"
+      },
+      {
+        "text": "property",
+        "bounds": [
+          823.0,
+          232.5,
+          895.0,
+          257.5
+        ],
+        "edge": 2,
+        "kind": "role"
+      }
+    ],
+    "object": false,
+    "notes": [
+      {
+        "id": "automation-note",
+        "class": "BillingAutomation",
+        "title": "Cấu hình theo khu trọ",
+        "lines": [
+          "Property có tối đa một cấu hình.",
+          "Lưu cấu hình ≠ đã chạy lịch.",
+          "Vận hành lịch cần được xác nhận."
+        ],
+        "x": 470,
+        "y": 365,
+        "width": 520,
+        "height": 120
+      }
+    ],
+    "attribute_size": 19,
+    "label_size": 17,
+    "line_step": 26
+  },
+  {
+    "id": "CD-05",
+    "title": "Bảo trì và chi phí",
+    "filename": "cd-05",
+    "width": 1860,
+    "height": 1060,
+    "nodes": [
+      {
+        "id": "Expense",
+        "title": "Expense",
+        "lines": [
+          "id: String {id}",
+          "category: ExpenseCategory",
+          "amount: Int",
+          "expenseDate: DateTime",
+          "title: String"
+        ],
+        "fields": [
+          "id",
+          "category",
+          "amount",
+          "expenseDate",
+          "title"
+        ],
+        "x": 900,
+        "y": 750,
+        "width": 320,
+        "height": 208,
+        "header": 44,
+        "reference": false,
+        "object": false
+      },
+      {
+        "id": "MaintenanceTicket",
+        "title": "MaintenanceTicket",
+        "lines": [
+          "id: String {id}",
+          "title: String",
+          "status: MaintenanceStatus",
+          "priority: MaintenancePriority",
+          "reportedAt: DateTime",
+          "actualCost: Int [0..1]"
+        ],
+        "fields": [
+          "id",
+          "title",
+          "status",
+          "priority",
+          "reportedAt",
+          "actualCost"
+        ],
+        "x": 900,
+        "y": 350,
+        "width": 320,
+        "height": 238,
+        "header": 44,
+        "reference": false,
+        "object": false
+      },
+      {
+        "id": "MaintenanceComment",
+        "title": "MaintenanceComment",
+        "lines": [
+          "id: String {id}",
+          "body: String",
+          "authorRole: UserRole",
+          "imageUrls: String [0..*]",
+          "createdAt: DateTime"
+        ],
+        "fields": [
+          "id",
+          "body",
+          "authorRole",
+          "imageUrls",
+          "createdAt"
+        ],
+        "x": 480,
+        "y": 500,
+        "width": 320,
+        "height": 208,
+        "header": 44,
+        "reference": false,
+        "object": false
+      },
+      {
+        "id": "User",
+        "title": "User",
+        "lines": [
+          "id: String {id}",
+          "fullName: String"
+        ],
+        "fields": [
+          "id",
+          "fullName"
+        ],
+        "x": 40,
+        "y": 350,
+        "width": 320,
+        "height": 134,
+        "header": 60,
+        "reference": true,
+        "object": false
+      },
+      {
+        "id": "Property",
+        "title": "Property",
+        "lines": [
+          "id: String {id}",
+          "name: String"
+        ],
+        "fields": [
+          "id",
+          "name"
+        ],
+        "x": 1450,
+        "y": 550,
+        "width": 320,
+        "height": 134,
+        "header": 60,
+        "reference": true,
+        "object": false
+      },
+      {
+        "id": "Room",
+        "title": "Room",
+        "lines": [
+          "id: String {id}",
+          "name: String"
+        ],
+        "fields": [
+          "id",
+          "name"
+        ],
+        "x": 900,
+        "y": 120,
+        "width": 320,
+        "height": 134,
+        "header": 60,
+        "reference": true,
+        "object": false
+      }
+    ],
+    "routes": [
+      {
+        "source": "Expense",
+        "target": "User",
+        "field": "landlord",
+        "points": [
+          [
+            900,
+            830
+          ],
+          [
+            400,
+            830
+          ],
+          [
+            400,
+            540
+          ],
+          [
+            200,
+            540
+          ],
+          [
+            200,
+            484
+          ]
+        ],
+        "dependency": false,
+        "source_multiplicity": "0..*",
+        "target_multiplicity": "1"
+      },
+      {
+        "source": "Expense",
+        "target": "Property",
+        "field": "property",
+        "points": [
+          [
+            1220,
+            830
+          ],
+          [
+            1350,
+            830
+          ],
+          [
+            1350,
+            650
+          ],
+          [
+            1450,
+            650
+          ]
+        ],
+        "dependency": false,
+        "source_multiplicity": "0..*",
+        "target_multiplicity": "1"
+      },
+      {
+        "source": "Expense",
+        "target": "Room",
+        "field": "room",
+        "points": [
+          [
+            1220,
+            890
+          ],
+          [
+            1820,
+            890
+          ],
+          [
+            1820,
+            180
+          ],
+          [
+            1220,
+            180
+          ]
+        ],
+        "dependency": false,
+        "source_multiplicity": "0..*",
+        "target_multiplicity": "0..1"
+      },
+      {
+        "source": "MaintenanceTicket",
+        "target": "User",
+        "field": "landlord",
+        "points": [
+          [
+            900,
+            420
+          ],
+          [
+            360,
+            420
+          ]
+        ],
+        "dependency": false,
+        "source_multiplicity": "0..*",
+        "target_multiplicity": "1"
+      },
+      {
+        "source": "MaintenanceTicket",
+        "target": "Property",
+        "field": "property",
+        "points": [
+          [
+            1220,
+            390
+          ],
+          [
+            1300,
+            390
+          ],
+          [
+            1300,
+            600
+          ],
+          [
+            1450,
+            600
+          ]
+        ],
+        "dependency": false,
+        "source_multiplicity": "0..*",
+        "target_multiplicity": "1"
+      },
+      {
+        "source": "MaintenanceTicket",
+        "target": "Room",
+        "field": "room",
+        "points": [
+          [
+            1060,
+            350
+          ],
+          [
+            1060,
+            254
+          ]
+        ],
+        "dependency": false,
+        "source_multiplicity": "0..*",
+        "target_multiplicity": "1"
+      },
+      {
+        "source": "MaintenanceTicket",
+        "target": "Expense",
+        "field": "expense",
+        "points": [
+          [
+            1060,
+            588
+          ],
+          [
+            1060,
+            750
+          ]
+        ],
+        "dependency": false,
+        "source_multiplicity": "0..*",
+        "target_multiplicity": "0..1"
+      },
+      {
+        "source": "MaintenanceComment",
+        "target": "MaintenanceTicket",
+        "field": "ticket",
+        "points": [
+          [
+            800,
+            550
+          ],
+          [
+            900,
+            550
+          ]
+        ],
+        "dependency": false,
+        "source_multiplicity": "0..*",
+        "target_multiplicity": "1"
+      },
+      {
+        "source": "MaintenanceComment",
+        "target": "User",
+        "field": "author",
+        "points": [
+          [
+            480,
+            560
+          ],
+          [
+            420,
+            560
+          ],
+          [
+            420,
+            440
+          ],
+          [
+            360,
+            440
+          ]
+        ],
+        "dependency": false,
+        "source_multiplicity": "0..*",
+        "target_multiplicity": "1"
+      }
+    ],
+    "labels": [
+      {
+        "text": "0..*",
+        "bounds": [
+          855.0,
+          785.5,
+          897.0,
+          814.5
+        ],
+        "edge": 1,
+        "kind": "multiplicity"
+      },
+      {
+        "text": "1",
+        "bounds": [
+          159.0,
+          493.5,
+          181.0,
+          522.5
+        ],
+        "edge": 1,
+        "kind": "multiplicity"
+      },
+      {
+        "text": "0..*",
+        "bounds": [
+          1223.0,
+          785.5,
+          1265.0,
+          814.5
+        ],
+        "edge": 2,
+        "kind": "multiplicity"
+      },
+      {
+        "text": "1",
+        "bounds": [
+          1415.0,
+          605.5,
+          1437.0,
+          634.5
+        ],
+        "edge": 2,
+        "kind": "multiplicity"
+      },
+      {
+        "text": "0..*",
+        "bounds": [
+          1223.0,
+          845.5,
+          1265.0,
+          874.5
+        ],
+        "edge": 3,
+        "kind": "multiplicity"
+      },
+      {
+        "text": "0..1",
+        "bounds": [
+          1233.0,
+          135.5,
+          1279.0,
+          164.5
+        ],
+        "edge": 3,
+        "kind": "multiplicity"
+      },
+      {
+        "text": "0..*",
+        "bounds": [
+          855.0,
+          375.5,
+          897.0,
+          404.5
+        ],
+        "edge": 4,
+        "kind": "multiplicity"
+      },
+      {
+        "text": "1",
+        "bounds": [
+          373.0,
+          375.5,
+          395.0,
+          404.5
+        ],
+        "edge": 4,
+        "kind": "multiplicity"
+      },
+      {
+        "text": "0..*",
+        "bounds": [
+          1223.0,
+          345.5,
+          1265.0,
+          374.5
+        ],
+        "edge": 5,
+        "kind": "multiplicity"
+      },
+      {
+        "text": "1",
+        "bounds": [
+          1415.0,
+          555.5,
+          1437.0,
+          584.5
+        ],
+        "edge": 5,
+        "kind": "multiplicity"
+      },
+      {
+        "text": "0..*",
+        "bounds": [
+          1009.0,
+          311.5,
+          1051.0,
+          340.5
+        ],
+        "edge": 6,
+        "kind": "multiplicity"
+      },
+      {
+        "text": "1",
+        "bounds": [
+          1019.0,
+          263.5,
+          1041.0,
+          292.5
+        ],
+        "edge": 6,
+        "kind": "multiplicity"
+      },
+      {
+        "text": "0..*",
+        "bounds": [
+          1009.0,
+          597.5,
+          1051.0,
+          626.5
+        ],
+        "edge": 7,
+        "kind": "multiplicity"
+      },
+      {
+        "text": "0..1",
+        "bounds": [
+          1007.0,
+          711.5,
+          1053.0,
+          740.5
+        ],
+        "edge": 7,
+        "kind": "multiplicity"
+      },
+      {
+        "text": "0..*",
+        "bounds": [
+          803.0,
+          505.5,
+          845.0,
+          534.5
+        ],
+        "edge": 8,
+        "kind": "multiplicity"
+      },
+      {
+        "text": "1",
+        "bounds": [
+          865.0,
+          505.5,
+          887.0,
+          534.5
+        ],
+        "edge": 8,
+        "kind": "multiplicity"
+      },
+      {
+        "text": "0..*",
+        "bounds": [
+          435.0,
+          515.5,
+          477.0,
+          544.5
+        ],
+        "edge": 9,
+        "kind": "multiplicity"
+      },
+      {
+        "text": "1",
+        "bounds": [
+          373.0,
+          455.5,
+          395.0,
+          484.5
+        ],
+        "edge": 9,
+        "kind": "multiplicity"
+      },
+      {
+        "text": "landlord",
+        "bounds": [
+          306.5,
+          525.5,
+          393.5,
+          554.5
+        ],
+        "edge": 1,
+        "kind": "role"
+      },
+      {
+        "text": "property",
+        "bounds": [
+          1305.5,
+          770.5,
+          1394.5,
+          799.5
+        ],
+        "edge": 2,
+        "kind": "role"
+      },
+      {
+        "text": "room",
+        "bounds": [
+          1640.5,
+          165.5,
+          1699.5,
+          194.5
+        ],
+        "edge": 3,
+        "kind": "role"
+      },
+      {
+        "text": "landlord",
+        "bounds": [
+          721.5,
+          405.5,
+          808.5,
+          434.5
+        ],
+        "edge": 4,
+        "kind": "role"
+      },
+      {
+        "text": "property",
+        "bounds": [
+          1293.0,
+          585.5,
+          1382.0,
+          614.5
+        ],
+        "edge": 5,
+        "kind": "role"
+      },
+      {
+        "text": "room",
+        "bounds": [
+          1065.0,
+          281.5,
+          1124.0,
+          310.5
+        ],
+        "edge": 6,
+        "kind": "role"
+      },
+      {
+        "text": "expense",
+        "bounds": [
+          1014.0,
+          654.5,
+          1106.0,
+          683.5
+        ],
+        "edge": 7,
+        "kind": "role"
+      },
+      {
+        "text": "ticket",
+        "bounds": [
+          834.0,
+          577.5,
+          895.0,
+          606.5
+        ],
+        "edge": 8,
+        "kind": "role"
+      },
+      {
+        "text": "author",
+        "bounds": [
+          405.0,
+          467.5,
+          476.0,
+          496.5
+        ],
+        "edge": 9,
+        "kind": "role"
+      }
+    ],
+    "object": false,
+    "notes": [
+      {
+        "id": "maintenance-policy",
+        "class": "Expense",
+        "title": "Bội số cấu trúc, không chốt chia sẻ chi phí",
+        "lines": [
+          "expenseId không unique: Expense được 0..* yêu cầu tham chiếu.",
+          "Luồng hoàn tất tạo khoản chi mới; chính sách chia sẻ cần xác nhận."
+        ],
+        "x": 40,
+        "y": 930,
+        "width": 800,
+        "height": 90
+      }
+    ],
+    "attribute_size": 22,
+    "label_size": 21,
+    "line_step": 30,
+    "note_size": 21
+  },
+  {
+    "id": "CD-06",
+    "title": "Thông báo và nhật ký",
+    "filename": "cd-06",
+    "width": 1240,
+    "height": 1060,
+    "nodes": [
+      {
+        "id": "NotificationRead",
+        "title": "NotificationRead",
+        "lines": [
+          "id: String {id}",
+          "notificationId: String",
+          "readAt: DateTime"
+        ],
+        "fields": [
+          "id",
+          "notificationId",
+          "readAt"
+        ],
+        "x": 40,
+        "y": 480,
+        "width": 400,
+        "height": 136,
+        "header": 44,
+        "reference": false,
+        "object": false
+      },
+      {
+        "id": "NotificationDelivery",
+        "title": "NotificationDelivery",
+        "lines": [
+          "id: String {id}",
+          "landlordId: String",
+          "tenantId: String [0..1]",
+          "invoiceId: String [0..1]",
+          "channel: NotificationDeliveryChannel",
+          "purpose: String",
+          "recipient: String",
+          "status: NotificationDeliveryStatus",
+          "sentAt: DateTime [0..1]",
+          "errorCode: String [0..1]"
+        ],
+        "fields": [
+          "id",
+          "landlordId",
+          "tenantId",
+          "invoiceId",
+          "channel",
+          "purpose",
+          "recipient",
+          "status",
+          "sentAt",
+          "errorCode"
+        ],
+        "x": 700,
+        "y": 480,
+        "width": 470,
+        "height": 318,
+        "header": 44,
+        "reference": false,
+        "object": false
+      },
+      {
+        "id": "AuditLog",
+        "title": "AuditLog",
+        "lines": [
+          "id: String {id}",
+          "actorRole: UserRole",
+          "action: String",
+          "resourceType: String",
+          "resourceId: String [0..1]",
+          "summary: String",
+          "createdAt: DateTime"
+        ],
+        "fields": [
+          "id",
+          "actorRole",
+          "action",
+          "resourceType",
+          "resourceId",
+          "summary",
+          "createdAt"
+        ],
+        "x": 700,
+        "y": 120,
+        "width": 470,
+        "height": 240,
+        "header": 44,
+        "reference": false,
+        "object": false
+      },
+      {
+        "id": "User",
+        "title": "User",
+        "lines": [
+          "id: String {id}",
+          "fullName: String"
+        ],
+        "fields": [
+          "id",
+          "fullName"
+        ],
+        "x": 40,
+        "y": 120,
+        "width": 400,
+        "height": 126,
+        "header": 60,
+        "reference": true,
+        "object": false
+      }
+    ],
+    "routes": [
+      {
+        "source": "AuditLog",
+        "target": "User",
+        "field": "landlord",
+        "points": [
+          [
+            700,
+            300
+          ],
+          [
+            550,
+            300
+          ],
+          [
+            550,
+            220
+          ],
+          [
+            440,
+            220
+          ]
+        ],
+        "dependency": false,
+        "source_multiplicity": "0..*",
+        "target_multiplicity": "0..1"
+      },
+      {
+        "source": "AuditLog",
+        "target": "User",
+        "field": "actor",
+        "points": [
+          [
+            700,
+            180
+          ],
+          [
+            440,
+            180
+          ]
+        ],
+        "dependency": false,
+        "source_multiplicity": "0..*",
+        "target_multiplicity": "0..1"
+      },
+      {
+        "source": "NotificationRead",
+        "target": "User",
+        "field": "user",
+        "points": [
+          [
+            240,
+            480
+          ],
+          [
+            240,
+            246
+          ]
+        ],
+        "dependency": false,
+        "source_multiplicity": "0..*",
+        "target_multiplicity": "1"
+      }
+    ],
+    "labels": [
+      {
+        "text": "0..*",
+        "bounds": [
+          655.0,
+          255.5,
+          697.0,
+          284.5
+        ],
+        "edge": 1,
+        "kind": "multiplicity"
+      },
+      {
+        "text": "0..1",
+        "bounds": [
+          441.0,
+          250.5,
+          487.0,
+          279.5
+        ],
+        "edge": 1,
+        "kind": "multiplicity"
+      },
+      {
+        "text": "0..*",
+        "bounds": [
+          655.0,
+          135.5,
+          697.0,
+          164.5
+        ],
+        "edge": 2,
+        "kind": "multiplicity"
+      },
+      {
+        "text": "0..1",
+        "bounds": [
+          453.0,
+          135.5,
+          499.0,
+          164.5
+        ],
+        "edge": 2,
+        "kind": "multiplicity"
+      },
+      {
+        "text": "0..*",
+        "bounds": [
+          189.0,
+          441.5,
+          231.0,
+          470.5
+        ],
+        "edge": 3,
+        "kind": "multiplicity"
+      },
+      {
+        "text": "1",
+        "bounds": [
+          199.0,
+          255.5,
+          221.0,
+          284.5
+        ],
+        "edge": 3,
+        "kind": "multiplicity"
+      },
+      {
+        "text": "landlord",
+        "bounds": [
+          479.0,
+          205.5,
+          566.0,
+          234.5
+        ],
+        "edge": 1,
+        "kind": "role"
+      },
+      {
+        "text": "actor",
+        "bounds": [
+          541.0,
+          165.5,
+          599.0,
+          194.5
+        ],
+        "edge": 2,
+        "kind": "role"
+      },
+      {
+        "text": "user",
+        "bounds": [
+          214.0,
+          407.0,
+          266.0,
+          436.0
+        ],
+        "edge": 3,
+        "kind": "role"
+      }
+    ],
+    "object": false,
+    "notes": [
+      {
+        "id": "notification-read-unique",
+        "class": "NotificationRead",
+        "title": "NotificationRead",
+        "lines": [
+          "{unique: user, notificationId}",
+          "notificationId có thể là mã tổng hợp;",
+          "không có association đến Delivery."
+        ],
+        "x": 40,
+        "y": 680,
+        "width": 470,
+        "height": 125
+      },
+      {
+        "id": "delivery-id-ref",
+        "class": "NotificationDelivery",
+        "title": "<<IDRef>> — quy ước chú thích",
+        "lines": [
+          "landlordId → User.id",
+          "tenantId → Tenant.id; invoiceId → Invoice.id",
+          "Tham chiếu bằng mã định danh trong dữ liệu;",
+          "không phải structural association UML."
+        ],
+        "x": 700,
+        "y": 840,
+        "width": 470,
+        "height": 170
+      }
+    ],
+    "attribute_size": 22,
+    "label_size": 21,
+    "line_step": 26,
+    "note_size": 20
+  },
+  {
+    "id": "OD-01",
+    "title": "Đối tượng tài khoản và hợp đồng",
+    "filename": "od-01",
+    "width": 1260,
+    "height": 760,
+    "nodes": [
+      {
+        "id": "chuTro01",
+        "title": "chuTro01 : User",
+        "lines": [
+          "id = \"ct01\"",
+          "fullName = \"Chủ trọ minh họa\"",
+          "role = LANDLORD",
+          "isActive = true"
+        ],
+        "fields": [
+          "id",
+          "fullName",
+          "role",
+          "isActive"
+        ],
+        "x": 40,
+        "y": 120,
+        "width": 320,
+        "height": 162,
+        "header": 44,
+        "reference": false,
+        "object": true
+      },
+      {
+        "id": "khuA",
+        "title": "khuA : Property",
+        "lines": [
+          "id = \"khuA\"",
+          "name = \"Khu trọ A\"",
+          "isArchived = false"
+        ],
+        "fields": [
+          "id",
+          "name",
+          "isArchived"
+        ],
+        "x": 470,
+        "y": 120,
+        "width": 320,
+        "height": 136,
+        "header": 44,
+        "reference": false,
+        "object": true
+      },
+      {
+        "id": "phongA01",
+        "title": "phongA01 : Room",
+        "lines": [
+          "id = \"phongA01\"",
+          "name = \"A01\"",
+          "basePrice = 3000000",
+          "status = OCCUPIED",
+          "isActive = true"
+        ],
+        "fields": [
+          "id",
+          "name",
+          "basePrice",
+          "status",
+          "isActive"
+        ],
+        "x": 900,
+        "y": 120,
+        "width": 320,
+        "height": 188,
+        "header": 44,
+        "reference": false,
+        "object": true
+      },
+      {
+        "id": "taiKhoanThue01",
+        "title": "taiKhoanThue01 : User",
+        "lines": [
+          "id = \"tk01\"",
+          "role = TENANT",
+          "isActive = true"
+        ],
+        "fields": [
+          "id",
+          "role",
+          "isActive"
+        ],
+        "x": 40,
+        "y": 460,
+        "width": 320,
+        "height": 136,
+        "header": 44,
+        "reference": false,
+        "object": true
+      },
+      {
+        "id": "hoSo01",
+        "title": "hoSo01 : Tenant",
+        "lines": [
+          "id = \"hoSo01\"",
+          "fullName = \"Người thuê minh họa\"",
+          "isActive = true"
+        ],
+        "fields": [
+          "id",
+          "fullName",
+          "isActive"
+        ],
+        "x": 470,
+        "y": 460,
+        "width": 320,
+        "height": 136,
+        "header": 44,
+        "reference": false,
+        "object": true
+      },
+      {
+        "id": "hopDong01",
+        "title": "hopDong01 : Lease",
+        "lines": [
+          "id = \"hopDong01\"",
+          "startDate = \"2026-10-01\"",
+          "monthlyRent = 3000000",
+          "deposit = 0",
+          "status = ACTIVE"
+        ],
+        "fields": [
+          "id",
+          "startDate",
+          "monthlyRent",
+          "deposit",
+          "status"
+        ],
+        "x": 900,
+        "y": 460,
+        "width": 320,
+        "height": 188,
+        "header": 44,
+        "reference": false,
+        "object": true
+      }
+    ],
+    "routes": [
+      {
+        "source": "khuA",
+        "target": "chuTro01",
+        "field": "landlord",
+        "points": [
+          [
+            470,
+            190
+          ],
+          [
+            450,
+            190
+          ],
+          [
+            450,
+            180
+          ],
+          [
+            380,
+            180
+          ],
+          [
+            360,
+            180
+          ]
+        ],
+        "dependency": false,
+        "source_multiplicity": null,
+        "target_multiplicity": null
+      },
+      {
+        "source": "phongA01",
+        "target": "khuA",
+        "field": "property",
+        "points": [
+          [
+            900,
+            210
+          ],
+          [
+            880,
+            210
+          ],
+          [
+            880,
+            190
+          ],
+          [
+            810,
+            190
+          ],
+          [
+            790,
+            190
+          ]
+        ],
+        "dependency": false,
+        "source_multiplicity": null,
+        "target_multiplicity": null
+      },
+      {
+        "source": "hoSo01",
+        "target": "chuTro01",
+        "field": "landlord",
+        "points": [
+          [
+            470,
+            510
+          ],
+          [
+            450,
+            510
+          ],
+          [
+            450,
+            220
+          ],
+          [
+            380,
+            220
+          ],
+          [
+            360,
+            220
+          ]
+        ],
+        "dependency": false,
+        "source_multiplicity": null,
+        "target_multiplicity": null
+      },
+      {
+        "source": "hoSo01",
+        "target": "taiKhoanThue01",
+        "field": "user",
+        "points": [
+          [
+            470,
+            540
+          ],
+          [
+            450,
+            540
+          ],
+          [
+            450,
+            530
+          ],
+          [
+            380,
+            530
+          ],
+          [
+            360,
+            530
+          ]
+        ],
+        "dependency": false,
+        "source_multiplicity": null,
+        "target_multiplicity": null
+      },
+      {
+        "source": "hopDong01",
+        "target": "phongA01",
+        "field": "room",
+        "points": [
+          [
+            1060,
+            460
+          ],
+          [
+            1060,
+            440
+          ],
+          [
+            1060,
+            330
+          ],
+          [
+            1060,
+            308
+          ]
+        ],
+        "dependency": false,
+        "source_multiplicity": null,
+        "target_multiplicity": null
+      },
+      {
+        "source": "hopDong01",
+        "target": "hoSo01",
+        "field": "tenant",
+        "points": [
+          [
+            900,
+            550
+          ],
+          [
+            880,
+            550
+          ],
+          [
+            880,
+            530
+          ],
+          [
+            810,
+            530
+          ],
+          [
+            790,
+            530
+          ]
+        ],
+        "dependency": false,
+        "source_multiplicity": null,
+        "target_multiplicity": null
+      }
+    ],
+    "labels": [
+      {
+        "text": "landlord",
+        "bounds": [
+          398.0,
+          167.5,
+          467.0,
+          192.5
+        ],
+        "edge": 1,
+        "kind": "role"
+      },
+      {
+        "text": "property",
+        "bounds": [
+          809.0,
+          177.5,
+          881.0,
+          202.5
+        ],
+        "edge": 2,
+        "kind": "role"
+      },
+      {
+        "text": "landlord",
+        "bounds": [
+          398.0,
+          207.5,
+          467.0,
+          232.5
+        ],
+        "edge": 3,
+        "kind": "role"
+      },
+      {
+        "text": "user",
+        "bounds": [
+          411.0,
+          517.5,
+          454.0,
+          542.5
+        ],
+        "edge": 4,
+        "kind": "role"
+      },
+      {
+        "text": "room",
+        "bounds": [
+          1036.0,
+          312.0,
+          1084.0,
+          337.0
+        ],
+        "edge": 5,
+        "kind": "role"
+      },
+      {
+        "text": "tenant",
+        "bounds": [
+          834.5,
+          517.5,
+          890.5,
+          542.5
+        ],
+        "edge": 6,
+        "kind": "role"
+      }
+    ],
+    "object": true,
+    "notes": [],
+    "attribute_size": 19,
+    "label_size": 17,
+    "line_step": 26
+  },
+  {
+    "id": "OD-02",
+    "title": "Đối tượng hóa đơn và thanh toán",
+    "filename": "od-02",
+    "width": 1380,
+    "height": 1040,
+    "nodes": [
+      {
+        "id": "phongA01",
+        "title": "phongA01 : Room",
+        "lines": [
+          "id = \"phongA01\""
+        ],
+        "fields": [
+          "id"
+        ],
+        "x": 40,
+        "y": 120,
+        "width": 320,
+        "height": 104,
+        "header": 60,
+        "reference": true,
+        "object": true
+      },
+      {
+        "id": "hopDong01",
+        "title": "hopDong01 : Lease",
+        "lines": [
+          "id = \"hopDong01\""
+        ],
+        "fields": [
+          "id"
+        ],
+        "x": 470,
+        "y": 120,
+        "width": 320,
+        "height": 104,
+        "header": 60,
+        "reference": true,
+        "object": true
+      },
+      {
+        "id": "hoSo01",
+        "title": "hoSo01 : Tenant",
+        "lines": [
+          "id = \"hoSo01\""
+        ],
+        "fields": [
+          "id"
+        ],
+        "x": 900,
+        "y": 120,
+        "width": 320,
+        "height": 104,
+        "header": 60,
+        "reference": true,
+        "object": true
+      },
+      {
+        "id": "chiSoDien01",
+        "title": "chiSoDien01 : MeterReading",
+        "lines": [
+          "utilityType = ELECTRICITY",
+          "previousReading = 1000",
+          "currentReading = 1020",
+          "unitPrice = 3500",
+          "amount = 70000",
+          "usage = 20",
+          "billingMonth = \"2026-10-01\""
+        ],
+        "fields": [
+          "utilityType",
+          "previousReading",
+          "currentReading",
+          "unitPrice",
+          "amount"
+        ],
+        "x": 40,
+        "y": 390,
+        "width": 320,
+        "height": 268,
+        "header": 44,
+        "reference": false,
+        "object": true
+      },
+      {
+        "id": "hoaDon01",
+        "title": "hoaDon01 : Invoice",
+        "lines": [
+          "billingMonth = \"2026-10-01\"",
+          "rentAmount = 3000000",
+          "electricityAmount = 70000",
+          "waterAmount = 50000",
+          "otherAmount = 0",
+          "totalAmount = 3120000",
+          "paidAmount = 2000000",
+          "status = PARTIAL",
+          "dueDate = \"2026-10-10\""
+        ],
+        "fields": [
+          "billingMonth",
+          "totalAmount",
+          "paidAmount",
+          "status",
+          "dueDate"
+        ],
+        "x": 470,
+        "y": 390,
+        "width": 320,
+        "height": 328,
+        "header": 44,
+        "reference": false,
+        "object": true
+      },
+      {
+        "id": "chiSoNuoc01",
+        "title": "chiSoNuoc01 : MeterReading",
+        "lines": [
+          "utilityType = WATER",
+          "previousReading = 20",
+          "currentReading = 25",
+          "unitPrice = 10000",
+          "amount = 50000",
+          "usage = 5",
+          "billingMonth = \"2026-10-01\""
+        ],
+        "fields": [
+          "utilityType",
+          "previousReading",
+          "currentReading",
+          "unitPrice",
+          "amount"
+        ],
+        "x": 900,
+        "y": 390,
+        "width": 320,
+        "height": 268,
+        "header": 44,
+        "reference": false,
+        "object": true
+      },
+      {
+        "id": "khoanThu01",
+        "title": "khoanThu01 : Payment",
+        "lines": [
+          "amount = 2000000",
+          "method = BANK_TRANSFER",
+          "type = PAYMENT",
+          "paidAt = \"2026-10-05\""
+        ],
+        "fields": [
+          "amount",
+          "method",
+          "type",
+          "paidAt"
+        ],
+        "x": 40,
+        "y": 750,
+        "width": 320,
+        "height": 178,
+        "header": 44,
+        "reference": false,
+        "object": true
+      },
+      {
+        "id": "minhChung01",
+        "title": "minhChung01 : PaymentProof",
+        "lines": [
+          "amount = 1120000",
+          "status = PENDING",
+          "submittedAt = \"2026-10-06\""
+        ],
+        "fields": [
+          "amount",
+          "status",
+          "submittedAt"
+        ],
+        "x": 900,
+        "y": 750,
+        "width": 320,
+        "height": 148,
+        "header": 44,
+        "reference": false,
+        "object": true
+      }
+    ],
+    "routes": [
+      {
+        "source": "hopDong01",
+        "target": "phongA01",
+        "field": "room",
+        "points": [
+          [
+            470,
+            170
+          ],
+          [
+            450,
+            170
+          ],
+          [
+            450,
+            160
+          ],
+          [
+            380,
+            160
+          ],
+          [
+            360,
+            160
+          ]
+        ],
+        "dependency": false,
+        "source_multiplicity": null,
+        "target_multiplicity": null
+      },
+      {
+        "source": "hopDong01",
+        "target": "hoSo01",
+        "field": "tenant",
+        "points": [
+          [
+            790,
+            170
+          ],
+          [
+            810,
+            170
+          ],
+          [
+            810,
+            160
+          ],
+          [
+            880,
+            160
+          ],
+          [
+            900,
+            160
+          ]
+        ],
+        "dependency": false,
+        "source_multiplicity": null,
+        "target_multiplicity": null
+      },
+      {
+        "source": "chiSoDien01",
+        "target": "phongA01",
+        "field": "room",
+        "points": [
+          [
+            200,
+            390
+          ],
+          [
+            200,
+            370
+          ],
+          [
+            200,
+            240
+          ],
+          [
+            200,
+            224
+          ]
+        ],
+        "dependency": false,
+        "source_multiplicity": null,
+        "target_multiplicity": null
+      },
+      {
+        "source": "hoaDon01",
+        "target": "hopDong01",
+        "field": "lease",
+        "points": [
+          [
+            630,
+            390
+          ],
+          [
+            630,
+            370
+          ],
+          [
+            630,
+            240
+          ],
+          [
+            630,
+            224
+          ]
+        ],
+        "dependency": false,
+        "source_multiplicity": null,
+        "target_multiplicity": null
+      },
+      {
+        "source": "hoaDon01",
+        "target": "phongA01",
+        "field": "room",
+        "points": [
+          [
+            470,
+            460
+          ],
+          [
+            450,
+            460
+          ],
+          [
+            380,
+            460
+          ],
+          [
+            380,
+            170
+          ],
+          [
+            360,
+            170
+          ]
+        ],
+        "dependency": false,
+        "source_multiplicity": null,
+        "target_multiplicity": null
+      },
+      {
+        "source": "hoaDon01",
+        "target": "hoSo01",
+        "field": "tenant",
+        "points": [
+          [
+            790,
+            460
+          ],
+          [
+            810,
+            460
+          ],
+          [
+            810,
+            180
+          ],
+          [
+            880,
+            180
+          ],
+          [
+            900,
+            180
+          ]
+        ],
+        "dependency": false,
+        "source_multiplicity": null,
+        "target_multiplicity": null
+      },
+      {
+        "source": "chiSoNuoc01",
+        "target": "phongA01",
+        "field": "room",
+        "points": [
+          [
+            900,
+            480
+          ],
+          [
+            880,
+            480
+          ],
+          [
+            800,
+            480
+          ],
+          [
+            800,
+            230
+          ],
+          [
+            390,
+            230
+          ],
+          [
+            390,
+            180
+          ],
+          [
+            380,
+            180
+          ],
+          [
+            360,
+            180
+          ]
+        ],
+        "dependency": false,
+        "source_multiplicity": null,
+        "target_multiplicity": null
+      },
+      {
+        "source": "khoanThu01",
+        "target": "hoaDon01",
+        "field": "invoice",
+        "points": [
+          [
+            360,
+            830
+          ],
+          [
+            380,
+            830
+          ],
+          [
+            380,
+            510
+          ],
+          [
+            450,
+            510
+          ],
+          [
+            470,
+            510
+          ]
+        ],
+        "dependency": false,
+        "source_multiplicity": null,
+        "target_multiplicity": null
+      },
+      {
+        "source": "minhChung01",
+        "target": "hoaDon01",
+        "field": "invoice",
+        "points": [
+          [
+            900,
+            820
+          ],
+          [
+            880,
+            820
+          ],
+          [
+            880,
+            510
+          ],
+          [
+            810,
+            510
+          ],
+          [
+            790,
+            510
+          ]
+        ],
+        "dependency": false,
+        "source_multiplicity": null,
+        "target_multiplicity": null
+      },
+      {
+        "source": "minhChung01",
+        "target": "hoSo01",
+        "field": "tenant",
+        "points": [
+          [
+            1220,
+            800
+          ],
+          [
+            1280,
+            800
+          ],
+          [
+            1280,
+            170
+          ],
+          [
+            1220,
+            170
+          ]
+        ],
+        "dependency": false,
+        "source_multiplicity": null,
+        "target_multiplicity": null
+      }
+    ],
+    "labels": [
+      {
+        "text": "room",
+        "bounds": [
+          403.0,
+          145.5,
+          462.0,
+          174.5
+        ],
+        "edge": 1,
+        "kind": "role"
+      },
+      {
+        "text": "tenant",
+        "bounds": [
+          810.0,
+          145.5,
+          880.0,
+          174.5
+        ],
+        "edge": 2,
+        "kind": "role"
+      },
+      {
+        "text": "room",
+        "bounds": [
+          170.5,
+          323.0,
+          229.5,
+          352.0
+        ],
+        "edge": 3,
+        "kind": "role"
+      },
+      {
+        "text": "lease",
+        "bounds": [
+          599.0,
+          323.0,
+          661.0,
+          352.0
+        ],
+        "edge": 4,
+        "kind": "role"
+      },
+      {
+        "text": "room",
+        "bounds": [
+          350.5,
+          300.5,
+          409.5,
+          329.5
+        ],
+        "edge": 5,
+        "kind": "role"
+      },
+      {
+        "text": "tenant",
+        "bounds": [
+          775.0,
+          305.5,
+          845.0,
+          334.5
+        ],
+        "edge": 6,
+        "kind": "role"
+      },
+      {
+        "text": "room",
+        "bounds": [
+          770.5,
+          340.5,
+          829.5,
+          369.5
+        ],
+        "edge": 7,
+        "kind": "role"
+      },
+      {
+        "text": "invoice",
+        "bounds": [
+          376.0,
+          495.5,
+          454.0,
+          524.5
+        ],
+        "edge": 8,
+        "kind": "role"
+      },
+      {
+        "text": "invoice",
+        "bounds": [
+          806.0,
+          495.5,
+          884.0,
+          524.5
+        ],
+        "edge": 9,
+        "kind": "role"
+      },
+      {
+        "text": "tenant",
+        "bounds": [
+          1230.0,
+          155.5,
+          1300.0,
+          184.5
+        ],
+        "edge": 10,
+        "kind": "role"
+      }
+    ],
+    "object": true,
+    "notes": [],
+    "attribute_size": 23,
+    "label_size": 21,
+    "line_step": 30
+  }
+]

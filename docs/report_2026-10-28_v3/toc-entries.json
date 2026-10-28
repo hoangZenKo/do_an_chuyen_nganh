@@ -1,0 +1,207 @@
+[
+  [
+    "sec_0001",
+    "Phân công thực hiện đồ án",
+    1
+  ],
+  [
+    "sec_0002",
+    "1 Giới thiệu",
+    1
+  ],
+  [
+    "sec_0003",
+    "1.1 Đặt vấn đề",
+    2
+  ],
+  [
+    "sec_0004",
+    "1.2 Các giải pháp đã có",
+    2
+  ],
+  [
+    "sec_0005",
+    "1.3 Giải pháp đề xuất",
+    2
+  ],
+  [
+    "sec_0006",
+    "2 Thiết kế và triển khai",
+    1
+  ],
+  [
+    "sec_0007",
+    "2.1 Các yêu cầu chức năng",
+    2
+  ],
+  [
+    "sec_0008",
+    "2.1.1 Tác nhân và phạm vi truy cập",
+    3
+  ],
+  [
+    "sec_0009",
+    "2.1.2 Thuật ngữ và quy tắc nghiệp vụ",
+    3
+  ],
+  [
+    "sec_0010",
+    "2.2 Các yêu cầu phi chức năng",
+    2
+  ],
+  [
+    "sec_0011",
+    "2.3 Các ràng buộc",
+    2
+  ],
+  [
+    "sec_0012",
+    "2.3.1 Các ràng buộc về triển khai",
+    3
+  ],
+  [
+    "sec_0013",
+    "2.3.2 Các ràng buộc kinh tế",
+    3
+  ],
+  [
+    "sec_0014",
+    "2.3.3 Các ràng buộc về đạo đức",
+    3
+  ],
+  [
+    "sec_0015",
+    "2.4 Mô hình hệ thống và thiết kế giải pháp",
+    2
+  ],
+  [
+    "sec_0016",
+    "2.4.1 Các kịch bản của hệ thống",
+    3
+  ],
+  [
+    "sec_0157",
+    "2.4.2 Mô hình Use case",
+    3
+  ],
+  [
+    "sec_0182",
+    "2.4.3 Mô hình lớp và đối tượng",
+    3
+  ],
+  [
+    "sec_0202",
+    "2.4.4 Các biểu đồ tuần tự",
+    3
+  ],
+  [
+    "sec_0222",
+    "2.4.5 Các màn hình giao diện người dùng",
+    3
+  ],
+  [
+    "sec_0251",
+    "2.5 Thiết kế triển khai và các điểm cần đối chiếu",
+    2
+  ],
+  [
+    "sec_0252",
+    "2.5.1 Cấu trúc mã nguồn và hợp đồng API",
+    3
+  ],
+  [
+    "sec_0253",
+    "2.5.2 Tính tiền phân bổ và báo cáo",
+    3
+  ],
+  [
+    "sec_0254",
+    "2.5.3 Phân quyền dữ liệu và tác vụ nền",
+    3
+  ],
+  [
+    "sec_0255",
+    "2.5.4 Các lỗi lệch tài liệu đã được hiệu chỉnh",
+    3
+  ],
+  [
+    "sec_0256",
+    "2.6 Kiểm chứng và đánh giá kết quả",
+    2
+  ],
+  [
+    "sec_0257",
+    "2.6.1 Phương pháp và phạm vi kiểm tra",
+    3
+  ],
+  [
+    "sec_0258",
+    "2.6.2 Các kịch bản kiểm chứng trọng yếu",
+    3
+  ],
+  [
+    "sec_0259",
+    "2.6.3 Lỗi hiện hữu và giới hạn còn lại",
+    3
+  ],
+  [
+    "sec_0260",
+    "3 Một số thành phần khác của đồ án",
+    1
+  ],
+  [
+    "sec_0261",
+    "3.1 Kế hoạch dự án",
+    2
+  ],
+  [
+    "sec_0262",
+    "3.2 Đảm bảo thực hiện đúng với đồ án cá nhân",
+    2
+  ],
+  [
+    "sec_0263",
+    "3.3 Các vấn đề về đạo đức và làm việc chuyên nghiệp",
+    2
+  ],
+  [
+    "sec_0264",
+    "3.4 Tác động xã hội",
+    2
+  ],
+  [
+    "sec_0265",
+    "3.5 Kế hoạch cho kiến thức mới và chiến lược học tập",
+    2
+  ],
+  [
+    "sec_0266",
+    "4 Kết luận",
+    1
+  ],
+  [
+    "sec_0267",
+    "5 Tài liệu tham khảo",
+    1
+  ],
+  [
+    "sec_0268",
+    "Phụ lục A Đối chiếu nội dung cũ và mới",
+    1
+  ],
+  [
+    "sec_0269",
+    "A.1 Truy vết 67 UC của bản dở sang báo cáo mới",
+    2
+  ],
+  [
+    "sec_0270",
+    "Phụ lục B Truy vết UC và căn cứ kiểm chứng",
+    1
+  ],
+  [
+    "sec_0271",
+    "Phụ lục C Bằng chứng và tài nguyên chỉnh sửa",
+    1
+  ]
+]

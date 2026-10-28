@@ -1,0 +1,642 @@
+[
+  {
+    "path": "test/features/admin/admin_account_detail_panel_test.dart",
+    "sha256": "b03e641cceb529e85efb78b71f30c3664f34acc8e2dbbb34721309214aa62070"
+  },
+  {
+    "path": "test/features/admin/admin_accounts_panel_test.dart",
+    "sha256": "e1dc3ae0b2586900abff816d94ffa61255b4c024d65fa249f16b6d2580200040"
+  },
+  {
+    "path": "test/features/admin/admin_route_theme_test.dart",
+    "sha256": "3a0eebc7d0d9c6f9dd7d5c2ad167d7c7f66dbd9e37f2f389cca257f1da2233d6"
+  },
+  {
+    "path": "test/features/admin/admin_inventory_panel_test.dart",
+    "sha256": "915592da863fd6c53a2a575dfa4329408eedc094715568b9275a6c3273d85ff4"
+  },
+  {
+    "path": "test/features/admin/admin_workspace_flow_test.dart",
+    "sha256": "f8c5af92c0d526e0fe62cb976490e964538de4ab8f963637fdb7076943281df4"
+  },
+  {
+    "path": "backend/prisma/schema.prisma",
+    "sha256": "1bf3ec69447fed2ea71250c12ca076c17d8648425d422aac384595d7150a64e3"
+  },
+  {
+    "path": "backend/src/auth/auth.controller.ts",
+    "sha256": "7af6547c6531f812b2eb9f0881c031e774120c08240e4cbef01f017777bb055c"
+  },
+  {
+    "path": "backend/src/auth/account-access.service.ts",
+    "sha256": "8ab4caffdf7abd1c22fbfb5bca8f597000d22a09d0e1237e256fc2708cf7f577"
+  },
+  {
+    "path": "backend/src/auth/auth.service.ts",
+    "sha256": "3c5bffa0396e703b7d51d96949831360e376d6927f3fce067a723dadb4cb5bf0"
+  },
+  {
+    "path": "backend/src/auth/admin-mfa.service.ts",
+    "sha256": "37ad59975c3a3c34097d2424f8f03f5f9f9d5532710551585979685cf8952194"
+  },
+  {
+    "path": "backend/src/auth/admin-security.controller.ts",
+    "sha256": "5b40d13190fe5641276cda4c7dbff7e901290a72b03b25203cb5b94d9166397f"
+  },
+  {
+    "path": "backend/src/auth/admin-step-up.controller.ts",
+    "sha256": "bcb15585ab4003161f0d871bcadf7f6eff63a2f51da86733c172b857206be130"
+  },
+  {
+    "path": "backend/src/auth/account-access.controller.ts",
+    "sha256": "bd7ae2c889ede891240a4183365540deca86958de7ed9f263e8d4bc8101030df"
+  },
+  {
+    "path": "backend/src/chatbot/chatbot.service.ts",
+    "sha256": "705e40239448f4ed47cf2a2107f924d877da4ca67c11e58caf2184b5acf98d92"
+  },
+  {
+    "path": "backend/src/chatbot/chatbot.controller.ts",
+    "sha256": "82d631aac638c0f29a9a158e0daee7a125c4c139d93ac56111597bec39eab74a"
+  },
+  {
+    "path": "backend/src/expenses/expenses.service.ts",
+    "sha256": "506330483485adf39931b68dc973f33d5057158dac95d3f6bc6341d06f846e04"
+  },
+  {
+    "path": "backend/src/expenses/expenses.controller.ts",
+    "sha256": "a0c4c43a566c9923dc22c1c7158bb3a8968619f2cfd49364bc36e52fe8367ef4"
+  },
+  {
+    "path": "backend/src/health/operations-queue.controller.ts",
+    "sha256": "7ee8b4342d4c85caaf87770f7606a062442d4419c0fee3415ffc434ada90d1d2"
+  },
+  {
+    "path": "backend/src/health/incident-workflow.controller.ts",
+    "sha256": "f75b8307a2e64f2f60cc24fc1dcc9aecb5b3c03a4bbc65587549e133c357be7e"
+  },
+  {
+    "path": "backend/src/health/operations-queue.service.ts",
+    "sha256": "e2cd3a0cef40faa251399343998061b046605d4f0d9415fc038bf965f4023827"
+  },
+  {
+    "path": "backend/src/health/health.controller.ts",
+    "sha256": "007293b6c92094851d958f38acc7a21d13f84a33b302936229e58d5aeeff15a4"
+  },
+  {
+    "path": "backend/src/listings/listings.controller.ts",
+    "sha256": "6787e0a1d8f83ab5a68f05945ba55aade4248f200513dc27d373da456fd8678d"
+  },
+  {
+    "path": "backend/src/listings/saved-searches.controller.ts",
+    "sha256": "17dda1664f0166541b0bc617a615de88752429858b5044d38a5c22bf5a62e77d"
+  },
+  {
+    "path": "backend/src/listings/listings.service.ts",
+    "sha256": "6f54ab821a9408b481b7a4b57bd7f93ed82455aea717a5752b6ceb7fe5f0c550"
+  },
+  {
+    "path": "backend/src/listings/saved-searches.service.ts",
+    "sha256": "3847bf1ce3ee1ba5ac9973a506288fbc4c3576e6bafffe270f86d8ab91234fd1"
+  },
+  {
+    "path": "backend/src/platform/governance.controller.ts",
+    "sha256": "e0da15e26f34fce5e75aef7d38b8f616a03f7fa2ead7e65660105f21a7294328"
+  },
+  {
+    "path": "backend/src/platform/finance-reconciliation.service.ts",
+    "sha256": "aa2e0d048bf59e7b465bce9191242a269d85c32f79a60d778230bf325ef776fd"
+  },
+  {
+    "path": "backend/src/platform/moderation-v2.service.ts",
+    "sha256": "124c9f39fb2c3f4d6cf4ab1338c097111347739bfc6a3d42b77011064aa2536c"
+  },
+  {
+    "path": "backend/src/platform/governance.service.ts",
+    "sha256": "cb94a8f78eb8d05d5acb446b4698a8d581de4035ff3d98ec8856ca274898b231"
+  },
+  {
+    "path": "backend/src/platform/moderation-policy.controller.ts",
+    "sha256": "54dfa90c7e8d6bdf28bfbc3589f82680ee08b39fdf3163b5b17d3c0a1da9adab"
+  },
+  {
+    "path": "backend/src/platform/moderation-v2.controller.ts",
+    "sha256": "65eb1aa8a2380881c032e53ec225eba52a4b7ee5a52cd0c6f3e5757d2c1123bc"
+  },
+  {
+    "path": "backend/src/platform/finance-reconciliation.controller.ts",
+    "sha256": "0ed14e584b2e02844b2956aa4c607ecde1e771eda2d034cadcbc61e77e41d6f2"
+  },
+  {
+    "path": "backend/src/platform/admin-report-worker.service.ts",
+    "sha256": "46175ad76b8d6440b848d00d0d16e43ec065b3def6ded32e4210dbcbc11285f2"
+  },
+  {
+    "path": "backend/src/platform/moderation-policy.service.ts",
+    "sha256": "271e51bf636be2676a153b5d3becf403c2d0e59e041f680cc60dae94efbaca4a"
+  },
+  {
+    "path": "backend/src/admin/admin-lifecycle.controller.ts",
+    "sha256": "d35cdd97ce8033bd8b3a6c97aaa07a613b7a24a2024365d910bc6b0b54a56447"
+  },
+  {
+    "path": "backend/src/admin/admin-search.controller.ts",
+    "sha256": "ec575085dce25704ecde1dfb06386b8eb7a76e0729fb3dfab379a59e1f741b02"
+  },
+  {
+    "path": "backend/src/admin/admin-access-review.service.ts",
+    "sha256": "85242dee0865857f9593aeb5f53e64e27ebd7225b039c121053e04b542b524a6"
+  },
+  {
+    "path": "backend/src/admin/admin-workspace.controller.ts",
+    "sha256": "7f49b6569677ec0d7495c9df1af19971e896b39b22a3d4a47c85f30b3f61121f"
+  },
+  {
+    "path": "backend/src/admin/admin-verification.service.ts",
+    "sha256": "03abb6f73d8abca0e4fe0ed58dafdd51421ff392e8b734e45711c3f6c6c7395c"
+  },
+  {
+    "path": "backend/src/admin/admin.controller.ts",
+    "sha256": "82b01dc3df49831c8fe0a4db6ac5b72f2e9e7b717a1c6c8ceaf653cf2579c24a"
+  },
+  {
+    "path": "backend/src/admin/admin-overview-analytics.service.ts",
+    "sha256": "d2110cf2d25d2339463c9e31c3f76a08c200c7d5c6677d2b421bb92e31519354"
+  },
+  {
+    "path": "backend/src/admin/admin-console.controller.ts",
+    "sha256": "1626f2a56e42ab5138bcf00503c03ac5855836cc412238c7571b8c56a62c782b"
+  },
+  {
+    "path": "backend/src/admin/admin-console.service.ts",
+    "sha256": "60e91f45bf3dd7a4bbf7f35b3af3abfdff97e2448cdfe771eb11eed6e26b1908"
+  },
+  {
+    "path": "backend/src/admin/admin-overview-analytics.controller.ts",
+    "sha256": "21b5af8b3ffa2609206bcf305d0f452342d7b96b7ab5ed35311a62fd4ae64ba7"
+  },
+  {
+    "path": "backend/src/admin/admin-search.service.ts",
+    "sha256": "69a5e4594818463854ee7818a78089fecfb4bcfa23c77407a50d3a57ad6aa4ba"
+  },
+  {
+    "path": "backend/src/admin/admin-plans.service.ts",
+    "sha256": "db8bf9a854d665acae890b6a3002680171638386edc7720cefc6f021ff2a5c69"
+  },
+  {
+    "path": "backend/src/admin/admin-registry.controller.ts",
+    "sha256": "e1d06f3196a18780545fab2f1e739b40f237bd15733b4d02d933555408301f4e"
+  },
+  {
+    "path": "backend/src/admin/admin.service.ts",
+    "sha256": "cf1a932567c64a5064a0abc81f0863f6c5da9dc347cbba013d117603e240a7e4"
+  },
+  {
+    "path": "backend/src/admin/admin-access-review.controller.ts",
+    "sha256": "30d707d8d814bda4fb8793057dfbd425f79ae2103f89b8bedc921722b6e49587"
+  },
+  {
+    "path": "backend/src/admin/admin-property-review.service.ts",
+    "sha256": "217fa4e30bc55d83549f1945b208b401604ee3e2fd11756c4da60949946cdd1b"
+  },
+  {
+    "path": "backend/src/housing/housing.controller.ts",
+    "sha256": "7fb784291d8a142c1e6a9c1b50d17cfb761cbd7e3d0e94a219dd1c5264c54138"
+  },
+  {
+    "path": "backend/src/housing/handover.service.ts",
+    "sha256": "ad52998fd07c3d27743d2673ca0f6ea6a0ce219db2c10463aff0a0c129c305b5"
+  },
+  {
+    "path": "backend/src/housing/housing.service.ts",
+    "sha256": "9260f60d85a55c0bc65db5c6279d8848f6bea02da4bc16fc1bae831a06d07854"
+  },
+  {
+    "path": "backend/src/uploads/uploads.controller.ts",
+    "sha256": "6d5fa92351c57183e2721b8dababe33fcb5041018e2472bd784bc00e8b9f4d4d"
+  },
+  {
+    "path": "backend/src/tenant-portal/tenant-portal.service.ts",
+    "sha256": "477edcc2d839aa4fe04e77e39e9de8e59b0a5a1b75a2647f49ab903a7afe273f"
+  },
+  {
+    "path": "backend/src/tenant-portal/tenant-portal.controller.ts",
+    "sha256": "94937c902b7d5726c6f0de9ac6ca024521934c2bf1fbdff80a43da5545c09746"
+  },
+  {
+    "path": "backend/src/tenants/tenant-invites.service.ts",
+    "sha256": "8467af14beb3629bb91486bcc9fdd09305139a9aa7b610474ec1a5a69c2e6363"
+  },
+  {
+    "path": "backend/src/tenants/tenants.controller.ts",
+    "sha256": "da6028a9147a29b183415bf0ab491f9a320251e37faab703dcc5b08fefc4b07a"
+  },
+  {
+    "path": "backend/src/tenants/tenant-invites.controller.ts",
+    "sha256": "9653bfa3c40d5cfad02c9d8139a3def96e394734eaf52a5faad99fc31fdc81a0"
+  },
+  {
+    "path": "backend/src/tenants/tenants.service.ts",
+    "sha256": "b0ad10211c2638e1835e536afa71baf84be8d9fc7f65f6bb8b23de56cb6f6a92"
+  },
+  {
+    "path": "backend/src/operations/p1.controller.ts",
+    "sha256": "003f72f61fceb6cd1c40db084dab3a073355cd3a082cd4823dbb3b328bb8045c"
+  },
+  {
+    "path": "backend/src/operations/recurring.service.ts",
+    "sha256": "561f5c45892f0ad2e19964f640b35f7f86f758c72b15de197f9bb60043932955"
+  },
+  {
+    "path": "backend/src/operations/operations.service.ts",
+    "sha256": "dea42c8349ef65c80da68e21024035a597327e9dec8d8fc221bdfe29468f419b"
+  },
+  {
+    "path": "backend/src/operations/turnovers.service.ts",
+    "sha256": "a6160a1b9fd5c2ce75d98687477bd0666cc79390e7df26eabf52a5447a157bcb"
+  },
+  {
+    "path": "backend/src/operations/operations.controller.ts",
+    "sha256": "f9ab3b0fce3accd165675967a99a50776aa99af99ec854b0219fdf525fb52ca5"
+  },
+  {
+    "path": "backend/src/dashboard/dashboard.controller.ts",
+    "sha256": "1323604b383a88f82371f0c857cd745a32e5e2f92cc6f9ff1ecb2c184025db78"
+  },
+  {
+    "path": "backend/src/dashboard/dashboard.service.ts",
+    "sha256": "339445c0e3ba30826434009a86bf8e50970473ea9d29290c2db22b6d83f8dbf1"
+  },
+  {
+    "path": "backend/src/common/subscription-entitlements.ts",
+    "sha256": "d25009b919a661c6117ebf048bca0e45743dd165693ce9f87c2c440dcfe958a7"
+  },
+  {
+    "path": "backend/src/leases/leases.controller.ts",
+    "sha256": "8d9b5e9c169e0e1f0ce0ed68e1623f94f8c2796ccbffb7386f39b81ad0241902"
+  },
+  {
+    "path": "backend/src/leases/leases.service.ts",
+    "sha256": "a180f67b708e91e08994725833bceb25b7ac97f408c8941d9886c702709e9eb1"
+  },
+  {
+    "path": "backend/src/leases/settlements.service.ts",
+    "sha256": "37a2a121e8c293d1cdd57ea16669e42cfec9ee9597648ef94d5630dbf2e98072"
+  },
+  {
+    "path": "backend/src/audit/audit.service.ts",
+    "sha256": "53c667039c5ec09b30ffe5c7711f865e7f3ac24407d461efe21801df44f4c1e5"
+  },
+  {
+    "path": "backend/src/audit/audit.controller.ts",
+    "sha256": "76c2abce0204c6dea9c98365f43a87d3c6bc6c3ed18b5736410aabc63b0e7c4e"
+  },
+  {
+    "path": "backend/src/tenant-lifecycle/tenant-lifecycle.service.ts",
+    "sha256": "812d0246d169759f82e695bbc7bc0b703f6d9fec2d0562714b2a5d32fa72798c"
+  },
+  {
+    "path": "backend/src/tenant-lifecycle/tenant-lifecycle.controller.ts",
+    "sha256": "d6fb6feaf86b7cca3d9533f8236494b566413a3e420937be8454c39d3e0f7b31"
+  },
+  {
+    "path": "backend/src/properties/properties.controller.ts",
+    "sha256": "d098d32e8014ee4fe105c29901e36ae34bea066644f1c4ecb678d0b2d10f53ba"
+  },
+  {
+    "path": "backend/src/properties/properties.service.ts",
+    "sha256": "2ba395ae34ee587c13d55da7a3d03bc4afd78ac0189a082ab87d1e6743b4c626"
+  },
+  {
+    "path": "backend/src/support/notification-delivery.controller.ts",
+    "sha256": "27925daff33e8cb91afd324f7c47f30aecbedef2168a6ac9dcf13b7cf5a2ae78"
+  },
+  {
+    "path": "backend/src/support/support-attachment.controller.ts",
+    "sha256": "b9e4065f668b89678f4f451f27c89b8527000c4914e2857175e5ff1f4c424550"
+  },
+  {
+    "path": "backend/src/support/support-sla.controller.ts",
+    "sha256": "b12c2be1159163913ca1cfb57742b112b2b43603da4d0c88708712e928bd44d8"
+  },
+  {
+    "path": "backend/src/support/support.service.ts",
+    "sha256": "00d983cdae192f9d0cffb4e606bfe8dc5cd61c1f149774c3794d52d102614946"
+  },
+  {
+    "path": "backend/src/support/notification-center.controller.ts",
+    "sha256": "aa07a04819c5ff09cd928863eeb1f3cbd5dd1a663a474edeec3c027e6932501e"
+  },
+  {
+    "path": "backend/src/support/support-attachment.service.ts",
+    "sha256": "de6bbdc52498dd23a9640df28fe7ade27f3ae9d1f1421e21a9dd7bd5c039802f"
+  },
+  {
+    "path": "backend/src/support/support-tools.controller.ts",
+    "sha256": "37c21ca06fc3d1eb6ae28a1c0ec34bcbdce55f605fd8d28719102a5e33ecbef0"
+  },
+  {
+    "path": "backend/src/support/support-case.controller.ts",
+    "sha256": "8d1ee5b906ce82df21eae7ccec7bb179514a0739f8c0e9f677a71e11901a0c81"
+  },
+  {
+    "path": "backend/src/support/support.controller.ts",
+    "sha256": "37078d6a485e2ee827c70554be8d6bc8578da0269795f7b165491898ab484bcb"
+  },
+  {
+    "path": "backend/src/support/platform-notification.service.ts",
+    "sha256": "20fb8add64c1ab49d90573f48cc1637019a11685f2e350e003048623f1ffbfdf"
+  },
+  {
+    "path": "backend/src/support/support-workflow.service.ts",
+    "sha256": "bdaafb0d04e7c97b3a3a3e639ca7ce161b72dd64d5fb4ce94558a7dd252993ef"
+  },
+  {
+    "path": "backend/src/support/support-workflow.controller.ts",
+    "sha256": "2d37df9a4d3bf5d40d7e6fe0d425d23c22712f2eaa25662800d2f1ecbb93152b"
+  },
+  {
+    "path": "backend/src/maintenance/maintenance.service.ts",
+    "sha256": "05a7fd9f7f26daa4d4ce7928616a57067bf906f75655e47eaa5735f2e193858d"
+  },
+  {
+    "path": "backend/src/maintenance/maintenance.controller.ts",
+    "sha256": "1e48cb1ef62e33119bea9dd515f7b9f4de3ce2d6d6ed5b38f6b7313304c9f596"
+  },
+  {
+    "path": "backend/src/staff/staff.controller.ts",
+    "sha256": "49c4ea58fed384b45e0ac388a6995822080e39a326f2a2ad6b5c190699dc137f"
+  },
+  {
+    "path": "backend/src/staff/staff.service.ts",
+    "sha256": "6f95c95762d0713d2400c6ba40828f6f4a27774f9ae8b3f63394f9fdbfa8f82b"
+  },
+  {
+    "path": "backend/src/rooms/rooms.service.ts",
+    "sha256": "79ffc92b49def6593a57d755d087608794e8bd0e20299c206af49bc844977945"
+  },
+  {
+    "path": "backend/src/rooms/rooms.controller.ts",
+    "sha256": "de29d2c96e9f1ffb5ac989096fd98a0db0f3d5d7e75a0eec9dfb11471c1df8ab"
+  },
+  {
+    "path": "backend/src/notifications/announcements.service.ts",
+    "sha256": "ea8c061cba317b356c8031aba0079fa4d2f7192d72f7c0ee616fde50f76d09a3"
+  },
+  {
+    "path": "backend/src/notifications/announcements.controller.ts",
+    "sha256": "761c6f5056d01914ed44aea402b59cd86ff706650c1d7aa3003293a6e4586d6d"
+  },
+  {
+    "path": "backend/src/notifications/notifications.controller.ts",
+    "sha256": "351e1dc9a1164a77e8495ff05e04cfd8bb6399a35781cee44b91c42fcb70aae1"
+  },
+  {
+    "path": "backend/src/notifications/notifications.service.ts",
+    "sha256": "1a7081dffe495b46bb9ba47a94e8f4fd31c6c4695b90e4a91696e9487f300090"
+  },
+  {
+    "path": "backend/src/billing/online-payments.controller.ts",
+    "sha256": "c6cbb8f0bfb6c058128f7b810224ffffaf2d91157dcc61972e80e7f73986f866"
+  },
+  {
+    "path": "backend/src/billing/billing.controller.ts",
+    "sha256": "f0ee8c237cc30a79c2f95b0777a652c2d7db3e6b7b94415baa399427aff53ca9"
+  },
+  {
+    "path": "backend/src/billing/billing-ledger.service.ts",
+    "sha256": "1da9486ba1b4f4511bd7f73cd49183344b5119204ffcf6d26691c0725306fb6f"
+  },
+  {
+    "path": "backend/src/billing/billing-reminders.service.ts",
+    "sha256": "ac227ff748dd004c6aa99236de7d5a9f78ad941bf1738b7a1b1539e53dcb8282"
+  },
+  {
+    "path": "backend/src/billing/billing-tariffs.service.ts",
+    "sha256": "e0033d0b3fc75efd248a115b323c514444fe495e08a5d474684fcb8186662a18"
+  },
+  {
+    "path": "backend/src/billing/online-payments.service.ts",
+    "sha256": "c74d07e68f1deced5ea062aac9ea21ab7013ef4ec5d29e98bd012dbd0d093b38"
+  },
+  {
+    "path": "backend/src/billing/billing.service.ts",
+    "sha256": "45271709a402e2034a553e83d01d24a8cac4772e742ccb95011848dc7269c3ee"
+  },
+  {
+    "path": "backend/src/billing/billing-commands.service.ts",
+    "sha256": "f0a04fdcbf7c3c9c416c1f3bf42a894cbbcd0bd8ec34294e79fe583e43302875"
+  },
+  {
+    "path": "backend/src/billing/billing-automation.scheduler.ts",
+    "sha256": "c7bdcfa163b819476370eda176f7ecb23b32ccfc43dee4a35a0b328fb614ee91"
+  },
+  {
+    "path": "backend/src/reports/reports.service.ts",
+    "sha256": "c921f140dca130fbd7ceaf3d0c70075230779feeba590603ef9985de246c637f"
+  },
+  {
+    "path": "backend/src/reports/reports.controller.ts",
+    "sha256": "8b4dc181789858d1f5aefb9733e00cc143e82d1513b2194b84cbc0a22603695e"
+  },
+  {
+    "path": "backend/src/reviews/reviews.controller.ts",
+    "sha256": "98807800665d4f03c04a1cfce21343bc9de3bc40aa5386ee407eb9b0c93e93f6"
+  },
+  {
+    "path": "backend/src/reviews/reviews.service.ts",
+    "sha256": "e749f4a261db5327a6cd14322e1af35aa553cc00d6f9c07613947d39ebfa783b"
+  },
+  {
+    "path": "lib/features/admin/admin_governance.dart",
+    "sha256": "dc824d68a93261c57236890d89ff4bb141b515f693d97322762f650b7b76881b"
+  },
+  {
+    "path": "lib/features/admin/admin_registry_screen.dart",
+    "sha256": "b5e3669bcab00ba525a86250a9d0ecbca722fa5aae779e19258c8e3a85241d17"
+  },
+  {
+    "path": "lib/features/admin/admin_overview_shell.dart",
+    "sha256": "391acb7045724a516a2e51712b9c8ce4d945dfa2157fae5e8e048f6f47835b93"
+  },
+  {
+    "path": "lib/features/admin/admin_providers.dart",
+    "sha256": "6cd11e575297d6f4e1b17f28d094cd1072c02fbf38e8c803b776e5c20843620f"
+  },
+  {
+    "path": "lib/features/admin/admin_workspace_states.dart",
+    "sha256": "5d7d447ae4725db1b55ab41d5ef58ae9ee302153410f43718b3aa07b7a7a2aa8"
+  },
+  {
+    "path": "lib/features/admin/admin_access_review_panel.dart",
+    "sha256": "f319b585c4d5e409f79adacd7aceee742454006cacd2bf015168b8cf53b9f90c"
+  },
+  {
+    "path": "lib/features/admin/admin_workspace_scaffold.dart",
+    "sha256": "b2c7be0192fd26e64d40a3064b41bc1a3a1a71ec741532decd86791811060e28"
+  },
+  {
+    "path": "lib/features/admin/admin_overview_page.dart",
+    "sha256": "e9318490bd81631f6ab3355cf1a9cabda2e240a8fefc98c5890bfbcc5fc49f74"
+  },
+  {
+    "path": "lib/features/admin/admin_security_screen.dart",
+    "sha256": "872fc7b7dfaa0a0813d04b6b56455e089841f09cc0bfae75c8bb6cb6668950fc"
+  },
+  {
+    "path": "lib/features/admin/admin_search_results.dart",
+    "sha256": "45200b6659af8a63552dc0caf0acc4b954b221a8b5221a5db23f23b77ef1d77e"
+  },
+  {
+    "path": "lib/features/admin/admin_lifecycle_panel.dart",
+    "sha256": "884c5c8197d8a297553b061a2788547abd4719470d03cf68a35e2aba45a0e0f6"
+  },
+  {
+    "path": "lib/features/admin/admin_case_timeline_dialog.dart",
+    "sha256": "5607800aaf314282fcef17bbe45ba09f34891b028416f4d9933078ab6cb02706"
+  },
+  {
+    "path": "lib/features/admin/admin_support_center.dart",
+    "sha256": "22dab715d17c155a52e24ab4cf53af21120e62d398d768c5f9aff82f100721a4"
+  },
+  {
+    "path": "lib/features/admin/admin_property_form_screen.dart",
+    "sha256": "b7316a1acdd7a16a12419b81a7a047b77243799a00031ef89093f07c3ef4eba2"
+  },
+  {
+    "path": "lib/features/admin/admin_finance_workflow.dart",
+    "sha256": "c2e64e0ad1358db868a4e9899ee9bc15c9fc6bcff2a57d5780918d1d9128f733"
+  },
+  {
+    "path": "lib/features/admin/admin_accounts_screen.dart",
+    "sha256": "1aa9598293d5dccb0e021b938b1ead99e39327b102393979ff8197dd2d826319"
+  },
+  {
+    "path": "lib/features/admin/admin_workspace_screen.dart",
+    "sha256": "184c4e834da1d88e9586fd32a17ede9fe5c050651cd5ff9398bfc152ac805a91"
+  },
+  {
+    "path": "lib/features/admin/admin_step_up.dart",
+    "sha256": "472d8d60a220495a62f6f509bb21db33f92b8ea26e8d9d96c1f7773853746e6a"
+  },
+  {
+    "path": "lib/features/admin/admin_overview_providers.dart",
+    "sha256": "f2f02dee5382f613fce449ff72b6f05d19511941163cc6bd176fd3b5011937ad"
+  },
+  {
+    "path": "lib/features/admin/admin_production_panels.dart",
+    "sha256": "78df0ab2ea502daf0222ea0e82cebcbc1731a06ac8bd88574bf422666eae5375"
+  },
+  {
+    "path": "lib/features/admin/admin_account_detail_panel.dart",
+    "sha256": "6b904aca6fc32500bbbf077e0c0d9f715c4e17c4e7f061c0b06c5452b7eac834"
+  },
+  {
+    "path": "lib/features/admin/admin_overview_theme.dart",
+    "sha256": "862f952709d27a5e2c0722e942cff35d8a842e05b568454e4aae127d1865eaac"
+  },
+  {
+    "path": "lib/features/admin/admin_workspace_navigation.dart",
+    "sha256": "79e24d37f2c524a1eaebee2eabceca2652e595847b30f74b68b22e68d5837837"
+  },
+  {
+    "path": "lib/features/admin/admin_audit_screen.dart",
+    "sha256": "5ae0bbfe5fb4150f67b9eaeb8428469d1ce0fdee9cc9a6412f6ea79dcbd955cd"
+  },
+  {
+    "path": "lib/features/admin/admin_properties_screen.dart",
+    "sha256": "2ff96ce5e50a608b69dc1cee8bb6bd47442ff1a4485675bb294ac016ac325846"
+  },
+  {
+    "path": "lib/features/admin/admin_delivery_jobs_panel.dart",
+    "sha256": "d75b921cc14958245152187d1d4741b11b997586be64af86c13893d81f1da398"
+  },
+  {
+    "path": "lib/features/admin/admin_inbox_filters.dart",
+    "sha256": "e085705bb7a744a1dfbb1cd32e55d6cf7c8ea0c7c8dc8a8c4aefbece684b12a4"
+  },
+  {
+    "path": "lib/features/admin/admin_landlord_form_screen.dart",
+    "sha256": "0610b436d182d637da10de1f957edb3e9186783e0d620c48cc17936bf45dfb9a"
+  },
+  {
+    "path": "lib/features/admin/admin_policies_screen.dart",
+    "sha256": "11e6948a29aad97beb5802d23afa5e8d61a50d682b70374c8528492d84c8c895"
+  },
+  {
+    "path": "lib/features/admin/admin_workspace_action_queue.dart",
+    "sha256": "9ca82ab88bddbf651fd788531f62edeb616de87660da9a11a3c49f85a6b67f37"
+  },
+  {
+    "path": "lib/features/admin/admin_landlord_detail_screen.dart",
+    "sha256": "8a4ce0741a5f253b463bd92de0e80804f356bd419457739cb798135f5bbf2011"
+  },
+  {
+    "path": "lib/features/admin/admin_notification_queue.dart",
+    "sha256": "3510492855c9f27a3d53b4c3db85e71b760dd859183bd3c32fb007110c784084"
+  },
+  {
+    "path": "lib/features/admin/admin_inventory_widgets.dart",
+    "sha256": "edf249fb02a955d2521df02a22856b9438ad27863194a73522789502583949f8"
+  },
+  {
+    "path": "lib/features/admin/admin_rooms_screen.dart",
+    "sha256": "21b15397cfe97bc541179748e68404bd43254fff0b48baa15d46ca04c2bce403"
+  },
+  {
+    "path": "lib/features/admin/admin_landlords_screen.dart",
+    "sha256": "0cef9a8234aeced8a936e1dd71fa2fc24d3e557c9efc484768ce1a7d1b5eeb7c"
+  },
+  {
+    "path": "lib/features/admin/admin_bulk_preview_dialog.dart",
+    "sha256": "6fe169f432ab32ee0e0054fa64d573204e28c100f53ed506ec92682e014e60b1"
+  },
+  {
+    "path": "lib/features/admin/admin_accounts_panel.dart",
+    "sha256": "2614e94a380b276dd7308094179211d8d4817d90ecd783ea3fc6b836edee4b37"
+  },
+  {
+    "path": "lib/features/admin/admin_moderation_screen.dart",
+    "sha256": "38d9d74eca2afe29f5094cb2ee222c1d2ecebb738d9bf6d781ee0a716865581d"
+  },
+  {
+    "path": "lib/features/admin/admin_workflow_widgets.dart",
+    "sha256": "39a3afa5bd8f63b125a61617c447382fdcaf37b50b6a97a5588ec407a6c59b84"
+  },
+  {
+    "path": "lib/features/admin/admin_console_providers.dart",
+    "sha256": "bfd7b4917bcda6e3257dd6a57a5b190fbd53c2ef0864ed1cafecedf2cd831fb9"
+  },
+  {
+    "path": "lib/features/admin/admin_moderation_quality_panel.dart",
+    "sha256": "7aa21c00412d1d8d4c8b7f478f2b0f5c49e493ff951f62d3983018426df5e9c7"
+  },
+  {
+    "path": "lib/features/admin/admin_sla_policy_screen.dart",
+    "sha256": "4cf6469f2efe2eda07b64d9e186d7786af38b96ae78ddf7ddc8995a112664336"
+  },
+  {
+    "path": "lib/features/admin/admin_moderation_v2.dart",
+    "sha256": "c6f7464262ae212e5565c6a46f3bf044a46080cd6677848eab74342961004fa2"
+  },
+  {
+    "path": "lib/features/admin/admin_transactions_panel.dart",
+    "sha256": "62ab8eafc7ae13846f1952c90a0d4329dd6ed15602b62a8bd97faf5ba12a7b66"
+  },
+  {
+    "path": "lib/features/admin/admin_overview_chart.dart",
+    "sha256": "c9d49daaa21fb0ab7aa530aaf691f5a848db4e04c1b41d920ebfcb7444d3b4e5"
+  },
+  {
+    "path": "lib/features/admin/admin_sessions_screen.dart",
+    "sha256": "711314e9f41c67beaff34a6059e0ee5cf5205d0668d21c64e9cd451a073ea392"
+  },
+  {
+    "path": "lib/features/admin/admin_property_detail_screen.dart",
+    "sha256": "396f5103048165d9eab514b94a93f95a86b972b26442af3d0c51ca040efdf541"
+  },
+  {
+    "path": "lib/features/admin/admin_search_screen.dart",
+    "sha256": "9fbfa3d382eff8032f923f757c494c62b1341b18032b8b09a12fe9961c463bd3"
+  }
+]

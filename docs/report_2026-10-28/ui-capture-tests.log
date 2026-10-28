@@ -1,0 +1,56 @@
+00:00 +0: loading /Users/hoang/Rental_room_management/test/features/admin/admin_inventory_panel_test.dart
+00:00 +0: /Users/hoang/Rental_room_management/test/features/admin/admin_account_detail_panel_test.dart: (setUpAll)
+00:00 +0: /Users/hoang/Rental_room_management/test/features/admin/admin_accounts_panel_test.dart: (setUpAll)
+00:00 +0: /Users/hoang/Rental_room_management/test/features/admin/admin_account_detail_panel_test.dart: detail shows counts and history; suspend binds current version
+00:00 +1: /Users/hoang/Rental_room_management/test/features/admin/admin_accounts_panel_test.dart: search debounces; role filter resets pagination
+00:00 +2: /Users/hoang/Rental_room_management/test/features/admin/admin_workspace_flow_test.dart: real dashboard fits 390.0 with enlarged mobile text
+00:00 +3: /Users/hoang/Rental_room_management/test/features/admin/admin_workspace_flow_test.dart: real dashboard fits 390.0 with enlarged mobile text
+00:00 +4: /Users/hoang/Rental_room_management/test/features/admin/admin_workspace_flow_test.dart: real dashboard fits 390.0 with enlarged mobile text
+00:01 +5: /Users/hoang/Rental_room_management/test/features/admin/admin_workspace_flow_test.dart: real dashboard fits 390.0 with enlarged mobile text
+00:01 +6: /Users/hoang/Rental_room_management/test/features/admin/admin_inventory_panel_test.dart: properties debounce and filters reset pagination; viewer cannot edit
+00:01 +7: /Users/hoang/Rental_room_management/test/features/admin/admin_inventory_panel_test.dart: properties debounce and filters reset pagination; viewer cannot edit
+00:01 +8: /Users/hoang/Rental_room_management/test/features/admin/admin_inventory_panel_test.dart: properties debounce and filters reset pagination; viewer cannot edit
+00:01 +9: /Users/hoang/Rental_room_management/test/features/admin/admin_inventory_panel_test.dart: properties debounce and filters reset pagination; viewer cannot edit
+00:01 +10: /Users/hoang/Rental_room_management/test/features/admin/admin_inventory_panel_test.dart: properties debounce and filters reset pagination; viewer cannot edit
+00:01 +11: /Users/hoang/Rental_room_management/test/features/admin/admin_inventory_panel_test.dart: properties debounce and filters reset pagination; viewer cannot edit
+00:01 +12: /Users/hoang/Rental_room_management/test/features/admin/admin_workspace_flow_test.dart: real dashboard fits 1440.0 with enlarged mobile text
+00:01 +13: /Users/hoang/Rental_room_management/test/features/admin/admin_workspace_flow_test.dart: real dashboard fits 1440.0 with enlarged mobile text
+00:01 +14: /Users/hoang/Rental_room_management/test/features/admin/admin_workspace_flow_test.dart: real dashboard fits 1440.0 with enlarged mobile text
+00:01 +15: /Users/hoang/Rental_room_management/test/features/admin/admin_workspace_flow_test.dart: real dashboard fits 1440.0 with enlarged mobile text
+00:01 +16: /Users/hoang/Rental_room_management/test/features/admin/admin_accounts_panel_test.dart: date range sends Vietnam calendar boundaries and can be cleared
+00:01 +17: /Users/hoang/Rental_room_management/test/features/admin/admin_accounts_panel_test.dart: date range sends Vietnam calendar boundaries and can be cleared
+00:01 +18: /Users/hoang/Rental_room_management/test/features/admin/admin_inventory_panel_test.dart: rooms validate internal prices and preserve property scope
+00:01 +19: /Users/hoang/Rental_room_management/test/features/admin/admin_inventory_panel_test.dart: rooms validate internal prices and preserve property scope
+00:01 +20: /Users/hoang/Rental_room_management/test/features/admin/admin_workspace_flow_test.dart: partial data remains actionable without reporting a false empty queue
+00:01 +21: /Users/hoang/Rental_room_management/test/features/admin/admin_accounts_panel_test.dart: returning from detail preserves the selected list page
+00:01 +22: /Users/hoang/Rental_room_management/test/features/admin/admin_accounts_panel_test.dart: returning from detail preserves the selected list page
+00:01 +23: /Users/hoang/Rental_room_management/test/features/admin/admin_accounts_panel_test.dart: returning from detail preserves the selected list page
+00:01 +24: /Users/hoang/Rental_room_management/test/features/admin/admin_accounts_panel_test.dart: returning from detail preserves the selected list page
+00:01 +25: /Users/hoang/Rental_room_management/test/features/admin/admin_accounts_panel_test.dart: returning from detail preserves the selected list page
+00:01 +26: /Users/hoang/Rental_room_management/test/features/admin/admin_accounts_panel_test.dart: returning from detail preserves the selected list page
+00:01 +27: /Users/hoang/Rental_room_management/test/features/admin/admin_accounts_panel_test.dart: returning from detail preserves the selected list page
+00:01 +28: /Users/hoang/Rental_room_management/test/features/admin/admin_accounts_panel_test.dart: returning from detail preserves the selected list page
+00:01 +29: /Users/hoang/Rental_room_management/test/features/admin/admin_accounts_panel_test.dart: returning from detail preserves the selected list page
+00:01 +30: /Users/hoang/Rental_room_management/test/features/admin/admin_workspace_flow_test.dart: a failed source can retry and recover
+00:01 +31: /Users/hoang/Rental_room_management/test/features/admin/admin_inventory_panel_test.dart: pending action forwards exact target to real moderation workspace and refreshes on return
+00:01 +32: /Users/hoang/Rental_room_management/test/features/admin/admin_inventory_panel_test.dart: pending action forwards exact target to real moderation workspace and refreshes on return
+00:01 +33: /Users/hoang/Rental_room_management/test/features/admin/admin_inventory_panel_test.dart: pending action forwards exact target to real moderation workspace and refreshes on return
+00:02 +34: /Users/hoang/Rental_room_management/test/features/admin/admin_inventory_panel_test.dart: pending action forwards exact target to real moderation workspace and refreshes on return
+00:02 +35: /Users/hoang/Rental_room_management/test/features/admin/admin_workspace_flow_test.dart: session change suppresses old counts and command results
+00:02 +36: /Users/hoang/Rental_room_management/test/features/admin/admin_workspace_flow_test.dart: session change suppresses old counts and command results
+00:02 +37: /Users/hoang/Rental_room_management/test/features/admin/admin_inventory_panel_test.dart: property form controller refuses direct writes without management capability
+00:02 +38: /Users/hoang/Rental_room_management/test/features/admin/admin_workspace_flow_test.dart: dashboard switches periods and exposes chart point details
+00:02 +39: /Users/hoang/Rental_room_management/test/features/admin/admin_workspace_flow_test.dart: dashboard switches periods and exposes chart point details
+00:02 +40: /Users/hoang/Rental_room_management/test/features/admin/admin_workspace_flow_test.dart: dashboard switches periods and exposes chart point details
+00:02 +41: /Users/hoang/Rental_room_management/test/features/admin/admin_inventory_panel_test.dart: inventory shell preserves query on detail/back at 1440.0px
+00:02 +42: /Users/hoang/Rental_room_management/test/features/admin/admin_inventory_panel_test.dart: inventory shell preserves query on detail/back at 1440.0px
+00:02 +43: /Users/hoang/Rental_room_management/test/features/admin/admin_workspace_flow_test.dart: report overview is separate from scheduled reports
+00:02 +44: /Users/hoang/Rental_room_management/test/features/admin/admin_inventory_panel_test.dart: inventory shell preserves query on detail/back at 320.0px
+00:02 +45: /Users/hoang/Rental_room_management/test/features/admin/admin_workspace_flow_test.dart: global search carries the encoded query and responds to query changes
+00:02 +46: /Users/hoang/Rental_room_management/test/features/admin/admin_workspace_flow_test.dart: notification badge navigates to the existing notification center
+00:02 +47: /Users/hoang/Rental_room_management/test/features/admin/admin_workspace_flow_test.dart: command palette supports keyboard selection and respects permissions
+00:02 +48: /Users/hoang/Rental_room_management/test/features/admin/admin_workspace_flow_test.dart: renders an actionable 401 state without raw server details
+00:02 +49: /Users/hoang/Rental_room_management/test/features/admin/admin_workspace_flow_test.dart: renders an actionable 403 state without raw server details
+00:02 +50: /Users/hoang/Rental_room_management/test/features/admin/admin_workspace_flow_test.dart: renders an actionable 409 state without raw server details
+00:02 +51: /Users/hoang/Rental_room_management/test/features/admin/admin_workspace_flow_test.dart: (tearDownAll)
+00:02 +51: All tests passed!

@@ -1,0 +1,56 @@
+[
+  {
+    "url": "https://docs.flutter.dev/app-architecture/guide",
+    "status": 200,
+    "title": "Guide to app architecture",
+    "accessed": "2026-10-28"
+  },
+  {
+    "url": "https://riverpod.dev/docs/introduction/getting_started",
+    "status": 200,
+    "title": "Getting started | Riverpod",
+    "accessed": "2026-10-28"
+  },
+  {
+    "url": "https://docs.nestjs.com/security/authorization",
+    "status": 200,
+    "title": "Documentation | NestJS - A progressive Node.js framework",
+    "accessed": "2026-10-28"
+  },
+  {
+    "url": "https://docs.nestjs.com/techniques/validation",
+    "status": 200,
+    "title": "Documentation | NestJS - A progressive Node.js framework",
+    "accessed": "2026-10-28"
+  },
+  {
+    "url": "https://www.prisma.io/docs/orm/prisma-client/queries/transactions",
+    "status": 200,
+    "title": "Transactions in Prisma ORM | Prisma Documentation",
+    "accessed": "2026-10-28"
+  },
+  {
+    "url": "https://www.postgresql.org/docs/16/transaction-iso.html",
+    "status": 200,
+    "title": "PostgreSQL: Documentation: 16: 13.2. Transaction Isolation",
+    "accessed": "2026-10-28"
+  },
+  {
+    "url": "https://cheatsheetseries.owasp.org/cheatsheets/Authorization_Cheat_Sheet.html",
+    "status": 200,
+    "title": "Authorization - OWASP Cheat Sheet Series",
+    "accessed": "2026-10-28"
+  },
+  {
+    "url": "https://cheatsheetseries.owasp.org/cheatsheets/File_Upload_Cheat_Sheet.html",
+    "status": 200,
+    "title": "File Upload - OWASP Cheat Sheet Series",
+    "accessed": "2026-10-28"
+  },
+  {
+    "url": "https://www.omg.org/spec/UML/2.5.1",
+    "status": 200,
+    "title": "About the Unified Modeling Language Specification Version 2.5.1",
+    "accessed": "2026-10-28"
+  }
+]

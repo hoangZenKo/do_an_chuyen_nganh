@@ -1,0 +1,58 @@
+@startuml
+hide empty methods
+skinparam classAttributeIconSize 0
+skinparam shadowing false
+skinparam defaultFontName Arial
+title CD-02 Khu trọ và phòng
+class Property {
+  id: String {id}
+  name: String
+  address: String
+  isArchived: Boolean
+}
+class Room {
+  id: String {id}
+  name: String
+  basePrice: Int
+  status: RoomStatus
+  isActive: Boolean
+  capacity: Int [0..1]
+}
+class RoomAsset {
+  id: String {id}
+  name: String
+  quantity: Int
+  condition: String
+  value: Int [0..1]
+}
+class RoomInspection {
+  id: String {id}
+  title: String
+  dueAt: DateTime
+  completedAt: DateTime [0..1]
+}
+class RoomServiceFee {
+  id: String {id}
+  name: String
+  amount: Int
+  isActive: Boolean
+  note: String [0..1]
+}
+class User <<reference>> {
+  id: String {id}
+  fullName: String
+}
+enum RoomStatus {
+  OCCUPIED
+  VACANT
+  MAINTENANCE
+}
+Property "0..*\nproperties" -- "1\nlandlord" User
+Room "0..*\nrooms" -- "1\nproperty" Property
+RoomAsset "0..*\nassets" -- "1\nroom" Room
+RoomInspection "0..*\ninspections" -- "1\nroom" Room
+RoomServiceFee "0..*\nserviceFees" -- "1\nroom" Room
+legend bottom
+Đường liền: association. <<IDRef>>: chỉ tham chiếu bằng mã, không phải association.
+endlegend
+@enduml

@@ -1,0 +1,69 @@
+Launching /tmp/rental-report-v3-20261028/capture-admin-v3/capture_all_test.dart on Flutter test device in debug mode...
+Syncing files to device Flutter test device...                  
+00:00 +0: (setUpAll)
+00:00 +1: real dashboard fits 390.0 with enlarged mobile text
+Syncing files to device Flutter test device...                      42ms
+
+Flutter run key commands.
+r Hot reload. 🔥🔥🔥
+R Hot restart.
+h List all available interactive commands.
+d Detach (terminate "flutter run" but leave application running).
+c Clear the screen
+q Quit (terminate the application on the device).
+
+A Dart VM Service on Flutter test device is available at: http://127.0.0.1:63633/Xaz5n3Jj6qA=/
+The Flutter DevTools debugger and profiler on Flutter test device is available at: http://127.0.0.1:9101?uri=http://127.0.0.1:63633/Xaz5n3Jj6qA=/
+00:00 +2: real dashboard fits 1440.0 with enlarged mobile text
+00:01 +3: partial data remains actionable without reporting a false empty queue
+00:01 +4: full dashboard fits a 320px phone with 200 percent text
+00:01 +5: a failed source can retry and recover
+00:01 +6: loading resolves to an empty state without stale results
+00:01 +7: revoked finance permission hides both navigation and stale queue data
+00:01 +8: session change suppresses old counts and command results
+00:01 +9: dashboard switches periods and exposes chart point details
+00:02 +10: new overview removes finance metrics when rights are revoked
+00:02 +11: report overview is separate from scheduled reports
+00:02 +12: global search carries the encoded query and responds to query changes
+00:02 +13: notification badge navigates to the existing notification center
+00:02 +14: command palette supports keyboard selection and respects permissions
+00:02 +15: renders an actionable 401 state without raw server details
+00:02 +16: renders an actionable 403 state without raw server details
+00:02 +17: renders an actionable 409 state without raw server details
+00:02 +18: search debounces; role filter resets pagination
+00:02 +19: no request without capability or authenticated owner
+00:02 +20: logout hides loaded data and does not request another page
+00:02 +21: unauthenticated panel never starts an account request
+00:02 +22: late list response cannot render after a session change
+00:02 +23: date range sends Vietnam calendar boundaries and can be cleared
+00:03 +24: returning from detail preserves the selected list page
+00:03 +25: mobile enlarged text has no overflow; errors can retry
+00:03 +26: detail shows counts and history; suspend binds current version
+00:03 +27: conflict requires reload, does not automatically retry mutation
+00:03 +28: PII dialog vanishes immediately when session changes
+00:03 +29: revoking permission closes an open confirmation without issuing a command
+00:03 +30: read-only admin cannot mutate; missing account has specific state
+00:03 +31: detail renders on a narrow screen at 200 percent text
+00:03 +32: read-only view exposes no mutation or unmasked contacts
+00:03 +33: restore binds version and inactive accounts cannot reset
+00:03 +34: revoke and reset confirm reasons and reload detail
+00:03 +35: pending mutation disables actions; late result cannot restore old UI
+00:03 +36: private contacts stay hidden after app backgrounding
+00:03 +37: restored permission cannot resurrect an old PII reveal
+00:03 +38: PII arriving after backgrounding starts hidden
+00:03 +39: properties debounce and filters reset pagination; viewer cannot edit
+00:03 +40: no inventory fetch without rights; old response hidden on identity change
+00:03 +41: rooms validate internal prices and preserve property scope
+00:03 +42: detail shows bounded preview and complete counts; direct form is gated
+00:04 +43: room filter and cards fit 320px with 200 percent text
+00:04 +44: permissions revoked hide room data; manager actions are separately authorized
+00:04 +45: pending action forwards exact target to real moderation workspace and refreshes on return
+00:04 +46: 320px property and detail previews fit at 200 percent text
+00:04 +47: property form controller refuses direct writes without management capability
+00:04 +48: inventory route guards allow viewers but keep form and moderation restricted
+00:04 +49: moderation URL targets one listing without unescaped query values
+00:04 +50: inventory shell preserves query on detail/back at 1440.0px
+00:04 +51: inventory shell preserves query on detail/back at 320.0px
+00:04 +52: (tearDownAll)
+00:04 +53: All tests passed!
+Lost connection to device.

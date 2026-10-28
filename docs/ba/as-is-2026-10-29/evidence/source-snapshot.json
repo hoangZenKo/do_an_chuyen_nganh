@@ -1,0 +1,3277 @@
+{
+  "capturedAt": "2026-10-28T17:14:11.328Z",
+  "businessDate": "2026-10-29",
+  "timezone": "Asia/Ho_Chi_Minh",
+  "commit": "2d1ec6444ff8a84fb1de4487f4cc7514354076cc",
+  "warning": "Working tree, including uncommitted and untracked source; not a production snapshot.",
+  "files": [
+    {
+      "file": "backend/src/admin/admin-access-review.controller.ts",
+      "sha256": "30d707d8d814bda4fb8793057dfbd425f79ae2103f89b8bedc921722b6e49587"
+    },
+    {
+      "file": "backend/src/admin/admin-access-review.service.spec.ts",
+      "sha256": "12a115b2813b031324a0737cb17bf35cc0f3dc978b8f30d10993a722a0735078"
+    },
+    {
+      "file": "backend/src/admin/admin-access-review.service.ts",
+      "sha256": "85242dee0865857f9593aeb5f53e64e27ebd7225b039c121053e04b542b524a6"
+    },
+    {
+      "file": "backend/src/admin/admin-account-governance.spec.ts",
+      "sha256": "b0ee54486be467ac2e36786a37f9a4fb34c28be30df0c9f940b6fd7326f75ad2"
+    },
+    {
+      "file": "backend/src/admin/admin-accounts.http.spec.ts",
+      "sha256": "6317e9511c86347c84815d96c3b24d734d97f47896f5dceb9d124f7e701135fb"
+    },
+    {
+      "file": "backend/src/admin/admin-accounts.service.spec.ts",
+      "sha256": "59c68622691730f4331f63b7f0c977a89461fffe2e50d1659800c89b7aa3e9f9"
+    },
+    {
+      "file": "backend/src/admin/admin-audit-query.service.spec.ts",
+      "sha256": "2308e19d56b69e4d805dd033ee2459f6a44799080b3146746b8365168a06bfb1"
+    },
+    {
+      "file": "backend/src/admin/admin-audit-query.service.ts",
+      "sha256": "f4d85165234e098518b65177a877f95cb04df24da91194970ae907ad91536b0f"
+    },
+    {
+      "file": "backend/src/admin/admin-audit.ts",
+      "sha256": "fac4ba48bf84f1ba2b5f64860de1694545ab5c27a1998b38a7edaa0cd9ff7cb9"
+    },
+    {
+      "file": "backend/src/admin/admin-console.controller.ts",
+      "sha256": "55b652d90241ac8c1610cd29b4ba517d2d7486c2e08ce7ee217bfdb7da640068"
+    },
+    {
+      "file": "backend/src/admin/admin-console.dto.ts",
+      "sha256": "9805de443c295a7893d85a15c52a352cf545739863bdfae664e074d361f5ad7a"
+    },
+    {
+      "file": "backend/src/admin/admin-console.service.ts",
+      "sha256": "3358794d393728f7db406aa9fc37324314b5f1a1179e528a7522dd88aa18a5af"
+    },
+    {
+      "file": "backend/src/admin/admin-inventory.http.spec.ts",
+      "sha256": "f3e95139456214c893d9765a10333d87d3e797e0cff864521ef93ccc2618894e"
+    },
+    {
+      "file": "backend/src/admin/admin-inventory.service.spec.ts",
+      "sha256": "3141313c959a5d2ff3e5d9ca253b6ae0142ca373717f73af03cc9337890643e0"
+    },
+    {
+      "file": "backend/src/admin/admin-lifecycle.controller.ts",
+      "sha256": "d35cdd97ce8033bd8b3a6c97aaa07a613b7a24a2024365d910bc6b0b54a56447"
+    },
+    {
+      "file": "backend/src/admin/admin-lifecycle.service.spec.ts",
+      "sha256": "76d8d5b8c875d097ee1b0289b1d7871dd85f51455cc79deec3626a078df26d1c"
+    },
+    {
+      "file": "backend/src/admin/admin-lifecycle.service.ts",
+      "sha256": "d8753c6e4d214b56457adbc3e210077b9c1f14bd3b1248cc53877c554b10fdfc"
+    },
+    {
+      "file": "backend/src/admin/admin-overview-analytics.controller.ts",
+      "sha256": "21b5af8b3ffa2609206bcf305d0f452342d7b96b7ab5ed35311a62fd4ae64ba7"
+    },
+    {
+      "file": "backend/src/admin/admin-overview-analytics.http.spec.ts",
+      "sha256": "6cb4d4d31c179417ba5aa57fb707e60ef6fcc211805fb5be4bdde85e5c1acc76"
+    },
+    {
+      "file": "backend/src/admin/admin-overview-analytics.service.spec.ts",
+      "sha256": "75a738978617295d173eebe480302a9c3307483325dc7ee39488e0084f39ce11"
+    },
+    {
+      "file": "backend/src/admin/admin-overview-analytics.service.ts",
+      "sha256": "d2110cf2d25d2339463c9e31c3f76a08c200c7d5c6677d2b421bb92e31519354"
+    },
+    {
+      "file": "backend/src/admin/admin-permissions.dto.spec.ts",
+      "sha256": "27097619d7c8e332a05cd01847ccba2e20a9985210b12216ad643607c82c1216"
+    },
+    {
+      "file": "backend/src/admin/admin-pii-projection.spec.ts",
+      "sha256": "5bbd43314ea49f382b59c1cd2d2bd06359fee77a7c247bd1cf13f947227cced0"
+    },
+    {
+      "file": "backend/src/admin/admin-plans.service.ts",
+      "sha256": "db8bf9a854d665acae890b6a3002680171638386edc7720cefc6f021ff2a5c69"
+    },
+    {
+      "file": "backend/src/admin/admin-property-review.service.spec.ts",
+      "sha256": "df34356f01e101f898548bd18b1429b59037d5164b66a4b7dcef66400f939356"
+    },
+    {
+      "file": "backend/src/admin/admin-property-review.service.ts",
+      "sha256": "217fa4e30bc55d83549f1945b208b401604ee3e2fd11756c4da60949946cdd1b"
+    },
+    {
+      "file": "backend/src/admin/admin-registry.controller.ts",
+      "sha256": "56de85afdf64fcbef420d180511afd526370fd4266c4691d455d91459b13529d"
+    },
+    {
+      "file": "backend/src/admin/admin-registry.dto.ts",
+      "sha256": "b07f1e9902e9be6bc6db744b7ca70094304810a46fc6e2dae96eed2f49483b33"
+    },
+    {
+      "file": "backend/src/admin/admin-registry.service.spec.ts",
+      "sha256": "313db3395a83d992c0609bc3917a9aa9497e33133a0ff9ee94cbab60eede4143"
+    },
+    {
+      "file": "backend/src/admin/admin-release-gate.spec.ts",
+      "sha256": "ebe42b7824df09c7173a9d28b824a3abfea8b637aadc0659e7ed81c26cedb155"
+    },
+    {
+      "file": "backend/src/admin/admin-release-http.spec.ts",
+      "sha256": "f39f0515717fa2de666330ad655556e262b4a23e42649ef5aaabf99d7a968090"
+    },
+    {
+      "file": "backend/src/admin/admin-route-catalog.spec.ts",
+      "sha256": "00df32e6f52b42d3d55c90f8f6e16439d47e6b0e00379cfe3545247e762b90df"
+    },
+    {
+      "file": "backend/src/admin/admin-route-inventory.ts",
+      "sha256": "1ecfd1f55cb3927387b3d2256f95f52b48a73b5ad429a1bf70ca028e9b047c5d"
+    },
+    {
+      "file": "backend/src/admin/admin-search.controller.ts",
+      "sha256": "ec575085dce25704ecde1dfb06386b8eb7a76e0729fb3dfab379a59e1f741b02"
+    },
+    {
+      "file": "backend/src/admin/admin-search.dto.ts",
+      "sha256": "2c045772ab79a4dcf52c8434129d908303a79749ca0cc6aef731eb6606d91560"
+    },
+    {
+      "file": "backend/src/admin/admin-search.service.spec.ts",
+      "sha256": "704758cded1d9d54f165e6feffd44e1b3f51abc1f33e95811769fcd2255005bf"
+    },
+    {
+      "file": "backend/src/admin/admin-search.service.ts",
+      "sha256": "69a5e4594818463854ee7818a78089fecfb4bcfa23c77407a50d3a57ad6aa4ba"
+    },
+    {
+      "file": "backend/src/admin/admin-transactions.service.spec.ts",
+      "sha256": "25236657841fc58099d1ccd5ae39a72045f4d0e6979a5f3dd7e18a4ed2ab9bee"
+    },
+    {
+      "file": "backend/src/admin/admin-transactions.service.ts",
+      "sha256": "36e871478dfec8217b8a535ff8e8cbfd4cf8830ffadc9c0045100765221849a0"
+    },
+    {
+      "file": "backend/src/admin/admin-verification.service.ts",
+      "sha256": "03abb6f73d8abca0e4fe0ed58dafdd51421ff392e8b734e45711c3f6c6c7395c"
+    },
+    {
+      "file": "backend/src/admin/admin-workspace.controller.ts",
+      "sha256": "7f49b6569677ec0d7495c9df1af19971e896b39b22a3d4a47c85f30b3f61121f"
+    },
+    {
+      "file": "backend/src/admin/admin-workspace.dto.ts",
+      "sha256": "91c5f296e76f7380fe40fe3a59920e9d02945e1d439d4756b9b0aec1397b1145"
+    },
+    {
+      "file": "backend/src/admin/admin-workspace.service.spec.ts",
+      "sha256": "dbb5097316f08f3d864a9121341903e19e76adcb89ef3550bee407ef5bd4260b"
+    },
+    {
+      "file": "backend/src/admin/admin-workspace.service.ts",
+      "sha256": "1be9de41c8c010bcde0f9ddaeee7de793d1d058ec318db76b12eb55f71ff367c"
+    },
+    {
+      "file": "backend/src/admin/admin.controller.ts",
+      "sha256": "82b01dc3df49831c8fe0a4db6ac5b72f2e9e7b717a1c6c8ceaf653cf2579c24a"
+    },
+    {
+      "file": "backend/src/admin/admin.module.ts",
+      "sha256": "96c8ce7844f8c91069c276b86a0fa68a27d99c5b1b21295c5bbec6d5a037ab4d"
+    },
+    {
+      "file": "backend/src/admin/admin.service.ts",
+      "sha256": "cf1a932567c64a5064a0abc81f0863f6c5da9dc347cbba013d117603e240a7e4"
+    },
+    {
+      "file": "backend/src/admin/dto/create-admin-property.dto.ts",
+      "sha256": "4c571e030c1acd1e21f74fc0518e690e494b5f7844783a1efaddfb3afd9552da"
+    },
+    {
+      "file": "backend/src/admin/dto/create-landlord.dto.ts",
+      "sha256": "e7d4dbf375f59400a5270e95a649f967fc5bbb2b11533fbfcc10bf93ec743685"
+    },
+    {
+      "file": "backend/src/admin/dto/list-admin-properties-query.dto.ts",
+      "sha256": "111953365011965e55aae47e9a9a49aada2ae5d2fc520a89048d51f4c1f886a7"
+    },
+    {
+      "file": "backend/src/admin/dto/list-admin-rooms-query.dto.ts",
+      "sha256": "d3aeee69dcf398b4da8d897b75c5c5683650d9ff51436c3a420b1a3bad9333ae"
+    },
+    {
+      "file": "backend/src/admin/dto/list-landlords-query.dto.ts",
+      "sha256": "315a356d4278e4fa40900c53bdcf47b1537231bce64c3fa157a31a41b15047b2"
+    },
+    {
+      "file": "backend/src/admin/dto/update-admin-property.dto.ts",
+      "sha256": "e222dd76b109befae7f771e629bedd10bed91dae4d9669cb2ab55d6184208f99"
+    },
+    {
+      "file": "backend/src/admin/dto/update-landlord-status.dto.ts",
+      "sha256": "65b82402aa383a9ff2b3c4edda7723864c5b5f800133399467abfb91412bdb9c"
+    },
+    {
+      "file": "backend/src/admin/dto/update-landlord.dto.ts",
+      "sha256": "c41ca11912c954f9077b4246aa6c1cf4b5f2a1051b4590403cdb1d666b2faf49"
+    },
+    {
+      "file": "backend/src/admin/property-review-state.ts",
+      "sha256": "643a36a0cc648262880b020fa57267e6b694041b67d1e435fb90f3c9731be08f"
+    },
+    {
+      "file": "backend/src/app.bootstrap.ts",
+      "sha256": "f9ae2958078351e8f9b3b8e6a5a3ad6cdbbf9fbf5fd1decbf4380158577eccdc"
+    },
+    {
+      "file": "backend/src/app.module.ts",
+      "sha256": "6e480ec4032c5e0d06a0dccf85052e3dcb5b2d62189ed9caf69f9f01fc36d8a3"
+    },
+    {
+      "file": "backend/src/audit/audit.controller.ts",
+      "sha256": "76c2abce0204c6dea9c98365f43a87d3c6bc6c3ed18b5736410aabc63b0e7c4e"
+    },
+    {
+      "file": "backend/src/audit/audit.module.ts",
+      "sha256": "50f8b4c99918b1d6151a9634545a4e776891462cf5c3dc9b79bfea1b1cf7d6e4"
+    },
+    {
+      "file": "backend/src/audit/audit.service.ts",
+      "sha256": "53c667039c5ec09b30ffe5c7711f865e7f3ac24407d461efe21801df44f4c1e5"
+    },
+    {
+      "file": "backend/src/audit/dto/list-audit-logs-query.dto.ts",
+      "sha256": "1c8f32281e69db1e8775cd5b2b8515a6951e9b9f41efef4d2af6c2e133f19e86"
+    },
+    {
+      "file": "backend/src/auth/account-access.controller.ts",
+      "sha256": "bd7ae2c889ede891240a4183365540deca86958de7ed9f263e8d4bc8101030df"
+    },
+    {
+      "file": "backend/src/auth/account-access.service.spec.ts",
+      "sha256": "27afc0772ed31ffaca538d475a4900e441adab09a7b8dfc85f1f346737addd5a"
+    },
+    {
+      "file": "backend/src/auth/account-access.service.ts",
+      "sha256": "8ab4caffdf7abd1c22fbfb5bca8f597000d22a09d0e1237e256fc2708cf7f577"
+    },
+    {
+      "file": "backend/src/auth/admin-mfa.service.spec.ts",
+      "sha256": "0550d24a584bf8d0168acc3794d96460b60d9f12b1dfe7c63704c12c6f16b127"
+    },
+    {
+      "file": "backend/src/auth/admin-mfa.service.ts",
+      "sha256": "37ad59975c3a3c34097d2424f8f03f5f9f9d5532710551585979685cf8952194"
+    },
+    {
+      "file": "backend/src/auth/admin-security.controller.ts",
+      "sha256": "5b40d13190fe5641276cda4c7dbff7e901290a72b03b25203cb5b94d9166397f"
+    },
+    {
+      "file": "backend/src/auth/admin-step-up.controller.ts",
+      "sha256": "bcb15585ab4003161f0d871bcadf7f6eff63a2f51da86733c172b857206be130"
+    },
+    {
+      "file": "backend/src/auth/admin-step-up.policy.spec.ts",
+      "sha256": "79acccb4c8cab57c40e0ec3e6b30a7662e7f305ae6e443ac3bd4bcacad0d9ca4"
+    },
+    {
+      "file": "backend/src/auth/admin-step-up.policy.ts",
+      "sha256": "b569cc6c863c964055b3164202259570702aebdcd88ff477490661351bee303c"
+    },
+    {
+      "file": "backend/src/auth/admin-step-up.service.ts",
+      "sha256": "2f03a718fb865579f1e93af522998da288075cdb5a52ac7513e91800448b5600"
+    },
+    {
+      "file": "backend/src/auth/auth.controller.ts",
+      "sha256": "7af6547c6531f812b2eb9f0881c031e774120c08240e4cbef01f017777bb055c"
+    },
+    {
+      "file": "backend/src/auth/auth.module.ts",
+      "sha256": "a769013f20dbf5cd5978ef12b4cb793e31a18bf69149639e578329e683fda735"
+    },
+    {
+      "file": "backend/src/auth/auth.service.spec.ts",
+      "sha256": "99c0387484a64a57b79ce71474204ea47c47140cd8c655690f633fd6c29acb35"
+    },
+    {
+      "file": "backend/src/auth/auth.service.ts",
+      "sha256": "3c5bffa0396e703b7d51d96949831360e376d6927f3fce067a723dadb4cb5bf0"
+    },
+    {
+      "file": "backend/src/auth/dto/change-password.dto.ts",
+      "sha256": "5ad59963d6275e902395990fe3ea212a253b14227fd8a0089883905e56b3f0d6"
+    },
+    {
+      "file": "backend/src/auth/dto/login.dto.ts",
+      "sha256": "955111642e939bcdb0abb742c2c527096bfc6d3a8c337e863994cf45196c5769"
+    },
+    {
+      "file": "backend/src/auth/dto/refresh.dto.ts",
+      "sha256": "f900436fec6b86ea8d3f9f8ebc5672718f933b887a5a8e4b44efb34f6177e29e"
+    },
+    {
+      "file": "backend/src/auth/dto/register.dto.ts",
+      "sha256": "9b69425e0a9af79befe244e7c52ac35b8f4ae154f086a45ba81ec1260386dc74"
+    },
+    {
+      "file": "backend/src/auth/jwt.strategy.spec.ts",
+      "sha256": "2190c7468f4a259edebc4f6cb33be7299b020d1f9ca7459d59b1fda66a176846"
+    },
+    {
+      "file": "backend/src/auth/jwt.strategy.ts",
+      "sha256": "59129cc38b85fd5baebd59a7968caed3731222946672c9d8c56908a759fedfd2"
+    },
+    {
+      "file": "backend/src/billing/billing-automation.scheduler.ts",
+      "sha256": "c7bdcfa163b819476370eda176f7ecb23b32ccfc43dee4a35a0b328fb614ee91"
+    },
+    {
+      "file": "backend/src/billing/billing-commands.service.ts",
+      "sha256": "f0a04fdcbf7c3c9c416c1f3bf42a894cbbcd0bd8ec34294e79fe583e43302875"
+    },
+    {
+      "file": "backend/src/billing/billing-events.ts",
+      "sha256": "d3b01fc9a5ee6403f293e1d264064fa37a1b17a0314b14dec2554c3d25c6c919"
+    },
+    {
+      "file": "backend/src/billing/billing-ledger.service.ts",
+      "sha256": "1da9486ba1b4f4511bd7f73cd49183344b5119204ffcf6d26691c0725306fb6f"
+    },
+    {
+      "file": "backend/src/billing/billing-outbox.service.ts",
+      "sha256": "379eb6f39609d6b6e010fdacbe4a4bd7391b5724fb6e861c742d4d3ffe5a4bfc"
+    },
+    {
+      "file": "backend/src/billing/billing-reminders.service.ts",
+      "sha256": "ac227ff748dd004c6aa99236de7d5a9f78ad941bf1738b7a1b1539e53dcb8282"
+    },
+    {
+      "file": "backend/src/billing/billing-rules.spec.ts",
+      "sha256": "11fdd006681dc250aa6cd8e8f0d99971935470adabc01f1eb12ff3678e57a06b"
+    },
+    {
+      "file": "backend/src/billing/billing-rules.ts",
+      "sha256": "866ce5d112d1f3def424c2273f8dbe511658a0ad6228233b256ab1fd930b8a99"
+    },
+    {
+      "file": "backend/src/billing/billing-tariffs.service.spec.ts",
+      "sha256": "9dc085d36f346bcca737213bb84d795cb30e90c603c74d3dadca5712d474d536"
+    },
+    {
+      "file": "backend/src/billing/billing-tariffs.service.ts",
+      "sha256": "e0033d0b3fc75efd248a115b323c514444fe495e08a5d474684fcb8186662a18"
+    },
+    {
+      "file": "backend/src/billing/billing.controller.ts",
+      "sha256": "f0ee8c237cc30a79c2f95b0777a652c2d7db3e6b7b94415baa399427aff53ca9"
+    },
+    {
+      "file": "backend/src/billing/billing.module.ts",
+      "sha256": "72c8ce2611560f550239465cb196b98c5e6ecc5c23a8a7134d9c5b48afa11423"
+    },
+    {
+      "file": "backend/src/billing/billing.service.spec.ts",
+      "sha256": "b98bebf79a64a7b320426c320c72cc6451c8e6eb740fb113b72ba3e309743f48"
+    },
+    {
+      "file": "backend/src/billing/billing.service.ts",
+      "sha256": "45271709a402e2034a553e83d01d24a8cac4772e742ccb95011848dc7269c3ee"
+    },
+    {
+      "file": "backend/src/billing/demo-card.gateway.spec.ts",
+      "sha256": "41afe2eeb5e7a2b7460a37b0925d18638adbb1d1f6dc1da6235e227369cfc29e"
+    },
+    {
+      "file": "backend/src/billing/demo-card.gateway.ts",
+      "sha256": "ccef830287701965a18b4b60a9c987fbc49dc59e34a5f42cb059d2ef4fd408ef"
+    },
+    {
+      "file": "backend/src/billing/demo-checkout.page.spec.ts",
+      "sha256": "f8a3c9a4c1ae52ba0d5c33ab3f3a6eaac25e1c582e2a813d5176ed0a1ee8693a"
+    },
+    {
+      "file": "backend/src/billing/demo-checkout.page.ts",
+      "sha256": "502124f857653032badef2ed7e7881518bd6e534a58af2f47a51ff65da311a65"
+    },
+    {
+      "file": "backend/src/billing/dto/billing-automation.dto.ts",
+      "sha256": "216538f3dd22fd370abaa3dc255c709f83afa507655bec3706c55d1bc9654337"
+    },
+    {
+      "file": "backend/src/billing/dto/billing-ledger.dto.ts",
+      "sha256": "fc4bea2f087d75c2072b216300c7786ac5d5cb8a1131899459d5db555c4140bc"
+    },
+    {
+      "file": "backend/src/billing/dto/billing-tariffs.dto.ts",
+      "sha256": "8d82535d505b8b0dfd5e4f3936ecc0bb3fc2f154f3c9987612be4b88ce3852d7"
+    },
+    {
+      "file": "backend/src/billing/dto/cancel-invoice.dto.ts",
+      "sha256": "52e1fa812f478f737f1915eda3c80e8922b8e9f2a01939454dc36a13fc30fb00"
+    },
+    {
+      "file": "backend/src/billing/dto/create-bulk-invoices.dto.ts",
+      "sha256": "a531c361990a0f1af29c487e341e0326b90506e5654d678c98b6f4170bc9ee70"
+    },
+    {
+      "file": "backend/src/billing/dto/create-invoice.dto.ts",
+      "sha256": "5b81e46a7af922285bd8d3e119589f383fc84edc1ae7003b7e1765db570ea403"
+    },
+    {
+      "file": "backend/src/billing/dto/create-meter-reading.dto.ts",
+      "sha256": "487e7b444e84ed7d7f761d0b739c43f1391fb9068e6a381f7f99a63b79aa36b5"
+    },
+    {
+      "file": "backend/src/billing/dto/record-payment.dto.ts",
+      "sha256": "75a57cefcdac8efa74bb91740aa3498b2cde3c38cdfc0e2bb813eb22891bb8bb"
+    },
+    {
+      "file": "backend/src/billing/dto/reverse-payment.dto.ts",
+      "sha256": "06aa4535d7fa4f5b6b3175da11e1534b672f8678c401b38f592ad184ff8d73a7"
+    },
+    {
+      "file": "backend/src/billing/dto/review-payment-proof.dto.ts",
+      "sha256": "09ee3cd4ba0e4124258859d2d08174b43ba35512188260877836043c9fd0b961"
+    },
+    {
+      "file": "backend/src/billing/dto/update-invoice.dto.ts",
+      "sha256": "96fc1faa59a028dad5d741296e2681e1d2da22cb1aab24a63bd6b651fdd80ea2"
+    },
+    {
+      "file": "backend/src/billing/invoice-lines.spec.ts",
+      "sha256": "2643f0d139d3dee8804469b60b5f47be9a2e7daa3555a045585157dfa2b194dc"
+    },
+    {
+      "file": "backend/src/billing/invoice-lines.ts",
+      "sha256": "9df58ef8cc4d7f9d5cff63dd6740fa704b696fd8926da28865dc0c43d591c245"
+    },
+    {
+      "file": "backend/src/billing/manual-transfer.controller.ts",
+      "sha256": "901e8450080da3c04ba80747bba26999fb70dd370c865f730a0b06f0b0aa8255"
+    },
+    {
+      "file": "backend/src/billing/manual-transfer.dto.spec.ts",
+      "sha256": "349602c4b3321b875f7aa89ea8da219af411f4e8dc6de530b9ae3df980ae38d7"
+    },
+    {
+      "file": "backend/src/billing/manual-transfer.dto.ts",
+      "sha256": "b2c579e075d6d30c38bcac81ec75be26295b785dcbcd48ce945bd410ec5778ab"
+    },
+    {
+      "file": "backend/src/billing/manual-transfer.service.spec.ts",
+      "sha256": "ede156504c3349a94ac68a050715e6b77f5dc9db7b95826dfc14c070fbc7dc6f"
+    },
+    {
+      "file": "backend/src/billing/manual-transfer.service.ts",
+      "sha256": "4bd4fbc0fd74db1273425b98d2e6dfce346e09d9ffe5bcb9b7fea1c519473ebe"
+    },
+    {
+      "file": "backend/src/billing/online-payments.controller.ts",
+      "sha256": "c6cbb8f0bfb6c058128f7b810224ffffaf2d91157dcc61972e80e7f73986f866"
+    },
+    {
+      "file": "backend/src/billing/online-payments.module.ts",
+      "sha256": "7b59846803a54b7bb87d494de5070a2497a6af12f1b151cc4b1e5a01d33aa47e"
+    },
+    {
+      "file": "backend/src/billing/online-payments.service.ts",
+      "sha256": "c74d07e68f1deced5ea062aac9ea21ab7013ef4ec5d29e98bd012dbd0d093b38"
+    },
+    {
+      "file": "backend/src/billing/priced-invoice-lines.ts",
+      "sha256": "aea6e6f109d1fce9625503563fd18d11b2ccb3a6266fe4a782e756233ee02e64"
+    },
+    {
+      "file": "backend/src/billing/tariff-key.ts",
+      "sha256": "4ce87468d7fee173028dc8453816e7ead988fadf33bcc1104c4861207dd886f7"
+    },
+    {
+      "file": "backend/src/billing/utility-pricing.ts",
+      "sha256": "e33aea23c4616a11d01fcd241b5476c99a14df327fad9b021787ab1a67554367"
+    },
+    {
+      "file": "backend/src/chatbot/chatbot-evaluation.spec.ts",
+      "sha256": "ec4c0b8517568399f3688d2ad48259150acaadd8050d989afa0f98a2de415270"
+    },
+    {
+      "file": "backend/src/chatbot/chatbot-evaluation.ts",
+      "sha256": "50b36af8455f673cb232a6ec1a045cd2b44c9cbabc80969e689351c2e505181a"
+    },
+    {
+      "file": "backend/src/chatbot/chatbot-exception.filter.ts",
+      "sha256": "61dd062b3fd6a3d010ec4db489d295fb0b050be353af9e483c839613e52bff0a"
+    },
+    {
+      "file": "backend/src/chatbot/chatbot-rate-limit.guard.ts",
+      "sha256": "0b132ab4b99e7ff8a1759b0b535cd9a25d49bdb0c840afcd562c0ec7371d175a"
+    },
+    {
+      "file": "backend/src/chatbot/chatbot.config.spec.ts",
+      "sha256": "4e84ab7dcb743e9234e8d0fdcbf4af01cecad229745c352747fe3869e5c0d808"
+    },
+    {
+      "file": "backend/src/chatbot/chatbot.config.ts",
+      "sha256": "610bf4f23173bb8089d64dac591577dc01072abe00e08279b0512f8f61316f5f"
+    },
+    {
+      "file": "backend/src/chatbot/chatbot.controller.ts",
+      "sha256": "82d631aac638c0f29a9a158e0daee7a125c4c139d93ac56111597bec39eab74a"
+    },
+    {
+      "file": "backend/src/chatbot/chatbot.module.ts",
+      "sha256": "068e1c2033fddd7ae13ddef04b3ff24dbb7c0297e98a0a370f66c25e686dcd44"
+    },
+    {
+      "file": "backend/src/chatbot/chatbot.service.spec.ts",
+      "sha256": "f23b019568ec03b806c4851fc72d25f5c3955042350bb89825649da8a5a46dda"
+    },
+    {
+      "file": "backend/src/chatbot/chatbot.service.ts",
+      "sha256": "705e40239448f4ed47cf2a2107f924d877da4ca67c11e58caf2184b5acf98d92"
+    },
+    {
+      "file": "backend/src/chatbot/chatbot.types.ts",
+      "sha256": "6254adbd303cf5f005e8c804d009a6c8545f70c508a59e2aecc8e1283be1d9d7"
+    },
+    {
+      "file": "backend/src/chatbot/dto/ask-chatbot.dto.ts",
+      "sha256": "383777beb4dac875ac070ae639f79da7da425d71f62ce0123e6576d79e7547a6"
+    },
+    {
+      "file": "backend/src/chatbot/knowledge-chunker.spec.ts",
+      "sha256": "f772e8e5ee89f24eda747daa8a213a67b01655eb99277c3471a2ff6c24d654ae"
+    },
+    {
+      "file": "backend/src/chatbot/knowledge-chunker.ts",
+      "sha256": "b6ed7b2e2ced310df9062d4e344d6261f31e59cbdc264e59eefe30821ded5751"
+    },
+    {
+      "file": "backend/src/chatbot/knowledge-import.cli.spec.ts",
+      "sha256": "7ec41e6b694ebecbaa2b1a68863413e4877e80f1d8698e9a8e54263832143643"
+    },
+    {
+      "file": "backend/src/chatbot/knowledge-import.cli.ts",
+      "sha256": "023cf4dd605d25396ec243fd6b12032ebb44ab7517d6e1b83676f6b65fddb111"
+    },
+    {
+      "file": "backend/src/chatbot/knowledge-importer.spec.ts",
+      "sha256": "6090f662923d8c6936f78c243dd59ea84d77d36a3db8df3dffee88193b0d0725"
+    },
+    {
+      "file": "backend/src/chatbot/knowledge-importer.ts",
+      "sha256": "526bb79df1bf7660ec607d5226e1a5fee15a08eeb3cf4dd029f4a4305c6647e7"
+    },
+    {
+      "file": "backend/src/chatbot/knowledge-retriever.spec.ts",
+      "sha256": "0dcb47c506e0a382a5167bc2e7969af8f4e973e6a488168c4f65a4041db4ce45"
+    },
+    {
+      "file": "backend/src/chatbot/knowledge-retriever.ts",
+      "sha256": "f70540c30af1daf56d17586e1c0c38165e4a5f33e113b41b7330d994e91eaa4d"
+    },
+    {
+      "file": "backend/src/chatbot/knowledge.repository.spec.ts",
+      "sha256": "fa9842bab843d93af76deb21b46c7be3adb7e08174517caf9003b1457e899273"
+    },
+    {
+      "file": "backend/src/chatbot/knowledge.repository.ts",
+      "sha256": "64e61a6f3115d83a18cdd65f689aa830bc469a742ba7ec93022805fabfe9a777"
+    },
+    {
+      "file": "backend/src/chatbot/ollama.client.spec.ts",
+      "sha256": "890704257c394b140c7bb0787b19aa2255e8d82d064dc9d276dfc50fa77b0586"
+    },
+    {
+      "file": "backend/src/chatbot/ollama.client.ts",
+      "sha256": "45d50f2a2d01624a04717dff2e75485329cb07d87f33a811985f4bc9ec3db0bb"
+    },
+    {
+      "file": "backend/src/common/admin-access.ts",
+      "sha256": "0e0d0a4d6f48fc5820de196d64b1d94a1b6737cdb559af045254fad7b21f2294"
+    },
+    {
+      "file": "backend/src/common/admin-permissions.ts",
+      "sha256": "e451daf50272dc4c3e79a8059631401f11daf364398a0d4bdbf9ef4e0748fa90"
+    },
+    {
+      "file": "backend/src/common/api-error.filter.spec.ts",
+      "sha256": "2cff20a36128596f0f92b06589ffc0885472a8fe03106969ed147d8464aca2f5"
+    },
+    {
+      "file": "backend/src/common/api-error.filter.ts",
+      "sha256": "aeada2b51644dda4b0ba9b6a3a4544e82f57cff8f13971a83f5bd3580c673b70"
+    },
+    {
+      "file": "backend/src/common/attachment-url.validator.spec.ts",
+      "sha256": "2348f4f33d98c8b1dfbd71ecbfeaebec639cf5409bfa635e448ae7a01890cdba"
+    },
+    {
+      "file": "backend/src/common/attachment-url.validator.ts",
+      "sha256": "4ba5f3048581fb170df256ae38da9885670451c77507e62e8dfd50e7e3cea1b8"
+    },
+    {
+      "file": "backend/src/common/auth-role.spec.ts",
+      "sha256": "46af4423c0f31c6bece61cc12aa49d08df506fc329461ceda2e405cef61262a1"
+    },
+    {
+      "file": "backend/src/common/auth-role.ts",
+      "sha256": "ce8ffdfa97f5a7b69685b715f5efb397f4436381b4d5fd0ab37a22bf246028f0"
+    },
+    {
+      "file": "backend/src/common/authorization.module.ts",
+      "sha256": "59e13430ef191af8a34bb9cd3f080d76e101776b81adc2221a802685e02ed742"
+    },
+    {
+      "file": "backend/src/common/current-user.decorator.ts",
+      "sha256": "92684013343ebd45a4a2d7bf55a9f14d12156ab75ce209e20d6e1cdb61d376e3"
+    },
+    {
+      "file": "backend/src/common/landlord-resource-authorization.spec.ts",
+      "sha256": "bf7725986f8b1d4ed2b8b672ceca3967b9f6a0c8584793e3f3555d41153d540c"
+    },
+    {
+      "file": "backend/src/common/moderation-assignment.ts",
+      "sha256": "949594efd7225a847e57ab920828daf0238f1ad2009d230bc21498baf06bf61f"
+    },
+    {
+      "file": "backend/src/common/moderation-decision.ts",
+      "sha256": "5594d856a9445a34896f2736240ba1b0d16ec756bdeafa730f77d1bc3fe90e84"
+    },
+    {
+      "file": "backend/src/common/moderation-queue.sql.ts",
+      "sha256": "2232e9078990f2940f6cecf79253d6b0fc862042b12b7997f22749b9c8068350"
+    },
+    {
+      "file": "backend/src/common/parse-duration.ts",
+      "sha256": "4dd4f539f56006fcd6332896c26c7d3afc10eee693feb75702dfa607ac472434"
+    },
+    {
+      "file": "backend/src/common/permissions.constants.ts",
+      "sha256": "9e965524af1d525699005abdc9af46909ff3d1b67b086a953137d066eda4958f"
+    },
+    {
+      "file": "backend/src/common/permissions.decorator.ts",
+      "sha256": "da677857c4dd56849eab69a3281d7972f23d62cd2e2beeb4aeac746a807c924d"
+    },
+    {
+      "file": "backend/src/common/property-scope.spec.ts",
+      "sha256": "30f33cb1027ecc2c49b9d39cad052320ed010d72526b74c5b5108cfcf8d71c77"
+    },
+    {
+      "file": "backend/src/common/property-scope.ts",
+      "sha256": "2b7ef500ee7afb25cab1d3fac601b75966f26a5708c9cdb2dc49d47d5a1db40e"
+    },
+    {
+      "file": "backend/src/common/request-context.ts",
+      "sha256": "46305baa5d50104f33b3e27d3372c62b29e1a6b123599999cd3d38b1cdc2c8fc"
+    },
+    {
+      "file": "backend/src/common/roles.constants.ts",
+      "sha256": "a5b6527e786dca99011ca7dd014364bb85a05b189bcbe9819b14d00ef9b9b389"
+    },
+    {
+      "file": "backend/src/common/roles.decorator.ts",
+      "sha256": "1137824af5a4a3a6881f9d40ae3b63d24da86b3200f9546965e87803c1602567"
+    },
+    {
+      "file": "backend/src/common/roles.guard.spec.ts",
+      "sha256": "50345bc113963b5e0f0cd8a5aba7ff858162a810eaede2f2bad3bab57faf8fc6"
+    },
+    {
+      "file": "backend/src/common/roles.guard.ts",
+      "sha256": "bbf5b3be6915e8c9bbeb1b4a035ae34d5780bb9e771195c82b779af2151a2ee4"
+    },
+    {
+      "file": "backend/src/common/subscription-entitlements.spec.ts",
+      "sha256": "ee31600a8f3532db6ce48e628d7df3fe25f53fa398c92ceb63c8a743d259d15d"
+    },
+    {
+      "file": "backend/src/common/subscription-entitlements.ts",
+      "sha256": "d25009b919a661c6117ebf048bca0e45743dd165693ce9f87c2c440dcfe958a7"
+    },
+    {
+      "file": "backend/src/common/worker-heartbeat.ts",
+      "sha256": "aaca4941cbb0ab361eabfa667178631c204d0e91c43ed26887bce76a11c4b087"
+    },
+    {
+      "file": "backend/src/dashboard/dashboard.controller.ts",
+      "sha256": "1323604b383a88f82371f0c857cd745a32e5e2f92cc6f9ff1ecb2c184025db78"
+    },
+    {
+      "file": "backend/src/dashboard/dashboard.module.ts",
+      "sha256": "c58d389f56191a5ba3b0b382c888ed13665939f40d626acdf24316950d0b46af"
+    },
+    {
+      "file": "backend/src/dashboard/dashboard.service.spec.ts",
+      "sha256": "ae67dca6739ead6ac2e7594c057922301b6bc5391c442c135ede440aa03e4b0f"
+    },
+    {
+      "file": "backend/src/dashboard/dashboard.service.ts",
+      "sha256": "339445c0e3ba30826434009a86bf8e50970473ea9d29290c2db22b6d83f8dbf1"
+    },
+    {
+      "file": "backend/src/dashboard/dto/dashboard-metrics-query.dto.ts",
+      "sha256": "0ef08baee871ee4615b97b3904062987bb8d4f733dabad55765359ea4946d894"
+    },
+    {
+      "file": "backend/src/delivery/delivery-crypto.service.spec.ts",
+      "sha256": "82e63d2b24690c428110db743e09475331bee072e6c72b14bbe0933b73c09379"
+    },
+    {
+      "file": "backend/src/delivery/delivery-crypto.service.ts",
+      "sha256": "8cc26858d60688c034fc685c13428910de2589cbc735851e6b4af5362bad2792"
+    },
+    {
+      "file": "backend/src/delivery/delivery.module.ts",
+      "sha256": "960dcac8a648cfd7ef9afcf3a4b1332ed182a059f4c26219feaa3e571c7a689a"
+    },
+    {
+      "file": "backend/src/delivery/delivery.service.ts",
+      "sha256": "9cfbf9b4eda36684a90e5cb006ade0ac3b1d7894fb6e4eb3f985f7c2cb736289"
+    },
+    {
+      "file": "backend/src/expenses/dto/create-expense.dto.ts",
+      "sha256": "5cbe32a5ff5316fad5450b15f02fb83e90b1109d510244304bfdf8480ad5ee92"
+    },
+    {
+      "file": "backend/src/expenses/dto/list-expenses-query.dto.ts",
+      "sha256": "ab3619e809ebd980caa7db9bf62c47251eb5e000b3fe9b8e859ca9807f117e6a"
+    },
+    {
+      "file": "backend/src/expenses/dto/update-expense.dto.ts",
+      "sha256": "6dc3c6c35256df335accf90596955a21f0979aea508b763c1484b8d48043f4e6"
+    },
+    {
+      "file": "backend/src/expenses/expenses.controller.ts",
+      "sha256": "a0c4c43a566c9923dc22c1c7158bb3a8968619f2cfd49364bc36e52fe8367ef4"
+    },
+    {
+      "file": "backend/src/expenses/expenses.module.ts",
+      "sha256": "7a5bfff5208bd9df8c94277ecac3a6f7098effe48e06d1d39191e2a55eb042b1"
+    },
+    {
+      "file": "backend/src/expenses/expenses.service.ts",
+      "sha256": "506330483485adf39931b68dc973f33d5057158dac95d3f6bc6341d06f846e04"
+    },
+    {
+      "file": "backend/src/health/backup-telemetry.service.spec.ts",
+      "sha256": "e3f9bed16d7231b6bbd7ae390827cf068dd04e1c4a0058b39e42368e6789ba07"
+    },
+    {
+      "file": "backend/src/health/backup-telemetry.service.ts",
+      "sha256": "1e1130367ca278932a25c9c69268555263a056f916347f70dd8608c98eda22f6"
+    },
+    {
+      "file": "backend/src/health/health.controller.ts",
+      "sha256": "007293b6c92094851d958f38acc7a21d13f84a33b302936229e58d5aeeff15a4"
+    },
+    {
+      "file": "backend/src/health/health.module.ts",
+      "sha256": "3946c81b85165466b7dfb533bcff4dccd74c772c2dd373fa943d5c44fd500de3"
+    },
+    {
+      "file": "backend/src/health/incident-workflow.controller.ts",
+      "sha256": "f75b8307a2e64f2f60cc24fc1dcc9aecb5b3c03a4bbc65587549e133c357be7e"
+    },
+    {
+      "file": "backend/src/health/incident-workflow.service.spec.ts",
+      "sha256": "9176918b1c7672541747b55ed1f26b41340469fa6d2350c654584efa9408747b"
+    },
+    {
+      "file": "backend/src/health/incident-workflow.service.ts",
+      "sha256": "a19eb9267e75473e861470ac41430303a618c34c5a299f7e882a9c84c5c6bfa7"
+    },
+    {
+      "file": "backend/src/health/operations-health.service.spec.ts",
+      "sha256": "125276c7e15c209c595d6ecef401b9451181fe114234e06aee29985d879515b8"
+    },
+    {
+      "file": "backend/src/health/operations-health.service.ts",
+      "sha256": "cb8acdd34deeeb06fd5f5b013509efadb390e3cb9535bdacb30f4f13aca87bb2"
+    },
+    {
+      "file": "backend/src/health/operations-queue.controller.ts",
+      "sha256": "7ee8b4342d4c85caaf87770f7606a062442d4419c0fee3415ffc434ada90d1d2"
+    },
+    {
+      "file": "backend/src/health/operations-queue.service.spec.ts",
+      "sha256": "e13176ab385978d5732f001ce0bb46389e3772939ae173f95a76314fc2453d1d"
+    },
+    {
+      "file": "backend/src/health/operations-queue.service.ts",
+      "sha256": "e2cd3a0cef40faa251399343998061b046605d4f0d9415fc038bf965f4023827"
+    },
+    {
+      "file": "backend/src/health/runtime-metrics.service.ts",
+      "sha256": "7fc0225ecae6839e4988bff38d81711aebf77498dce75286bcfe960afc0099f8"
+    },
+    {
+      "file": "backend/src/health/schema-readiness.service.spec.ts",
+      "sha256": "1d47b311959dcc0630910b60bd290cc81d9221a41f3a8bce5636894e83027567"
+    },
+    {
+      "file": "backend/src/health/schema-readiness.service.ts",
+      "sha256": "174b6046f991daa995b78d9ae80355c9d63580bea5e9ffe6093d94248584f6b6"
+    },
+    {
+      "file": "backend/src/housing/handover.service.ts",
+      "sha256": "ad52998fd07c3d27743d2673ca0f6ea6a0ce219db2c10463aff0a0c129c305b5"
+    },
+    {
+      "file": "backend/src/housing/housing.controller.ts",
+      "sha256": "7fb784291d8a142c1e6a9c1b50d17cfb761cbd7e3d0e94a219dd1c5264c54138"
+    },
+    {
+      "file": "backend/src/housing/housing.dto.ts",
+      "sha256": "3bf3155d3be16778dd62f4b07a9ff1095d22b0f0924c8085a286d3254314f0d6"
+    },
+    {
+      "file": "backend/src/housing/housing.module.ts",
+      "sha256": "9f28b3d0344469dc96901021bc2e8e657d07378a8b0b22aade3b39200736ada6"
+    },
+    {
+      "file": "backend/src/housing/housing.service.ts",
+      "sha256": "9260f60d85a55c0bc65db5c6279d8848f6bea02da4bc16fc1bae831a06d07854"
+    },
+    {
+      "file": "backend/src/housing/viewing-reminder.worker.ts",
+      "sha256": "34c13b16733fcc86b5ae22815b686fe3e7b555121dff441da541d4260d6d5280"
+    },
+    {
+      "file": "backend/src/leases/dto/create-deposit-transaction.dto.ts",
+      "sha256": "4b532b63b55e5ec58c66d8945c6f86de1b936f810113917c838f92d4dd8f66b0"
+    },
+    {
+      "file": "backend/src/leases/dto/create-lease.dto.ts",
+      "sha256": "c48a7ea44b356cc826cd2d4639ced927ede9025a6bd9ae5fd042a778e4464257"
+    },
+    {
+      "file": "backend/src/leases/dto/lease-settlement.dto.ts",
+      "sha256": "023d524fd1451cda8bdbe2647c7d8fdeba9e00420f828d8eda34a5dc8042478b"
+    },
+    {
+      "file": "backend/src/leases/dto/renew-lease.dto.ts",
+      "sha256": "ea18a3f4b5403372315f3648f9db2f2746b0e594e7a8c1bdea241dc07e1219ec"
+    },
+    {
+      "file": "backend/src/leases/dto/update-lease.dto.ts",
+      "sha256": "951af01063fb42395e7016280ca84b18eb64ae180fd823b33a78df9dd347bfa9"
+    },
+    {
+      "file": "backend/src/leases/leases.controller.ts",
+      "sha256": "8d9b5e9c169e0e1f0ce0ed68e1623f94f8c2796ccbffb7386f39b81ad0241902"
+    },
+    {
+      "file": "backend/src/leases/leases.module.ts",
+      "sha256": "2d308fa75cc88edf80987fa0201dcf5ed684bbe6503cf62adacc10d4f22e8dd9"
+    },
+    {
+      "file": "backend/src/leases/leases.service.ts",
+      "sha256": "a180f67b708e91e08994725833bceb25b7ac97f408c8941d9886c702709e9eb1"
+    },
+    {
+      "file": "backend/src/leases/settlements.service.spec.ts",
+      "sha256": "3b6a2a0290781ab66996e656efe28a9ff18e6308cc2c53075f80b42db4cf3b16"
+    },
+    {
+      "file": "backend/src/leases/settlements.service.ts",
+      "sha256": "37a2a121e8c293d1cdd57ea16669e42cfec9ee9597648ef94d5630dbf2e98072"
+    },
+    {
+      "file": "backend/src/listings/listings.controller.ts",
+      "sha256": "6787e0a1d8f83ab5a68f05945ba55aade4248f200513dc27d373da456fd8678d"
+    },
+    {
+      "file": "backend/src/listings/listings.dto.ts",
+      "sha256": "a38060385d34a5f966c2b488cc83ad0387dba2ddff718ffe5f55fd291bdfa4f7"
+    },
+    {
+      "file": "backend/src/listings/listings.module.ts",
+      "sha256": "8e224836b38f14252009e7a435cc3fd4a5941f8651d0f1287224aa10ec72113b"
+    },
+    {
+      "file": "backend/src/listings/listings.service.ts",
+      "sha256": "6f54ab821a9408b481b7a4b57bd7f93ed82455aea717a5752b6ceb7fe5f0c550"
+    },
+    {
+      "file": "backend/src/listings/saved-searches.controller.ts",
+      "sha256": "17dda1664f0166541b0bc617a615de88752429858b5044d38a5c22bf5a62e77d"
+    },
+    {
+      "file": "backend/src/listings/saved-searches.service.ts",
+      "sha256": "3847bf1ce3ee1ba5ac9973a506288fbc4c3576e6bafffe270f86d8ab91234fd1"
+    },
+    {
+      "file": "backend/src/main.ts",
+      "sha256": "2a864f21e698b94dd3462f43ce82c5af62fee542287c3fe9b12ab8d691e11162"
+    },
+    {
+      "file": "backend/src/maintenance/dto/complete-maintenance-ticket.dto.ts",
+      "sha256": "3530d06e8c35601512e96c1caddfd6d148310b6194b87b19a2c5e28360ce3c15"
+    },
+    {
+      "file": "backend/src/maintenance/dto/create-maintenance-comment.dto.ts",
+      "sha256": "4dab6ad23cdfa940ecc95c8ffc2e61667670695a3cab32fa007acaf8e783cee6"
+    },
+    {
+      "file": "backend/src/maintenance/dto/create-maintenance-ticket.dto.ts",
+      "sha256": "ee6236ebfb8fe57aea1b2ed64ed6469d9ebfda1060687c8f59335d5c70500d81"
+    },
+    {
+      "file": "backend/src/maintenance/dto/list-maintenance-query.dto.ts",
+      "sha256": "e2107d6358758a150e794c1a6de44acbf08be0603aab35d5c63e63b19947552c"
+    },
+    {
+      "file": "backend/src/maintenance/dto/update-maintenance-status.dto.ts",
+      "sha256": "d349a0ef5c9886d85c9eb8c57e06acc5b366bb446bf4fe52eb6b132014ecf258"
+    },
+    {
+      "file": "backend/src/maintenance/dto/update-maintenance-ticket.dto.ts",
+      "sha256": "246473d6130101cceba4aeee424454c68112fea57c6ce2b58aa3ec9989218b92"
+    },
+    {
+      "file": "backend/src/maintenance/maintenance-sla.service.ts",
+      "sha256": "22d94f7a74ce40c8562626c7ac2b823943a53db9b0a0a94ed92a58ddbd102b68"
+    },
+    {
+      "file": "backend/src/maintenance/maintenance.controller.ts",
+      "sha256": "1e48cb1ef62e33119bea9dd515f7b9f4de3ce2d6d6ed5b38f6b7313304c9f596"
+    },
+    {
+      "file": "backend/src/maintenance/maintenance.module.ts",
+      "sha256": "0c6dd87381d895f6684c50d75158e83c9c9e2819bb9cde44a6bce131da8c1411"
+    },
+    {
+      "file": "backend/src/maintenance/maintenance.service.ts",
+      "sha256": "05a7fd9f7f26daa4d4ce7928616a57067bf906f75655e47eaa5735f2e193858d"
+    },
+    {
+      "file": "backend/src/notifications/announcements.controller.ts",
+      "sha256": "761c6f5056d01914ed44aea402b59cd86ff706650c1d7aa3003293a6e4586d6d"
+    },
+    {
+      "file": "backend/src/notifications/announcements.service.ts",
+      "sha256": "ea8c061cba317b356c8031aba0079fa4d2f7192d72f7c0ee616fde50f76d09a3"
+    },
+    {
+      "file": "backend/src/notifications/notifications.controller.ts",
+      "sha256": "351e1dc9a1164a77e8495ff05e04cfd8bb6399a35781cee44b91c42fcb70aae1"
+    },
+    {
+      "file": "backend/src/notifications/notifications.module.ts",
+      "sha256": "f8273d4e9114e619334a08c886af99855332ada110a13e3c2b079fbd4f48f489"
+    },
+    {
+      "file": "backend/src/notifications/notifications.service.ts",
+      "sha256": "1a7081dffe495b46bb9ba47a94e8f4fd31c6c4695b90e4a91696e9487f300090"
+    },
+    {
+      "file": "backend/src/notifications/zalo-zns.service.ts",
+      "sha256": "4c872a514096b7913377b7bc93d1c522e8e7db0cbc09dac66db6e34b77879fc6"
+    },
+    {
+      "file": "backend/src/operations/action-items.dto.ts",
+      "sha256": "7f475027e0d1777f3562ce9b5ddb74478c37cb88c1f491470192b6ab517a617b"
+    },
+    {
+      "file": "backend/src/operations/operations.controller.ts",
+      "sha256": "f9ab3b0fce3accd165675967a99a50776aa99af99ec854b0219fdf525fb52ca5"
+    },
+    {
+      "file": "backend/src/operations/operations.module.ts",
+      "sha256": "3dc3c26fbf4d49a349ddf8760babf572ba87c5480a6f7e1c689323e67704898c"
+    },
+    {
+      "file": "backend/src/operations/operations.scheduler.ts",
+      "sha256": "bdce7956e4649a43dd77d1c36dbfba4a9233479c0a72cefb3090a7cae76f5a80"
+    },
+    {
+      "file": "backend/src/operations/operations.service.ts",
+      "sha256": "dea42c8349ef65c80da68e21024035a597327e9dec8d8fc221bdfe29468f419b"
+    },
+    {
+      "file": "backend/src/operations/p1.controller.ts",
+      "sha256": "003f72f61fceb6cd1c40db084dab3a073355cd3a082cd4823dbb3b328bb8045c"
+    },
+    {
+      "file": "backend/src/operations/p1.dto.ts",
+      "sha256": "d442ea2b3cf1559cc6be846d93e086e7b3edd3cf2564377897ea8dc1b398b125"
+    },
+    {
+      "file": "backend/src/operations/recurring.service.spec.ts",
+      "sha256": "4609abb5ad2b2e5a0908cbc0c89c4716261fe1d3efd18b89de74c1d5496fb0d0"
+    },
+    {
+      "file": "backend/src/operations/recurring.service.ts",
+      "sha256": "561f5c45892f0ad2e19964f640b35f7f86f758c72b15de197f9bb60043932955"
+    },
+    {
+      "file": "backend/src/operations/turnover.workflow.ts",
+      "sha256": "676205d5eb6e4b6e6b377167a7a8d82b97006d0d256fa154f366f5407d101350"
+    },
+    {
+      "file": "backend/src/operations/turnovers.service.ts",
+      "sha256": "a6160a1b9fd5c2ce75d98687477bd0666cc79390e7df26eabf52a5447a157bcb"
+    },
+    {
+      "file": "backend/src/platform/admin-report-worker.service.ts",
+      "sha256": "46175ad76b8d6440b848d00d0d16e43ec065b3def6ded32e4210dbcbc11285f2"
+    },
+    {
+      "file": "backend/src/platform/feature-flags.service.ts",
+      "sha256": "8057e8a5fa9660b399bbba81dc97d0b5de2c76415eb26b897d7d17acc686cb50"
+    },
+    {
+      "file": "backend/src/platform/finance-reconciliation.controller.ts",
+      "sha256": "0ed14e584b2e02844b2956aa4c607ecde1e771eda2d034cadcbc61e77e41d6f2"
+    },
+    {
+      "file": "backend/src/platform/finance-reconciliation.dto.ts",
+      "sha256": "8a5fe3a459a2f474aa0ef20dac6636e717c1c0517e23fc1539717400e59f66f1"
+    },
+    {
+      "file": "backend/src/platform/finance-reconciliation.service.spec.ts",
+      "sha256": "e7b056de942c01f65e74d14fcd443a574f0647a519ade5fe1bd12ac97049735a"
+    },
+    {
+      "file": "backend/src/platform/finance-reconciliation.service.ts",
+      "sha256": "aa2e0d048bf59e7b465bce9191242a269d85c32f79a60d778230bf325ef776fd"
+    },
+    {
+      "file": "backend/src/platform/governance.controller.ts",
+      "sha256": "e0da15e26f34fce5e75aef7d38b8f616a03f7fa2ead7e65660105f21a7294328"
+    },
+    {
+      "file": "backend/src/platform/governance.dto.ts",
+      "sha256": "1460e3b97b33eb676be785fc9f1828db5b9389bd655472a84022eaf5f1454b41"
+    },
+    {
+      "file": "backend/src/platform/governance.service.ts",
+      "sha256": "cb94a8f78eb8d05d5acb446b4698a8d581de4035ff3d98ec8856ca274898b231"
+    },
+    {
+      "file": "backend/src/platform/moderation-policy-quality.spec.ts",
+      "sha256": "f0a6f2a01f3db15ceee2bf2e75f1436c134facfb565f7b299056d8a8d3b127ff"
+    },
+    {
+      "file": "backend/src/platform/moderation-policy.controller.ts",
+      "sha256": "54dfa90c7e8d6bdf28bfbc3589f82680ee08b39fdf3163b5b17d3c0a1da9adab"
+    },
+    {
+      "file": "backend/src/platform/moderation-policy.dto.ts",
+      "sha256": "09db7f035e96a7d18d63b132cd3460ec0619e7f4ee039e4f9cd3bd811e5d42d5"
+    },
+    {
+      "file": "backend/src/platform/moderation-policy.service.ts",
+      "sha256": "271e51bf636be2676a153b5d3becf403c2d0e59e041f680cc60dae94efbaca4a"
+    },
+    {
+      "file": "backend/src/platform/moderation-preview.spec.ts",
+      "sha256": "3a7ab785d5b81aed4df2562e3f0dc2db96d1f719055d3a1745f41b1dc6455ae8"
+    },
+    {
+      "file": "backend/src/platform/moderation-quality.dto.ts",
+      "sha256": "9f3276ae94046ad467ed0ddcab8304a0fea86f28544f5bfb5636704e1d432201"
+    },
+    {
+      "file": "backend/src/platform/moderation-quality.service.spec.ts",
+      "sha256": "24879832f13afcc9749ea807e026ff597eda8124233b3e911519e7481d6049f7"
+    },
+    {
+      "file": "backend/src/platform/moderation-quality.service.ts",
+      "sha256": "9c2aeb64910574d7dc0418a9393a983d195868020d1e59aa756afad6953de18f"
+    },
+    {
+      "file": "backend/src/platform/moderation-v2.controller.ts",
+      "sha256": "65eb1aa8a2380881c032e53ec225eba52a4b7ee5a52cd0c6f3e5757d2c1123bc"
+    },
+    {
+      "file": "backend/src/platform/moderation-v2.dto.ts",
+      "sha256": "30d9e868419eda578786abd3f289db54f17aad0e7b6f5e4f2b94474cf8597c2e"
+    },
+    {
+      "file": "backend/src/platform/moderation-v2.service.ts",
+      "sha256": "124c9f39fb2c3f4d6cf4ab1338c097111347739bfc6a3d42b77011064aa2536c"
+    },
+    {
+      "file": "backend/src/platform/platform-audit.ts",
+      "sha256": "d24ebfd4d9c0a48d95705773eb0916058d6a4ebfc49166135558494f7fad4541"
+    },
+    {
+      "file": "backend/src/platform/platform-rules.spec.ts",
+      "sha256": "609839fff43a3d6d9a40c84acc3399726a124cb83991e780c14714efeb1b2310"
+    },
+    {
+      "file": "backend/src/platform/platform.module.ts",
+      "sha256": "a7acb2fcbaec2a33b7eefcfd71ec1319c40310f0af0347539ddf0ef06e4eec0e"
+    },
+    {
+      "file": "backend/src/platform/report-object-storage.service.ts",
+      "sha256": "d61de80ee3dce5d83f2a61ea58e65d3c1ec9d3378ac5fb85fb8aee5b95243b0e"
+    },
+    {
+      "file": "backend/src/platform/report-schedule.ts",
+      "sha256": "2d9dd22bf5015cbba049366feda7020a4e5dc2b3eeb340ba9096a08770cc90a3"
+    },
+    {
+      "file": "backend/src/prisma/prisma.module.ts",
+      "sha256": "9223a0889abb0669020e94a9b8c1e68274cdc05533c1f79d84fe516450e94ebd"
+    },
+    {
+      "file": "backend/src/prisma/prisma.service.ts",
+      "sha256": "3be1228670740c1a3b8b0728640019f90792f7bbbadbab0435ed1443a30ee491"
+    },
+    {
+      "file": "backend/src/properties/dto/create-property.dto.ts",
+      "sha256": "a8c69d613c19af6f16a3f64491cb6884014c00dbf1fb7f9dd9d898fe078aad77"
+    },
+    {
+      "file": "backend/src/properties/dto/list-properties-query.dto.ts",
+      "sha256": "b381bddaa5621c822d024e52b9cc01b05026fd41f49b858e43ef24e267f22b29"
+    },
+    {
+      "file": "backend/src/properties/dto/update-property-status.dto.ts",
+      "sha256": "563326cbb5c045065e99098164b6e7e627a1a10f703c34065792bc303f8a3d0e"
+    },
+    {
+      "file": "backend/src/properties/dto/update-property.dto.ts",
+      "sha256": "022c5a14f73f826d22d61f59b996bae6c1de2a3fa4aa9971a38147663cbc7066"
+    },
+    {
+      "file": "backend/src/properties/properties.controller.ts",
+      "sha256": "d098d32e8014ee4fe105c29901e36ae34bea066644f1c4ecb678d0b2d10f53ba"
+    },
+    {
+      "file": "backend/src/properties/properties.module.ts",
+      "sha256": "71a29f952ecaa178cc2efb8e64dd0872d10d2049651907a9debcbd706d5e4af7"
+    },
+    {
+      "file": "backend/src/properties/properties.service.ts",
+      "sha256": "2ba395ae34ee587c13d55da7a3d03bc4afd78ac0189a082ab87d1e6743b4c626"
+    },
+    {
+      "file": "backend/src/reports/billing-analytics.spec.ts",
+      "sha256": "2a0b3150dc3551e097b595f4fbd69e403cb5f999af3b5cf29d38fce4cc16f4c3"
+    },
+    {
+      "file": "backend/src/reports/billing-analytics.ts",
+      "sha256": "a85394040aa026e3eb15aedbeab4f36b783956049a5bcfe76854ab844e1dd180"
+    },
+    {
+      "file": "backend/src/reports/reports.controller.ts",
+      "sha256": "8b4dc181789858d1f5aefb9733e00cc143e82d1513b2194b84cbc0a22603695e"
+    },
+    {
+      "file": "backend/src/reports/reports.module.ts",
+      "sha256": "c7625ac610a0d294c87ce51ab3c6924d2d00e69f5c6ffd153857a5d360e3ede1"
+    },
+    {
+      "file": "backend/src/reports/reports.service.ts",
+      "sha256": "c921f140dca130fbd7ceaf3d0c70075230779feeba590603ef9985de246c637f"
+    },
+    {
+      "file": "backend/src/reviews/reviews.controller.ts",
+      "sha256": "98807800665d4f03c04a1cfce21343bc9de3bc40aa5386ee407eb9b0c93e93f6"
+    },
+    {
+      "file": "backend/src/reviews/reviews.dto.ts",
+      "sha256": "1bc1c5ca3cb51a2d28e12351524930ba4dc6011e2e2c613c72f7698012eaa898"
+    },
+    {
+      "file": "backend/src/reviews/reviews.module.ts",
+      "sha256": "521cadbaec9112529e1a814dffa75ed30fd2238a75d23ddf70aa78cb8a1beeda"
+    },
+    {
+      "file": "backend/src/reviews/reviews.service.ts",
+      "sha256": "e749f4a261db5327a6cd14322e1af35aa553cc00d6f9c07613947d39ebfa783b"
+    },
+    {
+      "file": "backend/src/rooms/dto/create-room-asset.dto.ts",
+      "sha256": "152870a7de7105bea961fa9cfad0d733539a776cfc4a322f379fe11b45753b25"
+    },
+    {
+      "file": "backend/src/rooms/dto/create-room-inspection.dto.ts",
+      "sha256": "5e8bad4c98c1775a016faa95f75d3df65b54f3adbdc64bd5b8d5bbd212574131"
+    },
+    {
+      "file": "backend/src/rooms/dto/create-room-service-fee.dto.ts",
+      "sha256": "854aba8057eae650c4dd8e44c4d2559d3cd5dbda8950ef093fdb73df8bdd1b2b"
+    },
+    {
+      "file": "backend/src/rooms/dto/create-room.dto.ts",
+      "sha256": "452cc06d36f03b685df5c4a06ece11d41b1b9a198f2ff7047545ef11ad9f477f"
+    },
+    {
+      "file": "backend/src/rooms/dto/list-rooms-query.dto.ts",
+      "sha256": "1fa4e513eb3e8bf6301615b22b9ab66592b80c7458e22d47d02e2b620f4c21df"
+    },
+    {
+      "file": "backend/src/rooms/dto/update-room-asset.dto.ts",
+      "sha256": "74f28bcfc62f8ca7273de858a529cf975a98d41fb7911e9d0b697ac5eaf6e025"
+    },
+    {
+      "file": "backend/src/rooms/dto/update-room-inspection.dto.ts",
+      "sha256": "36411ff5b350a2f33085312d39cdbcf675acccba819bccfa2b8a4eee9f24127a"
+    },
+    {
+      "file": "backend/src/rooms/dto/update-room-service-fee.dto.ts",
+      "sha256": "51a0882bc8589ab03a231b1a6a6d36629b8fb406ef9fd27def02a8eaff85fa93"
+    },
+    {
+      "file": "backend/src/rooms/dto/update-room-status.dto.ts",
+      "sha256": "59a0f98d8a8f5c604532bec4ffedd1051fef599a169291465313fd1a22a0bc79"
+    },
+    {
+      "file": "backend/src/rooms/dto/update-room.dto.ts",
+      "sha256": "a233c9a50092731fc53df78bf71b5664704feaaa472149c39ec0b21a6694699b"
+    },
+    {
+      "file": "backend/src/rooms/rooms.controller.ts",
+      "sha256": "de29d2c96e9f1ffb5ac989096fd98a0db0f3d5d7e75a0eec9dfb11471c1df8ab"
+    },
+    {
+      "file": "backend/src/rooms/rooms.module.ts",
+      "sha256": "7faae5a3feb52884cff5fda8b26f2aeca0c4b845939fe234a2d565bef8762924"
+    },
+    {
+      "file": "backend/src/rooms/rooms.service.ts",
+      "sha256": "79ffc92b49def6593a57d755d087608794e8bd0e20299c206af49bc844977945"
+    },
+    {
+      "file": "backend/src/rooms/service-tariff.spec.ts",
+      "sha256": "be04e384ea03e9766a5f91ea7c039751b5c5c120ee2ba66221be73deffcfba27"
+    },
+    {
+      "file": "backend/src/rooms/service-tariff.ts",
+      "sha256": "f2b48b39148bf7075f2307308499f3a0006a037615620bd0bbf187c7cd17c3e1"
+    },
+    {
+      "file": "backend/src/staff/dto/accept-staff-invite.dto.ts",
+      "sha256": "d5f4500cbfeaf40263708fe2385356e8c2bc0d84ef58e0f95ddb337a4719a120"
+    },
+    {
+      "file": "backend/src/staff/dto/create-staff-invite.dto.ts",
+      "sha256": "e4ed6ac3674235d2bdf8f1af25a24b3162f1fea3a160816968e9e9a60d788862"
+    },
+    {
+      "file": "backend/src/staff/dto/simulate-staff-permission.dto.ts",
+      "sha256": "5da8a144ce167c92fb95b3a9db5816989bddff137312c65346bd7d7ecefea341"
+    },
+    {
+      "file": "backend/src/staff/dto/update-staff.dto.ts",
+      "sha256": "5a5fd589c6dd20d2e2874f03e7d6fdc74d05b8aa0c1637a2d52080c02f4dff6c"
+    },
+    {
+      "file": "backend/src/staff/staff-presets.ts",
+      "sha256": "a40481af2e18f43b7e7fd0d4cae3e32ac99620f393d957857b5a78ebda92bbf0"
+    },
+    {
+      "file": "backend/src/staff/staff.controller.ts",
+      "sha256": "49c4ea58fed384b45e0ac388a6995822080e39a326f2a2ad6b5c190699dc137f"
+    },
+    {
+      "file": "backend/src/staff/staff.module.ts",
+      "sha256": "5e9bdef73e19dd783631a471904f59f060bce04de86831fb7a2d57e66b1be4c5"
+    },
+    {
+      "file": "backend/src/staff/staff.service.ts",
+      "sha256": "6f95c95762d0713d2400c6ba40828f6f4a27774f9ae8b3f63394f9fdbfa8f82b"
+    },
+    {
+      "file": "backend/src/support/business-calendar.spec.ts",
+      "sha256": "e774e9a20802ee5604f38e5955893268df16c1d84ee1ea72ea2081b24a8db3db"
+    },
+    {
+      "file": "backend/src/support/business-calendar.ts",
+      "sha256": "0baec95faf82d9a89768121245d988905ea8446cc56ceab6fd21686d432067b3"
+    },
+    {
+      "file": "backend/src/support/notification-center.controller.ts",
+      "sha256": "aa07a04819c5ff09cd928863eeb1f3cbd5dd1a663a474edeec3c027e6932501e"
+    },
+    {
+      "file": "backend/src/support/notification-delivery.controller.ts",
+      "sha256": "27925daff33e8cb91afd324f7c47f30aecbedef2168a6ac9dcf13b7cf5a2ae78"
+    },
+    {
+      "file": "backend/src/support/notification-delivery.service.ts",
+      "sha256": "98f2db45f74c2eb070cb2b1ac88971ac810eae91852803f624c18e56cfd3f296"
+    },
+    {
+      "file": "backend/src/support/platform-notification.service.ts",
+      "sha256": "20fb8add64c1ab49d90573f48cc1637019a11685f2e350e003048623f1ffbfdf"
+    },
+    {
+      "file": "backend/src/support/support-attachment.controller.ts",
+      "sha256": "b9e4065f668b89678f4f451f27c89b8527000c4914e2857175e5ff1f4c424550"
+    },
+    {
+      "file": "backend/src/support/support-attachment.service.ts",
+      "sha256": "de6bbdc52498dd23a9640df28fe7ade27f3ae9d1f1421e21a9dd7bd5c039802f"
+    },
+    {
+      "file": "backend/src/support/support-case.controller.ts",
+      "sha256": "8d1ee5b906ce82df21eae7ccec7bb179514a0739f8c0e9f677a71e11901a0c81"
+    },
+    {
+      "file": "backend/src/support/support-case.service.ts",
+      "sha256": "7214a11510447450c3580701398ec2eacdf5f18297dca3fb9c50222d027e0f5d"
+    },
+    {
+      "file": "backend/src/support/support-inbox.spec.ts",
+      "sha256": "84167a1367e7fe2cc57b63450ddb093bd1590bcf00bf9a29ed9ebbf9cf6487bd"
+    },
+    {
+      "file": "backend/src/support/support-inbox.ts",
+      "sha256": "25344831d6e409e7f37b32e1f252451d5835d2ef084fb8503c108d5960c58634"
+    },
+    {
+      "file": "backend/src/support/support-sla.controller.ts",
+      "sha256": "b12c2be1159163913ca1cfb57742b112b2b43603da4d0c88708712e928bd44d8"
+    },
+    {
+      "file": "backend/src/support/support-sla.dto.ts",
+      "sha256": "19b70a29d4aa92b5d0646f054bff966d05b649008ac185c3fcd3aef994749eef"
+    },
+    {
+      "file": "backend/src/support/support-sla.service.ts",
+      "sha256": "8e435179160b8bb22feab8fa77d84c5acc032fd05dec208bdfc4c4a7092eee7d"
+    },
+    {
+      "file": "backend/src/support/support-tools.controller.ts",
+      "sha256": "37c21ca06fc3d1eb6ae28a1c0ec34bcbdce55f605fd8d28719102a5e33ecbef0"
+    },
+    {
+      "file": "backend/src/support/support-tools.dto.ts",
+      "sha256": "10a9128970954ed7b881dbb5a861efa7a0e786ee709f8a208519f9634ed66fc7"
+    },
+    {
+      "file": "backend/src/support/support-tools.service.ts",
+      "sha256": "acd6c8e99e07ff7d40bd628c495cc38b155d0d1f77c5fc8227671d0de38c7d58"
+    },
+    {
+      "file": "backend/src/support/support-workflow.controller.ts",
+      "sha256": "2d37df9a4d3bf5d40d7e6fe0d425d23c22712f2eaa25662800d2f1ecbb93152b"
+    },
+    {
+      "file": "backend/src/support/support-workflow.dto.ts",
+      "sha256": "68924972c0ad135170bca12bdd8314fab41a229a0e0ff6c69403b90d0c758cdc"
+    },
+    {
+      "file": "backend/src/support/support-workflow.service.ts",
+      "sha256": "bdaafb0d04e7c97b3a3a3e639ca7ce161b72dd64d5fb4ce94558a7dd252993ef"
+    },
+    {
+      "file": "backend/src/support/support.controller.ts",
+      "sha256": "37078d6a485e2ee827c70554be8d6bc8578da0269795f7b165491898ab484bcb"
+    },
+    {
+      "file": "backend/src/support/support.dto.ts",
+      "sha256": "8de855ef0158bb883e8b54829cfc5a97c1fff5c7768deb976e3bc361dfee82fe"
+    },
+    {
+      "file": "backend/src/support/support.module.ts",
+      "sha256": "4999ced16d273c6cb459264ded0bd0456af125078ec5ee8b4bb0204ea9531c52"
+    },
+    {
+      "file": "backend/src/support/support.service.ts",
+      "sha256": "00d983cdae192f9d0cffb4e606bfe8dc5cd61c1f149774c3794d52d102614946"
+    },
+    {
+      "file": "backend/src/tenant-lifecycle/dto/tenant-lifecycle.dto.ts",
+      "sha256": "80179900f96f8e738355a06c3aa507cd2eddb503352bff8bea86c6d1f5118c53"
+    },
+    {
+      "file": "backend/src/tenant-lifecycle/notification-channels.spec.ts",
+      "sha256": "b57218cce23d97e1e256eb49f21c85293bf40768fb28a62ed470a474305447ca"
+    },
+    {
+      "file": "backend/src/tenant-lifecycle/notification-channels.ts",
+      "sha256": "3b03c7e3c369915754cad6827ac7f6ba5cce4cdc7992ceae3ac524f6faecc6a6"
+    },
+    {
+      "file": "backend/src/tenant-lifecycle/tenant-lifecycle.controller.ts",
+      "sha256": "d6fb6feaf86b7cca3d9533f8236494b566413a3e420937be8454c39d3e0f7b31"
+    },
+    {
+      "file": "backend/src/tenant-lifecycle/tenant-lifecycle.module.ts",
+      "sha256": "6b5d0f46b61349530c56a7ac3c88bd5c41fa00f581513ccc7070f309fdd9f661"
+    },
+    {
+      "file": "backend/src/tenant-lifecycle/tenant-lifecycle.service.ts",
+      "sha256": "812d0246d169759f82e695bbc7bc0b703f6d9fec2d0562714b2a5d32fa72798c"
+    },
+    {
+      "file": "backend/src/tenant-portal/dto/create-payment-proof.dto.ts",
+      "sha256": "c091f753db4d8d5df9d637c42be390af97d09fef638a75c8a44b987b4672beb7"
+    },
+    {
+      "file": "backend/src/tenant-portal/dto/create-tenant-maintenance.dto.ts",
+      "sha256": "f56d3fc21d53d69145867e653ed14eb87b57724cb6070322239595eeebc41c16"
+    },
+    {
+      "file": "backend/src/tenant-portal/dto/create-tenant-zalo-message.dto.ts",
+      "sha256": "cfadff57a7fcc28548418106c8fac59daa09fdb544078dc87be029a129d0e224"
+    },
+    {
+      "file": "backend/src/tenant-portal/tenant-portal.controller.ts",
+      "sha256": "94937c902b7d5726c6f0de9ac6ca024521934c2bf1fbdff80a43da5545c09746"
+    },
+    {
+      "file": "backend/src/tenant-portal/tenant-portal.module.ts",
+      "sha256": "b12dbe8edf5959725f98b91ff6705d10ab142100c82012e1dec4819aaa252941"
+    },
+    {
+      "file": "backend/src/tenant-portal/tenant-portal.service.ts",
+      "sha256": "477edcc2d839aa4fe04e77e39e9de8e59b0a5a1b75a2647f49ab903a7afe273f"
+    },
+    {
+      "file": "backend/src/tenants/dto/accept-tenant-invite.dto.ts",
+      "sha256": "0b68611c17525a48e096ecba6cb702a220691c707f0ef29fdbfad4e00dfbb40a"
+    },
+    {
+      "file": "backend/src/tenants/dto/create-tenant-account.dto.ts",
+      "sha256": "363dffb0704621469417b7495e9eeee5f59989f4ac95e0135c3666d57d18b366"
+    },
+    {
+      "file": "backend/src/tenants/dto/create-tenant-invite.dto.ts",
+      "sha256": "a8335f5c50a7569f9d204c1e17eb4d5bf5d0195634574ac7726378c3bc730c03"
+    },
+    {
+      "file": "backend/src/tenants/dto/create-tenant.dto.ts",
+      "sha256": "a2be3135597fe8f10df1d9571d2d990dabdcdcc62f29ed0f5d8119256a50333b"
+    },
+    {
+      "file": "backend/src/tenants/dto/list-tenants-query.dto.ts",
+      "sha256": "893e32bcc8977b8c6e1018cff8b27821981b37c1c22abb86a340b94119d38aaf"
+    },
+    {
+      "file": "backend/src/tenants/dto/update-tenant-status.dto.ts",
+      "sha256": "29b6c303191d0de89d38cc08ec2f0f42586a979bf176f9fd92fd00d63e53ae43"
+    },
+    {
+      "file": "backend/src/tenants/dto/update-tenant.dto.ts",
+      "sha256": "a44a07d70aa1278d527392f2708c353183e68f4eaae214b18b79f9b87578bd9e"
+    },
+    {
+      "file": "backend/src/tenants/tenant-invites.controller.ts",
+      "sha256": "9653bfa3c40d5cfad02c9d8139a3def96e394734eaf52a5faad99fc31fdc81a0"
+    },
+    {
+      "file": "backend/src/tenants/tenant-invites.service.spec.ts",
+      "sha256": "4c5920805cd0bfb05b53b61d73ffb2365b1976dab27c7155272a2fcc2b5aa20c"
+    },
+    {
+      "file": "backend/src/tenants/tenant-invites.service.ts",
+      "sha256": "8467af14beb3629bb91486bcc9fdd09305139a9aa7b610474ec1a5a69c2e6363"
+    },
+    {
+      "file": "backend/src/tenants/tenants.controller.ts",
+      "sha256": "da6028a9147a29b183415bf0ab491f9a320251e37faab703dcc5b08fefc4b07a"
+    },
+    {
+      "file": "backend/src/tenants/tenants.module.ts",
+      "sha256": "dc158a4c7712633b13d0cbe4169af0025fd24ce095f5e90739cf41e3edf83bc8"
+    },
+    {
+      "file": "backend/src/tenants/tenants.service.ts",
+      "sha256": "b0ad10211c2638e1835e536afa71baf84be8d9fc7f65f6bb8b23de56cb6f6a92"
+    },
+    {
+      "file": "backend/src/uploads/admin-attachment-authorization.spec.ts",
+      "sha256": "9d013e3381ee9c37da639ea16920f647b810d00a39467366f27c9d80827462b0"
+    },
+    {
+      "file": "backend/src/uploads/malware-scanner.service.spec.ts",
+      "sha256": "8ef17eeb278046662cfa7d135428b4c085429a1023d4db1f12f40af12889fc99"
+    },
+    {
+      "file": "backend/src/uploads/malware-scanner.service.ts",
+      "sha256": "6b1e0413c2e052b3d7e1cb0f76c34b8b46273f7f118cb1631fad61113c6fe14f"
+    },
+    {
+      "file": "backend/src/uploads/upload-references.interceptor.ts",
+      "sha256": "3a6b9f8ff774bcfe1a2ce6c61717822df4d1ab876ae8cf043b40fbaa9d6d8d4c"
+    },
+    {
+      "file": "backend/src/uploads/uploads.controller.ts",
+      "sha256": "6d5fa92351c57183e2721b8dababe33fcb5041018e2472bd784bc00e8b9f4d4d"
+    },
+    {
+      "file": "backend/src/uploads/uploads.module.ts",
+      "sha256": "cbde9b6467cff77c9e27f77e3a7f539c9a56296a2a38a427871fff479e6b7346"
+    },
+    {
+      "file": "backend/src/uploads/uploads.service.ts",
+      "sha256": "e8b1c69cabc5bcf1322a2b4185be0c748367bf67a95082e868fde6f03da0b280"
+    },
+    {
+      "file": "backend/test/e2e/admin-accounts.e2e-spec.ts",
+      "sha256": "8a80499145befec07130609b060a7b314211553b02772cb379bd49f0ae6d5dfc"
+    },
+    {
+      "file": "backend/test/e2e/admin-completion.e2e-spec.ts",
+      "sha256": "954fd339e86824771bb0c9772fe59eb1a92d221aac5451af5744449cc07bd95e"
+    },
+    {
+      "file": "backend/test/e2e/admin-console.e2e-spec.ts",
+      "sha256": "af73698ecfa11bcf7633030513901b557af0b7d26943c82d92009d3b52146bfb"
+    },
+    {
+      "file": "backend/test/e2e/admin-inventory.e2e-spec.ts",
+      "sha256": "5b34659d86723dca2662684f2d6b2d33fe51893a671020fd5949fb0fb59cc079"
+    },
+    {
+      "file": "backend/test/e2e/admin-moderation-policy.e2e-spec.ts",
+      "sha256": "ed985977e72e69bf3598361b031090d87b1c01ec82104f67b5be4a66fe4063fb"
+    },
+    {
+      "file": "backend/test/e2e/admin-next-sprints.e2e-spec.ts",
+      "sha256": "66c70b324121166c60b0626ee5963cfb4f0a477e01265801c7a40483baada112"
+    },
+    {
+      "file": "backend/test/e2e/admin-operations-release.e2e-spec.ts",
+      "sha256": "6bc90779d935c52c448a5a32c095fff806df13238e917514b79b7a4a6117a161"
+    },
+    {
+      "file": "backend/test/e2e/admin-registry.e2e-spec.ts",
+      "sha256": "4e0fad7042d37dec68317ae1b5c43a72b156a597ce0215ecbeabf82da60450f4"
+    },
+    {
+      "file": "backend/test/e2e/admin-roadmap-inboxes.e2e-spec.ts",
+      "sha256": "74dd291ea5d64c8984e414869dd4b199a91bbe7fb26a7b67b65861ec72f2b054"
+    },
+    {
+      "file": "backend/test/e2e/admin-search.e2e-spec.ts",
+      "sha256": "022ffbe6ee9db8abb591db521e49093531579493572898a0966cf84312c82353"
+    },
+    {
+      "file": "backend/test/e2e/admin-sprints.e2e-spec.ts",
+      "sha256": "45ee46388fdcc1dde1325438cb6724ae5bbe7b58c1996ffb518ab9058fe9cf81"
+    },
+    {
+      "file": "backend/test/e2e/admin-support-tools.e2e-spec.ts",
+      "sha256": "dfcf0ceb2a163d24468c12bda8040390881337eea73a07f69afa52b496f26812"
+    },
+    {
+      "file": "backend/test/e2e/admin-workspace.e2e-spec.ts",
+      "sha256": "d87691ce748d22d66c75129c6466991148a46a2531552da3b9fda0157d2f4954"
+    },
+    {
+      "file": "backend/test/e2e/admin.e2e-spec.ts",
+      "sha256": "c13347e7d3f37718c7886e00a5b5e8cd3e7a88f8b4af66957c5d37a7497c313d"
+    },
+    {
+      "file": "backend/test/e2e/app-functional.e2e-spec.ts",
+      "sha256": "9e91c928f71af0b2a579c2c7609112a4bf6c5e6ee5bc5d18ace214f011fa9028"
+    },
+    {
+      "file": "backend/test/e2e/auth.e2e-spec.ts",
+      "sha256": "cfd40ce96c30c73d081ee9e256580bf0bad460ebf43f4190f2c74cdf7bb23763"
+    },
+    {
+      "file": "backend/test/e2e/authorization-ownership.e2e-spec.ts",
+      "sha256": "f4ff6bb67d931653374da352c4092df7ad28f1aa27acece6f3f49317538208d9"
+    },
+    {
+      "file": "backend/test/e2e/billing-production.e2e-spec.ts",
+      "sha256": "890644d372844f436e7ba6d81a9223b069207adc76d2d8bc9fafa782037e3442"
+    },
+    {
+      "file": "backend/test/e2e/chatbot.e2e-spec.ts",
+      "sha256": "b9ca9fb4b671206a29aeb6afe412fec2a4f352e2396fc5fd25f9d51f8c0d27b8"
+    },
+    {
+      "file": "backend/test/e2e/demo-card-payments.e2e-spec.ts",
+      "sha256": "141057307ee193fcf7aedc4a1a80b35b9e74a2fbf38726ecc54c490c6df14bce"
+    },
+    {
+      "file": "backend/test/e2e/e2e-app.ts",
+      "sha256": "6854f3db89399b4c7ba0e6694787c3227a35a84dbd95a8502eeaca73131b8da1"
+    },
+    {
+      "file": "backend/test/e2e/e2e-fixtures.ts",
+      "sha256": "ded7281c845a2aadee68b0eb859928135e81528d1257d739c368b510fef1929c"
+    },
+    {
+      "file": "backend/test/e2e/explore-preview-images.e2e-spec.ts",
+      "sha256": "a05f125c46e6d729cfd6fe3a685b2aaed614703258e3c4cb00619a98baa2d3c4"
+    },
+    {
+      "file": "backend/test/e2e/housing.e2e-spec.ts",
+      "sha256": "a7a9538e64d96b522eff1688ecc26b66babcb0c09510b8a504d044bec9a67095"
+    },
+    {
+      "file": "backend/test/e2e/invoice-tariffs.e2e-spec.ts",
+      "sha256": "d68b36f17e35367ba83e6b08a72493f9bd57515d88ee8dffd31ea869016f7865"
+    },
+    {
+      "file": "backend/test/e2e/lease-billing-dashboard.e2e-spec.ts",
+      "sha256": "7460b79cd09932adf3b6bd0b5e8c7cb2cb330e08498605a1f54adfc0f85013a4"
+    },
+    {
+      "file": "backend/test/e2e/lease-settlement.e2e-spec.ts",
+      "sha256": "7c53b01a6232b5cc6ce7c6ad3b5da91e4d4266e4bda00a4087e442f57a1902f5"
+    },
+    {
+      "file": "backend/test/e2e/listings.e2e-spec.ts",
+      "sha256": "1ecd20c561be93c841090b74fdb821c2667d685b9175af9122655c6891090edf"
+    },
+    {
+      "file": "backend/test/e2e/manual-transfers.e2e-spec.ts",
+      "sha256": "c410571e18ff775da6f7d38bb3b698fd20902bc57899a9d6223daf3bf0f0a03c"
+    },
+    {
+      "file": "backend/test/e2e/operations.e2e-spec.ts",
+      "sha256": "b194a51eb343a4f6df6b41900afe62c0d2291bf19cac27b706c1c016a553888a"
+    },
+    {
+      "file": "backend/test/e2e/p1-operations.e2e-spec.ts",
+      "sha256": "84de74d4defe78823b6ae9883d8d228dbf6de162467f7efbdd95a7531d12bd5a"
+    },
+    {
+      "file": "backend/test/e2e/production-safety.e2e-spec.ts",
+      "sha256": "6220adf24367aee1bfbc4f36babbc9f5d758940617d8a1fc2a22ea19b0542e46"
+    },
+    {
+      "file": "backend/test/e2e/resource-lifecycle.e2e-spec.ts",
+      "sha256": "e16e12727dc594e3633c7df6f2c5b3298d6040a5acb7faa93dd4e290c7e9b8dc"
+    },
+    {
+      "file": "backend/test/e2e/reviews.e2e-spec.ts",
+      "sha256": "14e874a2c06931333af2374f2c57fde95b2709e4629745d1e055cf152d92cc85"
+    },
+    {
+      "file": "backend/test/e2e/security-discovery.e2e-spec.ts",
+      "sha256": "4fdb138a5c782525a97d791309f2a734b8773bb80f6cc05c39ae62ba97bd3c0a"
+    },
+    {
+      "file": "backend/test/e2e/staff-lifecycle.e2e-spec.ts",
+      "sha256": "7d7e778c81f47d5fe40f4ca8ab796ac2095776e3ef5de2d138e7450cbf53afd6"
+    },
+    {
+      "file": "backend/test/e2e/tenant-portal-priority.e2e-spec.ts",
+      "sha256": "14da08e2dd8a78a6e98269806ec1b1cae07e885e5a81e492c072cf83b5eb36ac"
+    },
+    {
+      "file": "backend/prisma/bootstrap-admin.ts",
+      "sha256": "1eae3ee42ca73b132aa0a1658cfb711865f0711386a00f4d7ff90f6c70230017"
+    },
+    {
+      "file": "backend/prisma/migrations/20260723221009_init/migration.sql",
+      "sha256": "a438dc04e82d7b0185a692ccc58b129485d16b23340f1c5976287457fb220d3b"
+    },
+    {
+      "file": "backend/prisma/migrations/20260724120000_auth_refresh_hash_index/migration.sql",
+      "sha256": "168f9e1e729dab1488888805c2c56eba6f8faea4a8014c71ca78696e9722b38a"
+    },
+    {
+      "file": "backend/prisma/migrations/20260726112728_add_property_room/migration.sql",
+      "sha256": "e0f27af2657c2c8059c3af7e40d43f4379451f985f797033b339739f9de09029"
+    },
+    {
+      "file": "backend/prisma/migrations/20260726115032_add_tenant_lease/migration.sql",
+      "sha256": "71f2a0fee631d48dd52ccfdaff6c41cb9d2a820f11edf0c73578652c47c4dbd0"
+    },
+    {
+      "file": "backend/prisma/migrations/20260726134050_add_room_details/migration.sql",
+      "sha256": "f36af483a2a73392dfe78424d843ad0d3f9528181e10a6cb71f3953a9e9353b5"
+    },
+    {
+      "file": "backend/prisma/migrations/20260804051821_add_billing/migration.sql",
+      "sha256": "b7fac48361e646f087abec4e7ff72c87b35b9b590b70a35c08ba5a44817981e4"
+    },
+    {
+      "file": "backend/prisma/migrations/20260807120000_add_resource_lifecycle/migration.sql",
+      "sha256": "5d342140a8cb892c5d067c0912a7e3503063a606270cb0c2b076328674f3109c"
+    },
+    {
+      "file": "backend/prisma/migrations/20260809120000_billing_payment_reversal/migration.sql",
+      "sha256": "57743b8bde3134a2494e3eda88c3e0ebec4d4f2c3b4b641d2ddbb31c270d5c76"
+    },
+    {
+      "file": "backend/prisma/migrations/20260810120000_add_expenses/migration.sql",
+      "sha256": "95273247d5313e5807c37d614878d2f85c58229f3c6a5ecc58394e184f538ce5"
+    },
+    {
+      "file": "backend/prisma/migrations/20260810130000_add_maintenance/migration.sql",
+      "sha256": "5dbc307fd541ba19c0c32c24c42f587a49a19eda51ad7339d6a6149610bf2e6d"
+    },
+    {
+      "file": "backend/prisma/migrations/20260810140000_add_tenant_accounts/migration.sql",
+      "sha256": "0cc12d17f01500ab039c52a74160c31a00ff9a096c58fe0b579d5cbf29f03088"
+    },
+    {
+      "file": "backend/prisma/migrations/20260810150000_tenant_security_portal/migration.sql",
+      "sha256": "4595eb4754e4c3de847ccdd944e48270652015c5dab1566cb171123a2a465750"
+    },
+    {
+      "file": "backend/prisma/migrations/20260810162000_tenant_portal_next_steps/migration.sql",
+      "sha256": "5ed7e9df9414d6a81ac3310352e4ac6e410152ce0d99bbb38f1eb8218ebc8cc9"
+    },
+    {
+      "file": "backend/prisma/migrations/20260810172000_deposits_lease_reports/migration.sql",
+      "sha256": "20820b64de724e006778d7a7240949a7c9aae847ef84d20db815ff9b6fea11b3"
+    },
+    {
+      "file": "backend/prisma/migrations/20260810173500_lease_change_landlord_fk/migration.sql",
+      "sha256": "8d325f7c18c29de4f4b3cfba73c84bdb242bcd2a919b9dad3d34ee738b57fb7c"
+    },
+    {
+      "file": "backend/prisma/migrations/20260810185000_staff_permissions/migration.sql",
+      "sha256": "9481455bf4b5dfe01b871e923149caf0d9a784ed3c565bb34836fa8a454fc9bf"
+    },
+    {
+      "file": "backend/prisma/migrations/20260811100000_audit_logs/migration.sql",
+      "sha256": "9fc2defc7112d2494ed352b7b7e8a3f399e47ee400559e3581f9a5d3dcfb932a"
+    },
+    {
+      "file": "backend/prisma/migrations/20260811110000_room_assets_inspections/migration.sql",
+      "sha256": "e517d1e1cede8360cd106151009139bd9c2c7bb6b6fbcaa31c0ddc772036b8a0"
+    },
+    {
+      "file": "backend/prisma/migrations/20260811120000_room_service_fees/migration.sql",
+      "sha256": "9ca7828813dca233b978426dd28476a88b8dd4a4e35cac2d73bc47f0f6fd36e8"
+    },
+    {
+      "file": "backend/prisma/migrations/20260811130000_billing_automation/migration.sql",
+      "sha256": "6865cd8521a70bb8f873738f9aad38c8beda7d383eb66d88bd753ca038d3762b"
+    },
+    {
+      "file": "backend/prisma/migrations/20260811140000_notification_delivery_zalo/migration.sql",
+      "sha256": "2f5a8b04f01a1c3d8282816d5e0bc000bb0df75f3c07f1929ed5d9a5b7b90982"
+    },
+    {
+      "file": "backend/prisma/migrations/20261017090000_chatbot_knowledge/migration.sql",
+      "sha256": "f41db1f42b23df7f6c8486cf5941d9b0bc2811d93be452244e3d139bcbd3bfd1"
+    },
+    {
+      "file": "backend/prisma/migrations/20261023000000_room_listings/migration.sql",
+      "sha256": "c6be439c9a0a0da8716298b701eb6f2aaff554f1a9f8c698dfd6569c54898973"
+    },
+    {
+      "file": "backend/prisma/migrations/20261023010000_student_discovery/migration.sql",
+      "sha256": "223596be43da74949e56d4e83e2f4fd4ed76895516abd49970cb7f5416094261"
+    },
+    {
+      "file": "backend/prisma/migrations/20261023090000_housing_journey/migration.sql",
+      "sha256": "d493e57c9cd40b9b089e9fa955ef69cd77fb610913d7986a3be083545c9a15b1"
+    },
+    {
+      "file": "backend/prisma/migrations/20261023120000_security_discovery/migration.sql",
+      "sha256": "7d822b691223d49a198bd32acebcc1a29c314228e036207d7ce659f5e0071f03"
+    },
+    {
+      "file": "backend/prisma/migrations/20261023160000_viewing_handover/migration.sql",
+      "sha256": "988e4548edb2d72c699cc4995f2029301fc2a7a1225f899e88bd1a4589f54685"
+    },
+    {
+      "file": "backend/prisma/migrations/20261023180000_verified_room_reviews/migration.sql",
+      "sha256": "8c9e483234cf9300b5eb950da7a1783be77624f586cfe8522b35f35270908c3a"
+    },
+    {
+      "file": "backend/prisma/migrations/20261024100000_add_p1_operations_payments/migration.sql",
+      "sha256": "1821d2595fd8b82e12ef25bbc854a4b799675532198f5b310764ae018b75fcb5"
+    },
+    {
+      "file": "backend/prisma/migrations/20261024110000_p1_group_owner_integrity/migration.sql",
+      "sha256": "be2feee8e21704c02e642a071f2905e07788b461b765410547907b422a0f6a1e"
+    },
+    {
+      "file": "backend/prisma/migrations/20261024120000_payment_transfer_bank_bin/migration.sql",
+      "sha256": "b73db49d38c6d1f1576841e1fcecea99c3723cd1eb456e8b41524988f0109403"
+    },
+    {
+      "file": "backend/prisma/migrations/20261024150000_admin_console_foundation/migration.sql",
+      "sha256": "3c0bb26b3fd872a1bcf67175e75b8148cc28b77775f1d167f0068d04243d84e8"
+    },
+    {
+      "file": "backend/prisma/migrations/20261024150000_demo_card_checkout/migration.sql",
+      "sha256": "2c8005038d3cbd29283e149b0e0b37b2ad780b411dfb96679861a0607ecfa1ea"
+    },
+    {
+      "file": "backend/prisma/migrations/20261025100000_isolate_demo_invoice_periods/migration.sql",
+      "sha256": "5b561f6b436494e12d4e0d88e779f2b2c890a62843fec9150cc3c7ce3fc802d6"
+    },
+    {
+      "file": "backend/prisma/migrations/20261025113000_repair_public_listing_images/migration.sql",
+      "sha256": "9ae1e6a7d4450197bf069955e901982738ee5759113477ff553058c92fad93d0"
+    },
+    {
+      "file": "backend/prisma/migrations/20261025160000_production_safety/migration.sql",
+      "sha256": "dfacfc6c5719aa40c1268e7e6b7b2e1e3f4d4aa9cd75903dec7620f6df3bf80a"
+    },
+    {
+      "file": "backend/prisma/migrations/20261025180000_admin_support_moderation_governance/migration.sql",
+      "sha256": "8510b00bbb469b3f9879562e5cf6707db35c21e72ef09e8cca2cd57445bbf113"
+    },
+    {
+      "file": "backend/prisma/migrations/20261025200000_auth_sessions/migration.sql",
+      "sha256": "93412baf1b765ac6963f35ad7f536a20bf0741a7ea259841fa5ebc55e350aa17"
+    },
+    {
+      "file": "backend/prisma/migrations/20261025210000_support_tools/migration.sql",
+      "sha256": "ce212d53a33caac7497313e1879c8e5d2121f2625d67e76ecd032bbff00e3a52"
+    },
+    {
+      "file": "backend/prisma/migrations/20261025220000_moderation_policies/migration.sql",
+      "sha256": "6900ef23555e8cdce7ed9166e36bf5421dd6136b7e21bcb7c453dbdd98439a71"
+    },
+    {
+      "file": "backend/prisma/migrations/20261026090000_admin_completion/migration.sql",
+      "sha256": "6770339ce38c69f0ddb34ffdd6ed299548bdb6337a2800635d973446a489c09d"
+    },
+    {
+      "file": "backend/prisma/migrations/20261026110000_admin_ops_stepup_sla/migration.sql",
+      "sha256": "fd7bd7c8cced581b1bb47874f7558f703c3823ad241913c4de9ac007a540e84d"
+    },
+    {
+      "file": "backend/prisma/migrations/20261026120000_incident_snooze_constraint/migration.sql",
+      "sha256": "2613334c607c7c12c341a69336052f790de966ddb5b748d46e027f871497a6c1"
+    },
+    {
+      "file": "backend/prisma/migrations/20261026133000_lease_settlement/migration.sql",
+      "sha256": "e642c21f06a0175572ad289e2b1c37b1c7fb62f970bf01e38726fa17be3dd2d6"
+    },
+    {
+      "file": "backend/prisma/migrations/20261026150000_invoice_line_items_service_tariffs/migration.sql",
+      "sha256": "18704f66afd72947e36769d23b35b15d6bed7bd6f17e95b4fc79dad1e6db9116"
+    },
+    {
+      "file": "backend/prisma/migrations/20261026170000_billing_production_controls/migration.sql",
+      "sha256": "be8a8368ed12abab057bdacef01e4b1de096591b6c5cb289785737f2c2f72788"
+    },
+    {
+      "file": "backend/prisma/migrations/20261026180000_finance_receipt_reconciliation/migration.sql",
+      "sha256": "b49eb31e663b80d86c73f0b231b415a72f77f6879290e428b5f9db52adc73710"
+    },
+    {
+      "file": "backend/prisma/migrations/20261026181000_maintenance_assignment_sla/migration.sql",
+      "sha256": "d3d18187df692acdc3783de0acbe0945361150f7cbe260b4b39c3c24a875f69a"
+    },
+    {
+      "file": "backend/prisma/migrations/20261026190000_staff_scope_tenant_lifecycle/migration.sql",
+      "sha256": "668f68d292d2faec58d48ac18b6cca68c2eef820426abff7589e4a23ff58265a"
+    },
+    {
+      "file": "backend/prisma/migrations/20261027090000_tenant_lifecycle_execution/migration.sql",
+      "sha256": "0c63b35fcf09cfe08aa91079c86e7f9cfc9faeddfc5d71762ca82fb8caa0aed4"
+    },
+    {
+      "file": "backend/prisma/migrations/20261027100000_payment_proof_idempotency/migration.sql",
+      "sha256": "efd43dedffa4723240df5413c5eae0e3bf36eb213ee15c28b829cd969b449887"
+    },
+    {
+      "file": "backend/prisma/migrations/20261027180000_admin_moderation_quality/migration.sql",
+      "sha256": "0da57ea0d984506691dd2aba2a951debc7e8cd98979a6df0a78a03b12282ea96"
+    },
+    {
+      "file": "backend/prisma/migrations/20261028090000_admin_registries/migration.sql",
+      "sha256": "f8fca809dacece16590479bf51082cba893f42279056ff9b8ea9da02a7c6a4ee"
+    },
+    {
+      "file": "backend/prisma/migrations/20261028140000_manual_transfer_account/migration.sql",
+      "sha256": "ae7815d82a35d749ff009f837186ef4af54db84dcd12da575ad75abe47babeb1"
+    },
+    {
+      "file": "backend/prisma/prepare-demo-payments.ts",
+      "sha256": "f1f02751b05c98f0235ce6e4f8c238f087327b6275c1b23fd7f6b633fb1b9a70"
+    },
+    {
+      "file": "backend/prisma/schema.prisma",
+      "sha256": "6548bcf996ac533012f5f9e4193ebc897eb93ef7cafbdc7aa4d92863216f237d"
+    },
+    {
+      "file": "backend/prisma/seed-explore-preview.ts",
+      "sha256": "8ff3a68a9547a7c648fc22c8fc20dfcebaaf9f16626547edbe4d58b4bb9e1432"
+    },
+    {
+      "file": "backend/prisma/seed-student-discovery.ts",
+      "sha256": "f09abc740f98795000baa5678b659b220646bf773ef1b26c85ff464421095992"
+    },
+    {
+      "file": "backend/prisma/seed-tenant-preview.ts",
+      "sha256": "22fdc78e4d6a9e23eebd7aa04323f536a047b79760683c05f3a678f4245a725a"
+    },
+    {
+      "file": "backend/prisma/seed.ts",
+      "sha256": "b4e35c7fdb359f420fcbf95e840b6780a83552f8b6fcdc49741edfa8c8bc37b9"
+    },
+    {
+      "file": "lib/app/app.dart",
+      "sha256": "e51d2fb43ad2140fefd945f7961858ee0caaace154a724a42af5131fabfc0117"
+    },
+    {
+      "file": "lib/core/config/api_config.dart",
+      "sha256": "f89d465048f7bf3f3a3bef5f177753cf7410f261848f78375260463a7bb2b918"
+    },
+    {
+      "file": "lib/core/messaging/messaging_launcher.dart",
+      "sha256": "cc9e27af4119c9eec5ff2794ad9119945d698dc3b53c31555fe02d88548f720f"
+    },
+    {
+      "file": "lib/core/network/api_client.dart",
+      "sha256": "b688874015a28a59038f9ddff7bd156cfc3422caf43e75cb901235c378530079"
+    },
+    {
+      "file": "lib/core/network/api_failure.dart",
+      "sha256": "51e156fa89da993ec841e73f51a21bf589ce45ef3442603e4b23aa18feee763b"
+    },
+    {
+      "file": "lib/core/theme/app_theme.dart",
+      "sha256": "70e60a1790fe999c4074dc19dc01664a897af629c93b2d600f94d477e20e4260"
+    },
+    {
+      "file": "lib/core/utils/format.dart",
+      "sha256": "2c645cc08cc7f14bd74c32820cb1ce12c3d5c747be07bdfd99834cc0d5105489"
+    },
+    {
+      "file": "lib/core/utils/request_key.dart",
+      "sha256": "edb35b8e046c0fbb43ae583e74f88bacc527ad6a97599d25e5f8e957239e1c38"
+    },
+    {
+      "file": "lib/core/widgets/liquid_bubble_navigation.dart",
+      "sha256": "4023866fb22f76ba04531bb6f69f7e452fcc48952136ec7d47d43dcb09f8b5d1"
+    },
+    {
+      "file": "lib/data/admin/admin_api.dart",
+      "sha256": "bb6ee390b131b2650c3c2deedc44bf7b6457caba9609995f3b4233ba56b62f27"
+    },
+    {
+      "file": "lib/data/admin/admin_repository.dart",
+      "sha256": "9df0d818fccf9b396f39682893d9e8473668dd3a3ceca9b0d47bc49adc7415c3"
+    },
+    {
+      "file": "lib/data/admin/finance_statement_csv.dart",
+      "sha256": "908ce6ca1434a7096c48861632f6b841690e8237481cd52daf1d7f51cbc2a4f9"
+    },
+    {
+      "file": "lib/data/audit/audit_api.dart",
+      "sha256": "bf3a9e789f0be86b4aaf92affc67d6d60facd3e78fa61ad410b9111d75752ad1"
+    },
+    {
+      "file": "lib/data/audit/audit_repository.dart",
+      "sha256": "77c4505575672a2e7d1389b1b09d5b18ae42bc15862a87e6c1b4e5bfe7a395f9"
+    },
+    {
+      "file": "lib/data/auth/auth_api.dart",
+      "sha256": "0b5947ee2607d6c59f1bf45f66f027487123797d41560557066de5cc6864ab99"
+    },
+    {
+      "file": "lib/data/auth/auth_repository.dart",
+      "sha256": "01c0b29bf87fdfaa31178422d918a63b5882f95d0148ec31335e5a3873476dcc"
+    },
+    {
+      "file": "lib/data/auth/secure_session_storage.dart",
+      "sha256": "fbd6a7c05bcbe753e82256bcae4c330dbe0b76e721d64c1b7dfaf0dd4b485039"
+    },
+    {
+      "file": "lib/data/auth/token_refresh_coordinator.dart",
+      "sha256": "75d82b8696da09d875e02151b44a8ed65156db83176198b1c98c6852292c84b7"
+    },
+    {
+      "file": "lib/data/billing/billing_api.dart",
+      "sha256": "c3ba0e98037a5f7f3ba35df1136fa221e2d51d785e5dd83f79bf77cb661e39a0"
+    },
+    {
+      "file": "lib/data/billing/billing_repository.dart",
+      "sha256": "45c1502193185dab1590f9d536a98e501298ff4833b799390ac8a9f9770cd7db"
+    },
+    {
+      "file": "lib/data/billing/manual_transfer_api.dart",
+      "sha256": "cad45ca19aba44a25b3395cd718969ad29c04f44b73076a315a856f383548135"
+    },
+    {
+      "file": "lib/data/chatbot/chatbot_api.dart",
+      "sha256": "92cf65d8b3556ac48f7fa46064b43f5e54a95727f82197a83056f8c109d2395c"
+    },
+    {
+      "file": "lib/data/chatbot/chatbot_repository.dart",
+      "sha256": "ac36fd5c3e42c23a910420a9ec19cab45c2ca6cdfac8a76aaf90499afaec0c74"
+    },
+    {
+      "file": "lib/data/dashboard/dashboard_api.dart",
+      "sha256": "8d7deb4d320aeac349b19c8514ad63ab1b9677be5666ec3ed67fe2020b67b69e"
+    },
+    {
+      "file": "lib/data/dashboard/dashboard_repository.dart",
+      "sha256": "4185eeb123ea04ad2428a061115f5a7a8359ae06c02333e4931a2897447fddec"
+    },
+    {
+      "file": "lib/data/expenses/expense_api.dart",
+      "sha256": "3257d4a97511796c7e747be8c916e2ec55396f5226b3a1bbea0ba3a43eacbbd0"
+    },
+    {
+      "file": "lib/data/expenses/expense_repository.dart",
+      "sha256": "5e06f9e78db39c1b8fa15d5ccedfeade7a0d1fd056aa96bf90ee282f4c1fb72e"
+    },
+    {
+      "file": "lib/data/listings/housing_repository.dart",
+      "sha256": "d2459d07e4a4134c47682e32cc6596321f794319320d7ebc3df1a9b8f0c80773"
+    },
+    {
+      "file": "lib/data/listings/listings_api.dart",
+      "sha256": "df7efb10456b6206aa603ae2fe0dbbba25660cb9a22b4ba8ec4258b9250dcc3a"
+    },
+    {
+      "file": "lib/data/listings/listings_repository.dart",
+      "sha256": "686acbe87d5322747ff3d6eed19a98d285e8832d13f03b7f4bc9d5e3f826c299"
+    },
+    {
+      "file": "lib/data/listings/reviews_repository.dart",
+      "sha256": "cbfcf62468b5656a174e6fd31cd736f04f19f589ad1aaae666428a5942afb669"
+    },
+    {
+      "file": "lib/data/maintenance/maintenance_api.dart",
+      "sha256": "9d60537350f4b2fa7e9a494fa273aea72a619b8cbcb4c3df46a2308769139efc"
+    },
+    {
+      "file": "lib/data/maintenance/maintenance_repository.dart",
+      "sha256": "d41a021fd21f82ae4e4ac9abfe086cc45b79b4e66f1d829df7689477187c41fe"
+    },
+    {
+      "file": "lib/data/notifications/notifications_api.dart",
+      "sha256": "1d6ed87fe776c91ef371b526a0c0cde813eafeef5781a6d2070559a793eb5ba0"
+    },
+    {
+      "file": "lib/data/onboarding/onboarding_preferences.dart",
+      "sha256": "7de15c3874f4a218e95f2d17a8b438c4f26a02160664d812863b427fc28c1748"
+    },
+    {
+      "file": "lib/data/operations/operations_api.dart",
+      "sha256": "63c812127283324c4b5ccb05f45e9c9308b9a94bcbb2b3005abc8002c85f6fb5"
+    },
+    {
+      "file": "lib/data/operations/p1_operations_api.dart",
+      "sha256": "ed190dbd78bd50d506c82bbe9346e7adcb5fc3e41808c34b9ee6de99d4b25278"
+    },
+    {
+      "file": "lib/data/reports/reports_api.dart",
+      "sha256": "1bc13a47973818aadad96a883147d0b590d00dca5d3a767e89df4485142156d6"
+    },
+    {
+      "file": "lib/data/rooms/property_api.dart",
+      "sha256": "3930ae322c12709b85555023ccb2a87c7904e7807ad0860657c598e44ac493e9"
+    },
+    {
+      "file": "lib/data/rooms/room_api.dart",
+      "sha256": "69538093d16d251336bb61c0b4c1bc4e38f181214e75b2768d37a4a36302ec22"
+    },
+    {
+      "file": "lib/data/rooms/room_repository.dart",
+      "sha256": "6e38c114ca9b0171a7d9c8a848165522a9685e98bed534bf87f454eed9c7b44a"
+    },
+    {
+      "file": "lib/data/staff/staff_api.dart",
+      "sha256": "07719614a95a215d2bd56079b82995d0f654abc71bd71ab5bbee0c87894832ee"
+    },
+    {
+      "file": "lib/data/staff/staff_repository.dart",
+      "sha256": "2f559a68b7f4edb289d42ce444bcfe39b1076b5827aed35b777a294f616eb9c7"
+    },
+    {
+      "file": "lib/data/tenant_portal/tenant_portal_api.dart",
+      "sha256": "c551e9fd34a725d9e3f6ea4416fa27bcba5b142e1a530bcee7ae91cd3306f6b8"
+    },
+    {
+      "file": "lib/data/tenant_portal/tenant_portal_repository.dart",
+      "sha256": "97cf897071ab3be8b11b68c4a7e7f36eb66e5e519af274806bed04dcdbf37ee5"
+    },
+    {
+      "file": "lib/data/tenants/lease_api.dart",
+      "sha256": "22dc1c349350b1b1683f88790aebcee67eb26552226a4c1b1ea9f41b4d73a865"
+    },
+    {
+      "file": "lib/data/tenants/lease_settlement_api.dart",
+      "sha256": "1598d8c4108769f83dfd069df8ce1467147e11ec831f18dca30f6ce70431a99c"
+    },
+    {
+      "file": "lib/data/tenants/tenant_api.dart",
+      "sha256": "9519e60a1b07f2641354d3485b9b2871a8d0946a389d1485d00f5738ca74abc8"
+    },
+    {
+      "file": "lib/data/tenants/tenant_lifecycle_api.dart",
+      "sha256": "bce73d0e968f925488001ca0a3582e7f9b6f8e45522b0f9ce6b572b8d5a066a5"
+    },
+    {
+      "file": "lib/data/tenants/tenant_repository.dart",
+      "sha256": "27e192b3cf1b34a4a84e45ca9d77f34768a174aceedbdb17dd78d9db63b53d59"
+    },
+    {
+      "file": "lib/data/uploads/upload_api.dart",
+      "sha256": "2d7e52c0e9de339b5f3b470e065b1f3feeef3050d53e9952e88ca89760c6bf39"
+    },
+    {
+      "file": "lib/features/admin/admin_access_review_panel.dart",
+      "sha256": "f319b585c4d5e409f79adacd7aceee742454006cacd2bf015168b8cf53b9f90c"
+    },
+    {
+      "file": "lib/features/admin/admin_account_detail_panel.dart",
+      "sha256": "6b904aca6fc32500bbbf077e0c0d9f715c4e17c4e7f061c0b06c5452b7eac834"
+    },
+    {
+      "file": "lib/features/admin/admin_accounts_panel.dart",
+      "sha256": "2614e94a380b276dd7308094179211d8d4817d90ecd783ea3fc6b836edee4b37"
+    },
+    {
+      "file": "lib/features/admin/admin_accounts_screen.dart",
+      "sha256": "1aa9598293d5dccb0e021b938b1ead99e39327b102393979ff8197dd2d826319"
+    },
+    {
+      "file": "lib/features/admin/admin_audit_screen.dart",
+      "sha256": "5ae0bbfe5fb4150f67b9eaeb8428469d1ce0fdee9cc9a6412f6ea79dcbd955cd"
+    },
+    {
+      "file": "lib/features/admin/admin_bulk_preview_dialog.dart",
+      "sha256": "6fe169f432ab32ee0e0054fa64d573204e28c100f53ed506ec92682e014e60b1"
+    },
+    {
+      "file": "lib/features/admin/admin_case_timeline_dialog.dart",
+      "sha256": "5607800aaf314282fcef17bbe45ba09f34891b028416f4d9933078ab6cb02706"
+    },
+    {
+      "file": "lib/features/admin/admin_console_providers.dart",
+      "sha256": "99ab6ecdf33d4f502f20d9cb43dab09cfbaba6f1e5e3950d2443d0153cba7ef2"
+    },
+    {
+      "file": "lib/features/admin/admin_delivery_jobs_panel.dart",
+      "sha256": "d75b921cc14958245152187d1d4741b11b997586be64af86c13893d81f1da398"
+    },
+    {
+      "file": "lib/features/admin/admin_finance_workflow.dart",
+      "sha256": "c2e64e0ad1358db868a4e9899ee9bc15c9fc6bcff2a57d5780918d1d9128f733"
+    },
+    {
+      "file": "lib/features/admin/admin_governance.dart",
+      "sha256": "dc824d68a93261c57236890d89ff4bb141b515f693d97322762f650b7b76881b"
+    },
+    {
+      "file": "lib/features/admin/admin_inbox_filters.dart",
+      "sha256": "e085705bb7a744a1dfbb1cd32e55d6cf7c8ea0c7c8dc8a8c4aefbece684b12a4"
+    },
+    {
+      "file": "lib/features/admin/admin_inventory_widgets.dart",
+      "sha256": "edf249fb02a955d2521df02a22856b9438ad27863194a73522789502583949f8"
+    },
+    {
+      "file": "lib/features/admin/admin_landlord_detail_screen.dart",
+      "sha256": "8a4ce0741a5f253b463bd92de0e80804f356bd419457739cb798135f5bbf2011"
+    },
+    {
+      "file": "lib/features/admin/admin_landlord_form_screen.dart",
+      "sha256": "0610b436d182d637da10de1f957edb3e9186783e0d620c48cc17936bf45dfb9a"
+    },
+    {
+      "file": "lib/features/admin/admin_landlords_screen.dart",
+      "sha256": "0cef9a8234aeced8a936e1dd71fa2fc24d3e557c9efc484768ce1a7d1b5eeb7c"
+    },
+    {
+      "file": "lib/features/admin/admin_lifecycle_panel.dart",
+      "sha256": "884c5c8197d8a297553b061a2788547abd4719470d03cf68a35e2aba45a0e0f6"
+    },
+    {
+      "file": "lib/features/admin/admin_moderation_quality_panel.dart",
+      "sha256": "7aa21c00412d1d8d4c8b7f478f2b0f5c49e493ff951f62d3983018426df5e9c7"
+    },
+    {
+      "file": "lib/features/admin/admin_moderation_screen.dart",
+      "sha256": "38d9d74eca2afe29f5094cb2ee222c1d2ecebb738d9bf6d781ee0a716865581d"
+    },
+    {
+      "file": "lib/features/admin/admin_moderation_v2.dart",
+      "sha256": "c6f7464262ae212e5565c6a46f3bf044a46080cd6677848eab74342961004fa2"
+    },
+    {
+      "file": "lib/features/admin/admin_notification_queue.dart",
+      "sha256": "3510492855c9f27a3d53b4c3db85e71b760dd859183bd3c32fb007110c784084"
+    },
+    {
+      "file": "lib/features/admin/admin_overview_chart.dart",
+      "sha256": "c9d49daaa21fb0ab7aa530aaf691f5a848db4e04c1b41d920ebfcb7444d3b4e5"
+    },
+    {
+      "file": "lib/features/admin/admin_overview_page.dart",
+      "sha256": "e9318490bd81631f6ab3355cf1a9cabda2e240a8fefc98c5890bfbcc5fc49f74"
+    },
+    {
+      "file": "lib/features/admin/admin_overview_providers.dart",
+      "sha256": "f2f02dee5382f613fce449ff72b6f05d19511941163cc6bd176fd3b5011937ad"
+    },
+    {
+      "file": "lib/features/admin/admin_overview_shell.dart",
+      "sha256": "391acb7045724a516a2e51712b9c8ce4d945dfa2157fae5e8e048f6f47835b93"
+    },
+    {
+      "file": "lib/features/admin/admin_overview_theme.dart",
+      "sha256": "862f952709d27a5e2c0722e942cff35d8a842e05b568454e4aae127d1865eaac"
+    },
+    {
+      "file": "lib/features/admin/admin_permissions_editor.dart",
+      "sha256": "811e1f2e7b7cf2ca42df6e0e72c935807be1fad49aa59011b7c536656493abc5"
+    },
+    {
+      "file": "lib/features/admin/admin_policies_screen.dart",
+      "sha256": "11e6948a29aad97beb5802d23afa5e8d61a50d682b70374c8528492d84c8c895"
+    },
+    {
+      "file": "lib/features/admin/admin_production_panels.dart",
+      "sha256": "78df0ab2ea502daf0222ea0e82cebcbc1731a06ac8bd88574bf422666eae5375"
+    },
+    {
+      "file": "lib/features/admin/admin_properties_screen.dart",
+      "sha256": "2ff96ce5e50a608b69dc1cee8bb6bd47442ff1a4485675bb294ac016ac325846"
+    },
+    {
+      "file": "lib/features/admin/admin_property_detail_screen.dart",
+      "sha256": "396f5103048165d9eab514b94a93f95a86b972b26442af3d0c51ca040efdf541"
+    },
+    {
+      "file": "lib/features/admin/admin_property_form_screen.dart",
+      "sha256": "b7316a1acdd7a16a12419b81a7a047b77243799a00031ef89093f07c3ef4eba2"
+    },
+    {
+      "file": "lib/features/admin/admin_providers.dart",
+      "sha256": "6cd11e575297d6f4e1b17f28d094cd1072c02fbf38e8c803b776e5c20843620f"
+    },
+    {
+      "file": "lib/features/admin/admin_registry_screen.dart",
+      "sha256": "b5e3669bcab00ba525a86250a9d0ecbca722fa5aae779e19258c8e3a85241d17"
+    },
+    {
+      "file": "lib/features/admin/admin_rooms_screen.dart",
+      "sha256": "21b15397cfe97bc541179748e68404bd43254fff0b48baa15d46ca04c2bce403"
+    },
+    {
+      "file": "lib/features/admin/admin_search_results.dart",
+      "sha256": "45200b6659af8a63552dc0caf0acc4b954b221a8b5221a5db23f23b77ef1d77e"
+    },
+    {
+      "file": "lib/features/admin/admin_search_screen.dart",
+      "sha256": "9fbfa3d382eff8032f923f757c494c62b1341b18032b8b09a12fe9961c463bd3"
+    },
+    {
+      "file": "lib/features/admin/admin_security_screen.dart",
+      "sha256": "872fc7b7dfaa0a0813d04b6b56455e089841f09cc0bfae75c8bb6cb6668950fc"
+    },
+    {
+      "file": "lib/features/admin/admin_sessions_screen.dart",
+      "sha256": "711314e9f41c67beaff34a6059e0ee5cf5205d0668d21c64e9cd451a073ea392"
+    },
+    {
+      "file": "lib/features/admin/admin_sla_policy_screen.dart",
+      "sha256": "4cf6469f2efe2eda07b64d9e186d7786af38b96ae78ddf7ddc8995a112664336"
+    },
+    {
+      "file": "lib/features/admin/admin_step_up.dart",
+      "sha256": "472d8d60a220495a62f6f509bb21db33f92b8ea26e8d9d96c1f7773853746e6a"
+    },
+    {
+      "file": "lib/features/admin/admin_support_center.dart",
+      "sha256": "22dab715d17c155a52e24ab4cf53af21120e62d398d768c5f9aff82f100721a4"
+    },
+    {
+      "file": "lib/features/admin/admin_transactions_panel.dart",
+      "sha256": "62ab8eafc7ae13846f1952c90a0d4329dd6ed15602b62a8bd97faf5ba12a7b66"
+    },
+    {
+      "file": "lib/features/admin/admin_workflow_widgets.dart",
+      "sha256": "39a3afa5bd8f63b125a61617c447382fdcaf37b50b6a97a5588ec407a6c59b84"
+    },
+    {
+      "file": "lib/features/admin/admin_workspace_action_queue.dart",
+      "sha256": "9ca82ab88bddbf651fd788531f62edeb616de87660da9a11a3c49f85a6b67f37"
+    },
+    {
+      "file": "lib/features/admin/admin_workspace_navigation.dart",
+      "sha256": "79e24d37f2c524a1eaebee2eabceca2652e595847b30f74b68b22e68d5837837"
+    },
+    {
+      "file": "lib/features/admin/admin_workspace_scaffold.dart",
+      "sha256": "b2c7be0192fd26e64d40a3064b41bc1a3a1a71ec741532decd86791811060e28"
+    },
+    {
+      "file": "lib/features/admin/admin_workspace_screen.dart",
+      "sha256": "4e7feb077f6e98ea13bb583f07987c216c875f46ca6d9fede6dafd9a745f9e2d"
+    },
+    {
+      "file": "lib/features/admin/admin_workspace_states.dart",
+      "sha256": "5d7d447ae4725db1b55ab41d5ef58ae9ee302153410f43718b3aa07b7a7a2aa8"
+    },
+    {
+      "file": "lib/features/audit/audit_providers.dart",
+      "sha256": "f463b6db6dd7ad5cc34b72106738f5d5e89610493527f629162e79756389a736"
+    },
+    {
+      "file": "lib/features/audit/audit_screen.dart",
+      "sha256": "edbad53d760721443f8ebaa52920a80e1a95c9669c8bf5fd9c134ce24107fa46"
+    },
+    {
+      "file": "lib/features/auth/account_access_link.dart",
+      "sha256": "1a1aea8dd1cdf4e7599a4e49e6d36995fab093bbaf4a556f87b289d1b126dd26"
+    },
+    {
+      "file": "lib/features/auth/account_access_screen.dart",
+      "sha256": "fad3cd85d54c318d3066672c5b356ae7f525e88172154454203697bf4db3b602"
+    },
+    {
+      "file": "lib/features/auth/auth_form.dart",
+      "sha256": "6ba11020d98367a78e8333d2b493b07ca65747e8eb6529a08b75fc6ed80367d7"
+    },
+    {
+      "file": "lib/features/auth/auth_navigation.dart",
+      "sha256": "85a67137aac4e2c0cc79bdfd1b0f4c9ac498ef7e03843decd03d2813fcb1b464"
+    },
+    {
+      "file": "lib/features/auth/auth_providers.dart",
+      "sha256": "28adcda531ae76a0cd50fec39fdb8853b2e2e95b3bdded2c5069c39de6214eac"
+    },
+    {
+      "file": "lib/features/auth/login_screen.dart",
+      "sha256": "29a57fa3dd02ee2885a5f9e850eaccd89b146af86df2796eab5f6c1f5560f8af"
+    },
+    {
+      "file": "lib/features/auth/password_recovery_dialog.dart",
+      "sha256": "e7f60d2899936d249180edd7737c449e511bfe76d9920b9585697c9498a711ad"
+    },
+    {
+      "file": "lib/features/auth/register_screen.dart",
+      "sha256": "ca209cd6ecbba294056810b7417c5820abc7bab6e0fba7003cffc9f9b9aa15ff"
+    },
+    {
+      "file": "lib/features/auth/staff_invite_screen.dart",
+      "sha256": "4d094867141d89e59d8b53e5d77afac7f7ef8c5d3ba4e0ff852562b95e13ab0e"
+    },
+    {
+      "file": "lib/features/auth/tenant_invite_screen.dart",
+      "sha256": "c1a7559687eb166a8f14d087b097f9b6e8a9ec5d3db906095d72497b390c6919"
+    },
+    {
+      "file": "lib/features/billing/billing_aging_screen.dart",
+      "sha256": "c96ba0fb511bd04cbead40f078c7c359484b09bc4cffc8f01ca74381b0fbbf5f"
+    },
+    {
+      "file": "lib/features/billing/billing_form_screen.dart",
+      "sha256": "c3a3f4bd6bea9ff70b236a730c32fa73f75c82a55fba3e638f5df873224f7fc9"
+    },
+    {
+      "file": "lib/features/billing/billing_providers.dart",
+      "sha256": "171fc0319a8b879bd32111ef741d59b7ba1ba5dc85f7cbc475d10500125049e7"
+    },
+    {
+      "file": "lib/features/billing/billing_receipts_screen.dart",
+      "sha256": "86b8df9aa78bb7e590c9abdb9e7d233082f4e4ef381d68265d64b337aace25ad"
+    },
+    {
+      "file": "lib/features/billing/billing_screen.dart",
+      "sha256": "8772dd5a1b6b7e83f5f4801f32899ee38400940876b0f5608b5b82362e3ef5d5"
+    },
+    {
+      "file": "lib/features/billing/billing_tariffs_screen.dart",
+      "sha256": "fd4b8d49fef915a0af954cade9cdbfa82d63e5205f0a7fb2dd0b647d45bb9445"
+    },
+    {
+      "file": "lib/features/billing/bulk_invoice_screen.dart",
+      "sha256": "01114d475302a2c069050b39ca776769812897dd6bfa8586f16778c34a4dc7e6"
+    },
+    {
+      "file": "lib/features/billing/invoice_adjustment_dialog.dart",
+      "sha256": "379a82f972281df5980cb10d5c2a332b47279d14e7310ea2ba83940d02b00c05"
+    },
+    {
+      "file": "lib/features/billing/invoice_detail_screen.dart",
+      "sha256": "d0924539a95cd2b66331eb706fecff308846c3ecf41d9f97eef1e215ae64cd6c"
+    },
+    {
+      "file": "lib/features/billing/invoice_pdf.dart",
+      "sha256": "122590094db44fc7b9d6a177f0c1b5d248b5d831060793a6cf1937fd5906327a"
+    },
+    {
+      "file": "lib/features/billing/invoice_replacement_screen.dart",
+      "sha256": "718b8218baef6d002b80069bec91cfa304487ff40cb23dc0f1cbe303f6eb0d35"
+    },
+    {
+      "file": "lib/features/billing/payment_events_screen.dart",
+      "sha256": "934fcad5dd13d996710d0760dd86fbe2efcae8c8009c5997ab0c967f9b619412"
+    },
+    {
+      "file": "lib/features/billing/transfer_account_dialog.dart",
+      "sha256": "221ec0efb10e4e6dfef6e767793168ebe438285b2b79cd62dac5eb836369a756"
+    },
+    {
+      "file": "lib/features/billing/widgets/invoice_line_items.dart",
+      "sha256": "a6f8845569b94bf98dfd695df0a3d1e069fe4df4dbdcd944dccb05b4addab69c"
+    },
+    {
+      "file": "lib/features/billing/widgets/invoice_timeline.dart",
+      "sha256": "788c482397268b88b7941715fe1ead9e8f7955a796bd73f10ce6e6820656ae6a"
+    },
+    {
+      "file": "lib/features/billing/widgets/meter_reading_fields.dart",
+      "sha256": "907a2f73d01e750c5dc74535b766f0d15d5dc73284dd83d634fb02ceb78f22cb"
+    },
+    {
+      "file": "lib/features/chatbot/chatbot_providers.dart",
+      "sha256": "4c3031b241a058c38c0a89b4e547ff5d8aa629ee660013e3fdee0e05cb8fbd6b"
+    },
+    {
+      "file": "lib/features/chatbot/chatbot_screen.dart",
+      "sha256": "faf05e6cb1fc19e93077f60735641076c81d5f9b2363b7d79d2b859bc2a7565e"
+    },
+    {
+      "file": "lib/features/chatbot/widgets/chat_message_bubble.dart",
+      "sha256": "1a4082c260507b14539886408745b865b6cb265b2b85db9d702ab86d785165ba"
+    },
+    {
+      "file": "lib/features/chatbot/widgets/chat_source_sheet.dart",
+      "sha256": "8f123a7d644150bd9a88fc9dd1aff83a0added39921c026675bfec6976ddabe1"
+    },
+    {
+      "file": "lib/features/chatbot/widgets/chatbot_launcher.dart",
+      "sha256": "ec1ed66a1b057ccec33272dd2944aa3e59e0615b448da75f4a961ef5d2ef834a"
+    },
+    {
+      "file": "lib/features/dashboard/dashboard_providers.dart",
+      "sha256": "8ac5f44b5d814881468f4c4f861a21827a9cdbdd3ff5d266d748065e87db67ed"
+    },
+    {
+      "file": "lib/features/dashboard/dashboard_screen.dart",
+      "sha256": "3e839ee9c8c5562ab8d4cce615027cee01e299ab026ff369bf4dc9eb3136e9e8"
+    },
+    {
+      "file": "lib/features/dashboard/room_map_dashboard.dart",
+      "sha256": "7e123069b8e7c7ea89a87d10a95805b8048de0ed251f2b9e23a3f8d5b97db39e"
+    },
+    {
+      "file": "lib/features/dashboard/widgets/room_floor_scene.dart",
+      "sha256": "6f7868d49cb04bf80c814302056d31f08aa9d72dafb2007e14c43a9eb61b0d5e"
+    },
+    {
+      "file": "lib/features/expenses/expense_form_screen.dart",
+      "sha256": "a25c4e122526f55669be9d872084fbfa9430048c91f7f82ba3a39cbe09414754"
+    },
+    {
+      "file": "lib/features/expenses/expense_providers.dart",
+      "sha256": "c2f3825fff85ce49fb42a96971f51ee846ef8c3fe2a30d42e6b0c70c6c8d5b6b"
+    },
+    {
+      "file": "lib/features/expenses/expenses_screen.dart",
+      "sha256": "27ee8da58fb730659e55c77ae27f51e38f40a910fab449f56cad09b77235e977"
+    },
+    {
+      "file": "lib/features/listings/campus_management_screen.dart",
+      "sha256": "975828a761393f4e55bb7581389d419327ca04667a6eb43e9dc3671130898886"
+    },
+    {
+      "file": "lib/features/listings/discovery_tools.dart",
+      "sha256": "4001a550c62a2e0ac50b2f26b6450d30d035b98563b1985cc6e029cddfc81aa0"
+    },
+    {
+      "file": "lib/features/listings/explore_screen.dart",
+      "sha256": "1b1b2666edbf3f27717d4ecbc8de704979a04a9f39c92d33f2bece224491fb78"
+    },
+    {
+      "file": "lib/features/listings/handover_screen.dart",
+      "sha256": "983986412aba1685cf11944d3a5ab880ea351ca748ea0aa76d22513dea1e082c"
+    },
+    {
+      "file": "lib/features/listings/housing_dialog.dart",
+      "sha256": "235988025d9810ee824f71baad5ada2c8cad1b822eeae172cb98be41082556e8"
+    },
+    {
+      "file": "lib/features/listings/housing_providers.dart",
+      "sha256": "5281e6fe22b0c3326bf217ab7f5c100df219c4cc1b933c3a27d4f5715c6ec7b9"
+    },
+    {
+      "file": "lib/features/listings/housing_screen.dart",
+      "sha256": "cc53d6607af9bcdc98a5fd141a7f58eabbe5d91dccbd6660e855c1994be3eae8"
+    },
+    {
+      "file": "lib/features/listings/listing_comparison_screen.dart",
+      "sha256": "d41fd14614c54a92f20ac898dd83cec9eca5bff004110796f26e257a261cf44e"
+    },
+    {
+      "file": "lib/features/listings/listing_detail_screen.dart",
+      "sha256": "f4aee6d6d23a6023b40355f8e411a286c6e4c0d1611f7c2ae56a6884aa1f8bad"
+    },
+    {
+      "file": "lib/features/listings/listing_form_screen.dart",
+      "sha256": "69c9ce5df6749f5edf9e6c04740da90c916b7474734541b69ae8da9e78125317"
+    },
+    {
+      "file": "lib/features/listings/listing_journey_actions.dart",
+      "sha256": "e53b32bd12341cebef4d4a850c85c62add761b5b6dbb806bde8983784b9fb9a3"
+    },
+    {
+      "file": "lib/features/listings/listing_report_dialog.dart",
+      "sha256": "7c6fe2c956fef4eb399c6e0784a556868679f3d3d0ceca51dd288bb1529ec0a7"
+    },
+    {
+      "file": "lib/features/listings/listing_reports_screen.dart",
+      "sha256": "9e6ebb246237a9cff91852d21817a3ba4173ae22a31dfbdfc477925741545c54"
+    },
+    {
+      "file": "lib/features/listings/listing_verification_dialog.dart",
+      "sha256": "94971b204243fa5d4b4b8eada0a7f6039719f639d9713352ab57691cff02f305"
+    },
+    {
+      "file": "lib/features/listings/listing_widgets.dart",
+      "sha256": "79f6cef78484b0dc115259a67f1d79a654482d89e66b53a5d36133e8abdb0428"
+    },
+    {
+      "file": "lib/features/listings/listings_providers.dart",
+      "sha256": "fd2097b0e506a4e98801dbe39f6c20e7bef73462d53727266d1937ec3086986f"
+    },
+    {
+      "file": "lib/features/listings/manage_listings_screen.dart",
+      "sha256": "fd80244b12cf3c857367df05f5111932de28d4e6826359ef7126f9d1a0251e5c"
+    },
+    {
+      "file": "lib/features/listings/manage_reviews_screen.dart",
+      "sha256": "921fc74ab06cc30ecab85be58b35f3943b2f1296671994c90898d5c689bf19ae"
+    },
+    {
+      "file": "lib/features/listings/review_composer.dart",
+      "sha256": "7a82a2b10701368f193104075d7d9fe82ced9ec229ce362dd8e40f364d0f61f2"
+    },
+    {
+      "file": "lib/features/listings/review_widgets.dart",
+      "sha256": "caefd67d72bf1739f7d11c9b28a36d6b717b3eb2e196a549db338b79723758ad"
+    },
+    {
+      "file": "lib/features/listings/reviews_providers.dart",
+      "sha256": "6bf4587198deee05ab112b943593622047e650d41a3d87ba5dc2843eacacb9fe"
+    },
+    {
+      "file": "lib/features/listings/saved_searches_screen.dart",
+      "sha256": "86f48cee0184b05dcf0bb11c803778b8c5fbe1d3d277c274e6facfbcf5d2830a"
+    },
+    {
+      "file": "lib/features/listings/seeker_account_screen.dart",
+      "sha256": "90c2247d2fc58c4340a39bb3f717f186a98315e82a677f9e3f2ec4547ff465f8"
+    },
+    {
+      "file": "lib/features/listings/student_listing_widgets.dart",
+      "sha256": "74c80cd284bd1c141cbfa25a4979d72edb8e404dabab369bd045454fcd9801c7"
+    },
+    {
+      "file": "lib/features/listings/tenant_home_screen.dart",
+      "sha256": "7583901752d205f899479be337a36723e630b00914ab175f379480f56d864690"
+    },
+    {
+      "file": "lib/features/listings/viewing_slots_screen.dart",
+      "sha256": "7d34b37dc25a1468b8e69ff424644d631f6b562872b42067889c9dad24bd673b"
+    },
+    {
+      "file": "lib/features/maintenance/maintenance_assignment_dialog.dart",
+      "sha256": "3dada5cd00cd0d79a59ff17becab60b2495f2bfae3e6ef2613d30913f943390e"
+    },
+    {
+      "file": "lib/features/maintenance/maintenance_form_screen.dart",
+      "sha256": "4308c528f3d27b9ac925de1d8984cb56958a3cf24b852b09d8b3af4d837ec470"
+    },
+    {
+      "file": "lib/features/maintenance/maintenance_providers.dart",
+      "sha256": "e2aa0c5439f4018ec3474024c52385124ad8d3c0aac36203990c03af4f913f97"
+    },
+    {
+      "file": "lib/features/maintenance/maintenance_screen.dart",
+      "sha256": "db7c3a4b533fdeedca80574aa02f3607bb8450e89d0fed0154b51dabab9215e0"
+    },
+    {
+      "file": "lib/features/notifications/notifications_providers.dart",
+      "sha256": "1928c252d8a28b512f58961f64cfa2b9eff93f47f1bf2706318528d04bec5bdf"
+    },
+    {
+      "file": "lib/features/notifications/notifications_screen.dart",
+      "sha256": "9d5837bd8c53ca39c24fed69fe1987024824b37366bca622f311c1bf0edc965d"
+    },
+    {
+      "file": "lib/features/onboarding/onboarding_providers.dart",
+      "sha256": "9e608da595e4fd0cedd50e8cd9dadf4084f38a07f7a430f6d5567efcfa363ad2"
+    },
+    {
+      "file": "lib/features/onboarding/onboarding_screen.dart",
+      "sha256": "35bc9c07a6b6451adfa211ca5734b2679164b0815d79fd2075f55ef2a079d4f1"
+    },
+    {
+      "file": "lib/features/operations/action_items_dashboard_card.dart",
+      "sha256": "165a87d8720dad4e85987cc908cb812f0e1672100eb720538f7d83be786e23f6"
+    },
+    {
+      "file": "lib/features/operations/action_items_screen.dart",
+      "sha256": "a4f9c2f5ca6fb8c91a9d0fd7c08e7ffb2c0e4a792b660b9ac434077496a9b8e9"
+    },
+    {
+      "file": "lib/features/operations/operations_providers.dart",
+      "sha256": "53fa0f8a606b44046235215313ae478c9be696b4a472ef62c4c2308ee2c56878"
+    },
+    {
+      "file": "lib/features/operations/p1_forms.dart",
+      "sha256": "5bafcd80a5ec166f395be46fd28681d8736f62201d481d92ef6c291bf78aa178"
+    },
+    {
+      "file": "lib/features/operations/p1_operations_screen.dart",
+      "sha256": "97b87a69d8ea55328dfa4068e566a8d2e3474b5b7af14b2f6b28c5d796673096"
+    },
+    {
+      "file": "lib/features/operations/p1_providers.dart",
+      "sha256": "d66219c55d8eca33a4aa9510e4c90be508cb936c71720c090c039be3976f3708"
+    },
+    {
+      "file": "lib/features/properties/properties_list_screen.dart",
+      "sha256": "57522b67e2be824446930178a4fd503585011c147aff68208a75c36fc0d1c6f2"
+    },
+    {
+      "file": "lib/features/properties/property_form_screen.dart",
+      "sha256": "27c58fbcb331cfbb549e3d300687e60348aada484533cbdefd6d3c394a13dc9d"
+    },
+    {
+      "file": "lib/features/reports/reports_providers.dart",
+      "sha256": "5b00d09f6c7457c080baf9ca53e78562ae5310bda730944c6f3d1b2ec1526651"
+    },
+    {
+      "file": "lib/features/reports/reports_screen.dart",
+      "sha256": "f5e5f52f95559e174acd6759a70c7cddc927e9a503a652222a76a283fd612c0a"
+    },
+    {
+      "file": "lib/features/rooms/property_selection_provider.dart",
+      "sha256": "3de7512ede6a32a995fbacfa8610caae4282ba73eea37f83abdd089626e7d8b3"
+    },
+    {
+      "file": "lib/features/rooms/room_detail_screen.dart",
+      "sha256": "858b9768885e3c62a319c4ca21be71a9c5864db94dfde82f9fc0c153d364a822"
+    },
+    {
+      "file": "lib/features/rooms/room_form_screen.dart",
+      "sha256": "398109d99210d723cdb7efdf91e8bffe78135866e587cb10fa05eafa08a886bd"
+    },
+    {
+      "file": "lib/features/rooms/room_providers.dart",
+      "sha256": "08d9bf4096a615028e34258c1b5d704b529becffc47cbae90887e4119e2c6df0"
+    },
+    {
+      "file": "lib/features/rooms/rooms_list_screen.dart",
+      "sha256": "d1f803d8209e87d2680031cddb731752a91d0dfce6f4ae78e4947e4c143184db"
+    },
+    {
+      "file": "lib/features/rooms/service_tariff_dialog.dart",
+      "sha256": "b1db0f7228ab76f289979300287eb3fe4e5dc8fa18723b827b23579364ee0023"
+    },
+    {
+      "file": "lib/features/rooms/widgets/room_image.dart",
+      "sha256": "6393524c3f35f886bc549afc4bedd191804fda17f6e57aa72fa6381562af32c8"
+    },
+    {
+      "file": "lib/features/settings/settings_screen.dart",
+      "sha256": "feb2c781c6e905bbf23d7b4a42fca89cd7ce8bcb6e8136abc9fc91ad0b377218"
+    },
+    {
+      "file": "lib/features/splash/splash_screen.dart",
+      "sha256": "1436e9daaa1e4b5ca8b42d6a1eaedf1b03f01d96ba5e7e9920f6764f0921363a"
+    },
+    {
+      "file": "lib/features/staff/staff_providers.dart",
+      "sha256": "9e3f3e8420385ccc6788a0fae70a03cac5bae0a6369437077ac1daed61b6e144"
+    },
+    {
+      "file": "lib/features/staff/staff_scope_screen.dart",
+      "sha256": "369795edac1820a2a159f6dd56fe01a9b6a36a7feb94f90485ca76623da4492c"
+    },
+    {
+      "file": "lib/features/staff/staff_screen.dart",
+      "sha256": "71cba2043f171ceb24d94242b6847f281a5429c77d5607636e46064943c16e17"
+    },
+    {
+      "file": "lib/features/tenant_portal/tenant_announcements_screen.dart",
+      "sha256": "bae23421cac6b6a989f4ce14455fa6a2be9f18082d7ff6abe2289f4adde9c6b7"
+    },
+    {
+      "file": "lib/features/tenant_portal/tenant_change_password_screen.dart",
+      "sha256": "726c54d64e78f7de948e791028f2c1b18ed22d5a9ec6a79f01c2896bb77fbb91"
+    },
+    {
+      "file": "lib/features/tenant_portal/tenant_invoice_detail_screen.dart",
+      "sha256": "490aa8ec5c607a2cbc5a9caabd1d83dec58601cfee9da4686967069e63068d59"
+    },
+    {
+      "file": "lib/features/tenant_portal/tenant_invoices_screen.dart",
+      "sha256": "2dc731fb671ed6a534b5ebf8ce98e3841d4698a4ff691801a191bad2f3921377"
+    },
+    {
+      "file": "lib/features/tenant_portal/tenant_leases_screen.dart",
+      "sha256": "8b6ca40d427175c5e55a0cc923847b61e1744da884a598650038dee01bab87d1"
+    },
+    {
+      "file": "lib/features/tenant_portal/tenant_maintenance_screen.dart",
+      "sha256": "c55639fc400cce9495beaa93a1c3bf2fbce95e16e8b5cef9ee203140271d5c9f"
+    },
+    {
+      "file": "lib/features/tenant_portal/tenant_manual_payment_screen.dart",
+      "sha256": "64e7e3ebda6fdad2913d23cea5a1bcb1e8d61f210c18fd69dad2e46f39f419c1"
+    },
+    {
+      "file": "lib/features/tenant_portal/tenant_notifications_screen.dart",
+      "sha256": "eaa522d1c589780307a50783c7e5593bba6b1b5298e36f367aa64b23434c9a67"
+    },
+    {
+      "file": "lib/features/tenant_portal/tenant_online_payment_screen.dart",
+      "sha256": "b5310c097c8cc9515f72d3b01923e50ef3b197fc419beffe42cb37508dbe5b8c"
+    },
+    {
+      "file": "lib/features/tenant_portal/tenant_payment_proof_dialog.dart",
+      "sha256": "e80fb5eace5fadb6c2517b9d19e939a651fa8d80f427cce9fdf2a3e5c46be4d2"
+    },
+    {
+      "file": "lib/features/tenant_portal/tenant_portal_providers.dart",
+      "sha256": "e8f6a26b3445b1a7a9915122f757e7fadc28dd592066615973c67642333592f9"
+    },
+    {
+      "file": "lib/features/tenant_portal/tenant_portal_screen.dart",
+      "sha256": "a7aa6b7a6b8d190ad6723baed8cb5493552d8484affd372232871fe0511d9617"
+    },
+    {
+      "file": "lib/features/tenant_portal/tenant_zalo_screen.dart",
+      "sha256": "b7b2d6896a8f151131b611c00a67072ee1b2729796be243cb900a83106261308"
+    },
+    {
+      "file": "lib/features/tenants/lease_expiry_screen.dart",
+      "sha256": "2fe904a0f39bb561df53085f2270d4e093638a26de7144793578597534679b86"
+    },
+    {
+      "file": "lib/features/tenants/lease_form_screen.dart",
+      "sha256": "91ad7e8d4d791a5af80ded885163327a1a2e540a6f6908ede9061fc22ea45ce9"
+    },
+    {
+      "file": "lib/features/tenants/lease_pdf.dart",
+      "sha256": "4831b51125c0ce7920cecbcb4aceddca5d0bf87a7dfeaa7074d1bbf92211366d"
+    },
+    {
+      "file": "lib/features/tenants/lease_settlement_screen.dart",
+      "sha256": "f118cf695bfb1c8a4d4c654c8d519cd666e73ea5a14eb8c61568067a3dc0d784"
+    },
+    {
+      "file": "lib/features/tenants/tenant_detail_screen.dart",
+      "sha256": "5547ca8852a2ebe74037c2575d9fd395c1dc2054cc32ceb6b9268f139ccea954"
+    },
+    {
+      "file": "lib/features/tenants/tenant_form_screen.dart",
+      "sha256": "9134b42db3e7f6ff391fefe42d3dedab0798a65e11d876b4d7f8040d08dbb3e4"
+    },
+    {
+      "file": "lib/features/tenants/tenant_lifecycle_screen.dart",
+      "sha256": "54a24c6e5e0bb9e872c9767d8aac640196980b4a52f5be3ca8184731059bb49a"
+    },
+    {
+      "file": "lib/features/tenants/tenant_providers.dart",
+      "sha256": "aede8bf4e5187c4ef1e769196b387198334db6831fd9fdf81c149a3b4b2cec83"
+    },
+    {
+      "file": "lib/features/tenants/tenants_list_screen.dart",
+      "sha256": "6a82d4341669c9efbbe76d7debe2002a6a23802cc14566c61a484d4bd85991e4"
+    },
+    {
+      "file": "lib/features/tenants/widgets/form_widgets.dart",
+      "sha256": "131738c5ae8970a17e4c8f9aa4042efcfd6e44d4b311348ce1a08585c542738c"
+    },
+    {
+      "file": "lib/main.dart",
+      "sha256": "d0a49852b8ba075126af4c911532220a465eb40602260299272d329511f2cc6f"
+    },
+    {
+      "file": "lib/models/admin_account_detail.dart",
+      "sha256": "68b902722ad3c04423e8fe9dc1657b55972cff6f335521627b4abdd5e3f18fa0"
+    },
+    {
+      "file": "lib/models/admin_dashboard.dart",
+      "sha256": "cfa58e51f0845d7c8a38b691c0f7248b0eeaa467f7a3a0c4399212f58b00151c"
+    },
+    {
+      "file": "lib/models/admin_inventory.dart",
+      "sha256": "34b53353a0987104416d79fdfdb8bd7790d8e4309a1cb67bc9f8ed8722500f9b"
+    },
+    {
+      "file": "lib/models/admin_models.dart",
+      "sha256": "4796c1c16d6f1968ab2e52f7405719b10f13d8379dc78e4edb7187c423a9e6d1"
+    },
+    {
+      "file": "lib/models/admin_workspace_models.dart",
+      "sha256": "8a0dc60b5a204dcf17e2ba7e4a56cf4b8a07604ec2fb4e919157cf1e8ddac6bc"
+    },
+    {
+      "file": "lib/models/audit_log.dart",
+      "sha256": "2156a2e9b57dbce11fda76f8abe6344c73652df870891af5ad280171faa66875"
+    },
+    {
+      "file": "lib/models/auth_models.dart",
+      "sha256": "4323f280bbfff77d364a22b9b58201209419e7be3598b5e32913db0cde95f337"
+    },
+    {
+      "file": "lib/models/billing.dart",
+      "sha256": "8d9e930cd43e328112d4cb095c3a6835dfe23a09f8fa441ca5c3152b5aeddba3"
+    },
+    {
+      "file": "lib/models/billing_receipt.dart",
+      "sha256": "128cc5c3e9d3d0d73ecf655d6ea2ccb8ea5451f06d7a0ffe0407db3a28037f2d"
+    },
+    {
+      "file": "lib/models/billing_tariff.dart",
+      "sha256": "40025c334e0e14c3709743161a1251e14c7b40f1f33de338ca98e04e26b87fe7"
+    },
+    {
+      "file": "lib/models/chatbot.dart",
+      "sha256": "9c46a03fea7a0a9306893fdeb6ed59015a63250925e2fb4acc963d8e317b8362"
+    },
+    {
+      "file": "lib/models/dashboard.dart",
+      "sha256": "79d479ed86a1c0a30413a7f942540259dd471002dec4850bc99741b4a498ae37"
+    },
+    {
+      "file": "lib/models/expense.dart",
+      "sha256": "35e89c59eed1074e352ae78550d3600502796bdb8d26739f538cdae40aca583c"
+    },
+    {
+      "file": "lib/models/housing.dart",
+      "sha256": "80ec37b98365657c9a4f7ba04e2d9b37183e91e2a560ba146e4175643eadd7e8"
+    },
+    {
+      "file": "lib/models/landlord_notification.dart",
+      "sha256": "42c18ded30dc7bac82aedd3d1d9edd74db17e1ef1167e48f31efa06d9e1a7e0d"
+    },
+    {
+      "file": "lib/models/lease.dart",
+      "sha256": "226934973450c99580f1be14706fa88b3c34a926d7162ed058236ecb7556297f"
+    },
+    {
+      "file": "lib/models/maintenance.dart",
+      "sha256": "197a770e343579ed4e8adb72ebd42cd2fe0dd77e3aee291b4d3835edcd69969d"
+    },
+    {
+      "file": "lib/models/notification_delivery.dart",
+      "sha256": "1b9d776b8c3fce075630eb2f04784da7ecc48161d384dfeedfb704c8a1e3de6f"
+    },
+    {
+      "file": "lib/models/p1_operations.dart",
+      "sha256": "97d46264175713055c4cc17409f382d7640192391ee6a85f59f91cbc88848f81"
+    },
+    {
+      "file": "lib/models/property.dart",
+      "sha256": "48b8258c5a86a866aeb8fdd362ab92fd44d7537db77450d77842f7f1455f33e1"
+    },
+    {
+      "file": "lib/models/reports.dart",
+      "sha256": "2917e011b4f91553d0f386fbe279ae9cb5c67c10b09f318618cc5740d72bf0a7"
+    },
+    {
+      "file": "lib/models/room.dart",
+      "sha256": "15e3388d0423af678999d9238128fdee7ab258aec3a8b50994b3455cf8b73124"
+    },
+    {
+      "file": "lib/models/room_listing.dart",
+      "sha256": "d7d845a46dde48a656982c4313a142f65b9f13ad033ef811606e0724cead260f"
+    },
+    {
+      "file": "lib/models/room_review.dart",
+      "sha256": "eb98ad6f90e1bffe7b92730f7688214d553157e653d9391cb14b808b1ac5f8e1"
+    },
+    {
+      "file": "lib/models/staff.dart",
+      "sha256": "6ccb71848e85fc1cccf81d5e07f3732ca9f8c23e4e69e24f93610255d8c1a7d6"
+    },
+    {
+      "file": "lib/models/student_discovery.dart",
+      "sha256": "d7d127afb14bcd44381ddedf80470522309f9bc77df1da038210d318eb39577b"
+    },
+    {
+      "file": "lib/models/tenant.dart",
+      "sha256": "9b555e092ac00fa93ec0d73659624ad9554e95a076bc43badf44ba859330be1e"
+    },
+    {
+      "file": "lib/models/tenant_portal.dart",
+      "sha256": "ec5e1e9a593112a5bf4b545a9fb97d20b57256d1da23b83926b24063567364d9"
+    },
+    {
+      "file": "test/core/network/api_client_test.dart",
+      "sha256": "a6c25791bc6f8971ef0da422492a3c9e119165d18a9b09c31faa9843644b2d80"
+    },
+    {
+      "file": "test/core/widgets/liquid_bubble_navigation_test.dart",
+      "sha256": "820cb799a3cd5fbac485ba035650816f91987b0bc80422cea8b9581e04bf98af"
+    },
+    {
+      "file": "test/core/widgets/liquid_taskbar_insets_test.dart",
+      "sha256": "27bd3e04377f97003524342ea176cab4af681e996947d04b6b3c7971e61f9541"
+    },
+    {
+      "file": "test/dashboard_test.dart",
+      "sha256": "98de0ee8fc247f8e832f34f63d32bb79bfc5d9416286baf61b6b3e3c0bb608c3"
+    },
+    {
+      "file": "test/data/admin/admin_accounts_api_test.dart",
+      "sha256": "ff90ac636507419ed38a5c460b041cdd2f9b3404fe042543eb54a4a049d0cb3f"
+    },
+    {
+      "file": "test/data/admin/admin_api_test.dart",
+      "sha256": "6f1d43ec2841959e52f4e9cdea08a95ab4f5fb87294466de4acbcf19715d69cf"
+    },
+    {
+      "file": "test/data/admin/admin_inventory_api_test.dart",
+      "sha256": "130f56860f82586bf8854075c09c7c86d5efd773e2bd6e14c8014821798bc4f7"
+    },
+    {
+      "file": "test/data/admin/admin_step_up_api_test.dart",
+      "sha256": "26ffefd32ec754a9f5e46d1e4653cf7235498be5a9d1db76506e649081317016"
+    },
+    {
+      "file": "test/data/admin/finance_statement_csv_test.dart",
+      "sha256": "a50f81dc778981aab775ef37dc541350a16205a3a8ff763708d778f34bd6b058"
+    },
+    {
+      "file": "test/data/auth/auth_api_test.dart",
+      "sha256": "069ab47ed1940b696cfb8e213478ce0efe2b7daae88c455aa065cd354ad5d0bf"
+    },
+    {
+      "file": "test/data/auth/auth_repository_test.dart",
+      "sha256": "03416080528881fc32bee97186a9c20079de0ecc8842506896f4af1e9a394577"
+    },
+    {
+      "file": "test/data/auth/token_refresh_coordinator_test.dart",
+      "sha256": "1afcee85a6323df159a6a15a46424756c1d90a64011bdb14f03b90be2d6999ad"
+    },
+    {
+      "file": "test/data/billing/billing_api_test.dart",
+      "sha256": "401b0b267de2be8cf268c672b3301230221ad7b6f5daf83cc287afe5003ae1a5"
+    },
+    {
+      "file": "test/data/billing/billing_receipt_api_test.dart",
+      "sha256": "8773c8127451b99f96d95ad0ca07be94c4111b05ae85ec93b0238d7fb610425a"
+    },
+    {
+      "file": "test/data/billing/billing_tariff_api_test.dart",
+      "sha256": "997f58a84d290a59bc8d1caf55a0ee377c920117bfc2149a7202491eda8c30f3"
+    },
+    {
+      "file": "test/data/billing/manual_transfer_api_test.dart",
+      "sha256": "e3d52f08e416d93880ea19ead460e9ac1c929c4a9e2bdfa96e91de5662679ad9"
+    },
+    {
+      "file": "test/data/chatbot/chatbot_api_test.dart",
+      "sha256": "b3ba5ec92101303532bba0025609b30d0921cbf324ecf4cf8d9356a262fad456"
+    },
+    {
+      "file": "test/data/dashboard/dashboard_api_test.dart",
+      "sha256": "dbbe56c23708573597cb27f561e3a2231518adbd9e6f493097f9d4b33ee48af4"
+    },
+    {
+      "file": "test/data/lease_settlement_api_test.dart",
+      "sha256": "eb3366e2d2fbe38a41665c23834cfa34b1232336bd819c2132d2f8a2607103f9"
+    },
+    {
+      "file": "test/data/listings/housing_repository_test.dart",
+      "sha256": "1d1a6ea3a0f07d6080679318da5cb82b124ba7754c4812cd7edb5abd162f9e7c"
+    },
+    {
+      "file": "test/data/listings/listings_api_test.dart",
+      "sha256": "84ee97a8830e026dc03954c958090e07b5cc08d21a5973f344a02b40d423a9ac"
+    },
+    {
+      "file": "test/data/listings/reviews_repository_test.dart",
+      "sha256": "b411b2a4de46f55222f4aade082fea2f97b9dce1658089be8968d0dc2a0e0f4e"
+    },
+    {
+      "file": "test/data/notifications/notifications_api_test.dart",
+      "sha256": "8db4e9cd9a1dc70de12727e2e00d64fa5f43d6e92d02d64c83812053c65fb544"
+    },
+    {
+      "file": "test/data/onboarding/onboarding_preferences_test.dart",
+      "sha256": "7863f932f64936bef77cb778063c2da7ebc4292332308c8b32c0445f2fb84833"
+    },
+    {
+      "file": "test/data/operations/operations_api_test.dart",
+      "sha256": "a98db7f94500f868cb03eb62271e0ebecae55a4e11c637ce140f9c598e65c0c7"
+    },
+    {
+      "file": "test/data/operations/p1_operations_api_test.dart",
+      "sha256": "9711bb4084697915087c3b63380a3abbb4f478e01f42bba0667fd9cec2ccaaa1"
+    },
+    {
+      "file": "test/data/rooms_lifecycle_api_test.dart",
+      "sha256": "47593f320b4bd4446aefb74e03e01290948c996cca95fd9cb2d56d731fd75fcb"
+    },
+    {
+      "file": "test/data/tenant_lifecycle_requests_api_test.dart",
+      "sha256": "53568627b91a552b2e1ffdbbe955ab21928fb6d701e1a4b282015452ee86fc9c"
+    },
+    {
+      "file": "test/data/tenant_portal/tenant_portal_api_test.dart",
+      "sha256": "08ce0f91c5cda775a713360d747ff4e7660affc4410379a908a792d805a65923"
+    },
+    {
+      "file": "test/data/tenants_lifecycle_api_test.dart",
+      "sha256": "7333aa6f902d1a8ef141f377c74203712709184202407ed003d7d9b7c9c6a888"
+    },
+    {
+      "file": "test/data/uploads/upload_api_test.dart",
+      "sha256": "a3b1ae4dbe7448ff5941bd1406f20c5af7d69fb59c2f2ca672319aa5637e291d"
+    },
+    {
+      "file": "test/features/admin/admin_account_detail_panel_test.dart",
+      "sha256": "b03e641cceb529e85efb78b71f30c3664f34acc8e2dbbb34721309214aa62070"
+    },
+    {
+      "file": "test/features/admin/admin_accounts_panel_test.dart",
+      "sha256": "e1dc3ae0b2586900abff816d94ffa61255b4c024d65fa249f16b6d2580200040"
+    },
+    {
+      "file": "test/features/admin/admin_accounts_workspace_test.dart",
+      "sha256": "e0979f9b1e5c59904ce21ed76e0db9e42672fe3addd0fdd48fb6130b1e8409ee"
+    },
+    {
+      "file": "test/features/admin/admin_completion_session_test.dart",
+      "sha256": "63a14aec4adcb4c766855eeb6b81b13820bf0f733810beb17cc2d17bc5005b43"
+    },
+    {
+      "file": "test/features/admin/admin_inbox_safety_test.dart",
+      "sha256": "912bcca9168cb816dcae9df22a97c89668c98bf14c4082c5532b030952631d6e"
+    },
+    {
+      "file": "test/features/admin/admin_inventory_panel_test.dart",
+      "sha256": "915592da863fd6c53a2a575dfa4329408eedc094715568b9275a6c3273d85ff4"
+    },
+    {
+      "file": "test/features/admin/admin_milestone_one_test.dart",
+      "sha256": "beccf7a246b3a5fc17f32501d65e078bf27ff5cd83ea52ff0ef2467c4ce41b03"
+    },
+    {
+      "file": "test/features/admin/admin_operations_release_test.dart",
+      "sha256": "fb67c5e030823713bbc152e34d32b592d2e08b5e85ea9f93b4479346ad451a7b"
+    },
+    {
+      "file": "test/features/admin/admin_overview_chart_test.dart",
+      "sha256": "4a38dbf0d94c3f9160250437f4141d72263551c367c7b42e611a43de0ee037c3"
+    },
+    {
+      "file": "test/features/admin/admin_permissions_editor_test.dart",
+      "sha256": "d52a7347f7e8e6d22f424edccfcb16a8db6f2897d78b721c6347b548be8af4ca"
+    },
+    {
+      "file": "test/features/admin/admin_production_panels_test.dart",
+      "sha256": "dec83c22da11e004baaf34c29ead5ebeb9f6c34c5c8b34caafa5211000abcd8b"
+    },
+    {
+      "file": "test/features/admin/admin_registry_screen_test.dart",
+      "sha256": "2fd76542f888834b8522421ee1c4632b111cf1e1e6f31759dfbcbec1143f0cf1"
+    },
+    {
+      "file": "test/features/admin/admin_route_theme_test.dart",
+      "sha256": "3a0eebc7d0d9c6f9dd7d5c2ad167d7c7f66dbd9e37f2f389cca257f1da2233d6"
+    },
+    {
+      "file": "test/features/admin/admin_search_quality_test.dart",
+      "sha256": "9fa48ea6f9c53fdc18c407d9bf594c7a48d3228ffc2a5920883b08b51f68708c"
+    },
+    {
+      "file": "test/features/admin/admin_sessions_test.dart",
+      "sha256": "bb72daa9c6735e848c6fbc9e1d2d173c7f24fc18f9160fb2350143c0ad69a6e8"
+    },
+    {
+      "file": "test/features/admin/admin_sprints_test.dart",
+      "sha256": "e9c2d86089ce94c858afed5037099fe84c32e6ffcfeaa5f276ea6321c83a6fca"
+    },
+    {
+      "file": "test/features/admin/admin_transactions_panel_test.dart",
+      "sha256": "4a2a9d1495ae5db42b7f3c06779ad98e6616280394fbb747038f1f46e44db639"
+    },
+    {
+      "file": "test/features/admin/admin_unified_shell_test.dart",
+      "sha256": "40f18858a3757c20d711f0c27efc7f922e665f45866c86d9045053c99920598b"
+    },
+    {
+      "file": "test/features/admin/admin_workspace_flow_test.dart",
+      "sha256": "f8c5af92c0d526e0fe62cb976490e964538de4ab8f963637fdb7076943281df4"
+    },
+    {
+      "file": "test/features/admin/admin_workspace_foundation_test.dart",
+      "sha256": "58f8ce58ec6889356fa23dd24f44d6d194b24911ab2e2b2364778b29adc8c0f7"
+    },
+    {
+      "file": "test/features/auth/account_access_test.dart",
+      "sha256": "5fe9edce8fda47f508041d7fc21eb95cfc56f0d3aa1ffe26a08ec96be5673590"
+    },
+    {
+      "file": "test/features/auth/auth_navigation_test.dart",
+      "sha256": "0f0553f1959e10ac1f8e9b321d260dcb9e4650053e0a8eb62c930de0be87c107"
+    },
+    {
+      "file": "test/features/auth/register_screen_test.dart",
+      "sha256": "211319c1aab38b2d33b68f3ae41268b476d8cffbd5995687ffa77ef525aa19f2"
+    },
+    {
+      "file": "test/features/auth/session_cache_isolation_test.dart",
+      "sha256": "da762bf386db8fab8287cb416439c80168a2378685f6fae4003d0976bdf8f8c8"
+    },
+    {
+      "file": "test/features/billing/billing_filter_entry_test.dart",
+      "sha256": "e878c42771f6db5a7386a9b4c6e75c18278491809a4a3db78b6d5926f1085797"
+    },
+    {
+      "file": "test/features/billing/billing_receipts_screen_test.dart",
+      "sha256": "ef7bad995bd65377b8e9786441591a46c8c377e5665c83d48bd5d28dbfc75065"
+    },
+    {
+      "file": "test/features/billing/billing_tariffs_screen_test.dart",
+      "sha256": "65277f01a4317232d4eb51e16eb54eb3b7d9e8813f6a3f13d3bd3642db82a909"
+    },
+    {
+      "file": "test/features/billing/invoice_adjustment_test.dart",
+      "sha256": "ce36543a9380f412d40c27461c7d34570717c6512328a94446d4661bcdcb2c16"
+    },
+    {
+      "file": "test/features/billing/invoice_replacement_test.dart",
+      "sha256": "d9f26db3880a1a04d9f2d6e2510665c5d3067374892919c63d12d302539cccef"
+    },
+    {
+      "file": "test/features/billing/invoice_tariffs_test.dart",
+      "sha256": "9e1a80f7b01ac6ff82e54a5b1daa97be86ac7a770d1b25a86e817751fccadd03"
+    },
+    {
+      "file": "test/features/billing/invoice_timeline_test.dart",
+      "sha256": "05798835589227f1d0d42305972cd41b75babec08838aa5bdbaae636a180a449"
+    },
+    {
+      "file": "test/features/billing/manual_review_confirmation_test.dart",
+      "sha256": "cf6dd11cd5311ab013c73ca7f97a81a98f0f48cfc977c0c0092fcd56637dccf4"
+    },
+    {
+      "file": "test/features/billing/meter_reading_fields_test.dart",
+      "sha256": "502a033f87885573ba6f1180e5392c440b1f0d83039fce52f2d3564295127bf8"
+    },
+    {
+      "file": "test/features/billing/reminder_policy_test.dart",
+      "sha256": "6ffb638a862f5a666d1260ad719ae4546377f617a7ae001c21e90a3ac00168ba"
+    },
+    {
+      "file": "test/features/chatbot/chatbot_screen_test.dart",
+      "sha256": "ddfdc86f7035be2c66cdc6eb00a35d69451ca374abb759fba6d4b3c0e92afcea"
+    },
+    {
+      "file": "test/features/chatbot/chatbot_session_test.dart",
+      "sha256": "649a9ce6df643dddf861ac8ec2a1a0236e3e2ab0e7acd048e598c0caa28cdaad"
+    },
+    {
+      "file": "test/features/chatbot/chatbot_test_support.dart",
+      "sha256": "81147f9b3596cd970e3715cfb1181a9d221792f10e3e41d6b0c1dcbfcf8662cb"
+    },
+    {
+      "file": "test/features/dashboard/dashboard_chatbot_entry_test.dart",
+      "sha256": "4d89b31b5c54947656ddbb25091fb91e6b30743dd3e01b2afc28230c6973eb40"
+    },
+    {
+      "file": "test/features/dashboard/room_map_dashboard_test.dart",
+      "sha256": "2c8e59dc4f43f0e9c7e69cbb043473057041655e565bc674659297322ab6a708"
+    },
+    {
+      "file": "test/features/listings/discovery_tools_test.dart",
+      "sha256": "cb2db58975104e1d9303b7cdfd3c6b64262db478aebf526f3f1405bea21cb177"
+    },
+    {
+      "file": "test/features/listings/housing_journey_test.dart",
+      "sha256": "ef6169e7e01801a9a019b874af30467756244dd511261a4d6e5e35eaba1169f0"
+    },
+    {
+      "file": "test/features/listings/housing_screen_test.dart",
+      "sha256": "61d9b0cfd1b15cbe37e5c840ca20d4025c9123086dba28cf3aa58ed442b5e1b6"
+    },
+    {
+      "file": "test/features/listings/listing_navigation_test.dart",
+      "sha256": "5a9980a42012afe78705fdd6be253ba4cf0960e1355fa64db10edfb23ee1a505"
+    },
+    {
+      "file": "test/features/listings/listing_taskbar_scroll_test.dart",
+      "sha256": "be50ab691a412a3a6bb3273ee2c812832617c95078a64a6d4353fddd825ddd71"
+    },
+    {
+      "file": "test/features/listings/listings_screen_test.dart",
+      "sha256": "6bee93896003d61257b316bae829b00daf10e377d030eaec0eb02d72c12f76f0"
+    },
+    {
+      "file": "test/features/listings/reviews_screen_test.dart",
+      "sha256": "fc3f9d93a13a37c50cf86f1faa9e6e0c70f7d2a01df96b865a9eb7046d19c051"
+    },
+    {
+      "file": "test/features/listings/student_discovery_test.dart",
+      "sha256": "d1ea50e965c749e266aeb124061f6138a1d51ebe7b37e5cb0b1da587fec715da"
+    },
+    {
+      "file": "test/features/onboarding/onboarding_persistence_test.dart",
+      "sha256": "32246593947fb58d9f0f1a62db7968a156c526b3b5580ebba8514ee9e8b089a1"
+    },
+    {
+      "file": "test/features/operations/action_destinations_test.dart",
+      "sha256": "5fcff387119ede4dc4c0d59eed3a601a029568b7dc162c3fd3a99fd1bf9894e6"
+    },
+    {
+      "file": "test/features/operations/action_items_screen_test.dart",
+      "sha256": "6994563d22d27496f90ec6dfc55676ce9cb80cb482ba83924c1a096254ddac55"
+    },
+    {
+      "file": "test/features/rooms/room_detail_screen_test.dart",
+      "sha256": "6130d4a625b13c48d5bcbdf23a83af1246b4253117b160d25b170b187fcbe7db"
+    },
+    {
+      "file": "test/features/settings/settings_screen_test.dart",
+      "sha256": "2806c94ea62470d0460ef5fe7a2bf9955b11a0272d451d06f78384fb181467c6"
+    },
+    {
+      "file": "test/features/tenant_portal/tenant_manual_payment_test.dart",
+      "sha256": "ccc9aec5d8bfe339fced32a0f1a1bff63eba22069e571fc1abc6bcdee70ec568"
+    },
+    {
+      "file": "test/features/tenant_portal/tenant_p1_screens_test.dart",
+      "sha256": "dfce55990e3aab7b3d26fa59d7c9bcf5afcf78d721c56e6274878b173fc335aa"
+    },
+    {
+      "file": "test/features/tenants/lease_form_screen_test.dart",
+      "sha256": "0406d77ed7ba7d4dda7658c9df5356b5377c4173b52b87ce6f0c99885202a26a"
+    },
+    {
+      "file": "test/features/tenants/lease_settlement_screen_test.dart",
+      "sha256": "a33e8461947b6799ef5d5f1daee1f0dd4f2c3509b7014b70655d595468ee7bce"
+    },
+    {
+      "file": "test/features/tenants/tenant_lifecycle_screen_test.dart",
+      "sha256": "a0097f090e12cbbd50481d8c8f24466bb6b69db45665bdda0a376c84cf5bf876"
+    },
+    {
+      "file": "test/fixtures/admin_accounts_capture.dart",
+      "sha256": "6178551b9738a71b6438ab201525d8b892a019c241aa684c51bcd98da5834fec"
+    },
+    {
+      "file": "test/fixtures/admin_overview_fixture.dart",
+      "sha256": "022972ff6635d6eab0b729ec91763e743492e62e24cd279c43843a66765949a2"
+    },
+    {
+      "file": "test/properties_test.dart",
+      "sha256": "cb53b7c3bc29e5149e515336ee6408c5a2dbc22e149b35717b8ebcdf9e49d26f"
+    },
+    {
+      "file": "test/rooms_test.dart",
+      "sha256": "0bed02a88073219320dec77979e20b2094b50b7c4e90f5c5a355131d32c50abb"
+    },
+    {
+      "file": "test/widget_test.dart",
+      "sha256": "90a5ac5f49d28feaa58b4af0aa37e64dcfff8620ae7a8d5a57b1170b5b54ea7b"
+    }
+  ]
+}

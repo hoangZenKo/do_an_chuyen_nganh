@@ -1,0 +1,60 @@
+{
+  "date": "2026-10-28",
+  "output": "/Users/hoang/Rental_room_management/docs/Bao_cao_Quan_ly_Nha_tro_V2_2026-10-28.docx",
+  "sha256": "54869f3b64ef6bc2022779032db24137b2ab8a6265f0c2511d101babfffce3db",
+  "pages": 436,
+  "body_starts_physical_page": 9,
+  "use_cases": 131,
+  "diagrams": {
+    "architecture": 2,
+    "usecase": 24,
+    "class": 18,
+    "sequence": 38,
+    "object": 1
+  },
+  "figures": 114,
+  "tables": 426,
+  "checks": {
+    "131_unique_in_scope_specifications": true,
+    "BA_metadata_mainflow_outcomes_complete": true,
+    "four_human_actors": true,
+    "no_staff_in_report": true,
+    "all_BA_cases_have_detailed_steps": true,
+    "source_evidence_hashes": true,
+    "83_diagram_panels": true,
+    "all_used_diagrams_available": true,
+    "24_stick_actor_UC_diagrams": true,
+    "38_yellow_sequence_panels": true,
+    "all_tables_white": true,
+    "all_table_borders_black": true,
+    "all_table_headers_repeat": true,
+    "three_sections_A4": true,
+    "academic_margins": true,
+    "cover_double_border_only": true,
+    "all_render_pages_present": true,
+    "no_empty_pages": true,
+    "toc_measured_pages_match": true,
+    "figure_list_measured_pages_match": true,
+    "114_numbered_figures": true,
+    "28_unique_UI_screens": true,
+    "no_raw_schema_appendix": true,
+    "67_legacy_cases_crosswalk": true,
+    "navigation_anchors_resolve": true,
+    "original_unchanged_CSE703014_Report_Template_VI_V1": true,
+    "original_unchanged_Bao_cao_da_chinh_form": true,
+    "capture_ui-capture-v2.log": true,
+    "capture_ui-tenant-capture-v2.log": true,
+    "capture_ui-landlord-capture-v2.log": true
+  },
+  "all_checks_passed": true,
+  "limitations": [
+    "Administrative identities and actual assignments were not provided.",
+    "Widget fixtures are not device, provider, E2E or production acceptance.",
+    "Earlier product tests had 12 Flutter failures; later source updates were checked statically."
+  ],
+  "visual_qa": {
+    "page_contact_sheets": "All 436 pages; content unchanged between final pagination pass and previous visual pass except measured navigation pages.",
+    "full_resolution": "Cover, TOC and list of figures; UC metadata/main/alternative tables; overview and decomposition; class; yellow sequence; guest/tenant/landlord/Admin screens; split tall mobile images.",
+    "render_directory": "/tmp/rental-report-v2-20261028/render-v2-final"
+  }
+}

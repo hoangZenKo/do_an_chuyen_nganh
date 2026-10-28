@@ -1,0 +1,15 @@
+digraph G {
+graph [bgcolor="white",rankdir=TB,nodesep=0.4,ranksep=0.55,pad=0.2];
+node [fontname="Times New Roman", fontsize=17, color="black", fontcolor="black", style="filled", fillcolor="white", penwidth=1.1];
+edge [fontname="Times New Roman", fontsize=14, color="black", arrowsize=0.7, penwidth=0.9];
+a [shape=box,label="Yêu cầu từ Flutter"];
+b [shape=box,label="Xác thực JWT và phiên"];
+c [shape=box,label="Roles / Permissions / Capability"];
+d [shape=box,label="Phạm vi tài nguyên theo vai trò"];
+e [shape=box,label="Ownership và quy tắc tại Service"];
+f [shape=box,label="Transaction Prisma / dữ liệu"];
+g [shape=box,label="Lỗi chuẩn hóa hoặc kết quả có projection"];
+a -> b -> c -> d -> e -> f -> g;
+c -> g [label="Từ chối quyền",style=dashed];
+e -> g [label="Ngoài scope / xung đột",style=dashed];
+}

@@ -1,0 +1,7 @@
+{
+  "statically_refreshed_sources": [
+    "backend/src/admin/admin-plans.service.ts",
+    "backend/src/properties/properties.service.ts"
+  ],
+  "note": "Earlier application test logs are preserved and are not claimed to test these later source changes."
+}

@@ -1,0 +1,15 @@
+digraph G {
+graph [bgcolor="white",rankdir=LR,nodesep=0.35,ranksep=0.85,pad=0.15,splines=polyline];
+node [fontname="Times New Roman", fontsize=17, color="black", fontcolor="black", style="filled", fillcolor="white", penwidth=1.1];
+edge [fontname="Times New Roman", fontsize=14, color="black", arrowsize=0.7, penwidth=0.9];
+User [shape=plain,label=<<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0" CELLPADDING="5"><TR><TD><B>User</B></TD></TR><TR><TD BORDER="1" SIDES="T"></TD></TR><TR><TD ALIGN="LEFT">id: String</TD></TR><TR><TD ALIGN="LEFT">sessionVersion: Int</TD></TR><TR><TD ALIGN="LEFT">fullName: String</TD></TR><TR><TD ALIGN="LEFT">email: String</TD></TR><TR><TD ALIGN="LEFT">phone: String?</TD></TR></TABLE>>];
+AuthSession [shape=plain,label=<<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0" CELLPADDING="5"><TR><TD><B>AuthSession</B></TD></TR><TR><TD BORDER="1" SIDES="T"></TD></TR><TR><TD ALIGN="LEFT">id: String</TD></TR><TR><TD ALIGN="LEFT">userId: String</TD></TR><TR><TD ALIGN="LEFT">userVersion: Int</TD></TR><TR><TD ALIGN="LEFT">device: String</TD></TR><TR><TD ALIGN="LEFT">ip: String?</TD></TR></TABLE>>];
+RefreshToken [shape=plain,label=<<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0" CELLPADDING="5"><TR><TD><B>RefreshToken</B></TD></TR><TR><TD BORDER="1" SIDES="T"></TD></TR><TR><TD ALIGN="LEFT">id: String</TD></TR><TR><TD ALIGN="LEFT">userId: String</TD></TR><TR><TD ALIGN="LEFT">sessionId: String?</TD></TR><TR><TD ALIGN="LEFT">mfaVerified: Boolean</TD></TR><TR><TD ALIGN="LEFT">tokenHash: String</TD></TR></TABLE>>];
+AdminProfile [shape=plain,label=<<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0" CELLPADDING="5"><TR><TD><B>AdminProfile</B></TD></TR><TR><TD BORDER="1" SIDES="T"></TD></TR><TR><TD ALIGN="LEFT">userId: String</TD></TR><TR><TD ALIGN="LEFT">accessReviewedAt: DateTime?</TD></TR><TR><TD ALIGN="LEFT">accessReviewedBy: String?</TD></TR><TR><TD ALIGN="LEFT">nextAccessReviewAt: DateTime?</TD></TR><TR><TD ALIGN="LEFT">reviewVersion: Int</TD></TR></TABLE>>];
+AccountAccessToken [shape=plain,label=<<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0" CELLPADDING="5"><TR><TD><B>AccountAccessToken</B></TD></TR><TR><TD BORDER="1" SIDES="T"></TD></TR><TR><TD ALIGN="LEFT">id: String</TD></TR><TR><TD ALIGN="LEFT">userId: String</TD></TR><TR><TD ALIGN="LEFT">purpose: String</TD></TR><TR><TD ALIGN="LEFT">tokenHash: String</TD></TR><TR><TD ALIGN="LEFT">expiresAt: DateTime</TD></TR></TABLE>>];
+RefreshToken -> AuthSession [dir=none,label="session",taillabel="0..*",headlabel="0..1",labeldistance=2.1];
+RefreshToken -> User [dir=none,label="user",taillabel="0..*",headlabel="1",labeldistance=2.1];
+AuthSession -> User [dir=none,label="user",taillabel="0..*",headlabel="1",labeldistance=2.1];
+AdminProfile -> User [dir=none,label="user",taillabel="0..1",headlabel="1",labeldistance=2.1];
+AccountAccessToken -> User [dir=none,label="user",taillabel="0..*",headlabel="1",labeldistance=2.1];
+}

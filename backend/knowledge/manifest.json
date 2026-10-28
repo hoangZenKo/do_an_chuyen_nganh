@@ -1,0 +1,11 @@
+{
+  "version": 1,
+  "documents": [
+    { "stableKey": "guide-properties-rooms", "file": "vi/01-khu-tro-va-phong.md", "title": "Quản lý khu trọ và phòng", "scope": "GLOBAL", "approved": true, "approvedBy": "project-owner (explicit chat approval, 2026-10-22)", "approvedAt": "2026-10-22T13:28:35.000Z" },
+    { "stableKey": "guide-tenants-leases", "file": "vi/02-nguoi-thue-va-hop-dong.md", "title": "Quản lý người thuê và hợp đồng", "scope": "GLOBAL", "approved": true, "approvedBy": "project-owner (explicit chat approval, 2026-10-22)", "approvedAt": "2026-10-22T13:28:35.000Z" },
+    { "stableKey": "guide-billing", "file": "vi/03-dien-nuoc-va-hoa-don.md", "title": "Điện nước và hóa đơn", "scope": "GLOBAL", "approved": true, "approvedBy": "project-owner (explicit chat approval, 2026-10-22)", "approvedAt": "2026-10-22T13:28:35.000Z" },
+    { "stableKey": "guide-payments", "file": "vi/04-thanh-toan-va-chung-tu.md", "title": "Thanh toán và chứng từ", "scope": "GLOBAL", "approved": true, "approvedBy": "project-owner (explicit chat approval, 2026-10-22)", "approvedAt": "2026-10-22T13:28:35.000Z" },
+    { "stableKey": "guide-maintenance", "file": "vi/05-bao-tri.md", "title": "Yêu cầu bảo trì", "scope": "GLOBAL", "approved": true, "approvedBy": "project-owner (explicit chat approval, 2026-10-22)", "approvedAt": "2026-10-22T13:28:35.000Z" },
+    { "stableKey": "guide-faq", "file": "vi/06-cau-hoi-thuong-gap.md", "title": "FAQ và hướng dẫn tìm chức năng", "scope": "GLOBAL", "approved": true, "approvedBy": "project-owner (explicit chat approval, 2026-10-22)", "approvedAt": "2026-10-22T13:28:35.000Z" }
+  ]
+}

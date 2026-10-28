@@ -1,0 +1,171 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<mxfile host="app.diagrams.net" scale="1" border="0">
+  <diagram name="SD-01 phong cách StarUML" id="QNYQnIbjP89wODBezkRW">
+    <mxGraphModel dx="1358" dy="968" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="715" math="0" shadow="0">
+      <root>
+        <mxCell id="0" style=""/>
+        <mxCell id="1" parent="0" style=""/>
+        <mxCell id="sd-frame" value="" style="rounded=0;fillColor=none;strokeColor=#555555;strokeWidth=1;" vertex="1" parent="1"><mxGeometry x="12" y="12" width="1076" height="690" as="geometry"/></mxCell><mxCell id="symbol-0" parent="1" style="shape=umlActor;html=0;fillColor=#EEEEEE;strokeColor=#333333;strokeWidth=1;shadow=0;" value="" vertex="1">
+          <mxGeometry height="40.0" width="24.0" x="94.0" y="46.0" as="geometry"/>
+        </mxCell>
+        <mxCell id="name-0" parent="1" style="text;html=0;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontFamily=Arial;fontColor=#222222;fontSize=12.8;" value="Chủ trọ" vertex="1">
+          <mxGeometry height="20.0" width="160.0" x="26.0" y="88.4" as="geometry"/>
+        </mxCell>
+        <mxCell id="life-0" edge="1" parent="1" style="endArrow=none;startArrow=none;dashed=1;dashPattern=5 5;strokeColor=#999999;strokeWidth=1;" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="106.0" y="110.0" as="sourcePoint"/>
+            <mxPoint x="106.0" y="658.0" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="symbol-1" parent="1" style="shape=umlBoundary;html=0;fillColor=#EEEEEE;strokeColor=#333333;strokeWidth=1;shadow=0;" value="" vertex="1">
+          <mxGeometry height="36.0" width="48.0" x="300.0" y="46.0" as="geometry"/>
+        </mxCell>
+        <mxCell id="name-1" parent="1" style="text;html=0;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontFamily=Arial;fontColor=#222222;fontSize=12.8;fontStyle=4;" value="Form hợp đồng" vertex="1">
+          <mxGeometry height="20.0" width="160.0" x="250.0" y="88.4" as="geometry"/>
+        </mxCell>
+        <mxCell id="life-1" edge="1" parent="1" style="endArrow=none;startArrow=none;dashed=1;dashPattern=5 5;strokeColor=#999999;strokeWidth=1;" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="330.0" y="110.0" as="sourcePoint"/>
+            <mxPoint x="330.0" y="658.0" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="symbol-2" parent="1" style="shape=umlBoundary;html=0;fillColor=#EEEEEE;strokeColor=#333333;strokeWidth=1;shadow=0;" value="" vertex="1">
+          <mxGeometry height="36.0" width="48.0" x="524.0" y="46.0" as="geometry"/>
+        </mxCell>
+        <mxCell id="name-2" parent="1" style="text;html=0;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontFamily=Arial;fontColor=#222222;fontSize=12.8;fontStyle=4;" value="API hợp đồng" vertex="1">
+          <mxGeometry height="20.0" width="160.0" x="474.0" y="88.4" as="geometry"/>
+        </mxCell>
+        <mxCell id="life-2" edge="1" parent="1" style="endArrow=none;startArrow=none;dashed=1;dashPattern=5 5;strokeColor=#999999;strokeWidth=1;" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="554.0" y="110.0" as="sourcePoint"/>
+            <mxPoint x="554.0" y="658.0" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="symbol-3" parent="1" style="shape=umlControl;html=0;fillColor=#EEEEEE;strokeColor=#333333;strokeWidth=1;shadow=0;" value="" vertex="1">
+          <mxGeometry height="36.0" width="36.0" x="760.0" y="46.0" as="geometry"/>
+        </mxCell>
+        <mxCell id="name-3" parent="1" style="text;html=0;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontFamily=Arial;fontColor=#222222;fontSize=12.8;fontStyle=4;" value="BĐK hợp đồng" vertex="1">
+          <mxGeometry height="20.0" width="160.0" x="698.0" y="88.4" as="geometry"/>
+        </mxCell>
+        <mxCell id="life-3" edge="1" parent="1" style="endArrow=none;startArrow=none;dashed=1;dashPattern=5 5;strokeColor=#999999;strokeWidth=1;" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="778.0" y="110.0" as="sourcePoint"/>
+            <mxPoint x="778.0" y="658.0" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="symbol-4" parent="1" style="shape=cylinder;html=0;fillColor=#EEEEEE;strokeColor=#333333;strokeWidth=1;shadow=0;" value="" vertex="1">
+          <mxGeometry height="36.0" width="36.0" x="984.0" y="46.0" as="geometry"/>
+        </mxCell>
+        <mxCell id="name-4" parent="1" style="text;html=0;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontFamily=Arial;fontColor=#222222;fontSize=12.8;fontStyle=4;" value="PostgreSQL" vertex="1">
+          <mxGeometry height="20.0" width="160.0" x="922.0" y="88.4" as="geometry"/>
+        </mxCell>
+        <mxCell id="life-4" edge="1" parent="1" style="endArrow=none;startArrow=none;dashed=1;dashPattern=5 5;strokeColor=#999999;strokeWidth=1;" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1002.0" y="110.0" as="sourcePoint"/>
+            <mxPoint x="1002.0" y="658.0" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="activation-1" parent="1" style="rounded=0;fillColor=#FFFFFF;strokeColor=#333333;strokeWidth=1;" value="" vertex="1">
+          <mxGeometry height="408.0" width="8.0" x="326.0" y="226.0" as="geometry"/>
+        </mxCell>
+        <mxCell id="activation-2" parent="1" style="rounded=0;fillColor=#FFFFFF;strokeColor=#333333;strokeWidth=1;" value="" vertex="1">
+          <mxGeometry height="324.0" width="8.0" x="550.0" y="270.0" as="geometry"/>
+        </mxCell>
+        <mxCell id="activation-3" parent="1" style="rounded=0;fillColor=#FFFFFF;strokeColor=#333333;strokeWidth=1;" value="" vertex="1">
+          <mxGeometry height="240.0" width="8.0" x="774.0" y="314.0" as="geometry"/>
+        </mxCell>
+        <mxCell id="activation-4" parent="1" style="rounded=0;fillColor=#FFFFFF;strokeColor=#333333;strokeWidth=1;" value="" vertex="1">
+          <mxGeometry height="40.0" width="8.0" x="998.0" y="358.0" as="geometry"/>
+        </mxCell>
+        <mxCell id="message-1" edge="1" parent="1" style="edgeStyle=none;rounded=0;html=0;strokeColor=#333333;strokeWidth=1;fontFamily=Arial;fontSize=12.8;labelBackgroundColor=#FFFFFF;verticalAlign=bottom;align=center;spacingBottom=5;endArrow=block;endFill=1;" value="1: Chọn tạo hợp đồng">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="110.0" y="142.0" as="sourcePoint"/>
+            <mxPoint x="326.0" y="142.0" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="message-2" edge="1" parent="1" style="edgeStyle=none;rounded=0;html=0;strokeColor=#333333;strokeWidth=1;fontFamily=Arial;fontSize=12.8;labelBackgroundColor=#FFFFFF;verticalAlign=bottom;align=center;spacingBottom=5;dashed=1;endArrow=open;endFill=0;" value="2: Hiển thị biểu mẫu">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="326.0" y="186.0" as="sourcePoint"/>
+            <mxPoint x="110.0" y="186.0" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="message-3" edge="1" parent="1" style="edgeStyle=none;rounded=0;html=0;strokeColor=#333333;strokeWidth=1;fontFamily=Arial;fontSize=12.8;labelBackgroundColor=#FFFFFF;verticalAlign=bottom;align=center;spacingBottom=5;endArrow=block;endFill=1;" value="3: Nhập thông tin, xác nhận">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="110.0" y="226.0" as="sourcePoint"/>
+            <mxPoint x="326.0" y="226.0" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="message-4" edge="1" parent="1" style="edgeStyle=none;rounded=0;html=0;strokeColor=#333333;strokeWidth=1;fontFamily=Arial;fontSize=12.8;labelBackgroundColor=#FFFFFF;verticalAlign=bottom;align=center;spacingBottom=5;endArrow=block;endFill=1;" value="4: POST /api/v1/leases">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="334.0" y="270.0" as="sourcePoint"/>
+            <mxPoint x="550.0" y="270.0" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="message-5" edge="1" parent="1" style="edgeStyle=none;rounded=0;html=0;strokeColor=#333333;strokeWidth=1;fontFamily=Arial;fontSize=12.8;labelBackgroundColor=#FFFFFF;verticalAlign=bottom;align=center;spacingBottom=5;endArrow=block;endFill=1;" value="5: Yêu cầu tạo hợp đồng">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="558.0" y="314.0" as="sourcePoint"/>
+            <mxPoint x="774.0" y="314.0" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="message-6" edge="1" parent="1" style="edgeStyle=none;rounded=0;html=0;strokeColor=#333333;strokeWidth=1;fontFamily=Arial;fontSize=12.8;labelBackgroundColor=#FFFFFF;verticalAlign=bottom;align=center;spacingBottom=5;endArrow=block;endFill=1;" value="6: Tra cứu dữ liệu liên quan">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="782.0" y="358.0" as="sourcePoint"/>
+            <mxPoint x="998.0" y="358.0" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="message-7" edge="1" parent="1" style="edgeStyle=none;rounded=0;html=0;strokeColor=#333333;strokeWidth=1;fontFamily=Arial;fontSize=12.8;labelBackgroundColor=#FFFFFF;verticalAlign=bottom;align=center;spacingBottom=5;dashed=1;endArrow=open;endFill=0;" value="7: Dữ liệu và kết quả kiểm tra">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="998.0" y="398.0" as="sourcePoint"/>
+            <mxPoint x="782.0" y="398.0" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="message-8" edge="1" parent="1" style="edgeStyle=none;rounded=0;html=0;strokeColor=#333333;strokeWidth=1;fontFamily=Arial;fontSize=12.8;labelBackgroundColor=#FFFFFF;verticalAlign=bottom;align=center;spacingBottom=5;endArrow=block;endFill=1;" value="8: Kiểm tra điều kiện">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="842.0" y="434.0"/>
+              <mxPoint x="842.0" y="458.0"/>
+            </Array>
+            <mxPoint x="782.0" y="434.0" as="sourcePoint"/>
+            <mxPoint x="782.0" y="458.0" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="message-9" edge="1" parent="1" style="edgeStyle=none;rounded=0;html=0;strokeColor=#333333;strokeWidth=1;fontFamily=Arial;fontSize=12.8;labelBackgroundColor=#FFFFFF;verticalAlign=bottom;align=center;spacingBottom=5;endArrow=block;endFill=1;" value="9: Lưu hợp đồng và cập nhật phòng">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="782.0" y="490.0" as="sourcePoint"/>
+            <mxPoint x="998.0" y="490.0" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="message-10" edge="1" parent="1" style="edgeStyle=none;rounded=0;html=0;strokeColor=#333333;strokeWidth=1;fontFamily=Arial;fontSize=12.8;labelBackgroundColor=#FFFFFF;verticalAlign=bottom;align=center;spacingBottom=5;dashed=1;endArrow=open;endFill=0;" value="10: Kết quả transaction">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="998.0" y="514.0" as="sourcePoint"/>
+            <mxPoint x="782.0" y="514.0" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="message-11" edge="1" parent="1" style="edgeStyle=none;rounded=0;html=0;strokeColor=#333333;strokeWidth=1;fontFamily=Arial;fontSize=12.8;labelBackgroundColor=#FFFFFF;verticalAlign=bottom;align=center;spacingBottom=5;dashed=1;endArrow=open;endFill=0;" value="11: Hợp đồng mới">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="774.0" y="554.0" as="sourcePoint"/>
+            <mxPoint x="558.0" y="554.0" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="message-12" edge="1" parent="1" style="edgeStyle=none;rounded=0;html=0;strokeColor=#333333;strokeWidth=1;fontFamily=Arial;fontSize=12.8;labelBackgroundColor=#FFFFFF;verticalAlign=bottom;align=center;spacingBottom=5;dashed=1;endArrow=open;endFill=0;" value="12: Trả kết quả thành công">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="550.0" y="594.0" as="sourcePoint"/>
+            <mxPoint x="334.0" y="594.0" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="message-13" edge="1" parent="1" style="edgeStyle=none;rounded=0;html=0;strokeColor=#333333;strokeWidth=1;fontFamily=Arial;fontSize=12.8;labelBackgroundColor=#FFFFFF;verticalAlign=bottom;align=center;spacingBottom=5;dashed=1;endArrow=open;endFill=0;" value="13: Hiển thị hợp đồng">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="326.0" y="634.0" as="sourcePoint"/>
+            <mxPoint x="110.0" y="634.0" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="activation-form-initial" parent="1" style="rounded=0;fillColor=#FFFFFF;strokeColor=#333333;strokeWidth=1;" value="" vertex="1">
+          <mxGeometry height="44.0" width="8.0" x="326.0" y="142.0" as="geometry"/>
+        </mxCell>
+        <mxCell id="activation-db-save" parent="1" style="rounded=0;fillColor=#FFFFFF;strokeColor=#333333;strokeWidth=1;" value="" vertex="1">
+          <mxGeometry height="24.0" width="8.0" x="998.0" y="490.0" as="geometry"/>
+        </mxCell>
+        <mxCell id="sd-frame-label" value="sd  SD-01 — Tạo hợp đồng thuê phòng" style="shape=note;size=10;direction=south;align=left;verticalAlign=middle;spacingLeft=10;fillColor=#F7F7F7;strokeColor=#555555;fontFamily=Arial;fontSize=14;html=0;" vertex="1" parent="1"><mxGeometry x="12" y="12" width="348" height="26" as="geometry"/></mxCell></root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

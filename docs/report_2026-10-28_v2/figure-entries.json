@@ -1,0 +1,800 @@
+[
+  {
+    "anchor": "figure_0001",
+    "title": "Hình 2.1 AR-01 Kiến trúc tổng thể và ranh giới tích hợp",
+    "label": "Hình 2.1",
+    "chapter": "2",
+    "path": "/tmp/rental-report-v2-20261028/diagrams/AR-01.png"
+  },
+  {
+    "anchor": "figure_0002",
+    "title": "Hình 2.2 AR-02 Các lớp kiểm tra truy cập",
+    "label": "Hình 2.2",
+    "chapter": "2",
+    "path": "/tmp/rental-report-v2-20261028/diagrams/AR-02.png"
+  },
+  {
+    "anchor": "figure_0003",
+    "title": "Hình 2.3 UC-OVERVIEW Sơ đồ Use Case tổng quan — Hệ thống quản lý nhà trọ",
+    "label": "Hình 2.3",
+    "chapter": "2",
+    "path": "/tmp/rental-report-v2-20261028/diagrams/UC-OVERVIEW.png"
+  },
+  {
+    "anchor": "figure_0004",
+    "title": "Hình 2.4 D-SYS-01 Tài khoản và phiên làm việc — phần 1",
+    "label": "Hình 2.4",
+    "chapter": "2",
+    "path": "/tmp/rental-report-v2-20261028/diagrams/D-SYS-01.png"
+  },
+  {
+    "anchor": "figure_0005",
+    "title": "Hình 2.5 D-SYS-02 Tài khoản và phiên làm việc — phần 2",
+    "label": "Hình 2.5",
+    "chapter": "2",
+    "path": "/tmp/rental-report-v2-20261028/diagrams/D-SYS-02.png"
+  },
+  {
+    "anchor": "figure_0006",
+    "title": "Hình 2.6 D-DIS-01 Khám phá phòng và hành trình thuê — phần 1",
+    "label": "Hình 2.6",
+    "chapter": "2",
+    "path": "/tmp/rental-report-v2-20261028/diagrams/D-DIS-01.png"
+  },
+  {
+    "anchor": "figure_0007",
+    "title": "Hình 2.7 D-DIS-02 Khám phá phòng và hành trình thuê — phần 2",
+    "label": "Hình 2.7",
+    "chapter": "2",
+    "path": "/tmp/rental-report-v2-20261028/diagrams/D-DIS-02.png"
+  },
+  {
+    "anchor": "figure_0008",
+    "title": "Hình 2.8 D-OPT-01 Khu trọ và phòng — phần 1",
+    "label": "Hình 2.8",
+    "chapter": "2",
+    "path": "/tmp/rental-report-v2-20261028/diagrams/D-OPT-01.png"
+  },
+  {
+    "anchor": "figure_0009",
+    "title": "Hình 2.9 D-OPT-02 Khu trọ và phòng — phần 2",
+    "label": "Hình 2.9",
+    "chapter": "2",
+    "path": "/tmp/rental-report-v2-20261028/diagrams/D-OPT-02.png"
+  },
+  {
+    "anchor": "figure_0010",
+    "title": "Hình 2.10 D-OPT-03 Khu trọ và phòng — phần 3",
+    "label": "Hình 2.10",
+    "chapter": "2",
+    "path": "/tmp/rental-report-v2-20261028/diagrams/D-OPT-03.png"
+  },
+  {
+    "anchor": "figure_0011",
+    "title": "Hình 2.11 D-TNT-01 Hồ sơ người thuê và hợp đồng — phần 1",
+    "label": "Hình 2.11",
+    "chapter": "2",
+    "path": "/tmp/rental-report-v2-20261028/diagrams/D-TNT-01.png"
+  },
+  {
+    "anchor": "figure_0012",
+    "title": "Hình 2.12 D-TNT-02 Hồ sơ người thuê và hợp đồng — phần 2",
+    "label": "Hình 2.12",
+    "chapter": "2",
+    "path": "/tmp/rental-report-v2-20261028/diagrams/D-TNT-02.png"
+  },
+  {
+    "anchor": "figure_0013",
+    "title": "Hình 2.13 D-TNT-03 Hồ sơ người thuê và hợp đồng — phần 3",
+    "label": "Hình 2.13",
+    "chapter": "2",
+    "path": "/tmp/rental-report-v2-20261028/diagrams/D-TNT-03.png"
+  },
+  {
+    "anchor": "figure_0014",
+    "title": "Hình 2.14 D-BIL-01 Hóa đơn và sổ thu chi — phần 1",
+    "label": "Hình 2.14",
+    "chapter": "2",
+    "path": "/tmp/rental-report-v2-20261028/diagrams/D-BIL-01.png"
+  },
+  {
+    "anchor": "figure_0015",
+    "title": "Hình 2.15 D-BIL-02 Hóa đơn và sổ thu chi — phần 2",
+    "label": "Hình 2.15",
+    "chapter": "2",
+    "path": "/tmp/rental-report-v2-20261028/diagrams/D-BIL-02.png"
+  },
+  {
+    "anchor": "figure_0016",
+    "title": "Hình 2.16 D-BIL-03 Hóa đơn và sổ thu chi — phần 3",
+    "label": "Hình 2.16",
+    "chapter": "2",
+    "path": "/tmp/rental-report-v2-20261028/diagrams/D-BIL-03.png"
+  },
+  {
+    "anchor": "figure_0017",
+    "title": "Hình 2.17 D-BIL-04 Hóa đơn và sổ thu chi — phần 4",
+    "label": "Hình 2.17",
+    "chapter": "2",
+    "path": "/tmp/rental-report-v2-20261028/diagrams/D-BIL-04.png"
+  },
+  {
+    "anchor": "figure_0018",
+    "title": "Hình 2.18 D-OPS-01 Bảo trì vận hành và nhật ký — phần 1",
+    "label": "Hình 2.18",
+    "chapter": "2",
+    "path": "/tmp/rental-report-v2-20261028/diagrams/D-OPS-01.png"
+  },
+  {
+    "anchor": "figure_0019",
+    "title": "Hình 2.19 D-OPS-02 Bảo trì vận hành và nhật ký — phần 2",
+    "label": "Hình 2.19",
+    "chapter": "2",
+    "path": "/tmp/rental-report-v2-20261028/diagrams/D-OPS-02.png"
+  },
+  {
+    "anchor": "figure_0020",
+    "title": "Hình 2.20 D-TEN-01 Cổng thông tin người thuê — phần 1",
+    "label": "Hình 2.20",
+    "chapter": "2",
+    "path": "/tmp/rental-report-v2-20261028/diagrams/D-TEN-01.png"
+  },
+  {
+    "anchor": "figure_0021",
+    "title": "Hình 2.21 D-TEN-02 Cổng thông tin người thuê — phần 2",
+    "label": "Hình 2.21",
+    "chapter": "2",
+    "path": "/tmp/rental-report-v2-20261028/diagrams/D-TEN-02.png"
+  },
+  {
+    "anchor": "figure_0022",
+    "title": "Hình 2.22 D-ADM-01 Quản trị và quản lý nền tảng — phần 1",
+    "label": "Hình 2.22",
+    "chapter": "2",
+    "path": "/tmp/rental-report-v2-20261028/diagrams/D-ADM-01.png"
+  },
+  {
+    "anchor": "figure_0023",
+    "title": "Hình 2.23 D-ADM-02 Quản trị và quản lý nền tảng — phần 2",
+    "label": "Hình 2.23",
+    "chapter": "2",
+    "path": "/tmp/rental-report-v2-20261028/diagrams/D-ADM-02.png"
+  },
+  {
+    "anchor": "figure_0024",
+    "title": "Hình 2.24 D-ADM-03 Quản trị và quản lý nền tảng — phần 3",
+    "label": "Hình 2.24",
+    "chapter": "2",
+    "path": "/tmp/rental-report-v2-20261028/diagrams/D-ADM-03.png"
+  },
+  {
+    "anchor": "figure_0025",
+    "title": "Hình 2.25 D-ADM-04 Quản trị và quản lý nền tảng — phần 4",
+    "label": "Hình 2.25",
+    "chapter": "2",
+    "path": "/tmp/rental-report-v2-20261028/diagrams/D-ADM-04.png"
+  },
+  {
+    "anchor": "figure_0026",
+    "title": "Hình 2.26 D-SUP-01 Hỗ trợ và quản trị vận hành — phần 1",
+    "label": "Hình 2.26",
+    "chapter": "2",
+    "path": "/tmp/rental-report-v2-20261028/diagrams/D-SUP-01.png"
+  },
+  {
+    "anchor": "figure_0027",
+    "title": "Hình 2.27 CD-01 Tài khoản và phân quyền",
+    "label": "Hình 2.27",
+    "chapter": "2",
+    "path": "/tmp/rental-report-v2-20261028/diagrams/CD-01.png"
+  },
+  {
+    "anchor": "figure_0028",
+    "title": "Hình 2.28 CD-02 Khu trọ phòng và dữ liệu phụ",
+    "label": "Hình 2.28",
+    "chapter": "2",
+    "path": "/tmp/rental-report-v2-20261028/diagrams/CD-02.png"
+  },
+  {
+    "anchor": "figure_0029",
+    "title": "Hình 2.29 CD-03 Tìm phòng và lịch xem",
+    "label": "Hình 2.29",
+    "chapter": "2",
+    "path": "/tmp/rental-report-v2-20261028/diagrams/CD-03.png"
+  },
+  {
+    "anchor": "figure_0030",
+    "title": "Hình 2.30 CD-04 Người thuê hợp đồng và vòng đời",
+    "label": "Hình 2.30",
+    "chapter": "2",
+    "path": "/tmp/rental-report-v2-20261028/diagrams/CD-04.png"
+  },
+  {
+    "anchor": "figure_0031",
+    "title": "Hình 2.31 CD-05 Tiền cọc và quyết toán",
+    "label": "Hình 2.31",
+    "chapter": "2",
+    "path": "/tmp/rental-report-v2-20261028/diagrams/CD-05.png"
+  },
+  {
+    "anchor": "figure_0032",
+    "title": "Hình 2.32 CD-06 Hóa đơn và giá phiên bản",
+    "label": "Hình 2.32",
+    "chapter": "2",
+    "path": "/tmp/rental-report-v2-20261028/diagrams/CD-06.png"
+  },
+  {
+    "anchor": "figure_0033",
+    "title": "Hình 2.33 CD-07 Khoản thu phân bổ và hoàn tiền",
+    "label": "Hình 2.33",
+    "chapter": "2",
+    "path": "/tmp/rental-report-v2-20261028/diagrams/CD-07.png"
+  },
+  {
+    "anchor": "figure_0034",
+    "title": "Hình 2.34 CD-08 Bảo trì và vận hành định kỳ",
+    "label": "Hình 2.34",
+    "chapter": "2",
+    "path": "/tmp/rental-report-v2-20261028/diagrams/CD-08.png"
+  },
+  {
+    "anchor": "figure_0035",
+    "title": "Hình 2.35 CD-09 Thông báo và delivery",
+    "label": "Hình 2.35",
+    "chapter": "2",
+    "path": "/tmp/rental-report-v2-20261028/diagrams/CD-09.png"
+  },
+  {
+    "anchor": "figure_0036",
+    "title": "Hình 2.36 CD-10 Quản trị nền tảng và đối soát",
+    "label": "Hình 2.36",
+    "chapter": "2",
+    "path": "/tmp/rental-report-v2-20261028/diagrams/CD-10.png"
+  },
+  {
+    "anchor": "figure_0037",
+    "title": "Hình 2.37 CD-11 Hỗ trợ và báo cáo quản trị",
+    "label": "Hình 2.37",
+    "chapter": "2",
+    "path": "/tmp/rental-report-v2-20261028/diagrams/CD-11.png"
+  },
+  {
+    "anchor": "figure_0038",
+    "title": "Hình 2.38 CD-12 Đánh giá tri thức và thanh toán demo",
+    "label": "Hình 2.38",
+    "chapter": "2",
+    "path": "/tmp/rental-report-v2-20261028/diagrams/CD-12.png"
+  },
+  {
+    "anchor": "figure_0039",
+    "title": "Hình 2.39 CD-13 Lời mời tệp và ngữ cảnh tìm phòng",
+    "label": "Hình 2.39",
+    "chapter": "2",
+    "path": "/tmp/rental-report-v2-20261028/diagrams/CD-13.png"
+  },
+  {
+    "anchor": "figure_0040",
+    "title": "Hình 2.40 CD-14 Mẫu thông báo nhóm nhận và automation",
+    "label": "Hình 2.40",
+    "chapter": "2",
+    "path": "/tmp/rental-report-v2-20261028/diagrams/CD-14.png"
+  },
+  {
+    "anchor": "figure_0041",
+    "title": "Hình 2.41 CD-15 Audit phiên đặc quyền và tổ chức Admin",
+    "label": "Hình 2.41",
+    "chapter": "2",
+    "path": "/tmp/rental-report-v2-20261028/diagrams/CD-15.png"
+  },
+  {
+    "anchor": "figure_0042",
+    "title": "Hình 2.42 CD-16 Telemetry sự cố và liên kết hỗ trợ",
+    "label": "Hình 2.42",
+    "chapter": "2",
+    "path": "/tmp/rental-report-v2-20261028/diagrams/CD-16.png"
+  },
+  {
+    "anchor": "figure_0043",
+    "title": "Hình 2.43 CD-17 Chính sách mẫu hỗ trợ và preference nền tảng",
+    "label": "Hình 2.43",
+    "chapter": "2",
+    "path": "/tmp/rental-report-v2-20261028/diagrams/CD-17.png"
+  },
+  {
+    "anchor": "figure_0044",
+    "title": "Hình 2.44 CD-18 Xác minh khu trọ và gói sử dụng nền tảng",
+    "label": "Hình 2.44",
+    "chapter": "2",
+    "path": "/tmp/rental-report-v2-20261028/diagrams/CD-18.png"
+  },
+  {
+    "anchor": "figure_0045",
+    "title": "Hình 2.45 OD-01 Đối tượng khoản thu và hóa đơn thanh toán một phần",
+    "label": "Hình 2.45",
+    "chapter": "2",
+    "path": "/tmp/rental-report-v2-20261028/diagrams/OD-01.png"
+  },
+  {
+    "anchor": "figure_0046",
+    "title": "Hình 2.46 SD-01-1 Đăng nhập và khôi phục phiên — phần 1/2",
+    "label": "Hình 2.46",
+    "chapter": "2",
+    "path": "/tmp/rental-report-v2-20261028/diagrams/SD-01-1.png"
+  },
+  {
+    "anchor": "figure_0047",
+    "title": "Hình 2.47 SD-01-2 Đăng nhập và khôi phục phiên — phần 2/2",
+    "label": "Hình 2.47",
+    "chapter": "2",
+    "path": "/tmp/rental-report-v2-20261028/diagrams/SD-01-2.png"
+  },
+  {
+    "anchor": "figure_0048",
+    "title": "Hình 2.48 SD-02-1 Đặt lịch xem và tạo hợp đồng — phần 1/2",
+    "label": "Hình 2.48",
+    "chapter": "2",
+    "path": "/tmp/rental-report-v2-20261028/diagrams/SD-02-1.png"
+  },
+  {
+    "anchor": "figure_0049",
+    "title": "Hình 2.49 SD-02-2 Đặt lịch xem và tạo hợp đồng — phần 2/2",
+    "label": "Hình 2.49",
+    "chapter": "2",
+    "path": "/tmp/rental-report-v2-20261028/diagrams/SD-02-2.png"
+  },
+  {
+    "anchor": "figure_0050",
+    "title": "Hình 2.50 SD-03-1 Tạo hợp đồng và ghi nhận cọc — phần 1/2",
+    "label": "Hình 2.50",
+    "chapter": "2",
+    "path": "/tmp/rental-report-v2-20261028/diagrams/SD-03-1.png"
+  },
+  {
+    "anchor": "figure_0051",
+    "title": "Hình 2.51 SD-03-2 Tạo hợp đồng và ghi nhận cọc — phần 2/2",
+    "label": "Hình 2.51",
+    "chapter": "2",
+    "path": "/tmp/rental-report-v2-20261028/diagrams/SD-03-2.png"
+  },
+  {
+    "anchor": "figure_0052",
+    "title": "Hình 2.52 SD-04-1 Đề xuất và phê duyệt biểu phí — phần 1/2",
+    "label": "Hình 2.52",
+    "chapter": "2",
+    "path": "/tmp/rental-report-v2-20261028/diagrams/SD-04-1.png"
+  },
+  {
+    "anchor": "figure_0053",
+    "title": "Hình 2.53 SD-04-2 Đề xuất và phê duyệt biểu phí — phần 2/2",
+    "label": "Hình 2.53",
+    "chapter": "2",
+    "path": "/tmp/rental-report-v2-20261028/diagrams/SD-04-2.png"
+  },
+  {
+    "anchor": "figure_0054",
+    "title": "Hình 2.54 SD-05-1 Preview và phát hành hóa đơn — phần 1/2",
+    "label": "Hình 2.54",
+    "chapter": "2",
+    "path": "/tmp/rental-report-v2-20261028/diagrams/SD-05-1.png"
+  },
+  {
+    "anchor": "figure_0055",
+    "title": "Hình 2.55 SD-05-2 Preview và phát hành hóa đơn — phần 2/2",
+    "label": "Hình 2.55",
+    "chapter": "2",
+    "path": "/tmp/rental-report-v2-20261028/diagrams/SD-05-2.png"
+  },
+  {
+    "anchor": "figure_0056",
+    "title": "Hình 2.56 SD-06-1 Khoản thu và phân bổ nhiều hóa đơn — phần 1/2",
+    "label": "Hình 2.56",
+    "chapter": "2",
+    "path": "/tmp/rental-report-v2-20261028/diagrams/SD-06-1.png"
+  },
+  {
+    "anchor": "figure_0057",
+    "title": "Hình 2.57 SD-06-2 Khoản thu và phân bổ nhiều hóa đơn — phần 2/2",
+    "label": "Hình 2.57",
+    "chapter": "2",
+    "path": "/tmp/rental-report-v2-20261028/diagrams/SD-06-2.png"
+  },
+  {
+    "anchor": "figure_0058",
+    "title": "Hình 2.58 SD-07-1 Giải phóng phân bổ và ghi hoàn tiền — phần 1/2",
+    "label": "Hình 2.58",
+    "chapter": "2",
+    "path": "/tmp/rental-report-v2-20261028/diagrams/SD-07-1.png"
+  },
+  {
+    "anchor": "figure_0059",
+    "title": "Hình 2.59 SD-07-2 Giải phóng phân bổ và ghi hoàn tiền — phần 2/2",
+    "label": "Hình 2.59",
+    "chapter": "2",
+    "path": "/tmp/rental-report-v2-20261028/diagrams/SD-07-2.png"
+  },
+  {
+    "anchor": "figure_0060",
+    "title": "Hình 2.60 SD-08-1 Người thuê gửi và chủ trọ duyệt proof — phần 1/2",
+    "label": "Hình 2.60",
+    "chapter": "2",
+    "path": "/tmp/rental-report-v2-20261028/diagrams/SD-08-1.png"
+  },
+  {
+    "anchor": "figure_0061",
+    "title": "Hình 2.61 SD-08-2 Người thuê gửi và chủ trọ duyệt proof — phần 2/2",
+    "label": "Hình 2.61",
+    "chapter": "2",
+    "path": "/tmp/rental-report-v2-20261028/diagrams/SD-08-2.png"
+  },
+  {
+    "anchor": "figure_0062",
+    "title": "Hình 2.62 SD-09-1 Hóa đơn thay thế và điều chỉnh — phần 1/2",
+    "label": "Hình 2.62",
+    "chapter": "2",
+    "path": "/tmp/rental-report-v2-20261028/diagrams/SD-09-1.png"
+  },
+  {
+    "anchor": "figure_0063",
+    "title": "Hình 2.63 SD-09-2 Hóa đơn thay thế và điều chỉnh — phần 2/2",
+    "label": "Hình 2.63",
+    "chapter": "2",
+    "path": "/tmp/rental-report-v2-20261028/diagrams/SD-09-2.png"
+  },
+  {
+    "anchor": "figure_0064",
+    "title": "Hình 2.64 SD-10-1 Quyết toán và ghi nhận hoàn cọc — phần 1/2",
+    "label": "Hình 2.64",
+    "chapter": "2",
+    "path": "/tmp/rental-report-v2-20261028/diagrams/SD-10-1.png"
+  },
+  {
+    "anchor": "figure_0065",
+    "title": "Hình 2.65 SD-10-2 Quyết toán và ghi nhận hoàn cọc — phần 2/2",
+    "label": "Hình 2.65",
+    "chapter": "2",
+    "path": "/tmp/rental-report-v2-20261028/diagrams/SD-10-2.png"
+  },
+  {
+    "anchor": "figure_0066",
+    "title": "Hình 2.66 SD-11-1 Yêu cầu và thực thi vòng đời thuê — phần 1/2",
+    "label": "Hình 2.66",
+    "chapter": "2",
+    "path": "/tmp/rental-report-v2-20261028/diagrams/SD-11-1.png"
+  },
+  {
+    "anchor": "figure_0067",
+    "title": "Hình 2.67 SD-11-2 Yêu cầu và thực thi vòng đời thuê — phần 2/2",
+    "label": "Hình 2.67",
+    "chapter": "2",
+    "path": "/tmp/rental-report-v2-20261028/diagrams/SD-11-2.png"
+  },
+  {
+    "anchor": "figure_0068",
+    "title": "Hình 2.68 SD-12-1 Bảo trì phân công và hoàn tất — phần 1/2",
+    "label": "Hình 2.68",
+    "chapter": "2",
+    "path": "/tmp/rental-report-v2-20261028/diagrams/SD-12-1.png"
+  },
+  {
+    "anchor": "figure_0069",
+    "title": "Hình 2.69 SD-12-2 Bảo trì phân công và hoàn tất — phần 2/2",
+    "label": "Hình 2.69",
+    "chapter": "2",
+    "path": "/tmp/rental-report-v2-20261028/diagrams/SD-12-2.png"
+  },
+  {
+    "anchor": "figure_0070",
+    "title": "Hình 2.70 SD-13-1 Báo cáo tháng và CSV — phần 1/2",
+    "label": "Hình 2.70",
+    "chapter": "2",
+    "path": "/tmp/rental-report-v2-20261028/diagrams/SD-13-1.png"
+  },
+  {
+    "anchor": "figure_0071",
+    "title": "Hình 2.71 SD-13-2 Báo cáo tháng và CSV — phần 2/2",
+    "label": "Hình 2.71",
+    "chapter": "2",
+    "path": "/tmp/rental-report-v2-20261028/diagrams/SD-13-2.png"
+  },
+  {
+    "anchor": "figure_0072",
+    "title": "Hình 2.72 SD-14-1 Đình chỉ tài khoản và thu hồi phiên — phần 1/2",
+    "label": "Hình 2.72",
+    "chapter": "2",
+    "path": "/tmp/rental-report-v2-20261028/diagrams/SD-14-1.png"
+  },
+  {
+    "anchor": "figure_0073",
+    "title": "Hình 2.73 SD-14-2 Đình chỉ tài khoản và thu hồi phiên — phần 2/2",
+    "label": "Hình 2.73",
+    "chapter": "2",
+    "path": "/tmp/rental-report-v2-20261028/diagrams/SD-14-2.png"
+  },
+  {
+    "anchor": "figure_0074",
+    "title": "Hình 2.74 SD-15-1 Inventory và chuyển sang kiểm duyệt — phần 1/2",
+    "label": "Hình 2.74",
+    "chapter": "2",
+    "path": "/tmp/rental-report-v2-20261028/diagrams/SD-15-1.png"
+  },
+  {
+    "anchor": "figure_0075",
+    "title": "Hình 2.75 SD-15-2 Inventory và chuyển sang kiểm duyệt — phần 2/2",
+    "label": "Hình 2.75",
+    "chapter": "2",
+    "path": "/tmp/rental-report-v2-20261028/diagrams/SD-15-2.png"
+  },
+  {
+    "anchor": "figure_0076",
+    "title": "Hình 2.76 SD-16-1 Đối soát khoản thu maker checker — phần 1/2",
+    "label": "Hình 2.76",
+    "chapter": "2",
+    "path": "/tmp/rental-report-v2-20261028/diagrams/SD-16-1.png"
+  },
+  {
+    "anchor": "figure_0077",
+    "title": "Hình 2.77 SD-16-2 Đối soát khoản thu maker checker — phần 2/2",
+    "label": "Hình 2.77",
+    "chapter": "2",
+    "path": "/tmp/rental-report-v2-20261028/diagrams/SD-16-2.png"
+  },
+  {
+    "anchor": "figure_0078",
+    "title": "Hình 2.78 SD-17-1 Chatbot truy xuất nguồn theo quyền — phần 1/2",
+    "label": "Hình 2.78",
+    "chapter": "2",
+    "path": "/tmp/rental-report-v2-20261028/diagrams/SD-17-1.png"
+  },
+  {
+    "anchor": "figure_0079",
+    "title": "Hình 2.79 SD-17-2 Chatbot truy xuất nguồn theo quyền — phần 2/2",
+    "label": "Hình 2.79",
+    "chapter": "2",
+    "path": "/tmp/rental-report-v2-20261028/diagrams/SD-17-2.png"
+  },
+  {
+    "anchor": "figure_0080",
+    "title": "Hình 2.80 SD-18-1 Duyệt xác minh chủ trọ theo hồ sơ hỗ trợ — phần 1/2",
+    "label": "Hình 2.80",
+    "chapter": "2",
+    "path": "/tmp/rental-report-v2-20261028/diagrams/SD-18-1.png"
+  },
+  {
+    "anchor": "figure_0081",
+    "title": "Hình 2.81 SD-18-2 Duyệt xác minh chủ trọ theo hồ sơ hỗ trợ — phần 2/2",
+    "label": "Hình 2.81",
+    "chapter": "2",
+    "path": "/tmp/rental-report-v2-20261028/diagrams/SD-18-2.png"
+  },
+  {
+    "anchor": "figure_0082",
+    "title": "Hình 2.82 SD-19-1 Gán gói sử dụng và lưu lịch sử không ghi doanh thu — phần 1/2",
+    "label": "Hình 2.82",
+    "chapter": "2",
+    "path": "/tmp/rental-report-v2-20261028/diagrams/SD-19-1.png"
+  },
+  {
+    "anchor": "figure_0083",
+    "title": "Hình 2.83 SD-19-2 Gán gói sử dụng và lưu lịch sử không ghi doanh thu — phần 2/2",
+    "label": "Hình 2.83",
+    "chapter": "2",
+    "path": "/tmp/rental-report-v2-20261028/diagrams/SD-19-2.png"
+  },
+  {
+    "anchor": "figure_0084",
+    "title": "Hình 2.84 UI-01 Đăng nhập tài khoản — dữ liệu fixture, widget render",
+    "label": "Hình 2.84",
+    "chapter": "2",
+    "path": "/tmp/rental-report-v2-20261028/ui-v2/public-login_001.png"
+  },
+  {
+    "anchor": "figure_0085",
+    "title": "Hình 2.85 UI-02 Đăng ký tài khoản — dữ liệu fixture, widget render",
+    "label": "Hình 2.85",
+    "chapter": "2",
+    "path": "/tmp/rental-report-v2-20261028/ui-v2/public-register_002.png"
+  },
+  {
+    "anchor": "figure_0086",
+    "title": "Hình 2.86 UI-03 Khách vãng lai khám phá và tìm phòng — dữ liệu fixture, widget render",
+    "label": "Hình 2.86",
+    "chapter": "2",
+    "path": "/tmp/rental-report-v2-20261028/ui-v2/listings_screen_test_001.png"
+  },
+  {
+    "anchor": "figure_0087",
+    "title": "Hình 2.87 UI-04 Khách vãng lai xem chi tiết tin phòng — dữ liệu fixture, widget render",
+    "label": "Hình 2.87",
+    "chapter": "2",
+    "path": "/tmp/rental-report-v2-20261028/ui-v2/listings_screen_test_003.png"
+  },
+  {
+    "anchor": "figure_0088",
+    "title": "Hình 2.88 UI-05 Chủ trọ xem dashboard và bản đồ phòng — dữ liệu fixture, widget render",
+    "label": "Hình 2.88",
+    "chapter": "2",
+    "path": "/tmp/rental-report-v2-20261028/ui-v2/landlord-dashboard_001.png"
+  },
+  {
+    "anchor": "figure_0089",
+    "title": "Hình 2.89 UI-06 Chủ trọ tra cứu danh sách khu trọ — dữ liệu fixture, widget render",
+    "label": "Hình 2.89",
+    "chapter": "2",
+    "path": "/tmp/rental-report-v2-20261028/ui-v2/properties_test_001.png"
+  },
+  {
+    "anchor": "figure_0090",
+    "title": "Hình 2.90 UI-07 Chủ trọ cập nhật thông tin khu trọ — dữ liệu fixture, widget render",
+    "label": "Hình 2.90",
+    "chapter": "2",
+    "path": "/tmp/rental-report-v2-20261028/ui-v2/properties_test_004.png"
+  },
+  {
+    "anchor": "figure_0091",
+    "title": "Hình 2.91 UI-08 Chủ trọ xem chi tiết phòng — dữ liệu fixture, widget render",
+    "label": "Hình 2.91",
+    "chapter": "2",
+    "path": "/tmp/rental-report-v2-20261028/ui-v2/room_detail_screen_test_001.png"
+  },
+  {
+    "anchor": "figure_0092",
+    "title": "Hình 2.92 UI-09 Chủ trọ mở luồng quyết toán trả phòng — dữ liệu fixture, widget render",
+    "label": "Hình 2.92",
+    "chapter": "2",
+    "path": "/tmp/rental-report-v2-20261028/ui-v2/lease_settlement_screen_test_001.png"
+  },
+  {
+    "anchor": "figure_0093",
+    "title": "Hình 2.93 UI-10 Người thuê xem tổng quan phòng đang thuê — dữ liệu fixture, widget render",
+    "label": "Hình 2.93",
+    "chapter": "2",
+    "path": "/tmp/rental-report-v2-20261028/ui-v2/tenant-overview_001.png"
+  },
+  {
+    "anchor": "figure_0094",
+    "title": "Hình 2.94 UI-11 Người thuê xem danh sách hóa đơn — dữ liệu fixture, widget render",
+    "label": "Hình 2.94",
+    "chapter": "2",
+    "path": "/tmp/rental-report-v2-20261028/ui-v2/tenant-invoices_002.png"
+  },
+  {
+    "anchor": "figure_0095",
+    "title": "Hình 2.95 UI-12 Người thuê xem chi tiết hóa đơn — dữ liệu fixture, widget render",
+    "label": "Hình 2.95",
+    "chapter": "2",
+    "path": "/tmp/rental-report-v2-20261028/ui-v2/tenant-invoice-detail_006.png"
+  },
+  {
+    "anchor": "figure_0096",
+    "title": "Hình 2.96 UI-13 Người thuê xem hợp đồng và tiền cọc — dữ liệu fixture, widget render",
+    "label": "Hình 2.96",
+    "chapter": "2",
+    "path": "/tmp/rental-report-v2-20261028/ui-v2/tenant-leases_003.png"
+  },
+  {
+    "anchor": "figure_0097",
+    "title": "Hình 2.97 UI-14 Người thuê theo dõi yêu cầu bảo trì — dữ liệu fixture, widget render",
+    "label": "Hình 2.97",
+    "chapter": "2",
+    "path": "/tmp/rental-report-v2-20261028/ui-v2/tenant-maintenance_004.png"
+  },
+  {
+    "anchor": "figure_0098",
+    "title": "Hình 2.98 UI-15 Người thuê xem thông báo — dữ liệu fixture, widget render",
+    "label": "Hình 2.98",
+    "chapter": "2",
+    "path": "/tmp/rental-report-v2-20261028/ui-v2/tenant-notifications_005.png"
+  },
+  {
+    "anchor": "figure_0099",
+    "title": "Hình 2.99 UI-16 Chủ trọ quản lý người thuê — dữ liệu fixture, widget render",
+    "label": "Hình 2.99",
+    "chapter": "2",
+    "path": "/tmp/rental-report-v2-20261028/ui-v2/landlord-tenants_003.png"
+  },
+  {
+    "anchor": "figure_0100",
+    "title": "Hình 2.100 UI-17 Chủ trọ quản lý hóa đơn và công nợ — dữ liệu fixture, widget render",
+    "label": "Hình 2.100",
+    "chapter": "2",
+    "path": "/tmp/rental-report-v2-20261028/ui-v2/landlord-invoices_004.png"
+  },
+  {
+    "anchor": "figure_0101",
+    "title": "Hình 2.101 UI-18 Chủ trọ xem báo cáo theo tháng — dữ liệu fixture, widget render",
+    "label": "Hình 2.101",
+    "chapter": "2",
+    "path": "/tmp/rental-report-v2-20261028/ui-v2/landlord-monthly-report_005.png"
+  },
+  {
+    "anchor": "figure_0102",
+    "title": "Hình 2.102 UI-19 Workspace Admin trên desktop — dữ liệu fixture, widget render",
+    "label": "Hình 2.102",
+    "chapter": "2",
+    "path": "/tmp/rental-report-v2-20261028/ui/workspace-desktop.png"
+  },
+  {
+    "anchor": "figure_0103",
+    "title": "Hình 2.103 UI-20 Workspace Admin trên màn hình hẹp — dữ liệu fixture, widget render",
+    "label": "Hình 2.103",
+    "chapter": "2",
+    "path": "/tmp/rental-report-v2-20261028/ui/workspace-phone.png"
+  },
+  {
+    "anchor": "figure_0104",
+    "title": "Hình 2.104 UI-21 Danh sách tài khoản và bộ lọc — dữ liệu fixture, widget render",
+    "label": "Hình 2.104",
+    "chapter": "2",
+    "path": "/tmp/rental-report-v2-20261028/ui/accounts-desktop.png"
+  },
+  {
+    "anchor": "figure_0105",
+    "title": "Hình 2.105 UI-22 Chi tiết tài khoản và hành động quản trị — dữ liệu fixture, widget render",
+    "label": "Hình 2.105",
+    "chapter": "2",
+    "path": "/tmp/rental-report-v2-20261028/ui/account-detail-desktop.png"
+  },
+  {
+    "anchor": "figure_0106",
+    "title": "Hình 2.106 UI-23 Inventory khu trọ và phân trang — dữ liệu fixture, widget render",
+    "label": "Hình 2.106",
+    "chapter": "2",
+    "path": "/tmp/rental-report-v2-20261028/ui/inventory-properties-desktop.png"
+  },
+  {
+    "anchor": "figure_0107",
+    "title": "Hình 2.107 UI-24 Inventory phòng có trạng thái tin đăng riêng — dữ liệu fixture, widget render",
+    "label": "Hình 2.107",
+    "chapter": "2",
+    "path": "/tmp/rental-report-v2-20261028/ui/inventory-rooms-desktop.png"
+  },
+  {
+    "anchor": "figure_0108",
+    "title": "Hình 2.108 UI-25 Inventory phòng ở chữ lớn trên mobile phần 1/2 — ảnh widget cắt nối tiếp, không đổi màu",
+    "label": "Hình 2.108",
+    "chapter": "2",
+    "path": "/tmp/rental-report-v2-20261028/ui-v2/inventory-rooms-mobile-200-panel-1.png"
+  },
+  {
+    "anchor": "figure_0109",
+    "title": "Hình 2.109 UI-25 Inventory phòng ở chữ lớn trên mobile phần 2/2 — ảnh widget cắt nối tiếp, không đổi màu",
+    "label": "Hình 2.109",
+    "chapter": "2",
+    "path": "/tmp/rental-report-v2-20261028/ui-v2/inventory-rooms-mobile-200-panel-2.png"
+  },
+  {
+    "anchor": "figure_0110",
+    "title": "Hình 2.110 UI-26 Chi tiết khu với preview phòng giới hạn phần 1/2 — ảnh widget cắt nối tiếp, không đổi màu",
+    "label": "Hình 2.110",
+    "chapter": "2",
+    "path": "/tmp/rental-report-v2-20261028/ui-v2/inventory-detail-mobile-200-panel-1.png"
+  },
+  {
+    "anchor": "figure_0111",
+    "title": "Hình 2.111 UI-26 Chi tiết khu với preview phòng giới hạn phần 2/2 — ảnh widget cắt nối tiếp, không đổi màu",
+    "label": "Hình 2.111",
+    "chapter": "2",
+    "path": "/tmp/rental-report-v2-20261028/ui-v2/inventory-detail-mobile-200-panel-2.png"
+  },
+  {
+    "anchor": "figure_0112",
+    "title": "Hình 2.112 UI-27 Form đề xuất biểu phí trên mobile — ảnh kiểm thử có sẵn trong workspace",
+    "label": "Hình 2.112",
+    "chapter": "2",
+    "path": "/Users/hoang/Rental_room_management/.impeccable/review/tariffs-phone-form.png"
+  },
+  {
+    "anchor": "figure_0113",
+    "title": "Hình 2.113 UI-28 Lịch sử và so sánh biểu phí trên tablet — ảnh kiểm thử có sẵn trong workspace",
+    "label": "Hình 2.113",
+    "chapter": "2",
+    "path": "/Users/hoang/Rental_room_management/.impeccable/review/tariffs-tablet.png"
+  },
+  {
+    "anchor": "figure_0114",
+    "title": "Hình 3.1 KH-01 Gantt tham chiếu 8 tuần để hoàn thiện và nghiệm thu",
+    "label": "Hình 3.1",
+    "chapter": "3",
+    "path": "/tmp/rental-report-v2-20261028/gantt.png"
+  }
+]

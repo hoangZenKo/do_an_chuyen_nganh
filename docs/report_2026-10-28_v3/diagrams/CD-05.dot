@@ -1,0 +1,14 @@
+digraph G {
+graph [bgcolor="white",rankdir=LR,nodesep=0.35,ranksep=0.85,pad=0.15,splines=polyline];
+node [fontname="Times New Roman", fontsize=17, color="black", fontcolor="black", style="filled", fillcolor="white", penwidth=1.1];
+edge [fontname="Times New Roman", fontsize=14, color="black", arrowsize=0.7, penwidth=0.9];
+Lease [shape=plain,label=<<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0" CELLPADDING="5"><TR><TD><B>Lease</B></TD></TR><TR><TD BORDER="1" SIDES="T"></TD></TR><TR><TD ALIGN="LEFT">id: String</TD></TR><TR><TD ALIGN="LEFT">tenantId: String</TD></TR><TR><TD ALIGN="LEFT">roomId: String</TD></TR><TR><TD ALIGN="LEFT">status: LeaseStatus</TD></TR><TR><TD ALIGN="LEFT">startDate: DateTime</TD></TR></TABLE>>];
+LeaseChange [shape=plain,label=<<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0" CELLPADDING="5"><TR><TD><B>LeaseChange</B></TD></TR><TR><TD BORDER="1" SIDES="T"></TD></TR><TR><TD ALIGN="LEFT">id: String</TD></TR><TR><TD ALIGN="LEFT">landlordId: String</TD></TR><TR><TD ALIGN="LEFT">leaseId: String</TD></TR><TR><TD ALIGN="LEFT">changeType: String</TD></TR><TR><TD ALIGN="LEFT">previousValues: Json</TD></TR></TABLE>>];
+DepositTransaction [shape=plain,label=<<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0" CELLPADDING="5"><TR><TD><B>DepositTransaction</B></TD></TR><TR><TD BORDER="1" SIDES="T"></TD></TR><TR><TD ALIGN="LEFT">id: String</TD></TR><TR><TD ALIGN="LEFT">landlordId: String</TD></TR><TR><TD ALIGN="LEFT">leaseId: String</TD></TR><TR><TD ALIGN="LEFT">amount: Int</TD></TR><TR><TD ALIGN="LEFT">type: DepositTransactionType</TD></TR></TABLE>>];
+LeaseSettlement [shape=plain,label=<<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0" CELLPADDING="5"><TR><TD><B>LeaseSettlement</B></TD></TR><TR><TD BORDER="1" SIDES="T"></TD></TR><TR><TD ALIGN="LEFT">id: String</TD></TR><TR><TD ALIGN="LEFT">landlordId: String</TD></TR><TR><TD ALIGN="LEFT">leaseId: String</TD></TR><TR><TD ALIGN="LEFT">status: LeaseSettlementStatus</TD></TR><TR><TD ALIGN="LEFT">version: Int</TD></TR></TABLE>>];
+LeaseSettlementLine [shape=plain,label=<<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0" CELLPADDING="5"><TR><TD><B>LeaseSettlementLine</B></TD></TR><TR><TD BORDER="1" SIDES="T"></TD></TR><TR><TD ALIGN="LEFT">id: String</TD></TR><TR><TD ALIGN="LEFT">amount: Int</TD></TR><TR><TD ALIGN="LEFT">settlementId: String</TD></TR><TR><TD ALIGN="LEFT">kind: String</TD></TR><TR><TD ALIGN="LEFT">description: String</TD></TR></TABLE>>];
+DepositTransaction -> Lease [dir=none,label="lease",taillabel="0..*",headlabel="1",labeldistance=2.1];
+LeaseChange -> Lease [dir=none,label="lease",taillabel="0..*",headlabel="1",labeldistance=2.1];
+LeaseSettlement -> Lease [dir=none,label="lease",taillabel="0..1",headlabel="1",labeldistance=2.1];
+LeaseSettlementLine -> LeaseSettlement [dir=none,label="settlement",taillabel="0..*",headlabel="1",labeldistance=2.1];
+}

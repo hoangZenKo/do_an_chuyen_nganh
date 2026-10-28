@@ -1,0 +1,434 @@
+[
+  {
+    "id": "SD-01",
+    "anchors": [
+      {
+        "path": "backend/src/auth/auth.service.ts",
+        "method": "login",
+        "line": 70,
+        "sha256": "3c5bffa0396e703b7d51d96949831360e376d6927f3fce067a723dadb4cb5bf0"
+      },
+      {
+        "path": "backend/src/auth/auth.service.ts",
+        "method": "refresh",
+        "line": 90,
+        "sha256": "3c5bffa0396e703b7d51d96949831360e376d6927f3fce067a723dadb4cb5bf0"
+      },
+      {
+        "path": "backend/src/auth/auth.service.ts",
+        "method": "issueSession",
+        "line": 178,
+        "sha256": "3c5bffa0396e703b7d51d96949831360e376d6927f3fce067a723dadb4cb5bf0"
+      }
+    ],
+    "review": "Đối chiếu success/error guards, actor, transaction và side effects; không có kiểm thử E2E mới."
+  },
+  {
+    "id": "SD-02",
+    "anchors": [
+      {
+        "path": "backend/src/housing/housing.service.ts",
+        "method": "book",
+        "line": 82,
+        "sha256": "9260f60d85a55c0bc65db5c6279d8848f6bea02da4bc16fc1bae831a06d07854"
+      },
+      {
+        "path": "backend/src/housing/housing.service.ts",
+        "method": "update",
+        "line": 207,
+        "sha256": "9260f60d85a55c0bc65db5c6279d8848f6bea02da4bc16fc1bae831a06d07854"
+      },
+      {
+        "path": "backend/src/housing/housing.service.ts",
+        "method": "createLease",
+        "line": 239,
+        "sha256": "9260f60d85a55c0bc65db5c6279d8848f6bea02da4bc16fc1bae831a06d07854"
+      }
+    ],
+    "review": "Đối chiếu success/error guards, actor, transaction và side effects; không có kiểm thử E2E mới."
+  },
+  {
+    "id": "SD-03",
+    "anchors": [
+      {
+        "path": "backend/src/leases/leases.service.ts",
+        "method": "create",
+        "line": 87,
+        "sha256": "a180f67b708e91e08994725833bceb25b7ac97f408c8941d9886c702709e9eb1"
+      },
+      {
+        "path": "backend/src/leases/leases.service.ts",
+        "method": "createWithinTransaction",
+        "line": 92,
+        "sha256": "a180f67b708e91e08994725833bceb25b7ac97f408c8941d9886c702709e9eb1"
+      }
+    ],
+    "review": "Đối chiếu success/error guards, actor, transaction và side effects; không có kiểm thử E2E mới."
+  },
+  {
+    "id": "SD-04",
+    "anchors": [
+      {
+        "path": "backend/src/billing/billing-tariffs.service.ts",
+        "method": "propose",
+        "line": 24,
+        "sha256": "e0033d0b3fc75efd248a115b323c514444fe495e08a5d474684fcb8186662a18"
+      },
+      {
+        "path": "backend/src/billing/billing-tariffs.service.ts",
+        "method": "impact",
+        "line": 43,
+        "sha256": "e0033d0b3fc75efd248a115b323c514444fe495e08a5d474684fcb8186662a18"
+      },
+      {
+        "path": "backend/src/billing/billing-tariffs.service.ts",
+        "method": "review",
+        "line": 66,
+        "sha256": "e0033d0b3fc75efd248a115b323c514444fe495e08a5d474684fcb8186662a18"
+      }
+    ],
+    "review": "Đối chiếu success/error guards, actor, transaction và side effects; không có kiểm thử E2E mới."
+  },
+  {
+    "id": "SD-05",
+    "anchors": [
+      {
+        "path": "backend/src/billing/billing-tariffs.service.ts",
+        "method": "preview",
+        "line": 99,
+        "sha256": "e0033d0b3fc75efd248a115b323c514444fe495e08a5d474684fcb8186662a18"
+      },
+      {
+        "path": "backend/src/billing/billing.service.ts",
+        "method": "createInvoice",
+        "line": 290,
+        "sha256": "45271709a402e2034a553e83d01d24a8cac4772e742ccb95011848dc7269c3ee"
+      },
+      {
+        "path": "backend/src/billing/billing.service.ts",
+        "method": "bulkInvoicePreflight",
+        "line": 383,
+        "sha256": "45271709a402e2034a553e83d01d24a8cac4772e742ccb95011848dc7269c3ee"
+      },
+      {
+        "path": "backend/src/billing/billing.service.ts",
+        "method": "createBulkInvoices",
+        "line": 459,
+        "sha256": "45271709a402e2034a553e83d01d24a8cac4772e742ccb95011848dc7269c3ee"
+      }
+    ],
+    "review": "Đối chiếu success/error guards, actor, transaction và side effects; không có kiểm thử E2E mới."
+  },
+  {
+    "id": "SD-06",
+    "anchors": [
+      {
+        "path": "backend/src/billing/billing-ledger.service.ts",
+        "method": "createReceipt",
+        "line": 87,
+        "sha256": "1da9486ba1b4f4511bd7f73cd49183344b5119204ffcf6d26691c0725306fb6f"
+      },
+      {
+        "path": "backend/src/billing/billing-ledger.service.ts",
+        "method": "allocate",
+        "line": 100,
+        "sha256": "1da9486ba1b4f4511bd7f73cd49183344b5119204ffcf6d26691c0725306fb6f"
+      },
+      {
+        "path": "backend/src/billing/billing-ledger.service.ts",
+        "method": "allocateLines",
+        "line": 174,
+        "sha256": "1da9486ba1b4f4511bd7f73cd49183344b5119204ffcf6d26691c0725306fb6f"
+      },
+      {
+        "path": "backend/src/billing/billing-commands.service.ts",
+        "method": "execute",
+        "line": 12,
+        "sha256": "f0a04fdcbf7c3c9c416c1f3bf42a894cbbcd0bd8ec34294e79fe583e43302875"
+      }
+    ],
+    "review": "Đối chiếu success/error guards, actor, transaction và side effects; không có kiểm thử E2E mới."
+  },
+  {
+    "id": "SD-07",
+    "anchors": [
+      {
+        "path": "backend/src/billing/billing-ledger.service.ts",
+        "method": "release",
+        "line": 110,
+        "sha256": "1da9486ba1b4f4511bd7f73cd49183344b5119204ffcf6d26691c0725306fb6f"
+      },
+      {
+        "path": "backend/src/billing/billing-ledger.service.ts",
+        "method": "refund",
+        "line": 131,
+        "sha256": "1da9486ba1b4f4511bd7f73cd49183344b5119204ffcf6d26691c0725306fb6f"
+      }
+    ],
+    "review": "Đối chiếu success/error guards, actor, transaction và side effects; không có kiểm thử E2E mới."
+  },
+  {
+    "id": "SD-08",
+    "anchors": [
+      {
+        "path": "backend/src/tenant-portal/tenant-portal.service.ts",
+        "method": "submitPaymentProof",
+        "line": 425,
+        "sha256": "477edcc2d839aa4fe04e77e39e9de8e59b0a5a1b75a2647f49ab903a7afe273f"
+      },
+      {
+        "path": "backend/src/billing/billing.service.ts",
+        "method": "reviewPaymentProof",
+        "line": 1052,
+        "sha256": "45271709a402e2034a553e83d01d24a8cac4772e742ccb95011848dc7269c3ee"
+      }
+    ],
+    "review": "Đối chiếu success/error guards, actor, transaction và side effects; không có kiểm thử E2E mới."
+  },
+  {
+    "id": "SD-09",
+    "anchors": [
+      {
+        "path": "backend/src/billing/billing-ledger.service.ts",
+        "method": "replace",
+        "line": 24,
+        "sha256": "1da9486ba1b4f4511bd7f73cd49183344b5119204ffcf6d26691c0725306fb6f"
+      },
+      {
+        "path": "backend/src/billing/billing-ledger.service.ts",
+        "method": "adjust",
+        "line": 59,
+        "sha256": "1da9486ba1b4f4511bd7f73cd49183344b5119204ffcf6d26691c0725306fb6f"
+      }
+    ],
+    "review": "Đối chiếu success/error guards, actor, transaction và side effects; không có kiểm thử E2E mới."
+  },
+  {
+    "id": "SD-10",
+    "anchors": [
+      {
+        "path": "backend/src/leases/settlements.service.ts",
+        "method": "preview",
+        "line": 52,
+        "sha256": "37a2a121e8c293d1cdd57ea16669e42cfec9ee9597648ef94d5630dbf2e98072"
+      },
+      {
+        "path": "backend/src/leases/settlements.service.ts",
+        "method": "confirm",
+        "line": 60,
+        "sha256": "37a2a121e8c293d1cdd57ea16669e42cfec9ee9597648ef94d5630dbf2e98072"
+      },
+      {
+        "path": "backend/src/leases/settlements.service.ts",
+        "method": "recordRefund",
+        "line": 100,
+        "sha256": "37a2a121e8c293d1cdd57ea16669e42cfec9ee9597648ef94d5630dbf2e98072"
+      }
+    ],
+    "review": "Đối chiếu success/error guards, actor, transaction và side effects; không có kiểm thử E2E mới."
+  },
+  {
+    "id": "SD-11",
+    "anchors": [
+      {
+        "path": "backend/src/tenant-lifecycle/tenant-lifecycle.service.ts",
+        "method": "createRequest",
+        "line": 60,
+        "sha256": "812d0246d169759f82e695bbc7bc0b703f6d9fec2d0562714b2a5d32fa72798c"
+      },
+      {
+        "path": "backend/src/tenant-lifecycle/tenant-lifecycle.service.ts",
+        "method": "decideRequest",
+        "line": 101,
+        "sha256": "812d0246d169759f82e695bbc7bc0b703f6d9fec2d0562714b2a5d32fa72798c"
+      },
+      {
+        "path": "backend/src/tenant-lifecycle/tenant-lifecycle.service.ts",
+        "method": "executeRequest",
+        "line": 147,
+        "sha256": "812d0246d169759f82e695bbc7bc0b703f6d9fec2d0562714b2a5d32fa72798c"
+      }
+    ],
+    "review": "Đối chiếu success/error guards, actor, transaction và side effects; không có kiểm thử E2E mới."
+  },
+  {
+    "id": "SD-12",
+    "anchors": [
+      {
+        "path": "backend/src/tenant-portal/tenant-portal.service.ts",
+        "method": "createMaintenance",
+        "line": 383,
+        "sha256": "477edcc2d839aa4fe04e77e39e9de8e59b0a5a1b75a2647f49ab903a7afe273f"
+      },
+      {
+        "path": "backend/src/maintenance/maintenance.service.ts",
+        "method": "update",
+        "line": 141,
+        "sha256": "05a7fd9f7f26daa4d4ce7928616a57067bf906f75655e47eaa5735f2e193858d"
+      },
+      {
+        "path": "backend/src/maintenance/maintenance.service.ts",
+        "method": "updateStatus",
+        "line": 202,
+        "sha256": "05a7fd9f7f26daa4d4ce7928616a57067bf906f75655e47eaa5735f2e193858d"
+      },
+      {
+        "path": "backend/src/maintenance/maintenance.service.ts",
+        "method": "addComment",
+        "line": 271,
+        "sha256": "05a7fd9f7f26daa4d4ce7928616a57067bf906f75655e47eaa5735f2e193858d"
+      },
+      {
+        "path": "backend/src/maintenance/maintenance.service.ts",
+        "method": "complete",
+        "line": 226,
+        "sha256": "05a7fd9f7f26daa4d4ce7928616a57067bf906f75655e47eaa5735f2e193858d"
+      }
+    ],
+    "review": "Đối chiếu success/error guards, actor, transaction và side effects; không có kiểm thử E2E mới."
+  },
+  {
+    "id": "SD-13",
+    "anchors": [
+      {
+        "path": "backend/src/reports/reports.service.ts",
+        "method": "monthly",
+        "line": 17,
+        "sha256": "c921f140dca130fbd7ceaf3d0c70075230779feeba590603ef9985de246c637f"
+      },
+      {
+        "path": "backend/src/reports/reports.service.ts",
+        "method": "monthlyExport",
+        "line": 140,
+        "sha256": "c921f140dca130fbd7ceaf3d0c70075230779feeba590603ef9985de246c637f"
+      }
+    ],
+    "review": "Đối chiếu success/error guards, actor, transaction và side effects; không có kiểm thử E2E mới."
+  },
+  {
+    "id": "SD-14",
+    "anchors": [
+      {
+        "path": "backend/src/admin/admin-console.service.ts",
+        "method": "status",
+        "line": 55,
+        "sha256": "60e91f45bf3dd7a4bbf7f35b3af3abfdff97e2448cdfe771eb11eed6e26b1908"
+      }
+    ],
+    "review": "Đối chiếu success/error guards, actor, transaction và side effects; không có kiểm thử E2E mới."
+  },
+  {
+    "id": "SD-15",
+    "anchors": [
+      {
+        "path": "backend/src/admin/admin.service.ts",
+        "method": "rooms",
+        "line": 161,
+        "sha256": "cf1a932567c64a5064a0abc81f0863f6c5da9dc347cbba013d117603e240a7e4"
+      },
+      {
+        "path": "backend/src/admin/admin-console.service.ts",
+        "method": "work",
+        "line": 207,
+        "sha256": "60e91f45bf3dd7a4bbf7f35b3af3abfdff97e2448cdfe771eb11eed6e26b1908"
+      },
+      {
+        "path": "backend/src/listings/listings.service.ts",
+        "method": "review",
+        "line": 129,
+        "sha256": "6f54ab821a9408b481b7a4b57bd7f93ed82455aea717a5752b6ceb7fe5f0c550"
+      },
+      {
+        "path": "backend/src/listings/listings.service.ts",
+        "method": "mutate",
+        "line": 157,
+        "sha256": "6f54ab821a9408b481b7a4b57bd7f93ed82455aea717a5752b6ceb7fe5f0c550"
+      }
+    ],
+    "review": "Đối chiếu success/error guards, actor, transaction và side effects; không có kiểm thử E2E mới."
+  },
+  {
+    "id": "SD-16",
+    "anchors": [
+      {
+        "path": "backend/src/platform/finance-reconciliation.service.ts",
+        "method": "importStatement",
+        "line": 17,
+        "sha256": "aa2e0d048bf59e7b465bce9191242a269d85c32f79a60d778230bf325ef776fd"
+      },
+      {
+        "path": "backend/src/platform/finance-reconciliation.service.ts",
+        "method": "propose",
+        "line": 99,
+        "sha256": "aa2e0d048bf59e7b465bce9191242a269d85c32f79a60d778230bf325ef776fd"
+      },
+      {
+        "path": "backend/src/platform/finance-reconciliation.service.ts",
+        "method": "review",
+        "line": 130,
+        "sha256": "aa2e0d048bf59e7b465bce9191242a269d85c32f79a60d778230bf325ef776fd"
+      }
+    ],
+    "review": "Đối chiếu success/error guards, actor, transaction và side effects; không có kiểm thử E2E mới."
+  },
+  {
+    "id": "SD-17",
+    "anchors": [
+      {
+        "path": "backend/src/chatbot/chatbot.service.ts",
+        "method": "ask",
+        "line": 23,
+        "sha256": "705e40239448f4ed47cf2a2107f924d877da4ca67c11e58caf2184b5acf98d92"
+      },
+      {
+        "path": "backend/src/chatbot/chatbot.service.ts",
+        "method": "answer",
+        "line": 68,
+        "sha256": "705e40239448f4ed47cf2a2107f924d877da4ca67c11e58caf2184b5acf98d92"
+      },
+      {
+        "path": "backend/src/chatbot/chatbot.service.ts",
+        "method": "getSource",
+        "line": 63,
+        "sha256": "705e40239448f4ed47cf2a2107f924d877da4ca67c11e58caf2184b5acf98d92"
+      }
+    ],
+    "review": "Đối chiếu success/error guards, actor, transaction và side effects; không có kiểm thử E2E mới."
+  },
+  {
+    "id": "SD-18",
+    "anchors": [
+      {
+        "path": "backend/src/admin/admin-verification.service.ts",
+        "method": "list",
+        "line": 21,
+        "sha256": "03abb6f73d8abca0e4fe0ed58dafdd51421ff392e8b734e45711c3f6c6c7395c"
+      },
+      {
+        "path": "backend/src/admin/admin-verification.service.ts",
+        "method": "review",
+        "line": 55,
+        "sha256": "03abb6f73d8abca0e4fe0ed58dafdd51421ff392e8b734e45711c3f6c6c7395c"
+      }
+    ],
+    "review": "Đối chiếu success/error guards, actor, transaction và side effects; không có kiểm thử E2E mới."
+  },
+  {
+    "id": "SD-19",
+    "anchors": [
+      {
+        "path": "backend/src/admin/admin-plans.service.ts",
+        "method": "assign",
+        "line": 73,
+        "sha256": "db8bf9a854d665acae890b6a3002680171638386edc7720cefc6f021ff2a5c69"
+      },
+      {
+        "path": "backend/src/admin/admin-plans.service.ts",
+        "method": "cancel",
+        "line": 108,
+        "sha256": "db8bf9a854d665acae890b6a3002680171638386edc7720cefc6f021ff2a5c69"
+      }
+    ],
+    "review": "Đối chiếu success/error guards, actor, transaction và side effects; không có kiểm thử E2E mới."
+  }
+]

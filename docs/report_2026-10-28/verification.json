@@ -1,0 +1,71 @@
+{
+  "date": "2026-10-28",
+  "output": "/Users/hoang/Rental_room_management/docs/Bao_cao_Quan_ly_Nha_tro_hoan_chinh_2026-10-28.docx",
+  "sha256": "a77eb30eb1b1fda5b515fcd31be2f76312c79034a3ed91f692d0b53f466be9bf",
+  "render_directory": "/tmp/rental-report-20261028/final-render9",
+  "rendered_pages": 258,
+  "use_cases": 132,
+  "uc_tables_fields": 12,
+  "tables": 184,
+  "inline_images": 76,
+  "diagrams": {
+    "architecture": 2,
+    "usecase": 24,
+    "class": 18,
+    "sequence": 19,
+    "object": 1
+  },
+  "toc_entries": 41,
+  "checks": {
+    "uc_specs_exactly_132": true,
+    "uc_ids_unique": true,
+    "uc_fields_complete": true,
+    "uc_source_files_exist": true,
+    "frozen_source_evidence_matches_audit": true,
+    "diagram_sources_and_pngs_exist": true,
+    "diagram_count_64": true,
+    "tables_white_only": true,
+    "table_borders_black": true,
+    "all_table_headers_repeat": true,
+    "two_template_sections": true,
+    "template_page_sizes_preserved": true,
+    "all_render_pages_present": true,
+    "no_blank_body_pages": true,
+    "no_schema_or_route_appendix": true,
+    "crosswalk_all_67": true,
+    "toc_measured_pages_match": true,
+    "toc_no_unfilled_entries": true,
+    "toc_links_resolve": true,
+    "original_unchanged_CSE703014_Report_Template_VI_V1": true,
+    "original_unchanged_Bao_cao_da_chinh_form": true
+  },
+  "all_checks_passed": true,
+  "originals_sha256": {
+    "CSE703014_Report_Template_VI_V1.docx": "a0afe993c3d04a4c90ad810b9eadccf48b31d5be60a0ef5c998eeb6237436604",
+    "Bao_cao_da_chinh_form.docx": "1b84f983810ab5a794c23d871f602aa4b0f7b9ad412da6ab654d361e772923c1"
+  },
+  "tests": {
+    "backend": {
+      "passed": 672,
+      "skipped": 7,
+      "exit_code": 0
+    },
+    "backend_build": {
+      "exit_code": 0
+    },
+    "flutter_features_data": {
+      "passed": 503,
+      "failed": 12,
+      "exit_code": 1
+    },
+    "admin_capture": {
+      "passed": 51,
+      "scope": "four focused widget files; fixtures"
+    }
+  },
+  "limitations": [
+    "Administrative names, student IDs, class, supervisor, and actual task assignments not provided.",
+    "No DB-reset E2E, migration, provider/device acceptance, real payments or production deployment performed.",
+    "Flutter test failures are documented; no claim that the application passed all tests."
+  ]
+}

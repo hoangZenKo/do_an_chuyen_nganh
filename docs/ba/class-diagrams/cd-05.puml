@@ -1,0 +1,85 @@
+@startuml
+hide empty methods
+skinparam classAttributeIconSize 0
+skinparam shadowing false
+skinparam defaultFontName Arial
+title CD-05 Bảo trì và chi phí
+class Expense {
+  id: String {id}
+  category: ExpenseCategory
+  amount: Int
+  expenseDate: DateTime
+  title: String
+}
+class MaintenanceTicket {
+  id: String {id}
+  title: String
+  status: MaintenanceStatus
+  priority: MaintenancePriority
+  reportedAt: DateTime
+  actualCost: Int [0..1]
+}
+class MaintenanceComment {
+  id: String {id}
+  body: String
+  authorRole: UserRole
+  imageUrls: String [0..*]
+  createdAt: DateTime
+}
+class User <<reference>> {
+  id: String {id}
+  fullName: String
+}
+class Property <<reference>> {
+  id: String {id}
+  name: String
+}
+class Room <<reference>> {
+  id: String {id}
+  name: String
+}
+enum ExpenseCategory {
+  REPAIR
+  UTILITIES
+  INTERNET
+  CLEANING
+  FURNITURE
+  SALARY
+  TAX
+  OTHER
+}
+enum MaintenancePriority {
+  LOW
+  MEDIUM
+  URGENT
+}
+enum MaintenanceStatus {
+  OPEN
+  IN_PROGRESS
+  DONE
+  CANCELLED
+}
+enum UserRole {
+  LANDLORD
+  ADMIN
+  TENANT
+  STAFF
+}
+Expense "0..*\nexpenses" -- "1\nlandlord" User
+Expense "0..*\nexpenses" -- "1\nproperty" Property
+Expense "0..*\nexpenses" -- "0..1\nroom" Room
+MaintenanceTicket "0..*\nmaintenanceTickets" -- "1\nlandlord" User
+MaintenanceTicket "0..*\nmaintenanceTickets" -- "1\nproperty" Property
+MaintenanceTicket "0..*\nmaintenanceTickets" -- "1\nroom" Room
+MaintenanceTicket "0..*\nmaintenanceTickets" -- "0..1\nexpense" Expense
+MaintenanceComment "0..*\ncomments" -- "1\nticket" MaintenanceTicket
+MaintenanceComment "0..*\nmaintenanceComments" -- "1\nauthor" User
+note right of Expense
+Bội số cấu trúc, không chốt chia sẻ chi phí
+expenseId không unique: Expense được 0..* yêu cầu tham chiếu.
+Luồng hoàn tất tạo khoản chi mới; chính sách chia sẻ cần xác nhận.
+end note
+legend bottom
+Đường liền: association. <<IDRef>>: chỉ tham chiếu bằng mã, không phải association.
+endlegend
+@enduml

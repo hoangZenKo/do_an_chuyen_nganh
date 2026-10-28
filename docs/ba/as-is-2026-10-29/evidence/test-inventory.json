@@ -1,0 +1,2677 @@
+{
+  "backend": [
+    {
+      "file": "backend/src/admin/admin-access-review.service.spec.ts",
+      "line": 5,
+      "kind": "describe",
+      "name": "Access review lifecycle signals"
+    },
+    {
+      "file": "backend/src/admin/admin-access-review.service.spec.ts",
+      "line": 6,
+      "kind": "it",
+      "name": "uses historical activity, not just unrevoked sessions; masks PII and flags overdue/unreviewed/inactive admins"
+    },
+    {
+      "file": "backend/src/admin/admin-access-review.service.spec.ts",
+      "line": 22,
+      "kind": "it",
+      "name": "blocks self approval and stale reviewVersion, and audits before/after in the mutation transaction"
+    },
+    {
+      "file": "backend/src/admin/admin-account-governance.spec.ts",
+      "line": 7,
+      "kind": "describe",
+      "name": "Existing administrator governance and customer recovery contracts"
+    },
+    {
+      "file": "backend/src/admin/admin-account-governance.spec.ts",
+      "line": 29,
+      "kind": "it",
+      "name": "blocks self role changes, stale versions and removing the last super admin"
+    },
+    {
+      "file": "backend/src/admin/admin-account-governance.spec.ts",
+      "line": 37,
+      "kind": "it",
+      "name": "does not change permissions or sessions when MFA fails"
+    },
+    {
+      "file": "backend/src/admin/admin-account-governance.spec.ts",
+      "line": 44,
+      "kind": "it",
+      "name": "deactivation revokes sessions, cancels pending deliveries and audits before/after"
+    },
+    {
+      "file": "backend/src/admin/admin-account-governance.spec.ts",
+      "line": 54,
+      "kind": "it",
+      "name": "password recovery only returns queue acceptance, never a password or token"
+    },
+    {
+      "file": "backend/src/admin/admin-account-governance.spec.ts",
+      "line": 60,
+      "kind": "it",
+      "name": "a missing delivery provider cannot report a reset or invitation as queued"
+    },
+    {
+      "file": "backend/src/admin/admin-account-governance.spec.ts",
+      "line": 67,
+      "kind": "describe",
+      "name": "explicit capability grants"
+    },
+    {
+      "file": "backend/src/admin/admin-account-governance.spec.ts",
+      "line": 79,
+      "kind": "it",
+      "name": "persists only explicitly chosen grants and revokes sessions in the audit transaction"
+    },
+    {
+      "file": "backend/src/admin/admin-account-governance.spec.ts",
+      "line": 100,
+      "kind": "it",
+      "name": "requires a live active super-admin profile and cannot delegate a missing permission"
+    },
+    {
+      "file": "backend/src/admin/admin-account-governance.spec.ts",
+      "line": 111,
+      "kind": "it",
+      "name": "does not allow an incomplete super-admin preset even when another super admin exists"
+    },
+    {
+      "file": "backend/src/admin/admin-account-governance.spec.ts",
+      "line": 116,
+      "kind": "it",
+      "name": "cannot bypass delegation limits by omitting the explicit permission list"
+    },
+    {
+      "file": "backend/src/admin/admin-account-governance.spec.ts",
+      "line": 122,
+      "kind": "it",
+      "name": "cannot invite an administrator with permissions the operator does not hold"
+    },
+    {
+      "file": "backend/src/admin/admin-account-governance.spec.ts",
+      "line": 133,
+      "kind": "it",
+      "name": "shows assigned and preset permissions without returning PII or MFA secrets"
+    },
+    {
+      "file": "backend/src/admin/admin-account-governance.spec.ts",
+      "line": 141,
+      "kind": "it",
+      "name": "does not offer editing for self or when the live operator has no grant authority"
+    },
+    {
+      "file": "backend/src/admin/admin-accounts.http.spec.ts",
+      "line": 19,
+      "kind": "describe",
+      "name": "Admin accounts HTTP contract (mock persistence)"
+    },
+    {
+      "file": "backend/src/admin/admin-accounts.http.spec.ts",
+      "line": 78,
+      "kind": "it",
+      "name": "fails closed for anonymous, customer roles, revoked capability and session"
+    },
+    {
+      "file": "backend/src/admin/admin-accounts.http.spec.ts",
+      "line": 88,
+      "kind": "it",
+      "name": "transforms bounded query, trims search and disables list/detail caching"
+    },
+    {
+      "file": "backend/src/admin/admin-accounts.http.spec.ts",
+      "line": 100,
+      "kind": "it",
+      "name": "requires a single-use step-up bound to the exact suspension version/reason"
+    },
+    {
+      "file": "backend/src/admin/admin-accounts.http.spec.ts",
+      "line": 108,
+      "kind": "it",
+      "name": "requires action-specific capabilities, not just account read permission"
+    },
+    {
+      "file": "backend/src/admin/admin-accounts.service.spec.ts",
+      "line": 7,
+      "kind": "describe",
+      "name": "Admin account management"
+    },
+    {
+      "file": "backend/src/admin/admin-accounts.service.spec.ts",
+      "line": 32,
+      "kind": "it",
+      "name": "rejects reversed account creation ranges before querying persistence"
+    },
+    {
+      "file": "backend/src/admin/admin-accounts.service.spec.ts",
+      "line": 38,
+      "kind": "it",
+      "name": "masks contacts, keeps version/metadata and bounds server pagination"
+    },
+    {
+      "file": "backend/src/admin/admin-accounts.service.spec.ts",
+      "line": 49,
+      "kind": "it",
+      "name": "suspends customer and dependent staff sessions, auditing both versions atomically"
+    },
+    {
+      "file": "backend/src/admin/admin-accounts.service.spec.ts",
+      "line": 60,
+      "kind": "it",
+      "name": "rejects a stale status version without token, session or audit writes"
+    },
+    {
+      "file": "backend/src/admin/admin-accounts.service.spec.ts",
+      "line": 67,
+      "kind": "it",
+      "name": "revoke reports the number of revoked sessions and records it in audit"
+    },
+    {
+      "file": "backend/src/admin/admin-accounts.service.spec.ts",
+      "line": 74,
+      "kind": "it",
+      "name": "keeps administrator accounts outside customer session revoke"
+    },
+    {
+      "file": "backend/src/admin/admin-audit-query.service.spec.ts",
+      "line": 5,
+      "kind": "describe",
+      "name": "Admin audit safety"
+    },
+    {
+      "file": "backend/src/admin/admin-audit-query.service.spec.ts",
+      "line": 6,
+      "kind": "it",
+      "name": "escapes CSV delimiters, quotes, newlines and formula prefixes"
+    },
+    {
+      "file": "backend/src/admin/admin-audit-query.service.spec.ts",
+      "line": 13,
+      "kind": "it",
+      "name": "redacts credentials, contact details and signed links recursively"
+    },
+    {
+      "file": "backend/src/admin/admin-audit-query.service.spec.ts",
+      "line": 17,
+      "kind": "it",
+      "name": "rejects reversed date ranges and composes filters rather than replacing ownership"
+    },
+    {
+      "file": "backend/src/admin/admin-inventory.http.spec.ts",
+      "line": 14,
+      "kind": "describe",
+      "name": "Admin inventory HTTP read boundaries"
+    },
+    {
+      "file": "backend/src/admin/admin-inventory.http.spec.ts",
+      "line": 48,
+      "kind": "it",
+      "name": "allows property viewers without write permission and returns no-store responses"
+    },
+    {
+      "file": "backend/src/admin/admin-inventory.http.spec.ts",
+      "line": 62,
+      "kind": "it",
+      "name": "validates pagination, UUIDs, price filters and enums before dispatch"
+    },
+    {
+      "file": "backend/src/admin/admin-inventory.service.spec.ts",
+      "line": 4,
+      "kind": "describe",
+      "name": "Admin property and room inventory"
+    },
+    {
+      "file": "backend/src/admin/admin-inventory.service.spec.ts",
+      "line": 20,
+      "kind": "it",
+      "name": "bounds the property preview while retaining full counts and lifecycle fields"
+    },
+    {
+      "file": "backend/src/admin/admin-inventory.service.spec.ts",
+      "line": 31,
+      "kind": "it",
+      "name": "returns stable page metadata and masks owner contacts without exposing tenant data"
+    },
+    {
+      "file": "backend/src/admin/admin-inventory.service.spec.ts",
+      "line": 44,
+      "kind": "it",
+      "name": "rejects reversed prices before persistence and supports rooms without listings"
+    },
+    {
+      "file": "backend/src/admin/admin-inventory.service.spec.ts",
+      "line": 51,
+      "kind": "it",
+      "name": "returns 404 for a missing property"
+    },
+    {
+      "file": "backend/src/admin/admin-lifecycle.service.spec.ts",
+      "line": 5,
+      "kind": "describe",
+      "name": "Admin lifecycle safety"
+    },
+    {
+      "file": "backend/src/admin/admin-lifecycle.service.spec.ts",
+      "line": 27,
+      "kind": "it",
+      "name": "resends an expired admin invite using the existing one-time token queue with before/after audit"
+    },
+    {
+      "file": "backend/src/admin/admin-lifecycle.service.spec.ts",
+      "line": 39,
+      "kind": "it",
+      "name": "applies a database-state cooldown, not only a per-process throttle"
+    },
+    {
+      "file": "backend/src/admin/admin-lifecycle.service.spec.ts",
+      "line": 46,
+      "kind": "it",
+      "name": "never mistakes invalidation for activation and blocks resends after actual redemption"
+    },
+    {
+      "file": "backend/src/admin/admin-lifecycle.service.spec.ts",
+      "line": 56,
+      "kind": "it",
+      "name": "blocks self action, non-admin IDOR, inactive targets, and missing provider configuration"
+    },
+    {
+      "file": "backend/src/admin/admin-lifecycle.service.spec.ts",
+      "line": 69,
+      "kind": "it",
+      "name": "revokes sessions and refresh tokens atomically with a versioned audit; rejects duplicate submit"
+    },
+    {
+      "file": "backend/src/admin/admin-lifecycle.service.spec.ts",
+      "line": 79,
+      "kind": "it",
+      "name": "counts only active sessions for the current userVersion and keeps history bounded"
+    },
+    {
+      "file": "backend/src/admin/admin-lifecycle.service.spec.ts",
+      "line": 89,
+      "kind": "it",
+      "name": "fails the transaction when audit persistence fails instead of acknowledging a sensitive change"
+    },
+    {
+      "file": "backend/src/admin/admin-overview-analytics.http.spec.ts",
+      "line": 14,
+      "kind": "describe",
+      "name": "overview analytics HTTP authorization and validation"
+    },
+    {
+      "file": "backend/src/admin/admin-overview-analytics.http.spec.ts",
+      "line": 60,
+      "kind": "it",
+      "name": "requires an authenticated admin with dashboard rights and MFA"
+    },
+    {
+      "file": "backend/src/admin/admin-overview-analytics.http.spec.ts",
+      "line": 69,
+      "kind": "it",
+      "name": "defaults to 30 days and forbids shared caching"
+    },
+    {
+      "file": "backend/src/admin/admin-overview-analytics.http.spec.ts",
+      "line": 75,
+      "kind": "it",
+      "name": "accepts only supported periods and rejects unknown query parameters"
+    },
+    {
+      "file": "backend/src/admin/admin-overview-analytics.http.spec.ts",
+      "line": 85,
+      "kind": "it",
+      "name": "rejects a disabled or expired actor before analytics executes"
+    },
+    {
+      "file": "backend/src/admin/admin-overview-analytics.service.spec.ts",
+      "line": 8,
+      "kind": "describe",
+      "name": "admin overview analytics"
+    },
+    {
+      "file": "backend/src/admin/admin-overview-analytics.service.spec.ts",
+      "line": 39,
+      "kind": "it",
+      "name": "rejects unsupported ranges and correctly crosses midnight in Vietnam"
+    },
+    {
+      "file": "backend/src/admin/admin-overview-analytics.service.spec.ts",
+      "line": 48,
+      "kind": "it",
+      "name": "does not invent growth from a zero baseline and handles negative net cash"
+    },
+    {
+      "file": "backend/src/admin/admin-overview-analytics.service.spec.ts",
+      "line": 55,
+      "kind": "it",
+      "name": "aggregates all roles, room statuses and true rental reversals in one snapshot"
+    },
+    {
+      "file": "backend/src/admin/admin-overview-analytics.service.spec.ts",
+      "line": 74,
+      "kind": "it",
+      "name": "omits sensitive fields and never queries finance without capability"
+    },
+    {
+      "file": "backend/src/admin/admin-overview-analytics.service.spec.ts",
+      "line": 88,
+      "kind": "it",
+      "name": "returns an unavailable occupancy ratio for an empty inventory"
+    },
+    {
+      "file": "backend/src/admin/admin-overview-analytics.service.spec.ts",
+      "line": 94,
+      "kind": "it",
+      "name": "rejects missing dashboard rights or a non-admin before reading the database"
+    },
+    {
+      "file": "backend/src/admin/admin-permissions.dto.spec.ts",
+      "line": 5,
+      "kind": "describe",
+      "name": "Explicit administrator permission validation"
+    },
+    {
+      "file": "backend/src/admin/admin-permissions.dto.spec.ts",
+      "line": 8,
+      "kind": "it",
+      "name": "preserves older preset commands and accepts a bounded explicit list"
+    },
+    {
+      "file": "backend/src/admin/admin-pii-projection.spec.ts",
+      "line": 4,
+      "kind": "describe",
+      "name": "Legacy admin contact projection"
+    },
+    {
+      "file": "backend/src/admin/admin-pii-projection.spec.ts",
+      "line": 5,
+      "kind": "it",
+      "name": "masks contacts on landlord and property list/detail instead of bypassing PII reveal"
+    },
+    {
+      "file": "backend/src/admin/admin-pii-projection.spec.ts",
+      "line": 24,
+      "kind": "it",
+      "name": "masks team/member emails and emits no MFA secret material"
+    },
+    {
+      "file": "backend/src/admin/admin-property-review.service.spec.ts",
+      "line": 7,
+      "kind": "describe",
+      "name": "property review safety"
+    },
+    {
+      "file": "backend/src/admin/admin-property-review.service.spec.ts",
+      "line": 16,
+      "kind": "it",
+      "name": "approves a matching snapshot and audits in the same transaction"
+    },
+    {
+      "file": "backend/src/admin/admin-property-review.service.spec.ts",
+      "line": 21,
+      "kind": "it",
+      "name": "refuses changed information, archived properties and stale versions"
+    },
+    {
+      "file": "backend/src/admin/admin-property-review.service.spec.ts",
+      "line": 29,
+      "kind": "it",
+      "name": "allows a changed pending snapshot to be resubmitted without approval"
+    },
+    {
+      "file": "backend/src/admin/admin-registry.service.spec.ts",
+      "line": 8,
+      "kind": "describe",
+      "name": "admin verification transitions"
+    },
+    {
+      "file": "backend/src/admin/admin-registry.service.spec.ts",
+      "line": 24,
+      "kind": "it",
+      "name": "reviews the expected version and audits without leaking documents"
+    },
+    {
+      "file": "backend/src/admin/admin-registry.service.spec.ts",
+      "line": 33,
+      "kind": "it",
+      "name": "refuses stale versions, terminal decisions and concurrent updates"
+    },
+    {
+      "file": "backend/src/admin/admin-registry.service.spec.ts",
+      "line": 41,
+      "kind": "it",
+      "name": "will not approve inactive owners or unscanned/mismatched evidence"
+    },
+    {
+      "file": "backend/src/admin/admin-registry.service.spec.ts",
+      "line": 49,
+      "kind": "it",
+      "name": "blocks reviewing your own verification request"
+    },
+    {
+      "file": "backend/src/admin/admin-registry.service.spec.ts",
+      "line": 55,
+      "kind": "describe",
+      "name": "service plans and subscription administration"
+    },
+    {
+      "file": "backend/src/admin/admin-registry.service.spec.ts",
+      "line": 70,
+      "kind": "it",
+      "name": "snapshots terms and records assignment as non-financial history"
+    },
+    {
+      "file": "backend/src/admin/admin-registry.service.spec.ts",
+      "line": 79,
+      "kind": "it",
+      "name": "rejects stale plan revisions and unsafe downgrades"
+    },
+    {
+      "file": "backend/src/admin/admin-registry.service.spec.ts",
+      "line": 88,
+      "kind": "it",
+      "name": "cancels current entitlement without refunds or deleting inventory"
+    },
+    {
+      "file": "backend/src/admin/admin-release-gate.spec.ts",
+      "line": 11,
+      "kind": "describe",
+      "name": "discovered admin release permission matrix"
+    },
+    {
+      "file": "backend/src/admin/admin-release-gate.spec.ts",
+      "line": 24,
+      "kind": "it",
+      "name": "discovers the lifecycle and operations surfaces rather than a fixed controller allowlist"
+    },
+    {
+      "file": "backend/src/admin/admin-release-http.spec.ts",
+      "line": 17,
+      "kind": "describe",
+      "name": "Admin lifecycle HTTP release gate (mock persistence, no database/reset)"
+    },
+    {
+      "file": "backend/src/admin/admin-release-http.spec.ts",
+      "line": 66,
+      "kind": "it",
+      "name": "rejects anonymous, staff, landlord and tenant HTTP calls, not just hidden menus"
+    },
+    {
+      "file": "backend/src/admin/admin-release-http.spec.ts",
+      "line": 75,
+      "kind": "it",
+      "name": "loads permissions at the next request and rejects revoked sessions or changed userVersion"
+    },
+    {
+      "file": "backend/src/admin/admin-release-http.spec.ts",
+      "line": 88,
+      "kind": "it",
+      "name": "requires fresh single-use step-up with an exact payload and both revoke capabilities"
+    },
+    {
+      "file": "backend/src/admin/admin-route-catalog.spec.ts",
+      "line": 26,
+      "kind": "describe",
+      "name": "admin route capability catalog"
+    },
+    {
+      "file": "backend/src/admin/admin-search.service.spec.ts",
+      "line": 7,
+      "kind": "describe",
+      "name": "AdminSearchService"
+    },
+    {
+      "file": "backend/src/admin/admin-search.service.spec.ts",
+      "line": 17,
+      "kind": "it",
+      "name": "paginates payment search, returns metadata and atomically audits sensitive reads"
+    },
+    {
+      "file": "backend/src/admin/admin-search.service.spec.ts",
+      "line": 26,
+      "kind": "it",
+      "name": "fails closed when a caller requests a kind outside its permission set"
+    },
+    {
+      "file": "backend/src/admin/admin-transactions.service.spec.ts",
+      "line": 5,
+      "kind": "describe",
+      "name": "admin transaction investigation"
+    },
+    {
+      "file": "backend/src/admin/admin-transactions.service.spec.ts",
+      "line": 6,
+      "kind": "it",
+      "name": "uses bounded safe projections and transactional access auditing"
+    },
+    {
+      "file": "backend/src/admin/admin-transactions.service.spec.ts",
+      "line": 15,
+      "kind": "it",
+      "name": "refuses unbounded ranges and mismatched type/status filters"
+    },
+    {
+      "file": "backend/src/admin/admin-workspace.service.spec.ts",
+      "line": 10,
+      "kind": "describe",
+      "name": "AdminWorkspaceService"
+    },
+    {
+      "file": "backend/src/admin/admin-workspace.service.spec.ts",
+      "line": 27,
+      "kind": "it",
+      "name": "never queries unauthorized sources"
+    },
+    {
+      "file": "backend/src/admin/admin-workspace.service.spec.ts",
+      "line": 38,
+      "kind": "it",
+      "name": "sums only action buckets and scopes unread notifications to the actor"
+    },
+    {
+      "file": "backend/src/admin/admin-workspace.service.spec.ts",
+      "line": 48,
+      "kind": "it",
+      "name": "keeps successful sources when one source fails and never substitutes zero"
+    },
+    {
+      "file": "backend/src/admin/admin-workspace.service.spec.ts",
+      "line": 60,
+      "kind": "it",
+      "name": "preserves report ownership, expiry and per-kind capabilities"
+    },
+    {
+      "file": "backend/src/admin/admin-workspace.service.spec.ts",
+      "line": 67,
+      "kind": "it",
+      "name": "excludes merged and closed tickets and separates due-soon from overdue"
+    },
+    {
+      "file": "backend/src/admin/admin-workspace.service.spec.ts",
+      "line": 75,
+      "kind": "it",
+      "name": "queries moderation only for the actor permitted kinds"
+    },
+    {
+      "file": "backend/src/admin/admin-workspace.service.spec.ts",
+      "line": 83,
+      "kind": "it",
+      "name": "paginates group buckets without including notification counts as tasks"
+    },
+    {
+      "file": "backend/src/admin/admin-workspace.service.spec.ts",
+      "line": 94,
+      "kind": "it",
+      "name": "rejects a cursor outside the current permission scope"
+    },
+    {
+      "file": "backend/src/auth/account-access.service.spec.ts",
+      "line": 3,
+      "kind": "describe",
+      "name": "AccountAccessService"
+    },
+    {
+      "file": "backend/src/auth/account-access.service.spec.ts",
+      "line": 4,
+      "kind": "it",
+      "name": "rate-limits repeated non-admin account access sends"
+    },
+    {
+      "file": "backend/src/auth/admin-mfa.service.spec.ts",
+      "line": 3,
+      "kind": "describe",
+      "name": "Admin TOTP primitives"
+    },
+    {
+      "file": "backend/src/auth/admin-mfa.service.spec.ts",
+      "line": 10,
+      "kind": "it",
+      "name": "encodes authenticator secrets as unpadded base32"
+    },
+    {
+      "file": "backend/src/auth/admin-step-up.policy.spec.ts",
+      "line": 3,
+      "kind": "describe",
+      "name": "admin step-up request policy"
+    },
+    {
+      "file": "backend/src/auth/admin-step-up.policy.spec.ts",
+      "line": 14,
+      "kind": "it",
+      "name": "matches only sensitive admin routes"
+    },
+    {
+      "file": "backend/src/auth/admin-step-up.policy.spec.ts",
+      "line": 22,
+      "kind": "it",
+      "name": "canonicalizes payload key order for single-request grants"
+    },
+    {
+      "file": "backend/src/auth/admin-step-up.policy.spec.ts",
+      "line": 29,
+      "kind": "it",
+      "name": "protects case-insensitive and percent-encoded Express route aliases"
+    },
+    {
+      "file": "backend/src/auth/auth.service.spec.ts",
+      "line": 7,
+      "kind": "describe",
+      "name": "AuthService"
+    },
+    {
+      "file": "backend/src/auth/auth.service.spec.ts",
+      "line": 57,
+      "kind": "it",
+      "name": "registers as a landlord and normalizes the email"
+    },
+    {
+      "file": "backend/src/auth/auth.service.spec.ts",
+      "line": 82,
+      "kind": "it",
+      "name": "maps concurrent duplicate email errors to conflict"
+    },
+    {
+      "file": "backend/src/auth/auth.service.spec.ts",
+      "line": 98,
+      "kind": "it",
+      "name": "rejects inactive users at login"
+    },
+    {
+      "file": "backend/src/auth/auth.service.spec.ts",
+      "line": 106,
+      "kind": "it",
+      "name": "changes password after verifying the current password"
+    },
+    {
+      "file": "backend/src/auth/jwt.strategy.spec.ts",
+      "line": 8,
+      "kind": "describe",
+      "name": "JwtStrategy"
+    },
+    {
+      "file": "backend/src/auth/jwt.strategy.spec.ts",
+      "line": 20,
+      "kind": "it",
+      "name": "maps an active landlord to a typed auth user"
+    },
+    {
+      "file": "backend/src/auth/jwt.strategy.spec.ts",
+      "line": 36,
+      "kind": "it",
+      "name": "maps an active admin to a typed auth user"
+    },
+    {
+      "file": "backend/src/auth/jwt.strategy.spec.ts",
+      "line": 55,
+      "kind": "it",
+      "name": "rejects non-access tokens"
+    },
+    {
+      "file": "backend/src/auth/jwt.strategy.spec.ts",
+      "line": 62,
+      "kind": "it",
+      "name": "rejects missing or inactive users"
+    },
+    {
+      "file": "backend/src/billing/billing-rules.spec.ts",
+      "line": 6,
+      "kind": "describe",
+      "name": "Production billing rules"
+    },
+    {
+      "file": "backend/src/billing/billing-rules.spec.ts",
+      "line": 8,
+      "kind": "it",
+      "name": "uses Vietnam calendar days at the UTC day boundary"
+    },
+    {
+      "file": "backend/src/billing/billing-rules.spec.ts",
+      "line": 15,
+      "kind": "it",
+      "name": "keeps undated debt visible instead of silently dropping it"
+    },
+    {
+      "file": "backend/src/billing/billing-rules.spec.ts",
+      "line": 16,
+      "kind": "it",
+      "name": "rejects a whitespace-only cancellation reason"
+    },
+    {
+      "file": "backend/src/billing/billing-rules.spec.ts",
+      "line": 17,
+      "kind": "it",
+      "name": "canonicalizes object key order for retry hashes"
+    },
+    {
+      "file": "backend/src/billing/billing-rules.spec.ts",
+      "line": 18,
+      "kind": "it",
+      "name": "matches the exact scheduled reminder offsets"
+    },
+    {
+      "file": "backend/src/billing/billing-rules.spec.ts",
+      "line": 25,
+      "kind": "it",
+      "name": "calculates progressive utility tiers without repricing the lower band"
+    },
+    {
+      "file": "backend/src/billing/billing-rules.spec.ts",
+      "line": 28,
+      "kind": "it",
+      "name": "rejects overlapping and capped final tiers and monetary overflow"
+    },
+    {
+      "file": "backend/src/billing/billing-rules.spec.ts",
+      "line": 33,
+      "kind": "it",
+      "name": "bounds exponential retry backoff"
+    },
+    {
+      "file": "backend/src/billing/billing-tariffs.service.spec.ts",
+      "line": 31,
+      "kind": "describe",
+      "name": "Billing tariff impact preview"
+    },
+    {
+      "file": "backend/src/billing/billing-tariffs.service.spec.ts",
+      "line": 32,
+      "kind": "it",
+      "name": "rejects an omitted property filter before any unscoped tariff read"
+    },
+    {
+      "file": "backend/src/billing/billing-tariffs.service.spec.ts",
+      "line": 39,
+      "kind": "it",
+      "name": "compares to another approved version, not the viewed document itself"
+    },
+    {
+      "file": "backend/src/billing/billing-tariffs.service.spec.ts",
+      "line": 49,
+      "kind": "it",
+      "name": "separates overridden rooms while preserving conservative issued-period guards"
+    },
+    {
+      "file": "backend/src/billing/billing-tariffs.service.spec.ts",
+      "line": 75,
+      "kind": "it",
+      "name": "returns closed, stale and already-reviewed reasons without offering approval"
+    },
+    {
+      "file": "backend/src/billing/billing-tariffs.service.spec.ts",
+      "line": 85,
+      "kind": "it",
+      "name": "keeps landlord and staff property scope checks on direct IDs"
+    },
+    {
+      "file": "backend/src/billing/billing.service.spec.ts",
+      "line": 119,
+      "kind": "describe",
+      "name": "BillingService"
+    },
+    {
+      "file": "backend/src/billing/billing.service.spec.ts",
+      "line": 122,
+      "kind": "it",
+      "name": "rejects a lease ended or changed after invoice preflight"
+    },
+    {
+      "file": "backend/src/billing/billing.service.spec.ts",
+      "line": 134,
+      "kind": "it",
+      "name": "revalidates bulk billing leases under lock before any new charges"
+    },
+    {
+      "file": "backend/src/billing/billing.service.spec.ts",
+      "line": 147,
+      "kind": "it",
+      "name": "creates invoice and meter readings in one transaction"
+    },
+    {
+      "file": "backend/src/billing/billing.service.spec.ts",
+      "line": 191,
+      "kind": "it",
+      "name": "keeps legacy invoice payload working"
+    },
+    {
+      "file": "backend/src/billing/billing.service.spec.ts",
+      "line": 209,
+      "kind": "it",
+      "name": "rejects invalid meter readings before writing"
+    },
+    {
+      "file": "backend/src/billing/billing.service.spec.ts",
+      "line": 231,
+      "kind": "it",
+      "name": "rejects inactive leases when creating invoices"
+    },
+    {
+      "file": "backend/src/billing/billing.service.spec.ts",
+      "line": 246,
+      "kind": "it",
+      "name": "rejects billing months outside the lease period"
+    },
+    {
+      "file": "backend/src/billing/billing.service.spec.ts",
+      "line": 264,
+      "kind": "it",
+      "name": "maps invoice unique violations to INVOICE_EXISTS"
+    },
+    {
+      "file": "backend/src/billing/billing.service.spec.ts",
+      "line": 282,
+      "kind": "it",
+      "name": "maps meter reading unique violations to METER_READING_EXISTS"
+    },
+    {
+      "file": "backend/src/billing/billing.service.spec.ts",
+      "line": 307,
+      "kind": "it",
+      "name": "preflights bulk invoices for an owned property"
+    },
+    {
+      "file": "backend/src/billing/billing.service.spec.ts",
+      "line": 375,
+      "kind": "it",
+      "name": "skips due billing automation until current meter readings exist"
+    },
+    {
+      "file": "backend/src/billing/billing.service.spec.ts",
+      "line": 414,
+      "kind": "it",
+      "name": "runs due billing automation once readings are ready"
+    },
+    {
+      "file": "backend/src/billing/billing.service.spec.ts",
+      "line": 526,
+      "kind": "it",
+      "name": "creates bulk invoices and reuses existing meter readings"
+    },
+    {
+      "file": "backend/src/billing/billing.service.spec.ts",
+      "line": 600,
+      "kind": "it",
+      "name": "rejects bulk invoice generation for foreign or archived properties"
+    },
+    {
+      "file": "backend/src/billing/billing.service.spec.ts",
+      "line": 615,
+      "kind": "it",
+      "name": "updates an unpaid invoice without payment history"
+    },
+    {
+      "file": "backend/src/billing/billing.service.spec.ts",
+      "line": 637,
+      "kind": "it",
+      "name": "rejects invoice updates after payment"
+    },
+    {
+      "file": "backend/src/billing/billing.service.spec.ts",
+      "line": 651,
+      "kind": "it",
+      "name": "records a partial payment using an invoice row lock"
+    },
+    {
+      "file": "backend/src/billing/billing.service.spec.ts",
+      "line": 686,
+      "kind": "it",
+      "name": "marks invoice as paid when a payment exactly matches remaining amount"
+    },
+    {
+      "file": "backend/src/billing/billing.service.spec.ts",
+      "line": 708,
+      "kind": "it",
+      "name": "rejects payments greater than the remaining amount"
+    },
+    {
+      "file": "backend/src/billing/billing.service.spec.ts",
+      "line": 720,
+      "kind": "it",
+      "name": "rejects additional payments for already paid invoices"
+    },
+    {
+      "file": "backend/src/billing/billing.service.spec.ts",
+      "line": 733,
+      "kind": "it",
+      "name": "rejects payments for cancelled invoices"
+    },
+    {
+      "file": "backend/src/billing/billing.service.spec.ts",
+      "line": 744,
+      "kind": "it",
+      "name": "rejects invalid paidAt values at service level"
+    },
+    {
+      "file": "backend/src/billing/billing.service.spec.ts",
+      "line": 758,
+      "kind": "it",
+      "name": "reverses a payment with a signed reversal ledger entry"
+    },
+    {
+      "file": "backend/src/billing/billing.service.spec.ts",
+      "line": 792,
+      "kind": "it",
+      "name": "does not reverse the same payment twice"
+    },
+    {
+      "file": "backend/src/billing/billing.service.spec.ts",
+      "line": 805,
+      "kind": "it",
+      "name": "does not reverse reversal payments"
+    },
+    {
+      "file": "backend/src/billing/billing.service.spec.ts",
+      "line": 818,
+      "kind": "it",
+      "name": "returns PAYMENT_NOT_FOUND when the payment is not on the invoice"
+    },
+    {
+      "file": "backend/src/billing/billing.service.spec.ts",
+      "line": 829,
+      "kind": "it",
+      "name": "cancels invoices that have no payment history"
+    },
+    {
+      "file": "backend/src/billing/billing.service.spec.ts",
+      "line": 849,
+      "kind": "it",
+      "name": "does not cancel invoices with any payment history"
+    },
+    {
+      "file": "backend/src/billing/billing.service.spec.ts",
+      "line": 861,
+      "kind": "it",
+      "name": "does not cancel an already cancelled invoice again"
+    },
+    {
+      "file": "backend/src/billing/demo-card.gateway.spec.ts",
+      "line": 3,
+      "kind": "describe",
+      "name": "DemoCardGateway"
+    },
+    {
+      "file": "backend/src/billing/demo-card.gateway.spec.ts",
+      "line": 14,
+      "kind": "it",
+      "name": "derives an opaque token that cannot be reconstructed from its database hash"
+    },
+    {
+      "file": "backend/src/billing/demo-card.gateway.spec.ts",
+      "line": 21,
+      "kind": "it",
+      "name": "rejects production even when the demo flag is set"
+    },
+    {
+      "file": "backend/src/billing/demo-card.gateway.spec.ts",
+      "line": 26,
+      "kind": "it",
+      "name": "requires explicit local opt in"
+    },
+    {
+      "file": "backend/src/billing/demo-card.gateway.spec.ts",
+      "line": 30,
+      "kind": "it",
+      "name": "accepts only the documented internal demo card"
+    },
+    {
+      "file": "backend/src/billing/demo-card.gateway.spec.ts",
+      "line": 47,
+      "kind": "it",
+      "name": "normalizes API base paths and supports LAN addresses"
+    },
+    {
+      "file": "backend/src/billing/demo-checkout.page.spec.ts",
+      "line": 3,
+      "kind": "describe",
+      "name": "Payment checkout copy"
+    },
+    {
+      "file": "backend/src/billing/demo-checkout.page.spec.ts",
+      "line": 6,
+      "kind": "it",
+      "name": "uses product labels while clearly identifying the test environment"
+    },
+    {
+      "file": "backend/src/billing/demo-checkout.page.spec.ts",
+      "line": 19,
+      "kind": "it",
+      "name": "shows a completed payment without leaving a payment form"
+    },
+    {
+      "file": "backend/src/billing/demo-checkout.page.spec.ts",
+      "line": 26,
+      "kind": "it",
+      "name": "escapes server error messages and rejects invalid form tokens"
+    },
+    {
+      "file": "backend/src/billing/invoice-lines.spec.ts",
+      "line": 5,
+      "kind": "describe",
+      "name": "invoice line snapshots"
+    },
+    {
+      "file": "backend/src/billing/invoice-lines.spec.ts",
+      "line": 6,
+      "kind": "it",
+      "name": "calculates totals and preserves tariff provenance"
+    },
+    {
+      "file": "backend/src/billing/invoice-lines.spec.ts",
+      "line": 21,
+      "kind": "it",
+      "name": "serializes legacy invoices without inventing tariff data"
+    },
+    {
+      "file": "backend/src/billing/invoice-lines.spec.ts",
+      "line": 29,
+      "kind": "it",
+      "name": "rejects overflowing totals rather than persisting partial invoice data"
+    },
+    {
+      "file": "backend/src/billing/invoice-lines.spec.ts",
+      "line": 33,
+      "kind": "it",
+      "name": "rejects utility amounts inconsistent with quantity times price"
+    },
+    {
+      "file": "backend/src/billing/invoice-lines.spec.ts",
+      "line": 39,
+      "kind": "it",
+      "name": "copies tariff values rather than keeping references to mutable fee inputs"
+    },
+    {
+      "file": "backend/src/billing/manual-transfer.dto.spec.ts",
+      "line": 5,
+      "kind": "describe",
+      "name": "Manual transfer account validation"
+    },
+    {
+      "file": "backend/src/billing/manual-transfer.dto.spec.ts",
+      "line": 7,
+      "kind": "it",
+      "name": "trims labels but preserves leading zeros"
+    },
+    {
+      "file": "backend/src/billing/manual-transfer.dto.spec.ts",
+      "line": 20,
+      "kind": "it",
+      "name": "accepts clearing an optional QR image without clearing the account"
+    },
+    {
+      "file": "backend/src/billing/manual-transfer.service.spec.ts",
+      "line": 5,
+      "kind": "describe",
+      "name": "Manual transfer recipient configuration"
+    },
+    {
+      "file": "backend/src/billing/manual-transfer.service.spec.ts",
+      "line": 19,
+      "kind": "it",
+      "name": "stores a versioned account and audits only safe metadata"
+    },
+    {
+      "file": "backend/src/billing/manual-transfer.service.spec.ts",
+      "line": 27,
+      "kind": "it",
+      "name": "rejects stale versions and properties not owned by the requester"
+    },
+    {
+      "file": "backend/src/billing/manual-transfer.service.spec.ts",
+      "line": 34,
+      "kind": "it",
+      "name": "never grants staff authority to change the bank recipient"
+    },
+    {
+      "file": "backend/src/billing/manual-transfer.service.spec.ts",
+      "line": 37,
+      "kind": "it",
+      "name": "rejects unknown QR uploads and accepts only private images belonging to the owner"
+    },
+    {
+      "file": "backend/src/billing/manual-transfer.service.spec.ts",
+      "line": 44,
+      "kind": "it",
+      "name": "returns only owned invoice instructions and reserves amounts already pending review"
+    },
+    {
+      "file": "backend/src/billing/manual-transfer.service.spec.ts",
+      "line": 50,
+      "kind": "it",
+      "name": "does not offer transfer instructions for demo, cancelled or fully paid invoices"
+    },
+    {
+      "file": "backend/src/billing/manual-transfer.service.spec.ts",
+      "line": 58,
+      "kind": "it",
+      "name": "returns no recipient when configuration is missing or disabled"
+    },
+    {
+      "file": "backend/src/chatbot/chatbot-evaluation.spec.ts",
+      "line": 5,
+      "kind": "describe",
+      "name": "MVP evaluation gate"
+    },
+    {
+      "file": "backend/src/chatbot/chatbot-evaluation.spec.ts",
+      "line": 8,
+      "kind": "it",
+      "name": "has exactly 30 unique cases and checklists for all model questions"
+    },
+    {
+      "file": "backend/src/chatbot/chatbot-evaluation.spec.ts",
+      "line": 18,
+      "kind": "it",
+      "name": "uses nearest-rank percentiles and never treats no samples as zero latency"
+    },
+    {
+      "file": "backend/src/chatbot/chatbot-evaluation.spec.ts",
+      "line": 23,
+      "kind": "it",
+      "name": "requires sample count, retrieval, fallback, security and latency thresholds"
+    },
+    {
+      "file": "backend/src/chatbot/chatbot.config.spec.ts",
+      "line": 3,
+      "kind": "describe",
+      "name": "loadChatbotConfig"
+    },
+    {
+      "file": "backend/src/chatbot/chatbot.config.spec.ts",
+      "line": 4,
+      "kind": "it",
+      "name": "defaults to a disabled feature and loopback inference"
+    },
+    {
+      "file": "backend/src/chatbot/chatbot.config.spec.ts",
+      "line": 22,
+      "kind": "it",
+      "name": "requires pinned embedding and calibrated retrieval score before enabling chat"
+    },
+    {
+      "file": "backend/src/chatbot/chatbot.service.spec.ts",
+      "line": 8,
+      "kind": "describe",
+      "name": "ChatbotService"
+    },
+    {
+      "file": "backend/src/chatbot/chatbot.service.spec.ts",
+      "line": 25,
+      "kind": "it",
+      "name": "returns verified citations and a server request ID"
+    },
+    {
+      "file": "backend/src/chatbot/chatbot.service.spec.ts",
+      "line": 32,
+      "kind": "it",
+      "name": "does not generate when retrieval has no evidence"
+    },
+    {
+      "file": "backend/src/chatbot/chatbot.service.spec.ts",
+      "line": 37,
+      "kind": "it",
+      "name": "never invents a current balance or multi-turn context"
+    },
+    {
+      "file": "backend/src/chatbot/chatbot.service.spec.ts",
+      "line": 47,
+      "kind": "it",
+      "name": "discards the answer when a supplied source changes while generating"
+    },
+    {
+      "file": "backend/src/chatbot/chatbot.service.spec.ts",
+      "line": 54,
+      "kind": "it",
+      "name": "rechecks every supplied source even when the model cites only one"
+    },
+    {
+      "file": "backend/src/chatbot/chatbot.service.spec.ts",
+      "line": 61,
+      "kind": "it",
+      "name": "ignores model prose when the model admits missing evidence"
+    },
+    {
+      "file": "backend/src/chatbot/chatbot.service.spec.ts",
+      "line": 67,
+      "kind": "it",
+      "name": "does not downgrade incompatible indexes to missing evidence"
+    },
+    {
+      "file": "backend/src/chatbot/chatbot.service.spec.ts",
+      "line": 71,
+      "kind": "it",
+      "name": "bounds the entire pipeline and releases the slot after timeout"
+    },
+    {
+      "file": "backend/src/chatbot/chatbot.service.spec.ts",
+      "line": 81,
+      "kind": "it",
+      "name": "rejects a second concurrent inference without a queue"
+    },
+    {
+      "file": "backend/src/chatbot/chatbot.service.spec.ts",
+      "line": 90,
+      "kind": "it",
+      "name": "retries context overflow only once with fewer sources"
+    },
+    {
+      "file": "backend/src/chatbot/chatbot.service.spec.ts",
+      "line": 97,
+      "kind": "it",
+      "name": "does not retry other model failures"
+    },
+    {
+      "file": "backend/src/chatbot/knowledge-chunker.spec.ts",
+      "line": 3,
+      "kind": "describe",
+      "name": "chunkMarkdown"
+    },
+    {
+      "file": "backend/src/chatbot/knowledge-chunker.spec.ts",
+      "line": 4,
+      "kind": "it",
+      "name": "preserves headings and normalizes line endings"
+    },
+    {
+      "file": "backend/src/chatbot/knowledge-chunker.spec.ts",
+      "line": 10,
+      "kind": "it",
+      "name": "bounds long paragraphs and retains all content in order with overlap"
+    },
+    {
+      "file": "backend/src/chatbot/knowledge-chunker.spec.ts",
+      "line": 23,
+      "kind": "it",
+      "name": "handles an unbroken string and ignores headings inside fenced code"
+    },
+    {
+      "file": "backend/src/chatbot/knowledge-chunker.spec.ts",
+      "line": 30,
+      "kind": "it",
+      "name": "excludes editorial HTML comments from searchable text"
+    },
+    {
+      "file": "backend/src/chatbot/knowledge-chunker.spec.ts",
+      "line": 36,
+      "kind": "it",
+      "name": "rejects empty, heading-only, binary and oversize content"
+    },
+    {
+      "file": "backend/src/chatbot/knowledge-import.cli.spec.ts",
+      "line": 4,
+      "kind": "describe",
+      "name": "knowledge import CLI arguments"
+    },
+    {
+      "file": "backend/src/chatbot/knowledge-import.cli.spec.ts",
+      "line": 5,
+      "kind": "it",
+      "name": "requires an explicit manifest file"
+    },
+    {
+      "file": "backend/src/chatbot/knowledge-import.cli.spec.ts",
+      "line": 11,
+      "kind": "it",
+      "name": "accepts only a stable key for revocation"
+    },
+    {
+      "file": "backend/src/chatbot/knowledge-importer.spec.ts",
+      "line": 6,
+      "kind": "describe",
+      "name": "KnowledgeImporter"
+    },
+    {
+      "file": "backend/src/chatbot/knowledge-importer.spec.ts",
+      "line": 44,
+      "kind": "it",
+      "name": "imports a reviewed document and pins the embedding model before and after embedding"
+    },
+    {
+      "file": "backend/src/chatbot/knowledge-importer.spec.ts",
+      "line": 54,
+      "kind": "it",
+      "name": "rejects drafts before calling Ollama or writing to the database"
+    },
+    {
+      "file": "backend/src/chatbot/knowledge-importer.spec.ts",
+      "line": 61,
+      "kind": "it",
+      "name": "preflights every entry before importing any document"
+    },
+    {
+      "file": "backend/src/chatbot/knowledge-importer.spec.ts",
+      "line": 76,
+      "kind": "it",
+      "name": "rejects a manifest outside the knowledge root"
+    },
+    {
+      "file": "backend/src/chatbot/knowledge-importer.spec.ts",
+      "line": 91,
+      "kind": "it",
+      "name": "rejects duplicate keys and invalid UTF-8"
+    },
+    {
+      "file": "backend/src/chatbot/knowledge-importer.spec.ts",
+      "line": 99,
+      "kind": "it",
+      "name": "rejects remote/model-changing manifests and destination property escape"
+    },
+    {
+      "file": "backend/src/chatbot/knowledge-importer.spec.ts",
+      "line": 109,
+      "kind": "it",
+      "name": "skips identical imports without generating vectors"
+    },
+    {
+      "file": "backend/src/chatbot/knowledge-importer.spec.ts",
+      "line": 116,
+      "kind": "it",
+      "name": "leaves the previous index untouched after an embedding failure or changed model"
+    },
+    {
+      "file": "backend/src/chatbot/knowledge-importer.spec.ts",
+      "line": 127,
+      "kind": "it",
+      "name": "rejects invalid vectors even when a client implementation bypasses adapter validation"
+    },
+    {
+      "file": "backend/src/chatbot/knowledge-retriever.spec.ts",
+      "line": 4,
+      "kind": "describe",
+      "name": "cosineSimilarity"
+    },
+    {
+      "file": "backend/src/chatbot/knowledge-retriever.spec.ts",
+      "line": 5,
+      "kind": "it",
+      "name": "ranks identical, opposite, and orthogonal vectors"
+    },
+    {
+      "file": "backend/src/chatbot/knowledge-retriever.spec.ts",
+      "line": 16,
+      "kind": "describe",
+      "name": "KnowledgeRetriever"
+    },
+    {
+      "file": "backend/src/chatbot/knowledge-retriever.spec.ts",
+      "line": 30,
+      "kind": "it",
+      "name": "embeds the question and returns the best three eligible chunks without vector data"
+    },
+    {
+      "file": "backend/src/chatbot/knowledge-retriever.spec.ts",
+      "line": 44,
+      "kind": "it",
+      "name": "returns no evidence under the calibrated threshold"
+    },
+    {
+      "file": "backend/src/chatbot/knowledge-retriever.spec.ts",
+      "line": 50,
+      "kind": "it",
+      "name": "uses Vietnamese topic terms in titles and headings to rerank generic passages"
+    },
+    {
+      "file": "backend/src/chatbot/knowledge-retriever.spec.ts",
+      "line": 65,
+      "kind": "it",
+      "name": "reranks exact Vietnamese matches and returns at most one chunk per document"
+    },
+    {
+      "file": "backend/src/chatbot/knowledge-retriever.spec.ts",
+      "line": 80,
+      "kind": "it",
+      "name": "returns empty evidence for a truly empty corpus without embedding"
+    },
+    {
+      "file": "backend/src/chatbot/knowledge-retriever.spec.ts",
+      "line": 87,
+      "kind": "it",
+      "name": "checks the live digest before embedding nonempty scoped candidates"
+    },
+    {
+      "file": "backend/src/chatbot/knowledge-retriever.spec.ts",
+      "line": 96,
+      "kind": "it",
+      "name": "does not convert an index-version error into empty evidence"
+    },
+    {
+      "file": "backend/src/chatbot/knowledge-retriever.spec.ts",
+      "line": 102,
+      "kind": "it",
+      "name": "fails closed on invalid query vectors and malformed rows"
+    },
+    {
+      "file": "backend/src/chatbot/knowledge.repository.spec.ts",
+      "line": 46,
+      "kind": "it",
+      "name": "stores vectors and recognizes unchanged metadata"
+    },
+    {
+      "file": "backend/src/chatbot/knowledge.repository.spec.ts",
+      "line": 56,
+      "kind": "it",
+      "name": "rolls back both metadata and chunks if an insert fails"
+    },
+    {
+      "file": "backend/src/chatbot/knowledge.repository.spec.ts",
+      "line": 74,
+      "kind": "it",
+      "name": "checks landlord and property ownership on import and enforces the DB relation"
+    },
+    {
+      "file": "backend/src/chatbot/knowledge.repository.spec.ts",
+      "line": 83,
+      "kind": "it",
+      "name": "filters global, landlord, and property content before vector retrieval"
+    },
+    {
+      "file": "backend/src/chatbot/knowledge.repository.spec.ts",
+      "line": 113,
+      "kind": "it",
+      "name": "revokes immediately, does not revive unchanged drafts, and rejects unknown keys"
+    },
+    {
+      "file": "backend/src/chatbot/knowledge.repository.spec.ts",
+      "line": 122,
+      "kind": "it",
+      "name": "rejects malformed scope and vectors before writing"
+    },
+    {
+      "file": "backend/src/chatbot/knowledge.repository.spec.ts",
+      "line": 129,
+      "kind": "it",
+      "name": "fails closed when any accessible active document has a different embedding model"
+    },
+    {
+      "file": "backend/src/chatbot/ollama.client.spec.ts",
+      "line": 8,
+      "kind": "describe",
+      "name": "OllamaClient"
+    },
+    {
+      "file": "backend/src/chatbot/ollama.client.spec.ts",
+      "line": 23,
+      "kind": "it",
+      "name": "embeds a batch without truncation and preserves the abort signal"
+    },
+    {
+      "file": "backend/src/chatbot/ollama.client.spec.ts",
+      "line": 42,
+      "kind": "it",
+      "name": "rejects mixed vector dimensions and dimensions changing across calls"
+    },
+    {
+      "file": "backend/src/chatbot/ollama.client.spec.ts",
+      "line": 51,
+      "kind": "it",
+      "name": "rejects input before making a request"
+    },
+    {
+      "file": "backend/src/chatbot/ollama.client.spec.ts",
+      "line": 57,
+      "kind": "it",
+      "name": "checks the full embedding digest rather than trusting a mutable tag"
+    },
+    {
+      "file": "backend/src/chatbot/ollama.client.spec.ts",
+      "line": 65,
+      "kind": "it",
+      "name": "sends sources as data and validates structured answers"
+    },
+    {
+      "file": "backend/src/chatbot/ollama.client.spec.ts",
+      "line": 89,
+      "kind": "it",
+      "name": "accepts an explicit insufficient-evidence answer"
+    },
+    {
+      "file": "backend/src/chatbot/ollama.client.spec.ts",
+      "line": 99,
+      "kind": "it",
+      "name": "rejects malformed JSON and incomplete generation"
+    },
+    {
+      "file": "backend/src/chatbot/ollama.client.spec.ts",
+      "line": 106,
+      "kind": "it",
+      "name": "maps unavailable and HTTP errors without exposing response contents or retrying"
+    },
+    {
+      "file": "backend/src/chatbot/ollama.client.spec.ts",
+      "line": 114,
+      "kind": "it",
+      "name": "distinguishes context overflow from an offline model"
+    },
+    {
+      "file": "backend/src/chatbot/ollama.client.spec.ts",
+      "line": 119,
+      "kind": "it",
+      "name": "maps abort to timeout, including when the caller is already aborted"
+    },
+    {
+      "file": "backend/src/chatbot/ollama.client.spec.ts",
+      "line": 126,
+      "kind": "it",
+      "name": "does not forward sensitive diagnostic text from malformed model error bodies"
+    },
+    {
+      "file": "backend/src/common/api-error.filter.spec.ts",
+      "line": 4,
+      "kind": "describe",
+      "name": "ApiErrorFilter"
+    },
+    {
+      "file": "backend/src/common/api-error.filter.spec.ts",
+      "line": 13,
+      "kind": "it",
+      "name": "preserves stable application error codes"
+    },
+    {
+      "file": "backend/src/common/api-error.filter.spec.ts",
+      "line": 18,
+      "kind": "it",
+      "name": "normalizes validation messages without reflecting request payloads"
+    },
+    {
+      "file": "backend/src/common/attachment-url.validator.spec.ts",
+      "line": 9,
+      "kind": "describe",
+      "name": "Attachment URL validation"
+    },
+    {
+      "file": "backend/src/common/attachment-url.validator.spec.ts",
+      "line": 17,
+      "kind": "it",
+      "name": "accepts the upload response across proof, maintenance and comment DTOs"
+    },
+    {
+      "file": "backend/src/common/auth-role.spec.ts",
+      "line": 5,
+      "kind": "describe",
+      "name": "toAuthRole"
+    },
+    {
+      "file": "backend/src/common/auth-role.spec.ts",
+      "line": 6,
+      "kind": "it",
+      "name": "maps landlord to lowercase wire role"
+    },
+    {
+      "file": "backend/src/common/auth-role.spec.ts",
+      "line": 10,
+      "kind": "it",
+      "name": "maps admin to lowercase wire role"
+    },
+    {
+      "file": "backend/src/common/landlord-resource-authorization.spec.ts",
+      "line": 19,
+      "kind": "describe",
+      "name": "landlord resource authorization metadata"
+    },
+    {
+      "file": "backend/src/common/landlord-resource-authorization.spec.ts",
+      "line": 41,
+      "kind": "it",
+      "name": "Roles decorator composes JWT auth and role guard semantics"
+    },
+    {
+      "file": "backend/src/common/property-scope.spec.ts",
+      "line": 7,
+      "kind": "describe",
+      "name": "Staff property authorization context"
+    },
+    {
+      "file": "backend/src/common/property-scope.spec.ts",
+      "line": 10,
+      "kind": "it",
+      "name": "is fail-closed for missing staff scopes but does not limit landlord/worker queries"
+    },
+    {
+      "file": "backend/src/common/property-scope.spec.ts",
+      "line": 20,
+      "kind": "it",
+      "name": "requires an assigned lease and denies tenants whose history spans unassigned properties"
+    },
+    {
+      "file": "backend/src/common/property-scope.spec.ts",
+      "line": 28,
+      "kind": "it",
+      "name": "preserves scope through Observable subscription and asynchronous database calls without leaking across requests"
+    },
+    {
+      "file": "backend/src/common/property-scope.spec.ts",
+      "line": 39,
+      "kind": "it",
+      "name": "denies unconverted modules, global reminder mutations, staff administration and property creation"
+    },
+    {
+      "file": "backend/src/common/roles.guard.spec.ts",
+      "line": 9,
+      "kind": "describe",
+      "name": "RolesGuard"
+    },
+    {
+      "file": "backend/src/common/roles.guard.spec.ts",
+      "line": 27,
+      "kind": "it",
+      "name": "allows access when no roles metadata is present"
+    },
+    {
+      "file": "backend/src/common/roles.guard.spec.ts",
+      "line": 32,
+      "kind": "it",
+      "name": "allows landlord users on landlord-only routes"
+    },
+    {
+      "file": "backend/src/common/roles.guard.spec.ts",
+      "line": 37,
+      "kind": "it",
+      "name": "rejects admin users on landlord-only routes"
+    },
+    {
+      "file": "backend/src/common/roles.guard.spec.ts",
+      "line": 44,
+      "kind": "it",
+      "name": "rejects missing authenticated users"
+    },
+    {
+      "file": "backend/src/common/roles.guard.spec.ts",
+      "line": 49,
+      "kind": "it",
+      "name": "passes handler and class targets to metadata lookup"
+    },
+    {
+      "file": "backend/src/common/roles.guard.spec.ts",
+      "line": 59,
+      "kind": "it",
+      "name": "denies admin without capability metadata or explicit permission"
+    },
+    {
+      "file": "backend/src/common/roles.guard.spec.ts",
+      "line": 66,
+      "kind": "it",
+      "name": "requires an MFA-verified session when MFA is required"
+    },
+    {
+      "file": "backend/src/common/subscription-entitlements.spec.ts",
+      "line": 4,
+      "kind": "describe",
+      "name": "subscription entitlement enforcement"
+    },
+    {
+      "file": "backend/src/common/subscription-entitlements.spec.ts",
+      "line": 10,
+      "kind": "it",
+      "name": "serializes owner inventory changes and rejects growth beyond snapshot limits"
+    },
+    {
+      "file": "backend/src/common/subscription-entitlements.spec.ts",
+      "line": 16,
+      "kind": "it",
+      "name": "denies growth after expiry but never deletes existing inventory"
+    },
+    {
+      "file": "backend/src/dashboard/dashboard.service.spec.ts",
+      "line": 19,
+      "kind": "describe",
+      "name": "DashboardService"
+    },
+    {
+      "file": "backend/src/dashboard/dashboard.service.spec.ts",
+      "line": 28,
+      "kind": "it",
+      "name": "scopes every aggregate query to the authenticated landlord"
+    },
+    {
+      "file": "backend/src/dashboard/dashboard.service.spec.ts",
+      "line": 72,
+      "kind": "it",
+      "name": "rejects a property that is not owned by the landlord"
+    },
+    {
+      "file": "backend/src/dashboard/dashboard.service.spec.ts",
+      "line": 88,
+      "kind": "it",
+      "name": "maps counts, outstanding totals, revenue buckets, attention and invoices"
+    },
+    {
+      "file": "backend/src/delivery/delivery-crypto.service.spec.ts",
+      "line": 5,
+      "kind": "describe",
+      "name": "Encrypted delivery"
+    },
+    {
+      "file": "backend/src/delivery/delivery-crypto.service.spec.ts",
+      "line": 6,
+      "kind": "it",
+      "name": "requires a dedicated 256-bit key and authenticates ciphertext"
+    },
+    {
+      "file": "backend/src/delivery/delivery-crypto.service.spec.ts",
+      "line": 15,
+      "kind": "it",
+      "name": "rejects insecure endpoints and embedded credentials"
+    },
+    {
+      "file": "backend/src/health/backup-telemetry.service.spec.ts",
+      "line": 7,
+      "kind": "describe",
+      "name": "BackupTelemetryService"
+    },
+    {
+      "file": "backend/src/health/backup-telemetry.service.spec.ts",
+      "line": 8,
+      "kind": "it",
+      "name": "accepts only signed, database-bound, durable telemetry"
+    },
+    {
+      "file": "backend/src/health/incident-workflow.service.spec.ts",
+      "line": 5,
+      "kind": "describe",
+      "name": "Incident inbox filters"
+    },
+    {
+      "file": "backend/src/health/incident-workflow.service.spec.ts",
+      "line": 6,
+      "kind": "it",
+      "name": "intersects actor assignment, explicit owner, status, severity, time window and search"
+    },
+    {
+      "file": "backend/src/health/incident-workflow.service.spec.ts",
+      "line": 20,
+      "kind": "it",
+      "name": "supports unassigned items without converting an empty result into an error"
+    },
+    {
+      "file": "backend/src/health/operations-health.service.spec.ts",
+      "line": 3,
+      "kind": "describe",
+      "name": "Operations readiness projection"
+    },
+    {
+      "file": "backend/src/health/operations-health.service.spec.ts",
+      "line": 22,
+      "kind": "it",
+      "name": "does not confuse database reachability with schema readiness, or invent backup age"
+    },
+    {
+      "file": "backend/src/health/operations-health.service.spec.ts",
+      "line": 33,
+      "kind": "it",
+      "name": "redacts readiness inspection errors and distinguishes unavailable from a passing check"
+    },
+    {
+      "file": "backend/src/health/operations-queue.service.spec.ts",
+      "line": 4,
+      "kind": "describe",
+      "name": "Operations delivery queue projection"
+    },
+    {
+      "file": "backend/src/health/operations-queue.service.spec.ts",
+      "line": 5,
+      "kind": "it",
+      "name": "bounds the query, filters state, selects no payload and never permits unsafe manual replay"
+    },
+    {
+      "file": "backend/src/health/schema-readiness.service.spec.ts",
+      "line": 8,
+      "kind": "describe",
+      "name": "Schema readiness release gate"
+    },
+    {
+      "file": "backend/src/health/schema-readiness.service.spec.ts",
+      "line": 12,
+      "kind": "it",
+      "name": "requires every migration, not just the latest marker"
+    },
+    {
+      "file": "backend/src/health/schema-readiness.service.spec.ts",
+      "line": 18,
+      "kind": "it",
+      "name": "blocks checksum drift, failed migrations and a database newer than the API"
+    },
+    {
+      "file": "backend/src/health/schema-readiness.service.spec.ts",
+      "line": 25,
+      "kind": "it",
+      "name": "loads only SQL migrations and fingerprints exact source bytes"
+    },
+    {
+      "file": "backend/src/health/schema-readiness.service.spec.ts",
+      "line": 35,
+      "kind": "it",
+      "name": "keeps liveness available but returns sanitized 503 for incompatible schema"
+    },
+    {
+      "file": "backend/src/health/schema-readiness.service.spec.ts",
+      "line": 44,
+      "kind": "it",
+      "name": "checks the actual auth schema even with a complete migration history"
+    },
+    {
+      "file": "backend/src/health/schema-readiness.service.spec.ts",
+      "line": 52,
+      "kind": "it",
+      "name": "keeps billing readiness tied to receipt reconciliation and maintenance SLA columns"
+    },
+    {
+      "file": "backend/src/leases/settlements.service.spec.ts",
+      "line": 57,
+      "kind": "describe",
+      "name": "LeaseSettlementsService"
+    },
+    {
+      "file": "backend/src/leases/settlements.service.spec.ts",
+      "line": 69,
+      "kind": "it",
+      "name": "scopes ownership and returns 404 for another landlord"
+    },
+    {
+      "file": "backend/src/leases/settlements.service.spec.ts",
+      "line": 78,
+      "kind": "it",
+      "name": "combines ledger entries, prorated rent and utility charges without mutating data"
+    },
+    {
+      "file": "backend/src/leases/settlements.service.spec.ts",
+      "line": 97,
+      "kind": "it",
+      "name": "keeps existing invoices separate and never bills rent twice"
+    },
+    {
+      "file": "backend/src/leases/settlements.service.spec.ts",
+      "line": 106,
+      "kind": "it",
+      "name": "leaves an explicit amount due when charges exceed the deposit"
+    },
+    {
+      "file": "backend/src/leases/settlements.service.spec.ts",
+      "line": 119,
+      "kind": "it",
+      "name": "rejects final readings below the current meter baseline"
+    },
+    {
+      "file": "backend/src/leases/settlements.service.spec.ts",
+      "line": 125,
+      "kind": "it",
+      "name": "rejects unpriced utility usage and future invoices"
+    },
+    {
+      "file": "backend/src/leases/settlements.service.spec.ts",
+      "line": 132,
+      "kind": "it",
+      "name": "rejects stale fingerprints before creating a settlement or ledger entry"
+    },
+    {
+      "file": "backend/src/leases/settlements.service.spec.ts",
+      "line": 141,
+      "kind": "it",
+      "name": "confirms atomically and returns the same settlement for an identical retry"
+    },
+    {
+      "file": "backend/src/leases/settlements.service.spec.ts",
+      "line": 161,
+      "kind": "it",
+      "name": "records a refund only once, preserving the settlement version"
+    },
+    {
+      "file": "backend/src/leases/settlements.service.spec.ts",
+      "line": 173,
+      "kind": "it",
+      "name": "rejects stale refund versions and a changed deposit balance"
+    },
+    {
+      "file": "backend/src/leases/settlements.service.spec.ts",
+      "line": 185,
+      "kind": "describe",
+      "name": "lease settlement calculations"
+    },
+    {
+      "file": "backend/src/leases/settlements.service.spec.ts",
+      "line": 186,
+      "kind": "it",
+      "name": "calculates rent inclusively for a partial month"
+    },
+    {
+      "file": "backend/src/leases/settlements.service.spec.ts",
+      "line": 200,
+      "kind": "it",
+      "name": "uses the lease start date when it begins inside the move-out month"
+    },
+    {
+      "file": "backend/src/leases/settlements.service.spec.ts",
+      "line": 214,
+      "kind": "it",
+      "name": "rejects a move-out date before the occupied period"
+    },
+    {
+      "file": "backend/src/leases/settlements.service.spec.ts",
+      "line": 224,
+      "kind": "it",
+      "name": "rejects unsafe or negative money values"
+    },
+    {
+      "file": "backend/src/operations/recurring.service.spec.ts",
+      "line": 3,
+      "kind": "describe",
+      "name": "Vietnam recurring operation calendar"
+    },
+    {
+      "file": "backend/src/operations/recurring.service.spec.ts",
+      "line": 4,
+      "kind": "test",
+      "name": "clamps end of month and restores the original local anchor day"
+    },
+    {
+      "file": "backend/src/operations/recurring.service.spec.ts",
+      "line": 10,
+      "kind": "test",
+      "name": "handles leap years, quarters, intervals and year boundaries"
+    },
+    {
+      "file": "backend/src/platform/finance-reconciliation.service.spec.ts",
+      "line": 3,
+      "kind": "describe",
+      "name": "FinanceReconciliationService"
+    },
+    {
+      "file": "backend/src/platform/finance-reconciliation.service.spec.ts",
+      "line": 4,
+      "kind": "it",
+      "name": "requires a separate checker for maker-checker approval"
+    },
+    {
+      "file": "backend/src/platform/moderation-policy-quality.spec.ts",
+      "line": 7,
+      "kind": "describe",
+      "name": "Moderation quality read model"
+    },
+    {
+      "file": "backend/src/platform/moderation-policy-quality.spec.ts",
+      "line": 21,
+      "kind": "it",
+      "name": "uses event-time bounds for each metric, and does not mislabel reopen as an overturn"
+    },
+    {
+      "file": "backend/src/platform/moderation-policy-quality.spec.ts",
+      "line": 33,
+      "kind": "it",
+      "name": "only includes CSAT with support read permission"
+    },
+    {
+      "file": "backend/src/platform/moderation-policy-quality.spec.ts",
+      "line": 40,
+      "kind": "it",
+      "name": "rejects unsupported windows/timezones and does not query for revoked permissions"
+    },
+    {
+      "file": "backend/src/platform/moderation-policy-quality.spec.ts",
+      "line": 48,
+      "kind": "it",
+      "name": "renders the same explicit instant using the requested timezone, including DST"
+    },
+    {
+      "file": "backend/src/platform/moderation-preview.spec.ts",
+      "line": 11,
+      "kind": "describe",
+      "name": "Read-only bulk moderation preview"
+    },
+    {
+      "file": "backend/src/platform/moderation-preview.spec.ts",
+      "line": 38,
+      "kind": "it",
+      "name": "returns ready items without invoking mutation services"
+    },
+    {
+      "file": "backend/src/platform/moderation-preview.spec.ts",
+      "line": 44,
+      "kind": "it",
+      "name": "checks the feature flag before opening any transaction"
+    },
+    {
+      "file": "backend/src/platform/moderation-preview.spec.ts",
+      "line": 49,
+      "kind": "it",
+      "name": "never reads targets or assignment without kind permission"
+    },
+    {
+      "file": "backend/src/platform/moderation-preview.spec.ts",
+      "line": 55,
+      "kind": "it",
+      "name": "rejects duplicate targets before querying"
+    },
+    {
+      "file": "backend/src/platform/moderation-preview.spec.ts",
+      "line": 61,
+      "kind": "it",
+      "name": "blocks a stale version and does not run availability queries"
+    },
+    {
+      "file": "backend/src/platform/moderation-preview.spec.ts",
+      "line": 66,
+      "kind": "it",
+      "name": "blocks publishing an unavailable room and rechecks all availability predicates"
+    },
+    {
+      "file": "backend/src/platform/moderation-preview.spec.ts",
+      "line": 73,
+      "kind": "it",
+      "name": "does not disclose a target assigned to another moderator"
+    },
+    {
+      "file": "backend/src/platform/moderation-preview.spec.ts",
+      "line": 78,
+      "kind": "it",
+      "name": "rejects withdrawn reviews and replies without approved parent content"
+    },
+    {
+      "file": "backend/src/platform/moderation-preview.spec.ts",
+      "line": 84,
+      "kind": "it",
+      "name": "propagates database failures rather than presenting partial readiness"
+    },
+    {
+      "file": "backend/src/platform/moderation-quality.service.spec.ts",
+      "line": 7,
+      "kind": "describe",
+      "name": "ModerationQualityService"
+    },
+    {
+      "file": "backend/src/platform/moderation-quality.service.spec.ts",
+      "line": 9,
+      "kind": "it",
+      "name": "samples deterministically within an explicit bounded window and excludes the actor own decisions"
+    },
+    {
+      "file": "backend/src/platform/moderation-quality.service.spec.ts",
+      "line": 18,
+      "kind": "it",
+      "name": "rejects invalid/future windows and self-review"
+    },
+    {
+      "file": "backend/src/platform/moderation-quality.service.spec.ts",
+      "line": 24,
+      "kind": "it",
+      "name": "uses version conflict and atomic audit for one QA review"
+    },
+    {
+      "file": "backend/src/platform/platform-rules.spec.ts",
+      "line": 6,
+      "kind": "describe",
+      "name": "Platform rules"
+    },
+    {
+      "file": "backend/src/platform/platform-rules.spec.ts",
+      "line": 12,
+      "kind": "it",
+      "name": "calculates initial UTC run today or tomorrow without modifying reference"
+    },
+    {
+      "file": "backend/src/platform/platform-rules.spec.ts",
+      "line": 21,
+      "kind": "it",
+      "name": "clamps monthly runs to the last valid day, including leap years"
+    },
+    {
+      "file": "backend/src/platform/platform-rules.spec.ts",
+      "line": 25,
+      "kind": "it",
+      "name": "enforces enabled, role allowlists and zero/full rollout"
+    },
+    {
+      "file": "backend/src/platform/platform-rules.spec.ts",
+      "line": 31,
+      "kind": "it",
+      "name": "schedules local business hours in Vietnam and quarter-hour timezones"
+    },
+    {
+      "file": "backend/src/platform/platform-rules.spec.ts",
+      "line": 35,
+      "kind": "it",
+      "name": "skips nonexistent DST hours and selects the earliest future ambiguous hour"
+    },
+    {
+      "file": "backend/src/platform/platform-rules.spec.ts",
+      "line": 40,
+      "kind": "it",
+      "name": "makes percentage rollout deterministic and monotonic"
+    },
+    {
+      "file": "backend/src/platform/platform-rules.spec.ts",
+      "line": 48,
+      "kind": "it",
+      "name": "escapes CSV formulas, commas, quotes and newlines"
+    },
+    {
+      "file": "backend/src/reports/billing-analytics.spec.ts",
+      "line": 3,
+      "kind": "describe",
+      "name": "billing analytics read model"
+    },
+    {
+      "file": "backend/src/reports/billing-analytics.spec.ts",
+      "line": 6,
+      "kind": "it",
+      "name": "computes MRR, collection, occupancy and overdue days with explicit definitions"
+    },
+    {
+      "file": "backend/src/reports/billing-analytics.spec.ts",
+      "line": 26,
+      "kind": "it",
+      "name": "returns null rates when there is no denominator"
+    },
+    {
+      "file": "backend/src/rooms/service-tariff.spec.ts",
+      "line": 15,
+      "kind": "describe",
+      "name": "versioned service tariff selection"
+    },
+    {
+      "file": "backend/src/rooms/service-tariff.spec.ts",
+      "line": 16,
+      "kind": "it",
+      "name": "selects the latest version effective for the billing month"
+    },
+    {
+      "file": "backend/src/rooms/service-tariff.spec.ts",
+      "line": 21,
+      "kind": "it",
+      "name": "does not use a future version for an earlier invoice"
+    },
+    {
+      "file": "backend/src/rooms/service-tariff.spec.ts",
+      "line": 26,
+      "kind": "it",
+      "name": "falls back to legacy mutable fee records"
+    },
+    {
+      "file": "backend/src/rooms/service-tariff.spec.ts",
+      "line": 30,
+      "kind": "it",
+      "name": "uses historical activity, not the mutable latest projection, for earlier months"
+    },
+    {
+      "file": "backend/src/rooms/service-tariff.spec.ts",
+      "line": 37,
+      "kind": "it",
+      "name": "does not charge a fee before its first effective period"
+    },
+    {
+      "file": "backend/src/rooms/service-tariff.spec.ts",
+      "line": 41,
+      "kind": "it",
+      "name": "uses the Vietnamese billing month at the UTC month boundary"
+    },
+    {
+      "file": "backend/src/support/business-calendar.spec.ts",
+      "line": 3,
+      "kind": "describe",
+      "name": "support business calendar"
+    },
+    {
+      "file": "backend/src/support/business-calendar.spec.ts",
+      "line": 8,
+      "kind": "it",
+      "name": "skips weekends without rounding away seconds"
+    },
+    {
+      "file": "backend/src/support/business-calendar.spec.ts",
+      "line": 11,
+      "kind": "it",
+      "name": "skips configured holidays"
+    },
+    {
+      "file": "backend/src/support/business-calendar.spec.ts",
+      "line": 14,
+      "kind": "it",
+      "name": "does not count closed hours in elapsed work"
+    },
+    {
+      "file": "backend/src/support/business-calendar.spec.ts",
+      "line": 17,
+      "kind": "it",
+      "name": "honours IANA offsets rather than the host timezone"
+    },
+    {
+      "file": "backend/src/support/business-calendar.spec.ts",
+      "line": 20,
+      "kind": "it",
+      "name": "counts actual work through the spring DST gap"
+    },
+    {
+      "file": "backend/src/support/business-calendar.spec.ts",
+      "line": 24,
+      "kind": "it",
+      "name": "counts the repeated fall DST hour once in real elapsed time"
+    },
+    {
+      "file": "backend/src/support/business-calendar.spec.ts",
+      "line": 28,
+      "kind": "it",
+      "name": "clamps a nonexistent opening time to the next valid wall time"
+    },
+    {
+      "file": "backend/src/support/business-calendar.spec.ts",
+      "line": 32,
+      "kind": "it",
+      "name": "preserves already overdue deadlines on resume"
+    },
+    {
+      "file": "backend/src/support/business-calendar.spec.ts",
+      "line": 36,
+      "kind": "it",
+      "name": "preserves only the remaining work budget on resume"
+    },
+    {
+      "file": "backend/src/support/business-calendar.spec.ts",
+      "line": 39,
+      "kind": "it",
+      "name": "does not restart a paused clock on reassignment or repeated pause"
+    },
+    {
+      "file": "backend/src/support/business-calendar.spec.ts",
+      "line": 44,
+      "kind": "it",
+      "name": "keeps legacy elapsed-hour deadlines when business policy is disabled"
+    },
+    {
+      "file": "backend/src/support/support-inbox.spec.ts",
+      "line": 13,
+      "kind": "describe",
+      "name": "Support inbox filtering"
+    },
+    {
+      "file": "backend/src/support/support-inbox.spec.ts",
+      "line": 22,
+      "kind": "it",
+      "name": "pauses resolution but still tracks a missing first response"
+    },
+    {
+      "file": "backend/src/support/support-inbox.spec.ts",
+      "line": 28,
+      "kind": "it",
+      "name": "uses a disjoint one-hour due-soon window"
+    },
+    {
+      "file": "backend/src/support/support-inbox.spec.ts",
+      "line": 37,
+      "kind": "it",
+      "name": "intersects explicit status, ownership, priority and SLA filters"
+    },
+    {
+      "file": "backend/src/support/support-inbox.spec.ts",
+      "line": 46,
+      "kind": "it",
+      "name": "scopes requester searches and does not search internal messages"
+    },
+    {
+      "file": "backend/src/tenant-lifecycle/notification-channels.spec.ts",
+      "line": 3,
+      "kind": "describe",
+      "name": "Tenant reminder consent"
+    },
+    {
+      "file": "backend/src/tenant-lifecycle/notification-channels.spec.ts",
+      "line": 4,
+      "kind": "it",
+      "name": "defaults to in-app only, not external email or Zalo delivery"
+    },
+    {
+      "file": "backend/src/tenant-lifecycle/notification-channels.spec.ts",
+      "line": 10,
+      "kind": "it",
+      "name": "requires both an enabled preference and an explicitly selected supported channel"
+    },
+    {
+      "file": "backend/src/tenants/tenant-invites.service.spec.ts",
+      "line": 5,
+      "kind": "describe",
+      "name": "TenantInvitesService"
+    },
+    {
+      "file": "backend/src/tenants/tenant-invites.service.spec.ts",
+      "line": 32,
+      "kind": "it",
+      "name": "creates a hashed activation invite for an active tenant"
+    },
+    {
+      "file": "backend/src/tenants/tenant-invites.service.spec.ts",
+      "line": 65,
+      "kind": "it",
+      "name": "rejects invite creation when the tenant is missing"
+    },
+    {
+      "file": "backend/src/tenants/tenant-invites.service.spec.ts",
+      "line": 74,
+      "kind": "it",
+      "name": "rejects invite creation when tenant already has an account"
+    },
+    {
+      "file": "backend/src/tenants/tenant-invites.service.spec.ts",
+      "line": 83,
+      "kind": "it",
+      "name": "rejects invite creation when the email is already registered"
+    },
+    {
+      "file": "backend/src/uploads/admin-attachment-authorization.spec.ts",
+      "line": 9,
+      "kind": "describe",
+      "name": "Support attachment release authorization"
+    },
+    {
+      "file": "backend/src/uploads/admin-attachment-authorization.spec.ts",
+      "line": 24,
+      "kind": "it",
+      "name": "requires support capability for internal notes, regardless of uploaded-file ownership"
+    },
+    {
+      "file": "backend/src/uploads/admin-attachment-authorization.spec.ts",
+      "line": 32,
+      "kind": "it",
+      "name": "checks requester ownership for non-internal attachments instead of trusting a filename"
+    },
+    {
+      "file": "backend/src/uploads/admin-attachment-authorization.spec.ts",
+      "line": 39,
+      "kind": "it",
+      "name": "binds new URLs to session and rechecks live permission and userVersion before reading bytes"
+    },
+    {
+      "file": "backend/src/uploads/malware-scanner.service.spec.ts",
+      "line": 5,
+      "kind": "describe",
+      "name": "MalwareScannerService"
+    },
+    {
+      "file": "backend/src/uploads/malware-scanner.service.spec.ts",
+      "line": 10,
+      "kind": "it",
+      "name": "does not accept unconfigured scanners"
+    },
+    {
+      "file": "backend/src/uploads/malware-scanner.service.spec.ts",
+      "line": 13,
+      "kind": "it",
+      "name": "binds a clean verdict to the exact file hash"
+    },
+    {
+      "file": "backend/src/uploads/malware-scanner.service.spec.ts",
+      "line": 18,
+      "kind": "it",
+      "name": "rejects infected, unverified or failed scan results"
+    }
+  ],
+  "flutterFiles": [
+    {
+      "file": "test/core/network/api_client_test.dart"
+    },
+    {
+      "file": "test/core/widgets/liquid_bubble_navigation_test.dart"
+    },
+    {
+      "file": "test/core/widgets/liquid_taskbar_insets_test.dart"
+    },
+    {
+      "file": "test/dashboard_test.dart"
+    },
+    {
+      "file": "test/data/admin/admin_accounts_api_test.dart"
+    },
+    {
+      "file": "test/data/admin/admin_api_test.dart"
+    },
+    {
+      "file": "test/data/admin/admin_inventory_api_test.dart"
+    },
+    {
+      "file": "test/data/admin/admin_step_up_api_test.dart"
+    },
+    {
+      "file": "test/data/admin/finance_statement_csv_test.dart"
+    },
+    {
+      "file": "test/data/auth/auth_api_test.dart"
+    },
+    {
+      "file": "test/data/auth/auth_repository_test.dart"
+    },
+    {
+      "file": "test/data/auth/token_refresh_coordinator_test.dart"
+    },
+    {
+      "file": "test/data/billing/billing_api_test.dart"
+    },
+    {
+      "file": "test/data/billing/billing_receipt_api_test.dart"
+    },
+    {
+      "file": "test/data/billing/billing_tariff_api_test.dart"
+    },
+    {
+      "file": "test/data/billing/manual_transfer_api_test.dart"
+    },
+    {
+      "file": "test/data/chatbot/chatbot_api_test.dart"
+    },
+    {
+      "file": "test/data/dashboard/dashboard_api_test.dart"
+    },
+    {
+      "file": "test/data/lease_settlement_api_test.dart"
+    },
+    {
+      "file": "test/data/listings/housing_repository_test.dart"
+    },
+    {
+      "file": "test/data/listings/listings_api_test.dart"
+    },
+    {
+      "file": "test/data/listings/reviews_repository_test.dart"
+    },
+    {
+      "file": "test/data/notifications/notifications_api_test.dart"
+    },
+    {
+      "file": "test/data/onboarding/onboarding_preferences_test.dart"
+    },
+    {
+      "file": "test/data/operations/operations_api_test.dart"
+    },
+    {
+      "file": "test/data/operations/p1_operations_api_test.dart"
+    },
+    {
+      "file": "test/data/rooms_lifecycle_api_test.dart"
+    },
+    {
+      "file": "test/data/tenant_lifecycle_requests_api_test.dart"
+    },
+    {
+      "file": "test/data/tenant_portal/tenant_portal_api_test.dart"
+    },
+    {
+      "file": "test/data/tenants_lifecycle_api_test.dart"
+    },
+    {
+      "file": "test/data/uploads/upload_api_test.dart"
+    },
+    {
+      "file": "test/features/admin/admin_account_detail_panel_test.dart"
+    },
+    {
+      "file": "test/features/admin/admin_accounts_panel_test.dart"
+    },
+    {
+      "file": "test/features/admin/admin_accounts_workspace_test.dart"
+    },
+    {
+      "file": "test/features/admin/admin_completion_session_test.dart"
+    },
+    {
+      "file": "test/features/admin/admin_inbox_safety_test.dart"
+    },
+    {
+      "file": "test/features/admin/admin_inventory_panel_test.dart"
+    },
+    {
+      "file": "test/features/admin/admin_milestone_one_test.dart"
+    },
+    {
+      "file": "test/features/admin/admin_operations_release_test.dart"
+    },
+    {
+      "file": "test/features/admin/admin_overview_chart_test.dart"
+    },
+    {
+      "file": "test/features/admin/admin_permissions_editor_test.dart"
+    },
+    {
+      "file": "test/features/admin/admin_production_panels_test.dart"
+    },
+    {
+      "file": "test/features/admin/admin_registry_screen_test.dart"
+    },
+    {
+      "file": "test/features/admin/admin_route_theme_test.dart"
+    },
+    {
+      "file": "test/features/admin/admin_search_quality_test.dart"
+    },
+    {
+      "file": "test/features/admin/admin_sessions_test.dart"
+    },
+    {
+      "file": "test/features/admin/admin_sprints_test.dart"
+    },
+    {
+      "file": "test/features/admin/admin_transactions_panel_test.dart"
+    },
+    {
+      "file": "test/features/admin/admin_unified_shell_test.dart"
+    },
+    {
+      "file": "test/features/admin/admin_workspace_flow_test.dart"
+    },
+    {
+      "file": "test/features/admin/admin_workspace_foundation_test.dart"
+    },
+    {
+      "file": "test/features/auth/account_access_test.dart"
+    },
+    {
+      "file": "test/features/auth/auth_navigation_test.dart"
+    },
+    {
+      "file": "test/features/auth/register_screen_test.dart"
+    },
+    {
+      "file": "test/features/auth/session_cache_isolation_test.dart"
+    },
+    {
+      "file": "test/features/billing/billing_filter_entry_test.dart"
+    },
+    {
+      "file": "test/features/billing/billing_receipts_screen_test.dart"
+    },
+    {
+      "file": "test/features/billing/billing_tariffs_screen_test.dart"
+    },
+    {
+      "file": "test/features/billing/invoice_adjustment_test.dart"
+    },
+    {
+      "file": "test/features/billing/invoice_replacement_test.dart"
+    },
+    {
+      "file": "test/features/billing/invoice_tariffs_test.dart"
+    },
+    {
+      "file": "test/features/billing/invoice_timeline_test.dart"
+    },
+    {
+      "file": "test/features/billing/manual_review_confirmation_test.dart"
+    },
+    {
+      "file": "test/features/billing/meter_reading_fields_test.dart"
+    },
+    {
+      "file": "test/features/billing/reminder_policy_test.dart"
+    },
+    {
+      "file": "test/features/chatbot/chatbot_screen_test.dart"
+    },
+    {
+      "file": "test/features/chatbot/chatbot_session_test.dart"
+    },
+    {
+      "file": "test/features/dashboard/dashboard_chatbot_entry_test.dart"
+    },
+    {
+      "file": "test/features/dashboard/room_map_dashboard_test.dart"
+    },
+    {
+      "file": "test/features/listings/discovery_tools_test.dart"
+    },
+    {
+      "file": "test/features/listings/housing_journey_test.dart"
+    },
+    {
+      "file": "test/features/listings/housing_screen_test.dart"
+    },
+    {
+      "file": "test/features/listings/listing_navigation_test.dart"
+    },
+    {
+      "file": "test/features/listings/listing_taskbar_scroll_test.dart"
+    },
+    {
+      "file": "test/features/listings/listings_screen_test.dart"
+    },
+    {
+      "file": "test/features/listings/reviews_screen_test.dart"
+    },
+    {
+      "file": "test/features/listings/student_discovery_test.dart"
+    },
+    {
+      "file": "test/features/onboarding/onboarding_persistence_test.dart"
+    },
+    {
+      "file": "test/features/operations/action_destinations_test.dart"
+    },
+    {
+      "file": "test/features/operations/action_items_screen_test.dart"
+    },
+    {
+      "file": "test/features/rooms/room_detail_screen_test.dart"
+    },
+    {
+      "file": "test/features/settings/settings_screen_test.dart"
+    },
+    {
+      "file": "test/features/tenant_portal/tenant_manual_payment_test.dart"
+    },
+    {
+      "file": "test/features/tenant_portal/tenant_p1_screens_test.dart"
+    },
+    {
+      "file": "test/features/tenants/lease_form_screen_test.dart"
+    },
+    {
+      "file": "test/features/tenants/lease_settlement_screen_test.dart"
+    },
+    {
+      "file": "test/features/tenants/tenant_lifecycle_screen_test.dart"
+    },
+    {
+      "file": "test/properties_test.dart"
+    },
+    {
+      "file": "test/rooms_test.dart"
+    },
+    {
+      "file": "test/widget_test.dart"
+    }
+  ],
+  "executed": false
+}

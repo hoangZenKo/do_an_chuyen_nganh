@@ -1,0 +1,96 @@
+@startuml
+hide empty methods
+skinparam classAttributeIconSize 0
+skinparam shadowing false
+skinparam defaultFontName Arial
+title CD-00 Sơ đồ lớp miền nghiệp vụ tổng quan (Domain Class Diagram)
+class User {
+  id: String {id}
+  fullName: String
+}
+class Property {
+  id: String {id}
+  name: String
+}
+class Room {
+  id: String {id}
+  name: String
+}
+class MeterReading {
+  id: String {id}
+  utilityType: UtilityType
+}
+class Tenant {
+  id: String {id}
+  fullName: String
+}
+class Lease {
+  id: String {id}
+  startDate: DateTime
+}
+class Invoice {
+  id: String {id}
+  billingMonth: DateTime
+}
+class Payment {
+  id: String {id}
+  amount: Int
+}
+class DepositTransaction {
+  id: String {id}
+  type: DepositTransactionType
+}
+class MaintenanceTicket {
+  id: String {id}
+  title: String
+}
+class Expense {
+  id: String {id}
+  category: ExpenseCategory
+}
+class PaymentProof {
+  id: String {id}
+  amount: Int
+}
+class BillingAutomation {
+  id: String {id}
+  isEnabled: Boolean
+}
+enum DepositTransactionType {
+  COLLECTED
+  REFUNDED
+  DEDUCTED
+  ADJUSTMENT
+}
+enum ExpenseCategory {
+  REPAIR
+  UTILITIES
+  INTERNET
+  CLEANING
+  FURNITURE
+  SALARY
+  TAX
+  OTHER
+}
+enum UtilityType {
+  ELECTRICITY
+  WATER
+}
+Property "0..*\nproperties" -- "1\nlandlord" User
+Room "0..*\nrooms" -- "1\nproperty" Property
+Tenant "0..*\ntenants" -- "1\nlandlord" User
+Lease "0..*\nleases" -- "1\nroom" Room
+Lease "0..*\nleases" -- "1\ntenant" Tenant
+DepositTransaction "0..*\ndepositTransactions" -- "1\nlease" Lease
+MeterReading "0..*\nmeterReadings" -- "1\nroom" Room
+Invoice "0..*\ninvoices" -- "1\nlease" Lease
+PaymentProof "0..*\npaymentProofs" -- "1\ninvoice" Invoice
+Payment "0..*\npayments" -- "1\ninvoice" Invoice
+BillingAutomation "0..1\nbillingAutomation" -- "1\nproperty" Property
+Expense "0..*\nexpenses" -- "1\nproperty" Property
+MaintenanceTicket "0..*\nmaintenanceTickets" -- "1\nroom" Room
+MaintenanceTicket "0..*\nmaintenanceTickets" -- "0..1\nexpense" Expense
+legend bottom
+Đường liền: association. <<IDRef>>: chỉ tham chiếu bằng mã, không phải association.
+endlegend
+@enduml

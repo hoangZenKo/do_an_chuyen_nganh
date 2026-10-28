@@ -1,0 +1,56 @@
+<?xml version='1.0' encoding='utf-8'?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="1221" viewBox="0 0 1000 1221" role="img" aria-labelledby="diagram-title diagram-description">
+  <title id="diagram-title">D-BIL-01 Chỉ số điện nước và hóa đơn</title>
+  <desc id="diagram-description">Actor nằm ngoài biên hệ thống. Đường liền biểu thị actor tham gia UC. Khung nét đứt chỉ nhóm phân rã theo UC tổng quan. Các UC: UC-BIL-01, UC-BIL-02.01, UC-BIL-02.02, UC-BIL-02.03, UC-BIL-02.04, UC-BIL-02.05, UC-BIL-02.06, UC-BIL-02.07</desc>
+  <rect x="210" y="28" width="755" height="1109" fill="none" stroke="#39414B" stroke-width="1.2" />
+  <text x="587.5" y="58" text-anchor="middle" dominant-baseline="central" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#222222">Hệ thống quản lý nhà trọ</text>
+  <polyline points="116.00,150.00 320.00,177.00" fill="none" stroke="#737B85" stroke-width="1.4" />
+  <rect x="248" y="91" width="693" height="166" fill="none" stroke="#A7AFB8" stroke-width="1.2" stroke-dasharray="7 5" />
+  <text x="264" y="115" text-anchor="start" dominant-baseline="central" font-family="Arial, sans-serif" font-size="21" font-weight="bold" fill="#222222">UC-BIL-01 Ghi chỉ số điện nước</text>
+  <circle cx="90" cy="123.0" r="13" fill="white" stroke="#222222" stroke-width="1.6" />
+  <polyline points="90,136.0 90,173.0" fill="none" stroke="#222222" stroke-width="1.6" />
+  <polyline points="65,150.0 115,150.0" fill="none" stroke="#222222" stroke-width="1.6" />
+  <polyline points="90,173.0 68,197.0" fill="none" stroke="#222222" stroke-width="1.6" />
+  <polyline points="90,173.0 112,197.0" fill="none" stroke="#222222" stroke-width="1.6" />
+  <text x="90" y="218.0" text-anchor="middle" dominant-baseline="central" font-family="Arial, sans-serif" font-size="23" font-weight="bold" fill="#222222">Chủ trọ</text>
+  <ellipse cx="610" cy="177" rx="290.0" ry="49.0" fill="white" stroke="#303740" stroke-width="1.6" data-uc-id="UC-BIL-01" />
+  <text x="610" y="161" text-anchor="middle" dominant-baseline="central" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#43505F">UC-BIL-01</text>
+  <text x="610" y="192" text-anchor="middle" dominant-baseline="central" font-family="Arial, sans-serif" font-size="24" font-weight="normal" fill="#222222">Ghi chỉ số điện nước</text>
+  <polyline points="116.00,672.00 320.00,363.00" fill="none" stroke="#737B85" stroke-width="1.4" />
+  <polyline points="116.00,672.00 320.00,475.00" fill="none" stroke="#737B85" stroke-width="1.4" />
+  <polyline points="116.00,672.00 320.00,587.00" fill="none" stroke="#737B85" stroke-width="1.4" />
+  <polyline points="116.00,672.00 320.00,699.00" fill="none" stroke="#737B85" stroke-width="1.4" />
+  <polyline points="116.00,672.00 320.00,811.00" fill="none" stroke="#737B85" stroke-width="1.4" />
+  <polyline points="116.00,672.00 320.00,923.00" fill="none" stroke="#737B85" stroke-width="1.4" />
+  <polyline points="116.00,672.00 320.00,1035.00" fill="none" stroke="#737B85" stroke-width="1.4" />
+  <rect x="248" y="277" width="693" height="838" fill="none" stroke="#A7AFB8" stroke-width="1.2" stroke-dasharray="7 5" />
+  <text x="264" y="301" text-anchor="start" dominant-baseline="central" font-family="Arial, sans-serif" font-size="21" font-weight="bold" fill="#222222">UC-BIL-02 Lập hóa đơn</text>
+  <circle cx="90" cy="645.0" r="13" fill="white" stroke="#222222" stroke-width="1.6" />
+  <polyline points="90,658.0 90,695.0" fill="none" stroke="#222222" stroke-width="1.6" />
+  <polyline points="65,672.0 115,672.0" fill="none" stroke="#222222" stroke-width="1.6" />
+  <polyline points="90,695.0 68,719.0" fill="none" stroke="#222222" stroke-width="1.6" />
+  <polyline points="90,695.0 112,719.0" fill="none" stroke="#222222" stroke-width="1.6" />
+  <text x="90" y="740.0" text-anchor="middle" dominant-baseline="central" font-family="Arial, sans-serif" font-size="23" font-weight="bold" fill="#222222">Chủ trọ</text>
+  <ellipse cx="610" cy="363" rx="290.0" ry="49.0" fill="white" stroke="#303740" stroke-width="1.6" data-uc-id="UC-BIL-02.01" />
+  <text x="610" y="347" text-anchor="middle" dominant-baseline="central" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#43505F">UC-BIL-02.01</text>
+  <text x="610" y="378" text-anchor="middle" dominant-baseline="central" font-family="Arial, sans-serif" font-size="24" font-weight="normal" fill="#222222">Lập hóa đơn cho một hợp đồng</text>
+  <ellipse cx="610" cy="475" rx="290.0" ry="49.0" fill="white" stroke="#303740" stroke-width="1.6" data-uc-id="UC-BIL-02.02" />
+  <text x="610" y="459" text-anchor="middle" dominant-baseline="central" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#43505F">UC-BIL-02.02</text>
+  <text x="610" y="490" text-anchor="middle" dominant-baseline="central" font-family="Arial, sans-serif" font-size="24" font-weight="normal" fill="#222222">Lập hóa đơn hàng loạt</text>
+  <ellipse cx="610" cy="587" rx="290.0" ry="49.0" fill="white" stroke="#303740" stroke-width="1.6" data-uc-id="UC-BIL-02.03" />
+  <text x="610" y="571" text-anchor="middle" dominant-baseline="central" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#43505F">UC-BIL-02.03</text>
+  <text x="610" y="602" text-anchor="middle" dominant-baseline="central" font-family="Arial, sans-serif" font-size="24" font-weight="normal" fill="#222222">Tra cứu hóa đơn và công nợ</text>
+  <ellipse cx="610" cy="699" rx="290.0" ry="49.0" fill="white" stroke="#303740" stroke-width="1.6" data-uc-id="UC-BIL-02.04" />
+  <text x="610" y="683" text-anchor="middle" dominant-baseline="central" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#43505F">UC-BIL-02.04</text>
+  <text x="610" y="714" text-anchor="middle" dominant-baseline="central" font-family="Arial, sans-serif" font-size="24" font-weight="normal" fill="#222222">Điều chỉnh hóa đơn chưa thu tiền</text>
+  <ellipse cx="610" cy="811" rx="290.0" ry="49.0" fill="white" stroke="#303740" stroke-width="1.6" data-uc-id="UC-BIL-02.05" />
+  <text x="610" y="795" text-anchor="middle" dominant-baseline="central" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#43505F">UC-BIL-02.05</text>
+  <text x="610" y="826" text-anchor="middle" dominant-baseline="central" font-family="Arial, sans-serif" font-size="24" font-weight="normal" fill="#222222">Hủy hóa đơn</text>
+  <ellipse cx="610" cy="923" rx="290.0" ry="49.0" fill="white" stroke="#303740" stroke-width="1.6" data-uc-id="UC-BIL-02.06" />
+  <text x="610" y="907" text-anchor="middle" dominant-baseline="central" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#43505F">UC-BIL-02.06</text>
+  <text x="610" y="938" text-anchor="middle" dominant-baseline="central" font-family="Arial, sans-serif" font-size="24" font-weight="normal" fill="#222222">Xuất hoặc chia sẻ hóa đơn</text>
+  <ellipse cx="610" cy="1035" rx="290.0" ry="49.0" fill="white" stroke="#303740" stroke-width="1.6" data-uc-id="UC-BIL-02.07" />
+  <text x="610" y="1019" text-anchor="middle" dominant-baseline="central" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#43505F">UC-BIL-02.07</text>
+  <text x="610" y="1050" text-anchor="middle" dominant-baseline="central" font-family="Arial, sans-serif" font-size="24" font-weight="normal" fill="#222222">Cấu hình lập hóa đơn định kỳ</text>
+  <text x="500" y="1170" text-anchor="middle" dominant-baseline="central" font-family="Arial, sans-serif" font-size="20" font-weight="normal" fill="#222222">Đường liền là liên kết actor với UC   Khung nét đứt là nhóm UC tổng quan</text>
+</svg>

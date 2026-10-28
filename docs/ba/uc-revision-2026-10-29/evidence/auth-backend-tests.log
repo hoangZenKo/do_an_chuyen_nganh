@@ -1,0 +1,17 @@
+
+> rental-room-api@0.1.0 test
+> jest --runInBand src/auth/auth.service.spec.ts src/auth/jwt.strategy.spec.ts src/auth/account-access.service.spec.ts src/auth/admin-mfa.service.spec.ts src/common/roles.guard.spec.ts src/common/property-scope.spec.ts src/tenants/tenant-invites.service.spec.ts
+
+PASS src/auth/auth.service.spec.ts
+PASS src/common/roles.guard.spec.ts
+PASS src/common/property-scope.spec.ts
+PASS src/auth/jwt.strategy.spec.ts
+PASS src/tenants/tenant-invites.service.spec.ts
+PASS src/auth/admin-mfa.service.spec.ts
+PASS src/auth/account-access.service.spec.ts
+
+Test Suites: 7 passed, 7 total
+Tests:       31 passed, 31 total
+Snapshots:   0 total
+Time:        2.035 s
+Ran all test suites matching /src\/auth\/auth.service.spec.ts|src\/auth\/jwt.strategy.spec.ts|src\/auth\/account-access.service.spec.ts|src\/auth\/admin-mfa.service.spec.ts|src\/common\/roles.guard.spec.ts|src\/common\/property-scope.spec.ts|src\/tenants\/tenant-invites.service.spec.ts/i.

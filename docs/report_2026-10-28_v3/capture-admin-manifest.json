@@ -1,0 +1,76 @@
+{
+  "date": "2026-10-28",
+  "source": "Current Flutter production widgets; AdminOverviewTheme.light; fixture providers.",
+  "captures": [
+    {
+      "path": "ui-admin-v3/inventory-detail-mobile-200.png",
+      "sha256": "89e0427a369bd8a6ec5e982ccfadaeafa0915ce18a1d057ea32fe09cee93185d",
+      "old_sha256": "99562bc41caef2823d0ad62ea04f86cc0c87a55e3b5103393c6f72bd63543497",
+      "size": 165177
+    },
+    {
+      "path": "ui-admin-v3/inventory-rooms-mobile-200.png",
+      "sha256": "8c0599b215dd55acaf9758edd0f5b79edb230440af1374fde8b4243eb762d0fd",
+      "old_sha256": "ac70a02496ea62fa68777982cfc3216732771f6c8fa2297648bb6081e242dbee",
+      "size": 136792
+    },
+    {
+      "path": "ui-admin-v3/accounts-desktop.png",
+      "sha256": "813dfdf2e0e1c98f5fc1c8f3af9dcfb682f896ec799f523b163ee253ced87089",
+      "old_sha256": "28f819da06abadbc9261b0880436670f733dd72c88dae8fbd7c720a95e2a7082",
+      "size": 46716
+    },
+    {
+      "path": "ui-admin-v3/inventory-properties-mobile-200.png",
+      "sha256": "11d0bb841cb3a86dd4290589066b453208020b1552a8913ce014dbd19f237409",
+      "old_sha256": "1c71cd77ae1887e62819e59faa8a961107fe6b42f9f963473d9cd374beeddece",
+      "size": 91172
+    },
+    {
+      "path": "ui-admin-v3/account-detail-mobile-large-text.png",
+      "sha256": "1a9efbd3d46c1ff985523f0010aa32f52c26e3cd6e65f08b243cc8b875b758de",
+      "old_sha256": "657c37ad8d09e142df5a7070eed8b8d1df6ef61fa156cff192f66aaed6e36f6c",
+      "size": 78733
+    },
+    {
+      "path": "ui-admin-v3/accounts-mobile-large-text.png",
+      "sha256": "d450c71b2bbad3c5e34c6e0b4938b2bdcc0cde7bd0327bfe74b760a7007b274b",
+      "old_sha256": "1c1fad24859e8c7d14b5a66e8c0c885978bf3e9a0ec79862421889020534b488",
+      "size": 74714
+    },
+    {
+      "path": "ui-admin-v3/inventory-rooms-desktop.png",
+      "sha256": "0eb96517b991452040ed10b46645b2402722b27097dc95dacffbfc35dec950e7",
+      "old_sha256": "972ac9f9f0f181c36957a38f1331fcf2b4c446c804fb04c5151533f55de7aa3b",
+      "size": 86319
+    },
+    {
+      "path": "ui-admin-v3/account-detail-desktop.png",
+      "sha256": "190a415dd0f3b4446f41cfe5013f4a115e54fed73c0926ee3703f824ba13ba5d",
+      "old_sha256": "4f5b91ebd6a96028c3a13155b7a669ffdf7c14a485abbd5caefae8601c287f6a",
+      "size": 49263
+    },
+    {
+      "path": "ui-admin-v3/workspace-desktop.png",
+      "sha256": "a71c290f828ab7386d5e7d028d3c1493ed90f00e514f74d706eed9b39aa2c98c",
+      "old_sha256": "ce1b3f53a23f0f9e5413153e92cd8c7e85f4660c49722e7ee72b1be17984b368",
+      "size": 228362
+    },
+    {
+      "path": "ui-admin-v3/inventory-properties-desktop.png",
+      "sha256": "35ac2415131054c1fe8839a1ed6c19c1b49143caf40ff37b57168b292e903481",
+      "old_sha256": "73f2bb3416ee2da79f6f45f7f95bc85b31bb338a1a030766744889a0b7309bd2",
+      "size": 53558
+    },
+    {
+      "path": "ui-admin-v3/workspace-phone.png",
+      "sha256": "7bf6f6659d198245e74f4b062bd00e83bc0179e0d921fb574a65695c59d000d6",
+      "old_sha256": "ca5fa6c915b4f626ebacf83f66a98635216989bf0fa7ad5bcd566c9f70ca749f",
+      "size": 69020
+    }
+  ],
+  "original_tests": "ui-admin-v3.log: 51 passed",
+  "capture_tests": "ui-admin-capture-v3.log: 51 passed",
+  "native_font_capture": "ui-admin-native-v3-final.log: All tests passed; native-font fixture run. Runner includes setup/teardown counts.",
+  "limitations": "Not E2E, device or provider acceptance. Font/theme/fixture harness changes are outside production source."
+}

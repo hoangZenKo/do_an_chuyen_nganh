@@ -1,0 +1,15 @@
+{
+  "result": "PASS",
+  "pngSize": [
+    3000,
+    3000
+  ],
+  "pngMode": "RGB",
+  "drawioCells": 100,
+  "embeddedBitmaps": 0,
+  "files": {
+    "architecture-overview.svg": "fc19faf5d889e314a0cd893215dc95bdb033fcb61f1803f3f914f55d55119be3",
+    "architecture-overview.png": "5401debbbe79c1278efa137799c6430023713918c14c42d171ed66122115ddc1",
+    "architecture-overview.drawio": "5ba3ab5082dd43a12bfddfc16d72fb34a11c5343be202cb72544c8d6b9d37322"
+  }
+}

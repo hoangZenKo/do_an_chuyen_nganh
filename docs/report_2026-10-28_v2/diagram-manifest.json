@@ -1,0 +1,1708 @@
+[
+  {
+    "id": "AR-01",
+    "title": "Kiến trúc tổng thể và ranh giới tích hợp",
+    "kind": "architecture",
+    "description": "Backend là modular monolith; worker và dịch vụ ngoài không được suy ra là đã nghiệm thu production.",
+    "source": "backend/src/app.module.ts"
+  },
+  {
+    "id": "AR-02",
+    "title": "Các lớp kiểm tra truy cập",
+    "kind": "architecture",
+    "description": "Có permission chưa đủ: còn scope, ownership và quy tắc trạng thái. Người thuê chỉ truy cập hồ sơ liên kết của mình.",
+    "source": "backend/src/common/property-scope.ts"
+  },
+  {
+    "id": "UC-OVERVIEW",
+    "title": "Sơ đồ Use Case tổng quan — Hệ thống quản lý nhà trọ",
+    "kind": "usecase",
+    "description": "Tác nhân hình người nằm ngoài biên hệ thống; đường association nối trực tiếp tới ellipse UC. Mã nhóm ở sơ đồ tổng được phân rã trong các hình và đặc tả tiếp theo.",
+    "source": "docs/ba/use-case-centralized.drawio"
+  },
+  {
+    "id": "D-SYS-01",
+    "title": "Tài khoản và phiên làm việc — phần 1",
+    "kind": "usecase",
+    "description": "Tác nhân hình người nằm ngoài biên hệ thống; đường association nối trực tiếp tới ellipse UC. Mã nhóm ở sơ đồ tổng được phân rã trong các hình và đặc tả tiếp theo.",
+    "source": "backend/src/auth"
+  },
+  {
+    "id": "D-SYS-02",
+    "title": "Tài khoản và phiên làm việc — phần 2",
+    "kind": "usecase",
+    "description": "Tác nhân hình người nằm ngoài biên hệ thống; đường association nối trực tiếp tới ellipse UC. Mã nhóm ở sơ đồ tổng được phân rã trong các hình và đặc tả tiếp theo.",
+    "source": "backend/src/auth"
+  },
+  {
+    "id": "D-DIS-01",
+    "title": "Khám phá phòng và hành trình thuê — phần 1",
+    "kind": "usecase",
+    "description": "Tác nhân hình người nằm ngoài biên hệ thống; đường association nối trực tiếp tới ellipse UC. Mã nhóm ở sơ đồ tổng được phân rã trong các hình và đặc tả tiếp theo.",
+    "source": "backend/src/listings"
+  },
+  {
+    "id": "D-DIS-02",
+    "title": "Khám phá phòng và hành trình thuê — phần 2",
+    "kind": "usecase",
+    "description": "Tác nhân hình người nằm ngoài biên hệ thống; đường association nối trực tiếp tới ellipse UC. Mã nhóm ở sơ đồ tổng được phân rã trong các hình và đặc tả tiếp theo.",
+    "source": "backend/src/listings"
+  },
+  {
+    "id": "D-OPT-01",
+    "title": "Khu trọ và phòng — phần 1",
+    "kind": "usecase",
+    "description": "Tác nhân hình người nằm ngoài biên hệ thống; đường association nối trực tiếp tới ellipse UC. Mã nhóm ở sơ đồ tổng được phân rã trong các hình và đặc tả tiếp theo.",
+    "source": "backend/src/properties"
+  },
+  {
+    "id": "D-OPT-02",
+    "title": "Khu trọ và phòng — phần 2",
+    "kind": "usecase",
+    "description": "Tác nhân hình người nằm ngoài biên hệ thống; đường association nối trực tiếp tới ellipse UC. Mã nhóm ở sơ đồ tổng được phân rã trong các hình và đặc tả tiếp theo.",
+    "source": "backend/src/properties"
+  },
+  {
+    "id": "D-OPT-03",
+    "title": "Khu trọ và phòng — phần 3",
+    "kind": "usecase",
+    "description": "Tác nhân hình người nằm ngoài biên hệ thống; đường association nối trực tiếp tới ellipse UC. Mã nhóm ở sơ đồ tổng được phân rã trong các hình và đặc tả tiếp theo.",
+    "source": "backend/src/properties"
+  },
+  {
+    "id": "D-TNT-01",
+    "title": "Hồ sơ người thuê và hợp đồng — phần 1",
+    "kind": "usecase",
+    "description": "Tác nhân hình người nằm ngoài biên hệ thống; đường association nối trực tiếp tới ellipse UC. Mã nhóm ở sơ đồ tổng được phân rã trong các hình và đặc tả tiếp theo.",
+    "source": "backend/src/tenants"
+  },
+  {
+    "id": "D-TNT-02",
+    "title": "Hồ sơ người thuê và hợp đồng — phần 2",
+    "kind": "usecase",
+    "description": "Tác nhân hình người nằm ngoài biên hệ thống; đường association nối trực tiếp tới ellipse UC. Mã nhóm ở sơ đồ tổng được phân rã trong các hình và đặc tả tiếp theo.",
+    "source": "backend/src/tenants"
+  },
+  {
+    "id": "D-TNT-03",
+    "title": "Hồ sơ người thuê và hợp đồng — phần 3",
+    "kind": "usecase",
+    "description": "Tác nhân hình người nằm ngoài biên hệ thống; đường association nối trực tiếp tới ellipse UC. Mã nhóm ở sơ đồ tổng được phân rã trong các hình và đặc tả tiếp theo.",
+    "source": "backend/src/tenants"
+  },
+  {
+    "id": "D-BIL-01",
+    "title": "Hóa đơn và sổ thu chi — phần 1",
+    "kind": "usecase",
+    "description": "Tác nhân hình người nằm ngoài biên hệ thống; đường association nối trực tiếp tới ellipse UC. Mã nhóm ở sơ đồ tổng được phân rã trong các hình và đặc tả tiếp theo.",
+    "source": "backend/src/billing"
+  },
+  {
+    "id": "D-BIL-02",
+    "title": "Hóa đơn và sổ thu chi — phần 2",
+    "kind": "usecase",
+    "description": "Tác nhân hình người nằm ngoài biên hệ thống; đường association nối trực tiếp tới ellipse UC. Mã nhóm ở sơ đồ tổng được phân rã trong các hình và đặc tả tiếp theo.",
+    "source": "backend/src/billing"
+  },
+  {
+    "id": "D-BIL-03",
+    "title": "Hóa đơn và sổ thu chi — phần 3",
+    "kind": "usecase",
+    "description": "Tác nhân hình người nằm ngoài biên hệ thống; đường association nối trực tiếp tới ellipse UC. Mã nhóm ở sơ đồ tổng được phân rã trong các hình và đặc tả tiếp theo.",
+    "source": "backend/src/billing"
+  },
+  {
+    "id": "D-BIL-04",
+    "title": "Hóa đơn và sổ thu chi — phần 4",
+    "kind": "usecase",
+    "description": "Tác nhân hình người nằm ngoài biên hệ thống; đường association nối trực tiếp tới ellipse UC. Mã nhóm ở sơ đồ tổng được phân rã trong các hình và đặc tả tiếp theo.",
+    "source": "backend/src/billing"
+  },
+  {
+    "id": "D-OPS-01",
+    "title": "Bảo trì vận hành và nhật ký — phần 1",
+    "kind": "usecase",
+    "description": "Tác nhân hình người nằm ngoài biên hệ thống; đường association nối trực tiếp tới ellipse UC. Mã nhóm ở sơ đồ tổng được phân rã trong các hình và đặc tả tiếp theo.",
+    "source": "backend/src/maintenance"
+  },
+  {
+    "id": "D-OPS-02",
+    "title": "Bảo trì vận hành và nhật ký — phần 2",
+    "kind": "usecase",
+    "description": "Tác nhân hình người nằm ngoài biên hệ thống; đường association nối trực tiếp tới ellipse UC. Mã nhóm ở sơ đồ tổng được phân rã trong các hình và đặc tả tiếp theo.",
+    "source": "backend/src/maintenance"
+  },
+  {
+    "id": "D-TEN-01",
+    "title": "Cổng thông tin người thuê — phần 1",
+    "kind": "usecase",
+    "description": "Tác nhân hình người nằm ngoài biên hệ thống; đường association nối trực tiếp tới ellipse UC. Mã nhóm ở sơ đồ tổng được phân rã trong các hình và đặc tả tiếp theo.",
+    "source": "backend/src/tenant-portal"
+  },
+  {
+    "id": "D-TEN-02",
+    "title": "Cổng thông tin người thuê — phần 2",
+    "kind": "usecase",
+    "description": "Tác nhân hình người nằm ngoài biên hệ thống; đường association nối trực tiếp tới ellipse UC. Mã nhóm ở sơ đồ tổng được phân rã trong các hình và đặc tả tiếp theo.",
+    "source": "backend/src/tenant-portal"
+  },
+  {
+    "id": "D-ADM-01",
+    "title": "Quản trị và quản lý nền tảng — phần 1",
+    "kind": "usecase",
+    "description": "Tác nhân hình người nằm ngoài biên hệ thống; đường association nối trực tiếp tới ellipse UC. Mã nhóm ở sơ đồ tổng được phân rã trong các hình và đặc tả tiếp theo.",
+    "source": "backend/src/admin"
+  },
+  {
+    "id": "D-ADM-02",
+    "title": "Quản trị và quản lý nền tảng — phần 2",
+    "kind": "usecase",
+    "description": "Tác nhân hình người nằm ngoài biên hệ thống; đường association nối trực tiếp tới ellipse UC. Mã nhóm ở sơ đồ tổng được phân rã trong các hình và đặc tả tiếp theo.",
+    "source": "backend/src/admin"
+  },
+  {
+    "id": "D-ADM-03",
+    "title": "Quản trị và quản lý nền tảng — phần 3",
+    "kind": "usecase",
+    "description": "Tác nhân hình người nằm ngoài biên hệ thống; đường association nối trực tiếp tới ellipse UC. Mã nhóm ở sơ đồ tổng được phân rã trong các hình và đặc tả tiếp theo.",
+    "source": "backend/src/admin"
+  },
+  {
+    "id": "D-ADM-04",
+    "title": "Quản trị và quản lý nền tảng — phần 4",
+    "kind": "usecase",
+    "description": "Tác nhân hình người nằm ngoài biên hệ thống; đường association nối trực tiếp tới ellipse UC. Mã nhóm ở sơ đồ tổng được phân rã trong các hình và đặc tả tiếp theo.",
+    "source": "backend/src/admin"
+  },
+  {
+    "id": "D-SUP-01",
+    "title": "Hỗ trợ và quản trị vận hành — phần 1",
+    "kind": "usecase",
+    "description": "Tác nhân hình người nằm ngoài biên hệ thống; đường association nối trực tiếp tới ellipse UC. Mã nhóm ở sơ đồ tổng được phân rã trong các hình và đặc tả tiếp theo.",
+    "source": "backend/src/support"
+  },
+  {
+    "id": "CD-01",
+    "title": "Tài khoản và phân quyền",
+    "kind": "class",
+    "description": "Các lớp biểu diễn thực thể nghiệp vụ và các thuộc tính tiêu biểu; không tự gắn phương thức CRUD vào entity. Hình dùng để giải thích UC, không thay thế schema database.",
+    "source": "backend/prisma/schema.prisma"
+  },
+  {
+    "id": "CD-02",
+    "title": "Khu trọ phòng và dữ liệu phụ",
+    "kind": "class",
+    "description": "Các lớp biểu diễn thực thể nghiệp vụ và các thuộc tính tiêu biểu; không tự gắn phương thức CRUD vào entity. Hình dùng để giải thích UC, không thay thế schema database.",
+    "source": "backend/prisma/schema.prisma"
+  },
+  {
+    "id": "CD-03",
+    "title": "Tìm phòng và lịch xem",
+    "kind": "class",
+    "description": "Các lớp biểu diễn thực thể nghiệp vụ và các thuộc tính tiêu biểu; không tự gắn phương thức CRUD vào entity. Hình dùng để giải thích UC, không thay thế schema database.",
+    "source": "backend/prisma/schema.prisma"
+  },
+  {
+    "id": "CD-04",
+    "title": "Người thuê hợp đồng và vòng đời",
+    "kind": "class",
+    "description": "Các lớp biểu diễn thực thể nghiệp vụ và các thuộc tính tiêu biểu; không tự gắn phương thức CRUD vào entity. Hình dùng để giải thích UC, không thay thế schema database.",
+    "source": "backend/prisma/schema.prisma"
+  },
+  {
+    "id": "CD-05",
+    "title": "Tiền cọc và quyết toán",
+    "kind": "class",
+    "description": "Các lớp biểu diễn thực thể nghiệp vụ và các thuộc tính tiêu biểu; không tự gắn phương thức CRUD vào entity. Hình dùng để giải thích UC, không thay thế schema database.",
+    "source": "backend/prisma/schema.prisma"
+  },
+  {
+    "id": "CD-06",
+    "title": "Hóa đơn và giá phiên bản",
+    "kind": "class",
+    "description": "Các lớp biểu diễn thực thể nghiệp vụ và các thuộc tính tiêu biểu; không tự gắn phương thức CRUD vào entity. Hình dùng để giải thích UC, không thay thế schema database.",
+    "source": "backend/prisma/schema.prisma"
+  },
+  {
+    "id": "CD-07",
+    "title": "Khoản thu phân bổ và hoàn tiền",
+    "kind": "class",
+    "description": "Các lớp biểu diễn thực thể nghiệp vụ và các thuộc tính tiêu biểu; không tự gắn phương thức CRUD vào entity. Hình dùng để giải thích UC, không thay thế schema database.",
+    "source": "backend/prisma/schema.prisma"
+  },
+  {
+    "id": "CD-08",
+    "title": "Bảo trì và vận hành định kỳ",
+    "kind": "class",
+    "description": "Các lớp biểu diễn thực thể nghiệp vụ và các thuộc tính tiêu biểu; không tự gắn phương thức CRUD vào entity. Hình dùng để giải thích UC, không thay thế schema database.",
+    "source": "backend/prisma/schema.prisma"
+  },
+  {
+    "id": "CD-09",
+    "title": "Thông báo và delivery",
+    "kind": "class",
+    "description": "Các lớp biểu diễn thực thể nghiệp vụ và các thuộc tính tiêu biểu; không tự gắn phương thức CRUD vào entity. Hình dùng để giải thích UC, không thay thế schema database.",
+    "source": "backend/prisma/schema.prisma"
+  },
+  {
+    "id": "CD-10",
+    "title": "Quản trị nền tảng và đối soát",
+    "kind": "class",
+    "description": "Các lớp biểu diễn thực thể nghiệp vụ và các thuộc tính tiêu biểu; không tự gắn phương thức CRUD vào entity. Hình dùng để giải thích UC, không thay thế schema database.",
+    "source": "backend/prisma/schema.prisma"
+  },
+  {
+    "id": "CD-11",
+    "title": "Hỗ trợ và báo cáo quản trị",
+    "kind": "class",
+    "description": "Các lớp biểu diễn thực thể nghiệp vụ và các thuộc tính tiêu biểu; không tự gắn phương thức CRUD vào entity. Hình dùng để giải thích UC, không thay thế schema database.",
+    "source": "backend/prisma/schema.prisma"
+  },
+  {
+    "id": "CD-12",
+    "title": "Đánh giá tri thức và thanh toán demo",
+    "kind": "class",
+    "description": "Các lớp biểu diễn thực thể nghiệp vụ và các thuộc tính tiêu biểu; không tự gắn phương thức CRUD vào entity. Hình dùng để giải thích UC, không thay thế schema database.",
+    "source": "backend/prisma/schema.prisma"
+  },
+  {
+    "id": "CD-13",
+    "title": "Lời mời tệp và ngữ cảnh tìm phòng",
+    "kind": "class",
+    "description": "Các lớp biểu diễn thực thể nghiệp vụ và các thuộc tính tiêu biểu; không tự gắn phương thức CRUD vào entity. Hình dùng để giải thích UC, không thay thế schema database.",
+    "source": "backend/prisma/schema.prisma"
+  },
+  {
+    "id": "CD-14",
+    "title": "Mẫu thông báo nhóm nhận và automation",
+    "kind": "class",
+    "description": "Các lớp biểu diễn thực thể nghiệp vụ và các thuộc tính tiêu biểu; không tự gắn phương thức CRUD vào entity. Hình dùng để giải thích UC, không thay thế schema database.",
+    "source": "backend/prisma/schema.prisma"
+  },
+  {
+    "id": "CD-15",
+    "title": "Audit phiên đặc quyền và tổ chức Admin",
+    "kind": "class",
+    "description": "Các lớp biểu diễn thực thể nghiệp vụ và các thuộc tính tiêu biểu; không tự gắn phương thức CRUD vào entity. Hình dùng để giải thích UC, không thay thế schema database.",
+    "source": "backend/prisma/schema.prisma"
+  },
+  {
+    "id": "CD-16",
+    "title": "Telemetry sự cố và liên kết hỗ trợ",
+    "kind": "class",
+    "description": "Các lớp biểu diễn thực thể nghiệp vụ và các thuộc tính tiêu biểu; không tự gắn phương thức CRUD vào entity. Hình dùng để giải thích UC, không thay thế schema database.",
+    "source": "backend/prisma/schema.prisma"
+  },
+  {
+    "id": "CD-17",
+    "title": "Chính sách mẫu hỗ trợ và preference nền tảng",
+    "kind": "class",
+    "description": "Các lớp biểu diễn thực thể nghiệp vụ và các thuộc tính tiêu biểu; không tự gắn phương thức CRUD vào entity. Hình dùng để giải thích UC, không thay thế schema database.",
+    "source": "backend/prisma/schema.prisma"
+  },
+  {
+    "id": "CD-18",
+    "title": "Xác minh khu trọ và gói sử dụng nền tảng",
+    "kind": "class",
+    "description": "Các lớp biểu diễn thực thể nghiệp vụ và các thuộc tính tiêu biểu; không tự gắn phương thức CRUD vào entity. Hình dùng để giải thích UC, không thay thế schema database.",
+    "source": "backend/prisma/schema.prisma"
+  },
+  {
+    "id": "SD-01-1",
+    "title": "Đăng nhập và khôi phục phiên — phần 1/2",
+    "kind": "sequence",
+    "description": "Sai mật khẩu/MFA → không tạo phiên. Refresh bị thu hồi → yêu cầu đăng nhập; lỗi mạng không đồng nhất tài khoản bị khóa.",
+    "source": "backend/src/auth/auth.service.ts",
+    "refs": "UC-SYS-03, UC-SYS-04",
+    "base_id": "SD-01",
+    "message_offset": 0,
+    "messages": [
+      [
+        0,
+        1,
+        "Nhập email, mật khẩu"
+      ],
+      [
+        1,
+        2,
+        "POST auth/login"
+      ],
+      [
+        2,
+        3,
+        "Đọc tài khoản, phiên và chính sách"
+      ],
+      [
+        3,
+        2,
+        "Tài khoản và trạng thái"
+      ],
+      [
+        2,
+        2,
+        "Xác minh mật khẩu; MFA nếu Admin"
+      ],
+      [
+        2,
+        3,
+        "Ghi session và refresh token"
+      ],
+      [
+        2,
+        1,
+        "Token, role, capabilities"
+      ]
+    ]
+  },
+  {
+    "id": "SD-01-2",
+    "title": "Đăng nhập và khôi phục phiên — phần 2/2",
+    "kind": "sequence",
+    "description": "Sai mật khẩu/MFA → không tạo phiên. Refresh bị thu hồi → yêu cầu đăng nhập; lỗi mạng không đồng nhất tài khoản bị khóa.",
+    "source": "backend/src/auth/auth.service.ts",
+    "refs": "UC-SYS-03, UC-SYS-04",
+    "base_id": "SD-01",
+    "message_offset": 7,
+    "messages": [
+      [
+        1,
+        1,
+        "Lưu phiên an toàn; điều hướng"
+      ],
+      [
+        1,
+        2,
+        "Refresh khi token hết hạn"
+      ],
+      [
+        2,
+        3,
+        "Luân chuyển token; kiểm tra thu hồi"
+      ]
+    ]
+  },
+  {
+    "id": "SD-02-1",
+    "title": "Đặt lịch xem và tạo hợp đồng — phần 1/2",
+    "kind": "sequence",
+    "description": "Slot/phòng bị thay đổi → từ chối. Tạo lịch không giữ phòng tuyệt đối; các bước của chủ trọ cần phiên riêng.",
+    "source": "backend/src/housing/housing.service.ts",
+    "refs": "UC-DIS-09, UC-DIS-11",
+    "base_id": "SD-02",
+    "message_offset": 0,
+    "messages": [
+      [
+        0,
+        1,
+        "Chọn slot của tin"
+      ],
+      [
+        1,
+        2,
+        "POST housing/viewings"
+      ],
+      [
+        2,
+        3,
+        "Kiểm tra listing, slot và tài khoản"
+      ],
+      [
+        2,
+        3,
+        "Tạo RoomViewing"
+      ],
+      [
+        2,
+        1,
+        "Lịch hẹn và trạng thái"
+      ],
+      [
+        1,
+        2,
+        "Chủ trọ xử lý lịch hợp lệ"
+      ],
+      [
+        2,
+        3,
+        "Kiểm tra lại phòng và người thuê"
+      ]
+    ]
+  },
+  {
+    "id": "SD-02-2",
+    "title": "Đặt lịch xem và tạo hợp đồng — phần 2/2",
+    "kind": "sequence",
+    "description": "Slot/phòng bị thay đổi → từ chối. Tạo lịch không giữ phòng tuyệt đối; các bước của chủ trọ cần phiên riêng.",
+    "source": "backend/src/housing/housing.service.ts",
+    "refs": "UC-DIS-09, UC-DIS-11",
+    "base_id": "SD-02",
+    "message_offset": 7,
+    "messages": [
+      [
+        2,
+        3,
+        "Tạo Lease theo nghiệp vụ"
+      ],
+      [
+        2,
+        1,
+        "Hợp đồng và bàn giao"
+      ]
+    ]
+  },
+  {
+    "id": "SD-03-1",
+    "title": "Tạo hợp đồng và ghi nhận cọc — phần 1/2",
+    "kind": "sequence",
+    "description": "Phòng đã có hợp đồng hoặc người thuê ngoài scope → rollback/từ chối; không ghi nửa hợp đồng.",
+    "source": "backend/src/leases/leases.service.ts",
+    "refs": "UC-TNT-05",
+    "base_id": "SD-03",
+    "message_offset": 0,
+    "messages": [
+      [
+        0,
+        1,
+        "Chọn phòng và hồ sơ"
+      ],
+      [
+        1,
+        2,
+        "POST leases"
+      ],
+      [
+        2,
+        3,
+        "Kiểm tra ownership, ACTIVE và ngày"
+      ],
+      [
+        2,
+        3,
+        "Transaction tạo Lease"
+      ],
+      [
+        2,
+        3,
+        "Ghi cọc theo dữ liệu đầu vào"
+      ],
+      [
+        2,
+        3,
+        "Cập nhật Room OCCUPIED"
+      ],
+      [
+        3,
+        2,
+        "Commit kết quả"
+      ]
+    ]
+  },
+  {
+    "id": "SD-03-2",
+    "title": "Tạo hợp đồng và ghi nhận cọc — phần 2/2",
+    "kind": "sequence",
+    "description": "Phòng đã có hợp đồng hoặc người thuê ngoài scope → rollback/từ chối; không ghi nửa hợp đồng.",
+    "source": "backend/src/leases/leases.service.ts",
+    "refs": "UC-TNT-05",
+    "base_id": "SD-03",
+    "message_offset": 7,
+    "messages": [
+      [
+        2,
+        1,
+        "Lease và thông tin phòng"
+      ],
+      [
+        1,
+        0,
+        "Hiển thị hợp đồng mới"
+      ]
+    ]
+  },
+  {
+    "id": "SD-04-1",
+    "title": "Đề xuất và phê duyệt biểu phí — phần 1/2",
+    "kind": "sequence",
+    "description": "Chủ trọ không được duyệt. Kỳ đã phát hành/khóa, backdate hoặc xung đột version → không áp dụng giá.",
+    "source": "backend/src/billing/billing-tariffs.service.ts",
+    "refs": "UC-BIL-15, UC-BIL-16",
+    "base_id": "SD-04",
+    "message_offset": 0,
+    "messages": [
+      [
+        0,
+        1,
+        "Nhập giá, phạm vi và kỳ"
+      ],
+      [
+        1,
+        2,
+        "POST tariffs/proposals"
+      ],
+      [
+        2,
+        3,
+        "Kiểm tra scope, bậc và kỳ khóa"
+      ],
+      [
+        2,
+        3,
+        "Lưu proposal"
+      ],
+      [
+        1,
+        2,
+        "GET impact cho đề xuất"
+      ],
+      [
+        2,
+        3,
+        "Đọc giá nền và phòng tác động"
+      ],
+      [
+        1,
+        2,
+        "Chủ trọ gửi review + lý do"
+      ]
+    ]
+  },
+  {
+    "id": "SD-04-2",
+    "title": "Đề xuất và phê duyệt biểu phí — phần 2/2",
+    "kind": "sequence",
+    "description": "Chủ trọ không được duyệt. Kỳ đã phát hành/khóa, backdate hoặc xung đột version → không áp dụng giá.",
+    "source": "backend/src/billing/billing-tariffs.service.ts",
+    "refs": "UC-BIL-15, UC-BIL-16",
+    "base_id": "SD-04",
+    "message_offset": 7,
+    "messages": [
+      [
+        2,
+        3,
+        "Khóa và kiểm tra lại trạng thái"
+      ],
+      [
+        2,
+        3,
+        "Ghi APPROVED/REJECTED và audit"
+      ],
+      [
+        2,
+        1,
+        "Kết quả; tải lại danh sách"
+      ]
+    ]
+  },
+  {
+    "id": "SD-05-1",
+    "title": "Preview và phát hành hóa đơn — phần 1/2",
+    "kind": "sequence",
+    "description": "Preflight không giữ khóa tới lần ghi. Không sửa hóa đơn quá khứ theo biểu phí mới; không coi bulk thành công tuyệt đối khi có lỗi.",
+    "source": "backend/src/billing/billing.service.ts",
+    "refs": "UC-BIL-02, UC-BIL-03",
+    "base_id": "SD-05",
+    "message_offset": 0,
+    "messages": [
+      [
+        0,
+        1,
+        "Chọn hợp đồng/kỳ và chỉ số"
+      ],
+      [
+        1,
+        2,
+        "POST invoices/preview hoặc bulk/preflight"
+      ],
+      [
+        2,
+        3,
+        "Đọc lease, meter readings và tariffs"
+      ],
+      [
+        2,
+        2,
+        "Tính các dòng có nguồn giá"
+      ],
+      [
+        2,
+        1,
+        "Preview hoặc lỗi từng phòng"
+      ],
+      [
+        0,
+        1,
+        "Xác nhận phát hành"
+      ],
+      [
+        1,
+        2,
+        "POST invoices hoặc invoices/bulk"
+      ]
+    ]
+  },
+  {
+    "id": "SD-05-2",
+    "title": "Preview và phát hành hóa đơn — phần 2/2",
+    "kind": "sequence",
+    "description": "Preflight không giữ khóa tới lần ghi. Không sửa hóa đơn quá khứ theo biểu phí mới; không coi bulk thành công tuyệt đối khi có lỗi.",
+    "source": "backend/src/billing/billing.service.ts",
+    "refs": "UC-BIL-02, UC-BIL-03",
+    "base_id": "SD-05",
+    "message_offset": 7,
+    "messages": [
+      [
+        2,
+        3,
+        "Kiểm tra trùng và điều kiện hiện tại"
+      ],
+      [
+        2,
+        3,
+        "Ghi Invoice, InvoiceLineItem"
+      ],
+      [
+        2,
+        1,
+        "Kết quả tạo/bỏ qua/lỗi"
+      ]
+    ]
+  },
+  {
+    "id": "SD-06-1",
+    "title": "Khoản thu và phân bổ nhiều hóa đơn — phần 1/2",
+    "kind": "sequence",
+    "description": "Cùng key/cùng payload → kết quả cũ. Phân bổ vượt số dư hoặc khác tenant → rollback; receipt chưa phân bổ không giảm nợ.",
+    "source": "backend/src/billing/billing-ledger.service.ts",
+    "refs": "UC-BIL-10, UC-BIL-11",
+    "base_id": "SD-06",
+    "message_offset": 0,
+    "messages": [
+      [
+        0,
+        1,
+        "Nhập tiền nhận, ngày và tham chiếu"
+      ],
+      [
+        1,
+        2,
+        "POST receipts + requestKey"
+      ],
+      [
+        2,
+        3,
+        "BillingCommand kiểm tra idempotency"
+      ],
+      [
+        2,
+        3,
+        "Tạo BillingReceipt khả dụng"
+      ],
+      [
+        0,
+        1,
+        "Chọn hóa đơn và số phân bổ"
+      ],
+      [
+        1,
+        2,
+        "POST receipts/:id/allocations"
+      ],
+      [
+        2,
+        3,
+        "Khóa receipt và invoices"
+      ]
+    ]
+  },
+  {
+    "id": "SD-06-2",
+    "title": "Khoản thu và phân bổ nhiều hóa đơn — phần 2/2",
+    "kind": "sequence",
+    "description": "Cùng key/cùng payload → kết quả cũ. Phân bổ vượt số dư hoặc khác tenant → rollback; receipt chưa phân bổ không giảm nợ.",
+    "source": "backend/src/billing/billing-ledger.service.ts",
+    "refs": "UC-BIL-10, UC-BIL-11",
+    "base_id": "SD-06",
+    "message_offset": 7,
+    "messages": [
+      [
+        2,
+        2,
+        "Kiểm tra cùng tenant, tổng và dư"
+      ],
+      [
+        2,
+        3,
+        "Ghi Payment + PaymentAllocation"
+      ],
+      [
+        2,
+        3,
+        "Cập nhật availableAmount và paidAmount"
+      ],
+      [
+        2,
+        1,
+        "Trả receipt và số dư mới"
+      ]
+    ]
+  },
+  {
+    "id": "SD-07-1",
+    "title": "Giải phóng phân bổ và ghi hoàn tiền — phần 1/2",
+    "kind": "sequence",
+    "description": "Đảo không xóa payment gốc. Chỉ hoàn phần khả dụng; hoàn sổ không thực hiện chuyển khoản ngân hàng.",
+    "source": "backend/src/billing/billing-ledger.service.ts",
+    "refs": "UC-BIL-12, UC-BIL-13",
+    "base_id": "SD-07",
+    "message_offset": 0,
+    "messages": [
+      [
+        0,
+        1,
+        "Chọn phân bổ cần giải phóng"
+      ],
+      [
+        1,
+        2,
+        "POST allocation/release + lý do"
+      ],
+      [
+        2,
+        3,
+        "Khóa và kiểm tra allocation"
+      ],
+      [
+        2,
+        3,
+        "Tạo REVERSAL âm; release allocation"
+      ],
+      [
+        2,
+        3,
+        "Cập nhật số dư hóa đơn/receipt"
+      ],
+      [
+        0,
+        1,
+        "Nhập tiền đã hoàn và tham chiếu"
+      ],
+      [
+        1,
+        2,
+        "POST receipt/refunds"
+      ]
+    ]
+  },
+  {
+    "id": "SD-07-2",
+    "title": "Giải phóng phân bổ và ghi hoàn tiền — phần 2/2",
+    "kind": "sequence",
+    "description": "Đảo không xóa payment gốc. Chỉ hoàn phần khả dụng; hoàn sổ không thực hiện chuyển khoản ngân hàng.",
+    "source": "backend/src/billing/billing-ledger.service.ts",
+    "refs": "UC-BIL-12, UC-BIL-13",
+    "base_id": "SD-07",
+    "message_offset": 7,
+    "messages": [
+      [
+        2,
+        3,
+        "Kiểm tra availableAmount"
+      ],
+      [
+        2,
+        3,
+        "Ghi BillingRefund, giảm khả dụng"
+      ],
+      [
+        2,
+        1,
+        "Trả lịch sử hoàn tiền"
+      ]
+    ]
+  },
+  {
+    "id": "SD-08-1",
+    "title": "Người thuê gửi và chủ trọ duyệt proof — phần 1/2",
+    "kind": "sequence",
+    "description": "Hai tác nhân dùng hai phiên riêng. Proof lặp, đã duyệt hoặc vượt số dư mới → không ghi khoản thu trùng.",
+    "source": "backend/src/tenant-portal/tenant-portal.service.ts",
+    "refs": "UC-TEN-04, UC-BIL-14",
+    "base_id": "SD-08",
+    "message_offset": 0,
+    "messages": [
+      [
+        0,
+        1,
+        "Chọn ảnh/PDF và nhập số tiền"
+      ],
+      [
+        1,
+        2,
+        "Upload qua endpoint bảo vệ"
+      ],
+      [
+        2,
+        3,
+        "Lưu tệp theo quyền truy cập"
+      ],
+      [
+        1,
+        2,
+        "POST payment-proofs + requestKey"
+      ],
+      [
+        2,
+        3,
+        "Kiểm tra hóa đơn của tenant; lưu PENDING"
+      ],
+      [
+        2,
+        1,
+        "Trạng thái chờ duyệt"
+      ],
+      [
+        1,
+        2,
+        "Chủ trọ gửi review"
+      ]
+    ]
+  },
+  {
+    "id": "SD-08-2",
+    "title": "Người thuê gửi và chủ trọ duyệt proof — phần 2/2",
+    "kind": "sequence",
+    "description": "Hai tác nhân dùng hai phiên riêng. Proof lặp, đã duyệt hoặc vượt số dư mới → không ghi khoản thu trùng.",
+    "source": "backend/src/tenant-portal/tenant-portal.service.ts",
+    "refs": "UC-TEN-04, UC-BIL-14",
+    "base_id": "SD-08",
+    "message_offset": 7,
+    "messages": [
+      [
+        2,
+        3,
+        "Khóa proof/invoice; kiểm tra số dư"
+      ],
+      [
+        2,
+        3,
+        "Ghi quyết định và payment nếu duyệt"
+      ],
+      [
+        2,
+        1,
+        "Cập nhật trạng thái và timeline"
+      ]
+    ]
+  },
+  {
+    "id": "SD-09-1",
+    "title": "Hóa đơn thay thế và điều chỉnh — phần 1/2",
+    "kind": "sequence",
+    "description": "Hai nhánh là lựa chọn, không chạy cả hai. Có lịch sử Payment → không replacement; credit không vượt dư.",
+    "source": "backend/src/billing/billing-ledger.service.ts",
+    "refs": "UC-BIL-06, UC-BIL-07",
+    "base_id": "SD-09",
+    "message_offset": 0,
+    "messages": [
+      [
+        0,
+        1,
+        "Chọn replacement hoặc adjustment"
+      ],
+      [
+        1,
+        2,
+        "Gửi lệnh có lý do/requestKey"
+      ],
+      [
+        2,
+        3,
+        "Kiểm tra command và khóa invoice"
+      ],
+      [
+        2,
+        2,
+        "Kiểm tra lịch sử thu/số dư"
+      ],
+      [
+        2,
+        3,
+        "Replacement: hủy gốc, tạo revision mới"
+      ],
+      [
+        2,
+        3,
+        "Adjustment: thêm note và dòng tiền"
+      ],
+      [
+        2,
+        3,
+        "Tính lại tổng, số dư và trạng thái"
+      ]
+    ]
+  },
+  {
+    "id": "SD-09-2",
+    "title": "Hóa đơn thay thế và điều chỉnh — phần 2/2",
+    "kind": "sequence",
+    "description": "Hai nhánh là lựa chọn, không chạy cả hai. Có lịch sử Payment → không replacement; credit không vượt dư.",
+    "source": "backend/src/billing/billing-ledger.service.ts",
+    "refs": "UC-BIL-06, UC-BIL-07",
+    "base_id": "SD-09",
+    "message_offset": 7,
+    "messages": [
+      [
+        2,
+        3,
+        "Ghi sự kiện và commit"
+      ],
+      [
+        2,
+        1,
+        "Trả hóa đơn có timeline"
+      ]
+    ]
+  },
+  {
+    "id": "SD-10-1",
+    "title": "Quyết toán và ghi nhận hoàn cọc — phần 1/2",
+    "kind": "sequence",
+    "description": "Snapshot đổi hoặc lệnh trùng khác nội dung → dừng. Luồng settlement chỉ dành LANDLORD.",
+    "source": "backend/src/leases/settlements.service.ts",
+    "refs": "UC-TNT-08, UC-TNT-09",
+    "base_id": "SD-10",
+    "message_offset": 0,
+    "messages": [
+      [
+        0,
+        1,
+        "Nhập ngày trả/chỉ số/phí"
+      ],
+      [
+        1,
+        2,
+        "POST settlement/preview"
+      ],
+      [
+        2,
+        3,
+        "Đọc lease, công nợ và ledger cọc"
+      ],
+      [
+        2,
+        1,
+        "Snapshot, fingerprint, chênh lệch"
+      ],
+      [
+        0,
+        1,
+        "Xác nhận preview"
+      ],
+      [
+        1,
+        2,
+        "POST confirm + fingerprint/requestKey"
+      ],
+      [
+        2,
+        3,
+        "Khóa và đối chiếu snapshot"
+      ]
+    ]
+  },
+  {
+    "id": "SD-10-2",
+    "title": "Quyết toán và ghi nhận hoàn cọc — phần 2/2",
+    "kind": "sequence",
+    "description": "Snapshot đổi hoặc lệnh trùng khác nội dung → dừng. Luồng settlement chỉ dành LANDLORD.",
+    "source": "backend/src/leases/settlements.service.ts",
+    "refs": "UC-TNT-08, UC-TNT-09",
+    "base_id": "SD-10",
+    "message_offset": 7,
+    "messages": [
+      [
+        2,
+        3,
+        "Ghi settlement/lines, cập nhật lease/room"
+      ],
+      [
+        0,
+        1,
+        "Ghi khoản đã hoàn sau xác nhận"
+      ],
+      [
+        1,
+        2,
+        "POST settlement/refund"
+      ],
+      [
+        2,
+        3,
+        "Ghi sổ, không chuyển tiền ngân hàng"
+      ]
+    ]
+  },
+  {
+    "id": "SD-11-1",
+    "title": "Yêu cầu và thực thi vòng đời thuê — phần 1/2",
+    "kind": "sequence",
+    "description": "Người quản lý là phiên riêng và có quyền. APPROVED không đồng nghĩa execute đã hoàn thành; phòng đích được kiểm tra lại.",
+    "source": "backend/src/tenant-lifecycle/tenant-lifecycle.service.ts",
+    "refs": "UC-TEN-07, UC-TNT-10, UC-TNT-11",
+    "base_id": "SD-11",
+    "message_offset": 0,
+    "messages": [
+      [
+        0,
+        1,
+        "Gửi renewal/transfer/checkout"
+      ],
+      [
+        1,
+        2,
+        "POST lifecycle-requests"
+      ],
+      [
+        2,
+        3,
+        "Kiểm tra lease, đích chuyển, trùng PENDING"
+      ],
+      [
+        2,
+        3,
+        "Lưu yêu cầu"
+      ],
+      [
+        1,
+        2,
+        "Người quản lý review + version/lý do"
+      ],
+      [
+        2,
+        3,
+        "Lưu APPROVED/REJECTED và audit"
+      ],
+      [
+        1,
+        2,
+        "Người quản lý yêu cầu execute"
+      ]
+    ]
+  },
+  {
+    "id": "SD-11-2",
+    "title": "Yêu cầu và thực thi vòng đời thuê — phần 2/2",
+    "kind": "sequence",
+    "description": "Người quản lý là phiên riêng và có quyền. APPROVED không đồng nghĩa execute đã hoàn thành; phòng đích được kiểm tra lại.",
+    "source": "backend/src/tenant-lifecycle/tenant-lifecycle.service.ts",
+    "refs": "UC-TEN-07, UC-TNT-10, UC-TNT-11",
+    "base_id": "SD-11",
+    "message_offset": 7,
+    "messages": [
+      [
+        2,
+        3,
+        "Khóa và kiểm tra lại điều kiện"
+      ],
+      [
+        2,
+        3,
+        "Thực thi lease/room; ghi Execution"
+      ],
+      [
+        2,
+        1,
+        "Kết quả và trạng thái hiện tại"
+      ]
+    ]
+  },
+  {
+    "id": "SD-12-1",
+    "title": "Bảo trì phân công và hoàn tất — phần 1/2",
+    "kind": "sequence",
+    "description": "Không dùng quyền xem để phân công. Lỗi provider không làm giả thông báo đã nhận; tránh ghi chi phí trùng.",
+    "source": "backend/src/maintenance/maintenance.service.ts",
+    "refs": "UC-TEN-06, UC-OPS-01, UC-OPS-02, UC-OPS-03",
+    "base_id": "SD-12",
+    "message_offset": 0,
+    "messages": [
+      [
+        0,
+        1,
+        "Gửi mô tả và ảnh hỏng"
+      ],
+      [
+        1,
+        2,
+        "Tạo ticket qua portal"
+      ],
+      [
+        2,
+        3,
+        "Kiểm tra tenant/phòng và lưu ticket"
+      ],
+      [
+        1,
+        2,
+        "Quản lý mở và phân công"
+      ],
+      [
+        2,
+        3,
+        "Kiểm tra assignee/quyền/scope"
+      ],
+      [
+        2,
+        3,
+        "Lưu tiến độ, SLA và comments"
+      ],
+      [
+        1,
+        2,
+        "Quản lý xác nhận hoàn tất"
+      ]
+    ]
+  },
+  {
+    "id": "SD-12-2",
+    "title": "Bảo trì phân công và hoàn tất — phần 2/2",
+    "kind": "sequence",
+    "description": "Không dùng quyền xem để phân công. Lỗi provider không làm giả thông báo đã nhận; tránh ghi chi phí trùng.",
+    "source": "backend/src/maintenance/maintenance.service.ts",
+    "refs": "UC-TEN-06, UC-OPS-01, UC-OPS-02, UC-OPS-03",
+    "base_id": "SD-12",
+    "message_offset": 7,
+    "messages": [
+      [
+        2,
+        3,
+        "Hoàn tất và liên kết Expense nếu có"
+      ],
+      [
+        2,
+        1,
+        "Trạng thái và lịch sử"
+      ]
+    ]
+  },
+  {
+    "id": "SD-13-1",
+    "title": "Báo cáo tháng và CSV — phần 1/2",
+    "kind": "sequence",
+    "description": "Không đồng nhất Payment ròng với toàn bộ Receipt; không mô tả clipboard thành XLSX/PDF đã lưu.",
+    "source": "backend/src/reports/reports.service.ts",
+    "refs": "UC-BIL-20, UC-BIL-21",
+    "base_id": "SD-13",
+    "message_offset": 0,
+    "messages": [
+      [
+        0,
+        1,
+        "Chọn tháng/khu"
+      ],
+      [
+        1,
+        2,
+        "GET reports/monthly"
+      ],
+      [
+        2,
+        3,
+        "Kiểm tra ownership/property scope"
+      ],
+      [
+        2,
+        3,
+        "Đọc invoice, payment, expense, cọc"
+      ],
+      [
+        2,
+        2,
+        "Tổng hợp theo các mốc thời gian riêng"
+      ],
+      [
+        2,
+        1,
+        "Summary, nhóm và danh sách invoices"
+      ],
+      [
+        0,
+        1,
+        "Chọn xuất CSV"
+      ]
+    ]
+  },
+  {
+    "id": "SD-13-2",
+    "title": "Báo cáo tháng và CSV — phần 2/2",
+    "kind": "sequence",
+    "description": "Không đồng nhất Payment ròng với toàn bộ Receipt; không mô tả clipboard thành XLSX/PDF đã lưu.",
+    "source": "backend/src/reports/reports.service.ts",
+    "refs": "UC-BIL-20, UC-BIL-21",
+    "base_id": "SD-13",
+    "message_offset": 7,
+    "messages": [
+      [
+        1,
+        2,
+        "GET monthly/export; quyền riêng"
+      ],
+      [
+        2,
+        1,
+        "filename, mimeType và content"
+      ],
+      [
+        1,
+        1,
+        "Clipboard.setData(content)"
+      ],
+      [
+        1,
+        0,
+        "Thông báo đã copy CSV"
+      ]
+    ]
+  },
+  {
+    "id": "SD-14-1",
+    "title": "Đình chỉ tài khoản và thu hồi phiên — phần 1/2",
+    "kind": "sequence",
+    "description": "Bảo vệ quản trị viên cuối và tác nhân theo policy. Restore không khôi phục token cũ; lỗi audit không được báo thành công.",
+    "source": "backend/src/admin/admin-console.service.ts",
+    "refs": "UC-ADM-04",
+    "base_id": "SD-14",
+    "message_offset": 0,
+    "messages": [
+      [
+        0,
+        1,
+        "Chọn đình chỉ và nhập lý do"
+      ],
+      [
+        1,
+        2,
+        "Lệnh suspend theo capability"
+      ],
+      [
+        2,
+        3,
+        "Kiểm tra tài khoản và trạng thái"
+      ],
+      [
+        2,
+        3,
+        "Transaction đổi active/session version"
+      ],
+      [
+        2,
+        3,
+        "Thu hồi session/refresh phụ thuộc"
+      ],
+      [
+        2,
+        3,
+        "Ghi audit bắt buộc"
+      ],
+      [
+        3,
+        2,
+        "Commit hoặc rollback"
+      ]
+    ]
+  },
+  {
+    "id": "SD-14-2",
+    "title": "Đình chỉ tài khoản và thu hồi phiên — phần 2/2",
+    "kind": "sequence",
+    "description": "Bảo vệ quản trị viên cuối và tác nhân theo policy. Restore không khôi phục token cũ; lỗi audit không được báo thành công.",
+    "source": "backend/src/admin/admin-console.service.ts",
+    "refs": "UC-ADM-04",
+    "base_id": "SD-14",
+    "message_offset": 7,
+    "messages": [
+      [
+        2,
+        1,
+        "Trạng thái và số phiên thu hồi"
+      ],
+      [
+        1,
+        0,
+        "Cập nhật detail/danh sách"
+      ]
+    ]
+  },
+  {
+    "id": "SD-15-1",
+    "title": "Inventory và chuyển sang kiểm duyệt — phần 1/2",
+    "kind": "sequence",
+    "description": "Chỉ có quyền xem inventory không đủ duyệt tin; không sửa Room/Lease/Invoice từ card inventory.",
+    "source": "backend/src/admin/admin.service.ts",
+    "refs": "UC-ADM-08, UC-ADM-11",
+    "base_id": "SD-15",
+    "message_offset": 0,
+    "messages": [
+      [
+        0,
+        1,
+        "Lọc khu/phòng và giá cơ sở"
+      ],
+      [
+        1,
+        2,
+        "GET admin/rooms"
+      ],
+      [
+        2,
+        3,
+        "Kiểm tra capability và projection"
+      ],
+      [
+        3,
+        2,
+        "Trang, tổng và listing riêng"
+      ],
+      [
+        2,
+        1,
+        "Thông tin che PII, no-store"
+      ],
+      [
+        0,
+        1,
+        "Mở tin PENDING cần duyệt"
+      ],
+      [
+        1,
+        2,
+        "Tìm queue theo exact UUID"
+      ]
+    ]
+  },
+  {
+    "id": "SD-15-2",
+    "title": "Inventory và chuyển sang kiểm duyệt — phần 2/2",
+    "kind": "sequence",
+    "description": "Chỉ có quyền xem inventory không đủ duyệt tin; không sửa Room/Lease/Invoice từ card inventory.",
+    "source": "backend/src/admin/admin.service.ts",
+    "refs": "UC-ADM-08, UC-ADM-11",
+    "base_id": "SD-15",
+    "message_offset": 7,
+    "messages": [
+      [
+        2,
+        3,
+        "Kiểm tra capability/claim/version"
+      ],
+      [
+        2,
+        3,
+        "Ghi quyết định và audit"
+      ],
+      [
+        2,
+        1,
+        "Kết quả; invalidate inventory"
+      ]
+    ]
+  },
+  {
+    "id": "SD-16-1",
+    "title": "Đối soát khoản thu maker checker — phần 1/2",
+    "kind": "sequence",
+    "description": "Checker dùng phiên khác; maker không tự duyệt. Không match riêng từng allocation để nhân đôi khoản nhận.",
+    "source": "backend/src/platform/finance-reconciliation.service.ts",
+    "refs": "UC-ADM-15",
+    "base_id": "SD-16",
+    "message_offset": 0,
+    "messages": [
+      [
+        0,
+        1,
+        "Import sao kê CSV"
+      ],
+      [
+        1,
+        2,
+        "POST finance/statements"
+      ],
+      [
+        2,
+        3,
+        "Kiểm tra đầu vào/trùng"
+      ],
+      [
+        1,
+        2,
+        "GET candidates của dòng"
+      ],
+      [
+        2,
+        3,
+        "Tìm BillingReceipt phù hợp"
+      ],
+      [
+        1,
+        2,
+        "Maker gửi proposal"
+      ],
+      [
+        2,
+        3,
+        "Lưu đề nghị và audit"
+      ]
+    ]
+  },
+  {
+    "id": "SD-16-2",
+    "title": "Đối soát khoản thu maker checker — phần 2/2",
+    "kind": "sequence",
+    "description": "Checker dùng phiên khác; maker không tự duyệt. Không match riêng từng allocation để nhân đôi khoản nhận.",
+    "source": "backend/src/platform/finance-reconciliation.service.ts",
+    "refs": "UC-ADM-15",
+    "base_id": "SD-16",
+    "message_offset": 7,
+    "messages": [
+      [
+        1,
+        2,
+        "Checker khác gửi approve/reject"
+      ],
+      [
+        2,
+        3,
+        "Khóa, kiểm tra tách nhiệm vụ"
+      ],
+      [
+        2,
+        3,
+        "Ghi liên kết và audit"
+      ]
+    ]
+  },
+  {
+    "id": "SD-17-1",
+    "title": "Chatbot truy xuất nguồn theo quyền — phần 1/2",
+    "kind": "sequence",
+    "description": "Controller chỉ LANDLORD. Không có nguồn/model sẵn sàng → nói rõ giới hạn; không tự bịa số liệu hoặc thực thi lệnh ghi.",
+    "source": "backend/src/chatbot/chatbot.service.ts",
+    "refs": "UC-SUP-06",
+    "base_id": "SD-17",
+    "message_offset": 0,
+    "messages": [
+      [
+        0,
+        1,
+        "Gửi câu hỏi và propertyId"
+      ],
+      [
+        1,
+        2,
+        "POST chatbot/ask"
+      ],
+      [
+        2,
+        2,
+        "Kiểm tra role và rate limit"
+      ],
+      [
+        2,
+        3,
+        "Truy xuất nguồn đã cho phép"
+      ],
+      [
+        2,
+        3,
+        "Gọi tool đọc nghiệp vụ nếu phù hợp"
+      ],
+      [
+        2,
+        2,
+        "Tổng hợp, giữ scope và nguồn"
+      ],
+      [
+        2,
+        1,
+        "Câu trả lời và tham chiếu"
+      ]
+    ]
+  },
+  {
+    "id": "SD-17-2",
+    "title": "Chatbot truy xuất nguồn theo quyền — phần 2/2",
+    "kind": "sequence",
+    "description": "Controller chỉ LANDLORD. Không có nguồn/model sẵn sàng → nói rõ giới hạn; không tự bịa số liệu hoặc thực thi lệnh ghi.",
+    "source": "backend/src/chatbot/chatbot.service.ts",
+    "refs": "UC-SUP-06",
+    "base_id": "SD-17",
+    "message_offset": 7,
+    "messages": [
+      [
+        1,
+        2,
+        "GET nguồn qua endpoint bảo vệ"
+      ],
+      [
+        2,
+        1,
+        "Nội dung nguồn được phép"
+      ]
+    ]
+  },
+  {
+    "id": "SD-18-1",
+    "title": "Duyệt xác minh chủ trọ theo hồ sơ hỗ trợ — phần 1/2",
+    "kind": "sequence",
+    "description": "Khi APPROVED phải có chủ trọ hoạt động và chứng cứ SUPPORT_CLEAN. Xung đột version hoặc chứng cứ không hợp lệ: rollback, đọc lại hồ sơ.",
+    "source": "backend/src/admin/admin-verification.service.ts",
+    "refs": "UC-ADM-18",
+    "base_id": "SD-18",
+    "message_offset": 0,
+    "messages": [
+      [
+        0,
+        1,
+        "Mở hàng đợi xác minh"
+      ],
+      [
+        1,
+        2,
+        "GET landlord-verifications"
+      ],
+      [
+        2,
+        3,
+        "Đọc projection, trang và trạng thái"
+      ],
+      [
+        0,
+        1,
+        "Nhập quyết định, lý do, version"
+      ],
+      [
+        1,
+        2,
+        "POST verification/review"
+      ],
+      [
+        2,
+        3,
+        "Đọc chủ trọ, ticket và minh chứng"
+      ],
+      [
+        2,
+        2,
+        "Kiểm tra PENDING, version, tự duyệt"
+      ]
+    ]
+  },
+  {
+    "id": "SD-18-2",
+    "title": "Duyệt xác minh chủ trọ theo hồ sơ hỗ trợ — phần 2/2",
+    "kind": "sequence",
+    "description": "Khi APPROVED phải có chủ trọ hoạt động và chứng cứ SUPPORT_CLEAN. Xung đột version hoặc chứng cứ không hợp lệ: rollback, đọc lại hồ sơ.",
+    "source": "backend/src/admin/admin-verification.service.ts",
+    "refs": "UC-ADM-18",
+    "base_id": "SD-18",
+    "message_offset": 7,
+    "messages": [
+      [
+        2,
+        3,
+        "Update có điều kiện và audit"
+      ],
+      [
+        2,
+        1,
+        "Kết quả và version mới"
+      ],
+      [
+        1,
+        0,
+        "Cập nhật hàng đợi"
+      ]
+    ]
+  },
+  {
+    "id": "SD-19-1",
+    "title": "Gán gói sử dụng và lưu lịch sử không ghi doanh thu — phần 1/2",
+    "kind": "sequence",
+    "description": "Transaction thất bại phải giữ đăng ký cũ. ADMINISTRATIVE_ENTITLEMENTS và financialEffect=NONE: không tạo Payment, hóa đơn thuê hoặc doanh thu nền tảng.",
+    "source": "backend/src/admin/admin-plans.service.ts",
+    "refs": "UC-ADM-20, UC-ADM-21",
+    "base_id": "SD-19",
+    "message_offset": 0,
+    "messages": [
+      [
+        0,
+        1,
+        "Chọn chủ trọ và gói đang bật"
+      ],
+      [
+        1,
+        2,
+        "Gửi planId, versions, thời hạn, lý do"
+      ],
+      [
+        2,
+        3,
+        "Khóa User và đọc chia sẻ ServicePlan"
+      ],
+      [
+        2,
+        2,
+        "Kiểm tra role, active, version và hạn"
+      ],
+      [
+        2,
+        3,
+        "Đếm khu và phòng hiện có"
+      ],
+      [
+        2,
+        2,
+        "Từ chối nếu vượt hạn mức gói"
+      ],
+      [
+        2,
+        3,
+        "Lưu subscription với planSnapshot"
+      ]
+    ]
+  },
+  {
+    "id": "SD-19-2",
+    "title": "Gán gói sử dụng và lưu lịch sử không ghi doanh thu — phần 2/2",
+    "kind": "sequence",
+    "description": "Transaction thất bại phải giữ đăng ký cũ. ADMINISTRATIVE_ENTITLEMENTS và financialEffect=NONE: không tạo Payment, hóa đơn thuê hoặc doanh thu nền tảng.",
+    "source": "backend/src/admin/admin-plans.service.ts",
+    "refs": "UC-ADM-20, UC-ADM-21",
+    "base_id": "SD-19",
+    "message_offset": 7,
+    "messages": [
+      [
+        2,
+        3,
+        "Ghi SubscriptionEvent và audit"
+      ],
+      [
+        2,
+        1,
+        "Kết quả gán quyền sử dụng"
+      ],
+      [
+        1,
+        0,
+        "Hiển thị lịch sử đăng ký"
+      ]
+    ]
+  },
+  {
+    "id": "OD-01",
+    "title": "Đối tượng khoản thu và hóa đơn thanh toán một phần",
+    "kind": "object",
+    "description": "Ví dụ giả định: 3.000.000 đồng nhận, 2.500.000 phân bổ, 500.000 còn khả dụng; công nợ hóa đơn còn 1.500.000 đồng.",
+    "source": "backend/prisma/schema.prisma"
+  }
+]

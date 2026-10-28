@@ -1,0 +1,19 @@
+{
+  "1 Phạm vi sửa đổi và kết luận AS IS": 3,
+  "2 Ma trận tác nhân và quyền hiệu lực": 6,
+  "3 Phân rã chức năng và catalog Use Case": 8,
+  "4 Đặc tả chi tiết nhóm tài khoản": 33,
+  "UC-SYS-01 Đăng ký tài khoản chủ trọ": 33,
+  "UC-SYS-02 Đăng ký tài khoản tìm phòng": 36,
+  "UC-SYS-03 Đăng nhập": 40,
+  "UC-SYS-05.1 Đăng xuất phiên hiện tại": 44,
+  "UC-SYS-05.2 Xem và thu hồi các phiên của mình": 47,
+  "UC-SYS-06 Khôi phục mật khẩu bằng liên kết một lần": 50,
+  "UC-SYS-07 Đổi mật khẩu khi đang đăng nhập": 54,
+  "UC-SYS-08 Kích hoạt tài khoản người thuê từ lời mời": 58,
+  "UC-SYS-09 Kích hoạt tài khoản nhân viên từ lời mời": 61,
+  "5 Các tiến trình hỗ trợ phiên": 66,
+  "6 Danh mục quy tắc nghiệp vụ và phát hiện hệ thống": 68,
+  "7 Ma trận truy vết yêu cầu": 71,
+  "8 Điểm chưa rõ khác biệt và kiểm thử": 87
+}

@@ -1,0 +1,71 @@
+@startuml
+hide empty methods
+skinparam classAttributeIconSize 0
+skinparam shadowing false
+skinparam defaultFontName Arial
+title CD-04A Chỉ số và hóa đơn
+class MeterReading {
+  id: String {id}
+  utilityType: UtilityType
+  billingMonth: DateTime
+  previousReading: Int
+  currentReading: Int
+  unitPrice: Int
+  usage: Int
+  amount: Int
+}
+class Invoice {
+  id: String {id}
+  billingMonth: DateTime
+  rentAmount: Int
+  electricityAmount: Int
+  waterAmount: Int
+  otherAmount: Int
+  totalAmount: Int
+  paidAmount: Int
+  status: InvoiceStatus
+  dueDate: DateTime [0..1]
+}
+class Room <<reference>> {
+  id: String {id}
+  name: String
+}
+class Lease <<reference>> {
+  id: String {id}
+  status: LeaseStatus
+}
+class Tenant <<reference>> {
+  id: String {id}
+  fullName: String
+}
+enum InvoiceStatus {
+  UNPAID
+  PARTIAL
+  PAID
+  CANCELLED
+}
+enum LeaseStatus {
+  ACTIVE
+  ENDED
+}
+enum UtilityType {
+  ELECTRICITY
+  WATER
+}
+MeterReading "0..*\nmeterReadings" -- "1\nroom" Room
+Invoice "0..*\ninvoices" -- "1\nlease" Lease
+Invoice "0..*\ninvoices" -- "1\nroom" Room
+Invoice "0..*\ninvoices" -- "1\ntenant" Tenant
+note right of Invoice
+Invoice
+{unique: lease, billingMonth}
+end note
+note right of MeterReading
+MeterReading
+{unique: room, utilityType,
+ billingMonth}
+end note
+legend bottom
+Đường liền: association. <<IDRef>>: chỉ tham chiếu bằng mã, không phải association.
+endlegend
+@enduml

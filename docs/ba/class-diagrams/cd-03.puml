@@ -1,0 +1,61 @@
+@startuml
+hide empty methods
+skinparam classAttributeIconSize 0
+skinparam shadowing false
+skinparam defaultFontName Arial
+title CD-03 Hợp đồng và tiền cọc
+class Lease {
+  id: String {id}
+  startDate: DateTime
+  endDate: DateTime [0..1]
+  monthlyRent: Int
+  deposit: Int
+  status: LeaseStatus
+}
+class LeaseChange {
+  id: String {id}
+  changeType: String
+  previousValues: Json
+  newValues: Json
+  note: String [0..1]
+  createdAt: DateTime
+}
+class DepositTransaction {
+  id: String {id}
+  type: DepositTransactionType
+  amount: Int
+  occurredAt: DateTime
+  note: String [0..1]
+}
+class User <<reference>> {
+  id: String {id}
+  fullName: String
+}
+class Room <<reference>> {
+  id: String {id}
+  name: String
+}
+class Tenant <<reference>> {
+  id: String {id}
+  fullName: String
+}
+enum DepositTransactionType {
+  COLLECTED
+  REFUNDED
+  DEDUCTED
+  ADJUSTMENT
+}
+enum LeaseStatus {
+  ACTIVE
+  ENDED
+}
+Lease "0..*\nleases" -- "1\nroom" Room
+Lease "0..*\nleases" -- "1\ntenant" Tenant
+DepositTransaction "0..*\ndepositTransactions" -- "1\nlease" Lease
+DepositTransaction "0..*\ndepositTransactions" -- "1\nlandlord" User
+LeaseChange "0..*\nchanges" -- "1\nlease" Lease
+LeaseChange "0..*\nleaseChanges" -- "1\nlandlord" User
+legend bottom
+Đường liền: association. <<IDRef>>: chỉ tham chiếu bằng mã, không phải association.
+endlegend
+@enduml

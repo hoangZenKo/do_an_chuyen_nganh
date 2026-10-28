@@ -1,0 +1,16 @@
+node_modules
+dist
+uploads/
+.env
+.env.*
+!.env.example
+coverage
+.backups/
+*.dump
+*.dump.enc
+*.dump.enc.json
+*.partial
+*.log
+*.DS_Store
+docs/chatbot-eval-report.local.json
+docs/chatbot-approved-smoke.local.json

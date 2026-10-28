@@ -1,0 +1,837 @@
+00:00 +0: loading /Users/hoang/Rental_room_management/test/features/auth/account_access_test.dart
+00:00 +0: /Users/hoang/Rental_room_management/test/features/auth/auth_navigation_test.dart: overview reporting uses dashboard rights, not report scheduling rights
+00:00 +1: /Users/hoang/Rental_room_management/test/features/auth/auth_navigation_test.dart: new sprint routes enforce capabilities and protect support from anonymous access
+00:00 +2: /Users/hoang/Rental_room_management/test/features/auth/auth_navigation_test.dart: operations route is capability-gated and still requires admin MFA
+00:00 +3: /Users/hoang/Rental_room_management/test/features/auth/auth_navigation_test.dart: keeps splash visible while session is checking
+00:00 +4: /Users/hoang/Rental_room_management/test/features/auth/auth_navigation_test.dart: redirects unauthenticated protected routes to login
+00:00 +5: /Users/hoang/Rental_room_management/test/features/auth/auth_navigation_test.dart: routes landlord away from admin and auth screens
+00:00 +6: /Users/hoang/Rental_room_management/test/features/auth/auth_navigation_test.dart: routes admin away from landlord routes and auth screens
+00:00 +7: /Users/hoang/Rental_room_management/test/features/auth/auth_navigation_test.dart: routes login register and onboarding to home by role
+00:00 +8: /Users/hoang/Rental_room_management/test/features/auth/auth_navigation_test.dart: allows tenants to use their portal invoice routes
+00:00 +9: /Users/hoang/Rental_room_management/test/features/auth/auth_navigation_test.dart: routes staff to the first route they can actually use
+00:00 +10: /Users/hoang/Rental_room_management/test/features/auth/auth_navigation_test.dart: keeps staff away from routes they do not have permission for
+00:00 +11: /Users/hoang/Rental_room_management/test/features/auth/auth_navigation_test.dart: keeps view-only staff away from management forms
+00:00 +12: /Users/hoang/Rental_room_management/test/features/auth/auth_navigation_test.dart: blocks fake zalo for non-landlord roles
+00:00 +13: /Users/hoang/Rental_room_management/test/features/auth/session_cache_isolation_test.dart: password change clears the local session and returns to unauthenticated state
+00:00 +14: /Users/hoang/Rental_room_management/test/features/auth/session_cache_isolation_test.dart: password change clears the local session and returns to unauthenticated state
+00:00 +15: /Users/hoang/Rental_room_management/test/features/auth/session_cache_isolation_test.dart: password change clears the local session and returns to unauthenticated state
+00:00 +16: /Users/hoang/Rental_room_management/test/features/auth/account_access_test.dart: recovery validates email and does not duplicate an in-flight request
+00:00 +17: /Users/hoang/Rental_room_management/test/features/auth/account_access_test.dart: recovery validates email and does not duplicate an in-flight request
+00:00 +18: /Users/hoang/Rental_room_management/test/features/auth/account_access_test.dart: recovery validates email and does not duplicate an in-flight request
+00:00 +19: /Users/hoang/Rental_room_management/test/features/auth/account_access_test.dart: recovery validates email and does not duplicate an in-flight request
+00:00 +20: /Users/hoang/Rental_room_management/test/features/auth/account_access_test.dart: recovery validates email and does not duplicate an in-flight request
+00:00 +21: /Users/hoang/Rental_room_management/test/features/auth/account_access_test.dart: recovery validates email and does not duplicate an in-flight request
+00:00 +22: /Users/hoang/Rental_room_management/test/features/auth/account_access_test.dart: recovery validates email and does not duplicate an in-flight request
+00:00 +23: /Users/hoang/Rental_room_management/test/features/auth/account_access_test.dart: recovery validates email and does not duplicate an in-flight request
+00:00 +24: /Users/hoang/Rental_room_management/test/features/auth/account_access_test.dart: recovery validates email and does not duplicate an in-flight request
+00:00 +25: /Users/hoang/Rental_room_management/test/features/auth/account_access_test.dart: recovery validates email and does not duplicate an in-flight request
+00:00 +26: /Users/hoang/Rental_room_management/test/features/auth/account_access_test.dart: recovery validates email and does not duplicate an in-flight request
+00:00 +27: /Users/hoang/Rental_room_management/test/features/auth/account_access_test.dart: recovery validates email and does not duplicate an in-flight request
+00:00 +28: /Users/hoang/Rental_room_management/test/features/chatbot/chatbot_screen_test.dart: shows independent-question notice and supported suggestions
+00:00 +29: /Users/hoang/Rental_room_management/test/features/listings/reviews_screen_test.dart: ineligible tenants see the reason instead of a submission form
+00:00 +30: /Users/hoang/Rental_room_management/test/features/listings/reviews_screen_test.dart: ineligible tenants see the reason instead of a submission form
+00:00 +31: /Users/hoang/Rental_room_management/test/features/chatbot/chatbot_screen_test.dart: fetches source only on opening the sheet
+00:01 +32: /Users/hoang/Rental_room_management/test/features/listings/reviews_screen_test.dart: validates review text and submits all four criteria for moderation
+00:01 +33: /Users/hoang/Rental_room_management/test/features/listings/reviews_screen_test.dart: validates review text and submits all four criteria for moderation
+00:01 +34: /Users/hoang/Rental_room_management/test/features/listings/reviews_screen_test.dart: validates review text and submits all four criteria for moderation
+00:01 +35: /Users/hoang/Rental_room_management/test/features/chatbot/chatbot_screen_test.dart: revoked source is an error and never uses cached excerpts
+00:01 +36: /Users/hoang/Rental_room_management/test/features/listings/reviews_screen_test.dart: conflicts preserve tenant input and offer reload
+00:01 +37: /Users/hoang/Rental_room_management/test/features/chatbot/chatbot_screen_test.dart: account switch hides a visible source and clears the composer
+00:01 +38: /Users/hoang/Rental_room_management/test/features/listings/reviews_screen_test.dart: tenant confirms withdrawal and can later resubmit
+00:01 +39: /Users/hoang/Rental_room_management/test/features/listings/reviews_screen_test.dart: tenant confirms withdrawal and can later resubmit
+00:01 +40: /Users/hoang/Rental_room_management/test/features/chatbot/chatbot_screen_test.dart: chat route is landlord-only even for direct links
+00:01 +41: /Users/hoang/Rental_room_management/test/features/listings/reviews_screen_test.dart: landlord reply validates length and remains in moderation flow
+00:01 +42: /Users/hoang/Rental_room_management/test/features/listings/reviews_screen_test.dart: admin filters reply queue and requires a moderation reason
+00:01 +43: /Users/hoang/Rental_room_management/test/features/listings/reviews_screen_test.dart: account changes disable open actions instead of using new credentials
+00:01 +44: /Users/hoang/Rental_room_management/test/features/listings/reviews_screen_test.dart: managed lists paginate and recover from load errors
+00:02 +45: /Users/hoang/Rental_room_management/test/features/listings/reviews_screen_test.dart: empty public reviews do not show fabricated ratings
+00:02 +46: /Users/hoang/Rental_room_management/test/features/listings/reviews_screen_test.dart: public reviews show four criteria and allow paging
+00:02 +47: /Users/hoang/Rental_room_management/test/features/listings/reviews_screen_test.dart: admin review controls fit a phone with enlarged text
+00:03 +48: /Users/hoang/Rental_room_management/test/features/listings/listing_navigation_test.dart: real tab routes share one fixed, persistent taskbar
+00:04 +49: /Users/hoang/Rental_room_management/test/features/listings/listing_navigation_test.dart: real tab routes share one fixed, persistent taskbar
+00:04 +50: /Users/hoang/Rental_room_management/test/features/listings/listing_navigation_test.dart: real tab routes share one fixed, persistent taskbar
+00:04 +51: /Users/hoang/Rental_room_management/test/features/listings/listing_navigation_test.dart: real tab routes share one fixed, persistent taskbar
+00:04 +52: /Users/hoang/Rental_room_management/test/features/listings/listing_navigation_test.dart: real tab routes share one fixed, persistent taskbar
+00:04 +53: /Users/hoang/Rental_room_management/test/features/listings/listing_navigation_test.dart: real tab routes share one fixed, persistent taskbar
+00:04 +54: /Users/hoang/Rental_room_management/test/features/listings/listing_navigation_test.dart: real tab routes share one fixed, persistent taskbar
+00:04 +55: /Users/hoang/Rental_room_management/test/features/listings/housing_journey_test.dart: slot-only bookings cannot silently fall back to free-form dates
+00:04 +56: /Users/hoang/Rental_room_management/test/features/listings/housing_journey_test.dart: slot-only bookings cannot silently fall back to free-form dates
+00:04 +57: /Users/hoang/Rental_room_management/test/features/listings/housing_journey_test.dart: slot-only bookings cannot silently fall back to free-form dates
+00:05 +58: /Users/hoang/Rental_room_management/test/features/listings/discovery_tools_test.dart: budget filter survives searching and changing categories
+00:05 +59: /Users/hoang/Rental_room_management/test/features/listings/discovery_tools_test.dart: budget filter survives searching and changing categories
+00:05 +60: /Users/hoang/Rental_room_management/test/features/listings/discovery_tools_test.dart: budget filter survives searching and changing categories
+00:05 +61: /Users/hoang/Rental_room_management/test/features/listings/discovery_tools_test.dart: budget filter survives searching and changing categories
+00:05 +62: /Users/hoang/Rental_room_management/test/features/listings/discovery_tools_test.dart: budget filter survives searching and changing categories
+00:05 +63: /Users/hoang/Rental_room_management/test/features/listings/discovery_tools_test.dart: budget filter survives searching and changing categories
+00:05 +64: /Users/hoang/Rental_room_management/test/features/listings/discovery_tools_test.dart: budget filter survives searching and changing categories
+00:05 +65: /Users/hoang/Rental_room_management/test/features/listings/discovery_tools_test.dart: budget filter survives searching and changing categories
+00:05 +66: /Users/hoang/Rental_room_management/test/features/listings/discovery_tools_test.dart: budget filter survives searching and changing categories
+00:05 +67: /Users/hoang/Rental_room_management/test/features/listings/discovery_tools_test.dart: budget filter survives searching and changing categories
+00:05 +68: /Users/hoang/Rental_room_management/test/features/listings/discovery_tools_test.dart: budget filter survives searching and changing categories
+00:05 +69: /Users/hoang/Rental_room_management/test/features/listings/discovery_tools_test.dart: budget filter survives searching and changing categories
+00:05 +70: /Users/hoang/Rental_room_management/test/features/listings/discovery_tools_test.dart: budget filter survives searching and changing categories
+00:05 +71: /Users/hoang/Rental_room_management/test/features/listings/discovery_tools_test.dart: budget filter survives searching and changing categories
+00:05 +72: /Users/hoang/Rental_room_management/test/features/listings/discovery_tools_test.dart: budget filter survives searching and changing categories
+00:05 +73: /Users/hoang/Rental_room_management/test/features/listings/discovery_tools_test.dart: budget filter survives searching and changing categories
+00:05 +74: /Users/hoang/Rental_room_management/test/features/listings/discovery_tools_test.dart: budget filter survives searching and changing categories
+00:05 +75: /Users/hoang/Rental_room_management/test/features/listings/listings_screen_test.dart: browse, search and detail use actual repository data
+00:06 +76: /Users/hoang/Rental_room_management/test/features/listings/listings_screen_test.dart: browse, search and detail use actual repository data
+00:06 +77: /Users/hoang/Rental_room_management/test/features/listings/listings_screen_test.dart: browse, search and detail use actual repository data
+00:06 +78: /Users/hoang/Rental_room_management/test/features/listings/listings_screen_test.dart: browse, search and detail use actual repository data
+00:06 +79: /Users/hoang/Rental_room_management/test/features/listings/listings_screen_test.dart: browse, search and detail use actual repository data
+00:06 +80: /Users/hoang/Rental_room_management/test/features/listings/listings_screen_test.dart: browse, search and detail use actual repository data
+00:06 +81: /Users/hoang/Rental_room_management/test/features/listings/listings_screen_test.dart: browse, search and detail use actual repository data
+00:06 +82: /Users/hoang/Rental_room_management/test/features/listings/listings_screen_test.dart: browse, search and detail use actual repository data
+00:06 +83: /Users/hoang/Rental_room_management/test/features/listings/listings_screen_test.dart: browse, search and detail use actual repository data
+00:07 +84: /Users/hoang/Rental_room_management/test/features/listings/listings_screen_test.dart: browse, search and detail use actual repository data
+00:07 +85: /Users/hoang/Rental_room_management/test/features/admin/admin_production_panels_test.dart: audit CSV requires a reason and copies the exported data
+00:07 +86: /Users/hoang/Rental_room_management/test/features/admin/admin_production_panels_test.dart: audit CSV requires a reason and copies the exported data
+00:07 +87: /Users/hoang/Rental_room_management/test/features/admin/admin_production_panels_test.dart: audit CSV requires a reason and copies the exported data
+00:07 +88: /Users/hoang/Rental_room_management/test/features/admin/admin_production_panels_test.dart: audit CSV requires a reason and copies the exported data
+00:07 +89: /Users/hoang/Rental_room_management/test/features/admin/admin_production_panels_test.dart: audit CSV requires a reason and copies the exported data
+00:07 +90: /Users/hoang/Rental_room_management/test/features/admin/admin_production_panels_test.dart: audit CSV requires a reason and copies the exported data
+00:07 +91: /Users/hoang/Rental_room_management/test/features/admin/admin_production_panels_test.dart: audit CSV requires a reason and copies the exported data
+00:07 +92: /Users/hoang/Rental_room_management/test/features/admin/admin_production_panels_test.dart: audit CSV requires a reason and copies the exported data
+00:07 +93: /Users/hoang/Rental_room_management/test/features/admin/admin_production_panels_test.dart: audit CSV requires a reason and copies the exported data
+00:07 +94: /Users/hoang/Rental_room_management/test/features/admin/admin_production_panels_test.dart: audit CSV requires a reason and copies the exported data
+00:07 +95: /Users/hoang/Rental_room_management/test/features/admin/admin_production_panels_test.dart: audit CSV requires a reason and copies the exported data
+00:07 +96: /Users/hoang/Rental_room_management/test/features/admin/admin_production_panels_test.dart: audit CSV requires a reason and copies the exported data
+00:07 +97: /Users/hoang/Rental_room_management/test/features/admin/admin_production_panels_test.dart: audit CSV requires a reason and copies the exported data
+00:07 +98: /Users/hoang/Rental_room_management/test/features/admin/admin_production_panels_test.dart: audit CSV requires a reason and copies the exported data
+00:08 +99: /Users/hoang/Rental_room_management/test/features/admin/admin_production_panels_test.dart: audit CSV requires a reason and copies the exported data
+00:08 +100: /Users/hoang/Rental_room_management/test/features/admin/admin_account_detail_panel_test.dart: detail shows counts and history; suspend binds current version
+00:08 +101: /Users/hoang/Rental_room_management/test/features/admin/admin_account_detail_panel_test.dart: detail shows counts and history; suspend binds current version
+00:08 +102: /Users/hoang/Rental_room_management/test/features/admin/admin_account_detail_panel_test.dart: detail shows counts and history; suspend binds current version
+00:08 +103: /Users/hoang/Rental_room_management/test/features/admin/admin_unified_shell_test.dart: AdminLandlordFormScreen uses the shared shell
+00:08 +104: /Users/hoang/Rental_room_management/test/features/admin/admin_unified_shell_test.dart: AdminLandlordFormScreen uses the shared shell
+00:08 +105: /Users/hoang/Rental_room_management/test/features/admin/admin_unified_shell_test.dart: AdminLandlordFormScreen uses the shared shell
+00:08 +106: /Users/hoang/Rental_room_management/test/features/admin/admin_unified_shell_test.dart: AdminLandlordFormScreen uses the shared shell
+00:08 +107: /Users/hoang/Rental_room_management/test/features/admin/admin_unified_shell_test.dart: AdminLandlordFormScreen uses the shared shell
+00:08 +108: /Users/hoang/Rental_room_management/test/features/listings/listings_screen_test.dart: editing a valid draft saves the original version without changing the room
+00:08 +109: /Users/hoang/Rental_room_management/test/features/listings/listings_screen_test.dart: editing a valid draft saves the original version without changing the room
+00:08 +110: /Users/hoang/Rental_room_management/test/features/listings/listings_screen_test.dart: editing a valid draft saves the original version without changing the room
+00:08 +111: /Users/hoang/Rental_room_management/test/features/listings/listings_screen_test.dart: editing a valid draft saves the original version without changing the room
+00:08 +112: /Users/hoang/Rental_room_management/test/features/admin/admin_search_quality_test.dart: payment pagination changes only its group and revocation removes cached data
+00:08 +113: /Users/hoang/Rental_room_management/test/features/admin/admin_search_quality_test.dart: payment pagination changes only its group and revocation removes cached data
+00:08 +114: /Users/hoang/Rental_room_management/test/features/admin/admin_search_quality_test.dart: payment pagination changes only its group and revocation removes cached data
+00:08 +115: /Users/hoang/Rental_room_management/test/features/admin/admin_search_quality_test.dart: payment pagination changes only its group and revocation removes cached data
+00:08 +116: /Users/hoang/Rental_room_management/test/features/admin/admin_search_quality_test.dart: payment pagination changes only its group and revocation removes cached data
+00:08 +117: /Users/hoang/Rental_room_management/test/features/admin/admin_search_quality_test.dart: payment pagination changes only its group and revocation removes cached data
+00:08 +118: /Users/hoang/Rental_room_management/test/features/admin/admin_search_quality_test.dart: payment pagination changes only its group and revocation removes cached data
+00:08 +119: /Users/hoang/Rental_room_management/test/features/admin/admin_search_quality_test.dart: payment pagination changes only its group and revocation removes cached data
+00:08 +120: /Users/hoang/Rental_room_management/test/features/admin/admin_search_quality_test.dart: payment pagination changes only its group and revocation removes cached data
+00:08 +121: /Users/hoang/Rental_room_management/test/features/admin/admin_search_quality_test.dart: payment pagination changes only its group and revocation removes cached data
+00:08 +122: /Users/hoang/Rental_room_management/test/features/admin/admin_search_quality_test.dart: payment pagination changes only its group and revocation removes cached data
+00:08 +123: /Users/hoang/Rental_room_management/test/features/admin/admin_search_quality_test.dart: payment pagination changes only its group and revocation removes cached data
+00:08 +124: /Users/hoang/Rental_room_management/test/features/admin/admin_search_quality_test.dart: payment pagination changes only its group and revocation removes cached data
+00:09 +125: /Users/hoang/Rental_room_management/test/features/admin/admin_search_quality_test.dart: payment pagination changes only its group and revocation removes cached data
+00:09 +126: /Users/hoang/Rental_room_management/test/features/admin/admin_account_detail_panel_test.dart: pending mutation disables actions; late result cannot restore old UI
+00:09 +127: /Users/hoang/Rental_room_management/test/features/admin/admin_search_quality_test.dart: QA is lazy, independently scoped and submits the exact decision version once
+00:09 +128: /Users/hoang/Rental_room_management/test/features/admin/admin_search_quality_test.dart: QA is lazy, independently scoped and submits the exact decision version once
+00:09 +129: /Users/hoang/Rental_room_management/test/features/admin/admin_search_quality_test.dart: QA is lazy, independently scoped and submits the exact decision version once
+00:09 +130: /Users/hoang/Rental_room_management/test/features/admin/admin_search_quality_test.dart: QA is lazy, independently scoped and submits the exact decision version once
+00:09 +131: /Users/hoang/Rental_room_management/test/features/admin/admin_operations_release_test.dart: MFA dialog validates input and suppresses results after logout
+00:09 +132: /Users/hoang/Rental_room_management/test/features/admin/admin_operations_release_test.dart: MFA dialog validates input and suppresses results after logout
+00:09 +133: /Users/hoang/Rental_room_management/test/features/admin/admin_operations_release_test.dart: MFA dialog validates input and suppresses results after logout
+00:09 +134: /Users/hoang/Rental_room_management/test/features/admin/admin_operations_release_test.dart: MFA dialog validates input and suppresses results after logout
+00:09 +135: /Users/hoang/Rental_room_management/test/features/admin/admin_operations_release_test.dart: MFA dialog validates input and suppresses results after logout
+00:09 +136: /Users/hoang/Rental_room_management/test/features/admin/admin_operations_release_test.dart: MFA dialog validates input and suppresses results after logout
+00:10 +137: /Users/hoang/Rental_room_management/test/features/admin/admin_accounts_panel_test.dart: search debounces; role filter resets pagination
+00:10 +138: /Users/hoang/Rental_room_management/test/features/admin/admin_accounts_panel_test.dart: search debounces; role filter resets pagination
+00:10 +139: /Users/hoang/Rental_room_management/test/features/admin/admin_accounts_panel_test.dart: search debounces; role filter resets pagination
+00:10 +140: /Users/hoang/Rental_room_management/test/features/admin/admin_accounts_workspace_test.dart: workspace list/detail routes use typed repository at width 1440.0
+00:10 +141: /Users/hoang/Rental_room_management/test/features/admin/admin_accounts_workspace_test.dart: workspace list/detail routes use typed repository at width 1440.0
+00:10 +142: /Users/hoang/Rental_room_management/test/features/admin/admin_accounts_workspace_test.dart: workspace list/detail routes use typed repository at width 1440.0
+00:10 +143: /Users/hoang/Rental_room_management/test/features/admin/admin_accounts_workspace_test.dart: workspace list/detail routes use typed repository at width 1440.0
+00:10 +144: /Users/hoang/Rental_room_management/test/features/admin/admin_sessions_test.dart: confirms individual revocation and never offers current-session revocation
+00:10 +145: /Users/hoang/Rental_room_management/test/features/admin/admin_sessions_test.dart: confirms individual revocation and never offers current-session revocation
+00:10 +146: /Users/hoang/Rental_room_management/test/features/admin/admin_sessions_test.dart: confirms individual revocation and never offers current-session revocation
+00:10 +147: /Users/hoang/Rental_room_management/test/features/admin/admin_sessions_test.dart: confirms individual revocation and never offers current-session revocation
+00:10 +148: /Users/hoang/Rental_room_management/test/features/admin/admin_sprints_test.dart: requester can create a ticket without requesting admin capabilities
+00:10 +149: /Users/hoang/Rental_room_management/test/features/admin/admin_sprints_test.dart: requester can create a ticket without requesting admin capabilities
+00:11 +150: /Users/hoang/Rental_room_management/test/features/admin/admin_sprints_test.dart: requester can create a ticket without requesting admin capabilities
+00:11 +151: /Users/hoang/Rental_room_management/test/features/admin/admin_sprints_test.dart: requester can create a ticket without requesting admin capabilities
+00:11 +152: /Users/hoang/Rental_room_management/test/features/admin/admin_sprints_test.dart: requester can create a ticket without requesting admin capabilities
+00:11 +152: /Users/hoang/Rental_room_management/test/features/admin/admin_operations_release_test.dart: legacy landlord status collects a reason and submits its version
+══╡ EXCEPTION CAUGHT BY FLUTTER TEST FRAMEWORK ╞════════════════════════════════════════════════════
+The following assertion was thrown running a test:
+The finder "Found 0 widgets with text "Deactivate": []" (used in a call to "tap()") could not find
+any matching widgets.
+
+When the exception was thrown, this was the stack:
+#0      WidgetController._getElementPoint (package:flutter_test/src/controller.dart:2009:7)
+#1      WidgetController.getCenter (package:flutter_test/src/controller.dart:1861:12)
+#2      WidgetController.tap (package:flutter_test/src/controller.dart:1041:7)
+#3      main.<anonymous closure> (file:///Users/hoang/Rental_room_management/test/features/admin/admin_operations_release_test.dart:276:18)
+<asynchronous suspension>
+#4      testWidgets.<anonymous closure>.<anonymous closure> (package:flutter_test/src/widget_tester.dart:193:15)
+<asynchronous suspension>
+#5      TestWidgetsFlutterBinding._runTestBody (package:flutter_test/src/binding.dart:1064:5)
+<asynchronous suspension>
+<asynchronous suspension>
+(elided one frame from package:stack_trace)
+
+The test description was:
+  legacy landlord status collects a reason and submits its version
+════════════════════════════════════════════════════════════════════════════════════════════════════
+00:11 +152 -1: /Users/hoang/Rental_room_management/test/features/admin/admin_sprints_test.dart: requester can create a ticket without requesting admin capabilities
+00:11 +152 -1: /Users/hoang/Rental_room_management/test/features/admin/admin_operations_release_test.dart: legacy landlord status collects a reason and submits its version [E]
+  Test failed. See exception logs above.
+  The test description was: legacy landlord status collects a reason and submits its version
+  
+00:11 +153 -1: /Users/hoang/Rental_room_management/test/features/admin/admin_accounts_panel_test.dart: returning from detail preserves the selected list page
+00:11 +154 -1: /Users/hoang/Rental_room_management/test/features/admin/admin_accounts_panel_test.dart: returning from detail preserves the selected list page
+00:11 +155 -1: /Users/hoang/Rental_room_management/test/features/admin/admin_accounts_panel_test.dart: returning from detail preserves the selected list page
+00:11 +156 -1: /Users/hoang/Rental_room_management/test/features/admin/admin_sprints_test.dart: failed replies preserve the draft and send optimistic version
+00:11 +157 -1: /Users/hoang/Rental_room_management/test/features/admin/admin_operations_release_test.dart: incident snooze submits a reason, version and bounded expiry
+00:11 +158 -1: /Users/hoang/Rental_room_management/test/features/admin/admin_operations_release_test.dart: incident snooze submits a reason, version and bounded expiry
+00:11 +159 -1: /Users/hoang/Rental_room_management/test/features/admin/admin_registry_screen_test.dart: verification requires both verification and support access
+00:11 +160 -1: /Users/hoang/Rental_room_management/test/features/admin/admin_registry_screen_test.dart: verification requires both verification and support access
+00:12 +161 -1: /Users/hoang/Rental_room_management/test/features/admin/admin_registry_screen_test.dart: verification requires both verification and support access
+00:12 +162 -1: /Users/hoang/Rental_room_management/test/features/admin/admin_milestone_one_test.dart: lifecycle does not fetch without permission or session
+00:12 +163 -1: /Users/hoang/Rental_room_management/test/features/admin/admin_milestone_one_test.dart: lifecycle does not fetch without permission or session
+00:12 +164 -1: /Users/hoang/Rental_room_management/test/features/admin/admin_milestone_one_test.dart: lifecycle does not fetch without permission or session
+00:12 +165 -1: /Users/hoang/Rental_room_management/test/features/admin/admin_registry_screen_test.dart: plans show nonfinancial terms without write controls for viewers
+00:12 +166 -1: /Users/hoang/Rental_room_management/test/features/admin/admin_registry_screen_test.dart: plans show nonfinancial terms without write controls for viewers
+00:12 +167 -1: /Users/hoang/Rental_room_management/test/features/admin/admin_milestone_one_test.dart: resend binds the current target version and does not double submit; old-session result is discarded
+00:12 +168 -1: /Users/hoang/Rental_room_management/test/features/admin/admin_overview_chart_test.dart: empty chart describes missing data
+00:12 +169 -1: /Users/hoang/Rental_room_management/test/features/admin/admin_overview_chart_test.dart: empty chart describes missing data
+00:12 +170 -1: /Users/hoang/Rental_room_management/test/features/admin/admin_overview_chart_test.dart: empty chart describes missing data
+00:12 +171 -1: /Users/hoang/Rental_room_management/test/features/admin/admin_inventory_panel_test.dart: properties debounce and filters reset pagination; viewer cannot edit
+00:12 +172 -1: /Users/hoang/Rental_room_management/test/features/admin/admin_inventory_panel_test.dart: properties debounce and filters reset pagination; viewer cannot edit
+00:12 +173 -1: /Users/hoang/Rental_room_management/test/features/admin/admin_inventory_panel_test.dart: properties debounce and filters reset pagination; viewer cannot edit
+00:12 +174 -1: /Users/hoang/Rental_room_management/test/features/admin/admin_inventory_panel_test.dart: properties debounce and filters reset pagination; viewer cannot edit
+00:12 +175 -1: /Users/hoang/Rental_room_management/test/features/admin/admin_inventory_panel_test.dart: properties debounce and filters reset pagination; viewer cannot edit
+00:12 +176 -1: /Users/hoang/Rental_room_management/test/features/admin/admin_inventory_panel_test.dart: properties debounce and filters reset pagination; viewer cannot edit
+00:12 +177 -1: /Users/hoang/Rental_room_management/test/features/admin/admin_inventory_panel_test.dart: properties debounce and filters reset pagination; viewer cannot edit
+00:13 +178 -1: /Users/hoang/Rental_room_management/test/features/admin/admin_inventory_panel_test.dart: properties debounce and filters reset pagination; viewer cannot edit
+00:13 +179 -1: /Users/hoang/Rental_room_management/test/features/admin/admin_inventory_panel_test.dart: properties debounce and filters reset pagination; viewer cannot edit
+00:13 +180 -1: /Users/hoang/Rental_room_management/test/features/admin/admin_workspace_foundation_test.dart: renders grouped navigation, counts and refresh action
+00:13 +181 -1: /Users/hoang/Rental_room_management/test/features/admin/admin_workspace_foundation_test.dart: renders grouped navigation, counts and refresh action
+00:13 +182 -1: /Users/hoang/Rental_room_management/test/features/admin/admin_workspace_flow_test.dart: real dashboard fits 390.0 with enlarged mobile text
+00:13 +183 -1: /Users/hoang/Rental_room_management/test/features/admin/admin_workspace_flow_test.dart: real dashboard fits 390.0 with enlarged mobile text
+00:13 +184 -1: /Users/hoang/Rental_room_management/test/features/admin/admin_workspace_flow_test.dart: real dashboard fits 390.0 with enlarged mobile text
+00:13 +185 -1: /Users/hoang/Rental_room_management/test/features/admin/admin_workspace_flow_test.dart: real dashboard fits 390.0 with enlarged mobile text
+00:13 +186 -1: /Users/hoang/Rental_room_management/test/features/admin/admin_workspace_flow_test.dart: real dashboard fits 390.0 with enlarged mobile text
+00:13 +187 -1: /Users/hoang/Rental_room_management/test/features/admin/admin_inbox_safety_test.dart: partial preview blocks the entire batch
+00:13 +188 -1: /Users/hoang/Rental_room_management/test/features/admin/admin_inbox_safety_test.dart: partial preview blocks the entire batch
+00:13 +189 -1: /Users/hoang/Rental_room_management/test/features/admin/admin_inbox_safety_test.dart: partial preview blocks the entire batch
+00:14 +190 -1: /Users/hoang/Rental_room_management/test/features/admin/admin_inbox_safety_test.dart: partial preview blocks the entire batch
+00:14 +191 -1: /Users/hoang/Rental_room_management/test/features/admin/admin_inbox_safety_test.dart: partial preview blocks the entire batch
+00:14 +192 -1: /Users/hoang/Rental_room_management/test/features/tenants/tenant_lifecycle_screen_test.dart: tenant sees cancellation but never landlord review controls
+00:14 +193 -1: /Users/hoang/Rental_room_management/test/features/tenants/tenant_lifecycle_screen_test.dart: tenant sees cancellation but never landlord review controls
+00:14 +194 -1: /Users/hoang/Rental_room_management/test/features/tenants/tenant_lifecycle_screen_test.dart: tenant sees cancellation but never landlord review controls
+00:14 +195 -1: /Users/hoang/Rental_room_management/test/features/tenants/tenant_lifecycle_screen_test.dart: tenant sees cancellation but never landlord review controls
+00:14 +196 -1: /Users/hoang/Rental_room_management/test/features/admin/admin_inventory_panel_test.dart: pending action forwards exact target to real moderation workspace and refreshes on return
+00:14 +197 -1: /Users/hoang/Rental_room_management/test/features/tenants/lease_settlement_screen_test.dart: requires valid input before requesting a preview
+00:14 +198 -1: /Users/hoang/Rental_room_management/test/features/tenants/lease_settlement_screen_test.dart: requires valid input before requesting a preview
+00:14 +199 -1: /Users/hoang/Rental_room_management/test/features/tenants/lease_settlement_screen_test.dart: requires valid input before requesting a preview
+00:14 +200 -1: /Users/hoang/Rental_room_management/test/features/tenants/lease_settlement_screen_test.dart: requires valid input before requesting a preview
+00:14 +201 -1: /Users/hoang/Rental_room_management/test/features/tenants/lease_settlement_screen_test.dart: requires valid input before requesting a preview
+00:14 +202 -1: /Users/hoang/Rental_room_management/test/features/tenants/lease_settlement_screen_test.dart: requires valid input before requesting a preview
+00:14 +203 -1: /Users/hoang/Rental_room_management/test/features/tenants/lease_settlement_screen_test.dart: requires valid input before requesting a preview
+00:14 +204 -1: /Users/hoang/Rental_room_management/test/features/tenants/lease_settlement_screen_test.dart: requires valid input before requesting a preview
+00:14 +205 -1: /Users/hoang/Rental_room_management/test/features/tenants/lease_settlement_screen_test.dart: requires valid input before requesting a preview
+00:14 +206 -1: /Users/hoang/Rental_room_management/test/features/tenants/lease_settlement_screen_test.dart: requires valid input before requesting a preview
+00:14 +207 -1: /Users/hoang/Rental_room_management/test/features/tenants/lease_settlement_screen_test.dart: requires valid input before requesting a preview
+00:15 +208 -1: /Users/hoang/Rental_room_management/test/features/tenants/lease_settlement_screen_test.dart: requires valid input before requesting a preview
+00:15 +209 -1: /Users/hoang/Rental_room_management/test/features/admin/admin_inventory_panel_test.dart: inventory shell preserves query on detail/back at 1440.0px
+00:15 +210 -1: /Users/hoang/Rental_room_management/test/features/admin/admin_inventory_panel_test.dart: inventory shell preserves query on detail/back at 1440.0px
+00:15 +211 -1: /Users/hoang/Rental_room_management/test/features/operations/action_items_screen_test.dart: shows all group counts and working category filters
+00:15 +212 -1: /Users/hoang/Rental_room_management/test/features/operations/action_items_screen_test.dart: shows all group counts and working category filters
+00:15 +213 -1: /Users/hoang/Rental_room_management/test/features/operations/action_items_screen_test.dart: shows all group counts and working category filters
+00:15 +214 -1: /Users/hoang/Rental_room_management/test/features/operations/action_items_screen_test.dart: shows all group counts and working category filters
+00:15 +215 -1: /Users/hoang/Rental_room_management/test/features/operations/action_items_screen_test.dart: shows all group counts and working category filters
+00:15 +216 -1: /Users/hoang/Rental_room_management/test/features/operations/action_items_screen_test.dart: shows all group counts and working category filters
+00:15 +217 -1: /Users/hoang/Rental_room_management/test/features/tenants/lease_settlement_screen_test.dart: reuses the same confirmation key after a network error
+00:16 +218 -1: /Users/hoang/Rental_room_management/test/features/admin/admin_workspace_flow_test.dart: report overview is separate from scheduled reports
+00:16 +219 -1: /Users/hoang/Rental_room_management/test/features/operations/action_destinations_test.dart: targeted maintenance bypasses unrelated selected property
+00:16 +220 -1: /Users/hoang/Rental_room_management/test/features/operations/action_destinations_test.dart: targeted maintenance bypasses unrelated selected property
+00:16 +221 -1: /Users/hoang/Rental_room_management/test/features/operations/action_destinations_test.dart: targeted maintenance bypasses unrelated selected property
+00:16 +222 -1: /Users/hoang/Rental_room_management/test/features/operations/action_items_screen_test.dart: marks read, opens destination and refreshes after returning
+00:16 +223 -1: /Users/hoang/Rental_room_management/test/features/operations/action_items_screen_test.dart: marks read, opens destination and refreshes after returning
+00:16 +224 -1: /Users/hoang/Rental_room_management/test/features/operations/action_items_screen_test.dart: marks read, opens destination and refreshes after returning
+00:16 +225 -1: /Users/hoang/Rental_room_management/test/features/operations/action_items_screen_test.dart: marks read, opens destination and refreshes after returning
+00:16 +226 -1: /Users/hoang/Rental_room_management/test/features/operations/action_destinations_test.dart: inspection destination opens calendar tab rather than room information
+00:16 +227 -1: /Users/hoang/Rental_room_management/test/features/dashboard/dashboard_chatbot_entry_test.dart: Floating dashboard navigation hold and scrub previews a tab then commits on release
+00:16 +228 -1: /Users/hoang/Rental_room_management/test/features/dashboard/dashboard_chatbot_entry_test.dart: Floating dashboard navigation hold and scrub previews a tab then commits on release
+00:16 +229 -1: /Users/hoang/Rental_room_management/test/features/dashboard/dashboard_chatbot_entry_test.dart: Floating dashboard navigation hold and scrub previews a tab then commits on release
+00:16 +230 -1: /Users/hoang/Rental_room_management/test/features/dashboard/dashboard_chatbot_entry_test.dart: Floating dashboard navigation hold and scrub previews a tab then commits on release
+00:16 +231 -1: /Users/hoang/Rental_room_management/test/features/dashboard/dashboard_chatbot_entry_test.dart: Floating dashboard navigation hold and scrub previews a tab then commits on release
+00:16 +232 -1: /Users/hoang/Rental_room_management/test/features/dashboard/dashboard_chatbot_entry_test.dart: Floating dashboard navigation hold and scrub previews a tab then commits on release
+00:17 +233 -1: /Users/hoang/Rental_room_management/test/features/dashboard/dashboard_chatbot_entry_test.dart: Floating dashboard navigation hold and scrub previews a tab then commits on release
+00:17 +234 -1: /Users/hoang/Rental_room_management/test/features/dashboard/dashboard_chatbot_entry_test.dart: Floating dashboard navigation hold and scrub previews a tab then commits on release
+00:17 +235 -1: /Users/hoang/Rental_room_management/test/features/dashboard/dashboard_chatbot_entry_test.dart: Floating dashboard navigation hold and scrub previews a tab then commits on release
+00:17 +236 -1: /Users/hoang/Rental_room_management/test/features/dashboard/dashboard_chatbot_entry_test.dart: Floating dashboard navigation hold and scrub previews a tab then commits on release
+00:17 +237 -1: /Users/hoang/Rental_room_management/test/features/dashboard/dashboard_chatbot_entry_test.dart: Floating dashboard navigation hold and scrub previews a tab then commits on release
+══╡ EXCEPTION CAUGHT BY FLUTTER TEST FRAMEWORK ╞════════════════════════════════════════════════════
+The following TestFailure was thrown running a test:
+Expected: null
+  Actual: FlutterError:<A RenderFlex overflowed by 112 pixels on the right.>
+
+When the exception was thrown, this was the stack:
+#4      main.<anonymous closure>.<anonymous closure> (file:///Users/hoang/Rental_room_management/test/features/dashboard/dashboard_chatbot_entry_test.dart:117:7)
+<asynchronous suspension>
+#5      testWidgets.<anonymous closure>.<anonymous closure> (package:flutter_test/src/widget_tester.dart:193:15)
+<asynchronous suspension>
+#6      TestWidgetsFlutterBinding._runTestBody (package:flutter_test/src/binding.dart:1064:5)
+<asynchronous suspension>
+<asynchronous suspension>
+(elided one frame from package:stack_trace)
+
+This was caught by the test expectation on the following line:
+  file:///Users/hoang/Rental_room_management/test/features/dashboard/dashboard_chatbot_entry_test.dart line 117
+The test description was:
+  hold and scrub previews a tab then commits on release
+════════════════════════════════════════════════════════════════════════════════════════════════════
+00:17 +237 -2: /Users/hoang/Rental_room_management/test/features/dashboard/room_map_dashboard_test.dart: loads real floor data and selects the overdue room
+00:17 +237 -2: /Users/hoang/Rental_room_management/test/features/dashboard/dashboard_chatbot_entry_test.dart: Floating dashboard navigation hold and scrub previews a tab then commits on release [E]
+  Test failed. See exception logs above.
+  The test description was: hold and scrub previews a tab then commits on release
+  
+00:17 +238 -2: /Users/hoang/Rental_room_management/test/features/dashboard/room_map_dashboard_test.dart: loads real floor data and selects the overdue room
+00:17 +239 -2: /Users/hoang/Rental_room_management/test/features/dashboard/room_map_dashboard_test.dart: loads real floor data and selects the overdue room
+00:17 +239 -2: /Users/hoang/Rental_room_management/test/features/dashboard/dashboard_chatbot_entry_test.dart: Floating dashboard navigation content reaches the end without moving the navigation
+══╡ EXCEPTION CAUGHT BY FLUTTER TEST FRAMEWORK ╞════════════════════════════════════════════════════
+The following StateError was thrown running a test:
+Bad state: Too many elements
+
+When the exception was thrown, this was the stack:
+#0      Iterable.single (dart:core/iterable.dart:678:24)
+#1      WidgetController.state (package:flutter_test/src/controller.dart:908:42)
+#2      main.<anonymous closure>.<anonymous closure> (file:///Users/hoang/Rental_room_management/test/features/dashboard/dashboard_chatbot_entry_test.dart:132:33)
+<asynchronous suspension>
+#3      testWidgets.<anonymous closure>.<anonymous closure> (package:flutter_test/src/widget_tester.dart:193:15)
+<asynchronous suspension>
+#4      TestWidgetsFlutterBinding._runTestBody (package:flutter_test/src/binding.dart:1064:5)
+<asynchronous suspension>
+<asynchronous suspension>
+(elided one frame from package:stack_trace)
+
+The test description was:
+  content reaches the end without moving the navigation
+════════════════════════════════════════════════════════════════════════════════════════════════════
+00:17 +239 -3: /Users/hoang/Rental_room_management/test/features/dashboard/room_map_dashboard_test.dart: loads real floor data and selects the overdue room
+00:17 +239 -3: /Users/hoang/Rental_room_management/test/features/dashboard/dashboard_chatbot_entry_test.dart: Floating dashboard navigation content reaches the end without moving the navigation [E]
+  Test failed. See exception logs above.
+  The test description was: content reaches the end without moving the navigation
+  
+00:17 +240 -3: /Users/hoang/Rental_room_management/test/features/dashboard/room_map_dashboard_test.dart: loads real floor data and selects the overdue room
+00:17 +241 -3: /Users/hoang/Rental_room_management/test/features/dashboard/room_map_dashboard_test.dart: loads real floor data and selects the overdue room
+00:18 +242 -3: /Users/hoang/Rental_room_management/test/features/tenant_portal/tenant_p1_screens_test.dart: hides QR for untrusted checkout URL https://evil.example/api/v1/payments/demo/checkout/aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+00:18 +242 -3: /Users/hoang/Rental_room_management/test/features/dashboard/dashboard_chatbot_entry_test.dart: Floating dashboard navigation pill fits width 320.0 with inset 0.0
+══╡ EXCEPTION CAUGHT BY FLUTTER TEST FRAMEWORK ╞════════════════════════════════════════════════════
+The following assertion was thrown running a test:
+The finder "Found 0 widgets with widget matching predicate descending from widgets with the given
+widget (SafeArea(avoid left padding, avoid right padding, avoid bottom padding)): []" (used in a
+call to "getTopLeft()") could not find any matching widgets.
+
+When the exception was thrown, this was the stack:
+#0      WidgetController._getElementPoint (package:flutter_test/src/controller.dart:2009:7)
+#1      WidgetController.getTopLeft (package:flutter_test/src/controller.dart:1877:12)
+#2      WidgetController.getRect (package:flutter_test/src/controller.dart:2259:23)
+#3      main.<anonymous closure>.<anonymous closure> (file:///Users/hoang/Rental_room_management/test/features/dashboard/dashboard_chatbot_entry_test.dart:192:35)
+<asynchronous suspension>
+#4      testWidgets.<anonymous closure>.<anonymous closure> (package:flutter_test/src/widget_tester.dart:193:15)
+<asynchronous suspension>
+#5      TestWidgetsFlutterBinding._runTestBody (package:flutter_test/src/binding.dart:1064:5)
+<asynchronous suspension>
+<asynchronous suspension>
+(elided one frame from package:stack_trace)
+
+The test description was:
+  pill fits width 320.0 with inset 0.0
+════════════════════════════════════════════════════════════════════════════════════════════════════
+00:18 +242 -4: /Users/hoang/Rental_room_management/test/features/tenant_portal/tenant_p1_screens_test.dart: hides QR for untrusted checkout URL https://evil.example/api/v1/payments/demo/checkout/aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+00:18 +242 -4: /Users/hoang/Rental_room_management/test/features/dashboard/dashboard_chatbot_entry_test.dart: Floating dashboard navigation pill fits width 320.0 with inset 0.0 [E]
+  Test failed. See exception logs above.
+  The test description was: pill fits width 320.0 with inset 0.0
+  
+00:18 +242 -4: /Users/hoang/Rental_room_management/test/features/dashboard/dashboard_chatbot_entry_test.dart: Floating dashboard navigation pill fits width 320.0 with inset 34.0
+══╡ EXCEPTION CAUGHT BY FLUTTER TEST FRAMEWORK ╞════════════════════════════════════════════════════
+The following assertion was thrown running a test:
+The finder "Found 0 widgets with widget matching predicate descending from widgets with the given
+widget (SafeArea(avoid left padding, avoid right padding, avoid bottom padding)): []" (used in a
+call to "getTopLeft()") could not find any matching widgets.
+
+When the exception was thrown, this was the stack:
+#0      WidgetController._getElementPoint (package:flutter_test/src/controller.dart:2009:7)
+#1      WidgetController.getTopLeft (package:flutter_test/src/controller.dart:1877:12)
+#2      WidgetController.getRect (package:flutter_test/src/controller.dart:2259:23)
+#3      main.<anonymous closure>.<anonymous closure> (file:///Users/hoang/Rental_room_management/test/features/dashboard/dashboard_chatbot_entry_test.dart:192:35)
+<asynchronous suspension>
+#4      testWidgets.<anonymous closure>.<anonymous closure> (package:flutter_test/src/widget_tester.dart:193:15)
+<asynchronous suspension>
+#5      TestWidgetsFlutterBinding._runTestBody (package:flutter_test/src/binding.dart:1064:5)
+<asynchronous suspension>
+<asynchronous suspension>
+(elided one frame from package:stack_trace)
+
+The test description was:
+  pill fits width 320.0 with inset 34.0
+════════════════════════════════════════════════════════════════════════════════════════════════════
+00:18 +242 -5: /Users/hoang/Rental_room_management/test/features/tenant_portal/tenant_p1_screens_test.dart: hides QR for untrusted checkout URL https://evil.example/api/v1/payments/demo/checkout/aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+00:18 +242 -5: /Users/hoang/Rental_room_management/test/features/dashboard/dashboard_chatbot_entry_test.dart: Floating dashboard navigation pill fits width 320.0 with inset 34.0 [E]
+  Test failed. See exception logs above.
+  The test description was: pill fits width 320.0 with inset 34.0
+  
+00:18 +243 -5: /Users/hoang/Rental_room_management/test/features/dashboard/room_map_dashboard_test.dart: floor picker filters real floors including unassigned rooms
+00:18 +244 -5: /Users/hoang/Rental_room_management/test/features/dashboard/room_map_dashboard_test.dart: floor picker filters real floors including unassigned rooms
+00:18 +244 -5: /Users/hoang/Rental_room_management/test/features/dashboard/dashboard_chatbot_entry_test.dart: Floating dashboard navigation pill fits width 375.0 with inset 0.0
+══╡ EXCEPTION CAUGHT BY FLUTTER TEST FRAMEWORK ╞════════════════════════════════════════════════════
+The following assertion was thrown running a test:
+The finder "Found 0 widgets with widget matching predicate descending from widgets with the given
+widget (SafeArea(avoid left padding, avoid right padding, avoid bottom padding)): []" (used in a
+call to "getTopLeft()") could not find any matching widgets.
+
+When the exception was thrown, this was the stack:
+#0      WidgetController._getElementPoint (package:flutter_test/src/controller.dart:2009:7)
+#1      WidgetController.getTopLeft (package:flutter_test/src/controller.dart:1877:12)
+#2      WidgetController.getRect (package:flutter_test/src/controller.dart:2259:23)
+#3      main.<anonymous closure>.<anonymous closure> (file:///Users/hoang/Rental_room_management/test/features/dashboard/dashboard_chatbot_entry_test.dart:192:35)
+<asynchronous suspension>
+#4      testWidgets.<anonymous closure>.<anonymous closure> (package:flutter_test/src/widget_tester.dart:193:15)
+<asynchronous suspension>
+#5      TestWidgetsFlutterBinding._runTestBody (package:flutter_test/src/binding.dart:1064:5)
+<asynchronous suspension>
+<asynchronous suspension>
+(elided one frame from package:stack_trace)
+
+The test description was:
+  pill fits width 375.0 with inset 0.0
+════════════════════════════════════════════════════════════════════════════════════════════════════
+00:18 +244 -6: /Users/hoang/Rental_room_management/test/features/dashboard/room_map_dashboard_test.dart: floor picker filters real floors including unassigned rooms
+00:18 +244 -6: /Users/hoang/Rental_room_management/test/features/dashboard/dashboard_chatbot_entry_test.dart: Floating dashboard navigation pill fits width 375.0 with inset 0.0 [E]
+  Test failed. See exception logs above.
+  The test description was: pill fits width 375.0 with inset 0.0
+  
+00:18 +245 -6: /Users/hoang/Rental_room_management/test/features/dashboard/room_map_dashboard_test.dart: floor picker filters real floors including unassigned rooms
+00:18 +245 -6: /Users/hoang/Rental_room_management/test/features/dashboard/dashboard_chatbot_entry_test.dart: Floating dashboard navigation pill fits width 375.0 with inset 34.0
+══╡ EXCEPTION CAUGHT BY FLUTTER TEST FRAMEWORK ╞════════════════════════════════════════════════════
+The following assertion was thrown running a test:
+The finder "Found 0 widgets with widget matching predicate descending from widgets with the given
+widget (SafeArea(avoid left padding, avoid right padding, avoid bottom padding)): []" (used in a
+call to "getTopLeft()") could not find any matching widgets.
+
+When the exception was thrown, this was the stack:
+#0      WidgetController._getElementPoint (package:flutter_test/src/controller.dart:2009:7)
+#1      WidgetController.getTopLeft (package:flutter_test/src/controller.dart:1877:12)
+#2      WidgetController.getRect (package:flutter_test/src/controller.dart:2259:23)
+#3      main.<anonymous closure>.<anonymous closure> (file:///Users/hoang/Rental_room_management/test/features/dashboard/dashboard_chatbot_entry_test.dart:192:35)
+<asynchronous suspension>
+#4      testWidgets.<anonymous closure>.<anonymous closure> (package:flutter_test/src/widget_tester.dart:193:15)
+<asynchronous suspension>
+#5      TestWidgetsFlutterBinding._runTestBody (package:flutter_test/src/binding.dart:1064:5)
+<asynchronous suspension>
+<asynchronous suspension>
+(elided one frame from package:stack_trace)
+
+The test description was:
+  pill fits width 375.0 with inset 34.0
+════════════════════════════════════════════════════════════════════════════════════════════════════
+00:18 +245 -7: /Users/hoang/Rental_room_management/test/features/dashboard/room_map_dashboard_test.dart: floor picker filters real floors including unassigned rooms
+00:18 +245 -7: /Users/hoang/Rental_room_management/test/features/dashboard/dashboard_chatbot_entry_test.dart: Floating dashboard navigation pill fits width 375.0 with inset 34.0 [E]
+  Test failed. See exception logs above.
+  The test description was: pill fits width 375.0 with inset 34.0
+  
+00:18 +246 -7: /Users/hoang/Rental_room_management/test/features/tenant_portal/tenant_p1_screens_test.dart: requires explicit confirmation before creating a separate test invoice
+00:18 +246 -7: /Users/hoang/Rental_room_management/test/features/dashboard/dashboard_chatbot_entry_test.dart: Floating dashboard navigation pill fits width 390.0 with inset 0.0
+══╡ EXCEPTION CAUGHT BY FLUTTER TEST FRAMEWORK ╞════════════════════════════════════════════════════
+The following assertion was thrown running a test:
+The finder "Found 0 widgets with widget matching predicate descending from widgets with the given
+widget (SafeArea(avoid left padding, avoid right padding, avoid bottom padding)): []" (used in a
+call to "getTopLeft()") could not find any matching widgets.
+
+When the exception was thrown, this was the stack:
+#0      WidgetController._getElementPoint (package:flutter_test/src/controller.dart:2009:7)
+#1      WidgetController.getTopLeft (package:flutter_test/src/controller.dart:1877:12)
+#2      WidgetController.getRect (package:flutter_test/src/controller.dart:2259:23)
+#3      main.<anonymous closure>.<anonymous closure> (file:///Users/hoang/Rental_room_management/test/features/dashboard/dashboard_chatbot_entry_test.dart:192:35)
+<asynchronous suspension>
+#4      testWidgets.<anonymous closure>.<anonymous closure> (package:flutter_test/src/widget_tester.dart:193:15)
+<asynchronous suspension>
+#5      TestWidgetsFlutterBinding._runTestBody (package:flutter_test/src/binding.dart:1064:5)
+<asynchronous suspension>
+<asynchronous suspension>
+(elided one frame from package:stack_trace)
+
+The test description was:
+  pill fits width 390.0 with inset 0.0
+════════════════════════════════════════════════════════════════════════════════════════════════════
+00:18 +246 -8: /Users/hoang/Rental_room_management/test/features/tenant_portal/tenant_p1_screens_test.dart: requires explicit confirmation before creating a separate test invoice
+00:18 +246 -8: /Users/hoang/Rental_room_management/test/features/dashboard/dashboard_chatbot_entry_test.dart: Floating dashboard navigation pill fits width 390.0 with inset 0.0 [E]
+  Test failed. See exception logs above.
+  The test description was: pill fits width 390.0 with inset 0.0
+  
+00:18 +247 -8: /Users/hoang/Rental_room_management/test/features/tenant_portal/tenant_p1_screens_test.dart: requires explicit confirmation before creating a separate test invoice
+00:18 +248 -8: /Users/hoang/Rental_room_management/test/features/tenant_portal/tenant_p1_screens_test.dart: requires explicit confirmation before creating a separate test invoice
+00:18 +249 -8: /Users/hoang/Rental_room_management/test/features/tenant_portal/tenant_p1_screens_test.dart: requires explicit confirmation before creating a separate test invoice
+00:18 +249 -8: /Users/hoang/Rental_room_management/test/features/dashboard/dashboard_chatbot_entry_test.dart: Floating dashboard navigation pill fits width 390.0 with inset 34.0
+══╡ EXCEPTION CAUGHT BY FLUTTER TEST FRAMEWORK ╞════════════════════════════════════════════════════
+The following assertion was thrown running a test:
+The finder "Found 0 widgets with widget matching predicate descending from widgets with the given
+widget (SafeArea(avoid left padding, avoid right padding, avoid bottom padding)): []" (used in a
+call to "getTopLeft()") could not find any matching widgets.
+
+When the exception was thrown, this was the stack:
+#0      WidgetController._getElementPoint (package:flutter_test/src/controller.dart:2009:7)
+#1      WidgetController.getTopLeft (package:flutter_test/src/controller.dart:1877:12)
+#2      WidgetController.getRect (package:flutter_test/src/controller.dart:2259:23)
+#3      main.<anonymous closure>.<anonymous closure> (file:///Users/hoang/Rental_room_management/test/features/dashboard/dashboard_chatbot_entry_test.dart:192:35)
+<asynchronous suspension>
+#4      testWidgets.<anonymous closure>.<anonymous closure> (package:flutter_test/src/widget_tester.dart:193:15)
+<asynchronous suspension>
+#5      TestWidgetsFlutterBinding._runTestBody (package:flutter_test/src/binding.dart:1064:5)
+<asynchronous suspension>
+<asynchronous suspension>
+(elided one frame from package:stack_trace)
+
+The test description was:
+  pill fits width 390.0 with inset 34.0
+════════════════════════════════════════════════════════════════════════════════════════════════════
+00:18 +250 -8: /Users/hoang/Rental_room_management/test/features/dashboard/room_map_dashboard_test.dart: selecting a label updates detail instead of using a hardcoded tenant
+00:18 +250 -9: /Users/hoang/Rental_room_management/test/features/dashboard/room_map_dashboard_test.dart: selecting a label updates detail instead of using a hardcoded tenant
+00:18 +250 -9: /Users/hoang/Rental_room_management/test/features/dashboard/dashboard_chatbot_entry_test.dart: Floating dashboard navigation pill fits width 390.0 with inset 34.0 [E]
+  Test failed. See exception logs above.
+  The test description was: pill fits width 390.0 with inset 34.0
+  
+00:18 +251 -9: /Users/hoang/Rental_room_management/test/features/billing/meter_reading_fields_test.dart: MeterReadingFields shows previous reading and warning copy
+00:18 +252 -9: /Users/hoang/Rental_room_management/test/features/billing/meter_reading_fields_test.dart: MeterReadingFields shows previous reading and warning copy
+00:18 +252 -9: /Users/hoang/Rental_room_management/test/features/dashboard/dashboard_chatbot_entry_test.dart: Floating dashboard navigation pill fits width 430.0 with inset 0.0
+══╡ EXCEPTION CAUGHT BY FLUTTER TEST FRAMEWORK ╞════════════════════════════════════════════════════
+The following assertion was thrown running a test:
+The finder "Found 0 widgets with widget matching predicate descending from widgets with the given
+widget (SafeArea(avoid left padding, avoid right padding, avoid bottom padding)): []" (used in a
+call to "getTopLeft()") could not find any matching widgets.
+
+When the exception was thrown, this was the stack:
+#0      WidgetController._getElementPoint (package:flutter_test/src/controller.dart:2009:7)
+#1      WidgetController.getTopLeft (package:flutter_test/src/controller.dart:1877:12)
+#2      WidgetController.getRect (package:flutter_test/src/controller.dart:2259:23)
+#3      main.<anonymous closure>.<anonymous closure> (file:///Users/hoang/Rental_room_management/test/features/dashboard/dashboard_chatbot_entry_test.dart:192:35)
+<asynchronous suspension>
+#4      testWidgets.<anonymous closure>.<anonymous closure> (package:flutter_test/src/widget_tester.dart:193:15)
+<asynchronous suspension>
+#5      TestWidgetsFlutterBinding._runTestBody (package:flutter_test/src/binding.dart:1064:5)
+<asynchronous suspension>
+<asynchronous suspension>
+(elided one frame from package:stack_trace)
+
+The test description was:
+  pill fits width 430.0 with inset 0.0
+════════════════════════════════════════════════════════════════════════════════════════════════════
+00:18 +252 -10: /Users/hoang/Rental_room_management/test/features/billing/meter_reading_fields_test.dart: MeterReadingFields shows previous reading and warning copy
+00:18 +252 -10: /Users/hoang/Rental_room_management/test/features/dashboard/dashboard_chatbot_entry_test.dart: Floating dashboard navigation pill fits width 430.0 with inset 0.0 [E]
+  Test failed. See exception logs above.
+  The test description was: pill fits width 430.0 with inset 0.0
+  
+00:18 +253 -10: /Users/hoang/Rental_room_management/test/features/billing/meter_reading_fields_test.dart: MeterReadingFields shows previous reading and warning copy
+00:18 +253 -10: /Users/hoang/Rental_room_management/test/features/dashboard/dashboard_chatbot_entry_test.dart: Floating dashboard navigation pill fits width 430.0 with inset 34.0
+══╡ EXCEPTION CAUGHT BY FLUTTER TEST FRAMEWORK ╞════════════════════════════════════════════════════
+The following assertion was thrown running a test:
+The finder "Found 0 widgets with widget matching predicate descending from widgets with the given
+widget (SafeArea(avoid left padding, avoid right padding, avoid bottom padding)): []" (used in a
+call to "getTopLeft()") could not find any matching widgets.
+
+When the exception was thrown, this was the stack:
+#0      WidgetController._getElementPoint (package:flutter_test/src/controller.dart:2009:7)
+#1      WidgetController.getTopLeft (package:flutter_test/src/controller.dart:1877:12)
+#2      WidgetController.getRect (package:flutter_test/src/controller.dart:2259:23)
+#3      main.<anonymous closure>.<anonymous closure> (file:///Users/hoang/Rental_room_management/test/features/dashboard/dashboard_chatbot_entry_test.dart:192:35)
+<asynchronous suspension>
+#4      testWidgets.<anonymous closure>.<anonymous closure> (package:flutter_test/src/widget_tester.dart:193:15)
+<asynchronous suspension>
+#5      TestWidgetsFlutterBinding._runTestBody (package:flutter_test/src/binding.dart:1064:5)
+<asynchronous suspension>
+<asynchronous suspension>
+(elided one frame from package:stack_trace)
+
+The test description was:
+  pill fits width 430.0 with inset 34.0
+════════════════════════════════════════════════════════════════════════════════════════════════════
+00:18 +253 -11: /Users/hoang/Rental_room_management/test/features/billing/meter_reading_fields_test.dart: MeterReadingFields shows previous reading and warning copy
+00:18 +253 -11: /Users/hoang/Rental_room_management/test/features/dashboard/dashboard_chatbot_entry_test.dart: Floating dashboard navigation pill fits width 430.0 with inset 34.0 [E]
+  Test failed. See exception logs above.
+  The test description was: pill fits width 430.0 with inset 34.0
+  
+00:18 +254 -11: /Users/hoang/Rental_room_management/test/features/billing/meter_reading_fields_test.dart: MeterReadingFields shows previous reading and warning copy
+00:18 +255 -11: /Users/hoang/Rental_room_management/test/features/billing/meter_reading_fields_test.dart: MeterReadingFields shows previous reading and warning copy
+00:18 +256 -11: /Users/hoang/Rental_room_management/test/features/billing/meter_reading_fields_test.dart: MeterReadingFields shows previous reading and warning copy
+00:18 +257 -11: /Users/hoang/Rental_room_management/test/features/billing/meter_reading_fields_test.dart: MeterReadingFields shows previous reading and warning copy
+00:19 +258 -11: /Users/hoang/Rental_room_management/test/features/billing/meter_reading_fields_test.dart: MeterReadingFields shows previous reading and warning copy
+00:19 +259 -11: /Users/hoang/Rental_room_management/test/features/billing/meter_reading_fields_test.dart: MeterReadingFields shows previous reading and warning copy
+00:19 +259 -11: /Users/hoang/Rental_room_management/test/features/dashboard/dashboard_chatbot_entry_test.dart: Floating dashboard navigation tabs and center action keep their existing callbacks
+══╡ EXCEPTION CAUGHT BY FLUTTER TEST FRAMEWORK ╞════════════════════════════════════════════════════
+The following assertion was thrown running a test:
+The finder "Found 0 widgets with icon "IconData(U+0F5B4)" descending from widgets with the given
+widget (SafeArea(avoid left padding, avoid right padding, avoid bottom padding)): []" (used in a
+call to "tap()") could not find any matching widgets.
+
+When the exception was thrown, this was the stack:
+#0      WidgetController._getElementPoint (package:flutter_test/src/controller.dart:2009:7)
+#1      WidgetController.getCenter (package:flutter_test/src/controller.dart:1861:12)
+#2      WidgetController.tap (package:flutter_test/src/controller.dart:1041:7)
+#3      main.<anonymous closure>.<anonymous closure> (file:///Users/hoang/Rental_room_management/test/features/dashboard/dashboard_chatbot_entry_test.dart:287:20)
+<asynchronous suspension>
+#4      testWidgets.<anonymous closure>.<anonymous closure> (package:flutter_test/src/widget_tester.dart:193:15)
+<asynchronous suspension>
+#5      TestWidgetsFlutterBinding._runTestBody (package:flutter_test/src/binding.dart:1064:5)
+<asynchronous suspension>
+<asynchronous suspension>
+(elided one frame from package:stack_trace)
+
+The test description was:
+  tabs and center action keep their existing callbacks
+════════════════════════════════════════════════════════════════════════════════════════════════════
+00:19 +259 -12: /Users/hoang/Rental_room_management/test/features/billing/meter_reading_fields_test.dart: MeterReadingFields shows previous reading and warning copy
+00:19 +259 -12: /Users/hoang/Rental_room_management/test/features/dashboard/dashboard_chatbot_entry_test.dart: Floating dashboard navigation tabs and center action keep their existing callbacks [E]
+  Test failed. See exception logs above.
+  The test description was: tabs and center action keep their existing callbacks
+  
+00:19 +260 -12: /Users/hoang/Rental_room_management/test/features/billing/meter_reading_fields_test.dart: MeterReadingFields shows previous reading and warning copy
+00:19 +261 -12: /Users/hoang/Rental_room_management/test/features/dashboard/room_map_dashboard_test.dart: pagination does not hide rooms beyond seven
+00:19 +262 -12: /Users/hoang/Rental_room_management/test/features/dashboard/room_map_dashboard_test.dart: pagination does not hide rooms beyond seven
+00:19 +263 -12: /Users/hoang/Rental_room_management/test/features/dashboard/room_map_dashboard_test.dart: pagination does not hide rooms beyond seven
+00:19 +264 -12: /Users/hoang/Rental_room_management/test/features/dashboard/dashboard_chatbot_entry_test.dart: AI button stays at bottom right above dashboard navigation
+00:19 +265 -12: /Users/hoang/Rental_room_management/test/features/tenant_portal/tenant_p1_screens_test.dart: review-required transfers hide QR and prevent another payment
+00:19 +266 -12: /Users/hoang/Rental_room_management/test/features/dashboard/room_map_dashboard_test.dart: unused illustration slots are disabled instead of fake rooms
+00:19 +267 -12: /Users/hoang/Rental_room_management/test/features/dashboard/room_map_dashboard_test.dart: unused illustration slots are disabled instead of fake rooms
+00:19 +268 -12: /Users/hoang/Rental_room_management/test/features/dashboard/room_map_dashboard_test.dart: unused illustration slots are disabled instead of fake rooms
+00:19 +269 -12: /Users/hoang/Rental_room_management/test/features/dashboard/room_map_dashboard_test.dart: unused illustration slots are disabled instead of fake rooms
+00:19 +270 -12: /Users/hoang/Rental_room_management/test/features/dashboard/dashboard_chatbot_entry_test.dart: AI button opens chat for the currently selected property
+00:19 +271 -12: /Users/hoang/Rental_room_management/test/features/dashboard/dashboard_chatbot_entry_test.dart: AI button opens chat for the currently selected property
+00:19 +272 -12: /Users/hoang/Rental_room_management/test/features/tenant_portal/tenant_p1_screens_test.dart: tenant acknowledges an announcement only on explicit action
+00:19 +273 -12: /Users/hoang/Rental_room_management/test/features/tenant_portal/tenant_p1_screens_test.dart: tenant acknowledges an announcement only on explicit action
+00:19 +274 -12: /Users/hoang/Rental_room_management/test/features/tenant_portal/tenant_p1_screens_test.dart: tenant acknowledges an announcement only on explicit action
+00:19 +275 -12: /Users/hoang/Rental_room_management/test/features/tenant_portal/tenant_p1_screens_test.dart: tenant acknowledges an announcement only on explicit action
+00:19 +276 -12: /Users/hoang/Rental_room_management/test/features/tenant_portal/tenant_p1_screens_test.dart: tenant acknowledges an announcement only on explicit action
+00:19 +277 -12: /Users/hoang/Rental_room_management/test/features/billing/invoice_tariffs_test.dart: rejects blank names and invalid effective months before API writes
+00:19 +278 -12: /Users/hoang/Rental_room_management/test/features/billing/invoice_tariffs_test.dart: rejects blank names and invalid effective months before API writes
+00:19 +279 -12: /Users/hoang/Rental_room_management/test/features/billing/invoice_tariffs_test.dart: rejects blank names and invalid effective months before API writes
+00:19 +280 -12: /Users/hoang/Rental_room_management/test/features/billing/invoice_tariffs_test.dart: rejects blank names and invalid effective months before API writes
+00:19 +281 -12: /Users/hoang/Rental_room_management/test/features/billing/invoice_tariffs_test.dart: rejects blank names and invalid effective months before API writes
+00:20 +282 -12: /Users/hoang/Rental_room_management/test/features/billing/invoice_tariffs_test.dart: rejects blank names and invalid effective months before API writes
+00:20 +283 -12: /Users/hoang/Rental_room_management/test/features/billing/invoice_tariffs_test.dart: rejects blank names and invalid effective months before API writes
+00:20 +284 -12: /Users/hoang/Rental_room_management/test/features/billing/invoice_tariffs_test.dart: rejects blank names and invalid effective months before API writes
+00:20 +285 -12: /Users/hoang/Rental_room_management/test/features/billing/invoice_tariffs_test.dart: rejects blank names and invalid effective months before API writes
+00:20 +286 -12: /Users/hoang/Rental_room_management/test/features/billing/invoice_tariffs_test.dart: rejects blank names and invalid effective months before API writes
+00:20 +287 -12: /Users/hoang/Rental_room_management/test/features/billing/invoice_tariffs_test.dart: rejects blank names and invalid effective months before API writes
+00:20 +288 -12: /Users/hoang/Rental_room_management/test/features/billing/billing_receipts_screen_test.dart: shows the empty receipt state without overflowing a mobile viewport
+00:20 +289 -12: /Users/hoang/Rental_room_management/test/features/billing/billing_receipts_screen_test.dart: shows the empty receipt state without overflowing a mobile viewport
+00:20 +290 -12: /Users/hoang/Rental_room_management/test/features/billing/billing_receipts_screen_test.dart: shows the empty receipt state without overflowing a mobile viewport
+00:20 +291 -12: /Users/hoang/Rental_room_management/test/features/billing/invoice_tariffs_test.dart: creates a versioned fee with an explicit first-of-month date
+00:20 +292 -12: /Users/hoang/Rental_room_management/test/features/dashboard/room_map_dashboard_test.dart: layout 390.0 with text scale 2.0
+00:20 +293 -12: /Users/hoang/Rental_room_management/test/features/billing/billing_receipts_screen_test.dart: prevents allocating more than the receipt and preserves one key across retries
+00:20 +294 -12: /Users/hoang/Rental_room_management/test/features/billing/billing_receipts_screen_test.dart: prevents allocating more than the receipt and preserves one key across retries
+00:20 +295 -12: /Users/hoang/Rental_room_management/test/features/billing/billing_receipts_screen_test.dart: prevents allocating more than the receipt and preserves one key across retries
+00:20 +296 -12: /Users/hoang/Rental_room_management/test/features/billing/billing_receipts_screen_test.dart: prevents allocating more than the receipt and preserves one key across retries
+00:20 +297 -12: /Users/hoang/Rental_room_management/test/features/billing/billing_receipts_screen_test.dart: prevents allocating more than the receipt and preserves one key across retries
+00:20 +298 -12: /Users/hoang/Rental_room_management/test/features/billing/billing_receipts_screen_test.dart: prevents allocating more than the receipt and preserves one key across retries
+00:20 +299 -12: /Users/hoang/Rental_room_management/test/features/billing/billing_receipts_screen_test.dart: prevents allocating more than the receipt and preserves one key across retries
+00:21 +300 -12: /Users/hoang/Rental_room_management/test/features/billing/billing_tariffs_screen_test.dart: staff can propose but cannot review even with approval permission
+00:21 +301 -12: /Users/hoang/Rental_room_management/test/features/billing/billing_tariffs_screen_test.dart: staff can propose but cannot review even with approval permission
+00:21 +302 -12: /Users/hoang/Rental_room_management/test/features/billing/reminder_policy_test.dart: edits inherited values with the local scope and version zero
+00:21 +303 -12: /Users/hoang/Rental_room_management/test/features/billing/reminder_policy_test.dart: edits inherited values with the local scope and version zero
+00:21 +304 -12: /Users/hoang/Rental_room_management/test/features/billing/invoice_adjustment_test.dart: discount percentage uses basis points and one idempotency key across retries
+00:21 +305 -12: /Users/hoang/Rental_room_management/test/features/billing/invoice_adjustment_test.dart: discount percentage uses basis points and one idempotency key across retries
+00:21 +306 -12: /Users/hoang/Rental_room_management/test/features/billing/invoice_adjustment_test.dart: discount percentage uses basis points and one idempotency key across retries
+00:21 +307 -12: /Users/hoang/Rental_room_management/test/features/billing/invoice_adjustment_test.dart: discount percentage uses basis points and one idempotency key across retries
+00:22 +308 -12: /Users/hoang/Rental_room_management/test/features/billing/invoice_adjustment_test.dart: discount percentage uses basis points and one idempotency key across retries
+00:22 +309 -12: /Users/hoang/Rental_room_management/test/features/billing/invoice_adjustment_test.dart: discount percentage uses basis points and one idempotency key across retries
+00:22 +310 -12: /Users/hoang/Rental_room_management/test/features/billing/invoice_adjustment_test.dart: discount percentage uses basis points and one idempotency key across retries
+00:22 +311 -12: /Users/hoang/Rental_room_management/test/features/billing/invoice_replacement_test.dart: requires reason and retains the original invoice snapshot
+00:22 +312 -12: /Users/hoang/Rental_room_management/test/features/billing/invoice_replacement_test.dart: requires reason and retains the original invoice snapshot
+00:22 +313 -12: /Users/hoang/Rental_room_management/test/features/billing/invoice_replacement_test.dart: requires reason and retains the original invoice snapshot
+00:22 +314 -12: /Users/hoang/Rental_room_management/test/features/billing/invoice_replacement_test.dart: requires reason and retains the original invoice snapshot
+00:22 +315 -12: /Users/hoang/Rental_room_management/test/features/billing/invoice_replacement_test.dart: requires reason and retains the original invoice snapshot
+00:22 +316 -12: /Users/hoang/Rental_room_management/test/features/billing/invoice_replacement_test.dart: requires reason and retains the original invoice snapshot
+00:22 +317 -12: /Users/hoang/Rental_room_management/test/features/billing/invoice_replacement_test.dart: requires reason and retains the original invoice snapshot
+00:22 +318 -12: /Users/hoang/Rental_room_management/test/features/billing/invoice_replacement_test.dart: requires reason and retains the original invoice snapshot
+00:22 +319 -12: /Users/hoang/Rental_room_management/test/features/billing/invoice_replacement_test.dart: requires reason and retains the original invoice snapshot
+00:22 +320 -12: /Users/hoang/Rental_room_management/test/features/billing/invoice_replacement_test.dart: requires reason and retains the original invoice snapshot
+00:22 +321 -12: /Users/hoang/Rental_room_management/test/features/billing/invoice_replacement_test.dart: requires reason and retains the original invoice snapshot
+00:22 +322 -12: /Users/hoang/Rental_room_management/test/features/billing/invoice_replacement_test.dart: requires reason and retains the original invoice snapshot
+00:22 +323 -12: /Users/hoang/Rental_room_management/test/features/billing/invoice_replacement_test.dart: requires reason and retains the original invoice snapshot
+00:22 +324 -12: /Users/hoang/Rental_room_management/test/features/billing/invoice_replacement_test.dart: requires reason and retains the original invoice snapshot
+00:22 +325 -12: /Users/hoang/Rental_room_management/test/features/billing/invoice_replacement_test.dart: requires reason and retains the original invoice snapshot
+00:22 +326 -12: /Users/hoang/Rental_room_management/test/features/billing/invoice_replacement_test.dart: requires reason and retains the original invoice snapshot
+00:22 +327 -12: /Users/hoang/Rental_room_management/test/features/billing/billing_tariffs_screen_test.dart: locked preview disables approval but permits rejection with reason
+00:23 +328 -12: /Users/hoang/Rental_room_management/test/features/onboarding/onboarding_persistence_test.dart: onboarding create account marks completed before navigation
+00:23 +329 -12: /Users/hoang/Rental_room_management/test/features/billing/invoice_replacement_test.dart: keeps the key across retries but rotates it when payload changes
+00:23 +330 -12: /Users/hoang/Rental_room_management/test/features/billing/billing_tariffs_screen_test.dart: account change discards draft and ignores late mutation response
+00:23 +331 -12: /Users/hoang/Rental_room_management/test/features/billing/billing_tariffs_screen_test.dart: account change discards draft and ignores late mutation response
+00:23 +332 -12: /Users/hoang/Rental_room_management/test/features/billing/billing_tariffs_screen_test.dart: account change discards draft and ignores late mutation response
+00:23 +333 -12: /Users/hoang/Rental_room_management/test/features/billing/billing_tariffs_screen_test.dart: account change discards draft and ignores late mutation response
+00:23 +334 -12: /Users/hoang/Rental_room_management/test/features/billing/billing_tariffs_screen_test.dart: account change discards draft and ignores late mutation response
+00:23 +335 -12: /Users/hoang/Rental_room_management/test/features/billing/billing_tariffs_screen_test.dart: account change discards draft and ignores late mutation response
+00:23 +336 -12: /Users/hoang/Rental_room_management/test/features/billing/billing_tariffs_screen_test.dart: account change discards draft and ignores late mutation response
+00:23 +337 -12: /Users/hoang/Rental_room_management/test/features/billing/billing_tariffs_screen_test.dart: account change discards draft and ignores late mutation response
+00:23 +338 -12: /Users/hoang/Rental_room_management/test/features/billing/billing_tariffs_screen_test.dart: account change discards draft and ignores late mutation response
+00:23 +339 -12: /Users/hoang/Rental_room_management/test/features/billing/billing_tariffs_screen_test.dart: account change discards draft and ignores late mutation response
+00:23 +340 -12: /Users/hoang/Rental_room_management/test/features/billing/billing_tariffs_screen_test.dart: account change discards draft and ignores late mutation response
+00:23 +341 -12: /Users/hoang/Rental_room_management/test/features/billing/billing_tariffs_screen_test.dart: account change discards draft and ignores late mutation response
+00:23 +342 -12: /Users/hoang/Rental_room_management/test/features/billing/billing_tariffs_screen_test.dart: account change discards draft and ignores late mutation response
+00:23 +343 -12: /Users/hoang/Rental_room_management/test/features/billing/billing_tariffs_screen_test.dart: account change discards draft and ignores late mutation response
+00:23 +344 -12: /Users/hoang/Rental_room_management/test/features/billing/billing_tariffs_screen_test.dart: account change discards draft and ignores late mutation response
+00:23 +345 -12: /Users/hoang/Rental_room_management/test/features/billing/billing_tariffs_screen_test.dart: account change discards draft and ignores late mutation response
+00:23 +346 -12: /Users/hoang/Rental_room_management/test/features/billing/billing_tariffs_screen_test.dart: account change discards draft and ignores late mutation response
+00:23 +347 -12: /Users/hoang/Rental_room_management/test/features/billing/invoice_replacement_test.dart: normalizes zero-usage and adjustment lines without changing totals
+00:23 +348 -12: /Users/hoang/Rental_room_management/test/features/billing/invoice_replacement_test.dart: normalizes zero-usage and adjustment lines without changing totals
+00:23 +349 -12: /Users/hoang/Rental_room_management/test/features/billing/billing_tariffs_screen_test.dart: small phone and large text retain readable form without overflow
+00:23 +350 -12: /Users/hoang/Rental_room_management/test/features/billing/billing_tariffs_screen_test.dart: tablet layout renders tariff history and comparison
+00:23 +351 -12: /Users/hoang/Rental_room_management/test/features/billing/billing_tariffs_screen_test.dart: utility proposal validates tier boundaries and serializes unbounded last tier
+00:23 +352 -12: /Users/hoang/Rental_room_management/test/features/billing/billing_tariffs_screen_test.dart: utility proposal validates tier boundaries and serializes unbounded last tier
+00:23 +353 -12: /Users/hoang/Rental_room_management/test/features/billing/billing_tariffs_screen_test.dart: utility proposal validates tier boundaries and serializes unbounded last tier
+00:23 +354 -12: /Users/hoang/Rental_room_management/test/features/billing/billing_tariffs_screen_test.dart: utility proposal validates tier boundaries and serializes unbounded last tier
+00:23 +355 -12: /Users/hoang/Rental_room_management/test/features/billing/billing_tariffs_screen_test.dart: utility proposal validates tier boundaries and serializes unbounded last tier
+00:23 +356 -12: /Users/hoang/Rental_room_management/test/features/billing/billing_tariffs_screen_test.dart: utility proposal validates tier boundaries and serializes unbounded last tier
+00:23 +357 -12: /Users/hoang/Rental_room_management/test/features/billing/billing_tariffs_screen_test.dart: utility proposal validates tier boundaries and serializes unbounded last tier
+00:23 +358 -12: /Users/hoang/Rental_room_management/test/features/billing/billing_tariffs_screen_test.dart: utility proposal validates tier boundaries and serializes unbounded last tier
+00:23 +359 -12: /Users/hoang/Rental_room_management/test/features/billing/billing_tariffs_screen_test.dart: utility proposal validates tier boundaries and serializes unbounded last tier
+00:23 +360 -12: /Users/hoang/Rental_room_management/test/features/billing/billing_tariffs_screen_test.dart: utility proposal validates tier boundaries and serializes unbounded last tier
+00:23 +361 -12: /Users/hoang/Rental_room_management/test/features/billing/billing_tariffs_screen_test.dart: utility proposal validates tier boundaries and serializes unbounded last tier
+00:23 +362 -12: /Users/hoang/Rental_room_management/test/features/billing/billing_tariffs_screen_test.dart: utility proposal validates tier boundaries and serializes unbounded last tier
+00:23 +363 -12: /Users/hoang/Rental_room_management/test/features/billing/billing_tariffs_screen_test.dart: utility proposal validates tier boundaries and serializes unbounded last tier
+00:23 +364 -12: /Users/hoang/Rental_room_management/test/features/billing/billing_tariffs_screen_test.dart: utility proposal validates tier boundaries and serializes unbounded last tier
+00:23 +365 -12: /Users/hoang/Rental_room_management/test/features/billing/billing_tariffs_screen_test.dart: utility proposal validates tier boundaries and serializes unbounded last tier
+00:23 +366 -12: /Users/hoang/Rental_room_management/test/features/billing/billing_tariffs_screen_test.dart: utility proposal validates tier boundaries and serializes unbounded last tier
+00:23 +367 -12: /Users/hoang/Rental_room_management/test/features/billing/billing_tariffs_screen_test.dart: utility proposal validates tier boundaries and serializes unbounded last tier
+00:23 +368 -12: /Users/hoang/Rental_room_management/test/features/billing/billing_tariffs_screen_test.dart: utility proposal validates tier boundaries and serializes unbounded last tier
+00:23 +369 -12: /Users/hoang/Rental_room_management/test/features/billing/billing_tariffs_screen_test.dart: utility proposal validates tier boundaries and serializes unbounded last tier
+00:23 +370 -12: /Users/hoang/Rental_room_management/test/features/billing/billing_tariffs_screen_test.dart: utility proposal validates tier boundaries and serializes unbounded last tier
+00:23 +371 -12: /Users/hoang/Rental_room_management/test/features/billing/billing_tariffs_screen_test.dart: utility proposal validates tier boundaries and serializes unbounded last tier
+00:23 +372 -12: /Users/hoang/Rental_room_management/test/features/billing/billing_tariffs_screen_test.dart: utility proposal validates tier boundaries and serializes unbounded last tier
+00:24 +373 -12: /Users/hoang/Rental_room_management/test/features/billing/billing_tariffs_screen_test.dart: utility proposal validates tier boundaries and serializes unbounded last tier
+00:24 +374 -12: /Users/hoang/Rental_room_management/test/features/billing/billing_tariffs_screen_test.dart: utility proposal validates tier boundaries and serializes unbounded last tier
+00:24 +375 -12: /Users/hoang/Rental_room_management/test/features/billing/billing_tariffs_screen_test.dart: utility proposal validates tier boundaries and serializes unbounded last tier
+00:24 +376 -12: /Users/hoang/Rental_room_management/test/features/billing/billing_tariffs_screen_test.dart: utility proposal validates tier boundaries and serializes unbounded last tier
+00:24 +377 -12: /Users/hoang/Rental_room_management/test/features/billing/billing_tariffs_screen_test.dart: utility proposal validates tier boundaries and serializes unbounded last tier
+00:24 +378 -12: /Users/hoang/Rental_room_management/test/features/billing/billing_tariffs_screen_test.dart: utility proposal validates tier boundaries and serializes unbounded last tier
+00:24 +379 -12: /Users/hoang/Rental_room_management/test/features/billing/billing_tariffs_screen_test.dart: utility proposal validates tier boundaries and serializes unbounded last tier
+00:24 +380 -12: /Users/hoang/Rental_room_management/test/features/billing/billing_tariffs_screen_test.dart: utility proposal validates tier boundaries and serializes unbounded last tier
+00:24 +381 -12: /Users/hoang/Rental_room_management/test/features/billing/billing_tariffs_screen_test.dart: utility proposal validates tier boundaries and serializes unbounded last tier
+00:24 +382 -12: /Users/hoang/Rental_room_management/test/features/billing/billing_tariffs_screen_test.dart: utility proposal validates tier boundaries and serializes unbounded last tier
+00:24 +383 -12: /Users/hoang/Rental_room_management/test/features/billing/billing_tariffs_screen_test.dart: utility proposal validates tier boundaries and serializes unbounded last tier
+00:24 +384 -12: /Users/hoang/Rental_room_management/test/features/billing/billing_tariffs_screen_test.dart: utility proposal validates tier boundaries and serializes unbounded last tier
+00:24 +385 -12: /Users/hoang/Rental_room_management/test/data/admin/admin_api_test.dart: property operations use the expected paths, query, and bodies
+00:24 +386 -12: /Users/hoang/Rental_room_management/test/features/billing/billing_tariffs_screen_test.dart: history uses bounded pages and filters without writes
+00:24 +387 -12: /Users/hoang/Rental_room_management/test/features/billing/billing_tariffs_screen_test.dart: history uses bounded pages and filters without writes
+00:24 +388 -12: /Users/hoang/Rental_room_management/test/features/billing/billing_tariffs_screen_test.dart: (tearDownAll)
+00:24 +388 -12: /Users/hoang/Rental_room_management/test/data/admin/admin_step_up_api_test.dart: ordinary commands do not prompt for unnecessary step-up
+00:24 +389 -12: /Users/hoang/Rental_room_management/test/data/admin/admin_step_up_api_test.dart: step-up retries once with the exact frozen payload and session owner
+00:24 +390 -12: /Users/hoang/Rental_room_management/test/data/admin/admin_step_up_api_test.dart: PATCH command keeps the same method after step-up
+00:24 +391 -12: /Users/hoang/Rental_room_management/test/data/admin/admin_step_up_api_test.dart: legacy landlord status supports step-up without bypassing audit version
+00:24 +392 -12: /Users/hoang/Rental_room_management/test/data/admin/admin_step_up_api_test.dart: cancelled verification never issues a grant or repeats the action
+00:24 +393 -12: /Users/hoang/Rental_room_management/test/data/admin/admin_step_up_api_test.dart: permission failures do not trigger MFA or retry
+00:24 +394 -12: /Users/hoang/Rental_room_management/test/data/admin/admin_step_up_api_test.dart: a rejected one-time grant does not start an infinite verification loop
+00:24 +395 -12: /Users/hoang/Rental_room_management/test/data/admin/admin_step_up_api_test.dart: audit export retries CSV using scoped grant, filters and reason
+00:24 +396 -12: /Users/hoang/Rental_room_management/test/data/admin/admin_accounts_api_test.dart: accounts binds owner and serializes filters without losing metadata
+00:24 +397 -12: /Users/hoang/Rental_room_management/test/data/admin/admin_accounts_api_test.dart: query identity includes date boundaries
+00:24 +398 -12: /Users/hoang/Rental_room_management/test/data/admin/admin_accounts_api_test.dart: detail preserves version, counts and masked history projection
+00:24 +399 -12: /Users/hoang/Rental_room_management/test/data/admin/admin_accounts_api_test.dart: status uses reason/version and owner binding through authorized command
+00:24 +400 -12: /Users/hoang/Rental_room_management/test/data/admin/admin_accounts_api_test.dart: revoke, reset and reveal use existing protected contracts
+00:24 +401 -12: /Users/hoang/Rental_room_management/test/data/uploads/upload_api_test.dart: uploadFile posts multipart file and parses returned url
+00:24 +402 -12: /Users/hoang/Rental_room_management/test/data/uploads/upload_api_test.dart: private attachment asks for a short-lived signed URL on the API host
+00:25 +403 -12: /Users/hoang/Rental_room_management/test/data/operations/p1_operations_api_test.dart: turnovers forwards pagination and parses stage and step completion
+00:25 +404 -12: /Users/hoang/Rental_room_management/test/data/operations/p1_operations_api_test.dart: advance sends the current stage and version without skipping
+00:25 +405 -12: /Users/hoang/Rental_room_management/test/data/operations/p1_operations_api_test.dart: checklist update includes version and parses completion
+00:25 +406 -12: /Users/hoang/Rental_room_management/test/data/operations/p1_operations_api_test.dart: recurring schedule creation forwards its complete payload
+00:25 +407 -12: /Users/hoang/Rental_room_management/test/data/operations/p1_operations_api_test.dart: recurring schedules can be paused
+00:25 +408 -12: /Users/hoang/Rental_room_management/test/data/operations/p1_operations_api_test.dart: tenant feed parses its own acknowledgement
+00:25 +409 -12: /Users/hoang/Rental_room_management/test/data/operations/p1_operations_api_test.dart: landlord feed counts recipients and acknowledgements
+00:25 +410 -12: /Users/hoang/Rental_room_management/test/data/operations/p1_operations_api_test.dart: acknowledgement posts only to the tenant endpoint
+00:25 +411 -12: /Users/hoang/Rental_room_management/test/data/operations/p1_operations_api_test.dart: group creation sends the selected tenant IDs
+00:25 +412 -12: /Users/hoang/Rental_room_management/test/data/operations/p1_operations_api_test.dart: payment creation parses QR, amount, expiry and pending status
+00:25 +413 -12: /Users/hoang/Rental_room_management/test/data/operations/p1_operations_api_test.dart: creates a separate demo invoice with an explicit POST
+00:25 +414 -12: /Users/hoang/Rental_room_management/test/data/operations/p1_operations_api_test.dart: rejects a malformed demo invoice creation response
+00:25 +415 -12: /Users/hoang/Rental_room_management/test/data/operations/p1_operations_api_test.dart: payment status permits an invoice without an existing link
+00:25 +416 -12: /Users/hoang/Rental_room_management/test/data/operations/p1_operations_api_test.dart: payment status uses invoice balance rather than paid link status
+00:25 +417 -12: /Users/hoang/Rental_room_management/test/data/operations/p1_operations_api_test.dart: payment status supports settled invoices without a payment link
+00:25 +418 -12: /Users/hoang/Rental_room_management/test/data/operations/p1_operations_api_test.dart: missing invoice summary cannot falsely mark a link as fully paid
+00:25 +419 -12: /Users/hoang/Rental_room_management/test/data/operations/p1_operations_api_test.dart: reconciliation uses the explicit invoice and event endpoint
+00:25 +420 -12: /Users/hoang/Rental_room_management/test/data/operations/p1_operations_api_test.dart: disabled demo retains the actionable 503
+00:25 +421 -12: /Users/hoang/Rental_room_management/test/data/operations/p1_operations_api_test.dart: version conflict retains the backend error message
+00:25 +422 -12: /Users/hoang/Rental_room_management/test/data/operations/p1_operations_api_test.dart: malformed pagination is a retryable API failure
+00:25 +423 -12: /Users/hoang/Rental_room_management/test/data/operations/p1_operations_api_test.dart: malformed object responses do not escape as type errors
+00:25 +424 -12: /Users/hoang/Rental_room_management/test/data/operations/operations_api_test.dart: malformed responses become a retryable API failure
+00:25 +425 -12: /Users/hoang/Rental_room_management/test/data/operations/operations_api_test.dart: forwards filters and parses scoped summary, rows and metadata
+00:25 +426 -12: /Users/hoang/Rental_room_management/test/data/rooms_lifecycle_api_test.dart: listByProperty serializes lifecycle query
+00:25 +427 -12: /Users/hoang/Rental_room_management/test/data/rooms_lifecycle_api_test.dart: listByProperty serializes lifecycle query
+00:25 +428 -12: /Users/hoang/Rental_room_management/test/data/rooms_lifecycle_api_test.dart: listByProperty serializes lifecycle query
+00:25 +429 -12: /Users/hoang/Rental_room_management/test/data/rooms_lifecycle_api_test.dart: listByProperty serializes lifecycle query
+00:25 +430 -12: /Users/hoang/Rental_room_management/test/data/rooms_lifecycle_api_test.dart: listByProperty serializes lifecycle query
+00:25 +431 -12: /Users/hoang/Rental_room_management/test/data/rooms_lifecycle_api_test.dart: setActive patches room lifecycle status
+00:25 +432 -12: /Users/hoang/Rental_room_management/test/data/rooms_lifecycle_api_test.dart: delete removes unused room
+00:25 +433 -12: /Users/hoang/Rental_room_management/test/data/dashboard/dashboard_api_test.dart: metrics requests dashboard endpoint and parses the data envelope
+00:26 +434 -12: /Users/hoang/Rental_room_management/test/data/tenants_lifecycle_api_test.dart: list serializes lifecycle query
+00:26 +435 -12: /Users/hoang/Rental_room_management/test/data/tenant_portal/tenant_portal_api_test.dart: me requests tenant/me and parses the data envelope
+00:26 +436 -12: /Users/hoang/Rental_room_management/test/data/tenant_portal/tenant_portal_api_test.dart: me requests tenant/me and parses the data envelope
+00:26 +437 -12: /Users/hoang/Rental_room_management/test/data/tenant_portal/tenant_portal_api_test.dart: me requests tenant/me and parses the data envelope
+00:26 +438 -12: /Users/hoang/Rental_room_management/test/data/tenant_portal/tenant_portal_api_test.dart: dashboard requests tenant/dashboard and parses nested data
+00:26 +439 -12: /Users/hoang/Rental_room_management/test/data/tenant_portal/tenant_portal_api_test.dart: invoices requests tenant/invoices and parses list responses
+00:26 +440 -12: /Users/hoang/Rental_room_management/test/data/tenant_portal/tenant_portal_api_test.dart: invoice requests tenant/invoices/:id and parses detail response
+00:26 +441 -12: /Users/hoang/Rental_room_management/test/data/tenant_portal/tenant_portal_api_test.dart: leases requests tenant/leases and parses tenant lease list
+00:26 +442 -12: /Users/hoang/Rental_room_management/test/data/tenant_portal/tenant_portal_api_test.dart: notifications requests tenant notifications and parses data list
+00:26 +443 -12: /Users/hoang/Rental_room_management/test/data/tenant_portal/tenant_portal_api_test.dart: markNotificationRead posts to the read endpoint
+00:26 +444 -12: /Users/hoang/Rental_room_management/test/data/tenant_portal/tenant_portal_api_test.dart: zaloMessages requests tenant Zalo inbox and parses logs
+00:26 +445 -12: /Users/hoang/Rental_room_management/test/data/tenant_portal/tenant_portal_api_test.dart: createZaloMessage posts payload and unwraps nested data
+00:26 +446 -12: /Users/hoang/Rental_room_management/test/data/tenant_portal/tenant_portal_api_test.dart: markZaloMessageRead posts to the read endpoint
+00:26 +447 -12: /Users/hoang/Rental_room_management/test/data/tenant_portal/tenant_portal_api_test.dart: submitPaymentProof posts proof payload and parses response
+00:26 +448 -12: /Users/hoang/Rental_room_management/test/data/tenant_portal/tenant_portal_api_test.dart: maintenance requests tenant/maintenance and parses list
+00:26 +449 -12: /Users/hoang/Rental_room_management/test/data/tenant_portal/tenant_portal_api_test.dart: createMaintenance posts payload and parses created ticket
+00:26 +450 -12: /Users/hoang/Rental_room_management/test/data/tenant_portal/tenant_portal_api_test.dart: addMaintenanceComment posts comment and unwraps nested data
+00:26 +451 -12: /Users/hoang/Rental_room_management/test/data/tenant_portal/tenant_portal_api_test.dart: maps Dio failures to ApiFailure
+00:26 +452 -12: /Users/hoang/Rental_room_management/test/data/tenant_lifecycle_requests_api_test.dart: paginates and filters the tenant history using the bound identity
+00:26 +453 -12: /Users/hoang/Rental_room_management/test/data/tenant_lifecycle_requests_api_test.dart: review and cancellation preserve optimistic concurrency tokens
+00:26 +454 -12: /Users/hoang/Rental_room_management/test/data/tenant_lifecycle_requests_api_test.dart: execution reuses its key and never sends a synthetic deposit
+00:26 +455 -12: /Users/hoang/Rental_room_management/test/data/tenant_lifecycle_requests_api_test.dart: empty settlement remains absent and malformed lists are not accepted as empty
+00:26 +456 -12: /Users/hoang/Rental_room_management/test/data/tenant_lifecycle_requests_api_test.dart: server conflict is surfaced without replaying the mutation
+00:26 +457 -12: /Users/hoang/Rental_room_management/test/data/tenant_lifecycle_requests_api_test.dart: no request is sent without an owner identity
+00:26 +458 -12: /Users/hoang/Rental_room_management/test/data/notifications/notifications_api_test.dart: list requests notifications endpoint and parses bundle
+00:26 +459 -12: /Users/hoang/Rental_room_management/test/data/notifications/notifications_api_test.dart: markRead posts to the read endpoint
+00:26 +460 -12: /Users/hoang/Rental_room_management/test/data/notifications/notifications_api_test.dart: deliveryLogs forwards take query and parses delivery list
+00:26 +461 -12: /Users/hoang/Rental_room_management/test/data/notifications/notifications_api_test.dart: createZaloTestMessage posts to the test endpoint
+00:26 +462 -12: /Users/hoang/Rental_room_management/test/data/notifications/notifications_api_test.dart: sendZaloManualMessage posts payload and unwraps nested data
+00:26 +463 -12: /Users/hoang/Rental_room_management/test/data/notifications/notifications_api_test.dart: maps Dio failures to ApiFailure
+00:26 +464 -12: /Users/hoang/Rental_room_management/test/data/billing/billing_api_test.dart: activeLeases requests endpoint and parses data envelope
+00:26 +465 -12: /Users/hoang/Rental_room_management/test/data/billing/billing_api_test.dart: invoices serializes filters and parses bare list responses
+00:26 +466 -12: /Users/hoang/Rental_room_management/test/data/billing/billing_api_test.dart: invoice requests detail endpoint and parses cancellation metadata
+00:26 +467 -12: /Users/hoang/Rental_room_management/test/data/billing/billing_api_test.dart: meterReadings serializes room and month filters
+00:26 +468 -12: /Users/hoang/Rental_room_management/test/data/billing/billing_api_test.dart: createMeterReading posts payload and parses response
+00:26 +469 -12: /Users/hoang/Rental_room_management/test/data/billing/billing_api_test.dart: createInvoice posts payload and parses response
+00:26 +470 -12: /Users/hoang/Rental_room_management/test/data/billing/billing_api_test.dart: aging requests scoped debt buckets
+00:26 +471 -12: /Users/hoang/Rental_room_management/test/data/billing/billing_api_test.dart: creates a replacement invoice without exposing line item edits
+00:26 +472 -12: /Users/hoang/Rental_room_management/test/data/billing/billing_api_test.dart: posts a multi-invoice receipt allocation
+00:26 +473 -12: /Users/hoang/Rental_room_management/test/data/billing/billing_api_test.dart: bulkInvoicePreflight posts scope and parses readiness items
+00:26 +474 -12: /Users/hoang/Rental_room_management/test/data/billing/billing_api_test.dart: createBulkInvoices posts readings and parses result summary
+00:26 +475 -12: /Users/hoang/Rental_room_management/test/data/billing/billing_api_test.dart: updateInvoice patches editable invoice fields
+00:26 +476 -12: /Users/hoang/Rental_room_management/test/data/billing/billing_api_test.dart: recordPayment posts payload to invoice payments endpoint
+00:26 +477 -12: /Users/hoang/Rental_room_management/test/data/billing/billing_api_test.dart: cancelInvoice posts note to cancel endpoint
+00:26 +478 -12: /Users/hoang/Rental_room_management/test/data/billing/billing_api_test.dart: reversePayment posts note to reverse endpoint
+00:26 +479 -12: /Users/hoang/Rental_room_management/test/data/billing/billing_api_test.dart: paymentProofs requests pending proofs and parses response
+00:26 +480 -12: /Users/hoang/Rental_room_management/test/data/billing/billing_api_test.dart: runInvoiceReminders posts query params and parses send result
+00:26 +481 -12: /Users/hoang/Rental_room_management/test/data/billing/billing_api_test.dart: reviewPaymentProof posts decision payload
+00:26 +482 -12: /Users/hoang/Rental_room_management/test/data/billing/billing_api_test.dart: maps Dio failures to ApiFailure
+00:26 +483 -12: /Users/hoang/Rental_room_management/test/data/billing/billing_tariff_api_test.dart: parses property versions without losing scope, tiers or review reason
+00:26 +484 -12: /Users/hoang/Rental_room_management/test/data/billing/billing_tariff_api_test.dart: posts a complete proposal through existing command API
+00:26 +485 -12: /Users/hoang/Rental_room_management/test/data/billing/billing_tariff_api_test.dart: impact preserves prior version, override exclusions and blocking reasons
+00:26 +486 -12: /Users/hoang/Rental_room_management/test/data/billing/billing_tariff_api_test.dart: reviews with a stable caller-supplied command key and audit reason
+00:26 +487 -12: /Users/hoang/Rental_room_management/test/data/billing/billing_tariff_api_test.dart: conflicts and permission failures are surfaced without replay
+00:26 +488 -12: /Users/hoang/Rental_room_management/test/data/billing/billing_tariff_api_test.dart: old impact payloads remain readable without new metadata
+00:27 +489 -12: /Users/hoang/Rental_room_management/test/data/billing/billing_receipt_api_test.dart: loads tenant receipts with allocation and refund history
+00:27 +490 -12: /Users/hoang/Rental_room_management/test/data/billing/billing_receipt_api_test.dart: loads tenant receipts with allocation and refund history
+00:27 +491 -12: /Users/hoang/Rental_room_management/test/data/billing/billing_receipt_api_test.dart: loads tenant receipts with allocation and refund history
+00:27 +492 -12: /Users/hoang/Rental_room_management/test/data/billing/billing_receipt_api_test.dart: releases allocations with a reason and stable command key
+00:27 +493 -12: /Users/hoang/Rental_room_management/test/data/billing/billing_receipt_api_test.dart: posts refunds without deleting the receipt or its payments
+00:27 +494 -12: /Users/hoang/Rental_room_management/test/data/lease_settlement_api_test.dart: loads an absent settlement without inventing a record
+00:27 +495 -12: /Users/hoang/Rental_room_management/test/data/lease_settlement_api_test.dart: loads an existing settlement
+00:27 +496 -12: /Users/hoang/Rental_room_management/test/data/lease_settlement_api_test.dart: preview binds the owner and preserves the request exactly
+00:27 +497 -12: /Users/hoang/Rental_room_management/test/data/lease_settlement_api_test.dart: confirm binds the owner and preserves the request exactly
+00:27 +498 -12: /Users/hoang/Rental_room_management/test/data/lease_settlement_api_test.dart: refund binds the owner and preserves the request exactly
+00:27 +499 -12: /Users/hoang/Rental_room_management/test/data/lease_settlement_api_test.dart: does not send anything without a session identity
+00:27 +500 -12: /Users/hoang/Rental_room_management/test/data/lease_settlement_api_test.dart: preserves conflict status and message so the UI clears stale previews
+00:27 +501 -12: /Users/hoang/Rental_room_management/test/data/lease_settlement_api_test.dart: rejects null mutation data and malformed successful responses
+00:27 +502 -12: /Users/hoang/Rental_room_management/test/data/lease_settlement_api_test.dart: rejects a preview without a valid fingerprint
+00:27 +503 -12: Some tests failed.
+
+EXIT_CODE=1

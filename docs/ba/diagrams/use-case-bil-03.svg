@@ -1,0 +1,51 @@
+<?xml version='1.0' encoding='utf-8'?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="773" viewBox="0 0 1000 773" role="img" aria-labelledby="diagram-title diagram-description">
+  <title id="diagram-title">D-BIL-03 Báo cáo và thông báo</title>
+  <desc id="diagram-description">Actor nằm ngoài biên hệ thống. Đường liền biểu thị actor tham gia UC. Khung nét đứt chỉ nhóm phân rã theo UC tổng quan. Các UC: UC-BIL-06.01, UC-BIL-06.02, UC-BIL-07.01, UC-BIL-07.02</desc>
+  <rect x="210" y="28" width="575" height="661" fill="none" stroke="#39414B" stroke-width="1.2" />
+  <text x="497.5" y="58" text-anchor="middle" dominant-baseline="central" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#222222">Hệ thống quản lý nhà trọ</text>
+  <polyline points="116.00,206.00 275.00,177.00" fill="none" stroke="#737B85" stroke-width="1.4" />
+  <polyline points="116.00,206.00 275.00,289.00" fill="none" stroke="#737B85" stroke-width="1.4" />
+  <rect x="248" y="91" width="513" height="278" fill="none" stroke="#A7AFB8" stroke-width="1.2" stroke-dasharray="7 5" />
+  <text x="264" y="115" text-anchor="start" dominant-baseline="central" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#222222">UC-BIL-06 Xem báo cáo tháng</text>
+  <circle cx="90" cy="179.0" r="13" fill="white" stroke="#222222" stroke-width="1.6" />
+  <polyline points="90,192.0 90,229.0" fill="none" stroke="#222222" stroke-width="1.6" />
+  <polyline points="65,206.0 115,206.0" fill="none" stroke="#222222" stroke-width="1.6" />
+  <polyline points="90,229.0 68,253.0" fill="none" stroke="#222222" stroke-width="1.6" />
+  <polyline points="90,229.0 112,253.0" fill="none" stroke="#222222" stroke-width="1.6" />
+  <text x="90" y="274.0" text-anchor="middle" dominant-baseline="central" font-family="Arial, sans-serif" font-size="23" font-weight="bold" fill="#222222">Chủ trọ</text>
+  <ellipse cx="500" cy="177" rx="225.0" ry="49.0" fill="white" stroke="#303740" stroke-width="1.6" data-uc-id="UC-BIL-06.01" />
+  <text x="500" y="161" text-anchor="middle" dominant-baseline="central" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#43505F">UC-BIL-06.01</text>
+  <text x="500" y="192" text-anchor="middle" dominant-baseline="central" font-family="Arial, sans-serif" font-size="24" font-weight="normal" fill="#222222">Xem báo cáo tháng</text>
+  <ellipse cx="500" cy="289" rx="225.0" ry="49.0" fill="white" stroke="#303740" stroke-width="1.6" data-uc-id="UC-BIL-06.02" />
+  <text x="500" y="273" text-anchor="middle" dominant-baseline="central" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#43505F">UC-BIL-06.02</text>
+  <text x="500" y="304" text-anchor="middle" dominant-baseline="central" font-family="Arial, sans-serif" font-size="24" font-weight="normal" fill="#222222">Xuất báo cáo tháng</text>
+  <polyline points="116.00,504.00 275.00,475.00" fill="none" stroke="#737B85" stroke-width="1.4" />
+  <polyline points="116.00,504.00 275.00,587.00" fill="none" stroke="#737B85" stroke-width="1.4" />
+  <rect x="248" y="389" width="513" height="278" fill="none" stroke="#A7AFB8" stroke-width="1.2" stroke-dasharray="7 5" />
+  <text x="264" y="413" text-anchor="start" dominant-baseline="central" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#222222">UC-BIL-07 Gửi thông báo / nhắc nợ</text>
+  <polyline points="725.00,587.00 874.00,587.00" fill="none" stroke="#737B85" stroke-width="1.4" />
+  <circle cx="90" cy="477.0" r="13" fill="white" stroke="#222222" stroke-width="1.6" />
+  <polyline points="90,490.0 90,527.0" fill="none" stroke="#222222" stroke-width="1.6" />
+  <polyline points="65,504.0 115,504.0" fill="none" stroke="#222222" stroke-width="1.6" />
+  <polyline points="90,527.0 68,551.0" fill="none" stroke="#222222" stroke-width="1.6" />
+  <polyline points="90,527.0 112,551.0" fill="none" stroke="#222222" stroke-width="1.6" />
+  <text x="90" y="572.0" text-anchor="middle" dominant-baseline="central" font-family="Arial, sans-serif" font-size="23" font-weight="bold" fill="#222222">Chủ trọ</text>
+  <ellipse cx="500" cy="475" rx="225.0" ry="49.0" fill="white" stroke="#303740" stroke-width="1.6" data-uc-id="UC-BIL-07.01" />
+  <text x="500" y="446" text-anchor="middle" dominant-baseline="central" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#43505F">UC-BIL-07.01</text>
+  <text x="500" y="475" text-anchor="middle" dominant-baseline="central" font-family="Arial, sans-serif" font-size="24" font-weight="normal" fill="#222222">Theo dõi thông báo và việc</text>
+  <text x="500" y="503" text-anchor="middle" dominant-baseline="central" font-family="Arial, sans-serif" font-size="24" font-weight="normal" fill="#222222">cần xử lý</text>
+  <ellipse cx="500" cy="587" rx="225.0" ry="49.0" fill="white" stroke="#303740" stroke-width="1.6" data-uc-id="UC-BIL-07.02" />
+  <text x="500" y="558" text-anchor="middle" dominant-baseline="central" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#43505F">UC-BIL-07.02</text>
+  <text x="500" y="587" text-anchor="middle" dominant-baseline="central" font-family="Arial, sans-serif" font-size="24" font-weight="normal" fill="#222222">Gửi thông báo hoặc nhắc</text>
+  <text x="500" y="615" text-anchor="middle" dominant-baseline="central" font-family="Arial, sans-serif" font-size="24" font-weight="normal" fill="#222222">thanh toán</text>
+  <circle cx="900" cy="560" r="13" fill="white" stroke="#222222" stroke-width="1.6" />
+  <polyline points="900,573 900,610" fill="none" stroke="#222222" stroke-width="1.6" />
+  <polyline points="875,587 925,587" fill="none" stroke="#222222" stroke-width="1.6" />
+  <polyline points="900,610 878,634" fill="none" stroke="#222222" stroke-width="1.6" />
+  <polyline points="900,610 922,634" fill="none" stroke="#222222" stroke-width="1.6" />
+  <text x="900" y="655" text-anchor="middle" dominant-baseline="central" font-family="Arial, sans-serif" font-size="23" font-weight="bold" fill="#222222">Dịch vụ Zalo</text>
+  <text x="900" y="681" text-anchor="middle" dominant-baseline="central" font-family="Arial, sans-serif" font-size="23" font-weight="bold" fill="#222222">ZNS</text>
+  <text x="900" y="707" text-anchor="middle" dominant-baseline="central" font-family="Arial, sans-serif" font-size="18" font-weight="normal" fill="#222222">Nhánh gửi Zalo</text>
+  <text x="500" y="722" text-anchor="middle" dominant-baseline="central" font-family="Arial, sans-serif" font-size="20" font-weight="normal" fill="#222222">Đường liền là liên kết actor với UC   Khung nét đứt là nhóm UC tổng quan</text>
+</svg>

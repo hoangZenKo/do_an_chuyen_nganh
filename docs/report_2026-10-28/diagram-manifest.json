@@ -1,0 +1,469 @@
+[
+  {
+    "id": "AR-01",
+    "title": "Kiến trúc tổng thể và ranh giới tích hợp",
+    "kind": "architecture",
+    "description": "Backend là modular monolith; worker và dịch vụ ngoài không được suy ra là đã nghiệm thu production.",
+    "source": "backend/src/app.module.ts"
+  },
+  {
+    "id": "AR-02",
+    "title": "Các lớp kiểm tra truy cập",
+    "kind": "architecture",
+    "description": "Có permission chưa đủ: còn scope, ownership và quy tắc trạng thái. Staff bị chặn controller chưa hỗ trợ property scope.",
+    "source": "backend/src/common/property-scope.ts"
+  },
+  {
+    "id": "D-SYS-01",
+    "title": "Tài khoản và phiên làm việc — phần 1",
+    "kind": "usecase",
+    "description": "Các đường nối thể hiện liên kết tác nhân–UC, không suy diễn include/extend cho thao tác dùng chung. Quyền chi tiết xem bảng UC.",
+    "source": "backend/src/auth"
+  },
+  {
+    "id": "D-SYS-02",
+    "title": "Tài khoản và phiên làm việc — phần 2",
+    "kind": "usecase",
+    "description": "Các đường nối thể hiện liên kết tác nhân–UC, không suy diễn include/extend cho thao tác dùng chung. Quyền chi tiết xem bảng UC.",
+    "source": "backend/src/auth"
+  },
+  {
+    "id": "D-DIS-01",
+    "title": "Khám phá phòng và hành trình thuê — phần 1",
+    "kind": "usecase",
+    "description": "Các đường nối thể hiện liên kết tác nhân–UC, không suy diễn include/extend cho thao tác dùng chung. Quyền chi tiết xem bảng UC.",
+    "source": "backend/src/listings"
+  },
+  {
+    "id": "D-DIS-02",
+    "title": "Khám phá phòng và hành trình thuê — phần 2",
+    "kind": "usecase",
+    "description": "Các đường nối thể hiện liên kết tác nhân–UC, không suy diễn include/extend cho thao tác dùng chung. Quyền chi tiết xem bảng UC.",
+    "source": "backend/src/listings"
+  },
+  {
+    "id": "D-OPT-01",
+    "title": "Khu trọ và phòng — phần 1",
+    "kind": "usecase",
+    "description": "Các đường nối thể hiện liên kết tác nhân–UC, không suy diễn include/extend cho thao tác dùng chung. Quyền chi tiết xem bảng UC.",
+    "source": "backend/src/properties"
+  },
+  {
+    "id": "D-OPT-02",
+    "title": "Khu trọ và phòng — phần 2",
+    "kind": "usecase",
+    "description": "Các đường nối thể hiện liên kết tác nhân–UC, không suy diễn include/extend cho thao tác dùng chung. Quyền chi tiết xem bảng UC.",
+    "source": "backend/src/properties"
+  },
+  {
+    "id": "D-OPT-03",
+    "title": "Khu trọ và phòng — phần 3",
+    "kind": "usecase",
+    "description": "Các đường nối thể hiện liên kết tác nhân–UC, không suy diễn include/extend cho thao tác dùng chung. Quyền chi tiết xem bảng UC.",
+    "source": "backend/src/properties"
+  },
+  {
+    "id": "D-TNT-01",
+    "title": "Hồ sơ người thuê và hợp đồng — phần 1",
+    "kind": "usecase",
+    "description": "Các đường nối thể hiện liên kết tác nhân–UC, không suy diễn include/extend cho thao tác dùng chung. Quyền chi tiết xem bảng UC.",
+    "source": "backend/src/tenants"
+  },
+  {
+    "id": "D-TNT-02",
+    "title": "Hồ sơ người thuê và hợp đồng — phần 2",
+    "kind": "usecase",
+    "description": "Các đường nối thể hiện liên kết tác nhân–UC, không suy diễn include/extend cho thao tác dùng chung. Quyền chi tiết xem bảng UC.",
+    "source": "backend/src/tenants"
+  },
+  {
+    "id": "D-TNT-03",
+    "title": "Hồ sơ người thuê và hợp đồng — phần 3",
+    "kind": "usecase",
+    "description": "Các đường nối thể hiện liên kết tác nhân–UC, không suy diễn include/extend cho thao tác dùng chung. Quyền chi tiết xem bảng UC.",
+    "source": "backend/src/tenants"
+  },
+  {
+    "id": "D-BIL-01",
+    "title": "Hóa đơn và sổ thu chi — phần 1",
+    "kind": "usecase",
+    "description": "Các đường nối thể hiện liên kết tác nhân–UC, không suy diễn include/extend cho thao tác dùng chung. Quyền chi tiết xem bảng UC.",
+    "source": "backend/src/billing"
+  },
+  {
+    "id": "D-BIL-02",
+    "title": "Hóa đơn và sổ thu chi — phần 2",
+    "kind": "usecase",
+    "description": "Các đường nối thể hiện liên kết tác nhân–UC, không suy diễn include/extend cho thao tác dùng chung. Quyền chi tiết xem bảng UC.",
+    "source": "backend/src/billing"
+  },
+  {
+    "id": "D-BIL-03",
+    "title": "Hóa đơn và sổ thu chi — phần 3",
+    "kind": "usecase",
+    "description": "Các đường nối thể hiện liên kết tác nhân–UC, không suy diễn include/extend cho thao tác dùng chung. Quyền chi tiết xem bảng UC.",
+    "source": "backend/src/billing"
+  },
+  {
+    "id": "D-BIL-04",
+    "title": "Hóa đơn và sổ thu chi — phần 4",
+    "kind": "usecase",
+    "description": "Các đường nối thể hiện liên kết tác nhân–UC, không suy diễn include/extend cho thao tác dùng chung. Quyền chi tiết xem bảng UC.",
+    "source": "backend/src/billing"
+  },
+  {
+    "id": "D-OPS-01",
+    "title": "Bảo trì và vận hành — phần 1",
+    "kind": "usecase",
+    "description": "Các đường nối thể hiện liên kết tác nhân–UC, không suy diễn include/extend cho thao tác dùng chung. Quyền chi tiết xem bảng UC.",
+    "source": "backend/src/maintenance"
+  },
+  {
+    "id": "D-OPS-02",
+    "title": "Bảo trì và vận hành — phần 2",
+    "kind": "usecase",
+    "description": "Các đường nối thể hiện liên kết tác nhân–UC, không suy diễn include/extend cho thao tác dùng chung. Quyền chi tiết xem bảng UC.",
+    "source": "backend/src/maintenance"
+  },
+  {
+    "id": "D-TEN-01",
+    "title": "Cổng thông tin người thuê — phần 1",
+    "kind": "usecase",
+    "description": "Các đường nối thể hiện liên kết tác nhân–UC, không suy diễn include/extend cho thao tác dùng chung. Quyền chi tiết xem bảng UC.",
+    "source": "backend/src/tenant-portal"
+  },
+  {
+    "id": "D-TEN-02",
+    "title": "Cổng thông tin người thuê — phần 2",
+    "kind": "usecase",
+    "description": "Các đường nối thể hiện liên kết tác nhân–UC, không suy diễn include/extend cho thao tác dùng chung. Quyền chi tiết xem bảng UC.",
+    "source": "backend/src/tenant-portal"
+  },
+  {
+    "id": "D-STF-01",
+    "title": "Nhân viên và nhật ký — phần 1",
+    "kind": "usecase",
+    "description": "Các đường nối thể hiện liên kết tác nhân–UC, không suy diễn include/extend cho thao tác dùng chung. Quyền chi tiết xem bảng UC.",
+    "source": "backend/src/staff"
+  },
+  {
+    "id": "D-ADM-01",
+    "title": "Quản trị và quản lý nền tảng — phần 1",
+    "kind": "usecase",
+    "description": "Các đường nối thể hiện liên kết tác nhân–UC, không suy diễn include/extend cho thao tác dùng chung. Quyền chi tiết xem bảng UC.",
+    "source": "backend/src/admin"
+  },
+  {
+    "id": "D-ADM-02",
+    "title": "Quản trị và quản lý nền tảng — phần 2",
+    "kind": "usecase",
+    "description": "Các đường nối thể hiện liên kết tác nhân–UC, không suy diễn include/extend cho thao tác dùng chung. Quyền chi tiết xem bảng UC.",
+    "source": "backend/src/admin"
+  },
+  {
+    "id": "D-ADM-03",
+    "title": "Quản trị và quản lý nền tảng — phần 3",
+    "kind": "usecase",
+    "description": "Các đường nối thể hiện liên kết tác nhân–UC, không suy diễn include/extend cho thao tác dùng chung. Quyền chi tiết xem bảng UC.",
+    "source": "backend/src/admin"
+  },
+  {
+    "id": "D-ADM-04",
+    "title": "Quản trị và quản lý nền tảng — phần 4",
+    "kind": "usecase",
+    "description": "Các đường nối thể hiện liên kết tác nhân–UC, không suy diễn include/extend cho thao tác dùng chung. Quyền chi tiết xem bảng UC.",
+    "source": "backend/src/admin"
+  },
+  {
+    "id": "D-SUP-01",
+    "title": "Hỗ trợ và quản trị vận hành — phần 1",
+    "kind": "usecase",
+    "description": "Các đường nối thể hiện liên kết tác nhân–UC, không suy diễn include/extend cho thao tác dùng chung. Quyền chi tiết xem bảng UC.",
+    "source": "backend/src/support"
+  },
+  {
+    "id": "CD-01",
+    "title": "Tài khoản và phân quyền",
+    "kind": "class",
+    "description": "Các lớp biểu diễn thực thể nghiệp vụ và các thuộc tính tiêu biểu; không tự gắn phương thức CRUD vào entity. Hình dùng để giải thích UC, không thay thế schema database.",
+    "source": "backend/prisma/schema.prisma"
+  },
+  {
+    "id": "CD-02",
+    "title": "Khu trọ phòng và dữ liệu phụ",
+    "kind": "class",
+    "description": "Các lớp biểu diễn thực thể nghiệp vụ và các thuộc tính tiêu biểu; không tự gắn phương thức CRUD vào entity. Hình dùng để giải thích UC, không thay thế schema database.",
+    "source": "backend/prisma/schema.prisma"
+  },
+  {
+    "id": "CD-03",
+    "title": "Tìm phòng và lịch xem",
+    "kind": "class",
+    "description": "Các lớp biểu diễn thực thể nghiệp vụ và các thuộc tính tiêu biểu; không tự gắn phương thức CRUD vào entity. Hình dùng để giải thích UC, không thay thế schema database.",
+    "source": "backend/prisma/schema.prisma"
+  },
+  {
+    "id": "CD-04",
+    "title": "Người thuê hợp đồng và vòng đời",
+    "kind": "class",
+    "description": "Các lớp biểu diễn thực thể nghiệp vụ và các thuộc tính tiêu biểu; không tự gắn phương thức CRUD vào entity. Hình dùng để giải thích UC, không thay thế schema database.",
+    "source": "backend/prisma/schema.prisma"
+  },
+  {
+    "id": "CD-05",
+    "title": "Tiền cọc và quyết toán",
+    "kind": "class",
+    "description": "Các lớp biểu diễn thực thể nghiệp vụ và các thuộc tính tiêu biểu; không tự gắn phương thức CRUD vào entity. Hình dùng để giải thích UC, không thay thế schema database.",
+    "source": "backend/prisma/schema.prisma"
+  },
+  {
+    "id": "CD-06",
+    "title": "Hóa đơn và giá phiên bản",
+    "kind": "class",
+    "description": "Các lớp biểu diễn thực thể nghiệp vụ và các thuộc tính tiêu biểu; không tự gắn phương thức CRUD vào entity. Hình dùng để giải thích UC, không thay thế schema database.",
+    "source": "backend/prisma/schema.prisma"
+  },
+  {
+    "id": "CD-07",
+    "title": "Khoản thu phân bổ và hoàn tiền",
+    "kind": "class",
+    "description": "Các lớp biểu diễn thực thể nghiệp vụ và các thuộc tính tiêu biểu; không tự gắn phương thức CRUD vào entity. Hình dùng để giải thích UC, không thay thế schema database.",
+    "source": "backend/prisma/schema.prisma"
+  },
+  {
+    "id": "CD-08",
+    "title": "Bảo trì và vận hành định kỳ",
+    "kind": "class",
+    "description": "Các lớp biểu diễn thực thể nghiệp vụ và các thuộc tính tiêu biểu; không tự gắn phương thức CRUD vào entity. Hình dùng để giải thích UC, không thay thế schema database.",
+    "source": "backend/prisma/schema.prisma"
+  },
+  {
+    "id": "CD-09",
+    "title": "Thông báo và delivery",
+    "kind": "class",
+    "description": "Các lớp biểu diễn thực thể nghiệp vụ và các thuộc tính tiêu biểu; không tự gắn phương thức CRUD vào entity. Hình dùng để giải thích UC, không thay thế schema database.",
+    "source": "backend/prisma/schema.prisma"
+  },
+  {
+    "id": "CD-10",
+    "title": "Quản trị nền tảng và đối soát",
+    "kind": "class",
+    "description": "Các lớp biểu diễn thực thể nghiệp vụ và các thuộc tính tiêu biểu; không tự gắn phương thức CRUD vào entity. Hình dùng để giải thích UC, không thay thế schema database.",
+    "source": "backend/prisma/schema.prisma"
+  },
+  {
+    "id": "CD-11",
+    "title": "Hỗ trợ và báo cáo quản trị",
+    "kind": "class",
+    "description": "Các lớp biểu diễn thực thể nghiệp vụ và các thuộc tính tiêu biểu; không tự gắn phương thức CRUD vào entity. Hình dùng để giải thích UC, không thay thế schema database.",
+    "source": "backend/prisma/schema.prisma"
+  },
+  {
+    "id": "CD-12",
+    "title": "Đánh giá tri thức và thanh toán demo",
+    "kind": "class",
+    "description": "Các lớp biểu diễn thực thể nghiệp vụ và các thuộc tính tiêu biểu; không tự gắn phương thức CRUD vào entity. Hình dùng để giải thích UC, không thay thế schema database.",
+    "source": "backend/prisma/schema.prisma"
+  },
+  {
+    "id": "CD-13",
+    "title": "Lời mời tệp và ngữ cảnh tìm phòng",
+    "kind": "class",
+    "description": "Các lớp biểu diễn thực thể nghiệp vụ và các thuộc tính tiêu biểu; không tự gắn phương thức CRUD vào entity. Hình dùng để giải thích UC, không thay thế schema database.",
+    "source": "backend/prisma/schema.prisma"
+  },
+  {
+    "id": "CD-14",
+    "title": "Mẫu thông báo nhóm nhận và automation",
+    "kind": "class",
+    "description": "Các lớp biểu diễn thực thể nghiệp vụ và các thuộc tính tiêu biểu; không tự gắn phương thức CRUD vào entity. Hình dùng để giải thích UC, không thay thế schema database.",
+    "source": "backend/prisma/schema.prisma"
+  },
+  {
+    "id": "CD-15",
+    "title": "Audit phiên đặc quyền và tổ chức Admin",
+    "kind": "class",
+    "description": "Các lớp biểu diễn thực thể nghiệp vụ và các thuộc tính tiêu biểu; không tự gắn phương thức CRUD vào entity. Hình dùng để giải thích UC, không thay thế schema database.",
+    "source": "backend/prisma/schema.prisma"
+  },
+  {
+    "id": "CD-16",
+    "title": "Telemetry sự cố và liên kết hỗ trợ",
+    "kind": "class",
+    "description": "Các lớp biểu diễn thực thể nghiệp vụ và các thuộc tính tiêu biểu; không tự gắn phương thức CRUD vào entity. Hình dùng để giải thích UC, không thay thế schema database.",
+    "source": "backend/prisma/schema.prisma"
+  },
+  {
+    "id": "CD-17",
+    "title": "Chính sách mẫu hỗ trợ và preference nền tảng",
+    "kind": "class",
+    "description": "Các lớp biểu diễn thực thể nghiệp vụ và các thuộc tính tiêu biểu; không tự gắn phương thức CRUD vào entity. Hình dùng để giải thích UC, không thay thế schema database.",
+    "source": "backend/prisma/schema.prisma"
+  },
+  {
+    "id": "CD-18",
+    "title": "Xác minh khu trọ và gói sử dụng nền tảng",
+    "kind": "class",
+    "description": "Các lớp biểu diễn thực thể nghiệp vụ và các thuộc tính tiêu biểu; không tự gắn phương thức CRUD vào entity. Hình dùng để giải thích UC, không thay thế schema database.",
+    "source": "backend/prisma/schema.prisma"
+  },
+  {
+    "id": "SD-01",
+    "title": "Đăng nhập và khôi phục phiên",
+    "kind": "sequence",
+    "description": "Sai mật khẩu/MFA → không tạo phiên. Refresh bị thu hồi → yêu cầu đăng nhập; lỗi mạng không đồng nhất tài khoản bị khóa.",
+    "source": "backend/src/auth/auth.service.ts",
+    "refs": "UC-SYS-03, UC-SYS-04"
+  },
+  {
+    "id": "SD-02",
+    "title": "Đặt lịch xem và tạo hợp đồng",
+    "kind": "sequence",
+    "description": "Slot/phòng bị thay đổi → từ chối. Tạo lịch không giữ phòng tuyệt đối; các bước của chủ trọ cần phiên riêng.",
+    "source": "backend/src/housing/housing.service.ts",
+    "refs": "UC-DIS-09, UC-DIS-11"
+  },
+  {
+    "id": "SD-03",
+    "title": "Tạo hợp đồng và ghi nhận cọc",
+    "kind": "sequence",
+    "description": "Phòng đã có hợp đồng hoặc người thuê ngoài scope → rollback/từ chối; không ghi nửa hợp đồng.",
+    "source": "backend/src/leases/leases.service.ts",
+    "refs": "UC-TNT-05"
+  },
+  {
+    "id": "SD-04",
+    "title": "Đề xuất và phê duyệt biểu phí",
+    "kind": "sequence",
+    "description": "Staff không được duyệt. Kỳ đã phát hành/khóa, backdate hoặc xung đột version → không áp dụng giá.",
+    "source": "backend/src/billing/billing-tariffs.service.ts",
+    "refs": "UC-BIL-15, UC-BIL-16"
+  },
+  {
+    "id": "SD-05",
+    "title": "Preview và phát hành hóa đơn",
+    "kind": "sequence",
+    "description": "Preflight không giữ khóa tới lần ghi. Không sửa hóa đơn quá khứ theo biểu phí mới; không coi bulk thành công tuyệt đối khi có lỗi.",
+    "source": "backend/src/billing/billing.service.ts",
+    "refs": "UC-BIL-02, UC-BIL-03"
+  },
+  {
+    "id": "SD-06",
+    "title": "Khoản thu và phân bổ nhiều hóa đơn",
+    "kind": "sequence",
+    "description": "Cùng key/cùng payload → kết quả cũ. Phân bổ vượt số dư hoặc khác tenant → rollback; receipt chưa phân bổ không giảm nợ.",
+    "source": "backend/src/billing/billing-ledger.service.ts",
+    "refs": "UC-BIL-10, UC-BIL-11"
+  },
+  {
+    "id": "SD-07",
+    "title": "Giải phóng phân bổ và ghi hoàn tiền",
+    "kind": "sequence",
+    "description": "Đảo không xóa payment gốc. Chỉ hoàn phần khả dụng; hoàn sổ không thực hiện chuyển khoản ngân hàng.",
+    "source": "backend/src/billing/billing-ledger.service.ts",
+    "refs": "UC-BIL-12, UC-BIL-13"
+  },
+  {
+    "id": "SD-08",
+    "title": "Người thuê gửi và chủ trọ duyệt proof",
+    "kind": "sequence",
+    "description": "Hai tác nhân dùng hai phiên riêng. Proof lặp, đã duyệt hoặc vượt số dư mới → không ghi khoản thu trùng.",
+    "source": "backend/src/tenant-portal/tenant-portal.service.ts",
+    "refs": "UC-TEN-04, UC-BIL-14"
+  },
+  {
+    "id": "SD-09",
+    "title": "Hóa đơn thay thế và điều chỉnh",
+    "kind": "sequence",
+    "description": "Hai nhánh là lựa chọn, không chạy cả hai. Có lịch sử Payment → không replacement; credit không vượt dư.",
+    "source": "backend/src/billing/billing-ledger.service.ts",
+    "refs": "UC-BIL-06, UC-BIL-07"
+  },
+  {
+    "id": "SD-10",
+    "title": "Quyết toán và ghi nhận hoàn cọc",
+    "kind": "sequence",
+    "description": "Snapshot đổi hoặc lệnh trùng khác nội dung → dừng. Luồng settlement chỉ dành LANDLORD.",
+    "source": "backend/src/leases/settlements.service.ts",
+    "refs": "UC-TNT-08, UC-TNT-09"
+  },
+  {
+    "id": "SD-11",
+    "title": "Yêu cầu và thực thi vòng đời thuê",
+    "kind": "sequence",
+    "description": "Người quản lý là phiên riêng và có quyền. APPROVED không đồng nghĩa execute đã hoàn thành; phòng đích được kiểm tra lại.",
+    "source": "backend/src/tenant-lifecycle/tenant-lifecycle.service.ts",
+    "refs": "UC-TEN-07, UC-TNT-10, UC-TNT-11"
+  },
+  {
+    "id": "SD-12",
+    "title": "Bảo trì phân công và hoàn tất",
+    "kind": "sequence",
+    "description": "Không dùng quyền xem để phân công. Lỗi provider không làm giả thông báo đã nhận; tránh ghi chi phí trùng.",
+    "source": "backend/src/maintenance/maintenance.service.ts",
+    "refs": "UC-TEN-06, UC-OPS-01, UC-OPS-02, UC-OPS-03"
+  },
+  {
+    "id": "SD-13",
+    "title": "Báo cáo tháng và CSV",
+    "kind": "sequence",
+    "description": "Không đồng nhất Payment ròng với toàn bộ Receipt; không mô tả clipboard thành XLSX/PDF đã lưu.",
+    "source": "backend/src/reports/reports.service.ts",
+    "refs": "UC-BIL-20, UC-BIL-21"
+  },
+  {
+    "id": "SD-14",
+    "title": "Đình chỉ tài khoản và thu hồi phiên",
+    "kind": "sequence",
+    "description": "Bảo vệ quản trị viên cuối và tác nhân theo policy. Restore không khôi phục token cũ; lỗi audit không được báo thành công.",
+    "source": "backend/src/admin/admin-console.service.ts",
+    "refs": "UC-ADM-04"
+  },
+  {
+    "id": "SD-15",
+    "title": "Inventory và chuyển sang kiểm duyệt",
+    "kind": "sequence",
+    "description": "Chỉ có quyền xem inventory không đủ duyệt tin; không sửa Room/Lease/Invoice từ card inventory.",
+    "source": "backend/src/admin/admin.service.ts",
+    "refs": "UC-ADM-08, UC-ADM-11"
+  },
+  {
+    "id": "SD-16",
+    "title": "Đối soát khoản thu maker checker",
+    "kind": "sequence",
+    "description": "Checker dùng phiên khác; maker không tự duyệt. Không match riêng từng allocation để nhân đôi khoản nhận.",
+    "source": "backend/src/platform/finance-reconciliation.service.ts",
+    "refs": "UC-ADM-15"
+  },
+  {
+    "id": "SD-17",
+    "title": "Chatbot truy xuất nguồn theo quyền",
+    "kind": "sequence",
+    "description": "Controller chỉ LANDLORD. Không có nguồn/model sẵn sàng → nói rõ giới hạn; không tự bịa số liệu hoặc thực thi lệnh ghi.",
+    "source": "backend/src/chatbot/chatbot.service.ts",
+    "refs": "UC-SUP-06"
+  },
+  {
+    "id": "SD-18",
+    "title": "Duyệt xác minh chủ trọ theo hồ sơ hỗ trợ",
+    "kind": "sequence",
+    "description": "Khi APPROVED phải có chủ trọ hoạt động và chứng cứ SUPPORT_CLEAN. Xung đột version hoặc chứng cứ không hợp lệ: rollback, đọc lại hồ sơ.",
+    "source": "backend/src/admin/admin-verification.service.ts",
+    "refs": "UC-ADM-18"
+  },
+  {
+    "id": "SD-19",
+    "title": "Gán gói sử dụng và lưu lịch sử không ghi doanh thu",
+    "kind": "sequence",
+    "description": "Transaction thất bại phải giữ đăng ký cũ. ADMINISTRATIVE_ENTITLEMENTS và financialEffect=NONE: không tạo Payment, hóa đơn thuê hoặc doanh thu nền tảng.",
+    "source": "backend/src/admin/admin-plans.service.ts",
+    "refs": "UC-ADM-20, UC-ADM-21"
+  },
+  {
+    "id": "OD-01",
+    "title": "Đối tượng khoản thu và hóa đơn thanh toán một phần",
+    "kind": "object",
+    "description": "Ví dụ giả định: 3.000.000 đồng nhận, 2.500.000 phân bổ, 500.000 còn khả dụng; công nợ hóa đơn còn 1.500.000 đồng.",
+    "source": "backend/prisma/schema.prisma"
+  }
+]

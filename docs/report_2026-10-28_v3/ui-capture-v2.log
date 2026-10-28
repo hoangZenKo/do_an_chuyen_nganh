@@ -1,0 +1,21 @@
+00:00 +0: loading /tmp/rental-report-v2-20261028/capture-tests/room_map_dashboard_test.dart
+00:00 +0: /tmp/rental-report-v2-20261028/capture-tests/room_map_dashboard_test.dart: (setUpAll)
+00:00 +0: /tmp/rental-report-v2-20261028/capture-tests/room_map_dashboard_test.dart: loads real floor data and selects the overdue room
+00:01 +1: /tmp/rental-report-v2-20261028/capture-tests/room_map_dashboard_test.dart: (tearDownAll)
+00:01 +1: loading /tmp/rental-report-v2-20261028/capture-tests/properties_test.dart
+00:01 +1: /tmp/rental-report-v2-20261028/capture-tests/properties_test.dart: PropertiesListScreen renders property cards and updates the selected property
+00:03 +2: /tmp/rental-report-v2-20261028/capture-tests/properties_test.dart: PropertyFormScreen prefills and updates an existing property
+00:04 +3: loading /tmp/rental-report-v2-20261028/capture-tests/room_detail_screen_test.dart
+00:04 +3: /tmp/rental-report-v2-20261028/capture-tests/room_detail_screen_test.dart: room detail renders vacant room with no leases
+00:05 +4: loading /tmp/rental-report-v2-20261028/capture-tests/lease_settlement_screen_test.dart
+00:06 +4: /tmp/rental-report-v2-20261028/capture-tests/lease_settlement_screen_test.dart: confirms on mobile without implicitly refunding the deposit
+00:08 +5: /tmp/rental-report-v2-20261028/capture-tests/lease_settlement_screen_test.dart: records the refund only after receipt details and explicit confirmation
+00:08 +6: loading /tmp/rental-report-v2-20261028/capture-tests/listings_screen_test.dart
+00:09 +6: /tmp/rental-report-v2-20261028/capture-tests/listings_screen_test.dart: browse, search and detail use actual repository data
+00:12 +7: loading /tmp/rental-report-v2-20261028/capture-tests/tenant_p1_screens_test.dart
+00:13 +7: /tmp/rental-report-v2-20261028/capture-tests/tenant_p1_screens_test.dart: a paid payment link with a remaining balance is not paid in full
+00:13 +8: /tmp/rental-report-v2-20261028/capture-tests/tenant_p1_screens_test.dart: tenant acknowledges an announcement only on explicit action
+00:15 +9: loading /tmp/rental-report-v2-20261028/capture-tests/billing_receipts_screen_test.dart
+00:17 +9: /tmp/rental-report-v2-20261028/capture-tests/billing_receipts_screen_test.dart: shows the empty receipt state without overflowing a mobile viewport
+00:17 +10: /tmp/rental-report-v2-20261028/capture-tests/billing_receipts_screen_test.dart: prevents allocating more than the receipt and preserves one key across retries
+00:18 +11: All tests passed!

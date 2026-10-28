@@ -1,0 +1,15 @@
+digraph G {
+graph [bgcolor="white",rankdir=TB,nodesep=0.4,ranksep=0.5,pad=0.2];
+node [fontname="Times New Roman", fontsize=17, color="black", fontcolor="black", style="filled", fillcolor="white", penwidth=1.1];
+edge [fontname="Times New Roman", fontsize=14, color="black", arrowsize=0.7, penwidth=0.9];
+r [shape=box,label="receipt01: BillingReceipt\namount=3.000.000; available=500.000"];
+a [shape=box,label="alloc01: PaymentAllocation\namount=2.500.000; releasedAt=null"];
+p [shape=box,label="payment01: Payment\namount=2.500.000; type=PAYMENT"];
+i [shape=box,label="invoice01: Invoice\ntotalAmount=4.000.000\npaidAmount=2.500.000; status=PARTIAL"];
+t [shape=box,label="tenant01: Tenant\nHồ sơ giả định, không phải dữ liệu thật"];
+r -> a [label="allocations"];
+a -> p [label="payment"];
+a -> i [label="invoice"];
+r -> t [label="tenant"];
+i -> t [label="tenant"];
+}

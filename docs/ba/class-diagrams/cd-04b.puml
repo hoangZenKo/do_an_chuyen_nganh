@@ -1,0 +1,64 @@
+@startuml
+hide empty methods
+skinparam classAttributeIconSize 0
+skinparam shadowing false
+skinparam defaultFontName Arial
+title CD-04B Thanh toán và minh chứng
+class Payment {
+  id: String {id}
+  amount: Int
+  method: PaymentMethod
+  type: PaymentType
+  paidAt: DateTime
+}
+class PaymentProof {
+  id: String {id}
+  amount: Int
+  method: PaymentMethod
+  status: PaymentProofStatus
+  submittedAt: DateTime
+  reviewedAt: DateTime [0..1]
+  reviewNote: String [0..1]
+  proofImageUrls: String [0..*]
+}
+class User <<reference>> {
+  id: String {id}
+  fullName: String
+}
+class Invoice <<reference>> {
+  id: String {id}
+  status: InvoiceStatus
+}
+class Tenant <<reference>> {
+  id: String {id}
+  fullName: String
+}
+enum InvoiceStatus {
+  UNPAID
+  PARTIAL
+  PAID
+  CANCELLED
+}
+enum PaymentMethod {
+  CASH
+  BANK_TRANSFER
+  OTHER
+}
+enum PaymentProofStatus {
+  PENDING
+  APPROVED
+  REJECTED
+}
+enum PaymentType {
+  PAYMENT
+  REVERSAL
+}
+PaymentProof "0..*\npaymentProofs" -- "1\ninvoice" Invoice
+PaymentProof "0..*\npaymentProofs" -- "1\ntenant" Tenant
+PaymentProof "0..*\nreviewedPaymentProofs" -- "0..1\nreviewedBy" User
+Payment "0..*\npayments" -- "1\ninvoice" Invoice
+Payment "0..1\nreversalPayment" -- "0..1\nreversalOfPayment" Payment
+legend bottom
+Đường liền: association. <<IDRef>>: chỉ tham chiếu bằng mã, không phải association.
+endlegend
+@enduml

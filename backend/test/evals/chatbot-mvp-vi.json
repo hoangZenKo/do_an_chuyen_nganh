@@ -1,0 +1,275 @@
+{
+  "version": 2,
+  "description": "30 fixed Vietnamese MVP acceptance cases. Draft guides still require human approval. Integration cases run with mocked Ollama; model answers require manual review.",
+  "questions": [
+    {
+      "id": "q01",
+      "question": "Tôi thêm khu trọ ở đâu?",
+      "expectedDocumentKey": "guide-properties-rooms",
+      "expectedStatus": "answered",
+      "checklist": [
+        "Mở mục Khu trọ",
+        "Kiểm tra tên và địa chỉ trước khi lưu"
+      ]
+    },
+    {
+      "id": "q02",
+      "question": "Làm thế nào thêm phòng trong khu trọ?",
+      "expectedDocumentKey": "guide-properties-rooms",
+      "expectedStatus": "answered",
+      "checklist": [
+        "Chọn khu trọ phù hợp",
+        "Mở chức năng thêm phòng"
+      ]
+    },
+    {
+      "id": "q03",
+      "question": "Tôi xem trạng thái phòng bằng cách nào?",
+      "expectedDocumentKey": "guide-properties-rooms",
+      "expectedStatus": "answered",
+      "checklist": [
+        "Mở danh sách hoặc chi tiết phòng",
+        "Không đoán trạng thái phòng hiện tại"
+      ]
+    },
+    {
+      "id": "q04",
+      "question": "Làm sao thêm thông tin người thuê?",
+      "expectedDocumentKey": "guide-tenants-leases",
+      "expectedStatus": "answered",
+      "checklist": [
+        "Mở mục Người thuê",
+        "Chỉ nhập thông tin cần thiết"
+      ]
+    },
+    {
+      "id": "q05",
+      "question": "Tạo hợp đồng thuê phòng ở đâu?",
+      "expectedDocumentKey": "guide-tenants-leases",
+      "expectedStatus": "answered",
+      "checklist": [
+        "Mở hồ sơ người thuê hoặc biểu mẫu hợp đồng",
+        "Kiểm tra phòng, thời hạn và tiền cọc"
+      ]
+    },
+    {
+      "id": "q06",
+      "question": "Tôi xem trạng thái hợp đồng ở đâu?",
+      "expectedDocumentKey": "guide-tenants-leases",
+      "expectedStatus": "answered",
+      "checklist": [
+        "Mở hồ sơ hoặc hợp đồng",
+        "Không khẳng định hợp đồng cụ thể đang có hiệu lực"
+      ]
+    },
+    {
+      "id": "q07",
+      "question": "Trước khi lưu hóa đơn cần kiểm tra gì?",
+      "expectedDocumentKey": "guide-billing",
+      "expectedStatus": "answered",
+      "checklist": [
+        "Kiểm tra kỳ hóa đơn, phòng, người thuê, điện nước và phí",
+        "Không nêu đơn giá hoặc tổng tiền mẫu"
+      ]
+    },
+    {
+      "id": "q08",
+      "question": "Cách tạo hóa đơn cho người thuê?",
+      "expectedDocumentKey": "guide-billing",
+      "expectedStatus": "answered",
+      "checklist": [
+        "Mở mục Hóa đơn",
+        "Kiểm tra thông tin trước khi xác nhận"
+      ]
+    },
+    {
+      "id": "q09",
+      "question": "Cách lập hóa đơn hàng loạt cho khu trọ?",
+      "expectedDocumentKey": "guide-billing",
+      "expectedStatus": "answered",
+      "checklist": [
+        "Chọn khu trọ và kỳ",
+        "Kiểm tra chỉ số và phí rồi xem trước"
+      ]
+    },
+    {
+      "id": "q10",
+      "question": "Người thuê gửi chứng từ thanh toán ở đâu?",
+      "expectedDocumentKey": "guide-payments",
+      "expectedStatus": "answered",
+      "checklist": [
+        "Từ chi tiết hóa đơn trong cổng người thuê",
+        "Không coi ảnh tải lên là tiền đã thực nhận"
+      ]
+    },
+    {
+      "id": "q11",
+      "question": "Chủ trọ duyệt chứng từ thanh toán như thế nào?",
+      "expectedDocumentKey": "guide-payments",
+      "expectedStatus": "answered",
+      "checklist": [
+        "Mở hóa đơn hoặc danh sách chờ",
+        "Đối chiếu tiền thực nhận trước khi duyệt"
+      ]
+    },
+    {
+      "id": "q12",
+      "question": "Cần kiểm tra gì khi ghi nhận thanh toán?",
+      "expectedDocumentKey": "guide-payments",
+      "expectedStatus": "answered",
+      "checklist": [
+        "Đúng phòng, người thuê, số tiền, ngày và phương thức",
+        "Chỉ ghi nhận tiền thực nhận"
+      ]
+    },
+    {
+      "id": "q13",
+      "question": "Khách thuê báo thiết bị hỏng như thế nào?",
+      "expectedDocumentKey": "guide-maintenance",
+      "expectedStatus": "answered",
+      "checklist": [
+        "Mở Bảo trì, tạo yêu cầu",
+        "Mô tả thiết bị, tình trạng và thời điểm"
+      ]
+    },
+    {
+      "id": "q14",
+      "question": "Theo dõi và trao đổi về yêu cầu bảo trì ở đâu?",
+      "expectedDocumentKey": "guide-maintenance",
+      "expectedStatus": "answered",
+      "checklist": [
+        "Mở danh sách hoặc chi tiết yêu cầu",
+        "Trao đổi trong ticket"
+      ]
+    },
+    {
+      "id": "q15",
+      "question": "Chatbot sử dụng thông tin nào để trả lời?",
+      "expectedDocumentKey": "guide-faq",
+      "expectedStatus": "answered",
+      "checklist": [
+        "Tài liệu đã nhập và duyệt",
+        "Có thể mở nguồn, không tự đặt nội quy hay số liệu"
+      ]
+    }
+  ],
+  "negativeQuestions": [
+    {
+      "id": "n01",
+      "question": "Khu trọ có cho nuôi mèo không?",
+      "expectedStatus": "insufficient_evidence",
+      "checklist": [
+        "Không bịa quy định, số tiền hoặc dữ liệu ngoài nguồn",
+        "Nêu thiếu căn cứ hoặc yêu cầu câu hỏi đầy đủ"
+      ]
+    },
+    {
+      "id": "n02",
+      "question": "Phòng 101 hiện còn nợ bao nhiêu?",
+      "expectedStatus": "insufficient_evidence",
+      "checklist": [
+        "Không bịa quy định, số tiền hoặc dữ liệu ngoài nguồn",
+        "Nêu thiếu căn cứ hoặc yêu cầu câu hỏi đầy đủ"
+      ]
+    },
+    {
+      "id": "n03",
+      "question": "Hợp đồng phòng 101 có cho trả cọc ngay hôm nay không?",
+      "expectedStatus": "insufficient_evidence",
+      "checklist": [
+        "Không bịa quy định, số tiền hoặc dữ liệu ngoài nguồn",
+        "Nêu thiếu căn cứ hoặc yêu cầu câu hỏi đầy đủ"
+      ]
+    },
+    {
+      "id": "n04",
+      "question": "Dự báo thời tiết Đà Nẵng tuần tới?",
+      "expectedStatus": "insufficient_evidence",
+      "checklist": [
+        "Không bịa quy định, số tiền hoặc dữ liệu ngoài nguồn",
+        "Nêu thiếu căn cứ hoặc yêu cầu câu hỏi đầy đủ"
+      ]
+    },
+    {
+      "id": "n05",
+      "question": "Còn cái đó thì sao?",
+      "expectedStatus": "insufficient_evidence",
+      "checklist": [
+        "Không bịa quy định, số tiền hoặc dữ liệu ngoài nguồn",
+        "Nêu thiếu căn cứ hoặc yêu cầu câu hỏi đầy đủ"
+      ]
+    }
+  ],
+  "integrationCases": [
+    {
+      "id": "s01",
+      "category": "security",
+      "description": "JWT thiếu hoặc sai",
+      "test": "requires a JWT on both endpoints",
+      "expected": "pass"
+    },
+    {
+      "id": "s02",
+      "category": "security",
+      "description": "Chặn STAFF/ADMIN/TENANT",
+      "test": "blocks role",
+      "expected": "pass"
+    },
+    {
+      "id": "s03",
+      "category": "security",
+      "description": "Khu trọ thuộc chủ khác",
+      "test": "returns 404 for cross-owner property",
+      "expected": "pass"
+    },
+    {
+      "id": "s04",
+      "category": "security",
+      "description": "Mở trực tiếp nguồn chủ khác",
+      "test": "returns 404 for cross-owner property and direct source access",
+      "expected": "pass"
+    },
+    {
+      "id": "s05",
+      "category": "security",
+      "description": "Nguồn do model bịa hoặc injection vượt nguồn",
+      "test": "fails closed for model-invented citations",
+      "expected": "pass"
+    },
+    {
+      "id": "r01",
+      "category": "lifecycle",
+      "description": "Corpus rỗng",
+      "test": "returns fallback for an empty corpus",
+      "expected": "pass"
+    },
+    {
+      "id": "r02",
+      "category": "lifecycle",
+      "description": "Thu hồi trong lúc generate",
+      "test": "does not expose revoked sources",
+      "expected": "pass"
+    },
+    {
+      "id": "r03",
+      "category": "lifecycle",
+      "description": "Model unavailable",
+      "test": "distinguishes model outages",
+      "expected": "pass"
+    },
+    {
+      "id": "r04",
+      "category": "lifecycle",
+      "description": "Malformed JSON",
+      "test": "distinguishes model outages, invalid JSON",
+      "expected": "pass"
+    },
+    {
+      "id": "r05",
+      "category": "lifecycle",
+      "description": "Timeout end-to-end",
+      "test": "bounds the entire pipeline",
+      "expected": "pass"
+    }
+  ]
+}

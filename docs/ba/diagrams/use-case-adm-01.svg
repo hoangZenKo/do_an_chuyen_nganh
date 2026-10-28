@@ -1,0 +1,68 @@
+<?xml version='1.0' encoding='utf-8'?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="1295" viewBox="0 0 1000 1295" role="img" aria-labelledby="diagram-title diagram-description">
+  <title id="diagram-title">D-ADM-01 Quản trị hệ thống</title>
+  <desc id="diagram-description">Actor nằm ngoài biên hệ thống. Đường liền biểu thị actor tham gia UC. Khung nét đứt chỉ nhóm phân rã theo UC tổng quan. Các UC: UC-ADM-01, UC-ADM-02.01, UC-ADM-02.02, UC-ADM-02.03, UC-ADM-02.04, UC-ADM-03.01, UC-ADM-03.02, UC-ADM-03.03</desc>
+  <rect x="210" y="28" width="755" height="1183" fill="none" stroke="#39414B" stroke-width="1.2" />
+  <text x="587.5" y="58" text-anchor="middle" dominant-baseline="central" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#222222">Hệ thống quản lý nhà trọ</text>
+  <polyline points="116.00,150.00 320.00,177.00" fill="none" stroke="#737B85" stroke-width="1.4" />
+  <rect x="248" y="91" width="693" height="166" fill="none" stroke="#A7AFB8" stroke-width="1.2" stroke-dasharray="7 5" />
+  <text x="264" y="115" text-anchor="start" dominant-baseline="central" font-family="Arial, sans-serif" font-size="21" font-weight="bold" fill="#222222">UC-ADM-01 Xem tổng quan hệ thống</text>
+  <circle cx="90" cy="123.0" r="13" fill="white" stroke="#222222" stroke-width="1.6" />
+  <polyline points="90,136.0 90,173.0" fill="none" stroke="#222222" stroke-width="1.6" />
+  <polyline points="65,150.0 115,150.0" fill="none" stroke="#222222" stroke-width="1.6" />
+  <polyline points="90,173.0 68,197.0" fill="none" stroke="#222222" stroke-width="1.6" />
+  <polyline points="90,173.0 112,197.0" fill="none" stroke="#222222" stroke-width="1.6" />
+  <text x="90" y="218.0" text-anchor="middle" dominant-baseline="central" font-family="Arial, sans-serif" font-size="23" font-weight="bold" fill="#222222">Admin hệ</text>
+  <text x="90" y="244.0" text-anchor="middle" dominant-baseline="central" font-family="Arial, sans-serif" font-size="23" font-weight="bold" fill="#222222">thống</text>
+  <ellipse cx="610" cy="177" rx="290.0" ry="49.0" fill="white" stroke="#303740" stroke-width="1.6" data-uc-id="UC-ADM-01" />
+  <text x="610" y="161" text-anchor="middle" dominant-baseline="central" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#43505F">UC-ADM-01</text>
+  <text x="610" y="192" text-anchor="middle" dominant-baseline="central" font-family="Arial, sans-serif" font-size="24" font-weight="normal" fill="#222222">Xem tổng quan hệ thống</text>
+  <polyline points="116.00,504.00 320.00,363.00" fill="none" stroke="#737B85" stroke-width="1.4" />
+  <polyline points="116.00,504.00 320.00,475.00" fill="none" stroke="#737B85" stroke-width="1.4" />
+  <polyline points="116.00,504.00 320.00,587.00" fill="none" stroke="#737B85" stroke-width="1.4" />
+  <polyline points="116.00,504.00 320.00,699.00" fill="none" stroke="#737B85" stroke-width="1.4" />
+  <rect x="248" y="277" width="693" height="502" fill="none" stroke="#A7AFB8" stroke-width="1.2" stroke-dasharray="7 5" />
+  <text x="264" y="301" text-anchor="start" dominant-baseline="central" font-family="Arial, sans-serif" font-size="21" font-weight="bold" fill="#222222">UC-ADM-02 Quản lý tài khoản chủ trọ</text>
+  <circle cx="90" cy="477.0" r="13" fill="white" stroke="#222222" stroke-width="1.6" />
+  <polyline points="90,490.0 90,527.0" fill="none" stroke="#222222" stroke-width="1.6" />
+  <polyline points="65,504.0 115,504.0" fill="none" stroke="#222222" stroke-width="1.6" />
+  <polyline points="90,527.0 68,551.0" fill="none" stroke="#222222" stroke-width="1.6" />
+  <polyline points="90,527.0 112,551.0" fill="none" stroke="#222222" stroke-width="1.6" />
+  <text x="90" y="572.0" text-anchor="middle" dominant-baseline="central" font-family="Arial, sans-serif" font-size="23" font-weight="bold" fill="#222222">Admin hệ</text>
+  <text x="90" y="598.0" text-anchor="middle" dominant-baseline="central" font-family="Arial, sans-serif" font-size="23" font-weight="bold" fill="#222222">thống</text>
+  <ellipse cx="610" cy="363" rx="290.0" ry="49.0" fill="white" stroke="#303740" stroke-width="1.6" data-uc-id="UC-ADM-02.01" />
+  <text x="610" y="347" text-anchor="middle" dominant-baseline="central" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#43505F">UC-ADM-02.01</text>
+  <text x="610" y="378" text-anchor="middle" dominant-baseline="central" font-family="Arial, sans-serif" font-size="24" font-weight="normal" fill="#222222">Tra cứu tài khoản chủ trọ</text>
+  <ellipse cx="610" cy="475" rx="290.0" ry="49.0" fill="white" stroke="#303740" stroke-width="1.6" data-uc-id="UC-ADM-02.02" />
+  <text x="610" y="459" text-anchor="middle" dominant-baseline="central" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#43505F">UC-ADM-02.02</text>
+  <text x="610" y="490" text-anchor="middle" dominant-baseline="central" font-family="Arial, sans-serif" font-size="24" font-weight="normal" fill="#222222">Tạo tài khoản chủ trọ</text>
+  <ellipse cx="610" cy="587" rx="290.0" ry="49.0" fill="white" stroke="#303740" stroke-width="1.6" data-uc-id="UC-ADM-02.03" />
+  <text x="610" y="571" text-anchor="middle" dominant-baseline="central" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#43505F">UC-ADM-02.03</text>
+  <text x="610" y="602" text-anchor="middle" dominant-baseline="central" font-family="Arial, sans-serif" font-size="24" font-weight="normal" fill="#222222">Cập nhật thông tin tài khoản chủ trọ</text>
+  <ellipse cx="610" cy="699" rx="290.0" ry="49.0" fill="white" stroke="#303740" stroke-width="1.6" data-uc-id="UC-ADM-02.04" />
+  <text x="610" y="683" text-anchor="middle" dominant-baseline="central" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#43505F">UC-ADM-02.04</text>
+  <text x="610" y="714" text-anchor="middle" dominant-baseline="central" font-family="Arial, sans-serif" font-size="24" font-weight="normal" fill="#222222">Khóa hoặc mở khóa tài khoản chủ trọ</text>
+  <polyline points="116.00,970.00 320.00,885.00" fill="none" stroke="#737B85" stroke-width="1.4" />
+  <polyline points="116.00,970.00 320.00,997.00" fill="none" stroke="#737B85" stroke-width="1.4" />
+  <polyline points="116.00,970.00 320.00,1109.00" fill="none" stroke="#737B85" stroke-width="1.4" />
+  <rect x="248" y="799" width="693" height="390" fill="none" stroke="#A7AFB8" stroke-width="1.2" stroke-dasharray="7 5" />
+  <text x="264" y="823" text-anchor="start" dominant-baseline="central" font-family="Arial, sans-serif" font-size="21" font-weight="bold" fill="#222222">UC-ADM-03 Quản lý khu trọ toàn hệ thống</text>
+  <circle cx="90" cy="943.0" r="13" fill="white" stroke="#222222" stroke-width="1.6" />
+  <polyline points="90,956.0 90,993.0" fill="none" stroke="#222222" stroke-width="1.6" />
+  <polyline points="65,970.0 115,970.0" fill="none" stroke="#222222" stroke-width="1.6" />
+  <polyline points="90,993.0 68,1017.0" fill="none" stroke="#222222" stroke-width="1.6" />
+  <polyline points="90,993.0 112,1017.0" fill="none" stroke="#222222" stroke-width="1.6" />
+  <text x="90" y="1038.0" text-anchor="middle" dominant-baseline="central" font-family="Arial, sans-serif" font-size="23" font-weight="bold" fill="#222222">Admin hệ</text>
+  <text x="90" y="1064.0" text-anchor="middle" dominant-baseline="central" font-family="Arial, sans-serif" font-size="23" font-weight="bold" fill="#222222">thống</text>
+  <ellipse cx="610" cy="885" rx="290.0" ry="49.0" fill="white" stroke="#303740" stroke-width="1.6" data-uc-id="UC-ADM-03.01" />
+  <text x="610" y="869" text-anchor="middle" dominant-baseline="central" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#43505F">UC-ADM-03.01</text>
+  <text x="610" y="900" text-anchor="middle" dominant-baseline="central" font-family="Arial, sans-serif" font-size="24" font-weight="normal" fill="#222222">Tra cứu khu trọ toàn hệ thống</text>
+  <ellipse cx="610" cy="997" rx="290.0" ry="49.0" fill="white" stroke="#303740" stroke-width="1.6" data-uc-id="UC-ADM-03.02" />
+  <text x="610" y="981" text-anchor="middle" dominant-baseline="central" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#43505F">UC-ADM-03.02</text>
+  <text x="610" y="1012" text-anchor="middle" dominant-baseline="central" font-family="Arial, sans-serif" font-size="24" font-weight="normal" fill="#222222">Tạo khu trọ cho chủ trọ</text>
+  <ellipse cx="610" cy="1109" rx="290.0" ry="49.0" fill="white" stroke="#303740" stroke-width="1.6" data-uc-id="UC-ADM-03.03" />
+  <text x="610" y="1080" text-anchor="middle" dominant-baseline="central" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#43505F">UC-ADM-03.03</text>
+  <text x="610" y="1109" text-anchor="middle" dominant-baseline="central" font-family="Arial, sans-serif" font-size="24" font-weight="normal" fill="#222222">Cập nhật thông tin khu trọ toàn hệ</text>
+  <text x="610" y="1137" text-anchor="middle" dominant-baseline="central" font-family="Arial, sans-serif" font-size="24" font-weight="normal" fill="#222222">thống</text>
+  <text x="500" y="1244" text-anchor="middle" dominant-baseline="central" font-family="Arial, sans-serif" font-size="20" font-weight="normal" fill="#222222">Đường liền là liên kết actor với UC   Khung nét đứt là nhóm UC tổng quan</text>
+</svg>

@@ -1,0 +1,2367 @@
+[
+  {
+    "id": "UC-SYS-01",
+    "code": "SYS-01",
+    "group": "SYS",
+    "title": "Đăng ký tài khoản chủ trọ",
+    "actor": "Khách",
+    "goal": "Tạo User LANDLORD và nhận phiên đăng nhập",
+    "bindings": [
+      "AuthController.register"
+    ],
+    "notes": "Tạo User và cấp phiên là hai đơn vị ghi khác nhau; lỗi cấp phiên sau khi tạo có thể để lại User.",
+    "status": "xác nhận"
+  },
+  {
+    "id": "UC-SYS-02",
+    "code": "SYS-02",
+    "group": "SYS",
+    "title": "Đăng ký tài khoản tìm phòng",
+    "actor": "Khách",
+    "goal": "Tạo User TENANT chưa tự sinh Tenant hay Lease",
+    "bindings": [
+      "AuthController.registerSeeker"
+    ],
+    "notes": "",
+    "status": "xác nhận"
+  },
+  {
+    "id": "UC-SYS-03",
+    "code": "SYS-03",
+    "group": "SYS",
+    "title": "Đăng nhập",
+    "actor": "Người có tài khoản",
+    "goal": "Nhận phiên đúng danh tính và điều hướng theo vai trò",
+    "bindings": [
+      "AuthController.login"
+    ],
+    "notes": "",
+    "status": "xác nhận"
+  },
+  {
+    "id": "UC-SYS-05.1",
+    "code": "SYS-05.1",
+    "group": "SYS",
+    "title": "Đăng xuất phiên hiện tại",
+    "actor": "Người đã đăng nhập",
+    "goal": "Thu hồi phiên gắn refresh token và rời phiên cục bộ",
+    "bindings": [
+      "AuthController.logout"
+    ],
+    "notes": "",
+    "status": "xác nhận"
+  },
+  {
+    "id": "UC-SYS-05.2",
+    "code": "SYS-05.2",
+    "group": "SYS",
+    "title": "Xem và thu hồi các phiên của mình",
+    "actor": "Người đã đăng nhập",
+    "goal": "Kiểm soát thiết bị đang truy cập tài khoản",
+    "bindings": [
+      "AuthController.sessions",
+      "AuthController.revokeSession",
+      "AuthController.revokeOtherSessions"
+    ],
+    "notes": "",
+    "status": "xác nhận"
+  },
+  {
+    "id": "UC-SYS-06",
+    "code": "SYS-06",
+    "group": "SYS",
+    "title": "Khôi phục mật khẩu bằng liên kết một lần",
+    "actor": "Người có tài khoản",
+    "goal": "Đặt lại mật khẩu qua token giao nhận riêng",
+    "bindings": [
+      "AccountAccessController.forgot",
+      "AccountAccessController.redeem"
+    ],
+    "notes": "",
+    "status": "xác nhận"
+  },
+  {
+    "id": "UC-SYS-07",
+    "code": "SYS-07",
+    "group": "SYS",
+    "title": "Đổi mật khẩu khi đang đăng nhập",
+    "actor": "Người đã đăng nhập",
+    "goal": "Thay mật khẩu sau khi xác minh mật khẩu hiện tại",
+    "bindings": [
+      "AuthController.changePassword"
+    ],
+    "notes": "",
+    "status": "xác nhận"
+  },
+  {
+    "id": "UC-SYS-08",
+    "code": "SYS-08",
+    "group": "SYS",
+    "title": "Kích hoạt tài khoản người thuê từ lời mời",
+    "actor": "Người nhận lời mời",
+    "goal": "Tạo User TENANT gắn Tenant đã được mời",
+    "bindings": [
+      "TenantInvitesController.accept"
+    ],
+    "notes": "",
+    "status": "xác nhận"
+  },
+  {
+    "id": "UC-SYS-09",
+    "code": "SYS-09",
+    "group": "SYS",
+    "title": "Kích hoạt tài khoản nhân viên từ lời mời",
+    "actor": "Người nhận lời mời",
+    "goal": "Nhận tài khoản STAFF và phạm vi đã được chủ trọ cấp",
+    "bindings": [
+      "StaffController.accept"
+    ],
+    "notes": "Bổ sung vì bản V3 chưa tách mục tiêu kích hoạt STAFF.",
+    "status": "xác nhận"
+  },
+  {
+    "id": "UC-DIS-01",
+    "code": "DIS-01",
+    "group": "DIS",
+    "title": "Tìm và lọc tin phòng công khai",
+    "actor": "Khách hoặc Người tìm phòng",
+    "goal": "Tìm tin công khai theo bộ lọc và cơ sở trường",
+    "bindings": [
+      "PublicListingsController.list",
+      "PublicCampusesController.list"
+    ],
+    "notes": "",
+    "status": "chưa đủ bằng chứng đối chiếu chi tiết"
+  },
+  {
+    "id": "UC-DIS-02",
+    "code": "DIS-02",
+    "group": "DIS",
+    "title": "Xem chi tiết tin và đánh giá công khai",
+    "actor": "Khách hoặc Người tìm phòng",
+    "goal": "Đọc nội dung tin còn hiển thị cùng đánh giá được duyệt",
+    "bindings": [
+      "PublicListingsController.detail",
+      "PublicRoomReviewsController.list"
+    ],
+    "notes": "",
+    "status": "chưa đủ bằng chứng đối chiếu chi tiết"
+  },
+  {
+    "id": "UC-DIS-03",
+    "code": "DIS-03",
+    "group": "DIS",
+    "title": "Lưu và bỏ lưu phòng yêu thích",
+    "actor": "TENANT",
+    "goal": "Duy trì danh sách tin quan tâm của mình",
+    "bindings": [
+      "HousingController.favorites",
+      "HousingController.favorite",
+      "HousingController.save",
+      "HousingController.remove"
+    ],
+    "notes": "",
+    "status": "chưa đủ bằng chứng đối chiếu chi tiết"
+  },
+  {
+    "id": "UC-DIS-04",
+    "code": "DIS-04",
+    "group": "DIS",
+    "title": "Lưu bộ lọc và theo dõi tin khớp",
+    "actor": "TENANT",
+    "goal": "Lưu tối đa 10 tìm kiếm và đọc cảnh báo kết quả mới",
+    "bindings": [
+      "SavedSearchesController.list",
+      "SavedSearchesController.create",
+      "SavedSearchesController.alerts",
+      "SavedSearchesController.read",
+      "SavedSearchesController.status",
+      "SavedSearchesController.remove"
+    ],
+    "notes": "Không có endpoint sửa filters của tìm kiếm đã lưu; chỉ tạo bật tắt xóa và đọc cảnh báo.",
+    "status": "chưa đủ bằng chứng đối chiếu chi tiết"
+  },
+  {
+    "id": "UC-DIS-05",
+    "code": "DIS-05",
+    "group": "DIS",
+    "title": "Soạn và sửa bản nháp tin cho thuê",
+    "actor": "LANDLORD",
+    "goal": "Chuẩn bị nội dung tin của phòng thuộc mình",
+    "bindings": [
+      "LandlordListingsController.list",
+      "LandlordListingsController.create",
+      "LandlordListingsController.update"
+    ],
+    "notes": "",
+    "status": "chưa đủ bằng chứng đối chiếu chi tiết"
+  },
+  {
+    "id": "UC-DIS-06.1",
+    "code": "DIS-06.1",
+    "group": "DIS",
+    "title": "Gửi tin cho thuê để kiểm duyệt",
+    "actor": "LANDLORD",
+    "goal": "Chuyển bản tin đủ điều kiện sang PENDING",
+    "bindings": [
+      "LandlordListingsController.submit"
+    ],
+    "notes": "",
+    "status": "chưa đủ bằng chứng đối chiếu chi tiết"
+  },
+  {
+    "id": "UC-DIS-06.2",
+    "code": "DIS-06.2",
+    "group": "DIS",
+    "title": "Ẩn tin cho thuê của mình",
+    "actor": "LANDLORD",
+    "goal": "Ngừng công khai tin mà không xóa lịch sử",
+    "bindings": [
+      "LandlordListingsController.hide"
+    ],
+    "notes": "",
+    "status": "chưa đủ bằng chứng đối chiếu chi tiết"
+  },
+  {
+    "id": "UC-DIS-06.3",
+    "code": "DIS-06.3",
+    "group": "DIS",
+    "title": "Xác nhận lại tình trạng còn phòng",
+    "actor": "LANDLORD",
+    "goal": "Ghi nhận lần xác nhận khả dụng của tin",
+    "bindings": [
+      "LandlordListingsController.confirm"
+    ],
+    "notes": "",
+    "status": "chưa đủ bằng chứng đối chiếu chi tiết"
+  },
+  {
+    "id": "UC-DIS-07",
+    "code": "DIS-07",
+    "group": "DIS",
+    "title": "Báo cáo tin phòng không phù hợp",
+    "actor": "TENANT",
+    "goal": "Gửi ListingReport để admin xử lý",
+    "bindings": [
+      "StudentListingsController.report"
+    ],
+    "notes": "",
+    "status": "chưa đủ bằng chứng đối chiếu chi tiết"
+  },
+  {
+    "id": "UC-DIS-08",
+    "code": "DIS-08",
+    "group": "DIS",
+    "title": "Quản lý khung giờ xem phòng",
+    "actor": "LANDLORD",
+    "goal": "Mở hoặc gỡ khung giờ cho lịch xem tin của mình",
+    "bindings": [
+      "HousingController.slots",
+      "HousingController.addSlot",
+      "HousingController.removeSlot"
+    ],
+    "notes": "",
+    "status": "chưa đủ bằng chứng đối chiếu chi tiết"
+  },
+  {
+    "id": "UC-DIS-09",
+    "code": "DIS-09",
+    "group": "DIS",
+    "title": "Đặt và theo dõi lịch xem phòng",
+    "actor": "TENANT",
+    "goal": "Gửi RoomViewing cho tin và lịch hợp lệ",
+    "bindings": [
+      "HousingController.book",
+      "HousingController.viewings",
+      "HousingController.viewing"
+    ],
+    "notes": "",
+    "status": "chưa đủ bằng chứng đối chiếu chi tiết"
+  },
+  {
+    "id": "UC-DIS-10",
+    "code": "DIS-10",
+    "group": "DIS",
+    "title": "Đổi lịch hủy và xử lý lịch xem",
+    "actor": "TENANT hoặc LANDLORD",
+    "goal": "Cập nhật lịch theo tác nhân trạng thái và version",
+    "bindings": [
+      "HousingController.reschedule",
+      "HousingController.update"
+    ],
+    "notes": "",
+    "status": "chưa đủ bằng chứng đối chiếu chi tiết"
+  },
+  {
+    "id": "UC-DIS-11",
+    "code": "DIS-11",
+    "group": "DIS",
+    "title": "Tạo hợp đồng từ lịch xem đã hoàn thành",
+    "actor": "LANDLORD",
+    "goal": "Chuyển lịch COMPLETED thành LEASED và ẩn tin",
+    "bindings": [
+      "HousingController.lease"
+    ],
+    "notes": "Không gộp bàn giao vào tạo hợp đồng; bàn giao nằm ở TNT-12.2 và TNT-12.3.",
+    "status": "chưa đủ bằng chứng đối chiếu chi tiết"
+  },
+  {
+    "id": "UC-DIS-12",
+    "code": "DIS-12",
+    "group": "DIS",
+    "title": "Viết sửa và rút đánh giá phòng đã thuê",
+    "actor": "TENANT",
+    "goal": "Gửi nội dung gắn hợp đồng đủ điều kiện để kiểm duyệt",
+    "bindings": [
+      "RoomReviewsController.context",
+      "RoomReviewsController.create",
+      "RoomReviewsController.update",
+      "RoomReviewsController.withdraw"
+    ],
+    "notes": "",
+    "status": "chưa đủ bằng chứng đối chiếu chi tiết"
+  },
+  {
+    "id": "UC-DIS-13.1",
+    "code": "DIS-13.1",
+    "group": "DIS",
+    "title": "Trả lời đánh giá phòng",
+    "actor": "LANDLORD",
+    "goal": "Gửi phản hồi của chủ trọ qua kiểm duyệt riêng",
+    "bindings": [
+      "RoomReviewsController.landlord",
+      "RoomReviewsController.reply"
+    ],
+    "notes": "",
+    "status": "chưa đủ bằng chứng đối chiếu chi tiết"
+  },
+  {
+    "id": "UC-DIS-13.2",
+    "code": "DIS-13.2",
+    "group": "DIS",
+    "title": "Gửi phản hồi về thử nghiệm tìm phòng",
+    "actor": "TENANT hoặc LANDLORD",
+    "goal": "Ghi PilotFeedback khi khu vực thử nghiệm được mở",
+    "bindings": [
+      "HousingController.pilot",
+      "HousingController.feedback"
+    ],
+    "notes": "",
+    "status": "chưa đủ bằng chứng đối chiếu chi tiết"
+  },
+  {
+    "id": "UC-DIS-14",
+    "code": "DIS-14",
+    "group": "DIS",
+    "title": "Xem thông báo hành trình tìm thuê",
+    "actor": "TENANT hoặc LANDLORD",
+    "goal": "Đọc thông báo lịch xem của chính tài khoản",
+    "bindings": [
+      "HousingController.notifications",
+      "HousingController.read"
+    ],
+    "notes": "",
+    "status": "chưa đủ bằng chứng đối chiếu chi tiết"
+  },
+  {
+    "id": "UC-DIS-15",
+    "code": "DIS-15",
+    "group": "DIS",
+    "title": "Xem quyết định và gửi kháng nghị kiểm duyệt",
+    "actor": "TENANT hoặc LANDLORD",
+    "goal": "Đề nghị xem lại quyết định thuộc tài nguyên của mình",
+    "bindings": [
+      "MyModerationController.decisions",
+      "MyModerationController.appeals",
+      "MyModerationController.appeal",
+      "MyModerationController.features"
+    ],
+    "notes": "",
+    "status": "chưa đủ bằng chứng đối chiếu chi tiết"
+  },
+  {
+    "id": "UC-OPT-01",
+    "code": "OPT-01",
+    "group": "OPT",
+    "title": "Xem dashboard và bản đồ phòng",
+    "actor": "LANDLORD hoặc STAFF có report.view",
+    "goal": "Theo dõi chỉ số và mở phòng trong phạm vi được cấp",
+    "bindings": [
+      "DashboardController.metrics"
+    ],
+    "notes": "",
+    "status": "chưa đủ bằng chứng đối chiếu chi tiết"
+  },
+  {
+    "id": "UC-OPT-02",
+    "code": "OPT-02",
+    "group": "OPT",
+    "title": "Tra cứu và chọn khu trọ",
+    "actor": "LANDLORD hoặc STAFF có property.view",
+    "goal": "Đọc khu trọ theo bộ lọc lifecycle và phạm vi",
+    "bindings": [
+      "PropertiesController.list",
+      "PropertiesController.getById"
+    ],
+    "notes": "",
+    "status": "chưa đủ bằng chứng đối chiếu chi tiết"
+  },
+  {
+    "id": "UC-OPT-03.1",
+    "code": "OPT-03.1",
+    "group": "OPT",
+    "title": "Tạo khu trọ",
+    "actor": "LANDLORD",
+    "goal": "Thêm Property chưa lưu trữ trong hạn mức gói",
+    "bindings": [
+      "PropertiesController.create"
+    ],
+    "notes": "",
+    "status": "chưa đủ bằng chứng đối chiếu chi tiết"
+  },
+  {
+    "id": "UC-OPT-03.2",
+    "code": "OPT-03.2",
+    "group": "OPT",
+    "title": "Cập nhật thông tin khu trọ",
+    "actor": "LANDLORD hoặc STAFF có property.manage",
+    "goal": "Sửa tên và địa chỉ khu thuộc phạm vi",
+    "bindings": [
+      "PropertiesController.update"
+    ],
+    "notes": "",
+    "status": "chưa đủ bằng chứng đối chiếu chi tiết"
+  },
+  {
+    "id": "UC-OPT-04.1",
+    "code": "OPT-04.1",
+    "group": "OPT",
+    "title": "Lưu trữ khu trọ",
+    "actor": "LANDLORD hoặc STAFF có property.manage",
+    "goal": "Đặt isArchived khi không còn hợp đồng ACTIVE",
+    "bindings": [
+      "PropertiesController.updateStatus"
+    ],
+    "notes": "",
+    "status": "chưa đủ bằng chứng đối chiếu chi tiết"
+  },
+  {
+    "id": "UC-OPT-04.2",
+    "code": "OPT-04.2",
+    "group": "OPT",
+    "title": "Khôi phục khu trọ đã lưu trữ",
+    "actor": "LANDLORD hoặc STAFF có property.manage",
+    "goal": "Bỏ lưu trữ sau kiểm tra hạn mức khu và phòng",
+    "bindings": [
+      "PropertiesController.updateStatus"
+    ],
+    "notes": "",
+    "status": "chưa đủ bằng chứng đối chiếu chi tiết"
+  },
+  {
+    "id": "UC-OPT-04.3",
+    "code": "OPT-04.3",
+    "group": "OPT",
+    "title": "Xóa khu trọ chưa có phòng và lịch sử xét duyệt",
+    "actor": "LANDLORD hoặc STAFF có property.manage",
+    "goal": "Xóa vật lý khi các ràng buộc phụ thuộc cho phép",
+    "bindings": [
+      "PropertiesController.remove"
+    ],
+    "notes": "",
+    "status": "chưa đủ bằng chứng đối chiếu chi tiết"
+  },
+  {
+    "id": "UC-OPT-05",
+    "code": "OPT-05",
+    "group": "OPT",
+    "title": "Tra cứu phòng và lịch sử liên quan",
+    "actor": "LANDLORD hoặc STAFF có room.view",
+    "goal": "Đọc phòng trong khu được cấp quyền",
+    "bindings": [
+      "PropertyRoomsController.list",
+      "RoomsController.getById"
+    ],
+    "notes": "",
+    "status": "chưa đủ bằng chứng đối chiếu chi tiết"
+  },
+  {
+    "id": "UC-OPT-06.1",
+    "code": "OPT-06.1",
+    "group": "OPT",
+    "title": "Tạo phòng",
+    "actor": "LANDLORD hoặc STAFF có room.manage",
+    "goal": "Thêm Room vào khu hoạt động trong hạn mức",
+    "bindings": [
+      "PropertyRoomsController.create"
+    ],
+    "notes": "",
+    "status": "chưa đủ bằng chứng đối chiếu chi tiết"
+  },
+  {
+    "id": "UC-OPT-06.2",
+    "code": "OPT-06.2",
+    "group": "OPT",
+    "title": "Cập nhật thông tin phòng",
+    "actor": "LANDLORD hoặc STAFF có room.manage",
+    "goal": "Sửa metadata không tự sửa giá thuê của hợp đồng cũ",
+    "bindings": [
+      "RoomsController.update"
+    ],
+    "notes": "",
+    "status": "chưa đủ bằng chứng đối chiếu chi tiết"
+  },
+  {
+    "id": "UC-OPT-07.1",
+    "code": "OPT-07.1",
+    "group": "OPT",
+    "title": "Đổi trạng thái sử dụng phòng",
+    "actor": "LANDLORD hoặc STAFF có room.manage",
+    "goal": "Đặt trạng thái phòng không trái hợp đồng và turnover",
+    "bindings": [
+      "RoomsController.update"
+    ],
+    "notes": "Cùng PATCH với sửa phòng nhưng mục tiêu đổi trạng thái được giữ riêng; không có endpoint status nghiệp vụ riêng.",
+    "status": "chưa đủ bằng chứng đối chiếu chi tiết"
+  },
+  {
+    "id": "UC-OPT-07.2",
+    "code": "OPT-07.2",
+    "group": "OPT",
+    "title": "Vô hiệu hóa hoặc khôi phục phòng",
+    "actor": "LANDLORD hoặc STAFF có room.manage",
+    "goal": "Đổi isActive và giữ lịch sử phòng",
+    "bindings": [
+      "RoomsController.updateStatus"
+    ],
+    "notes": "",
+    "status": "chưa đủ bằng chứng đối chiếu chi tiết"
+  },
+  {
+    "id": "UC-OPT-07.3",
+    "code": "OPT-07.3",
+    "group": "OPT",
+    "title": "Xóa phòng chưa có lịch sử nghiệp vụ",
+    "actor": "LANDLORD hoặc STAFF có room.manage",
+    "goal": "Xóa phòng sau kiểm tra hợp đồng chỉ số hóa đơn lịch xem turnover",
+    "bindings": [
+      "RoomsController.remove"
+    ],
+    "notes": "",
+    "status": "chưa đủ bằng chứng đối chiếu chi tiết"
+  },
+  {
+    "id": "UC-OPT-08.1",
+    "code": "OPT-08.1",
+    "group": "OPT",
+    "title": "Quản lý tài sản phòng",
+    "actor": "LANDLORD hoặc STAFF có room.manage",
+    "goal": "Duy trì RoomAsset của phòng thuộc phạm vi",
+    "bindings": [
+      "RoomsController.assets",
+      "RoomsController.createAsset",
+      "RoomsController.updateAsset",
+      "RoomsController.removeAsset"
+    ],
+    "notes": "",
+    "status": "chưa đủ bằng chứng đối chiếu chi tiết"
+  },
+  {
+    "id": "UC-OPT-08.2",
+    "code": "OPT-08.2",
+    "group": "OPT",
+    "title": "Theo dõi lịch kiểm tra phòng",
+    "actor": "LANDLORD hoặc STAFF có room.manage",
+    "goal": "Lập sửa hoàn tất hoặc xóa RoomInspection",
+    "bindings": [
+      "RoomsController.inspections",
+      "RoomsController.createInspection",
+      "RoomsController.updateInspection",
+      "RoomsController.completeInspection",
+      "RoomsController.removeInspection"
+    ],
+    "notes": "",
+    "status": "chưa đủ bằng chứng đối chiếu chi tiết"
+  },
+  {
+    "id": "UC-OPT-09",
+    "code": "OPT-09",
+    "group": "OPT",
+    "title": "Quản lý phiên bản phí dịch vụ phòng",
+    "actor": "LANDLORD hoặc STAFF có room.manage",
+    "goal": "Lưu lịch sử mức phí và tháng hiệu lực tại phòng",
+    "bindings": [
+      "RoomsController.serviceFees",
+      "RoomsController.createServiceFee",
+      "RoomsController.updateServiceFee",
+      "RoomsController.tariffVersions",
+      "RoomsController.removeServiceFee"
+    ],
+    "notes": "",
+    "status": "chưa đủ bằng chứng đối chiếu chi tiết"
+  },
+  {
+    "id": "UC-TNT-01",
+    "code": "TNT-01",
+    "group": "TNT",
+    "title": "Tra cứu hồ sơ người thuê và tổng quan",
+    "actor": "LANDLORD hoặc STAFF có tenant.view",
+    "goal": "Đọc Tenant và tóm tắt lịch sử đúng phạm vi",
+    "bindings": [
+      "TenantsController.list",
+      "TenantsController.getById",
+      "TenantsController.overview"
+    ],
+    "notes": "",
+    "status": "chưa đủ bằng chứng đối chiếu chi tiết"
+  },
+  {
+    "id": "UC-TNT-02.1",
+    "code": "TNT-02.1",
+    "group": "TNT",
+    "title": "Tạo hồ sơ người thuê",
+    "actor": "LANDLORD hoặc STAFF có tenant.manage",
+    "goal": "Tạo Tenant nghiệp vụ chưa mặc nhiên có User",
+    "bindings": [
+      "TenantsController.create"
+    ],
+    "notes": "",
+    "status": "chưa đủ bằng chứng đối chiếu chi tiết"
+  },
+  {
+    "id": "UC-TNT-02.2",
+    "code": "TNT-02.2",
+    "group": "TNT",
+    "title": "Cập nhật hồ sơ người thuê",
+    "actor": "LANDLORD hoặc STAFF có tenant.manage",
+    "goal": "Sửa dữ liệu hồ sơ thuộc chủ trọ",
+    "bindings": [
+      "TenantsController.update"
+    ],
+    "notes": "",
+    "status": "chưa đủ bằng chứng đối chiếu chi tiết"
+  },
+  {
+    "id": "UC-TNT-02.3",
+    "code": "TNT-02.3",
+    "group": "TNT",
+    "title": "Vô hiệu hóa hoặc khôi phục người thuê",
+    "actor": "LANDLORD hoặc STAFF có tenant.manage",
+    "goal": "Đổi isActive theo điều kiện hợp đồng",
+    "bindings": [
+      "TenantsController.updateStatus"
+    ],
+    "notes": "",
+    "status": "chưa đủ bằng chứng đối chiếu chi tiết"
+  },
+  {
+    "id": "UC-TNT-02.4",
+    "code": "TNT-02.4",
+    "group": "TNT",
+    "title": "Xóa hồ sơ người thuê chưa có lịch sử",
+    "actor": "LANDLORD hoặc STAFF có tenant.manage",
+    "goal": "Xóa Tenant khi không còn ràng buộc nghiệp vụ",
+    "bindings": [
+      "TenantsController.remove"
+    ],
+    "notes": "",
+    "status": "chưa đủ bằng chứng đối chiếu chi tiết"
+  },
+  {
+    "id": "UC-TNT-03",
+    "code": "TNT-03",
+    "group": "TNT",
+    "title": "Tạo lời mời truy cập cổng người thuê",
+    "actor": "LANDLORD",
+    "goal": "Nhận mã kích hoạt dùng một lần cho Tenant chưa có User",
+    "bindings": [
+      "TenantInvitesController.create"
+    ],
+    "notes": "Decorator nhận STAFF nhưng PropertyScopeInterceptor chặn TenantInvitesController; không mô tả STAFF thực thi được.",
+    "status": "chưa đủ bằng chứng đối chiếu chi tiết"
+  },
+  {
+    "id": "UC-TNT-03.1",
+    "code": "TNT-03.1",
+    "group": "TNT",
+    "title": "Tạo trực tiếp tài khoản cho hồ sơ người thuê",
+    "actor": "LANDLORD hoặc STAFF có tenant.manage",
+    "goal": "Liên kết tài khoản đăng nhập mới với Tenant",
+    "bindings": [
+      "TenantsController.createAccount"
+    ],
+    "notes": "",
+    "status": "chưa đủ bằng chứng đối chiếu chi tiết"
+  },
+  {
+    "id": "UC-TNT-04",
+    "code": "TNT-04",
+    "group": "TNT",
+    "title": "Tra cứu hợp đồng và cảnh báo hết hạn",
+    "actor": "LANDLORD hoặc STAFF có lease.view",
+    "goal": "Đọc hợp đồng theo phòng người thuê và số ngày cảnh báo",
+    "bindings": [
+      "LeasesController.expiring",
+      "RoomLeasesController.list",
+      "TenantLeasesController.list"
+    ],
+    "notes": "",
+    "status": "chưa đủ bằng chứng đối chiếu chi tiết"
+  },
+  {
+    "id": "UC-TNT-05",
+    "code": "TNT-05",
+    "group": "TNT",
+    "title": "Tạo hợp đồng và ghi nhận cọc ban đầu",
+    "actor": "LANDLORD hoặc STAFF có lease.manage",
+    "goal": "Tạo Lease ACTIVE và chuyển phòng OCCUPIED trong transaction",
+    "bindings": [
+      "LeasesController.create"
+    ],
+    "notes": "",
+    "status": "chưa đủ bằng chứng đối chiếu chi tiết"
+  },
+  {
+    "id": "UC-TNT-06.1",
+    "code": "TNT-06.1",
+    "group": "TNT",
+    "title": "Cập nhật điều khoản hợp đồng",
+    "actor": "LANDLORD hoặc STAFF có lease.manage",
+    "goal": "Lưu thay đổi điều khoản cùng LeaseChange",
+    "bindings": [
+      "LeasesController.update"
+    ],
+    "notes": "",
+    "status": "chưa đủ bằng chứng đối chiếu chi tiết"
+  },
+  {
+    "id": "UC-TNT-06.2",
+    "code": "TNT-06.2",
+    "group": "TNT",
+    "title": "Gia hạn hợp đồng",
+    "actor": "LANDLORD hoặc STAFF có lease.manage",
+    "goal": "Đặt ngày kết thúc muộn hơn khi chưa quyết toán",
+    "bindings": [
+      "LeasesController.renew"
+    ],
+    "notes": "",
+    "status": "chưa đủ bằng chứng đối chiếu chi tiết"
+  },
+  {
+    "id": "UC-TNT-06.3",
+    "code": "TNT-06.3",
+    "group": "TNT",
+    "title": "Kết thúc hợp đồng",
+    "actor": "LANDLORD hoặc STAFF có lease.manage",
+    "goal": "Đặt ENDED và khởi tạo turnover phòng",
+    "bindings": [
+      "LeasesController.end"
+    ],
+    "notes": "",
+    "status": "chưa đủ bằng chứng đối chiếu chi tiết"
+  },
+  {
+    "id": "UC-TNT-07",
+    "code": "TNT-07",
+    "group": "TNT",
+    "title": "Tra cứu và ghi giao dịch cọc",
+    "actor": "LANDLORD hoặc STAFF có lease.manage khi ghi",
+    "goal": "Ghi thu hoàn khấu trừ hoặc điều chỉnh số dư cọc",
+    "bindings": [
+      "LeasesController.deposits",
+      "LeasesController.createDeposit"
+    ],
+    "notes": "",
+    "status": "chưa đủ bằng chứng đối chiếu chi tiết"
+  },
+  {
+    "id": "UC-TNT-08",
+    "code": "TNT-08",
+    "group": "TNT",
+    "title": "Xem trước và xác nhận quyết toán trả phòng",
+    "actor": "LANDLORD",
+    "goal": "Chốt snapshot chi phí cọc và nghĩa vụ còn lại không tự chuyển tiền",
+    "bindings": [
+      "LeasesController.settlement",
+      "LeasesController.previewSettlement",
+      "LeasesController.confirmSettlement"
+    ],
+    "notes": "",
+    "status": "chưa đủ bằng chứng đối chiếu chi tiết"
+  },
+  {
+    "id": "UC-TNT-09",
+    "code": "TNT-09",
+    "group": "TNT",
+    "title": "Ghi nhận đã hoàn cọc theo quyết toán",
+    "actor": "LANDLORD",
+    "goal": "Ghi REFUNDED và trạng thái hoàn cọc đã trả",
+    "bindings": [
+      "LeasesController.recordSettlementRefund"
+    ],
+    "notes": "",
+    "status": "chưa đủ bằng chứng đối chiếu chi tiết"
+  },
+  {
+    "id": "UC-TNT-10",
+    "code": "TNT-10",
+    "group": "TNT",
+    "title": "Xét duyệt yêu cầu vòng đời thuê",
+    "actor": "LANDLORD hoặc STAFF có lease.manage",
+    "goal": "Đặt APPROVED hoặc REJECTED chưa tự đổi hợp đồng",
+    "bindings": [
+      "TenantLifecycleController.requests",
+      "TenantLifecycleController.review"
+    ],
+    "notes": "",
+    "status": "chưa đủ bằng chứng đối chiếu chi tiết"
+  },
+  {
+    "id": "UC-TNT-11",
+    "code": "TNT-11",
+    "group": "TNT",
+    "title": "Thực thi yêu cầu vòng đời đã duyệt",
+    "actor": "LANDLORD hoặc STAFF có lease.manage",
+    "goal": "Thực hiện yêu cầu một lần theo requestKey và điều kiện Lease",
+    "bindings": [
+      "TenantLifecycleController.execute"
+    ],
+    "notes": "",
+    "status": "chưa đủ bằng chứng đối chiếu chi tiết"
+  },
+  {
+    "id": "UC-TNT-12.1",
+    "code": "TNT-12.1",
+    "group": "TNT",
+    "title": "Quản lý người ở cùng hợp đồng",
+    "actor": "LANDLORD hoặc STAFF có lease.manage khi ghi",
+    "goal": "Thêm hoặc kết thúc người ở trong sức chứa phòng",
+    "bindings": [
+      "TenantLifecycleController.occupants",
+      "TenantLifecycleController.addOccupant",
+      "TenantLifecycleController.removeOccupant"
+    ],
+    "notes": "",
+    "status": "chưa đủ bằng chứng đối chiếu chi tiết"
+  },
+  {
+    "id": "UC-TNT-12.2",
+    "code": "TNT-12.2",
+    "group": "TNT",
+    "title": "Lập biên bản bàn giao nhận phòng",
+    "actor": "LANDLORD",
+    "goal": "Lưu chỉ số hiện trạng và ảnh trước khi người thuê xác nhận",
+    "bindings": [
+      "HousingController.handover",
+      "HousingController.saveHandover"
+    ],
+    "notes": "",
+    "status": "chưa đủ bằng chứng đối chiếu chi tiết"
+  },
+  {
+    "id": "UC-TNT-12.3",
+    "code": "TNT-12.3",
+    "group": "TNT",
+    "title": "Xác nhận biên bản bàn giao nhận phòng",
+    "actor": "TENANT",
+    "goal": "Chấp nhận đúng version khi hợp đồng đến ngày hiệu lực",
+    "bindings": [
+      "HousingController.acceptHandover"
+    ],
+    "notes": "",
+    "status": "chưa đủ bằng chứng đối chiếu chi tiết"
+  },
+  {
+    "id": "UC-TNT-13",
+    "code": "TNT-13",
+    "group": "TNT",
+    "title": "Xuất hoặc chia sẻ hợp đồng PDF",
+    "actor": "LANDLORD hoặc người được UI cho phép",
+    "goal": "Dựng PDF tại Flutter không phát sinh chữ ký số",
+    "bindings": [
+      "LOCAL.leasePdf"
+    ],
+    "notes": "Chức năng cục bộ; không bịa endpoint xuất PDF hoặc chữ ký điện tử.",
+    "status": "chưa đủ bằng chứng đối chiếu chi tiết"
+  },
+  {
+    "id": "UC-BIL-01",
+    "code": "BIL-01",
+    "group": "BIL",
+    "title": "Ghi chỉ số điện nước theo kỳ",
+    "actor": "LANDLORD hoặc STAFF có billing.create",
+    "goal": "Lưu lượng tiêu thụ và số tiền của phòng loại tiện ích kỳ",
+    "bindings": [
+      "BillingController.meterReadings",
+      "BillingController.createMeterReading"
+    ],
+    "notes": "",
+    "status": "chưa đủ bằng chứng đối chiếu chi tiết"
+  },
+  {
+    "id": "UC-BIL-02",
+    "code": "BIL-02",
+    "group": "BIL",
+    "title": "Xem trước và lập hóa đơn một hợp đồng",
+    "actor": "LANDLORD hoặc STAFF có billing.create",
+    "goal": "Phát hành hóa đơn với các dòng giá chụp tại kỳ lập",
+    "bindings": [
+      "BillingController.activeLeases",
+      "BillingController.previewInvoice",
+      "BillingController.createInvoice"
+    ],
+    "notes": "",
+    "status": "chưa đủ bằng chứng đối chiếu chi tiết"
+  },
+  {
+    "id": "UC-BIL-03",
+    "code": "BIL-03",
+    "group": "BIL",
+    "title": "Lập hóa đơn hàng loạt",
+    "actor": "LANDLORD hoặc STAFF có billing.create",
+    "goal": "Kiểm tra trước và tạo kết quả cho từng hợp đồng đủ điều kiện",
+    "bindings": [
+      "BillingController.bulkInvoicePreflight",
+      "BillingController.createBulkInvoices"
+    ],
+    "notes": "",
+    "status": "chưa đủ bằng chứng đối chiếu chi tiết"
+  },
+  {
+    "id": "UC-BIL-04",
+    "code": "BIL-04",
+    "group": "BIL",
+    "title": "Tra cứu hóa đơn và tuổi nợ",
+    "actor": "LANDLORD hoặc STAFF có billing.view",
+    "goal": "Đọc số còn phải thu và nhóm ngày quá hạn",
+    "bindings": [
+      "BillingController.invoices",
+      "BillingController.invoice",
+      "BillingController.aging",
+      "BillingController.reminders"
+    ],
+    "notes": "",
+    "status": "chưa đủ bằng chứng đối chiếu chi tiết"
+  },
+  {
+    "id": "UC-BIL-05",
+    "code": "BIL-05",
+    "group": "BIL",
+    "title": "Sửa hạn thanh toán hoặc ghi chú hóa đơn",
+    "actor": "LANDLORD hoặc STAFF có billing.create",
+    "goal": "Đổi hạn và ghi chú mà không ghi đè dòng tiền",
+    "bindings": [
+      "BillingController.updateInvoice"
+    ],
+    "notes": "",
+    "status": "chưa đủ bằng chứng đối chiếu chi tiết"
+  },
+  {
+    "id": "UC-BIL-06",
+    "code": "BIL-06",
+    "group": "BIL",
+    "title": "Thay thế hóa đơn chưa có lịch sử thanh toán",
+    "actor": "LANDLORD hoặc STAFF có billing.adjust",
+    "goal": "Hủy bản gốc và tạo revision mới có liên kết truy vết",
+    "bindings": [
+      "BillingController.replaceInvoice"
+    ],
+    "notes": "",
+    "status": "chưa đủ bằng chứng đối chiếu chi tiết"
+  },
+  {
+    "id": "UC-BIL-07",
+    "code": "BIL-07",
+    "group": "BIL",
+    "title": "Phát hành credit note hoặc debit note",
+    "actor": "LANDLORD hoặc STAFF có billing.adjust",
+    "goal": "Điều chỉnh nghĩa vụ theo số tiền hoặc basisPoints",
+    "bindings": [
+      "BillingController.adjustInvoice"
+    ],
+    "notes": "",
+    "status": "chưa đủ bằng chứng đối chiếu chi tiết"
+  },
+  {
+    "id": "UC-BIL-08.1",
+    "code": "BIL-08.1",
+    "group": "BIL",
+    "title": "Hủy hóa đơn đủ điều kiện",
+    "actor": "LANDLORD hoặc STAFF có billing.cancel",
+    "goal": "Đặt CANCELLED khi chưa có bản ghi Payment",
+    "bindings": [
+      "BillingController.cancelInvoice"
+    ],
+    "notes": "",
+    "status": "chưa đủ bằng chứng đối chiếu chi tiết"
+  },
+  {
+    "id": "UC-BIL-08.2",
+    "code": "BIL-08.2",
+    "group": "BIL",
+    "title": "Xuất hoặc chia sẻ hóa đơn PDF",
+    "actor": "Người được quyền xem hóa đơn",
+    "goal": "Dựng bản PDF từ dữ liệu hóa đơn tại Flutter",
+    "bindings": [
+      "LOCAL.invoicePdf"
+    ],
+    "notes": "Chức năng cục bộ Flutter; quyền xem dữ liệu nguồn vẫn phải do API thực thi.",
+    "status": "chưa đủ bằng chứng đối chiếu chi tiết"
+  },
+  {
+    "id": "UC-BIL-09",
+    "code": "BIL-09",
+    "group": "BIL",
+    "title": "Ghi nhận thanh toán trực tiếp",
+    "actor": "LANDLORD hoặc STAFF có billing.record_payment",
+    "goal": "Thêm Payment dương không vượt dư của hóa đơn thật",
+    "bindings": [
+      "BillingController.recordPayment"
+    ],
+    "notes": "",
+    "status": "chưa đủ bằng chứng đối chiếu chi tiết"
+  },
+  {
+    "id": "UC-BIL-10",
+    "code": "BIL-10",
+    "group": "BIL",
+    "title": "Tạo khoản thu cho người thuê",
+    "actor": "LANDLORD hoặc STAFF có billing.record_payment",
+    "goal": "Tạo BillingReceipt và giữ phần tiền chưa phân bổ",
+    "bindings": [
+      "BillingController.receipts",
+      "BillingController.createReceipt"
+    ],
+    "notes": "",
+    "status": "chưa đủ bằng chứng đối chiếu chi tiết"
+  },
+  {
+    "id": "UC-BIL-11",
+    "code": "BIL-11",
+    "group": "BIL",
+    "title": "Phân bổ khoản thu cho hóa đơn",
+    "actor": "LANDLORD hoặc STAFF có billing.record_payment",
+    "goal": "Đưa số tiền khả dụng vào hóa đơn cùng Tenant",
+    "bindings": [
+      "BillingController.allocateReceipt"
+    ],
+    "notes": "",
+    "status": "chưa đủ bằng chứng đối chiếu chi tiết"
+  },
+  {
+    "id": "UC-BIL-12.1",
+    "code": "BIL-12.1",
+    "group": "BIL",
+    "title": "Giải phóng phân bổ khoản thu",
+    "actor": "LANDLORD hoặc STAFF có billing.reverse_payment",
+    "goal": "Đảo Payment của allocation và trả tiền về khả dụng",
+    "bindings": [
+      "BillingController.releaseAllocation"
+    ],
+    "notes": "",
+    "status": "chưa đủ bằng chứng đối chiếu chi tiết"
+  },
+  {
+    "id": "UC-BIL-12.2",
+    "code": "BIL-12.2",
+    "group": "BIL",
+    "title": "Đảo thanh toán trực tiếp",
+    "actor": "LANDLORD hoặc STAFF có billing.reverse_payment",
+    "goal": "Ghi Payment REVERSAL cho khoản gốc chưa bị đảo",
+    "bindings": [
+      "BillingController.reversePayment"
+    ],
+    "notes": "",
+    "status": "chưa đủ bằng chứng đối chiếu chi tiết"
+  },
+  {
+    "id": "UC-BIL-13",
+    "code": "BIL-13",
+    "group": "BIL",
+    "title": "Ghi nhận hoàn tiền từ khoản thu",
+    "actor": "LANDLORD hoặc STAFF có billing.refund",
+    "goal": "Giảm tiền khả dụng bằng ReceiptRefund có tham chiếu",
+    "bindings": [
+      "BillingController.refundReceipt"
+    ],
+    "notes": "",
+    "status": "chưa đủ bằng chứng đối chiếu chi tiết"
+  },
+  {
+    "id": "UC-BIL-14",
+    "code": "BIL-14",
+    "group": "BIL",
+    "title": "Xét duyệt chứng từ thanh toán",
+    "actor": "LANDLORD hoặc STAFF có billing.approve_payment_proof",
+    "goal": "Chấp thuận tạo Payment hoặc từ chối không tăng paidAmount",
+    "bindings": [
+      "BillingController.paymentProofs",
+      "BillingController.reviewPaymentProof"
+    ],
+    "notes": "",
+    "status": "chưa đủ bằng chứng đối chiếu chi tiết"
+  },
+  {
+    "id": "UC-BIL-15",
+    "code": "BIL-15",
+    "group": "BIL",
+    "title": "Đề xuất biểu phí theo kỳ hiệu lực",
+    "actor": "LANDLORD hoặc STAFF có billing.create",
+    "goal": "Lưu BillingTariffVersion ở trạng thái PROPOSED",
+    "bindings": [
+      "BillingController.tariffsList",
+      "BillingController.proposeTariff"
+    ],
+    "notes": "",
+    "status": "chưa đủ bằng chứng đối chiếu chi tiết"
+  },
+  {
+    "id": "UC-BIL-16",
+    "code": "BIL-16",
+    "group": "BIL",
+    "title": "Phân tích tác động và duyệt biểu phí",
+    "actor": "LANDLORD",
+    "goal": "Duyệt hoặc từ chối đề xuất sau kiểm tra kỳ đã phát hành hoặc khóa",
+    "bindings": [
+      "BillingController.tariffImpact",
+      "BillingController.reviewTariff"
+    ],
+    "notes": "Controller reviewTariff là LANDLORD-only dù tồn tại tên permission billing.tariff_approve.",
+    "status": "chưa đủ bằng chứng đối chiếu chi tiết"
+  },
+  {
+    "id": "UC-BIL-17.1",
+    "code": "BIL-17.1",
+    "group": "BIL",
+    "title": "Cấu hình lập hóa đơn định kỳ",
+    "actor": "LANDLORD hoặc STAFF có billing.create",
+    "goal": "Lưu lịch lập hóa đơn theo khu",
+    "bindings": [
+      "BillingController.billingAutomation",
+      "BillingController.updateBillingAutomation"
+    ],
+    "notes": "",
+    "status": "chưa đủ bằng chứng đối chiếu chi tiết"
+  },
+  {
+    "id": "UC-BIL-17.2",
+    "code": "BIL-17.2",
+    "group": "BIL",
+    "title": "Xem trước và chạy đợt lập hóa đơn",
+    "actor": "LANDLORD hoặc STAFF có billing.create",
+    "goal": "Chạy kỳ theo cấu hình và ghi kết quả BillingRun",
+    "bindings": [
+      "BillingController.billingAutomationPreview",
+      "BillingController.runBillingAutomation"
+    ],
+    "notes": "",
+    "status": "chưa đủ bằng chứng đối chiếu chi tiết"
+  },
+  {
+    "id": "UC-BIL-18.1",
+    "code": "BIL-18.1",
+    "group": "BIL",
+    "title": "Cấu hình chính sách nhắc nợ",
+    "actor": "LANDLORD hoặc STAFF có billing.policy và khu cụ thể",
+    "goal": "Lưu chính sách mặc định hoặc ghi đè theo khu",
+    "bindings": [
+      "BillingController.reminderPolicy",
+      "BillingController.updateReminderPolicy"
+    ],
+    "notes": "",
+    "status": "chưa đủ bằng chứng đối chiếu chi tiết"
+  },
+  {
+    "id": "UC-BIL-18.2",
+    "code": "BIL-18.2",
+    "group": "BIL",
+    "title": "Xếp hàng nhắc nợ theo chính sách",
+    "actor": "LANDLORD hoặc STAFF có billing.policy và khu cụ thể",
+    "goal": "Tạo tác vụ gửi phù hợp sở thích người thuê",
+    "bindings": [
+      "BillingController.runReminders",
+      "BillingController.enqueueReminders"
+    ],
+    "notes": "",
+    "status": "chưa đủ bằng chứng đối chiếu chi tiết"
+  },
+  {
+    "id": "UC-BIL-18.3",
+    "code": "BIL-18.3",
+    "group": "BIL",
+    "title": "Theo dõi và thử lại outbox hóa đơn",
+    "actor": "LANDLORD",
+    "goal": "Đọc sự kiện và yêu cầu thử lại theo trạng thái được phép",
+    "bindings": [
+      "BillingController.outboxEvents",
+      "BillingController.retryOutbox"
+    ],
+    "notes": "Interceptor không cho STAFF dùng outboxEvents hoặc retryOutbox.",
+    "status": "chưa đủ bằng chứng đối chiếu chi tiết"
+  },
+  {
+    "id": "UC-BIL-19",
+    "code": "BIL-19",
+    "group": "BIL",
+    "title": "Quản lý khoản chi vận hành",
+    "actor": "LANDLORD hoặc STAFF có expense.manage khi ghi",
+    "goal": "Lưu khoản Expense riêng với tiền thuê và tiền cọc",
+    "bindings": [
+      "ExpensesController.list",
+      "ExpensesController.create",
+      "ExpensesController.getById",
+      "ExpensesController.update",
+      "ExpensesController.remove"
+    ],
+    "notes": "",
+    "status": "chưa đủ bằng chứng đối chiếu chi tiết"
+  },
+  {
+    "id": "UC-BIL-20",
+    "code": "BIL-20",
+    "group": "BIL",
+    "title": "Xem báo cáo tháng và chỉ số phân tích",
+    "actor": "LANDLORD hoặc STAFF có report.view",
+    "goal": "Đọc thu ròng chi phí công suất và công nợ theo định nghĩa code",
+    "bindings": [
+      "ReportsController.monthly",
+      "ReportsController.analytics"
+    ],
+    "notes": "",
+    "status": "chưa đủ bằng chứng đối chiếu chi tiết"
+  },
+  {
+    "id": "UC-BIL-21",
+    "code": "BIL-21",
+    "group": "BIL",
+    "title": "Xuất nội dung báo cáo tháng CSV",
+    "actor": "LANDLORD hoặc STAFF có report.export",
+    "goal": "Nhận CSV và sao chép nội dung tại giao diện",
+    "bindings": [
+      "ReportsController.monthlyExport"
+    ],
+    "notes": "UI sao chép CSV vào clipboard; không gọi đây là tải XLSX.",
+    "status": "chưa đủ bằng chứng đối chiếu chi tiết"
+  },
+  {
+    "id": "UC-BIL-22",
+    "code": "BIL-22",
+    "group": "BIL",
+    "title": "Khóa kỳ thanh toán của khu",
+    "actor": "LANDLORD",
+    "goal": "Lưu BillingPeriodLock ngăn các thao tác thuộc quy tắc khóa",
+    "bindings": [
+      "BillingController.lockPeriod"
+    ],
+    "notes": "",
+    "status": "chưa đủ bằng chứng đối chiếu chi tiết"
+  },
+  {
+    "id": "UC-BIL-23",
+    "code": "BIL-23",
+    "group": "BIL",
+    "title": "Cấu hình tài khoản nhận chuyển khoản",
+    "actor": "LANDLORD",
+    "goal": "Lưu ngân hàng tài khoản và QR riêng theo version",
+    "bindings": [
+      "TransferAccountController.account",
+      "TransferAccountController.save"
+    ],
+    "notes": "",
+    "status": "chưa đủ bằng chứng đối chiếu chi tiết"
+  },
+  {
+    "id": "UC-OPS-01",
+    "code": "OPS-01",
+    "group": "OPS",
+    "title": "Tiếp nhận và theo dõi phiếu bảo trì",
+    "actor": "LANDLORD hoặc STAFF có maintenance.manage khi ghi",
+    "goal": "Duy trì ticket nội dung bình luận và xóa theo điều kiện",
+    "bindings": [
+      "MaintenanceController.list",
+      "MaintenanceController.create",
+      "MaintenanceController.getById",
+      "MaintenanceController.addComment",
+      "MaintenanceController.remove"
+    ],
+    "notes": "",
+    "status": "chưa đủ bằng chứng đối chiếu chi tiết"
+  },
+  {
+    "id": "UC-OPS-02",
+    "code": "OPS-02",
+    "group": "OPS",
+    "title": "Phân công và cập nhật bảo trì",
+    "actor": "LANDLORD hoặc STAFF có maintenance.manage trừ escalate",
+    "goal": "Gán nhân viên tiến độ hạn xử lý và chạy kiểm tra SLA",
+    "bindings": [
+      "MaintenanceController.assignees",
+      "MaintenanceController.update",
+      "MaintenanceController.updateStatus",
+      "MaintenanceController.escalate"
+    ],
+    "notes": "STAFF được một số thao tác bảo trì nhưng bị chặn escalate ở interceptor.",
+    "status": "chưa đủ bằng chứng đối chiếu chi tiết"
+  },
+  {
+    "id": "UC-OPS-03",
+    "code": "OPS-03",
+    "group": "OPS",
+    "title": "Hoàn tất bảo trì và liên kết khoản chi",
+    "actor": "LANDLORD hoặc STAFF có maintenance.complete",
+    "goal": "Đặt DONE và tùy chọn tạo Expense REPAIR một lần",
+    "bindings": [
+      "MaintenanceController.complete"
+    ],
+    "notes": "",
+    "status": "chưa đủ bằng chứng đối chiếu chi tiết"
+  },
+  {
+    "id": "UC-OPS-04",
+    "code": "OPS-04",
+    "group": "OPS",
+    "title": "Theo dõi việc cần xử lý",
+    "actor": "LANDLORD",
+    "goal": "Đọc action items và đánh dấu đã xem theo tài khoản",
+    "bindings": [
+      "OperationsController.actionItems",
+      "OperationsController.markRead"
+    ],
+    "notes": "OperationsController không nằm trong allowlist của PropertyScopeInterceptor; STAFF bị từ chối.",
+    "status": "chưa đủ bằng chứng đối chiếu chi tiết"
+  },
+  {
+    "id": "UC-OPS-05",
+    "code": "OPS-05",
+    "group": "OPS",
+    "title": "Chuẩn bị phòng sau trả phòng",
+    "actor": "LANDLORD",
+    "goal": "Đi qua RETURNED INSPECTION REPAIR CLEANING READY",
+    "bindings": [
+      "P1OperationsController.list",
+      "P1OperationsController.create",
+      "P1OperationsController.advance"
+    ],
+    "notes": "P1OperationsController có decorator STAFF nhưng interceptor chặn toàn controller với STAFF.",
+    "status": "chưa đủ bằng chứng đối chiếu chi tiết"
+  },
+  {
+    "id": "UC-OPS-06",
+    "code": "OPS-06",
+    "group": "OPS",
+    "title": "Quản lý việc định kỳ và checklist",
+    "actor": "LANDLORD",
+    "goal": "Lập RecurringOperation và cập nhật OperationTask phát sinh",
+    "bindings": [
+      "P1OperationsController.templates",
+      "P1OperationsController.createRecurring",
+      "P1OperationsController.toggle",
+      "P1OperationsController.tasks",
+      "P1OperationsController.check"
+    ],
+    "notes": "P1OperationsController có decorator STAFF nhưng interceptor chặn toàn controller với STAFF.",
+    "status": "chưa đủ bằng chứng đối chiếu chi tiết"
+  },
+  {
+    "id": "UC-OPS-07",
+    "code": "OPS-07",
+    "group": "OPS",
+    "title": "Soạn và phát thông báo người thuê",
+    "actor": "LANDLORD",
+    "goal": "Lưu mẫu nhóm lịch thông báo và theo dõi lượt đọc",
+    "bindings": [
+      "AnnouncementsController.list",
+      "AnnouncementsController.templates",
+      "AnnouncementsController.groups",
+      "AnnouncementsController.createTemplate",
+      "AnnouncementsController.createGroup",
+      "AnnouncementsController.create",
+      "AnnouncementsController.receipts",
+      "AnnouncementsController.cancel"
+    ],
+    "notes": "AnnouncementsController có decorator STAFF nhưng interceptor chặn toàn controller với STAFF.",
+    "status": "chưa đủ bằng chứng đối chiếu chi tiết"
+  },
+  {
+    "id": "UC-OPS-08",
+    "code": "OPS-08",
+    "group": "OPS",
+    "title": "Theo dõi lượt gửi và gửi nhắc Zalo",
+    "actor": "LANDLORD",
+    "goal": "Đọc delivery log và gửi nhắc qua chế độ cấu hình thực tế",
+    "bindings": [
+      "NotificationsController.list",
+      "NotificationsController.markRead",
+      "NotificationsController.deliveryLogs",
+      "NotificationsController.sendInvoiceRemindersZalo",
+      "NotificationsController.createZaloTestMessage",
+      "NotificationsController.createZaloManualMessage"
+    ],
+    "notes": "NotificationsController có decorator STAFF nhưng interceptor chặn toàn controller với STAFF.",
+    "status": "chưa đủ bằng chứng đối chiếu chi tiết"
+  },
+  {
+    "id": "UC-OPS-09",
+    "code": "OPS-09",
+    "group": "OPS",
+    "title": "Tra cứu nhật ký vận hành",
+    "actor": "LANDLORD",
+    "goal": "Đọc AuditLog thuộc chủ trọ theo bộ lọc",
+    "bindings": [
+      "AuditController.list"
+    ],
+    "notes": "AuditController có decorator STAFF nhưng interceptor chặn toàn controller với STAFF.",
+    "status": "chưa đủ bằng chứng đối chiếu chi tiết"
+  },
+  {
+    "id": "UC-TEN-01",
+    "code": "TEN-01",
+    "group": "TEN",
+    "title": "Xem hồ sơ và tổng quan thuê của mình",
+    "actor": "TENANT có hồ sơ liên kết",
+    "goal": "Đọc thông tin thuê chỉ thuộc Tenant của tài khoản",
+    "bindings": [
+      "TenantPortalController.me",
+      "TenantPortalController.dashboard"
+    ],
+    "notes": "",
+    "status": "chưa đủ bằng chứng đối chiếu chi tiết"
+  },
+  {
+    "id": "UC-TEN-02",
+    "code": "TEN-02",
+    "group": "TEN",
+    "title": "Xem hợp đồng cọc và quyết toán của mình",
+    "actor": "TENANT có hồ sơ liên kết",
+    "goal": "Đọc Lease và settlement không được sửa điều khoản",
+    "bindings": [
+      "TenantPortalController.leases",
+      "TenantLifecyclePortalController.settlement"
+    ],
+    "notes": "",
+    "status": "chưa đủ bằng chứng đối chiếu chi tiết"
+  },
+  {
+    "id": "UC-TEN-03",
+    "code": "TEN-03",
+    "group": "TEN",
+    "title": "Xem hóa đơn và PDF của mình",
+    "actor": "TENANT có hồ sơ liên kết",
+    "goal": "Đọc hóa đơn đúng Tenant trước khi dựng PDF cục bộ",
+    "bindings": [
+      "TenantPortalController.invoices",
+      "TenantPortalController.invoice"
+    ],
+    "notes": "",
+    "status": "chưa đủ bằng chứng đối chiếu chi tiết"
+  },
+  {
+    "id": "UC-TEN-04",
+    "code": "TEN-04",
+    "group": "TEN",
+    "title": "Gửi chứng từ thanh toán",
+    "actor": "TENANT có hồ sơ liên kết",
+    "goal": "Tạo PaymentProof PENDING không tự giảm công nợ",
+    "bindings": [
+      "TenantPortalController.submitPaymentProof"
+    ],
+    "notes": "",
+    "status": "chưa đủ bằng chứng đối chiếu chi tiết"
+  },
+  {
+    "id": "UC-TEN-05",
+    "code": "TEN-05",
+    "group": "TEN",
+    "title": "Thanh toán bằng thẻ mô phỏng",
+    "actor": "TENANT ở môi trường demo",
+    "goal": "Thanh toán hóa đơn isDemo qua checkout nội bộ không dùng tiền thật",
+    "bindings": [
+      "TenantOnlinePaymentsController.create",
+      "TenantOnlinePaymentsController.demoInvoice",
+      "TenantOnlinePaymentsController.status",
+      "DemoCardPaymentController.checkout",
+      "DemoCardPaymentController.confirm"
+    ],
+    "notes": "Chỉ bật ngoài production và DEMO_PAYMENTS_ENABLED=true; không có cổng thu thẻ tiền thật được xác nhận.",
+    "status": "chỉ triển khai một phần"
+  },
+  {
+    "id": "UC-TEN-06",
+    "code": "TEN-06",
+    "group": "TEN",
+    "title": "Gửi và trao đổi yêu cầu bảo trì",
+    "actor": "TENANT có hồ sơ liên kết",
+    "goal": "Tạo ticket và bình luận cho phòng gắn hợp đồng của mình",
+    "bindings": [
+      "TenantPortalController.maintenance",
+      "TenantPortalController.createMaintenance",
+      "TenantPortalController.addMaintenanceComment"
+    ],
+    "notes": "",
+    "status": "chưa đủ bằng chứng đối chiếu chi tiết"
+  },
+  {
+    "id": "UC-TEN-07",
+    "code": "TEN-07",
+    "group": "TEN",
+    "title": "Gửi hủy và theo dõi yêu cầu vòng đời thuê",
+    "actor": "TENANT có hồ sơ liên kết",
+    "goal": "Đề nghị RENEWAL TRANSFER_ROOM CHECKOUT chưa sửa trực tiếp Lease",
+    "bindings": [
+      "TenantLifecyclePortalController.requests",
+      "TenantLifecyclePortalController.create",
+      "TenantLifecyclePortalController.cancel",
+      "TenantLifecyclePortalController.transferRooms"
+    ],
+    "notes": "",
+    "status": "chưa đủ bằng chứng đối chiếu chi tiết"
+  },
+  {
+    "id": "UC-TEN-08.1",
+    "code": "TEN-08.1",
+    "group": "TEN",
+    "title": "Xem người ở cùng hợp đồng",
+    "actor": "TENANT có hồ sơ liên kết",
+    "goal": "Đọc occupants nhưng không tự thêm hoặc xóa",
+    "bindings": [
+      "TenantLifecyclePortalController.occupants"
+    ],
+    "notes": "",
+    "status": "chưa đủ bằng chứng đối chiếu chi tiết"
+  },
+  {
+    "id": "UC-TEN-08.2",
+    "code": "TEN-08.2",
+    "group": "TEN",
+    "title": "Thiết lập sở thích nhắc nợ",
+    "actor": "TENANT có hồ sơ liên kết",
+    "goal": "Đặt enabled và các kênh nhắc nợ được hỗ trợ",
+    "bindings": [
+      "TenantLifecyclePortalController.preference",
+      "TenantLifecyclePortalController.savePreference"
+    ],
+    "notes": "",
+    "status": "chưa đủ bằng chứng đối chiếu chi tiết"
+  },
+  {
+    "id": "UC-TEN-09.1",
+    "code": "TEN-09.1",
+    "group": "TEN",
+    "title": "Đọc thông báo cổng người thuê",
+    "actor": "TENANT có hồ sơ liên kết",
+    "goal": "Đánh dấu notification của mình đã đọc",
+    "bindings": [
+      "TenantPortalController.notifications",
+      "TenantPortalController.markNotificationRead"
+    ],
+    "notes": "",
+    "status": "chưa đủ bằng chứng đối chiếu chi tiết"
+  },
+  {
+    "id": "UC-TEN-09.2",
+    "code": "TEN-09.2",
+    "group": "TEN",
+    "title": "Trao đổi tin nhắn mô phỏng Zalo trong portal",
+    "actor": "TENANT có hồ sơ liên kết",
+    "goal": "Lưu và đọc hội thoại trong ứng dụng không mặc nhiên gửi Zalo OA",
+    "bindings": [
+      "TenantPortalController.zaloMessages",
+      "TenantPortalController.createZaloMessage",
+      "TenantPortalController.markZaloMessageRead"
+    ],
+    "notes": "",
+    "status": "chỉ triển khai một phần"
+  },
+  {
+    "id": "UC-TEN-09.3",
+    "code": "TEN-09.3",
+    "group": "TEN",
+    "title": "Đọc và xác nhận thông báo chủ trọ",
+    "actor": "TENANT có hồ sơ liên kết",
+    "goal": "Ghi lượt đọc hoặc acknowledgement Announcement",
+    "bindings": [
+      "TenantAnnouncementsController.list",
+      "TenantAnnouncementsController.read"
+    ],
+    "notes": "",
+    "status": "chưa đủ bằng chứng đối chiếu chi tiết"
+  },
+  {
+    "id": "UC-TEN-10",
+    "code": "TEN-10",
+    "group": "TEN",
+    "title": "Xem hướng dẫn chuyển khoản của hóa đơn",
+    "actor": "TENANT có hồ sơ liên kết",
+    "goal": "Đọc tài khoản và QR chủ trọ trước khi gửi chứng từ",
+    "bindings": [
+      "TransferInstructionsController.instructions"
+    ],
+    "notes": "",
+    "status": "chưa đủ bằng chứng đối chiếu chi tiết"
+  },
+  {
+    "id": "UC-ADM-01",
+    "code": "ADM-01",
+    "group": "ADM",
+    "title": "Xem tổng quan và phân tích nền tảng",
+    "actor": "ADMIN có admin.dashboard.view",
+    "goal": "Đọc overview analytics và công việc chờ theo quyền",
+    "bindings": [
+      "AdminController.overview",
+      "AdminOverviewAnalyticsController.overview",
+      "AdminConsoleController.analytics",
+      "AdminWorkspaceController.summary",
+      "AdminWorkspaceController.actionItems"
+    ],
+    "notes": "",
+    "status": "chưa đủ bằng chứng đối chiếu chi tiết"
+  },
+  {
+    "id": "UC-ADM-02",
+    "code": "ADM-02",
+    "group": "ADM",
+    "title": "Tra cứu tài khoản nền tảng",
+    "actor": "ADMIN có quyền đọc tương ứng",
+    "goal": "Đọc thông tin khách hàng được che theo projection",
+    "bindings": [
+      "AdminConsoleController.accounts",
+      "AdminConsoleController.account",
+      "AdminController.listLandlords",
+      "AdminController.getLandlord"
+    ],
+    "notes": "",
+    "status": "chưa đủ bằng chứng đối chiếu chi tiết"
+  },
+  {
+    "id": "UC-ADM-03.1",
+    "code": "ADM-03.1",
+    "group": "ADM",
+    "title": "Tạo hoặc mời tài khoản chủ trọ",
+    "actor": "ADMIN có admin.accounts.manage",
+    "goal": "Tạo tài khoản LANDLORD hoặc công việc kích hoạt theo endpoint",
+    "bindings": [
+      "AdminController.createLandlord"
+    ],
+    "notes": "",
+    "status": "chưa đủ bằng chứng đối chiếu chi tiết"
+  },
+  {
+    "id": "UC-ADM-03.2",
+    "code": "ADM-03.2",
+    "group": "ADM",
+    "title": "Cập nhật hồ sơ chủ trọ",
+    "actor": "ADMIN có admin.accounts.manage",
+    "goal": "Sửa dữ liệu chủ trọ không thay quyền Admin",
+    "bindings": [
+      "AdminController.updateLandlord"
+    ],
+    "notes": "",
+    "status": "chưa đủ bằng chứng đối chiếu chi tiết"
+  },
+  {
+    "id": "UC-ADM-04.1",
+    "code": "ADM-04.1",
+    "group": "ADM",
+    "title": "Đình chỉ tài khoản và vô hiệu phiên",
+    "actor": "ADMIN có admin.accounts.suspend",
+    "goal": "Đặt inactive và tăng sessionVersion có tác động nhân viên phụ thuộc",
+    "bindings": [
+      "AdminConsoleController.suspend",
+      "AdminController.updateLandlordStatus"
+    ],
+    "notes": "",
+    "status": "chưa đủ bằng chứng đối chiếu chi tiết"
+  },
+  {
+    "id": "UC-ADM-04.2",
+    "code": "ADM-04.2",
+    "group": "ADM",
+    "title": "Khôi phục tài khoản bị đình chỉ",
+    "actor": "ADMIN có admin.accounts.suspend",
+    "goal": "Đặt active không làm token đã thu hồi sống lại",
+    "bindings": [
+      "AdminConsoleController.restore"
+    ],
+    "notes": "",
+    "status": "chưa đủ bằng chứng đối chiếu chi tiết"
+  },
+  {
+    "id": "UC-ADM-04.3",
+    "code": "ADM-04.3",
+    "group": "ADM",
+    "title": "Thu hồi phiên của tài khoản khách hàng",
+    "actor": "ADMIN có admin.sessions.revoke",
+    "goal": "Vô hiệu session và refresh token không xóa dữ liệu tài chính",
+    "bindings": [
+      "AdminConsoleController.revoke"
+    ],
+    "notes": "",
+    "status": "chưa đủ bằng chứng đối chiếu chi tiết"
+  },
+  {
+    "id": "UC-ADM-05.1",
+    "code": "ADM-05.1",
+    "group": "ADM",
+    "title": "Mở thông tin cá nhân được che",
+    "actor": "ADMIN có admin.pii.reveal",
+    "goal": "Đọc email điện thoại có lý do và audit",
+    "bindings": [
+      "AdminConsoleController.reveal"
+    ],
+    "notes": "",
+    "status": "chưa đủ bằng chứng đối chiếu chi tiết"
+  },
+  {
+    "id": "UC-ADM-05.2",
+    "code": "ADM-05.2",
+    "group": "ADM",
+    "title": "Yêu cầu khôi phục truy cập cho tài khoản",
+    "actor": "ADMIN có admin.accounts.manage",
+    "goal": "Xếp hàng liên kết đặt mật khẩu không trả mật khẩu mới",
+    "bindings": [
+      "AdminConsoleController.reset"
+    ],
+    "notes": "",
+    "status": "chưa đủ bằng chứng đối chiếu chi tiết"
+  },
+  {
+    "id": "UC-ADM-06.1",
+    "code": "ADM-06.1",
+    "group": "ADM",
+    "title": "Quản lý hồ sơ và quyền Admin",
+    "actor": "ADMIN có admin.admins.manage và điều kiện cấp quyền",
+    "goal": "Cập nhật preset hoặc quyền trong tập được phép ủy quyền",
+    "bindings": [
+      "AdminConsoleController.admins",
+      "AdminConsoleController.adminAccess",
+      "AdminConsoleController.profile",
+      "AdminConsoleController.invite"
+    ],
+    "notes": "",
+    "status": "chưa đủ bằng chứng đối chiếu chi tiết"
+  },
+  {
+    "id": "UC-ADM-06.2",
+    "code": "ADM-06.2",
+    "group": "ADM",
+    "title": "Rà soát quyền Admin định kỳ",
+    "actor": "ADMIN có admin.admins.manage",
+    "goal": "Lưu kết quả rà soát và hạn rà soát tiếp theo cho người khác",
+    "bindings": [
+      "AdminAccessReviewController.catalog",
+      "AdminAccessReviewController.list",
+      "AdminAccessReviewController.review"
+    ],
+    "notes": "",
+    "status": "chưa đủ bằng chứng đối chiếu chi tiết"
+  },
+  {
+    "id": "UC-ADM-07.1",
+    "code": "ADM-07.1",
+    "group": "ADM",
+    "title": "Thiết lập MFA Admin",
+    "actor": "ADMIN có phiên hợp lệ",
+    "goal": "Tạo và xác nhận cấu hình MFA với mã khôi phục",
+    "bindings": [
+      "AdminSecurityController.status",
+      "AdminSecurityController.enroll",
+      "AdminSecurityController.confirm"
+    ],
+    "notes": "AdminSecurityController dùng JWT trực tiếp cho bước thiết lập MFA; không gán capability giả cho endpoint này.",
+    "status": "chưa đủ bằng chứng đối chiếu chi tiết"
+  },
+  {
+    "id": "UC-ADM-07.2",
+    "code": "ADM-07.2",
+    "group": "ADM",
+    "title": "Xác minh tăng cường cho thao tác nhạy cảm",
+    "actor": "ADMIN có quyền của thao tác đích",
+    "goal": "Nhận token step-up gắn session method path payload",
+    "bindings": [
+      "AdminStepUpController.issue"
+    ],
+    "notes": "",
+    "status": "chưa đủ bằng chứng đối chiếu chi tiết"
+  },
+  {
+    "id": "UC-ADM-08",
+    "code": "ADM-08",
+    "group": "ADM",
+    "title": "Tra cứu khu và phòng toàn nền tảng",
+    "actor": "ADMIN có quyền inventory tương ứng",
+    "goal": "Đọc kho phòng và trạng thái tin tách biệt",
+    "bindings": [
+      "AdminController.listProperties",
+      "AdminController.getProperty",
+      "AdminController.rooms"
+    ],
+    "notes": "",
+    "status": "chưa đủ bằng chứng đối chiếu chi tiết"
+  },
+  {
+    "id": "UC-ADM-09",
+    "code": "ADM-09",
+    "group": "ADM",
+    "title": "Tạo hoặc cập nhật khu thay chủ trọ",
+    "actor": "ADMIN có admin.properties.manage",
+    "goal": "Ghi Property của landlord đích qua luồng quản trị",
+    "bindings": [
+      "AdminController.createProperty",
+      "AdminController.updateProperty"
+    ],
+    "notes": "",
+    "status": "chưa đủ bằng chứng đối chiếu chi tiết"
+  },
+  {
+    "id": "UC-ADM-10",
+    "code": "ADM-10",
+    "group": "ADM",
+    "title": "Tìm kiếm và định vị tài nguyên",
+    "actor": "ADMIN có quyền theo loại tài nguyên",
+    "goal": "Trả kết quả từng loại được quyền đọc không vượt capability",
+    "bindings": [
+      "AdminSearchController.searchAll",
+      "AdminSearchController.resources",
+      "AdminSearchController.detail"
+    ],
+    "notes": "",
+    "status": "chưa đủ bằng chứng đối chiếu chi tiết"
+  },
+  {
+    "id": "UC-ADM-11",
+    "code": "ADM-11",
+    "group": "ADM",
+    "title": "Nhận việc và kiểm duyệt tin đăng",
+    "actor": "ADMIN có quyền tin đăng",
+    "goal": "Nhận ModerationWorkItem và xét trạng thái tin hoặc batch theo quyền",
+    "bindings": [
+      "AdminConsoleController.queue",
+      "AdminConsoleController.work",
+      "AdminConsoleController.item",
+      "AdminListingsController.list",
+      "AdminListingsController.review",
+      "AdminListingsController.verify",
+      "ModerationV2Controller.bulk",
+      "ModerationV2Controller.preview"
+    ],
+    "notes": "",
+    "status": "chưa đủ bằng chứng đối chiếu chi tiết"
+  },
+  {
+    "id": "UC-ADM-12",
+    "code": "ADM-12",
+    "group": "ADM",
+    "title": "Kiểm duyệt đánh giá và báo cáo vi phạm",
+    "actor": "ADMIN có quyền theo loại nội dung",
+    "goal": "Duyệt review reply hoặc xử lý ListingReport",
+    "bindings": [
+      "AdminRoomReviewsController.queue",
+      "AdminRoomReviewsController.moderate",
+      "AdminRoomReviewsController.reply",
+      "AdminListingsController.reports",
+      "AdminListingsController.reviewReport"
+    ],
+    "notes": "",
+    "status": "chưa đủ bằng chứng đối chiếu chi tiết"
+  },
+  {
+    "id": "UC-ADM-13.1",
+    "code": "ADM-13.1",
+    "group": "ADM",
+    "title": "Quản lý chính sách kiểm duyệt",
+    "actor": "ADMIN có quyền chính sách",
+    "goal": "Tạo phiên bản và kích hoạt ModerationPolicy",
+    "bindings": [
+      "ModerationPolicyController.list",
+      "ModerationPolicyController.create",
+      "ModerationPolicyController.activate"
+    ],
+    "notes": "",
+    "status": "chưa đủ bằng chứng đối chiếu chi tiết"
+  },
+  {
+    "id": "UC-ADM-13.2",
+    "code": "ADM-13.2",
+    "group": "ADM",
+    "title": "Xử lý kháng nghị kiểm duyệt",
+    "actor": "ADMIN có quyền kháng nghị và nội dung",
+    "goal": "Phân công và giải quyết ModerationAppeal",
+    "bindings": [
+      "ModerationV2Controller.decisions",
+      "ModerationV2Controller.history",
+      "ModerationV2Controller.appeals",
+      "ModerationV2Controller.assign",
+      "ModerationV2Controller.resolve",
+      "ModerationV2Controller.reports"
+    ],
+    "notes": "",
+    "status": "chưa đủ bằng chứng đối chiếu chi tiết"
+  },
+  {
+    "id": "UC-ADM-13.3",
+    "code": "ADM-13.3",
+    "group": "ADM",
+    "title": "Đánh giá chất lượng kiểm duyệt",
+    "actor": "ADMIN có quyền đánh giá chất lượng",
+    "goal": "Lấy mẫu và đánh giá quyết định không tự đánh giá mình",
+    "bindings": [
+      "ModerationPolicyController.quality",
+      "ModerationPolicyController.samples",
+      "ModerationPolicyController.sample",
+      "ModerationPolicyController.review"
+    ],
+    "notes": "",
+    "status": "chưa đủ bằng chứng đối chiếu chi tiết"
+  },
+  {
+    "id": "UC-ADM-14",
+    "code": "ADM-14",
+    "group": "ADM",
+    "title": "Tra cứu và xuất nhật ký quản trị",
+    "actor": "ADMIN có admin.audit.view và thêm admin.audit.export khi xuất",
+    "goal": "Đọc audit và xuất dữ liệu trong phạm vi capability",
+    "bindings": [
+      "AdminConsoleController.audit",
+      "AdminConsoleController.auditDetail",
+      "AdminConsoleController.auditExport"
+    ],
+    "notes": "",
+    "status": "chưa đủ bằng chứng đối chiếu chi tiết"
+  },
+  {
+    "id": "UC-ADM-15",
+    "code": "ADM-15",
+    "group": "ADM",
+    "title": "Đối soát sao kê theo maker checker",
+    "actor": "ADMIN có admin.finance.reconcile",
+    "goal": "Nhập sao kê ghép chứng từ và duyệt đề xuất bởi người khác",
+    "bindings": [
+      "FinanceReconciliationController.importStatement",
+      "FinanceReconciliationController.lines",
+      "FinanceReconciliationController.propose",
+      "FinanceReconciliationController.candidates",
+      "FinanceReconciliationController.proposals",
+      "FinanceReconciliationController.approve",
+      "FinanceReconciliationController.reject"
+    ],
+    "notes": "Đối soát tham chiếu khoản thu đã có; không đồng nghĩa tự nhận tiền ngân hàng hoặc tự ghi Payment.",
+    "status": "chưa đủ bằng chứng đối chiếu chi tiết"
+  },
+  {
+    "id": "UC-ADM-16",
+    "code": "ADM-16",
+    "group": "ADM",
+    "title": "Quản lý lịch và tải báo cáo Admin",
+    "actor": "ADMIN có admin.reports.manage và quyền nội dung",
+    "goal": "Lập lịch theo timezone chạy và tải kết quả của mình",
+    "bindings": [
+      "GovernanceController.schedules",
+      "GovernanceController.createSchedule",
+      "GovernanceController.updateSchedule",
+      "GovernanceController.runSchedule",
+      "GovernanceController.runs",
+      "GovernanceController.download",
+      "GovernanceController.link",
+      "GovernanceController.retry"
+    ],
+    "notes": "",
+    "status": "chưa đủ bằng chứng đối chiếu chi tiết"
+  },
+  {
+    "id": "UC-ADM-17.1",
+    "code": "ADM-17.1",
+    "group": "ADM",
+    "title": "Quản lý feature flags nghiệp vụ",
+    "actor": "ADMIN có quyền feature flags",
+    "goal": "Đổi enabled rollout roles theo version cho key cho phép",
+    "bindings": [
+      "GovernanceController.flagsList",
+      "GovernanceController.effective",
+      "GovernanceController.flagsUpdate"
+    ],
+    "notes": "",
+    "status": "chưa đủ bằng chứng đối chiếu chi tiết"
+  },
+  {
+    "id": "UC-ADM-17.2",
+    "code": "ADM-17.2",
+    "group": "ADM",
+    "title": "Quản lý nhóm Admin",
+    "actor": "ADMIN có quyền nhóm",
+    "goal": "Duy trì nhóm thành viên và trạng thái hoạt động",
+    "bindings": [
+      "GovernanceController.team",
+      "GovernanceController.teams",
+      "GovernanceController.createTeam",
+      "GovernanceController.addMember",
+      "GovernanceController.updateTeam",
+      "GovernanceController.removeMember"
+    ],
+    "notes": "",
+    "status": "chưa đủ bằng chứng đối chiếu chi tiết"
+  },
+  {
+    "id": "UC-ADM-18",
+    "code": "ADM-18",
+    "group": "ADM",
+    "title": "Nộp và xét duyệt xác minh chủ trọ",
+    "actor": "LANDLORD nộp hoặc ADMIN có quyền xác minh và support.read",
+    "goal": "Lưu hồ sơ gắn ticket minh chứng và quyết định có version",
+    "bindings": [
+      "LandlordVerificationController.own",
+      "LandlordVerificationController.submit",
+      "AdminRegistryController.verifications",
+      "AdminRegistryController.submitVerification",
+      "AdminRegistryController.reviewVerification"
+    ],
+    "notes": "Hai vai trò dùng endpoint khác nhau; không gán quyền xét duyệt cho chủ trọ.",
+    "status": "chưa đủ bằng chứng đối chiếu chi tiết"
+  },
+  {
+    "id": "UC-ADM-19",
+    "code": "ADM-19",
+    "group": "ADM",
+    "title": "Trình và xét duyệt hồ sơ khu trọ",
+    "actor": "ADMIN có admin.properties.manage",
+    "goal": "Duyệt snapshot khu khi thông tin chưa thay đổi",
+    "bindings": [
+      "AdminRegistryController.propertyReviews",
+      "AdminRegistryController.submitProperty",
+      "AdminRegistryController.reviewProperty"
+    ],
+    "notes": "Endpoint trình hồ sơ khu hiện dành ADMIN; không ghi bước này do LANDLORD thực hiện.",
+    "status": "chưa đủ bằng chứng đối chiếu chi tiết"
+  },
+  {
+    "id": "UC-ADM-20",
+    "code": "ADM-20",
+    "group": "ADM",
+    "title": "Quản lý danh mục gói dịch vụ",
+    "actor": "ADMIN có quyền plans",
+    "goal": "Lưu ServicePlan có giới hạn và version",
+    "bindings": [
+      "AdminRegistryController.servicePlans",
+      "AdminRegistryController.savePlan"
+    ],
+    "notes": "",
+    "status": "chưa đủ bằng chứng đối chiếu chi tiết"
+  },
+  {
+    "id": "UC-ADM-21",
+    "code": "ADM-21",
+    "group": "ADM",
+    "title": "Gán gói và xem lịch sử đăng ký",
+    "actor": "ADMIN có quyền plans",
+    "goal": "Ghi planSnapshot và SubscriptionEvent cho landlord",
+    "bindings": [
+      "AdminRegistryController.subscriptions",
+      "AdminRegistryController.subscriptionEvents",
+      "AdminRegistryController.assignSubscription"
+    ],
+    "notes": "",
+    "status": "chưa đủ bằng chứng đối chiếu chi tiết"
+  },
+  {
+    "id": "UC-ADM-22",
+    "code": "ADM-22",
+    "group": "ADM",
+    "title": "Hủy quyền sử dụng gói đang hiệu lực",
+    "actor": "ADMIN có admin.plans.manage",
+    "goal": "Kết thúc hiệu lực không tự hoàn tiền hoặc xóa khu phòng",
+    "bindings": [
+      "AdminRegistryController.cancelSubscription"
+    ],
+    "notes": "",
+    "status": "chưa đủ bằng chứng đối chiếu chi tiết"
+  },
+  {
+    "id": "UC-ADM-23",
+    "code": "ADM-23",
+    "group": "ADM",
+    "title": "Quản lý danh mục cơ sở trường",
+    "actor": "ADMIN có admin.campuses.manage",
+    "goal": "Duy trì SchoolCampus làm bộ lọc vị trí tìm phòng",
+    "bindings": [
+      "AdminCampusesController.list",
+      "AdminCampusesController.create",
+      "AdminCampusesController.update"
+    ],
+    "notes": "",
+    "status": "chưa đủ bằng chứng đối chiếu chi tiết"
+  },
+  {
+    "id": "UC-ADM-24",
+    "code": "ADM-24",
+    "group": "ADM",
+    "title": "Tra cứu giao dịch tài chính nền tảng",
+    "actor": "ADMIN có admin.finance.read",
+    "goal": "Đọc dữ liệu giao dịch theo projection quản trị",
+    "bindings": [
+      "AdminRegistryController.transactionList",
+      "GovernanceController.finance"
+    ],
+    "notes": "",
+    "status": "chưa đủ bằng chứng đối chiếu chi tiết"
+  },
+  {
+    "id": "UC-ADM-25",
+    "code": "ADM-25",
+    "group": "ADM",
+    "title": "Theo dõi kích hoạt và thu hồi phiên Admin",
+    "actor": "ADMIN có quyền quản trị Admin và phiên tương ứng",
+    "goal": "Xem lifecycle gửi lại lời mời hoặc thu hồi phiên Admin khác",
+    "bindings": [
+      "AdminLifecycleController.detail",
+      "AdminLifecycleController.resend",
+      "AdminLifecycleController.revoke"
+    ],
+    "notes": "",
+    "status": "chưa đủ bằng chứng đối chiếu chi tiết"
+  },
+  {
+    "id": "UC-ADM-26",
+    "code": "ADM-26",
+    "group": "ADM",
+    "title": "Mô phỏng quyền Admin",
+    "actor": "ADMIN có admin.permissions.simulate",
+    "goal": "Tính quyền được phép không thay hồ sơ cấp quyền",
+    "bindings": [
+      "GovernanceController.simulate"
+    ],
+    "notes": "",
+    "status": "chưa đủ bằng chứng đối chiếu chi tiết"
+  },
+  {
+    "id": "UC-ADM-27",
+    "code": "ADM-27",
+    "group": "ADM",
+    "title": "Đọc phản hồi thử nghiệm tìm phòng",
+    "actor": "ADMIN có admin.listings.moderate",
+    "goal": "Đọc PilotFeedback và thống kê theo trang",
+    "bindings": [
+      "HousingController.feedbackList"
+    ],
+    "notes": "",
+    "status": "chưa đủ bằng chứng đối chiếu chi tiết"
+  },
+  {
+    "id": "UC-SUP-01",
+    "code": "SUP-01",
+    "group": "SUP",
+    "title": "Tạo và trao đổi hồ sơ hỗ trợ",
+    "actor": "LANDLORD TENANT hoặc ADMIN có quyền hỗ trợ",
+    "goal": "Theo dõi ticket công khai còn ghi chú nội bộ chỉ cho admin được cấp",
+    "bindings": [
+      "SupportController.create",
+      "SupportController.list",
+      "SupportController.assignees",
+      "SupportController.teams",
+      "SupportController.detail",
+      "SupportController.reply",
+      "SupportController.note",
+      "SupportController.assign",
+      "SupportController.status",
+      "AdminConsoleController.context"
+    ],
+    "notes": "Decorator nhận STAFF nhưng interceptor chặn SupportController; không suy quyền thực thi từ decorator.",
+    "status": "chưa đủ bằng chứng đối chiếu chi tiết"
+  },
+  {
+    "id": "UC-SUP-02.1",
+    "code": "SUP-02.1",
+    "group": "SUP",
+    "title": "Cấu hình phân công tự động hỗ trợ",
+    "actor": "ADMIN có quyền support tương ứng",
+    "goal": "Đặt skills và phân công theo khả dụng của người xử lý",
+    "bindings": [
+      "SupportWorkflowController.skills",
+      "SupportWorkflowController.setSkills",
+      "SupportWorkflowController.autoAssign"
+    ],
+    "notes": "",
+    "status": "chưa đủ bằng chứng đối chiếu chi tiết"
+  },
+  {
+    "id": "UC-SUP-02.2",
+    "code": "SUP-02.2",
+    "group": "SUP",
+    "title": "Cấu hình và theo dõi SLA hỗ trợ",
+    "actor": "ADMIN có quyền SLA",
+    "goal": "Lưu lịch giờ làm và chính sách thời hạn hỗ trợ",
+    "bindings": [
+      "SupportSlaController.policy",
+      "SupportSlaController.update"
+    ],
+    "notes": "",
+    "status": "chưa đủ bằng chứng đối chiếu chi tiết"
+  },
+  {
+    "id": "UC-SUP-03.1",
+    "code": "SUP-03.1",
+    "group": "SUP",
+    "title": "Đính kèm tệp vào ticket hỗ trợ",
+    "actor": "LANDLORD TENANT hoặc ADMIN theo quyền ticket",
+    "goal": "Quét tệp và gắn attachment vào ticket đọc được",
+    "bindings": [
+      "SupportAttachmentController.upload"
+    ],
+    "notes": "Tệp hỗ trợ có bước quét malware riêng; không áp đồng nhất quy tắc đó cho mọi upload.",
+    "status": "chưa đủ bằng chứng đối chiếu chi tiết"
+  },
+  {
+    "id": "UC-SUP-03.2",
+    "code": "SUP-03.2",
+    "group": "SUP",
+    "title": "Quản lý mẫu nhãn và hợp nhất ticket",
+    "actor": "ADMIN có quyền support",
+    "goal": "Duy trì mẫu trả lời nhãn và liên kết ticket hợp nhất",
+    "bindings": [
+      "SupportToolsController.templates",
+      "SupportToolsController.create",
+      "SupportToolsController.update",
+      "SupportToolsController.labels",
+      "SupportToolsController.merge",
+      "SupportToolsController.feedback"
+    ],
+    "notes": "",
+    "status": "chưa đủ bằng chứng đối chiếu chi tiết"
+  },
+  {
+    "id": "UC-SUP-03.3",
+    "code": "SUP-03.3",
+    "group": "SUP",
+    "title": "Lưu bộ lọc xử lý ticket",
+    "actor": "ADMIN có quyền support",
+    "goal": "Duy trì SupportSavedView thuộc tài khoản",
+    "bindings": [
+      "SupportWorkflowController.views",
+      "SupportWorkflowController.createView",
+      "SupportWorkflowController.updateView",
+      "SupportWorkflowController.deleteView"
+    ],
+    "notes": "",
+    "status": "chưa đủ bằng chứng đối chiếu chi tiết"
+  },
+  {
+    "id": "UC-SUP-03.4",
+    "code": "SUP-03.4",
+    "group": "SUP",
+    "title": "Liên kết và xem dòng thời gian hồ sơ hỗ trợ",
+    "actor": "ADMIN có quyền hồ sơ hỗ trợ",
+    "goal": "Gắn tài nguyên được phép và xem sự kiện theo quyền",
+    "bindings": [
+      "SupportCaseController.timeline",
+      "SupportCaseController.link"
+    ],
+    "notes": "",
+    "status": "chưa đủ bằng chứng đối chiếu chi tiết"
+  },
+  {
+    "id": "UC-SUP-04",
+    "code": "SUP-04",
+    "group": "SUP",
+    "title": "Quản lý trung tâm thông báo cá nhân",
+    "actor": "LANDLORD TENANT hoặc ADMIN theo endpoint",
+    "goal": "Đọc thông báo và thiết lập sở thích của chính tài khoản",
+    "bindings": [
+      "NotificationCenterController.list",
+      "NotificationCenterController.preferences",
+      "NotificationCenterController.updatePreferences",
+      "NotificationCenterController.markRead",
+      "NotificationCenterController.markAllRead",
+      "SupportController.listNotifications",
+      "SupportController.markNotification",
+      "SupportController.markAllNotifications"
+    ],
+    "notes": "Chỉ phần endpoint cho LANDLORD TENANT ADMIN được coi truy cập được; STAFF bị chặn bởi interceptor.",
+    "status": "chưa đủ bằng chứng đối chiếu chi tiết"
+  },
+  {
+    "id": "UC-SUP-05.1",
+    "code": "SUP-05.1",
+    "group": "SUP",
+    "title": "Giám sát và xử lý sự cố vận hành",
+    "actor": "ADMIN có quyền operations",
+    "goal": "Đọc sự cố và thực hiện action đúng trạng thái",
+    "bindings": [
+      "IncidentWorkflowController.list",
+      "IncidentWorkflowController.assignees",
+      "IncidentWorkflowController.detail",
+      "IncidentWorkflowController.action",
+      "AdminConsoleController.operationsHealth",
+      "AdminConsoleController.acknowledgeIncident"
+    ],
+    "notes": "",
+    "status": "chưa đủ bằng chứng đối chiếu chi tiết"
+  },
+  {
+    "id": "UC-SUP-05.2",
+    "code": "SUP-05.2",
+    "group": "SUP",
+    "title": "Theo dõi hàng đợi giao nhận",
+    "actor": "ADMIN có quyền operations",
+    "goal": "Đọc metadata job và thử lại notification đủ điều kiện",
+    "bindings": [
+      "OperationsQueueController.list",
+      "NotificationDeliveryController.queue",
+      "NotificationDeliveryController.retry"
+    ],
+    "notes": "",
+    "status": "chưa đủ bằng chứng đối chiếu chi tiết"
+  },
+  {
+    "id": "UC-SUP-06",
+    "code": "SUP-06",
+    "group": "SUP",
+    "title": "Hỏi trợ lý AI và đọc nguồn hướng dẫn",
+    "actor": "LANDLORD",
+    "goal": "Nhận câu trả lời từ tri thức theo scope hoặc thiếu bằng chứng",
+    "bindings": [
+      "ChatbotController.ask",
+      "ChatbotController.source"
+    ],
+    "notes": "",
+    "status": "chưa đủ bằng chứng đối chiếu chi tiết"
+  },
+  {
+    "id": "UC-STF-01",
+    "code": "STF-01",
+    "group": "STF",
+    "title": "Mời nhân viên và cấp phạm vi khu trọ",
+    "actor": "LANDLORD",
+    "goal": "Tạo lời mời với tập quyền và propertyIds thuộc mình",
+    "bindings": [
+      "StaffController.presets",
+      "StaffController.list",
+      "StaffController.createInvite"
+    ],
+    "notes": "STAFF chỉ được list và presets khi có staff.view; không được tạo invite qua interceptor.",
+    "status": "chưa đủ bằng chứng đối chiếu chi tiết"
+  },
+  {
+    "id": "UC-STF-02",
+    "code": "STF-02",
+    "group": "STF",
+    "title": "Cập nhật quyền trạng thái và phạm vi nhân viên",
+    "actor": "LANDLORD",
+    "goal": "Đổi quyền preset khu được cấp và trạng thái nhân viên",
+    "bindings": [
+      "StaffController.update"
+    ],
+    "notes": "Dù decorator có STAFF và staff.manage, interceptor không cho STAFF tự cập nhật quyền.",
+    "status": "chưa đủ bằng chứng đối chiếu chi tiết"
+  },
+  {
+    "id": "UC-STF-03",
+    "code": "STF-03",
+    "group": "STF",
+    "title": "Mô phỏng quyền nhân viên",
+    "actor": "LANDLORD",
+    "goal": "Kiểm tra quyền hiệu lực mà không đổi cấp quyền",
+    "bindings": [
+      "StaffController.simulate"
+    ],
+    "notes": "",
+    "status": "chưa đủ bằng chứng đối chiếu chi tiết"
+  }
+]

@@ -1,0 +1,1212 @@
+{
+  "date": "2026-10-29",
+  "original": "/Users/hoang/Desktop/ĐỒ ÁN/Bao_cao_Quan_ly_Nha_tro_V3_2026-10-28.docx",
+  "original_sha256": "198de27e5e6f96734a12125d2c8e3dc1e9c653e82cab2f30dabe8b402cdb3c31",
+  "snapshot_files": 853,
+  "catalog_ucs": 164,
+  "detailed_ucs": [
+    "SYS-01",
+    "SYS-02",
+    "SYS-03",
+    "SYS-05.1",
+    "SYS-05.2",
+    "SYS-06",
+    "SYS-07",
+    "SYS-08",
+    "SYS-09"
+  ],
+  "pending_ucs": 155,
+  "routes": 405,
+  "controllers": 70,
+  "routes_mapped_to_uc": 393,
+  "technical_routes": 12,
+  "groups": {
+    "SYS": 9,
+    "DIS": 18,
+    "OPT": 16,
+    "TNT": 21,
+    "BIL": 28,
+    "OPS": 9,
+    "TEN": 13,
+    "ADM": 36,
+    "SUP": 11,
+    "STF": 3
+  },
+  "crosswalk": {
+    "UC-SYS-01": [
+      "UC-SYS-01"
+    ],
+    "UC-SYS-02": [
+      "UC-SYS-02"
+    ],
+    "UC-SYS-03": [
+      "UC-SYS-03"
+    ],
+    "UC-SYS-04": [
+      "SP-SYS-01",
+      "SP-SYS-02"
+    ],
+    "UC-SYS-05.1": [
+      "UC-SYS-05.1"
+    ],
+    "UC-SYS-05.2": [
+      "UC-SYS-05.2"
+    ],
+    "UC-SYS-06": [
+      "UC-SYS-06"
+    ],
+    "UC-SYS-07": [
+      "UC-SYS-07"
+    ],
+    "UC-SYS-08": [
+      "UC-SYS-08"
+    ],
+    "UC-DIS-01": [
+      "UC-DIS-01"
+    ],
+    "UC-DIS-02": [
+      "UC-DIS-02"
+    ],
+    "UC-DIS-03": [
+      "UC-DIS-03"
+    ],
+    "UC-DIS-04": [
+      "UC-DIS-04"
+    ],
+    "UC-DIS-05": [
+      "UC-DIS-05"
+    ],
+    "UC-DIS-06": [
+      "UC-DIS-06.1",
+      "UC-DIS-06.2",
+      "UC-DIS-06.3"
+    ],
+    "UC-DIS-07": [
+      "UC-DIS-07"
+    ],
+    "UC-DIS-08": [
+      "UC-DIS-08"
+    ],
+    "UC-DIS-09": [
+      "UC-DIS-09"
+    ],
+    "UC-DIS-10": [
+      "UC-DIS-10"
+    ],
+    "UC-DIS-11": [
+      "UC-DIS-11",
+      "UC-TNT-12.2",
+      "UC-TNT-12.3"
+    ],
+    "UC-DIS-12": [
+      "UC-DIS-12"
+    ],
+    "UC-DIS-13": [
+      "UC-DIS-13.1",
+      "UC-DIS-13.2"
+    ],
+    "UC-OPT-01": [
+      "UC-OPT-01"
+    ],
+    "UC-OPT-02": [
+      "UC-OPT-02"
+    ],
+    "UC-OPT-03.1": [
+      "UC-OPT-03.1"
+    ],
+    "UC-OPT-03.2": [
+      "UC-OPT-03.2"
+    ],
+    "UC-OPT-04.1": [
+      "UC-OPT-04.1"
+    ],
+    "UC-OPT-04.2": [
+      "UC-OPT-04.2"
+    ],
+    "UC-OPT-04.3": [
+      "UC-OPT-04.3"
+    ],
+    "UC-OPT-05": [
+      "UC-OPT-05"
+    ],
+    "UC-OPT-06.1": [
+      "UC-OPT-06.1"
+    ],
+    "UC-OPT-06.2": [
+      "UC-OPT-06.2"
+    ],
+    "UC-OPT-07.1": [
+      "UC-OPT-07.1"
+    ],
+    "UC-OPT-07.2": [
+      "UC-OPT-07.2"
+    ],
+    "UC-OPT-07.3": [
+      "UC-OPT-07.3"
+    ],
+    "UC-OPT-08.1": [
+      "UC-OPT-08.1"
+    ],
+    "UC-OPT-08.2": [
+      "UC-OPT-08.2"
+    ],
+    "UC-OPT-09": [
+      "UC-OPT-09"
+    ],
+    "UC-TNT-01": [
+      "UC-TNT-01"
+    ],
+    "UC-TNT-02.1": [
+      "UC-TNT-02.1"
+    ],
+    "UC-TNT-02.2": [
+      "UC-TNT-02.2"
+    ],
+    "UC-TNT-02.3": [
+      "UC-TNT-02.3"
+    ],
+    "UC-TNT-02.4": [
+      "UC-TNT-02.4"
+    ],
+    "UC-TNT-03": [
+      "UC-TNT-03"
+    ],
+    "UC-TNT-04": [
+      "UC-TNT-04"
+    ],
+    "UC-TNT-05": [
+      "UC-TNT-05"
+    ],
+    "UC-TNT-06.1": [
+      "UC-TNT-06.1"
+    ],
+    "UC-TNT-06.2": [
+      "UC-TNT-06.2"
+    ],
+    "UC-TNT-06.3": [
+      "UC-TNT-06.3"
+    ],
+    "UC-TNT-07": [
+      "UC-TNT-07"
+    ],
+    "UC-TNT-08": [
+      "UC-TNT-08"
+    ],
+    "UC-TNT-09": [
+      "UC-TNT-09"
+    ],
+    "UC-TNT-10": [
+      "UC-TNT-10"
+    ],
+    "UC-TNT-11": [
+      "UC-TNT-11"
+    ],
+    "UC-TNT-12.1": [
+      "UC-TNT-12.1"
+    ],
+    "UC-TNT-12.2": [
+      "UC-TNT-12.2",
+      "UC-TNT-12.3"
+    ],
+    "UC-TNT-13": [
+      "UC-TNT-13"
+    ],
+    "UC-BIL-01": [
+      "UC-BIL-01"
+    ],
+    "UC-BIL-02": [
+      "UC-BIL-02"
+    ],
+    "UC-BIL-03": [
+      "UC-BIL-03"
+    ],
+    "UC-BIL-04": [
+      "UC-BIL-04"
+    ],
+    "UC-BIL-05": [
+      "UC-BIL-05"
+    ],
+    "UC-BIL-06": [
+      "UC-BIL-06"
+    ],
+    "UC-BIL-07": [
+      "UC-BIL-07"
+    ],
+    "UC-BIL-08.1": [
+      "UC-BIL-08.1"
+    ],
+    "UC-BIL-08.2": [
+      "UC-BIL-08.2"
+    ],
+    "UC-BIL-09": [
+      "UC-BIL-09"
+    ],
+    "UC-BIL-10": [
+      "UC-BIL-10"
+    ],
+    "UC-BIL-11": [
+      "UC-BIL-11"
+    ],
+    "UC-BIL-12": [
+      "UC-BIL-12.1",
+      "UC-BIL-12.2"
+    ],
+    "UC-BIL-13": [
+      "UC-BIL-13"
+    ],
+    "UC-BIL-14": [
+      "UC-BIL-14"
+    ],
+    "UC-BIL-15": [
+      "UC-BIL-15"
+    ],
+    "UC-BIL-16": [
+      "UC-BIL-16"
+    ],
+    "UC-BIL-17.1": [
+      "UC-BIL-17.1"
+    ],
+    "UC-BIL-17.2": [
+      "UC-BIL-17.2"
+    ],
+    "UC-BIL-18": [
+      "UC-BIL-18.1",
+      "UC-BIL-18.2",
+      "UC-BIL-18.3"
+    ],
+    "UC-BIL-19": [
+      "UC-BIL-19"
+    ],
+    "UC-BIL-20": [
+      "UC-BIL-20"
+    ],
+    "UC-BIL-21": [
+      "UC-BIL-21"
+    ],
+    "UC-OPS-01": [
+      "UC-OPS-01"
+    ],
+    "UC-OPS-02": [
+      "UC-OPS-02"
+    ],
+    "UC-OPS-03": [
+      "UC-OPS-03"
+    ],
+    "UC-OPS-04": [
+      "UC-OPS-04"
+    ],
+    "UC-OPS-05": [
+      "UC-OPS-05"
+    ],
+    "UC-OPS-06": [
+      "UC-OPS-06"
+    ],
+    "UC-OPS-07": [
+      "UC-OPS-07"
+    ],
+    "UC-OPS-08": [
+      "UC-OPS-08"
+    ],
+    "UC-TEN-01": [
+      "UC-TEN-01"
+    ],
+    "UC-TEN-02": [
+      "UC-TEN-02"
+    ],
+    "UC-TEN-03": [
+      "UC-TEN-03"
+    ],
+    "UC-TEN-04": [
+      "UC-TEN-04"
+    ],
+    "UC-TEN-05": [
+      "UC-TEN-05"
+    ],
+    "UC-TEN-06": [
+      "UC-TEN-06"
+    ],
+    "UC-TEN-07": [
+      "UC-TEN-07"
+    ],
+    "UC-TEN-08": [
+      "UC-TEN-08.1",
+      "UC-TEN-08.2"
+    ],
+    "UC-TEN-09": [
+      "UC-TEN-09.1",
+      "UC-TEN-09.2",
+      "UC-TEN-09.3"
+    ],
+    "UC-OPS-09": [
+      "UC-OPS-09"
+    ],
+    "UC-ADM-01": [
+      "UC-ADM-01"
+    ],
+    "UC-ADM-02": [
+      "UC-ADM-02"
+    ],
+    "UC-ADM-03.1": [
+      "UC-ADM-03.1"
+    ],
+    "UC-ADM-03.2": [
+      "UC-ADM-03.2"
+    ],
+    "UC-ADM-04.1": [
+      "UC-ADM-04.1"
+    ],
+    "UC-ADM-04.2": [
+      "UC-ADM-04.2"
+    ],
+    "UC-ADM-04.3": [
+      "UC-ADM-04.3"
+    ],
+    "UC-ADM-05.1": [
+      "UC-ADM-05.1"
+    ],
+    "UC-ADM-05.2": [
+      "UC-ADM-05.2"
+    ],
+    "UC-ADM-06.1": [
+      "UC-ADM-06.1"
+    ],
+    "UC-ADM-06.2": [
+      "UC-ADM-06.2"
+    ],
+    "UC-ADM-07": [
+      "UC-ADM-07.1",
+      "UC-ADM-07.2"
+    ],
+    "UC-ADM-08": [
+      "UC-ADM-08"
+    ],
+    "UC-ADM-09": [
+      "UC-ADM-09"
+    ],
+    "UC-ADM-10": [
+      "UC-ADM-10"
+    ],
+    "UC-ADM-11": [
+      "UC-ADM-11"
+    ],
+    "UC-ADM-12": [
+      "UC-ADM-12"
+    ],
+    "UC-ADM-13": [
+      "UC-ADM-13.1",
+      "UC-ADM-13.2",
+      "UC-ADM-13.3"
+    ],
+    "UC-ADM-14": [
+      "UC-ADM-14"
+    ],
+    "UC-ADM-15": [
+      "UC-ADM-15"
+    ],
+    "UC-ADM-16": [
+      "UC-ADM-16"
+    ],
+    "UC-ADM-17": [
+      "UC-ADM-17.1",
+      "UC-ADM-17.2"
+    ],
+    "UC-ADM-18": [
+      "UC-ADM-18"
+    ],
+    "UC-ADM-19": [
+      "UC-ADM-19"
+    ],
+    "UC-ADM-20": [
+      "UC-ADM-20"
+    ],
+    "UC-ADM-21": [
+      "UC-ADM-21"
+    ],
+    "UC-ADM-22": [
+      "UC-ADM-22"
+    ],
+    "UC-SUP-01": [
+      "UC-SUP-01"
+    ],
+    "UC-SUP-02": [
+      "UC-SUP-02.1",
+      "UC-SUP-02.2"
+    ],
+    "UC-SUP-03": [
+      "UC-SUP-03.1",
+      "UC-SUP-03.2",
+      "UC-SUP-03.3",
+      "UC-SUP-03.4"
+    ],
+    "UC-SUP-04": [
+      "UC-SUP-04"
+    ],
+    "UC-SUP-05": [
+      "UC-SUP-05.1",
+      "UC-SUP-05.2"
+    ],
+    "UC-SUP-06": [
+      "UC-SUP-06"
+    ]
+  },
+  "evidence": [
+    {
+      "id": "E001",
+      "file": "backend/src/auth/auth.controller.ts",
+      "line": 18,
+      "needle": "register(",
+      "label": "AuthController.register",
+      "kind": "Source"
+    },
+    {
+      "id": "E002",
+      "file": "backend/src/auth/auth.controller.ts",
+      "line": 25,
+      "needle": "registerSeeker(",
+      "label": "AuthController.registerSeeker",
+      "kind": "Source"
+    },
+    {
+      "id": "E003",
+      "file": "backend/src/auth/auth.controller.ts",
+      "line": 32,
+      "needle": "login(",
+      "label": "AuthController.login",
+      "kind": "Source"
+    },
+    {
+      "id": "E004",
+      "file": "backend/src/auth/auth.controller.ts",
+      "line": 44,
+      "needle": "logout(",
+      "label": "AuthController.logout",
+      "kind": "Source"
+    },
+    {
+      "id": "E005",
+      "file": "backend/src/auth/auth.controller.ts",
+      "line": 59,
+      "needle": "sessions(",
+      "label": "AuthController.sessions",
+      "kind": "Source"
+    },
+    {
+      "id": "E006",
+      "file": "backend/src/auth/auth.controller.ts",
+      "line": 80,
+      "needle": "changePassword(",
+      "label": "AuthController.changePassword",
+      "kind": "Source"
+    },
+    {
+      "id": "E007",
+      "file": "backend/src/auth/auth.service.ts",
+      "line": 45,
+      "needle": "registerAccount(",
+      "label": "AuthService.registerAccount",
+      "kind": "Source"
+    },
+    {
+      "id": "E008",
+      "file": "backend/src/auth/auth.service.ts",
+      "line": 41,
+      "needle": "registerSeeker(",
+      "label": "AuthService.registerSeeker",
+      "kind": "Source"
+    },
+    {
+      "id": "E009",
+      "file": "backend/src/auth/auth.service.ts",
+      "line": 71,
+      "needle": "login(",
+      "label": "AuthService.login",
+      "kind": "Source"
+    },
+    {
+      "id": "E010",
+      "file": "backend/src/auth/auth.service.ts",
+      "line": 137,
+      "needle": "logout(",
+      "label": "AuthService.logout",
+      "kind": "Source"
+    },
+    {
+      "id": "E011",
+      "file": "backend/src/auth/auth.service.ts",
+      "line": 212,
+      "needle": "sessions(",
+      "label": "AuthService.sessions",
+      "kind": "Source"
+    },
+    {
+      "id": "E012",
+      "file": "backend/src/auth/auth.service.ts",
+      "line": 232,
+      "needle": "revokeSession(",
+      "label": "AuthService.revokeSession",
+      "kind": "Source"
+    },
+    {
+      "id": "E013",
+      "file": "backend/src/auth/auth.service.ts",
+      "line": 244,
+      "needle": "revokeOtherSessions(",
+      "label": "AuthService.revokeOtherSessions",
+      "kind": "Source"
+    },
+    {
+      "id": "E014",
+      "file": "backend/src/auth/auth.service.ts",
+      "line": 159,
+      "needle": "changePassword(",
+      "label": "AuthService.changePassword",
+      "kind": "Source"
+    },
+    {
+      "id": "E015",
+      "file": "backend/src/auth/auth.service.ts",
+      "line": 179,
+      "needle": "issueSession(",
+      "label": "AuthService.issueSession",
+      "kind": "Source"
+    },
+    {
+      "id": "E016",
+      "file": "backend/src/auth/auth.service.ts",
+      "line": 91,
+      "needle": "refresh(",
+      "label": "AuthService.refresh",
+      "kind": "Source"
+    },
+    {
+      "id": "E017",
+      "file": "backend/src/auth/account-access.service.ts",
+      "line": 47,
+      "needle": "forgot(",
+      "label": "AccountAccessService.forgot",
+      "kind": "Source"
+    },
+    {
+      "id": "E018",
+      "file": "backend/src/auth/account-access.service.ts",
+      "line": 54,
+      "needle": "redeem(",
+      "label": "AccountAccessService.redeem",
+      "kind": "Source"
+    },
+    {
+      "id": "E019",
+      "file": "backend/src/auth/account-access.service.ts",
+      "line": 23,
+      "needle": "enqueue(",
+      "label": "AccountAccessService.enqueue",
+      "kind": "Source"
+    },
+    {
+      "id": "E020",
+      "file": "backend/src/auth/account-access.controller.ts",
+      "line": 19,
+      "needle": "forgot(",
+      "label": "AccountAccessController.forgot",
+      "kind": "Source"
+    },
+    {
+      "id": "E021",
+      "file": "backend/src/tenants/tenant-invites.controller.ts",
+      "line": 45,
+      "needle": "accept(",
+      "label": "TenantInvitesController.accept",
+      "kind": "Source"
+    },
+    {
+      "id": "E022",
+      "file": "backend/src/tenants/tenant-invites.service.ts",
+      "line": 97,
+      "needle": "accept(",
+      "label": "TenantInvitesService.accept",
+      "kind": "Source"
+    },
+    {
+      "id": "E023",
+      "file": "backend/src/tenants/tenant-invites.service.ts",
+      "line": 54,
+      "needle": "create(",
+      "label": "TenantInvitesService.create",
+      "kind": "Source"
+    },
+    {
+      "id": "E024",
+      "file": "backend/src/staff/staff.controller.ts",
+      "line": 96,
+      "needle": "accept(",
+      "label": "StaffController.accept",
+      "kind": "Source"
+    },
+    {
+      "id": "E025",
+      "file": "backend/src/staff/staff.service.ts",
+      "line": 104,
+      "needle": "accept(",
+      "label": "StaffService.accept",
+      "kind": "Source"
+    },
+    {
+      "id": "E026",
+      "file": "backend/src/auth/admin-mfa.service.ts",
+      "line": 66,
+      "needle": "verify(",
+      "label": "AdminMfaService.verify",
+      "kind": "Source"
+    },
+    {
+      "id": "E027",
+      "file": "backend/src/auth/dto/register.dto.ts",
+      "line": 4,
+      "needle": "export class RegisterDto",
+      "label": "RegisterDto",
+      "kind": "Source"
+    },
+    {
+      "id": "E028",
+      "file": "backend/src/auth/dto/login.dto.ts",
+      "line": 4,
+      "needle": "export class LoginDto",
+      "label": "LoginDto",
+      "kind": "Source"
+    },
+    {
+      "id": "E029",
+      "file": "backend/src/auth/dto/change-password.dto.ts",
+      "line": 4,
+      "needle": "export class ChangePasswordDto",
+      "label": "ChangePasswordDto",
+      "kind": "Source"
+    },
+    {
+      "id": "E030",
+      "file": "backend/src/auth/dto/refresh.dto.ts",
+      "line": 4,
+      "needle": "export class RefreshDto",
+      "label": "RefreshDto",
+      "kind": "Source"
+    },
+    {
+      "id": "E031",
+      "file": "backend/src/tenants/dto/accept-tenant-invite.dto.ts",
+      "line": 3,
+      "needle": "export class AcceptTenantInviteDto",
+      "label": "AcceptTenantInviteDto",
+      "kind": "Source"
+    },
+    {
+      "id": "E032",
+      "file": "backend/src/staff/dto/accept-staff-invite.dto.ts",
+      "line": 3,
+      "needle": "export class AcceptStaffInviteDto",
+      "label": "AcceptStaffInviteDto",
+      "kind": "Source"
+    },
+    {
+      "id": "E033",
+      "file": "backend/src/auth/jwt.strategy.ts",
+      "line": 25,
+      "needle": "async validate",
+      "label": "JwtStrategy.validate",
+      "kind": "Source"
+    },
+    {
+      "id": "E034",
+      "file": "backend/src/common/roles.guard.ts",
+      "line": 23,
+      "needle": "canActivate",
+      "label": "RolesGuard.canActivate",
+      "kind": "Source"
+    },
+    {
+      "id": "E035",
+      "file": "backend/src/common/property-scope.ts",
+      "line": 44,
+      "needle": "class PropertyScopeInterceptor",
+      "label": "PropertyScopeInterceptor",
+      "kind": "Source"
+    },
+    {
+      "id": "E036",
+      "file": "backend/src/common/admin-access.ts",
+      "line": 1,
+      "needle": "export",
+      "label": "Admin access predicates",
+      "kind": "Source"
+    },
+    {
+      "id": "E037",
+      "file": "backend/prisma/schema.prisma",
+      "line": 177,
+      "needle": "model User {",
+      "label": "User",
+      "kind": "Source"
+    },
+    {
+      "id": "E038",
+      "file": "backend/prisma/schema.prisma",
+      "line": 816,
+      "needle": "model Tenant {",
+      "label": "Tenant",
+      "kind": "Source"
+    },
+    {
+      "id": "E039",
+      "file": "backend/prisma/schema.prisma",
+      "line": 1738,
+      "needle": "model AuthSession {",
+      "label": "AuthSession; RefreshToken trong cùng schema",
+      "kind": "Source"
+    },
+    {
+      "id": "E040",
+      "file": "backend/prisma/schema.prisma",
+      "line": 1771,
+      "needle": "model AccountAccessToken {",
+      "label": "AccountAccessToken",
+      "kind": "Source"
+    },
+    {
+      "id": "E041",
+      "file": "backend/prisma/schema.prisma",
+      "line": 910,
+      "needle": "model TenantInvite {",
+      "label": "TenantInvite",
+      "kind": "Source"
+    },
+    {
+      "id": "E042",
+      "file": "backend/prisma/schema.prisma",
+      "line": 291,
+      "needle": "model StaffProfile {",
+      "label": "StaffProfile; StaffInvite; StaffPropertyScope",
+      "kind": "Source"
+    },
+    {
+      "id": "E043",
+      "file": "lib/features/auth/register_screen.dart",
+      "line": 79,
+      "needle": "Future<void> _submit",
+      "label": "RegisterScreen._submit",
+      "kind": "Source"
+    },
+    {
+      "id": "E044",
+      "file": "lib/features/auth/login_screen.dart",
+      "line": 37,
+      "needle": "Future<void> _submit",
+      "label": "LoginScreen._submit",
+      "kind": "Source"
+    },
+    {
+      "id": "E045",
+      "file": "lib/features/auth/auth_providers.dart",
+      "line": 116,
+      "needle": "Future<void> logout",
+      "label": "SessionController.logout",
+      "kind": "Source"
+    },
+    {
+      "id": "E046",
+      "file": "lib/features/admin/admin_sessions_screen.dart",
+      "line": 10,
+      "needle": "class AdminSessionsScreen",
+      "label": "AdminSessionsScreen",
+      "kind": "Source"
+    },
+    {
+      "id": "E047",
+      "file": "lib/features/tenant_portal/tenant_change_password_screen.dart",
+      "line": 8,
+      "needle": "class TenantChangePasswordScreen",
+      "label": "TenantChangePasswordScreen",
+      "kind": "Source"
+    },
+    {
+      "id": "E048",
+      "file": "lib/features/auth/password_recovery_dialog.dart",
+      "line": 12,
+      "needle": "class PasswordRecoveryDialog",
+      "label": "PasswordRecoveryDialog",
+      "kind": "Source"
+    },
+    {
+      "id": "E049",
+      "file": "lib/features/auth/account_access_screen.dart",
+      "line": 32,
+      "needle": "Future<void> _submit",
+      "label": "AccountAccessScreen._submit",
+      "kind": "Source"
+    },
+    {
+      "id": "E050",
+      "file": "lib/features/auth/tenant_invite_screen.dart",
+      "line": 39,
+      "needle": "Future<void> _submit",
+      "label": "TenantInviteScreen._submit",
+      "kind": "Source"
+    },
+    {
+      "id": "E051",
+      "file": "lib/features/auth/staff_invite_screen.dart",
+      "line": 39,
+      "needle": "Future<void> _submit",
+      "label": "StaffInviteScreen._submit",
+      "kind": "Source"
+    },
+    {
+      "id": "E052",
+      "file": "lib/data/auth/auth_repository.dart",
+      "line": 6,
+      "needle": "class AuthRepository",
+      "label": "AuthRepository login/register/logout/restore",
+      "kind": "Source"
+    },
+    {
+      "id": "E053",
+      "file": "lib/features/auth/auth_providers.dart",
+      "line": 52,
+      "needle": "class SessionController",
+      "label": "SessionController",
+      "kind": "Source"
+    },
+    {
+      "id": "E054",
+      "file": "lib/features/auth/auth_navigation.dart",
+      "line": 264,
+      "needle": "homeRouteForSession",
+      "label": "homeRouteForSession",
+      "kind": "Source"
+    },
+    {
+      "id": "E055",
+      "file": "lib/data/auth/token_refresh_coordinator.dart",
+      "line": 8,
+      "needle": "class TokenRefreshCoordinator",
+      "label": "TokenRefreshCoordinator",
+      "kind": "Source"
+    },
+    {
+      "id": "E056",
+      "file": "lib/core/network/api_client.dart",
+      "line": 52,
+      "needle": "authRetry",
+      "label": "API client retry 401",
+      "kind": "Source"
+    },
+    {
+      "id": "E057",
+      "file": "backend/src/app.bootstrap.ts",
+      "line": 1,
+      "needle": "ValidationPipe",
+      "label": "Global validation and API prefix",
+      "kind": "Source"
+    },
+    {
+      "id": "E058",
+      "file": "backend/src/app.module.ts",
+      "line": 37,
+      "needle": "@Module",
+      "label": "Module registrations and global interceptors",
+      "kind": "Source"
+    },
+    {
+      "id": "E059",
+      "file": "backend/src/common/api-error.filter.ts",
+      "line": 18,
+      "needle": "class ApiErrorFilter",
+      "label": "ApiErrorFilter",
+      "kind": "Source"
+    },
+    {
+      "id": "E060",
+      "file": "lib/app/app.dart",
+      "line": 80,
+      "needle": "GoRouter",
+      "label": "Flutter routing",
+      "kind": "Source"
+    },
+    {
+      "id": "E061",
+      "file": "backend/src/operations/turnover.workflow.ts",
+      "line": 4,
+      "needle": "export const turnoverStages",
+      "label": "Turnover stages and beginTurnover",
+      "kind": "Source"
+    },
+    {
+      "id": "E062",
+      "file": "backend/src/billing/demo-card.gateway.ts",
+      "line": 7,
+      "needle": "class DemoCardGateway",
+      "label": "DemoCardGateway.assertEnabled; validateCard",
+      "kind": "Source"
+    },
+    {
+      "id": "E063",
+      "file": "lib/features/reports/reports_screen.dart",
+      "line": 96,
+      "needle": "Clipboard.setData(ClipboardData(text: export.content))",
+      "label": "ReportsScreen CSV clipboard",
+      "kind": "Source"
+    },
+    {
+      "id": "E064",
+      "file": "backend/src/common/subscription-entitlements.ts",
+      "line": 4,
+      "needle": "export",
+      "label": "Inventory subscription entitlements",
+      "kind": "Source"
+    },
+    {
+      "id": "E065",
+      "file": "backend/src/chatbot/chatbot.config.ts",
+      "line": 19,
+      "needle": "env.CHATBOT_ENABLED ?? 'false'",
+      "label": "Chatbot default disabled",
+      "kind": "Source"
+    },
+    {
+      "id": "E066",
+      "file": "backend/src/chatbot/chatbot.controller.ts",
+      "line": 14,
+      "needle": "@Roles(AuthRole.LANDLORD)",
+      "label": "Chatbot role",
+      "kind": "Source"
+    },
+    {
+      "id": "E067",
+      "file": "lib/features/tenants/lease_pdf.dart",
+      "line": 1,
+      "needle": "import",
+      "label": "Local lease PDF",
+      "kind": "Source"
+    },
+    {
+      "id": "E068",
+      "file": "lib/features/billing/invoice_pdf.dart",
+      "line": 1,
+      "needle": "import",
+      "label": "Local invoice PDF",
+      "kind": "Source"
+    },
+    {
+      "id": "E069",
+      "file": "test/features/auth/register_screen_test.dart",
+      "line": 152,
+      "needle": "purpose selector matches",
+      "label": "RegisterScreen tests; validate/register two purposes",
+      "kind": "Test source, không mặc định đã chạy mọi scenario"
+    },
+    {
+      "id": "E070",
+      "file": "backend/src/auth/auth.service.spec.ts",
+      "line": 57,
+      "needle": "registers as a landlord",
+      "label": "AuthService tests; register, duplicate, inactive, change password",
+      "kind": "Test source, không mặc định đã chạy mọi scenario"
+    },
+    {
+      "id": "E071",
+      "file": "backend/src/auth/jwt.strategy.spec.ts",
+      "line": 20,
+      "needle": "maps an active landlord",
+      "label": "JwtStrategy tests",
+      "kind": "Test source, không mặc định đã chạy mọi scenario"
+    },
+    {
+      "id": "E072",
+      "file": "test/features/auth/session_cache_isolation_test.dart",
+      "line": 113,
+      "needle": "password change clears",
+      "label": "Password change and cache isolation tests",
+      "kind": "Test source, không mặc định đã chạy mọi scenario"
+    },
+    {
+      "id": "E073",
+      "file": "backend/src/auth/account-access.service.spec.ts",
+      "line": 4,
+      "needle": "rate-limits repeated",
+      "label": "Account access send rate-limit unit test",
+      "kind": "Test source, không mặc định đã chạy mọi scenario"
+    },
+    {
+      "id": "E074",
+      "file": "test/features/auth/account_access_test.dart",
+      "line": 10,
+      "needle": "activation handles",
+      "label": "Account access link parsing and recovery UI tests",
+      "kind": "Test source, không mặc định đã chạy mọi scenario"
+    },
+    {
+      "id": "E075",
+      "file": "backend/src/tenants/tenant-invites.service.spec.ts",
+      "line": 32,
+      "needle": "creates a hashed activation invite",
+      "label": "Tenant invite create tests, không phải accept E2E",
+      "kind": "Test source, không mặc định đã chạy mọi scenario"
+    },
+    {
+      "id": "E076",
+      "file": "backend/test/e2e/app-functional.e2e-spec.ts",
+      "line": 151,
+      "needle": "limits tenant invite resends",
+      "label": "Tenant and STAFF accept E2E source; chưa chạy",
+      "kind": "Test source, không mặc định đã chạy mọi scenario"
+    },
+    {
+      "id": "E077",
+      "file": "backend/test/e2e/admin-next-sprints.e2e-spec.ts",
+      "line": 42,
+      "needle": "revokes other devices",
+      "label": "Own-session revoke E2E source; chưa chạy",
+      "kind": "Test source, không mặc định đã chạy mọi scenario"
+    },
+    {
+      "id": "E078",
+      "file": "backend/test/e2e/auth.e2e-spec.ts",
+      "line": 58,
+      "needle": "rotates refresh tokens",
+      "label": "Auth refresh/logout E2E source; chưa chạy",
+      "kind": "Test source, không mặc định đã chạy mọi scenario"
+    },
+    {
+      "id": "E079",
+      "file": "backend/src/leases/leases.service.ts",
+      "line": 87,
+      "needle": "create(",
+      "label": "LeasesService.create",
+      "kind": "Source"
+    },
+    {
+      "id": "E080",
+      "file": "backend/src/leases/leases.service.ts",
+      "line": 160,
+      "needle": "end(",
+      "label": "LeasesService.end",
+      "kind": "Source"
+    },
+    {
+      "id": "E081",
+      "file": "backend/src/operations/turnovers.service.ts",
+      "line": 35,
+      "needle": "advance(",
+      "label": "TurnoversService.advance",
+      "kind": "Source"
+    },
+    {
+      "id": "E082",
+      "file": "backend/src/leases/settlements.service.ts",
+      "line": 61,
+      "needle": "confirm(",
+      "label": "LeaseSettlementsService.confirm",
+      "kind": "Source"
+    },
+    {
+      "id": "E083",
+      "file": "backend/src/leases/settlements.service.ts",
+      "line": 53,
+      "needle": "preview(",
+      "label": "LeaseSettlementsService.preview",
+      "kind": "Source"
+    },
+    {
+      "id": "E084",
+      "file": "backend/src/leases/settlements.service.ts",
+      "line": 101,
+      "needle": "recordRefund(",
+      "label": "LeaseSettlementsService.recordRefund",
+      "kind": "Source"
+    },
+    {
+      "id": "E085",
+      "file": "backend/src/tenant-lifecycle/tenant-lifecycle.service.ts",
+      "line": 148,
+      "needle": "executeRequest(",
+      "label": "TenantLifecycleService.executeRequest",
+      "kind": "Source"
+    },
+    {
+      "id": "E086",
+      "file": "backend/src/billing/billing.service.ts",
+      "line": 1053,
+      "needle": "reviewPaymentProof(",
+      "label": "BillingService.reviewPaymentProof",
+      "kind": "Source"
+    },
+    {
+      "id": "E087",
+      "file": "backend/src/billing/billing.service.ts",
+      "line": 1245,
+      "needle": "cancelInvoice(",
+      "label": "BillingService.cancelInvoice",
+      "kind": "Source"
+    },
+    {
+      "id": "E088",
+      "file": "backend/src/billing/billing.service.ts",
+      "line": 1185,
+      "needle": "reversePayment(",
+      "label": "BillingService.reversePayment",
+      "kind": "Source"
+    },
+    {
+      "id": "E089",
+      "file": "backend/src/reports/reports.service.ts",
+      "line": 18,
+      "needle": "monthly(",
+      "label": "ReportsService.monthly",
+      "kind": "Source"
+    },
+    {
+      "id": "E090",
+      "file": "backend/src/listings/listings.service.ts",
+      "line": 290,
+      "needle": "visibleWhere(",
+      "label": "ListingsService.visibleWhere",
+      "kind": "Source"
+    },
+    {
+      "id": "E091",
+      "file": "backend/src/listings/listings.service.ts",
+      "line": 104,
+      "needle": "update(",
+      "label": "ListingsService.update",
+      "kind": "Source"
+    },
+    {
+      "id": "E092",
+      "file": "backend/src/listings/saved-searches.service.ts",
+      "line": 25,
+      "needle": "create(",
+      "label": "SavedSearchesService.create",
+      "kind": "Source"
+    },
+    {
+      "id": "E093",
+      "file": "backend/src/support/support-attachment.service.ts",
+      "line": 25,
+      "needle": "upload(",
+      "label": "SupportAttachmentService.upload",
+      "kind": "Source"
+    },
+    {
+      "id": "E094",
+      "file": "backend/src/housing/housing.service.ts",
+      "line": 240,
+      "needle": "createLease(",
+      "label": "HousingService.createLease",
+      "kind": "Source"
+    }
+  ],
+  "tests": {
+    "backend_suites_passed": 7,
+    "backend_tests_passed": 31,
+    "flutter_tests_passed": 48,
+    "e2e_executed": false
+  }
+}

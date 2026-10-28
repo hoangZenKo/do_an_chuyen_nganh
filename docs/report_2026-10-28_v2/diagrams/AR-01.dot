@@ -1,0 +1,19 @@
+digraph G {
+graph [bgcolor="white",rankdir=TB,nodesep=0.45,ranksep=0.50,pad=0.2];
+node [fontname="Times New Roman", fontsize=17, color="black", fontcolor="black", style="filled", fillcolor="white", penwidth=1.1];
+edge [fontname="Times New Roman", fontsize=14, color="black", arrowsize=0.7, penwidth=0.9];
+users [shape=box,label="Admin / Chủ trọ / Người thuê\nKhách vãng lai"];
+ui [shape=box,label="Flutter\nGoRouter · Riverpod · Dio"];
+api [shape=box,label="NestJS REST API /api/v1\nJWT · Roles · Permissions · Property Scope"];
+domain [shape=box,label="Các service nghiệp vụ\nBilling · Leases · Listings · Support · Admin"];
+db [shape=box,label="Prisma ORM → PostgreSQL"];
+worker [shape=box,label="Scheduler / Outbox / Delivery\nTùy cấu hình môi trường"];
+external [shape=box,label="Uploads · Email/Zalo provider\nOllama/nguồn tri thức (tùy cấu hình)"];
+users -> ui [label="Thao tác"];
+ui -> api [label="HTTPS + token"];
+api -> domain [label="Kiểm tra quyền/đầu vào"];
+domain -> db [label="Transaction và truy vấn"];
+worker -> db [label="Lấy job, ghi kết quả"];
+domain -> worker [label="Ghi sự kiện/job"];
+worker -> external [label="Gửi theo cấu hình"];
+}

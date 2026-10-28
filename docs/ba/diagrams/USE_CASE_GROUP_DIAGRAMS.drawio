@@ -1,0 +1,688 @@
+<?xml version='1.0' encoding='utf-8'?>
+<mxfile host="app.diagrams.net" type="device">
+  <diagram id="D-SYS-01" name="D-SYS-01 Xác thực và phiên làm việc">
+    <mxGraphModel dx="1000" dy="810" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1000" pageHeight="810">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="item-1" value="Hệ thống quản lý nhà trọ" style="fillColor=none;strokeColor=#39414B;verticalAlign=top;spacingTop=10;fontSize=24;;fontFamily=Arial;whiteSpace=wrap;html=0;" vertex="1" parent="1">
+          <mxGeometry x="215" y="35" width="750" height="698" as="geometry" />
+        </mxCell>
+        <mxCell id="actor-Admin-hệ-thống" value="Admin hệ thống" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;fontSize=23;fillColor=white;strokeColor=#222222;;fontFamily=Arial;whiteSpace=wrap;html=0;" vertex="1" parent="1" actorName="Admin hệ thống">
+          <mxGeometry x="25" y="141" width="130" height="96" as="geometry" />
+        </mxCell>
+        <mxCell id="actor-Chủ-trọ" value="Chủ trọ" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;fontSize=23;fillColor=white;strokeColor=#222222;;fontFamily=Arial;whiteSpace=wrap;html=0;" vertex="1" parent="1" actorName="Chủ trọ">
+          <mxGeometry x="25" y="341" width="130" height="96" as="geometry" />
+        </mxCell>
+        <mxCell id="actor-Người-thuê" value="Người thuê" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;fontSize=23;fillColor=white;strokeColor=#222222;;fontFamily=Arial;whiteSpace=wrap;html=0;" vertex="1" parent="1" actorName="Người thuê">
+          <mxGeometry x="25" y="551" width="130" height="96" as="geometry" />
+        </mxCell>
+        <mxCell id="UC-SYS-01" value="UC-SYS-01&#10;Đăng nhập" style="ellipse;fontSize=24;fillColor=white;strokeColor=#303740;strokeWidth=1.6;;fontFamily=Arial;whiteSpace=wrap;html=0;" vertex="1" parent="1" ucId="UC-SYS-01">
+          <mxGeometry x="310.0" y="156.0" width="580" height="98" as="geometry" />
+        </mxCell>
+        <mxCell id="UC-SYS-01.01" value="UC-SYS-01.01&#10;Kích hoạt tài khoản người thuê từ lời mời" style="ellipse;fontSize=24;fillColor=white;strokeColor=#303740;strokeWidth=1.6;;fontFamily=Arial;whiteSpace=wrap;html=0;" vertex="1" parent="1" ucId="UC-SYS-01.01">
+          <mxGeometry x="310.0" y="516.0" width="580" height="98" as="geometry" />
+        </mxCell>
+        <mxCell id="UC-SYS-02" value="UC-SYS-02&#10;Đăng xuất" style="ellipse;fontSize=24;fillColor=white;strokeColor=#303740;strokeWidth=1.6;;fontFamily=Arial;whiteSpace=wrap;html=0;" vertex="1" parent="1" ucId="UC-SYS-02">
+          <mxGeometry x="310.0" y="336.0" width="580" height="98" as="geometry" />
+        </mxCell>
+        <mxCell id="item-15" value="Kích hoạt tài khoản chỉ dành cho Người thuê được mời" style="text;strokeColor=none;fillColor=none;fontSize=21;;fontFamily=Arial;whiteSpace=wrap;html=0;" vertex="1" parent="1">
+          <mxGeometry x="265" y="639" width="650" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="item-16" value="Đường liền là liên kết actor với UC   Phân nhóm theo danh mục UC tổng quan" style="text;strokeColor=none;fillColor=none;fontSize=20;;fontFamily=Arial;whiteSpace=wrap;html=0;" vertex="1" parent="1">
+          <mxGeometry x="40" y="740" width="920" height="38" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-2" style="edgeStyle=none;endArrow=none;startArrow=none;strokeColor=#737B85;strokeWidth=1.4;" edge="1" parent="1" source="actor-Admin-hệ-thống" target="UC-SYS-01">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-3" style="edgeStyle=none;endArrow=none;startArrow=none;strokeColor=#737B85;strokeWidth=1.4;" edge="1" parent="1" source="actor-Admin-hệ-thống" target="UC-SYS-02">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-4" style="edgeStyle=none;endArrow=none;startArrow=none;strokeColor=#737B85;strokeWidth=1.4;" edge="1" parent="1" source="actor-Chủ-trọ" target="UC-SYS-01">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-5" style="edgeStyle=none;endArrow=none;startArrow=none;strokeColor=#737B85;strokeWidth=1.4;" edge="1" parent="1" source="actor-Chủ-trọ" target="UC-SYS-02">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-6" style="edgeStyle=none;endArrow=none;startArrow=none;strokeColor=#737B85;strokeWidth=1.4;" edge="1" parent="1" source="actor-Người-thuê" target="UC-SYS-01">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-7" style="edgeStyle=none;endArrow=none;startArrow=none;strokeColor=#737B85;strokeWidth=1.4;" edge="1" parent="1" source="actor-Người-thuê" target="UC-SYS-01.01">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-8" style="edgeStyle=none;endArrow=none;startArrow=none;strokeColor=#737B85;strokeWidth=1.4;" edge="1" parent="1" source="actor-Người-thuê" target="UC-SYS-02">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="D-ADM-01" name="D-ADM-01 Quản trị hệ thống">
+    <mxGraphModel dx="1000" dy="1295" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1000" pageHeight="1295">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="item-1" value="Hệ thống quản lý nhà trọ" style="fillColor=none;strokeColor=#39414B;verticalAlign=top;spacingTop=10;fontSize=24;;fontFamily=Arial;whiteSpace=wrap;html=0;" vertex="1" parent="1">
+          <mxGeometry x="210" y="28" width="755" height="1183" as="geometry" />
+        </mxCell>
+        <mxCell id="item-3" value="UC-ADM-01 Xem tổng quan hệ thống" style="fillColor=none;strokeColor=#A7AFB8;dashed=1;verticalAlign=top;align=left;spacingTop=9;spacingLeft=16;fontStyle=1;fontSize=21;;fontFamily=Arial;whiteSpace=wrap;html=0;" vertex="1" parent="1" parentUcId="UC-ADM-01">
+          <mxGeometry x="248" y="91" width="693" height="166" as="geometry" />
+        </mxCell>
+        <mxCell id="actor-UC-ADM-01" value="Admin hệ thống" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;fontSize=23;fillColor=white;strokeColor=#222222;;fontFamily=Arial;whiteSpace=wrap;html=0;" vertex="1" parent="1" actorName="Admin hệ thống">
+          <mxGeometry x="25" y="106.0" width="130" height="96" as="geometry" />
+        </mxCell>
+        <mxCell id="UC-ADM-01" value="UC-ADM-01&#10;Xem tổng quan hệ thống" style="ellipse;fontSize=24;fillColor=white;strokeColor=#303740;strokeWidth=1.6;;fontFamily=Arial;whiteSpace=wrap;html=0;" vertex="1" parent="1" ucId="UC-ADM-01">
+          <mxGeometry x="320.0" y="128.0" width="580" height="98" as="geometry" />
+        </mxCell>
+        <mxCell id="item-10" value="UC-ADM-02 Quản lý tài khoản chủ trọ" style="fillColor=none;strokeColor=#A7AFB8;dashed=1;verticalAlign=top;align=left;spacingTop=9;spacingLeft=16;fontStyle=1;fontSize=21;;fontFamily=Arial;whiteSpace=wrap;html=0;" vertex="1" parent="1" parentUcId="UC-ADM-02">
+          <mxGeometry x="248" y="277" width="693" height="502" as="geometry" />
+        </mxCell>
+        <mxCell id="actor-UC-ADM-02" value="Admin hệ thống" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;fontSize=23;fillColor=white;strokeColor=#222222;;fontFamily=Arial;whiteSpace=wrap;html=0;" vertex="1" parent="1" actorName="Admin hệ thống">
+          <mxGeometry x="25" y="460.0" width="130" height="96" as="geometry" />
+        </mxCell>
+        <mxCell id="UC-ADM-02.01" value="UC-ADM-02.01&#10;Tra cứu tài khoản chủ trọ" style="ellipse;fontSize=24;fillColor=white;strokeColor=#303740;strokeWidth=1.6;;fontFamily=Arial;whiteSpace=wrap;html=0;" vertex="1" parent="1" ucId="UC-ADM-02.01">
+          <mxGeometry x="320.0" y="314.0" width="580" height="98" as="geometry" />
+        </mxCell>
+        <mxCell id="UC-ADM-02.02" value="UC-ADM-02.02&#10;Tạo tài khoản chủ trọ" style="ellipse;fontSize=24;fillColor=white;strokeColor=#303740;strokeWidth=1.6;;fontFamily=Arial;whiteSpace=wrap;html=0;" vertex="1" parent="1" ucId="UC-ADM-02.02">
+          <mxGeometry x="320.0" y="426.0" width="580" height="98" as="geometry" />
+        </mxCell>
+        <mxCell id="UC-ADM-02.03" value="UC-ADM-02.03&#10;Cập nhật thông tin tài khoản chủ trọ" style="ellipse;fontSize=24;fillColor=white;strokeColor=#303740;strokeWidth=1.6;;fontFamily=Arial;whiteSpace=wrap;html=0;" vertex="1" parent="1" ucId="UC-ADM-02.03">
+          <mxGeometry x="320.0" y="538.0" width="580" height="98" as="geometry" />
+        </mxCell>
+        <mxCell id="UC-ADM-02.04" value="UC-ADM-02.04&#10;Khóa hoặc mở khóa tài khoản chủ trọ" style="ellipse;fontSize=24;fillColor=white;strokeColor=#303740;strokeWidth=1.6;;fontFamily=Arial;whiteSpace=wrap;html=0;" vertex="1" parent="1" ucId="UC-ADM-02.04">
+          <mxGeometry x="320.0" y="650.0" width="580" height="98" as="geometry" />
+        </mxCell>
+        <mxCell id="item-19" value="UC-ADM-03 Quản lý khu trọ toàn hệ thống" style="fillColor=none;strokeColor=#A7AFB8;dashed=1;verticalAlign=top;align=left;spacingTop=9;spacingLeft=16;fontStyle=1;fontSize=21;;fontFamily=Arial;whiteSpace=wrap;html=0;" vertex="1" parent="1" parentUcId="UC-ADM-03">
+          <mxGeometry x="248" y="799" width="693" height="390" as="geometry" />
+        </mxCell>
+        <mxCell id="actor-UC-ADM-03" value="Admin hệ thống" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;fontSize=23;fillColor=white;strokeColor=#222222;;fontFamily=Arial;whiteSpace=wrap;html=0;" vertex="1" parent="1" actorName="Admin hệ thống">
+          <mxGeometry x="25" y="926.0" width="130" height="96" as="geometry" />
+        </mxCell>
+        <mxCell id="UC-ADM-03.01" value="UC-ADM-03.01&#10;Tra cứu khu trọ toàn hệ thống" style="ellipse;fontSize=24;fillColor=white;strokeColor=#303740;strokeWidth=1.6;;fontFamily=Arial;whiteSpace=wrap;html=0;" vertex="1" parent="1" ucId="UC-ADM-03.01">
+          <mxGeometry x="320.0" y="836.0" width="580" height="98" as="geometry" />
+        </mxCell>
+        <mxCell id="UC-ADM-03.02" value="UC-ADM-03.02&#10;Tạo khu trọ cho chủ trọ" style="ellipse;fontSize=24;fillColor=white;strokeColor=#303740;strokeWidth=1.6;;fontFamily=Arial;whiteSpace=wrap;html=0;" vertex="1" parent="1" ucId="UC-ADM-03.02">
+          <mxGeometry x="320.0" y="948.0" width="580" height="98" as="geometry" />
+        </mxCell>
+        <mxCell id="UC-ADM-03.03" value="UC-ADM-03.03&#10;Cập nhật thông tin khu trọ toàn hệ thống" style="ellipse;fontSize=24;fillColor=white;strokeColor=#303740;strokeWidth=1.6;;fontFamily=Arial;whiteSpace=wrap;html=0;" vertex="1" parent="1" ucId="UC-ADM-03.03">
+          <mxGeometry x="320.0" y="1060.0" width="580" height="98" as="geometry" />
+        </mxCell>
+        <mxCell id="item-24" value="Đường liền là liên kết actor với UC   Khung nét đứt là nhóm UC tổng quan" style="text;strokeColor=none;fillColor=none;fontSize=20;;fontFamily=Arial;whiteSpace=wrap;html=0;" vertex="1" parent="1">
+          <mxGeometry x="40" y="1225" width="920" height="38" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-2" style="edgeStyle=none;endArrow=none;startArrow=none;strokeColor=#737B85;strokeWidth=1.4;" edge="1" parent="1" source="actor-UC-ADM-01" target="UC-ADM-01">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-6" style="edgeStyle=none;endArrow=none;startArrow=none;strokeColor=#737B85;strokeWidth=1.4;" edge="1" parent="1" source="actor-UC-ADM-02" target="UC-ADM-02.01">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-7" style="edgeStyle=none;endArrow=none;startArrow=none;strokeColor=#737B85;strokeWidth=1.4;" edge="1" parent="1" source="actor-UC-ADM-02" target="UC-ADM-02.02">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-8" style="edgeStyle=none;endArrow=none;startArrow=none;strokeColor=#737B85;strokeWidth=1.4;" edge="1" parent="1" source="actor-UC-ADM-02" target="UC-ADM-02.03">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-9" style="edgeStyle=none;endArrow=none;startArrow=none;strokeColor=#737B85;strokeWidth=1.4;" edge="1" parent="1" source="actor-UC-ADM-02" target="UC-ADM-02.04">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-16" style="edgeStyle=none;endArrow=none;startArrow=none;strokeColor=#737B85;strokeWidth=1.4;" edge="1" parent="1" source="actor-UC-ADM-03" target="UC-ADM-03.01">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-17" style="edgeStyle=none;endArrow=none;startArrow=none;strokeColor=#737B85;strokeWidth=1.4;" edge="1" parent="1" source="actor-UC-ADM-03" target="UC-ADM-03.02">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-18" style="edgeStyle=none;endArrow=none;startArrow=none;strokeColor=#737B85;strokeWidth=1.4;" edge="1" parent="1" source="actor-UC-ADM-03" target="UC-ADM-03.03">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="D-OPT-01" name="D-OPT-01 Tổng quan vận hành và quản lý khu trọ">
+    <mxGraphModel dx="1000" dy="997" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1000" pageHeight="997">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="item-1" value="Hệ thống quản lý nhà trọ" style="fillColor=none;strokeColor=#39414B;verticalAlign=top;spacingTop=10;fontSize=24;;fontFamily=Arial;whiteSpace=wrap;html=0;" vertex="1" parent="1">
+          <mxGeometry x="210" y="28" width="755" height="885" as="geometry" />
+        </mxCell>
+        <mxCell id="item-3" value="UC-OPT-01 Xem dashboard vận hành" style="fillColor=none;strokeColor=#A7AFB8;dashed=1;verticalAlign=top;align=left;spacingTop=9;spacingLeft=16;fontStyle=1;fontSize=21;;fontFamily=Arial;whiteSpace=wrap;html=0;" vertex="1" parent="1" parentUcId="UC-OPT-01">
+          <mxGeometry x="248" y="91" width="693" height="166" as="geometry" />
+        </mxCell>
+        <mxCell id="actor-UC-OPT-01" value="Chủ trọ" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;fontSize=23;fillColor=white;strokeColor=#222222;;fontFamily=Arial;whiteSpace=wrap;html=0;" vertex="1" parent="1" actorName="Chủ trọ">
+          <mxGeometry x="25" y="106.0" width="130" height="96" as="geometry" />
+        </mxCell>
+        <mxCell id="UC-OPT-01" value="UC-OPT-01&#10;Xem tổng quan vận hành" style="ellipse;fontSize=24;fillColor=white;strokeColor=#303740;strokeWidth=1.6;;fontFamily=Arial;whiteSpace=wrap;html=0;" vertex="1" parent="1" ucId="UC-OPT-01">
+          <mxGeometry x="320.0" y="128.0" width="580" height="98" as="geometry" />
+        </mxCell>
+        <mxCell id="item-11" value="UC-OPT-02 Quản lý khu trọ" style="fillColor=none;strokeColor=#A7AFB8;dashed=1;verticalAlign=top;align=left;spacingTop=9;spacingLeft=16;fontStyle=1;fontSize=21;;fontFamily=Arial;whiteSpace=wrap;html=0;" vertex="1" parent="1" parentUcId="UC-OPT-02">
+          <mxGeometry x="248" y="277" width="693" height="614" as="geometry" />
+        </mxCell>
+        <mxCell id="actor-UC-OPT-02" value="Chủ trọ" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;fontSize=23;fillColor=white;strokeColor=#222222;;fontFamily=Arial;whiteSpace=wrap;html=0;" vertex="1" parent="1" actorName="Chủ trọ">
+          <mxGeometry x="25" y="516.0" width="130" height="96" as="geometry" />
+        </mxCell>
+        <mxCell id="UC-OPT-02.01" value="UC-OPT-02.01&#10;Tra cứu và chọn khu trọ" style="ellipse;fontSize=24;fillColor=white;strokeColor=#303740;strokeWidth=1.6;;fontFamily=Arial;whiteSpace=wrap;html=0;" vertex="1" parent="1" ucId="UC-OPT-02.01">
+          <mxGeometry x="320.0" y="314.0" width="580" height="98" as="geometry" />
+        </mxCell>
+        <mxCell id="UC-OPT-02.02" value="UC-OPT-02.02&#10;Tạo khu trọ" style="ellipse;fontSize=24;fillColor=white;strokeColor=#303740;strokeWidth=1.6;;fontFamily=Arial;whiteSpace=wrap;html=0;" vertex="1" parent="1" ucId="UC-OPT-02.02">
+          <mxGeometry x="320.0" y="426.0" width="580" height="98" as="geometry" />
+        </mxCell>
+        <mxCell id="UC-OPT-02.03" value="UC-OPT-02.03&#10;Cập nhật thông tin khu trọ" style="ellipse;fontSize=24;fillColor=white;strokeColor=#303740;strokeWidth=1.6;;fontFamily=Arial;whiteSpace=wrap;html=0;" vertex="1" parent="1" ucId="UC-OPT-02.03">
+          <mxGeometry x="320.0" y="538.0" width="580" height="98" as="geometry" />
+        </mxCell>
+        <mxCell id="UC-OPT-02.04" value="UC-OPT-02.04&#10;Lưu trữ hoặc khôi phục khu trọ" style="ellipse;fontSize=24;fillColor=white;strokeColor=#303740;strokeWidth=1.6;;fontFamily=Arial;whiteSpace=wrap;html=0;" vertex="1" parent="1" ucId="UC-OPT-02.04">
+          <mxGeometry x="320.0" y="650.0" width="580" height="98" as="geometry" />
+        </mxCell>
+        <mxCell id="UC-OPT-02.05" value="UC-OPT-02.05&#10;Xóa khu trọ chưa có phòng" style="ellipse;fontSize=24;fillColor=white;strokeColor=#303740;strokeWidth=1.6;;fontFamily=Arial;whiteSpace=wrap;html=0;" vertex="1" parent="1" ucId="UC-OPT-02.05">
+          <mxGeometry x="320.0" y="762.0" width="580" height="98" as="geometry" />
+        </mxCell>
+        <mxCell id="item-18" value="Đường liền là liên kết actor với UC   Khung nét đứt là nhóm UC tổng quan" style="text;strokeColor=none;fillColor=none;fontSize=20;;fontFamily=Arial;whiteSpace=wrap;html=0;" vertex="1" parent="1">
+          <mxGeometry x="40" y="927" width="920" height="38" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-2" style="edgeStyle=none;endArrow=none;startArrow=none;strokeColor=#737B85;strokeWidth=1.4;" edge="1" parent="1" source="actor-UC-OPT-01" target="UC-OPT-01">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-6" style="edgeStyle=none;endArrow=none;startArrow=none;strokeColor=#737B85;strokeWidth=1.4;" edge="1" parent="1" source="actor-UC-OPT-02" target="UC-OPT-02.01">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-7" style="edgeStyle=none;endArrow=none;startArrow=none;strokeColor=#737B85;strokeWidth=1.4;" edge="1" parent="1" source="actor-UC-OPT-02" target="UC-OPT-02.02">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-8" style="edgeStyle=none;endArrow=none;startArrow=none;strokeColor=#737B85;strokeWidth=1.4;" edge="1" parent="1" source="actor-UC-OPT-02" target="UC-OPT-02.03">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-9" style="edgeStyle=none;endArrow=none;startArrow=none;strokeColor=#737B85;strokeWidth=1.4;" edge="1" parent="1" source="actor-UC-OPT-02" target="UC-OPT-02.04">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-10" style="edgeStyle=none;endArrow=none;startArrow=none;strokeColor=#737B85;strokeWidth=1.4;" edge="1" parent="1" source="actor-UC-OPT-02" target="UC-OPT-02.05">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="D-OPT-02" name="D-OPT-02 Quản lý phòng">
+    <mxGraphModel dx="1000" dy="1259" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1000" pageHeight="1259">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="item-1" value="Hệ thống quản lý nhà trọ" style="fillColor=none;strokeColor=#39414B;verticalAlign=top;spacingTop=10;fontSize=24;;fontFamily=Arial;whiteSpace=wrap;html=0;" vertex="1" parent="1">
+          <mxGeometry x="210" y="28" width="755" height="1147" as="geometry" />
+        </mxCell>
+        <mxCell id="item-11" value="UC-OPT-03 Quản lý phòng" style="fillColor=none;strokeColor=#A7AFB8;dashed=1;verticalAlign=top;align=left;spacingTop=9;spacingLeft=16;fontStyle=1;fontSize=21;;fontFamily=Arial;whiteSpace=wrap;html=0;" vertex="1" parent="1" parentUcId="UC-OPT-03">
+          <mxGeometry x="248" y="91" width="693" height="1062" as="geometry" />
+        </mxCell>
+        <mxCell id="actor-UC-OPT-03" value="Chủ trọ" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;fontSize=23;fillColor=white;strokeColor=#222222;;fontFamily=Arial;whiteSpace=wrap;html=0;" vertex="1" parent="1" actorName="Chủ trọ">
+          <mxGeometry x="25" y="554.0" width="130" height="96" as="geometry" />
+        </mxCell>
+        <mxCell id="UC-OPT-03.01" value="UC-OPT-03.01&#10;Tra cứu phòng" style="ellipse;fontSize=24;fillColor=white;strokeColor=#303740;strokeWidth=1.6;;fontFamily=Arial;whiteSpace=wrap;html=0;" vertex="1" parent="1" ucId="UC-OPT-03.01">
+          <mxGeometry x="320.0" y="128.0" width="580" height="98" as="geometry" />
+        </mxCell>
+        <mxCell id="UC-OPT-03.02" value="UC-OPT-03.02&#10;Tạo phòng" style="ellipse;fontSize=24;fillColor=white;strokeColor=#303740;strokeWidth=1.6;;fontFamily=Arial;whiteSpace=wrap;html=0;" vertex="1" parent="1" ucId="UC-OPT-03.02">
+          <mxGeometry x="320.0" y="240.0" width="580" height="98" as="geometry" />
+        </mxCell>
+        <mxCell id="UC-OPT-03.03" value="UC-OPT-03.03&#10;Cập nhật thông tin phòng" style="ellipse;fontSize=24;fillColor=white;strokeColor=#303740;strokeWidth=1.6;;fontFamily=Arial;whiteSpace=wrap;html=0;" vertex="1" parent="1" ucId="UC-OPT-03.03">
+          <mxGeometry x="320.0" y="352.0" width="580" height="98" as="geometry" />
+        </mxCell>
+        <mxCell id="UC-OPT-03.04" value="UC-OPT-03.04&#10;Chuyển trạng thái trống hoặc bảo trì của phòng" style="ellipse;fontSize=24;fillColor=white;strokeColor=#303740;strokeWidth=1.6;;fontFamily=Arial;whiteSpace=wrap;html=0;" vertex="1" parent="1" ucId="UC-OPT-03.04">
+          <mxGeometry x="320.0" y="464.0" width="580" height="98" as="geometry" />
+        </mxCell>
+        <mxCell id="UC-OPT-03.05" value="UC-OPT-03.05&#10;Vô hiệu hóa hoặc khôi phục phòng" style="ellipse;fontSize=24;fillColor=white;strokeColor=#303740;strokeWidth=1.6;;fontFamily=Arial;whiteSpace=wrap;html=0;" vertex="1" parent="1" ucId="UC-OPT-03.05">
+          <mxGeometry x="320.0" y="576.0" width="580" height="98" as="geometry" />
+        </mxCell>
+        <mxCell id="UC-OPT-03.06" value="UC-OPT-03.06&#10;Xóa phòng chưa phát sinh nghiệp vụ" style="ellipse;fontSize=24;fillColor=white;strokeColor=#303740;strokeWidth=1.6;;fontFamily=Arial;whiteSpace=wrap;html=0;" vertex="1" parent="1" ucId="UC-OPT-03.06">
+          <mxGeometry x="320.0" y="688.0" width="580" height="98" as="geometry" />
+        </mxCell>
+        <mxCell id="UC-OPT-03.07" value="UC-OPT-03.07&#10;Quản lý tài sản phòng" style="ellipse;fontSize=24;fillColor=white;strokeColor=#303740;strokeWidth=1.6;;fontFamily=Arial;whiteSpace=wrap;html=0;" vertex="1" parent="1" ucId="UC-OPT-03.07">
+          <mxGeometry x="320.0" y="800.0" width="580" height="98" as="geometry" />
+        </mxCell>
+        <mxCell id="UC-OPT-03.08" value="UC-OPT-03.08&#10;Quản lý phí dịch vụ phòng" style="ellipse;fontSize=24;fillColor=white;strokeColor=#303740;strokeWidth=1.6;;fontFamily=Arial;whiteSpace=wrap;html=0;" vertex="1" parent="1" ucId="UC-OPT-03.08">
+          <mxGeometry x="320.0" y="912.0" width="580" height="98" as="geometry" />
+        </mxCell>
+        <mxCell id="UC-OPT-03.09" value="UC-OPT-03.09&#10;Theo dõi lịch kiểm tra phòng" style="ellipse;fontSize=24;fillColor=white;strokeColor=#303740;strokeWidth=1.6;;fontFamily=Arial;whiteSpace=wrap;html=0;" vertex="1" parent="1" ucId="UC-OPT-03.09">
+          <mxGeometry x="320.0" y="1024.0" width="580" height="98" as="geometry" />
+        </mxCell>
+        <mxCell id="item-22" value="Đường liền là liên kết actor với UC   Khung nét đứt là nhóm UC tổng quan" style="text;strokeColor=none;fillColor=none;fontSize=20;;fontFamily=Arial;whiteSpace=wrap;html=0;" vertex="1" parent="1">
+          <mxGeometry x="40" y="1189" width="920" height="38" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-2" style="edgeStyle=none;endArrow=none;startArrow=none;strokeColor=#737B85;strokeWidth=1.4;" edge="1" parent="1" source="actor-UC-OPT-03" target="UC-OPT-03.01">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-3" style="edgeStyle=none;endArrow=none;startArrow=none;strokeColor=#737B85;strokeWidth=1.4;" edge="1" parent="1" source="actor-UC-OPT-03" target="UC-OPT-03.02">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-4" style="edgeStyle=none;endArrow=none;startArrow=none;strokeColor=#737B85;strokeWidth=1.4;" edge="1" parent="1" source="actor-UC-OPT-03" target="UC-OPT-03.03">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-5" style="edgeStyle=none;endArrow=none;startArrow=none;strokeColor=#737B85;strokeWidth=1.4;" edge="1" parent="1" source="actor-UC-OPT-03" target="UC-OPT-03.04">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-6" style="edgeStyle=none;endArrow=none;startArrow=none;strokeColor=#737B85;strokeWidth=1.4;" edge="1" parent="1" source="actor-UC-OPT-03" target="UC-OPT-03.05">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-7" style="edgeStyle=none;endArrow=none;startArrow=none;strokeColor=#737B85;strokeWidth=1.4;" edge="1" parent="1" source="actor-UC-OPT-03" target="UC-OPT-03.06">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-8" style="edgeStyle=none;endArrow=none;startArrow=none;strokeColor=#737B85;strokeWidth=1.4;" edge="1" parent="1" source="actor-UC-OPT-03" target="UC-OPT-03.07">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-9" style="edgeStyle=none;endArrow=none;startArrow=none;strokeColor=#737B85;strokeWidth=1.4;" edge="1" parent="1" source="actor-UC-OPT-03" target="UC-OPT-03.08">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-10" style="edgeStyle=none;endArrow=none;startArrow=none;strokeColor=#737B85;strokeWidth=1.4;" edge="1" parent="1" source="actor-UC-OPT-03" target="UC-OPT-03.09">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="D-OPT-03" name="D-OPT-03 Quản lý hồ sơ người thuê">
+    <mxGraphModel dx="1000" dy="923" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1000" pageHeight="923">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="item-1" value="Hệ thống quản lý nhà trọ" style="fillColor=none;strokeColor=#39414B;verticalAlign=top;spacingTop=10;fontSize=24;;fontFamily=Arial;whiteSpace=wrap;html=0;" vertex="1" parent="1">
+          <mxGeometry x="210" y="28" width="755" height="811" as="geometry" />
+        </mxCell>
+        <mxCell id="item-8" value="UC-OPT-04 Quản lý hồ sơ người thuê" style="fillColor=none;strokeColor=#A7AFB8;dashed=1;verticalAlign=top;align=left;spacingTop=9;spacingLeft=16;fontStyle=1;fontSize=21;;fontFamily=Arial;whiteSpace=wrap;html=0;" vertex="1" parent="1" parentUcId="UC-OPT-04">
+          <mxGeometry x="248" y="91" width="693" height="726" as="geometry" />
+        </mxCell>
+        <mxCell id="actor-UC-OPT-04" value="Chủ trọ" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;fontSize=23;fillColor=white;strokeColor=#222222;;fontFamily=Arial;whiteSpace=wrap;html=0;" vertex="1" parent="1" actorName="Chủ trọ">
+          <mxGeometry x="25" y="386.0" width="130" height="96" as="geometry" />
+        </mxCell>
+        <mxCell id="UC-OPT-04.01" value="UC-OPT-04.01&#10;Tra cứu hồ sơ người thuê" style="ellipse;fontSize=24;fillColor=white;strokeColor=#303740;strokeWidth=1.6;;fontFamily=Arial;whiteSpace=wrap;html=0;" vertex="1" parent="1" ucId="UC-OPT-04.01">
+          <mxGeometry x="320.0" y="128.0" width="580" height="98" as="geometry" />
+        </mxCell>
+        <mxCell id="UC-OPT-04.02" value="UC-OPT-04.02&#10;Tạo hồ sơ người thuê" style="ellipse;fontSize=24;fillColor=white;strokeColor=#303740;strokeWidth=1.6;;fontFamily=Arial;whiteSpace=wrap;html=0;" vertex="1" parent="1" ucId="UC-OPT-04.02">
+          <mxGeometry x="320.0" y="240.0" width="580" height="98" as="geometry" />
+        </mxCell>
+        <mxCell id="UC-OPT-04.03" value="UC-OPT-04.03&#10;Cập nhật hồ sơ người thuê" style="ellipse;fontSize=24;fillColor=white;strokeColor=#303740;strokeWidth=1.6;;fontFamily=Arial;whiteSpace=wrap;html=0;" vertex="1" parent="1" ucId="UC-OPT-04.03">
+          <mxGeometry x="320.0" y="352.0" width="580" height="98" as="geometry" />
+        </mxCell>
+        <mxCell id="UC-OPT-04.04" value="UC-OPT-04.04&#10;Vô hiệu hóa hoặc khôi phục hồ sơ người thuê" style="ellipse;fontSize=24;fillColor=white;strokeColor=#303740;strokeWidth=1.6;;fontFamily=Arial;whiteSpace=wrap;html=0;" vertex="1" parent="1" ucId="UC-OPT-04.04">
+          <mxGeometry x="320.0" y="464.0" width="580" height="98" as="geometry" />
+        </mxCell>
+        <mxCell id="UC-OPT-04.05" value="UC-OPT-04.05&#10;Xóa hồ sơ người thuê chưa phát sinh nghiệp vụ" style="ellipse;fontSize=24;fillColor=white;strokeColor=#303740;strokeWidth=1.6;;fontFamily=Arial;whiteSpace=wrap;html=0;" vertex="1" parent="1" ucId="UC-OPT-04.05">
+          <mxGeometry x="320.0" y="576.0" width="580" height="98" as="geometry" />
+        </mxCell>
+        <mxCell id="UC-OPT-04.06" value="UC-OPT-04.06&#10;Mời người thuê kích hoạt tài khoản" style="ellipse;fontSize=24;fillColor=white;strokeColor=#303740;strokeWidth=1.6;;fontFamily=Arial;whiteSpace=wrap;html=0;" vertex="1" parent="1" ucId="UC-OPT-04.06">
+          <mxGeometry x="320.0" y="688.0" width="580" height="98" as="geometry" />
+        </mxCell>
+        <mxCell id="item-16" value="Đường liền là liên kết actor với UC   Khung nét đứt là nhóm UC tổng quan" style="text;strokeColor=none;fillColor=none;fontSize=20;;fontFamily=Arial;whiteSpace=wrap;html=0;" vertex="1" parent="1">
+          <mxGeometry x="40" y="853" width="920" height="38" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-2" style="edgeStyle=none;endArrow=none;startArrow=none;strokeColor=#737B85;strokeWidth=1.4;" edge="1" parent="1" source="actor-UC-OPT-04" target="UC-OPT-04.01">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-3" style="edgeStyle=none;endArrow=none;startArrow=none;strokeColor=#737B85;strokeWidth=1.4;" edge="1" parent="1" source="actor-UC-OPT-04" target="UC-OPT-04.02">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-4" style="edgeStyle=none;endArrow=none;startArrow=none;strokeColor=#737B85;strokeWidth=1.4;" edge="1" parent="1" source="actor-UC-OPT-04" target="UC-OPT-04.03">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-5" style="edgeStyle=none;endArrow=none;startArrow=none;strokeColor=#737B85;strokeWidth=1.4;" edge="1" parent="1" source="actor-UC-OPT-04" target="UC-OPT-04.04">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-6" style="edgeStyle=none;endArrow=none;startArrow=none;strokeColor=#737B85;strokeWidth=1.4;" edge="1" parent="1" source="actor-UC-OPT-04" target="UC-OPT-04.05">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-7" style="edgeStyle=none;endArrow=none;startArrow=none;strokeColor=#737B85;strokeWidth=1.4;" edge="1" parent="1" source="actor-UC-OPT-04" target="UC-OPT-04.06">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="D-OPT-04" name="D-OPT-04 Quản lý hợp đồng thuê">
+    <mxGraphModel dx="1000" dy="923" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1000" pageHeight="923">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="item-1" value="Hệ thống quản lý nhà trọ" style="fillColor=none;strokeColor=#39414B;verticalAlign=top;spacingTop=10;fontSize=24;;fontFamily=Arial;whiteSpace=wrap;html=0;" vertex="1" parent="1">
+          <mxGeometry x="210" y="28" width="755" height="811" as="geometry" />
+        </mxCell>
+        <mxCell id="item-8" value="UC-OPT-05 Quản lý hợp đồng thuê" style="fillColor=none;strokeColor=#A7AFB8;dashed=1;verticalAlign=top;align=left;spacingTop=9;spacingLeft=16;fontStyle=1;fontSize=21;;fontFamily=Arial;whiteSpace=wrap;html=0;" vertex="1" parent="1" parentUcId="UC-OPT-05">
+          <mxGeometry x="248" y="91" width="693" height="726" as="geometry" />
+        </mxCell>
+        <mxCell id="actor-UC-OPT-05" value="Chủ trọ" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;fontSize=23;fillColor=white;strokeColor=#222222;;fontFamily=Arial;whiteSpace=wrap;html=0;" vertex="1" parent="1" actorName="Chủ trọ">
+          <mxGeometry x="25" y="386.0" width="130" height="96" as="geometry" />
+        </mxCell>
+        <mxCell id="UC-OPT-05.01" value="UC-OPT-05.01&#10;Tra cứu hợp đồng và lịch sử thuê" style="ellipse;fontSize=24;fillColor=white;strokeColor=#303740;strokeWidth=1.6;;fontFamily=Arial;whiteSpace=wrap;html=0;" vertex="1" parent="1" ucId="UC-OPT-05.01">
+          <mxGeometry x="320.0" y="128.0" width="580" height="98" as="geometry" />
+        </mxCell>
+        <mxCell id="UC-OPT-05.02" value="UC-OPT-05.02&#10;Tạo hợp đồng thuê phòng" style="ellipse;fontSize=24;fillColor=white;strokeColor=#303740;strokeWidth=1.6;;fontFamily=Arial;whiteSpace=wrap;html=0;" vertex="1" parent="1" ucId="UC-OPT-05.02">
+          <mxGeometry x="320.0" y="240.0" width="580" height="98" as="geometry" />
+        </mxCell>
+        <mxCell id="UC-OPT-05.03" value="UC-OPT-05.03&#10;Cập nhật điều khoản hợp đồng" style="ellipse;fontSize=24;fillColor=white;strokeColor=#303740;strokeWidth=1.6;;fontFamily=Arial;whiteSpace=wrap;html=0;" vertex="1" parent="1" ucId="UC-OPT-05.03">
+          <mxGeometry x="320.0" y="352.0" width="580" height="98" as="geometry" />
+        </mxCell>
+        <mxCell id="UC-OPT-05.04" value="UC-OPT-05.04&#10;Gia hạn hợp đồng" style="ellipse;fontSize=24;fillColor=white;strokeColor=#303740;strokeWidth=1.6;;fontFamily=Arial;whiteSpace=wrap;html=0;" vertex="1" parent="1" ucId="UC-OPT-05.04">
+          <mxGeometry x="320.0" y="464.0" width="580" height="98" as="geometry" />
+        </mxCell>
+        <mxCell id="UC-OPT-05.05" value="UC-OPT-05.05&#10;Kết thúc hợp đồng" style="ellipse;fontSize=24;fillColor=white;strokeColor=#303740;strokeWidth=1.6;;fontFamily=Arial;whiteSpace=wrap;html=0;" vertex="1" parent="1" ucId="UC-OPT-05.05">
+          <mxGeometry x="320.0" y="576.0" width="580" height="98" as="geometry" />
+        </mxCell>
+        <mxCell id="UC-OPT-05.06" value="UC-OPT-05.06&#10;Ghi nhận thu, hoàn hoặc khấu trừ tiền cọc" style="ellipse;fontSize=24;fillColor=white;strokeColor=#303740;strokeWidth=1.6;;fontFamily=Arial;whiteSpace=wrap;html=0;" vertex="1" parent="1" ucId="UC-OPT-05.06">
+          <mxGeometry x="320.0" y="688.0" width="580" height="98" as="geometry" />
+        </mxCell>
+        <mxCell id="item-16" value="Đường liền là liên kết actor với UC   Khung nét đứt là nhóm UC tổng quan" style="text;strokeColor=none;fillColor=none;fontSize=20;;fontFamily=Arial;whiteSpace=wrap;html=0;" vertex="1" parent="1">
+          <mxGeometry x="40" y="853" width="920" height="38" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-2" style="edgeStyle=none;endArrow=none;startArrow=none;strokeColor=#737B85;strokeWidth=1.4;" edge="1" parent="1" source="actor-UC-OPT-05" target="UC-OPT-05.01">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-3" style="edgeStyle=none;endArrow=none;startArrow=none;strokeColor=#737B85;strokeWidth=1.4;" edge="1" parent="1" source="actor-UC-OPT-05" target="UC-OPT-05.02">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-4" style="edgeStyle=none;endArrow=none;startArrow=none;strokeColor=#737B85;strokeWidth=1.4;" edge="1" parent="1" source="actor-UC-OPT-05" target="UC-OPT-05.03">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-5" style="edgeStyle=none;endArrow=none;startArrow=none;strokeColor=#737B85;strokeWidth=1.4;" edge="1" parent="1" source="actor-UC-OPT-05" target="UC-OPT-05.04">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-6" style="edgeStyle=none;endArrow=none;startArrow=none;strokeColor=#737B85;strokeWidth=1.4;" edge="1" parent="1" source="actor-UC-OPT-05" target="UC-OPT-05.05">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-7" style="edgeStyle=none;endArrow=none;startArrow=none;strokeColor=#737B85;strokeWidth=1.4;" edge="1" parent="1" source="actor-UC-OPT-05" target="UC-OPT-05.06">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="D-OPT-05" name="D-OPT-05 Quản lý bảo trì">
+    <mxGraphModel dx="1000" dy="699" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1000" pageHeight="699">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="item-1" value="Hệ thống quản lý nhà trọ" style="fillColor=none;strokeColor=#39414B;verticalAlign=top;spacingTop=10;fontSize=24;;fontFamily=Arial;whiteSpace=wrap;html=0;" vertex="1" parent="1">
+          <mxGeometry x="210" y="28" width="755" height="587" as="geometry" />
+        </mxCell>
+        <mxCell id="item-6" value="UC-OPT-06 Quản lý bảo trì" style="fillColor=none;strokeColor=#A7AFB8;dashed=1;verticalAlign=top;align=left;spacingTop=9;spacingLeft=16;fontStyle=1;fontSize=21;;fontFamily=Arial;whiteSpace=wrap;html=0;" vertex="1" parent="1" parentUcId="UC-OPT-06">
+          <mxGeometry x="248" y="91" width="693" height="502" as="geometry" />
+        </mxCell>
+        <mxCell id="actor-UC-OPT-06" value="Chủ trọ" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;fontSize=23;fillColor=white;strokeColor=#222222;;fontFamily=Arial;whiteSpace=wrap;html=0;" vertex="1" parent="1" actorName="Chủ trọ">
+          <mxGeometry x="25" y="274.0" width="130" height="96" as="geometry" />
+        </mxCell>
+        <mxCell id="UC-OPT-06.01" value="UC-OPT-06.01&#10;Tra cứu yêu cầu bảo trì" style="ellipse;fontSize=24;fillColor=white;strokeColor=#303740;strokeWidth=1.6;;fontFamily=Arial;whiteSpace=wrap;html=0;" vertex="1" parent="1" ucId="UC-OPT-06.01">
+          <mxGeometry x="320.0" y="128.0" width="580" height="98" as="geometry" />
+        </mxCell>
+        <mxCell id="UC-OPT-06.02" value="UC-OPT-06.02&#10;Tạo yêu cầu bảo trì" style="ellipse;fontSize=24;fillColor=white;strokeColor=#303740;strokeWidth=1.6;;fontFamily=Arial;whiteSpace=wrap;html=0;" vertex="1" parent="1" ucId="UC-OPT-06.02">
+          <mxGeometry x="320.0" y="240.0" width="580" height="98" as="geometry" />
+        </mxCell>
+        <mxCell id="UC-OPT-06.03" value="UC-OPT-06.03&#10;Cập nhật nội dung và tiến độ bảo trì" style="ellipse;fontSize=24;fillColor=white;strokeColor=#303740;strokeWidth=1.6;;fontFamily=Arial;whiteSpace=wrap;html=0;" vertex="1" parent="1" ucId="UC-OPT-06.03">
+          <mxGeometry x="320.0" y="352.0" width="580" height="98" as="geometry" />
+        </mxCell>
+        <mxCell id="UC-OPT-06.04" value="UC-OPT-06.04&#10;Hoàn tất bảo trì và ghi nhận chi phí" style="ellipse;fontSize=24;fillColor=white;strokeColor=#303740;strokeWidth=1.6;;fontFamily=Arial;whiteSpace=wrap;html=0;" vertex="1" parent="1" ucId="UC-OPT-06.04">
+          <mxGeometry x="320.0" y="464.0" width="580" height="98" as="geometry" />
+        </mxCell>
+        <mxCell id="item-12" value="Đường liền là liên kết actor với UC   Khung nét đứt là nhóm UC tổng quan" style="text;strokeColor=none;fillColor=none;fontSize=20;;fontFamily=Arial;whiteSpace=wrap;html=0;" vertex="1" parent="1">
+          <mxGeometry x="40" y="629" width="920" height="38" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-2" style="edgeStyle=none;endArrow=none;startArrow=none;strokeColor=#737B85;strokeWidth=1.4;" edge="1" parent="1" source="actor-UC-OPT-06" target="UC-OPT-06.01">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-3" style="edgeStyle=none;endArrow=none;startArrow=none;strokeColor=#737B85;strokeWidth=1.4;" edge="1" parent="1" source="actor-UC-OPT-06" target="UC-OPT-06.02">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-4" style="edgeStyle=none;endArrow=none;startArrow=none;strokeColor=#737B85;strokeWidth=1.4;" edge="1" parent="1" source="actor-UC-OPT-06" target="UC-OPT-06.03">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-5" style="edgeStyle=none;endArrow=none;startArrow=none;strokeColor=#737B85;strokeWidth=1.4;" edge="1" parent="1" source="actor-UC-OPT-06" target="UC-OPT-06.04">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="D-BIL-01" name="D-BIL-01 Chỉ số điện nước và hóa đơn">
+    <mxGraphModel dx="1000" dy="1221" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1000" pageHeight="1221">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="item-1" value="Hệ thống quản lý nhà trọ" style="fillColor=none;strokeColor=#39414B;verticalAlign=top;spacingTop=10;fontSize=24;;fontFamily=Arial;whiteSpace=wrap;html=0;" vertex="1" parent="1">
+          <mxGeometry x="210" y="28" width="755" height="1109" as="geometry" />
+        </mxCell>
+        <mxCell id="item-3" value="UC-BIL-01 Ghi chỉ số điện nước" style="fillColor=none;strokeColor=#A7AFB8;dashed=1;verticalAlign=top;align=left;spacingTop=9;spacingLeft=16;fontStyle=1;fontSize=21;;fontFamily=Arial;whiteSpace=wrap;html=0;" vertex="1" parent="1" parentUcId="UC-BIL-01">
+          <mxGeometry x="248" y="91" width="693" height="166" as="geometry" />
+        </mxCell>
+        <mxCell id="actor-UC-BIL-01" value="Chủ trọ" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;fontSize=23;fillColor=white;strokeColor=#222222;;fontFamily=Arial;whiteSpace=wrap;html=0;" vertex="1" parent="1" actorName="Chủ trọ">
+          <mxGeometry x="25" y="106.0" width="130" height="96" as="geometry" />
+        </mxCell>
+        <mxCell id="UC-BIL-01" value="UC-BIL-01&#10;Ghi chỉ số điện nước" style="ellipse;fontSize=24;fillColor=white;strokeColor=#303740;strokeWidth=1.6;;fontFamily=Arial;whiteSpace=wrap;html=0;" vertex="1" parent="1" ucId="UC-BIL-01">
+          <mxGeometry x="320.0" y="128.0" width="580" height="98" as="geometry" />
+        </mxCell>
+        <mxCell id="item-13" value="UC-BIL-02 Lập hóa đơn" style="fillColor=none;strokeColor=#A7AFB8;dashed=1;verticalAlign=top;align=left;spacingTop=9;spacingLeft=16;fontStyle=1;fontSize=21;;fontFamily=Arial;whiteSpace=wrap;html=0;" vertex="1" parent="1" parentUcId="UC-BIL-02">
+          <mxGeometry x="248" y="277" width="693" height="838" as="geometry" />
+        </mxCell>
+        <mxCell id="actor-UC-BIL-02" value="Chủ trọ" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;fontSize=23;fillColor=white;strokeColor=#222222;;fontFamily=Arial;whiteSpace=wrap;html=0;" vertex="1" parent="1" actorName="Chủ trọ">
+          <mxGeometry x="25" y="628.0" width="130" height="96" as="geometry" />
+        </mxCell>
+        <mxCell id="UC-BIL-02.01" value="UC-BIL-02.01&#10;Lập hóa đơn cho một hợp đồng" style="ellipse;fontSize=24;fillColor=white;strokeColor=#303740;strokeWidth=1.6;;fontFamily=Arial;whiteSpace=wrap;html=0;" vertex="1" parent="1" ucId="UC-BIL-02.01">
+          <mxGeometry x="320.0" y="314.0" width="580" height="98" as="geometry" />
+        </mxCell>
+        <mxCell id="UC-BIL-02.02" value="UC-BIL-02.02&#10;Lập hóa đơn hàng loạt" style="ellipse;fontSize=24;fillColor=white;strokeColor=#303740;strokeWidth=1.6;;fontFamily=Arial;whiteSpace=wrap;html=0;" vertex="1" parent="1" ucId="UC-BIL-02.02">
+          <mxGeometry x="320.0" y="426.0" width="580" height="98" as="geometry" />
+        </mxCell>
+        <mxCell id="UC-BIL-02.03" value="UC-BIL-02.03&#10;Tra cứu hóa đơn và công nợ" style="ellipse;fontSize=24;fillColor=white;strokeColor=#303740;strokeWidth=1.6;;fontFamily=Arial;whiteSpace=wrap;html=0;" vertex="1" parent="1" ucId="UC-BIL-02.03">
+          <mxGeometry x="320.0" y="538.0" width="580" height="98" as="geometry" />
+        </mxCell>
+        <mxCell id="UC-BIL-02.04" value="UC-BIL-02.04&#10;Điều chỉnh hóa đơn chưa thu tiền" style="ellipse;fontSize=24;fillColor=white;strokeColor=#303740;strokeWidth=1.6;;fontFamily=Arial;whiteSpace=wrap;html=0;" vertex="1" parent="1" ucId="UC-BIL-02.04">
+          <mxGeometry x="320.0" y="650.0" width="580" height="98" as="geometry" />
+        </mxCell>
+        <mxCell id="UC-BIL-02.05" value="UC-BIL-02.05&#10;Hủy hóa đơn" style="ellipse;fontSize=24;fillColor=white;strokeColor=#303740;strokeWidth=1.6;;fontFamily=Arial;whiteSpace=wrap;html=0;" vertex="1" parent="1" ucId="UC-BIL-02.05">
+          <mxGeometry x="320.0" y="762.0" width="580" height="98" as="geometry" />
+        </mxCell>
+        <mxCell id="UC-BIL-02.06" value="UC-BIL-02.06&#10;Xuất hoặc chia sẻ hóa đơn" style="ellipse;fontSize=24;fillColor=white;strokeColor=#303740;strokeWidth=1.6;;fontFamily=Arial;whiteSpace=wrap;html=0;" vertex="1" parent="1" ucId="UC-BIL-02.06">
+          <mxGeometry x="320.0" y="874.0" width="580" height="98" as="geometry" />
+        </mxCell>
+        <mxCell id="UC-BIL-02.07" value="UC-BIL-02.07&#10;Cấu hình lập hóa đơn định kỳ" style="ellipse;fontSize=24;fillColor=white;strokeColor=#303740;strokeWidth=1.6;;fontFamily=Arial;whiteSpace=wrap;html=0;" vertex="1" parent="1" ucId="UC-BIL-02.07">
+          <mxGeometry x="320.0" y="986.0" width="580" height="98" as="geometry" />
+        </mxCell>
+        <mxCell id="item-22" value="Đường liền là liên kết actor với UC   Khung nét đứt là nhóm UC tổng quan" style="text;strokeColor=none;fillColor=none;fontSize=20;;fontFamily=Arial;whiteSpace=wrap;html=0;" vertex="1" parent="1">
+          <mxGeometry x="40" y="1151" width="920" height="38" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-2" style="edgeStyle=none;endArrow=none;startArrow=none;strokeColor=#737B85;strokeWidth=1.4;" edge="1" parent="1" source="actor-UC-BIL-01" target="UC-BIL-01">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-6" style="edgeStyle=none;endArrow=none;startArrow=none;strokeColor=#737B85;strokeWidth=1.4;" edge="1" parent="1" source="actor-UC-BIL-02" target="UC-BIL-02.01">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-7" style="edgeStyle=none;endArrow=none;startArrow=none;strokeColor=#737B85;strokeWidth=1.4;" edge="1" parent="1" source="actor-UC-BIL-02" target="UC-BIL-02.02">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-8" style="edgeStyle=none;endArrow=none;startArrow=none;strokeColor=#737B85;strokeWidth=1.4;" edge="1" parent="1" source="actor-UC-BIL-02" target="UC-BIL-02.03">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-9" style="edgeStyle=none;endArrow=none;startArrow=none;strokeColor=#737B85;strokeWidth=1.4;" edge="1" parent="1" source="actor-UC-BIL-02" target="UC-BIL-02.04">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-10" style="edgeStyle=none;endArrow=none;startArrow=none;strokeColor=#737B85;strokeWidth=1.4;" edge="1" parent="1" source="actor-UC-BIL-02" target="UC-BIL-02.05">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-11" style="edgeStyle=none;endArrow=none;startArrow=none;strokeColor=#737B85;strokeWidth=1.4;" edge="1" parent="1" source="actor-UC-BIL-02" target="UC-BIL-02.06">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-12" style="edgeStyle=none;endArrow=none;startArrow=none;strokeColor=#737B85;strokeWidth=1.4;" edge="1" parent="1" source="actor-UC-BIL-02" target="UC-BIL-02.07">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="D-BIL-02" name="D-BIL-02 Thanh toán minh chứng và chi phí">
+    <mxGraphModel dx="1000" dy="1071" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1000" pageHeight="1071">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="item-1" value="Hệ thống quản lý nhà trọ" style="fillColor=none;strokeColor=#39414B;verticalAlign=top;spacingTop=10;fontSize=24;;fontFamily=Arial;whiteSpace=wrap;html=0;" vertex="1" parent="1">
+          <mxGeometry x="210" y="28" width="755" height="959" as="geometry" />
+        </mxCell>
+        <mxCell id="item-4" value="UC-BIL-03 Ghi nhận thanh toán" style="fillColor=none;strokeColor=#A7AFB8;dashed=1;verticalAlign=top;align=left;spacingTop=9;spacingLeft=16;fontStyle=1;fontSize=21;;fontFamily=Arial;whiteSpace=wrap;html=0;" vertex="1" parent="1" parentUcId="UC-BIL-03">
+          <mxGeometry x="248" y="91" width="693" height="278" as="geometry" />
+        </mxCell>
+        <mxCell id="actor-UC-BIL-03" value="Chủ trọ" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;fontSize=23;fillColor=white;strokeColor=#222222;;fontFamily=Arial;whiteSpace=wrap;html=0;" vertex="1" parent="1" actorName="Chủ trọ">
+          <mxGeometry x="25" y="162.0" width="130" height="96" as="geometry" />
+        </mxCell>
+        <mxCell id="UC-BIL-03.01" value="UC-BIL-03.01&#10;Ghi nhận thanh toán hóa đơn" style="ellipse;fontSize=24;fillColor=white;strokeColor=#303740;strokeWidth=1.6;;fontFamily=Arial;whiteSpace=wrap;html=0;" vertex="1" parent="1" ucId="UC-BIL-03.01">
+          <mxGeometry x="320.0" y="128.0" width="580" height="98" as="geometry" />
+        </mxCell>
+        <mxCell id="UC-BIL-03.02" value="UC-BIL-03.02&#10;Đảo khoản thanh toán đã ghi nhận" style="ellipse;fontSize=24;fillColor=white;strokeColor=#303740;strokeWidth=1.6;;fontFamily=Arial;whiteSpace=wrap;html=0;" vertex="1" parent="1" ucId="UC-BIL-03.02">
+          <mxGeometry x="320.0" y="240.0" width="580" height="98" as="geometry" />
+        </mxCell>
+        <mxCell id="item-9" value="UC-BIL-04 Duyệt minh chứng thanh toán" style="fillColor=none;strokeColor=#A7AFB8;dashed=1;verticalAlign=top;align=left;spacingTop=9;spacingLeft=16;fontStyle=1;fontSize=21;;fontFamily=Arial;whiteSpace=wrap;html=0;" vertex="1" parent="1" parentUcId="UC-BIL-04">
+          <mxGeometry x="248" y="389" width="693" height="166" as="geometry" />
+        </mxCell>
+        <mxCell id="actor-UC-BIL-04" value="Chủ trọ" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;fontSize=23;fillColor=white;strokeColor=#222222;;fontFamily=Arial;whiteSpace=wrap;html=0;" vertex="1" parent="1" actorName="Chủ trọ">
+          <mxGeometry x="25" y="404.0" width="130" height="96" as="geometry" />
+        </mxCell>
+        <mxCell id="UC-BIL-04" value="UC-BIL-04&#10;Duyệt hoặc từ chối minh chứng thanh toán" style="ellipse;fontSize=24;fillColor=white;strokeColor=#303740;strokeWidth=1.6;;fontFamily=Arial;whiteSpace=wrap;html=0;" vertex="1" parent="1" ucId="UC-BIL-04">
+          <mxGeometry x="320.0" y="426.0" width="580" height="98" as="geometry" />
+        </mxCell>
+        <mxCell id="item-15" value="UC-BIL-05 Quản lý chi phí vận hành" style="fillColor=none;strokeColor=#A7AFB8;dashed=1;verticalAlign=top;align=left;spacingTop=9;spacingLeft=16;fontStyle=1;fontSize=21;;fontFamily=Arial;whiteSpace=wrap;html=0;" vertex="1" parent="1" parentUcId="UC-BIL-05">
+          <mxGeometry x="248" y="575" width="693" height="390" as="geometry" />
+        </mxCell>
+        <mxCell id="actor-UC-BIL-05" value="Chủ trọ" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;fontSize=23;fillColor=white;strokeColor=#222222;;fontFamily=Arial;whiteSpace=wrap;html=0;" vertex="1" parent="1" actorName="Chủ trọ">
+          <mxGeometry x="25" y="702.0" width="130" height="96" as="geometry" />
+        </mxCell>
+        <mxCell id="UC-BIL-05.01" value="UC-BIL-05.01&#10;Tra cứu chi phí vận hành" style="ellipse;fontSize=24;fillColor=white;strokeColor=#303740;strokeWidth=1.6;;fontFamily=Arial;whiteSpace=wrap;html=0;" vertex="1" parent="1" ucId="UC-BIL-05.01">
+          <mxGeometry x="320.0" y="612.0" width="580" height="98" as="geometry" />
+        </mxCell>
+        <mxCell id="UC-BIL-05.02" value="UC-BIL-05.02&#10;Ghi nhận chi phí vận hành" style="ellipse;fontSize=24;fillColor=white;strokeColor=#303740;strokeWidth=1.6;;fontFamily=Arial;whiteSpace=wrap;html=0;" vertex="1" parent="1" ucId="UC-BIL-05.02">
+          <mxGeometry x="320.0" y="724.0" width="580" height="98" as="geometry" />
+        </mxCell>
+        <mxCell id="UC-BIL-05.03" value="UC-BIL-05.03&#10;Cập nhật khoản chi" style="ellipse;fontSize=24;fillColor=white;strokeColor=#303740;strokeWidth=1.6;;fontFamily=Arial;whiteSpace=wrap;html=0;" vertex="1" parent="1" ucId="UC-BIL-05.03">
+          <mxGeometry x="320.0" y="836.0" width="580" height="98" as="geometry" />
+        </mxCell>
+        <mxCell id="item-20" value="Đường liền là liên kết actor với UC   Khung nét đứt là nhóm UC tổng quan" style="text;strokeColor=none;fillColor=none;fontSize=20;;fontFamily=Arial;whiteSpace=wrap;html=0;" vertex="1" parent="1">
+          <mxGeometry x="40" y="1001" width="920" height="38" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-2" style="edgeStyle=none;endArrow=none;startArrow=none;strokeColor=#737B85;strokeWidth=1.4;" edge="1" parent="1" source="actor-UC-BIL-03" target="UC-BIL-03.01">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-3" style="edgeStyle=none;endArrow=none;startArrow=none;strokeColor=#737B85;strokeWidth=1.4;" edge="1" parent="1" source="actor-UC-BIL-03" target="UC-BIL-03.02">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-8" style="edgeStyle=none;endArrow=none;startArrow=none;strokeColor=#737B85;strokeWidth=1.4;" edge="1" parent="1" source="actor-UC-BIL-04" target="UC-BIL-04">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-12" style="edgeStyle=none;endArrow=none;startArrow=none;strokeColor=#737B85;strokeWidth=1.4;" edge="1" parent="1" source="actor-UC-BIL-05" target="UC-BIL-05.01">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-13" style="edgeStyle=none;endArrow=none;startArrow=none;strokeColor=#737B85;strokeWidth=1.4;" edge="1" parent="1" source="actor-UC-BIL-05" target="UC-BIL-05.02">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-14" style="edgeStyle=none;endArrow=none;startArrow=none;strokeColor=#737B85;strokeWidth=1.4;" edge="1" parent="1" source="actor-UC-BIL-05" target="UC-BIL-05.03">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="D-BIL-03" name="D-BIL-03 Báo cáo và thông báo">
+    <mxGraphModel dx="1000" dy="773" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1000" pageHeight="773">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="item-1" value="Hệ thống quản lý nhà trọ" style="fillColor=none;strokeColor=#39414B;verticalAlign=top;spacingTop=10;fontSize=24;;fontFamily=Arial;whiteSpace=wrap;html=0;" vertex="1" parent="1">
+          <mxGeometry x="210" y="28" width="575" height="661" as="geometry" />
+        </mxCell>
+        <mxCell id="item-4" value="UC-BIL-06 Xem báo cáo tháng" style="fillColor=none;strokeColor=#A7AFB8;dashed=1;verticalAlign=top;align=left;spacingTop=9;spacingLeft=16;fontStyle=1;fontSize=20;;fontFamily=Arial;whiteSpace=wrap;html=0;" vertex="1" parent="1" parentUcId="UC-BIL-06">
+          <mxGeometry x="248" y="91" width="513" height="278" as="geometry" />
+        </mxCell>
+        <mxCell id="actor-UC-BIL-06" value="Chủ trọ" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;fontSize=23;fillColor=white;strokeColor=#222222;;fontFamily=Arial;whiteSpace=wrap;html=0;" vertex="1" parent="1" actorName="Chủ trọ">
+          <mxGeometry x="25" y="162.0" width="130" height="96" as="geometry" />
+        </mxCell>
+        <mxCell id="UC-BIL-06.01" value="UC-BIL-06.01&#10;Xem báo cáo tháng" style="ellipse;fontSize=24;fillColor=white;strokeColor=#303740;strokeWidth=1.6;;fontFamily=Arial;whiteSpace=wrap;html=0;" vertex="1" parent="1" ucId="UC-BIL-06.01">
+          <mxGeometry x="275.0" y="128.0" width="450" height="98" as="geometry" />
+        </mxCell>
+        <mxCell id="UC-BIL-06.02" value="UC-BIL-06.02&#10;Xuất báo cáo tháng" style="ellipse;fontSize=24;fillColor=white;strokeColor=#303740;strokeWidth=1.6;;fontFamily=Arial;whiteSpace=wrap;html=0;" vertex="1" parent="1" ucId="UC-BIL-06.02">
+          <mxGeometry x="275.0" y="240.0" width="450" height="98" as="geometry" />
+        </mxCell>
+        <mxCell id="item-10" value="UC-BIL-07 Gửi thông báo / nhắc nợ" style="fillColor=none;strokeColor=#A7AFB8;dashed=1;verticalAlign=top;align=left;spacingTop=9;spacingLeft=16;fontStyle=1;fontSize=20;;fontFamily=Arial;whiteSpace=wrap;html=0;" vertex="1" parent="1" parentUcId="UC-BIL-07">
+          <mxGeometry x="248" y="389" width="513" height="278" as="geometry" />
+        </mxCell>
+        <mxCell id="actor-UC-BIL-07" value="Chủ trọ" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;fontSize=23;fillColor=white;strokeColor=#222222;;fontFamily=Arial;whiteSpace=wrap;html=0;" vertex="1" parent="1" actorName="Chủ trọ">
+          <mxGeometry x="25" y="460.0" width="130" height="96" as="geometry" />
+        </mxCell>
+        <mxCell id="UC-BIL-07.01" value="UC-BIL-07.01&#10;Theo dõi thông báo và việc cần xử lý" style="ellipse;fontSize=24;fillColor=white;strokeColor=#303740;strokeWidth=1.6;;fontFamily=Arial;whiteSpace=wrap;html=0;" vertex="1" parent="1" ucId="UC-BIL-07.01">
+          <mxGeometry x="275.0" y="426.0" width="450" height="98" as="geometry" />
+        </mxCell>
+        <mxCell id="UC-BIL-07.02" value="UC-BIL-07.02&#10;Gửi thông báo hoặc nhắc thanh toán" style="ellipse;fontSize=24;fillColor=white;strokeColor=#303740;strokeWidth=1.6;;fontFamily=Arial;whiteSpace=wrap;html=0;" vertex="1" parent="1" ucId="UC-BIL-07.02">
+          <mxGeometry x="275.0" y="538.0" width="450" height="98" as="geometry" />
+        </mxCell>
+        <mxCell id="actor-zalo" value="Dịch vụ Zalo ZNS&#10;Nhánh gửi Zalo" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;fontSize=23;fillColor=white;strokeColor=#222222;;fontFamily=Arial;whiteSpace=wrap;html=0;" vertex="1" parent="1" actorName="Dịch vụ Zalo ZNS">
+          <mxGeometry x="835" y="543" width="130" height="96" as="geometry" />
+        </mxCell>
+        <mxCell id="item-16" value="Đường liền là liên kết actor với UC   Khung nét đứt là nhóm UC tổng quan" style="text;strokeColor=none;fillColor=none;fontSize=20;;fontFamily=Arial;whiteSpace=wrap;html=0;" vertex="1" parent="1">
+          <mxGeometry x="40" y="703" width="920" height="38" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-2" style="edgeStyle=none;endArrow=none;startArrow=none;strokeColor=#737B85;strokeWidth=1.4;" edge="1" parent="1" source="actor-UC-BIL-06" target="UC-BIL-06.01">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-3" style="edgeStyle=none;endArrow=none;startArrow=none;strokeColor=#737B85;strokeWidth=1.4;" edge="1" parent="1" source="actor-UC-BIL-06" target="UC-BIL-06.02">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-8" style="edgeStyle=none;endArrow=none;startArrow=none;strokeColor=#737B85;strokeWidth=1.4;" edge="1" parent="1" source="actor-UC-BIL-07" target="UC-BIL-07.01">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-9" style="edgeStyle=none;endArrow=none;startArrow=none;strokeColor=#737B85;strokeWidth=1.4;" edge="1" parent="1" source="actor-UC-BIL-07" target="UC-BIL-07.02">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-11" style="edgeStyle=none;endArrow=none;startArrow=none;strokeColor=#737B85;strokeWidth=1.4;" edge="1" parent="1" source="UC-BIL-07.02" target="actor-zalo">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="D-TEN-01" name="D-TEN-01 Cổng thông tin Người thuê">
+    <mxGraphModel dx="1000" dy="970" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1000" pageHeight="970">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="item-1" value="Hệ thống quản lý nhà trọ" style="fillColor=none;strokeColor=#39414B;verticalAlign=top;spacingTop=10;fontSize=24;;fontFamily=Arial;whiteSpace=wrap;html=0;" vertex="1" parent="1">
+          <mxGeometry x="210" y="28" width="755" height="858" as="geometry" />
+        </mxCell>
+        <mxCell id="actor-tenant" value="Người thuê" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;fontSize=23;fillColor=white;strokeColor=#222222;;fontFamily=Arial;whiteSpace=wrap;html=0;" vertex="1" parent="1" actorName="Người thuê">
+          <mxGeometry x="25" y="366" width="130" height="96" as="geometry" />
+        </mxCell>
+        <mxCell id="UC-TEN-01" value="UC-TEN-01&#10;Xem thông tin thuê phòng" style="ellipse;fontSize=24;fillColor=white;strokeColor=#303740;strokeWidth=1.6;;fontFamily=Arial;whiteSpace=wrap;html=0;" vertex="1" parent="1" ucId="UC-TEN-01">
+          <mxGeometry x="320.0" y="94.0" width="580" height="98" as="geometry" />
+        </mxCell>
+        <mxCell id="UC-TEN-02" value="UC-TEN-02&#10;Xem hợp đồng thuê của mình" style="ellipse;fontSize=24;fillColor=white;strokeColor=#303740;strokeWidth=1.6;;fontFamily=Arial;whiteSpace=wrap;html=0;" vertex="1" parent="1" ucId="UC-TEN-02">
+          <mxGeometry x="320.0" y="202.0" width="580" height="98" as="geometry" />
+        </mxCell>
+        <mxCell id="UC-TEN-03" value="UC-TEN-03&#10;Xem và xuất hóa đơn của mình" style="ellipse;fontSize=24;fillColor=white;strokeColor=#303740;strokeWidth=1.6;;fontFamily=Arial;whiteSpace=wrap;html=0;" vertex="1" parent="1" ucId="UC-TEN-03">
+          <mxGeometry x="320.0" y="310.0" width="580" height="98" as="geometry" />
+        </mxCell>
+        <mxCell id="UC-TEN-04" value="UC-TEN-04&#10;Gửi minh chứng thanh toán" style="ellipse;fontSize=24;fillColor=white;strokeColor=#303740;strokeWidth=1.6;;fontFamily=Arial;whiteSpace=wrap;html=0;" vertex="1" parent="1" ucId="UC-TEN-04">
+          <mxGeometry x="320.0" y="418.0" width="580" height="98" as="geometry" />
+        </mxCell>
+        <mxCell id="UC-TEN-05.01" value="UC-TEN-05.01&#10;Gửi yêu cầu bảo trì" style="ellipse;fontSize=24;fillColor=white;strokeColor=#303740;strokeWidth=1.6;;fontFamily=Arial;whiteSpace=wrap;html=0;" vertex="1" parent="1" ucId="UC-TEN-05.01">
+          <mxGeometry x="320.0" y="526.0" width="580" height="98" as="geometry" />
+        </mxCell>
+        <mxCell id="UC-TEN-05.02" value="UC-TEN-05.02&#10;Theo dõi và phản hồi yêu cầu bảo trì" style="ellipse;fontSize=24;fillColor=white;strokeColor=#303740;strokeWidth=1.6;;fontFamily=Arial;whiteSpace=wrap;html=0;" vertex="1" parent="1" ucId="UC-TEN-05.02">
+          <mxGeometry x="320.0" y="634.0" width="580" height="98" as="geometry" />
+        </mxCell>
+        <mxCell id="UC-TEN-06" value="UC-TEN-06&#10;Xem và đánh dấu thông báo đã đọc" style="ellipse;fontSize=24;fillColor=white;strokeColor=#303740;strokeWidth=1.6;;fontFamily=Arial;whiteSpace=wrap;html=0;" vertex="1" parent="1" ucId="UC-TEN-06">
+          <mxGeometry x="320.0" y="742.0" width="580" height="98" as="geometry" />
+        </mxCell>
+        <mxCell id="item-17" value="Đường liền là liên kết actor với UC   Phân nhóm theo danh mục UC tổng quan" style="text;strokeColor=none;fillColor=none;fontSize=20;;fontFamily=Arial;whiteSpace=wrap;html=0;" vertex="1" parent="1">
+          <mxGeometry x="40" y="900" width="920" height="38" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-2" style="edgeStyle=none;endArrow=none;startArrow=none;strokeColor=#737B85;strokeWidth=1.4;" edge="1" parent="1" source="actor-tenant" target="UC-TEN-01">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-3" style="edgeStyle=none;endArrow=none;startArrow=none;strokeColor=#737B85;strokeWidth=1.4;" edge="1" parent="1" source="actor-tenant" target="UC-TEN-02">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-4" style="edgeStyle=none;endArrow=none;startArrow=none;strokeColor=#737B85;strokeWidth=1.4;" edge="1" parent="1" source="actor-tenant" target="UC-TEN-03">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-5" style="edgeStyle=none;endArrow=none;startArrow=none;strokeColor=#737B85;strokeWidth=1.4;" edge="1" parent="1" source="actor-tenant" target="UC-TEN-04">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-6" style="edgeStyle=none;endArrow=none;startArrow=none;strokeColor=#737B85;strokeWidth=1.4;" edge="1" parent="1" source="actor-tenant" target="UC-TEN-05.01">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-7" style="edgeStyle=none;endArrow=none;startArrow=none;strokeColor=#737B85;strokeWidth=1.4;" edge="1" parent="1" source="actor-tenant" target="UC-TEN-05.02">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-8" style="edgeStyle=none;endArrow=none;startArrow=none;strokeColor=#737B85;strokeWidth=1.4;" edge="1" parent="1" source="actor-tenant" target="UC-TEN-06">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

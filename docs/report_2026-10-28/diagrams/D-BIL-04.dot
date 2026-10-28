@@ -1,0 +1,15 @@
+digraph G {
+graph [bgcolor="white", rankdir=LR, nodesep=0.30, ranksep=0.65, pad=0.2, splines=polyline];
+node [fontname="Times New Roman", fontsize=17, color="black", fontcolor="black", style="filled", fillcolor="white", penwidth=1.1];
+edge [fontname="Times New Roman", fontsize=14, color="black", arrowsize=0.7, penwidth=0.9];
+actor0 [shape=box,label="«actor»\nChủ trọ"];
+actor1 [shape=box,label="«actor»\nStaff đúng quyền/scope"];
+subgraph cluster_system { label="Rental Room Management · Hóa đơn và sổ thu chi";fontname="Times New Roman";fontsize=18;color="black";
+u0 [shape=ellipse,label="UC-BIL-20\nXem báo cáo tháng và các chỉ\nsố phân tích",margin="0.12,0.08"];
+u1 [shape=ellipse,label="UC-BIL-21\nXuất nội dung báo cáo tháng\nCSV",margin="0.12,0.08"];
+}
+actor0 -> u0 [arrowhead=none];
+actor1 -> u0 [arrowhead=none];
+actor0 -> u1 [arrowhead=none];
+actor1 -> u1 [arrowhead=none];
+}

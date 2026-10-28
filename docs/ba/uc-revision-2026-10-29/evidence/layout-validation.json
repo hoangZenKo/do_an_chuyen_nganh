@@ -1,0 +1,19 @@
+{
+  "original_unchanged": true,
+  "snapshot_hashes_verified": 853,
+  "uc_catalog": 164,
+  "completed_ucs": 9,
+  "pending_ucs": 155,
+  "source_locators": 94,
+  "routes_covered": 405,
+  "old_uc_ids_accounted": 131,
+  "business_rules": 26,
+  "acceptance_scenarios": 43,
+  "backend_tests_passed": 31,
+  "flutter_tests_passed": 48,
+  "sections_A_to_J": true,
+  "e2e_executed": false,
+  "rendered_pages": 89,
+  "toc_matches_rendered": true,
+  "sparse_pages": []
+}

@@ -1,0 +1,4030 @@
+[
+  {
+    "id": "SD-01",
+    "title": "Đăng nhập và gia hạn phiên",
+    "participants": [
+      {
+        "id": "actor",
+        "name": "Khách vãng lai",
+        "kind": "actor"
+      },
+      {
+        "id": "ui",
+        "name": "Giao diện Flutter",
+        "kind": "boundary"
+      },
+      {
+        "id": "service",
+        "name": "AuthService",
+        "kind": "control"
+      },
+      {
+        "id": "data",
+        "name": "PostgreSQL",
+        "kind": "entity"
+      }
+    ],
+    "pre": "Tài khoản đã đăng ký; màn hình chưa có phiên hoặc đang khôi phục phiên.",
+    "post": "Chỉ lưu token do backend trả về; refresh từ chối xác thực thì yêu cầu đăng nhập lại, lỗi mạng cho phép thử lại.",
+    "events": [
+      {
+        "type": "message",
+        "sender": "actor",
+        "receiver": "ui",
+        "text": "Nhập email và mật khẩu",
+        "kind": "call"
+      },
+      {
+        "type": "message",
+        "sender": "ui",
+        "receiver": "service",
+        "text": "login(email, password)",
+        "kind": "call"
+      },
+      {
+        "type": "message",
+        "sender": "service",
+        "receiver": "data",
+        "text": "Đọc User theo email",
+        "kind": "call"
+      },
+      {
+        "type": "message",
+        "sender": "data",
+        "receiver": "service",
+        "text": "User hoặc không tồn tại",
+        "kind": "return"
+      },
+      {
+        "type": "fragment",
+        "kind": "break",
+        "guard": "Không có user, bị khóa hoặc sai mật khẩu",
+        "children": [
+          {
+            "type": "message",
+            "sender": "service",
+            "receiver": "ui",
+            "text": "401; không tạo phiên",
+            "kind": "return"
+          }
+        ],
+        "alternate": null
+      },
+      {
+        "type": "fragment",
+        "kind": "opt",
+        "guard": "Admin đã bật MFA",
+        "children": [
+          {
+            "type": "message",
+            "sender": "service",
+            "receiver": "service",
+            "text": "Xác minh mã MFA / mã khôi phục",
+            "kind": "call"
+          },
+          {
+            "type": "fragment",
+            "kind": "break",
+            "guard": "Thiếu hoặc sai mã MFA",
+            "children": [
+              {
+                "type": "message",
+                "sender": "service",
+                "receiver": "ui",
+                "text": "MFA_REQUIRED / lỗi xác thực",
+                "kind": "return"
+              }
+            ],
+            "alternate": null
+          }
+        ],
+        "alternate": null
+      },
+      {
+        "type": "message",
+        "sender": "service",
+        "receiver": "data",
+        "text": "TX: khóa User; kiểm tra version; tạo session và refresh token",
+        "kind": "call"
+      },
+      {
+        "type": "message",
+        "sender": "data",
+        "receiver": "service",
+        "text": "Commit phiên và hạn token",
+        "kind": "return"
+      },
+      {
+        "type": "message",
+        "sender": "service",
+        "receiver": "ui",
+        "text": "Access token, refresh token, user",
+        "kind": "return"
+      },
+      {
+        "type": "message",
+        "sender": "ui",
+        "receiver": "ui",
+        "text": "Lưu phiên an toàn; mở đúng vai trò",
+        "kind": "call"
+      },
+      {
+        "type": "fragment",
+        "kind": "opt",
+        "guard": "Cần gia hạn access token",
+        "children": [
+          {
+            "type": "message",
+            "sender": "ui",
+            "receiver": "service",
+            "text": "refresh(rawToken)",
+            "kind": "call"
+          },
+          {
+            "type": "message",
+            "sender": "service",
+            "receiver": "data",
+            "text": "TX: khóa User; đọc token và session",
+            "kind": "call"
+          },
+          {
+            "type": "message",
+            "sender": "data",
+            "receiver": "service",
+            "text": "Trạng thái, hạn và userVersion",
+            "kind": "return"
+          },
+          {
+            "type": "fragment",
+            "kind": "break",
+            "guard": "Hết hạn, thu hồi hoặc version sai",
+            "children": [
+              {
+                "type": "message",
+                "sender": "service",
+                "receiver": "ui",
+                "text": "401; yêu cầu đăng nhập lại",
+                "kind": "return"
+              }
+            ],
+            "alternate": null
+          },
+          {
+            "type": "message",
+            "sender": "service",
+            "receiver": "data",
+            "text": "Thu hồi token cũ; ghi token thay thế",
+            "kind": "call"
+          },
+          {
+            "type": "message",
+            "sender": "data",
+            "receiver": "service",
+            "text": "Commit luân chuyển một lần",
+            "kind": "return"
+          },
+          {
+            "type": "message",
+            "sender": "service",
+            "receiver": "ui",
+            "text": "Cặp token mới và thông tin phiên",
+            "kind": "return"
+          }
+        ],
+        "alternate": null
+      }
+    ],
+    "methods": [
+      [
+        "auth/auth.service.ts",
+        "login"
+      ],
+      [
+        "auth/auth.service.ts",
+        "refresh"
+      ],
+      [
+        "auth/auth.service.ts",
+        "issueSession"
+      ]
+    ],
+    "render": {
+      "width": 1300,
+      "height": 1329,
+      "messages": 18,
+      "fragments": 5,
+      "font_size": 25
+    }
+  },
+  {
+    "id": "SD-02",
+    "title": "Đặt lịch xem và tạo hợp đồng từ lịch",
+    "participants": [
+      {
+        "id": "actor",
+        "name": "Người thuê",
+        "kind": "actor"
+      },
+      {
+        "id": "ui",
+        "name": "Giao diện Flutter",
+        "kind": "boundary"
+      },
+      {
+        "id": "service",
+        "name": "HousingService",
+        "kind": "control"
+      },
+      {
+        "id": "data",
+        "name": "PostgreSQL",
+        "kind": "entity"
+      },
+      {
+        "id": "second",
+        "name": "Chủ trọ",
+        "kind": "actor"
+      }
+    ],
+    "pre": "Người thuê có phiên tìm phòng; tin đang nhận khách; chủ trọ dùng phiên riêng.",
+    "post": "LEASED chỉ sau khi tạo lease thành công; tin được ẩn và lịch khác được xử lý trong cùng transaction.",
+    "events": [
+      {
+        "type": "message",
+        "sender": "actor",
+        "receiver": "ui",
+        "text": "Chọn tin, thời gian và slot",
+        "kind": "call"
+      },
+      {
+        "type": "message",
+        "sender": "ui",
+        "receiver": "service",
+        "text": "book(listingId, scheduledAt, slotId)",
+        "kind": "call"
+      },
+      {
+        "type": "message",
+        "sender": "service",
+        "receiver": "data",
+        "text": "TX: kiểm tra tin; reserveTime()",
+        "kind": "call"
+      },
+      {
+        "type": "message",
+        "sender": "data",
+        "receiver": "service",
+        "text": "Tin khả dụng và slot hợp lệ",
+        "kind": "return"
+      },
+      {
+        "type": "fragment",
+        "kind": "break",
+        "guard": "Tin ngừng nhận hoặc trùng giờ / hết slot",
+        "children": [
+          {
+            "type": "message",
+            "sender": "service",
+            "receiver": "ui",
+            "text": "Lỗi; không tạo lịch xem",
+            "kind": "return"
+          }
+        ],
+        "alternate": null
+      },
+      {
+        "type": "message",
+        "sender": "service",
+        "receiver": "data",
+        "text": "Tạo REQUESTED và thông báo nội bộ",
+        "kind": "call"
+      },
+      {
+        "type": "message",
+        "sender": "data",
+        "receiver": "service",
+        "text": "Commit lịch xem",
+        "kind": "return"
+      },
+      {
+        "type": "message",
+        "sender": "service",
+        "receiver": "ui",
+        "text": "Lịch REQUESTED và version",
+        "kind": "return"
+      },
+      {
+        "type": "message",
+        "sender": "second",
+        "receiver": "ui",
+        "text": "Xác nhận rồi ghi đã xem sau giờ hẹn",
+        "kind": "call"
+      },
+      {
+        "type": "message",
+        "sender": "ui",
+        "receiver": "service",
+        "text": "update(CONFIRMED / COMPLETED)",
+        "kind": "call"
+      },
+      {
+        "type": "message",
+        "sender": "service",
+        "receiver": "data",
+        "text": "Khóa lịch; kiểm tra giờ, quyền, version; cập nhật",
+        "kind": "call"
+      },
+      {
+        "type": "message",
+        "sender": "data",
+        "receiver": "service",
+        "text": "Lịch COMPLETED",
+        "kind": "return"
+      },
+      {
+        "type": "message",
+        "sender": "service",
+        "receiver": "ui",
+        "text": "Trạng thái mới và version",
+        "kind": "return"
+      },
+      {
+        "type": "message",
+        "sender": "second",
+        "receiver": "ui",
+        "text": "Chọn tạo hợp đồng",
+        "kind": "call"
+      },
+      {
+        "type": "message",
+        "sender": "ui",
+        "receiver": "service",
+        "text": "createLease(viewingId, version, terms)",
+        "kind": "call"
+      },
+      {
+        "type": "message",
+        "sender": "service",
+        "receiver": "data",
+        "text": "TX: khóa lịch; kiểm tra COMPLETED, tin và tenant",
+        "kind": "call"
+      },
+      {
+        "type": "message",
+        "sender": "data",
+        "receiver": "service",
+        "text": "Trạng thái hiện hành",
+        "kind": "return"
+      },
+      {
+        "type": "fragment",
+        "kind": "break",
+        "guard": "Phòng đổi trạng thái hoặc tenant ngoài scope",
+        "children": [
+          {
+            "type": "message",
+            "sender": "service",
+            "receiver": "ui",
+            "text": "409; không tạo lease",
+            "kind": "return"
+          }
+        ],
+        "alternate": null
+      },
+      {
+        "type": "message",
+        "sender": "service",
+        "receiver": "data",
+        "text": "Tạo lease; LEASED; ẩn tin; hủy lịch còn lại; audit",
+        "kind": "call"
+      },
+      {
+        "type": "message",
+        "sender": "data",
+        "receiver": "service",
+        "text": "Commit lease và tenant",
+        "kind": "return"
+      },
+      {
+        "type": "message",
+        "sender": "service",
+        "receiver": "ui",
+        "text": "leaseId và tenantId",
+        "kind": "return"
+      }
+    ],
+    "methods": [
+      [
+        "housing/housing.service.ts",
+        "book"
+      ],
+      [
+        "housing/housing.service.ts",
+        "update"
+      ],
+      [
+        "housing/housing.service.ts",
+        "createLease"
+      ]
+    ],
+    "render": {
+      "width": 1300,
+      "height": 1311,
+      "messages": 21,
+      "fragments": 2,
+      "font_size": 25
+    }
+  },
+  {
+    "id": "SD-03",
+    "title": "Tạo hợp đồng và ghi nhận cọc",
+    "participants": [
+      {
+        "id": "actor",
+        "name": "Chủ trọ",
+        "kind": "actor"
+      },
+      {
+        "id": "ui",
+        "name": "Giao diện Flutter",
+        "kind": "boundary"
+      },
+      {
+        "id": "service",
+        "name": "LeasesService",
+        "kind": "control"
+      },
+      {
+        "id": "data",
+        "name": "PostgreSQL",
+        "kind": "entity"
+      }
+    ],
+    "pre": "Có quyền tạo lease; phòng, hồ sơ người thuê và điều khoản đã được chọn.",
+    "post": "Lease ACTIVE và Room OCCUPIED đồng bộ; chỉ ghi COLLECTED nếu đầu vào cọc lớn hơn 0.",
+    "events": [
+      {
+        "type": "message",
+        "sender": "actor",
+        "receiver": "ui",
+        "text": "Nhập phòng, tenant và điều khoản",
+        "kind": "call"
+      },
+      {
+        "type": "message",
+        "sender": "ui",
+        "receiver": "service",
+        "text": "create(leaseInput)",
+        "kind": "call"
+      },
+      {
+        "type": "message",
+        "sender": "service",
+        "receiver": "data",
+        "text": "TX: khóa Room; đọc property và tenant",
+        "kind": "call"
+      },
+      {
+        "type": "message",
+        "sender": "data",
+        "receiver": "service",
+        "text": "Phạm vi và trạng thái hiện hành",
+        "kind": "return"
+      },
+      {
+        "type": "fragment",
+        "kind": "break",
+        "guard": "Ngoài scope, bị lưu trữ, inactive hoặc turnover",
+        "children": [
+          {
+            "type": "message",
+            "sender": "service",
+            "receiver": "ui",
+            "text": "Từ chối; không ghi hợp đồng",
+            "kind": "return"
+          }
+        ],
+        "alternate": null
+      },
+      {
+        "type": "message",
+        "sender": "service",
+        "receiver": "data",
+        "text": "Tìm lease ACTIVE của phòng",
+        "kind": "call"
+      },
+      {
+        "type": "message",
+        "sender": "data",
+        "receiver": "service",
+        "text": "Có hoặc không có lease",
+        "kind": "return"
+      },
+      {
+        "type": "fragment",
+        "kind": "alt",
+        "guard": "Đã có lease ACTIVE",
+        "children": [
+          {
+            "type": "message",
+            "sender": "service",
+            "receiver": "ui",
+            "text": "ROOM_ALREADY_LEASED; rollback",
+            "kind": "return"
+          }
+        ],
+        "alternate": [
+          "Không có lease ACTIVE",
+          [
+            {
+              "type": "message",
+              "sender": "service",
+              "receiver": "data",
+              "text": "Tạo Lease ACTIVE",
+              "kind": "call"
+            },
+            {
+              "type": "message",
+              "sender": "data",
+              "receiver": "service",
+              "text": "Lease mới",
+              "kind": "return"
+            },
+            {
+              "type": "fragment",
+              "kind": "opt",
+              "guard": "deposit > 0",
+              "children": [
+                {
+                  "type": "message",
+                  "sender": "service",
+                  "receiver": "data",
+                  "text": "Ghi DepositTransaction COLLECTED",
+                  "kind": "call"
+                },
+                {
+                  "type": "message",
+                  "sender": "data",
+                  "receiver": "service",
+                  "text": "Khoản cọc được ghi",
+                  "kind": "return"
+                }
+              ],
+              "alternate": null
+            },
+            {
+              "type": "message",
+              "sender": "service",
+              "receiver": "data",
+              "text": "Cập nhật Room OCCUPIED, tenantName",
+              "kind": "call"
+            },
+            {
+              "type": "message",
+              "sender": "data",
+              "receiver": "service",
+              "text": "Commit transaction",
+              "kind": "return"
+            },
+            {
+              "type": "message",
+              "sender": "service",
+              "receiver": "ui",
+              "text": "Lease cùng thông tin phòng / tenant",
+              "kind": "return"
+            },
+            {
+              "type": "message",
+              "sender": "ui",
+              "receiver": "actor",
+              "text": "Hiển thị hợp đồng mới",
+              "kind": "return"
+            }
+          ]
+        ]
+      }
+    ],
+    "methods": [
+      [
+        "leases/leases.service.ts",
+        "create"
+      ],
+      [
+        "leases/leases.service.ts",
+        "createWithinTransaction"
+      ]
+    ],
+    "render": {
+      "width": 1300,
+      "height": 1166,
+      "messages": 16,
+      "fragments": 3,
+      "font_size": 25
+    }
+  },
+  {
+    "id": "SD-04",
+    "title": "Đề xuất và duyệt biểu phí",
+    "participants": [
+      {
+        "id": "actor",
+        "name": "Chủ trọ",
+        "kind": "actor"
+      },
+      {
+        "id": "ui",
+        "name": "Giao diện Flutter",
+        "kind": "boundary"
+      },
+      {
+        "id": "service",
+        "name": "BillingTariffsService",
+        "kind": "control"
+      },
+      {
+        "id": "data",
+        "name": "PostgreSQL",
+        "kind": "entity"
+      }
+    ],
+    "pre": "Chủ trọ đúng phạm vi khu; thao tác duyệt cần billing.tariff_approve.",
+    "post": "Giữ lịch sử giá theo hiệu lực; không áp giá đề xuất chưa được duyệt cho hóa đơn đã phát hành.",
+    "events": [
+      {
+        "type": "message",
+        "sender": "actor",
+        "receiver": "ui",
+        "text": "Nhập biểu phí và tháng hiệu lực",
+        "kind": "call"
+      },
+      {
+        "type": "message",
+        "sender": "ui",
+        "receiver": "service",
+        "text": "propose(input, requestKey)",
+        "kind": "call"
+      },
+      {
+        "type": "message",
+        "sender": "service",
+        "receiver": "data",
+        "text": "TX: kiểm tra scope, kỳ; lưu PROPOSED",
+        "kind": "call"
+      },
+      {
+        "type": "message",
+        "sender": "data",
+        "receiver": "service",
+        "text": "Đề xuất đã lưu",
+        "kind": "return"
+      },
+      {
+        "type": "message",
+        "sender": "service",
+        "receiver": "ui",
+        "text": "Proposal và trạng thái",
+        "kind": "return"
+      },
+      {
+        "type": "message",
+        "sender": "ui",
+        "receiver": "service",
+        "text": "impact(proposalId)",
+        "kind": "call"
+      },
+      {
+        "type": "message",
+        "sender": "service",
+        "receiver": "data",
+        "text": "Đọc giá nền, phòng, invoice và kỳ khóa",
+        "kind": "call"
+      },
+      {
+        "type": "message",
+        "sender": "data",
+        "receiver": "service",
+        "text": "Tác động và blockingReasons",
+        "kind": "return"
+      },
+      {
+        "type": "message",
+        "sender": "service",
+        "receiver": "ui",
+        "text": "Impact và canApprove",
+        "kind": "return"
+      },
+      {
+        "type": "message",
+        "sender": "actor",
+        "receiver": "ui",
+        "text": "Chọn duyệt hoặc từ chối; nhập lý do",
+        "kind": "call"
+      },
+      {
+        "type": "message",
+        "sender": "ui",
+        "receiver": "service",
+        "text": "review(decision, reason, requestKey)",
+        "kind": "call"
+      },
+      {
+        "type": "message",
+        "sender": "service",
+        "receiver": "data",
+        "text": "TX: khóa Property; đọc lại proposal",
+        "kind": "call"
+      },
+      {
+        "type": "message",
+        "sender": "data",
+        "receiver": "service",
+        "text": "Trạng thái PROPOSED hiện hành",
+        "kind": "return"
+      },
+      {
+        "type": "fragment",
+        "kind": "break",
+        "guard": "Đã review hoặc requestKey khác payload",
+        "children": [
+          {
+            "type": "message",
+            "sender": "service",
+            "receiver": "ui",
+            "text": "409; không ghi quyết định mới",
+            "kind": "return"
+          }
+        ],
+        "alternate": null
+      },
+      {
+        "type": "fragment",
+        "kind": "alt",
+        "guard": "decision = APPROVED",
+        "children": [
+          {
+            "type": "message",
+            "sender": "service",
+            "receiver": "data",
+            "text": "Kiểm tra backdate, invoice, kỳ khóa, thứ tự hiệu lực",
+            "kind": "call"
+          },
+          {
+            "type": "message",
+            "sender": "data",
+            "receiver": "service",
+            "text": "Đủ hoặc thiếu điều kiện",
+            "kind": "return"
+          },
+          {
+            "type": "fragment",
+            "kind": "break",
+            "guard": "Kỳ bị chặn hoặc thứ tự không hợp lệ",
+            "children": [
+              {
+                "type": "message",
+                "sender": "service",
+                "receiver": "ui",
+                "text": "Không áp giá; rollback",
+                "kind": "return"
+              }
+            ],
+            "alternate": null
+          }
+        ],
+        "alternate": [
+          "decision = REJECTED",
+          [
+            {
+              "type": "message",
+              "sender": "service",
+              "receiver": "service",
+              "text": "Giữ proposal; ghi lý do từ chối",
+              "kind": "call"
+            }
+          ]
+        ]
+      },
+      {
+        "type": "message",
+        "sender": "service",
+        "receiver": "data",
+        "text": "Ghi decision, event, audit và command",
+        "kind": "call"
+      },
+      {
+        "type": "message",
+        "sender": "data",
+        "receiver": "service",
+        "text": "Commit kết quả review",
+        "kind": "return"
+      },
+      {
+        "type": "message",
+        "sender": "service",
+        "receiver": "ui",
+        "text": "Biểu phí cùng trạng thái mới",
+        "kind": "return"
+      }
+    ],
+    "methods": [
+      [
+        "billing/billing-tariffs.service.ts",
+        "propose"
+      ],
+      [
+        "billing/billing-tariffs.service.ts",
+        "impact"
+      ],
+      [
+        "billing/billing-tariffs.service.ts",
+        "review"
+      ]
+    ],
+    "render": {
+      "width": 1300,
+      "height": 1401,
+      "messages": 21,
+      "fragments": 3,
+      "font_size": 25
+    }
+  },
+  {
+    "id": "SD-05",
+    "title": "Xem trước và phát hành hóa đơn",
+    "participants": [
+      {
+        "id": "actor",
+        "name": "Chủ trọ",
+        "kind": "actor"
+      },
+      {
+        "id": "ui",
+        "name": "Giao diện Flutter",
+        "kind": "boundary"
+      },
+      {
+        "id": "service",
+        "name": "Billing / Tariffs",
+        "kind": "control"
+      },
+      {
+        "id": "data",
+        "name": "PostgreSQL",
+        "kind": "entity"
+      }
+    ],
+    "pre": "Có lease trong scope, kỳ lập hóa đơn và chỉ số điện nước.",
+    "post": "Preview không giữ khóa tới lần ghi; bulk trả kết quả tạo, bỏ qua và lỗi, không giả định mọi phòng đều thành công.",
+    "events": [
+      {
+        "type": "message",
+        "sender": "actor",
+        "receiver": "ui",
+        "text": "Chọn kỳ, hợp đồng và chỉ số",
+        "kind": "call"
+      },
+      {
+        "type": "message",
+        "sender": "ui",
+        "receiver": "service",
+        "text": "preview() / bulkInvoicePreflight()",
+        "kind": "call"
+      },
+      {
+        "type": "message",
+        "sender": "service",
+        "receiver": "data",
+        "text": "Đọc lease, meter, biểu phí hiệu lực",
+        "kind": "call"
+      },
+      {
+        "type": "message",
+        "sender": "data",
+        "receiver": "service",
+        "text": "Dữ liệu tính giá theo kỳ",
+        "kind": "return"
+      },
+      {
+        "type": "message",
+        "sender": "service",
+        "receiver": "service",
+        "text": "Tính dòng tiền, nguồn giá và lỗi thiếu",
+        "kind": "call"
+      },
+      {
+        "type": "message",
+        "sender": "service",
+        "receiver": "ui",
+        "text": "Preview / kết quả từng phòng",
+        "kind": "return"
+      },
+      {
+        "type": "fragment",
+        "kind": "opt",
+        "guard": "Chủ trọ xác nhận phát hành",
+        "children": [
+          {
+            "type": "message",
+            "sender": "actor",
+            "receiver": "ui",
+            "text": "Xác nhận nội dung đã xem",
+            "kind": "call"
+          },
+          {
+            "type": "message",
+            "sender": "ui",
+            "receiver": "service",
+            "text": "createInvoice() / createBulkInvoices()",
+            "kind": "call"
+          },
+          {
+            "type": "fragment",
+            "kind": "loop",
+            "guard": "Mỗi hợp đồng được chọn",
+            "children": [
+              {
+                "type": "message",
+                "sender": "service",
+                "receiver": "data",
+                "text": "TX: khóa lease / phòng; kiểm tra lại kỳ và trùng",
+                "kind": "call"
+              },
+              {
+                "type": "message",
+                "sender": "data",
+                "receiver": "service",
+                "text": "Dữ liệu tại thời điểm ghi",
+                "kind": "return"
+              },
+              {
+                "type": "fragment",
+                "kind": "alt",
+                "guard": "Đủ điều kiện ghi",
+                "children": [
+                  {
+                    "type": "message",
+                    "sender": "service",
+                    "receiver": "data",
+                    "text": "Ghi Invoice và line item snapshot",
+                    "kind": "call"
+                  },
+                  {
+                    "type": "message",
+                    "sender": "data",
+                    "receiver": "service",
+                    "text": "Commit hóa đơn",
+                    "kind": "return"
+                  }
+                ],
+                "alternate": [
+                  "Trùng hoặc không hợp lệ",
+                  [
+                    {
+                      "type": "message",
+                      "sender": "service",
+                      "receiver": "service",
+                      "text": "Giữ lỗi / bỏ qua theo từng mục",
+                      "kind": "call"
+                    }
+                  ]
+                ]
+              }
+            ],
+            "alternate": null
+          },
+          {
+            "type": "message",
+            "sender": "service",
+            "receiver": "ui",
+            "text": "Hóa đơn hoặc thống kê bulk",
+            "kind": "return"
+          },
+          {
+            "type": "message",
+            "sender": "ui",
+            "receiver": "actor",
+            "text": "Hiển thị kết quả, không báo thành công toàn bộ",
+            "kind": "return"
+          }
+        ],
+        "alternate": null
+      }
+    ],
+    "methods": [
+      [
+        "billing/billing-tariffs.service.ts",
+        "preview"
+      ],
+      [
+        "billing/billing.service.ts",
+        "createInvoice"
+      ],
+      [
+        "billing/billing.service.ts",
+        "bulkInvoicePreflight"
+      ],
+      [
+        "billing/billing.service.ts",
+        "createBulkInvoices"
+      ]
+    ],
+    "render": {
+      "width": 1300,
+      "height": 1119,
+      "messages": 15,
+      "fragments": 3,
+      "font_size": 25
+    }
+  },
+  {
+    "id": "SD-06",
+    "title": "Ghi khoản thu và phân bổ nhiều hóa đơn",
+    "participants": [
+      {
+        "id": "actor",
+        "name": "Chủ trọ",
+        "kind": "actor"
+      },
+      {
+        "id": "ui",
+        "name": "Giao diện Flutter",
+        "kind": "boundary"
+      },
+      {
+        "id": "service",
+        "name": "BillingLedgerService",
+        "kind": "control"
+      },
+      {
+        "id": "data",
+        "name": "PostgreSQL",
+        "kind": "entity"
+      }
+    ],
+    "pre": "Có tenant thuộc chủ trọ; khoản tiền thực nhận và tham chiếu đã được xác nhận.",
+    "post": "Receipt khả dụng chưa phân bổ không giảm công nợ; Payment và Allocation chỉ được ghi trong transaction thành công.",
+    "events": [
+      {
+        "type": "message",
+        "sender": "actor",
+        "receiver": "ui",
+        "text": "Nhập số tiền, tham chiếu, hóa đơn",
+        "kind": "call"
+      },
+      {
+        "type": "message",
+        "sender": "ui",
+        "receiver": "service",
+        "text": "createReceipt(input, requestKey)",
+        "kind": "call"
+      },
+      {
+        "type": "message",
+        "sender": "service",
+        "receiver": "data",
+        "text": "TX: khóa command key; đọc hash cũ",
+        "kind": "call"
+      },
+      {
+        "type": "message",
+        "sender": "data",
+        "receiver": "service",
+        "text": "Command cũ hoặc chưa tồn tại",
+        "kind": "return"
+      },
+      {
+        "type": "fragment",
+        "kind": "break",
+        "guard": "Đã có requestKey",
+        "children": [
+          {
+            "type": "message",
+            "sender": "service",
+            "receiver": "ui",
+            "text": "Cùng hash: kết quả cũ; khác hash: 409",
+            "kind": "return"
+          }
+        ],
+        "alternate": null
+      },
+      {
+        "type": "message",
+        "sender": "service",
+        "receiver": "data",
+        "text": "Kiểm tra tenant; tạo receipt khả dụng",
+        "kind": "call"
+      },
+      {
+        "type": "message",
+        "sender": "data",
+        "receiver": "service",
+        "text": "Receipt mới trong transaction",
+        "kind": "return"
+      },
+      {
+        "type": "fragment",
+        "kind": "loop",
+        "guard": "Mỗi allocation; khóa invoice theo ID",
+        "children": [
+          {
+            "type": "message",
+            "sender": "service",
+            "receiver": "data",
+            "text": "Khóa invoice; kiểm tra tenant và dư nợ",
+            "kind": "call"
+          },
+          {
+            "type": "message",
+            "sender": "data",
+            "receiver": "service",
+            "text": "Số dư hiện hành",
+            "kind": "return"
+          },
+          {
+            "type": "fragment",
+            "kind": "break",
+            "guard": "Trùng invoice, sai tenant hoặc vượt dư",
+            "children": [
+              {
+                "type": "message",
+                "sender": "service",
+                "receiver": "ui",
+                "text": "Lỗi; rollback toàn bộ lệnh",
+                "kind": "return"
+              }
+            ],
+            "alternate": null
+          },
+          {
+            "type": "message",
+            "sender": "service",
+            "receiver": "data",
+            "text": "Tạo Payment, Allocation; cập nhật invoice",
+            "kind": "call"
+          },
+          {
+            "type": "message",
+            "sender": "data",
+            "receiver": "service",
+            "text": "Phân bổ trong transaction",
+            "kind": "return"
+          }
+        ],
+        "alternate": null
+      },
+      {
+        "type": "message",
+        "sender": "service",
+        "receiver": "data",
+        "text": "Giảm available; event, audit, command",
+        "kind": "call"
+      },
+      {
+        "type": "message",
+        "sender": "data",
+        "receiver": "service",
+        "text": "Commit receipt và số dư",
+        "kind": "return"
+      },
+      {
+        "type": "message",
+        "sender": "service",
+        "receiver": "ui",
+        "text": "Receipt, allocations, availableAmount",
+        "kind": "return"
+      },
+      {
+        "type": "fragment",
+        "kind": "opt",
+        "guard": "Phân bổ thêm từ receipt đã tồn tại",
+        "children": [
+          {
+            "type": "message",
+            "sender": "ui",
+            "receiver": "service",
+            "text": "allocate(receiptId, lines, requestKey)",
+            "kind": "call"
+          },
+          {
+            "type": "message",
+            "sender": "service",
+            "receiver": "data",
+            "text": "Khóa receipt; áp dụng kiểm tra và phân bổ như trên",
+            "kind": "call"
+          },
+          {
+            "type": "message",
+            "sender": "data",
+            "receiver": "service",
+            "text": "Commit hoặc rollback lệnh mới",
+            "kind": "return"
+          },
+          {
+            "type": "message",
+            "sender": "service",
+            "receiver": "ui",
+            "text": "Receipt và công nợ cập nhật",
+            "kind": "return"
+          }
+        ],
+        "alternate": null
+      }
+    ],
+    "methods": [
+      [
+        "billing/billing-ledger.service.ts",
+        "createReceipt"
+      ],
+      [
+        "billing/billing-ledger.service.ts",
+        "allocate"
+      ],
+      [
+        "billing/billing-ledger.service.ts",
+        "allocateLines"
+      ],
+      [
+        "billing/billing-commands.service.ts",
+        "execute"
+      ]
+    ],
+    "render": {
+      "width": 1300,
+      "height": 1323,
+      "messages": 19,
+      "fragments": 4,
+      "font_size": 25
+    }
+  },
+  {
+    "id": "SD-07",
+    "title": "Giải phóng phân bổ và ghi nhận hoàn tiền",
+    "participants": [
+      {
+        "id": "actor",
+        "name": "Chủ trọ",
+        "kind": "actor"
+      },
+      {
+        "id": "ui",
+        "name": "Giao diện Flutter",
+        "kind": "boundary"
+      },
+      {
+        "id": "service",
+        "name": "BillingLedgerService",
+        "kind": "control"
+      },
+      {
+        "id": "data",
+        "name": "PostgreSQL",
+        "kind": "entity"
+      }
+    ],
+    "pre": "Có receipt / allocation thuộc scope; chủ trọ cung cấp lý do và requestKey riêng từng lệnh.",
+    "post": "Giữ payment gốc; hoàn tiền chỉ là ghi sổ, không chuyển khoản ngân hàng.",
+    "events": [
+      {
+        "type": "message",
+        "sender": "actor",
+        "receiver": "ui",
+        "text": "Chọn allocation, nhập lý do",
+        "kind": "call"
+      },
+      {
+        "type": "message",
+        "sender": "ui",
+        "receiver": "service",
+        "text": "release(receiptId, allocationId, key)",
+        "kind": "call"
+      },
+      {
+        "type": "message",
+        "sender": "service",
+        "receiver": "data",
+        "text": "TX: idempotency; khóa receipt và invoice",
+        "kind": "call"
+      },
+      {
+        "type": "message",
+        "sender": "data",
+        "receiver": "service",
+        "text": "Allocation và số dư hiện tại",
+        "kind": "return"
+      },
+      {
+        "type": "fragment",
+        "kind": "break",
+        "guard": "Không tồn tại, đã release hoặc sổ lệch",
+        "children": [
+          {
+            "type": "message",
+            "sender": "service",
+            "receiver": "ui",
+            "text": "Từ chối; không đảo trùng",
+            "kind": "return"
+          }
+        ],
+        "alternate": null
+      },
+      {
+        "type": "message",
+        "sender": "service",
+        "receiver": "data",
+        "text": "Ghi REVERSAL âm; release allocation; cập nhật số dư",
+        "kind": "call"
+      },
+      {
+        "type": "message",
+        "sender": "data",
+        "receiver": "service",
+        "text": "Commit event, audit và command",
+        "kind": "return"
+      },
+      {
+        "type": "message",
+        "sender": "service",
+        "receiver": "ui",
+        "text": "Receipt khả dụng tăng; invoice giảm paid",
+        "kind": "return"
+      },
+      {
+        "type": "fragment",
+        "kind": "opt",
+        "guard": "Đã thực trả và cần ghi hoàn tiền",
+        "children": [
+          {
+            "type": "message",
+            "sender": "actor",
+            "receiver": "ui",
+            "text": "Nhập tiền hoàn và tham chiếu",
+            "kind": "call"
+          },
+          {
+            "type": "message",
+            "sender": "ui",
+            "receiver": "service",
+            "text": "refund(receiptId, amount, key)",
+            "kind": "call"
+          },
+          {
+            "type": "message",
+            "sender": "service",
+            "receiver": "data",
+            "text": "TX: khóa receipt; kiểm tra availableAmount",
+            "kind": "call"
+          },
+          {
+            "type": "message",
+            "sender": "data",
+            "receiver": "service",
+            "text": "Số dư khả dụng",
+            "kind": "return"
+          },
+          {
+            "type": "fragment",
+            "kind": "alt",
+            "guard": "amount <= availableAmount",
+            "children": [
+              {
+                "type": "message",
+                "sender": "service",
+                "receiver": "data",
+                "text": "Tạo BillingRefund; giảm available; audit",
+                "kind": "call"
+              },
+              {
+                "type": "message",
+                "sender": "data",
+                "receiver": "service",
+                "text": "Commit hoàn sổ",
+                "kind": "return"
+              },
+              {
+                "type": "message",
+                "sender": "service",
+                "receiver": "ui",
+                "text": "Lịch sử hoàn tiền",
+                "kind": "return"
+              }
+            ],
+            "alternate": [
+              "amount > availableAmount",
+              [
+                {
+                  "type": "message",
+                  "sender": "service",
+                  "receiver": "ui",
+                  "text": "409; giữ nguyên số dư",
+                  "kind": "return"
+                }
+              ]
+            ]
+          }
+        ],
+        "alternate": null
+      }
+    ],
+    "methods": [
+      [
+        "billing/billing-ledger.service.ts",
+        "release"
+      ],
+      [
+        "billing/billing-ledger.service.ts",
+        "refund"
+      ]
+    ],
+    "render": {
+      "width": 1300,
+      "height": 1166,
+      "messages": 16,
+      "fragments": 3,
+      "font_size": 25
+    }
+  },
+  {
+    "id": "SD-08",
+    "title": "Gửi và xét duyệt chứng từ thanh toán",
+    "participants": [
+      {
+        "id": "actor",
+        "name": "Người thuê",
+        "kind": "actor"
+      },
+      {
+        "id": "ui",
+        "name": "Giao diện Flutter",
+        "kind": "boundary"
+      },
+      {
+        "id": "service",
+        "name": "Portal / Billing",
+        "kind": "control"
+      },
+      {
+        "id": "data",
+        "name": "PostgreSQL",
+        "kind": "entity"
+      },
+      {
+        "id": "second",
+        "name": "Chủ trọ",
+        "kind": "actor"
+      }
+    ],
+    "pre": "Người thuê có invoice của mình; chủ trọ xét duyệt bằng phiên có quyền riêng.",
+    "post": "PENDING không phải đã thanh toán; APPROVED tạo receipt, payment và allocation một lần.",
+    "events": [
+      {
+        "type": "message",
+        "sender": "actor",
+        "receiver": "ui",
+        "text": "Chọn tệp và nhập tiền đã chuyển",
+        "kind": "call"
+      },
+      {
+        "type": "message",
+        "sender": "ui",
+        "receiver": "service",
+        "text": "Tải tệp qua endpoint bảo vệ",
+        "kind": "call"
+      },
+      {
+        "type": "message",
+        "sender": "service",
+        "receiver": "data",
+        "text": "Lưu tệp theo policy truy cập",
+        "kind": "call"
+      },
+      {
+        "type": "message",
+        "sender": "data",
+        "receiver": "service",
+        "text": "Định danh tệp được phép",
+        "kind": "return"
+      },
+      {
+        "type": "message",
+        "sender": "service",
+        "receiver": "ui",
+        "text": "Thông tin tệp",
+        "kind": "return"
+      },
+      {
+        "type": "message",
+        "sender": "ui",
+        "receiver": "service",
+        "text": "submitPaymentProof(invoiceId, key)",
+        "kind": "call"
+      },
+      {
+        "type": "message",
+        "sender": "service",
+        "receiver": "data",
+        "text": "Kiểm tra tenant, invoice, tệp; tạo PENDING",
+        "kind": "call"
+      },
+      {
+        "type": "message",
+        "sender": "data",
+        "receiver": "service",
+        "text": "Proof chờ xét duyệt",
+        "kind": "return"
+      },
+      {
+        "type": "message",
+        "sender": "service",
+        "receiver": "ui",
+        "text": "PENDING; chưa giảm công nợ",
+        "kind": "return"
+      },
+      {
+        "type": "message",
+        "sender": "second",
+        "receiver": "ui",
+        "text": "Mở proof; nhập quyết định",
+        "kind": "call"
+      },
+      {
+        "type": "message",
+        "sender": "ui",
+        "receiver": "service",
+        "text": "reviewPaymentProof(proofId, decision)",
+        "kind": "call"
+      },
+      {
+        "type": "message",
+        "sender": "service",
+        "receiver": "data",
+        "text": "TX: khóa proof; kiểm tra PENDING và scope",
+        "kind": "call"
+      },
+      {
+        "type": "message",
+        "sender": "data",
+        "receiver": "service",
+        "text": "Proof chưa được xử lý",
+        "kind": "return"
+      },
+      {
+        "type": "fragment",
+        "kind": "break",
+        "guard": "Đã review hoặc ngoài scope",
+        "children": [
+          {
+            "type": "message",
+            "sender": "service",
+            "receiver": "ui",
+            "text": "Không ghi thu trùng",
+            "kind": "return"
+          }
+        ],
+        "alternate": null
+      },
+      {
+        "type": "fragment",
+        "kind": "alt",
+        "guard": "APPROVED",
+        "children": [
+          {
+            "type": "message",
+            "sender": "service",
+            "receiver": "data",
+            "text": "Khóa invoice; kiểm tra demo, hủy, dư nợ",
+            "kind": "call"
+          },
+          {
+            "type": "message",
+            "sender": "data",
+            "receiver": "service",
+            "text": "Invoice còn được thu",
+            "kind": "return"
+          },
+          {
+            "type": "fragment",
+            "kind": "break",
+            "guard": "Proof vượt số dư mới hoặc invoice không hợp lệ",
+            "children": [
+              {
+                "type": "message",
+                "sender": "service",
+                "receiver": "ui",
+                "text": "409; rollback",
+                "kind": "return"
+              }
+            ],
+            "alternate": null
+          },
+          {
+            "type": "message",
+            "sender": "service",
+            "receiver": "data",
+            "text": "Tạo receipt, payment, allocation; cập nhật invoice",
+            "kind": "call"
+          }
+        ],
+        "alternate": [
+          "REJECTED",
+          [
+            {
+              "type": "message",
+              "sender": "service",
+              "receiver": "data",
+              "text": "Chỉ ghi từ chối và lý do",
+              "kind": "call"
+            }
+          ]
+        ]
+      },
+      {
+        "type": "message",
+        "sender": "data",
+        "receiver": "service",
+        "text": "Commit quyết định và lịch sử",
+        "kind": "return"
+      },
+      {
+        "type": "message",
+        "sender": "service",
+        "receiver": "ui",
+        "text": "Proof và trạng thái hóa đơn mới",
+        "kind": "return"
+      }
+    ],
+    "methods": [
+      [
+        "tenant-portal/tenant-portal.service.ts",
+        "submitPaymentProof"
+      ],
+      [
+        "billing/billing.service.ts",
+        "reviewPaymentProof"
+      ]
+    ],
+    "render": {
+      "width": 1300,
+      "height": 1401,
+      "messages": 21,
+      "fragments": 3,
+      "font_size": 25
+    }
+  },
+  {
+    "id": "SD-09",
+    "title": "Thay thế hoặc điều chỉnh hóa đơn",
+    "participants": [
+      {
+        "id": "actor",
+        "name": "Chủ trọ",
+        "kind": "actor"
+      },
+      {
+        "id": "ui",
+        "name": "Giao diện Flutter",
+        "kind": "boundary"
+      },
+      {
+        "id": "service",
+        "name": "BillingLedgerService",
+        "kind": "control"
+      },
+      {
+        "id": "data",
+        "name": "PostgreSQL",
+        "kind": "entity"
+      }
+    ],
+    "pre": "Có invoice ngoài demo, không bị hủy; có lý do và requestKey.",
+    "post": "Replacement và adjustment là hai lựa chọn loại trừ; không ghi đè lịch sử thanh toán.",
+    "events": [
+      {
+        "type": "message",
+        "sender": "actor",
+        "receiver": "ui",
+        "text": "Chọn loại xử lý và nhập lý do",
+        "kind": "call"
+      },
+      {
+        "type": "message",
+        "sender": "ui",
+        "receiver": "service",
+        "text": "replace() hoặc adjust()",
+        "kind": "call"
+      },
+      {
+        "type": "message",
+        "sender": "service",
+        "receiver": "data",
+        "text": "TX: kiểm tra command; khóa invoice",
+        "kind": "call"
+      },
+      {
+        "type": "message",
+        "sender": "data",
+        "receiver": "service",
+        "text": "Invoice, payment history và số dư",
+        "kind": "return"
+      },
+      {
+        "type": "fragment",
+        "kind": "alt",
+        "guard": "Chọn replacement",
+        "children": [
+          {
+            "type": "fragment",
+            "kind": "break",
+            "guard": "Có payment history hoặc đã replacement",
+            "children": [
+              {
+                "type": "message",
+                "sender": "service",
+                "receiver": "ui",
+                "text": "409; dùng adjustment phù hợp",
+                "kind": "return"
+              }
+            ],
+            "alternate": null
+          },
+          {
+            "type": "message",
+            "sender": "service",
+            "receiver": "data",
+            "text": "Hủy invoice gốc; hủy link; tạo revision và snapshot",
+            "kind": "call"
+          },
+          {
+            "type": "message",
+            "sender": "data",
+            "receiver": "service",
+            "text": "Hóa đơn thay thế",
+            "kind": "return"
+          }
+        ],
+        "alternate": [
+          "Chọn adjustment",
+          [
+            {
+              "type": "message",
+              "sender": "service",
+              "receiver": "service",
+              "text": "Kiểm tra CREDIT / DEBIT và amount / basisPoints",
+              "kind": "call"
+            },
+            {
+              "type": "fragment",
+              "kind": "break",
+              "guard": "Sai loại hoặc credit vượt số dư",
+              "children": [
+                {
+                  "type": "message",
+                  "sender": "service",
+                  "receiver": "ui",
+                  "text": "Không ghi adjustment",
+                  "kind": "return"
+                }
+              ],
+              "alternate": null
+            },
+            {
+              "type": "message",
+              "sender": "service",
+              "receiver": "data",
+              "text": "Thêm adjustment và line item; tính lại total / status",
+              "kind": "call"
+            },
+            {
+              "type": "message",
+              "sender": "data",
+              "receiver": "service",
+              "text": "Hóa đơn điều chỉnh",
+              "kind": "return"
+            }
+          ]
+        ]
+      },
+      {
+        "type": "message",
+        "sender": "service",
+        "receiver": "data",
+        "text": "Ghi event, audit và command response",
+        "kind": "call"
+      },
+      {
+        "type": "message",
+        "sender": "data",
+        "receiver": "service",
+        "text": "Commit một nhánh duy nhất",
+        "kind": "return"
+      },
+      {
+        "type": "message",
+        "sender": "service",
+        "receiver": "ui",
+        "text": "Invoice và timeline cập nhật",
+        "kind": "return"
+      },
+      {
+        "type": "message",
+        "sender": "ui",
+        "receiver": "actor",
+        "text": "Hiển thị bản gốc và lịch sử liên quan",
+        "kind": "return"
+      }
+    ],
+    "methods": [
+      [
+        "billing/billing-ledger.service.ts",
+        "replace"
+      ],
+      [
+        "billing/billing-ledger.service.ts",
+        "adjust"
+      ]
+    ],
+    "render": {
+      "width": 1300,
+      "height": 1119,
+      "messages": 15,
+      "fragments": 3,
+      "font_size": 25
+    }
+  },
+  {
+    "id": "SD-10",
+    "title": "Quyết toán trả phòng và hoàn cọc",
+    "participants": [
+      {
+        "id": "actor",
+        "name": "Chủ trọ",
+        "kind": "actor"
+      },
+      {
+        "id": "ui",
+        "name": "Giao diện Flutter",
+        "kind": "boundary"
+      },
+      {
+        "id": "service",
+        "name": "LeaseSettlementsService",
+        "kind": "control"
+      },
+      {
+        "id": "data",
+        "name": "PostgreSQL",
+        "kind": "entity"
+      }
+    ],
+    "pre": "Chủ trọ có lease ACTIVE chưa quyết toán; ngày trả và chỉ số hợp lệ.",
+    "post": "Confirm kết thúc lease và tạo turnover; hóa đơn cũ không tự được xóa nợ; hoàn cọc là bước ghi sổ riêng.",
+    "events": [
+      {
+        "type": "message",
+        "sender": "actor",
+        "receiver": "ui",
+        "text": "Nhập ngày trả, chỉ số, chi phí",
+        "kind": "call"
+      },
+      {
+        "type": "message",
+        "sender": "ui",
+        "receiver": "service",
+        "text": "preview(leaseId, input)",
+        "kind": "call"
+      },
+      {
+        "type": "message",
+        "sender": "service",
+        "receiver": "data",
+        "text": "Đọc lease, invoice, cọc; tính snapshot",
+        "kind": "call"
+      },
+      {
+        "type": "message",
+        "sender": "data",
+        "receiver": "service",
+        "text": "Snapshot và previewFingerprint",
+        "kind": "return"
+      },
+      {
+        "type": "message",
+        "sender": "service",
+        "receiver": "ui",
+        "text": "Phí, cấn trừ cọc, hoàn / còn phải thu",
+        "kind": "return"
+      },
+      {
+        "type": "message",
+        "sender": "actor",
+        "receiver": "ui",
+        "text": "Xác nhận quyết toán",
+        "kind": "call"
+      },
+      {
+        "type": "message",
+        "sender": "ui",
+        "receiver": "service",
+        "text": "confirm(input, fingerprint, key)",
+        "kind": "call"
+      },
+      {
+        "type": "message",
+        "sender": "service",
+        "receiver": "data",
+        "text": "TX: khóa lease / room / invoice; tính lại",
+        "kind": "call"
+      },
+      {
+        "type": "message",
+        "sender": "data",
+        "receiver": "service",
+        "text": "Snapshot hiện tại hoặc settlement cũ",
+        "kind": "return"
+      },
+      {
+        "type": "fragment",
+        "kind": "break",
+        "guard": "Đã có settlement",
+        "children": [
+          {
+            "type": "message",
+            "sender": "service",
+            "receiver": "ui",
+            "text": "Cùng key + hash: kết quả cũ; khác: 409",
+            "kind": "return"
+          }
+        ],
+        "alternate": null
+      },
+      {
+        "type": "fragment",
+        "kind": "break",
+        "guard": "Fingerprint đổi hoặc key đã dùng lease khác",
+        "children": [
+          {
+            "type": "message",
+            "sender": "service",
+            "receiver": "ui",
+            "text": "409; yêu cầu preview lại",
+            "kind": "return"
+          }
+        ],
+        "alternate": null
+      },
+      {
+        "type": "message",
+        "sender": "service",
+        "receiver": "data",
+        "text": "Tạo settlement / lines; cấn trừ cọc; ENDED; turnover; audit",
+        "kind": "call"
+      },
+      {
+        "type": "message",
+        "sender": "data",
+        "receiver": "service",
+        "text": "Commit quyết toán",
+        "kind": "return"
+      },
+      {
+        "type": "message",
+        "sender": "service",
+        "receiver": "ui",
+        "text": "Settlement; hoàn cọc chưa thực hiện",
+        "kind": "return"
+      },
+      {
+        "type": "fragment",
+        "kind": "opt",
+        "guard": "Có khoản hoàn và chủ trọ đã trả tiền",
+        "children": [
+          {
+            "type": "message",
+            "sender": "actor",
+            "receiver": "ui",
+            "text": "Ghi xác nhận đã hoàn; tham chiếu",
+            "kind": "call"
+          },
+          {
+            "type": "message",
+            "sender": "ui",
+            "receiver": "service",
+            "text": "recordRefund(version, key, reference)",
+            "kind": "call"
+          },
+          {
+            "type": "message",
+            "sender": "service",
+            "receiver": "data",
+            "text": "TX: khóa; kiểm tra version và số dư cọc",
+            "kind": "call"
+          },
+          {
+            "type": "message",
+            "sender": "data",
+            "receiver": "service",
+            "text": "Trạng thái refund PENDING",
+            "kind": "return"
+          },
+          {
+            "type": "fragment",
+            "kind": "break",
+            "guard": "Đã hoàn, sai version hoặc số dư đổi",
+            "children": [
+              {
+                "type": "message",
+                "sender": "service",
+                "receiver": "ui",
+                "text": "409; không ghi hoàn trùng",
+                "kind": "return"
+              }
+            ],
+            "alternate": null
+          },
+          {
+            "type": "message",
+            "sender": "service",
+            "receiver": "data",
+            "text": "Ghi REFUNDED và refundStatus PAID; audit",
+            "kind": "call"
+          },
+          {
+            "type": "message",
+            "sender": "data",
+            "receiver": "service",
+            "text": "Commit ghi sổ hoàn cọc",
+            "kind": "return"
+          },
+          {
+            "type": "message",
+            "sender": "service",
+            "receiver": "ui",
+            "text": "Quyết toán và lịch sử hoàn",
+            "kind": "return"
+          }
+        ],
+        "alternate": null
+      }
+    ],
+    "methods": [
+      [
+        "leases/settlements.service.ts",
+        "preview"
+      ],
+      [
+        "leases/settlements.service.ts",
+        "confirm"
+      ],
+      [
+        "leases/settlements.service.ts",
+        "recordRefund"
+      ]
+    ],
+    "render": {
+      "width": 1300,
+      "height": 1464,
+      "messages": 22,
+      "fragments": 4,
+      "font_size": 25
+    }
+  },
+  {
+    "id": "SD-11",
+    "title": "Yêu cầu và thực thi vòng đời thuê",
+    "participants": [
+      {
+        "id": "actor",
+        "name": "Người thuê",
+        "kind": "actor"
+      },
+      {
+        "id": "ui",
+        "name": "Giao diện Flutter",
+        "kind": "boundary"
+      },
+      {
+        "id": "service",
+        "name": "TenantLifecycleService",
+        "kind": "control"
+      },
+      {
+        "id": "data",
+        "name": "PostgreSQL",
+        "kind": "entity"
+      },
+      {
+        "id": "second",
+        "name": "Chủ trọ",
+        "kind": "actor"
+      }
+    ],
+    "pre": "Người thuê có lease liên quan; chủ trọ có quyền xử lý trong cùng phạm vi.",
+    "post": "APPROVED chỉ là quyết định; execute là lệnh riêng, kiểm tra lại dữ liệu và có bản ghi execution.",
+    "events": [
+      {
+        "type": "message",
+        "sender": "actor",
+        "receiver": "ui",
+        "text": "Yêu cầu gia hạn, chuyển hoặc trả phòng",
+        "kind": "call"
+      },
+      {
+        "type": "message",
+        "sender": "ui",
+        "receiver": "service",
+        "text": "createRequest(type, lease, input)",
+        "kind": "call"
+      },
+      {
+        "type": "message",
+        "sender": "service",
+        "receiver": "data",
+        "text": "Kiểm tra lease, yêu cầu PENDING trùng; lưu request",
+        "kind": "call"
+      },
+      {
+        "type": "message",
+        "sender": "data",
+        "receiver": "service",
+        "text": "PENDING",
+        "kind": "return"
+      },
+      {
+        "type": "message",
+        "sender": "service",
+        "receiver": "ui",
+        "text": "Yêu cầu chờ quyết định",
+        "kind": "return"
+      },
+      {
+        "type": "message",
+        "sender": "second",
+        "receiver": "ui",
+        "text": "Xem và quyết định; nhập lý do",
+        "kind": "call"
+      },
+      {
+        "type": "message",
+        "sender": "ui",
+        "receiver": "service",
+        "text": "decideRequest(expectedUpdatedAt)",
+        "kind": "call"
+      },
+      {
+        "type": "message",
+        "sender": "service",
+        "receiver": "data",
+        "text": "TX: khóa; kiểm tra lease, đích chuyển và trạng thái",
+        "kind": "call"
+      },
+      {
+        "type": "message",
+        "sender": "data",
+        "receiver": "service",
+        "text": "Dữ liệu hiện tại",
+        "kind": "return"
+      },
+      {
+        "type": "fragment",
+        "kind": "break",
+        "guard": "Đã xử lý hoặc hợp đồng / phòng đổi",
+        "children": [
+          {
+            "type": "message",
+            "sender": "service",
+            "receiver": "ui",
+            "text": "409; đọc lại yêu cầu",
+            "kind": "return"
+          }
+        ],
+        "alternate": null
+      },
+      {
+        "type": "message",
+        "sender": "service",
+        "receiver": "data",
+        "text": "Ghi APPROVED / REJECTED và audit",
+        "kind": "call"
+      },
+      {
+        "type": "message",
+        "sender": "data",
+        "receiver": "service",
+        "text": "Commit quyết định",
+        "kind": "return"
+      },
+      {
+        "type": "message",
+        "sender": "service",
+        "receiver": "ui",
+        "text": "requiresLeaseAction nếu APPROVED",
+        "kind": "return"
+      },
+      {
+        "type": "fragment",
+        "kind": "opt",
+        "guard": "APPROVED và chủ trọ chọn execute",
+        "children": [
+          {
+            "type": "message",
+            "sender": "second",
+            "receiver": "ui",
+            "text": "Xác nhận thực thi",
+            "kind": "call"
+          },
+          {
+            "type": "message",
+            "sender": "ui",
+            "receiver": "service",
+            "text": "executeRequest(key, expectedUpdatedAt)",
+            "kind": "call"
+          },
+          {
+            "type": "message",
+            "sender": "service",
+            "receiver": "data",
+            "text": "TX: khóa request; kiểm tra execution và lease / phòng",
+            "kind": "call"
+          },
+          {
+            "type": "message",
+            "sender": "data",
+            "receiver": "service",
+            "text": "Điều kiện và hash thực thi",
+            "kind": "return"
+          },
+          {
+            "type": "fragment",
+            "kind": "break",
+            "guard": "Sai hash / stale / đích không còn trống",
+            "children": [
+              {
+                "type": "message",
+                "sender": "service",
+                "receiver": "ui",
+                "text": "409; không thực thi mới",
+                "kind": "return"
+              }
+            ],
+            "alternate": null
+          },
+          {
+            "type": "message",
+            "sender": "service",
+            "receiver": "data",
+            "text": "Gia hạn / chuyển / kết thúc; Execution và audit",
+            "kind": "call"
+          },
+          {
+            "type": "message",
+            "sender": "data",
+            "receiver": "service",
+            "text": "Commit theo loại yêu cầu",
+            "kind": "return"
+          },
+          {
+            "type": "message",
+            "sender": "service",
+            "receiver": "ui",
+            "text": "Kết quả execution và lease mới",
+            "kind": "return"
+          }
+        ],
+        "alternate": null
+      }
+    ],
+    "methods": [
+      [
+        "tenant-lifecycle/tenant-lifecycle.service.ts",
+        "createRequest"
+      ],
+      [
+        "tenant-lifecycle/tenant-lifecycle.service.ts",
+        "decideRequest"
+      ],
+      [
+        "tenant-lifecycle/tenant-lifecycle.service.ts",
+        "executeRequest"
+      ]
+    ],
+    "render": {
+      "width": 1300,
+      "height": 1364,
+      "messages": 21,
+      "fragments": 3,
+      "font_size": 25
+    }
+  },
+  {
+    "id": "SD-12",
+    "title": "Tiếp nhận và hoàn tất yêu cầu bảo trì",
+    "participants": [
+      {
+        "id": "actor",
+        "name": "Người thuê",
+        "kind": "actor"
+      },
+      {
+        "id": "ui",
+        "name": "Giao diện Flutter",
+        "kind": "boundary"
+      },
+      {
+        "id": "service",
+        "name": "MaintenanceService",
+        "kind": "control"
+      },
+      {
+        "id": "data",
+        "name": "PostgreSQL",
+        "kind": "entity"
+      },
+      {
+        "id": "second",
+        "name": "Chủ trọ",
+        "kind": "actor"
+      }
+    ],
+    "pre": "Người thuê có phòng hợp lệ; chủ trọ quản lý phạm vi của ticket.",
+    "post": "Giữ lịch sử trạng thái và trao đổi; chi phí chỉ được tạo theo dữ liệu thực tế và liên kết ticket.",
+    "events": [
+      {
+        "type": "message",
+        "sender": "actor",
+        "receiver": "ui",
+        "text": "Gửi mô tả, ảnh sự cố",
+        "kind": "call"
+      },
+      {
+        "type": "message",
+        "sender": "ui",
+        "receiver": "service",
+        "text": "Tạo maintenance từ tenant portal",
+        "kind": "call"
+      },
+      {
+        "type": "message",
+        "sender": "service",
+        "receiver": "data",
+        "text": "Kiểm tra tenant / phòng; tạo ticket",
+        "kind": "call"
+      },
+      {
+        "type": "message",
+        "sender": "data",
+        "receiver": "service",
+        "text": "Yêu cầu bảo trì",
+        "kind": "return"
+      },
+      {
+        "type": "message",
+        "sender": "service",
+        "receiver": "ui",
+        "text": "Ticket và trạng thái ban đầu",
+        "kind": "return"
+      },
+      {
+        "type": "message",
+        "sender": "second",
+        "receiver": "ui",
+        "text": "Xem ticket và phân công xử lý",
+        "kind": "call"
+      },
+      {
+        "type": "message",
+        "sender": "ui",
+        "receiver": "service",
+        "text": "assign / cập nhật ticket theo quyền",
+        "kind": "call"
+      },
+      {
+        "type": "message",
+        "sender": "service",
+        "receiver": "data",
+        "text": "Kiểm tra scope, assignee và trạng thái",
+        "kind": "call"
+      },
+      {
+        "type": "message",
+        "sender": "data",
+        "receiver": "service",
+        "text": "Ticket được cập nhật",
+        "kind": "return"
+      },
+      {
+        "type": "message",
+        "sender": "service",
+        "receiver": "ui",
+        "text": "Phân công và lịch sử",
+        "kind": "return"
+      },
+      {
+        "type": "fragment",
+        "kind": "loop",
+        "guard": "Khi cần trao đổi / cập nhật tiến độ",
+        "children": [
+          {
+            "type": "message",
+            "sender": "ui",
+            "receiver": "service",
+            "text": "Gửi comment / status",
+            "kind": "call"
+          },
+          {
+            "type": "message",
+            "sender": "service",
+            "receiver": "data",
+            "text": "Kiểm tra quyền; lưu comment / tiến độ",
+            "kind": "call"
+          },
+          {
+            "type": "message",
+            "sender": "data",
+            "receiver": "service",
+            "text": "Lịch sử mới",
+            "kind": "return"
+          },
+          {
+            "type": "message",
+            "sender": "service",
+            "receiver": "ui",
+            "text": "Nội dung được phép xem",
+            "kind": "return"
+          }
+        ],
+        "alternate": null
+      },
+      {
+        "type": "message",
+        "sender": "second",
+        "receiver": "ui",
+        "text": "Xác nhận hoàn tất và chi phí nếu có",
+        "kind": "call"
+      },
+      {
+        "type": "message",
+        "sender": "ui",
+        "receiver": "service",
+        "text": "Cập nhật DONE và dữ liệu chi phí",
+        "kind": "call"
+      },
+      {
+        "type": "message",
+        "sender": "service",
+        "receiver": "data",
+        "text": "Kiểm tra trạng thái; hoàn tất, liên kết Expense nếu có",
+        "kind": "call"
+      },
+      {
+        "type": "message",
+        "sender": "data",
+        "receiver": "service",
+        "text": "Ticket và expense hiện hành",
+        "kind": "return"
+      },
+      {
+        "type": "fragment",
+        "kind": "break",
+        "guard": "Ngoài scope hoặc dữ liệu không hợp lệ",
+        "children": [
+          {
+            "type": "message",
+            "sender": "service",
+            "receiver": "ui",
+            "text": "Từ chối; không báo hoàn tất",
+            "kind": "return"
+          }
+        ],
+        "alternate": null
+      },
+      {
+        "type": "message",
+        "sender": "service",
+        "receiver": "ui",
+        "text": "Trạng thái hoàn tất và lịch sử",
+        "kind": "return"
+      }
+    ],
+    "methods": [
+      [
+        "tenant-portal/tenant-portal.service.ts",
+        "createMaintenance"
+      ],
+      [
+        "maintenance/maintenance.service.ts",
+        "update"
+      ],
+      [
+        "maintenance/maintenance.service.ts",
+        "updateStatus"
+      ],
+      [
+        "maintenance/maintenance.service.ts",
+        "addComment"
+      ],
+      [
+        "maintenance/maintenance.service.ts",
+        "complete"
+      ]
+    ],
+    "render": {
+      "width": 1300,
+      "height": 1264,
+      "messages": 20,
+      "fragments": 2,
+      "font_size": 25
+    }
+  },
+  {
+    "id": "SD-13",
+    "title": "Báo cáo tháng và xuất CSV",
+    "participants": [
+      {
+        "id": "actor",
+        "name": "Chủ trọ",
+        "kind": "actor"
+      },
+      {
+        "id": "ui",
+        "name": "Giao diện Flutter",
+        "kind": "boundary"
+      },
+      {
+        "id": "service",
+        "name": "ReportsService",
+        "kind": "control"
+      },
+      {
+        "id": "data",
+        "name": "PostgreSQL",
+        "kind": "entity"
+      }
+    ],
+    "pre": "Có phiên và quyền báo cáo; tháng và khu thuộc phạm vi chủ trọ.",
+    "post": "Báo cáo Payment ròng không đồng nghĩa tổng Receipt; thao tác hiện tại sao chép CSV vào clipboard.",
+    "events": [
+      {
+        "type": "message",
+        "sender": "actor",
+        "receiver": "ui",
+        "text": "Chọn tháng và khu trọ",
+        "kind": "call"
+      },
+      {
+        "type": "message",
+        "sender": "ui",
+        "receiver": "service",
+        "text": "monthly(month, propertyId)",
+        "kind": "call"
+      },
+      {
+        "type": "message",
+        "sender": "service",
+        "receiver": "data",
+        "text": "Xác minh property scope và isArchived",
+        "kind": "call"
+      },
+      {
+        "type": "message",
+        "sender": "data",
+        "receiver": "service",
+        "text": "Khu hợp lệ hoặc không có",
+        "kind": "return"
+      },
+      {
+        "type": "fragment",
+        "kind": "break",
+        "guard": "Tháng sai hoặc khu ngoài phạm vi",
+        "children": [
+          {
+            "type": "message",
+            "sender": "service",
+            "receiver": "ui",
+            "text": "400 / 404; không trả số liệu",
+            "kind": "return"
+          }
+        ],
+        "alternate": null
+      },
+      {
+        "type": "message",
+        "sender": "service",
+        "receiver": "data",
+        "text": "Đọc invoices, payments, expenses, deposits, active leases",
+        "kind": "call"
+      },
+      {
+        "type": "message",
+        "sender": "data",
+        "receiver": "service",
+        "text": "Các tập dữ liệu theo mốc thời gian",
+        "kind": "return"
+      },
+      {
+        "type": "message",
+        "sender": "service",
+        "receiver": "service",
+        "text": "Tổng hợp công nợ và dòng tiền ròng",
+        "kind": "call"
+      },
+      {
+        "type": "message",
+        "sender": "service",
+        "receiver": "ui",
+        "text": "Summary, nhóm và invoice rows",
+        "kind": "return"
+      },
+      {
+        "type": "message",
+        "sender": "ui",
+        "receiver": "actor",
+        "text": "Hiển thị chỉ số của kỳ",
+        "kind": "return"
+      },
+      {
+        "type": "fragment",
+        "kind": "opt",
+        "guard": "Chọn xuất và có quyền export",
+        "children": [
+          {
+            "type": "message",
+            "sender": "actor",
+            "receiver": "ui",
+            "text": "Chọn xuất CSV",
+            "kind": "call"
+          },
+          {
+            "type": "message",
+            "sender": "ui",
+            "receiver": "service",
+            "text": "monthlyExport(month, propertyId)",
+            "kind": "call"
+          },
+          {
+            "type": "message",
+            "sender": "service",
+            "receiver": "data",
+            "text": "Chạy lại truy vấn báo cáo đúng scope",
+            "kind": "call"
+          },
+          {
+            "type": "message",
+            "sender": "data",
+            "receiver": "service",
+            "text": "Dữ liệu tại thời điểm xuất",
+            "kind": "return"
+          },
+          {
+            "type": "message",
+            "sender": "service",
+            "receiver": "service",
+            "text": "Escape ô CSV và tạo tên file",
+            "kind": "call"
+          },
+          {
+            "type": "message",
+            "sender": "service",
+            "receiver": "ui",
+            "text": "filename, mimeType, content",
+            "kind": "return"
+          },
+          {
+            "type": "message",
+            "sender": "ui",
+            "receiver": "ui",
+            "text": "Clipboard.setData(content)",
+            "kind": "call"
+          },
+          {
+            "type": "message",
+            "sender": "ui",
+            "receiver": "actor",
+            "text": "Thông báo đã sao chép CSV",
+            "kind": "return"
+          }
+        ],
+        "alternate": null
+      }
+    ],
+    "methods": [
+      [
+        "reports/reports.service.ts",
+        "monthly"
+      ],
+      [
+        "reports/reports.service.ts",
+        "monthlyExport"
+      ]
+    ],
+    "render": {
+      "width": 1300,
+      "height": 1170,
+      "messages": 18,
+      "fragments": 2,
+      "font_size": 25
+    }
+  },
+  {
+    "id": "SD-14",
+    "title": "Đình chỉ tài khoản khách hàng",
+    "participants": [
+      {
+        "id": "actor",
+        "name": "Admin",
+        "kind": "actor"
+      },
+      {
+        "id": "ui",
+        "name": "Giao diện Flutter",
+        "kind": "boundary"
+      },
+      {
+        "id": "service",
+        "name": "AdminConsoleService",
+        "kind": "control"
+      },
+      {
+        "id": "data",
+        "name": "PostgreSQL",
+        "kind": "entity"
+      }
+    ],
+    "pre": "Admin có capability; đối tượng là tài khoản khách hàng, không phải tài khoản Admin.",
+    "post": "Đổi trạng thái và thu hồi phiên cùng transaction; không xóa hóa đơn / dữ liệu tài chính.",
+    "events": [
+      {
+        "type": "message",
+        "sender": "actor",
+        "receiver": "ui",
+        "text": "Mở tài khoản; chọn đình chỉ và lý do",
+        "kind": "call"
+      },
+      {
+        "type": "message",
+        "sender": "ui",
+        "receiver": "service",
+        "text": "status(id, version, isActive=false)",
+        "kind": "call"
+      },
+      {
+        "type": "message",
+        "sender": "service",
+        "receiver": "data",
+        "text": "TX: khóa User; chỉ đọc role khác ADMIN",
+        "kind": "call"
+      },
+      {
+        "type": "message",
+        "sender": "data",
+        "receiver": "service",
+        "text": "User và sessionVersion",
+        "kind": "return"
+      },
+      {
+        "type": "fragment",
+        "kind": "alt",
+        "guard": "Không tìm thấy hoặc version / trạng thái đổi",
+        "children": [
+          {
+            "type": "message",
+            "sender": "service",
+            "receiver": "ui",
+            "text": "404 / 409; tải lại, không ghi",
+            "kind": "return"
+          }
+        ],
+        "alternate": [
+          "Tài khoản khách hàng hợp lệ",
+          [
+            {
+              "type": "message",
+              "sender": "service",
+              "receiver": "data",
+              "text": "Đổi isActive; tăng sessionVersion",
+              "kind": "call"
+            },
+            {
+              "type": "message",
+              "sender": "data",
+              "receiver": "service",
+              "text": "User mới trong transaction",
+              "kind": "return"
+            },
+            {
+              "type": "message",
+              "sender": "service",
+              "receiver": "data",
+              "text": "Thu hồi sessions, refresh, access-link và phiên phụ thuộc",
+              "kind": "call"
+            },
+            {
+              "type": "message",
+              "sender": "data",
+              "receiver": "service",
+              "text": "Số bản ghi theo policy",
+              "kind": "return"
+            },
+            {
+              "type": "message",
+              "sender": "service",
+              "receiver": "data",
+              "text": "Ghi adminAudit với before / after",
+              "kind": "call"
+            },
+            {
+              "type": "message",
+              "sender": "data",
+              "receiver": "service",
+              "text": "Commit toàn bộ hoặc rollback",
+              "kind": "return"
+            },
+            {
+              "type": "message",
+              "sender": "service",
+              "receiver": "ui",
+              "text": "Account projection mới",
+              "kind": "return"
+            },
+            {
+              "type": "message",
+              "sender": "ui",
+              "receiver": "actor",
+              "text": "Cập nhật danh sách và detail",
+              "kind": "return"
+            }
+          ]
+        ]
+      },
+      {
+        "type": "fragment",
+        "kind": "opt",
+        "guard": "Khôi phục ở lần xử lý khác",
+        "children": [
+          {
+            "type": "message",
+            "sender": "actor",
+            "receiver": "ui",
+            "text": "Chọn khôi phục và lý do",
+            "kind": "call"
+          },
+          {
+            "type": "message",
+            "sender": "ui",
+            "receiver": "service",
+            "text": "status(id, version, isActive=true)",
+            "kind": "call"
+          },
+          {
+            "type": "message",
+            "sender": "service",
+            "receiver": "data",
+            "text": "Kiểm tra lại; đổi trạng thái, version; audit",
+            "kind": "call"
+          },
+          {
+            "type": "message",
+            "sender": "data",
+            "receiver": "service",
+            "text": "Tài khoản active, token cũ vẫn thu hồi",
+            "kind": "return"
+          },
+          {
+            "type": "message",
+            "sender": "service",
+            "receiver": "ui",
+            "text": "Trạng thái mới; cần đăng nhập phiên mới",
+            "kind": "return"
+          }
+        ],
+        "alternate": null
+      }
+    ],
+    "methods": [
+      [
+        "admin/admin-console.service.ts",
+        "status"
+      ]
+    ],
+    "render": {
+      "width": 1300,
+      "height": 1207,
+      "messages": 18,
+      "fragments": 2,
+      "font_size": 25
+    }
+  },
+  {
+    "id": "SD-15",
+    "title": "Tra cứu inventory và chuyển kiểm duyệt tin",
+    "participants": [
+      {
+        "id": "actor",
+        "name": "Admin",
+        "kind": "actor"
+      },
+      {
+        "id": "ui",
+        "name": "Giao diện Flutter",
+        "kind": "boundary"
+      },
+      {
+        "id": "service",
+        "name": "Inventory / Moderation",
+        "kind": "control"
+      },
+      {
+        "id": "data",
+        "name": "PostgreSQL",
+        "kind": "entity"
+      }
+    ],
+    "pre": "Phiên Admin có quyền inventory; duyệt tin cần thêm capability moderation tương ứng.",
+    "post": "Inventory chỉ đọc; điều hướng tới đúng listing UUID, không sửa Room / Lease / Invoice từ card.",
+    "events": [
+      {
+        "type": "message",
+        "sender": "actor",
+        "receiver": "ui",
+        "text": "Lọc khu / phòng và phân trang",
+        "kind": "call"
+      },
+      {
+        "type": "message",
+        "sender": "ui",
+        "receiver": "service",
+        "text": "GET admin inventory theo query",
+        "kind": "call"
+      },
+      {
+        "type": "message",
+        "sender": "service",
+        "receiver": "data",
+        "text": "Kiểm tra scope; đọc projection có masking",
+        "kind": "call"
+      },
+      {
+        "type": "message",
+        "sender": "data",
+        "receiver": "service",
+        "text": "Danh sách và meta phân trang",
+        "kind": "return"
+      },
+      {
+        "type": "message",
+        "sender": "service",
+        "receiver": "ui",
+        "text": "Inventory cùng trạng thái listing riêng",
+        "kind": "return"
+      },
+      {
+        "type": "message",
+        "sender": "actor",
+        "receiver": "ui",
+        "text": "Chọn tin PENDING cần xử lý",
+        "kind": "call"
+      },
+      {
+        "type": "fragment",
+        "kind": "break",
+        "guard": "Không có quyền moderation",
+        "children": [
+          {
+            "type": "message",
+            "sender": "ui",
+            "receiver": "actor",
+            "text": "Ẩn / chặn hành động; không gửi quyết định",
+            "kind": "return"
+          }
+        ],
+        "alternate": null
+      },
+      {
+        "type": "message",
+        "sender": "ui",
+        "receiver": "service",
+        "text": "Tìm queue theo exact listing UUID",
+        "kind": "call"
+      },
+      {
+        "type": "message",
+        "sender": "service",
+        "receiver": "data",
+        "text": "Đọc mục kiểm duyệt và trạng thái claim",
+        "kind": "call"
+      },
+      {
+        "type": "message",
+        "sender": "data",
+        "receiver": "service",
+        "text": "Mục tiêu chính xác",
+        "kind": "return"
+      },
+      {
+        "type": "message",
+        "sender": "service",
+        "receiver": "ui",
+        "text": "Queue item và version",
+        "kind": "return"
+      },
+      {
+        "type": "message",
+        "sender": "actor",
+        "receiver": "ui",
+        "text": "Claim; nhập quyết định và lý do",
+        "kind": "call"
+      },
+      {
+        "type": "message",
+        "sender": "ui",
+        "receiver": "service",
+        "text": "Gửi claim / decision có version",
+        "kind": "call"
+      },
+      {
+        "type": "message",
+        "sender": "service",
+        "receiver": "data",
+        "text": "TX: kiểm tra quyền, claim và version",
+        "kind": "call"
+      },
+      {
+        "type": "message",
+        "sender": "data",
+        "receiver": "service",
+        "text": "Trạng thái trước khi ghi",
+        "kind": "return"
+      },
+      {
+        "type": "fragment",
+        "kind": "break",
+        "guard": "Mất claim hoặc version đã đổi",
+        "children": [
+          {
+            "type": "message",
+            "sender": "service",
+            "receiver": "ui",
+            "text": "409; tải lại, không áp quyết định",
+            "kind": "return"
+          }
+        ],
+        "alternate": null
+      },
+      {
+        "type": "message",
+        "sender": "service",
+        "receiver": "data",
+        "text": "Ghi decision và audit",
+        "kind": "call"
+      },
+      {
+        "type": "message",
+        "sender": "data",
+        "receiver": "service",
+        "text": "Commit trạng thái tin",
+        "kind": "return"
+      },
+      {
+        "type": "message",
+        "sender": "service",
+        "receiver": "ui",
+        "text": "Kết quả kiểm duyệt",
+        "kind": "return"
+      },
+      {
+        "type": "message",
+        "sender": "ui",
+        "receiver": "ui",
+        "text": "Invalidate inventory khi quay lại",
+        "kind": "call"
+      }
+    ],
+    "methods": [
+      [
+        "admin/admin.service.ts",
+        "rooms"
+      ],
+      [
+        "admin/admin-console.service.ts",
+        "work"
+      ],
+      [
+        "listings/listings.service.ts",
+        "review"
+      ],
+      [
+        "listings/listings.service.ts",
+        "mutate"
+      ]
+    ],
+    "render": {
+      "width": 1300,
+      "height": 1264,
+      "messages": 20,
+      "fragments": 2,
+      "font_size": 25
+    }
+  },
+  {
+    "id": "SD-16",
+    "title": "Đối soát khoản thu theo maker checker",
+    "participants": [
+      {
+        "id": "actor",
+        "name": "Admin maker",
+        "kind": "actor"
+      },
+      {
+        "id": "ui",
+        "name": "Giao diện Flutter",
+        "kind": "boundary"
+      },
+      {
+        "id": "service",
+        "name": "FinanceReconciliation",
+        "kind": "control"
+      },
+      {
+        "id": "data",
+        "name": "PostgreSQL",
+        "kind": "entity"
+      },
+      {
+        "id": "second",
+        "name": "Admin checker",
+        "kind": "actor"
+      }
+    ],
+    "pre": "Hai tài khoản Admin độc lập có quyền finance; CSV sao kê hợp lệ.",
+    "post": "Checker không được là maker; đối soát receipt không nhân bản tiền theo allocation.",
+    "events": [
+      {
+        "type": "message",
+        "sender": "actor",
+        "receiver": "ui",
+        "text": "Import sao kê và chọn dòng",
+        "kind": "call"
+      },
+      {
+        "type": "message",
+        "sender": "ui",
+        "receiver": "service",
+        "text": "importStatement(csv) / candidates(line)",
+        "kind": "call"
+      },
+      {
+        "type": "message",
+        "sender": "service",
+        "receiver": "data",
+        "text": "Kiểm tra đầu vào, trùng; tìm candidate theo scope",
+        "kind": "call"
+      },
+      {
+        "type": "message",
+        "sender": "data",
+        "receiver": "service",
+        "text": "Dòng sao kê và ứng viên",
+        "kind": "return"
+      },
+      {
+        "type": "message",
+        "sender": "service",
+        "receiver": "ui",
+        "text": "Candidates receipt / payment legacy",
+        "kind": "return"
+      },
+      {
+        "type": "message",
+        "sender": "actor",
+        "receiver": "ui",
+        "text": "Đề nghị match và nhập lý do",
+        "kind": "call"
+      },
+      {
+        "type": "message",
+        "sender": "ui",
+        "receiver": "service",
+        "text": "propose(lineId, version, action)",
+        "kind": "call"
+      },
+      {
+        "type": "message",
+        "sender": "service",
+        "receiver": "data",
+        "text": "TX: khóa đối soát; kiểm tra; tạo PENDING và audit",
+        "kind": "call"
+      },
+      {
+        "type": "message",
+        "sender": "data",
+        "receiver": "service",
+        "text": "Proposal có maker và lineVersion",
+        "kind": "return"
+      },
+      {
+        "type": "message",
+        "sender": "service",
+        "receiver": "ui",
+        "text": "Đề nghị chờ checker",
+        "kind": "return"
+      },
+      {
+        "type": "message",
+        "sender": "second",
+        "receiver": "ui",
+        "text": "Xem đề nghị; duyệt hoặc từ chối",
+        "kind": "call"
+      },
+      {
+        "type": "message",
+        "sender": "ui",
+        "receiver": "service",
+        "text": "review(proposalId, version, approve)",
+        "kind": "call"
+      },
+      {
+        "type": "message",
+        "sender": "service",
+        "receiver": "data",
+        "text": "TX: khóa; đọc proposal và line",
+        "kind": "call"
+      },
+      {
+        "type": "message",
+        "sender": "data",
+        "receiver": "service",
+        "text": "Proposal PENDING và version",
+        "kind": "return"
+      },
+      {
+        "type": "fragment",
+        "kind": "break",
+        "guard": "Checker = maker, stale hoặc đã review",
+        "children": [
+          {
+            "type": "message",
+            "sender": "service",
+            "receiver": "ui",
+            "text": "403 / 409; không tự duyệt",
+            "kind": "return"
+          }
+        ],
+        "alternate": null
+      },
+      {
+        "type": "fragment",
+        "kind": "alt",
+        "guard": "approve = true",
+        "children": [
+          {
+            "type": "message",
+            "sender": "service",
+            "receiver": "data",
+            "text": "Kiểm tra receipt / payment chưa match và đúng số tiền",
+            "kind": "call"
+          },
+          {
+            "type": "message",
+            "sender": "data",
+            "receiver": "service",
+            "text": "Ứng viên còn hợp lệ",
+            "kind": "return"
+          },
+          {
+            "type": "fragment",
+            "kind": "break",
+            "guard": "Ứng viên thay đổi hoặc đã ghép",
+            "children": [
+              {
+                "type": "message",
+                "sender": "service",
+                "receiver": "ui",
+                "text": "409; giữ nguyên đối soát",
+                "kind": "return"
+              }
+            ],
+            "alternate": null
+          },
+          {
+            "type": "message",
+            "sender": "service",
+            "receiver": "data",
+            "text": "Cập nhật line, tăng version; proposal APPROVED",
+            "kind": "call"
+          }
+        ],
+        "alternate": [
+          "approve = false",
+          [
+            {
+              "type": "message",
+              "sender": "service",
+              "receiver": "data",
+              "text": "Proposal REJECTED; giữ line",
+              "kind": "call"
+            }
+          ]
+        ]
+      },
+      {
+        "type": "message",
+        "sender": "data",
+        "receiver": "service",
+        "text": "Commit cùng audit quyết định",
+        "kind": "return"
+      },
+      {
+        "type": "message",
+        "sender": "service",
+        "receiver": "ui",
+        "text": "Proposal và line hiện tại",
+        "kind": "return"
+      }
+    ],
+    "methods": [
+      [
+        "platform/finance-reconciliation.service.ts",
+        "importStatement"
+      ],
+      [
+        "platform/finance-reconciliation.service.ts",
+        "propose"
+      ],
+      [
+        "platform/finance-reconciliation.service.ts",
+        "review"
+      ]
+    ],
+    "render": {
+      "width": 1300,
+      "height": 1448,
+      "messages": 22,
+      "fragments": 3,
+      "font_size": 25
+    }
+  },
+  {
+    "id": "SD-17",
+    "title": "Chatbot RAG và đọc nguồn theo quyền",
+    "participants": [
+      {
+        "id": "actor",
+        "name": "Chủ trọ",
+        "kind": "actor"
+      },
+      {
+        "id": "ui",
+        "name": "Giao diện Flutter",
+        "kind": "boundary"
+      },
+      {
+        "id": "service",
+        "name": "ChatbotService",
+        "kind": "control"
+      },
+      {
+        "id": "data",
+        "name": "Kho tri thức / Model",
+        "kind": "entity"
+      }
+    ],
+    "pre": "Phiên LANDLORD; cấu hình AI bật; câu hỏi trong giới hạn và property thuộc chủ trọ.",
+    "post": "Chỉ trả câu trả lời có nguồn còn hiệu lực; không gọi tool lấy số liệu sống hoặc ghi dữ liệu nghiệp vụ.",
+    "events": [
+      {
+        "type": "message",
+        "sender": "actor",
+        "receiver": "ui",
+        "text": "Nhập câu hỏi và propertyId",
+        "kind": "call"
+      },
+      {
+        "type": "message",
+        "sender": "ui",
+        "receiver": "service",
+        "text": "ask(message, scope)",
+        "kind": "call"
+      },
+      {
+        "type": "message",
+        "sender": "service",
+        "receiver": "service",
+        "text": "JWT / role / rate limit; scope; timeout",
+        "kind": "call"
+      },
+      {
+        "type": "fragment",
+        "kind": "break",
+        "guard": "AI tắt, quá tải, timeout hoặc scope sai",
+        "children": [
+          {
+            "type": "message",
+            "sender": "service",
+            "receiver": "ui",
+            "text": "Mã lỗi; UI cho thử lại phù hợp",
+            "kind": "return"
+          }
+        ],
+        "alternate": null
+      },
+      {
+        "type": "fragment",
+        "kind": "break",
+        "guard": "Hỏi số liệu hiện tại hoặc thiếu ngữ cảnh",
+        "children": [
+          {
+            "type": "message",
+            "sender": "service",
+            "receiver": "ui",
+            "text": "insufficient_evidence; nêu giới hạn",
+            "kind": "return"
+          }
+        ],
+        "alternate": null
+      },
+      {
+        "type": "message",
+        "sender": "service",
+        "receiver": "data",
+        "text": "Retriever: tìm chunks theo quyền",
+        "kind": "call"
+      },
+      {
+        "type": "message",
+        "sender": "data",
+        "receiver": "service",
+        "text": "Tối đa nguồn trong context giới hạn",
+        "kind": "return"
+      },
+      {
+        "type": "fragment",
+        "kind": "break",
+        "guard": "Không có nguồn hoặc không đủ bằng chứng",
+        "children": [
+          {
+            "type": "message",
+            "sender": "service",
+            "receiver": "ui",
+            "text": "insufficient_evidence; không bịa",
+            "kind": "return"
+          }
+        ],
+        "alternate": null
+      },
+      {
+        "type": "message",
+        "sender": "service",
+        "receiver": "data",
+        "text": "Model: sinh đáp án từ chunks cho phép",
+        "kind": "call"
+      },
+      {
+        "type": "message",
+        "sender": "data",
+        "receiver": "service",
+        "text": "Đáp án và sourceIds",
+        "kind": "return"
+      },
+      {
+        "type": "fragment",
+        "kind": "opt",
+        "guard": "AI_CONTEXT_LIMIT và có nhiều chunks",
+        "children": [
+          {
+            "type": "message",
+            "sender": "service",
+            "receiver": "data",
+            "text": "Thử model lại với một chunk",
+            "kind": "call"
+          },
+          {
+            "type": "message",
+            "sender": "data",
+            "receiver": "service",
+            "text": "Kết quả giới hạn context",
+            "kind": "return"
+          }
+        ],
+        "alternate": null
+      },
+      {
+        "type": "message",
+        "sender": "service",
+        "receiver": "service",
+        "text": "Validate nội dung và sourceIds",
+        "kind": "call"
+      },
+      {
+        "type": "message",
+        "sender": "service",
+        "receiver": "data",
+        "text": "Kiểm tra nguồn active và contentHash",
+        "kind": "call"
+      },
+      {
+        "type": "message",
+        "sender": "data",
+        "receiver": "service",
+        "text": "Nguồn hiện hành hoặc bị thu hồi",
+        "kind": "return"
+      },
+      {
+        "type": "fragment",
+        "kind": "break",
+        "guard": "Nguồn đổi / thu hồi hoặc phản hồi sai",
+        "children": [
+          {
+            "type": "message",
+            "sender": "service",
+            "receiver": "ui",
+            "text": "Fallback / AI_INVALID_RESPONSE",
+            "kind": "return"
+          }
+        ],
+        "alternate": null
+      },
+      {
+        "type": "message",
+        "sender": "service",
+        "receiver": "ui",
+        "text": "answered, answer, sources",
+        "kind": "return"
+      },
+      {
+        "type": "fragment",
+        "kind": "opt",
+        "guard": "Người dùng mở nguồn",
+        "children": [
+          {
+            "type": "message",
+            "sender": "ui",
+            "receiver": "service",
+            "text": "getSource(id, scope)",
+            "kind": "call"
+          },
+          {
+            "type": "message",
+            "sender": "service",
+            "receiver": "data",
+            "text": "Kiểm tra quyền và đọc nguồn",
+            "kind": "call"
+          },
+          {
+            "type": "message",
+            "sender": "data",
+            "receiver": "service",
+            "text": "Nội dung được phép",
+            "kind": "return"
+          },
+          {
+            "type": "message",
+            "sender": "service",
+            "receiver": "ui",
+            "text": "Nguồn hoặc lỗi truy cập",
+            "kind": "return"
+          }
+        ],
+        "alternate": null
+      }
+    ],
+    "methods": [
+      [
+        "chatbot/chatbot.service.ts",
+        "ask"
+      ],
+      [
+        "chatbot/chatbot.service.ts",
+        "answer"
+      ],
+      [
+        "chatbot/chatbot.service.ts",
+        "getSource"
+      ]
+    ],
+    "render": {
+      "width": 1300,
+      "height": 1523,
+      "messages": 21,
+      "fragments": 6,
+      "font_size": 25
+    }
+  },
+  {
+    "id": "SD-18",
+    "title": "Duyệt hồ sơ xác minh chủ trọ",
+    "participants": [
+      {
+        "id": "actor",
+        "name": "Admin",
+        "kind": "actor"
+      },
+      {
+        "id": "ui",
+        "name": "Giao diện Flutter",
+        "kind": "boundary"
+      },
+      {
+        "id": "service",
+        "name": "AdminVerificationService",
+        "kind": "control"
+      },
+      {
+        "id": "data",
+        "name": "PostgreSQL",
+        "kind": "entity"
+      }
+    ],
+    "pre": "Có hồ sơ PENDING liên kết ticket hỗ trợ; Admin có quyền xét duyệt.",
+    "post": "Quyết định ghi có điều kiện version và audit chứng cứ; chỉ APPROVED khi chủ trọ active và minh chứng SUPPORT_CLEAN.",
+    "events": [
+      {
+        "type": "message",
+        "sender": "actor",
+        "receiver": "ui",
+        "text": "Mở hàng đợi và hồ sơ",
+        "kind": "call"
+      },
+      {
+        "type": "message",
+        "sender": "ui",
+        "receiver": "service",
+        "text": "list(query)",
+        "kind": "call"
+      },
+      {
+        "type": "message",
+        "sender": "service",
+        "receiver": "data",
+        "text": "Đọc projection và phân trang",
+        "kind": "call"
+      },
+      {
+        "type": "message",
+        "sender": "data",
+        "receiver": "service",
+        "text": "Hồ sơ cùng version",
+        "kind": "return"
+      },
+      {
+        "type": "message",
+        "sender": "service",
+        "receiver": "ui",
+        "text": "Dữ liệu được phép xem",
+        "kind": "return"
+      },
+      {
+        "type": "message",
+        "sender": "actor",
+        "receiver": "ui",
+        "text": "Nhập decision, reason và version",
+        "kind": "call"
+      },
+      {
+        "type": "message",
+        "sender": "ui",
+        "receiver": "service",
+        "text": "review(id, input)",
+        "kind": "call"
+      },
+      {
+        "type": "message",
+        "sender": "service",
+        "receiver": "data",
+        "text": "TX: đọc identity; khóa User, Ticket và file",
+        "kind": "call"
+      },
+      {
+        "type": "message",
+        "sender": "data",
+        "receiver": "service",
+        "text": "Hồ sơ / chứng cứ hiện hành",
+        "kind": "return"
+      },
+      {
+        "type": "fragment",
+        "kind": "break",
+        "guard": "Tự duyệt, sai version, ticket đổi hoặc không PENDING",
+        "children": [
+          {
+            "type": "message",
+            "sender": "service",
+            "receiver": "ui",
+            "text": "403 / 409; đọc lại hồ sơ",
+            "kind": "return"
+          }
+        ],
+        "alternate": null
+      },
+      {
+        "type": "fragment",
+        "kind": "alt",
+        "guard": "decision = APPROVED",
+        "children": [
+          {
+            "type": "message",
+            "sender": "service",
+            "receiver": "service",
+            "text": "Kiểm tra active, chủ ticket, merge và SUPPORT_CLEAN",
+            "kind": "call"
+          },
+          {
+            "type": "fragment",
+            "kind": "break",
+            "guard": "Chủ trọ hoặc minh chứng không hợp lệ",
+            "children": [
+              {
+                "type": "message",
+                "sender": "service",
+                "receiver": "ui",
+                "text": "400; không xác minh",
+                "kind": "return"
+              }
+            ],
+            "alternate": null
+          }
+        ],
+        "alternate": [
+          "REJECTED / NEEDS_INFO",
+          [
+            {
+              "type": "message",
+              "sender": "service",
+              "receiver": "service",
+              "text": "Giữ lý do; không xác nhận thành công",
+              "kind": "call"
+            }
+          ]
+        ]
+      },
+      {
+        "type": "message",
+        "sender": "service",
+        "receiver": "data",
+        "text": "updateMany theo version và PENDING; audit hash chứng cứ",
+        "kind": "call"
+      },
+      {
+        "type": "message",
+        "sender": "data",
+        "receiver": "service",
+        "text": "Commit status và version + 1",
+        "kind": "return"
+      },
+      {
+        "type": "message",
+        "sender": "service",
+        "receiver": "ui",
+        "text": "Quyết định và version mới",
+        "kind": "return"
+      },
+      {
+        "type": "message",
+        "sender": "ui",
+        "receiver": "actor",
+        "text": "Làm mới hàng đợi và hồ sơ",
+        "kind": "return"
+      }
+    ],
+    "methods": [
+      [
+        "admin/admin-verification.service.ts",
+        "list"
+      ],
+      [
+        "admin/admin-verification.service.ts",
+        "review"
+      ]
+    ],
+    "render": {
+      "width": 1300,
+      "height": 1213,
+      "messages": 17,
+      "fragments": 3,
+      "font_size": 25
+    }
+  },
+  {
+    "id": "SD-19",
+    "title": "Gán và kết thúc quyền sử dụng gói",
+    "participants": [
+      {
+        "id": "actor",
+        "name": "Admin",
+        "kind": "actor"
+      },
+      {
+        "id": "ui",
+        "name": "Giao diện Flutter",
+        "kind": "boundary"
+      },
+      {
+        "id": "service",
+        "name": "AdminPlansService",
+        "kind": "control"
+      },
+      {
+        "id": "data",
+        "name": "PostgreSQL",
+        "kind": "entity"
+      }
+    ],
+    "pre": "Chủ trọ active; plan active; Admin có quyền, version và lý do.",
+    "post": "Chỉ gán entitlement; financialEffect NONE; hủy gói không hoàn tiền và không xóa inventory.",
+    "events": [
+      {
+        "type": "message",
+        "sender": "actor",
+        "receiver": "ui",
+        "text": "Chọn gói, thời hạn và lý do",
+        "kind": "call"
+      },
+      {
+        "type": "message",
+        "sender": "ui",
+        "receiver": "service",
+        "text": "assign(landlordId, versions, input)",
+        "kind": "call"
+      },
+      {
+        "type": "message",
+        "sender": "service",
+        "receiver": "data",
+        "text": "TX: khóa User; SHARE plan; đọc subscription",
+        "kind": "call"
+      },
+      {
+        "type": "message",
+        "sender": "data",
+        "receiver": "service",
+        "text": "Plan, landlord và version",
+        "kind": "return"
+      },
+      {
+        "type": "fragment",
+        "kind": "break",
+        "guard": "Inactive, hết hạn hoặc version sai",
+        "children": [
+          {
+            "type": "message",
+            "sender": "service",
+            "receiver": "ui",
+            "text": "400 / 404 / 409; giữ gói cũ",
+            "kind": "return"
+          }
+        ],
+        "alternate": null
+      },
+      {
+        "type": "message",
+        "sender": "service",
+        "receiver": "data",
+        "text": "Đếm khu chưa archive và phòng active",
+        "kind": "call"
+      },
+      {
+        "type": "message",
+        "sender": "data",
+        "receiver": "service",
+        "text": "Inventory hiện tại",
+        "kind": "return"
+      },
+      {
+        "type": "fragment",
+        "kind": "break",
+        "guard": "Số khu / phòng vượt hạn mức gói",
+        "children": [
+          {
+            "type": "message",
+            "sender": "service",
+            "receiver": "ui",
+            "text": "409; không xóa dữ liệu hiện có",
+            "kind": "return"
+          }
+        ],
+        "alternate": null
+      },
+      {
+        "type": "message",
+        "sender": "service",
+        "receiver": "data",
+        "text": "Tạo / cập nhật subscription + planSnapshot",
+        "kind": "call"
+      },
+      {
+        "type": "message",
+        "sender": "data",
+        "receiver": "service",
+        "text": "Subscription trong transaction",
+        "kind": "return"
+      },
+      {
+        "type": "message",
+        "sender": "service",
+        "receiver": "data",
+        "text": "Event ASSIGNED / REASSIGNED; audit NONE",
+        "kind": "call"
+      },
+      {
+        "type": "message",
+        "sender": "data",
+        "receiver": "service",
+        "text": "Commit entitlement",
+        "kind": "return"
+      },
+      {
+        "type": "message",
+        "sender": "service",
+        "receiver": "ui",
+        "text": "Subscription và lịch sử",
+        "kind": "return"
+      },
+      {
+        "type": "fragment",
+        "kind": "opt",
+        "guard": "Admin chọn kết thúc gói ở thao tác khác",
+        "children": [
+          {
+            "type": "message",
+            "sender": "actor",
+            "receiver": "ui",
+            "text": "Xác nhận hủy, lý do và version",
+            "kind": "call"
+          },
+          {
+            "type": "message",
+            "sender": "ui",
+            "receiver": "service",
+            "text": "cancel(subscriptionId, version)",
+            "kind": "call"
+          },
+          {
+            "type": "message",
+            "sender": "service",
+            "receiver": "data",
+            "text": "TX: khóa User; kiểm tra version và còn active",
+            "kind": "call"
+          },
+          {
+            "type": "message",
+            "sender": "data",
+            "receiver": "service",
+            "text": "Subscription hiện hành",
+            "kind": "return"
+          },
+          {
+            "type": "fragment",
+            "kind": "break",
+            "guard": "Đã inactive hoặc version đổi",
+            "children": [
+              {
+                "type": "message",
+                "sender": "service",
+                "receiver": "ui",
+                "text": "409; không hủy lặp",
+                "kind": "return"
+              }
+            ],
+            "alternate": null
+          },
+          {
+            "type": "message",
+            "sender": "service",
+            "receiver": "data",
+            "text": "endsAt = now; version++; CANCELLED event; audit",
+            "kind": "call"
+          },
+          {
+            "type": "message",
+            "sender": "data",
+            "receiver": "service",
+            "text": "Commit financialEffect NONE",
+            "kind": "return"
+          },
+          {
+            "type": "message",
+            "sender": "service",
+            "receiver": "ui",
+            "text": "Gói hết hiệu lực; dữ liệu thuê giữ nguyên",
+            "kind": "return"
+          }
+        ],
+        "alternate": null
+      }
+    ],
+    "methods": [
+      [
+        "admin/admin-plans.service.ts",
+        "assign"
+      ],
+      [
+        "admin/admin-plans.service.ts",
+        "cancel"
+      ]
+    ],
+    "render": {
+      "width": 1300,
+      "height": 1417,
+      "messages": 21,
+      "fragments": 4,
+      "font_size": 25
+    }
+  }
+]

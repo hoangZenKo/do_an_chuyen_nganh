@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Rental Room Management — Admin Console demo</title>
+  <style>
+    :root {
+      --ink: #14211f;
+      --muted: #65726f;
+      --paper: #f5f7f3;
+      --surface: #ffffff;
+      --line: #dce4df;
+      --rail: #152321;
+      --rail-2: #20332f;
+      --mint: #b8f2cf;
+      --mint-strong: #58d99a;
+      --lime: #d6f36a;
+      --amber: #f6c96c;
+      --red: #ee806f;
+      --blue: #9cc8f4;
+      --shadow: 0 18px 50px rgba(21, 35, 33, .10);
+      --radius: 16px;
+      --mono: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+      --sans: Manrope, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; min-height: 100%; background: var(--paper); color: var(--ink); font-family: var(--sans); }
+    body { overflow-x: hidden; }
+    button, input { font: inherit; }
+    button { cursor: pointer; }
+    .app { min-height: 100vh; display: grid; grid-template-columns: 248px minmax(0, 1fr); }
+    .rail { background: var(--rail); color: #e8f1eb; padding: 24px 16px; display: flex; flex-direction: column; min-height: 100vh; position: sticky; top: 0; height: 100vh; }
+    .brand { display: flex; align-items: center; gap: 12px; padding: 0 10px 26px; }
+    .brand-mark { width: 38px; height: 38px; border-radius: 12px; display: grid; place-items: center; background: var(--lime); color: var(--rail); font-weight: 900; letter-spacing: -.08em; }
+    .brand strong { display: block; font-size: 13px; letter-spacing: -.02em; }
+    .brand small { color: #91a79d; font-size: 10px; font-family: var(--mono); text-transform: uppercase; letter-spacing: .12em; }
+    .rail-label { color: #789088; font-family: var(--mono); font-size: 10px; letter-spacing: .14em; text-transform: uppercase; padding: 18px 10px 8px; }
+    .nav { display: grid; gap: 4px; }
+    .nav button { border: 0; background: transparent; color: #afc1b9; text-align: left; padding: 11px 10px; border-radius: 11px; display: flex; gap: 11px; align-items: center; font-size: 12px; }
+    .nav button:hover, .nav button.active { background: var(--rail-2); color: #fff; }
+    .nav b { width: 7px; height: 7px; border-radius: 50%; background: #547169; flex: 0 0 auto; }
+    .nav button.active b { background: var(--lime); box-shadow: 0 0 0 4px rgba(214,243,106,.12); }
+    .rail-foot { margin-top: auto; border-top: 1px solid #30433e; padding: 18px 10px 0; color: #a5b7ae; font-size: 11px; line-height: 1.5; }
+    .user { display: flex; align-items: center; gap: 9px; margin-top: 12px; color: #ecf5ef; font-size: 12px; }
+    .avatar { width: 28px; height: 28px; border-radius: 50%; display: grid; place-items: center; background: #436a5d; color: #dff8e8; font-size: 10px; font-weight: 800; }
+    .main { min-width: 0; }
+    .topbar { height: 74px; display: flex; align-items: center; justify-content: space-between; padding: 0 38px; border-bottom: 1px solid var(--line); background: rgba(245,247,243,.88); backdrop-filter: blur(12px); position: sticky; top: 0; z-index: 5; }
+    .crumb { color: var(--muted); font-family: var(--mono); font-size: 11px; text-transform: uppercase; letter-spacing: .09em; }
+    .top-actions { display: flex; align-items: center; gap: 10px; }
+    .search { border: 1px solid var(--line); background: var(--surface); color: var(--ink); width: 232px; padding: 10px 12px; border-radius: 10px; outline: none; font-size: 12px; }
+    .search:focus { border-color: #7bc8a1; box-shadow: 0 0 0 3px rgba(88,217,154,.14); }
+    .icon-button { width: 38px; height: 38px; border: 1px solid var(--line); border-radius: 10px; background: var(--surface); color: var(--ink); }
+    .content { max-width: 1440px; margin: 0 auto; padding: 34px 38px 112px; }
+    .page-head { display: flex; justify-content: space-between; gap: 24px; align-items: end; margin-bottom: 28px; }
+    h1, h2, h3, p { margin: 0; }
+    h1 { font-size: clamp(30px, 4vw, 52px); letter-spacing: -.06em; line-height: .98; max-width: 620px; }
+    .lede { color: var(--muted); font-size: 13px; margin-top: 12px; max-width: 620px; line-height: 1.55; }
+    .date-chip { white-space: nowrap; border: 1px solid var(--line); background: #fff; padding: 10px 12px; border-radius: 99px; color: var(--muted); font-family: var(--mono); font-size: 10px; }
+    .pulse { background: var(--rail); color: white; border-radius: 22px; padding: 24px; display: grid; grid-template-columns: minmax(220px, .92fr) 1.5fr; gap: 24px; box-shadow: var(--shadow); overflow: hidden; position: relative; }
+    .pulse:after { content: ""; position: absolute; width: 280px; height: 280px; border-radius: 50%; background: rgba(88,217,154,.15); right: -110px; top: -140px; filter: blur(2px); }
+    .pulse h2 { font-size: 26px; letter-spacing: -.045em; max-width: 310px; }
+    .pulse p { color: #a9beb4; font-size: 12px; line-height: 1.5; margin-top: 10px; max-width: 330px; }
+    .pulse-note { display: inline-flex; align-items: center; gap: 8px; color: var(--lime); font-family: var(--mono); font-size: 10px; text-transform: uppercase; letter-spacing: .11em; margin-bottom: 16px; }
+    .pulse-note i { width: 7px; height: 7px; background: var(--lime); border-radius: 50%; box-shadow: 0 0 0 5px rgba(214,243,106,.12); }
+    .metric-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; position: relative; z-index: 1; }
+    .metric { background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.10); padding: 15px; border-radius: 13px; }
+    .metric small { color: #9eb4aa; font-family: var(--mono); font-size: 10px; text-transform: uppercase; letter-spacing: .08em; }
+    .metric strong { display: block; margin-top: 22px; font-size: 28px; letter-spacing: -.05em; }
+    .metric span { display: block; color: #b9e8cd; font-size: 11px; margin-top: 4px; }
+    .layout { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(300px, .75fr); gap: 18px; margin-top: 18px; }
+    .panel { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); box-shadow: 0 7px 26px rgba(21,35,33,.045); overflow: hidden; }
+    .panel-head { display: flex; justify-content: space-between; align-items: center; padding: 18px 20px 14px; border-bottom: 1px solid var(--line); }
+    .panel-head h3 { font-size: 15px; letter-spacing: -.03em; }
+    .panel-head span { color: var(--muted); font-size: 11px; }
+    .link-button { border: 0; background: transparent; color: #2f986d; font-size: 11px; padding: 5px; }
+    .queue { padding: 6px 20px 18px; }
+    .queue-row { display: grid; grid-template-columns: 10px minmax(0, 1fr) auto; gap: 12px; align-items: center; padding: 14px 0; border-bottom: 1px solid #edf1ed; }
+    .queue-row:last-child { border-bottom: 0; }
+    .severity { width: 8px; height: 8px; border-radius: 50%; background: var(--amber); }
+    .severity.red { background: var(--red); }
+    .severity.blue { background: var(--blue); }
+    .queue-row strong { display: block; font-size: 12px; font-weight: 750; }
+    .queue-row small { color: var(--muted); display: block; font-size: 11px; margin-top: 4px; }
+    .status { border-radius: 99px; padding: 5px 8px; font-size: 10px; font-family: var(--mono); white-space: nowrap; }
+    .status.amber { color: #805c16; background: #fff1c9; }
+    .status.red { color: #9e3c31; background: #ffe0da; }
+    .status.blue { color: #35648d; background: #deefff; }
+    .status.green { color: #25704c; background: #dcf8e7; }
+    .side-stack { display: grid; gap: 18px; }
+    .health { padding: 18px 20px 20px; }
+    .health-top { display: flex; align-items: center; justify-content: space-between; }
+    .health-score { font-size: 40px; letter-spacing: -.08em; font-weight: 800; }
+    .health-score span { font-size: 14px; letter-spacing: 0; color: var(--muted); }
+    .health-copy { color: var(--muted); font-size: 11px; line-height: 1.45; max-width: 180px; text-align: right; }
+    .health-line { height: 9px; border-radius: 99px; background: #e9efea; overflow: hidden; margin: 18px 0 10px; }
+    .health-line i { display: block; width: 86%; height: 100%; background: var(--mint-strong); border-radius: inherit; }
+    .health-legend { display: flex; justify-content: space-between; font-size: 10px; color: var(--muted); }
+    .activity { padding: 4px 20px 18px; }
+    .activity-row { display: grid; grid-template-columns: 26px minmax(0,1fr); gap: 10px; padding: 11px 0; border-bottom: 1px solid #edf1ed; }
+    .activity-row:last-child { border-bottom: 0; }
+    .activity-icon { width: 26px; height: 26px; border-radius: 8px; background: #e6f7ed; color: #28835b; display: grid; place-items: center; font-size: 10px; font-weight: 800; }
+    .activity-row strong { font-size: 11px; display: block; }
+    .activity-row small { color: var(--muted); font-size: 10px; display: block; margin-top: 3px; }
+    .table-wrap { margin-top: 18px; }
+    .filters { display: flex; gap: 8px; padding: 14px 20px; border-bottom: 1px solid var(--line); flex-wrap: wrap; }
+    .filter { border: 1px solid var(--line); background: #fbfcfb; color: var(--muted); border-radius: 99px; padding: 8px 11px; font-size: 11px; }
+    table { width: 100%; border-collapse: collapse; font-size: 12px; }
+    th, td { text-align: left; padding: 14px 20px; border-bottom: 1px solid #edf1ed; }
+    th { color: var(--muted); font-family: var(--mono); text-transform: uppercase; letter-spacing: .08em; font-size: 9px; font-weight: 500; }
+    td strong { font-weight: 750; }
+    td small { color: var(--muted); display: block; margin-top: 3px; font-size: 10px; }
+    .dot { display: inline-block; width: 7px; height: 7px; border-radius: 50%; margin-right: 6px; background: var(--mint-strong); }
+    .dot.amber { background: var(--amber); }
+    .dot.red { background: var(--red); }
+    .switcher { position: fixed; z-index: 20; left: 50%; bottom: 18px; transform: translateX(-50%); display: flex; align-items: center; gap: 12px; padding: 8px 10px; border: 1px solid rgba(20,33,31,.15); border-radius: 99px; background: rgba(255,255,255,.9); backdrop-filter: blur(14px); box-shadow: 0 15px 35px rgba(20,33,31,.16); }
+    .switcher button { border: 0; background: transparent; color: var(--ink); width: 30px; height: 30px; border-radius: 50%; font-size: 18px; }
+    .switcher button:hover { background: var(--paper); }
+    .switcher label { min-width: 160px; text-align: center; font-size: 11px; font-weight: 800; }
+    .switcher label small { display: block; color: var(--muted); font-weight: 500; font-size: 9px; margin-top: 2px; }
+
+    /* Variant B: inbox-first triage board. */
+    body.variant-b { --paper: #f3f1eb; --surface: #fffdf8; --ink: #241f1b; --line: #e6dfd3; --mint-strong: #c56d43; --lime: #f1d580; }
+    .variant-b .pulse { background: #302a24; }
+    .variant-b .pulse:after { background: rgba(241,213,128,.18); }
+    .variant-b .layout { grid-template-columns: minmax(0, .78fr) minmax(0, 1.22fr); }
+    .variant-b .pulse { grid-template-columns: 1fr; }
+    .variant-b .metric-row { grid-template-columns: repeat(4, 1fr); }
+    .variant-b .side-stack { order: -1; }
+    .variant-b .panel-head { background: #fff9ed; }
+
+    /* Variant C: dense triage/data-first workspace. */
+    body.variant-c { --paper: #edf2f4; --surface: #fbfdff; --ink: #13222b; --line: #d8e2e7; --rail: #10232d; --rail-2: #1a3945; --mint: #9ce3d2; --mint-strong: #299f96; --lime: #a9ecdf; }
+    .variant-c .content { max-width: 1540px; }
+    .variant-c .page-head { align-items: center; }
+    .variant-c h1 { font-size: 32px; letter-spacing: -.045em; }
+    .variant-c .pulse { border-radius: 12px; grid-template-columns: 1fr 1.8fr; padding: 18px; }
+    .variant-c .pulse h2 { font-size: 21px; }
+    .variant-c .metric strong { margin-top: 15px; font-size: 23px; }
+    .variant-c .layout { grid-template-columns: 1fr; }
+    .variant-c .side-stack { grid-template-columns: 1fr 1fr; }
+    .variant-c .panel { border-radius: 12px; }
+
+    @media (max-width: 980px) {
+      .app { grid-template-columns: 76px minmax(0, 1fr); }
+      .rail { padding: 20px 10px; }
+      .brand { padding: 0 9px 24px; }
+      .brand > div:last-child, .rail-label, .nav span, .rail-foot { display: none; }
+      .nav button { justify-content: center; padding: 13px; }
+      .nav b { width: 9px; height: 9px; }
+      .topbar { padding: 0 24px; }
+      .content { padding: 28px 24px 110px; }
+      .layout, .variant-b .layout { grid-template-columns: 1fr; }
+      .side-stack, .variant-c .side-stack { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 640px) {
+      .app { display: block; }
+      .rail { min-height: auto; height: auto; position: sticky; top: 0; z-index: 10; padding: 10px 14px; flex-direction: row; align-items: center; }
+      .brand { padding: 0; flex: 1; }
+      .brand-mark { width: 32px; height: 32px; border-radius: 10px; }
+      .nav { display: flex; gap: 3px; }
+      .nav button { width: 36px; height: 36px; padding: 0; }
+      .nav button:nth-child(n+4) { display: none; }
+      .topbar { height: 62px; padding: 0 16px; }
+      .crumb { font-size: 9px; }
+      .search { display: none; }
+      .content { padding: 24px 16px 104px; }
+      .page-head { display: block; margin-bottom: 20px; }
+      h1, .variant-c h1 { font-size: 34px; }
+      .date-chip { display: inline-block; margin-top: 16px; }
+      .pulse, .variant-c .pulse { grid-template-columns: 1fr; border-radius: 16px; padding: 18px; }
+      .pulse h2 { font-size: 24px; }
+      .metric-row, .variant-b .metric-row { grid-template-columns: repeat(2, 1fr); }
+      .side-stack, .variant-c .side-stack { grid-template-columns: 1fr; }
+      .table-wrap { overflow-x: auto; }
+      table { min-width: 650px; }
+      th, td { padding: 12px 14px; }
+      .switcher { bottom: 12px; }
+      .switcher label { min-width: 138px; }
+    }
+    @media (prefers-reduced-motion: no-preference) {
+      .content > * { animation: rise .55s cubic-bezier(.19,1,.22,1) both; }
+      .content > *:nth-child(2) { animation-delay: .06s; }
+      .content > *:nth-child(3) { animation-delay: .12s; }
+      @keyframes rise { from { opacity: .1; transform: translateY(12px); filter: blur(4px); } to { opacity: 1; transform: none; filter: none; } }
+    }
+  </style>
+</head>
+<body>
+  <div class="app">
+    <aside class="rail">
+      <div class="brand"><div class="brand-mark">rr</div><div><strong>Rental Room</strong><small>Admin console</small></div></div>
+      <div class="rail-label">Workspace</div>
+      <nav class="nav" aria-label="Điều hướng admin">
+        <button class="active"><b></b><span>Tổng quan</span></button>
+        <button><b></b><span>Vận hành hệ thống</span></button>
+        <button><b></b><span>Thông báo</span></button>
+        <button><b></b><span>Tài khoản</span></button>
+      </nav>
+      <div class="rail-label">Governance</div>
+      <nav class="nav">
+        <button><b></b><span>Kiểm duyệt</span></button>
+        <button><b></b><span>Đối soát</span></button>
+        <button><b></b><span>Nhật ký</span></button>
+        <button><b></b><span>Bảo mật</span></button>
+      </nav>
+      <div class="rail-foot">Mọi hành động nhạy cảm đều ghi audit log.<div class="user"><div class="avatar">HN</div><div>Hoàng Nguyễn<br><span style="color:#7e988e">Platform admin</span></div></div></div>
+    </aside>
+    <main class="main">
+      <header class="topbar"><div class="crumb">Admin / Tổng quan</div><div class="top-actions"><input class="search" aria-label="Tra cứu toàn hệ thống" placeholder="Tra cứu tên, mã, ticket…" /><button class="icon-button" aria-label="Thông báo">!</button><button class="icon-button" aria-label="Tài khoản">HN</button></div></header>
+      <section class="content">
+        <div class="page-head"><div><h1>Buổi sáng của nền tảng.</h1><p class="lede">Một màn hình để thấy điều gì đang ổn, điều gì cần người xử lý, và nơi nên bắt đầu trước khi mở từng module.</p></div><div class="date-chip">27.10.2026 · 09:41 ICT</div></div>
+        <section class="pulse"><div><div class="pulse-note"><i></i> Hệ thống đang ổn định</div><h2>Giữ nhịp vận hành, không để việc quan trọng chìm xuống.</h2><p>3 cảnh báo cần chú ý trong hôm nay. Không có sự cố P1 đang mở.</p></div><div class="metric-row"><div class="metric"><small>Landlord active</small><strong>1,248</strong><span>+6.4% so với tuần trước</span></div><div class="metric"><small>Properties</small><strong>386</strong><span>97.2% đang đồng bộ</span></div><div class="metric"><small>Open queue</small><strong>27</strong><span>3 mục quá hạn SLA</span></div></div></section>
+        <div class="layout">
+          <section class="panel"><div class="panel-head"><div><h3>Việc cần xử lý</h3><span>Ưu tiên theo mức độ và SLA</span></div><button class="link-button">Mở hàng đợi →</button></div><div class="queue"><div class="queue-row"><i class="severity red"></i><div><strong>2 appeal kiểm duyệt quá hạn</strong><small>Moderation v2 · cập nhật 18 phút trước</small></div><span class="status red">Quá hạn</span></div><div class="queue-row"><i class="severity"></i><div><strong>5 landlord chờ xác minh hồ sơ</strong><small>Tài khoản · cần review trước 14:00</small></div><span class="status amber">Cần xem</span></div><div class="queue-row"><i class="severity blue"></i><div><strong>Đối soát 12 giao dịch ngân hàng</strong><small>Tài chính · batch #2026-10-27-A</small></div><span class="status blue">Đang chờ</span></div><div class="queue-row"><i class="severity"></i><div><strong>1 policy moderation cần second review</strong><small>Governance · người duyệt: Linh Trần</small></div><span class="status green">Trong hạn</span></div></div></section>
+          <div class="side-stack"><section class="panel"><div class="panel-head"><div><h3>Health snapshot</h3><span>5 phút gần nhất</span></div><span class="status green">Healthy</span></div><div class="health"><div class="health-top"><div class="health-score">86<span>/100</span></div><div class="health-copy">Không có degraded service. API p95 đang thấp hơn ngưỡng.</div></div><div class="health-line"><i></i></div><div class="health-legend"><span>API 96%</span><span>DB 91%</span><span>Outbox 82%</span></div></div></section><section class="panel"><div class="panel-head"><div><h3>Hoạt động gần đây</h3><span>Audit đã ghi nhận</span></div><button class="link-button">Xem log →</button></div><div class="activity"><div class="activity-row"><div class="activity-icon">AC</div><div><strong>Thu hồi session của tài khoản bị khóa</strong><small>2 phút trước · admin-security</small></div></div><div class="activity-row"><div class="activity-icon">MO</div><div><strong>Gán appeal #AP-1042 cho nhóm Trust</strong><small>11 phút trước · moderation</small></div></div><div class="activity-row"><div class="activity-icon">FI</div><div><strong>Xuất báo cáo đối soát tháng 10</strong><small>34 phút trước · finance</small></div></div></div></section></div>
+        </div>
+        <section class="panel table-wrap"><div class="panel-head"><div><h3>Những tài khoản gần đây</h3><span>Tra cứu nhanh theo tín hiệu rủi ro</span></div><button class="link-button">Xem tất cả →</button></div><div class="filters"><button class="filter">Tất cả vai trò⌄</button><button class="filter">Trạng thái⌄</button><button class="filter">Có cảnh báo</button></div><table><thead><tr><th>Tài khoản</th><th>Vai trò</th><th>Trạng thái</th><th>Hoạt động cuối</th><th>Phạm vi</th></tr></thead><tbody><tr><td><strong>Minh Anh Residence</strong><small>owner@minhanh.test</small></td><td>Landlord</td><td><span class="dot"></span>Đang hoạt động</td><td>8 phút trước</td><td>4 khu trọ</td></tr><tr><td><strong>Nguyễn Thị Mai</strong><small>mai.nguyen@test</small></td><td>Staff</td><td><span class="dot amber"></span>Cần review</td><td>31 phút trước</td><td>2 khu trọ</td></tr><tr><td><strong>CityNest Holdings</strong><small>ops@citynest.test</small></td><td>Landlord</td><td><span class="dot red"></span>Tạm khóa</td><td>2 giờ trước</td><td>9 khu trọ</td></tr></tbody></table></section>
+      </section>
+    </main>
+  </div>
+  <div class="switcher" aria-label="Chuyển biến thể prototype"><button id="prev" aria-label="Biến thể trước">‹</button><label id="variant-label">A — Command center<small>cân bằng scan + hành động</small></label><button id="next" aria-label="Biến thể sau">›</button></div>
+  <script>
+    const variants = [
+      ['A', 'Command center', 'cân bằng scan + hành động'],
+      ['B', 'Inbox-first triage', 'ưu tiên hàng đợi và SLA'],
+      ['C', 'Dense data desk', 'mật độ cao cho admin chuyên sâu'],
+    ];
+    const params = new URLSearchParams(location.search);
+    let index = Math.max(0, Math.min(2, variants.findIndex(v => v[0] === (params.get('variant') || 'A').toUpperCase())));
+    function applyVariant() {
+      document.body.classList.remove('variant-a', 'variant-b', 'variant-c');
+      document.body.classList.add('variant-' + variants[index][0].toLowerCase());
+      document.querySelector('#variant-label').innerHTML = `${variants[index][0]} — ${variants[index][1]}<small>${variants[index][2]}</small>`;
+      const next = new URL(location.href); next.searchParams.set('variant', variants[index][0]); history.replaceState({}, '', next);
+    }
+    function move(amount) { index = (index + amount + variants.length) % variants.length; applyVariant(); }
+    document.querySelector('#prev').addEventListener('click', () => move(-1));
+    document.querySelector('#next').addEventListener('click', () => move(1));
+    addEventListener('keydown', event => { if (event.target.matches('input,textarea,[contenteditable]')) return; if (event.key === 'ArrowLeft') move(-1); if (event.key === 'ArrowRight') move(1); });
+    document.querySelectorAll('.nav button').forEach(button => button.addEventListener('click', () => { document.querySelectorAll('.nav button').forEach(item => item.classList.remove('active')); button.classList.add('active'); }));
+    applyVariant();
+  </script>
+</body>
+</html>

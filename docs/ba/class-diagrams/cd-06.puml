@@ -1,0 +1,71 @@
+@startuml
+hide empty methods
+skinparam classAttributeIconSize 0
+skinparam shadowing false
+skinparam defaultFontName Arial
+title CD-06 Thông báo và nhật ký
+class NotificationRead {
+  id: String {id}
+  notificationId: String
+  readAt: DateTime
+}
+class NotificationDelivery {
+  id: String {id}
+  landlordId: String
+  tenantId: String [0..1]
+  invoiceId: String [0..1]
+  channel: NotificationDeliveryChannel
+  purpose: String
+  recipient: String
+  status: NotificationDeliveryStatus
+  sentAt: DateTime [0..1]
+  errorCode: String [0..1]
+}
+class AuditLog {
+  id: String {id}
+  actorRole: UserRole
+  action: String
+  resourceType: String
+  resourceId: String [0..1]
+  summary: String
+  createdAt: DateTime
+}
+class User <<reference>> {
+  id: String {id}
+  fullName: String
+}
+enum NotificationDeliveryChannel {
+  ZALO
+}
+enum NotificationDeliveryStatus {
+  PENDING
+  SENT
+  FAILED
+  SKIPPED
+}
+enum UserRole {
+  LANDLORD
+  ADMIN
+  TENANT
+  STAFF
+}
+AuditLog "0..*\nauditLogsAsLandlord" -- "0..1\nlandlord" User
+AuditLog "0..*\nauditLogsAsActor" -- "0..1\nactor" User
+NotificationRead "0..*\nnotificationReads" -- "1\nuser" User
+note right of NotificationRead
+NotificationRead
+{unique: user, notificationId}
+notificationId có thể là mã tổng hợp;
+không có association đến Delivery.
+end note
+note right of NotificationDelivery
+<<IDRef>> — quy ước chú thích
+landlordId → User.id
+tenantId → Tenant.id; invoiceId → Invoice.id
+Tham chiếu bằng mã định danh trong dữ liệu;
+không phải structural association UML.
+end note
+legend bottom
+Đường liền: association. <<IDRef>>: chỉ tham chiếu bằng mã, không phải association.
+endlegend
+@enduml

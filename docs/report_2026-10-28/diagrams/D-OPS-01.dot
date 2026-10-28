@@ -1,0 +1,26 @@
+digraph G {
+graph [bgcolor="white", rankdir=LR, nodesep=0.30, ranksep=0.65, pad=0.2, splines=polyline];
+node [fontname="Times New Roman", fontsize=17, color="black", fontcolor="black", style="filled", fillcolor="white", penwidth=1.1];
+edge [fontname="Times New Roman", fontsize=14, color="black", arrowsize=0.7, penwidth=0.9];
+actor0 [shape=box,label="«actor»\nChủ trọ"];
+actor1 [shape=box,label="«actor»\nStaff đúng quyền/scope"];
+subgraph cluster_system { label="Rental Room Management · Bảo trì và vận hành";fontname="Times New Roman";fontsize=18;color="black";
+u0 [shape=ellipse,label="UC-OPS-01\nTra cứu tạo và theo dõi bảo\ntrì",margin="0.12,0.08"];
+u1 [shape=ellipse,label="UC-OPS-02\nPhân công cập nhật tiến độ và\nSLA bảo trì",margin="0.12,0.08"];
+u2 [shape=ellipse,label="UC-OPS-03\nHoàn tất bảo trì và liên kết\nkhoản chi",margin="0.12,0.08"];
+u3 [shape=ellipse,label="UC-OPS-04\nTheo dõi việc cần xử lý và\nđiểm đến",margin="0.12,0.08"];
+u4 [shape=ellipse,label="UC-OPS-05\nQuản lý quy trình chuẩn bị\nphòng sau trả",margin="0.12,0.08"];
+u5 [shape=ellipse,label="UC-OPS-06\nQuản lý công việc định kỳ và\nchecklist",margin="0.12,0.08"];
+u6 [shape=ellipse,label="UC-OPS-07\nSoạn và phát thông báo cho\nngười thuê",margin="0.12,0.08"];
+}
+actor0 -> u0 [arrowhead=none];
+actor1 -> u0 [arrowhead=none];
+actor0 -> u1 [arrowhead=none];
+actor1 -> u1 [arrowhead=none];
+actor0 -> u2 [arrowhead=none];
+actor1 -> u2 [arrowhead=none];
+actor0 -> u3 [arrowhead=none];
+actor0 -> u4 [arrowhead=none];
+actor0 -> u5 [arrowhead=none];
+actor0 -> u6 [arrowhead=none];
+}

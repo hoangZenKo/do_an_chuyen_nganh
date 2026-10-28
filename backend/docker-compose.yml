@@ -1,0 +1,38 @@
+name: rental-room-api
+
+services:
+  postgres:
+    image: postgres:16-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: rental_management
+      POSTGRES_USER: rental_user
+      POSTGRES_PASSWORD: change_this_password
+    ports:
+      - "127.0.0.1:5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U rental_user -d rental_management"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  api:
+    build: .
+    restart: unless-stopped
+    environment:
+      DATABASE_URL: postgresql://rental_user:change_this_password@postgres:5432/rental_management?schema=public
+      PORT: 3000
+      JWT_ACCESS_SECRET: replace-with-a-long-random-secret
+      JWT_ACCESS_EXPIRES_IN: 15m
+      REFRESH_TOKEN_TTL_DAYS: 30
+      CORS_ORIGINS: http://localhost:3000
+    ports:
+      - "3000:3000"
+    depends_on:
+      postgres:
+        condition: service_healthy
+
+volumes:
+  postgres_data:

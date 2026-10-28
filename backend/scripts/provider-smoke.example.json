@@ -1,0 +1,5 @@
+[
+  { "name": "scanner", "urlEnv": "STAGING_SCANNER_HEALTH_URL", "tokenEnv": "STAGING_SCANNER_TOKEN" },
+  { "name": "report-storage", "urlEnv": "STAGING_REPORT_STORAGE_HEALTH_URL", "tokenEnv": "STAGING_REPORT_STORAGE_TOKEN" },
+  { "name": "notifications", "urlEnv": "STAGING_NOTIFICATIONS_HEALTH_URL", "tokenEnv": "STAGING_NOTIFICATIONS_TOKEN" }
+]

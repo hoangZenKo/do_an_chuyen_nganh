@@ -1,0 +1,7 @@
+00:00 +0: loading /tmp/rental-report-v2-20261028/capture-tests/landlord_report_test.dart
+00:00 +0: report public-login
+00:01 +1: report public-register
+00:01 +2: report landlord-tenants
+00:01 +3: report landlord-invoices
+00:01 +4: report landlord-monthly-report
+00:01 +5: All tests passed!

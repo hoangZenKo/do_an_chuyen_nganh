@@ -1,0 +1,14 @@
+[
+  "00:11 +152 -1: /Users/hoang/Rental_room_management/test/features/admin/admin_operations_release_test.dart: legacy landlord status collects a reason and submits its version [E]",
+  "00:17 +237 -2: /Users/hoang/Rental_room_management/test/features/dashboard/dashboard_chatbot_entry_test.dart: Floating dashboard navigation hold and scrub previews a tab then commits on release [E]",
+  "00:17 +239 -3: /Users/hoang/Rental_room_management/test/features/dashboard/dashboard_chatbot_entry_test.dart: Floating dashboard navigation content reaches the end without moving the navigation [E]",
+  "00:18 +242 -4: /Users/hoang/Rental_room_management/test/features/dashboard/dashboard_chatbot_entry_test.dart: Floating dashboard navigation pill fits width 320.0 with inset 0.0 [E]",
+  "00:18 +242 -5: /Users/hoang/Rental_room_management/test/features/dashboard/dashboard_chatbot_entry_test.dart: Floating dashboard navigation pill fits width 320.0 with inset 34.0 [E]",
+  "00:18 +244 -6: /Users/hoang/Rental_room_management/test/features/dashboard/dashboard_chatbot_entry_test.dart: Floating dashboard navigation pill fits width 375.0 with inset 0.0 [E]",
+  "00:18 +245 -7: /Users/hoang/Rental_room_management/test/features/dashboard/dashboard_chatbot_entry_test.dart: Floating dashboard navigation pill fits width 375.0 with inset 34.0 [E]",
+  "00:18 +246 -8: /Users/hoang/Rental_room_management/test/features/dashboard/dashboard_chatbot_entry_test.dart: Floating dashboard navigation pill fits width 390.0 with inset 0.0 [E]",
+  "00:18 +250 -9: /Users/hoang/Rental_room_management/test/features/dashboard/dashboard_chatbot_entry_test.dart: Floating dashboard navigation pill fits width 390.0 with inset 34.0 [E]",
+  "00:18 +252 -10: /Users/hoang/Rental_room_management/test/features/dashboard/dashboard_chatbot_entry_test.dart: Floating dashboard navigation pill fits width 430.0 with inset 0.0 [E]",
+  "00:18 +253 -11: /Users/hoang/Rental_room_management/test/features/dashboard/dashboard_chatbot_entry_test.dart: Floating dashboard navigation pill fits width 430.0 with inset 34.0 [E]",
+  "00:19 +259 -12: /Users/hoang/Rental_room_management/test/features/dashboard/dashboard_chatbot_entry_test.dart: Floating dashboard navigation tabs and center action keep their existing callbacks [E]"
+]

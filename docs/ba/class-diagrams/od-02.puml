@@ -1,0 +1,69 @@
+@startuml
+hide empty methods
+skinparam classAttributeIconSize 0
+skinparam shadowing false
+skinparam defaultFontName Arial
+title OD-02 Đối tượng hóa đơn và thanh toán\nCác đối tượng, giá trị thuộc tính và liên kết tại một thời điểm của hệ thống.
+object "phongA01 : Room" as phongA01 {
+  id = "phongA01"
+}
+object "hopDong01 : Lease" as hopDong01 {
+  id = "hopDong01"
+}
+object "hoSo01 : Tenant" as hoSo01 {
+  id = "hoSo01"
+}
+object "chiSoDien01 : MeterReading" as chiSoDien01 {
+  utilityType = ELECTRICITY
+  previousReading = 1000
+  currentReading = 1020
+  unitPrice = 3500
+  amount = 70000
+  usage = 20
+  billingMonth = "2026-10-01"
+}
+object "hoaDon01 : Invoice" as hoaDon01 {
+  billingMonth = "2026-10-01"
+  rentAmount = 3000000
+  electricityAmount = 70000
+  waterAmount = 50000
+  otherAmount = 0
+  totalAmount = 3120000
+  paidAmount = 2000000
+  status = PARTIAL
+  dueDate = "2026-10-10"
+}
+object "chiSoNuoc01 : MeterReading" as chiSoNuoc01 {
+  utilityType = WATER
+  previousReading = 20
+  currentReading = 25
+  unitPrice = 10000
+  amount = 50000
+  usage = 5
+  billingMonth = "2026-10-01"
+}
+object "khoanThu01 : Payment" as khoanThu01 {
+  amount = 2000000
+  method = BANK_TRANSFER
+  type = PAYMENT
+  paidAt = "2026-10-05"
+}
+object "minhChung01 : PaymentProof" as minhChung01 {
+  amount = 1120000
+  status = PENDING
+  submittedAt = "2026-10-06"
+}
+hopDong01 -- phongA01 : room
+hopDong01 -- hoSo01 : tenant
+chiSoDien01 -- phongA01 : room
+hoaDon01 -- hopDong01 : lease
+hoaDon01 -- phongA01 : room
+hoaDon01 -- hoSo01 : tenant
+chiSoNuoc01 -- phongA01 : room
+khoanThu01 -- hoaDon01 : invoice
+minhChung01 -- hoaDon01 : invoice
+minhChung01 -- hoSo01 : tenant
+legend bottom
+Snapshot giả định: 06/10/2026; các hình OD là góc nhìn của cùng dữ liệu.
+endlegend
+@enduml

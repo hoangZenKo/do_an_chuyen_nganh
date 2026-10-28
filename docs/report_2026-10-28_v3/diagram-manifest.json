@@ -1,0 +1,7203 @@
+[
+  {
+    "id": "AR-01",
+    "title": "Kiến trúc tổng thể và ranh giới tích hợp",
+    "kind": "architecture",
+    "description": "Backend là modular monolith; worker và dịch vụ ngoài không được suy ra là đã nghiệm thu production.",
+    "source": "backend/src/app.module.ts"
+  },
+  {
+    "id": "AR-02",
+    "title": "Các lớp kiểm tra truy cập",
+    "kind": "architecture",
+    "description": "Có permission chưa đủ: còn scope, ownership và quy tắc trạng thái. Người thuê chỉ truy cập hồ sơ liên kết của mình.",
+    "source": "backend/src/common/property-scope.ts"
+  },
+  {
+    "id": "UC-OVERVIEW",
+    "title": "Sơ đồ Use Case tổng quan — Hệ thống quản lý nhà trọ",
+    "kind": "usecase",
+    "description": "Tác nhân hình người nằm ngoài biên hệ thống; đường association nối trực tiếp tới ellipse UC. Mã nhóm ở sơ đồ tổng được phân rã trong các hình và đặc tả tiếp theo.",
+    "source": "docs/ba/use-case-centralized.drawio"
+  },
+  {
+    "id": "D-SYS-01",
+    "title": "Tài khoản và phiên làm việc — phần 1",
+    "kind": "usecase",
+    "description": "Tác nhân hình người nằm ngoài biên hệ thống; đường association nối trực tiếp tới ellipse UC. Mã nhóm ở sơ đồ tổng được phân rã trong các hình và đặc tả tiếp theo.",
+    "source": "backend/src/auth"
+  },
+  {
+    "id": "D-SYS-02",
+    "title": "Tài khoản và phiên làm việc — phần 2",
+    "kind": "usecase",
+    "description": "Tác nhân hình người nằm ngoài biên hệ thống; đường association nối trực tiếp tới ellipse UC. Mã nhóm ở sơ đồ tổng được phân rã trong các hình và đặc tả tiếp theo.",
+    "source": "backend/src/auth"
+  },
+  {
+    "id": "D-DIS-01",
+    "title": "Khám phá phòng và hành trình thuê — phần 1",
+    "kind": "usecase",
+    "description": "Tác nhân hình người nằm ngoài biên hệ thống; đường association nối trực tiếp tới ellipse UC. Mã nhóm ở sơ đồ tổng được phân rã trong các hình và đặc tả tiếp theo.",
+    "source": "backend/src/listings"
+  },
+  {
+    "id": "D-DIS-02",
+    "title": "Khám phá phòng và hành trình thuê — phần 2",
+    "kind": "usecase",
+    "description": "Tác nhân hình người nằm ngoài biên hệ thống; đường association nối trực tiếp tới ellipse UC. Mã nhóm ở sơ đồ tổng được phân rã trong các hình và đặc tả tiếp theo.",
+    "source": "backend/src/listings"
+  },
+  {
+    "id": "D-OPT-01",
+    "title": "Khu trọ và phòng — phần 1",
+    "kind": "usecase",
+    "description": "Tác nhân hình người nằm ngoài biên hệ thống; đường association nối trực tiếp tới ellipse UC. Mã nhóm ở sơ đồ tổng được phân rã trong các hình và đặc tả tiếp theo.",
+    "source": "backend/src/properties"
+  },
+  {
+    "id": "D-OPT-02",
+    "title": "Khu trọ và phòng — phần 2",
+    "kind": "usecase",
+    "description": "Tác nhân hình người nằm ngoài biên hệ thống; đường association nối trực tiếp tới ellipse UC. Mã nhóm ở sơ đồ tổng được phân rã trong các hình và đặc tả tiếp theo.",
+    "source": "backend/src/properties"
+  },
+  {
+    "id": "D-OPT-03",
+    "title": "Khu trọ và phòng — phần 3",
+    "kind": "usecase",
+    "description": "Tác nhân hình người nằm ngoài biên hệ thống; đường association nối trực tiếp tới ellipse UC. Mã nhóm ở sơ đồ tổng được phân rã trong các hình và đặc tả tiếp theo.",
+    "source": "backend/src/properties"
+  },
+  {
+    "id": "D-TNT-01",
+    "title": "Hồ sơ người thuê và hợp đồng — phần 1",
+    "kind": "usecase",
+    "description": "Tác nhân hình người nằm ngoài biên hệ thống; đường association nối trực tiếp tới ellipse UC. Mã nhóm ở sơ đồ tổng được phân rã trong các hình và đặc tả tiếp theo.",
+    "source": "backend/src/tenants"
+  },
+  {
+    "id": "D-TNT-02",
+    "title": "Hồ sơ người thuê và hợp đồng — phần 2",
+    "kind": "usecase",
+    "description": "Tác nhân hình người nằm ngoài biên hệ thống; đường association nối trực tiếp tới ellipse UC. Mã nhóm ở sơ đồ tổng được phân rã trong các hình và đặc tả tiếp theo.",
+    "source": "backend/src/tenants"
+  },
+  {
+    "id": "D-TNT-03",
+    "title": "Hồ sơ người thuê và hợp đồng — phần 3",
+    "kind": "usecase",
+    "description": "Tác nhân hình người nằm ngoài biên hệ thống; đường association nối trực tiếp tới ellipse UC. Mã nhóm ở sơ đồ tổng được phân rã trong các hình và đặc tả tiếp theo.",
+    "source": "backend/src/tenants"
+  },
+  {
+    "id": "D-BIL-01",
+    "title": "Hóa đơn và sổ thu chi — phần 1",
+    "kind": "usecase",
+    "description": "Tác nhân hình người nằm ngoài biên hệ thống; đường association nối trực tiếp tới ellipse UC. Mã nhóm ở sơ đồ tổng được phân rã trong các hình và đặc tả tiếp theo.",
+    "source": "backend/src/billing"
+  },
+  {
+    "id": "D-BIL-02",
+    "title": "Hóa đơn và sổ thu chi — phần 2",
+    "kind": "usecase",
+    "description": "Tác nhân hình người nằm ngoài biên hệ thống; đường association nối trực tiếp tới ellipse UC. Mã nhóm ở sơ đồ tổng được phân rã trong các hình và đặc tả tiếp theo.",
+    "source": "backend/src/billing"
+  },
+  {
+    "id": "D-BIL-03",
+    "title": "Hóa đơn và sổ thu chi — phần 3",
+    "kind": "usecase",
+    "description": "Tác nhân hình người nằm ngoài biên hệ thống; đường association nối trực tiếp tới ellipse UC. Mã nhóm ở sơ đồ tổng được phân rã trong các hình và đặc tả tiếp theo.",
+    "source": "backend/src/billing"
+  },
+  {
+    "id": "D-BIL-04",
+    "title": "Hóa đơn và sổ thu chi — phần 4",
+    "kind": "usecase",
+    "description": "Tác nhân hình người nằm ngoài biên hệ thống; đường association nối trực tiếp tới ellipse UC. Mã nhóm ở sơ đồ tổng được phân rã trong các hình và đặc tả tiếp theo.",
+    "source": "backend/src/billing"
+  },
+  {
+    "id": "D-OPS-01",
+    "title": "Bảo trì vận hành và nhật ký — phần 1",
+    "kind": "usecase",
+    "description": "Tác nhân hình người nằm ngoài biên hệ thống; đường association nối trực tiếp tới ellipse UC. Mã nhóm ở sơ đồ tổng được phân rã trong các hình và đặc tả tiếp theo.",
+    "source": "backend/src/maintenance"
+  },
+  {
+    "id": "D-OPS-02",
+    "title": "Bảo trì vận hành và nhật ký — phần 2",
+    "kind": "usecase",
+    "description": "Tác nhân hình người nằm ngoài biên hệ thống; đường association nối trực tiếp tới ellipse UC. Mã nhóm ở sơ đồ tổng được phân rã trong các hình và đặc tả tiếp theo.",
+    "source": "backend/src/maintenance"
+  },
+  {
+    "id": "D-TEN-01",
+    "title": "Cổng thông tin người thuê — phần 1",
+    "kind": "usecase",
+    "description": "Tác nhân hình người nằm ngoài biên hệ thống; đường association nối trực tiếp tới ellipse UC. Mã nhóm ở sơ đồ tổng được phân rã trong các hình và đặc tả tiếp theo.",
+    "source": "backend/src/tenant-portal"
+  },
+  {
+    "id": "D-TEN-02",
+    "title": "Cổng thông tin người thuê — phần 2",
+    "kind": "usecase",
+    "description": "Tác nhân hình người nằm ngoài biên hệ thống; đường association nối trực tiếp tới ellipse UC. Mã nhóm ở sơ đồ tổng được phân rã trong các hình và đặc tả tiếp theo.",
+    "source": "backend/src/tenant-portal"
+  },
+  {
+    "id": "D-ADM-01",
+    "title": "Quản trị và quản lý nền tảng — phần 1",
+    "kind": "usecase",
+    "description": "Tác nhân hình người nằm ngoài biên hệ thống; đường association nối trực tiếp tới ellipse UC. Mã nhóm ở sơ đồ tổng được phân rã trong các hình và đặc tả tiếp theo.",
+    "source": "backend/src/admin"
+  },
+  {
+    "id": "D-ADM-02",
+    "title": "Quản trị và quản lý nền tảng — phần 2",
+    "kind": "usecase",
+    "description": "Tác nhân hình người nằm ngoài biên hệ thống; đường association nối trực tiếp tới ellipse UC. Mã nhóm ở sơ đồ tổng được phân rã trong các hình và đặc tả tiếp theo.",
+    "source": "backend/src/admin"
+  },
+  {
+    "id": "D-ADM-03",
+    "title": "Quản trị và quản lý nền tảng — phần 3",
+    "kind": "usecase",
+    "description": "Tác nhân hình người nằm ngoài biên hệ thống; đường association nối trực tiếp tới ellipse UC. Mã nhóm ở sơ đồ tổng được phân rã trong các hình và đặc tả tiếp theo.",
+    "source": "backend/src/admin"
+  },
+  {
+    "id": "D-ADM-04",
+    "title": "Quản trị và quản lý nền tảng — phần 4",
+    "kind": "usecase",
+    "description": "Tác nhân hình người nằm ngoài biên hệ thống; đường association nối trực tiếp tới ellipse UC. Mã nhóm ở sơ đồ tổng được phân rã trong các hình và đặc tả tiếp theo.",
+    "source": "backend/src/admin"
+  },
+  {
+    "id": "D-SUP-01",
+    "title": "Hỗ trợ và quản trị vận hành — phần 1",
+    "kind": "usecase",
+    "description": "Tác nhân hình người nằm ngoài biên hệ thống; đường association nối trực tiếp tới ellipse UC. Mã nhóm ở sơ đồ tổng được phân rã trong các hình và đặc tả tiếp theo.",
+    "source": "backend/src/support"
+  },
+  {
+    "id": "CD-01",
+    "title": "Tài khoản và phân quyền",
+    "kind": "class",
+    "description": "Các lớp biểu diễn thực thể nghiệp vụ và các thuộc tính tiêu biểu; không tự gắn phương thức CRUD vào entity. Hình dùng để giải thích UC, không thay thế schema database.",
+    "source": "backend/prisma/schema.prisma"
+  },
+  {
+    "id": "CD-02",
+    "title": "Khu trọ phòng và dữ liệu phụ",
+    "kind": "class",
+    "description": "Các lớp biểu diễn thực thể nghiệp vụ và các thuộc tính tiêu biểu; không tự gắn phương thức CRUD vào entity. Hình dùng để giải thích UC, không thay thế schema database.",
+    "source": "backend/prisma/schema.prisma"
+  },
+  {
+    "id": "CD-03",
+    "title": "Tìm phòng và lịch xem",
+    "kind": "class",
+    "description": "Các lớp biểu diễn thực thể nghiệp vụ và các thuộc tính tiêu biểu; không tự gắn phương thức CRUD vào entity. Hình dùng để giải thích UC, không thay thế schema database.",
+    "source": "backend/prisma/schema.prisma"
+  },
+  {
+    "id": "CD-04",
+    "title": "Người thuê hợp đồng và vòng đời",
+    "kind": "class",
+    "description": "Các lớp biểu diễn thực thể nghiệp vụ và các thuộc tính tiêu biểu; không tự gắn phương thức CRUD vào entity. Hình dùng để giải thích UC, không thay thế schema database.",
+    "source": "backend/prisma/schema.prisma"
+  },
+  {
+    "id": "CD-05",
+    "title": "Tiền cọc và quyết toán",
+    "kind": "class",
+    "description": "Các lớp biểu diễn thực thể nghiệp vụ và các thuộc tính tiêu biểu; không tự gắn phương thức CRUD vào entity. Hình dùng để giải thích UC, không thay thế schema database.",
+    "source": "backend/prisma/schema.prisma"
+  },
+  {
+    "id": "CD-06",
+    "title": "Hóa đơn và giá phiên bản",
+    "kind": "class",
+    "description": "Các lớp biểu diễn thực thể nghiệp vụ và các thuộc tính tiêu biểu; không tự gắn phương thức CRUD vào entity. Hình dùng để giải thích UC, không thay thế schema database.",
+    "source": "backend/prisma/schema.prisma"
+  },
+  {
+    "id": "CD-07",
+    "title": "Khoản thu phân bổ và hoàn tiền",
+    "kind": "class",
+    "description": "Các lớp biểu diễn thực thể nghiệp vụ và các thuộc tính tiêu biểu; không tự gắn phương thức CRUD vào entity. Hình dùng để giải thích UC, không thay thế schema database.",
+    "source": "backend/prisma/schema.prisma"
+  },
+  {
+    "id": "CD-08",
+    "title": "Bảo trì và vận hành định kỳ",
+    "kind": "class",
+    "description": "Các lớp biểu diễn thực thể nghiệp vụ và các thuộc tính tiêu biểu; không tự gắn phương thức CRUD vào entity. Hình dùng để giải thích UC, không thay thế schema database.",
+    "source": "backend/prisma/schema.prisma"
+  },
+  {
+    "id": "CD-09",
+    "title": "Thông báo và delivery",
+    "kind": "class",
+    "description": "Các lớp biểu diễn thực thể nghiệp vụ và các thuộc tính tiêu biểu; không tự gắn phương thức CRUD vào entity. Hình dùng để giải thích UC, không thay thế schema database.",
+    "source": "backend/prisma/schema.prisma"
+  },
+  {
+    "id": "CD-10",
+    "title": "Quản trị nền tảng và đối soát",
+    "kind": "class",
+    "description": "Các lớp biểu diễn thực thể nghiệp vụ và các thuộc tính tiêu biểu; không tự gắn phương thức CRUD vào entity. Hình dùng để giải thích UC, không thay thế schema database.",
+    "source": "backend/prisma/schema.prisma"
+  },
+  {
+    "id": "CD-11",
+    "title": "Hỗ trợ và báo cáo quản trị",
+    "kind": "class",
+    "description": "Các lớp biểu diễn thực thể nghiệp vụ và các thuộc tính tiêu biểu; không tự gắn phương thức CRUD vào entity. Hình dùng để giải thích UC, không thay thế schema database.",
+    "source": "backend/prisma/schema.prisma"
+  },
+  {
+    "id": "CD-12",
+    "title": "Đánh giá tri thức và thanh toán demo",
+    "kind": "class",
+    "description": "Các lớp biểu diễn thực thể nghiệp vụ và các thuộc tính tiêu biểu; không tự gắn phương thức CRUD vào entity. Hình dùng để giải thích UC, không thay thế schema database.",
+    "source": "backend/prisma/schema.prisma"
+  },
+  {
+    "id": "CD-13",
+    "title": "Lời mời tệp và ngữ cảnh tìm phòng",
+    "kind": "class",
+    "description": "Các lớp biểu diễn thực thể nghiệp vụ và các thuộc tính tiêu biểu; không tự gắn phương thức CRUD vào entity. Hình dùng để giải thích UC, không thay thế schema database.",
+    "source": "backend/prisma/schema.prisma"
+  },
+  {
+    "id": "CD-14",
+    "title": "Mẫu thông báo nhóm nhận và automation",
+    "kind": "class",
+    "description": "Các lớp biểu diễn thực thể nghiệp vụ và các thuộc tính tiêu biểu; không tự gắn phương thức CRUD vào entity. Hình dùng để giải thích UC, không thay thế schema database.",
+    "source": "backend/prisma/schema.prisma"
+  },
+  {
+    "id": "CD-15",
+    "title": "Audit phiên đặc quyền và tổ chức Admin",
+    "kind": "class",
+    "description": "Các lớp biểu diễn thực thể nghiệp vụ và các thuộc tính tiêu biểu; không tự gắn phương thức CRUD vào entity. Hình dùng để giải thích UC, không thay thế schema database.",
+    "source": "backend/prisma/schema.prisma"
+  },
+  {
+    "id": "CD-16",
+    "title": "Telemetry sự cố và liên kết hỗ trợ",
+    "kind": "class",
+    "description": "Các lớp biểu diễn thực thể nghiệp vụ và các thuộc tính tiêu biểu; không tự gắn phương thức CRUD vào entity. Hình dùng để giải thích UC, không thay thế schema database.",
+    "source": "backend/prisma/schema.prisma"
+  },
+  {
+    "id": "CD-17",
+    "title": "Chính sách mẫu hỗ trợ và preference nền tảng",
+    "kind": "class",
+    "description": "Các lớp biểu diễn thực thể nghiệp vụ và các thuộc tính tiêu biểu; không tự gắn phương thức CRUD vào entity. Hình dùng để giải thích UC, không thay thế schema database.",
+    "source": "backend/prisma/schema.prisma"
+  },
+  {
+    "id": "CD-18",
+    "title": "Xác minh khu trọ và gói sử dụng nền tảng",
+    "kind": "class",
+    "description": "Các lớp biểu diễn thực thể nghiệp vụ và các thuộc tính tiêu biểu; không tự gắn phương thức CRUD vào entity. Hình dùng để giải thích UC, không thay thế schema database.",
+    "source": "backend/prisma/schema.prisma"
+  },
+  {
+    "id": "SD-01",
+    "title": "Đăng nhập và gia hạn phiên",
+    "kind": "sequence",
+    "refs": "UC-SYS-03, UC-SYS-04",
+    "source": "backend/src/auth/auth.service.ts:login; backend/src/auth/auth.service.ts:refresh; backend/src/auth/auth.service.ts:issueSession",
+    "description": "Chỉ lưu token do backend trả về; refresh từ chối xác thực thì yêu cầu đăng nhập lại, lỗi mạng cho phép thử lại.",
+    "pre": "Tài khoản đã đăng ký; màn hình chưa có phiên hoặc đang khôi phục phiên.",
+    "messages": [
+      {
+        "type": "message",
+        "sender": "actor",
+        "receiver": "ui",
+        "text": "Nhập email và mật khẩu",
+        "kind": "call",
+        "number": 1,
+        "lines": [
+          "1. Nhập email và mật khẩu"
+        ],
+        "baseline": 202,
+        "y": 211,
+        "depth": 0,
+        "context": []
+      },
+      {
+        "type": "message",
+        "sender": "ui",
+        "receiver": "service",
+        "text": "login(email, password)",
+        "kind": "call",
+        "number": 2,
+        "lines": [
+          "2. login(email, password)"
+        ],
+        "baseline": 249,
+        "y": 258,
+        "depth": 0,
+        "context": []
+      },
+      {
+        "type": "message",
+        "sender": "service",
+        "receiver": "data",
+        "text": "Đọc User theo email",
+        "kind": "call",
+        "number": 3,
+        "lines": [
+          "3. Đọc User theo email"
+        ],
+        "baseline": 296,
+        "y": 305,
+        "depth": 0,
+        "context": []
+      },
+      {
+        "type": "message",
+        "sender": "data",
+        "receiver": "service",
+        "text": "User hoặc không tồn tại",
+        "kind": "return",
+        "number": 4,
+        "lines": [
+          "4. User hoặc không tồn tại"
+        ],
+        "baseline": 343,
+        "y": 352,
+        "depth": 0,
+        "context": []
+      },
+      {
+        "type": "message",
+        "sender": "service",
+        "receiver": "ui",
+        "text": "401; không tạo phiên",
+        "kind": "return",
+        "number": 5,
+        "lines": [
+          "5. 401; không tạo phiên"
+        ],
+        "baseline": 427,
+        "y": 436,
+        "depth": 1,
+        "context": [
+          1004,
+          0
+        ]
+      },
+      {
+        "type": "message",
+        "sender": "service",
+        "receiver": "service",
+        "text": "Xác minh mã MFA / mã khôi phục",
+        "kind": "call",
+        "number": 6,
+        "lines": [
+          "6. Xác minh mã MFA / mã khôi phục"
+        ],
+        "baseline": 527,
+        "y": 536,
+        "depth": 1,
+        "context": [
+          1006,
+          0
+        ]
+      },
+      {
+        "type": "message",
+        "sender": "service",
+        "receiver": "ui",
+        "text": "MFA_REQUIRED / lỗi xác thực",
+        "kind": "return",
+        "number": 7,
+        "lines": [
+          "7. MFA_REQUIRED / lỗi xác thực"
+        ],
+        "baseline": 611,
+        "y": 620,
+        "depth": 2,
+        "context": [
+          1006,
+          0,
+          1007,
+          0
+        ]
+      },
+      {
+        "type": "message",
+        "sender": "service",
+        "receiver": "data",
+        "text": "TX: khóa User; kiểm tra version; tạo session và refresh token",
+        "kind": "call",
+        "number": 8,
+        "lines": [
+          "8. TX: khóa User; kiểm tra version; tạo session và refresh token"
+        ],
+        "baseline": 690,
+        "y": 699,
+        "depth": 0,
+        "context": []
+      },
+      {
+        "type": "message",
+        "sender": "data",
+        "receiver": "service",
+        "text": "Commit phiên và hạn token",
+        "kind": "return",
+        "number": 9,
+        "lines": [
+          "9. Commit phiên và hạn token"
+        ],
+        "baseline": 737,
+        "y": 746,
+        "depth": 0,
+        "context": []
+      },
+      {
+        "type": "message",
+        "sender": "service",
+        "receiver": "ui",
+        "text": "Access token, refresh token, user",
+        "kind": "return",
+        "number": 10,
+        "lines": [
+          "10. Access token, refresh token, user"
+        ],
+        "baseline": 784,
+        "y": 793,
+        "depth": 0,
+        "context": []
+      },
+      {
+        "type": "message",
+        "sender": "ui",
+        "receiver": "ui",
+        "text": "Lưu phiên an toàn; mở đúng vai trò",
+        "kind": "call",
+        "number": 11,
+        "lines": [
+          "11. Lưu phiên an toàn; mở đúng vai trò"
+        ],
+        "baseline": 831,
+        "y": 840,
+        "depth": 0,
+        "context": []
+      },
+      {
+        "type": "message",
+        "sender": "ui",
+        "receiver": "service",
+        "text": "refresh(rawToken)",
+        "kind": "call",
+        "number": 12,
+        "lines": [
+          "12. refresh(rawToken)"
+        ],
+        "baseline": 915,
+        "y": 924,
+        "depth": 1,
+        "context": [
+          1014,
+          0
+        ]
+      },
+      {
+        "type": "message",
+        "sender": "service",
+        "receiver": "data",
+        "text": "TX: khóa User; đọc token và session",
+        "kind": "call",
+        "number": 13,
+        "lines": [
+          "13. TX: khóa User; đọc token và session"
+        ],
+        "baseline": 962,
+        "y": 971,
+        "depth": 1,
+        "context": [
+          1014,
+          0
+        ]
+      },
+      {
+        "type": "message",
+        "sender": "data",
+        "receiver": "service",
+        "text": "Trạng thái, hạn và userVersion",
+        "kind": "return",
+        "number": 14,
+        "lines": [
+          "14. Trạng thái, hạn và userVersion"
+        ],
+        "baseline": 1009,
+        "y": 1018,
+        "depth": 1,
+        "context": [
+          1014,
+          0
+        ]
+      },
+      {
+        "type": "message",
+        "sender": "service",
+        "receiver": "ui",
+        "text": "401; yêu cầu đăng nhập lại",
+        "kind": "return",
+        "number": 15,
+        "lines": [
+          "15. 401; yêu cầu đăng nhập lại"
+        ],
+        "baseline": 1093,
+        "y": 1102,
+        "depth": 2,
+        "context": [
+          1014,
+          0,
+          1017,
+          0
+        ]
+      },
+      {
+        "type": "message",
+        "sender": "service",
+        "receiver": "data",
+        "text": "Thu hồi token cũ; ghi token thay thế",
+        "kind": "call",
+        "number": 16,
+        "lines": [
+          "16. Thu hồi token cũ; ghi token thay thế"
+        ],
+        "baseline": 1156,
+        "y": 1165,
+        "depth": 1,
+        "context": [
+          1014,
+          0
+        ]
+      },
+      {
+        "type": "message",
+        "sender": "data",
+        "receiver": "service",
+        "text": "Commit luân chuyển một lần",
+        "kind": "return",
+        "number": 17,
+        "lines": [
+          "17. Commit luân chuyển một lần"
+        ],
+        "baseline": 1203,
+        "y": 1212,
+        "depth": 1,
+        "context": [
+          1014,
+          0
+        ]
+      },
+      {
+        "type": "message",
+        "sender": "service",
+        "receiver": "ui",
+        "text": "Cặp token mới và thông tin phiên",
+        "kind": "return",
+        "number": 18,
+        "lines": [
+          "18. Cặp token mới và thông tin phiên"
+        ],
+        "baseline": 1250,
+        "y": 1259,
+        "depth": 1,
+        "context": [
+          1014,
+          0
+        ]
+      }
+    ],
+    "fragments": [
+      {
+        "top": 368,
+        "bottom": 457,
+        "depth": 0,
+        "kind": "break",
+        "guards": [
+          "[Không có user, bị khóa hoặc sai mật khẩu]"
+        ],
+        "divider": null,
+        "alt_lines": []
+      },
+      {
+        "top": 552,
+        "bottom": 641,
+        "depth": 1,
+        "kind": "break",
+        "guards": [
+          "[Thiếu hoặc sai mã MFA]"
+        ],
+        "divider": null,
+        "alt_lines": []
+      },
+      {
+        "top": 468,
+        "bottom": 657,
+        "depth": 0,
+        "kind": "opt",
+        "guards": [
+          "[Admin đã bật MFA]"
+        ],
+        "divider": null,
+        "alt_lines": []
+      },
+      {
+        "top": 1034,
+        "bottom": 1123,
+        "depth": 1,
+        "kind": "break",
+        "guards": [
+          "[Hết hạn, thu hồi hoặc version sai]"
+        ],
+        "divider": null,
+        "alt_lines": []
+      },
+      {
+        "top": 856,
+        "bottom": 1280,
+        "depth": 0,
+        "kind": "opt",
+        "guards": [
+          "[Cần gia hạn access token]"
+        ],
+        "divider": null,
+        "alt_lines": []
+      }
+    ],
+    "width": 1300,
+    "height": 1329
+  },
+  {
+    "id": "SD-02",
+    "title": "Đặt lịch xem và tạo hợp đồng từ lịch",
+    "kind": "sequence",
+    "refs": "UC-DIS-09, UC-DIS-11",
+    "source": "backend/src/housing/housing.service.ts:book; backend/src/housing/housing.service.ts:update; backend/src/housing/housing.service.ts:createLease",
+    "description": "LEASED chỉ sau khi tạo lease thành công; tin được ẩn và lịch khác được xử lý trong cùng transaction.",
+    "pre": "Người thuê có phiên tìm phòng; tin đang nhận khách; chủ trọ dùng phiên riêng.",
+    "messages": [
+      {
+        "type": "message",
+        "sender": "actor",
+        "receiver": "ui",
+        "text": "Chọn tin, thời gian và slot",
+        "kind": "call",
+        "number": 1,
+        "lines": [
+          "1. Chọn tin, thời gian và slot"
+        ],
+        "baseline": 202,
+        "y": 211,
+        "depth": 0,
+        "context": []
+      },
+      {
+        "type": "message",
+        "sender": "ui",
+        "receiver": "service",
+        "text": "book(listingId, scheduledAt, slotId)",
+        "kind": "call",
+        "number": 2,
+        "lines": [
+          "2. book(listingId, scheduledAt, slotId)"
+        ],
+        "baseline": 249,
+        "y": 258,
+        "depth": 0,
+        "context": []
+      },
+      {
+        "type": "message",
+        "sender": "service",
+        "receiver": "data",
+        "text": "TX: kiểm tra tin; reserveTime()",
+        "kind": "call",
+        "number": 3,
+        "lines": [
+          "3. TX: kiểm tra tin; reserveTime()"
+        ],
+        "baseline": 296,
+        "y": 305,
+        "depth": 0,
+        "context": []
+      },
+      {
+        "type": "message",
+        "sender": "data",
+        "receiver": "service",
+        "text": "Tin khả dụng và slot hợp lệ",
+        "kind": "return",
+        "number": 4,
+        "lines": [
+          "4. Tin khả dụng và slot hợp lệ"
+        ],
+        "baseline": 343,
+        "y": 352,
+        "depth": 0,
+        "context": []
+      },
+      {
+        "type": "message",
+        "sender": "service",
+        "receiver": "ui",
+        "text": "Lỗi; không tạo lịch xem",
+        "kind": "return",
+        "number": 5,
+        "lines": [
+          "5. Lỗi; không tạo lịch xem"
+        ],
+        "baseline": 427,
+        "y": 436,
+        "depth": 1,
+        "context": [
+          1004,
+          0
+        ]
+      },
+      {
+        "type": "message",
+        "sender": "service",
+        "receiver": "data",
+        "text": "Tạo REQUESTED và thông báo nội bộ",
+        "kind": "call",
+        "number": 6,
+        "lines": [
+          "6. Tạo REQUESTED và thông báo nội bộ"
+        ],
+        "baseline": 490,
+        "y": 499,
+        "depth": 0,
+        "context": []
+      },
+      {
+        "type": "message",
+        "sender": "data",
+        "receiver": "service",
+        "text": "Commit lịch xem",
+        "kind": "return",
+        "number": 7,
+        "lines": [
+          "7. Commit lịch xem"
+        ],
+        "baseline": 537,
+        "y": 546,
+        "depth": 0,
+        "context": []
+      },
+      {
+        "type": "message",
+        "sender": "service",
+        "receiver": "ui",
+        "text": "Lịch REQUESTED và version",
+        "kind": "return",
+        "number": 8,
+        "lines": [
+          "8. Lịch REQUESTED và version"
+        ],
+        "baseline": 584,
+        "y": 593,
+        "depth": 0,
+        "context": []
+      },
+      {
+        "type": "message",
+        "sender": "second",
+        "receiver": "ui",
+        "text": "Xác nhận rồi ghi đã xem sau giờ hẹn",
+        "kind": "call",
+        "number": 9,
+        "lines": [
+          "9. Xác nhận rồi ghi đã xem sau giờ hẹn"
+        ],
+        "baseline": 631,
+        "y": 640,
+        "depth": 0,
+        "context": []
+      },
+      {
+        "type": "message",
+        "sender": "ui",
+        "receiver": "service",
+        "text": "update(CONFIRMED / COMPLETED)",
+        "kind": "call",
+        "number": 10,
+        "lines": [
+          "10. update(CONFIRMED / COMPLETED)"
+        ],
+        "baseline": 678,
+        "y": 687,
+        "depth": 0,
+        "context": []
+      },
+      {
+        "type": "message",
+        "sender": "service",
+        "receiver": "data",
+        "text": "Khóa lịch; kiểm tra giờ, quyền, version; cập nhật",
+        "kind": "call",
+        "number": 11,
+        "lines": [
+          "11. Khóa lịch; kiểm tra giờ, quyền, version; cập nhật"
+        ],
+        "baseline": 725,
+        "y": 734,
+        "depth": 0,
+        "context": []
+      },
+      {
+        "type": "message",
+        "sender": "data",
+        "receiver": "service",
+        "text": "Lịch COMPLETED",
+        "kind": "return",
+        "number": 12,
+        "lines": [
+          "12. Lịch COMPLETED"
+        ],
+        "baseline": 772,
+        "y": 781,
+        "depth": 0,
+        "context": []
+      },
+      {
+        "type": "message",
+        "sender": "service",
+        "receiver": "ui",
+        "text": "Trạng thái mới và version",
+        "kind": "return",
+        "number": 13,
+        "lines": [
+          "13. Trạng thái mới và version"
+        ],
+        "baseline": 819,
+        "y": 828,
+        "depth": 0,
+        "context": []
+      },
+      {
+        "type": "message",
+        "sender": "second",
+        "receiver": "ui",
+        "text": "Chọn tạo hợp đồng",
+        "kind": "call",
+        "number": 14,
+        "lines": [
+          "14. Chọn tạo hợp đồng"
+        ],
+        "baseline": 866,
+        "y": 875,
+        "depth": 0,
+        "context": []
+      },
+      {
+        "type": "message",
+        "sender": "ui",
+        "receiver": "service",
+        "text": "createLease(viewingId, version, terms)",
+        "kind": "call",
+        "number": 15,
+        "lines": [
+          "15. createLease(viewingId, version, terms)"
+        ],
+        "baseline": 913,
+        "y": 922,
+        "depth": 0,
+        "context": []
+      },
+      {
+        "type": "message",
+        "sender": "service",
+        "receiver": "data",
+        "text": "TX: khóa lịch; kiểm tra COMPLETED, tin và tenant",
+        "kind": "call",
+        "number": 16,
+        "lines": [
+          "16. TX: khóa lịch; kiểm tra COMPLETED, tin và tenant"
+        ],
+        "baseline": 960,
+        "y": 969,
+        "depth": 0,
+        "context": []
+      },
+      {
+        "type": "message",
+        "sender": "data",
+        "receiver": "service",
+        "text": "Trạng thái hiện hành",
+        "kind": "return",
+        "number": 17,
+        "lines": [
+          "17. Trạng thái hiện hành"
+        ],
+        "baseline": 1007,
+        "y": 1016,
+        "depth": 0,
+        "context": []
+      },
+      {
+        "type": "message",
+        "sender": "service",
+        "receiver": "ui",
+        "text": "409; không tạo lease",
+        "kind": "return",
+        "number": 18,
+        "lines": [
+          "18. 409; không tạo lease"
+        ],
+        "baseline": 1091,
+        "y": 1100,
+        "depth": 1,
+        "context": [
+          1018,
+          0
+        ]
+      },
+      {
+        "type": "message",
+        "sender": "service",
+        "receiver": "data",
+        "text": "Tạo lease; LEASED; ẩn tin; hủy lịch còn lại; audit",
+        "kind": "call",
+        "number": 19,
+        "lines": [
+          "19. Tạo lease; LEASED; ẩn tin; hủy lịch còn lại; audit"
+        ],
+        "baseline": 1154,
+        "y": 1163,
+        "depth": 0,
+        "context": []
+      },
+      {
+        "type": "message",
+        "sender": "data",
+        "receiver": "service",
+        "text": "Commit lease và tenant",
+        "kind": "return",
+        "number": 20,
+        "lines": [
+          "20. Commit lease và tenant"
+        ],
+        "baseline": 1201,
+        "y": 1210,
+        "depth": 0,
+        "context": []
+      },
+      {
+        "type": "message",
+        "sender": "service",
+        "receiver": "ui",
+        "text": "leaseId và tenantId",
+        "kind": "return",
+        "number": 21,
+        "lines": [
+          "21. leaseId và tenantId"
+        ],
+        "baseline": 1248,
+        "y": 1257,
+        "depth": 0,
+        "context": []
+      }
+    ],
+    "fragments": [
+      {
+        "top": 368,
+        "bottom": 457,
+        "depth": 0,
+        "kind": "break",
+        "guards": [
+          "[Tin ngừng nhận hoặc trùng giờ / hết slot]"
+        ],
+        "divider": null,
+        "alt_lines": []
+      },
+      {
+        "top": 1032,
+        "bottom": 1121,
+        "depth": 0,
+        "kind": "break",
+        "guards": [
+          "[Phòng đổi trạng thái hoặc tenant ngoài scope]"
+        ],
+        "divider": null,
+        "alt_lines": []
+      }
+    ],
+    "width": 1300,
+    "height": 1311
+  },
+  {
+    "id": "SD-03",
+    "title": "Tạo hợp đồng và ghi nhận cọc",
+    "kind": "sequence",
+    "refs": "UC-TNT-05",
+    "source": "backend/src/leases/leases.service.ts:create; backend/src/leases/leases.service.ts:createWithinTransaction",
+    "description": "Lease ACTIVE và Room OCCUPIED đồng bộ; chỉ ghi COLLECTED nếu đầu vào cọc lớn hơn 0.",
+    "pre": "Có quyền tạo lease; phòng, hồ sơ người thuê và điều khoản đã được chọn.",
+    "messages": [
+      {
+        "type": "message",
+        "sender": "actor",
+        "receiver": "ui",
+        "text": "Nhập phòng, tenant và điều khoản",
+        "kind": "call",
+        "number": 1,
+        "lines": [
+          "1. Nhập phòng, tenant và điều khoản"
+        ],
+        "baseline": 202,
+        "y": 211,
+        "depth": 0,
+        "context": []
+      },
+      {
+        "type": "message",
+        "sender": "ui",
+        "receiver": "service",
+        "text": "create(leaseInput)",
+        "kind": "call",
+        "number": 2,
+        "lines": [
+          "2. create(leaseInput)"
+        ],
+        "baseline": 249,
+        "y": 258,
+        "depth": 0,
+        "context": []
+      },
+      {
+        "type": "message",
+        "sender": "service",
+        "receiver": "data",
+        "text": "TX: khóa Room; đọc property và tenant",
+        "kind": "call",
+        "number": 3,
+        "lines": [
+          "3. TX: khóa Room; đọc property và tenant"
+        ],
+        "baseline": 296,
+        "y": 305,
+        "depth": 0,
+        "context": []
+      },
+      {
+        "type": "message",
+        "sender": "data",
+        "receiver": "service",
+        "text": "Phạm vi và trạng thái hiện hành",
+        "kind": "return",
+        "number": 4,
+        "lines": [
+          "4. Phạm vi và trạng thái hiện hành"
+        ],
+        "baseline": 343,
+        "y": 352,
+        "depth": 0,
+        "context": []
+      },
+      {
+        "type": "message",
+        "sender": "service",
+        "receiver": "ui",
+        "text": "Từ chối; không ghi hợp đồng",
+        "kind": "return",
+        "number": 5,
+        "lines": [
+          "5. Từ chối; không ghi hợp đồng"
+        ],
+        "baseline": 427,
+        "y": 436,
+        "depth": 1,
+        "context": [
+          1004,
+          0
+        ]
+      },
+      {
+        "type": "message",
+        "sender": "service",
+        "receiver": "data",
+        "text": "Tìm lease ACTIVE của phòng",
+        "kind": "call",
+        "number": 6,
+        "lines": [
+          "6. Tìm lease ACTIVE của phòng"
+        ],
+        "baseline": 490,
+        "y": 499,
+        "depth": 0,
+        "context": []
+      },
+      {
+        "type": "message",
+        "sender": "data",
+        "receiver": "service",
+        "text": "Có hoặc không có lease",
+        "kind": "return",
+        "number": 7,
+        "lines": [
+          "7. Có hoặc không có lease"
+        ],
+        "baseline": 537,
+        "y": 546,
+        "depth": 0,
+        "context": []
+      },
+      {
+        "type": "message",
+        "sender": "service",
+        "receiver": "ui",
+        "text": "ROOM_ALREADY_LEASED; rollback",
+        "kind": "return",
+        "number": 8,
+        "lines": [
+          "8. ROOM_ALREADY_LEASED; rollback"
+        ],
+        "baseline": 621,
+        "y": 630,
+        "depth": 1,
+        "context": [
+          1008,
+          0
+        ]
+      },
+      {
+        "type": "message",
+        "sender": "service",
+        "receiver": "data",
+        "text": "Tạo Lease ACTIVE",
+        "kind": "call",
+        "number": 9,
+        "lines": [
+          "9. Tạo Lease ACTIVE"
+        ],
+        "baseline": 705,
+        "y": 714,
+        "depth": 1,
+        "context": [
+          1008,
+          1
+        ]
+      },
+      {
+        "type": "message",
+        "sender": "data",
+        "receiver": "service",
+        "text": "Lease mới",
+        "kind": "return",
+        "number": 10,
+        "lines": [
+          "10. Lease mới"
+        ],
+        "baseline": 752,
+        "y": 761,
+        "depth": 1,
+        "context": [
+          1008,
+          1
+        ]
+      },
+      {
+        "type": "message",
+        "sender": "service",
+        "receiver": "data",
+        "text": "Ghi DepositTransaction COLLECTED",
+        "kind": "call",
+        "number": 11,
+        "lines": [
+          "11. Ghi DepositTransaction COLLECTED"
+        ],
+        "baseline": 836,
+        "y": 845,
+        "depth": 2,
+        "context": [
+          1008,
+          1,
+          1011,
+          0
+        ]
+      },
+      {
+        "type": "message",
+        "sender": "data",
+        "receiver": "service",
+        "text": "Khoản cọc được ghi",
+        "kind": "return",
+        "number": 12,
+        "lines": [
+          "12. Khoản cọc được ghi"
+        ],
+        "baseline": 883,
+        "y": 892,
+        "depth": 2,
+        "context": [
+          1008,
+          1,
+          1011,
+          0
+        ]
+      },
+      {
+        "type": "message",
+        "sender": "service",
+        "receiver": "data",
+        "text": "Cập nhật Room OCCUPIED, tenantName",
+        "kind": "call",
+        "number": 13,
+        "lines": [
+          "13. Cập nhật Room OCCUPIED, tenantName"
+        ],
+        "baseline": 946,
+        "y": 955,
+        "depth": 1,
+        "context": [
+          1008,
+          1
+        ]
+      },
+      {
+        "type": "message",
+        "sender": "data",
+        "receiver": "service",
+        "text": "Commit transaction",
+        "kind": "return",
+        "number": 14,
+        "lines": [
+          "14. Commit transaction"
+        ],
+        "baseline": 993,
+        "y": 1002,
+        "depth": 1,
+        "context": [
+          1008,
+          1
+        ]
+      },
+      {
+        "type": "message",
+        "sender": "service",
+        "receiver": "ui",
+        "text": "Lease cùng thông tin phòng / tenant",
+        "kind": "return",
+        "number": 15,
+        "lines": [
+          "15. Lease cùng thông tin phòng / tenant"
+        ],
+        "baseline": 1040,
+        "y": 1049,
+        "depth": 1,
+        "context": [
+          1008,
+          1
+        ]
+      },
+      {
+        "type": "message",
+        "sender": "ui",
+        "receiver": "actor",
+        "text": "Hiển thị hợp đồng mới",
+        "kind": "return",
+        "number": 16,
+        "lines": [
+          "16. Hiển thị hợp đồng mới"
+        ],
+        "baseline": 1087,
+        "y": 1096,
+        "depth": 1,
+        "context": [
+          1008,
+          1
+        ]
+      }
+    ],
+    "fragments": [
+      {
+        "top": 368,
+        "bottom": 457,
+        "depth": 0,
+        "kind": "break",
+        "guards": [
+          "[Ngoài scope, bị lưu trữ, inactive hoặc turnover]"
+        ],
+        "divider": null,
+        "alt_lines": []
+      },
+      {
+        "top": 777,
+        "bottom": 913,
+        "depth": 1,
+        "kind": "opt",
+        "guards": [
+          "[deposit > 0]"
+        ],
+        "divider": null,
+        "alt_lines": []
+      },
+      {
+        "top": 562,
+        "bottom": 1117,
+        "depth": 0,
+        "kind": "alt",
+        "guards": [
+          "[Đã có lease ACTIVE]"
+        ],
+        "divider": 646,
+        "alt_lines": [
+          "[Không có lease ACTIVE]"
+        ]
+      }
+    ],
+    "width": 1300,
+    "height": 1166
+  },
+  {
+    "id": "SD-04",
+    "title": "Đề xuất và duyệt biểu phí",
+    "kind": "sequence",
+    "refs": "UC-BIL-15, UC-BIL-16",
+    "source": "backend/src/billing/billing-tariffs.service.ts:propose; backend/src/billing/billing-tariffs.service.ts:impact; backend/src/billing/billing-tariffs.service.ts:review",
+    "description": "Giữ lịch sử giá theo hiệu lực; không áp giá đề xuất chưa được duyệt cho hóa đơn đã phát hành.",
+    "pre": "Chủ trọ đúng phạm vi khu; thao tác duyệt cần billing.tariff_approve.",
+    "messages": [
+      {
+        "type": "message",
+        "sender": "actor",
+        "receiver": "ui",
+        "text": "Nhập biểu phí và tháng hiệu lực",
+        "kind": "call",
+        "number": 1,
+        "lines": [
+          "1. Nhập biểu phí và tháng hiệu lực"
+        ],
+        "baseline": 202,
+        "y": 211,
+        "depth": 0,
+        "context": []
+      },
+      {
+        "type": "message",
+        "sender": "ui",
+        "receiver": "service",
+        "text": "propose(input, requestKey)",
+        "kind": "call",
+        "number": 2,
+        "lines": [
+          "2. propose(input, requestKey)"
+        ],
+        "baseline": 249,
+        "y": 258,
+        "depth": 0,
+        "context": []
+      },
+      {
+        "type": "message",
+        "sender": "service",
+        "receiver": "data",
+        "text": "TX: kiểm tra scope, kỳ; lưu PROPOSED",
+        "kind": "call",
+        "number": 3,
+        "lines": [
+          "3. TX: kiểm tra scope, kỳ; lưu PROPOSED"
+        ],
+        "baseline": 296,
+        "y": 305,
+        "depth": 0,
+        "context": []
+      },
+      {
+        "type": "message",
+        "sender": "data",
+        "receiver": "service",
+        "text": "Đề xuất đã lưu",
+        "kind": "return",
+        "number": 4,
+        "lines": [
+          "4. Đề xuất đã lưu"
+        ],
+        "baseline": 343,
+        "y": 352,
+        "depth": 0,
+        "context": []
+      },
+      {
+        "type": "message",
+        "sender": "service",
+        "receiver": "ui",
+        "text": "Proposal và trạng thái",
+        "kind": "return",
+        "number": 5,
+        "lines": [
+          "5. Proposal và trạng thái"
+        ],
+        "baseline": 390,
+        "y": 399,
+        "depth": 0,
+        "context": []
+      },
+      {
+        "type": "message",
+        "sender": "ui",
+        "receiver": "service",
+        "text": "impact(proposalId)",
+        "kind": "call",
+        "number": 6,
+        "lines": [
+          "6. impact(proposalId)"
+        ],
+        "baseline": 437,
+        "y": 446,
+        "depth": 0,
+        "context": []
+      },
+      {
+        "type": "message",
+        "sender": "service",
+        "receiver": "data",
+        "text": "Đọc giá nền, phòng, invoice và kỳ khóa",
+        "kind": "call",
+        "number": 7,
+        "lines": [
+          "7. Đọc giá nền, phòng, invoice và kỳ khóa"
+        ],
+        "baseline": 484,
+        "y": 493,
+        "depth": 0,
+        "context": []
+      },
+      {
+        "type": "message",
+        "sender": "data",
+        "receiver": "service",
+        "text": "Tác động và blockingReasons",
+        "kind": "return",
+        "number": 8,
+        "lines": [
+          "8. Tác động và blockingReasons"
+        ],
+        "baseline": 531,
+        "y": 540,
+        "depth": 0,
+        "context": []
+      },
+      {
+        "type": "message",
+        "sender": "service",
+        "receiver": "ui",
+        "text": "Impact và canApprove",
+        "kind": "return",
+        "number": 9,
+        "lines": [
+          "9. Impact và canApprove"
+        ],
+        "baseline": 578,
+        "y": 587,
+        "depth": 0,
+        "context": []
+      },
+      {
+        "type": "message",
+        "sender": "actor",
+        "receiver": "ui",
+        "text": "Chọn duyệt hoặc từ chối; nhập lý do",
+        "kind": "call",
+        "number": 10,
+        "lines": [
+          "10. Chọn duyệt hoặc từ chối; nhập lý do"
+        ],
+        "baseline": 625,
+        "y": 634,
+        "depth": 0,
+        "context": []
+      },
+      {
+        "type": "message",
+        "sender": "ui",
+        "receiver": "service",
+        "text": "review(decision, reason, requestKey)",
+        "kind": "call",
+        "number": 11,
+        "lines": [
+          "11. review(decision, reason, requestKey)"
+        ],
+        "baseline": 672,
+        "y": 681,
+        "depth": 0,
+        "context": []
+      },
+      {
+        "type": "message",
+        "sender": "service",
+        "receiver": "data",
+        "text": "TX: khóa Property; đọc lại proposal",
+        "kind": "call",
+        "number": 12,
+        "lines": [
+          "12. TX: khóa Property; đọc lại proposal"
+        ],
+        "baseline": 719,
+        "y": 728,
+        "depth": 0,
+        "context": []
+      },
+      {
+        "type": "message",
+        "sender": "data",
+        "receiver": "service",
+        "text": "Trạng thái PROPOSED hiện hành",
+        "kind": "return",
+        "number": 13,
+        "lines": [
+          "13. Trạng thái PROPOSED hiện hành"
+        ],
+        "baseline": 766,
+        "y": 775,
+        "depth": 0,
+        "context": []
+      },
+      {
+        "type": "message",
+        "sender": "service",
+        "receiver": "ui",
+        "text": "409; không ghi quyết định mới",
+        "kind": "return",
+        "number": 14,
+        "lines": [
+          "14. 409; không ghi quyết định mới"
+        ],
+        "baseline": 850,
+        "y": 859,
+        "depth": 1,
+        "context": [
+          1013,
+          0
+        ]
+      },
+      {
+        "type": "message",
+        "sender": "service",
+        "receiver": "data",
+        "text": "Kiểm tra backdate, invoice, kỳ khóa, thứ tự hiệu lực",
+        "kind": "call",
+        "number": 15,
+        "lines": [
+          "15. Kiểm tra backdate, invoice, kỳ khóa, thứ tự hiệu lực"
+        ],
+        "baseline": 950,
+        "y": 959,
+        "depth": 1,
+        "context": [
+          1015,
+          0
+        ]
+      },
+      {
+        "type": "message",
+        "sender": "data",
+        "receiver": "service",
+        "text": "Đủ hoặc thiếu điều kiện",
+        "kind": "return",
+        "number": 16,
+        "lines": [
+          "16. Đủ hoặc thiếu điều kiện"
+        ],
+        "baseline": 997,
+        "y": 1006,
+        "depth": 1,
+        "context": [
+          1015,
+          0
+        ]
+      },
+      {
+        "type": "message",
+        "sender": "service",
+        "receiver": "ui",
+        "text": "Không áp giá; rollback",
+        "kind": "return",
+        "number": 17,
+        "lines": [
+          "17. Không áp giá; rollback"
+        ],
+        "baseline": 1081,
+        "y": 1090,
+        "depth": 2,
+        "context": [
+          1015,
+          0,
+          1017,
+          0
+        ]
+      },
+      {
+        "type": "message",
+        "sender": "service",
+        "receiver": "service",
+        "text": "Giữ proposal; ghi lý do từ chối",
+        "kind": "call",
+        "number": 18,
+        "lines": [
+          "18. Giữ proposal; ghi lý do từ chối"
+        ],
+        "baseline": 1181,
+        "y": 1190,
+        "depth": 1,
+        "context": [
+          1015,
+          1
+        ]
+      },
+      {
+        "type": "message",
+        "sender": "service",
+        "receiver": "data",
+        "text": "Ghi decision, event, audit và command",
+        "kind": "call",
+        "number": 19,
+        "lines": [
+          "19. Ghi decision, event, audit và command"
+        ],
+        "baseline": 1244,
+        "y": 1253,
+        "depth": 0,
+        "context": []
+      },
+      {
+        "type": "message",
+        "sender": "data",
+        "receiver": "service",
+        "text": "Commit kết quả review",
+        "kind": "return",
+        "number": 20,
+        "lines": [
+          "20. Commit kết quả review"
+        ],
+        "baseline": 1291,
+        "y": 1300,
+        "depth": 0,
+        "context": []
+      },
+      {
+        "type": "message",
+        "sender": "service",
+        "receiver": "ui",
+        "text": "Biểu phí cùng trạng thái mới",
+        "kind": "return",
+        "number": 21,
+        "lines": [
+          "21. Biểu phí cùng trạng thái mới"
+        ],
+        "baseline": 1338,
+        "y": 1347,
+        "depth": 0,
+        "context": []
+      }
+    ],
+    "fragments": [
+      {
+        "top": 791,
+        "bottom": 880,
+        "depth": 0,
+        "kind": "break",
+        "guards": [
+          "[Đã review hoặc requestKey khác payload]"
+        ],
+        "divider": null,
+        "alt_lines": []
+      },
+      {
+        "top": 1022,
+        "bottom": 1111,
+        "depth": 1,
+        "kind": "break",
+        "guards": [
+          "[Kỳ bị chặn hoặc thứ tự không hợp lệ]"
+        ],
+        "divider": null,
+        "alt_lines": []
+      },
+      {
+        "top": 891,
+        "bottom": 1211,
+        "depth": 0,
+        "kind": "alt",
+        "guards": [
+          "[decision = APPROVED]"
+        ],
+        "divider": 1122,
+        "alt_lines": [
+          "[decision = REJECTED]"
+        ]
+      }
+    ],
+    "width": 1300,
+    "height": 1401
+  },
+  {
+    "id": "SD-05",
+    "title": "Xem trước và phát hành hóa đơn",
+    "kind": "sequence",
+    "refs": "UC-BIL-02, UC-BIL-03",
+    "source": "backend/src/billing/billing-tariffs.service.ts:preview; backend/src/billing/billing.service.ts:createInvoice; backend/src/billing/billing.service.ts:bulkInvoicePreflight; backend/src/billing/billing.service.ts:createBulkInvoices",
+    "description": "Preview không giữ khóa tới lần ghi; bulk trả kết quả tạo, bỏ qua và lỗi, không giả định mọi phòng đều thành công.",
+    "pre": "Có lease trong scope, kỳ lập hóa đơn và chỉ số điện nước.",
+    "messages": [
+      {
+        "type": "message",
+        "sender": "actor",
+        "receiver": "ui",
+        "text": "Chọn kỳ, hợp đồng và chỉ số",
+        "kind": "call",
+        "number": 1,
+        "lines": [
+          "1. Chọn kỳ, hợp đồng và chỉ số"
+        ],
+        "baseline": 202,
+        "y": 211,
+        "depth": 0,
+        "context": []
+      },
+      {
+        "type": "message",
+        "sender": "ui",
+        "receiver": "service",
+        "text": "preview() / bulkInvoicePreflight()",
+        "kind": "call",
+        "number": 2,
+        "lines": [
+          "2. preview() / bulkInvoicePreflight()"
+        ],
+        "baseline": 249,
+        "y": 258,
+        "depth": 0,
+        "context": []
+      },
+      {
+        "type": "message",
+        "sender": "service",
+        "receiver": "data",
+        "text": "Đọc lease, meter, biểu phí hiệu lực",
+        "kind": "call",
+        "number": 3,
+        "lines": [
+          "3. Đọc lease, meter, biểu phí hiệu lực"
+        ],
+        "baseline": 296,
+        "y": 305,
+        "depth": 0,
+        "context": []
+      },
+      {
+        "type": "message",
+        "sender": "data",
+        "receiver": "service",
+        "text": "Dữ liệu tính giá theo kỳ",
+        "kind": "return",
+        "number": 4,
+        "lines": [
+          "4. Dữ liệu tính giá theo kỳ"
+        ],
+        "baseline": 343,
+        "y": 352,
+        "depth": 0,
+        "context": []
+      },
+      {
+        "type": "message",
+        "sender": "service",
+        "receiver": "service",
+        "text": "Tính dòng tiền, nguồn giá và lỗi thiếu",
+        "kind": "call",
+        "number": 5,
+        "lines": [
+          "5. Tính dòng tiền, nguồn giá và lỗi thiếu"
+        ],
+        "baseline": 390,
+        "y": 399,
+        "depth": 0,
+        "context": []
+      },
+      {
+        "type": "message",
+        "sender": "service",
+        "receiver": "ui",
+        "text": "Preview / kết quả từng phòng",
+        "kind": "return",
+        "number": 6,
+        "lines": [
+          "6. Preview / kết quả từng phòng"
+        ],
+        "baseline": 437,
+        "y": 446,
+        "depth": 0,
+        "context": []
+      },
+      {
+        "type": "message",
+        "sender": "actor",
+        "receiver": "ui",
+        "text": "Xác nhận nội dung đã xem",
+        "kind": "call",
+        "number": 7,
+        "lines": [
+          "7. Xác nhận nội dung đã xem"
+        ],
+        "baseline": 521,
+        "y": 530,
+        "depth": 1,
+        "context": [
+          1006,
+          0
+        ]
+      },
+      {
+        "type": "message",
+        "sender": "ui",
+        "receiver": "service",
+        "text": "createInvoice() / createBulkInvoices()",
+        "kind": "call",
+        "number": 8,
+        "lines": [
+          "8. createInvoice() / createBulkInvoices()"
+        ],
+        "baseline": 568,
+        "y": 577,
+        "depth": 1,
+        "context": [
+          1006,
+          0
+        ]
+      },
+      {
+        "type": "message",
+        "sender": "service",
+        "receiver": "data",
+        "text": "TX: khóa lease / phòng; kiểm tra lại kỳ và trùng",
+        "kind": "call",
+        "number": 9,
+        "lines": [
+          "9. TX: khóa lease / phòng; kiểm tra lại kỳ và trùng"
+        ],
+        "baseline": 652,
+        "y": 661,
+        "depth": 2,
+        "context": [
+          1006,
+          0,
+          1008,
+          0
+        ]
+      },
+      {
+        "type": "message",
+        "sender": "data",
+        "receiver": "service",
+        "text": "Dữ liệu tại thời điểm ghi",
+        "kind": "return",
+        "number": 10,
+        "lines": [
+          "10. Dữ liệu tại thời điểm ghi"
+        ],
+        "baseline": 699,
+        "y": 708,
+        "depth": 2,
+        "context": [
+          1006,
+          0,
+          1008,
+          0
+        ]
+      },
+      {
+        "type": "message",
+        "sender": "service",
+        "receiver": "data",
+        "text": "Ghi Invoice và line item snapshot",
+        "kind": "call",
+        "number": 11,
+        "lines": [
+          "11. Ghi Invoice và line item snapshot"
+        ],
+        "baseline": 783,
+        "y": 792,
+        "depth": 3,
+        "context": [
+          1006,
+          0,
+          1008,
+          0,
+          1010,
+          0
+        ]
+      },
+      {
+        "type": "message",
+        "sender": "data",
+        "receiver": "service",
+        "text": "Commit hóa đơn",
+        "kind": "return",
+        "number": 12,
+        "lines": [
+          "12. Commit hóa đơn"
+        ],
+        "baseline": 830,
+        "y": 839,
+        "depth": 3,
+        "context": [
+          1006,
+          0,
+          1008,
+          0,
+          1010,
+          0
+        ]
+      },
+      {
+        "type": "message",
+        "sender": "service",
+        "receiver": "service",
+        "text": "Giữ lỗi / bỏ qua theo từng mục",
+        "kind": "call",
+        "number": 13,
+        "lines": [
+          "13. Giữ lỗi / bỏ qua theo từng mục"
+        ],
+        "baseline": 914,
+        "y": 923,
+        "depth": 3,
+        "context": [
+          1006,
+          0,
+          1008,
+          0,
+          1010,
+          1
+        ]
+      },
+      {
+        "type": "message",
+        "sender": "service",
+        "receiver": "ui",
+        "text": "Hóa đơn hoặc thống kê bulk",
+        "kind": "return",
+        "number": 14,
+        "lines": [
+          "14. Hóa đơn hoặc thống kê bulk"
+        ],
+        "baseline": 993,
+        "y": 1002,
+        "depth": 1,
+        "context": [
+          1006,
+          0
+        ]
+      },
+      {
+        "type": "message",
+        "sender": "ui",
+        "receiver": "actor",
+        "text": "Hiển thị kết quả, không báo thành công toàn bộ",
+        "kind": "return",
+        "number": 15,
+        "lines": [
+          "15. Hiển thị kết quả, không báo thành công toàn bộ"
+        ],
+        "baseline": 1040,
+        "y": 1049,
+        "depth": 1,
+        "context": [
+          1006,
+          0
+        ]
+      }
+    ],
+    "fragments": [
+      {
+        "top": 724,
+        "bottom": 944,
+        "depth": 2,
+        "kind": "alt",
+        "guards": [
+          "[Đủ điều kiện ghi]"
+        ],
+        "divider": 855,
+        "alt_lines": [
+          "[Trùng hoặc không hợp lệ]"
+        ]
+      },
+      {
+        "top": 593,
+        "bottom": 960,
+        "depth": 1,
+        "kind": "loop",
+        "guards": [
+          "[Mỗi hợp đồng được chọn]"
+        ],
+        "divider": null,
+        "alt_lines": []
+      },
+      {
+        "top": 462,
+        "bottom": 1070,
+        "depth": 0,
+        "kind": "opt",
+        "guards": [
+          "[Chủ trọ xác nhận phát hành]"
+        ],
+        "divider": null,
+        "alt_lines": []
+      }
+    ],
+    "width": 1300,
+    "height": 1119
+  },
+  {
+    "id": "SD-06",
+    "title": "Ghi khoản thu và phân bổ nhiều hóa đơn",
+    "kind": "sequence",
+    "refs": "UC-BIL-10, UC-BIL-11",
+    "source": "backend/src/billing/billing-ledger.service.ts:createReceipt; backend/src/billing/billing-ledger.service.ts:allocate; backend/src/billing/billing-ledger.service.ts:allocateLines; backend/src/billing/billing-commands.service.ts:execute",
+    "description": "Receipt khả dụng chưa phân bổ không giảm công nợ; Payment và Allocation chỉ được ghi trong transaction thành công.",
+    "pre": "Có tenant thuộc chủ trọ; khoản tiền thực nhận và tham chiếu đã được xác nhận.",
+    "messages": [
+      {
+        "type": "message",
+        "sender": "actor",
+        "receiver": "ui",
+        "text": "Nhập số tiền, tham chiếu, hóa đơn",
+        "kind": "call",
+        "number": 1,
+        "lines": [
+          "1. Nhập số tiền, tham chiếu, hóa đơn"
+        ],
+        "baseline": 202,
+        "y": 211,
+        "depth": 0,
+        "context": []
+      },
+      {
+        "type": "message",
+        "sender": "ui",
+        "receiver": "service",
+        "text": "createReceipt(input, requestKey)",
+        "kind": "call",
+        "number": 2,
+        "lines": [
+          "2. createReceipt(input, requestKey)"
+        ],
+        "baseline": 249,
+        "y": 258,
+        "depth": 0,
+        "context": []
+      },
+      {
+        "type": "message",
+        "sender": "service",
+        "receiver": "data",
+        "text": "TX: khóa command key; đọc hash cũ",
+        "kind": "call",
+        "number": 3,
+        "lines": [
+          "3. TX: khóa command key; đọc hash cũ"
+        ],
+        "baseline": 296,
+        "y": 305,
+        "depth": 0,
+        "context": []
+      },
+      {
+        "type": "message",
+        "sender": "data",
+        "receiver": "service",
+        "text": "Command cũ hoặc chưa tồn tại",
+        "kind": "return",
+        "number": 4,
+        "lines": [
+          "4. Command cũ hoặc chưa tồn tại"
+        ],
+        "baseline": 343,
+        "y": 352,
+        "depth": 0,
+        "context": []
+      },
+      {
+        "type": "message",
+        "sender": "service",
+        "receiver": "ui",
+        "text": "Cùng hash: kết quả cũ; khác hash: 409",
+        "kind": "return",
+        "number": 5,
+        "lines": [
+          "5. Cùng hash: kết quả cũ; khác hash: 409"
+        ],
+        "baseline": 427,
+        "y": 436,
+        "depth": 1,
+        "context": [
+          1004,
+          0
+        ]
+      },
+      {
+        "type": "message",
+        "sender": "service",
+        "receiver": "data",
+        "text": "Kiểm tra tenant; tạo receipt khả dụng",
+        "kind": "call",
+        "number": 6,
+        "lines": [
+          "6. Kiểm tra tenant; tạo receipt khả dụng"
+        ],
+        "baseline": 490,
+        "y": 499,
+        "depth": 0,
+        "context": []
+      },
+      {
+        "type": "message",
+        "sender": "data",
+        "receiver": "service",
+        "text": "Receipt mới trong transaction",
+        "kind": "return",
+        "number": 7,
+        "lines": [
+          "7. Receipt mới trong transaction"
+        ],
+        "baseline": 537,
+        "y": 546,
+        "depth": 0,
+        "context": []
+      },
+      {
+        "type": "message",
+        "sender": "service",
+        "receiver": "data",
+        "text": "Khóa invoice; kiểm tra tenant và dư nợ",
+        "kind": "call",
+        "number": 8,
+        "lines": [
+          "8. Khóa invoice; kiểm tra tenant và dư nợ"
+        ],
+        "baseline": 621,
+        "y": 630,
+        "depth": 1,
+        "context": [
+          1008,
+          0
+        ]
+      },
+      {
+        "type": "message",
+        "sender": "data",
+        "receiver": "service",
+        "text": "Số dư hiện hành",
+        "kind": "return",
+        "number": 9,
+        "lines": [
+          "9. Số dư hiện hành"
+        ],
+        "baseline": 668,
+        "y": 677,
+        "depth": 1,
+        "context": [
+          1008,
+          0
+        ]
+      },
+      {
+        "type": "message",
+        "sender": "service",
+        "receiver": "ui",
+        "text": "Lỗi; rollback toàn bộ lệnh",
+        "kind": "return",
+        "number": 10,
+        "lines": [
+          "10. Lỗi; rollback toàn bộ lệnh"
+        ],
+        "baseline": 752,
+        "y": 761,
+        "depth": 2,
+        "context": [
+          1008,
+          0,
+          1010,
+          0
+        ]
+      },
+      {
+        "type": "message",
+        "sender": "service",
+        "receiver": "data",
+        "text": "Tạo Payment, Allocation; cập nhật invoice",
+        "kind": "call",
+        "number": 11,
+        "lines": [
+          "11. Tạo Payment, Allocation; cập nhật invoice"
+        ],
+        "baseline": 815,
+        "y": 824,
+        "depth": 1,
+        "context": [
+          1008,
+          0
+        ]
+      },
+      {
+        "type": "message",
+        "sender": "data",
+        "receiver": "service",
+        "text": "Phân bổ trong transaction",
+        "kind": "return",
+        "number": 12,
+        "lines": [
+          "12. Phân bổ trong transaction"
+        ],
+        "baseline": 862,
+        "y": 871,
+        "depth": 1,
+        "context": [
+          1008,
+          0
+        ]
+      },
+      {
+        "type": "message",
+        "sender": "service",
+        "receiver": "data",
+        "text": "Giảm available; event, audit, command",
+        "kind": "call",
+        "number": 13,
+        "lines": [
+          "13. Giảm available; event, audit, command"
+        ],
+        "baseline": 925,
+        "y": 934,
+        "depth": 0,
+        "context": []
+      },
+      {
+        "type": "message",
+        "sender": "data",
+        "receiver": "service",
+        "text": "Commit receipt và số dư",
+        "kind": "return",
+        "number": 14,
+        "lines": [
+          "14. Commit receipt và số dư"
+        ],
+        "baseline": 972,
+        "y": 981,
+        "depth": 0,
+        "context": []
+      },
+      {
+        "type": "message",
+        "sender": "service",
+        "receiver": "ui",
+        "text": "Receipt, allocations, availableAmount",
+        "kind": "return",
+        "number": 15,
+        "lines": [
+          "15. Receipt, allocations, availableAmount"
+        ],
+        "baseline": 1019,
+        "y": 1028,
+        "depth": 0,
+        "context": []
+      },
+      {
+        "type": "message",
+        "sender": "ui",
+        "receiver": "service",
+        "text": "allocate(receiptId, lines, requestKey)",
+        "kind": "call",
+        "number": 16,
+        "lines": [
+          "16. allocate(receiptId, lines, requestKey)"
+        ],
+        "baseline": 1103,
+        "y": 1112,
+        "depth": 1,
+        "context": [
+          1018,
+          0
+        ]
+      },
+      {
+        "type": "message",
+        "sender": "service",
+        "receiver": "data",
+        "text": "Khóa receipt; áp dụng kiểm tra và phân bổ như trên",
+        "kind": "call",
+        "number": 17,
+        "lines": [
+          "17. Khóa receipt; áp dụng kiểm tra và phân bổ như trên"
+        ],
+        "baseline": 1150,
+        "y": 1159,
+        "depth": 1,
+        "context": [
+          1018,
+          0
+        ]
+      },
+      {
+        "type": "message",
+        "sender": "data",
+        "receiver": "service",
+        "text": "Commit hoặc rollback lệnh mới",
+        "kind": "return",
+        "number": 18,
+        "lines": [
+          "18. Commit hoặc rollback lệnh mới"
+        ],
+        "baseline": 1197,
+        "y": 1206,
+        "depth": 1,
+        "context": [
+          1018,
+          0
+        ]
+      },
+      {
+        "type": "message",
+        "sender": "service",
+        "receiver": "ui",
+        "text": "Receipt và công nợ cập nhật",
+        "kind": "return",
+        "number": 19,
+        "lines": [
+          "19. Receipt và công nợ cập nhật"
+        ],
+        "baseline": 1244,
+        "y": 1253,
+        "depth": 1,
+        "context": [
+          1018,
+          0
+        ]
+      }
+    ],
+    "fragments": [
+      {
+        "top": 368,
+        "bottom": 457,
+        "depth": 0,
+        "kind": "break",
+        "guards": [
+          "[Đã có requestKey]"
+        ],
+        "divider": null,
+        "alt_lines": []
+      },
+      {
+        "top": 693,
+        "bottom": 782,
+        "depth": 1,
+        "kind": "break",
+        "guards": [
+          "[Trùng invoice, sai tenant hoặc vượt dư]"
+        ],
+        "divider": null,
+        "alt_lines": []
+      },
+      {
+        "top": 562,
+        "bottom": 892,
+        "depth": 0,
+        "kind": "loop",
+        "guards": [
+          "[Mỗi allocation; khóa invoice theo ID]"
+        ],
+        "divider": null,
+        "alt_lines": []
+      },
+      {
+        "top": 1044,
+        "bottom": 1274,
+        "depth": 0,
+        "kind": "opt",
+        "guards": [
+          "[Phân bổ thêm từ receipt đã tồn tại]"
+        ],
+        "divider": null,
+        "alt_lines": []
+      }
+    ],
+    "width": 1300,
+    "height": 1323
+  },
+  {
+    "id": "SD-07",
+    "title": "Giải phóng phân bổ và ghi nhận hoàn tiền",
+    "kind": "sequence",
+    "refs": "UC-BIL-12, UC-BIL-13",
+    "source": "backend/src/billing/billing-ledger.service.ts:release; backend/src/billing/billing-ledger.service.ts:refund",
+    "description": "Giữ payment gốc; hoàn tiền chỉ là ghi sổ, không chuyển khoản ngân hàng.",
+    "pre": "Có receipt / allocation thuộc scope; chủ trọ cung cấp lý do và requestKey riêng từng lệnh.",
+    "messages": [
+      {
+        "type": "message",
+        "sender": "actor",
+        "receiver": "ui",
+        "text": "Chọn allocation, nhập lý do",
+        "kind": "call",
+        "number": 1,
+        "lines": [
+          "1. Chọn allocation, nhập lý do"
+        ],
+        "baseline": 202,
+        "y": 211,
+        "depth": 0,
+        "context": []
+      },
+      {
+        "type": "message",
+        "sender": "ui",
+        "receiver": "service",
+        "text": "release(receiptId, allocationId, key)",
+        "kind": "call",
+        "number": 2,
+        "lines": [
+          "2. release(receiptId, allocationId, key)"
+        ],
+        "baseline": 249,
+        "y": 258,
+        "depth": 0,
+        "context": []
+      },
+      {
+        "type": "message",
+        "sender": "service",
+        "receiver": "data",
+        "text": "TX: idempotency; khóa receipt và invoice",
+        "kind": "call",
+        "number": 3,
+        "lines": [
+          "3. TX: idempotency; khóa receipt và invoice"
+        ],
+        "baseline": 296,
+        "y": 305,
+        "depth": 0,
+        "context": []
+      },
+      {
+        "type": "message",
+        "sender": "data",
+        "receiver": "service",
+        "text": "Allocation và số dư hiện tại",
+        "kind": "return",
+        "number": 4,
+        "lines": [
+          "4. Allocation và số dư hiện tại"
+        ],
+        "baseline": 343,
+        "y": 352,
+        "depth": 0,
+        "context": []
+      },
+      {
+        "type": "message",
+        "sender": "service",
+        "receiver": "ui",
+        "text": "Từ chối; không đảo trùng",
+        "kind": "return",
+        "number": 5,
+        "lines": [
+          "5. Từ chối; không đảo trùng"
+        ],
+        "baseline": 427,
+        "y": 436,
+        "depth": 1,
+        "context": [
+          1004,
+          0
+        ]
+      },
+      {
+        "type": "message",
+        "sender": "service",
+        "receiver": "data",
+        "text": "Ghi REVERSAL âm; release allocation; cập nhật số dư",
+        "kind": "call",
+        "number": 6,
+        "lines": [
+          "6. Ghi REVERSAL âm; release allocation; cập nhật số dư"
+        ],
+        "baseline": 490,
+        "y": 499,
+        "depth": 0,
+        "context": []
+      },
+      {
+        "type": "message",
+        "sender": "data",
+        "receiver": "service",
+        "text": "Commit event, audit và command",
+        "kind": "return",
+        "number": 7,
+        "lines": [
+          "7. Commit event, audit và command"
+        ],
+        "baseline": 537,
+        "y": 546,
+        "depth": 0,
+        "context": []
+      },
+      {
+        "type": "message",
+        "sender": "service",
+        "receiver": "ui",
+        "text": "Receipt khả dụng tăng; invoice giảm paid",
+        "kind": "return",
+        "number": 8,
+        "lines": [
+          "8. Receipt khả dụng tăng; invoice giảm paid"
+        ],
+        "baseline": 584,
+        "y": 593,
+        "depth": 0,
+        "context": []
+      },
+      {
+        "type": "message",
+        "sender": "actor",
+        "receiver": "ui",
+        "text": "Nhập tiền hoàn và tham chiếu",
+        "kind": "call",
+        "number": 9,
+        "lines": [
+          "9. Nhập tiền hoàn và tham chiếu"
+        ],
+        "baseline": 668,
+        "y": 677,
+        "depth": 1,
+        "context": [
+          1009,
+          0
+        ]
+      },
+      {
+        "type": "message",
+        "sender": "ui",
+        "receiver": "service",
+        "text": "refund(receiptId, amount, key)",
+        "kind": "call",
+        "number": 10,
+        "lines": [
+          "10. refund(receiptId, amount, key)"
+        ],
+        "baseline": 715,
+        "y": 724,
+        "depth": 1,
+        "context": [
+          1009,
+          0
+        ]
+      },
+      {
+        "type": "message",
+        "sender": "service",
+        "receiver": "data",
+        "text": "TX: khóa receipt; kiểm tra availableAmount",
+        "kind": "call",
+        "number": 11,
+        "lines": [
+          "11. TX: khóa receipt; kiểm tra availableAmount"
+        ],
+        "baseline": 762,
+        "y": 771,
+        "depth": 1,
+        "context": [
+          1009,
+          0
+        ]
+      },
+      {
+        "type": "message",
+        "sender": "data",
+        "receiver": "service",
+        "text": "Số dư khả dụng",
+        "kind": "return",
+        "number": 12,
+        "lines": [
+          "12. Số dư khả dụng"
+        ],
+        "baseline": 809,
+        "y": 818,
+        "depth": 1,
+        "context": [
+          1009,
+          0
+        ]
+      },
+      {
+        "type": "message",
+        "sender": "service",
+        "receiver": "data",
+        "text": "Tạo BillingRefund; giảm available; audit",
+        "kind": "call",
+        "number": 13,
+        "lines": [
+          "13. Tạo BillingRefund; giảm available; audit"
+        ],
+        "baseline": 893,
+        "y": 902,
+        "depth": 2,
+        "context": [
+          1009,
+          0,
+          1013,
+          0
+        ]
+      },
+      {
+        "type": "message",
+        "sender": "data",
+        "receiver": "service",
+        "text": "Commit hoàn sổ",
+        "kind": "return",
+        "number": 14,
+        "lines": [
+          "14. Commit hoàn sổ"
+        ],
+        "baseline": 940,
+        "y": 949,
+        "depth": 2,
+        "context": [
+          1009,
+          0,
+          1013,
+          0
+        ]
+      },
+      {
+        "type": "message",
+        "sender": "service",
+        "receiver": "ui",
+        "text": "Lịch sử hoàn tiền",
+        "kind": "return",
+        "number": 15,
+        "lines": [
+          "15. Lịch sử hoàn tiền"
+        ],
+        "baseline": 987,
+        "y": 996,
+        "depth": 2,
+        "context": [
+          1009,
+          0,
+          1013,
+          0
+        ]
+      },
+      {
+        "type": "message",
+        "sender": "service",
+        "receiver": "ui",
+        "text": "409; giữ nguyên số dư",
+        "kind": "return",
+        "number": 16,
+        "lines": [
+          "16. 409; giữ nguyên số dư"
+        ],
+        "baseline": 1071,
+        "y": 1080,
+        "depth": 2,
+        "context": [
+          1009,
+          0,
+          1013,
+          1
+        ]
+      }
+    ],
+    "fragments": [
+      {
+        "top": 368,
+        "bottom": 457,
+        "depth": 0,
+        "kind": "break",
+        "guards": [
+          "[Không tồn tại, đã release hoặc sổ lệch]"
+        ],
+        "divider": null,
+        "alt_lines": []
+      },
+      {
+        "top": 834,
+        "bottom": 1101,
+        "depth": 1,
+        "kind": "alt",
+        "guards": [
+          "[amount <= availableAmount]"
+        ],
+        "divider": 1012,
+        "alt_lines": [
+          "[amount > availableAmount]"
+        ]
+      },
+      {
+        "top": 609,
+        "bottom": 1117,
+        "depth": 0,
+        "kind": "opt",
+        "guards": [
+          "[Đã thực trả và cần ghi hoàn tiền]"
+        ],
+        "divider": null,
+        "alt_lines": []
+      }
+    ],
+    "width": 1300,
+    "height": 1166
+  },
+  {
+    "id": "SD-08",
+    "title": "Gửi và xét duyệt chứng từ thanh toán",
+    "kind": "sequence",
+    "refs": "UC-TEN-04, UC-BIL-14",
+    "source": "backend/src/tenant-portal/tenant-portal.service.ts:submitPaymentProof; backend/src/billing/billing.service.ts:reviewPaymentProof",
+    "description": "PENDING không phải đã thanh toán; APPROVED tạo receipt, payment và allocation một lần.",
+    "pre": "Người thuê có invoice của mình; chủ trọ xét duyệt bằng phiên có quyền riêng.",
+    "messages": [
+      {
+        "type": "message",
+        "sender": "actor",
+        "receiver": "ui",
+        "text": "Chọn tệp và nhập tiền đã chuyển",
+        "kind": "call",
+        "number": 1,
+        "lines": [
+          "1. Chọn tệp và nhập tiền đã chuyển"
+        ],
+        "baseline": 202,
+        "y": 211,
+        "depth": 0,
+        "context": []
+      },
+      {
+        "type": "message",
+        "sender": "ui",
+        "receiver": "service",
+        "text": "Tải tệp qua endpoint bảo vệ",
+        "kind": "call",
+        "number": 2,
+        "lines": [
+          "2. Tải tệp qua endpoint bảo vệ"
+        ],
+        "baseline": 249,
+        "y": 258,
+        "depth": 0,
+        "context": []
+      },
+      {
+        "type": "message",
+        "sender": "service",
+        "receiver": "data",
+        "text": "Lưu tệp theo policy truy cập",
+        "kind": "call",
+        "number": 3,
+        "lines": [
+          "3. Lưu tệp theo policy truy cập"
+        ],
+        "baseline": 296,
+        "y": 305,
+        "depth": 0,
+        "context": []
+      },
+      {
+        "type": "message",
+        "sender": "data",
+        "receiver": "service",
+        "text": "Định danh tệp được phép",
+        "kind": "return",
+        "number": 4,
+        "lines": [
+          "4. Định danh tệp được phép"
+        ],
+        "baseline": 343,
+        "y": 352,
+        "depth": 0,
+        "context": []
+      },
+      {
+        "type": "message",
+        "sender": "service",
+        "receiver": "ui",
+        "text": "Thông tin tệp",
+        "kind": "return",
+        "number": 5,
+        "lines": [
+          "5. Thông tin tệp"
+        ],
+        "baseline": 390,
+        "y": 399,
+        "depth": 0,
+        "context": []
+      },
+      {
+        "type": "message",
+        "sender": "ui",
+        "receiver": "service",
+        "text": "submitPaymentProof(invoiceId, key)",
+        "kind": "call",
+        "number": 6,
+        "lines": [
+          "6. submitPaymentProof(invoiceId, key)"
+        ],
+        "baseline": 437,
+        "y": 446,
+        "depth": 0,
+        "context": []
+      },
+      {
+        "type": "message",
+        "sender": "service",
+        "receiver": "data",
+        "text": "Kiểm tra tenant, invoice, tệp; tạo PENDING",
+        "kind": "call",
+        "number": 7,
+        "lines": [
+          "7. Kiểm tra tenant, invoice, tệp; tạo PENDING"
+        ],
+        "baseline": 484,
+        "y": 493,
+        "depth": 0,
+        "context": []
+      },
+      {
+        "type": "message",
+        "sender": "data",
+        "receiver": "service",
+        "text": "Proof chờ xét duyệt",
+        "kind": "return",
+        "number": 8,
+        "lines": [
+          "8. Proof chờ xét duyệt"
+        ],
+        "baseline": 531,
+        "y": 540,
+        "depth": 0,
+        "context": []
+      },
+      {
+        "type": "message",
+        "sender": "service",
+        "receiver": "ui",
+        "text": "PENDING; chưa giảm công nợ",
+        "kind": "return",
+        "number": 9,
+        "lines": [
+          "9. PENDING; chưa giảm công nợ"
+        ],
+        "baseline": 578,
+        "y": 587,
+        "depth": 0,
+        "context": []
+      },
+      {
+        "type": "message",
+        "sender": "second",
+        "receiver": "ui",
+        "text": "Mở proof; nhập quyết định",
+        "kind": "call",
+        "number": 10,
+        "lines": [
+          "10. Mở proof; nhập quyết định"
+        ],
+        "baseline": 625,
+        "y": 634,
+        "depth": 0,
+        "context": []
+      },
+      {
+        "type": "message",
+        "sender": "ui",
+        "receiver": "service",
+        "text": "reviewPaymentProof(proofId, decision)",
+        "kind": "call",
+        "number": 11,
+        "lines": [
+          "11. reviewPaymentProof(proofId, decision)"
+        ],
+        "baseline": 672,
+        "y": 681,
+        "depth": 0,
+        "context": []
+      },
+      {
+        "type": "message",
+        "sender": "service",
+        "receiver": "data",
+        "text": "TX: khóa proof; kiểm tra PENDING và scope",
+        "kind": "call",
+        "number": 12,
+        "lines": [
+          "12. TX: khóa proof; kiểm tra PENDING và scope"
+        ],
+        "baseline": 719,
+        "y": 728,
+        "depth": 0,
+        "context": []
+      },
+      {
+        "type": "message",
+        "sender": "data",
+        "receiver": "service",
+        "text": "Proof chưa được xử lý",
+        "kind": "return",
+        "number": 13,
+        "lines": [
+          "13. Proof chưa được xử lý"
+        ],
+        "baseline": 766,
+        "y": 775,
+        "depth": 0,
+        "context": []
+      },
+      {
+        "type": "message",
+        "sender": "service",
+        "receiver": "ui",
+        "text": "Không ghi thu trùng",
+        "kind": "return",
+        "number": 14,
+        "lines": [
+          "14. Không ghi thu trùng"
+        ],
+        "baseline": 850,
+        "y": 859,
+        "depth": 1,
+        "context": [
+          1013,
+          0
+        ]
+      },
+      {
+        "type": "message",
+        "sender": "service",
+        "receiver": "data",
+        "text": "Khóa invoice; kiểm tra demo, hủy, dư nợ",
+        "kind": "call",
+        "number": 15,
+        "lines": [
+          "15. Khóa invoice; kiểm tra demo, hủy, dư nợ"
+        ],
+        "baseline": 950,
+        "y": 959,
+        "depth": 1,
+        "context": [
+          1015,
+          0
+        ]
+      },
+      {
+        "type": "message",
+        "sender": "data",
+        "receiver": "service",
+        "text": "Invoice còn được thu",
+        "kind": "return",
+        "number": 16,
+        "lines": [
+          "16. Invoice còn được thu"
+        ],
+        "baseline": 997,
+        "y": 1006,
+        "depth": 1,
+        "context": [
+          1015,
+          0
+        ]
+      },
+      {
+        "type": "message",
+        "sender": "service",
+        "receiver": "ui",
+        "text": "409; rollback",
+        "kind": "return",
+        "number": 17,
+        "lines": [
+          "17. 409; rollback"
+        ],
+        "baseline": 1081,
+        "y": 1090,
+        "depth": 2,
+        "context": [
+          1015,
+          0,
+          1017,
+          0
+        ]
+      },
+      {
+        "type": "message",
+        "sender": "service",
+        "receiver": "data",
+        "text": "Tạo receipt, payment, allocation; cập nhật invoice",
+        "kind": "call",
+        "number": 18,
+        "lines": [
+          "18. Tạo receipt, payment, allocation; cập nhật invoice"
+        ],
+        "baseline": 1144,
+        "y": 1153,
+        "depth": 1,
+        "context": [
+          1015,
+          0
+        ]
+      },
+      {
+        "type": "message",
+        "sender": "service",
+        "receiver": "data",
+        "text": "Chỉ ghi từ chối và lý do",
+        "kind": "call",
+        "number": 19,
+        "lines": [
+          "19. Chỉ ghi từ chối và lý do"
+        ],
+        "baseline": 1228,
+        "y": 1237,
+        "depth": 1,
+        "context": [
+          1015,
+          1
+        ]
+      },
+      {
+        "type": "message",
+        "sender": "data",
+        "receiver": "service",
+        "text": "Commit quyết định và lịch sử",
+        "kind": "return",
+        "number": 20,
+        "lines": [
+          "20. Commit quyết định và lịch sử"
+        ],
+        "baseline": 1291,
+        "y": 1300,
+        "depth": 0,
+        "context": []
+      },
+      {
+        "type": "message",
+        "sender": "service",
+        "receiver": "ui",
+        "text": "Proof và trạng thái hóa đơn mới",
+        "kind": "return",
+        "number": 21,
+        "lines": [
+          "21. Proof và trạng thái hóa đơn mới"
+        ],
+        "baseline": 1338,
+        "y": 1347,
+        "depth": 0,
+        "context": []
+      }
+    ],
+    "fragments": [
+      {
+        "top": 791,
+        "bottom": 880,
+        "depth": 0,
+        "kind": "break",
+        "guards": [
+          "[Đã review hoặc ngoài scope]"
+        ],
+        "divider": null,
+        "alt_lines": []
+      },
+      {
+        "top": 1022,
+        "bottom": 1111,
+        "depth": 1,
+        "kind": "break",
+        "guards": [
+          "[Proof vượt số dư mới hoặc invoice không hợp lệ]"
+        ],
+        "divider": null,
+        "alt_lines": []
+      },
+      {
+        "top": 891,
+        "bottom": 1258,
+        "depth": 0,
+        "kind": "alt",
+        "guards": [
+          "[APPROVED]"
+        ],
+        "divider": 1169,
+        "alt_lines": [
+          "[REJECTED]"
+        ]
+      }
+    ],
+    "width": 1300,
+    "height": 1401
+  },
+  {
+    "id": "SD-09",
+    "title": "Thay thế hoặc điều chỉnh hóa đơn",
+    "kind": "sequence",
+    "refs": "UC-BIL-06, UC-BIL-07",
+    "source": "backend/src/billing/billing-ledger.service.ts:replace; backend/src/billing/billing-ledger.service.ts:adjust",
+    "description": "Replacement và adjustment là hai lựa chọn loại trừ; không ghi đè lịch sử thanh toán.",
+    "pre": "Có invoice ngoài demo, không bị hủy; có lý do và requestKey.",
+    "messages": [
+      {
+        "type": "message",
+        "sender": "actor",
+        "receiver": "ui",
+        "text": "Chọn loại xử lý và nhập lý do",
+        "kind": "call",
+        "number": 1,
+        "lines": [
+          "1. Chọn loại xử lý và nhập lý do"
+        ],
+        "baseline": 202,
+        "y": 211,
+        "depth": 0,
+        "context": []
+      },
+      {
+        "type": "message",
+        "sender": "ui",
+        "receiver": "service",
+        "text": "replace() hoặc adjust()",
+        "kind": "call",
+        "number": 2,
+        "lines": [
+          "2. replace() hoặc adjust()"
+        ],
+        "baseline": 249,
+        "y": 258,
+        "depth": 0,
+        "context": []
+      },
+      {
+        "type": "message",
+        "sender": "service",
+        "receiver": "data",
+        "text": "TX: kiểm tra command; khóa invoice",
+        "kind": "call",
+        "number": 3,
+        "lines": [
+          "3. TX: kiểm tra command; khóa invoice"
+        ],
+        "baseline": 296,
+        "y": 305,
+        "depth": 0,
+        "context": []
+      },
+      {
+        "type": "message",
+        "sender": "data",
+        "receiver": "service",
+        "text": "Invoice, payment history và số dư",
+        "kind": "return",
+        "number": 4,
+        "lines": [
+          "4. Invoice, payment history và số dư"
+        ],
+        "baseline": 343,
+        "y": 352,
+        "depth": 0,
+        "context": []
+      },
+      {
+        "type": "message",
+        "sender": "service",
+        "receiver": "ui",
+        "text": "409; dùng adjustment phù hợp",
+        "kind": "return",
+        "number": 5,
+        "lines": [
+          "5. 409; dùng adjustment phù hợp"
+        ],
+        "baseline": 464,
+        "y": 473,
+        "depth": 2,
+        "context": [
+          1004,
+          0,
+          1004,
+          0
+        ]
+      },
+      {
+        "type": "message",
+        "sender": "service",
+        "receiver": "data",
+        "text": "Hủy invoice gốc; hủy link; tạo revision và snapshot",
+        "kind": "call",
+        "number": 6,
+        "lines": [
+          "6. Hủy invoice gốc; hủy link; tạo revision và snapshot"
+        ],
+        "baseline": 527,
+        "y": 536,
+        "depth": 1,
+        "context": [
+          1004,
+          0
+        ]
+      },
+      {
+        "type": "message",
+        "sender": "data",
+        "receiver": "service",
+        "text": "Hóa đơn thay thế",
+        "kind": "return",
+        "number": 7,
+        "lines": [
+          "7. Hóa đơn thay thế"
+        ],
+        "baseline": 574,
+        "y": 583,
+        "depth": 1,
+        "context": [
+          1004,
+          0
+        ]
+      },
+      {
+        "type": "message",
+        "sender": "service",
+        "receiver": "service",
+        "text": "Kiểm tra CREDIT / DEBIT và amount / basisPoints",
+        "kind": "call",
+        "number": 8,
+        "lines": [
+          "8. Kiểm tra CREDIT / DEBIT và amount / basisPoints"
+        ],
+        "baseline": 658,
+        "y": 667,
+        "depth": 1,
+        "context": [
+          1004,
+          1
+        ]
+      },
+      {
+        "type": "message",
+        "sender": "service",
+        "receiver": "ui",
+        "text": "Không ghi adjustment",
+        "kind": "return",
+        "number": 9,
+        "lines": [
+          "9. Không ghi adjustment"
+        ],
+        "baseline": 742,
+        "y": 751,
+        "depth": 2,
+        "context": [
+          1004,
+          1,
+          1009,
+          0
+        ]
+      },
+      {
+        "type": "message",
+        "sender": "service",
+        "receiver": "data",
+        "text": "Thêm adjustment và line item; tính lại total / status",
+        "kind": "call",
+        "number": 10,
+        "lines": [
+          "10. Thêm adjustment và line item; tính lại total / status"
+        ],
+        "baseline": 805,
+        "y": 814,
+        "depth": 1,
+        "context": [
+          1004,
+          1
+        ]
+      },
+      {
+        "type": "message",
+        "sender": "data",
+        "receiver": "service",
+        "text": "Hóa đơn điều chỉnh",
+        "kind": "return",
+        "number": 11,
+        "lines": [
+          "11. Hóa đơn điều chỉnh"
+        ],
+        "baseline": 852,
+        "y": 861,
+        "depth": 1,
+        "context": [
+          1004,
+          1
+        ]
+      },
+      {
+        "type": "message",
+        "sender": "service",
+        "receiver": "data",
+        "text": "Ghi event, audit và command response",
+        "kind": "call",
+        "number": 12,
+        "lines": [
+          "12. Ghi event, audit và command response"
+        ],
+        "baseline": 915,
+        "y": 924,
+        "depth": 0,
+        "context": []
+      },
+      {
+        "type": "message",
+        "sender": "data",
+        "receiver": "service",
+        "text": "Commit một nhánh duy nhất",
+        "kind": "return",
+        "number": 13,
+        "lines": [
+          "13. Commit một nhánh duy nhất"
+        ],
+        "baseline": 962,
+        "y": 971,
+        "depth": 0,
+        "context": []
+      },
+      {
+        "type": "message",
+        "sender": "service",
+        "receiver": "ui",
+        "text": "Invoice và timeline cập nhật",
+        "kind": "return",
+        "number": 14,
+        "lines": [
+          "14. Invoice và timeline cập nhật"
+        ],
+        "baseline": 1009,
+        "y": 1018,
+        "depth": 0,
+        "context": []
+      },
+      {
+        "type": "message",
+        "sender": "ui",
+        "receiver": "actor",
+        "text": "Hiển thị bản gốc và lịch sử liên quan",
+        "kind": "return",
+        "number": 15,
+        "lines": [
+          "15. Hiển thị bản gốc và lịch sử liên quan"
+        ],
+        "baseline": 1056,
+        "y": 1065,
+        "depth": 0,
+        "context": []
+      }
+    ],
+    "fragments": [
+      {
+        "top": 405,
+        "bottom": 494,
+        "depth": 1,
+        "kind": "break",
+        "guards": [
+          "[Có payment history hoặc đã replacement]"
+        ],
+        "divider": null,
+        "alt_lines": []
+      },
+      {
+        "top": 683,
+        "bottom": 772,
+        "depth": 1,
+        "kind": "break",
+        "guards": [
+          "[Sai loại hoặc credit vượt số dư]"
+        ],
+        "divider": null,
+        "alt_lines": []
+      },
+      {
+        "top": 368,
+        "bottom": 882,
+        "depth": 0,
+        "kind": "alt",
+        "guards": [
+          "[Chọn replacement]"
+        ],
+        "divider": 599,
+        "alt_lines": [
+          "[Chọn adjustment]"
+        ]
+      }
+    ],
+    "width": 1300,
+    "height": 1119
+  },
+  {
+    "id": "SD-10",
+    "title": "Quyết toán trả phòng và hoàn cọc",
+    "kind": "sequence",
+    "refs": "UC-TNT-08, UC-TNT-09",
+    "source": "backend/src/leases/settlements.service.ts:preview; backend/src/leases/settlements.service.ts:confirm; backend/src/leases/settlements.service.ts:recordRefund",
+    "description": "Confirm kết thúc lease và tạo turnover; hóa đơn cũ không tự được xóa nợ; hoàn cọc là bước ghi sổ riêng.",
+    "pre": "Chủ trọ có lease ACTIVE chưa quyết toán; ngày trả và chỉ số hợp lệ.",
+    "messages": [
+      {
+        "type": "message",
+        "sender": "actor",
+        "receiver": "ui",
+        "text": "Nhập ngày trả, chỉ số, chi phí",
+        "kind": "call",
+        "number": 1,
+        "lines": [
+          "1. Nhập ngày trả, chỉ số, chi phí"
+        ],
+        "baseline": 202,
+        "y": 211,
+        "depth": 0,
+        "context": []
+      },
+      {
+        "type": "message",
+        "sender": "ui",
+        "receiver": "service",
+        "text": "preview(leaseId, input)",
+        "kind": "call",
+        "number": 2,
+        "lines": [
+          "2. preview(leaseId, input)"
+        ],
+        "baseline": 249,
+        "y": 258,
+        "depth": 0,
+        "context": []
+      },
+      {
+        "type": "message",
+        "sender": "service",
+        "receiver": "data",
+        "text": "Đọc lease, invoice, cọc; tính snapshot",
+        "kind": "call",
+        "number": 3,
+        "lines": [
+          "3. Đọc lease, invoice, cọc; tính snapshot"
+        ],
+        "baseline": 296,
+        "y": 305,
+        "depth": 0,
+        "context": []
+      },
+      {
+        "type": "message",
+        "sender": "data",
+        "receiver": "service",
+        "text": "Snapshot và previewFingerprint",
+        "kind": "return",
+        "number": 4,
+        "lines": [
+          "4. Snapshot và previewFingerprint"
+        ],
+        "baseline": 343,
+        "y": 352,
+        "depth": 0,
+        "context": []
+      },
+      {
+        "type": "message",
+        "sender": "service",
+        "receiver": "ui",
+        "text": "Phí, cấn trừ cọc, hoàn / còn phải thu",
+        "kind": "return",
+        "number": 5,
+        "lines": [
+          "5. Phí, cấn trừ cọc, hoàn / còn phải thu"
+        ],
+        "baseline": 390,
+        "y": 399,
+        "depth": 0,
+        "context": []
+      },
+      {
+        "type": "message",
+        "sender": "actor",
+        "receiver": "ui",
+        "text": "Xác nhận quyết toán",
+        "kind": "call",
+        "number": 6,
+        "lines": [
+          "6. Xác nhận quyết toán"
+        ],
+        "baseline": 437,
+        "y": 446,
+        "depth": 0,
+        "context": []
+      },
+      {
+        "type": "message",
+        "sender": "ui",
+        "receiver": "service",
+        "text": "confirm(input, fingerprint, key)",
+        "kind": "call",
+        "number": 7,
+        "lines": [
+          "7. confirm(input, fingerprint, key)"
+        ],
+        "baseline": 484,
+        "y": 493,
+        "depth": 0,
+        "context": []
+      },
+      {
+        "type": "message",
+        "sender": "service",
+        "receiver": "data",
+        "text": "TX: khóa lease / room / invoice; tính lại",
+        "kind": "call",
+        "number": 8,
+        "lines": [
+          "8. TX: khóa lease / room / invoice; tính lại"
+        ],
+        "baseline": 531,
+        "y": 540,
+        "depth": 0,
+        "context": []
+      },
+      {
+        "type": "message",
+        "sender": "data",
+        "receiver": "service",
+        "text": "Snapshot hiện tại hoặc settlement cũ",
+        "kind": "return",
+        "number": 9,
+        "lines": [
+          "9. Snapshot hiện tại hoặc settlement cũ"
+        ],
+        "baseline": 578,
+        "y": 587,
+        "depth": 0,
+        "context": []
+      },
+      {
+        "type": "message",
+        "sender": "service",
+        "receiver": "ui",
+        "text": "Cùng key + hash: kết quả cũ; khác: 409",
+        "kind": "return",
+        "number": 10,
+        "lines": [
+          "10. Cùng key + hash: kết quả cũ; khác: 409"
+        ],
+        "baseline": 662,
+        "y": 671,
+        "depth": 1,
+        "context": [
+          1009,
+          0
+        ]
+      },
+      {
+        "type": "message",
+        "sender": "service",
+        "receiver": "ui",
+        "text": "409; yêu cầu preview lại",
+        "kind": "return",
+        "number": 11,
+        "lines": [
+          "11. 409; yêu cầu preview lại"
+        ],
+        "baseline": 762,
+        "y": 771,
+        "depth": 1,
+        "context": [
+          1011,
+          0
+        ]
+      },
+      {
+        "type": "message",
+        "sender": "service",
+        "receiver": "data",
+        "text": "Tạo settlement / lines; cấn trừ cọc; ENDED; turnover; audit",
+        "kind": "call",
+        "number": 12,
+        "lines": [
+          "12. Tạo settlement / lines; cấn trừ cọc; ENDED; turnover; audit"
+        ],
+        "baseline": 825,
+        "y": 834,
+        "depth": 0,
+        "context": []
+      },
+      {
+        "type": "message",
+        "sender": "data",
+        "receiver": "service",
+        "text": "Commit quyết toán",
+        "kind": "return",
+        "number": 13,
+        "lines": [
+          "13. Commit quyết toán"
+        ],
+        "baseline": 872,
+        "y": 881,
+        "depth": 0,
+        "context": []
+      },
+      {
+        "type": "message",
+        "sender": "service",
+        "receiver": "ui",
+        "text": "Settlement; hoàn cọc chưa thực hiện",
+        "kind": "return",
+        "number": 14,
+        "lines": [
+          "14. Settlement; hoàn cọc chưa thực hiện"
+        ],
+        "baseline": 919,
+        "y": 928,
+        "depth": 0,
+        "context": []
+      },
+      {
+        "type": "message",
+        "sender": "actor",
+        "receiver": "ui",
+        "text": "Ghi xác nhận đã hoàn; tham chiếu",
+        "kind": "call",
+        "number": 15,
+        "lines": [
+          "15. Ghi xác nhận đã hoàn; tham chiếu"
+        ],
+        "baseline": 1003,
+        "y": 1012,
+        "depth": 1,
+        "context": [
+          1016,
+          0
+        ]
+      },
+      {
+        "type": "message",
+        "sender": "ui",
+        "receiver": "service",
+        "text": "recordRefund(version, key, reference)",
+        "kind": "call",
+        "number": 16,
+        "lines": [
+          "16. recordRefund(version, key, reference)"
+        ],
+        "baseline": 1050,
+        "y": 1059,
+        "depth": 1,
+        "context": [
+          1016,
+          0
+        ]
+      },
+      {
+        "type": "message",
+        "sender": "service",
+        "receiver": "data",
+        "text": "TX: khóa; kiểm tra version và số dư cọc",
+        "kind": "call",
+        "number": 17,
+        "lines": [
+          "17. TX: khóa; kiểm tra version và số dư cọc"
+        ],
+        "baseline": 1097,
+        "y": 1106,
+        "depth": 1,
+        "context": [
+          1016,
+          0
+        ]
+      },
+      {
+        "type": "message",
+        "sender": "data",
+        "receiver": "service",
+        "text": "Trạng thái refund PENDING",
+        "kind": "return",
+        "number": 18,
+        "lines": [
+          "18. Trạng thái refund PENDING"
+        ],
+        "baseline": 1144,
+        "y": 1153,
+        "depth": 1,
+        "context": [
+          1016,
+          0
+        ]
+      },
+      {
+        "type": "message",
+        "sender": "service",
+        "receiver": "ui",
+        "text": "409; không ghi hoàn trùng",
+        "kind": "return",
+        "number": 19,
+        "lines": [
+          "19. 409; không ghi hoàn trùng"
+        ],
+        "baseline": 1228,
+        "y": 1237,
+        "depth": 2,
+        "context": [
+          1016,
+          0,
+          1020,
+          0
+        ]
+      },
+      {
+        "type": "message",
+        "sender": "service",
+        "receiver": "data",
+        "text": "Ghi REFUNDED và refundStatus PAID; audit",
+        "kind": "call",
+        "number": 20,
+        "lines": [
+          "20. Ghi REFUNDED và refundStatus PAID; audit"
+        ],
+        "baseline": 1291,
+        "y": 1300,
+        "depth": 1,
+        "context": [
+          1016,
+          0
+        ]
+      },
+      {
+        "type": "message",
+        "sender": "data",
+        "receiver": "service",
+        "text": "Commit ghi sổ hoàn cọc",
+        "kind": "return",
+        "number": 21,
+        "lines": [
+          "21. Commit ghi sổ hoàn cọc"
+        ],
+        "baseline": 1338,
+        "y": 1347,
+        "depth": 1,
+        "context": [
+          1016,
+          0
+        ]
+      },
+      {
+        "type": "message",
+        "sender": "service",
+        "receiver": "ui",
+        "text": "Quyết toán và lịch sử hoàn",
+        "kind": "return",
+        "number": 22,
+        "lines": [
+          "22. Quyết toán và lịch sử hoàn"
+        ],
+        "baseline": 1385,
+        "y": 1394,
+        "depth": 1,
+        "context": [
+          1016,
+          0
+        ]
+      }
+    ],
+    "fragments": [
+      {
+        "top": 603,
+        "bottom": 692,
+        "depth": 0,
+        "kind": "break",
+        "guards": [
+          "[Đã có settlement]"
+        ],
+        "divider": null,
+        "alt_lines": []
+      },
+      {
+        "top": 703,
+        "bottom": 792,
+        "depth": 0,
+        "kind": "break",
+        "guards": [
+          "[Fingerprint đổi hoặc key đã dùng lease khác]"
+        ],
+        "divider": null,
+        "alt_lines": []
+      },
+      {
+        "top": 1169,
+        "bottom": 1258,
+        "depth": 1,
+        "kind": "break",
+        "guards": [
+          "[Đã hoàn, sai version hoặc số dư đổi]"
+        ],
+        "divider": null,
+        "alt_lines": []
+      },
+      {
+        "top": 944,
+        "bottom": 1415,
+        "depth": 0,
+        "kind": "opt",
+        "guards": [
+          "[Có khoản hoàn và chủ trọ đã trả tiền]"
+        ],
+        "divider": null,
+        "alt_lines": []
+      }
+    ],
+    "width": 1300,
+    "height": 1464
+  },
+  {
+    "id": "SD-11",
+    "title": "Yêu cầu và thực thi vòng đời thuê",
+    "kind": "sequence",
+    "refs": "UC-TEN-07, UC-TNT-10, UC-TNT-11",
+    "source": "backend/src/tenant-lifecycle/tenant-lifecycle.service.ts:createRequest; backend/src/tenant-lifecycle/tenant-lifecycle.service.ts:decideRequest; backend/src/tenant-lifecycle/tenant-lifecycle.service.ts:executeRequest",
+    "description": "APPROVED chỉ là quyết định; execute là lệnh riêng, kiểm tra lại dữ liệu và có bản ghi execution.",
+    "pre": "Người thuê có lease liên quan; chủ trọ có quyền xử lý trong cùng phạm vi.",
+    "messages": [
+      {
+        "type": "message",
+        "sender": "actor",
+        "receiver": "ui",
+        "text": "Yêu cầu gia hạn, chuyển hoặc trả phòng",
+        "kind": "call",
+        "number": 1,
+        "lines": [
+          "1. Yêu cầu gia hạn, chuyển hoặc trả phòng"
+        ],
+        "baseline": 202,
+        "y": 211,
+        "depth": 0,
+        "context": []
+      },
+      {
+        "type": "message",
+        "sender": "ui",
+        "receiver": "service",
+        "text": "createRequest(type, lease, input)",
+        "kind": "call",
+        "number": 2,
+        "lines": [
+          "2. createRequest(type, lease, input)"
+        ],
+        "baseline": 249,
+        "y": 258,
+        "depth": 0,
+        "context": []
+      },
+      {
+        "type": "message",
+        "sender": "service",
+        "receiver": "data",
+        "text": "Kiểm tra lease, yêu cầu PENDING trùng; lưu request",
+        "kind": "call",
+        "number": 3,
+        "lines": [
+          "3. Kiểm tra lease, yêu cầu PENDING trùng; lưu request"
+        ],
+        "baseline": 296,
+        "y": 305,
+        "depth": 0,
+        "context": []
+      },
+      {
+        "type": "message",
+        "sender": "data",
+        "receiver": "service",
+        "text": "PENDING",
+        "kind": "return",
+        "number": 4,
+        "lines": [
+          "4. PENDING"
+        ],
+        "baseline": 343,
+        "y": 352,
+        "depth": 0,
+        "context": []
+      },
+      {
+        "type": "message",
+        "sender": "service",
+        "receiver": "ui",
+        "text": "Yêu cầu chờ quyết định",
+        "kind": "return",
+        "number": 5,
+        "lines": [
+          "5. Yêu cầu chờ quyết định"
+        ],
+        "baseline": 390,
+        "y": 399,
+        "depth": 0,
+        "context": []
+      },
+      {
+        "type": "message",
+        "sender": "second",
+        "receiver": "ui",
+        "text": "Xem và quyết định; nhập lý do",
+        "kind": "call",
+        "number": 6,
+        "lines": [
+          "6. Xem và quyết định; nhập lý do"
+        ],
+        "baseline": 437,
+        "y": 446,
+        "depth": 0,
+        "context": []
+      },
+      {
+        "type": "message",
+        "sender": "ui",
+        "receiver": "service",
+        "text": "decideRequest(expectedUpdatedAt)",
+        "kind": "call",
+        "number": 7,
+        "lines": [
+          "7. decideRequest(expectedUpdatedAt)"
+        ],
+        "baseline": 484,
+        "y": 493,
+        "depth": 0,
+        "context": []
+      },
+      {
+        "type": "message",
+        "sender": "service",
+        "receiver": "data",
+        "text": "TX: khóa; kiểm tra lease, đích chuyển và trạng thái",
+        "kind": "call",
+        "number": 8,
+        "lines": [
+          "8. TX: khóa; kiểm tra lease, đích chuyển và trạng thái"
+        ],
+        "baseline": 531,
+        "y": 540,
+        "depth": 0,
+        "context": []
+      },
+      {
+        "type": "message",
+        "sender": "data",
+        "receiver": "service",
+        "text": "Dữ liệu hiện tại",
+        "kind": "return",
+        "number": 9,
+        "lines": [
+          "9. Dữ liệu hiện tại"
+        ],
+        "baseline": 578,
+        "y": 587,
+        "depth": 0,
+        "context": []
+      },
+      {
+        "type": "message",
+        "sender": "service",
+        "receiver": "ui",
+        "text": "409; đọc lại yêu cầu",
+        "kind": "return",
+        "number": 10,
+        "lines": [
+          "10. 409; đọc lại yêu cầu"
+        ],
+        "baseline": 662,
+        "y": 671,
+        "depth": 1,
+        "context": [
+          1009,
+          0
+        ]
+      },
+      {
+        "type": "message",
+        "sender": "service",
+        "receiver": "data",
+        "text": "Ghi APPROVED / REJECTED và audit",
+        "kind": "call",
+        "number": 11,
+        "lines": [
+          "11. Ghi APPROVED / REJECTED và audit"
+        ],
+        "baseline": 725,
+        "y": 734,
+        "depth": 0,
+        "context": []
+      },
+      {
+        "type": "message",
+        "sender": "data",
+        "receiver": "service",
+        "text": "Commit quyết định",
+        "kind": "return",
+        "number": 12,
+        "lines": [
+          "12. Commit quyết định"
+        ],
+        "baseline": 772,
+        "y": 781,
+        "depth": 0,
+        "context": []
+      },
+      {
+        "type": "message",
+        "sender": "service",
+        "receiver": "ui",
+        "text": "requiresLeaseAction nếu APPROVED",
+        "kind": "return",
+        "number": 13,
+        "lines": [
+          "13. requiresLeaseAction nếu APPROVED"
+        ],
+        "baseline": 819,
+        "y": 828,
+        "depth": 0,
+        "context": []
+      },
+      {
+        "type": "message",
+        "sender": "second",
+        "receiver": "ui",
+        "text": "Xác nhận thực thi",
+        "kind": "call",
+        "number": 14,
+        "lines": [
+          "14. Xác nhận thực thi"
+        ],
+        "baseline": 903,
+        "y": 912,
+        "depth": 1,
+        "context": [
+          1014,
+          0
+        ]
+      },
+      {
+        "type": "message",
+        "sender": "ui",
+        "receiver": "service",
+        "text": "executeRequest(key, expectedUpdatedAt)",
+        "kind": "call",
+        "number": 15,
+        "lines": [
+          "15. executeRequest(key, expectedUpdatedAt)"
+        ],
+        "baseline": 950,
+        "y": 959,
+        "depth": 1,
+        "context": [
+          1014,
+          0
+        ]
+      },
+      {
+        "type": "message",
+        "sender": "service",
+        "receiver": "data",
+        "text": "TX: khóa request; kiểm tra execution và lease / phòng",
+        "kind": "call",
+        "number": 16,
+        "lines": [
+          "16. TX: khóa request; kiểm tra execution và lease / phòng"
+        ],
+        "baseline": 997,
+        "y": 1006,
+        "depth": 1,
+        "context": [
+          1014,
+          0
+        ]
+      },
+      {
+        "type": "message",
+        "sender": "data",
+        "receiver": "service",
+        "text": "Điều kiện và hash thực thi",
+        "kind": "return",
+        "number": 17,
+        "lines": [
+          "17. Điều kiện và hash thực thi"
+        ],
+        "baseline": 1044,
+        "y": 1053,
+        "depth": 1,
+        "context": [
+          1014,
+          0
+        ]
+      },
+      {
+        "type": "message",
+        "sender": "service",
+        "receiver": "ui",
+        "text": "409; không thực thi mới",
+        "kind": "return",
+        "number": 18,
+        "lines": [
+          "18. 409; không thực thi mới"
+        ],
+        "baseline": 1128,
+        "y": 1137,
+        "depth": 2,
+        "context": [
+          1014,
+          0,
+          1018,
+          0
+        ]
+      },
+      {
+        "type": "message",
+        "sender": "service",
+        "receiver": "data",
+        "text": "Gia hạn / chuyển / kết thúc; Execution và audit",
+        "kind": "call",
+        "number": 19,
+        "lines": [
+          "19. Gia hạn / chuyển / kết thúc; Execution và audit"
+        ],
+        "baseline": 1191,
+        "y": 1200,
+        "depth": 1,
+        "context": [
+          1014,
+          0
+        ]
+      },
+      {
+        "type": "message",
+        "sender": "data",
+        "receiver": "service",
+        "text": "Commit theo loại yêu cầu",
+        "kind": "return",
+        "number": 20,
+        "lines": [
+          "20. Commit theo loại yêu cầu"
+        ],
+        "baseline": 1238,
+        "y": 1247,
+        "depth": 1,
+        "context": [
+          1014,
+          0
+        ]
+      },
+      {
+        "type": "message",
+        "sender": "service",
+        "receiver": "ui",
+        "text": "Kết quả execution và lease mới",
+        "kind": "return",
+        "number": 21,
+        "lines": [
+          "21. Kết quả execution và lease mới"
+        ],
+        "baseline": 1285,
+        "y": 1294,
+        "depth": 1,
+        "context": [
+          1014,
+          0
+        ]
+      }
+    ],
+    "fragments": [
+      {
+        "top": 603,
+        "bottom": 692,
+        "depth": 0,
+        "kind": "break",
+        "guards": [
+          "[Đã xử lý hoặc hợp đồng / phòng đổi]"
+        ],
+        "divider": null,
+        "alt_lines": []
+      },
+      {
+        "top": 1069,
+        "bottom": 1158,
+        "depth": 1,
+        "kind": "break",
+        "guards": [
+          "[Sai hash / stale / đích không còn trống]"
+        ],
+        "divider": null,
+        "alt_lines": []
+      },
+      {
+        "top": 844,
+        "bottom": 1315,
+        "depth": 0,
+        "kind": "opt",
+        "guards": [
+          "[APPROVED và chủ trọ chọn execute]"
+        ],
+        "divider": null,
+        "alt_lines": []
+      }
+    ],
+    "width": 1300,
+    "height": 1364
+  },
+  {
+    "id": "SD-12",
+    "title": "Tiếp nhận và hoàn tất yêu cầu bảo trì",
+    "kind": "sequence",
+    "refs": "UC-TEN-06, UC-OPS-01, UC-OPS-02, UC-OPS-03",
+    "source": "backend/src/tenant-portal/tenant-portal.service.ts:createMaintenance; backend/src/maintenance/maintenance.service.ts:update; backend/src/maintenance/maintenance.service.ts:updateStatus; backend/src/maintenance/maintenance.service.ts:addComment; backend/src/maintenance/maintenance.service.ts:complete",
+    "description": "Giữ lịch sử trạng thái và trao đổi; chi phí chỉ được tạo theo dữ liệu thực tế và liên kết ticket.",
+    "pre": "Người thuê có phòng hợp lệ; chủ trọ quản lý phạm vi của ticket.",
+    "messages": [
+      {
+        "type": "message",
+        "sender": "actor",
+        "receiver": "ui",
+        "text": "Gửi mô tả, ảnh sự cố",
+        "kind": "call",
+        "number": 1,
+        "lines": [
+          "1. Gửi mô tả, ảnh sự cố"
+        ],
+        "baseline": 202,
+        "y": 211,
+        "depth": 0,
+        "context": []
+      },
+      {
+        "type": "message",
+        "sender": "ui",
+        "receiver": "service",
+        "text": "Tạo maintenance từ tenant portal",
+        "kind": "call",
+        "number": 2,
+        "lines": [
+          "2. Tạo maintenance từ tenant portal"
+        ],
+        "baseline": 249,
+        "y": 258,
+        "depth": 0,
+        "context": []
+      },
+      {
+        "type": "message",
+        "sender": "service",
+        "receiver": "data",
+        "text": "Kiểm tra tenant / phòng; tạo ticket",
+        "kind": "call",
+        "number": 3,
+        "lines": [
+          "3. Kiểm tra tenant / phòng; tạo ticket"
+        ],
+        "baseline": 296,
+        "y": 305,
+        "depth": 0,
+        "context": []
+      },
+      {
+        "type": "message",
+        "sender": "data",
+        "receiver": "service",
+        "text": "Yêu cầu bảo trì",
+        "kind": "return",
+        "number": 4,
+        "lines": [
+          "4. Yêu cầu bảo trì"
+        ],
+        "baseline": 343,
+        "y": 352,
+        "depth": 0,
+        "context": []
+      },
+      {
+        "type": "message",
+        "sender": "service",
+        "receiver": "ui",
+        "text": "Ticket và trạng thái ban đầu",
+        "kind": "return",
+        "number": 5,
+        "lines": [
+          "5. Ticket và trạng thái ban đầu"
+        ],
+        "baseline": 390,
+        "y": 399,
+        "depth": 0,
+        "context": []
+      },
+      {
+        "type": "message",
+        "sender": "second",
+        "receiver": "ui",
+        "text": "Xem ticket và phân công xử lý",
+        "kind": "call",
+        "number": 6,
+        "lines": [
+          "6. Xem ticket và phân công xử lý"
+        ],
+        "baseline": 437,
+        "y": 446,
+        "depth": 0,
+        "context": []
+      },
+      {
+        "type": "message",
+        "sender": "ui",
+        "receiver": "service",
+        "text": "assign / cập nhật ticket theo quyền",
+        "kind": "call",
+        "number": 7,
+        "lines": [
+          "7. assign / cập nhật ticket theo quyền"
+        ],
+        "baseline": 484,
+        "y": 493,
+        "depth": 0,
+        "context": []
+      },
+      {
+        "type": "message",
+        "sender": "service",
+        "receiver": "data",
+        "text": "Kiểm tra scope, assignee và trạng thái",
+        "kind": "call",
+        "number": 8,
+        "lines": [
+          "8. Kiểm tra scope, assignee và trạng thái"
+        ],
+        "baseline": 531,
+        "y": 540,
+        "depth": 0,
+        "context": []
+      },
+      {
+        "type": "message",
+        "sender": "data",
+        "receiver": "service",
+        "text": "Ticket được cập nhật",
+        "kind": "return",
+        "number": 9,
+        "lines": [
+          "9. Ticket được cập nhật"
+        ],
+        "baseline": 578,
+        "y": 587,
+        "depth": 0,
+        "context": []
+      },
+      {
+        "type": "message",
+        "sender": "service",
+        "receiver": "ui",
+        "text": "Phân công và lịch sử",
+        "kind": "return",
+        "number": 10,
+        "lines": [
+          "10. Phân công và lịch sử"
+        ],
+        "baseline": 625,
+        "y": 634,
+        "depth": 0,
+        "context": []
+      },
+      {
+        "type": "message",
+        "sender": "ui",
+        "receiver": "service",
+        "text": "Gửi comment / status",
+        "kind": "call",
+        "number": 11,
+        "lines": [
+          "11. Gửi comment / status"
+        ],
+        "baseline": 709,
+        "y": 718,
+        "depth": 1,
+        "context": [
+          1010,
+          0
+        ]
+      },
+      {
+        "type": "message",
+        "sender": "service",
+        "receiver": "data",
+        "text": "Kiểm tra quyền; lưu comment / tiến độ",
+        "kind": "call",
+        "number": 12,
+        "lines": [
+          "12. Kiểm tra quyền; lưu comment / tiến độ"
+        ],
+        "baseline": 756,
+        "y": 765,
+        "depth": 1,
+        "context": [
+          1010,
+          0
+        ]
+      },
+      {
+        "type": "message",
+        "sender": "data",
+        "receiver": "service",
+        "text": "Lịch sử mới",
+        "kind": "return",
+        "number": 13,
+        "lines": [
+          "13. Lịch sử mới"
+        ],
+        "baseline": 803,
+        "y": 812,
+        "depth": 1,
+        "context": [
+          1010,
+          0
+        ]
+      },
+      {
+        "type": "message",
+        "sender": "service",
+        "receiver": "ui",
+        "text": "Nội dung được phép xem",
+        "kind": "return",
+        "number": 14,
+        "lines": [
+          "14. Nội dung được phép xem"
+        ],
+        "baseline": 850,
+        "y": 859,
+        "depth": 1,
+        "context": [
+          1010,
+          0
+        ]
+      },
+      {
+        "type": "message",
+        "sender": "second",
+        "receiver": "ui",
+        "text": "Xác nhận hoàn tất và chi phí nếu có",
+        "kind": "call",
+        "number": 15,
+        "lines": [
+          "15. Xác nhận hoàn tất và chi phí nếu có"
+        ],
+        "baseline": 913,
+        "y": 922,
+        "depth": 0,
+        "context": []
+      },
+      {
+        "type": "message",
+        "sender": "ui",
+        "receiver": "service",
+        "text": "Cập nhật DONE và dữ liệu chi phí",
+        "kind": "call",
+        "number": 16,
+        "lines": [
+          "16. Cập nhật DONE và dữ liệu chi phí"
+        ],
+        "baseline": 960,
+        "y": 969,
+        "depth": 0,
+        "context": []
+      },
+      {
+        "type": "message",
+        "sender": "service",
+        "receiver": "data",
+        "text": "Kiểm tra trạng thái; hoàn tất, liên kết Expense nếu có",
+        "kind": "call",
+        "number": 17,
+        "lines": [
+          "17. Kiểm tra trạng thái; hoàn tất, liên kết Expense nếu có"
+        ],
+        "baseline": 1007,
+        "y": 1016,
+        "depth": 0,
+        "context": []
+      },
+      {
+        "type": "message",
+        "sender": "data",
+        "receiver": "service",
+        "text": "Ticket và expense hiện hành",
+        "kind": "return",
+        "number": 18,
+        "lines": [
+          "18. Ticket và expense hiện hành"
+        ],
+        "baseline": 1054,
+        "y": 1063,
+        "depth": 0,
+        "context": []
+      },
+      {
+        "type": "message",
+        "sender": "service",
+        "receiver": "ui",
+        "text": "Từ chối; không báo hoàn tất",
+        "kind": "return",
+        "number": 19,
+        "lines": [
+          "19. Từ chối; không báo hoàn tất"
+        ],
+        "baseline": 1138,
+        "y": 1147,
+        "depth": 1,
+        "context": [
+          1019,
+          0
+        ]
+      },
+      {
+        "type": "message",
+        "sender": "service",
+        "receiver": "ui",
+        "text": "Trạng thái hoàn tất và lịch sử",
+        "kind": "return",
+        "number": 20,
+        "lines": [
+          "20. Trạng thái hoàn tất và lịch sử"
+        ],
+        "baseline": 1201,
+        "y": 1210,
+        "depth": 0,
+        "context": []
+      }
+    ],
+    "fragments": [
+      {
+        "top": 650,
+        "bottom": 880,
+        "depth": 0,
+        "kind": "loop",
+        "guards": [
+          "[Khi cần trao đổi / cập nhật tiến độ]"
+        ],
+        "divider": null,
+        "alt_lines": []
+      },
+      {
+        "top": 1079,
+        "bottom": 1168,
+        "depth": 0,
+        "kind": "break",
+        "guards": [
+          "[Ngoài scope hoặc dữ liệu không hợp lệ]"
+        ],
+        "divider": null,
+        "alt_lines": []
+      }
+    ],
+    "width": 1300,
+    "height": 1264
+  },
+  {
+    "id": "SD-13",
+    "title": "Báo cáo tháng và xuất CSV",
+    "kind": "sequence",
+    "refs": "UC-BIL-20, UC-BIL-21",
+    "source": "backend/src/reports/reports.service.ts:monthly; backend/src/reports/reports.service.ts:monthlyExport",
+    "description": "Báo cáo Payment ròng không đồng nghĩa tổng Receipt; thao tác hiện tại sao chép CSV vào clipboard.",
+    "pre": "Có phiên và quyền báo cáo; tháng và khu thuộc phạm vi chủ trọ.",
+    "messages": [
+      {
+        "type": "message",
+        "sender": "actor",
+        "receiver": "ui",
+        "text": "Chọn tháng và khu trọ",
+        "kind": "call",
+        "number": 1,
+        "lines": [
+          "1. Chọn tháng và khu trọ"
+        ],
+        "baseline": 202,
+        "y": 211,
+        "depth": 0,
+        "context": []
+      },
+      {
+        "type": "message",
+        "sender": "ui",
+        "receiver": "service",
+        "text": "monthly(month, propertyId)",
+        "kind": "call",
+        "number": 2,
+        "lines": [
+          "2. monthly(month, propertyId)"
+        ],
+        "baseline": 249,
+        "y": 258,
+        "depth": 0,
+        "context": []
+      },
+      {
+        "type": "message",
+        "sender": "service",
+        "receiver": "data",
+        "text": "Xác minh property scope và isArchived",
+        "kind": "call",
+        "number": 3,
+        "lines": [
+          "3. Xác minh property scope và isArchived"
+        ],
+        "baseline": 296,
+        "y": 305,
+        "depth": 0,
+        "context": []
+      },
+      {
+        "type": "message",
+        "sender": "data",
+        "receiver": "service",
+        "text": "Khu hợp lệ hoặc không có",
+        "kind": "return",
+        "number": 4,
+        "lines": [
+          "4. Khu hợp lệ hoặc không có"
+        ],
+        "baseline": 343,
+        "y": 352,
+        "depth": 0,
+        "context": []
+      },
+      {
+        "type": "message",
+        "sender": "service",
+        "receiver": "ui",
+        "text": "400 / 404; không trả số liệu",
+        "kind": "return",
+        "number": 5,
+        "lines": [
+          "5. 400 / 404; không trả số liệu"
+        ],
+        "baseline": 427,
+        "y": 436,
+        "depth": 1,
+        "context": [
+          1004,
+          0
+        ]
+      },
+      {
+        "type": "message",
+        "sender": "service",
+        "receiver": "data",
+        "text": "Đọc invoices, payments, expenses, deposits, active leases",
+        "kind": "call",
+        "number": 6,
+        "lines": [
+          "6. Đọc invoices, payments, expenses, deposits, active leases"
+        ],
+        "baseline": 490,
+        "y": 499,
+        "depth": 0,
+        "context": []
+      },
+      {
+        "type": "message",
+        "sender": "data",
+        "receiver": "service",
+        "text": "Các tập dữ liệu theo mốc thời gian",
+        "kind": "return",
+        "number": 7,
+        "lines": [
+          "7. Các tập dữ liệu theo mốc thời gian"
+        ],
+        "baseline": 537,
+        "y": 546,
+        "depth": 0,
+        "context": []
+      },
+      {
+        "type": "message",
+        "sender": "service",
+        "receiver": "service",
+        "text": "Tổng hợp công nợ và dòng tiền ròng",
+        "kind": "call",
+        "number": 8,
+        "lines": [
+          "8. Tổng hợp công nợ và dòng tiền ròng"
+        ],
+        "baseline": 584,
+        "y": 593,
+        "depth": 0,
+        "context": []
+      },
+      {
+        "type": "message",
+        "sender": "service",
+        "receiver": "ui",
+        "text": "Summary, nhóm và invoice rows",
+        "kind": "return",
+        "number": 9,
+        "lines": [
+          "9. Summary, nhóm và invoice rows"
+        ],
+        "baseline": 631,
+        "y": 640,
+        "depth": 0,
+        "context": []
+      },
+      {
+        "type": "message",
+        "sender": "ui",
+        "receiver": "actor",
+        "text": "Hiển thị chỉ số của kỳ",
+        "kind": "return",
+        "number": 10,
+        "lines": [
+          "10. Hiển thị chỉ số của kỳ"
+        ],
+        "baseline": 678,
+        "y": 687,
+        "depth": 0,
+        "context": []
+      },
+      {
+        "type": "message",
+        "sender": "actor",
+        "receiver": "ui",
+        "text": "Chọn xuất CSV",
+        "kind": "call",
+        "number": 11,
+        "lines": [
+          "11. Chọn xuất CSV"
+        ],
+        "baseline": 762,
+        "y": 771,
+        "depth": 1,
+        "context": [
+          1011,
+          0
+        ]
+      },
+      {
+        "type": "message",
+        "sender": "ui",
+        "receiver": "service",
+        "text": "monthlyExport(month, propertyId)",
+        "kind": "call",
+        "number": 12,
+        "lines": [
+          "12. monthlyExport(month, propertyId)"
+        ],
+        "baseline": 809,
+        "y": 818,
+        "depth": 1,
+        "context": [
+          1011,
+          0
+        ]
+      },
+      {
+        "type": "message",
+        "sender": "service",
+        "receiver": "data",
+        "text": "Chạy lại truy vấn báo cáo đúng scope",
+        "kind": "call",
+        "number": 13,
+        "lines": [
+          "13. Chạy lại truy vấn báo cáo đúng scope"
+        ],
+        "baseline": 856,
+        "y": 865,
+        "depth": 1,
+        "context": [
+          1011,
+          0
+        ]
+      },
+      {
+        "type": "message",
+        "sender": "data",
+        "receiver": "service",
+        "text": "Dữ liệu tại thời điểm xuất",
+        "kind": "return",
+        "number": 14,
+        "lines": [
+          "14. Dữ liệu tại thời điểm xuất"
+        ],
+        "baseline": 903,
+        "y": 912,
+        "depth": 1,
+        "context": [
+          1011,
+          0
+        ]
+      },
+      {
+        "type": "message",
+        "sender": "service",
+        "receiver": "service",
+        "text": "Escape ô CSV và tạo tên file",
+        "kind": "call",
+        "number": 15,
+        "lines": [
+          "15. Escape ô CSV và tạo tên file"
+        ],
+        "baseline": 950,
+        "y": 959,
+        "depth": 1,
+        "context": [
+          1011,
+          0
+        ]
+      },
+      {
+        "type": "message",
+        "sender": "service",
+        "receiver": "ui",
+        "text": "filename, mimeType, content",
+        "kind": "return",
+        "number": 16,
+        "lines": [
+          "16. filename, mimeType, content"
+        ],
+        "baseline": 997,
+        "y": 1006,
+        "depth": 1,
+        "context": [
+          1011,
+          0
+        ]
+      },
+      {
+        "type": "message",
+        "sender": "ui",
+        "receiver": "ui",
+        "text": "Clipboard.setData(content)",
+        "kind": "call",
+        "number": 17,
+        "lines": [
+          "17. Clipboard.setData(content)"
+        ],
+        "baseline": 1044,
+        "y": 1053,
+        "depth": 1,
+        "context": [
+          1011,
+          0
+        ]
+      },
+      {
+        "type": "message",
+        "sender": "ui",
+        "receiver": "actor",
+        "text": "Thông báo đã sao chép CSV",
+        "kind": "return",
+        "number": 18,
+        "lines": [
+          "18. Thông báo đã sao chép CSV"
+        ],
+        "baseline": 1091,
+        "y": 1100,
+        "depth": 1,
+        "context": [
+          1011,
+          0
+        ]
+      }
+    ],
+    "fragments": [
+      {
+        "top": 368,
+        "bottom": 457,
+        "depth": 0,
+        "kind": "break",
+        "guards": [
+          "[Tháng sai hoặc khu ngoài phạm vi]"
+        ],
+        "divider": null,
+        "alt_lines": []
+      },
+      {
+        "top": 703,
+        "bottom": 1121,
+        "depth": 0,
+        "kind": "opt",
+        "guards": [
+          "[Chọn xuất và có quyền export]"
+        ],
+        "divider": null,
+        "alt_lines": []
+      }
+    ],
+    "width": 1300,
+    "height": 1170
+  },
+  {
+    "id": "SD-14",
+    "title": "Đình chỉ tài khoản khách hàng",
+    "kind": "sequence",
+    "refs": "UC-ADM-04",
+    "source": "backend/src/admin/admin-console.service.ts:status",
+    "description": "Đổi trạng thái và thu hồi phiên cùng transaction; không xóa hóa đơn / dữ liệu tài chính.",
+    "pre": "Admin có capability; đối tượng là tài khoản khách hàng, không phải tài khoản Admin.",
+    "messages": [
+      {
+        "type": "message",
+        "sender": "actor",
+        "receiver": "ui",
+        "text": "Mở tài khoản; chọn đình chỉ và lý do",
+        "kind": "call",
+        "number": 1,
+        "lines": [
+          "1. Mở tài khoản; chọn đình chỉ và lý do"
+        ],
+        "baseline": 202,
+        "y": 211,
+        "depth": 0,
+        "context": []
+      },
+      {
+        "type": "message",
+        "sender": "ui",
+        "receiver": "service",
+        "text": "status(id, version, isActive=false)",
+        "kind": "call",
+        "number": 2,
+        "lines": [
+          "2. status(id, version, isActive=false)"
+        ],
+        "baseline": 249,
+        "y": 258,
+        "depth": 0,
+        "context": []
+      },
+      {
+        "type": "message",
+        "sender": "service",
+        "receiver": "data",
+        "text": "TX: khóa User; chỉ đọc role khác ADMIN",
+        "kind": "call",
+        "number": 3,
+        "lines": [
+          "3. TX: khóa User; chỉ đọc role khác ADMIN"
+        ],
+        "baseline": 296,
+        "y": 305,
+        "depth": 0,
+        "context": []
+      },
+      {
+        "type": "message",
+        "sender": "data",
+        "receiver": "service",
+        "text": "User và sessionVersion",
+        "kind": "return",
+        "number": 4,
+        "lines": [
+          "4. User và sessionVersion"
+        ],
+        "baseline": 343,
+        "y": 352,
+        "depth": 0,
+        "context": []
+      },
+      {
+        "type": "message",
+        "sender": "service",
+        "receiver": "ui",
+        "text": "404 / 409; tải lại, không ghi",
+        "kind": "return",
+        "number": 5,
+        "lines": [
+          "5. 404 / 409; tải lại, không ghi"
+        ],
+        "baseline": 427,
+        "y": 436,
+        "depth": 1,
+        "context": [
+          1004,
+          0
+        ]
+      },
+      {
+        "type": "message",
+        "sender": "service",
+        "receiver": "data",
+        "text": "Đổi isActive; tăng sessionVersion",
+        "kind": "call",
+        "number": 6,
+        "lines": [
+          "6. Đổi isActive; tăng sessionVersion"
+        ],
+        "baseline": 511,
+        "y": 520,
+        "depth": 1,
+        "context": [
+          1004,
+          1
+        ]
+      },
+      {
+        "type": "message",
+        "sender": "data",
+        "receiver": "service",
+        "text": "User mới trong transaction",
+        "kind": "return",
+        "number": 7,
+        "lines": [
+          "7. User mới trong transaction"
+        ],
+        "baseline": 558,
+        "y": 567,
+        "depth": 1,
+        "context": [
+          1004,
+          1
+        ]
+      },
+      {
+        "type": "message",
+        "sender": "service",
+        "receiver": "data",
+        "text": "Thu hồi sessions, refresh, access-link và phiên phụ thuộc",
+        "kind": "call",
+        "number": 8,
+        "lines": [
+          "8. Thu hồi sessions, refresh, access-link và phiên phụ thuộc"
+        ],
+        "baseline": 605,
+        "y": 614,
+        "depth": 1,
+        "context": [
+          1004,
+          1
+        ]
+      },
+      {
+        "type": "message",
+        "sender": "data",
+        "receiver": "service",
+        "text": "Số bản ghi theo policy",
+        "kind": "return",
+        "number": 9,
+        "lines": [
+          "9. Số bản ghi theo policy"
+        ],
+        "baseline": 652,
+        "y": 661,
+        "depth": 1,
+        "context": [
+          1004,
+          1
+        ]
+      },
+      {
+        "type": "message",
+        "sender": "service",
+        "receiver": "data",
+        "text": "Ghi adminAudit với before / after",
+        "kind": "call",
+        "number": 10,
+        "lines": [
+          "10. Ghi adminAudit với before / after"
+        ],
+        "baseline": 699,
+        "y": 708,
+        "depth": 1,
+        "context": [
+          1004,
+          1
+        ]
+      },
+      {
+        "type": "message",
+        "sender": "data",
+        "receiver": "service",
+        "text": "Commit toàn bộ hoặc rollback",
+        "kind": "return",
+        "number": 11,
+        "lines": [
+          "11. Commit toàn bộ hoặc rollback"
+        ],
+        "baseline": 746,
+        "y": 755,
+        "depth": 1,
+        "context": [
+          1004,
+          1
+        ]
+      },
+      {
+        "type": "message",
+        "sender": "service",
+        "receiver": "ui",
+        "text": "Account projection mới",
+        "kind": "return",
+        "number": 12,
+        "lines": [
+          "12. Account projection mới"
+        ],
+        "baseline": 793,
+        "y": 802,
+        "depth": 1,
+        "context": [
+          1004,
+          1
+        ]
+      },
+      {
+        "type": "message",
+        "sender": "ui",
+        "receiver": "actor",
+        "text": "Cập nhật danh sách và detail",
+        "kind": "return",
+        "number": 13,
+        "lines": [
+          "13. Cập nhật danh sách và detail"
+        ],
+        "baseline": 840,
+        "y": 849,
+        "depth": 1,
+        "context": [
+          1004,
+          1
+        ]
+      },
+      {
+        "type": "message",
+        "sender": "actor",
+        "receiver": "ui",
+        "text": "Chọn khôi phục và lý do",
+        "kind": "call",
+        "number": 14,
+        "lines": [
+          "14. Chọn khôi phục và lý do"
+        ],
+        "baseline": 940,
+        "y": 949,
+        "depth": 1,
+        "context": [
+          1014,
+          0
+        ]
+      },
+      {
+        "type": "message",
+        "sender": "ui",
+        "receiver": "service",
+        "text": "status(id, version, isActive=true)",
+        "kind": "call",
+        "number": 15,
+        "lines": [
+          "15. status(id, version, isActive=true)"
+        ],
+        "baseline": 987,
+        "y": 996,
+        "depth": 1,
+        "context": [
+          1014,
+          0
+        ]
+      },
+      {
+        "type": "message",
+        "sender": "service",
+        "receiver": "data",
+        "text": "Kiểm tra lại; đổi trạng thái, version; audit",
+        "kind": "call",
+        "number": 16,
+        "lines": [
+          "16. Kiểm tra lại; đổi trạng thái, version; audit"
+        ],
+        "baseline": 1034,
+        "y": 1043,
+        "depth": 1,
+        "context": [
+          1014,
+          0
+        ]
+      },
+      {
+        "type": "message",
+        "sender": "data",
+        "receiver": "service",
+        "text": "Tài khoản active, token cũ vẫn thu hồi",
+        "kind": "return",
+        "number": 17,
+        "lines": [
+          "17. Tài khoản active, token cũ vẫn thu hồi"
+        ],
+        "baseline": 1081,
+        "y": 1090,
+        "depth": 1,
+        "context": [
+          1014,
+          0
+        ]
+      },
+      {
+        "type": "message",
+        "sender": "service",
+        "receiver": "ui",
+        "text": "Trạng thái mới; cần đăng nhập phiên mới",
+        "kind": "return",
+        "number": 18,
+        "lines": [
+          "18. Trạng thái mới; cần đăng nhập phiên mới"
+        ],
+        "baseline": 1128,
+        "y": 1137,
+        "depth": 1,
+        "context": [
+          1014,
+          0
+        ]
+      }
+    ],
+    "fragments": [
+      {
+        "top": 368,
+        "bottom": 870,
+        "depth": 0,
+        "kind": "alt",
+        "guards": [
+          "[Không tìm thấy hoặc version / trạng thái đổi]"
+        ],
+        "divider": 452,
+        "alt_lines": [
+          "[Tài khoản khách hàng hợp lệ]"
+        ]
+      },
+      {
+        "top": 881,
+        "bottom": 1158,
+        "depth": 0,
+        "kind": "opt",
+        "guards": [
+          "[Khôi phục ở lần xử lý khác]"
+        ],
+        "divider": null,
+        "alt_lines": []
+      }
+    ],
+    "width": 1300,
+    "height": 1207
+  },
+  {
+    "id": "SD-15",
+    "title": "Tra cứu inventory và chuyển kiểm duyệt tin",
+    "kind": "sequence",
+    "refs": "UC-ADM-08, UC-ADM-11",
+    "source": "backend/src/admin/admin.service.ts:rooms; backend/src/admin/admin-console.service.ts:work; backend/src/listings/listings.service.ts:review; backend/src/listings/listings.service.ts:mutate",
+    "description": "Inventory chỉ đọc; điều hướng tới đúng listing UUID, không sửa Room / Lease / Invoice từ card.",
+    "pre": "Phiên Admin có quyền inventory; duyệt tin cần thêm capability moderation tương ứng.",
+    "messages": [
+      {
+        "type": "message",
+        "sender": "actor",
+        "receiver": "ui",
+        "text": "Lọc khu / phòng và phân trang",
+        "kind": "call",
+        "number": 1,
+        "lines": [
+          "1. Lọc khu / phòng và phân trang"
+        ],
+        "baseline": 202,
+        "y": 211,
+        "depth": 0,
+        "context": []
+      },
+      {
+        "type": "message",
+        "sender": "ui",
+        "receiver": "service",
+        "text": "GET admin inventory theo query",
+        "kind": "call",
+        "number": 2,
+        "lines": [
+          "2. GET admin inventory theo query"
+        ],
+        "baseline": 249,
+        "y": 258,
+        "depth": 0,
+        "context": []
+      },
+      {
+        "type": "message",
+        "sender": "service",
+        "receiver": "data",
+        "text": "Kiểm tra scope; đọc projection có masking",
+        "kind": "call",
+        "number": 3,
+        "lines": [
+          "3. Kiểm tra scope; đọc projection có masking"
+        ],
+        "baseline": 296,
+        "y": 305,
+        "depth": 0,
+        "context": []
+      },
+      {
+        "type": "message",
+        "sender": "data",
+        "receiver": "service",
+        "text": "Danh sách và meta phân trang",
+        "kind": "return",
+        "number": 4,
+        "lines": [
+          "4. Danh sách và meta phân trang"
+        ],
+        "baseline": 343,
+        "y": 352,
+        "depth": 0,
+        "context": []
+      },
+      {
+        "type": "message",
+        "sender": "service",
+        "receiver": "ui",
+        "text": "Inventory cùng trạng thái listing riêng",
+        "kind": "return",
+        "number": 5,
+        "lines": [
+          "5. Inventory cùng trạng thái listing riêng"
+        ],
+        "baseline": 390,
+        "y": 399,
+        "depth": 0,
+        "context": []
+      },
+      {
+        "type": "message",
+        "sender": "actor",
+        "receiver": "ui",
+        "text": "Chọn tin PENDING cần xử lý",
+        "kind": "call",
+        "number": 6,
+        "lines": [
+          "6. Chọn tin PENDING cần xử lý"
+        ],
+        "baseline": 437,
+        "y": 446,
+        "depth": 0,
+        "context": []
+      },
+      {
+        "type": "message",
+        "sender": "ui",
+        "receiver": "actor",
+        "text": "Ẩn / chặn hành động; không gửi quyết định",
+        "kind": "return",
+        "number": 7,
+        "lines": [
+          "7. Ẩn / chặn hành động; không gửi quyết định"
+        ],
+        "baseline": 521,
+        "y": 530,
+        "depth": 1,
+        "context": [
+          1006,
+          0
+        ]
+      },
+      {
+        "type": "message",
+        "sender": "ui",
+        "receiver": "service",
+        "text": "Tìm queue theo exact listing UUID",
+        "kind": "call",
+        "number": 8,
+        "lines": [
+          "8. Tìm queue theo exact listing UUID"
+        ],
+        "baseline": 584,
+        "y": 593,
+        "depth": 0,
+        "context": []
+      },
+      {
+        "type": "message",
+        "sender": "service",
+        "receiver": "data",
+        "text": "Đọc mục kiểm duyệt và trạng thái claim",
+        "kind": "call",
+        "number": 9,
+        "lines": [
+          "9. Đọc mục kiểm duyệt và trạng thái claim"
+        ],
+        "baseline": 631,
+        "y": 640,
+        "depth": 0,
+        "context": []
+      },
+      {
+        "type": "message",
+        "sender": "data",
+        "receiver": "service",
+        "text": "Mục tiêu chính xác",
+        "kind": "return",
+        "number": 10,
+        "lines": [
+          "10. Mục tiêu chính xác"
+        ],
+        "baseline": 678,
+        "y": 687,
+        "depth": 0,
+        "context": []
+      },
+      {
+        "type": "message",
+        "sender": "service",
+        "receiver": "ui",
+        "text": "Queue item và version",
+        "kind": "return",
+        "number": 11,
+        "lines": [
+          "11. Queue item và version"
+        ],
+        "baseline": 725,
+        "y": 734,
+        "depth": 0,
+        "context": []
+      },
+      {
+        "type": "message",
+        "sender": "actor",
+        "receiver": "ui",
+        "text": "Claim; nhập quyết định và lý do",
+        "kind": "call",
+        "number": 12,
+        "lines": [
+          "12. Claim; nhập quyết định và lý do"
+        ],
+        "baseline": 772,
+        "y": 781,
+        "depth": 0,
+        "context": []
+      },
+      {
+        "type": "message",
+        "sender": "ui",
+        "receiver": "service",
+        "text": "Gửi claim / decision có version",
+        "kind": "call",
+        "number": 13,
+        "lines": [
+          "13. Gửi claim / decision có version"
+        ],
+        "baseline": 819,
+        "y": 828,
+        "depth": 0,
+        "context": []
+      },
+      {
+        "type": "message",
+        "sender": "service",
+        "receiver": "data",
+        "text": "TX: kiểm tra quyền, claim và version",
+        "kind": "call",
+        "number": 14,
+        "lines": [
+          "14. TX: kiểm tra quyền, claim và version"
+        ],
+        "baseline": 866,
+        "y": 875,
+        "depth": 0,
+        "context": []
+      },
+      {
+        "type": "message",
+        "sender": "data",
+        "receiver": "service",
+        "text": "Trạng thái trước khi ghi",
+        "kind": "return",
+        "number": 15,
+        "lines": [
+          "15. Trạng thái trước khi ghi"
+        ],
+        "baseline": 913,
+        "y": 922,
+        "depth": 0,
+        "context": []
+      },
+      {
+        "type": "message",
+        "sender": "service",
+        "receiver": "ui",
+        "text": "409; tải lại, không áp quyết định",
+        "kind": "return",
+        "number": 16,
+        "lines": [
+          "16. 409; tải lại, không áp quyết định"
+        ],
+        "baseline": 997,
+        "y": 1006,
+        "depth": 1,
+        "context": [
+          1016,
+          0
+        ]
+      },
+      {
+        "type": "message",
+        "sender": "service",
+        "receiver": "data",
+        "text": "Ghi decision và audit",
+        "kind": "call",
+        "number": 17,
+        "lines": [
+          "17. Ghi decision và audit"
+        ],
+        "baseline": 1060,
+        "y": 1069,
+        "depth": 0,
+        "context": []
+      },
+      {
+        "type": "message",
+        "sender": "data",
+        "receiver": "service",
+        "text": "Commit trạng thái tin",
+        "kind": "return",
+        "number": 18,
+        "lines": [
+          "18. Commit trạng thái tin"
+        ],
+        "baseline": 1107,
+        "y": 1116,
+        "depth": 0,
+        "context": []
+      },
+      {
+        "type": "message",
+        "sender": "service",
+        "receiver": "ui",
+        "text": "Kết quả kiểm duyệt",
+        "kind": "return",
+        "number": 19,
+        "lines": [
+          "19. Kết quả kiểm duyệt"
+        ],
+        "baseline": 1154,
+        "y": 1163,
+        "depth": 0,
+        "context": []
+      },
+      {
+        "type": "message",
+        "sender": "ui",
+        "receiver": "ui",
+        "text": "Invalidate inventory khi quay lại",
+        "kind": "call",
+        "number": 20,
+        "lines": [
+          "20. Invalidate inventory khi quay lại"
+        ],
+        "baseline": 1201,
+        "y": 1210,
+        "depth": 0,
+        "context": []
+      }
+    ],
+    "fragments": [
+      {
+        "top": 462,
+        "bottom": 551,
+        "depth": 0,
+        "kind": "break",
+        "guards": [
+          "[Không có quyền moderation]"
+        ],
+        "divider": null,
+        "alt_lines": []
+      },
+      {
+        "top": 938,
+        "bottom": 1027,
+        "depth": 0,
+        "kind": "break",
+        "guards": [
+          "[Mất claim hoặc version đã đổi]"
+        ],
+        "divider": null,
+        "alt_lines": []
+      }
+    ],
+    "width": 1300,
+    "height": 1264
+  },
+  {
+    "id": "SD-16",
+    "title": "Đối soát khoản thu theo maker checker",
+    "kind": "sequence",
+    "refs": "UC-ADM-15",
+    "source": "backend/src/platform/finance-reconciliation.service.ts:importStatement; backend/src/platform/finance-reconciliation.service.ts:propose; backend/src/platform/finance-reconciliation.service.ts:review",
+    "description": "Checker không được là maker; đối soát receipt không nhân bản tiền theo allocation.",
+    "pre": "Hai tài khoản Admin độc lập có quyền finance; CSV sao kê hợp lệ.",
+    "messages": [
+      {
+        "type": "message",
+        "sender": "actor",
+        "receiver": "ui",
+        "text": "Import sao kê và chọn dòng",
+        "kind": "call",
+        "number": 1,
+        "lines": [
+          "1. Import sao kê và chọn dòng"
+        ],
+        "baseline": 202,
+        "y": 211,
+        "depth": 0,
+        "context": []
+      },
+      {
+        "type": "message",
+        "sender": "ui",
+        "receiver": "service",
+        "text": "importStatement(csv) / candidates(line)",
+        "kind": "call",
+        "number": 2,
+        "lines": [
+          "2. importStatement(csv) / candidates(line)"
+        ],
+        "baseline": 249,
+        "y": 258,
+        "depth": 0,
+        "context": []
+      },
+      {
+        "type": "message",
+        "sender": "service",
+        "receiver": "data",
+        "text": "Kiểm tra đầu vào, trùng; tìm candidate theo scope",
+        "kind": "call",
+        "number": 3,
+        "lines": [
+          "3. Kiểm tra đầu vào, trùng; tìm candidate theo scope"
+        ],
+        "baseline": 296,
+        "y": 305,
+        "depth": 0,
+        "context": []
+      },
+      {
+        "type": "message",
+        "sender": "data",
+        "receiver": "service",
+        "text": "Dòng sao kê và ứng viên",
+        "kind": "return",
+        "number": 4,
+        "lines": [
+          "4. Dòng sao kê và ứng viên"
+        ],
+        "baseline": 343,
+        "y": 352,
+        "depth": 0,
+        "context": []
+      },
+      {
+        "type": "message",
+        "sender": "service",
+        "receiver": "ui",
+        "text": "Candidates receipt / payment legacy",
+        "kind": "return",
+        "number": 5,
+        "lines": [
+          "5. Candidates receipt / payment legacy"
+        ],
+        "baseline": 390,
+        "y": 399,
+        "depth": 0,
+        "context": []
+      },
+      {
+        "type": "message",
+        "sender": "actor",
+        "receiver": "ui",
+        "text": "Đề nghị match và nhập lý do",
+        "kind": "call",
+        "number": 6,
+        "lines": [
+          "6. Đề nghị match và nhập lý do"
+        ],
+        "baseline": 437,
+        "y": 446,
+        "depth": 0,
+        "context": []
+      },
+      {
+        "type": "message",
+        "sender": "ui",
+        "receiver": "service",
+        "text": "propose(lineId, version, action)",
+        "kind": "call",
+        "number": 7,
+        "lines": [
+          "7. propose(lineId, version, action)"
+        ],
+        "baseline": 484,
+        "y": 493,
+        "depth": 0,
+        "context": []
+      },
+      {
+        "type": "message",
+        "sender": "service",
+        "receiver": "data",
+        "text": "TX: khóa đối soát; kiểm tra; tạo PENDING và audit",
+        "kind": "call",
+        "number": 8,
+        "lines": [
+          "8. TX: khóa đối soát; kiểm tra; tạo PENDING và audit"
+        ],
+        "baseline": 531,
+        "y": 540,
+        "depth": 0,
+        "context": []
+      },
+      {
+        "type": "message",
+        "sender": "data",
+        "receiver": "service",
+        "text": "Proposal có maker và lineVersion",
+        "kind": "return",
+        "number": 9,
+        "lines": [
+          "9. Proposal có maker và lineVersion"
+        ],
+        "baseline": 578,
+        "y": 587,
+        "depth": 0,
+        "context": []
+      },
+      {
+        "type": "message",
+        "sender": "service",
+        "receiver": "ui",
+        "text": "Đề nghị chờ checker",
+        "kind": "return",
+        "number": 10,
+        "lines": [
+          "10. Đề nghị chờ checker"
+        ],
+        "baseline": 625,
+        "y": 634,
+        "depth": 0,
+        "context": []
+      },
+      {
+        "type": "message",
+        "sender": "second",
+        "receiver": "ui",
+        "text": "Xem đề nghị; duyệt hoặc từ chối",
+        "kind": "call",
+        "number": 11,
+        "lines": [
+          "11. Xem đề nghị; duyệt hoặc từ chối"
+        ],
+        "baseline": 672,
+        "y": 681,
+        "depth": 0,
+        "context": []
+      },
+      {
+        "type": "message",
+        "sender": "ui",
+        "receiver": "service",
+        "text": "review(proposalId, version, approve)",
+        "kind": "call",
+        "number": 12,
+        "lines": [
+          "12. review(proposalId, version, approve)"
+        ],
+        "baseline": 719,
+        "y": 728,
+        "depth": 0,
+        "context": []
+      },
+      {
+        "type": "message",
+        "sender": "service",
+        "receiver": "data",
+        "text": "TX: khóa; đọc proposal và line",
+        "kind": "call",
+        "number": 13,
+        "lines": [
+          "13. TX: khóa; đọc proposal và line"
+        ],
+        "baseline": 766,
+        "y": 775,
+        "depth": 0,
+        "context": []
+      },
+      {
+        "type": "message",
+        "sender": "data",
+        "receiver": "service",
+        "text": "Proposal PENDING và version",
+        "kind": "return",
+        "number": 14,
+        "lines": [
+          "14. Proposal PENDING và version"
+        ],
+        "baseline": 813,
+        "y": 822,
+        "depth": 0,
+        "context": []
+      },
+      {
+        "type": "message",
+        "sender": "service",
+        "receiver": "ui",
+        "text": "403 / 409; không tự duyệt",
+        "kind": "return",
+        "number": 15,
+        "lines": [
+          "15. 403 / 409; không tự duyệt"
+        ],
+        "baseline": 897,
+        "y": 906,
+        "depth": 1,
+        "context": [
+          1014,
+          0
+        ]
+      },
+      {
+        "type": "message",
+        "sender": "service",
+        "receiver": "data",
+        "text": "Kiểm tra receipt / payment chưa match và đúng số tiền",
+        "kind": "call",
+        "number": 16,
+        "lines": [
+          "16. Kiểm tra receipt / payment chưa match và đúng số tiền"
+        ],
+        "baseline": 997,
+        "y": 1006,
+        "depth": 1,
+        "context": [
+          1016,
+          0
+        ]
+      },
+      {
+        "type": "message",
+        "sender": "data",
+        "receiver": "service",
+        "text": "Ứng viên còn hợp lệ",
+        "kind": "return",
+        "number": 17,
+        "lines": [
+          "17. Ứng viên còn hợp lệ"
+        ],
+        "baseline": 1044,
+        "y": 1053,
+        "depth": 1,
+        "context": [
+          1016,
+          0
+        ]
+      },
+      {
+        "type": "message",
+        "sender": "service",
+        "receiver": "ui",
+        "text": "409; giữ nguyên đối soát",
+        "kind": "return",
+        "number": 18,
+        "lines": [
+          "18. 409; giữ nguyên đối soát"
+        ],
+        "baseline": 1128,
+        "y": 1137,
+        "depth": 2,
+        "context": [
+          1016,
+          0,
+          1018,
+          0
+        ]
+      },
+      {
+        "type": "message",
+        "sender": "service",
+        "receiver": "data",
+        "text": "Cập nhật line, tăng version; proposal APPROVED",
+        "kind": "call",
+        "number": 19,
+        "lines": [
+          "19. Cập nhật line, tăng version; proposal APPROVED"
+        ],
+        "baseline": 1191,
+        "y": 1200,
+        "depth": 1,
+        "context": [
+          1016,
+          0
+        ]
+      },
+      {
+        "type": "message",
+        "sender": "service",
+        "receiver": "data",
+        "text": "Proposal REJECTED; giữ line",
+        "kind": "call",
+        "number": 20,
+        "lines": [
+          "20. Proposal REJECTED; giữ line"
+        ],
+        "baseline": 1275,
+        "y": 1284,
+        "depth": 1,
+        "context": [
+          1016,
+          1
+        ]
+      },
+      {
+        "type": "message",
+        "sender": "data",
+        "receiver": "service",
+        "text": "Commit cùng audit quyết định",
+        "kind": "return",
+        "number": 21,
+        "lines": [
+          "21. Commit cùng audit quyết định"
+        ],
+        "baseline": 1338,
+        "y": 1347,
+        "depth": 0,
+        "context": []
+      },
+      {
+        "type": "message",
+        "sender": "service",
+        "receiver": "ui",
+        "text": "Proposal và line hiện tại",
+        "kind": "return",
+        "number": 22,
+        "lines": [
+          "22. Proposal và line hiện tại"
+        ],
+        "baseline": 1385,
+        "y": 1394,
+        "depth": 0,
+        "context": []
+      }
+    ],
+    "fragments": [
+      {
+        "top": 838,
+        "bottom": 927,
+        "depth": 0,
+        "kind": "break",
+        "guards": [
+          "[Checker = maker, stale hoặc đã review]"
+        ],
+        "divider": null,
+        "alt_lines": []
+      },
+      {
+        "top": 1069,
+        "bottom": 1158,
+        "depth": 1,
+        "kind": "break",
+        "guards": [
+          "[Ứng viên thay đổi hoặc đã ghép]"
+        ],
+        "divider": null,
+        "alt_lines": []
+      },
+      {
+        "top": 938,
+        "bottom": 1305,
+        "depth": 0,
+        "kind": "alt",
+        "guards": [
+          "[approve = true]"
+        ],
+        "divider": 1216,
+        "alt_lines": [
+          "[approve = false]"
+        ]
+      }
+    ],
+    "width": 1300,
+    "height": 1448
+  },
+  {
+    "id": "SD-17",
+    "title": "Chatbot RAG và đọc nguồn theo quyền",
+    "kind": "sequence",
+    "refs": "UC-SUP-06",
+    "source": "backend/src/chatbot/chatbot.service.ts:ask; backend/src/chatbot/chatbot.service.ts:answer; backend/src/chatbot/chatbot.service.ts:getSource",
+    "description": "Chỉ trả câu trả lời có nguồn còn hiệu lực; không gọi tool lấy số liệu sống hoặc ghi dữ liệu nghiệp vụ.",
+    "pre": "Phiên LANDLORD; cấu hình AI bật; câu hỏi trong giới hạn và property thuộc chủ trọ.",
+    "messages": [
+      {
+        "type": "message",
+        "sender": "actor",
+        "receiver": "ui",
+        "text": "Nhập câu hỏi và propertyId",
+        "kind": "call",
+        "number": 1,
+        "lines": [
+          "1. Nhập câu hỏi và propertyId"
+        ],
+        "baseline": 202,
+        "y": 211,
+        "depth": 0,
+        "context": []
+      },
+      {
+        "type": "message",
+        "sender": "ui",
+        "receiver": "service",
+        "text": "ask(message, scope)",
+        "kind": "call",
+        "number": 2,
+        "lines": [
+          "2. ask(message, scope)"
+        ],
+        "baseline": 249,
+        "y": 258,
+        "depth": 0,
+        "context": []
+      },
+      {
+        "type": "message",
+        "sender": "service",
+        "receiver": "service",
+        "text": "JWT / role / rate limit; scope; timeout",
+        "kind": "call",
+        "number": 3,
+        "lines": [
+          "3. JWT / role / rate limit; scope; timeout"
+        ],
+        "baseline": 296,
+        "y": 305,
+        "depth": 0,
+        "context": []
+      },
+      {
+        "type": "message",
+        "sender": "service",
+        "receiver": "ui",
+        "text": "Mã lỗi; UI cho thử lại phù hợp",
+        "kind": "return",
+        "number": 4,
+        "lines": [
+          "4. Mã lỗi; UI cho thử lại phù hợp"
+        ],
+        "baseline": 380,
+        "y": 389,
+        "depth": 1,
+        "context": [
+          1003,
+          0
+        ]
+      },
+      {
+        "type": "message",
+        "sender": "service",
+        "receiver": "ui",
+        "text": "insufficient_evidence; nêu giới hạn",
+        "kind": "return",
+        "number": 5,
+        "lines": [
+          "5. insufficient_evidence; nêu giới hạn"
+        ],
+        "baseline": 480,
+        "y": 489,
+        "depth": 1,
+        "context": [
+          1005,
+          0
+        ]
+      },
+      {
+        "type": "message",
+        "sender": "service",
+        "receiver": "data",
+        "text": "Retriever: tìm chunks theo quyền",
+        "kind": "call",
+        "number": 6,
+        "lines": [
+          "6. Retriever: tìm chunks theo quyền"
+        ],
+        "baseline": 543,
+        "y": 552,
+        "depth": 0,
+        "context": []
+      },
+      {
+        "type": "message",
+        "sender": "data",
+        "receiver": "service",
+        "text": "Tối đa nguồn trong context giới hạn",
+        "kind": "return",
+        "number": 7,
+        "lines": [
+          "7. Tối đa nguồn trong context giới hạn"
+        ],
+        "baseline": 590,
+        "y": 599,
+        "depth": 0,
+        "context": []
+      },
+      {
+        "type": "message",
+        "sender": "service",
+        "receiver": "ui",
+        "text": "insufficient_evidence; không bịa",
+        "kind": "return",
+        "number": 8,
+        "lines": [
+          "8. insufficient_evidence; không bịa"
+        ],
+        "baseline": 674,
+        "y": 683,
+        "depth": 1,
+        "context": [
+          1009,
+          0
+        ]
+      },
+      {
+        "type": "message",
+        "sender": "service",
+        "receiver": "data",
+        "text": "Model: sinh đáp án từ chunks cho phép",
+        "kind": "call",
+        "number": 9,
+        "lines": [
+          "9. Model: sinh đáp án từ chunks cho phép"
+        ],
+        "baseline": 737,
+        "y": 746,
+        "depth": 0,
+        "context": []
+      },
+      {
+        "type": "message",
+        "sender": "data",
+        "receiver": "service",
+        "text": "Đáp án và sourceIds",
+        "kind": "return",
+        "number": 10,
+        "lines": [
+          "10. Đáp án và sourceIds"
+        ],
+        "baseline": 784,
+        "y": 793,
+        "depth": 0,
+        "context": []
+      },
+      {
+        "type": "message",
+        "sender": "service",
+        "receiver": "data",
+        "text": "Thử model lại với một chunk",
+        "kind": "call",
+        "number": 11,
+        "lines": [
+          "11. Thử model lại với một chunk"
+        ],
+        "baseline": 868,
+        "y": 877,
+        "depth": 1,
+        "context": [
+          1013,
+          0
+        ]
+      },
+      {
+        "type": "message",
+        "sender": "data",
+        "receiver": "service",
+        "text": "Kết quả giới hạn context",
+        "kind": "return",
+        "number": 12,
+        "lines": [
+          "12. Kết quả giới hạn context"
+        ],
+        "baseline": 915,
+        "y": 924,
+        "depth": 1,
+        "context": [
+          1013,
+          0
+        ]
+      },
+      {
+        "type": "message",
+        "sender": "service",
+        "receiver": "service",
+        "text": "Validate nội dung và sourceIds",
+        "kind": "call",
+        "number": 13,
+        "lines": [
+          "13. Validate nội dung và sourceIds"
+        ],
+        "baseline": 978,
+        "y": 987,
+        "depth": 0,
+        "context": []
+      },
+      {
+        "type": "message",
+        "sender": "service",
+        "receiver": "data",
+        "text": "Kiểm tra nguồn active và contentHash",
+        "kind": "call",
+        "number": 14,
+        "lines": [
+          "14. Kiểm tra nguồn active và contentHash"
+        ],
+        "baseline": 1025,
+        "y": 1034,
+        "depth": 0,
+        "context": []
+      },
+      {
+        "type": "message",
+        "sender": "data",
+        "receiver": "service",
+        "text": "Nguồn hiện hành hoặc bị thu hồi",
+        "kind": "return",
+        "number": 15,
+        "lines": [
+          "15. Nguồn hiện hành hoặc bị thu hồi"
+        ],
+        "baseline": 1072,
+        "y": 1081,
+        "depth": 0,
+        "context": []
+      },
+      {
+        "type": "message",
+        "sender": "service",
+        "receiver": "ui",
+        "text": "Fallback / AI_INVALID_RESPONSE",
+        "kind": "return",
+        "number": 16,
+        "lines": [
+          "16. Fallback / AI_INVALID_RESPONSE"
+        ],
+        "baseline": 1156,
+        "y": 1165,
+        "depth": 1,
+        "context": [
+          1019,
+          0
+        ]
+      },
+      {
+        "type": "message",
+        "sender": "service",
+        "receiver": "ui",
+        "text": "answered, answer, sources",
+        "kind": "return",
+        "number": 17,
+        "lines": [
+          "17. answered, answer, sources"
+        ],
+        "baseline": 1219,
+        "y": 1228,
+        "depth": 0,
+        "context": []
+      },
+      {
+        "type": "message",
+        "sender": "ui",
+        "receiver": "service",
+        "text": "getSource(id, scope)",
+        "kind": "call",
+        "number": 18,
+        "lines": [
+          "18. getSource(id, scope)"
+        ],
+        "baseline": 1303,
+        "y": 1312,
+        "depth": 1,
+        "context": [
+          1022,
+          0
+        ]
+      },
+      {
+        "type": "message",
+        "sender": "service",
+        "receiver": "data",
+        "text": "Kiểm tra quyền và đọc nguồn",
+        "kind": "call",
+        "number": 19,
+        "lines": [
+          "19. Kiểm tra quyền và đọc nguồn"
+        ],
+        "baseline": 1350,
+        "y": 1359,
+        "depth": 1,
+        "context": [
+          1022,
+          0
+        ]
+      },
+      {
+        "type": "message",
+        "sender": "data",
+        "receiver": "service",
+        "text": "Nội dung được phép",
+        "kind": "return",
+        "number": 20,
+        "lines": [
+          "20. Nội dung được phép"
+        ],
+        "baseline": 1397,
+        "y": 1406,
+        "depth": 1,
+        "context": [
+          1022,
+          0
+        ]
+      },
+      {
+        "type": "message",
+        "sender": "service",
+        "receiver": "ui",
+        "text": "Nguồn hoặc lỗi truy cập",
+        "kind": "return",
+        "number": 21,
+        "lines": [
+          "21. Nguồn hoặc lỗi truy cập"
+        ],
+        "baseline": 1444,
+        "y": 1453,
+        "depth": 1,
+        "context": [
+          1022,
+          0
+        ]
+      }
+    ],
+    "fragments": [
+      {
+        "top": 321,
+        "bottom": 410,
+        "depth": 0,
+        "kind": "break",
+        "guards": [
+          "[AI tắt, quá tải, timeout hoặc scope sai]"
+        ],
+        "divider": null,
+        "alt_lines": []
+      },
+      {
+        "top": 421,
+        "bottom": 510,
+        "depth": 0,
+        "kind": "break",
+        "guards": [
+          "[Hỏi số liệu hiện tại hoặc thiếu ngữ cảnh]"
+        ],
+        "divider": null,
+        "alt_lines": []
+      },
+      {
+        "top": 615,
+        "bottom": 704,
+        "depth": 0,
+        "kind": "break",
+        "guards": [
+          "[Không có nguồn hoặc không đủ bằng chứng]"
+        ],
+        "divider": null,
+        "alt_lines": []
+      },
+      {
+        "top": 809,
+        "bottom": 945,
+        "depth": 0,
+        "kind": "opt",
+        "guards": [
+          "[AI_CONTEXT_LIMIT và có nhiều chunks]"
+        ],
+        "divider": null,
+        "alt_lines": []
+      },
+      {
+        "top": 1097,
+        "bottom": 1186,
+        "depth": 0,
+        "kind": "break",
+        "guards": [
+          "[Nguồn đổi / thu hồi hoặc phản hồi sai]"
+        ],
+        "divider": null,
+        "alt_lines": []
+      },
+      {
+        "top": 1244,
+        "bottom": 1474,
+        "depth": 0,
+        "kind": "opt",
+        "guards": [
+          "[Người dùng mở nguồn]"
+        ],
+        "divider": null,
+        "alt_lines": []
+      }
+    ],
+    "width": 1300,
+    "height": 1523
+  },
+  {
+    "id": "SD-18",
+    "title": "Duyệt hồ sơ xác minh chủ trọ",
+    "kind": "sequence",
+    "refs": "UC-ADM-18",
+    "source": "backend/src/admin/admin-verification.service.ts:list; backend/src/admin/admin-verification.service.ts:review",
+    "description": "Quyết định ghi có điều kiện version và audit chứng cứ; chỉ APPROVED khi chủ trọ active và minh chứng SUPPORT_CLEAN.",
+    "pre": "Có hồ sơ PENDING liên kết ticket hỗ trợ; Admin có quyền xét duyệt.",
+    "messages": [
+      {
+        "type": "message",
+        "sender": "actor",
+        "receiver": "ui",
+        "text": "Mở hàng đợi và hồ sơ",
+        "kind": "call",
+        "number": 1,
+        "lines": [
+          "1. Mở hàng đợi và hồ sơ"
+        ],
+        "baseline": 202,
+        "y": 211,
+        "depth": 0,
+        "context": []
+      },
+      {
+        "type": "message",
+        "sender": "ui",
+        "receiver": "service",
+        "text": "list(query)",
+        "kind": "call",
+        "number": 2,
+        "lines": [
+          "2. list(query)"
+        ],
+        "baseline": 249,
+        "y": 258,
+        "depth": 0,
+        "context": []
+      },
+      {
+        "type": "message",
+        "sender": "service",
+        "receiver": "data",
+        "text": "Đọc projection và phân trang",
+        "kind": "call",
+        "number": 3,
+        "lines": [
+          "3. Đọc projection và phân trang"
+        ],
+        "baseline": 296,
+        "y": 305,
+        "depth": 0,
+        "context": []
+      },
+      {
+        "type": "message",
+        "sender": "data",
+        "receiver": "service",
+        "text": "Hồ sơ cùng version",
+        "kind": "return",
+        "number": 4,
+        "lines": [
+          "4. Hồ sơ cùng version"
+        ],
+        "baseline": 343,
+        "y": 352,
+        "depth": 0,
+        "context": []
+      },
+      {
+        "type": "message",
+        "sender": "service",
+        "receiver": "ui",
+        "text": "Dữ liệu được phép xem",
+        "kind": "return",
+        "number": 5,
+        "lines": [
+          "5. Dữ liệu được phép xem"
+        ],
+        "baseline": 390,
+        "y": 399,
+        "depth": 0,
+        "context": []
+      },
+      {
+        "type": "message",
+        "sender": "actor",
+        "receiver": "ui",
+        "text": "Nhập decision, reason và version",
+        "kind": "call",
+        "number": 6,
+        "lines": [
+          "6. Nhập decision, reason và version"
+        ],
+        "baseline": 437,
+        "y": 446,
+        "depth": 0,
+        "context": []
+      },
+      {
+        "type": "message",
+        "sender": "ui",
+        "receiver": "service",
+        "text": "review(id, input)",
+        "kind": "call",
+        "number": 7,
+        "lines": [
+          "7. review(id, input)"
+        ],
+        "baseline": 484,
+        "y": 493,
+        "depth": 0,
+        "context": []
+      },
+      {
+        "type": "message",
+        "sender": "service",
+        "receiver": "data",
+        "text": "TX: đọc identity; khóa User, Ticket và file",
+        "kind": "call",
+        "number": 8,
+        "lines": [
+          "8. TX: đọc identity; khóa User, Ticket và file"
+        ],
+        "baseline": 531,
+        "y": 540,
+        "depth": 0,
+        "context": []
+      },
+      {
+        "type": "message",
+        "sender": "data",
+        "receiver": "service",
+        "text": "Hồ sơ / chứng cứ hiện hành",
+        "kind": "return",
+        "number": 9,
+        "lines": [
+          "9. Hồ sơ / chứng cứ hiện hành"
+        ],
+        "baseline": 578,
+        "y": 587,
+        "depth": 0,
+        "context": []
+      },
+      {
+        "type": "message",
+        "sender": "service",
+        "receiver": "ui",
+        "text": "403 / 409; đọc lại hồ sơ",
+        "kind": "return",
+        "number": 10,
+        "lines": [
+          "10. 403 / 409; đọc lại hồ sơ"
+        ],
+        "baseline": 662,
+        "y": 671,
+        "depth": 1,
+        "context": [
+          1009,
+          0
+        ]
+      },
+      {
+        "type": "message",
+        "sender": "service",
+        "receiver": "service",
+        "text": "Kiểm tra active, chủ ticket, merge và SUPPORT_CLEAN",
+        "kind": "call",
+        "number": 11,
+        "lines": [
+          "11. Kiểm tra active, chủ ticket, merge và SUPPORT_CLEAN"
+        ],
+        "baseline": 762,
+        "y": 771,
+        "depth": 1,
+        "context": [
+          1011,
+          0
+        ]
+      },
+      {
+        "type": "message",
+        "sender": "service",
+        "receiver": "ui",
+        "text": "400; không xác minh",
+        "kind": "return",
+        "number": 12,
+        "lines": [
+          "12. 400; không xác minh"
+        ],
+        "baseline": 846,
+        "y": 855,
+        "depth": 2,
+        "context": [
+          1011,
+          0,
+          1012,
+          0
+        ]
+      },
+      {
+        "type": "message",
+        "sender": "service",
+        "receiver": "service",
+        "text": "Giữ lý do; không xác nhận thành công",
+        "kind": "call",
+        "number": 13,
+        "lines": [
+          "13. Giữ lý do; không xác nhận thành công"
+        ],
+        "baseline": 946,
+        "y": 955,
+        "depth": 1,
+        "context": [
+          1011,
+          1
+        ]
+      },
+      {
+        "type": "message",
+        "sender": "service",
+        "receiver": "data",
+        "text": "updateMany theo version và PENDING; audit hash chứng cứ",
+        "kind": "call",
+        "number": 14,
+        "lines": [
+          "14. updateMany theo version và PENDING; audit hash chứng cứ"
+        ],
+        "baseline": 1009,
+        "y": 1018,
+        "depth": 0,
+        "context": []
+      },
+      {
+        "type": "message",
+        "sender": "data",
+        "receiver": "service",
+        "text": "Commit status và version + 1",
+        "kind": "return",
+        "number": 15,
+        "lines": [
+          "15. Commit status và version + 1"
+        ],
+        "baseline": 1056,
+        "y": 1065,
+        "depth": 0,
+        "context": []
+      },
+      {
+        "type": "message",
+        "sender": "service",
+        "receiver": "ui",
+        "text": "Quyết định và version mới",
+        "kind": "return",
+        "number": 16,
+        "lines": [
+          "16. Quyết định và version mới"
+        ],
+        "baseline": 1103,
+        "y": 1112,
+        "depth": 0,
+        "context": []
+      },
+      {
+        "type": "message",
+        "sender": "ui",
+        "receiver": "actor",
+        "text": "Làm mới hàng đợi và hồ sơ",
+        "kind": "return",
+        "number": 17,
+        "lines": [
+          "17. Làm mới hàng đợi và hồ sơ"
+        ],
+        "baseline": 1150,
+        "y": 1159,
+        "depth": 0,
+        "context": []
+      }
+    ],
+    "fragments": [
+      {
+        "top": 603,
+        "bottom": 692,
+        "depth": 0,
+        "kind": "break",
+        "guards": [
+          "[Tự duyệt, sai version, ticket đổi hoặc không PENDING]"
+        ],
+        "divider": null,
+        "alt_lines": []
+      },
+      {
+        "top": 787,
+        "bottom": 876,
+        "depth": 1,
+        "kind": "break",
+        "guards": [
+          "[Chủ trọ hoặc minh chứng không hợp lệ]"
+        ],
+        "divider": null,
+        "alt_lines": []
+      },
+      {
+        "top": 703,
+        "bottom": 976,
+        "depth": 0,
+        "kind": "alt",
+        "guards": [
+          "[decision = APPROVED]"
+        ],
+        "divider": 887,
+        "alt_lines": [
+          "[REJECTED / NEEDS_INFO]"
+        ]
+      }
+    ],
+    "width": 1300,
+    "height": 1213
+  },
+  {
+    "id": "SD-19",
+    "title": "Gán và kết thúc quyền sử dụng gói",
+    "kind": "sequence",
+    "refs": "UC-ADM-20, UC-ADM-21 , UC-ADM-22",
+    "source": "backend/src/admin/admin-plans.service.ts:assign; backend/src/admin/admin-plans.service.ts:cancel",
+    "description": "Chỉ gán entitlement; financialEffect NONE; hủy gói không hoàn tiền và không xóa inventory.",
+    "pre": "Chủ trọ active; plan active; Admin có quyền, version và lý do.",
+    "messages": [
+      {
+        "type": "message",
+        "sender": "actor",
+        "receiver": "ui",
+        "text": "Chọn gói, thời hạn và lý do",
+        "kind": "call",
+        "number": 1,
+        "lines": [
+          "1. Chọn gói, thời hạn và lý do"
+        ],
+        "baseline": 202,
+        "y": 211,
+        "depth": 0,
+        "context": []
+      },
+      {
+        "type": "message",
+        "sender": "ui",
+        "receiver": "service",
+        "text": "assign(landlordId, versions, input)",
+        "kind": "call",
+        "number": 2,
+        "lines": [
+          "2. assign(landlordId, versions, input)"
+        ],
+        "baseline": 249,
+        "y": 258,
+        "depth": 0,
+        "context": []
+      },
+      {
+        "type": "message",
+        "sender": "service",
+        "receiver": "data",
+        "text": "TX: khóa User; SHARE plan; đọc subscription",
+        "kind": "call",
+        "number": 3,
+        "lines": [
+          "3. TX: khóa User; SHARE plan; đọc subscription"
+        ],
+        "baseline": 296,
+        "y": 305,
+        "depth": 0,
+        "context": []
+      },
+      {
+        "type": "message",
+        "sender": "data",
+        "receiver": "service",
+        "text": "Plan, landlord và version",
+        "kind": "return",
+        "number": 4,
+        "lines": [
+          "4. Plan, landlord và version"
+        ],
+        "baseline": 343,
+        "y": 352,
+        "depth": 0,
+        "context": []
+      },
+      {
+        "type": "message",
+        "sender": "service",
+        "receiver": "ui",
+        "text": "400 / 404 / 409; giữ gói cũ",
+        "kind": "return",
+        "number": 5,
+        "lines": [
+          "5. 400 / 404 / 409; giữ gói cũ"
+        ],
+        "baseline": 427,
+        "y": 436,
+        "depth": 1,
+        "context": [
+          1004,
+          0
+        ]
+      },
+      {
+        "type": "message",
+        "sender": "service",
+        "receiver": "data",
+        "text": "Đếm khu chưa archive và phòng active",
+        "kind": "call",
+        "number": 6,
+        "lines": [
+          "6. Đếm khu chưa archive và phòng active"
+        ],
+        "baseline": 490,
+        "y": 499,
+        "depth": 0,
+        "context": []
+      },
+      {
+        "type": "message",
+        "sender": "data",
+        "receiver": "service",
+        "text": "Inventory hiện tại",
+        "kind": "return",
+        "number": 7,
+        "lines": [
+          "7. Inventory hiện tại"
+        ],
+        "baseline": 537,
+        "y": 546,
+        "depth": 0,
+        "context": []
+      },
+      {
+        "type": "message",
+        "sender": "service",
+        "receiver": "ui",
+        "text": "409; không xóa dữ liệu hiện có",
+        "kind": "return",
+        "number": 8,
+        "lines": [
+          "8. 409; không xóa dữ liệu hiện có"
+        ],
+        "baseline": 621,
+        "y": 630,
+        "depth": 1,
+        "context": [
+          1008,
+          0
+        ]
+      },
+      {
+        "type": "message",
+        "sender": "service",
+        "receiver": "data",
+        "text": "Tạo / cập nhật subscription + planSnapshot",
+        "kind": "call",
+        "number": 9,
+        "lines": [
+          "9. Tạo / cập nhật subscription + planSnapshot"
+        ],
+        "baseline": 684,
+        "y": 693,
+        "depth": 0,
+        "context": []
+      },
+      {
+        "type": "message",
+        "sender": "data",
+        "receiver": "service",
+        "text": "Subscription trong transaction",
+        "kind": "return",
+        "number": 10,
+        "lines": [
+          "10. Subscription trong transaction"
+        ],
+        "baseline": 731,
+        "y": 740,
+        "depth": 0,
+        "context": []
+      },
+      {
+        "type": "message",
+        "sender": "service",
+        "receiver": "data",
+        "text": "Event ASSIGNED / REASSIGNED; audit NONE",
+        "kind": "call",
+        "number": 11,
+        "lines": [
+          "11. Event ASSIGNED / REASSIGNED; audit NONE"
+        ],
+        "baseline": 778,
+        "y": 787,
+        "depth": 0,
+        "context": []
+      },
+      {
+        "type": "message",
+        "sender": "data",
+        "receiver": "service",
+        "text": "Commit entitlement",
+        "kind": "return",
+        "number": 12,
+        "lines": [
+          "12. Commit entitlement"
+        ],
+        "baseline": 825,
+        "y": 834,
+        "depth": 0,
+        "context": []
+      },
+      {
+        "type": "message",
+        "sender": "service",
+        "receiver": "ui",
+        "text": "Subscription và lịch sử",
+        "kind": "return",
+        "number": 13,
+        "lines": [
+          "13. Subscription và lịch sử"
+        ],
+        "baseline": 872,
+        "y": 881,
+        "depth": 0,
+        "context": []
+      },
+      {
+        "type": "message",
+        "sender": "actor",
+        "receiver": "ui",
+        "text": "Xác nhận hủy, lý do và version",
+        "kind": "call",
+        "number": 14,
+        "lines": [
+          "14. Xác nhận hủy, lý do và version"
+        ],
+        "baseline": 956,
+        "y": 965,
+        "depth": 1,
+        "context": [
+          1015,
+          0
+        ]
+      },
+      {
+        "type": "message",
+        "sender": "ui",
+        "receiver": "service",
+        "text": "cancel(subscriptionId, version)",
+        "kind": "call",
+        "number": 15,
+        "lines": [
+          "15. cancel(subscriptionId, version)"
+        ],
+        "baseline": 1003,
+        "y": 1012,
+        "depth": 1,
+        "context": [
+          1015,
+          0
+        ]
+      },
+      {
+        "type": "message",
+        "sender": "service",
+        "receiver": "data",
+        "text": "TX: khóa User; kiểm tra version và còn active",
+        "kind": "call",
+        "number": 16,
+        "lines": [
+          "16. TX: khóa User; kiểm tra version và còn active"
+        ],
+        "baseline": 1050,
+        "y": 1059,
+        "depth": 1,
+        "context": [
+          1015,
+          0
+        ]
+      },
+      {
+        "type": "message",
+        "sender": "data",
+        "receiver": "service",
+        "text": "Subscription hiện hành",
+        "kind": "return",
+        "number": 17,
+        "lines": [
+          "17. Subscription hiện hành"
+        ],
+        "baseline": 1097,
+        "y": 1106,
+        "depth": 1,
+        "context": [
+          1015,
+          0
+        ]
+      },
+      {
+        "type": "message",
+        "sender": "service",
+        "receiver": "ui",
+        "text": "409; không hủy lặp",
+        "kind": "return",
+        "number": 18,
+        "lines": [
+          "18. 409; không hủy lặp"
+        ],
+        "baseline": 1181,
+        "y": 1190,
+        "depth": 2,
+        "context": [
+          1015,
+          0,
+          1019,
+          0
+        ]
+      },
+      {
+        "type": "message",
+        "sender": "service",
+        "receiver": "data",
+        "text": "endsAt = now; version++; CANCELLED event; audit",
+        "kind": "call",
+        "number": 19,
+        "lines": [
+          "19. endsAt = now; version++; CANCELLED event; audit"
+        ],
+        "baseline": 1244,
+        "y": 1253,
+        "depth": 1,
+        "context": [
+          1015,
+          0
+        ]
+      },
+      {
+        "type": "message",
+        "sender": "data",
+        "receiver": "service",
+        "text": "Commit financialEffect NONE",
+        "kind": "return",
+        "number": 20,
+        "lines": [
+          "20. Commit financialEffect NONE"
+        ],
+        "baseline": 1291,
+        "y": 1300,
+        "depth": 1,
+        "context": [
+          1015,
+          0
+        ]
+      },
+      {
+        "type": "message",
+        "sender": "service",
+        "receiver": "ui",
+        "text": "Gói hết hiệu lực; dữ liệu thuê giữ nguyên",
+        "kind": "return",
+        "number": 21,
+        "lines": [
+          "21. Gói hết hiệu lực; dữ liệu thuê giữ nguyên"
+        ],
+        "baseline": 1338,
+        "y": 1347,
+        "depth": 1,
+        "context": [
+          1015,
+          0
+        ]
+      }
+    ],
+    "fragments": [
+      {
+        "top": 368,
+        "bottom": 457,
+        "depth": 0,
+        "kind": "break",
+        "guards": [
+          "[Inactive, hết hạn hoặc version sai]"
+        ],
+        "divider": null,
+        "alt_lines": []
+      },
+      {
+        "top": 562,
+        "bottom": 651,
+        "depth": 0,
+        "kind": "break",
+        "guards": [
+          "[Số khu / phòng vượt hạn mức gói]"
+        ],
+        "divider": null,
+        "alt_lines": []
+      },
+      {
+        "top": 1122,
+        "bottom": 1211,
+        "depth": 1,
+        "kind": "break",
+        "guards": [
+          "[Đã inactive hoặc version đổi]"
+        ],
+        "divider": null,
+        "alt_lines": []
+      },
+      {
+        "top": 897,
+        "bottom": 1368,
+        "depth": 0,
+        "kind": "opt",
+        "guards": [
+          "[Admin chọn kết thúc gói ở thao tác khác]"
+        ],
+        "divider": null,
+        "alt_lines": []
+      }
+    ],
+    "width": 1300,
+    "height": 1417
+  },
+  {
+    "id": "OD-01",
+    "title": "Đối tượng khoản thu và hóa đơn thanh toán một phần",
+    "kind": "object",
+    "description": "Ví dụ giả định: 3.000.000 đồng nhận, 2.500.000 phân bổ, 500.000 còn khả dụng; công nợ hóa đơn còn 1.500.000 đồng.",
+    "source": "backend/prisma/schema.prisma"
+  }
+]

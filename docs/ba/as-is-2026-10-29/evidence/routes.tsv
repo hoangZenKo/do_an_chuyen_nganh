@@ -1,0 +1,406 @@
+Verb	Route	Controller	Method	Source	Calls
+GET	/api/v1/admin/permission-catalog	AdminAccessReviewController	catalog	backend/src/admin/admin-access-review.controller.ts:17	reviews.catalog
+GET	/api/v1/admin/access-reviews	AdminAccessReviewController	list	backend/src/admin/admin-access-review.controller.ts:18	reviews.list
+POST	/api/v1/admin/access-reviews/:id	AdminAccessReviewController	review	backend/src/admin/admin-access-review.controller.ts:20	reviews.review
+GET	/api/v1/admin/me/capabilities	AdminConsoleController	capabilities	backend/src/admin/admin-console.controller.ts:17	
+GET	/api/v1/admin/accounts	AdminConsoleController	accounts	backend/src/admin/admin-console.controller.ts:19	console.accounts
+GET	/api/v1/admin/accounts/:id	AdminConsoleController	account	backend/src/admin/admin-console.controller.ts:22	console.account
+POST	/api/v1/admin/accounts/:id/suspend	AdminConsoleController	suspend	backend/src/admin/admin-console.controller.ts:25	console.status
+POST	/api/v1/admin/accounts/:id/restore	AdminConsoleController	restore	backend/src/admin/admin-console.controller.ts:27	console.status
+POST	/api/v1/admin/accounts/:id/revoke-sessions	AdminConsoleController	revoke	backend/src/admin/admin-console.controller.ts:29	console.revoke
+POST	/api/v1/admin/accounts/:id/reveal	AdminConsoleController	reveal	backend/src/admin/admin-console.controller.ts:31	console.reveal
+POST	/api/v1/admin/accounts/:id/reset-password	AdminConsoleController	reset	backend/src/admin/admin-console.controller.ts:35	console.reset
+POST	/api/v1/admin/account-invites	AdminConsoleController	invite	backend/src/admin/admin-console.controller.ts:37	console.invite
+GET	/api/v1/admin/admins	AdminConsoleController	admins	backend/src/admin/admin-console.controller.ts:39	console.accounts
+GET	/api/v1/admin/admins/:id/access	AdminConsoleController	adminAccess	backend/src/admin/admin-console.controller.ts:41	console.adminAccess
+PATCH	/api/v1/admin/admins/:id	AdminConsoleController	profile	backend/src/admin/admin-console.controller.ts:44	console.updateAdmin
+GET	/api/v1/admin/audit-logs	AdminConsoleController	audit	backend/src/admin/admin-console.controller.ts:47	console.audit
+GET	/api/v1/admin/audit-logs/:id	AdminConsoleController	auditDetail	backend/src/admin/admin-console.controller.ts:49	auditQuery.detail
+POST	/api/v1/admin/audit-logs/export	AdminConsoleController	auditExport	backend/src/admin/admin-console.controller.ts:51	auditQuery.export
+POST	/api/v1/admin/support-context	AdminConsoleController	context	backend/src/admin/admin-console.controller.ts:59	console.context
+GET	/api/v1/admin/moderation/queue	AdminConsoleController	queue	backend/src/admin/admin-console.controller.ts:62	console.queue
+POST	/api/v1/admin/moderation/work	AdminConsoleController	work	backend/src/admin/admin-console.controller.ts:64	console.work
+GET	/api/v1/admin/moderation/items/:kind/:id	AdminConsoleController	item	backend/src/admin/admin-console.controller.ts:66	console.moderationItem
+GET	/api/v1/admin/analytics/summary	AdminConsoleController	analytics	backend/src/admin/admin-console.controller.ts:68	console.analytics
+GET	/api/v1/admin/operations/health	AdminConsoleController	operationsHealth	backend/src/admin/admin-console.controller.ts:70	health.summary
+POST	/api/v1/admin/operations/incidents/:id/acknowledge	AdminConsoleController	acknowledgeIncident	backend/src/admin/admin-console.controller.ts:73	health.acknowledge
+GET	/api/v1/admin/admins/:id/lifecycle	AdminLifecycleController	detail	backend/src/admin/admin-lifecycle.controller.ts:16	lifecycle.detail
+POST	/api/v1/admin/admins/:id/resend-invite	AdminLifecycleController	resend	backend/src/admin/admin-lifecycle.controller.ts:19	lifecycle.resend
+POST	/api/v1/admin/admins/:id/revoke-sessions	AdminLifecycleController	revoke	backend/src/admin/admin-lifecycle.controller.ts:25	lifecycle.revoke
+GET	/api/v1/admin/analytics/overview	AdminOverviewAnalyticsController	overview	backend/src/admin/admin-overview-analytics.controller.ts:14	analytics.overview
+GET	/api/v1/admin/finance/transactions	AdminRegistryController	transactionList	backend/src/admin/admin-registry.controller.ts:18	transactions.list
+GET	/api/v1/admin/landlord-verifications	AdminRegistryController	verifications	backend/src/admin/admin-registry.controller.ts:21	verification.list
+POST	/api/v1/admin/landlord-verifications	AdminRegistryController	submitVerification	backend/src/admin/admin-registry.controller.ts:24	verification.submit
+POST	/api/v1/admin/landlord-verifications/:id/review	AdminRegistryController	reviewVerification	backend/src/admin/admin-registry.controller.ts:27	verification.review
+GET	/api/v1/admin/property-reviews	AdminRegistryController	propertyReviews	backend/src/admin/admin-registry.controller.ts:30	properties.list
+POST	/api/v1/admin/properties/:id/submit-review	AdminRegistryController	submitProperty	backend/src/admin/admin-registry.controller.ts:33	properties.submit
+POST	/api/v1/admin/property-reviews/:id/review	AdminRegistryController	reviewProperty	backend/src/admin/admin-registry.controller.ts:36	properties.review
+GET	/api/v1/admin/service-plans	AdminRegistryController	servicePlans	backend/src/admin/admin-registry.controller.ts:39	plans.plans
+POST	/api/v1/admin/service-plans	AdminRegistryController	savePlan	backend/src/admin/admin-registry.controller.ts:42	plans.save
+GET	/api/v1/admin/subscriptions	AdminRegistryController	subscriptions	backend/src/admin/admin-registry.controller.ts:45	plans.subscriptions
+GET	/api/v1/admin/subscriptions/:id/events	AdminRegistryController	subscriptionEvents	backend/src/admin/admin-registry.controller.ts:48	plans.history
+POST	/api/v1/admin/landlords/:id/subscription	AdminRegistryController	assignSubscription	backend/src/admin/admin-registry.controller.ts:51	plans.assign
+POST	/api/v1/admin/subscriptions/:id/cancel	AdminRegistryController	cancelSubscription	backend/src/admin/admin-registry.controller.ts:54	plans.cancel
+GET	/api/v1/landlord-verification	LandlordVerificationController	own	backend/src/admin/admin-registry.controller.ts:62	verification.own
+POST	/api/v1/landlord-verification	LandlordVerificationController	submit	backend/src/admin/admin-registry.controller.ts:64	verification.submit
+GET	/api/v1/admin/search	AdminSearchController	searchAll	backend/src/admin/admin-search.controller.ts:18	search.search
+GET	/api/v1/admin/resources	AdminSearchController	resources	backend/src/admin/admin-search.controller.ts:21	search.resources
+GET	/api/v1/admin/resources/:id	AdminSearchController	detail	backend/src/admin/admin-search.controller.ts:24	search.resources
+GET	/api/v1/admin/workspace/summary	AdminWorkspaceController	summary	backend/src/admin/admin-workspace.controller.ts:14	workspace.summary
+GET	/api/v1/admin/workspace/action-items	AdminWorkspaceController	actionItems	backend/src/admin/admin-workspace.controller.ts:16	workspace.actionItems
+GET	/api/v1/admin/overview	AdminController	overview	backend/src/admin/admin.controller.ts:22	admin.overview
+GET	/api/v1/admin/landlords	AdminController	listLandlords	backend/src/admin/admin.controller.ts:28	admin.listLandlords
+POST	/api/v1/admin/landlords	AdminController	createLandlord	backend/src/admin/admin.controller.ts:34	admin.createLandlord
+GET	/api/v1/admin/landlords/:id	AdminController	getLandlord	backend/src/admin/admin.controller.ts:40	admin.getLandlord
+PATCH	/api/v1/admin/landlords/:id	AdminController	updateLandlord	backend/src/admin/admin.controller.ts:46	admin.updateLandlord
+PATCH	/api/v1/admin/landlords/:id/status	AdminController	updateLandlordStatus	backend/src/admin/admin.controller.ts:52	admin.updateLandlordStatus
+GET	/api/v1/admin/properties	AdminController	listProperties	backend/src/admin/admin.controller.ts:62	admin.listProperties
+POST	/api/v1/admin/properties	AdminController	createProperty	backend/src/admin/admin.controller.ts:69	admin.createProperty
+GET	/api/v1/admin/properties/:id	AdminController	getProperty	backend/src/admin/admin.controller.ts:75	admin.getProperty
+GET	/api/v1/admin/rooms	AdminController	rooms	backend/src/admin/admin.controller.ts:82	admin.rooms
+PATCH	/api/v1/admin/properties/:id	AdminController	updateProperty	backend/src/admin/admin.controller.ts:89	admin.updateProperty
+GET	/api/v1/audit-logs	AuditController	list	backend/src/audit/audit.controller.ts:19	audit.list
+POST	/api/v1/auth/account-access/forgot	AccountAccessController	forgot	backend/src/auth/account-access.controller.ts:19	access.forgot
+POST	/api/v1/auth/account-access/redeem	AccountAccessController	redeem	backend/src/auth/account-access.controller.ts:20	access.redeem
+GET	/api/v1/admin/me/security	AdminSecurityController	status	backend/src/auth/admin-security.controller.ts:25	mfa.required
+POST	/api/v1/admin/me/security/enroll	AdminSecurityController	enroll	backend/src/auth/admin-security.controller.ts:30	mfa.enroll
+POST	/api/v1/admin/me/security/confirm	AdminSecurityController	confirm	backend/src/auth/admin-security.controller.ts:32	mfa.verify
+POST	/api/v1/admin/me/security/step-up	AdminStepUpController	issue	backend/src/auth/admin-step-up.controller.ts:23	stepUp.issue
+POST	/api/v1/auth/register	AuthController	register	backend/src/auth/auth.controller.ts:18	auth.register
+POST	/api/v1/auth/register-seeker	AuthController	registerSeeker	backend/src/auth/auth.controller.ts:25	auth.registerSeeker
+POST	/api/v1/auth/login	AuthController	login	backend/src/auth/auth.controller.ts:32	auth.login
+POST	/api/v1/auth/refresh	AuthController	refresh	backend/src/auth/auth.controller.ts:38	auth.refresh
+POST	/api/v1/auth/logout	AuthController	logout	backend/src/auth/auth.controller.ts:44	auth.logout
+GET	/api/v1/auth/me	AuthController	me	backend/src/auth/auth.controller.ts:51	auth.me, auth.serializeUser
+GET	/api/v1/auth/sessions	AuthController	sessions	backend/src/auth/auth.controller.ts:59	auth.sessions
+POST	/api/v1/auth/sessions/:id/revoke	AuthController	revokeSession	backend/src/auth/auth.controller.ts:66	auth.revokeSession
+POST	/api/v1/auth/sessions/revoke-all	AuthController	revokeOtherSessions	backend/src/auth/auth.controller.ts:73	auth.revokeOtherSessions
+POST	/api/v1/auth/change-password	AuthController	changePassword	backend/src/auth/auth.controller.ts:80	auth.changePassword
+GET	/api/v1/billing/active-leases	BillingController	activeLeases	backend/src/billing/billing.controller.ts:50	billing.activeLeases
+GET	/api/v1/billing/meter-readings	BillingController	meterReadings	backend/src/billing/billing.controller.ts:56	billing.listMeterReadings
+POST	/api/v1/billing/meter-readings	BillingController	createMeterReading	backend/src/billing/billing.controller.ts:66	billing.createMeterReading, audit.recordSafe
+GET	/api/v1/billing/invoices	BillingController	invoices	backend/src/billing/billing.controller.ts:90	billing.listInvoices
+GET	/api/v1/billing/reminders	BillingController	reminders	backend/src/billing/billing.controller.ts:110	billing.reminders
+POST	/api/v1/billing/reminders/run	BillingController	runReminders	backend/src/billing/billing.controller.ts:124	reminderPolicies.enqueue
+POST	/api/v1/billing/invoices/bulk/preflight	BillingController	bulkInvoicePreflight	backend/src/billing/billing.controller.ts:135	billing.bulkInvoicePreflight
+POST	/api/v1/billing/invoices/bulk	BillingController	createBulkInvoices	backend/src/billing/billing.controller.ts:144	billing.createBulkInvoices, audit.recordSafe
+GET	/api/v1/billing/automation	BillingController	billingAutomation	backend/src/billing/billing.controller.ts:168	billing.billingAutomation
+PUT	/api/v1/billing/automation	BillingController	updateBillingAutomation	backend/src/billing/billing.controller.ts:180	billing.updateBillingAutomation, audit.recordSafe
+POST	/api/v1/billing/automation/preview	BillingController	billingAutomationPreview	backend/src/billing/billing.controller.ts:208	billing.billingAutomationPreview
+POST	/api/v1/billing/automation/run	BillingController	runBillingAutomation	backend/src/billing/billing.controller.ts:217	billing.runBillingAutomation, audit.recordSafe
+POST	/api/v1/billing/invoices	BillingController	createInvoice	backend/src/billing/billing.controller.ts:241	billing.createInvoice, audit.recordSafe
+GET	/api/v1/billing/invoices/:id	BillingController	invoice	backend/src/billing/billing.controller.ts:264	billing.getInvoice
+PATCH	/api/v1/billing/invoices/:id	BillingController	updateInvoice	backend/src/billing/billing.controller.ts:270	billing.updateInvoice, audit.recordSafe
+POST	/api/v1/billing/invoices/:id/cancel	BillingController	cancelInvoice	backend/src/billing/billing.controller.ts:291	billing.cancelInvoice
+POST	/api/v1/billing/invoices/:id/replacement	BillingController	replaceInvoice	backend/src/billing/billing.controller.ts:303	ledger.replace
+POST	/api/v1/billing/invoices/:id/adjustments	BillingController	adjustInvoice	backend/src/billing/billing.controller.ts:309	ledger.adjust
+GET	/api/v1/billing/aging	BillingController	aging	backend/src/billing/billing.controller.ts:315	ledger.aging
+GET	/api/v1/billing/receipts	BillingController	receipts	backend/src/billing/billing.controller.ts:321	ledger.receipts
+POST	/api/v1/billing/receipts	BillingController	createReceipt	backend/src/billing/billing.controller.ts:327	ledger.createReceipt
+POST	/api/v1/billing/receipts/:id/allocations	BillingController	allocateReceipt	backend/src/billing/billing.controller.ts:333	ledger.allocate
+POST	/api/v1/billing/receipts/:id/allocations/:allocationId/release	BillingController	releaseAllocation	backend/src/billing/billing.controller.ts:339	ledger.release
+POST	/api/v1/billing/receipts/:id/refunds	BillingController	refundReceipt	backend/src/billing/billing.controller.ts:345	ledger.refund
+GET	/api/v1/billing/reminder-policy	BillingController	reminderPolicy	backend/src/billing/billing.controller.ts:351	reminderPolicies.policy
+PUT	/api/v1/billing/reminder-policy	BillingController	updateReminderPolicy	backend/src/billing/billing.controller.ts:357	reminderPolicies.save
+POST	/api/v1/billing/reminders/enqueue	BillingController	enqueueReminders	backend/src/billing/billing.controller.ts:363	reminderPolicies.enqueue
+GET	/api/v1/billing/outbox	BillingController	outboxEvents	backend/src/billing/billing.controller.ts:369	outbox.list
+POST	/api/v1/billing/outbox/:id/retry	BillingController	retryOutbox	backend/src/billing/billing.controller.ts:375	outbox.retry
+GET	/api/v1/billing/tariffs	BillingController	tariffsList	backend/src/billing/billing.controller.ts:381	tariffs.list
+POST	/api/v1/billing/tariffs/proposals	BillingController	proposeTariff	backend/src/billing/billing.controller.ts:387	tariffs.propose
+GET	/api/v1/billing/tariffs/:id/impact	BillingController	tariffImpact	backend/src/billing/billing.controller.ts:393	tariffs.impact
+POST	/api/v1/billing/tariffs/:id/review	BillingController	reviewTariff	backend/src/billing/billing.controller.ts:399	tariffs.review
+POST	/api/v1/billing/period-locks	BillingController	lockPeriod	backend/src/billing/billing.controller.ts:406	tariffs.lockPeriod
+POST	/api/v1/billing/invoices/preview	BillingController	previewInvoice	backend/src/billing/billing.controller.ts:413	tariffs.preview
+POST	/api/v1/billing/invoices/:id/payments	BillingController	recordPayment	backend/src/billing/billing.controller.ts:419	billing.recordPayment, audit.recordSafe
+GET	/api/v1/billing/payment-proofs	BillingController	paymentProofs	backend/src/billing/billing.controller.ts:440	billing.listPaymentProofs
+POST	/api/v1/billing/payment-proofs/:id/review	BillingController	reviewPaymentProof	backend/src/billing/billing.controller.ts:449	billing.reviewPaymentProof, audit.recordSafe
+POST	/api/v1/billing/invoices/:invoiceId/payments/:paymentId/reverse	BillingController	reversePayment	backend/src/billing/billing.controller.ts:475	billing.reversePayment, audit.recordSafe
+GET	/api/v1/properties/:id/transfer-account	TransferAccountController	account	backend/src/billing/manual-transfer.controller.ts:12	transfers.account
+PUT	/api/v1/properties/:id/transfer-account	TransferAccountController	save	backend/src/billing/manual-transfer.controller.ts:14	transfers.save
+GET	/api/v1/tenant/invoices/:id/transfer-instructions	TransferInstructionsController	instructions	backend/src/billing/manual-transfer.controller.ts:22	transfers.instructions
+POST	/api/v1/tenant/invoices/:id/payment-link	TenantOnlinePaymentsController	create	backend/src/billing/online-payments.controller.ts:15	payments.createLink
+POST	/api/v1/tenant/invoices/:id/demo-invoice	TenantOnlinePaymentsController	demoInvoice	backend/src/billing/online-payments.controller.ts:16	payments.createDemoInvoice
+GET	/api/v1/tenant/invoices/:id/payment-link	TenantOnlinePaymentsController	status	backend/src/billing/online-payments.controller.ts:17	payments.status
+GET	/api/v1/billing/invoices/:id/payment-link	LandlordOnlinePaymentsController	status	backend/src/billing/online-payments.controller.ts:24	payments.status
+GET	/api/v1/billing/invoices/:id/payment-events	LandlordOnlinePaymentsController	events	backend/src/billing/online-payments.controller.ts:25	payments.events
+POST	/api/v1/billing/invoices/:id/payment-events/:eventId/reconcile	LandlordOnlinePaymentsController	reconcile	backend/src/billing/online-payments.controller.ts:26	payments.reconcile
+GET	/api/v1/payments/demo/checkout/:token	DemoCardPaymentController	checkout	backend/src/billing/online-payments.controller.ts:41	payments.checkout
+POST	/api/v1/payments/demo/checkout/:token/confirm	DemoCardPaymentController	confirm	backend/src/billing/online-payments.controller.ts:53	payments.confirmDemo, payments.checkout
+POST	/api/v1/chatbot/ask	ChatbotController	ask	backend/src/chatbot/chatbot.controller.ts:19	chatbot.ask
+GET	/api/v1/chatbot/sources/:id	ChatbotController	source	backend/src/chatbot/chatbot.controller.ts:26	chatbot.getSource
+GET	/api/v1/dashboard/metrics	DashboardController	metrics	backend/src/dashboard/dashboard.controller.ts:19	dashboard.metrics
+GET	/api/v1/expenses	ExpensesController	list	backend/src/expenses/expenses.controller.ts:36	expenses.list
+POST	/api/v1/expenses	ExpensesController	create	backend/src/expenses/expenses.controller.ts:42	expenses.create, audit.recordSafe
+GET	/api/v1/expenses/:id	ExpensesController	getById	backend/src/expenses/expenses.controller.ts:59	expenses.getById
+PATCH	/api/v1/expenses/:id	ExpensesController	update	backend/src/expenses/expenses.controller.ts:65	expenses.update, audit.recordSafe
+DELETE	/api/v1/expenses/:id	ExpensesController	remove	backend/src/expenses/expenses.controller.ts:86	expenses.remove, audit.recordSafe
+GET	/api/v1/health	HealthController	check	backend/src/health/health.controller.ts:9	
+GET	/api/v1/health/live	HealthController	live	backend/src/health/health.controller.ts:22	
+GET	/api/v1/health/ready	HealthController	ready	backend/src/health/health.controller.ts:24	schema.inspect
+GET	/api/v1/admin/operations/incidents	IncidentWorkflowController	list	backend/src/health/incident-workflow.controller.ts:29	incidents.list
+GET	/api/v1/admin/operations/incidents/assignees	IncidentWorkflowController	assignees	backend/src/health/incident-workflow.controller.ts:30	incidents.assignees
+GET	/api/v1/admin/operations/incidents/:id	IncidentWorkflowController	detail	backend/src/health/incident-workflow.controller.ts:31	incidents.detail
+POST	/api/v1/admin/operations/incidents/:id/actions	IncidentWorkflowController	action	backend/src/health/incident-workflow.controller.ts:32	incidents.transition
+GET	/api/v1/admin/operations/delivery-jobs	OperationsQueueController	list	backend/src/health/operations-queue.controller.ts:18	queue.list
+GET	/api/v1/housing/listings/:id/slots	HousingController	slots	backend/src/housing/housing.controller.ts:14	housing.slots
+POST	/api/v1/housing/listings/:id/slots	HousingController	addSlot	backend/src/housing/housing.controller.ts:17	housing.addSlot
+DELETE	/api/v1/housing/slots/:id	HousingController	removeSlot	backend/src/housing/housing.controller.ts:22	housing.removeSlot
+PATCH	/api/v1/housing/viewings/:id/reschedule	HousingController	reschedule	backend/src/housing/housing.controller.ts:25	housing.reschedule
+GET	/api/v1/housing/leases/:id/handover	HousingController	handover	backend/src/housing/housing.controller.ts:30	handovers.get
+PUT	/api/v1/housing/leases/:id/handover	HousingController	saveHandover	backend/src/housing/housing.controller.ts:33	handovers.save
+POST	/api/v1/housing/leases/:id/handover/accept	HousingController	acceptHandover	backend/src/housing/housing.controller.ts:38	handovers.accept
+GET	/api/v1/housing/favorites	HousingController	favorites	backend/src/housing/housing.controller.ts:43	housing.favorites
+GET	/api/v1/housing/favorites/:id	HousingController	favorite	backend/src/housing/housing.controller.ts:48	housing.favorite
+PUT	/api/v1/housing/favorites/:id	HousingController	save	backend/src/housing/housing.controller.ts:53	housing.saveFavorite
+DELETE	/api/v1/housing/favorites/:id	HousingController	remove	backend/src/housing/housing.controller.ts:58	housing.removeFavorite
+GET	/api/v1/housing/viewings	HousingController	viewings	backend/src/housing/housing.controller.ts:63	housing.viewings
+POST	/api/v1/housing/viewings	HousingController	book	backend/src/housing/housing.controller.ts:68	housing.book
+GET	/api/v1/housing/viewings/:id	HousingController	viewing	backend/src/housing/housing.controller.ts:71	housing.viewing
+PATCH	/api/v1/housing/viewings/:id	HousingController	update	backend/src/housing/housing.controller.ts:74	housing.update
+POST	/api/v1/housing/viewings/:id/lease	HousingController	lease	backend/src/housing/housing.controller.ts:79	housing.createLease
+GET	/api/v1/housing/notifications	HousingController	notifications	backend/src/housing/housing.controller.ts:84	housing.notifications
+POST	/api/v1/housing/notifications/:id/read	HousingController	read	backend/src/housing/housing.controller.ts:89	housing.readNotification
+GET	/api/v1/housing/pilot	HousingController	pilot	backend/src/housing/housing.controller.ts:92	housing.pilot
+POST	/api/v1/housing/feedback	HousingController	feedback	backend/src/housing/housing.controller.ts:95	housing.feedback
+GET	/api/v1/housing/feedback	HousingController	feedbackList	backend/src/housing/housing.controller.ts:98	housing.feedbackList
+POST	/api/v1/leases	LeasesController	create	backend/src/leases/leases.controller.ts:29	leases.create, audit.recordSafe
+GET	/api/v1/leases/expiring	LeasesController	expiring	backend/src/leases/leases.controller.ts:50	leases.expiring
+POST	/api/v1/leases/:id/end	LeasesController	end	backend/src/leases/leases.controller.ts:59	leases.end, audit.recordSafe
+GET	/api/v1/leases/:id/settlement	LeasesController	settlement	backend/src/leases/leases.controller.ts:76	settlements.get
+POST	/api/v1/leases/:id/settlement/preview	LeasesController	previewSettlement	backend/src/leases/leases.controller.ts:83	settlements.preview
+POST	/api/v1/leases/:id/settlement/confirm	LeasesController	confirmSettlement	backend/src/leases/leases.controller.ts:90	settlements.confirm
+POST	/api/v1/leases/:id/settlement/refund	LeasesController	recordSettlementRefund	backend/src/leases/leases.controller.ts:97	settlements.recordRefund
+PATCH	/api/v1/leases/:id	LeasesController	update	backend/src/leases/leases.controller.ts:104	leases.update, audit.recordSafe
+POST	/api/v1/leases/:id/renew	LeasesController	renew	backend/src/leases/leases.controller.ts:125	leases.renew, audit.recordSafe
+GET	/api/v1/leases/:id/deposits	LeasesController	deposits	backend/src/leases/leases.controller.ts:146	leases.depositTransactions
+POST	/api/v1/leases/:id/deposits	LeasesController	createDeposit	backend/src/leases/leases.controller.ts:152	leases.createDepositTransaction, audit.recordSafe
+GET	/api/v1/rooms/:roomId/leases	RoomLeasesController	list	backend/src/leases/leases.controller.ts:184	leases.listByRoom
+GET	/api/v1/tenants/:tenantId/leases	TenantLeasesController	list	backend/src/leases/leases.controller.ts:197	leases.listByTenant
+GET	/api/v1/public/campuses	PublicCampusesController	list	backend/src/listings/listings.controller.ts:12	listings.campuses
+GET	/api/v1/admin/campuses	AdminCampusesController	list	backend/src/listings/listings.controller.ts:21	listings.campuses
+POST	/api/v1/admin/campuses	AdminCampusesController	create	backend/src/listings/listings.controller.ts:23	listings.createCampus
+PATCH	/api/v1/admin/campuses/:id	AdminCampusesController	update	backend/src/listings/listings.controller.ts:25	listings.updateCampus
+POST	/api/v1/student/listings/:id/reports	StudentListingsController	report	backend/src/listings/listings.controller.ts:33	listings.report
+GET	/api/v1/public/listings	PublicListingsController	list	backend/src/listings/listings.controller.ts:43	listings.publicList
+GET	/api/v1/public/listings/:id	PublicListingsController	detail	backend/src/listings/listings.controller.ts:46	listings.publicDetail
+GET	/api/v1/listings	LandlordListingsController	list	backend/src/listings/listings.controller.ts:55	listings.manageList
+POST	/api/v1/listings	LandlordListingsController	create	backend/src/listings/listings.controller.ts:60	listings.create
+PATCH	/api/v1/listings/:id	LandlordListingsController	update	backend/src/listings/listings.controller.ts:65	listings.update
+POST	/api/v1/listings/:id/submit	LandlordListingsController	submit	backend/src/listings/listings.controller.ts:70	listings.submit
+POST	/api/v1/listings/:id/hide	LandlordListingsController	hide	backend/src/listings/listings.controller.ts:75	listings.hide
+POST	/api/v1/listings/:id/confirm-availability	LandlordListingsController	confirm	backend/src/listings/listings.controller.ts:80	listings.confirmAvailability
+GET	/api/v1/admin/listings/reports	AdminListingsController	reports	backend/src/listings/listings.controller.ts:92	listings.reports
+POST	/api/v1/admin/listings/reports/:id/review	AdminListingsController	reviewReport	backend/src/listings/listings.controller.ts:95	listings.reviewReport
+GET	/api/v1/admin/listings	AdminListingsController	list	backend/src/listings/listings.controller.ts:100	listings.manageList
+POST	/api/v1/admin/listings/:id/review	AdminListingsController	review	backend/src/listings/listings.controller.ts:103	listings.review
+POST	/api/v1/admin/listings/:id/verification	AdminListingsController	verify	backend/src/listings/listings.controller.ts:108	listings.verify
+GET	/api/v1/student/searches	SavedSearchesController	list	backend/src/listings/saved-searches.controller.ts:12	searches.list
+POST	/api/v1/student/searches	SavedSearchesController	create	backend/src/listings/saved-searches.controller.ts:13	searches.create
+GET	/api/v1/student/searches/alerts	SavedSearchesController	alerts	backend/src/listings/saved-searches.controller.ts:14	searches.alerts
+POST	/api/v1/student/searches/alerts/:id/read	SavedSearchesController	read	backend/src/listings/saved-searches.controller.ts:15	searches.read
+PATCH	/api/v1/student/searches/:id	SavedSearchesController	status	backend/src/listings/saved-searches.controller.ts:16	searches.status
+DELETE	/api/v1/student/searches/:id	SavedSearchesController	remove	backend/src/listings/saved-searches.controller.ts:17	searches.remove
+GET	/api/v1/maintenance	MaintenanceController	list	backend/src/maintenance/maintenance.controller.ts:41	maintenance.list
+POST	/api/v1/maintenance	MaintenanceController	create	backend/src/maintenance/maintenance.controller.ts:47	maintenance.create, audit.recordSafe
+GET	/api/v1/maintenance/assignees	MaintenanceController	assignees	backend/src/maintenance/maintenance.controller.ts:67	maintenance.assignees
+GET	/api/v1/maintenance/:id	MaintenanceController	getById	backend/src/maintenance/maintenance.controller.ts:73	maintenance.getById
+POST	/api/v1/maintenance/sla/escalate	MaintenanceController	escalate	backend/src/maintenance/maintenance.controller.ts:79	sla.escalate
+PATCH	/api/v1/maintenance/:id	MaintenanceController	update	backend/src/maintenance/maintenance.controller.ts:85	maintenance.update, audit.recordSafe
+POST	/api/v1/maintenance/:id/status	MaintenanceController	updateStatus	backend/src/maintenance/maintenance.controller.ts:106	maintenance.updateStatus, audit.recordSafe
+POST	/api/v1/maintenance/:id/complete	MaintenanceController	complete	backend/src/maintenance/maintenance.controller.ts:127	maintenance.complete, audit.recordSafe
+POST	/api/v1/maintenance/:id/comments	MaintenanceController	addComment	backend/src/maintenance/maintenance.controller.ts:148	maintenance.addComment, audit.recordSafe
+DELETE	/api/v1/maintenance/:id	MaintenanceController	remove	backend/src/maintenance/maintenance.controller.ts:173	maintenance.remove, audit.recordSafe
+GET	/api/v1/announcements	AnnouncementsController	list	backend/src/notifications/announcements.controller.ts:13	announcements.list
+GET	/api/v1/announcements/templates	AnnouncementsController	templates	backend/src/notifications/announcements.controller.ts:14	announcements.templates
+GET	/api/v1/announcements/groups	AnnouncementsController	groups	backend/src/notifications/announcements.controller.ts:15	announcements.groups
+POST	/api/v1/announcements/templates	AnnouncementsController	createTemplate	backend/src/notifications/announcements.controller.ts:16	announcements.createTemplate
+POST	/api/v1/announcements/groups	AnnouncementsController	createGroup	backend/src/notifications/announcements.controller.ts:17	announcements.createGroup
+POST	/api/v1/announcements	AnnouncementsController	create	backend/src/notifications/announcements.controller.ts:18	announcements.create
+GET	/api/v1/announcements/:id/receipts	AnnouncementsController	receipts	backend/src/notifications/announcements.controller.ts:19	announcements.receipts
+POST	/api/v1/announcements/:id/cancel	AnnouncementsController	cancel	backend/src/notifications/announcements.controller.ts:20	announcements.cancel
+GET	/api/v1/tenant/announcements	TenantAnnouncementsController	list	backend/src/notifications/announcements.controller.ts:27	announcements.tenantAnnouncements
+POST	/api/v1/tenant/announcements/:id/read	TenantAnnouncementsController	read	backend/src/notifications/announcements.controller.ts:28	announcements.markRead
+GET	/api/v1/notifications	NotificationsController	list	backend/src/notifications/notifications.controller.ts:18	notifications.list
+POST	/api/v1/notifications/:id/read	NotificationsController	markRead	backend/src/notifications/notifications.controller.ts:24	notifications.markRead
+GET	/api/v1/notifications/deliveries	NotificationsController	deliveryLogs	backend/src/notifications/notifications.controller.ts:30	notifications.deliveryLogs
+POST	/api/v1/notifications/zalo/invoice-reminders	NotificationsController	sendInvoiceRemindersZalo	backend/src/notifications/notifications.controller.ts:39	notifications.sendInvoiceRemindersZalo
+POST	/api/v1/notifications/zalo/test-message	NotificationsController	createZaloTestMessage	backend/src/notifications/notifications.controller.ts:53	notifications.createZaloTestMessage
+POST	/api/v1/notifications/zalo/manual-message	NotificationsController	createZaloManualMessage	backend/src/notifications/notifications.controller.ts:59	notifications.createZaloManualMessage
+GET	/api/v1/operations/action-items	OperationsController	actionItems	backend/src/operations/operations.controller.ts:18	operations.actionItems
+POST	/api/v1/operations/action-items/:id/read	OperationsController	markRead	backend/src/operations/operations.controller.ts:24	operations.markRead
+GET	/api/v1/operations/options	P1OperationsController	options	backend/src/operations/p1.controller.ts:16	
+GET	/api/v1/operations/turnovers	P1OperationsController	list	backend/src/operations/p1.controller.ts:25	turnovers.list
+POST	/api/v1/operations/turnovers	P1OperationsController	create	backend/src/operations/p1.controller.ts:26	turnovers.create
+POST	/api/v1/operations/turnovers/:id/advance	P1OperationsController	advance	backend/src/operations/p1.controller.ts:27	turnovers.advance
+GET	/api/v1/operations/recurring	P1OperationsController	templates	backend/src/operations/p1.controller.ts:28	recurring.templates
+POST	/api/v1/operations/recurring	P1OperationsController	createRecurring	backend/src/operations/p1.controller.ts:29	recurring.create
+PATCH	/api/v1/operations/recurring/:id	P1OperationsController	toggle	backend/src/operations/p1.controller.ts:30	recurring.toggle
+GET	/api/v1/operations/tasks	P1OperationsController	tasks	backend/src/operations/p1.controller.ts:31	recurring.tasks
+PATCH	/api/v1/operations/tasks/:id/checklist	P1OperationsController	check	backend/src/operations/p1.controller.ts:32	recurring.check
+POST	/api/v1/admin/finance/statements	FinanceReconciliationController	importStatement	backend/src/platform/finance-reconciliation.controller.ts:14	reconciliation.importStatement
+GET	/api/v1/admin/finance/statement-lines	FinanceReconciliationController	lines	backend/src/platform/finance-reconciliation.controller.ts:15	reconciliation.lines
+POST	/api/v1/admin/finance/statement-lines/:id/proposals	FinanceReconciliationController	propose	backend/src/platform/finance-reconciliation.controller.ts:16	reconciliation.propose
+GET	/api/v1/admin/finance/statement-lines/:id/candidates	FinanceReconciliationController	candidates	backend/src/platform/finance-reconciliation.controller.ts:17	reconciliation.candidates
+GET	/api/v1/admin/finance/reconciliation-proposals	FinanceReconciliationController	proposals	backend/src/platform/finance-reconciliation.controller.ts:18	reconciliation.proposals
+POST	/api/v1/admin/finance/reconciliation-proposals/:id/approve	FinanceReconciliationController	approve	backend/src/platform/finance-reconciliation.controller.ts:19	reconciliation.review
+POST	/api/v1/admin/finance/reconciliation-proposals/:id/reject	FinanceReconciliationController	reject	backend/src/platform/finance-reconciliation.controller.ts:20	reconciliation.review
+GET	/api/v1/admin/team	GovernanceController	team	backend/src/platform/governance.controller.ts:17	governance.team
+GET	/api/v1/admin/teams	GovernanceController	teams	backend/src/platform/governance.controller.ts:18	governance.teams
+POST	/api/v1/admin/teams	GovernanceController	createTeam	backend/src/platform/governance.controller.ts:19	governance.createTeam
+POST	/api/v1/admin/teams/:id/members	GovernanceController	addMember	backend/src/platform/governance.controller.ts:20	governance.addMember
+PATCH	/api/v1/admin/teams/:id	GovernanceController	updateTeam	backend/src/platform/governance.controller.ts:21	governance.updateTeam
+POST	/api/v1/admin/teams/:id/members/:userId/remove	GovernanceController	removeMember	backend/src/platform/governance.controller.ts:22	governance.removeMember
+POST	/api/v1/admin/permissions/simulate	GovernanceController	simulate	backend/src/platform/governance.controller.ts:23	governance.simulate
+GET	/api/v1/admin/feature-flags	GovernanceController	flagsList	backend/src/platform/governance.controller.ts:24	governance.flagsList
+GET	/api/v1/admin/feature-flags/effective	GovernanceController	effective	backend/src/platform/governance.controller.ts:25	governance.flagsEffective
+PATCH	/api/v1/admin/feature-flags/:key	GovernanceController	flagsUpdate	backend/src/platform/governance.controller.ts:26	governance.flagsUpdate
+GET	/api/v1/admin/finance/reconciliation	GovernanceController	finance	backend/src/platform/governance.controller.ts:27	governance.finance
+GET	/api/v1/admin/report-schedules	GovernanceController	schedules	backend/src/platform/governance.controller.ts:28	governance.schedules
+POST	/api/v1/admin/report-schedules	GovernanceController	createSchedule	backend/src/platform/governance.controller.ts:29	governance.createSchedule
+PATCH	/api/v1/admin/report-schedules/:id	GovernanceController	updateSchedule	backend/src/platform/governance.controller.ts:30	governance.updateSchedule
+POST	/api/v1/admin/report-schedules/:id/run	GovernanceController	runSchedule	backend/src/platform/governance.controller.ts:31	governance.runSchedule
+GET	/api/v1/admin/report-schedules/:id/runs	GovernanceController	runs	backend/src/platform/governance.controller.ts:32	reports.runs
+POST	/api/v1/admin/report-runs/:id/retry	GovernanceController	retry	backend/src/platform/governance.controller.ts:33	reports.retry
+POST	/api/v1/admin/report-runs/:id/download-link	GovernanceController	link	backend/src/platform/governance.controller.ts:34	reports.downloadLink
+GET	/api/v1/admin/report-runs/:id/download	GovernanceController	download	backend/src/platform/governance.controller.ts:35	reports.verifyLink, reports.download
+GET	/api/v1/admin/moderation-policies	ModerationPolicyController	list	backend/src/platform/moderation-policy.controller.ts:19	policies.list
+GET	/api/v1/admin/moderation-policies/quality	ModerationPolicyController	quality	backend/src/platform/moderation-policy.controller.ts:20	policies.quality
+GET	/api/v1/admin/moderation-policies/quality/samples	ModerationPolicyController	samples	backend/src/platform/moderation-policy.controller.ts:21	qa.samples
+GET	/api/v1/admin/moderation-policies/quality/samples/:id	ModerationPolicyController	sample	backend/src/platform/moderation-policy.controller.ts:22	qa.detail
+POST	/api/v1/admin/moderation-policies/quality/samples/:id/review	ModerationPolicyController	review	backend/src/platform/moderation-policy.controller.ts:23	qa.review
+POST	/api/v1/admin/moderation-policies	ModerationPolicyController	create	backend/src/platform/moderation-policy.controller.ts:24	policies.create
+POST	/api/v1/admin/moderation-policies/:id/activate	ModerationPolicyController	activate	backend/src/platform/moderation-policy.controller.ts:25	policies.activate
+GET	/api/v1/moderation/decisions	MyModerationController	decisions	backend/src/platform/moderation-v2.controller.ts:16	moderation.decisions
+GET	/api/v1/moderation/appeals	MyModerationController	appeals	backend/src/platform/moderation-v2.controller.ts:17	moderation.appeals
+POST	/api/v1/moderation/appeals	MyModerationController	appeal	backend/src/platform/moderation-v2.controller.ts:18	moderation.appeal
+GET	/api/v1/moderation/features	MyModerationController	features	backend/src/platform/moderation-v2.controller.ts:19	flags.effective
+GET	/api/v1/admin/moderation-v2/decisions	ModerationV2Controller	decisions	backend/src/platform/moderation-v2.controller.ts:26	moderation.decisions
+GET	/api/v1/admin/moderation-v2/history/:kind/:id	ModerationV2Controller	history	backend/src/platform/moderation-v2.controller.ts:27	moderation.history
+GET	/api/v1/admin/moderation-v2/appeals	ModerationV2Controller	appeals	backend/src/platform/moderation-v2.controller.ts:28	moderation.appeals
+POST	/api/v1/admin/moderation-v2/appeals/:id/assign	ModerationV2Controller	assign	backend/src/platform/moderation-v2.controller.ts:29	moderation.assign
+POST	/api/v1/admin/moderation-v2/appeals/:id/resolve	ModerationV2Controller	resolve	backend/src/platform/moderation-v2.controller.ts:30	moderation.resolve
+POST	/api/v1/admin/moderation-v2/bulk	ModerationV2Controller	bulk	backend/src/platform/moderation-v2.controller.ts:31	moderation.bulk
+POST	/api/v1/admin/moderation-v2/bulk/preview	ModerationV2Controller	preview	backend/src/platform/moderation-v2.controller.ts:32	moderation.preview
+GET	/api/v1/admin/moderation-v2/reports	ModerationV2Controller	reports	backend/src/platform/moderation-v2.controller.ts:33	moderation.reports
+GET	/api/v1/properties	PropertiesController	list	backend/src/properties/properties.controller.ts:37	properties.list
+POST	/api/v1/properties	PropertiesController	create	backend/src/properties/properties.controller.ts:43	properties.create, audit.recordSafe
+GET	/api/v1/properties/:id	PropertiesController	getById	backend/src/properties/properties.controller.ts:60	properties.getById
+PATCH	/api/v1/properties/:id	PropertiesController	update	backend/src/properties/properties.controller.ts:66	properties.update, audit.recordSafe
+PATCH	/api/v1/properties/:id/status	PropertiesController	updateStatus	backend/src/properties/properties.controller.ts:87	properties.updateStatus, audit.recordSafe
+DELETE	/api/v1/properties/:id	PropertiesController	remove	backend/src/properties/properties.controller.ts:108	properties.remove, audit.recordSafe
+GET	/api/v1/reports/monthly	ReportsController	monthly	backend/src/reports/reports.controller.ts:18	reports.monthly
+GET	/api/v1/reports/monthly/export	ReportsController	monthlyExport	backend/src/reports/reports.controller.ts:28	reports.monthlyExport
+GET	/api/v1/reports/analytics	ReportsController	analytics	backend/src/reports/reports.controller.ts:38	reports.analytics
+GET	/api/v1/public/listings/:id/reviews	PublicRoomReviewsController	list	backend/src/reviews/reviews.controller.ts:12	reviews.publicReviews
+GET	/api/v1/reviews/leases/:id	RoomReviewsController	context	backend/src/reviews/reviews.controller.ts:20	reviews.context
+POST	/api/v1/reviews/leases/:id	RoomReviewsController	create	backend/src/reviews/reviews.controller.ts:23	reviews.create
+PATCH	/api/v1/reviews/:id	RoomReviewsController	update	backend/src/reviews/reviews.controller.ts:28	reviews.update
+DELETE	/api/v1/reviews/:id	RoomReviewsController	withdraw	backend/src/reviews/reviews.controller.ts:33	reviews.withdraw
+GET	/api/v1/reviews/landlord	RoomReviewsController	landlord	backend/src/reviews/reviews.controller.ts:38	reviews.landlord
+POST	/api/v1/reviews/:id/reply	RoomReviewsController	reply	backend/src/reviews/reviews.controller.ts:41	reviews.reply
+GET	/api/v1/admin/room-reviews	AdminRoomReviewsController	queue	backend/src/reviews/reviews.controller.ts:52	reviews.queue
+POST	/api/v1/admin/room-reviews/:id/moderate	AdminRoomReviewsController	moderate	backend/src/reviews/reviews.controller.ts:55	reviews.moderate
+POST	/api/v1/admin/room-reviews/:id/reply/moderate	AdminRoomReviewsController	reply	backend/src/reviews/reviews.controller.ts:60	reviews.moderate
+GET	/api/v1/properties/:propertyId/rooms	PropertyRoomsController	list	backend/src/rooms/rooms.controller.ts:44	rooms.listByProperty
+POST	/api/v1/properties/:propertyId/rooms	PropertyRoomsController	create	backend/src/rooms/rooms.controller.ts:54	rooms.create, audit.recordSafe
+GET	/api/v1/rooms/:id	RoomsController	getById	backend/src/rooms/rooms.controller.ts:85	rooms.getById
+PATCH	/api/v1/rooms/:id	RoomsController	update	backend/src/rooms/rooms.controller.ts:91	rooms.update, audit.recordSafe
+PATCH	/api/v1/rooms/:id/status	RoomsController	updateStatus	backend/src/rooms/rooms.controller.ts:112	rooms.updateStatus, audit.recordSafe
+DELETE	/api/v1/rooms/:id	RoomsController	remove	backend/src/rooms/rooms.controller.ts:133	rooms.remove, audit.recordSafe
+GET	/api/v1/rooms/:id/assets	RoomsController	assets	backend/src/rooms/rooms.controller.ts:152	rooms.assets
+POST	/api/v1/rooms/:id/assets	RoomsController	createAsset	backend/src/rooms/rooms.controller.ts:158	rooms.createAsset, audit.recordSafe
+PATCH	/api/v1/rooms/:id/assets/:assetId	RoomsController	updateAsset	backend/src/rooms/rooms.controller.ts:179	rooms.updateAsset, audit.recordSafe
+DELETE	/api/v1/rooms/:id/assets/:assetId	RoomsController	removeAsset	backend/src/rooms/rooms.controller.ts:201	rooms.removeAsset, audit.recordSafe
+GET	/api/v1/rooms/:id/inspections	RoomsController	inspections	backend/src/rooms/rooms.controller.ts:222	rooms.inspections
+POST	/api/v1/rooms/:id/inspections	RoomsController	createInspection	backend/src/rooms/rooms.controller.ts:228	rooms.createInspection, audit.recordSafe
+PATCH	/api/v1/rooms/:id/inspections/:inspectionId	RoomsController	updateInspection	backend/src/rooms/rooms.controller.ts:249	rooms.updateInspection, audit.recordSafe
+POST	/api/v1/rooms/:id/inspections/:inspectionId/complete	RoomsController	completeInspection	backend/src/rooms/rooms.controller.ts:276	rooms.completeInspection, audit.recordSafe
+DELETE	/api/v1/rooms/:id/inspections/:inspectionId	RoomsController	removeInspection	backend/src/rooms/rooms.controller.ts:301	rooms.removeInspection, audit.recordSafe
+GET	/api/v1/rooms/:id/service-fees	RoomsController	serviceFees	backend/src/rooms/rooms.controller.ts:322	rooms.serviceFees
+POST	/api/v1/rooms/:id/service-fees	RoomsController	createServiceFee	backend/src/rooms/rooms.controller.ts:328	rooms.createServiceFee, audit.recordSafe
+PATCH	/api/v1/rooms/:id/service-fees/:feeId	RoomsController	updateServiceFee	backend/src/rooms/rooms.controller.ts:350	rooms.updateServiceFee, audit.recordSafe
+GET	/api/v1/rooms/:id/service-fees/:feeId/versions	RoomsController	tariffVersions	backend/src/rooms/rooms.controller.ts:373	rooms.serviceFeeVersions
+DELETE	/api/v1/rooms/:id/service-fees/:feeId	RoomsController	removeServiceFee	backend/src/rooms/rooms.controller.ts:379	rooms.removeServiceFee, audit.recordSafe
+GET	/api/v1/staff/presets	StaffController	presets	backend/src/staff/staff.controller.ts:25	staff.presets
+GET	/api/v1/staff	StaffController	list	backend/src/staff/staff.controller.ts:32	staff.list
+POST	/api/v1/staff/invites	StaffController	createInvite	backend/src/staff/staff.controller.ts:39	staff.createInvite, audit.recordSafe
+PATCH	/api/v1/staff/:id	StaffController	update	backend/src/staff/staff.controller.ts:64	staff.update, audit.recordSafe
+POST	/api/v1/staff/:id/simulate	StaffController	simulate	backend/src/staff/staff.controller.ts:90	staff.simulate
+POST	/api/v1/staff/invites/accept	StaffController	accept	backend/src/staff/staff.controller.ts:96	staff.accept
+GET	/api/v1/notification-center	NotificationCenterController	list	backend/src/support/notification-center.controller.ts:14	notifications.list
+GET	/api/v1/notification-center/preferences	NotificationCenterController	preferences	backend/src/support/notification-center.controller.ts:15	notifications.preferences
+PATCH	/api/v1/notification-center/preferences	NotificationCenterController	updatePreferences	backend/src/support/notification-center.controller.ts:16	notifications.updatePreferences
+POST	/api/v1/notification-center/:id/read	NotificationCenterController	markRead	backend/src/support/notification-center.controller.ts:17	notifications.markRead
+POST	/api/v1/notification-center/read-all	NotificationCenterController	markAllRead	backend/src/support/notification-center.controller.ts:18	notifications.markAllRead
+GET	/api/v1/admin/operations/notification-delivery	NotificationDeliveryController	queue	backend/src/support/notification-delivery.controller.ts:14	delivery.queue
+POST	/api/v1/admin/operations/notification-delivery/:id/retry	NotificationDeliveryController	retry	backend/src/support/notification-delivery.controller.ts:15	delivery.retry
+POST	/api/v1/support/tickets/:id/attachments	SupportAttachmentController	upload	backend/src/support/support-attachment.controller.ts:16	attachments.upload
+POST	/api/v1/admin/support-cases/:id/timeline	SupportCaseController	timeline	backend/src/support/support-case.controller.ts:20	cases.timeline
+POST	/api/v1/admin/support-cases/:id/links	SupportCaseController	link	backend/src/support/support-case.controller.ts:22	cases.link
+GET	/api/v1/admin/support-sla-policy	SupportSlaController	policy	backend/src/support/support-sla.controller.ts:14	sla.policy
+PATCH	/api/v1/admin/support-sla-policy	SupportSlaController	update	backend/src/support/support-sla.controller.ts:15	sla.update
+GET	/api/v1/support/templates	SupportToolsController	templates	backend/src/support/support-tools.controller.ts:18	tools.templates
+POST	/api/v1/support/templates	SupportToolsController	create	backend/src/support/support-tools.controller.ts:19	tools.saveTemplate
+PATCH	/api/v1/support/templates/:id	SupportToolsController	update	backend/src/support/support-tools.controller.ts:20	tools.saveTemplate
+PATCH	/api/v1/support/tickets/:id/labels	SupportToolsController	labels	backend/src/support/support-tools.controller.ts:21	tools.labels
+POST	/api/v1/support/tickets/:id/merge	SupportToolsController	merge	backend/src/support/support-tools.controller.ts:22	tools.merge
+POST	/api/v1/support/tickets/:id/feedback	SupportToolsController	feedback	backend/src/support/support-tools.controller.ts:23	tools.feedback
+GET	/api/v1/support/views	SupportWorkflowController	views	backend/src/support/support-workflow.controller.ts:14	workflow.views
+POST	/api/v1/support/views	SupportWorkflowController	createView	backend/src/support/support-workflow.controller.ts:15	workflow.saveView
+PATCH	/api/v1/support/views/:id	SupportWorkflowController	updateView	backend/src/support/support-workflow.controller.ts:16	workflow.saveView
+DELETE	/api/v1/support/views/:id	SupportWorkflowController	deleteView	backend/src/support/support-workflow.controller.ts:17	workflow.deleteView
+GET	/api/v1/support/skills	SupportWorkflowController	skills	backend/src/support/support-workflow.controller.ts:18	workflow.skills
+PATCH	/api/v1/support/skills/:id	SupportWorkflowController	setSkills	backend/src/support/support-workflow.controller.ts:19	workflow.setSkills
+POST	/api/v1/support/tickets/:id/auto-assign	SupportWorkflowController	autoAssign	backend/src/support/support-workflow.controller.ts:20	workflow.autoAssign
+POST	/api/v1/support/tickets	SupportController	create	backend/src/support/support.controller.ts:15	support.create
+GET	/api/v1/support/tickets	SupportController	list	backend/src/support/support.controller.ts:16	support.list
+GET	/api/v1/support/tickets/assignees	SupportController	assignees	backend/src/support/support.controller.ts:17	support.assignees
+GET	/api/v1/support/tickets/teams	SupportController	teams	backend/src/support/support.controller.ts:18	support.teams
+GET	/api/v1/support/tickets/:id	SupportController	detail	backend/src/support/support.controller.ts:19	support.detail
+POST	/api/v1/support/tickets/:id/replies	SupportController	reply	backend/src/support/support.controller.ts:20	support.reply
+POST	/api/v1/support/tickets/:id/notes	SupportController	note	backend/src/support/support.controller.ts:21	support.note
+PATCH	/api/v1/support/tickets/:id/assignment	SupportController	assign	backend/src/support/support.controller.ts:22	support.assign
+PATCH	/api/v1/support/tickets/:id/status	SupportController	status	backend/src/support/support.controller.ts:23	support.status
+GET	/api/v1/support/notifications	SupportController	listNotifications	backend/src/support/support.controller.ts:25	notifications.list
+POST	/api/v1/support/notifications/:id/read	SupportController	markNotification	backend/src/support/support.controller.ts:26	notifications.markRead
+POST	/api/v1/support/notifications/read-all	SupportController	markAllNotifications	backend/src/support/support.controller.ts:27	notifications.markAllRead
+GET	/api/v1/tenant/lifecycle-requests	TenantLifecyclePortalController	requests	backend/src/tenant-lifecycle/tenant-lifecycle.controller.ts:15	lifecycle.requests
+POST	/api/v1/tenant/lifecycle-requests	TenantLifecyclePortalController	create	backend/src/tenant-lifecycle/tenant-lifecycle.controller.ts:18	lifecycle.createRequest
+POST	/api/v1/tenant/lifecycle-requests/:id/cancel	TenantLifecyclePortalController	cancel	backend/src/tenant-lifecycle/tenant-lifecycle.controller.ts:21	lifecycle.cancelRequest
+GET	/api/v1/tenant/transfer-rooms	TenantLifecyclePortalController	transferRooms	backend/src/tenant-lifecycle/tenant-lifecycle.controller.ts:24	lifecycle.transferRooms
+GET	/api/v1/tenant/leases/:leaseId/settlement	TenantLifecyclePortalController	settlement	backend/src/tenant-lifecycle/tenant-lifecycle.controller.ts:27	settlements.getForTenant
+GET	/api/v1/tenant/occupants	TenantLifecyclePortalController	occupants	backend/src/tenant-lifecycle/tenant-lifecycle.controller.ts:30	lifecycle.occupants
+GET	/api/v1/tenant/notification-preferences	TenantLifecyclePortalController	preference	backend/src/tenant-lifecycle/tenant-lifecycle.controller.ts:33	lifecycle.preference
+PUT	/api/v1/tenant/notification-preferences	TenantLifecyclePortalController	savePreference	backend/src/tenant-lifecycle/tenant-lifecycle.controller.ts:36	lifecycle.savePreference
+GET	/api/v1/tenant-lifecycle/requests	TenantLifecycleController	requests	backend/src/tenant-lifecycle/tenant-lifecycle.controller.ts:45	lifecycle.requests
+POST	/api/v1/tenant-lifecycle/requests/:id/review	TenantLifecycleController	review	backend/src/tenant-lifecycle/tenant-lifecycle.controller.ts:48	lifecycle.decideRequest
+POST	/api/v1/tenant-lifecycle/requests/:id/execute	TenantLifecycleController	execute	backend/src/tenant-lifecycle/tenant-lifecycle.controller.ts:51	lifecycle.executeRequest
+GET	/api/v1/tenant-lifecycle/leases/:leaseId/occupants	TenantLifecycleController	occupants	backend/src/tenant-lifecycle/tenant-lifecycle.controller.ts:54	lifecycle.occupants
+POST	/api/v1/tenant-lifecycle/leases/:leaseId/occupants	TenantLifecycleController	addOccupant	backend/src/tenant-lifecycle/tenant-lifecycle.controller.ts:57	lifecycle.addOccupant
+DELETE	/api/v1/tenant-lifecycle/leases/:leaseId/occupants/:id	TenantLifecycleController	removeOccupant	backend/src/tenant-lifecycle/tenant-lifecycle.controller.ts:60	lifecycle.removeOccupant
+GET	/api/v1/tenant/me	TenantPortalController	me	backend/src/tenant-portal/tenant-portal.controller.ts:17	portal.me
+GET	/api/v1/tenant/dashboard	TenantPortalController	dashboard	backend/src/tenant-portal/tenant-portal.controller.ts:22	portal.dashboard
+GET	/api/v1/tenant/invoices	TenantPortalController	invoices	backend/src/tenant-portal/tenant-portal.controller.ts:27	portal.invoices
+GET	/api/v1/tenant/leases	TenantPortalController	leases	backend/src/tenant-portal/tenant-portal.controller.ts:32	portal.leases
+GET	/api/v1/tenant/invoices/:id	TenantPortalController	invoice	backend/src/tenant-portal/tenant-portal.controller.ts:37	portal.invoice
+GET	/api/v1/tenant/notifications	TenantPortalController	notifications	backend/src/tenant-portal/tenant-portal.controller.ts:42	portal.notifications
+POST	/api/v1/tenant/notifications/:id/read	TenantPortalController	markNotificationRead	backend/src/tenant-portal/tenant-portal.controller.ts:47	portal.markNotificationRead
+GET	/api/v1/tenant/zalo-messages	TenantPortalController	zaloMessages	backend/src/tenant-portal/tenant-portal.controller.ts:52	portal.zaloMessages
+POST	/api/v1/tenant/zalo-messages	TenantPortalController	createZaloMessage	backend/src/tenant-portal/tenant-portal.controller.ts:57	portal.createZaloMessage
+POST	/api/v1/tenant/zalo-messages/:id/read	TenantPortalController	markZaloMessageRead	backend/src/tenant-portal/tenant-portal.controller.ts:65	portal.markZaloMessageRead
+POST	/api/v1/tenant/invoices/:id/payment-proofs	TenantPortalController	submitPaymentProof	backend/src/tenant-portal/tenant-portal.controller.ts:70	portal.submitPaymentProof
+GET	/api/v1/tenant/maintenance	TenantPortalController	maintenance	backend/src/tenant-portal/tenant-portal.controller.ts:79	portal.maintenance
+POST	/api/v1/tenant/maintenance	TenantPortalController	createMaintenance	backend/src/tenant-portal/tenant-portal.controller.ts:84	portal.createMaintenance
+POST	/api/v1/tenant/maintenance/:id/comments	TenantPortalController	addMaintenanceComment	backend/src/tenant-portal/tenant-portal.controller.ts:92	portal.addMaintenanceComment
+POST	/api/v1/tenants/:id/invite	TenantInvitesController	create	backend/src/tenants/tenant-invites.controller.ts:23	invites.create, audit.recordSafe
+POST	/api/v1/tenant-invites/accept	TenantInvitesController	accept	backend/src/tenants/tenant-invites.controller.ts:45	invites.accept
+GET	/api/v1/tenants	TenantsController	list	backend/src/tenants/tenants.controller.ts:38	tenants.list
+POST	/api/v1/tenants	TenantsController	create	backend/src/tenants/tenants.controller.ts:44	tenants.create, audit.recordSafe
+GET	/api/v1/tenants/:id	TenantsController	getById	backend/src/tenants/tenants.controller.ts:61	tenants.getById
+GET	/api/v1/tenants/:id/overview	TenantsController	overview	backend/src/tenants/tenants.controller.ts:67	tenants.overview
+POST	/api/v1/tenants/:id/account	TenantsController	createAccount	backend/src/tenants/tenants.controller.ts:73	tenants.createAccount, audit.recordSafe
+PATCH	/api/v1/tenants/:id	TenantsController	update	backend/src/tenants/tenants.controller.ts:94	tenants.update, audit.recordSafe
+PATCH	/api/v1/tenants/:id/status	TenantsController	updateStatus	backend/src/tenants/tenants.controller.ts:115	tenants.updateStatus, audit.recordSafe
+DELETE	/api/v1/tenants/:id	TenantsController	remove	backend/src/tenants/tenants.controller.ts:136	tenants.remove, audit.recordSafe
+POST	/api/v1/uploads	UploadsController	upload	backend/src/uploads/uploads.controller.ts:13	uploads.save
+GET	/api/v1/uploads/:filename/access	UploadsController	access	backend/src/uploads/uploads.controller.ts:20	uploads.access
