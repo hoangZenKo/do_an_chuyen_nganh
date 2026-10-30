@@ -1,0 +1,18 @@
+
+> rental-room-api@0.1.0 test:e2e
+> NODE_ENV=test jest --config ./test/jest-e2e.json --runInBand --runTestsByPath test/e2e/manual-transfers.e2e-spec.ts --runInBand
+
+PASS test/e2e/manual-transfers.e2e-spec.ts
+  Manual transfer: recipient, tenant proof and landlord confirmation
+    ✓ binds account updates to the landlord and rejects stale versions and malformed inputs (340 ms)
+    ✓ shows only owned payable invoice instructions; never creates a payment or demo session (321 ms)
+    ✓ reserves pending proofs without reducing debt, then records exactly one receipt on confirmation (290 ms)
+    ✓ rejection leaves the ledger unchanged and permits a corrected proof (271 ms)
+    ✓ preserves partial balance and replays a proof request without duplicate receipt creation (279 ms)
+    ✓ grants private QR access only to the recipient owner and related tenants while enabled (303 ms)
+
+Test Suites: 1 passed, 1 total
+Tests:       6 passed, 6 total
+Snapshots:   0 total
+Time:        3.445 s
+Ran all test suites within paths "test/e2e/manual-transfers.e2e-spec.ts".

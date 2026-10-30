@@ -1,0 +1,21 @@
+{
+  "route": "/tenant/leases",
+  "apiBaseUrl": "http://127.0.0.1:54542/api/v1",
+  "texts": [
+    "Đang thuê",
+    "Phòng DEMO-A101",
+    "Khu tro KIEM THU",
+    "0 hợp đồng cũ",
+    "Tất cả",
+    "Đang thuê",
+    "Đã kết thúc",
+    "Phòng DEMO-A101 · Khu tro KIEM THU",
+    "Tiền thuê 3.000.000 đ · Cọc 3.000.000 đ",
+    "Đang thuê",
+    "01/10/2026 - 30/10/2027",
+    "Hợp đồng của tôi",
+    "Bấm: DEMO-A101"
+  ],
+  "fields": [],
+  "errors": []
+}

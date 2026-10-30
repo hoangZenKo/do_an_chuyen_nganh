@@ -1,0 +1,62 @@
+
+> rental-room-api@0.1.0 test:e2e
+> NODE_ENV=test jest --config ./test/jest-e2e.json --runInBand --runTestsByPath test/e2e/operations.e2e-spec.ts --runInBand
+
+FAIL test/e2e/operations.e2e-spec.ts
+  Landlord operations E2E
+    ✓ aggregates all categories with truthful counts, dates and exact destinations (20 ms)
+    ✓ filters by category without losing global summary counts (17 ms)
+    ✓ scopes property filters and rejects foreign properties (22 ms)
+    ✓ never reveals another landlord actions (10 ms)
+    ✓ validates query page=0 (3 ms)
+    ✓ validates query page=1.5 (2 ms)
+    ✓ validates query limit=51 (3 ms)
+    ✓ validates query limit=0 (2 ms)
+    ✓ validates query category=unknown (2 ms)
+    ✓ validates query propertyId=invalid (2 ms)
+    ✓ paginates deterministically with no duplicate or missing items (48 ms)
+    ✓ supports existing notification read records and idempotent action reads (27 ms)
+    ✕ filters staff counts and rows by resource permissions, without notification permission (7 ms)
+    ✕ requires operation permission and returns no inaccessible resources (8 ms)
+    ✓ rejects anonymous, tenant and admin callers (85 ms)
+    ✓ removes resolved tasks and distinguishes due-soon, nonurgent and expired tasks (21 ms)
+
+  ● Landlord operations E2E › filters staff counts and rows by resource permissions, without notification permission
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 200
+    Received: 403
+
+      160 |     const token = await staffToken(['operation.view', 'maintenance.view']);
+      161 |     const result = await get('', token);
+    > 162 |     expect(result.status).toBe(200);
+          |                           ^
+      163 |     expect(result.json!.data.summary).toMatchObject({ total: 2, pendingViewings: 0, overdueInvoices: 0, openMaintenance: 2 });
+      164 |     expect(result.json!.data.categories).toEqual(['maintenance']);
+      165 |     expect((await get('?category=invoice', token)).status).toBe(403);
+
+      at Object.<anonymous> (test/e2e/operations.e2e-spec.ts:162:27)
+
+  ● Landlord operations E2E › requires operation permission and returns no inaccessible resources
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 200
+    Received: 403
+
+      176 |     expect((await get('', await staffToken(['maintenance.view']))).status).toBe(403);
+      177 |     const empty = await get('', await staffToken(['operation.view']));
+    > 178 |     expect(empty.status).toBe(200);
+          |                          ^
+      179 |     expect(empty.json!.data.items).toEqual([]);
+      180 |     expect(empty.json!.data.summary.total).toBe(0);
+      181 |   });
+
+      at Object.<anonymous> (test/e2e/operations.e2e-spec.ts:178:26)
+
+Test Suites: 1 failed, 1 total
+Tests:       2 failed, 14 passed, 16 total
+Snapshots:   0 total
+Time:        2.873 s, estimated 3 s
+Ran all test suites within paths "test/e2e/operations.e2e-spec.ts".

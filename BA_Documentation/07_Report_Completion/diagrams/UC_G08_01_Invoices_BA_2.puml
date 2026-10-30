@@ -1,0 +1,61 @@
+@startuml
+left to right direction
+skinparam defaultFontName SansSerif
+skinparam defaultFontSize 13
+skinparam backgroundColor #F8FAFC
+skinparam shadowing false
+skinparam ArrowColor #52647A
+skinparam ArrowThickness 1
+skinparam actorStyle stickman
+skinparam actorBorderColor #243A52
+skinparam actorFontColor #243A52
+skinparam actorBackgroundColor #FFFFFF
+skinparam usecase {
+  BackgroundColor #FFFFFF
+  BorderColor #327C83
+  FontColor #20354B
+  BackgroundColor<<Một phần>> #FFF0CE
+  BorderColor<<Một phần>> #B17917
+  BackgroundColor<<DEMO>> #FCE5DF
+  BorderColor<<DEMO>> #BC593A
+  BackgroundColor<<MÔ PHỎNG>> #E7EAF1
+  BorderColor<<MÔ PHỎNG>> #6C7488
+}
+skinparam rectangle {
+  BackgroundColor #EEF4F5
+  BorderColor #243A52
+  FontColor #243A52
+}
+skinparam titleFontColor #20354B
+skinparam titleFontSize 18
+skinparam nodesep 25
+skinparam ranksep 65
+title G08 Chỉ số và hóa đơn phần 2
+
+actor "A02\nChủ trọ" as A02
+actor "A03\nNhân viên vận hành" as A03
+actor "A04\nNgười tìm phòng\nhoặc người thuê" as A04
+rectangle "Hệ thống quản lý nhà trọ" as SYSTEM {
+  usecase "UC-BIL-05\nSửa hạn thanh toán hoặc ghi chú\nhóa đơn" as UC_BIL_05
+  usecase "UC-BIL-06\nThay thế hóa đơn chưa có lịch sử\nthanh toán" as UC_BIL_06
+  usecase "UC-BIL-07\nĐiều chỉnh tăng hoặc giảm hóa\nđơn" as UC_BIL_07
+  usecase "UC-BIL-08.1\nHủy hóa đơn đủ điều kiện" as UC_BIL_08_1
+  usecase "UC-TEN-03\nTra cứu hóa đơn của mình" as UC_TEN_03
+}
+A02 -- UC_BIL_05
+UC_BIL_05 -- A03
+A02 -- UC_BIL_06
+UC_BIL_06 -- A03
+A02 -- UC_BIL_07
+UC_BIL_07 -- A03
+A02 -- UC_BIL_08_1
+UC_BIL_08_1 -- A03
+A04 -- UC_TEN_03
+legend bottom left
+  Đường liền: tác nhân tham gia mục tiêu nghiệp vụ.
+  Đường xanh có nhãn: chỉ tham gia trong phạm vi giới hạn được nêu.
+  Nhân viên cần quyền phù hợp và khu được giao; quản trị viên cần đúng thẩm quyền.
+  Vàng: đáp ứng một phần. Cam: thanh toán thử nghiệm. Xám: trao đổi mô phỏng.
+  Không thể hiện thứ tự thực hiện; không suy ra quyền từ vị trí tác nhân.
+endlegend
+@enduml

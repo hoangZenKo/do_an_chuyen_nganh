@@ -1,0 +1,10 @@
+[
+  {
+    "id": "login",
+    "layer": "UI",
+    "status": "passed",
+    "startedAt": "2026-10-30T01:36:46.004Z",
+    "screenshot": "login.png",
+    "finishedAt": "2026-10-30T01:37:31.143Z"
+  }
+]

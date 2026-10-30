@@ -1,0 +1,71 @@
+@startuml
+left to right direction
+skinparam defaultFontName SansSerif
+skinparam defaultFontSize 13
+skinparam backgroundColor #F8FAFC
+skinparam shadowing false
+skinparam ArrowColor #52647A
+skinparam ArrowThickness 1
+skinparam actorStyle stickman
+skinparam actorBorderColor #243A52
+skinparam actorFontColor #243A52
+skinparam actorBackgroundColor #FFFFFF
+skinparam usecase {
+  BackgroundColor #FFFFFF
+  BorderColor #327C83
+  FontColor #20354B
+  BackgroundColor<<Một phần>> #FFF0CE
+  BorderColor<<Một phần>> #B17917
+  BackgroundColor<<DEMO>> #FCE5DF
+  BorderColor<<DEMO>> #BC593A
+  BackgroundColor<<MÔ PHỎNG>> #E7EAF1
+  BorderColor<<MÔ PHỎNG>> #6C7488
+}
+skinparam rectangle {
+  BackgroundColor #EEF4F5
+  BorderColor #243A52
+  FontColor #243A52
+}
+skinparam titleFontColor #20354B
+skinparam titleFontSize 18
+skinparam nodesep 25
+skinparam ranksep 65
+title G06 · Hồ sơ thuê, hợp đồng và tiền cọc\n<size:12>Trang 2/2 · Hợp đồng, tiền cọc và người ở cùng</size>
+caption AS-IS · 29/10/2026 · Snapshot c565c29 · Không biểu diễn trình tự xử lý
+actor "A02\nChủ trọ" as A02
+actor "A03\nNhân viên vận hành" as A03
+actor "A04\nNgười tìm phòng/người\nthuê" as A04
+rectangle "Hệ thống quản lý nhà trọ" as SYSTEM {
+  usecase "UC-TNT-04\nTra cứu và xuất hợp đồng thuê" as UC_TNT_04
+  usecase "UC-TNT-05\nLập hợp đồng thuê phòng" as UC_TNT_05
+  usecase "UC-TNT-06.1\nCập nhật điều khoản hợp đồng" as UC_TNT_06_1
+  usecase "UC-TNT-06.2\nGia hạn hợp đồng" as UC_TNT_06_2
+  usecase "UC-TNT-06.3\nKết thúc hợp đồng" as UC_TNT_06_3
+  usecase "UC-TEN-02\nTra cứu hợp đồng và quyết toán\ncủa mình" as UC_TEN_02
+  usecase "UC-TNT-07\nTra cứu và ghi giao dịch cọc" as UC_TNT_07
+  usecase "UC-TNT-12.1\nQuản lý người ở cùng hợp đồng" as UC_TNT_12_1
+  usecase "UC-TEN-08.1\nXem người ở cùng hợp đồng" as UC_TEN_08_1
+}
+A02 -- UC_TNT_04
+UC_TNT_04 -- A03
+A02 -- UC_TNT_05
+UC_TNT_05 -- A03
+A02 -- UC_TNT_06_1
+UC_TNT_06_1 -- A03
+A02 -- UC_TNT_06_2
+UC_TNT_06_2 -- A03
+A02 -- UC_TNT_06_3
+UC_TNT_06_3 -- A03
+A04 -- UC_TEN_02
+A02 -- UC_TNT_07
+UC_TNT_07 -- A03
+A02 -- UC_TNT_12_1
+UC_TNT_12_1 -- A03
+A04 -- UC_TEN_08_1
+legend bottom left
+  Đường liền: tương tác; không biểu diễn luồng điều khiển.
+  STAFF: permission theo handler + khu được giao + whitelist controller; không mặc định toàn quyền.
+  Mặc định: xác minh tĩnh, chưa nghiệm thu runtime; màu vàng: một phần, cam: DEMO, xám: mô phỏng.
+  Quyền chi tiết, điều kiện và nguồn: Association_Traceability.md / data/diagram-manifest.json.
+endlegend
+@enduml

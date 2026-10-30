@@ -1,0 +1,1162 @@
+
+> rental-room-api@0.1.0 test:e2e
+> NODE_ENV=test jest --config ./test/jest-e2e.json --runInBand --runTestsByPath=test/e2e/admin-inventory.e2e-spec.ts --runInBand
+
+FAIL test/e2e/security-discovery.e2e-spec.ts
+  ● Security and discovery regressions › keeps receipts private, validates bytes and permits only authorized sharing
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 200
+    Received: 404
+
+      91 |     expect((await call(`/uploads/${file.json.data.fileName}/access`, staffToken)).status).toBe(404);
+      92 |     await harness.prisma.staffProfile.update({ where: { userId: staff.id }, data: { permissions: ['billing.view'] } });
+    > 93 |     expect((await call(`/uploads/${file.json.data.fileName}/access`, staffToken)).status).toBe(200);
+         |                                                                                           ^
+      94 |     const stolen = await upload(other);
+      95 |     expect((await call(`/tenant/invoices/${invoice.id}/payment-proofs`, student, { amount: 100000, proofImageUrls: [stolen.json.data.url] })).status).toBe(400);
+      96 |     expect((await upload(student, Buffer.from('<html>not an image</html>'))).status).toBe(400);
+
+      at Object.<anonymous> (test/e2e/security-discovery.e2e-spec.ts:93:91)
+
+FAIL test/e2e/production-safety.e2e-spec.ts
+  ● Production safety › cancels superseded and expired jobs, and stops retrying permanent provider failures
+
+    HttpException: Vui lòng chờ trước khi yêu cầu gửi lại.
+
+      32 |       const count = await tx.accountAccessToken.count({ where: { userId, purpose, createdAt: { gte: since } } });
+      33 |       if ((latest && latest.createdAt.getTime() > Date.now() - 60_000) || count >= 5) {
+    > 34 |         throw new HttpException('Vui lòng chờ trước khi yêu cầu gửi lại.', 429);
+         |               ^
+      35 |       }
+      36 |     }
+      37 |     await tx.deliveryJob.updateMany({ where: { token: { userId, purpose }, status: { in: ['PENDING', 'PROCESSING'] } },
+
+      at AccountAccessService.enqueue (src/auth/account-access.service.ts:34:15)
+      at Proxy._transactionWithCallback (node_modules/@prisma/client/src/runtime/getPrismaClient.ts:722:18)
+      at Object.<anonymous> (test/e2e/production-safety.e2e-spec.ts:109:21)
+
+FAIL test/e2e/operations.e2e-spec.ts
+  ● Landlord operations E2E › filters staff counts and rows by resource permissions, without notification permission
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 200
+    Received: 403
+
+      160 |     const token = await staffToken(['operation.view', 'maintenance.view']);
+      161 |     const result = await get('', token);
+    > 162 |     expect(result.status).toBe(200);
+          |                           ^
+      163 |     expect(result.json!.data.summary).toMatchObject({ total: 2, pendingViewings: 0, overdueInvoices: 0, openMaintenance: 2 });
+      164 |     expect(result.json!.data.categories).toEqual(['maintenance']);
+      165 |     expect((await get('?category=invoice', token)).status).toBe(403);
+
+      at Object.<anonymous> (test/e2e/operations.e2e-spec.ts:162:27)
+
+  ● Landlord operations E2E › requires operation permission and returns no inaccessible resources
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 200
+    Received: 403
+
+      176 |     expect((await get('', await staffToken(['maintenance.view']))).status).toBe(403);
+      177 |     const empty = await get('', await staffToken(['operation.view']));
+    > 178 |     expect(empty.status).toBe(200);
+          |                          ^
+      179 |     expect(empty.json!.data.items).toEqual([]);
+      180 |     expect(empty.json!.data.summary.total).toBe(0);
+      181 |   });
+
+      at Object.<anonymous> (test/e2e/operations.e2e-spec.ts:178:26)
+
+FAIL test/e2e/app-functional.e2e-spec.ts
+  ● App functional milestone (disposable database) › rejects duplicate submissions, stale reviews and stale cancellation; concurrent reviewers have one winner
+
+    Use run-app-functional-e2e.mjs.
+
+      13 |     requestJson(harness.baseUrl, `/api/v1/${path}`, { token, method, body });
+      14 |   beforeAll(async () => {
+    > 15 |     if (!/^\/rental_functional_test_\d+_[a-f0-9]+$/.test(new URL(process.env.DATABASE_URL!).pathname)) throw new Error('Use run-app-functional-e2e.mjs.');
+         |                                                                                                              ^
+      16 |   });
+      17 |   afterEach(async () => { if (harness) await closeE2eHarness(harness); });
+      18 |   beforeEach(async () => {
+
+      at Object.<anonymous> (test/e2e/app-functional.e2e-spec.ts:15:110)
+
+  ● App functional milestone (disposable database) › executes renewal once and preserves deposit ledger and lease history
+
+    Use run-app-functional-e2e.mjs.
+
+      13 |     requestJson(harness.baseUrl, `/api/v1/${path}`, { token, method, body });
+      14 |   beforeAll(async () => {
+    > 15 |     if (!/^\/rental_functional_test_\d+_[a-f0-9]+$/.test(new URL(process.env.DATABASE_URL!).pathname)) throw new Error('Use run-app-functional-e2e.mjs.');
+         |                                                                                                              ^
+      16 |   });
+      17 |   afterEach(async () => { if (harness) await closeE2eHarness(harness); });
+      18 |   beforeEach(async () => {
+
+      at Object.<anonymous> (test/e2e/app-functional.e2e-spec.ts:15:110)
+
+  ● App functional milestone (disposable database) › requires canonical settlement for checkout and exposes only the tenants own settlement
+
+    Use run-app-functional-e2e.mjs.
+
+      13 |     requestJson(harness.baseUrl, `/api/v1/${path}`, { token, method, body });
+      14 |   beforeAll(async () => {
+    > 15 |     if (!/^\/rental_functional_test_\d+_[a-f0-9]+$/.test(new URL(process.env.DATABASE_URL!).pathname)) throw new Error('Use run-app-functional-e2e.mjs.');
+         |                                                                                                              ^
+      16 |   });
+      17 |   afterEach(async () => { if (harness) await closeE2eHarness(harness); });
+      18 |   beforeEach(async () => {
+
+      at Object.<anonymous> (test/e2e/app-functional.e2e-spec.ts:15:110)
+
+  ● App functional milestone (disposable database) › transfers only after settlement, copies co-occupants without erasing history and never invents a new deposit
+
+    Use run-app-functional-e2e.mjs.
+
+      13 |     requestJson(harness.baseUrl, `/api/v1/${path}`, { token, method, body });
+      14 |   beforeAll(async () => {
+    > 15 |     if (!/^\/rental_functional_test_\d+_[a-f0-9]+$/.test(new URL(process.env.DATABASE_URL!).pathname)) throw new Error('Use run-app-functional-e2e.mjs.');
+         |                                                                                                              ^
+      16 |   });
+      17 |   afterEach(async () => { if (harness) await closeE2eHarness(harness); });
+      18 |   beforeEach(async () => {
+
+      at Object.<anonymous> (test/e2e/app-functional.e2e-spec.ts:15:110)
+
+  ● App functional milestone (disposable database) › rejects execution against a changed lease and filters lifecycle history by lease and status
+
+    Use run-app-functional-e2e.mjs.
+
+      13 |     requestJson(harness.baseUrl, `/api/v1/${path}`, { token, method, body });
+      14 |   beforeAll(async () => {
+    > 15 |     if (!/^\/rental_functional_test_\d+_[a-f0-9]+$/.test(new URL(process.env.DATABASE_URL!).pathname)) throw new Error('Use run-app-functional-e2e.mjs.');
+         |                                                                                                              ^
+      16 |   });
+      17 |   afterEach(async () => { if (harness) await closeE2eHarness(harness); });
+      18 |   beforeEach(async () => {
+
+      at Object.<anonymous> (test/e2e/app-functional.e2e-spec.ts:15:110)
+
+  ● App functional milestone (disposable database) › queues one recovery token under resend limits, redeems once and revokes existing sessions
+
+    Use run-app-functional-e2e.mjs.
+
+      13 |     requestJson(harness.baseUrl, `/api/v1/${path}`, { token, method, body });
+      14 |   beforeAll(async () => {
+    > 15 |     if (!/^\/rental_functional_test_\d+_[a-f0-9]+$/.test(new URL(process.env.DATABASE_URL!).pathname)) throw new Error('Use run-app-functional-e2e.mjs.');
+         |                                                                                                              ^
+      16 |   });
+      17 |   afterEach(async () => { if (harness) await closeE2eHarness(harness); });
+      18 |   beforeEach(async () => {
+
+      at Object.<anonymous> (test/e2e/app-functional.e2e-spec.ts:15:110)
+
+  ● App functional milestone (disposable database) › rejects expired recovery tokens without changing the password or consuming a session
+
+    Use run-app-functional-e2e.mjs.
+
+      13 |     requestJson(harness.baseUrl, `/api/v1/${path}`, { token, method, body });
+      14 |   beforeAll(async () => {
+    > 15 |     if (!/^\/rental_functional_test_\d+_[a-f0-9]+$/.test(new URL(process.env.DATABASE_URL!).pathname)) throw new Error('Use run-app-functional-e2e.mjs.');
+         |                                                                                                              ^
+      16 |   });
+      17 |   afterEach(async () => { if (harness) await closeE2eHarness(harness); });
+      18 |   beforeEach(async () => {
+
+      at Object.<anonymous> (test/e2e/app-functional.e2e-spec.ts:15:110)
+
+  ● App functional milestone (disposable database) › limits tenant invite resends, invalidates the previous link and consumes activation exactly once
+
+    Use run-app-functional-e2e.mjs.
+
+      13 |     requestJson(harness.baseUrl, `/api/v1/${path}`, { token, method, body });
+      14 |   beforeAll(async () => {
+    > 15 |     if (!/^\/rental_functional_test_\d+_[a-f0-9]+$/.test(new URL(process.env.DATABASE_URL!).pathname)) throw new Error('Use run-app-functional-e2e.mjs.');
+         |                                                                                                              ^
+      16 |   });
+      17 |   afterEach(async () => { if (harness) await closeE2eHarness(harness); });
+      18 |   beforeEach(async () => {
+
+      at Object.<anonymous> (test/e2e/app-functional.e2e-spec.ts:15:110)
+
+  ● App functional milestone (disposable database) › staff activation is one-time, property scoped and rejects expired invites
+
+    Use run-app-functional-e2e.mjs.
+
+      13 |     requestJson(harness.baseUrl, `/api/v1/${path}`, { token, method, body });
+      14 |   beforeAll(async () => {
+    > 15 |     if (!/^\/rental_functional_test_\d+_[a-f0-9]+$/.test(new URL(process.env.DATABASE_URL!).pathname)) throw new Error('Use run-app-functional-e2e.mjs.');
+         |                                                                                                              ^
+      16 |   });
+      17 |   afterEach(async () => { if (harness) await closeE2eHarness(harness); });
+      18 |   beforeEach(async () => {
+
+      at Object.<anonymous> (test/e2e/app-functional.e2e-spec.ts:15:110)
+
+  ● App functional milestone (disposable database) › keeps uploaded proof pending, then records the canonical receipt allocation only after approval
+
+    Use run-app-functional-e2e.mjs.
+
+      13 |     requestJson(harness.baseUrl, `/api/v1/${path}`, { token, method, body });
+      14 |   beforeAll(async () => {
+    > 15 |     if (!/^\/rental_functional_test_\d+_[a-f0-9]+$/.test(new URL(process.env.DATABASE_URL!).pathname)) throw new Error('Use run-app-functional-e2e.mjs.');
+         |                                                                                                              ^
+      16 |   });
+      17 |   afterEach(async () => { if (harness) await closeE2eHarness(harness); });
+      18 |   beforeEach(async () => {
+
+      at Object.<anonymous> (test/e2e/app-functional.e2e-spec.ts:15:110)
+
+FAIL test/e2e/chatbot.e2e-spec.ts
+  ● Chatbot API (real JWT, PostgreSQL, mocked Ollama) › requires a JWT on both endpoints
+
+    Chatbot E2E requires a local rental_chatbot_test_* database.
+
+      47 |     if (process.env.NODE_ENV !== 'test' || !['localhost', '127.0.0.1'].includes(url.hostname) ||
+      48 |         !/^\/rental_chatbot_test_[a-z0-9_]+$/.test(url.pathname)) {
+    > 49 |       throw new Error('Chatbot E2E requires a local rental_chatbot_test_* database.');
+         |             ^
+      50 |     }
+      51 |     const module = await Test.createTestingModule({ imports: [AppModule] })
+      52 |       .overrideProvider(CHATBOT_CONFIG).useValue(config)
+
+      at Object.<anonymous> (test/e2e/chatbot.e2e-spec.ts:49:13)
+
+  ● Chatbot API (real JWT, PostgreSQL, mocked Ollama) › blocks role STAFF on ask and direct sources
+
+    Chatbot E2E requires a local rental_chatbot_test_* database.
+
+      47 |     if (process.env.NODE_ENV !== 'test' || !['localhost', '127.0.0.1'].includes(url.hostname) ||
+      48 |         !/^\/rental_chatbot_test_[a-z0-9_]+$/.test(url.pathname)) {
+    > 49 |       throw new Error('Chatbot E2E requires a local rental_chatbot_test_* database.');
+         |             ^
+      50 |     }
+      51 |     const module = await Test.createTestingModule({ imports: [AppModule] })
+      52 |       .overrideProvider(CHATBOT_CONFIG).useValue(config)
+
+      at Object.<anonymous> (test/e2e/chatbot.e2e-spec.ts:49:13)
+
+  ● Chatbot API (real JWT, PostgreSQL, mocked Ollama) › blocks role ADMIN on ask and direct sources
+
+    Chatbot E2E requires a local rental_chatbot_test_* database.
+
+      47 |     if (process.env.NODE_ENV !== 'test' || !['localhost', '127.0.0.1'].includes(url.hostname) ||
+      48 |         !/^\/rental_chatbot_test_[a-z0-9_]+$/.test(url.pathname)) {
+    > 49 |       throw new Error('Chatbot E2E requires a local rental_chatbot_test_* database.');
+         |             ^
+      50 |     }
+      51 |     const module = await Test.createTestingModule({ imports: [AppModule] })
+      52 |       .overrideProvider(CHATBOT_CONFIG).useValue(config)
+
+      at Object.<anonymous> (test/e2e/chatbot.e2e-spec.ts:49:13)
+
+  ● Chatbot API (real JWT, PostgreSQL, mocked Ollama) › blocks role TENANT on ask and direct sources
+
+    Chatbot E2E requires a local rental_chatbot_test_* database.
+
+      47 |     if (process.env.NODE_ENV !== 'test' || !['localhost', '127.0.0.1'].includes(url.hostname) ||
+      48 |         !/^\/rental_chatbot_test_[a-z0-9_]+$/.test(url.pathname)) {
+    > 49 |       throw new Error('Chatbot E2E requires a local rental_chatbot_test_* database.');
+         |             ^
+      50 |     }
+      51 |     const module = await Test.createTestingModule({ imports: [AppModule] })
+      52 |       .overrideProvider(CHATBOT_CONFIG).useValue(config)
+
+      at Object.<anonymous> (test/e2e/chatbot.e2e-spec.ts:49:13)
+
+  ● Chatbot API (real JWT, PostgreSQL, mocked Ollama) › rejects invalid input {"message":""}
+
+    Chatbot E2E requires a local rental_chatbot_test_* database.
+
+      47 |     if (process.env.NODE_ENV !== 'test' || !['localhost', '127.0.0.1'].includes(url.hostname) ||
+      48 |         !/^\/rental_chatbot_test_[a-z0-9_]+$/.test(url.pathname)) {
+    > 49 |       throw new Error('Chatbot E2E requires a local rental_chatbot_test_* database.');
+         |             ^
+      50 |     }
+      51 |     const module = await Test.createTestingModule({ imports: [AppModule] })
+      52 |       .overrideProvider(CHATBOT_CONFIG).useValue(config)
+
+      at Object.<anonymous> (test/e2e/chatbot.e2e-spec.ts:49:13)
+
+  ● Chatbot API (real JWT, PostgreSQL, mocked Ollama) › rejects invalid input {"message":"   "}
+
+    Chatbot E2E requires a local rental_chatbot_test_* database.
+
+      47 |     if (process.env.NODE_ENV !== 'test' || !['localhost', '127.0.0.1'].includes(url.hostname) ||
+      48 |         !/^\/rental_chatbot_test_[a-z0-9_]+$/.test(url.pathname)) {
+    > 49 |       throw new Error('Chatbot E2E requires a local rental_chatbot_test_* database.');
+         |             ^
+      50 |     }
+      51 |     const module = await Test.createTestingModule({ imports: [AppModule] })
+      52 |       .overrideProvider(CHATBOT_CONFIG).useValue(config)
+
+      at Object.<anonymous> (test/e2e/chatbot.e2e-spec.ts:49:13)
+
+  ● Chatbot API (real JWT, PostgreSQL, mocked Ollama) › rejects invalid input {"message":"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"}
+
+    Chatbot E2E requires a local rental_chatbot_test_* database.
+
+      47 |     if (process.env.NODE_ENV !== 'test' || !['localhost', '127.0.0.1'].includes(url.hostname) ||
+      48 |         !/^\/rental_chatbot_test_[a-z0-9_]+$/.test(url.pathname)) {
+    > 49 |       throw new Error('Chatbot E2E requires a local rental_chatbot_test_* database.');
+         |             ^
+      50 |     }
+      51 |     const module = await Test.createTestingModule({ imports: [AppModule] })
+      52 |       .overrideProvider(CHATBOT_CONFIG).useValue(config)
+
+      at Object.<anonymous> (test/e2e/chatbot.e2e-spec.ts:49:13)
+
+  ● Chatbot API (real JWT, PostgreSQL, mocked Ollama) › rejects invalid input {"message":"X","landlordId":"forged"}
+
+    Chatbot E2E requires a local rental_chatbot_test_* database.
+
+      47 |     if (process.env.NODE_ENV !== 'test' || !['localhost', '127.0.0.1'].includes(url.hostname) ||
+      48 |         !/^\/rental_chatbot_test_[a-z0-9_]+$/.test(url.pathname)) {
+    > 49 |       throw new Error('Chatbot E2E requires a local rental_chatbot_test_* database.');
+         |             ^
+      50 |     }
+      51 |     const module = await Test.createTestingModule({ imports: [AppModule] })
+      52 |       .overrideProvider(CHATBOT_CONFIG).useValue(config)
+
+      at Object.<anonymous> (test/e2e/chatbot.e2e-spec.ts:49:13)
+
+  ● Chatbot API (real JWT, PostgreSQL, mocked Ollama) › rejects invalid input {"message":10}
+
+    Chatbot E2E requires a local rental_chatbot_test_* database.
+
+      47 |     if (process.env.NODE_ENV !== 'test' || !['localhost', '127.0.0.1'].includes(url.hostname) ||
+      48 |         !/^\/rental_chatbot_test_[a-z0-9_]+$/.test(url.pathname)) {
+    > 49 |       throw new Error('Chatbot E2E requires a local rental_chatbot_test_* database.');
+         |             ^
+      50 |     }
+      51 |     const module = await Test.createTestingModule({ imports: [AppModule] })
+      52 |       .overrideProvider(CHATBOT_CONFIG).useValue(config)
+
+      at Object.<anonymous> (test/e2e/chatbot.e2e-spec.ts:49:13)
+
+  ● Chatbot API (real JWT, PostgreSQL, mocked Ollama) › rejects invalid input {"message":"X","propertyId":null}
+
+    Chatbot E2E requires a local rental_chatbot_test_* database.
+
+      47 |     if (process.env.NODE_ENV !== 'test' || !['localhost', '127.0.0.1'].includes(url.hostname) ||
+      48 |         !/^\/rental_chatbot_test_[a-z0-9_]+$/.test(url.pathname)) {
+    > 49 |       throw new Error('Chatbot E2E requires a local rental_chatbot_test_* database.');
+         |             ^
+      50 |     }
+      51 |     const module = await Test.createTestingModule({ imports: [AppModule] })
+      52 |       .overrideProvider(CHATBOT_CONFIG).useValue(config)
+
+      at Object.<anonymous> (test/e2e/chatbot.e2e-spec.ts:49:13)
+
+  ● Chatbot API (real JWT, PostgreSQL, mocked Ollama) › returns an answer and loads current source text
+
+    Chatbot E2E requires a local rental_chatbot_test_* database.
+
+      47 |     if (process.env.NODE_ENV !== 'test' || !['localhost', '127.0.0.1'].includes(url.hostname) ||
+      48 |         !/^\/rental_chatbot_test_[a-z0-9_]+$/.test(url.pathname)) {
+    > 49 |       throw new Error('Chatbot E2E requires a local rental_chatbot_test_* database.');
+         |             ^
+      50 |     }
+      51 |     const module = await Test.createTestingModule({ imports: [AppModule] })
+      52 |       .overrideProvider(CHATBOT_CONFIG).useValue(config)
+
+      at Object.<anonymous> (test/e2e/chatbot.e2e-spec.ts:49:13)
+
+  ● Chatbot API (real JWT, PostgreSQL, mocked Ollama) › returns 404 for cross-owner property and direct source access
+
+    Chatbot E2E requires a local rental_chatbot_test_* database.
+
+      47 |     if (process.env.NODE_ENV !== 'test' || !['localhost', '127.0.0.1'].includes(url.hostname) ||
+      48 |         !/^\/rental_chatbot_test_[a-z0-9_]+$/.test(url.pathname)) {
+    > 49 |       throw new Error('Chatbot E2E requires a local rental_chatbot_test_* database.');
+         |             ^
+      50 |     }
+      51 |     const module = await Test.createTestingModule({ imports: [AppModule] })
+      52 |       .overrideProvider(CHATBOT_CONFIG).useValue(config)
+
+      at Object.<anonymous> (test/e2e/chatbot.e2e-spec.ts:49:13)
+
+  ● Chatbot API (real JWT, PostgreSQL, mocked Ollama) › rejects spoofed source query fields
+
+    Chatbot E2E requires a local rental_chatbot_test_* database.
+
+      47 |     if (process.env.NODE_ENV !== 'test' || !['localhost', '127.0.0.1'].includes(url.hostname) ||
+      48 |         !/^\/rental_chatbot_test_[a-z0-9_]+$/.test(url.pathname)) {
+    > 49 |       throw new Error('Chatbot E2E requires a local rental_chatbot_test_* database.');
+         |             ^
+      50 |     }
+      51 |     const module = await Test.createTestingModule({ imports: [AppModule] })
+      52 |       .overrideProvider(CHATBOT_CONFIG).useValue(config)
+
+      at Object.<anonymous> (test/e2e/chatbot.e2e-spec.ts:49:13)
+
+  ● Chatbot API (real JWT, PostgreSQL, mocked Ollama) › fails closed for model-invented citations
+
+    Chatbot E2E requires a local rental_chatbot_test_* database.
+
+      47 |     if (process.env.NODE_ENV !== 'test' || !['localhost', '127.0.0.1'].includes(url.hostname) ||
+      48 |         !/^\/rental_chatbot_test_[a-z0-9_]+$/.test(url.pathname)) {
+    > 49 |       throw new Error('Chatbot E2E requires a local rental_chatbot_test_* database.');
+         |             ^
+      50 |     }
+      51 |     const module = await Test.createTestingModule({ imports: [AppModule] })
+      52 |       .overrideProvider(CHATBOT_CONFIG).useValue(config)
+
+      at Object.<anonymous> (test/e2e/chatbot.e2e-spec.ts:49:13)
+
+  ● Chatbot API (real JWT, PostgreSQL, mocked Ollama) › returns fallback for an empty corpus without generation
+
+    Chatbot E2E requires a local rental_chatbot_test_* database.
+
+      47 |     if (process.env.NODE_ENV !== 'test' || !['localhost', '127.0.0.1'].includes(url.hostname) ||
+      48 |         !/^\/rental_chatbot_test_[a-z0-9_]+$/.test(url.pathname)) {
+    > 49 |       throw new Error('Chatbot E2E requires a local rental_chatbot_test_* database.');
+         |             ^
+      50 |     }
+      51 |     const module = await Test.createTestingModule({ imports: [AppModule] })
+      52 |       .overrideProvider(CHATBOT_CONFIG).useValue(config)
+
+      at Object.<anonymous> (test/e2e/chatbot.e2e-spec.ts:49:13)
+
+  ● Chatbot API (real JWT, PostgreSQL, mocked Ollama) › never includes another owned property in retrieval or direct sources
+
+    Chatbot E2E requires a local rental_chatbot_test_* database.
+
+      47 |     if (process.env.NODE_ENV !== 'test' || !['localhost', '127.0.0.1'].includes(url.hostname) ||
+      48 |         !/^\/rental_chatbot_test_[a-z0-9_]+$/.test(url.pathname)) {
+    > 49 |       throw new Error('Chatbot E2E requires a local rental_chatbot_test_* database.');
+         |             ^
+      50 |     }
+      51 |     const module = await Test.createTestingModule({ imports: [AppModule] })
+      52 |       .overrideProvider(CHATBOT_CONFIG).useValue(config)
+
+      at Object.<anonymous> (test/e2e/chatbot.e2e-spec.ts:49:13)
+
+  ● Chatbot API (real JWT, PostgreSQL, mocked Ollama) › returns a retry delay while the single inference slot is busy
+
+    Chatbot E2E requires a local rental_chatbot_test_* database.
+
+      47 |     if (process.env.NODE_ENV !== 'test' || !['localhost', '127.0.0.1'].includes(url.hostname) ||
+      48 |         !/^\/rental_chatbot_test_[a-z0-9_]+$/.test(url.pathname)) {
+    > 49 |       throw new Error('Chatbot E2E requires a local rental_chatbot_test_* database.');
+         |             ^
+      50 |     }
+      51 |     const module = await Test.createTestingModule({ imports: [AppModule] })
+      52 |       .overrideProvider(CHATBOT_CONFIG).useValue(config)
+
+      at Object.<anonymous> (test/e2e/chatbot.e2e-spec.ts:49:13)
+
+  ● Chatbot API (real JWT, PostgreSQL, mocked Ollama) › enforces the real deadline and frees the slot after timeout
+
+    Chatbot E2E requires a local rental_chatbot_test_* database.
+
+      47 |     if (process.env.NODE_ENV !== 'test' || !['localhost', '127.0.0.1'].includes(url.hostname) ||
+      48 |         !/^\/rental_chatbot_test_[a-z0-9_]+$/.test(url.pathname)) {
+    > 49 |       throw new Error('Chatbot E2E requires a local rental_chatbot_test_* database.');
+         |             ^
+      50 |     }
+      51 |     const module = await Test.createTestingModule({ imports: [AppModule] })
+      52 |       .overrideProvider(CHATBOT_CONFIG).useValue(config)
+
+      at Object.<anonymous> (test/e2e/chatbot.e2e-spec.ts:49:13)
+
+  ● Chatbot API (real JWT, PostgreSQL, mocked Ollama) › does not answer live-balance requests
+
+    Chatbot E2E requires a local rental_chatbot_test_* database.
+
+      47 |     if (process.env.NODE_ENV !== 'test' || !['localhost', '127.0.0.1'].includes(url.hostname) ||
+      48 |         !/^\/rental_chatbot_test_[a-z0-9_]+$/.test(url.pathname)) {
+    > 49 |       throw new Error('Chatbot E2E requires a local rental_chatbot_test_* database.');
+         |             ^
+      50 |     }
+      51 |     const module = await Test.createTestingModule({ imports: [AppModule] })
+      52 |       .overrideProvider(CHATBOT_CONFIG).useValue(config)
+
+      at Object.<anonymous> (test/e2e/chatbot.e2e-spec.ts:49:13)
+
+  ● Chatbot API (real JWT, PostgreSQL, mocked Ollama) › does not expose revoked sources or an answer generated from them
+
+    Chatbot E2E requires a local rental_chatbot_test_* database.
+
+      47 |     if (process.env.NODE_ENV !== 'test' || !['localhost', '127.0.0.1'].includes(url.hostname) ||
+      48 |         !/^\/rental_chatbot_test_[a-z0-9_]+$/.test(url.pathname)) {
+    > 49 |       throw new Error('Chatbot E2E requires a local rental_chatbot_test_* database.');
+         |             ^
+      50 |     }
+      51 |     const module = await Test.createTestingModule({ imports: [AppModule] })
+      52 |       .overrideProvider(CHATBOT_CONFIG).useValue(config)
+
+      at Object.<anonymous> (test/e2e/chatbot.e2e-spec.ts:49:13)
+
+  ● Chatbot API (real JWT, PostgreSQL, mocked Ollama) › distinguishes model outages, invalid JSON, and deadline expiry from missing evidence
+
+    Chatbot E2E requires a local rental_chatbot_test_* database.
+
+      47 |     if (process.env.NODE_ENV !== 'test' || !['localhost', '127.0.0.1'].includes(url.hostname) ||
+      48 |         !/^\/rental_chatbot_test_[a-z0-9_]+$/.test(url.pathname)) {
+    > 49 |       throw new Error('Chatbot E2E requires a local rental_chatbot_test_* database.');
+         |             ^
+      50 |     }
+      51 |     const module = await Test.createTestingModule({ imports: [AppModule] })
+      52 |       .overrideProvider(CHATBOT_CONFIG).useValue(config)
+
+      at Object.<anonymous> (test/e2e/chatbot.e2e-spec.ts:49:13)
+
+  ● Chatbot API (real JWT, PostgreSQL, mocked Ollama) › keeps disabled AI separate from application liveness
+
+    Chatbot E2E requires a local rental_chatbot_test_* database.
+
+      47 |     if (process.env.NODE_ENV !== 'test' || !['localhost', '127.0.0.1'].includes(url.hostname) ||
+      48 |         !/^\/rental_chatbot_test_[a-z0-9_]+$/.test(url.pathname)) {
+    > 49 |       throw new Error('Chatbot E2E requires a local rental_chatbot_test_* database.');
+         |             ^
+      50 |     }
+      51 |     const module = await Test.createTestingModule({ imports: [AppModule] })
+      52 |       .overrideProvider(CHATBOT_CONFIG).useValue(config)
+
+      at Object.<anonymous> (test/e2e/chatbot.e2e-spec.ts:49:13)
+
+  ● Chatbot API (real JWT, PostgreSQL, mocked Ollama) › limits POST requests by authenticated user, not shared IP
+
+    Chatbot E2E requires a local rental_chatbot_test_* database.
+
+      47 |     if (process.env.NODE_ENV !== 'test' || !['localhost', '127.0.0.1'].includes(url.hostname) ||
+      48 |         !/^\/rental_chatbot_test_[a-z0-9_]+$/.test(url.pathname)) {
+    > 49 |       throw new Error('Chatbot E2E requires a local rental_chatbot_test_* database.');
+         |             ^
+      50 |     }
+      51 |     const module = await Test.createTestingModule({ imports: [AppModule] })
+      52 |       .overrideProvider(CHATBOT_CONFIG).useValue(config)
+
+      at Object.<anonymous> (test/e2e/chatbot.e2e-spec.ts:49:13)
+
+FAIL test/e2e/staff-lifecycle.e2e-spec.ts
+  ● Staff property scope and tenant lifecycle (disposable database) › isolates collections and direct IDs across property, room, tenant, invoice, maintenance, reports and dashboard
+
+    Use the disposable billing production runner.
+
+      16 |
+      17 |   beforeAll(async () => {
+    > 18 |     if (process.env.NODE_ENV !== 'test' || !/^rental_billing_test_\d+_[a-f0-9]+$/.test(new URL(process.env.DATABASE_URL!).pathname.slice(1))) throw new Error('Use the disposable billing production runner.');
+         |                                                                                                                                                     ^
+      19 |   });
+      20 |   afterEach(async () => { if (harness) await closeE2eHarness(harness); });
+      21 |   beforeEach(async () => {
+
+      at Object.<anonymous> (test/e2e/staff-lifecycle.e2e-spec.ts:18:149)
+
+  ● Staff property scope and tenant lifecycle (disposable database) › requires an explicit authorized property when staff browse tariff history
+
+    Use the disposable billing production runner.
+
+      16 |
+      17 |   beforeAll(async () => {
+    > 18 |     if (process.env.NODE_ENV !== 'test' || !/^rental_billing_test_\d+_[a-f0-9]+$/.test(new URL(process.env.DATABASE_URL!).pathname.slice(1))) throw new Error('Use the disposable billing production runner.');
+         |                                                                                                                                                     ^
+      19 |   });
+      20 |   afterEach(async () => { if (harness) await closeE2eHarness(harness); });
+      21 |   beforeEach(async () => {
+
+      at Object.<anonymous> (test/e2e/staff-lifecycle.e2e-spec.ts:18:149)
+
+  ● Staff property scope and tenant lifecycle (disposable database) › requires staff to propose tariffs rather than activating legacy room fees directly
+
+    Use the disposable billing production runner.
+
+      16 |
+      17 |   beforeAll(async () => {
+    > 18 |     if (process.env.NODE_ENV !== 'test' || !/^rental_billing_test_\d+_[a-f0-9]+$/.test(new URL(process.env.DATABASE_URL!).pathname.slice(1))) throw new Error('Use the disposable billing production runner.');
+         |                                                                                                                                                     ^
+      19 |   });
+      20 |   afterEach(async () => { if (harness) await closeE2eHarness(harness); });
+      21 |   beforeEach(async () => {
+
+      at Object.<anonymous> (test/e2e/staff-lifecycle.e2e-spec.ts:18:149)
+
+  ● Staff property scope and tenant lifecycle (disposable database) › revokes scopes on existing tokens, records scope audit atomically and cannot self-escalate
+
+    Use the disposable billing production runner.
+
+      16 |
+      17 |   beforeAll(async () => {
+    > 18 |     if (process.env.NODE_ENV !== 'test' || !/^rental_billing_test_\d+_[a-f0-9]+$/.test(new URL(process.env.DATABASE_URL!).pathname.slice(1))) throw new Error('Use the disposable billing production runner.');
+         |                                                                                                                                                     ^
+      19 |   });
+      20 |   afterEach(async () => { if (harness) await closeE2eHarness(harness); });
+      21 |   beforeEach(async () => {
+
+      at Object.<anonymous> (test/e2e/staff-lifecycle.e2e-spec.ts:18:149)
+
+  ● Staff property scope and tenant lifecycle (disposable database) › does not expose shared tenant financial history or receipts outside the assigned scope
+
+    Use the disposable billing production runner.
+
+      16 |
+      17 |   beforeAll(async () => {
+    > 18 |     if (process.env.NODE_ENV !== 'test' || !/^rental_billing_test_\d+_[a-f0-9]+$/.test(new URL(process.env.DATABASE_URL!).pathname.slice(1))) throw new Error('Use the disposable billing production runner.');
+         |                                                                                                                                                     ^
+      19 |   });
+      20 |   afterEach(async () => { if (harness) await closeE2eHarness(harness); });
+      21 |   beforeEach(async () => {
+
+      at Object.<anonymous> (test/e2e/staff-lifecycle.e2e-spec.ts:18:149)
+
+  ● Staff property scope and tenant lifecycle (disposable database) › creates and reviews tenant requests without silently modifying leases or settlement balances
+
+    Use the disposable billing production runner.
+
+      16 |
+      17 |   beforeAll(async () => {
+    > 18 |     if (process.env.NODE_ENV !== 'test' || !/^rental_billing_test_\d+_[a-f0-9]+$/.test(new URL(process.env.DATABASE_URL!).pathname.slice(1))) throw new Error('Use the disposable billing production runner.');
+         |                                                                                                                                                     ^
+      19 |   });
+      20 |   afterEach(async () => { if (harness) await closeE2eHarness(harness); });
+      21 |   beforeEach(async () => {
+
+      at Object.<anonymous> (test/e2e/staff-lifecycle.e2e-spec.ts:18:149)
+
+  ● Staff property scope and tenant lifecycle (disposable database) › validates target rooms, supports cancellation and scopes lifecycle review to the staff property
+
+    Use the disposable billing production runner.
+
+      16 |
+      17 |   beforeAll(async () => {
+    > 18 |     if (process.env.NODE_ENV !== 'test' || !/^rental_billing_test_\d+_[a-f0-9]+$/.test(new URL(process.env.DATABASE_URL!).pathname.slice(1))) throw new Error('Use the disposable billing production runner.');
+         |                                                                                                                                                     ^
+      19 |   });
+      20 |   afterEach(async () => { if (harness) await closeE2eHarness(harness); });
+      21 |   beforeEach(async () => {
+
+      at Object.<anonymous> (test/e2e/staff-lifecycle.e2e-spec.ts:18:149)
+
+  ● Staff property scope and tenant lifecycle (disposable database) › enforces co-occupant room capacity under concurrency and never returns identity numbers
+
+    Use the disposable billing production runner.
+
+      16 |
+      17 |   beforeAll(async () => {
+    > 18 |     if (process.env.NODE_ENV !== 'test' || !/^rental_billing_test_\d+_[a-f0-9]+$/.test(new URL(process.env.DATABASE_URL!).pathname.slice(1))) throw new Error('Use the disposable billing production runner.');
+         |                                                                                                                                                     ^
+      19 |   });
+      20 |   afterEach(async () => { if (harness) await closeE2eHarness(harness); });
+      21 |   beforeEach(async () => {
+
+      at Object.<anonymous> (test/e2e/staff-lifecycle.e2e-spec.ts:18:149)
+
+  ● Staff property scope and tenant lifecycle (disposable database) › checks tenant channel opt-out both before enqueue and again immediately before delivery
+
+    Use the disposable billing production runner.
+
+      16 |
+      17 |   beforeAll(async () => {
+    > 18 |     if (process.env.NODE_ENV !== 'test' || !/^rental_billing_test_\d+_[a-f0-9]+$/.test(new URL(process.env.DATABASE_URL!).pathname.slice(1))) throw new Error('Use the disposable billing production runner.');
+         |                                                                                                                                                     ^
+      19 |   });
+      20 |   afterEach(async () => { if (harness) await closeE2eHarness(harness); });
+      21 |   beforeEach(async () => {
+
+      at Object.<anonymous> (test/e2e/staff-lifecycle.e2e-spec.ts:18:149)
+
+FAIL test/e2e/billing-production.e2e-spec.ts
+  ● Production billing ledger (disposable database) › cancels only with a reason and replaces using a new immutable revision
+
+    Use the disposable billing production runner.
+
+      35 |   };
+      36 |   beforeAll(async () => {
+    > 37 |     if (process.env.NODE_ENV !== 'test' || !/^rental_billing_test_\d+_[a-f0-9]+$/.test(new URL(process.env.DATABASE_URL!).pathname.slice(1))) throw new Error('Use the disposable billing production runner.');
+         |                                                                                                                                                     ^
+      38 |   });
+      39 |   beforeEach(async () => {
+      40 |     harness = await createE2eHarness();
+
+      at Object.<anonymous> (test/e2e/billing-production.e2e-spec.ts:37:149)
+
+  ● Production billing ledger (disposable database) › appends credit/debit notes, preserves original lines and audits retries once
+
+    Use the disposable billing production runner.
+
+      35 |   };
+      36 |   beforeAll(async () => {
+    > 37 |     if (process.env.NODE_ENV !== 'test' || !/^rental_billing_test_\d+_[a-f0-9]+$/.test(new URL(process.env.DATABASE_URL!).pathname.slice(1))) throw new Error('Use the disposable billing production runner.');
+         |                                                                                                                                                     ^
+      38 |   });
+      39 |   beforeEach(async () => {
+      40 |     harness = await createE2eHarness();
+
+      at Object.<anonymous> (test/e2e/billing-production.e2e-spec.ts:37:149)
+
+  ● Production billing ledger (disposable database) › allocates one receipt across invoices, retains credit, releases and refunds with full history
+
+    Use the disposable billing production runner.
+
+      35 |   };
+      36 |   beforeAll(async () => {
+    > 37 |     if (process.env.NODE_ENV !== 'test' || !/^rental_billing_test_\d+_[a-f0-9]+$/.test(new URL(process.env.DATABASE_URL!).pathname.slice(1))) throw new Error('Use the disposable billing production runner.');
+         |                                                                                                                                                     ^
+      38 |   });
+      39 |   beforeEach(async () => {
+      40 |     harness = await createE2eHarness();
+
+      at Object.<anonymous> (test/e2e/billing-production.e2e-spec.ts:37:149)
+
+  ● Production billing ledger (disposable database) › rejects cross-landlord, cross-tenant, over-allocation and concurrent over-refund
+
+    Use the disposable billing production runner.
+
+      35 |   };
+      36 |   beforeAll(async () => {
+    > 37 |     if (process.env.NODE_ENV !== 'test' || !/^rental_billing_test_\d+_[a-f0-9]+$/.test(new URL(process.env.DATABASE_URL!).pathname.slice(1))) throw new Error('Use the disposable billing production runner.');
+         |                                                                                                                                                     ^
+      38 |   });
+      39 |   beforeEach(async () => {
+      40 |     harness = await createE2eHarness();
+
+      at Object.<anonymous> (test/e2e/billing-production.e2e-spec.ts:37:149)
+
+  ● Production billing ledger (disposable database) › serializes concurrent allocations so invoices cannot be overpaid
+
+    Use the disposable billing production runner.
+
+      35 |   };
+      36 |   beforeAll(async () => {
+    > 37 |     if (process.env.NODE_ENV !== 'test' || !/^rental_billing_test_\d+_[a-f0-9]+$/.test(new URL(process.env.DATABASE_URL!).pathname.slice(1))) throw new Error('Use the disposable billing production runner.');
+         |                                                                                                                                                     ^
+      38 |   });
+      39 |   beforeEach(async () => {
+      40 |     harness = await createE2eHarness();
+
+      at Object.<anonymous> (test/e2e/billing-production.e2e-spec.ts:37:149)
+
+  ● Production billing ledger (disposable database) › deduplicates reminders and skips delivery when payment was received
+
+    Use the disposable billing production runner.
+
+      35 |   };
+      36 |   beforeAll(async () => {
+    > 37 |     if (process.env.NODE_ENV !== 'test' || !/^rental_billing_test_\d+_[a-f0-9]+$/.test(new URL(process.env.DATABASE_URL!).pathname.slice(1))) throw new Error('Use the disposable billing production runner.');
+         |                                                                                                                                                     ^
+      38 |   });
+      39 |   beforeEach(async () => {
+      40 |     harness = await createE2eHarness();
+
+      at Object.<anonymous> (test/e2e/billing-production.e2e-spec.ts:37:149)
+
+  ● Production billing ledger (disposable database) › applies approved property service and tiered utility prices to preview and issue
+
+    Use the disposable billing production runner.
+
+      35 |   };
+      36 |   beforeAll(async () => {
+    > 37 |     if (process.env.NODE_ENV !== 'test' || !/^rental_billing_test_\d+_[a-f0-9]+$/.test(new URL(process.env.DATABASE_URL!).pathname.slice(1))) throw new Error('Use the disposable billing production runner.');
+         |                                                                                                                                                     ^
+      38 |   });
+      39 |   beforeEach(async () => {
+      40 |     harness = await createE2eHarness();
+
+      at Object.<anonymous> (test/e2e/billing-production.e2e-spec.ts:37:149)
+
+  ● Production billing ledger (disposable database) › deduplicates concurrent tariff proposals and serializes competing decisions
+
+    Use the disposable billing production runner.
+
+      35 |   };
+      36 |   beforeAll(async () => {
+    > 37 |     if (process.env.NODE_ENV !== 'test' || !/^rental_billing_test_\d+_[a-f0-9]+$/.test(new URL(process.env.DATABASE_URL!).pathname.slice(1))) throw new Error('Use the disposable billing production runner.');
+         |                                                                                                                                                     ^
+      38 |   });
+      39 |   beforeEach(async () => {
+      40 |     harness = await createE2eHarness();
+
+      at Object.<anonymous> (test/e2e/billing-production.e2e-spec.ts:37:149)
+
+  ● Production billing ledger (disposable database) › discloses room override exclusions and compares approved tariffs to their predecessor
+
+    Use the disposable billing production runner.
+
+      35 |   };
+      36 |   beforeAll(async () => {
+    > 37 |     if (process.env.NODE_ENV !== 'test' || !/^rental_billing_test_\d+_[a-f0-9]+$/.test(new URL(process.env.DATABASE_URL!).pathname.slice(1))) throw new Error('Use the disposable billing production runner.');
+         |                                                                                                                                                     ^
+      38 |   });
+      39 |   beforeEach(async () => {
+      40 |     harness = await createE2eHarness();
+
+      at Object.<anonymous> (test/e2e/billing-production.e2e-spec.ts:37:149)
+
+  ● Production billing ledger (disposable database) › blocks stale effective-order previews without weakening the live review guard
+
+    Use the disposable billing production runner.
+
+      35 |   };
+      36 |   beforeAll(async () => {
+    > 37 |     if (process.env.NODE_ENV !== 'test' || !/^rental_billing_test_\d+_[a-f0-9]+$/.test(new URL(process.env.DATABASE_URL!).pathname.slice(1))) throw new Error('Use the disposable billing production runner.');
+         |                                                                                                                                                     ^
+      38 |   });
+      39 |   beforeEach(async () => {
+      40 |     harness = await createE2eHarness();
+
+      at Object.<anonymous> (test/e2e/billing-production.e2e-spec.ts:37:149)
+
+  ● Production billing ledger (disposable database) › blocks invoice issuance and tariff activation for locked periods
+
+    Use the disposable billing production runner.
+
+      35 |   };
+      36 |   beforeAll(async () => {
+    > 37 |     if (process.env.NODE_ENV !== 'test' || !/^rental_billing_test_\d+_[a-f0-9]+$/.test(new URL(process.env.DATABASE_URL!).pathname.slice(1))) throw new Error('Use the disposable billing production runner.');
+         |                                                                                                                                                     ^
+      38 |   });
+      39 |   beforeEach(async () => {
+      40 |     harness = await createE2eHarness();
+
+      at Object.<anonymous> (test/e2e/billing-production.e2e-spec.ts:37:149)
+
+  ● Production billing ledger (disposable database) › reconciles a bank transfer to its full receipt, not the individual invoice allocations
+
+    Use the disposable billing production runner.
+
+      35 |   };
+      36 |   beforeAll(async () => {
+    > 37 |     if (process.env.NODE_ENV !== 'test' || !/^rental_billing_test_\d+_[a-f0-9]+$/.test(new URL(process.env.DATABASE_URL!).pathname.slice(1))) throw new Error('Use the disposable billing production runner.');
+         |                                                                                                                                                     ^
+      38 |   });
+      39 |   beforeEach(async () => {
+      40 |     harness = await createE2eHarness();
+
+      at Object.<anonymous> (test/e2e/billing-production.e2e-spec.ts:37:149)
+
+  ● Production billing ledger (disposable database) › requires a separate checker and revalidates receipt uniqueness during reconciliation approval
+
+    Use the disposable billing production runner.
+
+      35 |   };
+      36 |   beforeAll(async () => {
+    > 37 |     if (process.env.NODE_ENV !== 'test' || !/^rental_billing_test_\d+_[a-f0-9]+$/.test(new URL(process.env.DATABASE_URL!).pathname.slice(1))) throw new Error('Use the disposable billing production runner.');
+         |                                                                                                                                                     ^
+      38 |   });
+      39 |   beforeEach(async () => {
+      40 |     harness = await createE2eHarness();
+
+      at Object.<anonymous> (test/e2e/billing-production.e2e-spec.ts:37:149)
+
+  ● Production billing ledger (disposable database) › assigns only active landlord staff and keeps a custom SLA when editing unchanged priority
+
+    Use the disposable billing production runner.
+
+      35 |   };
+      36 |   beforeAll(async () => {
+    > 37 |     if (process.env.NODE_ENV !== 'test' || !/^rental_billing_test_\d+_[a-f0-9]+$/.test(new URL(process.env.DATABASE_URL!).pathname.slice(1))) throw new Error('Use the disposable billing production runner.');
+         |                                                                                                                                                     ^
+      38 |   });
+      39 |   beforeEach(async () => {
+      40 |     harness = await createE2eHarness();
+
+      at Object.<anonymous> (test/e2e/billing-production.e2e-spec.ts:37:149)
+
+  ● Production billing ledger (disposable database) › defaults SLA by priority and escalates each overdue deadline once under concurrency
+
+    Use the disposable billing production runner.
+
+      35 |   };
+      36 |   beforeAll(async () => {
+    > 37 |     if (process.env.NODE_ENV !== 'test' || !/^rental_billing_test_\d+_[a-f0-9]+$/.test(new URL(process.env.DATABASE_URL!).pathname.slice(1))) throw new Error('Use the disposable billing production runner.');
+         |                                                                                                                                                     ^
+      38 |   });
+      39 |   beforeEach(async () => {
+      40 |     harness = await createE2eHarness();
+
+      at Object.<anonymous> (test/e2e/billing-production.e2e-spec.ts:37:149)
+
+  ● Production billing ledger (disposable database) › links exactly one repair expense when completion is retried concurrently
+
+    Use the disposable billing production runner.
+
+      35 |   };
+      36 |   beforeAll(async () => {
+    > 37 |     if (process.env.NODE_ENV !== 'test' || !/^rental_billing_test_\d+_[a-f0-9]+$/.test(new URL(process.env.DATABASE_URL!).pathname.slice(1))) throw new Error('Use the disposable billing production runner.');
+         |                                                                                                                                                     ^
+      38 |   });
+      39 |   beforeEach(async () => {
+      40 |     harness = await createE2eHarness();
+
+      at Object.<anonymous> (test/e2e/billing-production.e2e-spec.ts:37:149)
+
+  ● Production billing ledger (disposable database) › passes the release readiness gate with the actual migrated columns and immutable/SLA triggers
+
+    Use the disposable billing production runner.
+
+      35 |   };
+      36 |   beforeAll(async () => {
+    > 37 |     if (process.env.NODE_ENV !== 'test' || !/^rental_billing_test_\d+_[a-f0-9]+$/.test(new URL(process.env.DATABASE_URL!).pathname.slice(1))) throw new Error('Use the disposable billing production runner.');
+         |                                                                                                                                                     ^
+      38 |   });
+      39 |   beforeEach(async () => {
+      40 |     harness = await createE2eHarness();
+
+      at Object.<anonymous> (test/e2e/billing-production.e2e-spec.ts:37:149)
+
+PASS test/e2e/admin-inventory.e2e-spec.ts
+[Nest] 264  - 10/30/2026, 7:45:24 AM   ERROR [ApiErrorFilter] {"event":"request_failed","requestId":"f5dabad4-0550-4135-b63f-c9d7161c4295","method":"POST","route":"/api/v1/admin/accounts/:id/suspend","status":500,"code":"INTERNAL_SERVER_ERROR"}
+[Nest] 264  - 10/30/2026, 7:45:24 AM   ERROR [ApiErrorFilter] {"event":"request_failed","requestId":"dce1dc5f-a2a5-40bb-9123-47f41553c260","method":"POST","route":"/api/v1/admin/accounts/:id/revoke-sessions","status":500,"code":"INTERNAL_SERVER_ERROR"}
+[Nest] 264  - 10/30/2026, 7:45:24 AM   ERROR [ApiErrorFilter] {"event":"request_failed","requestId":"1f3b92cd-24c4-4ef7-ad7c-b73e33409f7a","method":"POST","route":"/api/v1/admin/accounts/:id/reveal","status":500,"code":"INTERNAL_SERVER_ERROR"}
+[Nest] 264  - 10/30/2026, 7:45:24 AM   ERROR [ApiErrorFilter] {"event":"request_failed","requestId":"4082efd0-4bda-4f7d-9646-c8ecab1a2317","method":"POST","route":"/api/v1/admin/accounts/:id/reset-password","status":503,"code":"INTERNAL_SERVER_ERROR"}
+[Nest] 264  - 10/30/2026, 7:45:24 AM   ERROR [ApiErrorFilter] {"event":"request_failed","requestId":"d38f4b06-fb18-4b0a-aa01-7b939593eec3","method":"POST","route":"/api/v1/admin/account-invites","status":503,"code":"INTERNAL_SERVER_ERROR"}
+PASS test/e2e/admin-accounts.e2e-spec.ts
+PASS test/e2e/admin-registry.e2e-spec.ts
+FAIL test/e2e/invoice-tariffs.e2e-spec.ts
+  ● Invoice lines and service tariffs (disposable database) › stores atomic line snapshots and never reprices issued invoices
+
+    Use scripts/run-invoice-tariffs-e2e.mjs with its disposable database.
+
+      32 |     const name = new URL(process.env.DATABASE_URL!).pathname.slice(1);
+      33 |     if (process.env.NODE_ENV !== 'test' || !/^rental_(invoice|billing)_test_\d+_[a-f0-9]+$/.test(name)) {
+    > 34 |       throw new Error('Use scripts/run-invoice-tariffs-e2e.mjs with its disposable database.');
+         |             ^
+      35 |     }
+      36 |   });
+      37 |   beforeEach(async () => {
+
+      at Object.<anonymous> (test/e2e/invoice-tariffs.e2e-spec.ts:34:13)
+
+  ● Invoice lines and service tariffs (disposable database) › uses the same effective tariffs in preflight, bulk and single creation, including retries
+
+    Use scripts/run-invoice-tariffs-e2e.mjs with its disposable database.
+
+      32 |     const name = new URL(process.env.DATABASE_URL!).pathname.slice(1);
+      33 |     if (process.env.NODE_ENV !== 'test' || !/^rental_(invoice|billing)_test_\d+_[a-f0-9]+$/.test(name)) {
+    > 34 |       throw new Error('Use scripts/run-invoice-tariffs-e2e.mjs with its disposable database.');
+         |             ^
+      35 |     }
+      36 |   });
+      37 |   beforeEach(async () => {
+
+      at Object.<anonymous> (test/e2e/invoice-tariffs.e2e-spec.ts:34:13)
+
+  ● Invoice lines and service tariffs (disposable database) › schedules fee retirement without deleting historical charges
+
+    Use scripts/run-invoice-tariffs-e2e.mjs with its disposable database.
+
+      32 |     const name = new URL(process.env.DATABASE_URL!).pathname.slice(1);
+      33 |     if (process.env.NODE_ENV !== 'test' || !/^rental_(invoice|billing)_test_\d+_[a-f0-9]+$/.test(name)) {
+    > 34 |       throw new Error('Use scripts/run-invoice-tariffs-e2e.mjs with its disposable database.');
+         |             ^
+      35 |     }
+      36 |   });
+      37 |   beforeEach(async () => {
+
+      at Object.<anonymous> (test/e2e/invoice-tariffs.e2e-spec.ts:34:13)
+
+  ● Invoice lines and service tariffs (disposable database) › rejects retroactive, duplicate, stale, blank and already-invoiced changes
+
+    Use scripts/run-invoice-tariffs-e2e.mjs with its disposable database.
+
+      32 |     const name = new URL(process.env.DATABASE_URL!).pathname.slice(1);
+      33 |     if (process.env.NODE_ENV !== 'test' || !/^rental_(invoice|billing)_test_\d+_[a-f0-9]+$/.test(name)) {
+    > 34 |       throw new Error('Use scripts/run-invoice-tariffs-e2e.mjs with its disposable database.');
+         |             ^
+      35 |     }
+      36 |   });
+      37 |   beforeEach(async () => {
+
+      at Object.<anonymous> (test/e2e/invoice-tariffs.e2e-spec.ts:34:13)
+
+  ● Invoice lines and service tariffs (disposable database) › serializes concurrent tariff edits and rejects stale versions
+
+    Use scripts/run-invoice-tariffs-e2e.mjs with its disposable database.
+
+      32 |     const name = new URL(process.env.DATABASE_URL!).pathname.slice(1);
+      33 |     if (process.env.NODE_ENV !== 'test' || !/^rental_(invoice|billing)_test_\d+_[a-f0-9]+$/.test(name)) {
+    > 34 |       throw new Error('Use scripts/run-invoice-tariffs-e2e.mjs with its disposable database.');
+         |             ^
+      35 |     }
+      36 |   });
+      37 |   beforeEach(async () => {
+
+      at Object.<anonymous> (test/e2e/invoice-tariffs.e2e-spec.ts:34:13)
+
+  ● Invoice lines and service tariffs (disposable database) › blocks legacy tariff creation and version changes across a locked period
+
+    Use scripts/run-invoice-tariffs-e2e.mjs with its disposable database.
+
+      32 |     const name = new URL(process.env.DATABASE_URL!).pathname.slice(1);
+      33 |     if (process.env.NODE_ENV !== 'test' || !/^rental_(invoice|billing)_test_\d+_[a-f0-9]+$/.test(name)) {
+    > 34 |       throw new Error('Use scripts/run-invoice-tariffs-e2e.mjs with its disposable database.');
+         |             ^
+      35 |     }
+      36 |   });
+      37 |   beforeEach(async () => {
+
+      at Object.<anonymous> (test/e2e/invoice-tariffs.e2e-spec.ts:34:13)
+
+  ● Invoice lines and service tariffs (disposable database) › enforces ownership and exposes identical line snapshots to the tenant
+
+    Use scripts/run-invoice-tariffs-e2e.mjs with its disposable database.
+
+      32 |     const name = new URL(process.env.DATABASE_URL!).pathname.slice(1);
+      33 |     if (process.env.NODE_ENV !== 'test' || !/^rental_(invoice|billing)_test_\d+_[a-f0-9]+$/.test(name)) {
+    > 34 |       throw new Error('Use scripts/run-invoice-tariffs-e2e.mjs with its disposable database.');
+         |             ^
+      35 |     }
+      36 |   });
+      37 |   beforeEach(async () => {
+
+      at Object.<anonymous> (test/e2e/invoice-tariffs.e2e-spec.ts:34:13)
+
+  ● Invoice lines and service tariffs (disposable database) › rejects database-level mutations of published snapshots
+
+    Use scripts/run-invoice-tariffs-e2e.mjs with its disposable database.
+
+      32 |     const name = new URL(process.env.DATABASE_URL!).pathname.slice(1);
+      33 |     if (process.env.NODE_ENV !== 'test' || !/^rental_(invoice|billing)_test_\d+_[a-f0-9]+$/.test(name)) {
+    > 34 |       throw new Error('Use scripts/run-invoice-tariffs-e2e.mjs with its disposable database.');
+         |             ^
+      35 |     }
+      36 |   });
+      37 |   beforeEach(async () => {
+
+      at Object.<anonymous> (test/e2e/invoice-tariffs.e2e-spec.ts:34:13)
+
+PASS test/e2e/manual-transfers.e2e-spec.ts
+FAIL test/e2e/lease-settlement.e2e-spec.ts
+  ● Move-out settlement E2E (isolated database only) › settles a lease, starts turnover, and records the actual refund exactly once
+
+    Use scripts/run-settlement-e2e.mjs with its disposable database.
+
+      19 |     const name = decodeURIComponent(new URL(process.env.DATABASE_URL!).pathname.slice(1));
+      20 |     if (process.env.NODE_ENV !== 'test' || !/^rental_settlement_test_\d+_[a-f0-9]+$/.test(name)) {
+    > 21 |       throw new Error('Use scripts/run-settlement-e2e.mjs with its disposable database.');
+         |             ^
+      22 |     }
+      23 |   });
+      24 |
+
+      at Object.<anonymous> (test/e2e/lease-settlement.e2e-spec.ts:21:13)
+
+  ● Move-out settlement E2E (isolated database only) › rejects a stale preview without persisting any settlement or turnover
+
+    Use scripts/run-settlement-e2e.mjs with its disposable database.
+
+      19 |     const name = decodeURIComponent(new URL(process.env.DATABASE_URL!).pathname.slice(1));
+      20 |     if (process.env.NODE_ENV !== 'test' || !/^rental_settlement_test_\d+_[a-f0-9]+$/.test(name)) {
+    > 21 |       throw new Error('Use scripts/run-settlement-e2e.mjs with its disposable database.');
+         |             ^
+      22 |     }
+      23 |   });
+      24 |
+
+      at Object.<anonymous> (test/e2e/lease-settlement.e2e-spec.ts:21:13)
+
+  ● Move-out settlement E2E (isolated database only) › prevents post-settlement edits, renewals and manual deposit changes
+
+    Use scripts/run-settlement-e2e.mjs with its disposable database.
+
+      19 |     const name = decodeURIComponent(new URL(process.env.DATABASE_URL!).pathname.slice(1));
+      20 |     if (process.env.NODE_ENV !== 'test' || !/^rental_settlement_test_\d+_[a-f0-9]+$/.test(name)) {
+    > 21 |       throw new Error('Use scripts/run-settlement-e2e.mjs with its disposable database.');
+         |             ^
+      22 |     }
+      23 |   });
+      24 |
+
+      at Object.<anonymous> (test/e2e/lease-settlement.e2e-spec.ts:21:13)
+
+  ● Move-out settlement E2E (isolated database only) › does not charge rent already present on a non-demo invoice
+
+    Use scripts/run-settlement-e2e.mjs with its disposable database.
+
+      19 |     const name = decodeURIComponent(new URL(process.env.DATABASE_URL!).pathname.slice(1));
+      20 |     if (process.env.NODE_ENV !== 'test' || !/^rental_settlement_test_\d+_[a-f0-9]+$/.test(name)) {
+    > 21 |       throw new Error('Use scripts/run-settlement-e2e.mjs with its disposable database.');
+         |             ^
+      22 |     }
+      23 |   });
+      24 |
+
+      at Object.<anonymous> (test/e2e/lease-settlement.e2e-spec.ts:21:13)
+
+  ● Move-out settlement E2E (isolated database only) › rolls back settlement and deposit deductions if turnover creation fails
+
+    Use scripts/run-settlement-e2e.mjs with its disposable database.
+
+      19 |     const name = decodeURIComponent(new URL(process.env.DATABASE_URL!).pathname.slice(1));
+      20 |     if (process.env.NODE_ENV !== 'test' || !/^rental_settlement_test_\d+_[a-f0-9]+$/.test(name)) {
+    > 21 |       throw new Error('Use scripts/run-settlement-e2e.mjs with its disposable database.');
+         |             ^
+      22 |     }
+      23 |   });
+      24 |
+
+      at Object.<anonymous> (test/e2e/lease-settlement.e2e-spec.ts:21:13)
+
+  ● Move-out settlement E2E (isolated database only) › enforces ownership and DTO validation over HTTP
+
+    Use scripts/run-settlement-e2e.mjs with its disposable database.
+
+      19 |     const name = decodeURIComponent(new URL(process.env.DATABASE_URL!).pathname.slice(1));
+      20 |     if (process.env.NODE_ENV !== 'test' || !/^rental_settlement_test_\d+_[a-f0-9]+$/.test(name)) {
+    > 21 |       throw new Error('Use scripts/run-settlement-e2e.mjs with its disposable database.');
+         |             ^
+      22 |     }
+      23 |   });
+      24 |
+
+      at Object.<anonymous> (test/e2e/lease-settlement.e2e-spec.ts:21:13)
+
+  ● Move-out settlement E2E (isolated database only) › cannot create an invoice from stale lease state during settlement
+
+    Use scripts/run-settlement-e2e.mjs with its disposable database.
+
+      19 |     const name = decodeURIComponent(new URL(process.env.DATABASE_URL!).pathname.slice(1));
+      20 |     if (process.env.NODE_ENV !== 'test' || !/^rental_settlement_test_\d+_[a-f0-9]+$/.test(name)) {
+    > 21 |       throw new Error('Use scripts/run-settlement-e2e.mjs with its disposable database.');
+         |             ^
+      22 |     }
+      23 |   });
+      24 |
+
+      at Object.<anonymous> (test/e2e/lease-settlement.e2e-spec.ts:21:13)
+
+  ● Move-out settlement E2E (isolated database only) › cannot double-record concurrent refunds
+
+    Use scripts/run-settlement-e2e.mjs with its disposable database.
+
+      19 |     const name = decodeURIComponent(new URL(process.env.DATABASE_URL!).pathname.slice(1));
+      20 |     if (process.env.NODE_ENV !== 'test' || !/^rental_settlement_test_\d+_[a-f0-9]+$/.test(name)) {
+    > 21 |       throw new Error('Use scripts/run-settlement-e2e.mjs with its disposable database.');
+         |             ^
+      22 |     }
+      23 |   });
+      24 |
+
+      at Object.<anonymous> (test/e2e/lease-settlement.e2e-spec.ts:21:13)
+
+PASS test/e2e/housing.e2e-spec.ts (7.402 s)
+[Nest] 264  - 10/30/2026, 7:45:40 AM   ERROR [ApiErrorFilter] {"event":"request_failed","requestId":"a0538583-82ea-4279-8e88-90f9bbe53b9b","method":"POST","route":"/api/v1/support/tickets","status":503,"code":"INTERNAL_SERVER_ERROR"}
+PASS test/e2e/admin-sprints.e2e-spec.ts
+PASS test/e2e/admin-operations-release.e2e-spec.ts
+PASS test/e2e/admin-console.e2e-spec.ts
+PASS test/e2e/reviews.e2e-spec.ts
+PASS test/e2e/listings.e2e-spec.ts
+PASS test/e2e/explore-preview-images.e2e-spec.ts
+PASS test/e2e/admin-completion.e2e-spec.ts
+PASS test/e2e/admin-workspace.e2e-spec.ts
+PASS test/e2e/lease-billing-dashboard.e2e-spec.ts
+PASS test/e2e/admin-roadmap-inboxes.e2e-spec.ts
+PASS test/e2e/admin.e2e-spec.ts
+PASS test/e2e/maintenance-audit.e2e-spec.ts
+[Nest] 264  - 10/30/2026, 7:46:05 AM   ERROR [ApiErrorFilter] {"event":"request_failed","requestId":"cb429150-8973-4926-accd-f894f44eef08","method":"POST","route":"/api/v1/tenant/invoices/:id/payment-link","status":503,"code":"INTERNAL_SERVER_ERROR"}
+[Nest] 264  - 10/30/2026, 7:46:05 AM   ERROR [ApiErrorFilter] {"event":"request_failed","requestId":"dfdae24f-3da0-49ff-bb3a-5f1a696fe05f","method":"POST","route":"/api/v1/tenant/invoices/:id/payment-link","status":503,"code":"INTERNAL_SERVER_ERROR"}
+PASS test/e2e/demo-card-payments.e2e-spec.ts
+PASS test/e2e/resource-lifecycle.e2e-spec.ts
+PASS test/e2e/authorization-ownership.e2e-spec.ts
+PASS test/e2e/tenant-portal-priority.e2e-spec.ts
+PASS test/e2e/auth.e2e-spec.ts
+PASS test/e2e/p1-operations.e2e-spec.ts
+PASS test/e2e/admin-search.e2e-spec.ts

@@ -1,0 +1,9 @@
+dbug Appium Creating hash file directory: /Users/hoang/Rental_room_management/test/system_demo/.appium/node_modules/.cache/appium
+[38;5;214m[FlutterDriver@0d71][0m The following provided capabilities were not recognized by this driver:
+[38;5;214m[FlutterDriver@0d71][0m   bundleId
+[38;5;214m[FlutterDriver@0d71][0m   wdaLocalPort
+[38;5;19m[8f61f031][0m[38;5;128m[XCUITestDriver@00c2][0m The following provided capabilities were not recognized by this driver:
+[38;5;19m[8f61f031][0m[38;5;128m[XCUITestDriver@00c2][0m   observatoryWsUri
+[38;5;19m[8f61f031][0m[38;5;128m[XCUITestDriver@00c2][0m 'platformVersion' capability ('undefined') is not a valid version number. Consider fixing it or be ready to experience an inconsistent driver behavior.
+[38;5;30m[3f95cd9e][0m[38;5;135m[XCUITest][0m RemoteXPC devices listing unavailable: Tunnel registry port not found. Please run the tunnel creation script first See https://appium.github.io/appium-xcuitest-driver/latest/guides/remotexpc-tunnels-real-devices/ Falling back to appium-ios-device.
+[38;5;25m[AppiumDriver@7fd6][0m Ending session, cause was 'The process has received SIGTERM signal'

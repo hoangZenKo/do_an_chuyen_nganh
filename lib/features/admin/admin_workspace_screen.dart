@@ -233,26 +233,51 @@ class _AdminWorkspaceScreenState extends ConsumerState<AdminWorkspaceScreen> {
                       }
                     }));
 
-  Widget _searchBox() => SizedBox(
+  Widget _searchBox({bool moderation = false}) => SizedBox(
       width: 340,
-      child: TextField(
-          controller: _search,
-          decoration: const InputDecoration(
-              isDense: true,
-              labelText: 'Tìm kiếm',
-              hintText: 'Tên, email, số điện thoại hoặc mã',
-              prefixIcon: Icon(Icons.search)),
-          onChanged: (value) {
-            _debounce?.cancel();
-            _debounce = Timer(const Duration(milliseconds: 350), () {
-              if (_active) {
-                setState(() {
-                  _searchValue = value.trim();
-                  _page = 1;
+      child: ValueListenableBuilder<TextEditingValue>(
+          valueListenable: _search,
+          builder: (context, value, child) => TextField(
+              key: moderation ? const ValueKey('moderation-search') : null,
+              controller: _search,
+              maxLength: moderation ? 120 : null,
+              decoration: InputDecoration(
+                  isDense: true,
+                  labelText: moderation ? 'Tìm nội dung' : 'Tìm kiếm',
+                  helperText:
+                      moderation ? 'Tìm trong hàng đợi chờ xử lý' : null,
+                  helperMaxLines: 2,
+                  hintText: moderation
+                      ? 'Tên/mã phòng, tin đăng, khu trọ, chủ trọ'
+                      : 'Tên, email, số điện thoại hoặc mã',
+                  counterText: '',
+                  prefixIcon: const Icon(Icons.search),
+                  suffixIcon: moderation && value.text.isNotEmpty
+                      ? IconButton(
+                          tooltip: 'Xóa tìm kiếm',
+                          icon: const Icon(Icons.close),
+                          onPressed: !_active
+                              ? null
+                              : () {
+                                  _debounce?.cancel();
+                                  _search.clear();
+                                  setState(() {
+                                    _searchValue = '';
+                                    _page = 1;
+                                  });
+                                })
+                      : null),
+              onChanged: (value) {
+                _debounce?.cancel();
+                _debounce = Timer(const Duration(milliseconds: 350), () {
+                  if (_active) {
+                    setState(() {
+                      _searchValue = value.trim();
+                      _page = 1;
+                    });
+                  }
                 });
-              }
-            });
-          }));
+              })));
 
   @override
   Widget build(BuildContext context) {
@@ -714,7 +739,7 @@ class _AdminWorkspaceScreenState extends ConsumerState<AdminWorkspaceScreen> {
                   'URGENT': 'Khẩn cấp'
                 },
                 (value) => _priority = value),
-            _searchBox(),
+            _searchBox(moderation: true),
             FilterChip(
                 label: const Text('Quá hạn'),
                 selected: _overdue,
@@ -736,7 +761,9 @@ class _AdminWorkspaceScreenState extends ConsumerState<AdminWorkspaceScreen> {
             }),
             (response) => Column(children: [
                   if (_rows(response).isEmpty)
-                    const WorkflowEmpty('Không có công việc phù hợp.'),
+                    WorkflowEmpty(_searchValue.isEmpty
+                        ? 'Không có công việc phù hợp.'
+                        : 'Không tìm thấy nội dung chờ duyệt phù hợp. Thử từ khóa khác hoặc thay đổi bộ lọc.'),
                   for (final row in _rows(response))
                     Container(
                       margin: const EdgeInsets.only(bottom: 10),

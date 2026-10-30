@@ -1,0 +1,13 @@
+@startwbs
+title Phân rã chức năng AS-IS — không phải sơ đồ Use Case
+* Hệ thống quản lý và tìm thuê nhà trọ
+** G15 — Hồ sơ xác minh và gói dịch vụ
+*** G15.1 Hồ sơ xác minh và xét duyệt khu
+**** UC-ADM-18.1 Nộp hồ sơ xác minh chủ trọ
+**** UC-ADM-18 Xét duyệt hồ sơ xác minh chủ trọ
+**** UC-ADM-19 Trình và xét duyệt hồ sơ khu trọ
+*** G15.2 Gói và quyền sử dụng dịch vụ
+**** UC-ADM-20 Quản lý danh mục gói dịch vụ
+**** UC-ADM-21 Gán gói và xem lịch sử đăng ký
+**** UC-ADM-22 Hủy quyền sử dụng gói đang hiệu lực
+@endwbs

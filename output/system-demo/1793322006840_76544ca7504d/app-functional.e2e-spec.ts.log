@@ -1,0 +1,22 @@
+
+> rental-room-api@0.1.0 test:e2e
+> NODE_ENV=test jest --config ./test/jest-e2e.json --runInBand --runTestsByPath test/e2e/app-functional.e2e-spec.ts --runInBand
+
+PASS test/e2e/app-functional.e2e-spec.ts
+  App functional milestone (disposable database)
+    ✓ rejects duplicate submissions, stale reviews and stale cancellation; concurrent reviewers have one winner (351 ms)
+    ✓ executes renewal once and preserves deposit ledger and lease history (271 ms)
+    ✓ requires canonical settlement for checkout and exposes only the tenants own settlement (275 ms)
+    ✓ transfers only after settlement, copies co-occupants without erasing history and never invents a new deposit (327 ms)
+    ✓ rejects execution against a changed lease and filters lifecycle history by lease and status (251 ms)
+    ✓ queues one recovery token under resend limits, redeems once and revokes existing sessions (233 ms)
+    ✓ rejects expired recovery tokens without changing the password or consuming a session (207 ms)
+    ✓ limits tenant invite resends, invalidates the previous link and consumes activation exactly once (277 ms)
+    ✓ staff activation is one-time, property scoped and rejects expired invites (294 ms)
+    ✓ keeps uploaded proof pending, then records the canonical receipt allocation only after approval (258 ms)
+
+Test Suites: 1 passed, 1 total
+Tests:       10 passed, 10 total
+Snapshots:   0 total
+Time:        4.57 s, estimated 5 s
+Ran all test suites within paths "test/e2e/app-functional.e2e-spec.ts".

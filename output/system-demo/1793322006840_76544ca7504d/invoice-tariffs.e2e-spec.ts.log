@@ -1,0 +1,20 @@
+
+> rental-room-api@0.1.0 test:e2e
+> NODE_ENV=test jest --config ./test/jest-e2e.json --runInBand --runTestsByPath test/e2e/invoice-tariffs.e2e-spec.ts --runInBand
+
+PASS test/e2e/invoice-tariffs.e2e-spec.ts
+  Invoice lines and service tariffs (disposable database)
+    ✓ stores atomic line snapshots and never reprices issued invoices (378 ms)
+    ✓ uses the same effective tariffs in preflight, bulk and single creation, including retries (426 ms)
+    ✓ schedules fee retirement without deleting historical charges (298 ms)
+    ✓ rejects retroactive, duplicate, stale, blank and already-invoiced changes (237 ms)
+    ✓ serializes concurrent tariff edits and rejects stale versions (222 ms)
+    ✓ blocks legacy tariff creation and version changes across a locked period (268 ms)
+    ✓ enforces ownership and exposes identical line snapshots to the tenant (444 ms)
+    ✓ rejects database-level mutations of published snapshots (287 ms)
+
+Test Suites: 1 passed, 1 total
+Tests:       8 passed, 8 total
+Snapshots:   0 total
+Time:        4.548 s, estimated 5 s
+Ran all test suites within paths "test/e2e/invoice-tariffs.e2e-spec.ts".

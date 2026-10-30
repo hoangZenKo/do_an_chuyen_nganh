@@ -1,0 +1,70 @@
+@startuml
+left to right direction
+skinparam defaultFontName SansSerif
+skinparam defaultFontSize 13
+skinparam backgroundColor #F8FAFC
+skinparam shadowing false
+skinparam ArrowColor #52647A
+skinparam ArrowThickness 1
+skinparam actorStyle stickman
+skinparam actorBorderColor #243A52
+skinparam actorFontColor #243A52
+skinparam actorBackgroundColor #FFFFFF
+skinparam usecase {
+  BackgroundColor #FFFFFF
+  BorderColor #327C83
+  FontColor #20354B
+  BackgroundColor<<Một phần>> #FFF0CE
+  BorderColor<<Một phần>> #B17917
+  BackgroundColor<<DEMO>> #FCE5DF
+  BorderColor<<DEMO>> #BC593A
+  BackgroundColor<<MÔ PHỎNG>> #E7EAF1
+  BorderColor<<MÔ PHỎNG>> #6C7488
+}
+skinparam rectangle {
+  BackgroundColor #EEF4F5
+  BorderColor #243A52
+  FontColor #243A52
+}
+skinparam titleFontColor #20354B
+skinparam titleFontSize 18
+skinparam nodesep 25
+skinparam ranksep 65
+title G14 · Dịch vụ hỗ trợ khách hàng\n<size:12>Đầy đủ UC của nhóm nghiệp vụ</size>
+
+actor "A02\nChủ trọ" as A02
+actor "A04\nNgười tìm phòng\nhoặc người thuê" as A04
+actor "A05\nQuản trị viên nền tảng" as A05
+rectangle "Hệ thống quản lý nhà trọ" as SYSTEM {
+  usecase "UC-SUP-01\nGửi và theo dõi yêu cầu hỗ trợ" as UC_SUP_01 <<Một phần>>
+  usecase "UC-SUP-01.1\nTiếp nhận và xử lý hồ sơ hỗ trợ" as UC_SUP_01_1 <<Một phần>>
+  usecase "UC-SUP-03.2.1\nHợp nhất hồ sơ hỗ trợ trùng" as UC_SUP_03_2_1
+  usecase "UC-SUP-03.2.2\nĐánh giá kết quả hỗ trợ" as UC_SUP_03_2_2
+  usecase "UC-SUP-02.1\nCấu hình phân công tự động hỗ\ntrợ" as UC_SUP_02_1
+  usecase "UC-SUP-02.2\nThiết lập và theo dõi thời hạn\nhỗ trợ" as UC_SUP_02_2
+  usecase "UC-SUP-03.2\nQuản lý mẫu trả lời hỗ trợ" as UC_SUP_03_2
+  usecase "UC-SUP-03.3\nLưu bộ lọc xử lý hỗ trợ" as UC_SUP_03_3
+}
+actor "E03\nDịch vụ quét tệp hỗ trợ\n(có điều kiện)" as E03
+A02 -- UC_SUP_01
+A04 -- UC_SUP_01
+A05 -- UC_SUP_01
+UC_SUP_01 -- E03 : khi sử dụng kênh này
+A05 -- UC_SUP_01_1
+UC_SUP_01_1 -- E03 : khi sử dụng kênh này
+A05 -- UC_SUP_03_2_1
+A02 -- UC_SUP_03_2_2
+A04 -- UC_SUP_03_2_2
+A05 -- UC_SUP_03_2_2
+A05 -- UC_SUP_02_1
+A05 -- UC_SUP_02_2
+A05 -- UC_SUP_03_2
+A05 -- UC_SUP_03_3
+legend bottom left
+  Đường liền: tác nhân tham gia mục tiêu nghiệp vụ.
+  Đường xanh có nhãn: chỉ tham gia trong phạm vi giới hạn được nêu.
+  Nhân viên cần quyền phù hợp và khu được giao; quản trị viên cần đúng thẩm quyền.
+  Vàng: đáp ứng một phần. Cam: thanh toán thử nghiệm. Xám: trao đổi mô phỏng.
+  Không thể hiện thứ tự thực hiện; không suy ra quyền từ vị trí tác nhân.
+endlegend
+@enduml

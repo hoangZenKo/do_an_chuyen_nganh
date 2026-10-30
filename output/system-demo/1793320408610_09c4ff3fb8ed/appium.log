@@ -1,0 +1,19 @@
+2026-10-30 00:34:25:666 [FlutterDriver@411d] The following provided capabilities were not recognized by this driver:
+2026-10-30 00:34:25:666 [FlutterDriver@411d]   bundleId
+2026-10-30 00:34:25:666 [FlutterDriver@411d]   wdaLocalPort
+2026-10-30 00:34:25:668 [cb79925b][XCUITestDriver@9b8b] The following provided capabilities were not recognized by this driver:
+2026-10-30 00:34:25:668 [cb79925b][XCUITestDriver@9b8b]   observatoryWsUri
+2026-10-30 00:34:25:668 [cb79925b][XCUITestDriver@9b8b] 'platformVersion' capability ('undefined') is not a valid version number. Consider fixing it or be ready to experience an inconsistent driver behavior.
+2026-10-30 00:34:25:795 [849384f4][XCUITest] RemoteXPC devices listing unavailable: Tunnel registry port not found. Please run the tunnel creation script first See https://appium.github.io/appium-xcuitest-driver/latest/guides/remotexpc-tunnels-real-devices/ Falling back to appium-ios-device.
+2026-10-30 00:35:39:851 [cb79925b][FlutterDriver@411d] Error: {"code":-32000,"message":"Could not capture image screenshot."}
+    at socket.call (file:///Users/hoang/Rental_room_management/test/system_demo/.appium/node_modules/appium-flutter-driver/build/lib/sessions/observatory.js:57:49)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async FlutterDriver.getScreenshot (file:///Users/hoang/Rental_room_management/test/system_demo/.appium/node_modules/appium-flutter-driver/build/lib/commands/screen.js:2:23)
+    at async runCommandPromise (/Users/hoang/Rental_room_management/test/system_demo/node_modules/@appium/base-driver/build/lib/basedriver/driver.js:120:24)
+
+2026-10-30 00:35:39:857 [cb79925b][FlutterDriver@411d] Error: {"code":-32000,"message":"Could not capture image screenshot."}
+    at socket.call (file:///Users/hoang/Rental_room_management/test/system_demo/.appium/node_modules/appium-flutter-driver/build/lib/sessions/observatory.js:57:49)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async FlutterDriver.getScreenshot (file:///Users/hoang/Rental_room_management/test/system_demo/.appium/node_modules/appium-flutter-driver/build/lib/commands/screen.js:2:23)
+    at async runCommandPromise (/Users/hoang/Rental_room_management/test/system_demo/node_modules/@appium/base-driver/build/lib/basedriver/driver.js:120:24)
+

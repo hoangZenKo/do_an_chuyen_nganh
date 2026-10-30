@@ -1,0 +1,22 @@
+@startwbs
+title Phân rã chức năng AS-IS — không phải sơ đồ Use Case
+* Hệ thống quản lý và tìm thuê nhà trọ
+** G04 — Khu trọ và cơ sở vật chất
+*** G04.1 Danh mục và vòng đời khu trọ
+**** UC-OPT-02 Tra cứu khu trọ
+**** UC-OPT-03.1 Tạo khu trọ
+**** UC-OPT-03.2 Cập nhật thông tin khu trọ
+**** UC-OPT-04.1 Lưu trữ hoặc khôi phục khu trọ
+**** UC-OPT-04.3 Xóa khu trọ đủ điều kiện
+*** G04.2 Danh mục và vòng đời phòng
+**** UC-OPT-05 Tra cứu phòng và lịch sử liên quan
+**** UC-OPT-06.1 Tạo phòng
+**** UC-OPT-06.2 Cập nhật thông tin phòng
+**** UC-OPT-07.1 Đổi trạng thái sử dụng phòng
+**** UC-OPT-07.2 Vô hiệu hóa hoặc khôi phục phòng
+**** UC-OPT-07.3 Xóa phòng đủ điều kiện
+*** G04.3 Tài sản, kiểm tra và phí phòng
+**** UC-OPT-08.1 Quản lý tài sản phòng
+**** UC-OPT-08.2 Theo dõi lịch kiểm tra phòng
+**** UC-OPT-09 Quản lý phiên bản phí dịch vụ phòng
+@endwbs

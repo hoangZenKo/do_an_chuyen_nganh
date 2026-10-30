@@ -1,0 +1,25 @@
+@startwbs
+title Phân rã chức năng AS-IS — không phải sơ đồ Use Case
+* Hệ thống quản lý và tìm thuê nhà trọ
+** G06 — Hồ sơ thuê, hợp đồng và tiền cọc
+*** G06.1 Hồ sơ và tài khoản người thuê
+**** UC-TNT-01 Tra cứu hồ sơ người thuê và tổng quan
+**** UC-TNT-02.1 Tạo hồ sơ người thuê
+**** UC-TNT-02.2 Cập nhật hồ sơ người thuê
+**** UC-TNT-02.3 Vô hiệu hóa hoặc khôi phục người thuê
+**** UC-TNT-02.4 Xóa hồ sơ người thuê đủ điều kiện
+**** UC-TNT-03 Tạo lời mời truy cập cổng người thuê
+**** UC-TNT-03.1 Tạo trực tiếp tài khoản cho hồ sơ người thuê
+**** UC-TEN-01 Xem hồ sơ và tổng quan thuê của mình
+*** G06.2 Điều khoản và trạng thái hợp đồng
+**** UC-TNT-04 Tra cứu và xuất hợp đồng thuê
+**** UC-TNT-05 Lập hợp đồng thuê phòng
+**** UC-TNT-06.1 Cập nhật điều khoản hợp đồng
+**** UC-TNT-06.2 Gia hạn hợp đồng
+**** UC-TNT-06.3 Kết thúc hợp đồng
+**** UC-TEN-02 Tra cứu hợp đồng và quyết toán của mình
+*** G06.3 Tiền cọc và người ở cùng
+**** UC-TNT-07 Tra cứu và ghi giao dịch cọc
+**** UC-TNT-12.1 Quản lý người ở cùng hợp đồng
+**** UC-TEN-08.1 Xem người ở cùng hợp đồng
+@endwbs

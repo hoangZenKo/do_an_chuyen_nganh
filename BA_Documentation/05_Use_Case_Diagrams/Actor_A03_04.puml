@@ -1,0 +1,61 @@
+@startuml
+left to right direction
+skinparam defaultFontName SansSerif
+skinparam defaultFontSize 13
+skinparam backgroundColor #F8FAFC
+skinparam shadowing false
+skinparam ArrowColor #52647A
+skinparam ArrowThickness 1
+skinparam actorStyle stickman
+skinparam actorBorderColor #243A52
+skinparam actorFontColor #243A52
+skinparam actorBackgroundColor #FFFFFF
+skinparam usecase {
+  BackgroundColor #FFFFFF
+  BorderColor #327C83
+  FontColor #20354B
+  BackgroundColor<<Một phần>> #FFF0CE
+  BorderColor<<Một phần>> #B17917
+  BackgroundColor<<DEMO>> #FCE5DF
+  BorderColor<<DEMO>> #BC593A
+  BackgroundColor<<MÔ PHỎNG>> #E7EAF1
+  BorderColor<<MÔ PHỎNG>> #6C7488
+}
+skinparam rectangle {
+  BackgroundColor #EEF4F5
+  BorderColor #243A52
+  FontColor #243A52
+}
+skinparam titleFontColor #20354B
+skinparam titleFontSize 18
+skinparam nodesep 25
+skinparam ranksep 65
+title A03 · NHÂN VIÊN VẬN HÀNH\n<size:12>Trang 4/6 · Vòng đời thuê, bảo trì và báo cáo</size>
+caption AS-IS · 29/10/2026 · Snapshot c565c29 · Không biểu diễn trình tự xử lý
+actor "A03\nNhân viên vận hành" as A03
+rectangle "Hệ thống quản lý nhà trọ" as SYSTEM {
+  usecase "UC-TNT-10\nXét duyệt yêu cầu vòng đời thuê" as UC_TNT_10
+  usecase "UC-TNT-11\nThực thi yêu cầu vòng đời đã\nduyệt" as UC_TNT_11
+  usecase "UC-BIL-19\nQuản lý khoản chi vận hành" as UC_BIL_19
+  usecase "UC-OPS-01\nTiếp nhận và theo dõi phiếu bảo\ntrì" as UC_OPS_01
+  usecase "UC-OPS-02\nPhân công và cập nhật bảo trì" as UC_OPS_02
+  usecase "UC-OPS-03\nHoàn tất bảo trì và liên kết\nkhoản chi" as UC_OPS_03
+  usecase "UC-BIL-20\nPhân tích và xuất báo cáo vận\nhành" as UC_BIL_20
+  usecase "UC-OPT-01\nXem dashboard và bản đồ phòng" as UC_OPT_01
+}
+A03 -- UC_TNT_10 : tùy handler: lease.view / lease.manage
+A03 -- UC_TNT_11 : tùy handler: lease.manage
+A03 -- UC_BIL_19 : tùy handler: expense.view / expense.manage
+A03 -- UC_OPS_01 : tùy handler: maintenance.view / maintenance.manage
+A03 -- UC_OPS_02 : tùy handler: maintenance.manage
+A03 -- UC_OPS_03 : tùy handler: maintenance.complete
+A03 -- UC_BIL_20 : tùy handler: report.view / report.export
+A03 -- UC_OPT_01 : tùy handler: report.view
+legend bottom left
+  Đường liền: tương tác; không biểu diễn luồng điều khiển.
+  STAFF: permission theo handler + khu được giao + whitelist controller; không mặc định toàn quyền.
+  Mặc định: xác minh tĩnh, chưa nghiệm thu runtime; màu vàng: một phần, cam: DEMO, xám: mô phỏng.
+  Góc nhìn A03: nhãn liệt kê quyền tùy handler, KHÔNG yêu cầu đồng thời mọi quyền; giữ nguyên UC.
+  Quyền chi tiết, điều kiện và nguồn: Association_Traceability.md / data/diagram-manifest.json.
+endlegend
+@enduml

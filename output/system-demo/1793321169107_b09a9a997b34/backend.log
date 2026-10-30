@@ -1,0 +1,515 @@
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [NestFactory] Starting Nest application...
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [InstanceLoader] PrismaModule dependencies initialized +13ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [InstanceLoader] PassportModule dependencies initialized +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [InstanceLoader] ThrottlerModule dependencies initialized +6ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [InstanceLoader] ConfigHostModule dependencies initialized +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [InstanceLoader] FeatureFlagsModule dependencies initialized +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [InstanceLoader] ConfigModule dependencies initialized +1ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [InstanceLoader] ConfigModule dependencies initialized +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [InstanceLoader] AppModule dependencies initialized +1ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [InstanceLoader] JwtModule dependencies initialized +1ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [InstanceLoader] DeliveryModule dependencies initialized +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [InstanceLoader] ReviewsModule dependencies initialized +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [InstanceLoader] OnlinePaymentsModule dependencies initialized +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [InstanceLoader] AuditModule dependencies initialized +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [InstanceLoader] TenantPortalModule dependencies initialized +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [InstanceLoader] ReportsModule dependencies initialized +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [InstanceLoader] DashboardModule dependencies initialized +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [InstanceLoader] AuthorizationModule dependencies initialized +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [InstanceLoader] ListingsModule dependencies initialized +1ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [InstanceLoader] ExpensesModule dependencies initialized +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [InstanceLoader] OperationsModule dependencies initialized +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [InstanceLoader] ChatbotModule dependencies initialized +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [InstanceLoader] TenantLifecycleModule dependencies initialized +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [InstanceLoader] LeasesModule dependencies initialized +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [InstanceLoader] PropertiesModule dependencies initialized +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [InstanceLoader] RoomsModule dependencies initialized +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [InstanceLoader] MaintenanceModule dependencies initialized +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [InstanceLoader] SupportModule dependencies initialized +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [InstanceLoader] UploadsModule dependencies initialized +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [InstanceLoader] NotificationsModule dependencies initialized +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [InstanceLoader] HousingModule dependencies initialized +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [InstanceLoader] PlatformModule dependencies initialized +1ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [InstanceLoader] HealthModule dependencies initialized +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [InstanceLoader] AuthModule dependencies initialized +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [InstanceLoader] BillingModule dependencies initialized +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [InstanceLoader] StaffModule dependencies initialized +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [InstanceLoader] TenantsModule dependencies initialized +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [InstanceLoader] AdminModule dependencies initialized +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RoutesResolver] ChatbotController {/api/v1/chatbot}: +24ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/chatbot/ask, POST} route +1ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/chatbot/sources/:id, GET} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RoutesResolver] AuthController {/api/v1/auth}: +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/auth/register, POST} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/auth/register-seeker, POST} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/auth/login, POST} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/auth/refresh, POST} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/auth/logout, POST} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/auth/me, GET} route +1ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/auth/sessions, GET} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/auth/sessions/:id/revoke, POST} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/auth/sessions/revoke-all, POST} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/auth/change-password, POST} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RoutesResolver] AdminSecurityController {/api/v1/admin/me/security}: +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/admin/me/security, GET} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/admin/me/security/enroll, POST} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/admin/me/security/confirm, POST} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RoutesResolver] AccountAccessController {/api/v1/auth/account-access}: +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/auth/account-access/forgot, POST} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/auth/account-access/redeem, POST} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RoutesResolver] SavedSearchesController {/api/v1/student/searches}: +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/student/searches, GET} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/student/searches, POST} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/student/searches/alerts, GET} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/student/searches/alerts/:id/read, POST} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/student/searches/:id, PATCH} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/student/searches/:id, DELETE} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RoutesResolver] PublicListingsController {/api/v1/public/listings}: +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/public/listings, GET} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/public/listings/:id, GET} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RoutesResolver] LandlordListingsController {/api/v1/listings}: +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/listings, GET} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/listings, POST} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/listings/:id, PATCH} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/listings/:id/submit, POST} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/listings/:id/hide, POST} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/listings/:id/confirm-availability, POST} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RoutesResolver] AdminListingsController {/api/v1/admin/listings}: +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/admin/listings/reports, GET} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/admin/listings/reports/:id/review, POST} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/admin/listings, GET} route +1ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/admin/listings/:id/review, POST} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/admin/listings/:id/verification, POST} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RoutesResolver] PublicCampusesController {/api/v1/public/campuses}: +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/public/campuses, GET} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RoutesResolver] AdminCampusesController {/api/v1/admin/campuses}: +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/admin/campuses, GET} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/admin/campuses, POST} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/admin/campuses/:id, PATCH} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RoutesResolver] StudentListingsController {/api/v1/student/listings}: +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/student/listings/:id/reports, POST} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RoutesResolver] HousingController {/api/v1/housing}: +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/housing/listings/:id/slots, GET} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/housing/listings/:id/slots, POST} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/housing/slots/:id, DELETE} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/housing/viewings/:id/reschedule, PATCH} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/housing/leases/:id/handover, GET} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/housing/leases/:id/handover, PUT} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/housing/leases/:id/handover/accept, POST} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/housing/favorites, GET} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/housing/favorites/:id, GET} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/housing/favorites/:id, PUT} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/housing/favorites/:id, DELETE} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/housing/viewings, GET} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/housing/viewings, POST} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/housing/viewings/:id, GET} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/housing/viewings/:id, PATCH} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/housing/viewings/:id/lease, POST} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/housing/notifications, GET} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/housing/notifications/:id/read, POST} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/housing/pilot, GET} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/housing/feedback, POST} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/housing/feedback, GET} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RoutesResolver] LeasesController {/api/v1/leases}: +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/leases, POST} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/leases/expiring, GET} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/leases/:id/end, POST} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/leases/:id/settlement, GET} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/leases/:id/settlement/preview, POST} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/leases/:id/settlement/confirm, POST} route +1ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/leases/:id/settlement/refund, POST} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/leases/:id, PATCH} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/leases/:id/renew, POST} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/leases/:id/deposits, GET} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/leases/:id/deposits, POST} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RoutesResolver] RoomLeasesController {/api/v1/rooms/:roomId/leases}: +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/rooms/:roomId/leases, GET} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RoutesResolver] TenantLeasesController {/api/v1/tenants/:tenantId/leases}: +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/tenants/:tenantId/leases, GET} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RoutesResolver] AuditController {/api/v1/audit-logs}: +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/audit-logs, GET} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RoutesResolver] PublicRoomReviewsController {/api/v1/public/listings}: +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/public/listings/:id/reviews, GET} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RoutesResolver] RoomReviewsController {/api/v1/reviews}: +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/reviews/leases/:id, GET} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/reviews/leases/:id, POST} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/reviews/:id, PATCH} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/reviews/:id, DELETE} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/reviews/landlord, GET} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/reviews/:id/reply, POST} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RoutesResolver] AdminRoomReviewsController {/api/v1/admin/room-reviews}: +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/admin/room-reviews, GET} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/admin/room-reviews/:id/moderate, POST} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/admin/room-reviews/:id/reply/moderate, POST} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RoutesResolver] LandlordOnlinePaymentsController {/api/v1/billing/invoices}: +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/billing/invoices/:id/payment-link, GET} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/billing/invoices/:id/payment-events, GET} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/billing/invoices/:id/payment-events/:eventId/reconcile, POST} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RoutesResolver] TenantOnlinePaymentsController {/api/v1/tenant/invoices}: +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/tenant/invoices/:id/payment-link, POST} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/tenant/invoices/:id/demo-invoice, POST} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/tenant/invoices/:id/payment-link, GET} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RoutesResolver] DemoCardPaymentController {/api/v1/payments/demo}: +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/payments/demo/checkout/:token, GET} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/payments/demo/checkout/:token/confirm, POST} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RoutesResolver] TransferAccountController {/api/v1/properties/:id/transfer-account}: +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/properties/:id/transfer-account, GET} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/properties/:id/transfer-account, PUT} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RoutesResolver] TransferInstructionsController {/api/v1/tenant/invoices/:id/transfer-instructions}: +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/tenant/invoices/:id/transfer-instructions, GET} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RoutesResolver] GovernanceController {/api/v1/admin}: +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/admin/team, GET} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/admin/teams, GET} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/admin/teams, POST} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/admin/teams/:id/members, POST} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/admin/teams/:id, PATCH} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/admin/teams/:id/members/:userId/remove, POST} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/admin/permissions/simulate, POST} route +1ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/admin/feature-flags, GET} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/admin/feature-flags/effective, GET} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/admin/feature-flags/:key, PATCH} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/admin/finance/reconciliation, GET} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/admin/report-schedules, GET} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/admin/report-schedules, POST} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/admin/report-schedules/:id, PATCH} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/admin/report-schedules/:id/run, POST} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/admin/report-schedules/:id/runs, GET} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/admin/report-runs/:id/retry, POST} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/admin/report-runs/:id/download-link, POST} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/admin/report-runs/:id/download, GET} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RoutesResolver] ModerationV2Controller {/api/v1/admin/moderation-v2}: +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/admin/moderation-v2/decisions, GET} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/admin/moderation-v2/history/:kind/:id, GET} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/admin/moderation-v2/appeals, GET} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/admin/moderation-v2/appeals/:id/assign, POST} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/admin/moderation-v2/appeals/:id/resolve, POST} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/admin/moderation-v2/bulk, POST} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/admin/moderation-v2/bulk/preview, POST} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/admin/moderation-v2/reports, GET} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RoutesResolver] MyModerationController {/api/v1/moderation}: +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/moderation/decisions, GET} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/moderation/appeals, GET} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/moderation/appeals, POST} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/moderation/features, GET} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RoutesResolver] ModerationPolicyController {/api/v1/admin/moderation-policies}: +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/admin/moderation-policies, GET} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/admin/moderation-policies/quality, GET} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/admin/moderation-policies/quality/samples, GET} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/admin/moderation-policies/quality/samples/:id, GET} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/admin/moderation-policies/quality/samples/:id/review, POST} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/admin/moderation-policies, POST} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/admin/moderation-policies/:id/activate, POST} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RoutesResolver] FinanceReconciliationController {/api/v1/admin/finance}: +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/admin/finance/statements, POST} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/admin/finance/statement-lines, GET} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/admin/finance/statement-lines/:id/proposals, POST} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/admin/finance/statement-lines/:id/candidates, GET} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/admin/finance/reconciliation-proposals, GET} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/admin/finance/reconciliation-proposals/:id/approve, POST} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/admin/finance/reconciliation-proposals/:id/reject, POST} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RoutesResolver] TenantLifecycleController {/api/v1/tenant-lifecycle}: +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/tenant-lifecycle/requests, GET} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/tenant-lifecycle/requests/:id/review, POST} route +1ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/tenant-lifecycle/requests/:id/execute, POST} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/tenant-lifecycle/leases/:leaseId/occupants, GET} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/tenant-lifecycle/leases/:leaseId/occupants, POST} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/tenant-lifecycle/leases/:leaseId/occupants/:id, DELETE} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RoutesResolver] TenantLifecyclePortalController {/api/v1/tenant}: +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/tenant/lifecycle-requests, GET} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/tenant/lifecycle-requests, POST} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/tenant/lifecycle-requests/:id/cancel, POST} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/tenant/transfer-rooms, GET} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/tenant/leases/:leaseId/settlement, GET} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/tenant/occupants, GET} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/tenant/notification-preferences, GET} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/tenant/notification-preferences, PUT} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RoutesResolver] SupportController {/api/v1/support}: +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/support/tickets, POST} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/support/tickets, GET} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/support/tickets/assignees, GET} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/support/tickets/teams, GET} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/support/tickets/:id, GET} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/support/tickets/:id/replies, POST} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/support/tickets/:id/notes, POST} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/support/tickets/:id/assignment, PATCH} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/support/tickets/:id/status, PATCH} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/support/notifications, GET} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/support/notifications/:id/read, POST} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/support/notifications/read-all, POST} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RoutesResolver] NotificationCenterController {/api/v1/notification-center}: +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/notification-center, GET} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/notification-center/preferences, GET} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/notification-center/preferences, PATCH} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/notification-center/:id/read, POST} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/notification-center/read-all, POST} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RoutesResolver] SupportToolsController {/api/v1/support}: +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/support/templates, GET} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/support/templates, POST} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/support/templates/:id, PATCH} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/support/tickets/:id/labels, PATCH} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/support/tickets/:id/merge, POST} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/support/tickets/:id/feedback, POST} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RoutesResolver] SupportWorkflowController {/api/v1/support}: +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/support/views, GET} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/support/views, POST} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/support/views/:id, PATCH} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/support/views/:id, DELETE} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/support/skills, GET} route +1ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/support/skills/:id, PATCH} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/support/tickets/:id/auto-assign, POST} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RoutesResolver] SupportAttachmentController {/api/v1/support/tickets}: +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/support/tickets/:id/attachments, POST} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RoutesResolver] NotificationDeliveryController {/api/v1/admin/operations/notification-delivery}: +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/admin/operations/notification-delivery, GET} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/admin/operations/notification-delivery/:id/retry, POST} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RoutesResolver] SupportSlaController {/api/v1/admin/support-sla-policy}: +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/admin/support-sla-policy, GET} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/admin/support-sla-policy, PATCH} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RoutesResolver] SupportCaseController {/api/v1/admin/support-cases}: +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/admin/support-cases/:id/timeline, POST} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/admin/support-cases/:id/links, POST} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RoutesResolver] HealthController {/api/v1/health}: +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/health, GET} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/health/live, GET} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/health/ready, GET} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RoutesResolver] IncidentWorkflowController {/api/v1/admin/operations/incidents}: +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/admin/operations/incidents, GET} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/admin/operations/incidents/assignees, GET} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/admin/operations/incidents/:id, GET} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/admin/operations/incidents/:id/actions, POST} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RoutesResolver] OperationsQueueController {/api/v1/admin/operations/delivery-jobs}: +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/admin/operations/delivery-jobs, GET} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RoutesResolver] PropertiesController {/api/v1/properties}: +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/properties, GET} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/properties, POST} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/properties/:id, GET} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/properties/:id, PATCH} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/properties/:id/status, PATCH} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/properties/:id, DELETE} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RoutesResolver] PropertyRoomsController {/api/v1/properties/:propertyId/rooms}: +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/properties/:propertyId/rooms, GET} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/properties/:propertyId/rooms, POST} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RoutesResolver] RoomsController {/api/v1/rooms}: +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/rooms/:id, GET} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/rooms/:id, PATCH} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/rooms/:id/status, PATCH} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/rooms/:id, DELETE} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/rooms/:id/assets, GET} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/rooms/:id/assets, POST} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/rooms/:id/assets/:assetId, PATCH} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/rooms/:id/assets/:assetId, DELETE} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/rooms/:id/inspections, GET} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/rooms/:id/inspections, POST} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/rooms/:id/inspections/:inspectionId, PATCH} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/rooms/:id/inspections/:inspectionId/complete, POST} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/rooms/:id/inspections/:inspectionId, DELETE} route +1ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/rooms/:id/service-fees, GET} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/rooms/:id/service-fees, POST} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/rooms/:id/service-fees/:feeId, PATCH} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/rooms/:id/service-fees/:feeId/versions, GET} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/rooms/:id/service-fees/:feeId, DELETE} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RoutesResolver] TenantsController {/api/v1/tenants}: +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/tenants, GET} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/tenants, POST} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/tenants/:id, GET} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/tenants/:id/overview, GET} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/tenants/:id/account, POST} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/tenants/:id, PATCH} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/tenants/:id/status, PATCH} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/tenants/:id, DELETE} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RoutesResolver] TenantInvitesController {/api/v1}: +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/tenants/:id/invite, POST} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/tenant-invites/accept, POST} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RoutesResolver] BillingController {/api/v1/billing}: +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/billing/active-leases, GET} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/billing/meter-readings, GET} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/billing/meter-readings, POST} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/billing/invoices, GET} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/billing/reminders, GET} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/billing/reminders/run, POST} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/billing/invoices/bulk/preflight, POST} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/billing/invoices/bulk, POST} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/billing/automation, GET} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/billing/automation, PUT} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/billing/automation/preview, POST} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/billing/automation/run, POST} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/billing/invoices, POST} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/billing/invoices/:id, GET} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/billing/invoices/:id, PATCH} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/billing/invoices/:id/cancel, POST} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/billing/invoices/:id/replacement, POST} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/billing/invoices/:id/adjustments, POST} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/billing/aging, GET} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/billing/receipts, GET} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/billing/receipts, POST} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/billing/receipts/:id/allocations, POST} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/billing/receipts/:id/allocations/:allocationId/release, POST} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/billing/receipts/:id/refunds, POST} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/billing/reminder-policy, GET} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/billing/reminder-policy, PUT} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/billing/reminders/enqueue, POST} route +1ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/billing/outbox, GET} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/billing/outbox/:id/retry, POST} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/billing/tariffs, GET} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/billing/tariffs/proposals, POST} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/billing/tariffs/:id/impact, GET} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/billing/tariffs/:id/review, POST} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/billing/period-locks, POST} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/billing/invoices/preview, POST} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/billing/invoices/:id/payments, POST} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/billing/payment-proofs, GET} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/billing/payment-proofs/:id/review, POST} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/billing/invoices/:invoiceId/payments/:paymentId/reverse, POST} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RoutesResolver] NotificationsController {/api/v1/notifications}: +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/notifications, GET} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/notifications/:id/read, POST} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/notifications/deliveries, GET} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/notifications/zalo/invoice-reminders, POST} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/notifications/zalo/test-message, POST} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/notifications/zalo/manual-message, POST} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RoutesResolver] AnnouncementsController {/api/v1/announcements}: +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/announcements, GET} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/announcements/templates, GET} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/announcements/groups, GET} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/announcements/templates, POST} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/announcements/groups, POST} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/announcements, POST} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/announcements/:id/receipts, GET} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/announcements/:id/cancel, POST} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RoutesResolver] TenantAnnouncementsController {/api/v1/tenant/announcements}: +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/tenant/announcements, GET} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/tenant/announcements/:id/read, POST} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RoutesResolver] ExpensesController {/api/v1/expenses}: +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/expenses, GET} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/expenses, POST} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/expenses/:id, GET} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/expenses/:id, PATCH} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/expenses/:id, DELETE} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RoutesResolver] MaintenanceController {/api/v1/maintenance}: +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/maintenance, GET} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/maintenance, POST} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/maintenance/assignees, GET} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/maintenance/:id, GET} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/maintenance/sla/escalate, POST} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/maintenance/:id, PATCH} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/maintenance/:id/status, POST} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/maintenance/:id/complete, POST} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/maintenance/:id/comments, POST} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/maintenance/:id, DELETE} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RoutesResolver] TenantPortalController {/api/v1/tenant}: +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/tenant/me, GET} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/tenant/dashboard, GET} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/tenant/invoices, GET} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/tenant/leases, GET} route +1ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/tenant/invoices/:id, GET} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/tenant/notifications, GET} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/tenant/notifications/:id/read, POST} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/tenant/zalo-messages, GET} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/tenant/zalo-messages, POST} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/tenant/zalo-messages/:id/read, POST} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/tenant/invoices/:id/payment-proofs, POST} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/tenant/maintenance, GET} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/tenant/maintenance, POST} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/tenant/maintenance/:id/comments, POST} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RoutesResolver] UploadsController {/api/v1/uploads}: +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/uploads, POST} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/uploads/:filename/access, GET} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RoutesResolver] ReportsController {/api/v1/reports}: +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/reports/monthly, GET} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/reports/monthly/export, GET} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/reports/analytics, GET} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RoutesResolver] StaffController {/api/v1/staff}: +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/staff/presets, GET} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/staff, GET} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/staff/invites, POST} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/staff/:id, PATCH} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/staff/:id/simulate, POST} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/staff/invites/accept, POST} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RoutesResolver] OperationsController {/api/v1/operations}: +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/operations/action-items, GET} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/operations/action-items/:id/read, POST} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RoutesResolver] P1OperationsController {/api/v1/operations}: +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/operations/options, GET} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/operations/turnovers, GET} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/operations/turnovers, POST} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/operations/turnovers/:id/advance, POST} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/operations/recurring, GET} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/operations/recurring, POST} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/operations/recurring/:id, PATCH} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/operations/tasks, GET} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/operations/tasks/:id/checklist, PATCH} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RoutesResolver] DashboardController {/api/v1/dashboard}: +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/dashboard/metrics, GET} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RoutesResolver] AdminController {/api/v1/admin}: +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/admin/overview, GET} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/admin/landlords, GET} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/admin/landlords, POST} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/admin/landlords/:id, GET} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/admin/landlords/:id, PATCH} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/admin/landlords/:id/status, PATCH} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/admin/properties, GET} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/admin/properties, POST} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/admin/properties/:id, GET} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/admin/rooms, GET} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/admin/properties/:id, PATCH} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RoutesResolver] AdminConsoleController {/api/v1/admin}: +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/admin/me/capabilities, GET} route +1ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/admin/accounts, GET} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/admin/accounts/:id, GET} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/admin/accounts/:id/suspend, POST} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/admin/accounts/:id/restore, POST} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/admin/accounts/:id/revoke-sessions, POST} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/admin/accounts/:id/reveal, POST} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/admin/accounts/:id/reset-password, POST} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/admin/account-invites, POST} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/admin/admins, GET} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/admin/admins/:id/access, GET} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/admin/admins/:id, PATCH} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/admin/audit-logs, GET} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/admin/audit-logs/:id, GET} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/admin/audit-logs/export, POST} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/admin/support-context, POST} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/admin/moderation/queue, GET} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/admin/moderation/work, POST} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/admin/moderation/items/:kind/:id, GET} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/admin/analytics/summary, GET} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/admin/operations/health, GET} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/admin/operations/incidents/:id/acknowledge, POST} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RoutesResolver] AdminSearchController {/api/v1/admin}: +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/admin/search, GET} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/admin/resources, GET} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/admin/resources/:id, GET} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RoutesResolver] AdminStepUpController {/api/v1/admin/me/security/step-up}: +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/admin/me/security/step-up, POST} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RoutesResolver] AdminAccessReviewController {/api/v1/admin}: +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/admin/permission-catalog, GET} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/admin/access-reviews, GET} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/admin/access-reviews/:id, POST} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RoutesResolver] AdminWorkspaceController {/api/v1/admin/workspace}: +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/admin/workspace/summary, GET} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/admin/workspace/action-items, GET} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RoutesResolver] AdminLifecycleController {/api/v1/admin/admins}: +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/admin/admins/:id/lifecycle, GET} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/admin/admins/:id/resend-invite, POST} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/admin/admins/:id/revoke-sessions, POST} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RoutesResolver] AdminOverviewAnalyticsController {/api/v1/admin/analytics}: +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/admin/analytics/overview, GET} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RoutesResolver] AdminRegistryController {/api/v1/admin}: +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/admin/finance/transactions, GET} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/admin/landlord-verifications, GET} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/admin/landlord-verifications, POST} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/admin/landlord-verifications/:id/review, POST} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/admin/property-reviews, GET} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/admin/properties/:id/submit-review, POST} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/admin/property-reviews/:id/review, POST} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/admin/service-plans, GET} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/admin/service-plans, POST} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/admin/subscriptions, GET} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/admin/subscriptions/:id/events, GET} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/admin/landlords/:id/subscription, POST} route +1ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/admin/subscriptions/:id/cancel, POST} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RoutesResolver] LandlordVerificationController {/api/v1/landlord-verification}: +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/landlord-verification, GET} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [RouterExplorer] Mapped {/api/v1/landlord-verification, POST} route +0ms
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [BillingAutomationScheduler] Billing automation worker is disabled.
+[Nest] 1058  - 10/30/2026, 7:46:13 AM     LOG [NestApplication] Nest application successfully started +1ms

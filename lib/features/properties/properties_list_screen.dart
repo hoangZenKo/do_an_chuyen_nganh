@@ -8,6 +8,7 @@ import '../../models/property.dart';
 import '../auth/auth_navigation.dart';
 import '../dashboard/dashboard_providers.dart';
 import '../rooms/room_providers.dart';
+import 'property_management_theme.dart';
 
 class PropertiesListScreen extends ConsumerStatefulWidget {
   const PropertiesListScreen({super.key});
@@ -28,7 +29,7 @@ class _PropertiesListScreenState extends ConsumerState<PropertiesListScreen> {
     final selectedId = ref.watch(selectedPropertyProvider);
 
     return Scaffold(
-      backgroundColor: const Color(0xFF0F1117),
+      backgroundColor: PropertyManagementTheme.background,
       appBar: AppBar(
         title: const Text('Khu trọ'),
         actions: [
@@ -197,8 +198,9 @@ class _PropertiesListScreenState extends ConsumerState<PropertiesListScreen> {
           FilledButton(
             onPressed: () => Navigator.of(context).pop(true),
             style: FilledButton.styleFrom(
-              backgroundColor:
-                  destructive ? const Color(0xFFEF4444) : AppTheme.primary,
+              backgroundColor: destructive
+                  ? PropertyManagementTheme.error
+                  : AppTheme.primary,
             ),
             child: Text(confirmLabel),
           ),
@@ -270,7 +272,7 @@ class _FilterPill extends StatelessWidget {
         decoration: BoxDecoration(
           color: selected
               ? AppTheme.primary.withValues(alpha: 0.12)
-              : const Color(0xFF22263A),
+              : PropertyManagementTheme.surfaceAlt,
           borderRadius: BorderRadius.circular(999),
           border: Border.all(
             color: selected ? AppTheme.primary : Colors.transparent,
@@ -281,7 +283,7 @@ class _FilterPill extends StatelessWidget {
           style: TextStyle(
             fontSize: 12,
             fontWeight: FontWeight.w700,
-            color: selected ? AppTheme.primary : const Color(0xFF8891A8),
+            color: selected ? AppTheme.primary : PropertyManagementTheme.muted,
           ),
         ),
       ),
@@ -319,16 +321,9 @@ class _PropertyCard extends StatelessWidget {
           color: Colors.white,
           borderRadius: BorderRadius.circular(16),
           border: Border.all(
-            color: selected ? AppTheme.primary : const Color(0xFF2E3348),
+            color: selected ? AppTheme.primary : PropertyManagementTheme.border,
             width: selected ? 1.5 : 1,
           ),
-          boxShadow: [
-            BoxShadow(
-              color: Colors.black.withValues(alpha: 0.04),
-              blurRadius: 8,
-              offset: const Offset(0, 2),
-            ),
-          ],
         ),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -340,7 +335,7 @@ class _PropertyCard extends StatelessWidget {
                   height: 42,
                   decoration: BoxDecoration(
                     color: property.isArchived
-                        ? const Color(0xFF22263A)
+                        ? PropertyManagementTheme.surfaceAlt
                         : AppTheme.primary.withValues(alpha: 0.12),
                     borderRadius: BorderRadius.circular(12),
                   ),
@@ -349,7 +344,7 @@ class _PropertyCard extends StatelessWidget {
                         ? Icons.archive_outlined
                         : Icons.apartment_rounded,
                     color: property.isArchived
-                        ? const Color(0xFF8891A8)
+                        ? PropertyManagementTheme.muted
                         : AppTheme.primary,
                   ),
                 ),
@@ -368,7 +363,7 @@ class _PropertyCard extends StatelessWidget {
                               style: const TextStyle(
                                 fontSize: 16,
                                 fontWeight: FontWeight.w800,
-                                color: Color(0xFFF0F2FF),
+                                color: PropertyManagementTheme.ink,
                               ),
                             ),
                           ),
@@ -390,7 +385,7 @@ class _PropertyCard extends StatelessWidget {
                         maxLines: 1,
                         overflow: TextOverflow.ellipsis,
                         style: const TextStyle(
-                            fontSize: 12, color: Color(0xFF8891A8)),
+                            fontSize: 12, color: PropertyManagementTheme.muted),
                       ),
                     ],
                   ),
@@ -417,7 +412,7 @@ class _PropertyCard extends StatelessWidget {
                       value: 'delete',
                       child: Text(
                         'Xóa vĩnh viễn',
-                        style: TextStyle(color: Color(0xFFEF4444)),
+                        style: TextStyle(color: PropertyManagementTheme.error),
                       ),
                     ),
                   ],
@@ -449,7 +444,7 @@ class _ArchivedBadge extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 3),
       decoration: BoxDecoration(
-        color: const Color(0xFF22263A),
+        color: PropertyManagementTheme.surfaceAlt,
         borderRadius: BorderRadius.circular(999),
       ),
       child: const Text(
@@ -457,7 +452,7 @@ class _ArchivedBadge extends StatelessWidget {
         style: TextStyle(
           fontSize: 10,
           fontWeight: FontWeight.w700,
-          color: Color(0xFF8891A8),
+          color: PropertyManagementTheme.muted,
         ),
       ),
     );
@@ -474,7 +469,7 @@ class _MetricChip extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
       decoration: BoxDecoration(
-        color: const Color(0xFF22263A),
+        color: PropertyManagementTheme.surfaceAlt,
         borderRadius: BorderRadius.circular(999),
       ),
       child: Text(
@@ -482,7 +477,7 @@ class _MetricChip extends StatelessWidget {
         style: const TextStyle(
           fontSize: 12,
           fontWeight: FontWeight.w600,
-          color: Color(0xFF8891A8),
+          color: PropertyManagementTheme.muted,
         ),
       ),
     );
@@ -514,7 +509,7 @@ class _EmptyProperties extends StatelessWidget {
               style: const TextStyle(
                 fontSize: 20,
                 fontWeight: FontWeight.w800,
-                color: Color(0xFFF0F2FF),
+                color: PropertyManagementTheme.ink,
               ),
             ),
             const SizedBox(height: 8),
@@ -523,7 +518,8 @@ class _EmptyProperties extends StatelessWidget {
                   ? 'Khu trọ đã archive sẽ xuất hiện tại đây để bạn khôi phục khi cần.'
                   : 'Tạo khu trọ đầu tiên để bắt đầu quản lý phòng.',
               textAlign: TextAlign.center,
-              style: const TextStyle(fontSize: 14, color: Color(0xFF8891A8)),
+              style: const TextStyle(
+                  fontSize: 14, color: PropertyManagementTheme.muted),
             ),
             if (!archived) ...[
               const SizedBox(height: 18),
@@ -565,12 +561,12 @@ class _PropertiesError extends StatelessWidget {
           mainAxisSize: MainAxisSize.min,
           children: [
             const Icon(Icons.cloud_off_rounded,
-                size: 52, color: Color(0xFF9CA3AF)),
+                size: 52, color: PropertyManagementTheme.muted),
             const SizedBox(height: 14),
             Text(
               message,
               textAlign: TextAlign.center,
-              style: const TextStyle(color: Color(0xFF8891A8)),
+              style: const TextStyle(color: PropertyManagementTheme.muted),
             ),
             const SizedBox(height: 12),
             TextButton(onPressed: onRetry, child: const Text('Thử lại')),

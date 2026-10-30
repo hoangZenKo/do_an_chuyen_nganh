@@ -1,0 +1,146 @@
+@startuml
+skinparam backgroundColor white
+skinparam shadowing false
+skinparam dpi 240
+skinparam defaultFontName "Times New Roman"
+skinparam defaultFontSize 17
+skinparam defaultFontColor black
+skinparam titleFontSize 21
+skinparam titleFontColor black
+skinparam roundcorner 0
+skinparam maxMessageSize 270
+skinparam ParticipantPadding 30
+skinparam sequence {
+  ArrowColor #800000
+  ArrowThickness 1.2
+  LifeLineBorderColor #999999
+  LifeLineBackgroundColor #FFFFB9
+  ParticipantBackgroundColor #FFFFB9
+  ParticipantBorderColor #800000
+  ParticipantFontColor black
+  ActorBackgroundColor #FFFFB9
+  ActorBorderColor #800000
+  ActorFontColor black
+  BoundaryBackgroundColor #FFFFB9
+  BoundaryBorderColor #800000
+  ControlBackgroundColor #FFFFB9
+  ControlBorderColor #800000
+  EntityBackgroundColor #FFFFB9
+  EntityBorderColor #800000
+  DatabaseBackgroundColor #FFFFB9
+  DatabaseBorderColor #800000
+  GroupBackgroundColor #FFFFB9
+  GroupBodyBackgroundColor white
+  GroupBorderColor #888888
+  GroupFontColor black
+  GroupHeaderFontColor black
+  GroupFontSize 15
+  GroupHeaderFontSize 16
+  MessageAlign center
+}
+hide footbox
+<style>
+sequenceDiagram {
+ actor { BackgroundColor #FFFFB9
+ LineColor #800000 }
+ boundary { BackgroundColor #FFFFB9
+ LineColor #800000 }
+ control { BackgroundColor #FFFFB9
+ LineColor #800000 }
+ database { BackgroundColor #FFFFB9
+ LineColor #800000 }
+ activationBox { BackgroundColor #FFFFB9
+ LineColor #800000 }
+}
+</style>
+autonumber "<b>0.</b>"
+
+title SD-16. Nhập sao kê và xét duyệt đề nghị đối soát
+actor "Quản trị viên\nngười lập đề nghị" as A
+actor "Quản trị viên\nngười kiểm tra độc lập" as B
+boundary "<u>Giao diện</u>\n<u>đối soát</u>" as U #FFFFB9
+control "<u>Quản lý</u>\n<u>đối soát thu tiền</u>" as C #FFFFB9
+database "<u>Cơ sở dữ liệu</u>" as D #FFFFB9
+A -> U: Nhập sao kê CSV và chọn dòng cần đối soát
+activate U
+U -> C: Yêu cầu nhập sao kê và tìm khoản thu phù hợp
+activate C
+C -> C: Kiểm tra quyền nhập và nội dung sao kê
+break Không có quyền nhập hoặc nội dung sao kê không hợp lệ
+C --> U: Không nhập sao kê
+U --> A: Không nhập sao kê; thông báo nội dung cần kiểm tra
+end
+C -> D ++: Tra cứu khu trọ, lần nhập trước và giao dịch sao kê đã có
+D --> C --: Thông tin khu trọ và lịch sử nhập sao kê
+C -> C: Đối chiếu lần nhập, tài khoản sao kê và giao dịch trùng
+alt Gửi lại đúng lần nhập với nội dung đã lưu
+C --> U: Trả kết quả lần nhập trước
+U --> A: Trả kết quả lần nhập trước; không lưu sao kê trùng
+else Khu trọ không tồn tại, lần nhập đổi nội dung hoặc giao dịch đã nhập
+C --> U: Không nhập sao kê
+U --> A: Không nhập sao kê; thông báo nội dung cần kiểm tra
+else Lần nhập mới hợp lệ
+C -> D ++: Tra cứu khoản thu và thanh toán liên quan đến các dòng sao kê
+D --> C --: Số tiền, mã đối chiếu, thời gian và tình trạng đã ghép
+C -> C: Tìm khoản phù hợp duy nhất theo khu trọ, số tiền, mã đối chiếu và thời gian
+C -> D ++: Lưu sao kê và các dòng; lưu liên kết tự động khi có khoản phù hợp duy nhất
+D --> C --: Sao kê, dòng đã ghép tự động và dòng chưa ghép
+C --> U: Kết quả: kết quả nhập, số dòng tự ghép và số dòng cần xử lý
+U --> A: Hiển thị kết quả nhập, số dòng tự ghép và số dòng cần xử lý
+end
+deactivate C
+deactivate U
+opt Có dòng sao kê chưa ghép; người lập chọn đề nghị ghép
+A -> U: Chọn khoản thu và gửi đề nghị ghép; nhập lý do
+activate U
+U -> C: Yêu cầu lập đề nghị đối soát khoản thu
+activate C
+C -> D ++: Tra cứu dòng sao kê, khoản thu và đề nghị đang chờ
+D --> C --: Số tiền, lịch sử ghép và các đề nghị hiện có
+C -> C: Kiểm tra quyền đề nghị, số tiền và điều kiện ghép khoản thu
+alt Sai số tiền, sai phạm vi hoặc dòng đã có đề nghị chờ
+C --> U: Không lập đề nghị
+U --> A: Không lập đề nghị; thông báo lý do
+else Khoản thu và dòng sao kê đủ điều kiện
+C -> D ++: Lưu đề nghị chờ người khác xét duyệt
+D --> C --: Đề nghị chưa làm thay đổi kết quả đối soát
+C --> U: Đề nghị đang chờ kiểm tra độc lập
+U --> A: Đề nghị đang chờ kiểm tra độc lập
+end
+deactivate C
+deactivate U
+end
+opt Có đề nghị đang chờ; quản trị viên chọn kiểm tra
+B -> U: Gửi quyết định chấp thuận hoặc từ chối và lý do
+activate U
+U -> C: Yêu cầu xét duyệt đề nghị đối soát
+activate C
+C -> D ++: Tra cứu người lập, đề nghị và dòng sao kê hiện hành
+D --> C --: Danh tính người lập và tình trạng đề nghị
+C -> C: Kiểm tra người duyệt khác người lập và đề nghị còn chờ xử lý
+alt Người kiểm tra là người lập hoặc đề nghị, sao kê đã đổi
+C --> U: Không cho xét duyệt đề nghị
+U --> B: Không cho xét duyệt đề nghị
+else Người khác kiểm tra; chọn từ chối
+C -> D ++: Lưu quyết định từ chối và lý do
+D --> C --: Đề nghị bị từ chối; chưa ghép khoản thu
+C --> U: Đã từ chối đề nghị
+U --> B: Đã từ chối đề nghị
+else Người khác kiểm tra; chọn chấp thuận
+C -> D ++: Tra cứu lại khoản thu, số tiền và liên kết đối soát
+D --> C --: Khoản thu và các liên kết hiện hành
+C -> C: Đối chiếu số tiền và kiểm tra khoản thu chưa được ghép
+alt Khoản thu không còn đủ điều kiện
+C --> U: Không chấp thuận
+U --> B: Không chấp thuận; chưa ghi kết quả ghép
+else Khoản thu còn hợp lệ
+C -> D ++: Ghi liên kết đối soát và quyết định chấp thuận
+D --> C --: Dòng sao kê được ghép một lần với khoản thu
+C --> U: Đối soát hoàn tất
+U --> B: Đối soát hoàn tất; không nhân tiền theo từng phân bổ
+end
+end
+deactivate C
+deactivate U
+end
+@enduml

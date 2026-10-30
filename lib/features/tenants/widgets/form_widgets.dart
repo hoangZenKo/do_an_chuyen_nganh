@@ -1,10 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-import '../../../core/theme/app_theme.dart';
-
-/// Shared form widgets for the tenants/leases feature, matching the room form
-/// styling (white fills, teal focus, rounded 12).
+/// Shared form widgets for tenant, lease, and landlord operation forms.
 
 class FieldLabel extends StatelessWidget {
   const FieldLabel(this.text, {super.key, this.color});
@@ -17,7 +14,7 @@ class FieldLabel extends StatelessWidget {
         style: TextStyle(
           fontSize: 13,
           fontWeight: FontWeight.w700,
-          color: color ?? const Color(0xFFF0F2FF),
+          color: color ?? Theme.of(context).colorScheme.onSurface,
         ),
       );
 }
@@ -61,39 +58,48 @@ class AppTextField extends StatelessWidget {
           inputFormatters: inputFormatters,
           maxLines: maxLines,
           readOnly: readOnly,
-          style: const TextStyle(
+          style: TextStyle(
             fontSize: 15,
             fontWeight: FontWeight.w600,
-            color: Color(0xFF0F172A),
+            color: Theme.of(context).colorScheme.onSurface,
           ),
-          decoration: _decoration(hint),
+          decoration: _decoration(context, hint),
         ),
       ],
     );
   }
 }
 
-InputDecoration _decoration(String? hint) => InputDecoration(
+InputDecoration _decoration(BuildContext context, String? hint) =>
+    InputDecoration(
       hintText: hint,
-      hintStyle: const TextStyle(color: Color(0xFF64748B), fontSize: 14),
+      hintStyle: TextStyle(
+          color: Theme.of(context).colorScheme.onSurfaceVariant, fontSize: 14),
       filled: true,
-      fillColor: Colors.white,
+      fillColor: Theme.of(context).brightness == Brightness.light
+          ? Colors.white
+          : Theme.of(context).inputDecorationTheme.fillColor ??
+              Theme.of(context).colorScheme.surface,
       contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 14),
       enabledBorder: OutlineInputBorder(
         borderRadius: BorderRadius.circular(12),
-        borderSide: const BorderSide(color: Color(0xFFCBD5E1), width: 1),
+        borderSide:
+            BorderSide(color: Theme.of(context).colorScheme.outline, width: 1),
       ),
       focusedBorder: OutlineInputBorder(
         borderRadius: BorderRadius.circular(12),
-        borderSide: const BorderSide(color: AppTheme.primary, width: 1.8),
+        borderSide: BorderSide(
+            color: Theme.of(context).colorScheme.primary, width: 1.8),
       ),
       errorBorder: OutlineInputBorder(
         borderRadius: BorderRadius.circular(12),
-        borderSide: const BorderSide(color: Color(0xFFEF4444), width: 1.2),
+        borderSide:
+            BorderSide(color: Theme.of(context).colorScheme.error, width: 1.2),
       ),
       focusedErrorBorder: OutlineInputBorder(
         borderRadius: BorderRadius.circular(12),
-        borderSide: const BorderSide(color: Color(0xFFEF4444), width: 1.8),
+        borderSide:
+            BorderSide(color: Theme.of(context).colorScheme.error, width: 1.8),
       ),
     );
 
@@ -117,8 +123,8 @@ class SubmitButton extends StatelessWidget {
       child: ElevatedButton(
         onPressed: loading ? null : onPressed,
         style: ElevatedButton.styleFrom(
-          backgroundColor: AppTheme.primary,
-          foregroundColor: Colors.white,
+          backgroundColor: Theme.of(context).colorScheme.primary,
+          foregroundColor: Theme.of(context).colorScheme.onPrimary,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(12),
           ),

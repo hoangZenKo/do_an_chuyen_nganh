@@ -1,0 +1,18 @@
+
+> rental-room-api@0.1.0 test:e2e
+> NODE_ENV=test jest --config ./test/jest-e2e.json --runInBand --runTestsByPath test/e2e/admin-completion.e2e-spec.ts --runInBand
+
+PASS test/e2e/admin-completion.e2e-spec.ts
+  Admin completion E2E
+    ✓ isolates saved views by owner and enforces optimistic versions (236 ms)
+    ✓ auto-assigns only eligible agents and respects global open-ticket capacity (269 ms)
+    ✓ fails closed on unsafe attachments and keeps internal evidence private (265 ms)
+    ✓ imports safely, auto-matches references and requires an independent reconciliation checker (409 ms)
+    ✓ persists channel jobs once, retries provider errors and honours preference opt-out (95 ms)
+    ✓ uses owner-bound signed report links and object storage with retryable failures (203 ms)
+
+Test Suites: 1 passed, 1 total
+Tests:       6 passed, 6 total
+Snapshots:   0 total
+Time:        3.218 s, estimated 5 s
+Ran all test suites within paths "test/e2e/admin-completion.e2e-spec.ts".

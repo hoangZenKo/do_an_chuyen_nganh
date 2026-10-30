@@ -1,0 +1,16 @@
+Launching test/system_demo/appium_main.dart on Rental System Demo in debug mode...
+Running Xcode build...                                          
+Xcode build done.                                           14.2s
+Syncing files to device Rental System Demo...                       99ms
+
+Flutter run key commands.
+r Hot reload. 🔥🔥🔥
+R Hot restart.
+h List all available interactive commands.
+d Detach (terminate "flutter run" but leave application running).
+c Clear the screen
+q Quit (terminate the application on the device).
+
+A Dart VM Service on Rental System Demo is available at: http://127.0.0.1:58954/ALFZwSqRasQ=/
+The Flutter DevTools debugger and profiler on Rental System Demo is available at: http://127.0.0.1:9101?uri=http://127.0.0.1:58954/ALFZwSqRasQ=/
+[ERROR:flutter/shell/platform/darwin/ios/framework/Source/FlutterDartVMServicePublisher.mm(129)] Could not register as server for FlutterDartVMServicePublisher, permission denied. Check your 'Local Network' permissions for this app in the Privacy section of the system Settings.

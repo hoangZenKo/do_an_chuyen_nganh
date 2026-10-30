@@ -1,0 +1,108 @@
+@startuml
+skinparam backgroundColor white
+skinparam shadowing false
+skinparam dpi 240
+skinparam defaultFontName "Times New Roman"
+skinparam defaultFontSize 17
+skinparam defaultFontColor black
+skinparam titleFontSize 21
+skinparam titleFontColor black
+skinparam roundcorner 0
+skinparam maxMessageSize 270
+skinparam ParticipantPadding 30
+skinparam sequence {
+  ArrowColor #800000
+  ArrowThickness 1.2
+  LifeLineBorderColor #999999
+  LifeLineBackgroundColor #FFFFB9
+  ParticipantBackgroundColor #FFFFB9
+  ParticipantBorderColor #800000
+  ParticipantFontColor black
+  ActorBackgroundColor #FFFFB9
+  ActorBorderColor #800000
+  ActorFontColor black
+  BoundaryBackgroundColor #FFFFB9
+  BoundaryBorderColor #800000
+  ControlBackgroundColor #FFFFB9
+  ControlBorderColor #800000
+  EntityBackgroundColor #FFFFB9
+  EntityBorderColor #800000
+  DatabaseBackgroundColor #FFFFB9
+  DatabaseBorderColor #800000
+  GroupBackgroundColor #FFFFB9
+  GroupBodyBackgroundColor white
+  GroupBorderColor #888888
+  GroupFontColor black
+  GroupHeaderFontColor black
+  GroupFontSize 15
+  GroupHeaderFontSize 16
+  MessageAlign center
+}
+hide footbox
+<style>
+sequenceDiagram {
+ actor { BackgroundColor #FFFFB9
+ LineColor #800000 }
+ boundary { BackgroundColor #FFFFB9
+ LineColor #800000 }
+ control { BackgroundColor #FFFFB9
+ LineColor #800000 }
+ database { BackgroundColor #FFFFB9
+ LineColor #800000 }
+ activationBox { BackgroundColor #FFFFB9
+ LineColor #800000 }
+}
+</style>
+autonumber "<b>0.</b>"
+
+title SD-01. Đăng nhập và duy trì phiên sử dụng
+actor "Người dùng" as A
+boundary "<u>Giao diện</u>\n<u>đăng nhập</u>" as U #FFFFB9
+control "<u>Xác thực</u>\n<u>tài khoản</u>" as C #FFFFB9
+database "<u>Cơ sở dữ liệu</u>" as D #FFFFB9
+loop Mỗi lần gửi đăng nhập; dừng khi thành công hoặc người dùng dừng
+A -> U: Nhập email, mật khẩu; bổ sung mã xác thực nếu được yêu cầu
+activate U
+U -> C: Yêu cầu đăng nhập bằng thông tin đã nhập
+activate C
+C -> D ++: Tra cứu tài khoản và thông tin bảo mật đã đăng ký
+D --> C --: Thông tin tài khoản, trạng thái và thiết lập bảo mật
+C -> C: Kiểm tra mật khẩu, trạng thái tài khoản và mã xác thực nếu bắt buộc
+alt Email, mật khẩu sai hoặc tài khoản ngừng hoạt động
+C --> U: Không chấp nhận đăng nhập
+U --> A: Không chấp nhận đăng nhập
+else Thông tin đúng; quản trị viên cần mã nhưng chưa cung cấp
+C --> U: Yêu cầu mã xác thực hoặc mã khôi phục
+U --> A: Yêu cầu mã xác thực hoặc mã khôi phục
+else Thông tin đúng; quản trị viên cần mã nhưng mã đã gửi sai hoặc đã sử dụng
+C --> U: Mã không được chấp nhận
+U --> A: Mã không được chấp nhận; chưa đăng nhập
+else Thông tin đúng và đáp ứng yêu cầu xác thực
+C -> D ++: Ghi nhận phiên sử dụng hợp lệ
+D --> C --: Phiên được cấp theo tài khoản hiện hành
+C --> U: Đăng nhập thành công
+U --> A: Mở trang phù hợp; mở thiết lập bảo mật nếu bắt buộc
+end
+deactivate C
+deactivate U
+end
+opt Đã đăng nhập; hệ thống cần duy trì phiên khi tiếp tục sử dụng
+activate U
+U -> C: Yêu cầu duy trì phiên sử dụng
+activate C
+C -> D ++: Tra cứu tài khoản và phiên sử dụng
+D --> C --: Trạng thái, thời hạn và lịch sử thu hồi phiên
+C -> C: Kiểm tra tài khoản còn hoạt động và phiên còn được phép sử dụng
+alt Tài khoản và phiên vẫn hợp lệ
+C -> D ++: Gia hạn hiệu lực sử dụng và thay thông tin phiên cũ
+D --> C --: Phiên tiếp tục có hiệu lực
+C --> U: Tiếp tục sử dụng theo quyền được cấp
+U --> A: Tiếp tục sử dụng theo quyền được cấp
+else Phiên hết hạn, bị thu hồi hoặc tài khoản không còn hợp lệ
+C --> U: Yêu cầu đăng nhập lại
+U --> A: Yêu cầu đăng nhập lại
+end
+deactivate C
+deactivate U
+end
+@enduml

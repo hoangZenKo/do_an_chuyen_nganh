@@ -1,0 +1,17 @@
+{
+  "name": "rental-system-demo",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --test system_demo.test.mjs",
+    "inventory": "node system_demo.mjs --inventory",
+    "demo": "node system_demo.mjs",
+    "smoke": "node system_demo.mjs --sections=login,screens --delay=500"
+  },
+  "engines": { "node": ">=24" },
+  "devDependencies": {
+    "appium": "3.9.0",
+    "appium-flutter-driver": "4.1.0",
+    "webdriverio": "9.27.1"
+  }
+}

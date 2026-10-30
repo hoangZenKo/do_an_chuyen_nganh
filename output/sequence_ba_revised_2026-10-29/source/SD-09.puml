@@ -1,0 +1,93 @@
+@startuml
+skinparam backgroundColor white
+skinparam shadowing false
+skinparam dpi 240
+skinparam defaultFontName "Times New Roman"
+skinparam defaultFontSize 17
+skinparam defaultFontColor black
+skinparam titleFontSize 21
+skinparam titleFontColor black
+skinparam roundcorner 0
+skinparam maxMessageSize 270
+skinparam ParticipantPadding 30
+skinparam sequence {
+  ArrowColor #800000
+  ArrowThickness 1.2
+  LifeLineBorderColor #999999
+  LifeLineBackgroundColor #FFFFB9
+  ParticipantBackgroundColor #FFFFB9
+  ParticipantBorderColor #800000
+  ParticipantFontColor black
+  ActorBackgroundColor #FFFFB9
+  ActorBorderColor #800000
+  ActorFontColor black
+  BoundaryBackgroundColor #FFFFB9
+  BoundaryBorderColor #800000
+  ControlBackgroundColor #FFFFB9
+  ControlBorderColor #800000
+  EntityBackgroundColor #FFFFB9
+  EntityBorderColor #800000
+  GroupBackgroundColor #FFFFB9
+  GroupBodyBackgroundColor white
+  GroupBorderColor #888888
+  GroupFontColor black
+  GroupHeaderFontColor black
+  GroupFontSize 15
+  GroupHeaderFontSize 16
+  MessageAlign center
+}
+hide footbox
+<style>
+sequenceDiagram {
+ actor { BackgroundColor #FFFFB9
+ LineColor #800000 }
+ boundary { BackgroundColor #FFFFB9
+ LineColor #800000 }
+ control { BackgroundColor #FFFFB9
+ LineColor #800000 }
+ entity { BackgroundColor #FFFFB9
+ LineColor #800000 }
+ activationBox { BackgroundColor #FFFFB9
+ LineColor #800000 }
+}
+</style>
+autonumber "<b>0.</b>"
+
+title SD-09. Thay thế hoặc điều chỉnh hóa đơn
+actor "Chủ trọ" as A
+boundary "<u>Giao diện</u>\n<u>chi tiết hóa đơn</u>" as U #FFFFB9
+control "<u>Quản lý</u>\n<u>điều chỉnh hóa đơn</u>" as C #FFFFB9
+entity "<u>Hóa đơn</u>\n<u>và lịch sử điều chỉnh</u>" as D #FFFFB9
+A -> U: Chọn thay thế hoặc điều chỉnh; nhập nội dung và lý do
+activate U
+U -> C: Yêu cầu sửa hóa đơn theo cách đã chọn
+activate C
+C -> D ++: Đối chiếu hóa đơn, lịch sử thanh toán và thay thế
+D --> C --: Hóa đơn và lịch sử hiện hành
+alt Ngoài quyền, dữ liệu đề nghị sai hoặc hóa đơn không còn được điều chỉnh
+C --> U: Không thay đổi hóa đơn
+U --> A: Không thay đổi hóa đơn; hiển thị lý do
+else Chọn thay thế
+alt Có lịch sử thanh toán hoặc đã có hóa đơn thay thế
+C --> U: Không thay thế
+U --> A: Không thay thế; hóa đơn có thanh toán cần dùng điều chỉnh
+else Chưa thanh toán, chưa bị thay thế; các khoản tiền hợp lệ
+C -> D ++: Hủy hiệu lực hóa đơn cũ; lập hóa đơn mới và liên kết thay thế
+D --> C --: Hóa đơn mới được lập; giữ lịch sử hóa đơn cũ
+C --> U: Hiển thị hóa đơn thay thế và liên kết hóa đơn gốc
+U --> A: Hiển thị hóa đơn thay thế và liên kết hóa đơn gốc
+end
+else Chọn điều chỉnh tăng hoặc giảm
+alt Loại điều chỉnh sai, phí trễ hạn chưa đủ điều kiện hoặc mức giảm vượt dư nợ
+C --> U: Không ghi điều chỉnh
+U --> A: Không ghi điều chỉnh; thông báo giới hạn
+else Loại và số tiền điều chỉnh hợp lệ
+C -> D ++: Lưu khoản điều chỉnh; cập nhật tổng tiền và dư nợ
+D --> C --: Hóa đơn sau điều chỉnh; giữ lịch sử trước đó
+C --> U: Hiển thị kết quả và lịch sử điều chỉnh
+U --> A: Hiển thị kết quả và lịch sử điều chỉnh
+end
+end
+deactivate C
+deactivate U
+@enduml

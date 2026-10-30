@@ -1,0 +1,11 @@
+@startwbs
+title Phân rã chức năng AS-IS — không phải sơ đồ Use Case
+* Hệ thống quản lý và tìm thuê nhà trọ
+** G05 — Nhân sự và ủy quyền vận hành
+*** G05.1 Nhân sự và phạm vi làm việc
+**** UC-STF-01 Mời nhân viên và cấp phạm vi khu trọ
+**** UC-STF-02 Cập nhật quyền trạng thái và phạm vi nhân viên
+**** UC-STF-04 Tra cứu nhân viên và phạm vi được cấp
+*** G05.2 Kiểm tra ủy quyền
+**** UC-STF-03 Mô phỏng quyền nhân viên
+@endwbs

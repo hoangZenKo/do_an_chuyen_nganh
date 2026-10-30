@@ -1,0 +1,35 @@
+
+> rental-room-api@0.1.0 test:e2e
+> NODE_ENV=test jest --config ./test/jest-e2e.json --runInBand --runTestsByPath test/e2e/chatbot.e2e-spec.ts --runInBand
+
+PASS test/e2e/chatbot.e2e-spec.ts
+  Chatbot API (real JWT, PostgreSQL, mocked Ollama)
+    ✓ requires a JWT on both endpoints (37 ms)
+    ✓ blocks role STAFF on ask and direct sources (18 ms)
+    ✓ blocks role ADMIN on ask and direct sources (11 ms)
+    ✓ blocks role TENANT on ask and direct sources (9 ms)
+    ✓ rejects invalid input {"message":""} (11 ms)
+    ✓ rejects invalid input {"message":"   "} (10 ms)
+    ✓ rejects invalid input {"message":"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"} (7 ms)
+    ✓ rejects invalid input {"message":"X","landlordId":"forged"} (8 ms)
+    ✓ rejects invalid input {"message":10} (8 ms)
+    ✓ rejects invalid input {"message":"X","propertyId":null} (8 ms)
+    ✓ returns an answer and loads current source text (18 ms)
+    ✓ returns 404 for cross-owner property and direct source access (14 ms)
+    ✓ rejects spoofed source query fields (7 ms)
+    ✓ fails closed for model-invented citations (8 ms)
+    ✓ returns fallback for an empty corpus without generation (10 ms)
+    ✓ never includes another owned property in retrieval or direct sources (27 ms)
+    ✓ returns a retry delay while the single inference slot is busy (17 ms)
+    ✓ enforces the real deadline and frees the slot after timeout (35 ms)
+    ✓ does not answer live-balance requests (8 ms)
+    ✓ does not expose revoked sources or an answer generated from them (13 ms)
+    ✓ distinguishes model outages, invalid JSON, and deadline expiry from missing evidence (17 ms)
+    ✓ keeps disabled AI separate from application liveness (9 ms)
+    ✓ limits POST requests by authenticated user, not shared IP (37 ms)
+
+Test Suites: 1 passed, 1 total
+Tests:       23 passed, 23 total
+Snapshots:   0 total
+Time:        2.18 s
+Ran all test suites within paths "test/e2e/chatbot.e2e-spec.ts".

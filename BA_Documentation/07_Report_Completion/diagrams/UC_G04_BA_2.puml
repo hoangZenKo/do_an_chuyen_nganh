@@ -1,0 +1,67 @@
+@startuml
+left to right direction
+skinparam defaultFontName SansSerif
+skinparam defaultFontSize 13
+skinparam backgroundColor #F8FAFC
+skinparam shadowing false
+skinparam ArrowColor #52647A
+skinparam ArrowThickness 1
+skinparam actorStyle stickman
+skinparam actorBorderColor #243A52
+skinparam actorFontColor #243A52
+skinparam actorBackgroundColor #FFFFFF
+skinparam usecase {
+  BackgroundColor #FFFFFF
+  BorderColor #327C83
+  FontColor #20354B
+  BackgroundColor<<Một phần>> #FFF0CE
+  BorderColor<<Một phần>> #B17917
+  BackgroundColor<<DEMO>> #FCE5DF
+  BorderColor<<DEMO>> #BC593A
+  BackgroundColor<<MÔ PHỎNG>> #E7EAF1
+  BorderColor<<MÔ PHỎNG>> #6C7488
+}
+skinparam rectangle {
+  BackgroundColor #EEF4F5
+  BorderColor #243A52
+  FontColor #243A52
+}
+skinparam titleFontColor #20354B
+skinparam titleFontSize 18
+skinparam nodesep 25
+skinparam ranksep 65
+title G04 Khu trọ và cơ sở vật chất phần 2
+
+actor "A02\nChủ trọ" as A02
+actor "A03\nNhân viên vận hành" as A03
+rectangle "Hệ thống quản lý nhà trọ" as SYSTEM {
+  usecase "UC-OPT-06.2\nCập nhật thông tin phòng" as UC_OPT_06_2
+  usecase "UC-OPT-07.1\nĐổi trạng thái sử dụng phòng" as UC_OPT_07_1
+  usecase "UC-OPT-07.2\nVô hiệu hóa hoặc khôi phục phòng" as UC_OPT_07_2
+  usecase "UC-OPT-07.3\nXóa phòng đủ điều kiện" as UC_OPT_07_3
+  usecase "UC-OPT-08.1\nQuản lý tài sản phòng" as UC_OPT_08_1
+  usecase "UC-OPT-08.2\nTheo dõi lịch kiểm tra phòng" as UC_OPT_08_2
+  usecase "UC-OPT-09\nQuản lý phiên bản phí dịch vụ\nphòng" as UC_OPT_09
+}
+A02 -- UC_OPT_06_2
+UC_OPT_06_2 -- A03
+A02 -- UC_OPT_07_1
+UC_OPT_07_1 -- A03
+A02 -- UC_OPT_07_2
+UC_OPT_07_2 -- A03
+A02 -- UC_OPT_07_3
+UC_OPT_07_3 -- A03
+A02 -- UC_OPT_08_1
+UC_OPT_08_1 -- A03
+A02 -- UC_OPT_08_2
+UC_OPT_08_2 -- A03
+A02 -- UC_OPT_09
+UC_OPT_09 -[#3975AA]- A03 : chỉ đọc phí/phiên bản
+legend bottom left
+  Đường liền: tác nhân tham gia mục tiêu nghiệp vụ.
+  Đường xanh có nhãn: chỉ tham gia trong phạm vi giới hạn được nêu.
+  Nhân viên cần quyền phù hợp và khu được giao; quản trị viên cần đúng thẩm quyền.
+  Vàng: đáp ứng một phần. Cam: thanh toán thử nghiệm. Xám: trao đổi mô phỏng.
+  Không thể hiện thứ tự thực hiện; không suy ra quyền từ vị trí tác nhân.
+endlegend
+@enduml

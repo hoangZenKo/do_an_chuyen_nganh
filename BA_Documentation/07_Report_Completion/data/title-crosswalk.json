@@ -1,0 +1,974 @@
+[
+  {
+    "id": "UC-ADM-07.1",
+    "catalogTitle": "Thiết lập MFA Admin",
+    "reportTitle": "Thiết lập xác thực nhiều yếu tố cho quản trị viên",
+    "groupId": "G01"
+  },
+  {
+    "id": "UC-SYS-01",
+    "catalogTitle": "Đăng ký tài khoản chủ trọ",
+    "reportTitle": "Đăng ký tài khoản chủ trọ",
+    "groupId": "G01"
+  },
+  {
+    "id": "UC-SYS-02",
+    "catalogTitle": "Đăng ký tài khoản tìm phòng",
+    "reportTitle": "Đăng ký tài khoản tìm phòng",
+    "groupId": "G01"
+  },
+  {
+    "id": "UC-SYS-03",
+    "catalogTitle": "Đăng nhập",
+    "reportTitle": "Đăng nhập",
+    "groupId": "G01"
+  },
+  {
+    "id": "UC-SYS-05.1",
+    "catalogTitle": "Đăng xuất phiên hiện tại",
+    "reportTitle": "Đăng xuất khỏi phiên đang sử dụng",
+    "groupId": "G01"
+  },
+  {
+    "id": "UC-SYS-05.2",
+    "catalogTitle": "Xem và thu hồi các phiên của mình",
+    "reportTitle": "Xem và thu hồi phiên truy cập của mình",
+    "groupId": "G01"
+  },
+  {
+    "id": "UC-SYS-06",
+    "catalogTitle": "Khôi phục mật khẩu bằng liên kết một lần",
+    "reportTitle": "Khôi phục mật khẩu bằng liên kết một lần",
+    "groupId": "G01"
+  },
+  {
+    "id": "UC-SYS-07",
+    "catalogTitle": "Đổi mật khẩu khi đang đăng nhập",
+    "reportTitle": "Đổi mật khẩu khi đang đăng nhập",
+    "groupId": "G01"
+  },
+  {
+    "id": "UC-SYS-08",
+    "catalogTitle": "Kích hoạt tài khoản người thuê từ lời mời",
+    "reportTitle": "Kích hoạt tài khoản người thuê từ lời mời",
+    "groupId": "G01"
+  },
+  {
+    "id": "UC-SYS-09",
+    "catalogTitle": "Kích hoạt tài khoản nhân viên từ lời mời",
+    "reportTitle": "Kích hoạt tài khoản nhân viên từ lời mời",
+    "groupId": "G01"
+  },
+  {
+    "id": "UC-SYS-10",
+    "catalogTitle": "Thiết lập mật khẩu tài khoản được mời",
+    "reportTitle": "Thiết lập mật khẩu tài khoản được mời",
+    "groupId": "G01"
+  },
+  {
+    "id": "UC-DIS-01",
+    "catalogTitle": "Tìm và lọc tin phòng công khai",
+    "reportTitle": "Tìm và lọc tin phòng công khai",
+    "groupId": "G02"
+  },
+  {
+    "id": "UC-DIS-02",
+    "catalogTitle": "Xem chi tiết tin và đánh giá công khai",
+    "reportTitle": "Xem chi tiết tin và đánh giá công khai",
+    "groupId": "G02"
+  },
+  {
+    "id": "UC-DIS-03",
+    "catalogTitle": "Lưu và bỏ lưu phòng yêu thích",
+    "reportTitle": "Lưu và bỏ lưu phòng yêu thích",
+    "groupId": "G02"
+  },
+  {
+    "id": "UC-DIS-04",
+    "catalogTitle": "Lưu bộ lọc và theo dõi tin khớp",
+    "reportTitle": "Lưu bộ lọc và theo dõi tin khớp",
+    "groupId": "G02"
+  },
+  {
+    "id": "UC-DIS-16",
+    "catalogTitle": "So sánh các phòng quan tâm",
+    "reportTitle": "So sánh các phòng quan tâm",
+    "groupId": "G02"
+  },
+  {
+    "id": "UC-DIS-17",
+    "catalogTitle": "Ước tính chi phí thuê phòng",
+    "reportTitle": "Ước tính chi phí thuê phòng",
+    "groupId": "G02"
+  },
+  {
+    "id": "UC-DIS-05",
+    "catalogTitle": "Quản lý và gửi duyệt tin cho thuê",
+    "reportTitle": "Quản lý và gửi duyệt tin cho thuê",
+    "groupId": "G03"
+  },
+  {
+    "id": "UC-DIS-06.2",
+    "catalogTitle": "Ẩn tin cho thuê của mình",
+    "reportTitle": "Ẩn tin cho thuê của mình",
+    "groupId": "G03"
+  },
+  {
+    "id": "UC-DIS-08",
+    "catalogTitle": "Quản lý khung giờ xem phòng",
+    "reportTitle": "Quản lý khung giờ xem phòng",
+    "groupId": "G03"
+  },
+  {
+    "id": "UC-DIS-09",
+    "catalogTitle": "Đặt và quản lý lịch xem của mình",
+    "reportTitle": "Đặt và quản lý lịch xem của mình",
+    "groupId": "G03"
+  },
+  {
+    "id": "UC-DIS-10",
+    "catalogTitle": "Tiếp nhận và hoàn tất lịch xem",
+    "reportTitle": "Tiếp nhận và hoàn tất lịch xem",
+    "groupId": "G03"
+  },
+  {
+    "id": "UC-DIS-13.2",
+    "catalogTitle": "Gửi phản hồi về thử nghiệm tìm phòng",
+    "reportTitle": "Gửi phản hồi về thử nghiệm tìm phòng",
+    "groupId": "G16"
+  },
+  {
+    "id": "UC-TNT-12.2",
+    "catalogTitle": "Lập biên bản bàn giao nhận phòng",
+    "reportTitle": "Lập biên bản bàn giao nhận phòng",
+    "groupId": "G03"
+  },
+  {
+    "id": "UC-TNT-12.3",
+    "catalogTitle": "Xác nhận biên bản bàn giao nhận phòng",
+    "reportTitle": "Xác nhận biên bản bàn giao nhận phòng",
+    "groupId": "G03"
+  },
+  {
+    "id": "UC-OPT-02",
+    "catalogTitle": "Tra cứu khu trọ",
+    "reportTitle": "Tra cứu khu trọ",
+    "groupId": "G04"
+  },
+  {
+    "id": "UC-OPT-03.1",
+    "catalogTitle": "Tạo khu trọ",
+    "reportTitle": "Tạo khu trọ",
+    "groupId": "G04"
+  },
+  {
+    "id": "UC-OPT-03.2",
+    "catalogTitle": "Cập nhật thông tin khu trọ",
+    "reportTitle": "Cập nhật thông tin khu trọ",
+    "groupId": "G04"
+  },
+  {
+    "id": "UC-OPT-04.1",
+    "catalogTitle": "Lưu trữ hoặc khôi phục khu trọ",
+    "reportTitle": "Lưu trữ hoặc khôi phục khu trọ",
+    "groupId": "G04"
+  },
+  {
+    "id": "UC-OPT-04.3",
+    "catalogTitle": "Xóa khu trọ đủ điều kiện",
+    "reportTitle": "Xóa khu trọ đủ điều kiện",
+    "groupId": "G04"
+  },
+  {
+    "id": "UC-OPT-05",
+    "catalogTitle": "Tra cứu phòng và lịch sử liên quan",
+    "reportTitle": "Tra cứu phòng và lịch sử liên quan",
+    "groupId": "G04"
+  },
+  {
+    "id": "UC-OPT-06.1",
+    "catalogTitle": "Tạo phòng",
+    "reportTitle": "Tạo phòng",
+    "groupId": "G04"
+  },
+  {
+    "id": "UC-OPT-06.2",
+    "catalogTitle": "Cập nhật thông tin phòng",
+    "reportTitle": "Cập nhật thông tin phòng",
+    "groupId": "G04"
+  },
+  {
+    "id": "UC-OPT-07.1",
+    "catalogTitle": "Đổi trạng thái sử dụng phòng",
+    "reportTitle": "Đổi trạng thái sử dụng phòng",
+    "groupId": "G04"
+  },
+  {
+    "id": "UC-OPT-07.2",
+    "catalogTitle": "Vô hiệu hóa hoặc khôi phục phòng",
+    "reportTitle": "Vô hiệu hóa hoặc khôi phục phòng",
+    "groupId": "G04"
+  },
+  {
+    "id": "UC-OPT-07.3",
+    "catalogTitle": "Xóa phòng đủ điều kiện",
+    "reportTitle": "Xóa phòng đủ điều kiện",
+    "groupId": "G04"
+  },
+  {
+    "id": "UC-OPT-08.1",
+    "catalogTitle": "Quản lý tài sản phòng",
+    "reportTitle": "Quản lý tài sản phòng",
+    "groupId": "G04"
+  },
+  {
+    "id": "UC-OPT-08.2",
+    "catalogTitle": "Theo dõi lịch kiểm tra phòng",
+    "reportTitle": "Theo dõi lịch kiểm tra phòng",
+    "groupId": "G04"
+  },
+  {
+    "id": "UC-OPT-09",
+    "catalogTitle": "Quản lý phiên bản phí dịch vụ phòng",
+    "reportTitle": "Quản lý phiên bản phí dịch vụ phòng",
+    "groupId": "G04"
+  },
+  {
+    "id": "UC-STF-01",
+    "catalogTitle": "Mời nhân viên và cấp phạm vi khu trọ",
+    "reportTitle": "Mời nhân viên và cấp phạm vi khu trọ",
+    "groupId": "G05"
+  },
+  {
+    "id": "UC-STF-02",
+    "catalogTitle": "Cập nhật quyền trạng thái và phạm vi nhân viên",
+    "reportTitle": "Cập nhật quyền trạng thái và phạm vi nhân viên",
+    "groupId": "G05"
+  },
+  {
+    "id": "UC-STF-03",
+    "catalogTitle": "Mô phỏng quyền nhân viên",
+    "reportTitle": "Mô phỏng quyền nhân viên",
+    "groupId": "G05"
+  },
+  {
+    "id": "UC-STF-04",
+    "catalogTitle": "Tra cứu nhân viên và phạm vi được cấp",
+    "reportTitle": "Tra cứu nhân viên và phạm vi được cấp",
+    "groupId": "G05"
+  },
+  {
+    "id": "UC-TEN-01",
+    "catalogTitle": "Xem hồ sơ và tổng quan thuê của mình",
+    "reportTitle": "Xem hồ sơ và tổng quan thuê của mình",
+    "groupId": "G06"
+  },
+  {
+    "id": "UC-TEN-02",
+    "catalogTitle": "Tra cứu hợp đồng và quyết toán của mình",
+    "reportTitle": "Tra cứu hợp đồng và quyết toán của mình",
+    "groupId": "G06"
+  },
+  {
+    "id": "UC-TEN-08.1",
+    "catalogTitle": "Xem người ở cùng hợp đồng",
+    "reportTitle": "Xem người ở cùng hợp đồng",
+    "groupId": "G06"
+  },
+  {
+    "id": "UC-TNT-01",
+    "catalogTitle": "Tra cứu hồ sơ người thuê và tổng quan",
+    "reportTitle": "Tra cứu hồ sơ người thuê và tổng quan",
+    "groupId": "G06"
+  },
+  {
+    "id": "UC-TNT-02.1",
+    "catalogTitle": "Tạo hồ sơ người thuê",
+    "reportTitle": "Tạo hồ sơ người thuê",
+    "groupId": "G06"
+  },
+  {
+    "id": "UC-TNT-02.2",
+    "catalogTitle": "Cập nhật hồ sơ người thuê",
+    "reportTitle": "Cập nhật hồ sơ người thuê",
+    "groupId": "G06"
+  },
+  {
+    "id": "UC-TNT-02.3",
+    "catalogTitle": "Vô hiệu hóa hoặc khôi phục người thuê",
+    "reportTitle": "Vô hiệu hóa hoặc khôi phục người thuê",
+    "groupId": "G06"
+  },
+  {
+    "id": "UC-TNT-02.4",
+    "catalogTitle": "Xóa hồ sơ người thuê đủ điều kiện",
+    "reportTitle": "Xóa hồ sơ người thuê đủ điều kiện",
+    "groupId": "G06"
+  },
+  {
+    "id": "UC-TNT-03",
+    "catalogTitle": "Tạo lời mời truy cập cổng người thuê",
+    "reportTitle": "Tạo lời mời truy cập cổng người thuê",
+    "groupId": "G06"
+  },
+  {
+    "id": "UC-TNT-03.1",
+    "catalogTitle": "Tạo trực tiếp tài khoản cho hồ sơ người thuê",
+    "reportTitle": "Tạo trực tiếp tài khoản cho hồ sơ người thuê",
+    "groupId": "G06"
+  },
+  {
+    "id": "UC-TNT-04",
+    "catalogTitle": "Tra cứu và xuất hợp đồng thuê",
+    "reportTitle": "Tra cứu và xuất hợp đồng thuê",
+    "groupId": "G06"
+  },
+  {
+    "id": "UC-TNT-05",
+    "catalogTitle": "Lập hợp đồng thuê phòng",
+    "reportTitle": "Lập hợp đồng thuê phòng",
+    "groupId": "G06"
+  },
+  {
+    "id": "UC-TNT-06.1",
+    "catalogTitle": "Cập nhật điều khoản hợp đồng",
+    "reportTitle": "Cập nhật điều khoản hợp đồng",
+    "groupId": "G06"
+  },
+  {
+    "id": "UC-TNT-06.2",
+    "catalogTitle": "Gia hạn hợp đồng",
+    "reportTitle": "Gia hạn hợp đồng",
+    "groupId": "G06"
+  },
+  {
+    "id": "UC-TNT-06.3",
+    "catalogTitle": "Kết thúc hợp đồng",
+    "reportTitle": "Kết thúc hợp đồng",
+    "groupId": "G06"
+  },
+  {
+    "id": "UC-TNT-07",
+    "catalogTitle": "Tra cứu và ghi giao dịch cọc",
+    "reportTitle": "Tra cứu và ghi giao dịch cọc",
+    "groupId": "G06"
+  },
+  {
+    "id": "UC-TNT-12.1",
+    "catalogTitle": "Quản lý người ở cùng hợp đồng",
+    "reportTitle": "Quản lý người ở cùng hợp đồng",
+    "groupId": "G06"
+  },
+  {
+    "id": "UC-TEN-07.1",
+    "catalogTitle": "Đề nghị gia hạn thuê",
+    "reportTitle": "Đề nghị gia hạn thuê",
+    "groupId": "G07"
+  },
+  {
+    "id": "UC-TEN-07.2",
+    "catalogTitle": "Đề nghị chuyển phòng",
+    "reportTitle": "Đề nghị chuyển phòng",
+    "groupId": "G07"
+  },
+  {
+    "id": "UC-TEN-07.3",
+    "catalogTitle": "Đề nghị trả phòng",
+    "reportTitle": "Đề nghị trả phòng",
+    "groupId": "G07"
+  },
+  {
+    "id": "UC-TNT-08",
+    "catalogTitle": "Xem trước và xác nhận quyết toán trả phòng",
+    "reportTitle": "Xem trước và xác nhận quyết toán trả phòng",
+    "groupId": "G07"
+  },
+  {
+    "id": "UC-TNT-09",
+    "catalogTitle": "Ghi nhận đã hoàn cọc theo quyết toán",
+    "reportTitle": "Ghi nhận đã hoàn cọc theo quyết toán",
+    "groupId": "G07"
+  },
+  {
+    "id": "UC-TNT-10",
+    "catalogTitle": "Xét duyệt yêu cầu vòng đời thuê",
+    "reportTitle": "Xét duyệt yêu cầu vòng đời thuê",
+    "groupId": "G07"
+  },
+  {
+    "id": "UC-TNT-11",
+    "catalogTitle": "Thực thi yêu cầu vòng đời đã duyệt",
+    "reportTitle": "Thực thi yêu cầu vòng đời đã duyệt",
+    "groupId": "G07"
+  },
+  {
+    "id": "UC-BIL-01",
+    "catalogTitle": "Ghi chỉ số điện nước theo kỳ",
+    "reportTitle": "Ghi chỉ số điện nước theo kỳ",
+    "groupId": "G08"
+  },
+  {
+    "id": "UC-BIL-02",
+    "catalogTitle": "Xem trước và lập hóa đơn một hợp đồng",
+    "reportTitle": "Xem trước và lập hóa đơn một hợp đồng",
+    "groupId": "G08"
+  },
+  {
+    "id": "UC-BIL-03",
+    "catalogTitle": "Lập hóa đơn hàng loạt",
+    "reportTitle": "Lập hóa đơn hàng loạt",
+    "groupId": "G08"
+  },
+  {
+    "id": "UC-BIL-04",
+    "catalogTitle": "Tra cứu hóa đơn và công nợ",
+    "reportTitle": "Tra cứu hóa đơn và công nợ",
+    "groupId": "G08"
+  },
+  {
+    "id": "UC-BIL-05",
+    "catalogTitle": "Sửa hạn thanh toán hoặc ghi chú hóa đơn",
+    "reportTitle": "Sửa hạn thanh toán hoặc ghi chú hóa đơn",
+    "groupId": "G08"
+  },
+  {
+    "id": "UC-BIL-06",
+    "catalogTitle": "Thay thế hóa đơn chưa có lịch sử thanh toán",
+    "reportTitle": "Thay thế hóa đơn chưa có lịch sử thanh toán",
+    "groupId": "G08"
+  },
+  {
+    "id": "UC-BIL-07",
+    "catalogTitle": "Điều chỉnh tăng hoặc giảm hóa đơn",
+    "reportTitle": "Điều chỉnh tăng hoặc giảm hóa đơn",
+    "groupId": "G08"
+  },
+  {
+    "id": "UC-BIL-08.1",
+    "catalogTitle": "Hủy hóa đơn đủ điều kiện",
+    "reportTitle": "Hủy hóa đơn đủ điều kiện",
+    "groupId": "G08"
+  },
+  {
+    "id": "UC-BIL-09",
+    "catalogTitle": "Ghi nhận thanh toán trực tiếp",
+    "reportTitle": "Ghi nhận thanh toán trực tiếp",
+    "groupId": "G08"
+  },
+  {
+    "id": "UC-BIL-10",
+    "catalogTitle": "Tạo khoản thu cho người thuê",
+    "reportTitle": "Tạo khoản thu cho người thuê",
+    "groupId": "G08"
+  },
+  {
+    "id": "UC-BIL-11",
+    "catalogTitle": "Phân bổ khoản thu cho hóa đơn",
+    "reportTitle": "Phân bổ khoản thu cho hóa đơn",
+    "groupId": "G08"
+  },
+  {
+    "id": "UC-BIL-12.1",
+    "catalogTitle": "Giải phóng phân bổ khoản thu",
+    "reportTitle": "Giải phóng phân bổ khoản thu",
+    "groupId": "G08"
+  },
+  {
+    "id": "UC-BIL-12.2",
+    "catalogTitle": "Đảo thanh toán trực tiếp",
+    "reportTitle": "Đảo thanh toán trực tiếp",
+    "groupId": "G08"
+  },
+  {
+    "id": "UC-BIL-13",
+    "catalogTitle": "Ghi nhận hoàn tiền từ khoản thu",
+    "reportTitle": "Ghi nhận hoàn tiền từ khoản thu",
+    "groupId": "G08"
+  },
+  {
+    "id": "UC-BIL-14",
+    "catalogTitle": "Xét duyệt chứng từ thanh toán",
+    "reportTitle": "Xét duyệt chứng từ thanh toán",
+    "groupId": "G08"
+  },
+  {
+    "id": "UC-BIL-15",
+    "catalogTitle": "Đề xuất biểu phí theo kỳ hiệu lực",
+    "reportTitle": "Đề xuất biểu phí theo kỳ hiệu lực",
+    "groupId": "G08"
+  },
+  {
+    "id": "UC-BIL-16",
+    "catalogTitle": "Phân tích tác động và duyệt biểu phí",
+    "reportTitle": "Phân tích tác động và duyệt biểu phí",
+    "groupId": "G08"
+  },
+  {
+    "id": "UC-BIL-17.1",
+    "catalogTitle": "Cấu hình lập hóa đơn định kỳ",
+    "reportTitle": "Cấu hình lập hóa đơn định kỳ",
+    "groupId": "G08"
+  },
+  {
+    "id": "UC-BIL-17.2",
+    "catalogTitle": "Xem trước và chạy đợt lập hóa đơn",
+    "reportTitle": "Xem trước và chạy đợt lập hóa đơn",
+    "groupId": "G08"
+  },
+  {
+    "id": "UC-BIL-18.1",
+    "catalogTitle": "Cấu hình chính sách nhắc nợ",
+    "reportTitle": "Cấu hình chính sách nhắc nợ",
+    "groupId": "G08"
+  },
+  {
+    "id": "UC-BIL-18.2",
+    "catalogTitle": "Gửi nhắc nợ theo chính sách",
+    "reportTitle": "Gửi nhắc nợ theo chính sách",
+    "groupId": "G08"
+  },
+  {
+    "id": "UC-BIL-18.3",
+    "catalogTitle": "Theo dõi và thử lại outbox hóa đơn",
+    "reportTitle": "Theo dõi và gửi lại thông báo hóa đơn",
+    "groupId": "G08"
+  },
+  {
+    "id": "UC-BIL-22",
+    "catalogTitle": "Khóa kỳ thanh toán của khu",
+    "reportTitle": "Khóa kỳ thanh toán của khu",
+    "groupId": "G08"
+  },
+  {
+    "id": "UC-BIL-23",
+    "catalogTitle": "Cấu hình tài khoản nhận chuyển khoản",
+    "reportTitle": "Cấu hình tài khoản nhận chuyển khoản",
+    "groupId": "G08"
+  },
+  {
+    "id": "UC-TEN-03",
+    "catalogTitle": "Tra cứu hóa đơn của mình",
+    "reportTitle": "Tra cứu hóa đơn của mình",
+    "groupId": "G08"
+  },
+  {
+    "id": "UC-TEN-04",
+    "catalogTitle": "Gửi chứng từ chuyển khoản hóa đơn",
+    "reportTitle": "Gửi chứng từ chuyển khoản hóa đơn",
+    "groupId": "G08"
+  },
+  {
+    "id": "UC-TEN-05",
+    "catalogTitle": "Thanh toán bằng thẻ mô phỏng",
+    "reportTitle": "Thanh toán bằng thẻ mô phỏng",
+    "groupId": "G08"
+  },
+  {
+    "id": "UC-TEN-08.2",
+    "catalogTitle": "Chọn kênh nhận nhắc nợ",
+    "reportTitle": "Chọn kênh nhận nhắc nợ",
+    "groupId": "G08"
+  },
+  {
+    "id": "UC-BIL-19",
+    "catalogTitle": "Quản lý khoản chi vận hành",
+    "reportTitle": "Quản lý khoản chi vận hành",
+    "groupId": "G09"
+  },
+  {
+    "id": "UC-OPS-01",
+    "catalogTitle": "Tiếp nhận và theo dõi phiếu bảo trì",
+    "reportTitle": "Tiếp nhận và theo dõi phiếu bảo trì",
+    "groupId": "G09"
+  },
+  {
+    "id": "UC-OPS-02",
+    "catalogTitle": "Phân công và cập nhật bảo trì",
+    "reportTitle": "Phân công và cập nhật bảo trì",
+    "groupId": "G09"
+  },
+  {
+    "id": "UC-OPS-03",
+    "catalogTitle": "Hoàn tất bảo trì và liên kết khoản chi",
+    "reportTitle": "Hoàn tất bảo trì và liên kết khoản chi",
+    "groupId": "G09"
+  },
+  {
+    "id": "UC-TEN-06",
+    "catalogTitle": "Gửi và trao đổi yêu cầu bảo trì",
+    "reportTitle": "Gửi và trao đổi yêu cầu bảo trì",
+    "groupId": "G09"
+  },
+  {
+    "id": "UC-OPS-04",
+    "catalogTitle": "Theo dõi việc cần xử lý",
+    "reportTitle": "Theo dõi việc cần xử lý",
+    "groupId": "G10"
+  },
+  {
+    "id": "UC-OPS-05",
+    "catalogTitle": "Chuẩn bị phòng sau trả phòng",
+    "reportTitle": "Chuẩn bị phòng sau trả phòng",
+    "groupId": "G10"
+  },
+  {
+    "id": "UC-OPS-06",
+    "catalogTitle": "Thiết lập lịch công việc định kỳ",
+    "reportTitle": "Thiết lập lịch công việc định kỳ",
+    "groupId": "G10"
+  },
+  {
+    "id": "UC-OPS-06.1",
+    "catalogTitle": "Thực hiện checklist công việc định kỳ",
+    "reportTitle": "Thực hiện danh sách kiểm tra công việc định kỳ",
+    "groupId": "G10"
+  },
+  {
+    "id": "UC-OPS-07",
+    "catalogTitle": "Soạn và phát thông báo người thuê",
+    "reportTitle": "Soạn và phát thông báo người thuê",
+    "groupId": "G10"
+  },
+  {
+    "id": "UC-SUP-04",
+    "catalogTitle": "Theo dõi thông báo cá nhân",
+    "reportTitle": "Quản lý thông báo cá nhân",
+    "groupId": "G10"
+  },
+  {
+    "id": "UC-SUP-06",
+    "catalogTitle": "Hỏi trợ lý AI và đọc nguồn hướng dẫn",
+    "reportTitle": "Hỏi trợ lý và tra cứu hướng dẫn sử dụng",
+    "groupId": "G10"
+  },
+  {
+    "id": "UC-TEN-09.2",
+    "catalogTitle": "Trao đổi tin nhắn Zalo mô phỏng",
+    "reportTitle": "Trao đổi qua kênh Zalo mô phỏng",
+    "groupId": "G10"
+  },
+  {
+    "id": "UC-TEN-09.3",
+    "catalogTitle": "Đọc và xác nhận thông báo chủ trọ",
+    "reportTitle": "Đọc và xác nhận thông báo chủ trọ",
+    "groupId": "G10"
+  },
+  {
+    "id": "UC-ADM-01",
+    "catalogTitle": "Xem tổng quan nền tảng",
+    "reportTitle": "Xem tổng quan hoạt động nền tảng",
+    "groupId": "G11"
+  },
+  {
+    "id": "UC-ADM-14",
+    "catalogTitle": "Tra cứu và xuất nhật ký quản trị",
+    "reportTitle": "Tra cứu nhật ký quản trị",
+    "groupId": "G11"
+  },
+  {
+    "id": "UC-ADM-16",
+    "catalogTitle": "Quản lý lịch và tải báo cáo Admin",
+    "reportTitle": "Lập lịch và tải báo cáo quản trị",
+    "groupId": "G11"
+  },
+  {
+    "id": "UC-BIL-20",
+    "catalogTitle": "Phân tích và xuất báo cáo vận hành",
+    "reportTitle": "Phân tích và xuất báo cáo vận hành",
+    "groupId": "G11"
+  },
+  {
+    "id": "UC-OPS-09",
+    "catalogTitle": "Tra cứu nhật ký vận hành",
+    "reportTitle": "Tra cứu nhật ký vận hành",
+    "groupId": "G11"
+  },
+  {
+    "id": "UC-OPT-01",
+    "catalogTitle": "Xem dashboard và bản đồ phòng",
+    "reportTitle": "Xem tổng quan và bản đồ phòng",
+    "groupId": "G11"
+  },
+  {
+    "id": "UC-SUP-05.1",
+    "catalogTitle": "Giám sát và xử lý sự cố vận hành",
+    "reportTitle": "Giám sát và xử lý sự cố vận hành",
+    "groupId": "G11"
+  },
+  {
+    "id": "UC-SUP-05.2",
+    "catalogTitle": "Theo dõi hàng đợi giao nhận",
+    "reportTitle": "Theo dõi và gửi lại thông báo cần chuyển",
+    "groupId": "G11"
+  },
+  {
+    "id": "UC-ADM-02",
+    "catalogTitle": "Tra cứu tài khoản nền tảng",
+    "reportTitle": "Tra cứu tài khoản nền tảng",
+    "groupId": "G12"
+  },
+  {
+    "id": "UC-ADM-03.1",
+    "catalogTitle": "Tạo hoặc mời tài khoản chủ trọ",
+    "reportTitle": "Tạo hoặc mời tài khoản chủ trọ",
+    "groupId": "G12"
+  },
+  {
+    "id": "UC-ADM-03.2",
+    "catalogTitle": "Cập nhật hồ sơ chủ trọ",
+    "reportTitle": "Cập nhật hồ sơ chủ trọ",
+    "groupId": "G12"
+  },
+  {
+    "id": "UC-ADM-04.1",
+    "catalogTitle": "Đình chỉ hoặc khôi phục tài khoản",
+    "reportTitle": "Đình chỉ hoặc khôi phục tài khoản",
+    "groupId": "G12"
+  },
+  {
+    "id": "UC-ADM-04.3",
+    "catalogTitle": "Thu hồi phiên của tài khoản khác",
+    "reportTitle": "Thu hồi phiên của tài khoản khác",
+    "groupId": "G12"
+  },
+  {
+    "id": "UC-ADM-05.1",
+    "catalogTitle": "Mở thông tin cá nhân được che",
+    "reportTitle": "Mở thông tin cá nhân được che",
+    "groupId": "G12"
+  },
+  {
+    "id": "UC-ADM-05.2",
+    "catalogTitle": "Yêu cầu khôi phục truy cập cho tài khoản",
+    "reportTitle": "Yêu cầu khôi phục truy cập cho tài khoản",
+    "groupId": "G12"
+  },
+  {
+    "id": "UC-ADM-06.1",
+    "catalogTitle": "Cấp và quản lý quyền quản trị viên",
+    "reportTitle": "Cấp và quản lý quyền quản trị viên",
+    "groupId": "G12"
+  },
+  {
+    "id": "UC-ADM-06.2",
+    "catalogTitle": "Rà soát quyền Admin định kỳ",
+    "reportTitle": "Rà soát quyền Quản trị viên định kỳ",
+    "groupId": "G12"
+  },
+  {
+    "id": "UC-ADM-08",
+    "catalogTitle": "Tra cứu khu và phòng toàn nền tảng",
+    "reportTitle": "Tra cứu khu và phòng toàn nền tảng",
+    "groupId": "G12"
+  },
+  {
+    "id": "UC-ADM-09",
+    "catalogTitle": "Tạo hoặc cập nhật khu thay chủ trọ",
+    "reportTitle": "Tạo hoặc cập nhật khu thay chủ trọ",
+    "groupId": "G12"
+  },
+  {
+    "id": "UC-ADM-10",
+    "catalogTitle": "Tìm kiếm và định vị tài nguyên",
+    "reportTitle": "Tìm kiếm hồ sơ nghiệp vụ",
+    "groupId": "G12"
+  },
+  {
+    "id": "UC-ADM-11",
+    "catalogTitle": "Tiếp nhận và kiểm duyệt tin cho thuê",
+    "reportTitle": "Tiếp nhận và kiểm duyệt tin cho thuê",
+    "groupId": "G13"
+  },
+  {
+    "id": "UC-ADM-11.1",
+    "catalogTitle": "Xác minh thông tin tin cho thuê",
+    "reportTitle": "Xác minh thông tin tin cho thuê",
+    "groupId": "G13"
+  },
+  {
+    "id": "UC-ADM-12",
+    "catalogTitle": "Kiểm duyệt đánh giá và phản hồi phòng",
+    "reportTitle": "Kiểm duyệt đánh giá và phản hồi phòng",
+    "groupId": "G13"
+  },
+  {
+    "id": "UC-ADM-12.1",
+    "catalogTitle": "Xử lý báo cáo vi phạm tin đăng",
+    "reportTitle": "Xử lý báo cáo vi phạm tin đăng",
+    "groupId": "G13"
+  },
+  {
+    "id": "UC-ADM-13.1",
+    "catalogTitle": "Quản lý chính sách kiểm duyệt",
+    "reportTitle": "Quản lý chính sách kiểm duyệt",
+    "groupId": "G13"
+  },
+  {
+    "id": "UC-ADM-13.2",
+    "catalogTitle": "Xử lý kháng nghị kiểm duyệt",
+    "reportTitle": "Xử lý kháng nghị kiểm duyệt",
+    "groupId": "G13"
+  },
+  {
+    "id": "UC-ADM-13.3",
+    "catalogTitle": "Đánh giá chất lượng kiểm duyệt",
+    "reportTitle": "Đánh giá chất lượng kiểm duyệt",
+    "groupId": "G13"
+  },
+  {
+    "id": "UC-DIS-07",
+    "catalogTitle": "Báo cáo tin phòng không phù hợp",
+    "reportTitle": "Báo cáo tin phòng không phù hợp",
+    "groupId": "G13"
+  },
+  {
+    "id": "UC-DIS-12",
+    "catalogTitle": "Viết sửa và rút đánh giá phòng đã thuê",
+    "reportTitle": "Viết sửa và rút đánh giá phòng đã thuê",
+    "groupId": "G13"
+  },
+  {
+    "id": "UC-DIS-13.1",
+    "catalogTitle": "Trả lời đánh giá phòng",
+    "reportTitle": "Trả lời đánh giá phòng",
+    "groupId": "G13"
+  },
+  {
+    "id": "UC-DIS-15",
+    "catalogTitle": "Xem quyết định và gửi kháng nghị kiểm duyệt",
+    "reportTitle": "Xem quyết định và gửi kháng nghị kiểm duyệt",
+    "groupId": "G13"
+  },
+  {
+    "id": "UC-SUP-01",
+    "catalogTitle": "Gửi và theo dõi yêu cầu hỗ trợ",
+    "reportTitle": "Gửi và theo dõi yêu cầu hỗ trợ",
+    "groupId": "G14"
+  },
+  {
+    "id": "UC-SUP-01.1",
+    "catalogTitle": "Tiếp nhận và xử lý hồ sơ hỗ trợ",
+    "reportTitle": "Tiếp nhận và xử lý hồ sơ hỗ trợ",
+    "groupId": "G14"
+  },
+  {
+    "id": "UC-SUP-02.1",
+    "catalogTitle": "Cấu hình phân công tự động hỗ trợ",
+    "reportTitle": "Cấu hình phân công tự động hỗ trợ",
+    "groupId": "G14"
+  },
+  {
+    "id": "UC-SUP-02.2",
+    "catalogTitle": "Cấu hình và theo dõi SLA hỗ trợ",
+    "reportTitle": "Thiết lập và theo dõi thời hạn hỗ trợ",
+    "groupId": "G14"
+  },
+  {
+    "id": "UC-SUP-03.2",
+    "catalogTitle": "Quản lý mẫu trả lời hỗ trợ",
+    "reportTitle": "Quản lý mẫu trả lời hỗ trợ",
+    "groupId": "G14"
+  },
+  {
+    "id": "UC-SUP-03.2.1",
+    "catalogTitle": "Hợp nhất hồ sơ hỗ trợ trùng",
+    "reportTitle": "Hợp nhất hồ sơ hỗ trợ trùng",
+    "groupId": "G14"
+  },
+  {
+    "id": "UC-SUP-03.2.2",
+    "catalogTitle": "Đánh giá kết quả hỗ trợ",
+    "reportTitle": "Đánh giá kết quả hỗ trợ",
+    "groupId": "G14"
+  },
+  {
+    "id": "UC-SUP-03.3",
+    "catalogTitle": "Lưu bộ lọc xử lý hỗ trợ",
+    "reportTitle": "Lưu bộ lọc xử lý hỗ trợ",
+    "groupId": "G14"
+  },
+  {
+    "id": "UC-ADM-18",
+    "catalogTitle": "Xét duyệt hồ sơ xác minh chủ trọ",
+    "reportTitle": "Xét duyệt hồ sơ xác minh chủ trọ",
+    "groupId": "G15"
+  },
+  {
+    "id": "UC-ADM-18.1",
+    "catalogTitle": "Nộp hồ sơ xác minh chủ trọ",
+    "reportTitle": "Nộp hồ sơ xác minh chủ trọ",
+    "groupId": "G15"
+  },
+  {
+    "id": "UC-ADM-19",
+    "catalogTitle": "Trình và xét duyệt hồ sơ khu trọ",
+    "reportTitle": "Trình và xét duyệt hồ sơ khu trọ",
+    "groupId": "G15"
+  },
+  {
+    "id": "UC-ADM-20",
+    "catalogTitle": "Quản lý danh mục gói dịch vụ",
+    "reportTitle": "Quản lý danh mục gói dịch vụ",
+    "groupId": "G15"
+  },
+  {
+    "id": "UC-ADM-21",
+    "catalogTitle": "Gán gói và xem lịch sử đăng ký",
+    "reportTitle": "Gán gói và xem lịch sử đăng ký",
+    "groupId": "G15"
+  },
+  {
+    "id": "UC-ADM-22",
+    "catalogTitle": "Hủy quyền sử dụng gói đang hiệu lực",
+    "reportTitle": "Hủy quyền sử dụng gói đang hiệu lực",
+    "groupId": "G15"
+  },
+  {
+    "id": "UC-ADM-15",
+    "catalogTitle": "Chuẩn bị đối soát sao kê",
+    "reportTitle": "Chuẩn bị đối soát sao kê",
+    "groupId": "G16"
+  },
+  {
+    "id": "UC-ADM-15.1",
+    "catalogTitle": "Duyệt đề xuất đối soát sao kê",
+    "reportTitle": "Duyệt đề xuất đối soát sao kê",
+    "groupId": "G16"
+  },
+  {
+    "id": "UC-ADM-17.1",
+    "catalogTitle": "Cấu hình bật tắt tính năng nền tảng",
+    "reportTitle": "Cấu hình bật tắt tính năng nền tảng",
+    "groupId": "G16"
+  },
+  {
+    "id": "UC-ADM-17.2",
+    "catalogTitle": "Quản lý nhóm Admin",
+    "reportTitle": "Quản lý nhóm quản trị viên",
+    "groupId": "G16"
+  },
+  {
+    "id": "UC-ADM-23",
+    "catalogTitle": "Quản lý danh mục cơ sở trường",
+    "reportTitle": "Quản lý danh mục cơ sở trường",
+    "groupId": "G16"
+  },
+  {
+    "id": "UC-ADM-24",
+    "catalogTitle": "Tra cứu giao dịch tài chính nền tảng",
+    "reportTitle": "Tra cứu giao dịch tài chính nền tảng",
+    "groupId": "G16"
+  },
+  {
+    "id": "UC-ADM-26",
+    "catalogTitle": "Mô phỏng quyền Admin",
+    "reportTitle": "Kiểm tra mô phỏng quyền quản trị",
+    "groupId": "G16"
+  },
+  {
+    "id": "UC-ADM-27",
+    "catalogTitle": "Đọc phản hồi thử nghiệm tìm phòng",
+    "reportTitle": "Đọc phản hồi thử nghiệm tìm phòng",
+    "groupId": "G16"
+  }
+]

@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1410" viewBox="0 0 1920 1410">
+<rect width="100%" height="100%" fill="white"/>
+<rect x="460" y="40" width="1000" height="1280" fill="white" stroke="black" stroke-width="2.5"/>
+<text x="960" y="99" font-family="Arial, sans-serif" font-size="31" font-weight="bold" fill="black" text-anchor="middle" dominant-baseline="central">Hệ thống quản lý nhà trọ</text>
+<g class="association" data-actor="A02" data-uc="UC-BIL-18.1">
+<polyline points="240.00,415.00 595.00,235.00" fill="none" stroke="black" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"/>
+</g>
+<g class="association" data-actor="A03" data-uc="UC-BIL-18.1">
+<polyline points="1680.00,170.00 1325.00,235.00" fill="none" stroke="black" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"/>
+</g>
+<g class="association" data-actor="A02" data-uc="UC-BIL-18.2">
+<polyline points="240.00,415.00 595.00,440.00" fill="none" stroke="black" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"/>
+</g>
+<g class="association" data-actor="A03" data-uc="UC-BIL-18.2">
+<polyline points="1680.00,170.00 1325.00,440.00" fill="none" stroke="black" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"/>
+</g>
+<g class="association" data-actor="E01" data-uc="UC-BIL-18.2">
+<polyline points="1680.00,580.00 1325.00,440.00" fill="none" stroke="black" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"/>
+</g>
+<g class="association" data-actor="E02" data-uc="UC-BIL-18.2">
+<polyline points="1680.00,990.00 1325.00,440.00" fill="none" stroke="black" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"/>
+</g>
+<g class="association" data-actor="A02" data-uc="UC-BIL-18.3">
+<polyline points="240.00,415.00 595.00,645.00" fill="none" stroke="black" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"/>
+</g>
+<g class="association" data-actor="A04" data-uc="UC-TEN-08.2">
+<polyline points="240.00,825.00 595.00,850.00" fill="none" stroke="black" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"/>
+</g>
+<ellipse cx="960.0" cy="235.0" rx="365.0" ry="78.0" fill="white" stroke="black" stroke-width="2.5"/>
+<text x="960" y="220.0" font-family="Arial, sans-serif" font-size="27" font-weight="bold" fill="black" text-anchor="middle" dominant-baseline="central">UC-BIL-18.1</text>
+<text x="960" y="250.0" font-family="Arial, sans-serif" font-size="25" font-weight="normal" fill="black" text-anchor="middle" dominant-baseline="central">Cấu hình chính sách nhắc nợ</text>
+<ellipse cx="960.0" cy="440.0" rx="365.0" ry="78.0" fill="white" stroke="black" stroke-width="2.5"/>
+<text x="960" y="410.0" font-family="Arial, sans-serif" font-size="27" font-weight="bold" fill="black" text-anchor="middle" dominant-baseline="central">UC-BIL-18.2</text>
+<text x="960" y="440.0" font-family="Arial, sans-serif" font-size="25" font-weight="normal" fill="black" text-anchor="middle" dominant-baseline="central">Gửi nhắc nợ theo chính sách</text>
+<text x="960" y="470.0" font-family="Arial, sans-serif" font-size="20" font-weight="normal" fill="black" text-anchor="middle" dominant-baseline="central">[Một phần]</text>
+<ellipse cx="960.0" cy="645.0" rx="365.0" ry="78.0" fill="white" stroke="black" stroke-width="2.5"/>
+<text x="960" y="630.0" font-family="Arial, sans-serif" font-size="27" font-weight="bold" fill="black" text-anchor="middle" dominant-baseline="central">UC-BIL-18.3</text>
+<text x="960" y="660.0" font-family="Arial, sans-serif" font-size="25" font-weight="normal" fill="black" text-anchor="middle" dominant-baseline="central">Theo dõi và gửi lại thông báo hóa đơn</text>
+<ellipse cx="960.0" cy="850.0" rx="365.0" ry="78.0" fill="white" stroke="black" stroke-width="2.5"/>
+<text x="960" y="835.0" font-family="Arial, sans-serif" font-size="27" font-weight="bold" fill="black" text-anchor="middle" dominant-baseline="central">UC-TEN-08.2</text>
+<text x="960" y="865.0" font-family="Arial, sans-serif" font-size="25" font-weight="normal" fill="black" text-anchor="middle" dominant-baseline="central">Chọn kênh nhận nhắc nợ</text>
+<ellipse cx="170.0" cy="365.0" rx="23.0" ry="23.0" fill="white" stroke="black" stroke-width="3"/>
+<polyline points="170.00,388.00 170.00,498.00" fill="none" stroke="black" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+<polyline points="100.00,415.00 240.00,415.00" fill="none" stroke="black" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+<polyline points="170.00,498.00 121.00,555.00" fill="none" stroke="black" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+<polyline points="170.00,498.00 219.00,555.00" fill="none" stroke="black" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="170" y="595.0" font-family="Arial, sans-serif" font-size="26" font-weight="bold" fill="black" text-anchor="middle" dominant-baseline="central">A02</text>
+<text x="170" y="633.0" font-family="Arial, sans-serif" font-size="25" font-weight="normal" fill="black" text-anchor="middle" dominant-baseline="central">Chủ trọ</text>
+<ellipse cx="170.0" cy="775.0" rx="23.0" ry="23.0" fill="white" stroke="black" stroke-width="3"/>
+<polyline points="170.00,798.00 170.00,908.00" fill="none" stroke="black" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+<polyline points="100.00,825.00 240.00,825.00" fill="none" stroke="black" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+<polyline points="170.00,908.00 121.00,965.00" fill="none" stroke="black" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+<polyline points="170.00,908.00 219.00,965.00" fill="none" stroke="black" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="170" y="1005.0" font-family="Arial, sans-serif" font-size="26" font-weight="bold" fill="black" text-anchor="middle" dominant-baseline="central">A04</text>
+<text x="170" y="1043.0" font-family="Arial, sans-serif" font-size="25" font-weight="normal" fill="black" text-anchor="middle" dominant-baseline="central">Người tìm phòng</text>
+<text x="170" y="1074.0" font-family="Arial, sans-serif" font-size="25" font-weight="normal" fill="black" text-anchor="middle" dominant-baseline="central">hoặc người thuê</text>
+<ellipse cx="1750.0" cy="120.0" rx="23.0" ry="23.0" fill="white" stroke="black" stroke-width="3"/>
+<polyline points="1750.00,143.00 1750.00,253.00" fill="none" stroke="black" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+<polyline points="1680.00,170.00 1820.00,170.00" fill="none" stroke="black" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+<polyline points="1750.00,253.00 1701.00,310.00" fill="none" stroke="black" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+<polyline points="1750.00,253.00 1799.00,310.00" fill="none" stroke="black" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="1750" y="350" font-family="Arial, sans-serif" font-size="26" font-weight="bold" fill="black" text-anchor="middle" dominant-baseline="central">A03</text>
+<text x="1750" y="388" font-family="Arial, sans-serif" font-size="25" font-weight="normal" fill="black" text-anchor="middle" dominant-baseline="central">Nhân viên vận hành</text>
+<ellipse cx="1750.0" cy="530.0" rx="23.0" ry="23.0" fill="white" stroke="black" stroke-width="3"/>
+<polyline points="1750.00,553.00 1750.00,663.00" fill="none" stroke="black" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+<polyline points="1680.00,580.00 1820.00,580.00" fill="none" stroke="black" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+<polyline points="1750.00,663.00 1701.00,720.00" fill="none" stroke="black" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+<polyline points="1750.00,663.00 1799.00,720.00" fill="none" stroke="black" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="1750" y="760" font-family="Arial, sans-serif" font-size="26" font-weight="bold" fill="black" text-anchor="middle" dominant-baseline="central">E01</text>
+<text x="1750" y="798" font-family="Arial, sans-serif" font-size="25" font-weight="normal" fill="black" text-anchor="middle" dominant-baseline="central">Đơn vị gửi thư hoặc</text>
+<text x="1750" y="829" font-family="Arial, sans-serif" font-size="25" font-weight="normal" fill="black" text-anchor="middle" dominant-baseline="central">thông báo (có điều</text>
+<text x="1750" y="860" font-family="Arial, sans-serif" font-size="25" font-weight="normal" fill="black" text-anchor="middle" dominant-baseline="central">kiện)</text>
+<ellipse cx="1750.0" cy="940.0" rx="23.0" ry="23.0" fill="white" stroke="black" stroke-width="3"/>
+<polyline points="1750.00,963.00 1750.00,1073.00" fill="none" stroke="black" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+<polyline points="1680.00,990.00 1820.00,990.00" fill="none" stroke="black" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+<polyline points="1750.00,1073.00 1701.00,1130.00" fill="none" stroke="black" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+<polyline points="1750.00,1073.00 1799.00,1130.00" fill="none" stroke="black" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="1750" y="1170" font-family="Arial, sans-serif" font-size="26" font-weight="bold" fill="black" text-anchor="middle" dominant-baseline="central">E02</text>
+<text x="1750" y="1208" font-family="Arial, sans-serif" font-size="25" font-weight="normal" fill="black" text-anchor="middle" dominant-baseline="central">Nhà cung cấp Zalo</text>
+<text x="1750" y="1239" font-family="Arial, sans-serif" font-size="25" font-weight="normal" fill="black" text-anchor="middle" dominant-baseline="central">ZNS (có điều kiện)</text>
+</svg>

@@ -16,6 +16,7 @@ import 'lease_pdf.dart';
 import 'lease_settlement_screen.dart';
 import 'tenant_providers.dart';
 import 'tenant_lifecycle_screen.dart';
+import 'tenant_management_theme.dart';
 
 /// Tenant profile with lease history and lifecycle actions.
 class TenantDetailScreen extends ConsumerStatefulWidget {
@@ -33,8 +34,14 @@ class _TenantDetailScreenState extends ConsumerState<TenantDetailScreen> {
     final tenantAsync = ref.watch(tenantDetailProvider(widget.tenantId));
 
     return Scaffold(
-      backgroundColor: const Color(0xFF0F1117),
+      backgroundColor: TenantManagementTheme.background,
       appBar: AppBar(
+        leading: IconButton(
+          tooltip: 'Quay lại',
+          icon: const Icon(Icons.arrow_back),
+          onPressed: () =>
+              context.canPop() ? context.pop() : context.go(tenantsRoute),
+        ),
         title: const Text('Chi tiết người thuê'),
         actions: [
           tenantAsync.maybeWhen(
@@ -66,8 +73,8 @@ class _TenantDetailScreenState extends ConsumerState<TenantDetailScreen> {
         loading: () => const Center(
             child: CircularProgressIndicator(color: AppTheme.primary)),
         error: (error, _) => Center(
-          child:
-              Text('$error', style: const TextStyle(color: Color(0xFF8891A8))),
+          child: Text('$error',
+              style: const TextStyle(color: TenantManagementTheme.muted)),
         ),
         data: (tenant) => _Body(tenant: tenant),
       ),
@@ -263,7 +270,7 @@ class _Body extends ConsumerWidget {
                                 style: const TextStyle(
                                   fontSize: 20,
                                   fontWeight: FontWeight.w800,
-                                  color: Color(0xFFF0F2FF),
+                                  color: TenantManagementTheme.ink,
                                 ),
                               ),
                             ),
@@ -300,7 +307,8 @@ class _Body extends ConsumerWidget {
                           Text(
                             tenant.phone ?? 'Chưa cập nhật SĐT',
                             style: const TextStyle(
-                                fontSize: 13, color: Color(0xFF8891A8)),
+                                fontSize: 13,
+                                color: TenantManagementTheme.muted),
                           ),
                       ],
                     ),
@@ -395,7 +403,7 @@ class _Body extends ConsumerWidget {
           error: (error, _) => _Card(
             child: Text(
               '$error',
-              style: const TextStyle(color: Color(0xFF8891A8)),
+              style: const TextStyle(color: TenantManagementTheme.muted),
             ),
           ),
           data: (overview) => _TenantOverviewCard(
@@ -427,7 +435,7 @@ class _Body extends ConsumerWidget {
             style: TextStyle(
               fontSize: 16,
               fontWeight: FontWeight.w800,
-              color: Color(0xFFF0F2FF),
+              color: TenantManagementTheme.ink,
             ),
           ),
         ),
@@ -438,8 +446,8 @@ class _Body extends ConsumerWidget {
             child: Center(
                 child: CircularProgressIndicator(color: AppTheme.primary)),
           ),
-          error: (error, _) =>
-              Text('$error', style: const TextStyle(color: Color(0xFF8891A8))),
+          error: (error, _) => Text('$error',
+              style: const TextStyle(color: TenantManagementTheme.muted)),
           data: (leases) => leases.isEmpty
               ? _Card(
                   child: Text(
@@ -472,7 +480,7 @@ class _InactiveBadge extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
       decoration: BoxDecoration(
-        color: const Color(0xFF22263A),
+        color: TenantManagementTheme.surfaceAlt,
         borderRadius: BorderRadius.circular(999),
       ),
       child: const Text(
@@ -480,7 +488,7 @@ class _InactiveBadge extends StatelessWidget {
         style: TextStyle(
           fontSize: 11,
           fontWeight: FontWeight.w700,
-          color: Color(0xFF8891A8),
+          color: TenantManagementTheme.muted,
         ),
       ),
     );
@@ -496,12 +504,12 @@ class _InactiveNotice extends StatelessWidget {
       width: double.infinity,
       padding: const EdgeInsets.all(12),
       decoration: BoxDecoration(
-        color: const Color(0xFF22263A),
+        color: TenantManagementTheme.surfaceAlt,
         borderRadius: BorderRadius.circular(12),
       ),
       child: const Text(
         'Người thuê đang ngưng hoạt động nên không xuất hiện trong danh sách vận hành.',
-        style: TextStyle(fontSize: 12, color: Color(0xFF8891A8)),
+        style: TextStyle(fontSize: 12, color: TenantManagementTheme.muted),
       ),
     );
   }
@@ -554,7 +562,7 @@ class _TenantOverviewCard extends StatelessWidget {
                       style: TextStyle(
                         fontSize: 16,
                         fontWeight: FontWeight.w900,
-                        color: Color(0xFFF0F2FF),
+                        color: TenantManagementTheme.ink,
                       ),
                     ),
                   ),
@@ -630,7 +638,7 @@ class _AccountBadge extends StatelessWidget {
   Widget build(BuildContext context) {
     final hasAccount = email?.trim().isNotEmpty == true;
     final color = !hasAccount
-        ? const Color(0xFF8891A8)
+        ? TenantManagementTheme.muted
         : isActive
             ? const Color(0xFF10B981)
             : const Color(0xFFDC2626);
@@ -692,7 +700,8 @@ class _FinanceTile extends StatelessWidget {
           ),
           Text(
             label,
-            style: const TextStyle(fontSize: 12, color: Color(0xFF8891A8)),
+            style: const TextStyle(
+                fontSize: 12, color: TenantManagementTheme.muted),
           ),
         ],
       ),
@@ -711,7 +720,7 @@ class _MiniStat extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 6),
       decoration: BoxDecoration(
-        color: const Color(0xFF22263A),
+        color: TenantManagementTheme.surfaceAlt,
         borderRadius: BorderRadius.circular(999),
       ),
       child: Text(
@@ -742,14 +751,14 @@ class _TimelineCard extends StatelessWidget {
             style: TextStyle(
               fontSize: 16,
               fontWeight: FontWeight.w900,
-              color: Color(0xFFF0F2FF),
+              color: TenantManagementTheme.ink,
             ),
           ),
           const SizedBox(height: 8),
           if (events.isEmpty)
             const Text(
               'Chưa có sự kiện vận hành.',
-              style: TextStyle(color: Color(0xFF8891A8)),
+              style: TextStyle(color: TenantManagementTheme.muted),
             )
           else
             ...events.take(8).map(_TimelineRow.new),
@@ -794,7 +803,7 @@ class _TimelineRow extends StatelessWidget {
                         style: const TextStyle(
                           fontSize: 13,
                           fontWeight: FontWeight.w900,
-                          color: Color(0xFFF0F2FF),
+                          color: TenantManagementTheme.ink,
                         ),
                       ),
                     ),
@@ -802,7 +811,7 @@ class _TimelineRow extends StatelessWidget {
                       formatDate(event.occurredAt),
                       style: const TextStyle(
                         fontSize: 11,
-                        color: Color(0xFF9CA3AF),
+                        color: TenantManagementTheme.muted,
                       ),
                     ),
                   ],
@@ -817,7 +826,7 @@ class _TimelineRow extends StatelessWidget {
                   ].where((part) => part.trim().isNotEmpty).join(' · '),
                   style: const TextStyle(
                     fontSize: 12,
-                    color: Color(0xFF8891A8),
+                    color: TenantManagementTheme.muted,
                   ),
                 ),
               ],
@@ -845,7 +854,7 @@ class _TimelineRow extends StatelessWidget {
 
   Color _eventColor(String type, String? status) {
     if (status == 'cancelled' || status == 'reversal') {
-      return const Color(0xFF8891A8);
+      return TenantManagementTheme.muted;
     }
     if (status == 'unpaid' || status == 'pending') {
       return const Color(0xFFD97706);
@@ -887,7 +896,7 @@ class _LeaseCardState extends ConsumerState<_LeaseCard> {
                 style: const TextStyle(
                   fontSize: 15,
                   fontWeight: FontWeight.w700,
-                  color: Color(0xFFF0F2FF),
+                  color: TenantManagementTheme.ink,
                 ),
               ),
               const SizedBox(width: 8),
@@ -923,7 +932,8 @@ class _LeaseCardState extends ConsumerState<_LeaseCard> {
           Text(
             'Từ ${formatDate(lease.startDate)}'
             '${lease.endDate != null ? ' đến ${formatDate(lease.endDate)}' : ''}',
-            style: const TextStyle(fontSize: 12, color: Color(0xFF9CA3AF)),
+            style: const TextStyle(
+                fontSize: 12, color: TenantManagementTheme.muted),
           ),
           if (ref.watch(sessionControllerProvider).session?.user.role ==
               'landlord')
@@ -986,7 +996,7 @@ class _LeaseCardState extends ConsumerState<_LeaseCard> {
                     '${item.label}: ${formatCurrencyVnd(item.amount)} · ${formatDate(item.occurredAt)}',
                     style: const TextStyle(
                       fontSize: 12,
-                      color: Color(0xFF8891A8),
+                      color: TenantManagementTheme.muted,
                     ),
                   ),
                 ),
@@ -1072,7 +1082,8 @@ Future<void> _showTenantInviteDialog(
                   const SizedBox(height: 8),
                   const Text(
                     'Tenant sẽ tự đặt mật khẩu bằng link kích hoạt.',
-                    style: TextStyle(fontSize: 12, color: Color(0xFF8891A8)),
+                    style: TextStyle(
+                        fontSize: 12, color: TenantManagementTheme.muted),
                   ),
                 ] else ...[
                   _InviteCopyRow(
@@ -1087,8 +1098,8 @@ Future<void> _showTenantInviteDialog(
                   const SizedBox(height: 10),
                   Text(
                     'Hết hạn: ${invite!['expiresAt'] ?? 'Không rõ'}',
-                    style:
-                        const TextStyle(fontSize: 12, color: Color(0xFF8891A8)),
+                    style: const TextStyle(
+                        fontSize: 12, color: TenantManagementTheme.muted),
                   ),
                 ],
                 if (error != null) ...[
@@ -1171,15 +1182,56 @@ Future<void> _showDepositDialog(
   Lease lease,
   Tenant tenant,
 ) async {
+  final transaction =
+      await showDialog<({String type, int amount, String note})>(
+    context: context,
+    builder: (_) => const _DepositDialog(),
+  );
+  if (transaction == null || !context.mounted) return;
+
+  try {
+    await ref.read(leaseFormControllerProvider.notifier).depositTransaction(
+          leaseId: lease.id,
+          tenantId: tenant.id,
+          type: transaction.type,
+          amount: transaction.amount,
+          note: transaction.note,
+        );
+    if (context.mounted) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(content: Text('Đã ghi nhận giao dịch cọc.')),
+      );
+    }
+  } catch (err) {
+    if (context.mounted) {
+      ScaffoldMessenger.of(context)
+          .showSnackBar(SnackBar(content: Text('$err')));
+    }
+  }
+}
+
+class _DepositDialog extends StatefulWidget {
+  const _DepositDialog();
+
+  @override
+  State<_DepositDialog> createState() => _DepositDialogState();
+}
+
+class _DepositDialogState extends State<_DepositDialog> {
   final amount = TextEditingController();
   final note = TextEditingController();
   var type = 'collected';
   String? error;
 
-  final confirmed = await showDialog<bool>(
-    context: context,
-    builder: (dialogContext) => StatefulBuilder(
-      builder: (context, setState) => AlertDialog(
+  @override
+  void dispose() {
+    amount.dispose();
+    note.dispose();
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) => AlertDialog(
         title: const Text('Ghi nhận tiền cọc'),
         content: Column(
           mainAxisSize: MainAxisSize.min,
@@ -1215,7 +1267,7 @@ Future<void> _showDepositDialog(
         ),
         actions: [
           TextButton(
-            onPressed: () => Navigator.pop(dialogContext, false),
+            onPressed: () => Navigator.pop(context),
             child: const Text('Hủy'),
           ),
           FilledButton(
@@ -1224,39 +1276,16 @@ Future<void> _showDepositDialog(
                 setState(() => error = 'Nhập số tiền hợp lệ.');
                 return;
               }
-              Navigator.pop(dialogContext, true);
+              Navigator.pop(context, (
+                type: type,
+                amount: int.parse(amount.text.trim()),
+                note: note.text,
+              ));
             },
             child: const Text('Lưu'),
           ),
         ],
-      ),
-    ),
-  );
-  final parsedAmount = int.tryParse(amount.text.trim());
-  final noteText = note.text;
-  amount.dispose();
-  note.dispose();
-  if (confirmed != true || parsedAmount == null) return;
-
-  try {
-    await ref.read(leaseFormControllerProvider.notifier).depositTransaction(
-          leaseId: lease.id,
-          tenantId: tenant.id,
-          type: type,
-          amount: parsedAmount,
-          note: noteText,
-        );
-    if (context.mounted) {
-      ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(content: Text('Đã ghi nhận giao dịch cọc.')),
       );
-    }
-  } catch (err) {
-    if (context.mounted) {
-      ScaffoldMessenger.of(context)
-          .showSnackBar(SnackBar(content: Text('$err')));
-    }
-  }
 }
 
 Future<void> _showRenewDialog(
@@ -1374,9 +1403,9 @@ class _InviteCopyRow extends StatelessWidget {
       width: double.infinity,
       padding: const EdgeInsets.all(10),
       decoration: BoxDecoration(
-        color: const Color(0xFF22263A),
+        color: TenantManagementTheme.surfaceAlt,
         borderRadius: BorderRadius.circular(8),
-        border: Border.all(color: const Color(0xFF2E3348)),
+        border: Border.all(color: TenantManagementTheme.border),
       ),
       child: Row(
         children: [
@@ -1386,8 +1415,8 @@ class _InviteCopyRow extends StatelessWidget {
               children: [
                 Text(
                   label,
-                  style:
-                      const TextStyle(fontSize: 12, color: Color(0xFF8891A8)),
+                  style: const TextStyle(
+                      fontSize: 12, color: TenantManagementTheme.muted),
                 ),
                 const SizedBox(height: 3),
                 Text(
@@ -1397,7 +1426,7 @@ class _InviteCopyRow extends StatelessWidget {
                   style: const TextStyle(
                     fontSize: 13,
                     fontWeight: FontWeight.w700,
-                    color: Color(0xFFF0F2FF),
+                    color: TenantManagementTheme.ink,
                   ),
                 ),
               ],
@@ -1461,7 +1490,8 @@ class _Row extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Text(label,
-              style: const TextStyle(fontSize: 14, color: Color(0xFF8891A8))),
+              style: const TextStyle(
+                  fontSize: 14, color: TenantManagementTheme.muted)),
           Flexible(
             child: Text(
               value,
@@ -1469,7 +1499,7 @@ class _Row extends StatelessWidget {
               style: const TextStyle(
                 fontSize: 14,
                 fontWeight: FontWeight.w600,
-                color: Color(0xFFF0F2FF),
+                color: TenantManagementTheme.ink,
               ),
             ),
           ),
@@ -1484,5 +1514,5 @@ class _Divider extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) =>
-      const Divider(height: 1, color: Color(0xFF22263A));
+      const Divider(height: 1, color: TenantManagementTheme.border);
 }

@@ -1,0 +1,19 @@
+@startwbs
+title Phân rã chức năng AS-IS — không phải sơ đồ Use Case
+* Hệ thống quản lý và tìm thuê nhà trọ
+** G13 — Kiểm duyệt và chất lượng nội dung
+*** G13.1 Đánh giá và phản ánh nội dung
+**** UC-DIS-07 Báo cáo tin phòng không phù hợp
+**** UC-DIS-12 Viết sửa và rút đánh giá phòng đã thuê
+**** UC-DIS-13.1 Trả lời đánh giá phòng
+*** G13.2 Quyết định nội dung và xác minh tin
+**** UC-ADM-11 Tiếp nhận và kiểm duyệt tin cho thuê
+**** UC-ADM-11.1 Xác minh thông tin tin cho thuê
+**** UC-ADM-12 Kiểm duyệt đánh giá và phản hồi phòng
+**** UC-ADM-12.1 Xử lý báo cáo vi phạm tin đăng
+*** G13.3 Kháng nghị, chính sách và chất lượng
+**** UC-DIS-15 Xem quyết định và gửi kháng nghị kiểm duyệt
+**** UC-ADM-13.1 Quản lý chính sách kiểm duyệt
+**** UC-ADM-13.2 Xử lý kháng nghị kiểm duyệt
+**** UC-ADM-13.3 Đánh giá chất lượng kiểm duyệt
+@endwbs

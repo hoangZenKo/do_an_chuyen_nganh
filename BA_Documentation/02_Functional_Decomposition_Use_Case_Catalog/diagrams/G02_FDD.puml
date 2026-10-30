@@ -1,0 +1,14 @@
+@startwbs
+title Phân rã chức năng AS-IS — không phải sơ đồ Use Case
+* Hệ thống quản lý và tìm thuê nhà trọ
+** G02 — Tìm và lựa chọn phòng
+*** G02.1 Khám phá phòng
+**** UC-DIS-01 Tìm và lọc tin phòng công khai
+**** UC-DIS-02 Xem chi tiết tin và đánh giá công khai
+*** G02.2 Lưu nhu cầu và theo dõi tin
+**** UC-DIS-03 Lưu và bỏ lưu phòng yêu thích
+**** UC-DIS-04 Lưu bộ lọc và theo dõi tin khớp
+*** G02.3 Đánh giá lựa chọn
+**** UC-DIS-16 So sánh các phòng quan tâm
+**** UC-DIS-17 Ước tính chi phí thuê phòng
+@endwbs

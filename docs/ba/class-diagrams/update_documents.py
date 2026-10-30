@@ -73,7 +73,7 @@ def update_markdown():
     text = text.split(correction_heading)[0]
     text += correction_heading + '\n\nBản hiệu chỉnh giữ 23 lớp và 39 association cấu trúc. Bỏ FK trùng association khỏi hình, lược tokenHash khỏi thuộc tính báo cáo, bổ sung thành phần tiền hóa đơn và danh sách ảnh minh chứng. Các ràng buộc unique có căn cứ được ghi trên hình; nhãn liên kết là tên vai trò từ lớp nguồn, còn PlantUML ghi tên vai trò tại các đầu association. Các lớp nhắc lại dùng cùng tên và thuộc tính của cùng classifier. CD-05 đặt Expense dưới MaintenanceTicket và dùng các tuyến nối không giao nhau; CD-06 dùng chú thích <<IDRef>>, không còn connector tham chiếu ID. Các nhãn bội số và vai trò trong Draw.io gắn với connector tương ứng.\n\nMột Expense được phép có nhiều MaintenanceTicket ở mức schema vì expenseId không unique. Luồng complete hiện tạo khoản chi mới, không cung cấp thao tác chọn một Expense đã tồn tại để chia sẻ. Việc cho phép chia sẻ khoản chi và đồng bộ actualCost với Expense.amount vẫn cần xác nhận, không được suy ra từ structural multiplicity. Các điểm PX-01, PX-02, PX-03, PX-14, PX-19, PX-24, PX-25, PX-26 và PX-32 không bị quyết định thay trong lần hiệu chỉnh này.\n\nXem `CLASS_DIAGRAM_AUDIT.md` để tra ma trận 39 quan hệ, 3 IDRef, danh sách 23 lớp, changelog, cấu trúc 11 hình và checklist. Không thay schema, code hay đặc tả Use Case.\n'
     apply_text(filename, text)
-    proposal_name = 'PROPOSAL_QUAN_LY_TRO.md'
+    proposal_name = 'docs/PROPOSAL_QUAN_LY_TRO.md'
     proposal = (ROOT / proposal_name).read_text()
     start = proposal.index('### 2.4.3')
     end = proposal.index('### 2.4.4', start)

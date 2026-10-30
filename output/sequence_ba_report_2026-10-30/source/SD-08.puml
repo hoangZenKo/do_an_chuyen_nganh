@@ -1,0 +1,113 @@
+@startuml
+skinparam backgroundColor white
+skinparam shadowing false
+skinparam dpi 240
+skinparam defaultFontName "Times New Roman"
+skinparam defaultFontSize 17
+skinparam defaultFontColor black
+skinparam titleFontSize 21
+skinparam titleFontColor black
+skinparam roundcorner 0
+skinparam maxMessageSize 270
+skinparam ParticipantPadding 30
+skinparam sequence {
+  ArrowColor #800000
+  ArrowThickness 1.2
+  LifeLineBorderColor #999999
+  LifeLineBackgroundColor #FFFFB9
+  ParticipantBackgroundColor #FFFFB9
+  ParticipantBorderColor #800000
+  ParticipantFontColor black
+  ActorBackgroundColor #FFFFB9
+  ActorBorderColor #800000
+  ActorFontColor black
+  BoundaryBackgroundColor #FFFFB9
+  BoundaryBorderColor #800000
+  ControlBackgroundColor #FFFFB9
+  ControlBorderColor #800000
+  EntityBackgroundColor #FFFFB9
+  EntityBorderColor #800000
+  DatabaseBackgroundColor #FFFFB9
+  DatabaseBorderColor #800000
+  GroupBackgroundColor #FFFFB9
+  GroupBodyBackgroundColor white
+  GroupBorderColor #888888
+  GroupFontColor black
+  GroupHeaderFontColor black
+  GroupFontSize 15
+  GroupHeaderFontSize 16
+  MessageAlign center
+}
+hide footbox
+<style>
+sequenceDiagram {
+ actor { BackgroundColor #FFFFB9
+ LineColor #800000 }
+ boundary { BackgroundColor #FFFFB9
+ LineColor #800000 }
+ control { BackgroundColor #FFFFB9
+ LineColor #800000 }
+ database { BackgroundColor #FFFFB9
+ LineColor #800000 }
+ activationBox { BackgroundColor #FFFFB9
+ LineColor #800000 }
+}
+</style>
+autonumber "<b>0.</b>"
+
+title SD-08. Gửi và xét duyệt chứng từ thanh toán
+actor "Người thuê" as A
+actor "Chủ trọ" as B
+boundary "<u>Giao diện</u>\n<u>chứng từ thanh toán</u>" as U #FFFFB9
+control "<u>Quản lý</u>\n<u>chứng từ</u>" as C #FFFFB9
+database "<u>Cơ sở dữ liệu</u>" as D #FFFFB9
+A -> U: Chọn hóa đơn; gửi số tiền, thông tin và ảnh chứng từ
+activate U
+U -> C: Yêu cầu tiếp nhận chứng từ thanh toán
+activate C
+C -> D ++: Tra cứu hóa đơn của người thuê, chứng từ đang chờ và lần gửi trước
+D --> C --: Hóa đơn, thanh toán và lịch sử chứng từ
+C -> C: Kiểm tra quyền gửi, nội dung gửi lại và số tiền còn được gửi chứng từ
+alt Gửi lại đúng nội dung đã được tiếp nhận
+C --> U: Trả chứng từ đã có
+U --> A: Trả chứng từ đã có; không tạo thêm
+else Lần mới có hóa đơn không hợp lệ, tiền vượt phần còn được gửi; hoặc gửi lại khác nội dung
+C --> U: Không nhận chứng từ
+U --> A: Không nhận chứng từ; hiển thị lý do
+else Lần gửi mới hợp lệ
+C -> D ++: Lưu chứng từ chờ duyệt
+D --> C --: Chứng từ đã gửi; chưa ghi giảm công nợ
+C --> U: Chứng từ chờ chủ trọ xét duyệt
+U --> A: Chứng từ chờ chủ trọ xét duyệt
+end
+deactivate C
+deactivate U
+opt Chủ trọ chọn xử lý chứng từ đang chờ
+B -> U: Xem chứng từ; gửi quyết định và lý do nếu từ chối
+activate U
+U -> C: Yêu cầu xét duyệt chứng từ
+activate C
+C -> D ++: Tra cứu chứng từ, chủ quản lý, hóa đơn và thanh toán mới nhất
+D --> C --: Trạng thái chứng từ, hóa đơn và số tiền đã thanh toán
+C -> C: Kiểm tra quyền duyệt, trạng thái chứng từ và dư nợ hiện hành
+alt Ngoài quyền hoặc chứng từ đã được xét duyệt
+C --> U: Không xét duyệt lại
+U --> B: Không xét duyệt lại; yêu cầu tải lại
+else Chọn từ chối; có lý do hợp lệ
+C -> D ++: Lưu quyết định từ chối và lý do
+D --> C --: Chứng từ bị từ chối; công nợ không đổi
+C --> U: Đã từ chối chứng từ
+U --> B: Đã từ chối chứng từ
+else Chọn duyệt nhưng hóa đơn hủy, đã trả đủ hoặc tiền vượt dư nợ
+C --> U: Không chấp thuận chứng từ
+U --> B: Không chấp thuận chứng từ; chưa ghi thu
+else Chọn duyệt và hóa đơn còn đủ điều kiện
+C -> D ++: Lưu chấp thuận; ghi khoản thu và phân bổ vào hóa đơn
+D --> C --: Chứng từ được duyệt; công nợ giảm đúng một lần
+C --> U: Duyệt thành công
+U --> B: Duyệt thành công; hiển thị trạng thái hóa đơn mới
+end
+deactivate C
+deactivate U
+end
+@enduml

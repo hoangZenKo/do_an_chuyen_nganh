@@ -1,0 +1,73 @@
+{
+  "route": "/rooms/form",
+  "apiBaseUrl": "http://127.0.0.1:54542/api/v1",
+  "texts": [
+    "Tên phòng",
+    "P.201",
+    "Tầng",
+    "2",
+    "Diện tích (m²)",
+    "25",
+    "Giá thuê (đ)",
+    "3500000",
+    "Sức chứa (người)",
+    "2",
+    "Trạng thái",
+    "Đang thuê",
+    "Phòng trống",
+    "Bảo trì",
+    "Ảnh phòng",
+    "Tiện nghi",
+    "Nóng lạnh",
+    "Wifi",
+    "Máy lạnh",
+    "Ban công",
+    "Gác lửng",
+    "Tủ lạnh",
+    "Máy giặt",
+    "Bếp",
+    "Ghi chú",
+    "Tuỳ chọn",
+    "Thêm phòng",
+    "Bấm: Tạo phòng"
+  ],
+  "fields": [
+    {
+      "label": null,
+      "hint": "P.201",
+      "readOnly": false,
+      "obscure": false
+    },
+    {
+      "label": null,
+      "hint": "2",
+      "readOnly": false,
+      "obscure": false
+    },
+    {
+      "label": null,
+      "hint": "25",
+      "readOnly": false,
+      "obscure": false
+    },
+    {
+      "label": null,
+      "hint": "3500000",
+      "readOnly": false,
+      "obscure": false
+    },
+    {
+      "label": null,
+      "hint": "2",
+      "readOnly": false,
+      "obscure": false
+    },
+    {
+      "label": null,
+      "hint": "Tuỳ chọn",
+      "readOnly": false,
+      "obscure": false
+    }
+  ],
+  "errors": []
+}

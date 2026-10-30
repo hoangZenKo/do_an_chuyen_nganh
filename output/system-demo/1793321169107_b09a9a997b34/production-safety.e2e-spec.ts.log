@@ -1,0 +1,35 @@
+
+> rental-room-api@0.1.0 test:e2e
+> NODE_ENV=test jest --config ./test/jest-e2e.json --runInBand --runTestsByPath test/e2e/production-safety.e2e-spec.ts --runInBand
+
+FAIL test/e2e/production-safety.e2e-spec.ts
+  Production safety
+    ✓ runs the read-only staging smoke CLI against the isolated local API (512 ms)
+    ✓ protects operations data and correlates sensitive admin audit requests (385 ms)
+    ✓ exports bounded, injection-safe CSV and exposes only redacted detail (306 ms)
+    ✓ persists retries without raw tokens, uses the same idempotency key and serializes competing workers (196 ms)
+    ✕ cancels superseded and expired jobs, and stops retrying permanent provider failures (152 ms)
+    ✓ deduplicates alerts, acknowledges with a version, and auto-resolves recovered conditions (307 ms)
+    ✓ does not keep delivery incidents open for historical dead jobs (173 ms)
+
+  ● Production safety › cancels superseded and expired jobs, and stops retrying permanent provider failures
+
+    HttpException: Vui lòng chờ trước khi yêu cầu gửi lại.
+
+      32 |       const count = await tx.accountAccessToken.count({ where: { userId, purpose, createdAt: { gte: since } } });
+      33 |       if ((latest && latest.createdAt.getTime() > Date.now() - 60_000) || count >= 5) {
+    > 34 |         throw new HttpException('Vui lòng chờ trước khi yêu cầu gửi lại.', 429);
+         |               ^
+      35 |       }
+      36 |     }
+      37 |     await tx.deliveryJob.updateMany({ where: { token: { userId, purpose }, status: { in: ['PENDING', 'PROCESSING'] } },
+
+      at AccountAccessService.enqueue (src/auth/account-access.service.ts:34:15)
+      at Proxy._transactionWithCallback (node_modules/@prisma/client/src/runtime/getPrismaClient.ts:722:18)
+      at Object.<anonymous> (test/e2e/production-safety.e2e-spec.ts:109:21)
+
+Test Suites: 1 failed, 1 total
+Tests:       1 failed, 6 passed, 7 total
+Snapshots:   0 total
+Time:        3.738 s
+Ran all test suites within paths "test/e2e/production-safety.e2e-spec.ts".

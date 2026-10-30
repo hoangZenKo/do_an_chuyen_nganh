@@ -1,0 +1,47 @@
+{
+  "route": "/support-center",
+  "apiBaseUrl": "http://127.0.0.1:58895/api/v1",
+  "texts": [
+    "Yêu cầu hỗ trợ",
+    "Xác minh chủ trọ",
+    "Khiếu nại kiểm duyệt",
+    "Thông báo",
+    "Tạo yêu cầu",
+    "Tìm tiêu đề hoặc nội dung",
+    "Mọi trạng thái",
+    "Chưa có yêu cầu trong bộ lọc này.",
+    "Trang 1 · 0 kết quả",
+    "Trung tâm hỗ trợ",
+    "Gửi yêu cầu hỗ trợ",
+    "Tiêu đề",
+    "24/160",
+    "Chung",
+    "Loại yêu cầu",
+    "Nội dung yêu cầu",
+    "0/10000",
+    "Hủy",
+    "Xác nhận",
+    "Bấm: Loại yêu cầu"
+  ],
+  "fields": [
+    {
+      "label": "Tìm tiêu đề hoặc nội dung",
+      "hint": null,
+      "readOnly": false,
+      "obscure": false
+    },
+    {
+      "label": "Tiêu đề",
+      "hint": null,
+      "readOnly": false,
+      "obscure": false
+    },
+    {
+      "label": "Nội dung yêu cầu",
+      "hint": null,
+      "readOnly": false,
+      "obscure": false
+    }
+  ],
+  "errors": []
+}

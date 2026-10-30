@@ -1,0 +1,27 @@
+
+> rental-room-api@0.1.0 test:e2e
+> NODE_ENV=test jest --config ./test/jest-e2e.json --runInBand --runTestsByPath test/e2e/admin-sprints.e2e-spec.ts --runInBand
+
+[Nest] 4841  - 10/30/2026, 7:48:44 AM   ERROR [ApiErrorFilter] {"event":"request_failed","requestId":"463700c9-a839-4d49-88b7-e653bd919115","method":"POST","route":"/api/v1/support/tickets","status":503,"code":"INTERNAL_SERVER_ERROR"}
+PASS test/e2e/admin-sprints.e2e-spec.ts (7.954 s)
+  Admin support, moderation v2 and governance
+    ✓ scopes tickets and notifications to owners and hides internal notes (498 ms)
+    ✓ checks assignee capabilities, optimistic versions and ticket transitions (527 ms)
+    ✓ requires independent appeal reviewers and forbids cross-owner appeals (505 ms)
+    ✓ guards stale appeal reopens without changing the appeal (412 ms)
+    ✓ returns per-item bulk failures, rejects duplicate and oversized batches (346 ms)
+    ✓ escalates overdue work once across repeated monitor evaluations (395 ms)
+    ✓ escalates unassigned default deadlines, open appeals and support SLA without duplicate notifications (487 ms)
+    ✓ persists successful bulk decisions alongside version conflicts and supports real appeal reopen (416 ms)
+    ✓ feature flags are versioned, audited, gated and cannot alter security controls (361 ms)
+    ✓ simulates permissions without granting them and supports team membership (330 ms)
+    ✓ finance reconciliation is read-only and capability gated (739 ms)
+    ✓ reconciles lifetime signed payments without confusing refunds with deposit deductions (412 ms)
+    ✓ automatically enqueues due schedules once and cancels exports when owner permission is revoked (274 ms)
+    ✓ runs scheduled exports idempotently, encrypts payloads, scopes downloads and expires artifacts (417 ms)
+
+Test Suites: 1 passed, 1 total
+Tests:       14 passed, 14 total
+Snapshots:   0 total
+Time:        8.059 s
+Ran all test suites within paths "test/e2e/admin-sprints.e2e-spec.ts".

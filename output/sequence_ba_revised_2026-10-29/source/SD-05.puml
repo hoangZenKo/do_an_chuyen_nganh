@@ -1,0 +1,100 @@
+@startuml
+skinparam backgroundColor white
+skinparam shadowing false
+skinparam dpi 240
+skinparam defaultFontName "Times New Roman"
+skinparam defaultFontSize 17
+skinparam defaultFontColor black
+skinparam titleFontSize 21
+skinparam titleFontColor black
+skinparam roundcorner 0
+skinparam maxMessageSize 270
+skinparam ParticipantPadding 30
+skinparam sequence {
+  ArrowColor #800000
+  ArrowThickness 1.2
+  LifeLineBorderColor #999999
+  LifeLineBackgroundColor #FFFFB9
+  ParticipantBackgroundColor #FFFFB9
+  ParticipantBorderColor #800000
+  ParticipantFontColor black
+  ActorBackgroundColor #FFFFB9
+  ActorBorderColor #800000
+  ActorFontColor black
+  BoundaryBackgroundColor #FFFFB9
+  BoundaryBorderColor #800000
+  ControlBackgroundColor #FFFFB9
+  ControlBorderColor #800000
+  EntityBackgroundColor #FFFFB9
+  EntityBorderColor #800000
+  GroupBackgroundColor #FFFFB9
+  GroupBodyBackgroundColor white
+  GroupBorderColor #888888
+  GroupFontColor black
+  GroupHeaderFontColor black
+  GroupFontSize 15
+  GroupHeaderFontSize 16
+  MessageAlign center
+}
+hide footbox
+<style>
+sequenceDiagram {
+ actor { BackgroundColor #FFFFB9
+ LineColor #800000 }
+ boundary { BackgroundColor #FFFFB9
+ LineColor #800000 }
+ control { BackgroundColor #FFFFB9
+ LineColor #800000 }
+ entity { BackgroundColor #FFFFB9
+ LineColor #800000 }
+ activationBox { BackgroundColor #FFFFB9
+ LineColor #800000 }
+}
+</style>
+autonumber "<b>0.</b>"
+
+title SD-05. Xem trước và phát hành hóa đơn tháng
+actor "Chủ trọ" as A
+boundary "<u>Giao diện</u>\n<u>lập hóa đơn</u>" as U #FFFFB9
+control "<u>Quản lý</u>\n<u>hóa đơn</u>" as C #FFFFB9
+entity "<u>Hợp đồng, chỉ số</u>\n<u>và hóa đơn</u>" as D #FFFFB9
+A -> U: Chọn tháng và hợp đồng hoặc khu trọ; nhập chỉ số điện nước
+activate U
+U -> C: Yêu cầu xem trước tiền thuê và phí trong kỳ
+activate C
+C -> D ++: Tra cứu hợp đồng, biểu phí, chỉ số và hóa đơn đã có
+D --> C --: Dữ liệu tính tiền và các thông tin còn thiếu
+C --> U: Hiển thị dự tính, dữ liệu thiếu và hóa đơn đã có
+U --> A: Hiển thị dự tính, dữ liệu thiếu và hóa đơn đã có
+deactivate C
+deactivate U
+opt Đã bổ sung đủ dữ liệu; chủ trọ xác nhận phát hành
+A -> U: Xác nhận phát hành cho một hợp đồng hoặc cả khu
+activate U
+U -> C: Yêu cầu phát hành hóa đơn đã xác nhận
+activate C
+C -> D ++: Đối chiếu lại quyền, hợp đồng, kỳ và chỉ số hiện hành
+D --> C --: Điều kiện lập hóa đơn mới nhất
+alt Dữ liệu không hợp lệ, hợp đồng hết hiệu lực hoặc kỳ đã khóa
+C --> U: Không phát hành
+U --> A: Không phát hành; giữ nguyên dữ liệu đã có
+else Đủ điều kiện; chọn một hợp đồng
+C -> D ++: Ghi chỉ số và hóa đơn cùng các khoản tiền
+D --> C --: Hóa đơn mới hoặc báo hóa đơn trong kỳ đã tồn tại
+C --> U: Hiển thị kết quả phát hành hóa đơn
+U --> A: Hiển thị kết quả phát hành hóa đơn
+else Đủ điều kiện; chọn phát hành hàng loạt
+C -> D ++: Lập hóa đơn cho các hợp đồng chưa có; giữ hóa đơn đã tồn tại
+D --> C --: Kết quả toàn bộ đợt lập hóa đơn
+alt Toàn bộ phần tạo mới thành công
+C --> U: Hoàn tất đợt
+U --> A: Hoàn tất đợt; phòng đã có hóa đơn được bỏ qua
+else Có lỗi trong phần tạo mới
+C --> U: Không lưu hóa đơn mới nào của đợt
+U --> A: Không lưu hóa đơn mới nào của đợt; thông báo lỗi
+end
+end
+deactivate C
+deactivate U
+end
+@enduml

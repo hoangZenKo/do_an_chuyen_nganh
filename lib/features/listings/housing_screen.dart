@@ -84,8 +84,17 @@ class _HousingScreenState extends ConsumerState<HousingScreen> {
                 accountId: accountId,
                 form: lease ? HousingForm.lease : HousingForm.viewingAction,
                 requireNote: status == 'CANCELLED',
-                description:
-                    '${viewing.title}\nNgười xem: ${viewing.studentName}${status == 'CONFIRMED' ? '\nGhi rõ điểm hẹn và cách liên hệ. Không yêu cầu chuyển tiền để giữ lịch xem.' : ''}',
+                description: [
+                  viewing.title,
+                  'Người xem: ${viewing.studentName}',
+                  if (status == 'CONFIRMED')
+                    'Ghi rõ điểm hẹn và cách liên hệ. Không yêu cầu chuyển tiền để giữ lịch xem.',
+                  if (status == 'COMPLETED') ...[
+                    if (viewing.scheduledAt.isAfter(DateTime.now()))
+                      'Lịch hẹn chưa tới giờ.',
+                    'Chỉ xác nhận khi hai bên đã thực sự xem phòng. Thao tác này chưa tạo hợp đồng hoặc ghi nhận thu cọc.',
+                  ],
+                ].join('\n'),
                 rent: viewing.rent,
                 deposit: viewing.deposit,
                 onSubmit: (value) => lease
@@ -132,7 +141,12 @@ class _HousingScreenState extends ConsumerState<HousingScreen> {
   Widget _viewing(RoomViewing viewing, bool landlord) => Padding(
       padding: const EdgeInsets.symmetric(vertical: 16),
       child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-        Text(viewing.title, style: Theme.of(context).textTheme.titleMedium),
+        Builder(
+            builder: (context) => Text(viewing.title,
+                style: Theme.of(context)
+                    .textTheme
+                    .titleMedium
+                    ?.copyWith(fontWeight: FontWeight.w700))),
         const SizedBox(height: 6),
         Text(
             '${formatDate(viewing.scheduledAt)} · ${TimeOfDay.fromDateTime(viewing.scheduledAt).format(context)} (giờ thiết bị)'),
@@ -175,9 +189,7 @@ class _HousingScreenState extends ConsumerState<HousingScreen> {
                 onPressed:
                     _busy ? null : () => _viewingAction(viewing, 'CONFIRMED'),
                 child: const Text('Xác nhận lịch')),
-          if (landlord &&
-              viewing.status == 'CONFIRMED' &&
-              !viewing.scheduledAt.isAfter(DateTime.now()))
+          if (landlord && viewing.status == 'CONFIRMED')
             FilledButton(
                 onPressed:
                     _busy ? null : () => _viewingAction(viewing, 'COMPLETED'),

@@ -1,0 +1,115 @@
+@startuml
+skinparam backgroundColor white
+skinparam shadowing false
+skinparam dpi 240
+skinparam defaultFontName "Times New Roman"
+skinparam defaultFontSize 17
+skinparam defaultFontColor black
+skinparam titleFontSize 21
+skinparam titleFontColor black
+skinparam roundcorner 0
+skinparam maxMessageSize 270
+skinparam ParticipantPadding 30
+skinparam sequence {
+  ArrowColor #800000
+  ArrowThickness 1.2
+  LifeLineBorderColor #999999
+  LifeLineBackgroundColor #FFFFB9
+  ParticipantBackgroundColor #FFFFB9
+  ParticipantBorderColor #800000
+  ParticipantFontColor black
+  ActorBackgroundColor #FFFFB9
+  ActorBorderColor #800000
+  ActorFontColor black
+  BoundaryBackgroundColor #FFFFB9
+  BoundaryBorderColor #800000
+  ControlBackgroundColor #FFFFB9
+  ControlBorderColor #800000
+  EntityBackgroundColor #FFFFB9
+  EntityBorderColor #800000
+  GroupBackgroundColor #FFFFB9
+  GroupBodyBackgroundColor white
+  GroupBorderColor #888888
+  GroupFontColor black
+  GroupHeaderFontColor black
+  GroupFontSize 15
+  GroupHeaderFontSize 16
+  MessageAlign center
+}
+hide footbox
+<style>
+sequenceDiagram {
+ actor { BackgroundColor #FFFFB9
+ LineColor #800000 }
+ boundary { BackgroundColor #FFFFB9
+ LineColor #800000 }
+ control { BackgroundColor #FFFFB9
+ LineColor #800000 }
+ entity { BackgroundColor #FFFFB9
+ LineColor #800000 }
+ activationBox { BackgroundColor #FFFFB9
+ LineColor #800000 }
+}
+</style>
+autonumber "<b>0.</b>"
+
+title SD-10. Quyết toán trả phòng và ghi nhận hoàn cọc
+actor "Chủ trọ" as A
+boundary "<u>Giao diện</u>\n<u>quyết toán</u>" as U #FFFFB9
+control "<u>Quản lý</u>\n<u>quyết toán thuê</u>" as C #FFFFB9
+entity "<u>Quyết toán, hợp đồng</u>\n<u>và sổ tiền cọc</u>" as D #FFFFB9
+A -> U: Nhập ngày trả, chỉ số cuối và các khoản phí; xem trước
+activate U
+U -> C: Yêu cầu tính dự kiến quyết toán
+activate C
+C -> D ++: Đối chiếu hợp đồng, hóa đơn, chỉ số và cọc đã thu
+D --> C --: Chi phí cuối kỳ, cọc bù trừ, tiền cần thu hoặc hoàn
+C --> U: Hiển thị dự tính quyết toán
+U --> A: Hiển thị dự tính quyết toán; báo lỗi nếu chưa đủ điều kiện
+deactivate C
+deactivate U
+opt Có bản xem trước hợp lệ; chủ trọ xác nhận
+A -> U: Xác nhận quyết toán theo bản đã xem
+activate U
+U -> C: Yêu cầu ghi nhận quyết toán
+activate C
+C -> D ++: Đối chiếu dữ liệu hiện hành và quyết toán đã ghi trước đó
+D --> C --: Kết quả kiểm tra thay đổi và lần xác nhận trước
+alt Gửi lại đúng lần xác nhận đã hoàn tất
+C --> U: Hiển thị quyết toán đã có
+U --> A: Hiển thị quyết toán đã có; không ghi thêm
+else Quyết toán khác đã có; hoặc chưa quyết toán nhưng dữ liệu đã đổi, không hợp lệ
+C --> U: Không xác nhận
+U --> A: Không xác nhận; yêu cầu kiểm tra và xem trước lại
+else Chưa quyết toán; dữ liệu còn khớp và đủ điều kiện
+C -> D ++: Lưu quyết toán, khấu trừ cọc; kết thúc thuê và chuyển phòng chờ xử lý
+D --> C --: Quyết toán được xác nhận; khoản hoàn cọc chưa trả
+C --> U: Hiển thị quyết toán
+U --> A: Hiển thị quyết toán; hóa đơn còn nợ không tự tất toán
+end
+deactivate C
+deactivate U
+end
+opt Có khoản cọc chờ hoàn; chủ trọ đã hoàn tiền thực tế
+A -> U: Ghi nhận đã hoàn cọc; nhập thông tin đối chiếu và lý do
+activate U
+U -> C: Yêu cầu ghi nhận khoản cọc đã hoàn
+activate C
+C -> D ++: Đối chiếu quyết toán, số dư cọc và lần ghi hoàn trước
+D --> C --: Khoản hoàn còn hợp lệ hoặc kết quả đã ghi nhận
+alt Khoản chờ hoàn hợp lệ và số dư vẫn khớp
+C -> D ++: Ghi cọc đã hoàn và cập nhật trạng thái đã trả
+D --> C --: Lịch sử cọc và quyết toán được cập nhật
+C --> U: Đã ghi nhận hoàn cọc
+U --> A: Đã ghi nhận hoàn cọc; không tự chuyển tiền
+else Gửi lại đúng lần ghi nhận đã hoàn tất
+C --> U: Trả kết quả đã có
+U --> A: Trả kết quả đã có; không ghi hoàn thêm
+else Đã ghi khác trước, số dư đổi hoặc không có tiền cần hoàn
+C --> U: Không ghi hoàn
+U --> A: Không ghi hoàn; yêu cầu kiểm tra lại
+end
+deactivate C
+deactivate U
+end
+@enduml

@@ -1,0 +1,3677 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-29",
+  "snapshotCommit": "c565c29ee5742d38dfaea37aa8fa047f4b6793c0",
+  "scope": "151 UC bổ sung G02–G16; nội dung nghiệp vụ được phân tích từ service/helper, không sinh mục tiêu từ tên API. G01 giữ nguyên tệp.",
+  "useCases": [
+    {
+      "id": "UC-DIS-01",
+      "groupId": "G02",
+      "input": "Từ khóa, địa bàn, giá, tiện ích, campus/bán kính, ngân sách, mức điện/nước, sắp xếp và phân trang.",
+      "steps": [
+        "Actor nhập tiêu chí tìm phòng hoặc đổi trang.",
+        "Hệ thống giới hạn nguồn tin PUBLISHED, phòng hoạt động VACANT, khu chưa lưu trữ và chủ trọ hoạt động.",
+        "Hệ thống lọc theo tiêu chí; khi có ngân sách tính tiền thuê + phí dịch vụ + gửi xe + điện/nước dự kiến; truy vấn tổng số và trang tin.",
+        "Hệ thống trả các tin phù hợp, chi phí ước tính, khoảng cách khi có campus và thông tin độ mới."
+      ],
+      "alternatives": [
+        "B3: Không có tin phù hợp: trả danh sách rỗng và tổng số tương ứng; không thay đổi dữ liệu; kết thúc tra cứu."
+      ],
+      "exceptions": [
+        "B1: Giá trị bộ lọc không hợp lệ theo DTO: API từ chối đầu vào; không lưu tiêu chí; kết thúc yêu cầu."
+      ],
+      "rules": [
+        "freshOnly chỉ nhận xác nhận phòng trong 14 ngày; không đồng nghĩa tin ngoài 14 ngày tự bị ẩn.",
+        "Mặc định ước tính điện 50 kWh, nước 3 m3 khi không truyền; đây không phải hóa đơn."
+      ],
+      "post": "Trả kết quả công khai; không tạo lịch xem hay hợp đồng.",
+      "relations": "UC-DIS-02 là mục tiêu xem chi tiết riêng; không include tự động.",
+      "pre": "",
+      "failure": ""
+    },
+    {
+      "id": "UC-DIS-02",
+      "groupId": "G02",
+      "input": "Mã tin đăng, tham số phân trang đánh giá công khai.",
+      "steps": [
+        "Actor mở một tin phòng.",
+        "Hệ thống kiểm tra tin vẫn thỏa điều kiện công khai; lấy chi tiết phòng/tin.",
+        "Hệ thống đọc đánh giá APPROVED chưa rút, bỏ dữ liệu explore-preview, tính điểm trung bình và chỉ lộ phản hồi đã duyệt.",
+        "Hệ thống trả chi tiết cùng kết quả đánh giá được ẩn danh tác giả."
+      ],
+      "alternatives": [
+        "B3: Chưa có đánh giá công khai: trả phần đánh giá trống; không đổi dữ liệu; kết thúc."
+      ],
+      "exceptions": [
+        "B2: Tin không còn hiển thị: trả 404 Tin đăng không còn hiển thị; không công khai nội dung; kết thúc."
+      ],
+      "rules": [
+        "Điểm tổng hợp dựa bốn tiêu chí room/cost/landlord/area.",
+        "Đọc công khai không cấp quyền viết hoặc duyệt review."
+      ],
+      "post": "Không sửa tin hoặc lịch sử đánh giá.",
+      "relations": "UC-DIS-12/UC-ADM-12 quản lý nguồn review, không là bước bắt buộc của tra cứu.",
+      "pre": "",
+      "failure": ""
+    },
+    {
+      "id": "UC-DIS-03",
+      "groupId": "G02",
+      "input": "Mã tin đăng; trang danh sách yêu thích.",
+      "steps": [
+        "Actor TENANT mở yêu thích hoặc chọn lưu một tin.",
+        "Hệ thống ràng buộc favorite theo userId hiện tại và kiểm tra tin còn công khai khi lưu.",
+        "Hệ thống upsert liên kết user–listing và trả trạng thái đã lưu.",
+        "Actor mở danh sách; hệ thống trả trang favorite và cờ available của từng tin."
+      ],
+      "alternatives": [
+        "B3: Bỏ lưu: deleteMany đúng userId/listingId; trả kết quả, kết thúc.",
+        "B3: Lưu lại liên kết đã có: upsert không tạo bản sao; trả thành công, kết thúc.",
+        "B4: Tin đã không khả dụng: vẫn trả mục đã lưu với available=false; không tái công khai tin; kết thúc."
+      ],
+      "exceptions": [
+        "B2: Lưu tin không còn hiển thị: 404; không tạo favorite; kết thúc."
+      ],
+      "rules": [
+        "Chỉ TENANT dùng các API favorite; trạng thái riêng từng tài khoản."
+      ],
+      "post": "Favorite được lưu hoặc gỡ, không giữ chỗ phòng.",
+      "relations": "",
+      "pre": "",
+      "failure": ""
+    },
+    {
+      "id": "UC-DIS-04",
+      "groupId": "G02",
+      "input": "Tên bộ lọc, tiêu chí tìm, enabled, mã bộ lọc/match và trang cảnh báo.",
+      "steps": [
+        "Actor yêu cầu lưu bộ lọc tìm phòng.",
+        "Hệ thống khóa theo User, kiểm tra giới hạn 10 bộ lọc và campus còn hoạt động; loại page/limit khỏi dữ liệu lưu.",
+        "Hệ thống lưu SavedSearch; khi lấy cảnh báo, quét các tin phù hợp và tạo match chống trùng.",
+        "Hệ thống trả cảnh báo còn tin khả dụng, tổng/unread và trang 20 mục."
+      ],
+      "alternatives": [
+        "B3: Bật lại bộ lọc đã tắt: cập nhật enabled và checkedAt=hiện tại; chỉ theo dõi từ mốc mới; kết thúc.",
+        "B3: Actor xóa bộ lọc hoặc đánh dấu match đã đọc: cập nhật đúng tài khoản; kết thúc thao tác."
+      ],
+      "exceptions": [
+        "B2: Đã có 10 bộ lọc hoặc campus không hoạt động: từ chối tạo; không thêm bộ lọc; kết thúc.",
+        "B3: Bộ lọc/match không thuộc người dùng: 404; không sửa dữ liệu của người khác; kết thúc."
+      ],
+      "rules": [
+        "Không có endpoint sửa bộ tiêu chí đã lưu trong phạm vi đối chiếu.",
+        "Quét kiểm tra enabled/checkedAt và tài khoản hoạt động trước khi ghi match."
+      ],
+      "post": "Bộ lọc/match được lưu; không mặc định gửi email hay đặt phòng.",
+      "relations": "",
+      "pre": "",
+      "failure": ""
+    },
+    {
+      "id": "UC-DIS-16",
+      "groupId": "G02",
+      "input": "Các đối tượng RoomListing được chọn trong phiên giao diện.",
+      "steps": [
+        "Actor chọn tin vào danh sách so sánh.",
+        "Riverpod kiểm tra tin đã được chọn và số tin hiện tại.",
+        "Giao diện thêm tin nếu chưa đủ 3 mục, giữ state trong bộ nhớ.",
+        "Actor mở trang so sánh; giao diện trình bày các thuộc tính tin cạnh nhau."
+      ],
+      "alternatives": [
+        "B2: Chọn lại tin đang có: loại khỏi state, trả thành công; tiếp tục B4 khi còn tin.",
+        "B3: Actor xóa toàn bộ: clear state; kết thúc danh sách so sánh."
+      ],
+      "exceptions": [
+        "B3: Đã đủ 3 tin: toggle trả false, không thêm tin thứ tư; kết thúc lần chọn."
+      ],
+      "rules": [
+        "Không có API lưu so sánh; state được tái tạo khi identity phiên thay đổi.",
+        "Nút mở so sánh tại Explore chỉ bật khi có ít nhất 2 mục."
+      ],
+      "post": "Chỉ thay đổi state cục bộ, không ghi database.",
+      "relations": "",
+      "pre": "Không yêu cầu đăng nhập để dùng chức năng công khai.",
+      "failure": "Không phát sinh thay đổi backend; danh sách so sánh chưa có bằng chứng lưu bền."
+    },
+    {
+      "id": "UC-DIS-17",
+      "groupId": "G02",
+      "input": "Điện mặc định 50, nước 3, số người 1; điện/nước là số nguyên 0–10000, số người 1–20.",
+      "steps": [
+        "Actor mở bảng Ngân sách ở trọ của tin.",
+        "Giao diện hiển thị đơn giá tin và nhận mức tiêu thụ/số người.",
+        "Giao diện kiểm form rồi tính tiền tháng từ thuê, điện, nước, phí dịch vụ và gửi xe.",
+        "Giao diện hiển thị tổng tháng, chia đều/người, cọc và ngân sách cọc + tháng đầu."
+      ],
+      "alternatives": [
+        "B2: Actor đổi các giá trị hợp lệ: setState tính lại kết quả; quay về B3; không lưu backend."
+      ],
+      "exceptions": [
+        "B3: Số không hợp lệ: báo Nhập số hợp lệ và đặt estimate=null, không hiển thị kết quả tính; quay về B2."
+      ],
+      "rules": [
+        "Chia người và tháng đầu là dự tính; chưa gồm phí chưa kê khai, mua sắm/chuyển nhà.",
+        "Không tạo hóa đơn hoặc yêu cầu chuyển tiền.",
+        "Chia đều/người dùng ceil(tổng tháng/số người), làm tròn lên đơn vị tiền."
+      ],
+      "post": "Chỉ có kết quả ước tính giao diện.",
+      "relations": "",
+      "pre": "Tin có thông tin giá để tính.",
+      "failure": "Không ghi dữ liệu nghiệp vụ."
+    },
+    {
+      "id": "UC-DIS-05",
+      "groupId": "G03",
+      "input": "Mã phòng, nội dung/giá/ảnh/vị trí tin; version khi sửa/gửi duyệt.",
+      "steps": [
+        "Actor mở tin của mình và nhập thông tin cho phòng thuộc mình.",
+        "Hệ thống kiểm quyền phòng, cặp tọa độ và dữ liệu tin; tạo tin và audit trong transaction.",
+        "Khi Actor sửa, hệ thống kiểm version, lưu nội dung và đưa về DRAFT, xóa các dấu xác minh/xuất bản/xác nhận phòng cũ.",
+        "Actor gửi duyệt; hệ thống nhận DRAFT/REJECTED/HIDDEN, kiểm phòng còn sẵn sàng và chuyển PENDING.",
+        "Hệ thống trả bản tin cùng version mới."
+      ],
+      "alternatives": [
+        "B4: Chủ trọ xác nhận còn phòng cho tin PUBLISHED: kiểm phòng khả dụng, cập nhật availabilityConfirmedAt; trả tin và kết thúc.",
+        "B1: Chỉ tra danh sách quản lý: trả tin của chủ trọ và needsAvailabilityConfirmation; không thay nội dung; kết thúc."
+      ],
+      "exceptions": [
+        "B2: Phòng đã có tin (P2002): trả xung đột, không tạo tin thứ hai; kết thúc.",
+        "B3: Version thay đổi hoặc trạng thái không cho phép: từ chối ghi; cần tải lại; kết thúc lần gửi."
+      ],
+      "rules": [
+        "Sửa nội dung làm mất xác minh trước đó; chủ trọ không tự PUBLISH tin.",
+        "Gửi duyệt không đảm bảo được duyệt."
+      ],
+      "post": "Có DRAFT hoặc PENDING theo thao tác; không tự tạo hợp đồng.",
+      "relations": "UC-ADM-11 xét duyệt; UC-DIS-06.2 ẩn tin là mục tiêu riêng.",
+      "pre": "",
+      "failure": ""
+    },
+    {
+      "id": "UC-DIS-06.2",
+      "groupId": "G03",
+      "input": "Mã tin của chủ trọ và version.",
+      "steps": [
+        "Actor chọn ẩn tin của mình.",
+        "Hệ thống kiểm quyền sở hữu và version qua mutate.",
+        "Hệ thống cập nhật HIDDEN, publishedAt=null, tăng version và ghi audit.",
+        "Hệ thống trả tin sau cập nhật."
+      ],
+      "alternatives": [],
+      "exceptions": [
+        "B2: Tin không thuộc chủ trọ hoặc version cũ: trả lỗi truy cập/không tìm thấy hoặc xung đột theo service; không ghi trạng thái; kết thúc."
+      ],
+      "rules": [
+        "Không suy ra điều kiện chỉ PUBLISHED từ luồng HIDE của Admin: đường hide chủ trọ dùng mutate riêng."
+      ],
+      "post": "Tin bị ẩn; không kết thúc hợp đồng.",
+      "relations": "Cùng tài nguyên UC-DIS-05, không phải UC-ADM-11.",
+      "pre": "",
+      "failure": ""
+    },
+    {
+      "id": "UC-DIS-08",
+      "groupId": "G03",
+      "input": "listingId; startsAt/endsAt; mã slot khi xóa.",
+      "steps": [
+        "Actor chủ trọ mở các khung giờ của tin thuộc mình.",
+        "Actor thêm thời gian; hệ thống kiểm bắt đầu từ 15 phút đến 90 ngày tới và độ dài 15–120 phút.",
+        "Hệ thống khóa User, kiểm dưới 200 slot tương lai/tin và không chồng slot đã mở của cùng chủ trọ.",
+        "Hệ thống tạo slot, bật viewingSlotsRequired và trả khung giờ."
+      ],
+      "alternatives": [
+        "B1: Đọc slot: trả tối đa 200 mục tương lai và available theo lịch REQUESTED/CONFIRMED chồng thời gian; không ghi dữ liệu; kết thúc.",
+        "B2: Xóa slot chưa có lịch đang chờ/xác nhận: kiểm sở hữu, xóa và trả deleted=true; kết thúc."
+      ],
+      "exceptions": [
+        "B3: Trùng giờ, vượt 200 slot hoặc slot có người đặt khi xóa: trả 409; không lưu/xóa slot; kết thúc.",
+        "B2: Thời gian ngoài giới hạn: trả 400; không tạo slot; quay lại nhập."
+      ],
+      "rules": [
+        "Xóa hết slot không có bằng chứng tự tắt viewingSlotsRequired.",
+        "Lịch bận kiểm cho cả chủ trọ và người đặt."
+      ],
+      "post": "Slot được lưu/xóa; không tự tạo lịch xem.",
+      "relations": "",
+      "pre": "",
+      "failure": ""
+    },
+    {
+      "id": "UC-DIS-09",
+      "groupId": "G03",
+      "input": "listingId, scheduledAt, slotId khi bắt buộc, note; id/version cho đổi hoặc hủy lịch.",
+      "steps": [
+        "Actor TENANT chọn tin và thời gian xem.",
+        "Hệ thống kiểm 15 phút–90 ngày tới, tin khả dụng, slot hợp lệ khi bắt buộc, không trùng lịch người đặt/chủ trọ.",
+        "Hệ thống tạo RoomViewing REQUESTED với activeKey theo người dùng/tin và thông báo nội bộ chủ trọ trong transaction Serializable.",
+        "Hệ thống trả lịch; Actor tra danh sách/chi tiết đúng studentId."
+      ],
+      "alternatives": [
+        "B4: Đổi lịch REQUESTED/CONFIRMED của mình: kiểm version, giữ nguyên listingId, giữ chỗ giờ mới, cập nhật và thông báo; kết thúc.",
+        "B4: Hủy REQUESTED/CONFIRMED: cập nhật CANCELLED, lý do mặc định nếu thiếu, xóa activeKey và thông báo chủ trọ; kết thúc."
+      ],
+      "exceptions": [
+        "B2: Tin ngừng nhận, slot không còn hợp lệ/trùng giờ hoặc thiếu slot bắt buộc: 404/409 theo điều kiện; không tạo lịch; kết thúc.",
+        "B3: Trùng activeKey hoặc xung đột Serializable không khắc phục sau retry: 409; transaction không hoàn thành; tải lại."
+      ],
+      "rules": [
+        "TENANT không được xác nhận/hoàn tất thay chủ trọ và không đổi sang tin khác qua reschedule."
+      ],
+      "post": "Lịch xem được lưu, chưa giữ phòng theo hợp đồng.",
+      "relations": "UC-DIS-10 tiếp nhận lịch; UC-TNT-05 chỉ sau đã xem với đường chủ trọ.",
+      "pre": "",
+      "failure": ""
+    },
+    {
+      "id": "UC-DIS-10",
+      "groupId": "G03",
+      "input": "Mã lịch, version, status và note.",
+      "steps": [
+        "Actor chủ trọ mở lịch thuộc landlordId của mình.",
+        "Actor xác nhận lịch REQUESTED; hệ thống khóa lịch, kiểm version, lịch còn ở tương lai, phòng còn khả dụng và giờ không trùng.",
+        "Hệ thống chuyển CONFIRMED, tăng version và gửi thông báo nội bộ người đặt.",
+        "Sau giờ hẹn, Actor chọn hoàn tất; hệ thống chỉ nhận CONFIRMED và chuyển COMPLETED, xóa activeKey, thông báo đối phương."
+      ],
+      "alternatives": [
+        "B2: Hủy lịch REQUESTED/CONFIRMED thay vì xác nhận: lưu CANCELLED, lý do, version mới và activeKey=null; kết thúc."
+      ],
+      "exceptions": [
+        "B2: Lịch quá giờ, version cũ hoặc chuyển trạng thái không hợp lệ: trả 409; không cập nhật; kết thúc.",
+        "B4: Chưa đến giờ hẹn: từ chối COMPLETED; lịch giữ trạng thái cũ; kết thúc."
+      ],
+      "rules": [
+        "COMPLETED không tự lập lease; xác nhận phải kiểm lại điều kiện phòng và chồng lịch."
+      ],
+      "post": "Lịch hoàn tất hoặc hủy, không tự chuyển phòng OCCUPIED.",
+      "relations": "UC-TNT-05 có biến thể lập hợp đồng từ lịch COMPLETED.",
+      "pre": "",
+      "failure": ""
+    },
+    {
+      "id": "UC-DIS-13.2",
+      "groupId": "G16",
+      "input": "area, điểm/nội dung theo PilotFeedbackDto.",
+      "steps": [
+        "Actor chủ trọ/người tìm phòng đọc pilot config.",
+        "Hệ thống trả enabled khi PILOT_AREA có giá trị cùng area.",
+        "Actor gửi feedback; hệ thống kiểm pilot vẫn enabled và input.area trùng khu đang mở.",
+        "Hệ thống tạo PilotFeedback theo userId hiện tại và trả kết quả."
+      ],
+      "alternatives": [],
+      "exceptions": [
+        "B3: Pilot tắt/area đã đổi: 400; không lưu feedback; kết thúc."
+      ],
+      "rules": [
+        "ADMIN có thể đọc cấu hình nhưng endpoint feedback chỉ LANDLORD/TENANT."
+      ],
+      "post": "Phản hồi thử nghiệm được lưu, không đổi cấu hình pilot.",
+      "relations": "",
+      "pre": "",
+      "failure": ""
+    },
+    {
+      "id": "UC-TNT-12.2",
+      "groupId": "G03",
+      "input": "leaseId, version, số điện/nước, mô tả tình trạng, đường dẫn ảnh.",
+      "steps": [
+        "Actor chủ trọ mở biên bản của hợp đồng mình quản lý.",
+        "Hệ thống lấy lease và số dư cọc COLLECTED+ADJUSTMENT−REFUNDED−DEDUCTED.",
+        "Actor lưu; hệ thống khóa Lease, kiểm ACTIVE, chưa accepted và version khớp; mọi ảnh phải là ảnh PRIVATE do Actor tải lên.",
+        "Hệ thống upsert biên bản, tăng version, ghi audit và thông báo người thuê trong cùng transaction."
+      ],
+      "alternatives": [
+        "B1: Chỉ xem biên bản hiện có: trả dữ liệu/số dư cọc, không chỉnh ledger; kết thúc."
+      ],
+      "exceptions": [
+        "B3: Lease không ACTIVE, biên bản đã accepted hoặc version thay đổi: 409; không lưu; kết thúc.",
+        "B3: Ảnh không thuộc uploader/không đúng loại PRIVATE: 400; không đính kèm; quay về nhập."
+      ],
+      "rules": [
+        "Lưu biên bản không đồng nghĩa người thuê đã nhận phòng."
+      ],
+      "post": "Biên bản chờ người thuê xác nhận.",
+      "relations": "UC-TNT-12.3 xác nhận sau; không tạo include/extend.",
+      "pre": "",
+      "failure": ""
+    },
+    {
+      "id": "UC-TNT-12.3",
+      "groupId": "G03",
+      "input": "leaseId và version biên bản đang xem.",
+      "steps": [
+        "Actor TENANT mở biên bản của hợp đồng liên kết mình.",
+        "Hệ thống khóa Lease, kiểm ACTIVE và ngày bắt đầu đã đến.",
+        "Hệ thống kiểm biên bản tồn tại, chưa được chấp nhận và version khớp.",
+        "Hệ thống ghi acceptedAt, tăng version, audit và thông báo chủ trọ trong transaction."
+      ],
+      "alternatives": [],
+      "exceptions": [
+        "B2: Chưa đến ngày bắt đầu hoặc lease không ACTIVE: 409; không ghi nhận nhận phòng; kết thúc.",
+        "B3: Không có biên bản, đã accepted hoặc version cũ: từ chối theo service; không ghi đè; kết thúc."
+      ],
+      "rules": [
+        "Xác nhận là bằng chứng lịch sử thuê cho xét điều kiện review; không tạo thanh toán."
+      ],
+      "post": "Biên bản có mốc acceptedAt.",
+      "relations": "UC-DIS-12 kiểm lịch sử thuê dựa một trong các bằng chứng này.",
+      "pre": "",
+      "failure": ""
+    },
+    {
+      "id": "UC-OPT-02",
+      "groupId": "G04",
+      "input": "Bộ lọc lifecycle của khu.",
+      "steps": [
+        "Actor yêu cầu danh sách hoặc chi tiết khu.",
+        "Hệ thống áp landlordId và propertyScope cho nhân viên; lọc lifecycle khi truyền.",
+        "Hệ thống lấy khu cùng trạng thái các phòng và serialize số liệu.",
+        "Hệ thống trả danh sách hoặc một khu."
+      ],
+      "alternatives": [
+        "B3: Không có khu thỏa bộ lọc: trả danh sách rỗng; không đổi dữ liệu; kết thúc."
+      ],
+      "exceptions": [
+        "B2: Mã khu không thuộc phạm vi: không trả khu; lỗi not found theo findOwned; kết thúc."
+      ],
+      "rules": [
+        "Quyền xem không bao gồm tạo khu."
+      ],
+      "post": "Chỉ trả dữ liệu khu trong phạm vi.",
+      "relations": "",
+      "pre": "",
+      "failure": ""
+    },
+    {
+      "id": "UC-OPT-03.1",
+      "groupId": "G04",
+      "input": "Tên khu và địa chỉ.",
+      "steps": [
+        "Actor chủ trọ nhập thông tin khu.",
+        "Hệ thống kiểm đầu vào và hạn mức tăng inventory trong transaction.",
+        "Hệ thống tạo Property với landlordId hiện tại.",
+        "Hệ thống trả khu đã lưu."
+      ],
+      "alternatives": [],
+      "exceptions": [
+        "B2: Vượt quota hoặc subscription hết hạn đang áp dụng: từ chối tăng inventory; không tạo khu; kết thúc."
+      ],
+      "rules": [
+        "STAFF bị chặn create ở interceptor dù có decorator quyền."
+      ],
+      "post": "Khu mới thuộc chủ trọ; không tạo phòng kèm.",
+      "relations": "",
+      "pre": "",
+      "failure": ""
+    },
+    {
+      "id": "UC-OPT-03.2",
+      "groupId": "G04",
+      "input": "propertyId; tên/địa chỉ cần cập nhật.",
+      "steps": [
+        "Actor mở khu được quản lý.",
+        "Hệ thống kiểm sở hữu/phạm vi.",
+        "Actor gửi phần thay đổi; hệ thống trim và chỉ cập nhật field có truyền.",
+        "Hệ thống trả khu với thống kê phòng."
+      ],
+      "alternatives": [],
+      "exceptions": [
+        "B2: Khu không thuộc phạm vi: lỗi not found; không sửa khu; kết thúc."
+      ],
+      "rules": [
+        "Cập nhật thông tin không thay landlordId hoặc tự lưu trữ khu."
+      ],
+      "post": "Thông tin khu được lưu.",
+      "relations": "",
+      "pre": "",
+      "failure": ""
+    },
+    {
+      "id": "UC-OPT-04.1",
+      "groupId": "G04",
+      "input": "propertyId, isArchived boolean.",
+      "steps": [
+        "Actor chọn lưu trữ hoặc khôi phục khu.",
+        "Hệ thống khóa User và đọc khu đúng sở hữu/phạm vi.",
+        "Nhánh lưu trữ kiểm không có lease ACTIVE; nhánh khôi phục khu đang archived kiểm quota khu và phòng hoạt động.",
+        "Hệ thống cập nhật isArchived và trả khu."
+      ],
+      "alternatives": [
+        "B3: Khôi phục đủ quota: giữ phòng/lịch sử cũ, chỉ đổi cờ khu; kết thúc sau B4."
+      ],
+      "exceptions": [
+        "B3: Còn lease ACTIVE hoặc khôi phục vượt quota: từ chối; transaction không thay cờ khu; kết thúc."
+      ],
+      "rules": [
+        "Lưu trữ không xóa khu/phòng; khôi phục vẫn chịu quota đang có hiệu lực."
+      ],
+      "post": "Cờ lưu trữ đổi; lịch sử giữ lại.",
+      "relations": "",
+      "pre": "",
+      "failure": ""
+    },
+    {
+      "id": "UC-OPT-04.3",
+      "groupId": "G04",
+      "input": "Mã khu.",
+      "steps": [
+        "Actor yêu cầu xóa khu.",
+        "Hệ thống kiểm sở hữu/phạm vi, số phòng và lịch sử propertyApprovalReview.",
+        "Nếu đủ điều kiện, hệ thống delete Property.",
+        "Hệ thống hoàn tất yêu cầu xóa."
+      ],
+      "alternatives": [],
+      "exceptions": [
+        "B2: Khu còn phòng hoặc lịch sử xét duyệt: trả xung đột; không xóa; kết thúc.",
+        "B3: Database từ chối khóa ngoại P2003: trả PROPERTY_HAS_RELATED_HISTORY; giữ khu; kết thúc."
+      ],
+      "rules": [
+        "Không xóa dây chuyền lịch sử để ép xóa khu."
+      ],
+      "post": "Khu không còn khi delete thành công.",
+      "relations": "",
+      "pre": "",
+      "failure": ""
+    },
+    {
+      "id": "UC-OPT-05",
+      "groupId": "G04",
+      "input": "propertyId/roomId và lifecycle phòng.",
+      "steps": [
+        "Actor tra phòng trong khu hoặc mở chi tiết.",
+        "Hệ thống kiểm sở hữu khu/phòng và scope.",
+        "Hệ thống truy vấn/serialize phòng cùng các quan hệ mà service trả về.",
+        "Giao diện hiển thị kết quả và các mục lịch sử liên quan đã có dữ liệu."
+      ],
+      "alternatives": [
+        "B3: Không có phòng thỏa lọc: trả mảng rỗng, không sửa dữ liệu; kết thúc."
+      ],
+      "exceptions": [
+        "B2: Phòng/khu ngoài phạm vi: trả not found; không cung cấp dữ liệu; kết thúc."
+      ],
+      "rules": [
+        "Tra phòng không tạo lease hoặc sửa trạng thái."
+      ],
+      "post": "Kết quả phòng đúng phạm vi.",
+      "relations": "",
+      "pre": "",
+      "failure": ""
+    },
+    {
+      "id": "UC-OPT-06.1",
+      "groupId": "G04",
+      "input": "propertyId, tên phòng, status, giá và các thuộc tính phòng.",
+      "steps": [
+        "Actor nhập phòng mới cho khu.",
+        "Hệ thống kiểm khu tồn tại, chưa archived và quota tăng phòng trong transaction.",
+        "Hệ thống từ chối OCCUPIED khai báo thủ công; tạo phòng với dữ liệu hợp lệ.",
+        "Hệ thống trả phòng đã tạo."
+      ],
+      "alternatives": [],
+      "exceptions": [
+        "B2: Khu archived/không thuộc scope hoặc hết quota: từ chối tạo; không thêm phòng; kết thúc.",
+        "B3: Chọn OCCUPIED: báo xung đột lease; không tạo phòng; kết thúc."
+      ],
+      "rules": [
+        "OCCUPIED phải được ràng buộc với hợp đồng; không tạo người thuê theo tenantName nhập tự do."
+      ],
+      "post": "Phòng mới thuộc khu được chọn.",
+      "relations": "",
+      "pre": "",
+      "failure": ""
+    },
+    {
+      "id": "UC-OPT-06.2",
+      "groupId": "G04",
+      "input": "roomId; các thuộc tính tên/tầng/diện tích/giá/sức chứa/tiện ích/ảnh/ghi chú.",
+      "steps": [
+        "Actor sửa thông tin phòng.",
+        "Hệ thống tìm phòng đúng scope và yêu cầu isActive.",
+        "Hệ thống chỉ cập nhật thuộc tính được truyền, trim chuỗi; nếu có status gọi kiểm tra trạng thái lease/turnover.",
+        "Hệ thống trả phòng đã cập nhật."
+      ],
+      "alternatives": [],
+      "exceptions": [
+        "B2: Phòng inactive hoặc không thuộc phạm vi: từ chối; không cập nhật; kết thúc."
+      ],
+      "rules": [
+        "Không có bằng chứng tự điều chỉnh giá các lease/hóa đơn cũ khi đổi basePrice."
+      ],
+      "post": "Chỉ thông tin phòng được cập nhật.",
+      "relations": "UC-OPT-07.1 dùng cùng PATCH nhưng mục tiêu đổi trạng thái riêng.",
+      "pre": "",
+      "failure": ""
+    },
+    {
+      "id": "UC-OPT-07.1",
+      "groupId": "G04",
+      "input": "roomId, status trong UpdateRoomDto.",
+      "steps": [
+        "Actor yêu cầu đổi trạng thái phòng qua PATCH cập nhật phòng.",
+        "Hệ thống kiểm phòng active và scope.",
+        "Hệ thống kiểm ACTIVE lease và turnover: có lease chỉ OCCUPIED; không lease không được OCCUPIED; turnover active chỉ giữ MAINTENANCE.",
+        "Hệ thống lưu status và trả phòng."
+      ],
+      "alternatives": [],
+      "exceptions": [
+        "B3: Trạng thái mâu thuẫn lease hoặc turnover: trả conflict; giữ status cũ; kết thúc."
+      ],
+      "rules": [
+        "Không có endpoint status riêng; không nhầm status với isActive."
+      ],
+      "post": "Trạng thái phòng hợp lệ theo kiểm tra tại thời điểm gọi.",
+      "relations": "UC-OPT-07.2 là cờ hoạt động khác mục tiêu.",
+      "pre": "",
+      "failure": ""
+    },
+    {
+      "id": "UC-OPT-07.2",
+      "groupId": "G04",
+      "input": "roomId, isActive boolean.",
+      "steps": [
+        "Actor vô hiệu hóa/khôi phục phòng.",
+        "Hệ thống khóa User, lấy phòng đúng phạm vi.",
+        "Khi tắt kiểm không lease ACTIVE; khi khôi phục phòng inactive kiểm khu chưa archived và quota.",
+        "Hệ thống cập nhật isActive, trả phòng."
+      ],
+      "alternatives": [
+        "B3: Khôi phục đủ điều kiện: giữ lịch sử phòng và status nghiệp vụ; kết thúc sau B4."
+      ],
+      "exceptions": [
+        "B3: Còn lease ACTIVE, khu archived hoặc quota không cho tăng: từ chối; không thay cờ; kết thúc."
+      ],
+      "rules": [
+        "Tắt phòng không xóa lịch sử; không thay thế kết thúc lease."
+      ],
+      "post": "Cờ hoạt động cập nhật.",
+      "relations": "",
+      "pre": "",
+      "failure": ""
+    },
+    {
+      "id": "UC-OPT-07.3",
+      "groupId": "G04",
+      "input": "Mã phòng.",
+      "steps": [
+        "Actor yêu cầu xóa phòng.",
+        "Hệ thống kiểm sở hữu/phạm vi.",
+        "Hệ thống đếm lease, meterReading, invoice, viewing và roomTurnover; chỉ xóa khi không có lịch sử bị chặn.",
+        "Hệ thống delete phòng, hoàn tất yêu cầu."
+      ],
+      "alternatives": [],
+      "exceptions": [
+        "B3: Có lịch sử liên quan: trả ROOM_HAS_HISTORY theo helper; phòng giữ nguyên; kết thúc."
+      ],
+      "rules": [
+        "Không hủy chứng từ hoặc lease để phục vụ xóa phòng.",
+        "Tài sản phòng, lịch kiểm tra và phí dịch vụ không thuộc các điều kiện đếm chặn xóa; RoomAsset, RoomInspection, RoomServiceFee có onDelete: Cascade theo schema nguồn. Chưa chạy kiểm chứng cascade trên DB thật."
+      ],
+      "post": "Phòng được xóa khi đủ điều kiện.",
+      "relations": "",
+      "pre": "",
+      "failure": ""
+    },
+    {
+      "id": "UC-OPT-08.1",
+      "groupId": "G04",
+      "input": "roomId/assetId; tên, số lượng, tình trạng, giá trị, ngày mua, ảnh, ghi chú.",
+      "steps": [
+        "Actor mở tài sản phòng trong phạm vi.",
+        "Actor thêm tài sản; hệ thống kiểm phòng và DTO rồi ghi RoomAsset.",
+        "Hệ thống trả dữ liệu tài sản được serialize.",
+        "Giao diện tải lại danh sách tài sản phòng."
+      ],
+      "alternatives": [
+        "B2: Sửa tài sản: tìm đúng asset thuộc room, cập nhật field gửi lên; tiếp tục B3.",
+        "B2: Xóa tài sản: kiểm liên kết room/asset, delete; tải lại danh sách và kết thúc."
+      ],
+      "exceptions": [
+        "B2: Phòng hoặc asset không thuộc phạm vi: trả lỗi not found; không ghi/xóa; kết thúc."
+      ],
+      "rules": [
+        "Đây là sổ tài sản, không tự tạo Expense hoặc khấu trừ cọc."
+      ],
+      "post": "Tài sản phòng được cập nhật theo thao tác.",
+      "relations": "",
+      "pre": "",
+      "failure": ""
+    },
+    {
+      "id": "UC-OPT-08.2",
+      "groupId": "G04",
+      "input": "roomId/inspectionId; tiêu đề, dueAt, ghi chú, completedAt khi sửa.",
+      "steps": [
+        "Actor mở lịch kiểm tra phòng.",
+        "Actor thêm lịch; hệ thống kiểm phòng và dữ liệu ngày/tiêu đề.",
+        "Hệ thống lưu RoomInspection và trả dữ liệu.",
+        "Actor tra danh sách lịch theo phòng."
+      ],
+      "alternatives": [
+        "B2: Sửa lịch: cập nhật field đã truyền; tiếp tục B3.",
+        "B2: Đánh dấu xong: đặt completedAt=hiện tại; trả lịch và kết thúc.",
+        "B2: Xóa lịch: kiểm phòng/inspection, delete; kết thúc."
+      ],
+      "exceptions": [
+        "B2: Phòng/lịch không tồn tại trong phạm vi hoặc dữ liệu sai: trả lỗi, không ghi thay đổi; kết thúc."
+      ],
+      "rules": [
+        "Lịch kiểm tra không tự trở thành phiếu bảo trì hoặc khoản chi."
+      ],
+      "post": "Lịch kiểm tra được lưu/hoàn tất/xóa.",
+      "relations": "",
+      "pre": "",
+      "failure": ""
+    },
+    {
+      "id": "UC-OPT-09",
+      "groupId": "G04",
+      "input": "roomId, feeId; tên/phí/đơn vị/effectiveFrom/isActive; expectedVersion nếu có.",
+      "steps": [
+        "Actor chủ trọ mở các phí và phiên bản theo phòng.",
+        "Actor tạo phí; hệ thống kiểm phòng, lưu phí và version 1.",
+        "Khi sửa, hệ thống khóa tài nguyên, kiểm expectedVersion nếu truyền và ngày hiệu lực sau version gần nhất.",
+        "Hệ thống thêm version phí, trả phí cùng lịch sử."
+      ],
+      "alternatives": [
+        "B3: Chỉ gửi isActive bằng trạng thái hiện tại cùng expectedVersion: trả hiện tại, không thêm version; kết thúc.",
+        "B3: Xóa phí qua API remove: thực hiện vô hiệu hóa bằng updateServiceFee, không delete vật lý; kết thúc."
+      ],
+      "exceptions": [
+        "B3: Version cũ hoặc effectiveFrom không tăng: TARIFF_VERSION_CHANGED/TARIFF_DATE_CONFLICT; không thêm phiên bản; kết thúc."
+      ],
+      "rules": [
+        "STAFF room.view+scope chỉ đọc; mutation chỉ LANDLORD.",
+        "Không sửa hồi tố line item hóa đơn đã phát hành."
+      ],
+      "post": "Phiên bản phí được lưu; dữ liệu quá khứ không bị ghi đè.",
+      "relations": "",
+      "pre": "",
+      "failure": ""
+    },
+    {
+      "id": "UC-STF-01",
+      "groupId": "G05",
+      "input": "Email, họ tên, preset/quyền và propertyIds.",
+      "steps": [
+        "Actor chủ trọ nhập lời mời nhân viên.",
+        "Hệ thống chuẩn hóa email, khóa theo chủ trọ/email, kiểm chưa có User và giới hạn gửi.",
+        "Hệ thống kiểm preset/quyền cùng khu thuộc chủ trọ; làm hết hạn lời mời cũ chưa dùng.",
+        "Hệ thống tạo lời mời 7 ngày, trả inviteCode và activationPath để chia sẻ."
+      ],
+      "alternatives": [],
+      "exceptions": [
+        "B2: Email đã có User: conflict; không tạo nhân viên mới; kết thúc.",
+        "B2: Chưa đủ 60 giây hoặc đã 5 lời mời/giờ: 429; không tạo token mới; kết thúc."
+      ],
+      "rules": [
+        "Không có gửi email được chứng minh ở đường createInvite.",
+        "Preset mặc định viewer; quyền và scope không được tự suy theo tên chức danh."
+      ],
+      "post": "Lời mời tồn tại; chưa có tài khoản STAFF đến khi kích hoạt.",
+      "relations": "UC-SYS-09 kích hoạt ở G01.",
+      "pre": "",
+      "failure": ""
+    },
+    {
+      "id": "UC-STF-02",
+      "groupId": "G05",
+      "input": "staffId, preset/permissions/isActive/propertyIds tùy phần cập nhật.",
+      "steps": [
+        "Actor chủ trọ chọn nhân viên của mình.",
+        "Hệ thống xác minh profile thuộc landlord, giải preset/quyền và kiểm khu hợp lệ.",
+        "Trong transaction hệ thống khóa profile, cập nhật profile và User.isActive; khi truyền propertyIds thay toàn bộ scope.",
+        "Hệ thống audit phạm vi cũ/mới và trả nhân viên."
+      ],
+      "alternatives": [
+        "B3: Không truyền propertyIds: giữ nguyên scope đã có; tiếp tục B4."
+      ],
+      "exceptions": [
+        "B2: Nhân viên hoặc khu không thuộc chủ trọ/quyền không hợp lệ: từ chối; không cấp quyền; kết thúc."
+      ],
+      "rules": [
+        "JWT đọc profile/owner sống; STAFF không được tự quản lý nhân sự qua decorator staff.manage."
+      ],
+      "post": "Quyền/trạng thái/scope của nhân viên được lưu.",
+      "relations": "",
+      "pre": "",
+      "failure": ""
+    },
+    {
+      "id": "UC-STF-03",
+      "groupId": "G05",
+      "input": "staffId, propertyId, permission cần mô phỏng.",
+      "steps": [
+        "Actor chủ trọ chọn nhân viên, khu và quyền thử.",
+        "Hệ thống đọc profile/User và khu thuộc chủ trọ.",
+        "Hệ thống tổng hợp STAFF_INACTIVE, MODULE_PERMISSION_MISSING, PROPERTY_NOT_ASSIGNED, PROPERTY_ARCHIVED và LANDLORD_ONLY_ACTION khi phù hợp.",
+        "Hệ thống trả allowed chỉ khi không có reasons, scope=module-and-property và additionalActionChecksApply=true."
+      ],
+      "alternatives": [
+        "B3: Có một hoặc nhiều lý do từ chối: trả allowed=false cùng reasons; không đổi quyền; kết thúc."
+      ],
+      "exceptions": [
+        "B2: Không có nhân viên/khu thuộc chủ trọ: not found; không mô phỏng tài nguyên ngoài phạm vi; kết thúc."
+      ],
+      "rules": [
+        "Mô phỏng không thay thế guard/interceptor và kiểm tra nghiệp vụ từng API."
+      ],
+      "post": "Chỉ kết quả đánh giá quyền; không lưu quyền mới.",
+      "relations": "",
+      "pre": "",
+      "failure": ""
+    },
+    {
+      "id": "UC-STF-04",
+      "groupId": "G05",
+      "input": "Phiên và phạm vi propertyIds được cấp.",
+      "steps": [
+        "Actor mở danh sách nhân viên hoặc preset.",
+        "Hệ thống áp landlordId và propertyIds hiện hành cho STAFF.",
+        "Hệ thống lấy profile, trạng thái User và chỉ các scope nằm trong tập khu được xem; lấy danh mục preset khi yêu cầu.",
+        "Hệ thống trả danh sách đã serialize."
+      ],
+      "alternatives": [
+        "B3: Không có nhân viên khớp scope: trả danh sách rỗng; không đổi nhân sự; kết thúc."
+      ],
+      "exceptions": [
+        "B2: STAFF không có quyền đọc yêu cầu: guard/interceptor từ chối; không trả danh sách; kết thúc."
+      ],
+      "rules": [
+        "StaffController chỉ list/presets được allowlist cho STAFF; không suy thêm quyền create/update."
+      ],
+      "post": "Dữ liệu nhân sự trong phạm vi được trả về.",
+      "relations": "",
+      "pre": "",
+      "failure": ""
+    },
+    {
+      "id": "UC-TEN-01",
+      "groupId": "G06",
+      "input": "Phiên TENANT có Tenant liên kết.",
+      "steps": [
+        "Actor mở cổng người thuê.",
+        "Hệ thống tìm hồ sơ Tenant theo User hiện tại.",
+        "Hệ thống lấy profile và dashboard từ lease, hóa đơn chưa đủ tiền, bảo trì và thông báo thuộc người thuê.",
+        "Hệ thống trả tổng quan để giao diện hiển thị."
+      ],
+      "alternatives": [
+        "B3: Không có nợ/bảo trì/thông báo phù hợp: trả tập rỗng hoặc số đếm tương ứng; không tạo hồ sơ/hợp đồng; kết thúc."
+      ],
+      "exceptions": [
+        "B2: User tìm phòng chưa có Tenant liên kết: trả lỗi hồ sơ theo portal; không tự cấp dữ liệu thuê; kết thúc."
+      ],
+      "rules": [
+        "Tài khoản TENANT không đồng nghĩa đã ký hợp đồng."
+      ],
+      "post": "Chỉ đọc dữ liệu thuê cá nhân.",
+      "relations": "",
+      "pre": "",
+      "failure": ""
+    },
+    {
+      "id": "UC-TEN-02",
+      "groupId": "G06",
+      "input": "Phiên TENANT; leaseId để lấy quyết toán.",
+      "steps": [
+        "Actor mở danh sách hợp đồng của mình.",
+        "Hệ thống lấy các lease qua Tenant liên kết.",
+        "Actor xem quyết toán một lease; hệ thống kiểm lease thuộc tenantId/userId hiện tại.",
+        "Hệ thống trả lease và settlement nếu có."
+      ],
+      "alternatives": [
+        "B4: Lease chưa có settlement: trả data=null; không khởi tạo quyết toán; kết thúc."
+      ],
+      "exceptions": [
+        "B3: Lease không thuộc tài khoản: 404; không trả quyết toán; kết thúc."
+      ],
+      "rules": [
+        "Chưa thấy UI TENANT nối shareLeasePdf; không gán khả năng xuất PDF chỉ vì dùng chung model."
+      ],
+      "post": "Không sửa lease hoặc quyết toán.",
+      "relations": "UC-TNT-08 là quyền chốt quyết toán của chủ trọ.",
+      "pre": "",
+      "failure": ""
+    },
+    {
+      "id": "UC-TEN-08.1",
+      "groupId": "G06",
+      "input": "leaseId tùy chọn trong truy vấn người ở cùng.",
+      "steps": [
+        "Actor TENANT yêu cầu danh sách người ở cùng.",
+        "Hệ thống xác minh Tenant và leaseId nếu có thuộc phạm vi cá nhân.",
+        "Hệ thống lấy TenantOccupant theo leaseWhere của người thuê.",
+        "Hệ thống trả các thành viên được phép xem."
+      ],
+      "alternatives": [
+        "B3: Không có occupant: trả mảng rỗng, không thay đổi lease; kết thúc."
+      ],
+      "exceptions": [
+        "B2: LeaseId không thuộc người thuê: 404; không trả danh sách; kết thúc."
+      ],
+      "rules": [
+        "TENANT chỉ đọc, không thêm/xóa người ở cùng."
+      ],
+      "post": "Chỉ dữ liệu người ở cùng hợp đồng của mình.",
+      "relations": "",
+      "pre": "",
+      "failure": ""
+    },
+    {
+      "id": "UC-TNT-01",
+      "groupId": "G06",
+      "input": "lifecycle, tenantId cho chi tiết/tổng quan.",
+      "steps": [
+        "Actor vận hành tra hồ sơ người thuê.",
+        "Hệ thống áp landlordId và tenantScope của STAFF.",
+        "Hệ thống lấy danh sách/chi tiết, lease ACTIVE và thông tin tổng quan tài chính/lịch sử được service lựa chọn.",
+        "Hệ thống serialize và trả kết quả."
+      ],
+      "alternatives": [
+        "B3: Không có hồ sơ phù hợp bộ lọc: trả tập rỗng; không tạo hồ sơ; kết thúc."
+      ],
+      "exceptions": [
+        "B2: Tenant ngoài scope: not found; không lộ hồ sơ; kết thúc."
+      ],
+      "rules": [
+        "Scope hồ sơ của STAFF không được suy chỉ từ landlordId chung."
+      ],
+      "post": "Hồ sơ/tổng quan được trả trong phạm vi.",
+      "relations": "",
+      "pre": "",
+      "failure": ""
+    },
+    {
+      "id": "UC-TNT-02.1",
+      "groupId": "G06",
+      "input": "Họ tên, điện thoại, giấy tờ, ghi chú.",
+      "steps": [
+        "Actor tạo hồ sơ người thuê.",
+        "Hệ thống kiểm DTO và phạm vi vận hành.",
+        "Hệ thống tạo Tenant thuộc landlordId với chuỗi được chuẩn hóa.",
+        "Hệ thống trả hồ sơ mới."
+      ],
+      "alternatives": [],
+      "exceptions": [
+        "B2: Input sai validation hoặc quyền/scope bị từ chối: không tạo hồ sơ; trả lỗi tương ứng; kết thúc."
+      ],
+      "rules": [
+        "Tạo Tenant không tự tạo User hoặc lease."
+      ],
+      "post": "Hồ sơ người thuê mới, chưa mặc định có quyền đăng nhập.",
+      "relations": "",
+      "pre": "",
+      "failure": ""
+    },
+    {
+      "id": "UC-TNT-02.2",
+      "groupId": "G06",
+      "input": "tenantId và thông tin hồ sơ cần sửa.",
+      "steps": [
+        "Actor mở hồ sơ trong phạm vi.",
+        "Hệ thống tìm Tenant và yêu cầu isActive.",
+        "Hệ thống cập nhật các field đã truyền và trim chuỗi.",
+        "Hệ thống trả hồ sơ sau cập nhật."
+      ],
+      "alternatives": [],
+      "exceptions": [
+        "B2: Tenant inactive/ngoài scope: từ chối; giữ hồ sơ; kết thúc."
+      ],
+      "rules": [
+        "Sửa profile không đổi role hoặc tự tạo tài khoản cổng thuê."
+      ],
+      "post": "Thông tin Tenant được cập nhật.",
+      "relations": "",
+      "pre": "",
+      "failure": ""
+    },
+    {
+      "id": "UC-TNT-02.3",
+      "groupId": "G06",
+      "input": "tenantId, isActive.",
+      "steps": [
+        "Actor yêu cầu vô hiệu hóa/khôi phục hồ sơ.",
+        "Hệ thống kiểm hồ sơ thuộc scope.",
+        "Khi vô hiệu hóa, hệ thống kiểm điều kiện không có lease ACTIVE qua helper.",
+        "Hệ thống cập nhật Tenant.isActive và trả hồ sơ."
+      ],
+      "alternatives": [
+        "B3: Khôi phục: cập nhật cờ Tenant; không tự ký lease mới; tiếp tục B4."
+      ],
+      "exceptions": [
+        "B3: Còn lease ACTIVE khi tắt: từ chối; hồ sơ vẫn hoạt động; kết thúc."
+      ],
+      "rules": [
+        "Đây là Tenant.isActive; không đồng nhất với thao tác đình chỉ User của Admin."
+      ],
+      "post": "Cờ hồ sơ người thuê thay đổi.",
+      "relations": "",
+      "pre": "",
+      "failure": ""
+    },
+    {
+      "id": "UC-TNT-02.4",
+      "groupId": "G06",
+      "input": "tenantId.",
+      "steps": [
+        "Actor chọn xóa hồ sơ.",
+        "Hệ thống tìm Tenant thuộc phạm vi và đếm lease/invoice.",
+        "Nếu không có lịch sử bị chặn, hệ thống delete Tenant.",
+        "Hệ thống hoàn tất yêu cầu xóa."
+      ],
+      "alternatives": [],
+      "exceptions": [
+        "B2: Có lease hoặc invoice: báo tenantHasHistory; không xóa; kết thúc."
+      ],
+      "rules": [
+        "Không xóa lịch sử thuê/hóa đơn để xóa hồ sơ."
+      ],
+      "post": "Hồ sơ được xóa khi đủ điều kiện.",
+      "relations": "",
+      "pre": "",
+      "failure": ""
+    },
+    {
+      "id": "UC-TNT-03",
+      "groupId": "G06",
+      "input": "tenantId, email và thông tin lời mời.",
+      "steps": [
+        "Actor chủ trọ yêu cầu mời hồ sơ người thuê vào cổng.",
+        "Hệ thống khóa/ràng buộc Tenant thuộc mình, kiểm chưa liên kết User, email chưa đăng ký và hạn mức lời mời.",
+        "Hệ thống làm hết hạn lời mời cũ và tạo lời mời mới.",
+        "Hệ thống trả inviteCode/activationPath cho chủ trọ chia sẻ."
+      ],
+      "alternatives": [],
+      "exceptions": [
+        "B2: Hồ sơ đã có User hoặc email tồn tại: conflict; không liên kết tài khoản khác; kết thúc.",
+        "B2: Chưa đủ 60 giây/đạt 5 lần mỗi giờ: 429; không tạo lời mời; kết thúc."
+      ],
+      "rules": [
+        "Không có bằng chứng đường này tự gửi email; STAFF bị chặn TenantInvitesController."
+      ],
+      "post": "Có lời mời, chưa tự cấp phiên đăng nhập.",
+      "relations": "UC-SYS-08 kích hoạt, khác UC-TNT-03.1 tạo User trực tiếp.",
+      "pre": "",
+      "failure": ""
+    },
+    {
+      "id": "UC-TNT-03.1",
+      "groupId": "G06",
+      "input": "tenantId; email/mật khẩu và dữ liệu CreateTenantAccountDto.",
+      "steps": [
+        "Actor yêu cầu tạo tài khoản cho hồ sơ Tenant trong scope.",
+        "Hệ thống kiểm chưa có userId, chuẩn hóa email và hash mật khẩu.",
+        "Hệ thống tạo User role TENANT và cập nhật Tenant.userId trong transaction.",
+        "Hệ thống trả Tenant đã liên kết."
+      ],
+      "alternatives": [],
+      "exceptions": [
+        "B2: Hồ sơ đã có tài khoản: conflict; không tạo User. Kết thúc.",
+        "B3: Email trùng P2002: rollback transaction và trả emailAlreadyRegistered; kết thúc."
+      ],
+      "rules": [
+        "STAFF tenant.manage có đường trực tiếp trong whitelist; không vì UC mời bị chặn mà phủ nhận đường này."
+      ],
+      "post": "User TENANT mới được liên kết duy nhất với hồ sơ.",
+      "relations": "",
+      "pre": "",
+      "failure": ""
+    },
+    {
+      "id": "UC-TNT-04",
+      "groupId": "G06",
+      "input": "roomId/tenantId; khoảng ngày cảnh báo sắp hết hạn; hợp đồng chọn xuất tại UI.",
+      "steps": [
+        "Actor mở danh sách hợp đồng theo phòng hoặc người thuê.",
+        "Hệ thống kiểm room/tenant thuộc scope, lấy lease và dữ liệu serialize.",
+        "Khi xem sắp hết hạn, hệ thống lọc lease ACTIVE theo ngày kết thúc và trả số ngày còn lại.",
+        "Actor dùng luồng xuất/chia sẻ hợp đồng tại giao diện vận hành; dữ liệu xuất lấy từ lease đã tải."
+      ],
+      "alternatives": [
+        "B2: Danh sách không có lease: trả rỗng; không tạo hợp đồng; kết thúc."
+      ],
+      "exceptions": [
+        "B2: Room/tenant ngoài quyền: not found; không cung cấp lease để xuất; kết thúc."
+      ],
+      "rules": [
+        "Xuất phía client không chứng minh chữ ký số hoặc giá trị hợp đồng điện tử."
+      ],
+      "post": "Dữ liệu lease/bản xuất phía UI; không sửa hợp đồng.",
+      "relations": "",
+      "pre": "",
+      "failure": ""
+    },
+    {
+      "id": "UC-TNT-05",
+      "groupId": "G06",
+      "input": "roomId, tenantId, monthlyRent, deposit, startDate tùy chọn; biến thể lịch xem dùng viewingId/version.",
+      "steps": [
+        "Actor vận hành chọn phòng/người thuê và nhập điều khoản ban đầu.",
+        "Hệ thống khóa Room, kiểm khu chưa lưu trữ, phòng active, không MAINTENANCE/turnover ACTIVE và không lease ACTIVE khác.",
+        "Hệ thống kiểm Tenant active trong scope; tạo Lease ACTIVE, ngày bắt đầu mặc định hiện tại nếu bỏ trống.",
+        "Hệ thống ghi COLLECTED cho deposit dương và cập nhật phòng OCCUPIED/tenantName trong cùng transaction.",
+        "Hệ thống trả lease đã tạo."
+      ],
+      "alternatives": [
+        "B1: Chủ trọ lập từ lịch xem COMPLETED: kiểm tin/phòng/người xem active; tái dùng hoặc tạo Tenant đủ điều kiện; tạo lease với recordDeposit=false, lưu cọc thỏa thuận nhưng không ghi COLLECTED; đánh lịch LEASED, ẩn tin và hủy lịch đang chờ khác; kết thúc sau trả leaseId/tenantId."
+      ],
+      "exceptions": [
+        "B2: Phòng có lease ACTIVE, chưa sẵn sàng hoặc ngoài scope: từ chối; không tạo lease/cọc; kết thúc.",
+        "B3: Tenant inactive/ngoài scope: từ chối; không chuyển phòng OCCUPIED; kết thúc."
+      ],
+      "rules": [
+        "CreateLeaseDto không nhận endDate; không tự thêm ngày kết thúc.",
+        "Đường từ HousingController chỉ LANDLORD; STAFF chỉ tạo trực tiếp.",
+        "Nhánh lập từ lịch xem gọi createWithinTransaction với recordDeposit=false: lưu tiền cọc thỏa thuận nhưng không tự ghi COLLECTED. Nhánh lập trực tiếp mới tự ghi COLLECTED khi deposit dương."
+      ],
+      "post": "Lease ACTIVE, phòng OCCUPIED; deposit lưu cọc thỏa thuận. Chỉ nhánh lập trực tiếp tự ghi COLLECTED khi deposit dương; nhánh từ lịch xem không tự ghi thu cọc.",
+      "relations": "UC-TNT-06.1/06.2 chỉnh điều khoản/gia hạn; UC-DIS-10 không tự gọi bước lập lease.",
+      "pre": "",
+      "failure": ""
+    },
+    {
+      "id": "UC-TNT-06.1",
+      "groupId": "G06",
+      "input": "leaseId; các điều khoản UpdateLeaseDto.",
+      "steps": [
+        "Actor chọn hợp đồng cần sửa.",
+        "Hệ thống tìm theo scope, khóa Room/Lease và kiểm chưa có settlement.",
+        "Hệ thống tính giá trị tiếp theo, parse ngày và kiểm endDate không trước startDate.",
+        "Hệ thống cập nhật lease, ghi thay đổi và trả kết quả."
+      ],
+      "alternatives": [],
+      "exceptions": [
+        "B2: Lease đã quyết toán: conflict; không sửa điều khoản; kết thúc.",
+        "B3: Ngày sai hoặc endDate trước startDate: 400; không lưu; quay lại nhập."
+      ],
+      "rules": [
+        "Không tự điều chỉnh hóa đơn đã phát hành theo điều khoản mới."
+      ],
+      "post": "Điều khoản lease được cập nhật.",
+      "relations": "",
+      "pre": "",
+      "failure": ""
+    },
+    {
+      "id": "UC-TNT-06.2",
+      "groupId": "G06",
+      "input": "leaseId, endDate mới và monthlyRent nếu DTO cho phép.",
+      "steps": [
+        "Actor vận hành chọn gia hạn lease.",
+        "Hệ thống tìm lease đúng scope, khóa và yêu cầu ACTIVE/chưa settlement.",
+        "Hệ thống kiểm endDate mới sau endDate hiện có hoặc startDate nếu chưa có hạn.",
+        "Hệ thống cập nhật thời hạn/điều khoản theo input, ghi thay đổi và trả lease."
+      ],
+      "alternatives": [],
+      "exceptions": [
+        "B2: Lease ENDED hoặc đã settlement: conflict; không gia hạn; kết thúc.",
+        "B3: Ngày mới không tăng: conflict; không lưu; kết thúc."
+      ],
+      "rules": [
+        "Không tự thu cọc/nợ khi gia hạn."
+      ],
+      "post": "Lease có hạn mới; không tạo lease trùng.",
+      "relations": "UC-TEN-07.1 là gửi đề nghị; duyệt đề nghị không đồng nghĩa đã gia hạn.",
+      "pre": "",
+      "failure": ""
+    },
+    {
+      "id": "UC-TNT-06.3",
+      "groupId": "G06",
+      "input": "leaseId.",
+      "steps": [
+        "Actor yêu cầu kết thúc hợp đồng.",
+        "Hệ thống tìm đúng scope và khóa Room/Lease.",
+        "Hệ thống đặt lease ENDED/endDate=hiện tại.",
+        "Khi không còn lease ACTIVE khác, hệ thống chuyển phòng MAINTENANCE, xóa tenantName và mở turnover; trả lease."
+      ],
+      "alternatives": [
+        "B2: Lease đã ENDED: trả dữ liệu hiện tại, không lặp kết thúc; kết thúc."
+      ],
+      "exceptions": [
+        "B2: Không có lease thuộc scope: not found; không đổi phòng; kết thúc."
+      ],
+      "rules": [
+        "Không tự chốt quyết toán/hoàn cọc; phòng không tự VACANT."
+      ],
+      "post": "Lease kết thúc, phòng chờ chuẩn bị lại nếu không còn hợp đồng active.",
+      "relations": "UC-OPS-05 đưa phòng qua pipeline; UC-TNT-08 quyết toán riêng.",
+      "pre": "",
+      "failure": ""
+    },
+    {
+      "id": "UC-TNT-07",
+      "groupId": "G06",
+      "input": "leaseId, loại giao dịch cọc, amount, note/thời gian theo DTO.",
+      "steps": [
+        "Actor mở sổ cọc hợp đồng trong scope.",
+        "Actor ghi giao dịch; hệ thống khóa Lease và kiểm chưa quyết toán.",
+        "Hệ thống tính balance từ ledger; nếu REFUNDED/DEDUCTED phải không vượt số dư.",
+        "Hệ thống tạo DepositTransaction, trả giao dịch."
+      ],
+      "alternatives": [
+        "B1: Chỉ xem sổ cọc: trả các giao dịch đã có; không thay số dư; kết thúc."
+      ],
+      "exceptions": [
+        "B2: Có settlement: conflict, yêu cầu dùng ghi nhận hoàn của quyết toán; không ghi cọc đường cũ; kết thúc.",
+        "B3: Khoản hoàn/khấu trừ vượt balance: conflict; không thêm ledger; kết thúc."
+      ],
+      "rules": [
+        "Ghi sổ cọc không thực hiện chuyển tiền ngân hàng."
+      ],
+      "post": "Ledger cọc tăng bản ghi hợp lệ.",
+      "relations": "UC-TNT-09 dành khoản hoàn đã chốt.",
+      "pre": "",
+      "failure": ""
+    },
+    {
+      "id": "UC-TNT-12.1",
+      "groupId": "G06",
+      "input": "leaseId, tên/điện thoại/giấy tờ/quan hệ occupant; occupantId khi xóa.",
+      "steps": [
+        "Actor mở người ở cùng lease.",
+        "Khi thêm, hệ thống khóa Lease, kiểm ACTIVE, Tenant active và khu chưa archived trong scope.",
+        "Hệ thống kiểm số người ở cùng + người thuê chính chưa đạt capacity, mặc định 100 khi null.",
+        "Hệ thống tạo TenantOccupant và trả kết quả."
+      ],
+      "alternatives": [
+        "B1: Xem danh sách: áp leaseWhere, trả các occupant; không cập nhật; kết thúc.",
+        "B2: Xóa: tìm occupant thuộc lease ACTIVE trong scope, khóa Lease rồi delete; trả removed=true; kết thúc."
+      ],
+      "exceptions": [
+        "B3: Đã đủ sức chứa: conflict; không thêm người; kết thúc.",
+        "B2: Lease/occupant không thuộc scope hoặc không ACTIVE: not found; không sửa; kết thúc."
+      ],
+      "rules": [
+        "TENANT không có quyền thêm/xóa; capacity tính cả người thuê chính."
+      ],
+      "post": "Danh sách người ở cùng được lưu, không tạo tài khoản User.",
+      "relations": "",
+      "pre": "",
+      "failure": ""
+    },
+    {
+      "id": "UC-TEN-07.1",
+      "groupId": "G07",
+      "input": "leaseId, type=RENEWAL, ngày đề nghị và note; expectedUpdatedAt khi hủy.",
+      "steps": [
+        "Actor TENANT mở yêu cầu vòng đời của mình.",
+        "Actor gửi loại RENEWAL; hệ thống khóa theo Tenant, tìm lease ACTIVE và kiểm chưa có yêu cầu PENDING cùng loại.",
+        "Hệ thống kiểm requestedEnd mới lớn hơn endDate hiện có và lớn hơn hiện tại; không nhận requestedStart/requestedRoomId.",
+        "Hệ thống tạo TenantLifecycleRequest PENDING và trả yêu cầu."
+      ],
+      "alternatives": [
+        "B1: Tra cứu yêu cầu: trả trang theo cursor/limit trong scope; không sửa lease; kết thúc.",
+        "B4: Người thuê hủy khi còn PENDING và version thời gian nếu truyền khớp: đổi CANCELLED; kết thúc."
+      ],
+      "exceptions": [
+        "B2: Không có lease ACTIVE hoặc trùng yêu cầu PENDING: 404/409; không tạo đề nghị; kết thúc.",
+        "B3: Ngày/phòng không hợp lệ: 400/404; không sửa lease; quay lại nhập."
+      ],
+      "rules": [
+        "Gửi đề nghị không tự thực thi thay đổi lease.",
+        "requestedEnd mới lớn hơn endDate hiện có và lớn hơn hiện tại; không nhận requestedStart/requestedRoomId."
+      ],
+      "post": "Có yêu cầu PENDING; hợp đồng hiện tại chưa đổi.",
+      "relations": "UC-TNT-10 xét duyệt; UC-TNT-11 thực thi là mục tiêu khác.",
+      "pre": "",
+      "failure": ""
+    },
+    {
+      "id": "UC-TEN-07.2",
+      "groupId": "G07",
+      "input": "leaseId, type=TRANSFER_ROOM, ngày đề nghị và note; expectedUpdatedAt khi hủy.",
+      "steps": [
+        "Actor TENANT mở yêu cầu vòng đời của mình.",
+        "Actor gửi loại TRANSFER_ROOM; hệ thống khóa theo Tenant, tìm lease ACTIVE và kiểm chưa có yêu cầu PENDING cùng loại.",
+        "Hệ thống kiểm requestedStart từ ngày hiện tại, không trước startDate lease; chọn phòng khác còn trống cùng chủ trọ; không nhận requestedEnd.",
+        "Hệ thống tạo TenantLifecycleRequest PENDING và trả yêu cầu."
+      ],
+      "alternatives": [
+        "B1: Tra cứu yêu cầu: trả trang theo cursor/limit trong scope; không sửa lease; kết thúc.",
+        "B4: Người thuê hủy khi còn PENDING và version thời gian nếu truyền khớp: đổi CANCELLED; kết thúc."
+      ],
+      "exceptions": [
+        "B2: Không có lease ACTIVE hoặc trùng yêu cầu PENDING: 404/409; không tạo đề nghị; kết thúc.",
+        "B3: Ngày/phòng không hợp lệ: 400/404; không sửa lease; quay lại nhập."
+      ],
+      "rules": [
+        "Gửi đề nghị không tự thực thi thay đổi lease.",
+        "requestedStart từ ngày hiện tại, không trước startDate lease; chọn phòng khác còn trống cùng chủ trọ; không nhận requestedEnd."
+      ],
+      "post": "Có yêu cầu PENDING; hợp đồng hiện tại chưa đổi.",
+      "relations": "UC-TNT-10 xét duyệt; UC-TNT-11 thực thi là mục tiêu khác.",
+      "pre": "",
+      "failure": ""
+    },
+    {
+      "id": "UC-TEN-07.3",
+      "groupId": "G07",
+      "input": "leaseId, type=CHECKOUT, ngày đề nghị và note; expectedUpdatedAt khi hủy.",
+      "steps": [
+        "Actor TENANT mở yêu cầu vòng đời của mình.",
+        "Actor gửi loại CHECKOUT; hệ thống khóa theo Tenant, tìm lease ACTIVE và kiểm chưa có yêu cầu PENDING cùng loại.",
+        "Hệ thống kiểm requestedStart từ ngày hiện tại, không trước startDate lease; không nhận requestedRoomId/requestedEnd.",
+        "Hệ thống tạo TenantLifecycleRequest PENDING và trả yêu cầu."
+      ],
+      "alternatives": [
+        "B1: Tra cứu yêu cầu: trả trang theo cursor/limit trong scope; không sửa lease; kết thúc.",
+        "B4: Người thuê hủy khi còn PENDING và version thời gian nếu truyền khớp: đổi CANCELLED; kết thúc."
+      ],
+      "exceptions": [
+        "B2: Không có lease ACTIVE hoặc trùng yêu cầu PENDING: 404/409; không tạo đề nghị; kết thúc.",
+        "B3: Ngày/phòng không hợp lệ: 400/404; không sửa lease; quay lại nhập."
+      ],
+      "rules": [
+        "Gửi đề nghị không tự thực thi thay đổi lease.",
+        "requestedStart từ ngày hiện tại, không trước startDate lease; không nhận requestedRoomId/requestedEnd."
+      ],
+      "post": "Có yêu cầu PENDING; hợp đồng hiện tại chưa đổi.",
+      "relations": "UC-TNT-10 xét duyệt; UC-TNT-11 thực thi là mục tiêu khác.",
+      "pre": "",
+      "failure": ""
+    },
+    {
+      "id": "UC-TNT-08",
+      "groupId": "G07",
+      "input": "Ngày trả không tương lai, chỉ số cuối/đơn giá tiện ích, khoản bổ sung; fingerprint và idempotencyKey UUID để chốt.",
+      "steps": [
+        "Actor chủ trọ nhập dữ liệu quyết toán và yêu cầu xem trước.",
+        "Hệ thống kiểm lease ACTIVE/chưa settlement, ngày trả từ ngày bắt đầu đến hôm nay theo UTC+7 và không có hóa đơn sau tháng trả.",
+        "Hệ thống tính tiền thuê gồm ngày trả nếu tháng chưa lập hóa đơn, điện/nước cuối, phụ phí, cọc áp dụng và công nợ hóa đơn riêng; trả previewFingerprint.",
+        "Actor xác nhận; hệ thống khóa, tính lại và so fingerprint, kiểm idempotencyKey chưa dùng cho lease khác.",
+        "Hệ thống lưu settlement/lines, ghi DEDUCTED nếu có, kết thúc lease và mở turnover; trả kết quả."
+      ],
+      "alternatives": [
+        "B4: Đã chốt bằng cùng key/hash/fingerprint: trả settlement với idempotent=true; không ghi cọc lần nữa; kết thúc.",
+        "B3: Tháng trả đã có hóa đơn: tiền thuê quyết toán=0, không tự hoàn phần thuê thừa; tiếp tục B4."
+      ],
+      "exceptions": [
+        "B4: Fingerprint thay đổi/key khác khi đã chốt: 409; không chốt đè; cần xem trước lại từ B1.",
+        "B2: Ngày không hợp lệ hoặc có hóa đơn sau tháng trả: từ chối; không sửa lease/ledger; kết thúc."
+      ],
+      "rules": [
+        "depositApplied=min(balanceCoc,totalCharges); refund=balanceCoc−applied.",
+        "Nợ hóa đơn cũ hiển thị riêng, không tự cấn cọc, không tự ghi Payment hoặc invoice mới."
+      ],
+      "post": "Settlement và lease ENDED được lưu; refund có thể còn PENDING.",
+      "relations": "UC-TNT-09 ghi nhận hoàn thực tế sau chốt; UC-OPS-05 chuẩn bị phòng.",
+      "pre": "",
+      "failure": ""
+    },
+    {
+      "id": "UC-TNT-09",
+      "groupId": "G07",
+      "input": "leaseId, version, idempotencyKey UUID, reference và reason.",
+      "steps": [
+        "Actor chủ trọ xác nhận khoản hoàn cọc đã thực hiện.",
+        "Hệ thống khóa và đọc settlement đúng lease/scope.",
+        "Hệ thống kiểm refund PENDING, version khớp và balance cọc đúng refundAmount.",
+        "Hệ thống ghi REFUNDED, cập nhật trạng thái hoàn PAID và dữ liệu tham chiếu; trả settlement."
+      ],
+      "alternatives": [
+        "B2: Đã PAID cùng requestKey và reference: trả idempotent=true; không ghi hoàn lại; kết thúc."
+      ],
+      "exceptions": [
+        "B2: Chưa có settlement hoặc đã hoàn bằng request khác: 404/409; không ghi giao dịch; kết thúc.",
+        "B3: Version/số dư đổi hoặc không có khoản cần hoàn: conflict; không đánh PAID; kết thúc."
+      ],
+      "rules": [
+        "Đây là ghi nhận, không lệnh chuyển tiền qua ngân hàng."
+      ],
+      "post": "Settlement đánh đã hoàn và ledger cọc được cập nhật.",
+      "relations": "",
+      "pre": "",
+      "failure": ""
+    },
+    {
+      "id": "UC-TNT-10",
+      "groupId": "G07",
+      "input": "requestId, APPROVED/REJECTED, reason và timestamp kỳ vọng của request/lease khi có.",
+      "steps": [
+        "Actor vận hành mở các yêu cầu thuộc scope.",
+        "Actor chọn quyết định; hệ thống tìm PENDING, khóa Room/Lease và kiểm timestamp kỳ vọng.",
+        "Nếu duyệt, hệ thống yêu cầu lease ACTIVE; ngày gia hạn còn hợp lệ hoặc phòng chuyển còn trống.",
+        "Hệ thống lưu quyết định, reviewer/thời gian và trả requiresLeaseAction=true khi APPROVED."
+      ],
+      "alternatives": [
+        "B3: Từ chối: lưu REJECTED và decisionNote, không thay lease; kết thúc sau B4."
+      ],
+      "exceptions": [
+        "B2: Request đã xử lý/hủy hoặc lease đổi: 409; không ghi đè quyết định; kết thúc.",
+        "B3: Lease/phòng/ngày không còn phù hợp: conflict; không duyệt; kết thúc."
+      ],
+      "rules": [
+        "Duyệt không tự thực hiện trả/chuyển/gia hạn."
+      ],
+      "post": "Yêu cầu đã quyết định; lease giữ nguyên ở bước này.",
+      "relations": "UC-TNT-11 thực thi sau phê duyệt.",
+      "pre": "",
+      "failure": ""
+    },
+    {
+      "id": "UC-TNT-11",
+      "groupId": "G07",
+      "input": "requestId, requestKey UUID, timestamp kỳ vọng; monthlyRent khi chuyển.",
+      "steps": [
+        "Actor thực thi yêu cầu APPROVED.",
+        "Hệ thống khóa Request và phòng/lease theo thứ tự, kiểm version thời gian và lịch sử execution.",
+        "Nhánh gia hạn gọi renewWithinTransaction; nhánh trả/chuyển đòi lease đã ENDED và settlement có sẵn.",
+        "Khi chuyển, hệ thống kiểm đã đến ngày chuyển, không trước ngày quyết toán, xác nhận giá và capacity; tạo lease mới với recordDeposit=false và sao chép occupant.",
+        "Hệ thống lưu TenantLifecycleExecution cùng requestHash, trả resultLeaseId và idempotent=false."
+      ],
+      "alternatives": [
+        "B2: Đã có execution cùng requestKey/hash: trả kết quả cũ idempotent=true; không tạo lease mới lần nữa; kết thúc.",
+        "B3: CHECKOUT đủ quyết toán: lưu execution hoàn tất, không tạo lease đích; tiếp tục B5."
+      ],
+      "exceptions": [
+        "B2: Đã thực thi bằng request khác/chưa APPROVED hoặc timestamp cũ: 409; không thực thi lại; kết thúc.",
+        "B3: Chưa settlement hoặc B4 phòng đích không sẵn sàng/không đủ sức chứa: conflict; không tạo lease đích; kết thúc."
+      ],
+      "rules": [
+        "Không tự chốt quyết toán để vượt tiền điều kiện; không thu lại cọc khi tạo lease chuyển."
+      ],
+      "post": "Execution được lưu; lease mới chỉ với chuyển phòng.",
+      "relations": "UC-TNT-08 phải hoàn tất chốt khi trả/chuyển; không phải include chỉ vì tiền điều kiện.",
+      "pre": "",
+      "failure": ""
+    },
+    {
+      "id": "UC-BIL-01",
+      "groupId": "G08",
+      "input": "roomId, billingMonth, utilityType, previousReading/currentReading/unitPrice.",
+      "steps": [
+        "Actor mở chỉ số điện/nước theo kỳ/phòng.",
+        "Actor gửi chỉ số; hệ thống kiểm phòng thuộc scope, chuẩn hóa kỳ và loại tiện ích.",
+        "Hệ thống kiểm currentReading ≥ previousReading và unitPrice > 0; tính usage và amount=usage×unitPrice.",
+        "Hệ thống tạo MeterReading, trả chỉ số đã lưu."
+      ],
+      "alternatives": [
+        "B1: Chỉ tra cứu: trả số liệu theo phòng/kỳ đúng scope; không tạo chỉ số; kết thúc."
+      ],
+      "exceptions": [
+        "B3: Chỉ số giảm hoặc đơn giá không dương: 400; không ghi số liệu; quay về nhập.",
+        "B4: Vi phạm unique phòng/kỳ/loại: conflict; không tạo bản ghi thứ hai; kết thúc."
+      ],
+      "rules": [
+        "Chỉ số theo phòng/kỳ/tiện ích, không tự lập hóa đơn khi ghi."
+      ],
+      "post": "MeterReading hợp lệ có usage/amount.",
+      "relations": "",
+      "pre": "",
+      "failure": ""
+    },
+    {
+      "id": "UC-BIL-02",
+      "groupId": "G08",
+      "input": "leaseId, billingMonth, dueDate/note và meterReadings theo DTO.",
+      "steps": [
+        "Actor chọn lease ACTIVE và kỳ, yêu cầu xem trước.",
+        "Hệ thống kiểm lease thuộc scope, lấy biểu phí/phí dịch vụ theo kỳ, chỉ số và trả thiếu tiện ích nếu có.",
+        "Actor lập; hệ thống kiểm kỳ thuộc thời gian lease, khóa và đối chiếu lease chưa thay đổi, kỳ chưa khóa.",
+        "Hệ thống ghi chỉ số input nếu cần, tính các khoản và tạo Invoice UNPAID cùng line item/snapshot giá trong transaction.",
+        "Hệ thống trả hóa đơn."
+      ],
+      "alternatives": [
+        "B2: Preview thiếu điện/nước: trả missingUtilities để Actor bổ sung; không phát hành hóa đơn; quay lại B1."
+      ],
+      "exceptions": [
+        "B3: Lease đã kết thúc/thay đổi hoặc BILLING_PERIOD_LOCKED: conflict; không phát hành; kết thúc.",
+        "B4: Trùng hóa đơn/chỉ số theo ràng buộc unique: conflict và rollback; không tạo bản sao; kết thúc."
+      ],
+      "rules": [
+        "Đóng băng line item tại thời điểm phát hành; không dùng ước tính tin đăng làm hóa đơn."
+      ],
+      "post": "Invoice và dữ liệu tính được lưu, chưa thu tiền.",
+      "relations": "UC-BIL-03 lập nhiều lease; không tách preview thành UC kỹ thuật.",
+      "pre": "",
+      "failure": ""
+    },
+    {
+      "id": "UC-BIL-03",
+      "groupId": "G08",
+      "input": "propertyId, billingMonth, leaseIds và chỉ số/dueDate theo DTO bulk.",
+      "steps": [
+        "Actor chọn khu/kỳ để lập hàng loạt.",
+        "Hệ thống preflight lease ACTIVE, chỉ số/phí và đánh dấu existing/ready.",
+        "Actor gửi tập lease; hệ thống kiểm tất cả thuộc tập đủ scope, không trùng input tiện ích.",
+        "Trong transaction, hệ thống bỏ qua hóa đơn đã có, dùng chỉ số hiện có hoặc tạo số còn thiếu rồi lập hóa đơn cho lease còn lại.",
+        "Hệ thống trả kết quả từng lease và tổng hợp đã tạo/đã có."
+      ],
+      "alternatives": [
+        "B4: Lease đã có hóa đơn: trả status=existing, không lập lại; tiếp tục xử lý các lease còn lại ở B4."
+      ],
+      "exceptions": [
+        "B3: LeaseId ngoài tập cho phép hoặc lặp chỉ số input: 400; không chạy lập theo input sai; kết thúc.",
+        "B4: Unique/concurrency conflict: rollback transaction của batch theo service; trả lỗi; tải lại từ B1."
+      ],
+      "rules": [
+        "Preflight không giữ chỗ DB và không bảo đảm batch sau không đổi; phải kiểm lại lúc lập."
+      ],
+      "post": "Các hóa đơn tạo thành công được trả theo kết quả batch.",
+      "relations": "",
+      "pre": "",
+      "failure": ""
+    },
+    {
+      "id": "UC-BIL-04",
+      "groupId": "G08",
+      "input": "Bộ lọc khu/phòng/người thuê/trạng thái; invoiceId; asOf/groupBy để aging.",
+      "steps": [
+        "Actor tra danh sách hoặc chi tiết hóa đơn trong scope.",
+        "Hệ thống lọc invoice theo phạm vi, trả khoản phải thu/đã thu/line item theo serializer.",
+        "Khi tra aging, hệ thống bỏ demo/CANCELLED, tính số dư dương theo ngày nghiệp vụ UTC+7 và nhóm tenant/property theo input.",
+        "Hệ thống trả tổng nợ, các nhóm, danh sách và unallocated credit khi bộ lọc cho phép."
+      ],
+      "alternatives": [
+        "B4: Có propertyId/roomId: tenantUnallocatedCredit=null, không phân bổ giả tín dụng toàn Tenant cho một phòng; kết thúc.",
+        "B2: Actor LANDLORD xem trạng thái link/event demo: service có thể cập nhật PENDING hết hạn/hủy theo số dư; trả trạng thái, không thu tiền thật; kết thúc."
+      ],
+      "exceptions": [
+        "B2: Hóa đơn ngoài scope: not found; không trả chứng từ; kết thúc."
+      ],
+      "rules": [
+        "STAFF chỉ các handler được interceptor cho phép; status/events link không tự mở theo quyền billing.view."
+      ],
+      "post": "Dữ liệu tra cứu/công nợ; trạng thái link có thể được chuẩn hóa khi đọc.",
+      "relations": "",
+      "pre": "",
+      "failure": ""
+    },
+    {
+      "id": "UC-BIL-05",
+      "groupId": "G08",
+      "input": "invoiceId, dueDate/note.",
+      "steps": [
+        "Actor sửa hạn thanh toán hoặc ghi chú.",
+        "Hệ thống khóa/lấy hóa đơn thuộc scope.",
+        "Hệ thống yêu cầu chưa CANCELLED, paidAmount=0 và status UNPAID.",
+        "Hệ thống cập nhật phần cho phép và trả hóa đơn."
+      ],
+      "alternatives": [],
+      "exceptions": [
+        "B3: Hóa đơn hủy/đã có tiền hoặc không UNPAID: conflict; không thay hạn/ghi chú; kết thúc."
+      ],
+      "rules": [
+        "Không dùng đường này để sửa số tiền/line item."
+      ],
+      "post": "Hạn/ghi chú được cập nhật, số tiền giữ nguyên.",
+      "relations": "",
+      "pre": "",
+      "failure": ""
+    },
+    {
+      "id": "UC-BIL-06",
+      "groupId": "G08",
+      "input": "invoiceId, requestKey, reason, lines thay thế và dueDate tùy chọn.",
+      "steps": [
+        "Actor nhập nội dung hóa đơn thay thế.",
+        "Hệ thống kiểm có lines; chỉ DISCOUNT được đơn giá âm, tính từng line và tổng.",
+        "Qua command idempotency, hệ thống khóa hóa đơn thật/chưa hủy, yêu cầu paidAmount=0, không có lịch sử payments và chưa replacement.",
+        "Hệ thống hủy hóa đơn gốc, tạo revision thay thế cùng line item và hủy link cũ trong transaction.",
+        "Hệ thống trả replacement invoice."
+      ],
+      "alternatives": [],
+      "exceptions": [
+        "B2: Lines không hợp lệ: 400; không hủy hóa đơn gốc; kết thúc.",
+        "B3: Có lịch sử payment hoặc đã replacement: conflict; không thay; kết thúc."
+      ],
+      "rules": [
+        "Có lịch sử payment dù đã đảo về 0 vẫn phải dùng credit/debit note."
+      ],
+      "post": "Hóa đơn gốc CANCELLED, hóa đơn mới liên kết thay thế.",
+      "relations": "UC-BIL-07 dùng khi điều chỉnh hóa đơn đã có payment.",
+      "pre": "",
+      "failure": ""
+    },
+    {
+      "id": "UC-BIL-07",
+      "groupId": "G08",
+      "input": "invoiceId, requestKey, CREDIT/DEBIT, category, amount hoặc basisPoints, reason.",
+      "steps": [
+        "Actor chọn tăng/giảm hóa đơn.",
+        "Hệ thống yêu cầu đúng một amount/basisPoints và category phù hợp loại note.",
+        "Hệ thống khóa hóa đơn thật chưa hủy, tính số điều chỉnh; LATE_FEE chỉ khi dư nợ đã quá hạn, tổng sau giảm không dưới paidAmount.",
+        "Hệ thống tạo InvoiceAdjustment và line item có dấu, cập nhật total/otherAmount/status và trả hóa đơn."
+      ],
+      "alternatives": [],
+      "exceptions": [
+        "B2: Truyền cả hai/không có cách tính hoặc category trái loại: từ chối, không tạo note; kết thúc.",
+        "B3: Giảm vượt dư hoặc phạt nợ chưa quá hạn: conflict/validation theo helper; không đổi tiền; kết thúc."
+      ],
+      "rules": [
+        "DISCOUNT/TENANT_WAIVER chỉ CREDIT; LATE_FEE/SURCHARGE chỉ DEBIT."
+      ],
+      "post": "Lưu bút toán điều chỉnh, không xóa payment.",
+      "relations": "",
+      "pre": "",
+      "failure": ""
+    },
+    {
+      "id": "UC-BIL-08.1",
+      "groupId": "G08",
+      "input": "invoiceId, ghi chú/lý do hủy theo DTO.",
+      "steps": [
+        "Actor yêu cầu hủy hóa đơn.",
+        "Hệ thống khóa và xác minh hóa đơn thuộc scope.",
+        "Hệ thống yêu cầu chưa CANCELLED và không có payment trong lịch sử.",
+        "Hệ thống cập nhật CANCELLED, thời gian/lý do hủy; hủy link/session PENDING ở đường có Actor, trả hóa đơn."
+      ],
+      "alternatives": [],
+      "exceptions": [
+        "B3: Đã hủy hoặc có payment: conflict; không hủy/xóa payment; kết thúc."
+      ],
+      "rules": [
+        "Không xóa hóa đơn vật lý; không đảo thanh toán ngầm để hủy."
+      ],
+      "post": "Hóa đơn bị hủy nhưng giữ lịch sử.",
+      "relations": "",
+      "pre": "",
+      "failure": ""
+    },
+    {
+      "id": "UC-BIL-09",
+      "groupId": "G08",
+      "input": "invoiceId, amount, method, paidAt/note theo DTO.",
+      "steps": [
+        "Actor nhập khoản đã thu trực tiếp.",
+        "Hệ thống khóa hóa đơn đúng scope, từ chối demo/CANCELLED và tính remaining.",
+        "Hệ thống kiểm remaining>0 và amount không vượt remaining.",
+        "Hệ thống tạo Payment và cập nhật paidAmount/status trong transaction; trả hóa đơn."
+      ],
+      "alternatives": [],
+      "exceptions": [
+        "B2: Hóa đơn demo/hủy: từ chối ghi tiền thật; không tạo Payment; kết thúc.",
+        "B3: Đã đủ tiền hoặc thu vượt dư: conflict; không tăng paidAmount; kết thúc."
+      ],
+      "rules": [
+        "Đây là ghi nhận đã thu, không tích hợp lệnh ngân hàng."
+      ],
+      "post": "Payment được lưu và invoice có trạng thái theo số dư.",
+      "relations": "",
+      "pre": "",
+      "failure": ""
+    },
+    {
+      "id": "UC-BIL-10",
+      "groupId": "G08",
+      "input": "tenantId, amount, method, reference, paidAt tùy chọn và requestKey.",
+      "steps": [
+        "Actor mở khoản thu của Tenant hoặc nhập khoản mới.",
+        "Hệ thống command idempotency kiểm Tenant thuộc landlord/scope và reference hợp lệ.",
+        "Hệ thống tạo BillingReceipt với availableAmount bằng amount.",
+        "Hệ thống ghi outbox payment.receipt.created và trả receiptView."
+      ],
+      "alternatives": [
+        "B1: Chỉ tra receipts: trả sổ thu trong phạm vi, không tạo khoản thu; kết thúc."
+      ],
+      "exceptions": [
+        "B2: Tenant không thuộc phạm vi hoặc input/reference không hợp lệ: từ chối; không tạo receipt; kết thúc."
+      ],
+      "rules": [
+        "Tạo receipt không tự thanh toán hóa đơn khi chưa phân bổ."
+      ],
+      "post": "Khoản thu có số tiền khả dụng chưa phân bổ.",
+      "relations": "UC-BIL-11 phân bổ, khác Payment trực tiếp UC-BIL-09.",
+      "pre": "",
+      "failure": ""
+    },
+    {
+      "id": "UC-BIL-11",
+      "groupId": "G08",
+      "input": "receiptId, requestKey, allocations với invoiceId/amount.",
+      "steps": [
+        "Actor chọn khoản thu và các hóa đơn phân bổ.",
+        "BillingCommands kiểm requestKey/hash trước callback; với lệnh mới, hệ thống khóa receipt, kiểm invoice không lặp và tổng không vượt availableAmount.",
+        "Hệ thống khóa các invoice, kiểm cùng Tenant, hóa đơn thật chưa hủy và số phân bổ không vượt từng dư nợ.",
+        "Hệ thống tạo Payment/PaymentAllocation, cập nhật invoice và giảm tiền khả dụng receipt, ghi outbox rồi trả receiptView."
+      ],
+      "alternatives": [],
+      "exceptions": [
+        "B2: Invoice lặp hoặc tổng vượt credit: từ chối; không phân bổ; kết thúc.",
+        "B3: Khác Tenant hoặc vượt dư/hóa đơn không hợp lệ: từ chối; rollback lệnh; kết thúc."
+      ],
+      "rules": [
+        "Các invoice phải thuộc cùng Tenant với receipt; không chuyển tín dụng người này cho người khác."
+      ],
+      "post": "Receipt giảm available, các invoice tăng đã trả.",
+      "relations": "",
+      "pre": "",
+      "failure": ""
+    },
+    {
+      "id": "UC-BIL-12.1",
+      "groupId": "G08",
+      "input": "allocationId, requestKey và reason.",
+      "steps": [
+        "Actor yêu cầu giải phóng phân bổ.",
+        "Hệ thống tìm allocation thuộc scope, khóa receipt/invoice và kiểm chưa released.",
+        "Hệ thống kiểm ledger không âm, tạo Payment REVERSAL bằng âm amount đã phân bổ.",
+        "Hệ thống đánh releasedAt/by/reason, giảm invoice.paidAmount, cộng lại receipt.availableAmount và ghi outbox; trả receipt."
+      ],
+      "alternatives": [],
+      "exceptions": [
+        "B2: Đã giải phóng/không tìm thấy: conflict/not found; không cộng credit lần nữa; kết thúc.",
+        "B3: Ledger không nhất quán: PAYMENT_LEDGER_INCONSISTENT; không đảo; kết thúc."
+      ],
+      "rules": [
+        "Giải phóng không phải hoàn tiền ra ngoài; tiền trở lại khả dụng."
+      ],
+      "post": "Allocation có mốc giải phóng và ledger đối ứng.",
+      "relations": "",
+      "pre": "",
+      "failure": ""
+    },
+    {
+      "id": "UC-BIL-12.2",
+      "groupId": "G08",
+      "input": "paymentId/invoiceId theo handler, lý do đảo.",
+      "steps": [
+        "Actor chọn payment trực tiếp cần đảo.",
+        "Hệ thống khóa hóa đơn/payment trong scope và kiểm payment không quản lý bởi allocation.",
+        "Hệ thống yêu cầu không phải REVERSAL và chưa có reversalPayment.",
+        "Hệ thống tạo REVERSAL số âm, cập nhật paidAmount/status, trả hóa đơn."
+      ],
+      "alternatives": [],
+      "exceptions": [
+        "B2: Payment thuộc receipt allocation: PAYMENT_ALLOCATION_MANAGED, yêu cầu giải phóng thay vì đảo; không ghi; kết thúc.",
+        "B3: Đã đảo hoặc payment là đảo: conflict; không tạo lần nữa; kết thúc."
+      ],
+      "rules": [
+        "Giữ payment gốc; không xóa chứng từ thu."
+      ],
+      "post": "Payment đối ứng được ghi, số dư invoice cập nhật.",
+      "relations": "",
+      "pre": "",
+      "failure": ""
+    },
+    {
+      "id": "UC-BIL-13",
+      "groupId": "G08",
+      "input": "receiptId, amount, requestKey, reason/reference.",
+      "steps": [
+        "Actor ghi nhận hoàn tiền từ khoản thu.",
+        "Hệ thống khóa receipt đúng scope qua command.",
+        "Hệ thống kiểm amount không vượt availableAmount chưa phân bổ.",
+        "Hệ thống tạo BillingRefund, giảm available/tăng refundedAmount, ghi outbox và trả receiptView."
+      ],
+      "alternatives": [],
+      "exceptions": [
+        "B3: Khoản hoàn vượt khả dụng: REFUND_EXCEEDS_AVAILABLE; không tạo hoàn, cần giải phóng phân bổ trước; kết thúc."
+      ],
+      "rules": [
+        "Ghi BillingRefund không thực thi ngân hàng và không tự đảo allocation."
+      ],
+      "post": "Sổ khoản thu phản ánh số đã hoàn.",
+      "relations": "",
+      "pre": "",
+      "failure": ""
+    },
+    {
+      "id": "UC-BIL-14",
+      "groupId": "G08",
+      "input": "proofId, decision APPROVED/REJECTED, note; bộ lọc danh sách chứng từ.",
+      "steps": [
+        "Actor vận hành mở chứng từ PENDING trong scope.",
+        "Actor quyết định; hệ thống khóa, yêu cầu proof còn PENDING, không nhận decision=PENDING; từ chối cần lý do.",
+        "Khi chấp thuận, hệ thống kiểm invoice thật/chưa hủy và proof.amount không vượt dư hiện tại.",
+        "Hệ thống tạo receipt/payment/allocation, tăng paidAmount, hủy link/session PENDING và đánh proof APPROVED trong transaction; trả chứng từ."
+      ],
+      "alternatives": [
+        "B3: REJECTED: chỉ ghi trạng thái/reviewer/note, không tăng paidAmount hoặc tạo khoản thu; trả proof và kết thúc."
+      ],
+      "exceptions": [
+        "B2: Proof đã được xử lý: conflict; không duyệt lại; kết thúc.",
+        "B3: Hóa đơn demo/hủy/đã đủ hoặc proof vượt dư: từ chối; không tạo payment; kết thúc."
+      ],
+      "rules": [
+        "STAFF đọc cần billing.view; quyết định cần billing.approve_payment_proof và scope."
+      ],
+      "post": "Chứng từ có quyết định; chỉ APPROVED làm tăng đã thu.",
+      "relations": "",
+      "pre": "",
+      "failure": ""
+    },
+    {
+      "id": "UC-BIL-15",
+      "groupId": "G08",
+      "input": "propertyId, roomId tùy chọn, serviceKey/kind/name/unit/amount/tiers/effectiveFrom/isActive, reason/requestKey.",
+      "steps": [
+        "Actor chọn khu và nhập đề xuất biểu phí.",
+        "Hệ thống kiểm kỳ hiệu lực không quá khứ, key/name/unit, tiers hợp lệ; SERVICE không có bậc tiêu thụ.",
+        "Hệ thống khóa khu, kiểm room thuộc khu active khi có, tìm version trước và tạo BillingTariffVersion PROPOSED với maker.",
+        "Hệ thống trả đề xuất."
+      ],
+      "alternatives": [
+        "B1: Đọc danh mục: yêu cầu propertyId rõ ràng, trả các version giảm dần theo kỳ; không sửa phí; kết thúc."
+      ],
+      "exceptions": [
+        "B2: Lùi kỳ, thiếu key/name/unit hoặc SERVICE có tiers: từ chối; không tạo đề xuất; kết thúc."
+      ],
+      "rules": [
+        "Đề xuất chưa có hiệu lực như APPROVED; không sửa hóa đơn đã phát hành."
+      ],
+      "post": "Có version đề xuất chờ quyết định.",
+      "relations": "",
+      "pre": "",
+      "failure": ""
+    },
+    {
+      "id": "UC-BIL-16",
+      "groupId": "G08",
+      "input": "tariffId, decision APPROVED/REJECTED, reason/requestKey.",
+      "steps": [
+        "Actor chủ trọ mở tác động đề xuất.",
+        "Hệ thống tính phòng bị ảnh hưởng, phòng có override, hóa đơn đã lập và kỳ khóa; trả blockingReasons/canApprove.",
+        "Actor quyết định; hệ thống khóa và yêu cầu PROPOSED; khi duyệt kiểm kỳ không quá khứ, không ảnh hưởng kỳ đã lập/khóa và hiệu lực sau bản đã duyệt gần nhất.",
+        "Hệ thống lưu state/checker/reviewReason/reviewedAt và trả version."
+      ],
+      "alternatives": [
+        "B3: REJECTED: lưu quyết định từ chối, không đưa biểu phí vào tính tiền; kết thúc sau B4."
+      ],
+      "exceptions": [
+        "B3: Đã duyệt, kỳ bị đóng hoặc ngày hiệu lực không tăng: conflict; không APPROVED; kết thúc."
+      ],
+      "rules": [
+        "STAFF billing.view chỉ xem impact, không reviewTariff dù có tên permission billing.tariff_approve."
+      ],
+      "post": "Version có quyết định; invoice cũ không thay line item.",
+      "relations": "",
+      "pre": "",
+      "failure": ""
+    },
+    {
+      "id": "UC-BIL-17.1",
+      "groupId": "G08",
+      "input": "propertyId và cấu hình BillingAutomationDto.",
+      "steps": [
+        "Actor mở cấu hình lập hóa đơn của khu.",
+        "Hệ thống kiểm khu active trong scope và trả cấu hình hiện có hoặc mặc định.",
+        "Actor gửi thay đổi bật/tắt/ngày lập/hạn trả theo DTO; hệ thống upsert BillingAutomation.",
+        "Hệ thống trả cấu hình đã lưu."
+      ],
+      "alternatives": [
+        "B2: Chưa có record: trả giá trị mặc định, chưa chạy lập hóa đơn; tiếp tục B3 khi lưu."
+      ],
+      "exceptions": [
+        "B2: Khu ngoài phạm vi hoặc archived: not found; không lưu cấu hình; kết thúc."
+      ],
+      "rules": [
+        "STAFF đọc billing.view, sửa billing.create, phải có scope; không suy quyền billing.policy."
+      ],
+      "post": "Cấu hình định kỳ được lưu; chưa phát hành hóa đơn.",
+      "relations": "",
+      "pre": "",
+      "failure": ""
+    },
+    {
+      "id": "UC-BIL-17.2",
+      "groupId": "G08",
+      "input": "propertyId và billingMonth/kỳ theo DTO automation run.",
+      "steps": [
+        "Actor chọn khu/kỳ xem trước đợt lập.",
+        "Hệ thống kiểm khu, lấy automation và preflight các lease/chỉ số/phí/hóa đơn đã có.",
+        "Actor chạy; hệ thống yêu cầu automation.isEnabled và gọi nghiệp vụ bulk với dueDate tính từ cấu hình.",
+        "Hệ thống cập nhật lastRunMonth/lastRunAt sau kết quả bulk và trả tổng hợp."
+      ],
+      "alternatives": [
+        "B2: Chỉ preview: trả preflight, không tạo invoice hoặc đánh đã chạy; kết thúc."
+      ],
+      "exceptions": [
+        "B3: Automation chưa bật: conflict; không chạy bulk; kết thúc.",
+        "B3: Bulk phát sinh xung đột dữ liệu: trả lỗi từ nghiệp vụ bulk; không khẳng định đã lập đủ; kết thúc."
+      ],
+      "rules": [
+        "Worker là thành phần nội bộ, không tạo Actor mới; STAFF run/preview cần billing.create."
+      ],
+      "post": "Hóa đơn theo kết quả bulk, kèm mốc chạy được lưu khi chạy thành công.",
+      "relations": "",
+      "pre": "",
+      "failure": ""
+    },
+    {
+      "id": "UC-BIL-18.1",
+      "groupId": "G08",
+      "input": "propertyId tùy scope; enabled, beforeDays/onDueDate/overdueDays/channels, expectedVersion/reason/requestKey.",
+      "steps": [
+        "Actor mở chính sách nhắc nợ theo scope.",
+        "Hệ thống kiểm khu khi có; trả policy hiện có hoặc mặc định tắt, before=[3,1], overdue=[1,7,30], APP và thông tin inherited.",
+        "Actor lưu; hệ thống kiểm chính sách bật có kênh, khóa/đối chiếu expectedVersion.",
+        "Hệ thống upsert và tăng version, trả policy."
+      ],
+      "alternatives": [],
+      "exceptions": [
+        "B3: Bật nhưng không kênh hoặc version đổi: validation/conflict; không ghi policy; kết thúc."
+      ],
+      "rules": [
+        "STAFF cả đọc/ghi cần billing.policy và propertyId được giao.",
+        "Không đồng nhất policy nhắc nợ với ZNS cấu hình riêng."
+      ],
+      "post": "Chính sách được lưu, chưa mặc định gửi tin.",
+      "relations": "",
+      "pre": "",
+      "failure": ""
+    },
+    {
+      "id": "UC-BIL-18.2",
+      "groupId": "G08",
+      "input": "propertyId trong scope cho enqueue; tùy chọn endpoint ZNS và cấu hình kênh tương ứng.",
+      "steps": [
+        "Actor yêu cầu tạo nhắc nợ.",
+        "Hệ thống duyệt invoice thật UNPAID/PARTIAL còn dư, dueDate có giá trị, khu/chủ còn hoạt động.",
+        "Hệ thống chọn policy hiệu lực, đối chiếu ngày UTC+7, Tenant active và tùy chọn kênh của Tenant.",
+        "Hệ thống createMany outbox có eventKey chống trùng, trả queued/businessDay; worker giao kênh xử lý sau."
+      ],
+      "alternatives": [
+        "B4: Gọi đường Zalo ZNS bởi LANDLORD: tạo NotificationDelivery và dùng phone/template/provider; ghi SENT/FAILED theo phản hồi, trả từng mục; không đồng nhất với enqueue APP.",
+        "B3: Không có invoice/không khớp lịch/không được Tenant cho phép: bỏ qua; không tạo event cho mục đó, tiếp tục quét B2."
+      ],
+      "exceptions": [
+        "B2: Khu không thuộc scope: not found; không enqueue; kết thúc.",
+        "B4: ZNS thiếu phone/template hoặc provider lỗi: ghi/ trả trạng thái thất bại theo nhánh; không tuyên bố đã giao; kết thúc mục."
+      ],
+      "rules": [
+        "Enqueue thành công không chứng minh EMAIL/ZALO/webhook đã giao thực.",
+        "STAFF chỉ BillingController billing.policy+scope, không NotificationsController/ZNS."
+      ],
+      "post": "Outbox/nhật ký được lưu; giao nhận bên ngoài chưa kiểm chứng runtime.",
+      "relations": "",
+      "pre": "",
+      "failure": ""
+    },
+    {
+      "id": "UC-BIL-18.3",
+      "groupId": "G08",
+      "input": "Bộ lọc outbox; eventId, requestKey/reason để retry.",
+      "steps": [
+        "Actor chủ trọ mở outbox hóa đơn.",
+        "Hệ thống lấy sự kiện theo landlordId, trạng thái/thời gian theo truy vấn.",
+        "Actor retry; hệ thống command cập nhật chỉ DEAD/STORED thành PENDING, attempts=0, availableAt=hiện tại và xóa lỗi/completedAt.",
+        "Hệ thống trả retried theo số record được cập nhật."
+      ],
+      "alternatives": [
+        "B3: Event không đúng trạng thái/scope: retried=false, không tái xếp hàng; kết thúc."
+      ],
+      "exceptions": [
+        "B2: STAFF gọi endpoint: interceptor từ chối dù có decorator permission; không xem/retry outbox; kết thúc."
+      ],
+      "rules": [
+        "Retry không xác nhận giao thành công và không làm mới invoice/payment."
+      ],
+      "post": "Outbox có thể được đưa lại PENDING.",
+      "relations": "",
+      "pre": "",
+      "failure": ""
+    },
+    {
+      "id": "UC-BIL-22",
+      "groupId": "G08",
+      "input": "propertyId, tháng khóa, reason/requestKey.",
+      "steps": [
+        "Actor chủ trọ yêu cầu khóa kỳ khu.",
+        "Hệ thống kiểm khu thuộc scope và chuẩn hóa tháng.",
+        "Trong command transaction, hệ thống upsert BillingPeriodLock theo propertyId/month với lý do/Actor.",
+        "Hệ thống trả record khóa."
+      ],
+      "alternatives": [
+        "B3: Kỳ đã có khóa: upsert update rỗng, trả khóa hiện có, không nhân bản; kết thúc."
+      ],
+      "exceptions": [
+        "B2: Khu không thuộc phạm vi hoặc input sai: từ chối; không khóa; kết thúc."
+      ],
+      "rules": [
+        "Chỉ LANDLORD; chưa có bằng chứng mở khóa trong UC này.",
+        "Khóa được kiểm khi lập invoice/duyệt tariff, không suy cấm mọi nghiệp vụ tiền."
+      ],
+      "post": "Kỳ có bản ghi khóa, không đổi hóa đơn quá khứ.",
+      "relations": "",
+      "pre": "",
+      "failure": ""
+    },
+    {
+      "id": "UC-BIL-23",
+      "groupId": "G08",
+      "input": "propertyId, thông tin ngân hàng/tài khoản/QR, enabled và version.",
+      "steps": [
+        "Actor chủ trọ mở tài khoản nhận chuyển khoản của khu.",
+        "Hệ thống kiểm role LANDLORD, quyền sở hữu và trả bản hiện có hoặc disabled/version=0.",
+        "Actor lưu; hệ thống đối chiếu version; QR nếu có phải là đường uploads ảnh hợp lệ, PRIVATE của chính Actor.",
+        "Hệ thống upsert cấu hình, tăng version, audit và trả dữ liệu."
+      ],
+      "alternatives": [],
+      "exceptions": [
+        "B3: Version đổi: conflict; không ghi đè tài khoản; kết thúc.",
+        "B3: Ảnh QR sai mẫu/không thuộc chủ trọ: 400; không lưu QR; kết thúc."
+      ],
+      "rules": [
+        "Thông tin nhận chuyển khoản thủ công không phải kết nối ngân hàng trực tiếp."
+      ],
+      "post": "Cấu hình nhận tiền được lưu.",
+      "relations": "",
+      "pre": "",
+      "failure": ""
+    },
+    {
+      "id": "UC-TEN-03",
+      "groupId": "G08",
+      "input": "Phiên TENANT; invoiceId khi xem chi tiết.",
+      "steps": [
+        "Actor mở hóa đơn của mình.",
+        "Hệ thống tìm Tenant liên kết và giới hạn invoice theo tenantId.",
+        "Hệ thống serialize tiền thuê, phí, paid/remaining, line item và chứng từ được phép.",
+        "Hệ thống trả danh sách/chi tiết hóa đơn."
+      ],
+      "alternatives": [
+        "B3: Chưa có invoice: danh sách rỗng; không tự tạo hóa đơn; kết thúc."
+      ],
+      "exceptions": [
+        "B2: Invoice không thuộc Tenant: not found; không trả dữ liệu; kết thúc."
+      ],
+      "rules": [
+        "Quyền xem không gồm sửa/hủy hóa đơn."
+      ],
+      "post": "Hóa đơn cá nhân được đọc.",
+      "relations": "",
+      "pre": "",
+      "failure": ""
+    },
+    {
+      "id": "UC-TEN-04",
+      "groupId": "G08",
+      "input": "invoiceId, amount, ảnh/chứng từ, reference/note và requestKey tùy chọn.",
+      "steps": [
+        "Actor TENANT xem hướng dẫn chuyển khoản của hóa đơn mình.",
+        "Hệ thống trả MANUAL_BANK_TRANSFER, reference HD kèm id và số dư trừ chứng từ PENDING theo cấu hình.",
+        "Sau khi chuyển bên ngoài, Actor gửi chứng từ; hệ thống khóa invoice, kiểm thật/chưa hủy/còn dư và amount ≤ remaining−pendingAmount.",
+        "Hệ thống lưu PaymentProof PENDING cùng requestHash khi có key, trả chứng từ; chưa tăng paidAmount."
+      ],
+      "alternatives": [
+        "B3: Cùng requestKey/hash đã có: trả proof cũ; không tạo trùng; kết thúc."
+      ],
+      "exceptions": [
+        "B3: Key dùng nội dung khác, invoice demo/hủy/đã đủ hoặc tổng proof vượt dư: conflict; không tạo proof; kết thúc."
+      ],
+      "rules": [
+        "Gửi ảnh không đồng nghĩa chủ trọ đã nhận/duyệt tiền."
+      ],
+      "post": "Chứng từ chờ duyệt; ledger chưa thay đổi.",
+      "relations": "UC-BIL-14 duyệt chứng từ.",
+      "pre": "",
+      "failure": ""
+    },
+    {
+      "id": "UC-TEN-05",
+      "groupId": "G08",
+      "input": "invoiceId demo, checkout token, cardNumber/expiry/cvc kiểm thủ công tại DemoCardGateway.validateCard; chỉ thẻ 4242424242424242, MM/YY không quá khứ theo UTC và CVC 3 số; không có DTO class cho body unknown.",
+      "steps": [
+        "Actor TENANT chọn thanh toán kiểm thử.",
+        "Hệ thống kiểm ngoài production, cờ demo, khóa ký và invoice thuộc mình/isDemo; có nhánh tạo hoặc tái dùng invoice demo.",
+        "Hệ thống tạo hoặc tái dùng link/session DEMO_CARD PENDING đúng số dư, thời hạn 30 phút, trả checkoutUrl; Actor mở trang checkout HTML bằng token.",
+        "Actor nhập bộ thông tin thẻ demo và xác nhận. Controller kiểm Origin/Sec-Fetch-Site; service kiểm token, gateway kiểm cardNumber/expiry/cvc trước transaction; sau đó khóa Invoice và kiểm trạng thái, expiry, số dư còn khớp.",
+        "Hệ thống tạo Payment demo, cập nhật invoice/link/session, ghi webhook event/audit demo; trả JSON success/demo hoặc render lại HTML theo kiểu gửi form. Không phát sinh tiền thật."
+      ],
+      "alternatives": [
+        "B3: Link còn hợp lệ cùng số tiền: tái dùng, không tạo phiên mới; tiếp tục B4.",
+        "B4: Session/link đã PAID: trả duplicate=true, không ghi payment lần nữa; kết thúc."
+      ],
+      "exceptions": [
+        "B2: Production/cờ tắt/invoice tiền thật: từ chối; không mở thanh toán thẻ thật; kết thúc.",
+        "B4: Hết hạn/hủy hoặc số dư đổi: conflict, yêu cầu tạo lại; không ghi tiền; kết thúc.",
+        "B4: Token sai hoặc không tìm thấy: 404; thông tin thẻ thiếu/sai/field thừa: 400 trước transaction. Không tạo Payment; trả lỗi JSON hoặc HTML theo dạng gửi, kết thúc lần gửi; Actor có thể sửa dữ liệu trên trang còn hiệu lực.",
+        "B4: Sec-Fetch-Site=cross-site hoặc Origin không được chấp nhận theo Controller: 403 trước gọi service, không ghi Payment. Origin vắng/null được chấp nhận; không mô tả thành bắt buộc luôn có Origin. Kết thúc lần gọi.",
+        "B2/B3: Thiếu khóa đủ 32 ký tự hoặc URL checkout không đúng cấu hình: 503, không trả được link mới. Nếu lỗi URL xảy ra sau transaction tạo link, link/session có thể đã tồn tại; không khẳng định rollback toàn thao tác."
+      ],
+      "rules": [
+        "Không có gateway thu thẻ tiền thật; cardLast4=4242 là dữ liệu mô phỏng.",
+        "Validation thẻ trước transaction và trước nhánh duplicate; checkout public theo token, còn tạo link yêu cầu TENANT và sở hữu invoice."
+      ],
+      "post": "Chỉ ledger isDemo thay đổi; không phát sinh tiền thật.",
+      "relations": "",
+      "pre": "",
+      "failure": ""
+    },
+    {
+      "id": "UC-TEN-08.2",
+      "groupId": "G08",
+      "input": "enabled và danh sách channels theo DTO.",
+      "steps": [
+        "Actor mở tùy chọn nhắc nợ.",
+        "Hệ thống tìm Tenant liên kết và trả cấu hình hiện có hoặc mặc định.",
+        "Actor chọn bật/tắt và kênh; khi bật hệ thống yêu cầu ít nhất một kênh.",
+        "Hệ thống upsert TenantNotificationPreference trong transaction và trả cấu hình."
+      ],
+      "alternatives": [],
+      "exceptions": [
+        "B3: Bật không có kênh: 400; không lưu preference; quay lại chọn."
+      ],
+      "rules": [
+        "Lựa chọn kênh chỉ được worker dùng làm điều kiện; không chứng minh provider đã cấu hình/giao thành công."
+      ],
+      "post": "Preference người thuê được lưu.",
+      "relations": "",
+      "pre": "",
+      "failure": ""
+    },
+    {
+      "id": "UC-BIL-19",
+      "groupId": "G09",
+      "input": "Bộ lọc khoản chi; propertyId/roomId, category, amount, expenseDate, title/note.",
+      "steps": [
+        "Actor mở sổ chi vận hành.",
+        "Actor tạo khoản chi; hệ thống kiểm khu thuộc scope và phòng nếu có thuộc đúng khu.",
+        "Hệ thống lưu Expense với landlordId, ngày/loại/số tiền và nội dung.",
+        "Hệ thống trả khoản chi hoặc danh sách đã serialize."
+      ],
+      "alternatives": [
+        "B2: Sửa khoản chi: kiểm lại khu/phòng mới, cập nhật field có truyền; tiếp tục B4.",
+        "B2: Xóa khoản chi: tìm đúng expense trong scope, delete; kết thúc."
+      ],
+      "exceptions": [
+        "B2: Khu/phòng/khoản chi không thuộc phạm vi: not found; không ghi dữ liệu; kết thúc."
+      ],
+      "rules": [
+        "Khoản chi độc lập không tự thanh toán nhà cung cấp hoặc điều chỉnh invoice."
+      ],
+      "post": "Sổ Expense cập nhật.",
+      "relations": "",
+      "pre": "",
+      "failure": ""
+    },
+    {
+      "id": "UC-OPS-01",
+      "groupId": "G09",
+      "input": "Bộ lọc phiếu, propertyId/roomId, tiêu đề/mô tả/mức ưu tiên và comment.",
+      "steps": [
+        "Actor vận hành mở hoặc lập phiếu bảo trì.",
+        "Hệ thống kiểm khu/phòng trong scope rồi tạo MaintenanceTicket theo dữ liệu DTO.",
+        "Hệ thống trả phiếu và dữ liệu chi tiết/lịch sử bình luận.",
+        "Actor thêm comment; hệ thống kiểm phiếu thuộc scope, ghi MaintenanceComment và trả bình luận."
+      ],
+      "alternatives": [
+        "B1: Chỉ xem danh sách/chi tiết: trả dữ liệu theo trạng thái/khu/phòng; không đổi phiếu; kết thúc.",
+        "B1: Xóa phiếu: tìm đúng scope, delete theo service; kết thúc."
+      ],
+      "exceptions": [
+        "B2: Khu/phòng không hợp lệ hoặc B4 phiếu không thuộc scope: not found; không tạo/cập nhật; kết thúc."
+      ],
+      "rules": [
+        "Tạo/comment không đồng nghĩa bảo trì đã hoàn thành hoặc có khoản chi."
+      ],
+      "post": "Phiếu/bình luận được ghi; không tự tạo Expense.",
+      "relations": "",
+      "pre": "",
+      "failure": ""
+    },
+    {
+      "id": "UC-OPS-02",
+      "groupId": "G09",
+      "input": "ticketId, thông tin cập nhật/status/assignee/dueAt; khu để tra assignee.",
+      "steps": [
+        "Actor vận hành mở phiếu và danh sách người có thể nhận.",
+        "Hệ thống lọc nhân viên active, User active, quyền maintenance.manage hoặc maintenance.complete và scope khu.",
+        "Actor cập nhật; hệ thống kiểm phòng/khu/người phụ trách và không thay chi phí/phạm vi đã liên kết Expense trái quy tắc.",
+        "Hệ thống lưu nội dung/trạng thái/phân công, trả phiếu."
+      ],
+      "alternatives": [
+        "B1: Chủ trọ chạy escalate: quét OPEN/IN_PROGRESS quá dueAt chưa escalated, claim và ghi escalatedAt/audit; trả checked/escalated; kết thúc."
+      ],
+      "exceptions": [
+        "B3: Đã liên kết expense nhưng đổi khu/phòng/actualCost: conflict; yêu cầu đối chiếu khoản chi; không sửa; kết thúc.",
+        "B2: Assignee không còn đủ scope/quyền: từ chối; không phân công; kết thúc."
+      ],
+      "rules": [
+        "STAFF không dùng escalate vì interceptor; worker SLA không là Actor ngoài."
+      ],
+      "post": "Phiếu cập nhật hoặc gắn mốc quá hạn theo đường chủ trọ.",
+      "relations": "",
+      "pre": "",
+      "failure": ""
+    },
+    {
+      "id": "UC-OPS-03",
+      "groupId": "G09",
+      "input": "ticketId, actualCost, createExpense, completedAt/note.",
+      "steps": [
+        "Actor yêu cầu hoàn tất phiếu.",
+        "Hệ thống khóa ticket đúng landlord/scope, từ chối CANCELLED.",
+        "Hệ thống chọn actualCost từ input hoặc giá trị cũ; không cho thay cost khi đã gắn Expense.",
+        "Nếu createExpense=true, cost>0 và chưa expenseId, hệ thống tạo Expense REPAIR; đặt ticket DONE, giữ completedAt đã có hoặc dùng ngày mới, liên kết expense.",
+        "Hệ thống trả phiếu đã hoàn tất."
+      ],
+      "alternatives": [
+        "B4: Không yêu cầu chi/cost=0/đã có expense: không tạo chi mới; chỉ cập nhật phiếu phù hợp; tiếp tục B5."
+      ],
+      "exceptions": [
+        "B2: Phiếu đã CANCELLED hoặc ngoài scope: conflict/not found; không hoàn tất; kết thúc.",
+        "B3: Cost khác khoản đã gắn Expense: conflict; không ghi chi lại; kết thúc."
+      ],
+      "rules": [
+        "Tạo chi tối đa một lần qua expenseId, không mô tả mọi lần complete đều tạo Expense."
+      ],
+      "post": "Phiếu DONE và Expense liên kết khi đủ điều kiện.",
+      "relations": "",
+      "pre": "",
+      "failure": ""
+    },
+    {
+      "id": "UC-TEN-06",
+      "groupId": "G09",
+      "input": "Nội dung/mức ưu tiên yêu cầu bảo trì; ticketId và comment.",
+      "steps": [
+        "Actor TENANT mở bảo trì của mình.",
+        "Actor gửi yêu cầu; hệ thống tìm lease ACTIVE thuộc Tenant.",
+        "Hệ thống tạo phiếu OPEN gắn đúng khu/phòng của lease và trả phiếu.",
+        "Actor trao đổi; hệ thống kiểm quyền phiếu rồi tạo comment."
+      ],
+      "alternatives": [
+        "B1: Chỉ tra danh sách: trả phiếu liên quan người thuê, không lập phiếu; kết thúc."
+      ],
+      "exceptions": [
+        "B2: Không có ACTIVE lease: activeLeaseRequired; không tạo yêu cầu; kết thúc.",
+        "B4: Ticket không thuộc người thuê: từ chối/404; không ghi comment; kết thúc."
+      ],
+      "rules": [
+        "TENANT không được hoàn tất/gắn chi thay quyền vận hành."
+      ],
+      "post": "Phiếu OPEN/bình luận nội bộ được lưu.",
+      "relations": "",
+      "pre": "",
+      "failure": ""
+    },
+    {
+      "id": "UC-OPS-04",
+      "groupId": "G10",
+      "input": "category/propertyId và page/limit; notificationId khi đánh dấu đọc.",
+      "steps": [
+        "Actor chủ trọ mở việc cần xử lý.",
+        "Hệ thống kiểm nhóm công việc được xem và khu thuộc chủ trọ.",
+        "Hệ thống tạo feed từ lịch xem, nợ, chứng từ, bảo trì, lease sắp hạn và lịch kiểm tra; tính counts/unread trong RepeatableRead.",
+        "Hệ thống trả các mục theo severity, hạn/ngày và phân trang."
+      ],
+      "alternatives": [
+        "B4: Actor đánh dấu đã đọc: kiểm id còn trong feed/quyền nhóm, upsert NotificationRead; kết thúc."
+      ],
+      "exceptions": [
+        "B2: Nhóm/khu không được phép: 403/404; không trả feed; kết thúc.",
+        "B4: Mục không còn trong feed: not found, không tạo read tùy ý; kết thúc."
+      ],
+      "rules": [
+        "STAFF bị chặn OperationsController; đọc feed không tự hoàn tất công việc nguồn."
+      ],
+      "post": "Feed/đếm được trả; chỉ dấu đọc có thể được lưu.",
+      "relations": "",
+      "pre": "",
+      "failure": ""
+    },
+    {
+      "id": "UC-OPS-05",
+      "groupId": "G10",
+      "input": "roomId để bắt đầu; turnoverId/version/stage/note để chuyển bước.",
+      "steps": [
+        "Actor chủ trọ mở pipeline hoặc tạo cho phòng active không có lease ACTIVE.",
+        "Hệ thống khóa/kiểm phòng và tạo turnover từ RETURNED, phòng chờ bảo trì.",
+        "Actor xác nhận bước; hệ thống kiểm ACTIVE turnover, version/stage khớp, không có lease ACTIVE.",
+        "Hệ thống hoàn tất step, chuyển INSPECTION→REPAIR→CLEANING→READY theo thứ tự; chặn rời REPAIR/hoàn tất khi còn sửa chữa OPEN/IN_PROGRESS.",
+        "Khi hoàn tất pipeline, hệ thống đánh COMPLETED và phòng VACANT/tenantName=null; trả turnover."
+      ],
+      "alternatives": [
+        "B1: Chỉ tra danh sách: trả turnover theo bộ lọc/phân trang; không chuyển stage; kết thúc."
+      ],
+      "exceptions": [
+        "B3: Version/stage đã đổi hoặc có lease ACTIVE: conflict; không chuyển bước; kết thúc.",
+        "B4: Còn phiếu sửa: conflict và transaction không hoàn tất step; cần xử lý phiếu trước; kết thúc."
+      ],
+      "rules": [
+        "Không cho VACANT khi pipeline chưa xong; không đổi stage tùy ý."
+      ],
+      "post": "Room chỉ sẵn sàng sau hoàn tất, không tự tạo lease.",
+      "relations": "",
+      "pre": "",
+      "failure": ""
+    },
+    {
+      "id": "UC-OPS-06",
+      "groupId": "G10",
+      "input": "propertyId/roomId, tên/loại/cadence/checklist/ngày chạy theo DTO; isEnabled khi bật/tắt.",
+      "steps": [
+        "Actor chủ trọ mở các mẫu định kỳ.",
+        "Actor tạo mẫu; hệ thống kiểm khu chưa archived, phòng active đúng khu nếu có và ngày bắt đầu không lùi quá một ngày.",
+        "Hệ thống lưu RecurringOperation với checklist/lịch và trả mẫu.",
+        "Actor bật/tắt; hệ thống updateMany đúng landlordId và trả isEnabled."
+      ],
+      "alternatives": [
+        "B1: Chỉ xem templates: trả trang danh sách, không tự tạo task tại thao tác đọc; kết thúc."
+      ],
+      "exceptions": [
+        "B2: Khu/phòng không hợp lệ hoặc ngày quá khứ quá hạn: 404/400; không tạo mẫu; kết thúc.",
+        "B4: Không tìm thấy mẫu của chủ trọ: 404; không đổi isEnabled; kết thúc."
+      ],
+      "rules": [
+        "STAFF bị chặn P1OperationsController; worker sinh task nội bộ không là actor riêng."
+      ],
+      "post": "Mẫu/cờ định kỳ lưu; checklist task thực hiện ở UC riêng.",
+      "relations": "",
+      "pre": "",
+      "failure": ""
+    },
+    {
+      "id": "UC-OPS-06.1",
+      "groupId": "G10",
+      "input": "taskId, index checklist, checked và version.",
+      "steps": [
+        "Actor mở các task định kỳ trong phạm vi chủ trọ.",
+        "Actor đánh dấu một mục checklist.",
+        "Hệ thống kiểm task/index tồn tại và cập nhật có điều kiện version khớp.",
+        "Hệ thống tăng version; mọi mục checked thì COMPLETED/completedAt/by, nếu chưa đủ thì PENDING và bỏ mốc hoàn tất; trả task."
+      ],
+      "alternatives": [
+        "B3: Bỏ đánh dấu một mục đã làm: tính lại trạng thái, có thể về PENDING; tiếp tục B4."
+      ],
+      "exceptions": [
+        "B3: Index sai hoặc version đổi: 400/409; không ghi đè checklist; tải lại trước lần sửa."
+      ],
+      "rules": [
+        "Task thuộc chủ trọ; không tự hoàn tất bảo trì hoặc turnover nguồn khác."
+      ],
+      "post": "Checklist và trạng thái task cập nhật.",
+      "relations": "",
+      "pre": "",
+      "failure": ""
+    },
+    {
+      "id": "UC-OPS-07",
+      "groupId": "G10",
+      "input": "Tiêu đề/body, audience, scope tương ứng và sendAt; template/group; id để hủy/đọc biên nhận.",
+      "steps": [
+        "Actor chủ trọ chọn phạm vi người nhận, nhập nội dung và thời gian.",
+        "Hệ thống kiểm thời gian không lùi quá 60 giây, audience khớp các field khu/phòng/nhóm/tenant, nguồn thuộc chủ trọ và có người thuê active.",
+        "Hệ thống resolve/chụp danh sách recipients và tạo Announcement cùng recipient trong transaction.",
+        "Hệ thống đặt SENT/sentAt nếu đến giờ, SCHEDULED nếu tương lai và trả thông báo."
+      ],
+      "alternatives": [
+        "B1: Tạo template/nhóm: kiểm TenantIds active thuộc chủ trọ, lưu để tái sử dụng; kết thúc mục tiêu phụ trợ.",
+        "B4: Hủy thông báo SCHEDULED: chuyển CANCELLED; không hủy thông báo đã gửi; kết thúc.",
+        "B4: Xem biên nhận: trả recipient/readAt thuộc thông báo của chủ trọ; không đánh đọc thay Tenant; kết thúc."
+      ],
+      "exceptions": [
+        "B2: Audience thiếu/thừa field hoặc không có recipient phù hợp: 400; không tạo thông báo; kết thúc.",
+        "B4: Hủy thông báo không còn SCHEDULED: 409; giữ trạng thái; kết thúc."
+      ],
+      "rules": [
+        "SENT ở Announcement là thông báo nội bộ, không mặc định giao SMS/Zalo/email."
+      ],
+      "post": "Thông báo/recipients được lưu, hoặc hủy lịch gửi hợp lệ.",
+      "relations": "",
+      "pre": "",
+      "failure": ""
+    },
+    {
+      "id": "UC-SUP-04",
+      "groupId": "G10",
+      "input": "Bộ lọc/trang theo từng nguồn; notificationId; cấu hình nhận thông báo nền tảng.",
+      "steps": [
+        "Actor mở khu vực thông báo cá nhân.",
+        "Hệ thống lấy nguồn phù hợp: platform theo userId, housing theo userId hoặc portal/vận hành theo tài khoản.",
+        "Hệ thống trả items và unread theo nguồn; không gộp các id khác namespace thành một record.",
+        "Actor đánh đã đọc; service tương ứng cập nhật readAt hoặc NotificationRead đúng user."
+      ],
+      "alternatives": [
+        "B4: Platform markAllRead: cập nhật các notification chưa đọc của đúng user và trả marked; kết thúc.",
+        "B1: Đổi preference nền tảng: upsert UserNotificationPreference; không mặc định bật kênh ngoài; kết thúc."
+      ],
+      "exceptions": [
+        "B4: Notification platform không thuộc user: not found; không đổi người khác; kết thúc."
+      ],
+      "rules": [
+        "Quyền là hợp các handler thực tế; STAFF không được suy từ decorator NotificationsController bị chặn.",
+        "Không tự xóa hoặc hoàn tất resource nguồn khi đọc tin."
+      ],
+      "post": "Dấu đọc/preference theo nguồn được cập nhật.",
+      "relations": "",
+      "pre": "",
+      "failure": ""
+    },
+    {
+      "id": "UC-SUP-06",
+      "groupId": "G10",
+      "input": "Câu hỏi không rỗng, tối đa 1000 ký tự; propertyId/scope và sourceId khi đọc hướng dẫn.",
+      "steps": [
+        "Actor chủ trọ gửi câu hỏi.",
+        "Hệ thống kiểm AI enabled, input, phạm vi GLOBAL/LANDLORD/PROPERTY và slot xử lý chưa busy trong timeout.",
+        "Hệ thống truy hồi tối đa 3 đoạn nguồn được phép; đủ điều kiện mới gọi model để trả hướng dẫn gắn nguồn.",
+        "Hệ thống trả answer/sources hoặc fallback đã triển khai; Actor mở nguồn qua getSource theo cùng scope."
+      ],
+      "alternatives": [
+        "B3: Không có ngữ cảnh đủ tin cậy hoặc câu hỏi không phù hợp: trả fallback, không bịa số dư sống hay thực thi nghiệp vụ; kết thúc."
+      ],
+      "exceptions": [
+        "B2: AI_DISABLED/AI_INVALID_INPUT/AI_BUSY: trả lỗi tương ứng, không gọi nghiệp vụ thuê; kết thúc.",
+        "B3: Quá deadline: abort và AI_TIMEOUT; không thay đổi dữ liệu vận hành; kết thúc."
+      ],
+      "rules": [
+        "Không có bằng chứng gọi Ollama thật trong đợt này; unit test mô phỏng không là acceptance model."
+      ],
+      "post": "Hướng dẫn/fallback và nguồn, không tạo giao dịch.",
+      "relations": "",
+      "pre": "",
+      "failure": ""
+    },
+    {
+      "id": "UC-TEN-09.2",
+      "groupId": "G10",
+      "input": "tenantId cho chủ trọ; message, invoiceId tùy chọn; deliveryId đánh đọc.",
+      "steps": [
+        "Actor chủ trọ hoặc Tenant gửi tin qua khu vực Zalo mô phỏng.",
+        "Hệ thống kiểm Tenant/scope và invoice thật đúng người nhận nếu gửi nhắc tiền.",
+        "Hệ thống tạo NotificationDelivery nội bộ với SENT theo nhánh mock, lưu payload và trả tin.",
+        "Actor đọc lịch sử hoặc đánh read bằng NotificationRead trong phạm vi."
+      ],
+      "alternatives": [
+        "B1: Chủ trọ gửi tin thử: chọn Tenant hợp lệ, tổng dư hóa đơn thật, tạo bản tin thử nội bộ; kết thúc sau trả kết quả."
+      ],
+      "exceptions": [
+        "B2: Thiếu nội dung/người nhận hoặc invoice demo/không thuộc Tenant: từ chối; không tạo tin; kết thúc.",
+        "B4: Delivery không thuộc người thuê: not found; không đánh đọc; kết thúc."
+      ],
+      "rules": [
+        "SENT của đường mock không chứng minh Zalo bên ngoài nhận; khác gửi ZNS thật có cấu hình."
+      ],
+      "post": "Bản tin/read nội bộ, không có cam kết giao Zalo.",
+      "relations": "",
+      "pre": "",
+      "failure": ""
+    },
+    {
+      "id": "UC-TEN-09.3",
+      "groupId": "G10",
+      "input": "Phiên Tenant và announcementId.",
+      "steps": [
+        "Actor mở thông báo chủ trọ.",
+        "Hệ thống tìm Tenant liên kết, chỉ lấy Announcement SENT có recipient là Tenant.",
+        "Hệ thống trả nội dung và readAt của chính recipient.",
+        "Actor xác nhận đọc; hệ thống kiểm quyền và updateMany readAt đang null, trả id/readAt."
+      ],
+      "alternatives": [
+        "B4: Recipient đã đọc: không ghi đè readAt qua updateMany có điều kiện null; kết thúc."
+      ],
+      "exceptions": [
+        "B2: Không có Tenant hoặc B4 thông báo không được gửi cho Tenant: 404; không đọc/đánh dấu hộ; kết thúc."
+      ],
+      "rules": [
+        "Người thuê không đọc SCHEDULED/CANCELLED qua danh sách này."
+      ],
+      "post": "Dấu đọc recipient được lưu.",
+      "relations": "",
+      "pre": "",
+      "failure": ""
+    },
+    {
+      "id": "UC-ADM-01",
+      "groupId": "G11",
+      "input": "Bộ lọc thời gian/dashboard và cursor hàng việc Admin theo DTO.",
+      "steps": [
+        "Actor Admin mở tổng quan nền tảng.",
+        "Hệ thống kiểm admin.dashboard.view và các capability con trước khi truy vấn từng phần.",
+        "Hệ thống tổng hợp tài khoản, khu/phòng/lease, dữ liệu tài chính khi có quyền và các hàng chờ công việc.",
+        "Hệ thống trả thời điểm sinh, chỉ số/nhóm công việc và trạng thái từng nguồn; phần không sẵn sàng không giả số đếm."
+      ],
+      "alternatives": [
+        "B3: Thiếu quyền finance/properties/support: chỉ phần được phép có dữ liệu; không mặc định cấp quyền; tiếp tục B4.",
+        "B3: Nguồn workspace lỗi: trả UNAVAILABLE/pendingCount=null cho nguồn đó; không coi bằng 0; kết thúc trang."
+      ],
+      "exceptions": [
+        "B2: Không có dashboard capability hoặc cursor sai: 403/400; không trả dữ liệu trái quyền; kết thúc."
+      ],
+      "rules": [
+        "Doanh thu mua gói trả available=false/SUBSCRIPTION_BILLING_NOT_IMPLEMENTED; không suy price gói thành doanh thu thật."
+      ],
+      "post": "Chỉ trả số liệu tổng quan, không thay nghiệp vụ thuê.",
+      "relations": "",
+      "pre": "",
+      "failure": ""
+    },
+    {
+      "id": "UC-ADM-14",
+      "groupId": "G11",
+      "input": "Bộ lọc audit; id để chi tiết; from/to bắt buộc khi xuất tối đa 31 ngày.",
+      "steps": [
+        "Actor Admin tra nhật ký.",
+        "Hệ thống áp bộ lọc và quyền đọc, trả trang audit đã chọn trường.",
+        "Actor mở chi tiết; hệ thống chuẩn hóa metadata qua auditMetadata để trả an toàn.",
+        "Actor xuất; hệ thống kiểm khoảng thời gian, lấy tối đa 5001 để phát hiện vượt 5000 rồi sinh CSV có BOM/csvCell."
+      ],
+      "alternatives": [
+        "B2: Không có bản ghi: trả danh sách trống; không sửa nhật ký; kết thúc."
+      ],
+      "exceptions": [
+        "B4: Thiếu ngày/khoảng quá 31 ngày hoặc vượt 5000 dòng: 400, không xuất file thiếu dữ liệu; yêu cầu thu hẹp; kết thúc.",
+        "B3: Audit id không có: 404; không trả chi tiết; kết thúc."
+      ],
+      "rules": [
+        "Xuất không tạo/xóa audit nguồn; escape CSV theo helper."
+      ],
+      "post": "Danh sách/chi tiết/CSV audit.",
+      "relations": "",
+      "pre": "",
+      "failure": ""
+    },
+    {
+      "id": "UC-ADM-16",
+      "groupId": "G11",
+      "input": "Tên, kind, cadence, hourUtc, timezone, enabled; version/reason khi sửa; scheduleId/runId.",
+      "steps": [
+        "Actor Admin tạo/sửa lịch báo cáo của mình.",
+        "Hệ thống kiểm admin.reports.manage, feature flag reports.scheduled và quyền loại báo cáo; tính nextRunAt theo lịch/timezone.",
+        "Actor chạy lịch bật; hệ thống upsert AdminReportRun theo scheduleId/scheduledFor, đặt hạn giữ kết quả 7 ngày và ghi audit.",
+        "Actor xem runs; khi COMPLETED còn hạn, hệ thống kiểm owner/quyền, giải mã payload hoặc lấy object storage rồi trả CSV."
+      ],
+      "alternatives": [
+        "B4: Xin downloadLink: sinh HMAC theo Actor/run/hạn tối đa 5 phút, đường tải vẫn yêu cầu xác thực; kết thúc.",
+        "B4: Retry run FAILED còn hạn của lịch owner đang bật: chuyển PENDING/reset attempts; kết thúc."
+      ],
+      "exceptions": [
+        "B2: Cờ tắt/thiếu quyền hoặc version lịch đổi: từ chối lưu; không tạo run; kết thúc.",
+        "B4: Run chưa sẵn sàng/hết hạn/chữ ký không hợp lệ: conflict/not found; không trả file; kết thúc."
+      ],
+      "rules": [
+        "Kho ngoài là E05 tùy cấu hình; không suy link tải bỏ qua xác thực."
+      ],
+      "post": "Lịch/job/bản xuất theo trạng thái; queued chưa là COMPLETED.",
+      "relations": "",
+      "pre": "",
+      "failure": ""
+    },
+    {
+      "id": "UC-BIL-20",
+      "groupId": "G11",
+      "input": "month và propertyId; yêu cầu monthly/analytics/export.",
+      "steps": [
+        "Actor vận hành chọn kỳ và khu báo cáo.",
+        "Hệ thống kiểm tháng hợp lệ, khu chưa archived và scope.",
+        "Hệ thống lấy invoice thật chưa hủy, payment, Expense và lease/phòng theo từng phép tổng hợp.",
+        "Hệ thống trả monthly/analytics hoặc dữ liệu xuất qua monthlyExport; giao diện dùng kết quả để xuất."
+      ],
+      "alternatives": [
+        "B3: Không có dữ liệu kỳ: trả tập/tổng tương ứng, không tự tạo invoice; kết thúc."
+      ],
+      "exceptions": [
+        "B2: Tháng không hợp lệ hoặc khu ngoài scope: 400/404; không trả báo cáo trái quyền; kết thúc."
+      ],
+      "rules": [
+        "Loại demo khỏi dữ liệu invoice/payment; chỉ số theo định nghĩa billingAnalytics, không đồng nhất doanh thu nền tảng."
+      ],
+      "post": "Báo cáo vận hành trong phạm vi; không đổi ledger.",
+      "relations": "",
+      "pre": "",
+      "failure": ""
+    },
+    {
+      "id": "UC-OPS-09",
+      "groupId": "G11",
+      "input": "take, action, resourceType, actorId.",
+      "steps": [
+        "Actor chủ trọ mở nhật ký vận hành.",
+        "Hệ thống áp landlordId và bộ lọc theo input.",
+        "Hệ thống resolve take: mặc định 50 khi không hợp lệ, tối đa 200; lấy createdAt giảm dần cùng Actor được chọn trường.",
+        "Hệ thống trả logs và metadata/thời gian đã serialize."
+      ],
+      "alternatives": [
+        "B3: Không có log: trả mảng rỗng, không tạo log giả; kết thúc."
+      ],
+      "exceptions": [
+        "B2: STAFF gọi AuditController: interceptor từ chối dù audit.view; không trả log; kết thúc."
+      ],
+      "rules": [
+        "Nhật ký là chỉ đọc; không có quyền sửa/xóa log trong UC này."
+      ],
+      "post": "Danh sách log chủ trọ.",
+      "relations": "",
+      "pre": "",
+      "failure": ""
+    },
+    {
+      "id": "UC-OPT-01",
+      "groupId": "G11",
+      "input": "propertyId tùy chọn, trạng thái hiển thị bản đồ tại UI.",
+      "steps": [
+        "Actor mở dashboard/bản đồ phòng.",
+        "Hệ thống kiểm khu nếu truyền và áp roomScope theo landlord/propertyIds.",
+        "Hệ thống tổng hợp số phòng theo status, lease ACTIVE, hóa đơn thật/đã thu/nợ và phòng MAINTENANCE.",
+        "Hệ thống trả metrics; giao diện hiển thị sơ đồ phòng từ dữ liệu được tải."
+      ],
+      "alternatives": [
+        "B3: Phạm vi không có phòng/hóa đơn: trả số đếm/tập tương ứng; không tạo dữ liệu; kết thúc."
+      ],
+      "exceptions": [
+        "B2: Khu không thuộc phạm vi: not found; không trả dashboard khu khác; kết thúc."
+      ],
+      "rules": [
+        "Không coi trạng thái trên bản đồ là quyền đổi phòng tùy ý."
+      ],
+      "post": "Dashboard/bản đồ không tự đổi trạng thái lease/phòng.",
+      "relations": "",
+      "pre": "",
+      "failure": ""
+    },
+    {
+      "id": "UC-SUP-05.1",
+      "groupId": "G11",
+      "input": "Bộ lọc incidents; incidentId, action/version/reason, ownerId/snoozedUntil khi cần.",
+      "steps": [
+        "Actor Admin mở sức khỏe hệ thống và danh sách/chi tiết sự cố.",
+        "Hệ thống tổng hợp schema/heartbeat/queues/release blockers và lịch sử/runbook; lọc người nhận có quyền vận hành.",
+        "Actor chuyển trạng thái; hệ thống khóa và kiểm version, chỉ nhận transition hợp lệ.",
+        "Hệ thống lưu status/owner/mốc xử lý, tăng version, ghi adminAudit và trả incident."
+      ],
+      "alternatives": [
+        "B3: ACKNOWLEDGE chỉ OPEN; ASSIGN người đủ quyền; SNOOZE tối đa 24 giờ; REOPEN chỉ RESOLVED: thực hiện nhánh được chọn rồi tiếp tục B4."
+      ],
+      "exceptions": [
+        "B3: Version cũ/chuyển sai hoặc RESOLVE khi conditionActive: conflict; không đóng sự cố che lỗi; kết thúc."
+      ],
+      "rules": [
+        "Release summary productionAccepted=false, MANUAL_ACCEPTANCE_REQUIRED không phải đạt production."
+      ],
+      "post": "Workflow incident/audit được cập nhật, không tự sửa nguyên nhân sự cố.",
+      "relations": "",
+      "pre": "",
+      "failure": ""
+    },
+    {
+      "id": "UC-SUP-05.2",
+      "groupId": "G11",
+      "input": "jobStatus/kind và deliveryId khi retry.",
+      "steps": [
+        "Actor Admin tra hàng đợi giao nhận.",
+        "Hệ thống trả DeliveryJob theo bộ lọc, mặc định DEAD, che lastError và đánh retryable theo nguồn.",
+        "Actor mở platform notification queue; hệ thống trả counts và tối đa 100 dead letters.",
+        "Actor retry notification DEAD chưa quá 7 ngày: hệ thống chuyển PENDING, reset attempts/error/lease và trả queued=true."
+      ],
+      "alternatives": [
+        "B2: Account-access DeliveryJob được trả retryable=false: chỉ xem, không suy có nút retry an toàn; kết thúc."
+      ],
+      "exceptions": [
+        "B4: Không phải DEAD hoặc đã quá hạn: 409; không xếp lại; kết thúc."
+      ],
+      "rules": [
+        "Queued không chứng minh provider ngoài đã gửi; mỗi loại job có quyền và cách retry riêng."
+      ],
+      "post": "Notification có thể được xếp lại; dịch vụ giao nhận ngoài chưa kiểm chứng.",
+      "relations": "",
+      "pre": "",
+      "failure": ""
+    },
+    {
+      "id": "UC-ADM-02",
+      "groupId": "G12",
+      "input": "Bộ lọc tài khoản/role/trạng thái/ngày, accountId hoặc landlordId.",
+      "steps": [
+        "Actor Admin tra tài khoản nền tảng.",
+        "Hệ thống kiểm capability của đường gọi: console accounts.view, đường landlords cũ accounts.manage.",
+        "Hệ thống kiểm khoảng ngày, không cho dùng tài nguyên non-admin để đọc ADMIN, trả trường che theo accountView.",
+        "Khi mở landlord, hệ thống trả tổng khu/phòng/người thuê/lease và version hiện có."
+      ],
+      "alternatives": [
+        "B3: Không có tài khoản phù hợp: trả trang rỗng; không tạo tài khoản; kết thúc."
+      ],
+      "exceptions": [
+        "B3: Ngày đảo ngược/role ADMIN qua đường không cho phép hoặc id không có: 400/403/404; không lộ dữ liệu; kết thúc."
+      ],
+      "rules": [
+        "Không mở PII đầy đủ chỉ từ accounts.view."
+      ],
+      "post": "Tài khoản và chỉ số liên quan chỉ đọc.",
+      "relations": "",
+      "pre": "",
+      "failure": ""
+    },
+    {
+      "id": "UC-ADM-03.1",
+      "groupId": "G12",
+      "input": "Họ tên/email/phone; role=LANDLORD khi invite, reason; mật khẩu chỉ nhánh tạo trực tiếp dev.",
+      "steps": [
+        "Actor Admin chọn tạo hoặc mời chủ trọ.",
+        "Với invite, hệ thống kiểm dashboard.view ở handler, accounts.manage tại service và kênh gửi sẵn sàng.",
+        "Hệ thống kiểm email chưa tồn tại, tạo User LANDLORD cùng cơ chế AccountAccess và xếp hàng liên kết kích hoạt.",
+        "Hệ thống trả id/queued, không trả token thô qua đường invite Admin."
+      ],
+      "alternatives": [
+        "B1: Nhánh createLandlord trực tiếp ngoài production: hash mật khẩu, tạo User trong transaction và trả hồ sơ; không cần suy đã giao email; kết thúc."
+      ],
+      "exceptions": [
+        "B2: Chưa cấu hình giao link: 503; không tuyên bố đã gửi lời mời; kết thúc.",
+        "B3: Email trùng: conflict; không tạo tài khoản thứ hai; kết thúc."
+      ],
+      "rules": [
+        "Production cấm createLandlord trực tiếp, phải dùng lời mời.",
+        "Giao nhận ngoài chưa được xác nhận."
+      ],
+      "post": "Tài khoản/lời mời xếp hàng hoặc User dev tạo trực tiếp.",
+      "relations": "UC-SYS-10 thiết lập mật khẩu từ liên kết; khác tự đăng ký UC-SYS-01.",
+      "pre": "",
+      "failure": ""
+    },
+    {
+      "id": "UC-ADM-03.2",
+      "groupId": "G12",
+      "input": "landlordId, fullName/phone.",
+      "steps": [
+        "Actor Admin mở hồ sơ chủ trọ.",
+        "Hệ thống trong transaction kiểm mục tiêu role LANDLORD tồn tại.",
+        "Hệ thống trim và cập nhật fullName/phone khi có, ghi audit.",
+        "Hệ thống trả hồ sơ serialize."
+      ],
+      "alternatives": [],
+      "exceptions": [
+        "B2: Không có chủ trọ: not found; không cập nhật User khác role; kết thúc."
+      ],
+      "rules": [
+        "Không sửa email/mật khẩu/quyền qua đường này."
+      ],
+      "post": "Thông tin chủ trọ cập nhật.",
+      "relations": "",
+      "pre": "",
+      "failure": ""
+    },
+    {
+      "id": "UC-ADM-04.1",
+      "groupId": "G12",
+      "input": "accountId, version, trạng thái đích và reason.",
+      "steps": [
+        "Actor Admin chọn đình chỉ/khôi phục tài khoản khách hàng.",
+        "Hệ thống khóa/tìm tài khoản đủ điều kiện, kiểm version và trạng thái đích khác hiện tại.",
+        "Hệ thống đổi isActive, tăng sessionVersion, thu hồi session/refresh và tiêu thụ token truy cập chưa dùng.",
+        "Nếu đình chỉ LANDLORD, hệ thống tăng version và thu hồi phiên các STAFF phụ thuộc; ghi audit, trả accountView."
+      ],
+      "alternatives": [
+        "B1: Đường landlords cũ: kiểm không đổi trạng thái chính mình và ủy quyền nghiệp vụ trạng thái hiện hành; trả hồ sơ chủ trọ sau cập nhật; kết thúc."
+      ],
+      "exceptions": [
+        "B2: Version/trạng thái đã đổi: conflict; không ghi đè; tải lại trước lần thao tác."
+      ],
+      "rules": [
+        "Khôi phục không phục hồi refresh/session đã thu hồi.",
+        "Quản lý trạng thái ADMIN phải theo quản trị Admin, không suy từ khách hàng."
+      ],
+      "post": "Trạng thái và hiệu lực phiên đổi, dữ liệu thuê không bị xóa.",
+      "relations": "",
+      "pre": "",
+      "failure": ""
+    },
+    {
+      "id": "UC-ADM-04.3",
+      "groupId": "G12",
+      "input": "accountId/AdminId, version/reason theo đường Admin lifecycle.",
+      "steps": [
+        "Actor Admin yêu cầu thu hồi phiên tài khoản khác.",
+        "Hệ thống kiểm đường khách hàng không nhận ADMIN; đường Admin kiểm quyền admins.manage và sessions.revoke cùng điều kiện service.",
+        "Hệ thống khóa mục tiêu, tăng sessionVersion và revoke refresh/AuthSession chưa thu hồi.",
+        "Hệ thống audit và trả revoked/số phiên hoặc version mới."
+      ],
+      "alternatives": [],
+      "exceptions": [
+        "B2: Sai loại tài khoản/không đủ quyền hoặc version không khớp: từ chối; không thu hồi tài khoản ngoài mục tiêu hợp lệ; kết thúc."
+      ],
+      "rules": [
+        "Không dùng quyền thu hồi phiên mình để suy thu hồi người khác."
+      ],
+      "post": "Phiên cũ không còn hợp lệ, không đổi mật khẩu.",
+      "relations": "",
+      "pre": "",
+      "failure": ""
+    },
+    {
+      "id": "UC-ADM-05.1",
+      "groupId": "G12",
+      "input": "accountId và reason mở dữ liệu.",
+      "steps": [
+        "Actor Admin yêu cầu xem PII đang che.",
+        "Hệ thống kiểm quyền reveal theo handler và các lớp MFA/step-up áp dụng.",
+        "Hệ thống tìm tài khoản, ghi audit truy cập có lý do trong transaction.",
+        "Hệ thống trả các trường PII mà projection reveal chọn."
+      ],
+      "alternatives": [],
+      "exceptions": [
+        "B3: Tài khoản không có: not found; không trả PII; kết thúc."
+      ],
+      "rules": [
+        "Reveal không phải xuất toàn bộ dữ liệu User; dùng projection được lựa chọn.",
+        "Audit là dấu vết mở dữ liệu nhạy cảm.",
+        "Projection reveal chỉ id/email/phone của tài khoản không ADMIN; không trả hash mật khẩu."
+      ],
+      "post": "PII được trả cho Admin hợp lệ, không sửa profile.",
+      "relations": "",
+      "pre": "",
+      "failure": ""
+    },
+    {
+      "id": "UC-ADM-05.2",
+      "groupId": "G12",
+      "input": "accountId và reason theo DTO.",
+      "steps": [
+        "Actor Admin yêu cầu khôi phục truy cập cho khách hàng.",
+        "Hệ thống kiểm capability và tìm mục tiêu không phải Admin theo đường service.",
+        "Hệ thống gọi AccountAccess yêu cầu reset, lưu/xếp hàng liên kết một lần theo chính sách truy cập.",
+        "Hệ thống trả queued=true, không trả mật khẩu mới."
+      ],
+      "alternatives": [],
+      "exceptions": [
+        "B2: Mục tiêu không tồn tại/không thuộc loại cho phép: not found; không cấp token; kết thúc.",
+        "B3: Kênh giao nhận chưa sẵn sàng/lỗi: trả lỗi cơ chế AccountAccess; không khẳng định email đã giao; kết thúc."
+      ],
+      "rules": [
+        "Không làm UC này thành Admin biết mật khẩu người dùng; giao link ngoài chưa xác minh."
+      ],
+      "post": "Yêu cầu reset được xếp hàng khi đủ cấu hình.",
+      "relations": "UC-SYS-06 người dùng thực hiện liên kết reset.",
+      "pre": "Mục tiêu là User active không thuộc ADMIN.",
+      "failure": ""
+    },
+    {
+      "id": "UC-ADM-06.1",
+      "groupId": "G12",
+      "input": "adminId, preset/permissions/isActive/version/reason; email/role=ADMIN/mfaCode cho lời mời.",
+      "steps": [
+        "Actor Admin đủ quyền mở hồ sơ quyền Admin mục tiêu.",
+        "Actor sửa; hệ thống kiểm preset/permission hợp lệ, không trùng, có dashboard.view, không vượt quyền người cấp; quyền tùy biến đòi super_admin active.",
+        "Hệ thống khóa, cấm tự đổi mình, kiểm version và giữ ít nhất một super_admin hoạt động.",
+        "Hệ thống cập nhật profile/User, tăng version, reset mốc rà soát quyền, revoke phiên/refresh; khi tắt tiêu thụ token và hủy delivery chưa xong; trả updated."
+      ],
+      "alternatives": [
+        "B1: Mời ADMIN: cần dashboard.view+admins.manage+MFA, preset mời support/moderator/analyst không vượt quyền; tạo tài khoản và queued link; kết thúc.",
+        "B1: Gửi lại lời mời chưa kích hoạt: chỉ active PENDING/EXPIRED/INVALIDATED, cách lần trước ít nhất 60 giây; tăng version và xếp lại; kết thúc."
+      ],
+      "exceptions": [
+        "B2: Cấp quyền vượt mình/sai preset hoặc B3 tự đổi/loại super_admin cuối/version cũ: từ chối; không thay quyền; kết thúc.",
+        "B1: Lời mời thiếu kênh giao: 503; không khẳng định gửi email; kết thúc."
+      ],
+      "rules": [
+        "Preset không tạo Actor mới; quyền Admin không mặc định gồm quyền chủ trọ."
+      ],
+      "post": "Quyền/trạng thái/phiên được cập nhật hoặc lời mời xếp hàng.",
+      "relations": "",
+      "pre": "",
+      "failure": ""
+    },
+    {
+      "id": "UC-ADM-06.2",
+      "groupId": "G12",
+      "input": "AdminId, version review, nextReviewAt và reason.",
+      "steps": [
+        "Actor Admin mở catalog quyền và danh sách cần rà soát.",
+        "Hệ thống trả preset/permissions, email che và lastActiveAt theo phiên.",
+        "Actor duyệt rà soát mục tiêu khác mình; hệ thống kiểm nextReviewAt tương lai trong 366 ngày và reviewVersion.",
+        "Hệ thống cập nhật accessReviewedAt/by/nextAccessReviewAt, tăng reviewVersion và audit."
+      ],
+      "alternatives": [],
+      "exceptions": [
+        "B3: Tự duyệt, ngày sai hoặc version thay đổi: 403/400/409; không ghi dấu reviewed; kết thúc."
+      ],
+      "rules": [
+        "Rà soát không tự đổi quyền hoặc thu hồi phiên."
+      ],
+      "post": "Lịch sử/mốc rà soát quyền cập nhật.",
+      "relations": "",
+      "pre": "",
+      "failure": ""
+    },
+    {
+      "id": "UC-ADM-08",
+      "groupId": "G12",
+      "input": "Bộ lọc landlord/khu/phòng/giá/trạng thái và id chi tiết.",
+      "steps": [
+        "Actor Admin tra inventory nền tảng.",
+        "Hệ thống kiểm capability của đường đọc, validation minPrice≤maxPrice.",
+        "Hệ thống truy vấn khu/phòng đa chủ trọ với filter và phân trang trong snapshot đọc khi service dùng RepeatableRead.",
+        "Hệ thống trả summary/detail được chọn trường, không cấp mutation theo kết quả tìm."
+      ],
+      "alternatives": [
+        "B3: Không có kết quả: trả trang rỗng; không đổi inventory; kết thúc."
+      ],
+      "exceptions": [
+        "B2: Dải giá đảo ngược hoặc id không có: 400/404; không trả chi tiết; kết thúc."
+      ],
+      "rules": [
+        "Tra toàn nền tảng là API Admin riêng; không thừa hưởng landlordScope."
+      ],
+      "post": "Dữ liệu khu/phòng đọc theo quyền Admin.",
+      "relations": "",
+      "pre": "",
+      "failure": ""
+    },
+    {
+      "id": "UC-ADM-09",
+      "groupId": "G12",
+      "input": "landlordId khi tạo; propertyId khi sửa, tên/địa chỉ và reason.",
+      "steps": [
+        "Actor Admin nhập khu thay chủ trọ.",
+        "Hệ thống kiểm chủ trọ role LANDLORD active khi tạo và kiểm hạn mức qua nghiệp vụ inventory.",
+        "Hệ thống tạo Property với chủ trọ mục tiêu, hoặc cập nhật tên/địa chỉ khu hiện có trong transaction; ghi audit.",
+        "Hệ thống trả property summary/detail."
+      ],
+      "alternatives": [
+        "B1: Chỉ cập nhật: tìm khu đã có, không chuyển landlordId; tiếp tục B3."
+      ],
+      "exceptions": [
+        "B2: Chủ trọ không active/không tồn tại hoặc quota không cho phép: từ chối; không tạo khu; kết thúc."
+      ],
+      "rules": [
+        "Không suy ra chuyển quyền sở hữu khu từ updateProperty chỉ sửa name/address."
+      ],
+      "post": "Khu được tạo/cập nhật có audit.",
+      "relations": "",
+      "pre": "",
+      "failure": ""
+    },
+    {
+      "id": "UC-ADM-10",
+      "groupId": "G12",
+      "input": "q/kind/page/limit, resource kind/id khi định vị.",
+      "steps": [
+        "Actor Admin tìm tài nguyên.",
+        "Hệ thống xác định kinds được phép từ capability, từ chối kind được chọn mà không có quyền.",
+        "Hệ thống truy vấn các loại được phép, chọn projection che PII và audit các lần truy cập dữ liệu nhạy cảm.",
+        "Hệ thống trả các nhóm/metadata đường định vị hoặc một resource với readOnly=true."
+      ],
+      "alternatives": [
+        "B3: Không có kind được phép cho kết quả tìm chung: trả nhóm phù hợp rỗng theo service; không cấp quyền mới; kết thúc."
+      ],
+      "exceptions": [
+        "B2: Chỉ định loại không được phép: 403; không truy vấn dữ liệu loại đó; kết thúc.",
+        "B4: Resource id không có: 404; không trả đối tượng; kết thúc."
+      ],
+      "rules": [
+        "ROOM/TENANT/LEASE/INVOICE/PAYMENT có kiểm quyền riêng; tìm kiếm không mở quyền chỉnh sửa."
+      ],
+      "post": "Kết quả chỉ đọc và audit nhạy cảm khi có.",
+      "relations": "",
+      "pre": "",
+      "failure": ""
+    },
+    {
+      "id": "UC-ADM-11",
+      "groupId": "G13",
+      "input": "Bộ lọc queue; kind/targetId/assignee/version; quyết định PUBLISH/REJECT/HIDE và note.",
+      "steps": [
+        "Actor Admin mở hàng chờ tin và chi tiết/lịch sử.",
+        "Actor nhận/phân công; hệ thống kiểm capability nội dung, còn pending, version assignment và quy tắc người phụ trách.",
+        "Actor ra quyết định; hệ thống khóa/mutate version, yêu cầu PENDING để publish/reject, PUBLISHED để hide; publish kiểm lại phòng khả dụng.",
+        "Hệ thống lưu trạng thái, note/mốc xuất bản, audit/quyết định kiểm duyệt và trả tin."
+      ],
+      "alternatives": [
+        "B3: Batch: preview độ sẵn sàng từng mục, sau đó chạy từng quyết định với service gốc; trả success/error từng mục, không rollback toàn batch vì một mục lỗi; kết thúc.",
+        "B3: REJECT/HIDE: bắt buộc lý do, không công khai tin; tiếp tục B4."
+      ],
+      "exceptions": [
+        "B2: Nội dung thuộc người khác hoặc version assignment cũ: 403/409; không nhận đè; kết thúc.",
+        "B3: State/version sai hoặc phòng không còn sẵn sàng: conflict; không publish; kết thúc."
+      ],
+      "rules": [
+        "Gán người khác cần admins.manage; không dùng quyền listing để tự quyết review/reply."
+      ],
+      "post": "Tin có quyết định được audit; batch có thể thành công một phần.",
+      "relations": "",
+      "pre": "",
+      "failure": ""
+    },
+    {
+      "id": "UC-ADM-11.1",
+      "groupId": "G13",
+      "input": "listingId, version, landlordVerified/roomInspected và note ít nhất 10 ký tự.",
+      "steps": [
+        "Actor Admin mở tin đã xuất bản.",
+        "Hệ thống kiểm note căn cứ và quyền kiểm duyệt.",
+        "Hệ thống mutate kiểm version và tin PUBLISHED.",
+        "Hệ thống đặt/xóa landlordVerifiedAt/inspectedAt theo input, tăng version/audit và trả tin."
+      ],
+      "alternatives": [],
+      "exceptions": [
+        "B2: Căn cứ dưới 10 ký tự hoặc B3 tin chưa PUBLISHED/version cũ: từ chối; không gắn xác minh; kết thúc."
+      ],
+      "rules": [
+        "Đây là dấu xác minh tin, không thay thế hồ sơ landlordVerification/propertyApprovalReview."
+      ],
+      "post": "Dấu xác minh tin cập nhật.",
+      "relations": "",
+      "pre": "",
+      "failure": ""
+    },
+    {
+      "id": "UC-ADM-12",
+      "groupId": "G13",
+      "input": "ReviewId, version, status APPROVED/REJECTED/HIDDEN, note; cờ reply và filter queue.",
+      "steps": [
+        "Actor Admin mở hàng review hoặc reply.",
+        "Hệ thống lấy đúng queue: reply phải có body, review gốc APPROVED và chưa withdrawn.",
+        "Actor quyết định; hệ thống kiểm version, review chưa rút, trạng thái đích khác hiện tại và điều kiện công khai gốc nếu duyệt reply.",
+        "Hệ thống cập nhật trạng thái/note/reviewer/time đúng phần review hoặc reply, audit/quyết định rồi trả privateView."
+      ],
+      "alternatives": [],
+      "exceptions": [
+        "B3: Người thuê đã rút, reply thiếu hoặc review gốc không công khai: conflict; không công khai lại thay người thuê; kết thúc."
+      ],
+      "rules": [
+        "Review và reply có hai trạng thái duyệt riêng, cùng tài nguyên không đồng nghĩa một quyết định cho cả hai."
+      ],
+      "post": "Nội dung được duyệt/từ chối/ẩn theo phần chọn.",
+      "relations": "",
+      "pre": "",
+      "failure": ""
+    },
+    {
+      "id": "UC-ADM-12.1",
+      "groupId": "G13",
+      "input": "reportId, version khi truyền, RESOLVED/DISMISSED và note.",
+      "steps": [
+        "Actor Admin mở báo cáo vi phạm cùng tin liên quan.",
+        "Actor chọn kết quả xử lý.",
+        "Hệ thống khóa/kiểm report tồn tại và chỉ update khi còn OPEN, version khớp nếu gửi.",
+        "Hệ thống lưu trạng thái/note/reviewedAt, tăng version, ghi quyết định và trả báo cáo."
+      ],
+      "alternatives": [],
+      "exceptions": [
+        "B3: Report đã xử lý/version đổi: conflict; không ghi đè; kết thúc."
+      ],
+      "rules": [
+        "Đóng báo cáo không mặc định ẩn/xóa tin đăng; thay trạng thái tin dùng quyền/luồng riêng."
+      ],
+      "post": "Báo cáo vi phạm có kết quả xử lý.",
+      "relations": "",
+      "pre": "",
+      "failure": ""
+    },
+    {
+      "id": "UC-ADM-13.1",
+      "groupId": "G13",
+      "input": "kind, title/body và dữ liệu policy; id để kích hoạt.",
+      "steps": [
+        "Actor Admin mở danh mục chính sách kiểm duyệt.",
+        "Actor tạo phiên bản nháp; hệ thống lưu ModerationPolicy và audit.",
+        "Actor kích hoạt; hệ thống khóa policy, yêu cầu DRAFT.",
+        "Hệ thống RETIRED các ACTIVE cùng kind và chuyển bản chọn ACTIVE/activatedBy/At, trả policy."
+      ],
+      "alternatives": [
+        "B1: Chỉ đọc: trả tối đa 100 bản theo ngày/id, không đổi chính sách; kết thúc."
+      ],
+      "exceptions": [
+        "B3: Policy không tồn tại hoặc không DRAFT: 404/409; không kích hoạt lại; kết thúc."
+      ],
+      "rules": [
+        "Một kind chuyển bản active bằng retirement; không sửa lại lịch sử quyết định cũ."
+      ],
+      "post": "Chính sách nháp/active được lưu.",
+      "relations": "",
+      "pre": "",
+      "failure": ""
+    },
+    {
+      "id": "UC-ADM-13.2",
+      "groupId": "G13",
+      "input": "appealId, version, assigneeId, outcome UPHELD/REOPENED/SUPERSEDED và reason.",
+      "steps": [
+        "Actor Admin tra quyết định/kháng nghị và lịch sử.",
+        "Actor nhận/phân công; hệ thống kiểm OPEN/version, người nhận đủ quyền appeals+nội dung và không là người quyết định gốc.",
+        "Actor xử lý; hệ thống yêu cầu người đánh giá độc lập đúng assignment và version.",
+        "Nếu REOPENED, hệ thống đưa nội dung đúng version còn bị từ chối/ẩn về PENDING hoặc báo cáo DISMISSED về OPEN; lưu kết quả appeal và thông báo requester."
+      ],
+      "alternatives": [
+        "B4: Giữ nguyên quyết định theo outcome tương ứng DTO: chỉ chốt kháng nghị, không thay enforcement; trả kết quả; kết thúc."
+      ],
+      "exceptions": [
+        "B3: Người quyết định tự xét/không phải người được giao: 403; không xử lý; kết thúc.",
+        "B4: Nội dung đã đổi/đã rút: conflict; không ghi đè nội dung mới; kết thúc."
+      ],
+      "rules": [
+        "Mở lại để kiểm duyệt, không trực tiếp công khai nội dung."
+      ],
+      "post": "Appeal có kết quả; nội dung có thể trở lại chờ duyệt.",
+      "relations": "",
+      "pre": "",
+      "failure": ""
+    },
+    {
+      "id": "UC-ADM-13.3",
+      "groupId": "G13",
+      "input": "Khoảng ngày/timezone tối đa 93 ngày; decisionId/version, outcome/reason QA.",
+      "steps": [
+        "Actor Admin mở báo cáo chất lượng và mẫu cần QA.",
+        "Hệ thống kiểm admin.moderation.reports, khoảng thời gian/timezone và kinds nội dung được phép.",
+        "Actor mở quyết định; hệ thống yêu cầu reviewer không là người quyết định gốc.",
+        "Actor ghi QA; hệ thống kiểm version và chưa qualityReview, tạo ModerationQualityReview rồi trả enforcementUnchanged=true/automaticSanctions=false."
+      ],
+      "alternatives": [
+        "B2: Không có kind được phép: trả danh sách mẫu rỗng theo service, không tự cấp quyền; kết thúc."
+      ],
+      "exceptions": [
+        "B2: Khoảng ngày/timezone sai: 400; không truy vấn báo cáo như hợp lệ; kết thúc.",
+        "B3: Tự QA hoặc B4 đã review/version khác: 403/409; không tạo QA trùng; kết thúc."
+      ],
+      "rules": [
+        "QA độc lập, không tự áp chế tài hoặc đổi trạng thái nội dung."
+      ],
+      "post": "QA/báo cáo chất lượng, enforcement không đổi.",
+      "relations": "",
+      "pre": "",
+      "failure": ""
+    },
+    {
+      "id": "UC-DIS-07",
+      "groupId": "G13",
+      "input": "listingId, reason/detail.",
+      "steps": [
+        "Actor TENANT chọn báo cáo tin không phù hợp.",
+        "Hệ thống kiểm điều kiện tin và quyền gửi theo đường report.",
+        "Hệ thống tạo ListingReport gắn reporterId hiện tại.",
+        "Hệ thống trả id/status để theo dõi."
+      ],
+      "alternatives": [],
+      "exceptions": [
+        "B3: Trùng unique người báo cáo/tin: 409 Bạn đã báo cáo tin này; không tạo bản sao; kết thúc."
+      ],
+      "rules": [
+        "Gửi report không lập tức ẩn tin hoặc kết luận vi phạm."
+      ],
+      "post": "Report được lưu chờ xử lý.",
+      "relations": "UC-ADM-12.1 xét báo cáo.",
+      "pre": "",
+      "failure": ""
+    },
+    {
+      "id": "UC-DIS-12",
+      "groupId": "G13",
+      "input": "leaseId hoặc reviewId/version; bốn rating và body.",
+      "steps": [
+        "Actor TENANT mở context đánh giá lease của mình.",
+        "Hệ thống kiểm lịch sử thuê đủ điều kiện: bàn giao accepted hoặc nhánh lease đã kết thúc hợp lệ.",
+        "Actor gửi; hệ thống tạo RoomReview theo khóa Tenant/room/landlord, trạng thái chờ kiểm duyệt.",
+        "Hệ thống trả privateView của đánh giá và tình trạng kiểm duyệt."
+      ],
+      "alternatives": [
+        "B3: Sửa đánh giá của mình: kiểm version, lưu rating/body, về PENDING và withdrawnAt=null; kết thúc.",
+        "B3: Rút đánh giá: kiểm chưa withdrawn, đặt HIDDEN/withdrawnAt, tăng version; kết thúc."
+      ],
+      "exceptions": [
+        "B2: Không đủ lịch sử thuê: conflict; không tạo review; kết thúc.",
+        "B3: Đã review cùng khóa: P2002→conflict, yêu cầu sửa bản có; không tạo mới; kết thúc."
+      ],
+      "rules": [
+        "Không viết review chỉ từ tài khoản tìm phòng chưa có lịch sử; sửa phải duyệt lại."
+      ],
+      "post": "Review cá nhân chờ duyệt hoặc đã rút.",
+      "relations": "",
+      "pre": "",
+      "failure": ""
+    },
+    {
+      "id": "UC-DIS-13.1",
+      "groupId": "G13",
+      "input": "reviewId/version và reply body.",
+      "steps": [
+        "Actor chủ trọ xem review APPROVED chưa withdrawn thuộc mình.",
+        "Actor nhập phản hồi.",
+        "Hệ thống khóa/kiểm version và review vẫn công khai, chưa rút.",
+        "Hệ thống lưu replyBody, đưa replyStatus=PENDING, tăng version và trả privateView."
+      ],
+      "alternatives": [],
+      "exceptions": [
+        "B3: Review không còn APPROVED/đã rút hoặc version đổi: conflict; không đăng reply; kết thúc."
+      ],
+      "rules": [
+        "Phản hồi không công khai ngay và không sửa nội dung/rating người thuê."
+      ],
+      "post": "Phản hồi chờ kiểm duyệt.",
+      "relations": "",
+      "pre": "",
+      "failure": ""
+    },
+    {
+      "id": "UC-DIS-15",
+      "groupId": "G13",
+      "input": "decisionId, reason; bộ lọc quyết định/kháng nghị.",
+      "steps": [
+        "Actor chủ trọ/người thuê xem quyết định thuộc ownerId mình.",
+        "Actor gửi kháng nghị; hệ thống kiểm quyết định của mình có toStatus REJECTED/HIDDEN/DISMISSED trong 14 ngày.",
+        "Hệ thống kiểm chưa có quyết định mới hơn và chưa appeal cùng decision/requester.",
+        "Hệ thống tạo appeal OPEN với dueAt sau 72 giờ và thông báo các reviewer đủ quyền."
+      ],
+      "alternatives": [
+        "B1: Chỉ tra quyết định/appeal: trả dữ liệu đúng requester/owner theo role; không tạo kháng nghị; kết thúc."
+      ],
+      "exceptions": [
+        "B2: Quyết định không bất lợi/quá 14 ngày: conflict; không tạo appeal; kết thúc.",
+        "B3: Quyết định đã thay thế hoặc đã appeal: conflict; không tạo trùng; kết thúc."
+      ],
+      "rules": [
+        "ADMIN không mặc định là chủ tài nguyên để appeal hộ; STAFF controller bị chặn."
+      ],
+      "post": "Kháng nghị chờ người xử lý độc lập.",
+      "relations": "",
+      "pre": "",
+      "failure": ""
+    },
+    {
+      "id": "UC-SUP-01",
+      "groupId": "G14",
+      "input": "subject/body/category/priority/context theo DTO; ticketId/version khi reply; tệp tùy nhánh.",
+      "steps": [
+        "Actor gửi yêu cầu hỗ trợ khi feature flag support.user_tickets cho phép.",
+        "Hệ thống tạo ticket/message đầu, chụp SLA và phân công/notify theo cấu hình trong transaction.",
+        "Actor theo dõi; hệ thống chỉ trả ticket của requester, giấu internal messages và labels/team không công khai.",
+        "Actor trả lời công khai; hệ thống kiểm version/quyền và ticket còn cho phép, lưu message, tăng version, notify bên còn lại."
+      ],
+      "alternatives": [
+        "B4: Ticket RESOLVED trong 7 ngày: reply requester mở lại; tiếp tục lưu tại B4.",
+        "B3: Đính kèm: kiểm ticket/version, tệp đúng MIME/nội dung JPEG/PNG/WEBP/PDF ≤8MB, quét sạch, tối đa 20/ticket, lưu private/hash; trả metadata, kết thúc."
+      ],
+      "exceptions": [
+        "B4: CLOSED hoặc RESOLVED quá 7 ngày: conflict, không thêm reply; yêu cầu ticket mới; kết thúc.",
+        "B3: Scanner không sẵn sàng/tệp không sạch/sai loại: fail-closed; không cho tệp chưa quét vào ticket, cleanup file khi lỗi lưu; kết thúc nhánh."
+      ],
+      "rules": [
+        "STAFF bị interceptor chặn SupportController.",
+        "Chưa xác minh scanner ngoài thực và không suy upload chung là tệp hỗ trợ sạch."
+      ],
+      "post": "Ticket/reply được lưu; tệp phụ thuộc scanner sạch.",
+      "relations": "",
+      "pre": "",
+      "failure": ""
+    },
+    {
+      "id": "UC-SUP-01.1",
+      "groupId": "G14",
+      "input": "Bộ lọc ticket, id/version; assignee/team/priority, status/reason, internal reply/labels/resource link.",
+      "steps": [
+        "Actor Admin đủ support.read/manage mở hồ sơ và timeline.",
+        "Actor nhận/phân công; hệ thống khóa/version, kiểm Admin active đủ support và thuộc team nếu chọn; gán IN_PROGRESS hoặc OPEN và tính SLA không kéo dài tùy ý.",
+        "Actor trao đổi công khai/nội bộ hoặc liên kết tài nguyên; hệ thống kiểm quyền tài nguyên, thuộc requester, tối đa 50 links và không sửa hồ sơ đã merged/đóng theo nhánh.",
+        "Actor đổi trạng thái theo state machine; hệ thống cập nhật SLA clock, version/message/audit và thông báo requester."
+      ],
+      "alternatives": [
+        "B3: Tệp đính kèm: cùng kiểm quét sạch/MIME/8MB/20 tệp; internal chỉ người có quyền xử lý nhìn thấy; không mặc định scanner ngoài hoạt động; kết thúc nhánh.",
+        "B3: Link đã có: trả duplicate=true không thêm bản sao; kết thúc nhánh."
+      ],
+      "exceptions": [
+        "B2: Không phải supervisor nhưng gán người khác/giành ticket, assignee sai team/quyền hoặc version cũ: từ chối; không phân công; kết thúc.",
+        "B4: Chuyển state ngoài OPEN→IN_PROGRESS/RESOLVED, IN_PROGRESS↔WAITING_FOR_USER hoặc →RESOLVED, RESOLVED→OPEN/CLOSED: conflict; không đổi state; kết thúc."
+      ],
+      "rules": [
+        "Service.manage mới quyết quyền xử lý, không dựa decorator đa role.",
+        "CLOSED không có chuyển tiếp; ghi chú nội bộ không gửi cho requester."
+      ],
+      "post": "Hồ sơ hỗ trợ và lịch sử xử lý cập nhật, không tự sửa resource thuê liên kết.",
+      "relations": "",
+      "pre": "",
+      "failure": ""
+    },
+    {
+      "id": "UC-SUP-02.1",
+      "groupId": "G14",
+      "input": "userId, categories/maxOpen; ticketId để autoAssign.",
+      "steps": [
+        "Actor Admin mở skills hỗ trợ.",
+        "Actor đặt chuyên môn; hệ thống kiểm người nhận là Admin active đủ hỗ trợ rồi thay tập SupportAgentSkill trong transaction.",
+        "Actor yêu cầu autoAssign; hệ thống kiểm admins.manage cùng support.read/manage, chọn người đúng chuyên môn còn capacity theo nghiệp vụ.",
+        "Hệ thống lưu phân công và trả ticket/người nhận."
+      ],
+      "alternatives": [],
+      "exceptions": [
+        "B2: Không có agent hợp lệ hoặc B3 không còn capacity: not found/conflict; không gán bừa; kết thúc."
+      ],
+      "rules": [
+        "Agent hỗ trợ là ADMIN có capability, không Role/User loại mới."
+      ],
+      "post": "Skills hoặc assignment được lưu.",
+      "relations": "",
+      "pre": "",
+      "failure": ""
+    },
+    {
+      "id": "UC-SUP-02.2",
+      "groupId": "G14",
+      "input": "Lịch làm việc/timezone/holidays, responseMinutes/resolutionMinutes theo ưu tiên, escalationMinutes và version.",
+      "steps": [
+        "Actor Admin đọc chính sách SLA.",
+        "Hệ thống trả record platform hoặc mặc định.",
+        "Actor lưu; hệ thống kiểm cửa sổ ≥60 phút không qua nửa đêm, ngày nghỉ hợp lệ, escalation bắt đầu 0/tăng dần, resolution≥response từng mức.",
+        "Hệ thống khóa/version, upsert policy và audit; trả newTicketsOnly=true."
+      ],
+      "alternatives": [],
+      "exceptions": [
+        "B3: Vi phạm lịch/mốc thời gian hoặc B4 version cũ: 400/409; không thay policy; kết thúc."
+      ],
+      "rules": [
+        "Chính sách mới chỉ ticket mới, không tự tính lại deadline các ticket cũ."
+      ],
+      "post": "Policy SLA mới được lưu.",
+      "relations": "",
+      "pre": "",
+      "failure": ""
+    },
+    {
+      "id": "UC-SUP-03.2",
+      "groupId": "G14",
+      "input": "templateId tùy tạo/sửa; title/body/isActive và version/reason theo DTO.",
+      "steps": [
+        "Actor Admin mở mẫu trả lời.",
+        "Actor tạo/sửa; hệ thống khóa, kiểm tồn tại/version nếu sửa và tên chưa trùng mẫu khác.",
+        "Hệ thống lưu SupportTemplate, tăng version khi sửa và audit.",
+        "Hệ thống trả mẫu để giao diện tái sử dụng."
+      ],
+      "alternatives": [],
+      "exceptions": [
+        "B2: Tên đã có hoặc version cũ: conflict; không ghi đè mẫu; kết thúc."
+      ],
+      "rules": [
+        "Mẫu không tự gửi ticket reply khi mới lưu; không suy có xóa vật lý nếu chỉ isActive."
+      ],
+      "post": "Mẫu trả lời được lưu.",
+      "relations": "",
+      "pre": "",
+      "failure": ""
+    },
+    {
+      "id": "UC-SUP-03.2.1",
+      "groupId": "G14",
+      "input": "ticket nguồn, targetId, version/targetVersion và reason.",
+      "steps": [
+        "Actor Admin chọn hai ticket cần hợp nhất.",
+        "Hệ thống cấm nguồn=đích, khóa và yêu cầu cùng requester, đúng version, chưa merged và chưa RESOLVED/CLOSED.",
+        "Hệ thống chuyển SupportMessage/SupportAttachment nguồn sang đích trong transaction.",
+        "Hệ thống đóng ticket nguồn, đặt mergedIntoId, tăng version nguồn/đích và audit; trả id đích/version."
+      ],
+      "alternatives": [],
+      "exceptions": [
+        "B2: Khác requester/đã đóng/merged hoặc version thay đổi: conflict; không chuyển messages/attachments; kết thúc."
+      ],
+      "rules": [
+        "Không suy tự hợp nhất mọi quan hệ khác chỉ vì cùng ticket; code chỉ chuyển các quan hệ nêu rõ."
+      ],
+      "post": "Nguồn CLOSED, nội dung trao đổi/tệp ở ticket đích.",
+      "relations": "",
+      "pre": "",
+      "failure": ""
+    },
+    {
+      "id": "UC-SUP-03.2.2",
+      "groupId": "G14",
+      "input": "ticketId, điểm/nội dung feedback theo DTO.",
+      "steps": [
+        "Actor mở ticket do chính mình yêu cầu.",
+        "Hệ thống khóa và kiểm requesterId=Actor.userId.",
+        "Hệ thống yêu cầu RESOLVED/CLOSED, chưa merged và chưa feedbackAt.",
+        "Hệ thống lưu feedback/feedbackAt, tăng version/audit theo service và trả kết quả."
+      ],
+      "alternatives": [],
+      "exceptions": [
+        "B2: Không phải requester: not found; không đánh giá hộ; kết thúc.",
+        "B3: Chưa giải quyết/đã đánh giá/đã merged: conflict; không ghi lần hai; kết thúc."
+      ],
+      "rules": [
+        "Admin chỉ đánh giá nếu chính là requester, không thay khách hàng vì quyền support.manage."
+      ],
+      "post": "Một đánh giá kết quả trên ticket đủ điều kiện.",
+      "relations": "",
+      "pre": "",
+      "failure": ""
+    },
+    {
+      "id": "UC-SUP-03.3",
+      "groupId": "G14",
+      "input": "name, filters, savedViewId/version và reason theo DTO.",
+      "steps": [
+        "Actor Admin mở saved views của mình.",
+        "Actor lưu mới/sửa; hệ thống chuẩn hóa filters, kiểm owner/version khi sửa, tối đa 50 view khi tạo và tên không trùng.",
+        "Hệ thống tạo/cập nhật SupportSavedView, tăng version khi sửa.",
+        "Hệ thống trả view áp dụng cho bộ lọc xử lý."
+      ],
+      "alternatives": [
+        "B2: Xóa view: delete có owner/version, trả deleted=true; không xóa ticket; kết thúc."
+      ],
+      "exceptions": [
+        "B2: Đủ 50 view, trùng tên, id thiếu/khác owner hoặc version đổi: conflict; không ghi view; kết thúc."
+      ],
+      "rules": [
+        "Lưu view không mở rộng quyền support hay bỏ giới hạn requester."
+      ],
+      "post": "Bộ lọc riêng Admin được lưu/xóa.",
+      "relations": "",
+      "pre": "",
+      "failure": ""
+    },
+    {
+      "id": "UC-ADM-18",
+      "groupId": "G15",
+      "input": "verificationId, version, APPROVED/REJECTED/NEEDS_INFO và reason.",
+      "steps": [
+        "Actor Admin mở danh sách hồ sơ xác minh.",
+        "Hệ thống khóa hồ sơ và evidence ticket, kiểm ticket chưa đổi và Actor không tự duyệt yêu cầu mình.",
+        "Hệ thống yêu cầu PENDING/version khớp; APPROVED cần chủ trọ active, ticket đúng requester và evidence private đã quét sạch hợp lệ.",
+        "Hệ thống lưu status/reviewer/reviewedAt/reviewNote, tăng version/audit và trả hồ sơ."
+      ],
+      "alternatives": [
+        "B3: REJECTED/NEEDS_INFO: lưu kết quả và lý do, không cấp dấu xác minh approved; kết thúc sau B4."
+      ],
+      "exceptions": [
+        "B2: Evidence ticket đổi/tự duyệt hoặc B3 version/state cũ/evidence không hợp lệ: từ chối; không APPROVED; kết thúc."
+      ],
+      "rules": [
+        "Xác minh hồ sơ khác xác minh tin đăng; có record evidence không chứng minh scanner ngoài hoạt động trong đợt này."
+      ],
+      "post": "Hồ sơ có kết quả xét duyệt.",
+      "relations": "",
+      "pre": "",
+      "failure": ""
+    },
+    {
+      "id": "UC-ADM-18.1",
+      "groupId": "G15",
+      "input": "landlordId theo đường Admin hoặc suy từ phiên chủ trọ; ticketId và version.",
+      "steps": [
+        "Actor chủ trọ xem hồ sơ mình hoặc Admin hỗ trợ nộp qua endpoint riêng.",
+        "Hệ thống kiểm chủ trọ active và ticket thuộc chủ trọ có evidence private đã quét hợp lệ.",
+        "Hệ thống kiểm version, chỉ nhận lần đầu hoặc nộp lại NEEDS_INFO/REJECTED.",
+        "Hệ thống tạo/cập nhật LandlordVerification PENDING, tăng version khi có và audit; trả hồ sơ."
+      ],
+      "alternatives": [
+        "B1: Chủ trọ chỉ xem own: trả hồ sơ hiện tại, không tự nộp/duyệt; kết thúc."
+      ],
+      "exceptions": [
+        "B2: Thiếu ticket/evidence hợp lệ hoặc B3 đã PENDING/APPROVED/version đổi: từ chối; không tạo bản trùng; kết thúc."
+      ],
+      "rules": [
+        "Chủ trọ không có quyền xét duyệt; Admin và landlord dùng đường khác nhau."
+      ],
+      "post": "Hồ sơ PENDING, chưa xác minh approved.",
+      "relations": "",
+      "pre": "",
+      "failure": ""
+    },
+    {
+      "id": "UC-ADM-19",
+      "groupId": "G15",
+      "input": "propertyId/reviewId, version, quyết định và reason.",
+      "steps": [
+        "Actor Admin đủ properties.manage trình khu đang hoạt động.",
+        "Hệ thống chụp/hash nội dung hiện tại; kiểm version và chưa PENDING/APPROVED cùng snapshot; lưu review PENDING.",
+        "Actor Admin xét; hệ thống khóa, yêu cầu review còn PENDING/version khớp, khu chưa archived và hash vẫn khớp.",
+        "Hệ thống lưu kết quả/reviewer/time, tăng version/audit và trả review."
+      ],
+      "alternatives": [
+        "B2: Nội dung khu thay đổi sau hồ sơ cũ: có thể trình lại snapshot mới nếu điều kiện version cho phép; tiếp tục B3."
+      ],
+      "exceptions": [
+        "B3: Khu/nội dung đã đổi: conflict, yêu cầu trình lại; không duyệt snapshot cũ; kết thúc."
+      ],
+      "rules": [
+        "Chưa có endpoint LANDLORD tự trình khu trong UC này.",
+        "Hồ sơ khu không tự gắn verified cho listing."
+      ],
+      "post": "Review khu chụp đúng snapshot và có trạng thái.",
+      "relations": "",
+      "pre": "",
+      "failure": ""
+    },
+    {
+      "id": "UC-ADM-20",
+      "groupId": "G15",
+      "input": "code/name/price/quota/isActive và version/reason theo DTO gói.",
+      "steps": [
+        "Actor Admin tra các gói.",
+        "Hệ thống kiểm plans.view để đọc, plans.manage để ghi; trả billingMode=ADMINISTRATIVE_ENTITLEMENTS.",
+        "Actor tạo/sửa; hệ thống kiểm FREE có price=0, khóa và version hiện tại khớp.",
+        "Hệ thống lưu ServicePlan/version/audit và trả gói."
+      ],
+      "alternatives": [],
+      "exceptions": [
+        "B3: FREE có giá dương, version cũ hoặc unique conflict: từ chối; không ghi đè gói; kết thúc."
+      ],
+      "rules": [
+        "platformRevenueAvailable=false; quản lý danh mục không có quy trình mua/thu tiền gói được xác minh."
+      ],
+      "post": "Điều khoản/hạn mức gói được lưu.",
+      "relations": "",
+      "pre": "",
+      "failure": ""
+    },
+    {
+      "id": "UC-ADM-21",
+      "groupId": "G15",
+      "input": "landlordId, planId/planVersion, subscription version, endsAt tùy chọn và reason.",
+      "steps": [
+        "Actor Admin xem subscription/lịch sử hoặc chọn gói cho chủ trọ.",
+        "Hệ thống kiểm chủ trọ LANDLORD active, plan active/version khớp và endsAt ở tương lai nếu có.",
+        "Hệ thống khóa subscription/version, đếm inventory hiện tại và yêu cầu không vượt maxProperties/maxRooms gói chọn.",
+        "Hệ thống lưu snapshot entitlement, SubscriptionEvent/audit, trả subscription."
+      ],
+      "alternatives": [
+        "B1: Chỉ xem history: kiểm subscription tồn tại, trả các event phân trang; không đổi entitlement; kết thúc."
+      ],
+      "exceptions": [
+        "B2: Plan/expiry không hợp lệ hoặc B3 inventory vượt hạn mức/version đổi: conflict/validation; không gán; không xóa dữ liệu để giảm quota; kết thúc."
+      ],
+      "rules": [
+        "Quota áp dụng khi đã có subscription; hết hạn chặn tăng inventory, không xóa khu/phòng cũ."
+      ],
+      "post": "Gói được gán hành chính, chưa có thanh toán mua gói.",
+      "relations": "",
+      "pre": "",
+      "failure": ""
+    },
+    {
+      "id": "UC-ADM-22",
+      "groupId": "G15",
+      "input": "subscriptionId, version và reason.",
+      "steps": [
+        "Actor Admin chọn hủy quyền sử dụng gói.",
+        "Hệ thống xác định chủ trọ và khóa subscription, kiểm version.",
+        "Hệ thống yêu cầu chưa hết hạn; đặt endsAt=hiện tại và tăng version.",
+        "Hệ thống ghi SubscriptionEvent CANCELLED/audit và trả subscription."
+      ],
+      "alternatives": [],
+      "exceptions": [
+        "B2: Không tồn tại/version cũ hoặc B3 đã hết hạn: not found/conflict; không ghi hủy lại; kết thúc."
+      ],
+      "rules": [
+        "Không hoàn tiền và không xóa inventory; không có subscription billing thực được xác nhận."
+      ],
+      "post": "Entitlement kết thúc tại mốc hủy.",
+      "relations": "",
+      "pre": "",
+      "failure": ""
+    },
+    {
+      "id": "UC-ADM-15",
+      "groupId": "G16",
+      "input": "propertyId, accountKey, importKey, lines externalId/amount/occurredAt/reference, reason; đề xuất action/lineVersion/paymentId/receiptId.",
+      "steps": [
+        "Actor Admin nhập sao kê đã có từ bên ngoài.",
+        "Hệ thống kiểm ngày/externalId không trùng, khóa đối soát toàn cục, kiểm importKey/contentHash và alias không thuộc khu khác.",
+        "Hệ thống lưu statement/lines, tự MATCHED chỉ khi findCandidate đủ điều kiện; ghi audit và trả matched/unmatched.",
+        "Actor xem candidate và đề xuất MATCH_PAYMENT/MATCH_RECEIPT/MARK_REVIEWED/UNMATCH; hệ thống kiểm lineVersion, trạng thái, chưa proposal PENDING và target cùng khu/đúng số tiền trước khi lưu proposal."
+      ],
+      "alternatives": [
+        "B2: Cùng importKey/hash: trả duplicate=true, không nhập lại; kết thúc.",
+        "B3: Không có candidate chắc chắn: giữ dòng chưa ghép để Actor rà soát B4; không tự tạo Payment."
+      ],
+      "exceptions": [
+        "B2: Key nội dung khác/alias khác khu/externalId đã nhập: conflict; không nhập trùng; kết thúc.",
+        "B4: Target sai/đã ghép/trùng pending hoặc version cũ: từ chối đề xuất; không sửa ledger tiền; kết thúc."
+      ],
+      "rules": [
+        "Nhập và ghép tham chiếu khoản thu đã có, không kết nối ngân hàng hay tự thu tiền."
+      ],
+      "post": "Statement và/hoặc proposal được lưu; payment gốc không tự sinh.",
+      "relations": "",
+      "pre": "",
+      "failure": ""
+    },
+    {
+      "id": "UC-ADM-15.1",
+      "groupId": "G16",
+      "input": "proposalId, line version, quyết định duyệt/từ chối và reason.",
+      "steps": [
+        "Actor Admin độc lập mở các proposal PENDING.",
+        "Hệ thống khóa đối soát, kiểm maker khác checker và version dòng bằng cả input/proposal.lineVersion.",
+        "Khi duyệt match, hệ thống kiểm lại Payment BANK_TRANSFER thật/chưa đảo/chưa ghép/không allocation hoặc receipt hợp lệ cùng khu/số tiền.",
+        "Hệ thống cập nhật line MATCHED/UNMATCHED/NEEDS_REVIEW theo action, tăng version, đánh proposal APPROVED và audit; trả line/proposal."
+      ],
+      "alternatives": [
+        "B3: Từ chối: chỉ lưu proposal REJECTED/reviewer/reason, không đổi line; kết thúc."
+      ],
+      "exceptions": [
+        "B2: Tự duyệt, proposal hết pending hoặc line đổi: 403/409; không phê duyệt; kết thúc.",
+        "B3: Payment/receipt đã đổi/đã ghép: conflict; không tạo đối soát sai; kết thúc."
+      ],
+      "rules": [
+        "Duyệt proposal không tạo thu ngân hàng hoặc Payment mới."
+      ],
+      "post": "Line/proposal phản ánh kết quả kiểm tra độc lập.",
+      "relations": "",
+      "pre": "",
+      "failure": ""
+    },
+    {
+      "id": "UC-ADM-17.1",
+      "groupId": "G16",
+      "input": "Feature key trong danh mục, enabled/rollout/roles, version và reason.",
+      "steps": [
+        "Actor Admin mở danh sách/effective flags.",
+        "Hệ thống kiểm flags.manage cho cấu hình, chỉ key FEATURE_KEYS được phép, không thay cờ bảo mật tùy ý.",
+        "Actor lưu; hệ thống khóa theo key, kiểm version hiện tại.",
+        "Hệ thống upsert enabled/rollout/roles, tăng version/audit và trả flag."
+      ],
+      "alternatives": [
+        "B1: Chỉ xem effective: trả trạng thái tính theo Actor/userId/role, không thay cấu hình; kết thúc."
+      ],
+      "exceptions": [
+        "B2: Key ngoài danh mục hoặc B3 version đổi: conflict; không ghi; kết thúc."
+      ],
+      "rules": [
+        "Flag không thay thế authentication/authorization; effective theo rollout không phải quyền RBAC."
+      ],
+      "post": "Cờ cấu hình được lưu.",
+      "relations": "",
+      "pre": "",
+      "failure": ""
+    },
+    {
+      "id": "UC-ADM-17.2",
+      "groupId": "G16",
+      "input": "Team name/description/isActive/version; userId/role thành viên và reason.",
+      "steps": [
+        "Actor Admin tra nhóm/quyền thành viên với email che.",
+        "Actor tạo/sửa team; hệ thống kiểm version khi sửa và audit.",
+        "Actor thêm/cập nhật member; hệ thống yêu cầu team active, User ADMIN active rồi upsert membership.",
+        "Hệ thống reset mốc access review/tăng reviewVersion và audit, trả membership/team."
+      ],
+      "alternatives": [
+        "B3: Xóa member: khóa, yêu cầu không còn ticket active của người này trong team rồi xóa, reset review và audit; kết thúc."
+      ],
+      "exceptions": [
+        "B2: Version team cũ hoặc B3 user/team không hợp lệ: conflict/not found; không ghi member; kết thúc.",
+        "B3: Xóa khi còn ticket chưa RESOLVED/CLOSED: conflict; phải chuyển ticket trước; kết thúc."
+      ],
+      "rules": [
+        "Membership không tự biến thành quyền Admin capability mới; preset vẫn ở AdminProfile."
+      ],
+      "post": "Nhóm/member cập nhật và mốc rà soát được reset khi đổi thành viên.",
+      "relations": "",
+      "pre": "",
+      "failure": ""
+    },
+    {
+      "id": "UC-ADM-23",
+      "groupId": "G16",
+      "input": "Mã/tên cơ sở trường, địa bàn/tọa độ và isActive/isDemo theo DTO.",
+      "steps": [
+        "Actor Admin mở danh mục cơ sở trường.",
+        "Hệ thống trả tất cả bản ghi cho Admin, xếp demo sau dữ liệu thường và theo city/name/campus.",
+        "Actor tạo hoặc sửa; hệ thống kiểm DTO và campus tồn tại khi sửa.",
+        "Hệ thống lưu SchoolCampus và trả bản ghi."
+      ],
+      "alternatives": [
+        "B3: Vô hiệu hóa qua update isActive: lưu cờ, không xóa lịch sử; công khai chỉ đọc campus active; kết thúc."
+      ],
+      "exceptions": [
+        "B3: CampusId không có: 404; không tạo đè qua update; kết thúc."
+      ],
+      "rules": [
+        "Không suy có endpoint xóa vật lý campus từ CRUD tên chung."
+      ],
+      "post": "Danh mục campus cập nhật, phục vụ bộ lọc công khai.",
+      "relations": "",
+      "pre": "",
+      "failure": ""
+    },
+    {
+      "id": "UC-ADM-24",
+      "groupId": "G16",
+      "input": "kind/status/from/to và scope/phân trang; truy vấn đối chiếu tổng hợp riêng.",
+      "steps": [
+        "Actor Admin tra giao dịch theo loại PAYMENT/LINK/WEBHOOK.",
+        "Hệ thống kiểm admin.finance.read, khoảng tối đa 93 ngày và status thuộc đúng kind.",
+        "Hệ thống trả projection phân trang chỉ đọc; khi chạy governance finance kiểm khoảng tối đa 366 ngày và không quá 5000 dòng mỗi tập.",
+        "Hệ thống tổng hợp invoice thật/payment có dấu/cọc/Expense, so invoicePaidSnapshot với ledger và trả mismatches."
+      ],
+      "alternatives": [
+        "B3: Không có giao dịch trong kỳ: trả tập rỗng/tổng 0 tương ứng; không tạo giao dịch; kết thúc."
+      ],
+      "exceptions": [
+        "B2: Ngày/status không hợp lệ hoặc B3 vượt giới hạn dòng: 400; không cắt bớt rồi coi báo cáo đủ; kết thúc."
+      ],
+      "rules": [
+        "Tra cứu khác đối soát sao kê duyệt kép và không có quyền tự sửa tiền từ báo cáo mismatch."
+      ],
+      "post": "Danh sách/tổng hợp tài chính chỉ đọc.",
+      "relations": "",
+      "pre": "",
+      "failure": ""
+    },
+    {
+      "id": "UC-ADM-26",
+      "groupId": "G16",
+      "input": "preset và capability cần kiểm tra.",
+      "steps": [
+        "Actor Admin chọn preset và quyền để mô phỏng.",
+        "Hệ thống kiểm quyền truy cập công cụ mô phỏng.",
+        "Hệ thống giải permissions của preset và so checked capability nếu có.",
+        "Hệ thống trả allowed/permissions/note về giới hạn mô phỏng."
+      ],
+      "alternatives": [
+        "B3: Không truyền capability để kiểm: checked=null, allowed=false; không thay quyền; kết thúc."
+      ],
+      "exceptions": [
+        "B2: Không đủ capability công cụ hoặc input preset sai: từ chối; không mô phỏng như quyền thật; kết thúc."
+      ],
+      "rules": [
+        "Kết quả RBAC không bỏ qua MFA, trạng thái và scope kiểm tại API thật."
+      ],
+      "post": "Chỉ kết quả mô phỏng, không cấp quyền.",
+      "relations": "",
+      "pre": "",
+      "failure": ""
+    },
+    {
+      "id": "UC-ADM-27",
+      "groupId": "G16",
+      "input": "Bộ lọc/trang phản hồi pilot theo DTO.",
+      "steps": [
+        "Actor Admin mở phản hồi thử nghiệm tìm phòng.",
+        "Hệ thống kiểm capability của đường feedbackList.",
+        "Hệ thống truy vấn PilotFeedback và tổng hợp summary theo bộ lọc/phân trang.",
+        "Hệ thống trả data/summary/meta."
+      ],
+      "alternatives": [
+        "B3: Không có feedback: trả tập rỗng/tổng tương ứng; không tạo phản hồi; kết thúc."
+      ],
+      "exceptions": [
+        "B2: Không đủ quyền hoặc tham số sai: từ chối; không trả dữ liệu trái quyền; kết thúc."
+      ],
+      "rules": [
+        "Đọc feedback không tự mở khu pilot hoặc gửi feedback thay Actor khác."
+      ],
+      "post": "Phản hồi thử nghiệm chỉ đọc.",
+      "relations": "",
+      "pre": "",
+      "failure": ""
+    }
+  ]
+}

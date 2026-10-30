@@ -1,0 +1,85 @@
+[
+  {
+    "id": "login",
+    "layer": "UI",
+    "status": "passed",
+    "startedAt": "2026-10-30T00:39:52.154Z",
+    "screenshot": "login.png",
+    "finishedAt": "2026-10-30T00:40:24.860Z"
+  },
+  {
+    "id": "02-dang-ky-nguoi-thue",
+    "layer": "UI",
+    "status": "passed",
+    "startedAt": "2026-10-30T00:40:24.862Z",
+    "screenshot": "02-dang-ky-nguoi-thue.png",
+    "finishedAt": "2026-10-30T00:40:50.234Z"
+  },
+  {
+    "id": "03-tao-sua-khu-tro",
+    "layer": "UI",
+    "status": "passed",
+    "startedAt": "2026-10-30T00:40:50.235Z",
+    "screenshot": "03-tao-sua-khu-tro.png",
+    "finishedAt": "2026-10-30T00:41:13.464Z"
+  },
+  {
+    "id": "04-tao-sua-phong",
+    "layer": "UI",
+    "status": "failed",
+    "startedAt": "2026-10-30T00:41:13.464Z",
+    "error": "unknown error: WebDriverError: Cannot execute command waitFor, server response {\n  \"isError\": true,\n  \"response\": \"Uncaught extension error while executing waitFor: RangeError (index): Index out of range: no indices are valid: 0\\n#0      CachingIterable.elementAt (package:flutter/src/foundation/basic_types.dart:189:9)\\n#1      _IndexFinderMixin.filter (package:flutter_test/src/finders.dart:1396:28)\\n#2      _SyncStarIterator.moveNext (dart:async-patch/async_patch.dart:595:13)\\n#3      Iterable.isEmpty (dart:core/iterable.dart:542:33)\\n#4      Iterable.isNotEmpty (dart:core/iterable.dart:554:27)\\n#5      CommandHandlerFactory.waitForElement.<anonymous closure> (package:flutter_driver/src/common/handler_factory.dart:508:51)\\n#6      CommandHandlerFactory._waitUntilFrame (package:flutter_driver/src/common/handler_factory.dart:535:19)\\n#7      CommandHandlerFactory.waitForElement (package:flutter_driver/src/common/handler_factory.dart:508:11)\\n<asynchronous suspension>\\n#8      CommandHandlerFactory._waitFor (package:flutter_driver/src/common/handler_factory.dart:252:5)\\n<asynchronous suspension>\\n#9      Future.timeout.<anonymous closure> (dart:async/future_impl.dart:1043:7)\\n<asynchronous suspension>\\n#10     FlutterDriverExtension.call (package:flutter_driver/src/extension/extension.dart:423:31)\\n<asynchronous suspension>\\n#11     BindingBase.registerServiceExtension.<anonymous closure> (package:flutter/src/foundation/binding.dart:960:18)\\n<asynchronous suspension>\\n#12     _runExtension.<anonymous closure> (dart:developer-patch/developer.dart:138:13)\\n<asynchronous suspension>\\n\",\n  \"type\": \"_extensionType\",\n  \"method\": \"ext.flutter.driver\"\n} when running \"execute/sync\" with method \"POST\"\n    at FetchRequest._request (file:///Users/hoang/Rental_room_management/test/system_demo/node_modules/webdriver/build/node.js:2229:19)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async Browser.wrapCommandFn (file:///Users/hoang/Rental_room_management/test/system_demo/node_modules/@wdio/utils/build/index.js:982:23)\n    at async Browser.wrapCommandFn (file:///Users/hoang/Rental_room_management/test/system_demo/node_modules/@wdio/utils/build/index.js:982:23)\n    at async DemoUI.reveal (file:///Users/hoang/Rental_room_management/test/system_demo/system_demo.mjs:260:5)\n    at async DemoUI.tap (file:///Users/hoang/Rental_room_management/test/system_demo/system_demo.mjs:266:5)\n    at async file:///Users/hoang/Rental_room_management/test/system_demo/system_demo.mjs:421:5\n    at async file:///Users/hoang/Rental_room_management/test/system_demo/system_demo.mjs:306:5\n    at async runCase (file:///Users/hoang/Rental_room_management/test/system_demo/system_demo.mjs:98:9)\n    at async scenario (file:///Users/hoang/Rental_room_management/test/system_demo/system_demo.mjs:301:18)",
+    "finishedAt": "2026-10-30T00:41:37.040Z",
+    "screenshot": "04-tao-sua-phong-FAILED.png"
+  },
+  {
+    "id": "05-tao-sua-tim-nguoi-thue",
+    "layer": "UI",
+    "status": "passed",
+    "startedAt": "2026-10-30T00:41:37.690Z",
+    "screenshot": "05-tao-sua-tim-nguoi-thue.png",
+    "finishedAt": "2026-10-30T00:42:02.054Z"
+  },
+  {
+    "id": "06-tin-dang-va-kiem-duyet",
+    "layer": "UI",
+    "status": "blocked",
+    "startedAt": "2026-10-30T00:42:02.055Z",
+    "error": "Prerequisites failed/not selected: 04-tao-sua-phong"
+  },
+  {
+    "id": "07-kham-pha-va-yeu-thich",
+    "layer": "UI",
+    "status": "passed",
+    "startedAt": "2026-10-30T00:42:02.055Z",
+    "screenshot": "07-kham-pha-va-yeu-thich.png",
+    "finishedAt": "2026-10-30T00:42:14.469Z"
+  },
+  {
+    "id": "08-hop-dong-va-ban-giao",
+    "layer": "UI",
+    "status": "failed",
+    "startedAt": "2026-10-30T00:42:14.471Z",
+    "error": "Error: Timeout: Expected text: Lịch sử tiền cọc\n    at waitUntil (file:///Users/hoang/Rental_room_management/test/system_demo/system_demo.mjs:162:9)\n    at async DemoUI.expect (file:///Users/hoang/Rental_room_management/test/system_demo/system_demo.mjs:278:5)\n    at async file:///Users/hoang/Rental_room_management/test/system_demo/system_demo.mjs:478:44\n    at async file:///Users/hoang/Rental_room_management/test/system_demo/system_demo.mjs:306:5\n    at async runCase (file:///Users/hoang/Rental_room_management/test/system_demo/system_demo.mjs:98:9)\n    at async scenario (file:///Users/hoang/Rental_room_management/test/system_demo/system_demo.mjs:301:18)\n    at async journeys (file:///Users/hoang/Rental_room_management/test/system_demo/system_demo.mjs:476:3)\n    at async visualJourneys (file:///Users/hoang/Rental_room_management/test/system_demo/system_demo.mjs:356:3)\n    at async main (file:///Users/hoang/Rental_room_management/test/system_demo/system_demo.mjs:752:5)",
+    "finishedAt": "2026-10-30T00:42:34.221Z",
+    "screenshot": "08-hop-dong-va-ban-giao-FAILED.png"
+  },
+  {
+    "id": "09-thu-coc-va-doi-chieu",
+    "layer": "UI",
+    "status": "failed",
+    "startedAt": "2026-10-30T00:42:34.440Z",
+    "error": "unknown error: WebDriverError: Cannot execute command waitFor, server response {\n  \"isError\": true,\n  \"response\": \"Uncaught extension error while executing waitFor: RangeError (index): Index out of range: no indices are valid: 0\\n#0      CachingIterable.elementAt (package:flutter/src/foundation/basic_types.dart:189:9)\\n#1      _IndexFinderMixin.filter (package:flutter_test/src/finders.dart:1396:28)\\n#2      _SyncStarIterator.moveNext (dart:async-patch/async_patch.dart:595:13)\\n#3      Iterable.isEmpty (dart:core/iterable.dart:542:33)\\n#4      Iterable.isNotEmpty (dart:core/iterable.dart:554:27)\\n#5      CommandHandlerFactory.waitForElement.<anonymous closure> (package:flutter_driver/src/common/handler_factory.dart:508:51)\\n#6      CommandHandlerFactory._waitUntilFrame (package:flutter_driver/src/common/handler_factory.dart:535:19)\\n#7      CommandHandlerFactory.waitForElement (package:flutter_driver/src/common/handler_factory.dart:508:11)\\n<asynchronous suspension>\\n#8      CommandHandlerFactory._waitFor (package:flutter_driver/src/common/handler_factory.dart:252:5)\\n<asynchronous suspension>\\n#9      Future.timeout.<anonymous closure> (dart:async/future_impl.dart:1043:7)\\n<asynchronous suspension>\\n#10     FlutterDriverExtension.call (package:flutter_driver/src/extension/extension.dart:423:31)\\n<asynchronous suspension>\\n#11     BindingBase.registerServiceExtension.<anonymous closure> (package:flutter/src/foundation/binding.dart:960:18)\\n<asynchronous suspension>\\n#12     _runExtension.<anonymous closure> (dart:developer-patch/developer.dart:138:13)\\n<asynchronous suspension>\\n\",\n  \"type\": \"_extensionType\",\n  \"method\": \"ext.flutter.driver\"\n} when running \"execute/sync\" with method \"POST\"\n    at FetchRequest._request (file:///Users/hoang/Rental_room_management/test/system_demo/node_modules/webdriver/build/node.js:2229:19)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async Browser.wrapCommandFn (file:///Users/hoang/Rental_room_management/test/system_demo/node_modules/@wdio/utils/build/index.js:982:23)\n    at async Browser.wrapCommandFn (file:///Users/hoang/Rental_room_management/test/system_demo/node_modules/@wdio/utils/build/index.js:982:23)\n    at async DemoUI.reveal (file:///Users/hoang/Rental_room_management/test/system_demo/system_demo.mjs:260:5)\n    at async DemoUI.tap (file:///Users/hoang/Rental_room_management/test/system_demo/system_demo.mjs:266:5)\n    at async file:///Users/hoang/Rental_room_management/test/system_demo/system_demo.mjs:496:5\n    at async file:///Users/hoang/Rental_room_management/test/system_demo/system_demo.mjs:306:5\n    at async runCase (file:///Users/hoang/Rental_room_management/test/system_demo/system_demo.mjs:98:9)\n    at async scenario (file:///Users/hoang/Rental_room_management/test/system_demo/system_demo.mjs:301:18)",
+    "finishedAt": "2026-10-30T00:42:45.949Z",
+    "screenshot": "09-thu-coc-va-doi-chieu-FAILED.png"
+  },
+  {
+    "id": "10-hoa-don-va-thanh-toan",
+    "layer": "UI",
+    "status": "failed",
+    "startedAt": "2026-10-30T00:42:46.370Z",
+    "error": "unknown error: WebDriverError: Cannot execute command waitFor, server response {\n  \"isError\": true,\n  \"response\": \"Uncaught extension error while executing waitFor: RangeError (index): Index out of range: no indices are valid: 0\\n#0      CachingIterable.elementAt (package:flutter/src/foundation/basic_types.dart:189:9)\\n#1      _IndexFinderMixin.filter (package:flutter_test/src/finders.dart:1396:28)\\n#2      _SyncStarIterator.moveNext (dart:async-patch/async_patch.dart:595:13)\\n#3      Iterable.isEmpty (dart:core/iterable.dart:542:33)\\n#4      Iterable.isNotEmpty (dart:core/iterable.dart:554:27)\\n#5      CommandHandlerFactory.waitForElement.<anonymous closure> (package:flutter_driver/src/common/handler_factory.dart:508:51)\\n#6      CommandHandlerFactory._waitUntilFrame (package:flutter_driver/src/common/handler_factory.dart:535:19)\\n#7      CommandHandlerFactory.waitForElement (package:flutter_driver/src/common/handler_factory.dart:508:11)\\n<asynchronous suspension>\\n#8      CommandHandlerFactory._waitFor (package:flutter_driver/src/common/handler_factory.dart:252:5)\\n<asynchronous suspension>\\n#9      Future.timeout.<anonymous closure> (dart:async/future_impl.dart:1043:7)\\n<asynchronous suspension>\\n#10     FlutterDriverExtension.call (package:flutter_driver/src/extension/extension.dart:423:31)\\n<asynchronous suspension>\\n#11     BindingBase.registerServiceExtension.<anonymous closure> (package:flutter/src/foundation/binding.dart:960:18)\\n<asynchronous suspension>\\n#12     _runExtension.<anonymous closure> (dart:developer-patch/developer.dart:138:13)\\n<asynchronous suspension>\\n\",\n  \"type\": \"_extensionType\",\n  \"method\": \"ext.flutter.driver\"\n} when running \"execute/sync\" with method \"POST\"\n    at FetchRequest._request (file:///Users/hoang/Rental_room_management/test/system_demo/node_modules/webdriver/build/node.js:2229:19)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async Browser.wrapCommandFn (file:///Users/hoang/Rental_room_management/test/system_demo/node_modules/@wdio/utils/build/index.js:982:23)\n    at async Browser.wrapCommandFn (file:///Users/hoang/Rental_room_management/test/system_demo/node_modules/@wdio/utils/build/index.js:982:23)\n    at async DemoUI.reveal (file:///Users/hoang/Rental_room_management/test/system_demo/system_demo.mjs:260:5)\n    at async DemoUI.tap (file:///Users/hoang/Rental_room_management/test/system_demo/system_demo.mjs:266:5)\n    at async file:///Users/hoang/Rental_room_management/test/system_demo/system_demo.mjs:516:5\n    at async file:///Users/hoang/Rental_room_management/test/system_demo/system_demo.mjs:306:5\n    at async runCase (file:///Users/hoang/Rental_room_management/test/system_demo/system_demo.mjs:98:9)\n    at async scenario (file:///Users/hoang/Rental_room_management/test/system_demo/system_demo.mjs:301:18)",
+    "finishedAt": "2026-10-30T00:43:15.051Z",
+    "screenshot": "10-hoa-don-va-thanh-toan-FAILED.png"
+  }
+]

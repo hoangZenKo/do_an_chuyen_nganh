@@ -1,0 +1,14 @@
+
+> rental-room-api@0.1.0 test:e2e
+> NODE_ENV=test jest --config ./test/jest-e2e.json --runInBand --runTestsByPath test/e2e/lease-billing-dashboard.e2e-spec.ts --runInBand
+
+PASS test/e2e/lease-billing-dashboard.e2e-spec.ts
+  Lease, billing and dashboard E2E
+    ✓ covers lease transitions, billing flows and dashboard scoping (552 ms)
+    ✓ guards payment overpayment, reversal and invoice cancellation flows (403 ms)
+
+Test Suites: 1 passed, 1 total
+Tests:       2 passed, 2 total
+Snapshots:   0 total
+Time:        3.16 s
+Ran all test suites within paths "test/e2e/lease-billing-dashboard.e2e-spec.ts".

@@ -1,0 +1,109 @@
+@startuml
+skinparam backgroundColor white
+skinparam shadowing false
+skinparam dpi 240
+skinparam defaultFontName "Times New Roman"
+skinparam defaultFontSize 17
+skinparam defaultFontColor black
+skinparam titleFontSize 21
+skinparam titleFontColor black
+skinparam roundcorner 0
+skinparam maxMessageSize 270
+skinparam ParticipantPadding 30
+skinparam sequence {
+  ArrowColor #800000
+  ArrowThickness 1.2
+  LifeLineBorderColor #999999
+  LifeLineBackgroundColor #FFFFB9
+  ParticipantBackgroundColor #FFFFB9
+  ParticipantBorderColor #800000
+  ParticipantFontColor black
+  ActorBackgroundColor #FFFFB9
+  ActorBorderColor #800000
+  ActorFontColor black
+  BoundaryBackgroundColor #FFFFB9
+  BoundaryBorderColor #800000
+  ControlBackgroundColor #FFFFB9
+  ControlBorderColor #800000
+  EntityBackgroundColor #FFFFB9
+  EntityBorderColor #800000
+  DatabaseBackgroundColor #FFFFB9
+  DatabaseBorderColor #800000
+  GroupBackgroundColor #FFFFB9
+  GroupBodyBackgroundColor white
+  GroupBorderColor #888888
+  GroupFontColor black
+  GroupHeaderFontColor black
+  GroupFontSize 15
+  GroupHeaderFontSize 16
+  MessageAlign center
+}
+hide footbox
+<style>
+sequenceDiagram {
+ actor { BackgroundColor #FFFFB9
+ LineColor #800000 }
+ boundary { BackgroundColor #FFFFB9
+ LineColor #800000 }
+ control { BackgroundColor #FFFFB9
+ LineColor #800000 }
+ database { BackgroundColor #FFFFB9
+ LineColor #800000 }
+ activationBox { BackgroundColor #FFFFB9
+ LineColor #800000 }
+}
+</style>
+autonumber "<b>0.</b>"
+
+title SD-07. Gỡ phân bổ và ghi nhận hoàn tiền khoản thu
+actor "Chủ trọ" as A
+boundary "<u>Giao diện</u>\n<u>khoản thu</u>" as U #FFFFB9
+control "<u>Quản lý</u>\n<u>phân bổ và hoàn tiền</u>" as C #FFFFB9
+database "<u>Cơ sở dữ liệu</u>" as D #FFFFB9
+opt Chọn gỡ một phân bổ đang có hiệu lực
+A -> U: Chọn phân bổ; nhập lý do gỡ
+activate U
+U -> C: Yêu cầu gỡ phân bổ thanh toán
+activate C
+C -> D ++: Tra cứu lần yêu cầu trước, khoản thu, phân bổ và hóa đơn
+D --> C --: Lịch sử xử lý, phân bổ và số tiền đã thanh toán
+C -> C: Đối chiếu yêu cầu gửi lại, quyền xử lý và tình trạng phân bổ
+alt Gửi lại đúng yêu cầu gỡ đã hoàn tất
+C --> U: Trả kết quả đã có
+U --> A: Trả kết quả đã có; không ghi bút toán đảo thêm
+else Ngoài quyền, đã gỡ bằng yêu cầu khác hoặc số liệu không khớp
+C --> U: Không gỡ phân bổ
+U --> A: Không gỡ phân bổ; hiển thị lý do
+else Phân bổ còn hiệu lực và số liệu hợp lệ
+C -> D ++: Ghi bút toán đảo; tăng tiền chưa phân bổ; cập nhật dư nợ
+D --> C --: Giữ khoản gốc; lưu lịch sử gỡ phân bổ
+C --> U: Đã gỡ phân bổ
+U --> A: Đã gỡ phân bổ; hiển thị số dư và công nợ mới
+end
+deactivate C
+deactivate U
+end
+opt Có tiền chưa phân bổ; chủ trọ chọn ghi nhận khoản đã hoàn
+A -> U: Nhập tiền hoàn, lý do và thông tin đối chiếu
+activate U
+U -> C: Yêu cầu ghi nhận khoản đã hoàn
+activate C
+C -> D ++: Tra cứu lần ghi nhận trước, khoản thu, phân bổ và khoản hoàn
+D --> C --: Lịch sử yêu cầu và các khoản tiền đã ghi nhận
+C -> C: Đối chiếu yêu cầu gửi lại; tính tiền còn dư và kiểm tra số tiền hoàn
+alt Gửi lại đúng yêu cầu đã ghi nhận
+C --> U: Trả kết quả đã có
+U --> A: Trả kết quả đã có; không ghi hoàn thêm
+else Yêu cầu mới vượt số dư; hoặc dữ liệu không hợp lệ, nội dung gửi lại khác trước
+C --> U: Không ghi hoàn tiền
+U --> A: Không ghi hoàn tiền; yêu cầu kiểm tra hoặc gỡ phân bổ trước
+else Yêu cầu mới hợp lệ và không vượt số dư
+C -> D ++: Lưu khoản hoàn; giảm tiền chưa phân bổ
+D --> C --: Lịch sử hoàn tiền được cập nhật
+C --> U: Đã ghi nhận hoàn tiền
+U --> A: Đã ghi nhận hoàn tiền; không thực hiện chuyển tiền
+end
+deactivate C
+deactivate U
+end
+@enduml

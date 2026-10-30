@@ -1,0 +1,13 @@
+
+> rental-room-api@0.1.0 test:e2e
+> NODE_ENV=test jest --config ./test/jest-e2e.json --runInBand --runTestsByPath test/e2e/resource-lifecycle.e2e-spec.ts --runInBand
+
+PASS test/e2e/resource-lifecycle.e2e-spec.ts
+  Resource lifecycle E2E
+    ✓ guards lifecycle actions, hides inactive resources and allows unused deletes (666 ms)
+
+Test Suites: 1 passed, 1 total
+Tests:       1 passed, 1 total
+Snapshots:   0 total
+Time:        3.436 s
+Ran all test suites within paths "test/e2e/resource-lifecycle.e2e-spec.ts".

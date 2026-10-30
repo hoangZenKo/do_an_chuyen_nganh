@@ -1,0 +1,38 @@
+
+> rental-room-api@0.1.0 test:e2e
+> NODE_ENV=test jest --config ./test/jest-e2e.json --runInBand --runTestsByPath test/e2e/security-discovery.e2e-spec.ts --runInBand
+
+FAIL test/e2e/security-discovery.e2e-spec.ts
+  Security and discovery regressions
+    ✓ serializes duplicate proof approvals and competing refunds (382 ms)
+    ✕ keeps receipts private, validates bytes and permits only authorized sharing (334 ms)
+    ✓ revokes other sessions, refresh tokens and private file links on password change (389 ms)
+    ✓ returns validation errors rather than server errors for invalid dates (246 ms)
+    ✓ filters by full estimated budget and availability freshness (291 ms)
+    ✓ allows only admins to manage real campus coordinates and active state (263 ms)
+    ✓ saves filters, sends deduplicated in-app alerts and enforces account boundaries (379 ms)
+    ✓ does not alert for historical listings, paused searches or more than ten saved searches (317 ms)
+    ✓ scans all matching pages without truncating notifications at fifty (381 ms)
+
+  ● Security and discovery regressions › keeps receipts private, validates bytes and permits only authorized sharing
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 200
+    Received: 404
+
+      91 |     expect((await call(`/uploads/${file.json.data.fileName}/access`, staffToken)).status).toBe(404);
+      92 |     await harness.prisma.staffProfile.update({ where: { userId: staff.id }, data: { permissions: ['billing.view'] } });
+    > 93 |     expect((await call(`/uploads/${file.json.data.fileName}/access`, staffToken)).status).toBe(200);
+         |                                                                                           ^
+      94 |     const stolen = await upload(other);
+      95 |     expect((await call(`/tenant/invoices/${invoice.id}/payment-proofs`, student, { amount: 100000, proofImageUrls: [stolen.json.data.url] })).status).toBe(400);
+      96 |     expect((await upload(student, Buffer.from('<html>not an image</html>'))).status).toBe(400);
+
+      at Object.<anonymous> (test/e2e/security-discovery.e2e-spec.ts:93:91)
+
+Test Suites: 1 failed, 1 total
+Tests:       1 failed, 8 passed, 9 total
+Snapshots:   0 total
+Time:        4.747 s, estimated 5 s
+Ran all test suites within paths "test/e2e/security-discovery.e2e-spec.ts".

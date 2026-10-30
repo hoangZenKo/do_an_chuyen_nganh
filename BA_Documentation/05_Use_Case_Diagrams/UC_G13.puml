@@ -1,0 +1,71 @@
+@startuml
+left to right direction
+skinparam defaultFontName SansSerif
+skinparam defaultFontSize 13
+skinparam backgroundColor #F8FAFC
+skinparam shadowing false
+skinparam ArrowColor #52647A
+skinparam ArrowThickness 1
+skinparam actorStyle stickman
+skinparam actorBorderColor #243A52
+skinparam actorFontColor #243A52
+skinparam actorBackgroundColor #FFFFFF
+skinparam usecase {
+  BackgroundColor #FFFFFF
+  BorderColor #327C83
+  FontColor #20354B
+  BackgroundColor<<Một phần>> #FFF0CE
+  BorderColor<<Một phần>> #B17917
+  BackgroundColor<<DEMO>> #FCE5DF
+  BorderColor<<DEMO>> #BC593A
+  BackgroundColor<<MÔ PHỎNG>> #E7EAF1
+  BorderColor<<MÔ PHỎNG>> #6C7488
+}
+skinparam rectangle {
+  BackgroundColor #EEF4F5
+  BorderColor #243A52
+  FontColor #243A52
+}
+skinparam titleFontColor #20354B
+skinparam titleFontSize 18
+skinparam nodesep 25
+skinparam ranksep 65
+title G13 · Kiểm duyệt và chất lượng nội dung\n<size:12>Đầy đủ UC của nhóm nghiệp vụ</size>
+caption AS-IS · 29/10/2026 · Snapshot c565c29 · Không biểu diễn trình tự xử lý
+actor "A02\nChủ trọ" as A02
+actor "A04\nNgười tìm phòng/người\nthuê" as A04
+actor "A05\nQuản trị viên nền tảng" as A05
+rectangle "Hệ thống quản lý nhà trọ" as SYSTEM {
+  usecase "UC-DIS-07\nBáo cáo tin phòng không phù hợp" as UC_DIS_07
+  usecase "UC-DIS-12\nViết sửa và rút đánh giá phòng\nđã thuê" as UC_DIS_12
+  usecase "UC-DIS-13.1\nTrả lời đánh giá phòng" as UC_DIS_13_1
+  usecase "UC-ADM-11\nTiếp nhận và kiểm duyệt tin cho\nthuê" as UC_ADM_11
+  usecase "UC-ADM-11.1\nXác minh thông tin tin cho thuê" as UC_ADM_11_1
+  usecase "UC-ADM-12\nKiểm duyệt đánh giá và phản hồi\nphòng" as UC_ADM_12
+  usecase "UC-ADM-12.1\nXử lý báo cáo vi phạm tin đăng" as UC_ADM_12_1
+  usecase "UC-DIS-15\nXem quyết định và gửi kháng\nnghị kiểm duyệt" as UC_DIS_15
+  usecase "UC-ADM-13.1\nQuản lý chính sách kiểm duyệt" as UC_ADM_13_1
+  usecase "UC-ADM-13.2\nXử lý kháng nghị kiểm duyệt" as UC_ADM_13_2
+  usecase "UC-ADM-13.3\nĐánh giá chất lượng kiểm duyệt" as UC_ADM_13_3
+}
+A04 -- UC_DIS_07
+A04 -- UC_DIS_12
+A02 -- UC_DIS_13_1
+A05 -- UC_ADM_11
+A05 -- UC_ADM_11_1
+A05 -- UC_ADM_12
+A05 -- UC_ADM_12_1
+A02 -- UC_DIS_15
+A04 -- UC_DIS_15
+A05 -[#3975AA]- UC_DIS_15 : chỉ ngữ cảnh ownerId của mình
+A05 -- UC_ADM_13_1
+A05 -- UC_ADM_13_2
+A05 -- UC_ADM_13_3
+legend bottom left
+  Đường liền: tương tác; không biểu diễn luồng điều khiển.
+  ADMIN: capability theo handler + MFA/step-up nếu áp dụng; không kế thừa quyền chủ trọ.
+  Đường xanh có nhãn: biến thể giới hạn (V), không được toàn bộ mục tiêu UC.
+  Mặc định: xác minh tĩnh, chưa nghiệm thu runtime; màu vàng: một phần, cam: DEMO, xám: mô phỏng.
+  Quyền chi tiết, điều kiện và nguồn: Association_Traceability.md / data/diagram-manifest.json.
+endlegend
+@enduml

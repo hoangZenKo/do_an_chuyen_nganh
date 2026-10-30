@@ -423,6 +423,34 @@ void main() {
       expect(find.text('Khu A'), findsOneWidget);
     });
 
+    testWidgets('creates a property when the form is opened directly',
+        (tester) async {
+      when(() => propertyApi.list(lifecycle: any(named: 'lifecycle')))
+          .thenAnswer((_) async => const [
+                Property(id: 'p1', name: 'Khu A', address: ''),
+              ]);
+      when(() => propertyApi.create(name: 'Khu A', address: ''))
+          .thenAnswer((_) async => const Property(
+                id: 'p1',
+                name: 'Khu A',
+                address: '',
+              ));
+
+      await tester.pumpWidget(_scopedApp(
+        container: container,
+        initialLocation: propertyFormRoute,
+      ));
+      await tester.pumpAndSettle();
+      await tester.enterText(find.byType(TextFormField).first, 'Khu A');
+      await tester.tap(find.widgetWithText(ElevatedButton, 'Tạo khu trọ'));
+      await tester.pumpAndSettle();
+
+      verify(() => propertyApi.create(name: 'Khu A', address: '')).called(1);
+      expect(find.text('Khu A'), findsOneWidget);
+      expect(find.byType(TextFormField), findsNothing);
+      expect(tester.takeException(), isNull);
+    });
+
     testWidgets('prefills and updates an existing property', (tester) async {
       when(() => propertyApi.list(lifecycle: any(named: 'lifecycle')))
           .thenAnswer((_) async => const [

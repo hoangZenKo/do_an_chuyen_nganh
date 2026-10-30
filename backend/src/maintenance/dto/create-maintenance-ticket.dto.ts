@@ -5,12 +5,14 @@ import {
   IsOptional,
   IsArray,
   IsString,
+  IsNotEmpty,
   IsUUID,
   MaxLength,
   Min,
   Max,
 } from 'class-validator';
 import { IsAttachmentUrl } from '../../common/attachment-url.validator';
+import { Transform } from 'class-transformer';
 
 export class CreateMaintenanceTicketDto {
   @IsUUID()
@@ -24,6 +26,8 @@ export class CreateMaintenanceTicketDto {
   priority?: string;
 
   @IsString()
+  @Transform(({ value }) => typeof value === 'string' ? value.trim() : value)
+  @IsNotEmpty()
   @MaxLength(120)
   title!: string;
 

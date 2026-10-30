@@ -112,15 +112,33 @@ describe('Student housing journey E2E', () => {
     expect((await get('/housing/notifications', owner)).json.unreadCount).toBe(0);
   });
 
-  it('rejects stale updates and future completion; cancellation allows rebooking', async () => {
+  it('rejects stale updates and premature lease creation; cancellation allows rebooking', async () => {
     const id = (await book()).json.data.id;
     expect((await change(id, 1, 'CONFIRMED')).status).toBe(200);
     expect((await change(id, 1, 'CANCELLED', student)).status).toBe(409);
-    expect((await change(id, 2, 'COMPLETED')).status).toBe(409);
     expect((await request(`/housing/viewings/${id}/lease`, owner, leaseBody(2))).status).toBe(409);
     expect((await change(id, 2, 'CANCELLED', student)).status).toBe(200);
     expect((await book()).status).toBe(201);
     expect((await get('/housing/notifications', student)).json.data[0].message).toContain('xác nhận');
+  });
+
+  it('lets only the owning landlord complete a confirmed visit before its scheduled time', async () => {
+    const created = (await book()).json.data;
+    expect((await change(created.id, 1, 'COMPLETED')).status).toBe(409);
+    expect((await change(created.id, 1, 'CONFIRMED')).status).toBe(200);
+    expect((await change(created.id, 2, 'COMPLETED', student)).status).toBe(409);
+    expect((await change(created.id, 2, 'COMPLETED', otherOwner)).status).toBe(404);
+    expect((await change(created.id, 1, 'COMPLETED')).status).toBe(409);
+
+    const result = await change(created.id, 2, 'COMPLETED');
+    expect(result.status).toBe(200);
+    expect(result.json.data.status).toBe('COMPLETED');
+    expect(result.json.data.version).toBe(3);
+    expect(new Date(result.json.data.scheduledAt).getTime()).toBeGreaterThan(Date.now());
+    expect((await change(created.id, 3, 'COMPLETED')).status).toBe(409);
+    expect(await harness.prisma.lease.count({ where: { roomId } })).toBe(0);
+    expect(await harness.prisma.depositTransaction.count()).toBe(0);
+    expect((await request(`/housing/viewings/${created.id}/lease`, owner, leaseBody())).status).toBe(201);
   });
 
   it('atomically converts a completed visit into a linked lease without inventing a deposit payment', async () => {

@@ -8,6 +8,7 @@ import '../../core/theme/app_theme.dart';
 import '../../core/utils/format.dart';
 import '../../models/maintenance.dart';
 import '../listings/listing_widgets.dart';
+import '../auth/auth_providers.dart';
 import 'tenant_portal_providers.dart';
 
 const _background = Color(0xFFF7F7F7);
@@ -60,116 +61,118 @@ class _TenantMaintenanceScreenState
     final maintenanceAsync = ref.watch(tenantPortalMaintenanceProvider);
 
     return ListingTheme(
-      child: Scaffold(
-        backgroundColor: _background,
-        appBar: AppBar(
-          title: const Text(
-            'Yêu cầu bảo trì',
-            style: TextStyle(fontWeight: FontWeight.w800, color: _ink),
-          ),
-          backgroundColor: Colors.white,
-          surfaceTintColor: Colors.transparent,
-        ),
-        floatingActionButton: FloatingActionButton.extended(
-          onPressed: () => _showCreateMaintenanceSheet(context, ref),
-          backgroundColor: kAirbnbRose,
-          foregroundColor: Colors.white,
-          icon: const Icon(Icons.add_rounded),
-          label: const Text(
-            'Báo sự cố',
-            style: TextStyle(fontWeight: FontWeight.w800),
-          ),
-        ),
-        body: RefreshIndicator(
-          color: kAirbnbRose,
-          onRefresh: _refresh,
-          child: maintenanceAsync.when(
-            loading: () => const Center(
-              child: CircularProgressIndicator(color: AppTheme.primary),
+      child: Builder(
+        builder: (context) => Scaffold(
+          backgroundColor: _background,
+          appBar: AppBar(
+            title: const Text(
+              'Yêu cầu bảo trì',
+              style: TextStyle(fontWeight: FontWeight.w800, color: _ink),
             ),
-            error: (error, _) => ListView(
-              physics: const AlwaysScrollableScrollPhysics(),
-              padding: const EdgeInsets.all(18),
-              children: [
-                _EmptyPanel(
-                  icon: Icons.cloud_off_rounded,
-                  title: 'Không tải được yêu cầu bảo trì',
-                  subtitle: '$error',
-                  action: TextButton.icon(
-                    onPressed: () =>
-                        ref.invalidate(tenantPortalMaintenanceProvider),
-                    icon: const Icon(Icons.refresh_rounded),
-                    label: const Text('Thử lại'),
-                  ),
-                ),
-              ],
+            backgroundColor: Colors.white,
+            surfaceTintColor: Colors.transparent,
+          ),
+          floatingActionButton: FloatingActionButton.extended(
+            onPressed: () => _showCreateMaintenanceSheet(context, ref),
+            backgroundColor: kAirbnbRose,
+            foregroundColor: Colors.white,
+            icon: const Icon(Icons.add_rounded),
+            label: const Text(
+              'Báo sự cố',
+              style: TextStyle(fontWeight: FontWeight.w800),
             ),
-            data: (tickets) {
-              final visible = tickets
-                  .where((ticket) => _matchesFilter(ticket, _filter))
-                  .toList(growable: false);
-
-              return ListView(
+          ),
+          body: RefreshIndicator(
+            color: kAirbnbRose,
+            onRefresh: _refresh,
+            child: maintenanceAsync.when(
+              loading: () => const Center(
+                child: CircularProgressIndicator(color: AppTheme.primary),
+              ),
+              error: (error, _) => ListView(
                 physics: const AlwaysScrollableScrollPhysics(),
-                padding: const EdgeInsets.fromLTRB(16, 8, 16, 96),
+                padding: const EdgeInsets.all(18),
                 children: [
-                  _SummaryPanel(tickets: tickets),
-                  const SizedBox(height: 14),
-                  _QuickIssueGrid(
-                    onSelect: (presetTitle) => _showCreateMaintenanceSheet(
-                      context,
-                      ref,
-                      initialTitle: presetTitle,
+                  _EmptyPanel(
+                    icon: Icons.cloud_off_rounded,
+                    title: 'Không tải được yêu cầu bảo trì',
+                    subtitle: '$error',
+                    action: TextButton.icon(
+                      onPressed: () =>
+                          ref.invalidate(tenantPortalMaintenanceProvider),
+                      icon: const Icon(Icons.refresh_rounded),
+                      label: const Text('Thử lại'),
                     ),
                   ),
-                  const SizedBox(height: 14),
-                  _FilterBar(
-                    value: _filter,
-                    onChanged: (value) => setState(() => _filter = value),
-                  ),
-                  const SizedBox(height: 14),
-                  if (tickets.isEmpty)
-                    _EmptyPanel(
-                      icon: Icons.construction_rounded,
-                      title: 'Chưa có yêu cầu bảo trì',
-                      subtitle:
-                          'Khi có hư hỏng trong phòng, gửi mô tả và ảnh để chủ trọ xử lý nhanh hơn.',
-                      action: FilledButton.icon(
-                        onPressed: () => _showCreateMaintenanceSheet(
-                          context,
-                          ref,
-                        ),
-                        icon: const Icon(Icons.add_rounded),
-                        label: const Text('Báo sự cố'),
-                      ),
-                    )
-                  else if (visible.isEmpty)
-                    _EmptyPanel(
-                      icon: Icons.filter_alt_off_rounded,
-                      title: 'Không có yêu cầu phù hợp',
-                      subtitle: 'Đổi bộ lọc để xem các yêu cầu khác.',
-                      action: TextButton(
-                        onPressed: () => setState(
-                          () => _filter = _TenantMaintenanceFilter.all,
-                        ),
-                        child: const Text('Xem tất cả'),
-                      ),
-                    )
-                  else
-                    for (final ticket in visible) ...[
-                      _MaintenanceTile(
-                        ticket: ticket,
-                        onTap: () => _showMaintenanceDetailSheet(
-                          context,
-                          ref,
-                          ticket,
-                        ),
-                      ),
-                      const SizedBox(height: 10),
-                    ],
                 ],
-              );
-            },
+              ),
+              data: (tickets) {
+                final visible = tickets
+                    .where((ticket) => _matchesFilter(ticket, _filter))
+                    .toList(growable: false);
+
+                return ListView(
+                  physics: const AlwaysScrollableScrollPhysics(),
+                  padding: const EdgeInsets.fromLTRB(16, 8, 16, 96),
+                  children: [
+                    _SummaryPanel(tickets: tickets),
+                    const SizedBox(height: 14),
+                    _QuickIssueGrid(
+                      onSelect: (presetTitle) => _showCreateMaintenanceSheet(
+                        context,
+                        ref,
+                        initialTitle: presetTitle,
+                      ),
+                    ),
+                    const SizedBox(height: 14),
+                    _FilterBar(
+                      value: _filter,
+                      onChanged: (value) => setState(() => _filter = value),
+                    ),
+                    const SizedBox(height: 14),
+                    if (tickets.isEmpty)
+                      _EmptyPanel(
+                        icon: Icons.construction_rounded,
+                        title: 'Chưa có yêu cầu bảo trì',
+                        subtitle:
+                            'Khi có hư hỏng trong phòng, gửi mô tả và ảnh để chủ trọ xử lý nhanh hơn.',
+                        action: FilledButton.icon(
+                          onPressed: () => _showCreateMaintenanceSheet(
+                            context,
+                            ref,
+                          ),
+                          icon: const Icon(Icons.add_rounded),
+                          label: const Text('Báo sự cố'),
+                        ),
+                      )
+                    else if (visible.isEmpty)
+                      _EmptyPanel(
+                        icon: Icons.filter_alt_off_rounded,
+                        title: 'Không có yêu cầu phù hợp',
+                        subtitle: 'Đổi bộ lọc để xem các yêu cầu khác.',
+                        action: TextButton(
+                          onPressed: () => setState(
+                            () => _filter = _TenantMaintenanceFilter.all,
+                          ),
+                          child: const Text('Xem tất cả'),
+                        ),
+                      )
+                    else
+                      for (final ticket in visible) ...[
+                        _MaintenanceTile(
+                          ticket: ticket,
+                          onTap: () => _showMaintenanceDetailSheet(
+                            context,
+                            ref,
+                            ticket,
+                          ),
+                        ),
+                        const SizedBox(height: 10),
+                      ],
+                  ],
+                );
+              },
+            ),
           ),
         ),
       ),
@@ -536,14 +539,6 @@ Future<void> _showCreateMaintenanceSheet(
   WidgetRef ref, {
   String initialTitle = '',
 }) async {
-  final title = TextEditingController(text: initialTitle);
-  final description = TextEditingController();
-  final imageUrl = TextEditingController();
-  final imageUrls = <String>[];
-  var priority = MaintenancePriority.medium;
-  String? error;
-  var loading = false;
-
   await showModalBottomSheet<void>(
     context: context,
     isScrollControlled: true,
@@ -552,207 +547,245 @@ Future<void> _showCreateMaintenanceSheet(
     shape: const RoundedRectangleBorder(
       borderRadius: BorderRadius.vertical(top: Radius.circular(18)),
     ),
-    builder: (sheetContext) => StatefulBuilder(
-      builder: (context, setState) {
-        return Padding(
-          padding: EdgeInsets.fromLTRB(
-            18,
-            12,
-            18,
-            18 + MediaQuery.viewInsetsOf(context).bottom,
-          ),
-          child: SingleChildScrollView(
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              crossAxisAlignment: CrossAxisAlignment.start,
+    builder: (_) => _MaintenanceSessionSheet(
+      child: _CreateMaintenanceSheet(initialTitle: initialTitle),
+    ),
+  );
+}
+
+class _CreateMaintenanceSheet extends ConsumerStatefulWidget {
+  const _CreateMaintenanceSheet({required this.initialTitle});
+
+  final String initialTitle;
+
+  @override
+  ConsumerState<_CreateMaintenanceSheet> createState() =>
+      _CreateMaintenanceSheetState();
+}
+
+class _CreateMaintenanceSheetState
+    extends ConsumerState<_CreateMaintenanceSheet> {
+  late final title = TextEditingController(text: widget.initialTitle);
+  final description = TextEditingController();
+  final imageUrl = TextEditingController();
+  final imageUrls = <String>[];
+  var priority = MaintenancePriority.medium;
+  String? error;
+  var loading = false;
+  var uploading = false;
+
+  @override
+  void dispose() {
+    title.dispose();
+    description.dispose();
+    imageUrl.dispose();
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: EdgeInsets.fromLTRB(
+        18,
+        12,
+        18,
+        18 + MediaQuery.viewInsetsOf(context).bottom,
+      ),
+      child: SingleChildScrollView(
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            const _SheetHandle(),
+            const SizedBox(height: 10),
+            const Text(
+              'Báo sự cố bảo trì',
+              style: TextStyle(
+                color: _ink,
+                fontSize: 20,
+                fontWeight: FontWeight.w900,
+              ),
+            ),
+            const SizedBox(height: 4),
+            const Text(
+              'Gửi tiêu đề, mức độ và ảnh hiện trạng để chủ trọ nắm nhanh tình hình.',
+              style: TextStyle(
+                color: _muted,
+                fontSize: 13,
+                height: 1.4,
+                fontWeight: FontWeight.w700,
+              ),
+            ),
+            const SizedBox(height: 16),
+            TextField(
+              controller: title,
+              enabled: !loading && !uploading,
+              textInputAction: TextInputAction.next,
+              decoration: const InputDecoration(labelText: 'Tiêu đề'),
+            ),
+            const SizedBox(height: 10),
+            DropdownButtonFormField<MaintenancePriority>(
+              value: priority,
+              items: MaintenancePriority.values
+                  .map(
+                    (item) => DropdownMenuItem(
+                      value: item,
+                      child: Text(item.label),
+                    ),
+                  )
+                  .toList(),
+              onChanged: loading || uploading
+                  ? null
+                  : (value) => setState(() => priority = value ?? priority),
+              decoration: const InputDecoration(labelText: 'Mức độ'),
+            ),
+            const SizedBox(height: 10),
+            TextField(
+              controller: description,
+              enabled: !loading && !uploading,
+              maxLines: 4,
+              decoration: const InputDecoration(
+                labelText: 'Mô tả',
+                hintText: 'Ví dụ: vòi nước rò, ổ điện chập chờn...',
+              ),
+            ),
+            const SizedBox(height: 10),
+            TextField(
+              controller: imageUrl,
+              enabled: !loading && !uploading,
+              decoration: const InputDecoration(
+                labelText: 'Link ảnh/file bổ sung',
+                hintText: 'https://...',
+              ),
+            ),
+            const SizedBox(height: 10),
+            OutlinedButton.icon(
+              onPressed: loading || uploading
+                  ? null
+                  : () async {
+                      setState(() {
+                        uploading = true;
+                        error = null;
+                      });
+                      try {
+                        final uploaded = await _pickAndUploadFile(ref);
+                        if (!mounted) return;
+                        if (uploaded != null) {
+                          setState(() {
+                            if (!imageUrls.contains(uploaded)) {
+                              imageUrls.add(uploaded);
+                            }
+                          });
+                        }
+                      } catch (err) {
+                        if (!mounted) return;
+                        setState(() => error = '$err');
+                      } finally {
+                        if (mounted) setState(() => uploading = false);
+                      }
+                    },
+              icon: const Icon(Icons.upload_file_rounded),
+              label: Text(
+                imageUrls.isEmpty
+                    ? 'Upload ảnh/file'
+                    : 'Đã upload ${imageUrls.length} file',
+              ),
+            ),
+            if (imageUrls.isNotEmpty) ...[
+              const SizedBox(height: 8),
+              Wrap(
+                spacing: 8,
+                runSpacing: 8,
+                children: [
+                  for (var i = 0; i < imageUrls.length; i += 1)
+                    Chip(
+                      label: Text('File ${i + 1}'),
+                      onDeleted: loading || uploading
+                          ? null
+                          : () => setState(() => imageUrls.removeAt(i)),
+                    ),
+                ],
+              ),
+            ],
+            if (error != null) ...[
+              const SizedBox(height: 10),
+              Text(error!, style: const TextStyle(color: _danger)),
+            ],
+            const SizedBox(height: 18),
+            Row(
               children: [
-                const _SheetHandle(),
-                const SizedBox(height: 10),
-                const Text(
-                  'Báo sự cố bảo trì',
-                  style: TextStyle(
-                    color: _ink,
-                    fontSize: 20,
-                    fontWeight: FontWeight.w900,
+                Expanded(
+                  child: OutlinedButton(
+                    onPressed: loading ? null : () => Navigator.pop(context),
+                    child: const Text('Hủy'),
                   ),
                 ),
-                const SizedBox(height: 4),
-                const Text(
-                  'Gửi tiêu đề, mức độ và ảnh hiện trạng để chủ trọ nắm nhanh tình hình.',
-                  style: TextStyle(
-                    color: _muted,
-                    fontSize: 13,
-                    height: 1.4,
-                    fontWeight: FontWeight.w700,
-                  ),
-                ),
-                const SizedBox(height: 16),
-                TextField(
-                  controller: title,
-                  enabled: !loading,
-                  textInputAction: TextInputAction.next,
-                  decoration: const InputDecoration(labelText: 'Tiêu đề'),
-                ),
-                const SizedBox(height: 10),
-                DropdownButtonFormField<MaintenancePriority>(
-                  value: priority,
-                  items: MaintenancePriority.values
-                      .map(
-                        (item) => DropdownMenuItem(
-                          value: item,
-                          child: Text(item.label),
-                        ),
-                      )
-                      .toList(),
-                  onChanged: loading
-                      ? null
-                      : (value) => setState(() => priority = value ?? priority),
-                  decoration: const InputDecoration(labelText: 'Mức độ'),
-                ),
-                const SizedBox(height: 10),
-                TextField(
-                  controller: description,
-                  enabled: !loading,
-                  maxLines: 4,
-                  decoration: const InputDecoration(
-                    labelText: 'Mô tả',
-                    hintText: 'Ví dụ: vòi nước rò, ổ điện chập chờn...',
-                  ),
-                ),
-                const SizedBox(height: 10),
-                TextField(
-                  controller: imageUrl,
-                  enabled: !loading,
-                  decoration: const InputDecoration(
-                    labelText: 'Link ảnh/file bổ sung',
-                    hintText: 'https://...',
-                  ),
-                ),
-                const SizedBox(height: 10),
-                OutlinedButton.icon(
-                  onPressed: loading
-                      ? null
-                      : () async {
-                          try {
-                            final uploaded = await _pickAndUploadFile(ref);
-                            if (uploaded != null) {
+                const SizedBox(width: 10),
+                Expanded(
+                  child: FilledButton.icon(
+                    onPressed: loading || uploading
+                        ? null
+                        : () async {
+                            if (title.text.trim().isEmpty) {
+                              setState(
+                                () => error = 'Nhập tiêu đề sự cố.',
+                              );
+                              return;
+                            }
+                            setState(() {
+                              loading = true;
+                              error = null;
+                            });
+                            try {
+                              await ref
+                                  .read(
+                                tenantMaintenanceControllerProvider.notifier,
+                              )
+                                  .submit(
+                                title: title.text,
+                                description: description.text,
+                                priority: priority,
+                                imageUrls: [
+                                  ...imageUrls,
+                                  if (imageUrl.text.trim().isNotEmpty &&
+                                      !imageUrls.contains(
+                                        imageUrl.text.trim(),
+                                      ))
+                                    imageUrl.text.trim(),
+                                ],
+                              );
+                              if (context.mounted &&
+                                  ModalRoute.of(context)?.isCurrent == true) {
+                                Navigator.pop(context);
+                              }
+                            } catch (err) {
+                              if (!mounted) return;
                               setState(() {
-                                imageUrls.add(uploaded);
-                                imageUrl.text = uploaded;
+                                loading = false;
+                                error = '$err';
                               });
                             }
-                          } catch (err) {
-                            setState(() => error = '$err');
-                          }
-                        },
-                  icon: const Icon(Icons.upload_file_rounded),
-                  label: Text(
-                    imageUrls.isEmpty
-                        ? 'Upload ảnh/file'
-                        : 'Đã upload ${imageUrls.length} file',
+                          },
+                    icon: loading
+                        ? const SizedBox(
+                            width: 16,
+                            height: 16,
+                            child: CircularProgressIndicator(
+                              strokeWidth: 2,
+                              color: Colors.white,
+                            ),
+                          )
+                        : const Icon(Icons.send_rounded),
+                    label: const Text('Gửi yêu cầu'),
                   ),
-                ),
-                if (imageUrls.isNotEmpty) ...[
-                  const SizedBox(height: 8),
-                  Wrap(
-                    spacing: 8,
-                    runSpacing: 8,
-                    children: [
-                      for (var i = 0; i < imageUrls.length; i += 1)
-                        Chip(
-                          label: Text('File ${i + 1}'),
-                          onDeleted: loading
-                              ? null
-                              : () => setState(() => imageUrls.removeAt(i)),
-                        ),
-                    ],
-                  ),
-                ],
-                if (error != null) ...[
-                  const SizedBox(height: 10),
-                  Text(error!, style: const TextStyle(color: _danger)),
-                ],
-                const SizedBox(height: 18),
-                Row(
-                  children: [
-                    Expanded(
-                      child: OutlinedButton(
-                        onPressed:
-                            loading ? null : () => Navigator.pop(sheetContext),
-                        child: const Text('Hủy'),
-                      ),
-                    ),
-                    const SizedBox(width: 10),
-                    Expanded(
-                      child: FilledButton.icon(
-                        onPressed: loading
-                            ? null
-                            : () async {
-                                if (title.text.trim().isEmpty) {
-                                  setState(
-                                    () => error = 'Nhập tiêu đề sự cố.',
-                                  );
-                                  return;
-                                }
-                                setState(() {
-                                  loading = true;
-                                  error = null;
-                                });
-                                try {
-                                  await ref
-                                      .read(
-                                    tenantMaintenanceControllerProvider
-                                        .notifier,
-                                  )
-                                      .submit(
-                                    title: title.text,
-                                    description: description.text,
-                                    priority: priority,
-                                    imageUrls: [
-                                      ...imageUrls,
-                                      if (imageUrl.text.trim().isNotEmpty &&
-                                          !imageUrls.contains(
-                                            imageUrl.text.trim(),
-                                          ))
-                                        imageUrl.text.trim(),
-                                    ],
-                                  );
-                                  if (sheetContext.mounted) {
-                                    Navigator.pop(sheetContext);
-                                  }
-                                } catch (err) {
-                                  setState(() {
-                                    loading = false;
-                                    error = '$err';
-                                  });
-                                }
-                              },
-                        icon: loading
-                            ? const SizedBox(
-                                width: 16,
-                                height: 16,
-                                child: CircularProgressIndicator(
-                                  strokeWidth: 2,
-                                  color: Colors.white,
-                                ),
-                              )
-                            : const Icon(Icons.send_rounded),
-                        label: const Text('Gửi yêu cầu'),
-                      ),
-                    ),
-                  ],
                 ),
               ],
             ),
-          ),
-        );
-      },
-    ),
-  );
-
-  title.dispose();
-  description.dispose();
-  imageUrl.dispose();
+          ],
+        ),
+      ),
+    );
+  }
 }
 
 Future<void> _showMaintenanceDetailSheet(
@@ -760,11 +793,6 @@ Future<void> _showMaintenanceDetailSheet(
   WidgetRef ref,
   MaintenanceTicket ticket,
 ) async {
-  final body = TextEditingController();
-  final imageUrls = <String>[];
-  String? error;
-  var loading = false;
-
   await showModalBottomSheet<void>(
     context: context,
     isScrollControlled: true,
@@ -773,248 +801,327 @@ Future<void> _showMaintenanceDetailSheet(
     shape: const RoundedRectangleBorder(
       borderRadius: BorderRadius.vertical(top: Radius.circular(18)),
     ),
-    builder: (sheetContext) => StatefulBuilder(
-      builder: (context, setState) {
-        return Padding(
-          padding: EdgeInsets.fromLTRB(
-            18,
-            12,
-            18,
-            18 + MediaQuery.viewInsetsOf(context).bottom,
-          ),
-          child: SingleChildScrollView(
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
+    builder: (_) => _MaintenanceSessionSheet(
+      child: _MaintenanceDetailSheet(ticket: ticket),
+    ),
+  );
+}
+
+class _MaintenanceDetailSheet extends ConsumerStatefulWidget {
+  const _MaintenanceDetailSheet({required this.ticket});
+
+  final MaintenanceTicket ticket;
+
+  @override
+  ConsumerState<_MaintenanceDetailSheet> createState() =>
+      _MaintenanceDetailSheetState();
+}
+
+class _MaintenanceDetailSheetState
+    extends ConsumerState<_MaintenanceDetailSheet> {
+  final body = TextEditingController();
+  final imageUrls = <String>[];
+  String? error;
+  var loading = false;
+  var uploading = false;
+
+  @override
+  void dispose() {
+    body.dispose();
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final ticket = ref
+            .watch(tenantPortalMaintenanceProvider)
+            .valueOrNull
+            ?.firstWhere((item) => item.id == widget.ticket.id,
+                orElse: () => widget.ticket) ??
+        widget.ticket;
+    return Padding(
+      padding: EdgeInsets.fromLTRB(
+        18,
+        12,
+        18,
+        18 + MediaQuery.viewInsetsOf(context).bottom,
+      ),
+      child: SingleChildScrollView(
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            const _SheetHandle(),
+            const SizedBox(height: 10),
+            Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const _SheetHandle(),
-                const SizedBox(height: 10),
-                Row(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    _IconBubble(
-                      icon: ticket.status.icon,
-                      color: ticket.status.color,
-                    ),
-                    const SizedBox(width: 12),
-                    Expanded(
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
+                _IconBubble(
+                  icon: ticket.status.icon,
+                  color: ticket.status.color,
+                ),
+                const SizedBox(width: 12),
+                Expanded(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        ticket.title,
+                        style: const TextStyle(
+                          color: _ink,
+                          fontSize: 20,
+                          fontWeight: FontWeight.w900,
+                        ),
+                      ),
+                      const SizedBox(height: 8),
+                      Wrap(
+                        spacing: 6,
+                        runSpacing: 6,
                         children: [
-                          Text(
-                            ticket.title,
-                            style: const TextStyle(
-                              color: _ink,
-                              fontSize: 20,
-                              fontWeight: FontWeight.w900,
-                            ),
+                          _StatusPill(
+                            label: ticket.status.label,
+                            color: ticket.status.color,
                           ),
-                          const SizedBox(height: 8),
-                          Wrap(
-                            spacing: 6,
-                            runSpacing: 6,
-                            children: [
-                              _StatusPill(
-                                label: ticket.status.label,
-                                color: ticket.status.color,
-                              ),
-                              _StatusPill(
-                                label: ticket.priority.label,
-                                color: ticket.priority.color,
-                              ),
-                            ],
+                          _StatusPill(
+                            label: ticket.priority.label,
+                            color: ticket.priority.color,
                           ),
                         ],
                       ),
-                    ),
-                  ],
-                ),
-                const SizedBox(height: 16),
-                _DetailLine(
-                  icon: Icons.meeting_room_rounded,
-                  label: 'Phòng',
-                  value: ticket.roomName ?? 'Chưa có thông tin phòng',
-                ),
-                if (ticket.reportedAt != null)
-                  _DetailLine(
-                    icon: Icons.event_rounded,
-                    label: 'Ngày báo',
-                    value: formatDate(ticket.reportedAt),
-                  ),
-                if (ticket.completedAt != null)
-                  _DetailLine(
-                    icon: Icons.task_alt_rounded,
-                    label: 'Hoàn tất',
-                    value: formatDate(ticket.completedAt),
-                  ),
-                if (ticket.description?.trim().isNotEmpty == true) ...[
-                  const SizedBox(height: 12),
-                  const Text(
-                    'Mô tả',
-                    style: TextStyle(
-                      color: _muted,
-                      fontSize: 12,
-                      fontWeight: FontWeight.w800,
-                    ),
-                  ),
-                  const SizedBox(height: 5),
-                  Text(
-                    ticket.description!.trim(),
-                    style: const TextStyle(
-                      color: _ink,
-                      fontSize: 14,
-                      height: 1.45,
-                      fontWeight: FontWeight.w600,
-                    ),
-                  ),
-                ],
-                if (ticket.imageUrls.isNotEmpty) ...[
-                  const SizedBox(height: 14),
-                  _AttachmentWrap(urls: ticket.imageUrls),
-                ],
-                const SizedBox(height: 18),
-                const Text(
-                  'Trao đổi',
-                  style: TextStyle(
-                    color: _ink,
-                    fontSize: 16,
-                    fontWeight: FontWeight.w900,
-                  ),
-                ),
-                const SizedBox(height: 10),
-                if (ticket.comments.isEmpty)
-                  const Text(
-                    'Chưa có phản hồi nào cho yêu cầu này.',
-                    style: TextStyle(
-                      color: _muted,
-                      fontSize: 13,
-                      fontWeight: FontWeight.w700,
-                    ),
-                  )
-                else
-                  for (final comment in ticket.comments) ...[
-                    _CommentBlock(comment: comment),
-                    const SizedBox(height: 10),
-                  ],
-                const SizedBox(height: 10),
-                TextField(
-                  controller: body,
-                  enabled: !loading,
-                  maxLines: 3,
-                  decoration: const InputDecoration(labelText: 'Phản hồi'),
-                ),
-                const SizedBox(height: 10),
-                OutlinedButton.icon(
-                  onPressed: loading
-                      ? null
-                      : () async {
-                          try {
-                            final uploaded = await _pickAndUploadFile(ref);
-                            if (uploaded != null) {
-                              setState(() => imageUrls.add(uploaded));
-                            }
-                          } catch (err) {
-                            setState(() => error = '$err');
-                          }
-                        },
-                  icon: const Icon(Icons.attach_file_rounded),
-                  label: Text(
-                    imageUrls.isEmpty
-                        ? 'Đính kèm ảnh/file'
-                        : 'Đã đính kèm ${imageUrls.length} file',
-                  ),
-                ),
-                if (imageUrls.isNotEmpty) ...[
-                  const SizedBox(height: 8),
-                  Wrap(
-                    spacing: 8,
-                    runSpacing: 8,
-                    children: [
-                      for (var i = 0; i < imageUrls.length; i += 1)
-                        Chip(
-                          label: Text('File ${i + 1}'),
-                          onDeleted: loading
-                              ? null
-                              : () => setState(() => imageUrls.removeAt(i)),
-                        ),
                     ],
                   ),
-                ],
-                if (error != null) ...[
-                  const SizedBox(height: 10),
-                  Text(error!, style: const TextStyle(color: _danger)),
-                ],
-                const SizedBox(height: 16),
-                Row(
-                  children: [
-                    Expanded(
-                      child: OutlinedButton(
-                        onPressed:
-                            loading ? null : () => Navigator.pop(sheetContext),
-                        child: const Text('Đóng'),
-                      ),
-                    ),
-                    const SizedBox(width: 10),
-                    Expanded(
-                      child: FilledButton.icon(
-                        onPressed: loading
-                            ? null
-                            : () async {
-                                if (body.text.trim().isEmpty) {
-                                  setState(
-                                    () => error = 'Nhập nội dung phản hồi.',
-                                  );
-                                  return;
-                                }
-                                setState(() {
-                                  loading = true;
-                                  error = null;
-                                });
-                                try {
-                                  await ref
-                                      .read(
-                                        tenantMaintenanceControllerProvider
-                                            .notifier,
-                                      )
-                                      .comment(
-                                        ticketId: ticket.id,
-                                        body: body.text,
-                                        imageUrls: imageUrls,
-                                      );
-                                  if (sheetContext.mounted) {
-                                    Navigator.pop(sheetContext);
-                                  }
-                                } catch (err) {
-                                  setState(() {
-                                    loading = false;
-                                    error = '$err';
-                                  });
-                                }
-                              },
-                        icon: loading
-                            ? const SizedBox(
-                                width: 16,
-                                height: 16,
-                                child: CircularProgressIndicator(
-                                  strokeWidth: 2,
-                                  color: Colors.white,
-                                ),
-                              )
-                            : const Icon(Icons.reply_rounded),
-                        label: const Text('Gửi phản hồi'),
-                      ),
-                    ),
-                  ],
                 ),
               ],
             ),
-          ),
-        );
-      },
-    ),
-  );
+            const SizedBox(height: 16),
+            _DetailLine(
+              icon: Icons.meeting_room_rounded,
+              label: 'Phòng',
+              value: ticket.roomName ?? 'Chưa có thông tin phòng',
+            ),
+            if (ticket.reportedAt != null)
+              _DetailLine(
+                icon: Icons.event_rounded,
+                label: 'Ngày báo',
+                value: formatDate(ticket.reportedAt),
+              ),
+            if (ticket.completedAt != null)
+              _DetailLine(
+                icon: Icons.task_alt_rounded,
+                label: 'Hoàn tất',
+                value: formatDate(ticket.completedAt),
+              ),
+            if (ticket.description?.trim().isNotEmpty == true) ...[
+              const SizedBox(height: 12),
+              const Text(
+                'Mô tả',
+                style: TextStyle(
+                  color: _muted,
+                  fontSize: 12,
+                  fontWeight: FontWeight.w800,
+                ),
+              ),
+              const SizedBox(height: 5),
+              Text(
+                ticket.description!.trim(),
+                style: const TextStyle(
+                  color: _ink,
+                  fontSize: 14,
+                  height: 1.45,
+                  fontWeight: FontWeight.w600,
+                ),
+              ),
+            ],
+            if (ticket.imageUrls.isNotEmpty) ...[
+              const SizedBox(height: 14),
+              _AttachmentWrap(urls: ticket.imageUrls),
+            ],
+            const SizedBox(height: 18),
+            const Text(
+              'Trao đổi',
+              style: TextStyle(
+                color: _ink,
+                fontSize: 16,
+                fontWeight: FontWeight.w900,
+              ),
+            ),
+            const SizedBox(height: 10),
+            if (ticket.comments.isEmpty)
+              const Text(
+                'Chưa có phản hồi nào cho yêu cầu này.',
+                style: TextStyle(
+                  color: _muted,
+                  fontSize: 13,
+                  fontWeight: FontWeight.w700,
+                ),
+              )
+            else
+              for (final comment in ticket.comments) ...[
+                _CommentBlock(comment: comment),
+                const SizedBox(height: 10),
+              ],
+            const SizedBox(height: 10),
+            TextField(
+              controller: body,
+              enabled: !loading && !uploading,
+              maxLines: 3,
+              decoration: const InputDecoration(labelText: 'Phản hồi'),
+            ),
+            const SizedBox(height: 10),
+            OutlinedButton.icon(
+              onPressed: loading || uploading
+                  ? null
+                  : () async {
+                      setState(() {
+                        uploading = true;
+                        error = null;
+                      });
+                      try {
+                        final uploaded = await _pickAndUploadFile(ref);
+                        if (!mounted) return;
+                        if (uploaded != null) {
+                          setState(() {
+                            if (!imageUrls.contains(uploaded)) {
+                              imageUrls.add(uploaded);
+                            }
+                          });
+                        }
+                      } catch (err) {
+                        if (!mounted) return;
+                        setState(() => error = '$err');
+                      } finally {
+                        if (mounted) setState(() => uploading = false);
+                      }
+                    },
+              icon: const Icon(Icons.attach_file_rounded),
+              label: Text(
+                imageUrls.isEmpty
+                    ? 'Đính kèm ảnh/file'
+                    : 'Đã đính kèm ${imageUrls.length} file',
+              ),
+            ),
+            if (imageUrls.isNotEmpty) ...[
+              const SizedBox(height: 8),
+              Wrap(
+                spacing: 8,
+                runSpacing: 8,
+                children: [
+                  for (var i = 0; i < imageUrls.length; i += 1)
+                    Chip(
+                      label: Text('File ${i + 1}'),
+                      onDeleted: loading || uploading
+                          ? null
+                          : () => setState(() => imageUrls.removeAt(i)),
+                    ),
+                ],
+              ),
+            ],
+            if (error != null) ...[
+              const SizedBox(height: 10),
+              Text(error!, style: const TextStyle(color: _danger)),
+            ],
+            const SizedBox(height: 16),
+            Row(
+              children: [
+                Expanded(
+                  child: OutlinedButton(
+                    onPressed: loading ? null : () => Navigator.pop(context),
+                    child: const Text('Đóng'),
+                  ),
+                ),
+                const SizedBox(width: 10),
+                Expanded(
+                  child: FilledButton.icon(
+                    onPressed: loading || uploading
+                        ? null
+                        : () async {
+                            if (body.text.trim().isEmpty) {
+                              setState(
+                                () => error = 'Nhập nội dung phản hồi.',
+                              );
+                              return;
+                            }
+                            setState(() {
+                              loading = true;
+                              error = null;
+                            });
+                            try {
+                              await ref
+                                  .read(
+                                    tenantMaintenanceControllerProvider
+                                        .notifier,
+                                  )
+                                  .comment(
+                                    ticketId: ticket.id,
+                                    body: body.text,
+                                    imageUrls: imageUrls,
+                                  );
+                              if (context.mounted &&
+                                  ModalRoute.of(context)?.isCurrent == true) {
+                                Navigator.pop(context);
+                              }
+                            } catch (err) {
+                              if (!mounted) return;
+                              setState(() {
+                                loading = false;
+                                error = '$err';
+                              });
+                            }
+                          },
+                    icon: loading
+                        ? const SizedBox(
+                            width: 16,
+                            height: 16,
+                            child: CircularProgressIndicator(
+                              strokeWidth: 2,
+                              color: Colors.white,
+                            ),
+                          )
+                        : const Icon(Icons.reply_rounded),
+                    label: const Text('Gửi phản hồi'),
+                  ),
+                ),
+              ],
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
 
-  body.dispose();
+class _MaintenanceSessionSheet extends ConsumerStatefulWidget {
+  const _MaintenanceSessionSheet({required this.child});
+  final Widget child;
+
+  @override
+  ConsumerState<_MaintenanceSessionSheet> createState() =>
+      _MaintenanceSessionSheetState();
+}
+
+class _MaintenanceSessionSheetState
+    extends ConsumerState<_MaintenanceSessionSheet> {
+  late final String? _owner;
+  bool _invalidated = false;
+
+  @override
+  void initState() {
+    super.initState();
+    _owner = ref.read(sessionIdentityProvider);
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    ref.listen(sessionIdentityProvider, (_, next) {
+      if (next != _owner && !_invalidated) setState(() => _invalidated = true);
+    });
+    if (!_invalidated) return widget.child;
+    return const SafeArea(
+        child: Padding(
+      padding: EdgeInsets.all(24),
+      child: Text('Phiên làm việc đã thay đổi. Đóng cửa sổ và mở lại.'),
+    ));
+  }
 }
 
 class _CommentBlock extends StatelessWidget {
@@ -1309,6 +1416,7 @@ class _EmptyPanel extends StatelessWidget {
 }
 
 Future<String?> _pickAndUploadFile(WidgetRef ref) async {
+  final uploadApi = ref.read(uploadApiProvider);
   final result = await FilePicker.platform.pickFiles(
     type: FileType.custom,
     allowedExtensions: const [
@@ -1323,6 +1431,6 @@ Future<String?> _pickAndUploadFile(WidgetRef ref) async {
   );
   final path = result?.files.single.path;
   if (path == null) return null;
-  final url = await ref.read(uploadApiProvider).uploadFile(path);
+  final url = await uploadApi.uploadFile(path);
   return url.isEmpty ? null : ApiConfig.resolveUrl(url);
 }

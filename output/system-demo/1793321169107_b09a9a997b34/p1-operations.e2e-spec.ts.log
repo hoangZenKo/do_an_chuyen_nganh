@@ -1,0 +1,16 @@
+
+> rental-room-api@0.1.0 test:e2e
+> NODE_ENV=test jest --config ./test/jest-e2e.json --runInBand --runTestsByPath test/e2e/p1-operations.e2e-spec.ts --runInBand
+
+PASS test/e2e/p1-operations.e2e-spec.ts
+  P1 operations and online payments E2E
+    ✓ ending a lease creates exactly one turnover and keeps the room unavailable (31 ms)
+    ✓ turnover scopes, version checks and ordered completion prevent skipping steps (53 ms)
+    ✓ recurrence generates occurrences once and protects concurrent checklist updates (46 ms)
+    ✓ announcements support templates, groups, immutable recipient snapshots and read receipts (47 ms)
+
+Test Suites: 1 passed, 1 total
+Tests:       4 passed, 4 total
+Snapshots:   0 total
+Time:        2.178 s
+Ran all test suites within paths "test/e2e/p1-operations.e2e-spec.ts".

@@ -1,0 +1,76 @@
+@startuml
+left to right direction
+skinparam defaultFontName SansSerif
+skinparam defaultFontSize 13
+skinparam backgroundColor #F8FAFC
+skinparam shadowing false
+skinparam ArrowColor #52647A
+skinparam ArrowThickness 1
+skinparam actorStyle stickman
+skinparam actorBorderColor #243A52
+skinparam actorFontColor #243A52
+skinparam actorBackgroundColor #FFFFFF
+skinparam usecase {
+  BackgroundColor #FFFFFF
+  BorderColor #327C83
+  FontColor #20354B
+  BackgroundColor<<Một phần>> #FFF0CE
+  BorderColor<<Một phần>> #B17917
+  BackgroundColor<<DEMO>> #FCE5DF
+  BorderColor<<DEMO>> #BC593A
+  BackgroundColor<<MÔ PHỎNG>> #E7EAF1
+  BorderColor<<MÔ PHỎNG>> #6C7488
+}
+skinparam rectangle {
+  BackgroundColor #EEF4F5
+  BorderColor #243A52
+  FontColor #243A52
+}
+skinparam titleFontColor #20354B
+skinparam titleFontSize 18
+skinparam nodesep 25
+skinparam ranksep 65
+title TỔNG THỂ · HỆ THỐNG QUẢN LÝ NHÀ TRỌ\n<size:12>12 mục tiêu đại diện · Xem các sơ đồ G01–G16 để bao phủ đủ 162 UC</size>
+caption AS-IS · 29/10/2026 · Snapshot c565c29 · Không biểu diễn trình tự xử lý
+actor "A01\nKhách/chưa đăng nhập" as A01
+actor "A02\nChủ trọ" as A02
+actor "A03\nNhân viên vận hành" as A03
+actor "A04\nNgười tìm phòng/người\nthuê" as A04
+actor "A05\nQuản trị viên nền tảng" as A05
+rectangle "Hệ thống quản lý nhà trọ" as SYSTEM {
+  usecase "UC-SYS-03\nĐăng nhập" as UC_SYS_03
+  usecase "UC-DIS-01\nTìm và lọc tin phòng công khai" as UC_DIS_01
+  usecase "UC-DIS-09\nĐặt và quản lý lịch xem của\nmình" as UC_DIS_09
+  usecase "UC-TEN-03\nTra cứu hóa đơn của mình" as UC_TEN_03
+  usecase "UC-TNT-05\nLập hợp đồng thuê phòng" as UC_TNT_05
+  usecase "UC-TNT-08\nXem trước và xác nhận quyết\ntoán trả phòng" as UC_TNT_08
+  usecase "UC-BIL-16\nPhân tích tác động và duyệt\nbiểu phí" as UC_BIL_16
+  usecase "UC-OPT-03.1\nTạo khu trọ" as UC_OPT_03_1
+  usecase "UC-OPT-01\nXem dashboard và bản đồ phòng" as UC_OPT_01
+  usecase "UC-ADM-02\nTra cứu tài khoản nền tảng" as UC_ADM_02
+  usecase "UC-ADM-11\nTiếp nhận và kiểm duyệt tin cho\nthuê" as UC_ADM_11
+  usecase "UC-ADM-15\nChuẩn bị đối soát sao kê" as UC_ADM_15
+}
+A01 -- UC_SYS_03
+A01 -- UC_DIS_01
+A04 -- UC_DIS_01
+A04 -- UC_DIS_09
+A04 -- UC_TEN_03
+A02 -- UC_TNT_05
+A03 -- UC_TNT_05
+A02 -- UC_TNT_08
+A02 -- UC_BIL_16
+A02 -- UC_OPT_03_1
+A02 -- UC_OPT_01
+A03 -- UC_OPT_01
+A05 -- UC_ADM_02
+A05 -- UC_ADM_11
+A05 -- UC_ADM_15
+legend bottom left
+  Đường liền: tương tác; không biểu diễn luồng điều khiển.
+  STAFF: permission theo handler + khu được giao + whitelist controller; không mặc định toàn quyền.
+  ADMIN: capability theo handler + MFA/step-up nếu áp dụng; không kế thừa quyền chủ trọ.
+  Mặc định: xác minh tĩnh, chưa nghiệm thu runtime; màu vàng: một phần, cam: DEMO, xám: mô phỏng.
+  Quyền chi tiết, điều kiện và nguồn: Association_Traceability.md / data/diagram-manifest.json.
+endlegend
+@enduml

@@ -1,0 +1,13 @@
+
+> rental-room-api@0.1.0 test:e2e
+> NODE_ENV=test jest --config ./test/jest-e2e.json --runInBand --runTestsByPath test/e2e/authorization-ownership.e2e-spec.ts --runInBand
+
+PASS test/e2e/authorization-ownership.e2e-spec.ts
+  Authorization and ownership E2E
+    ✓ protects landlord resources and keeps cross-owner resources hidden (395 ms)
+
+Test Suites: 1 passed, 1 total
+Tests:       1 passed, 1 total
+Snapshots:   0 total
+Time:        2.397 s, estimated 3 s
+Ran all test suites within paths "test/e2e/authorization-ownership.e2e-spec.ts".

@@ -159,6 +159,7 @@ export class MaintenanceService {
     }
 
     const status = input.status ? this.status(input.status) : undefined;
+    const now = new Date();
     const ticket = await this.prisma.maintenanceTicket.update({
       where: { id: existing.id },
       data: {
@@ -177,10 +178,14 @@ export class MaintenanceService {
           : {}),
         ...(input.startedAt !== undefined
           ? { startedAt: this.parseDate(input.startedAt) }
-          : {}),
+          : status === MaintenanceStatus.IN_PROGRESS && !existing.startedAt
+            ? { startedAt: now }
+            : {}),
         ...(input.completedAt !== undefined
           ? { completedAt: this.parseDate(input.completedAt) }
-          : {}),
+          : status === MaintenanceStatus.DONE && !existing.completedAt
+            ? { completedAt: now }
+            : {}),
         ...(input.assigneeStaffProfileId !== undefined
           ? { assigneeStaffProfileId: input.assigneeStaffProfileId ? await this.assertStaff(landlordId, input.assigneeStaffProfileId, propertyId) : null }
           : {}),
@@ -274,13 +279,14 @@ export class MaintenanceService {
     id: string,
     authorId: string,
     input: CreateMaintenanceCommentDto,
+    authorRole: UserRole = UserRole.LANDLORD,
   ) {
     const ticket = await this.findOwned(landlordId, id);
     const comment = await this.prisma.maintenanceComment.create({
       data: {
         ticketId: ticket.id,
         authorId,
-        authorRole: UserRole.LANDLORD,
+        authorRole,
         body: input.body.trim(),
         imageUrls: this.imageUrls(input.imageUrls),
       },

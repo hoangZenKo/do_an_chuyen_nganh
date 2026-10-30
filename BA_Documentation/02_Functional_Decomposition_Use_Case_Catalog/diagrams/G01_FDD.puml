@@ -1,0 +1,19 @@
+@startwbs
+title Phân rã chức năng AS-IS — không phải sơ đồ Use Case
+* Hệ thống quản lý và tìm thuê nhà trọ
+** G01 — Tài khoản và an toàn truy cập
+*** G01.1 Đăng ký và kích hoạt
+**** UC-SYS-01 Đăng ký tài khoản chủ trọ
+**** UC-SYS-02 Đăng ký tài khoản tìm phòng
+**** UC-SYS-08 Kích hoạt tài khoản người thuê từ lời mời
+**** UC-SYS-09 Kích hoạt tài khoản nhân viên từ lời mời
+**** UC-SYS-10 Thiết lập mật khẩu tài khoản được mời
+*** G01.2 Đăng nhập và quản lý phiên
+**** UC-SYS-03 Đăng nhập
+**** UC-SYS-05.1 Đăng xuất phiên hiện tại
+**** UC-SYS-05.2 Xem và thu hồi các phiên của mình
+*** G01.3 Bảo vệ tài khoản
+**** UC-SYS-06 Khôi phục mật khẩu bằng liên kết một lần [Một phần]
+**** UC-SYS-07 Đổi mật khẩu khi đang đăng nhập
+**** UC-ADM-07.1 Thiết lập MFA Admin
+@endwbs

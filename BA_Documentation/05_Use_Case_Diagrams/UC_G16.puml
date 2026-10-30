@@ -1,0 +1,65 @@
+@startuml
+left to right direction
+skinparam defaultFontName SansSerif
+skinparam defaultFontSize 13
+skinparam backgroundColor #F8FAFC
+skinparam shadowing false
+skinparam ArrowColor #52647A
+skinparam ArrowThickness 1
+skinparam actorStyle stickman
+skinparam actorBorderColor #243A52
+skinparam actorFontColor #243A52
+skinparam actorBackgroundColor #FFFFFF
+skinparam usecase {
+  BackgroundColor #FFFFFF
+  BorderColor #327C83
+  FontColor #20354B
+  BackgroundColor<<Một phần>> #FFF0CE
+  BorderColor<<Một phần>> #B17917
+  BackgroundColor<<DEMO>> #FCE5DF
+  BorderColor<<DEMO>> #BC593A
+  BackgroundColor<<MÔ PHỎNG>> #E7EAF1
+  BorderColor<<MÔ PHỎNG>> #6C7488
+}
+skinparam rectangle {
+  BackgroundColor #EEF4F5
+  BorderColor #243A52
+  FontColor #243A52
+}
+skinparam titleFontColor #20354B
+skinparam titleFontSize 18
+skinparam nodesep 25
+skinparam ranksep 65
+title G16 · Quản trị chính sách và đối soát nền tảng\n<size:12>Đầy đủ UC của nhóm nghiệp vụ</size>
+caption AS-IS · 29/10/2026 · Snapshot c565c29 · Không biểu diễn trình tự xử lý
+actor "A02\nChủ trọ" as A02
+actor "A04\nNgười tìm phòng/người\nthuê" as A04
+actor "A05\nQuản trị viên nền tảng" as A05
+rectangle "Hệ thống quản lý nhà trọ" as SYSTEM {
+  usecase "UC-ADM-15\nChuẩn bị đối soát sao kê" as UC_ADM_15
+  usecase "UC-ADM-15.1\nDuyệt đề xuất đối soát sao kê" as UC_ADM_15_1
+  usecase "UC-ADM-24\nTra cứu giao dịch tài chính nền\ntảng" as UC_ADM_24
+  usecase "UC-ADM-17.1\nCấu hình bật tắt tính năng nền\ntảng" as UC_ADM_17_1
+  usecase "UC-ADM-17.2\nQuản lý nhóm Admin" as UC_ADM_17_2
+  usecase "UC-ADM-26\nMô phỏng quyền Admin" as UC_ADM_26
+  usecase "UC-ADM-23\nQuản lý danh mục cơ sở trường" as UC_ADM_23
+  usecase "UC-DIS-13.2\nGửi phản hồi về thử nghiệm tìm\nphòng" as UC_DIS_13_2
+  usecase "UC-ADM-27\nĐọc phản hồi thử nghiệm tìm\nphòng" as UC_ADM_27
+}
+A05 -- UC_ADM_15
+A05 -- UC_ADM_15_1
+A05 -- UC_ADM_24
+A05 -- UC_ADM_17_1
+A05 -- UC_ADM_17_2
+A05 -- UC_ADM_26
+A05 -- UC_ADM_23
+A02 -- UC_DIS_13_2
+A04 -- UC_DIS_13_2
+A05 -- UC_ADM_27
+legend bottom left
+  Đường liền: tương tác; không biểu diễn luồng điều khiển.
+  ADMIN: capability theo handler + MFA/step-up nếu áp dụng; không kế thừa quyền chủ trọ.
+  Mặc định: xác minh tĩnh, chưa nghiệm thu runtime; màu vàng: một phần, cam: DEMO, xám: mô phỏng.
+  Quyền chi tiết, điều kiện và nguồn: Association_Traceability.md / data/diagram-manifest.json.
+endlegend
+@enduml

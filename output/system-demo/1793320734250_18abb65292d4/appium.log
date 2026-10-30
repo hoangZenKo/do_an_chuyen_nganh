@@ -1,0 +1,8 @@
+2026-10-30 00:39:42:869 [FlutterDriver@7c97] The following provided capabilities were not recognized by this driver:
+2026-10-30 00:39:42:869 [FlutterDriver@7c97]   bundleId
+2026-10-30 00:39:42:869 [FlutterDriver@7c97]   wdaLocalPort
+2026-10-30 00:39:42:870 [aad01219][XCUITestDriver@9f52] The following provided capabilities were not recognized by this driver:
+2026-10-30 00:39:42:871 [aad01219][XCUITestDriver@9f52]   observatoryWsUri
+2026-10-30 00:39:42:871 [aad01219][XCUITestDriver@9f52] 'platformVersion' capability ('undefined') is not a valid version number. Consider fixing it or be ready to experience an inconsistent driver behavior.
+2026-10-30 00:39:42:982 [39f436fe][XCUITest] RemoteXPC devices listing unavailable: Tunnel registry port not found. Please run the tunnel creation script first See https://appium.github.io/appium-xcuitest-driver/latest/guides/remotexpc-tunnels-real-devices/ Falling back to appium-ios-device.
+2026-10-30 00:46:58:643 [AppiumDriver@71d6] Ending session, cause was 'The process has received SIGTERM signal'

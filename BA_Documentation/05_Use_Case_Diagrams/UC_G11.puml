@@ -1,0 +1,70 @@
+@startuml
+left to right direction
+skinparam defaultFontName SansSerif
+skinparam defaultFontSize 13
+skinparam backgroundColor #F8FAFC
+skinparam shadowing false
+skinparam ArrowColor #52647A
+skinparam ArrowThickness 1
+skinparam actorStyle stickman
+skinparam actorBorderColor #243A52
+skinparam actorFontColor #243A52
+skinparam actorBackgroundColor #FFFFFF
+skinparam usecase {
+  BackgroundColor #FFFFFF
+  BorderColor #327C83
+  FontColor #20354B
+  BackgroundColor<<Một phần>> #FFF0CE
+  BorderColor<<Một phần>> #B17917
+  BackgroundColor<<DEMO>> #FCE5DF
+  BorderColor<<DEMO>> #BC593A
+  BackgroundColor<<MÔ PHỎNG>> #E7EAF1
+  BorderColor<<MÔ PHỎNG>> #6C7488
+}
+skinparam rectangle {
+  BackgroundColor #EEF4F5
+  BorderColor #243A52
+  FontColor #243A52
+}
+skinparam titleFontColor #20354B
+skinparam titleFontSize 18
+skinparam nodesep 25
+skinparam ranksep 65
+title G11 · Báo cáo và giám sát vận hành\n<size:12>Đầy đủ UC của nhóm nghiệp vụ</size>
+caption AS-IS · 29/10/2026 · Snapshot c565c29 · Không biểu diễn trình tự xử lý
+actor "A02\nChủ trọ" as A02
+actor "A03\nNhân viên vận hành" as A03
+actor "A05\nQuản trị viên nền tảng" as A05
+rectangle "Hệ thống quản lý nhà trọ" as SYSTEM {
+  usecase "UC-OPT-01\nXem dashboard và bản đồ phòng" as UC_OPT_01
+  usecase "UC-BIL-20\nPhân tích và xuất báo cáo vận\nhành" as UC_BIL_20
+  usecase "UC-ADM-01\nXem tổng quan nền tảng" as UC_ADM_01
+  usecase "UC-OPS-09\nTra cứu nhật ký vận hành" as UC_OPS_09
+  usecase "UC-ADM-14\nTra cứu và xuất nhật ký quản\ntrị" as UC_ADM_14
+  usecase "UC-ADM-16\nQuản lý lịch và tải báo cáo\nAdmin" as UC_ADM_16
+  usecase "UC-SUP-05.1\nGiám sát và xử lý sự cố vận\nhành" as UC_SUP_05_1
+  usecase "UC-SUP-05.2\nTheo dõi hàng đợi giao nhận" as UC_SUP_05_2 <<Một phần>>
+}
+actor "E01\nDịch vụ giao liên\nkết/thông báo bên ngoài\n(có điều kiện)" as E01
+actor "E05\nKho lưu kết quả báo cáo\nngoài hệ thống\n(có điều kiện)" as E05
+A02 -- UC_OPT_01
+UC_OPT_01 -- A03
+A02 -- UC_BIL_20
+UC_BIL_20 -- A03
+A05 -- UC_ADM_01
+A02 -- UC_OPS_09
+A05 -- UC_ADM_14
+A05 -- UC_ADM_16
+UC_ADM_16 -- E05 : nếu cấu hình/bật
+A05 -- UC_SUP_05_1
+A05 -- UC_SUP_05_2
+UC_SUP_05_2 -- E01 : nếu cấu hình/bật
+legend bottom left
+  Đường liền: tương tác; không biểu diễn luồng điều khiển.
+  STAFF: permission theo handler + khu được giao + whitelist controller; không mặc định toàn quyền.
+  ADMIN: capability theo handler + MFA/step-up nếu áp dụng; không kế thừa quyền chủ trọ.
+  E01–E05: hệ thống ngoài có adapter; chỉ tương tác ở nhánh cấu hình/bật tương ứng.
+  Mặc định: xác minh tĩnh, chưa nghiệm thu runtime; màu vàng: một phần, cam: DEMO, xám: mô phỏng.
+  Quyền chi tiết, điều kiện và nguồn: Association_Traceability.md / data/diagram-manifest.json.
+endlegend
+@enduml

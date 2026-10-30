@@ -1,0 +1,112 @@
+@startuml
+skinparam backgroundColor white
+skinparam shadowing false
+skinparam dpi 240
+skinparam defaultFontName "Times New Roman"
+skinparam defaultFontSize 17
+skinparam defaultFontColor black
+skinparam titleFontSize 21
+skinparam titleFontColor black
+skinparam roundcorner 0
+skinparam maxMessageSize 270
+skinparam ParticipantPadding 30
+skinparam sequence {
+  ArrowColor #800000
+  ArrowThickness 1.2
+  LifeLineBorderColor #999999
+  LifeLineBackgroundColor #FFFFB9
+  ParticipantBackgroundColor #FFFFB9
+  ParticipantBorderColor #800000
+  ParticipantFontColor black
+  ActorBackgroundColor #FFFFB9
+  ActorBorderColor #800000
+  ActorFontColor black
+  BoundaryBackgroundColor #FFFFB9
+  BoundaryBorderColor #800000
+  ControlBackgroundColor #FFFFB9
+  ControlBorderColor #800000
+  EntityBackgroundColor #FFFFB9
+  EntityBorderColor #800000
+  GroupBackgroundColor #FFFFB9
+  GroupBodyBackgroundColor white
+  GroupBorderColor #888888
+  GroupFontColor black
+  GroupHeaderFontColor black
+  GroupFontSize 15
+  GroupHeaderFontSize 16
+  MessageAlign center
+}
+hide footbox
+<style>
+sequenceDiagram {
+ actor { BackgroundColor #FFFFB9
+ LineColor #800000 }
+ boundary { BackgroundColor #FFFFB9
+ LineColor #800000 }
+ control { BackgroundColor #FFFFB9
+ LineColor #800000 }
+ entity { BackgroundColor #FFFFB9
+ LineColor #800000 }
+ activationBox { BackgroundColor #FFFFB9
+ LineColor #800000 }
+}
+</style>
+autonumber "<b>0.</b>"
+
+title SD-15. Tra cứu phòng và xử lý kiểm duyệt tin đăng
+actor "Quản trị viên" as A
+boundary "<u>Giao diện</u>\n<u>tra cứu và kiểm duyệt</u>" as U #FFFFB9
+control "<u>Quản lý</u>\n<u>tra cứu và kiểm duyệt</u>" as C #FFFFB9
+entity "<u>Thông tin phòng</u>\n<u>và hồ sơ tin đăng</u>" as D #FFFFB9
+A -> U: Lọc khu trọ và phòng; yêu cầu tra cứu
+activate U
+U -> C: Yêu cầu tra cứu phòng theo bộ lọc
+activate C
+C -> D ++: Tra cứu phòng trong phạm vi được xem
+D --> C --: Danh sách phòng và trạng thái tin liên quan
+C --> U: Hiển thị thông tin chỉ đọc
+U --> A: Hiển thị thông tin chỉ đọc; không sửa phòng từ kết quả tra cứu
+deactivate C
+deactivate U
+opt Có quyền kiểm duyệt; chọn tin đăng của phòng
+A -> U: Mở đúng hồ sơ tin đăng cần kiểm duyệt
+activate U
+U -> C: Yêu cầu xem hồ sơ kiểm duyệt của tin
+activate C
+C -> D ++: Tra cứu tin đăng và việc phân công xử lý
+D --> C --: Nội dung tin, trạng thái và người phụ trách
+C --> U: Hiển thị hồ sơ kiểm duyệt đúng tin đăng
+U --> A: Hiển thị hồ sơ kiểm duyệt đúng tin đăng
+deactivate C
+deactivate U
+opt Tin đang chờ; quản trị viên chọn nhận xử lý
+A -> U: Yêu cầu nhận xử lý tin đăng
+activate U
+U -> C: Yêu cầu nhận xử lý tin đăng
+activate C
+C -> D ++: Đối chiếu quyền và phân công; ghi nhận việc hợp lệ
+D --> C --: Phân công được ghi nhận hoặc báo không thể nhận việc
+C --> U: Hiển thị kết quả nhận việc
+U --> A: Hiển thị kết quả nhận việc
+deactivate C
+deactivate U
+end
+A -> U: Gửi quyết định duyệt, từ chối hoặc ẩn tin; nhập lý do khi cần
+activate U
+U -> C: Yêu cầu ghi nhận quyết định kiểm duyệt
+activate C
+C -> D ++: Đối chiếu quyền xử lý, phân công, trạng thái tin và phòng
+D --> C --: Điều kiện ra quyết định hiện hành
+alt Không có quyền xử lý, tin đã đổi hoặc điều kiện không đạt
+C --> U: Không lưu quyết định
+U --> A: Không lưu quyết định; yêu cầu kiểm tra lại
+else Quyết định phù hợp trạng thái và đủ điều kiện
+C -> D ++: Lưu quyết định, trạng thái tin và lịch sử kiểm duyệt
+D --> C --: Tin đăng được cập nhật
+C --> U: Hiển thị kết quả kiểm duyệt
+U --> A: Hiển thị kết quả kiểm duyệt
+end
+deactivate C
+deactivate U
+end
+@enduml

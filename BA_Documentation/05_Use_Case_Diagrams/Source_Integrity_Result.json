@@ -1,0 +1,26 @@
+{
+  "status": "PASSED",
+  "checkedAt": "2026-10-28T23:56:15.143Z",
+  "snapshotCommit": "c565c29ee5742d38dfaea37aa8fa047f4b6793c0",
+  "sourceHashCount": 846,
+  "changedSources": [],
+  "trackedFileChanges": [],
+  "gitStatus": "?? BA_Documentation/",
+  "earlierDocumentationChanges": [
+    {
+      "file": "BA_Documentation/02_Functional_Decomposition_Use_Case_Catalog/Validation_Result.json",
+      "beforeSha256": "de58ba82c158073564fa7f16e448da5b8502b585db9b5a56eb3634f5334f0388",
+      "afterSha256": "b0e308a14d200b437544e1e6516ce6ab12dd2fb303d4b8da028fa7c0f0ea185c",
+      "reason": "Chạy lại validator Giai đoạn 2, làm mới Validation_Result.json"
+    },
+    {
+      "file": "BA_Documentation/README.md",
+      "beforeSha256": "c77aa36a9155a155c79d30f2473cfb19667d4c2f3bcff8e4fcd15976c3e0b8e3",
+      "afterSha256": "81db1080204cc687705cd14f8326c80e70917543a36becec442c1bc4b4c784dd",
+      "reason": "Cập nhật mục lục BA thêm Giai đoạn 3"
+    }
+  ],
+  "catalogSha256": "85868f2f097e0dfd6882a83e7bee86360ac9e7c4930c28d7726bda9018b47b9b",
+  "traceabilitySha256": "e977fa3042beceae1f283b7c8255b21dc29110942f3db939d474eddfe9c44158",
+  "applicationTestsExecutedThisStage": false
+}

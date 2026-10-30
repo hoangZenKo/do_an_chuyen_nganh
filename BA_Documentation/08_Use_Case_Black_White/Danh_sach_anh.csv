@@ -1,0 +1,31 @@
+﻿STT,Hình trong báo cáo V4,Nhóm chức năng,File PNG,File SVG,Số UC
+1,Hình 2.3,TỔNG THỂ · HỆ THỐNG QUẢN LÝ NHÀ TRỌ,PNG/01_Hinh_2_03_Overall_Use_Case.png,SVG/01_Hinh_2_03_Overall_Use_Case.svg,12
+2,Hình 2.4,G01 Đăng ký và tiếp nhận lời mời,PNG/02_Hinh_2_04_UC_G01_01_SYS_Public.png,SVG/02_Hinh_2_04_UC_G01_01_SYS_Public.svg,7
+3,Hình 2.5,G01 Đăng nhập và bảo vệ tài khoản,PNG/03_Hinh_2_05_UC_G01_02_SYS_Sessions.png,SVG/03_Hinh_2_05_UC_G01_02_SYS_Sessions.svg,4
+4,Hình 2.6,G02 · Tìm và lựa chọn phòng,PNG/04_Hinh_2_06_UC_G02.png,SVG/04_Hinh_2_06_UC_G02.svg,6
+5,Hình 2.7,"G03 · Đăng tin, lịch xem và nhận phòng",PNG/05_Hinh_2_07_UC_G03.png,SVG/05_Hinh_2_07_UC_G03.svg,7
+6,Hình 2.8,G04 · Khu trọ và cơ sở vật chất phần 1,PNG/06_Hinh_2_08_UC_G04_BA_1.png,SVG/06_Hinh_2_08_UC_G04_BA_1.svg,7
+7,Hình 2.9,G04 · Khu trọ và cơ sở vật chất phần 2,PNG/07_Hinh_2_09_UC_G04_BA_2.png,SVG/07_Hinh_2_09_UC_G04_BA_2.svg,7
+8,Hình 2.10,G05 · Nhân sự và ủy quyền vận hành,PNG/08_Hinh_2_10_UC_G05.png,SVG/08_Hinh_2_10_UC_G05.svg,4
+9,Hình 2.11,G06 Hồ sơ người thuê và quyền truy cập,PNG/09_Hinh_2_11_UC_G06_01_Tenant_Records.png,SVG/09_Hinh_2_11_UC_G06_01_Tenant_Records.svg,8
+10,Hình 2.12,G06 Hợp đồng và tiền cọc phần 1,PNG/10_Hinh_2_12_UC_G06_02_Leases_Deposits_BA_1.png,SVG/10_Hinh_2_12_UC_G06_02_Leases_Deposits_BA_1.svg,5
+11,Hình 2.13,G06 Hợp đồng và tiền cọc phần 2,PNG/11_Hinh_2_13_UC_G06_02_Leases_Deposits_BA_2.png,SVG/11_Hinh_2_13_UC_G06_02_Leases_Deposits_BA_2.svg,4
+12,Hình 2.14,G07 · Vòng đời thuê và quyết toán,PNG/12_Hinh_2_14_UC_G07.png,SVG/12_Hinh_2_14_UC_G07.svg,7
+13,Hình 2.15,G08 Chỉ số và hóa đơn phần 1,PNG/13_Hinh_2_15_UC_G08_01_Invoices_BA_1.png,SVG/13_Hinh_2_15_UC_G08_01_Invoices_BA_1.svg,6
+14,Hình 2.16,G08 Chỉ số và hóa đơn phần 2,PNG/14_Hinh_2_16_UC_G08_01_Invoices_BA_2.png,SVG/14_Hinh_2_16_UC_G08_01_Invoices_BA_2.svg,5
+15,Hình 2.17,G08 Thu tiền và thanh toán phần 1,PNG/15_Hinh_2_17_UC_G08_02_Collections_BA_1.png,SVG/15_Hinh_2_17_UC_G08_02_Collections_BA_1.svg,5
+16,Hình 2.18,G08 Thu tiền và thanh toán phần 2,PNG/16_Hinh_2_18_UC_G08_02_Collections_BA_2.png,SVG/16_Hinh_2_18_UC_G08_02_Collections_BA_2.svg,5
+17,Hình 2.19,G08 Biểu phí và kỳ thanh toán,PNG/17_Hinh_2_19_UC_G08_03_Tariffs_Periods.png,SVG/17_Hinh_2_19_UC_G08_03_Tariffs_Periods.svg,3
+18,Hình 2.20,G08 Chính sách và thông báo nhắc nợ,PNG/18_Hinh_2_20_UC_G08_04_Reminders.png,SVG/18_Hinh_2_20_UC_G08_04_Reminders.svg,4
+19,Hình 2.21,G09 · Bảo trì và chi phí vận hành,PNG/19_Hinh_2_21_UC_G09.png,SVG/19_Hinh_2_21_UC_G09.svg,5
+20,Hình 2.22,"G10 · Công việc, thông tin và hỗ trợ sử dụng phần 1",PNG/20_Hinh_2_22_UC_G10_BA_1.png,SVG/20_Hinh_2_22_UC_G10_BA_1.svg,5
+21,Hình 2.23,"G10 · Công việc, thông tin và hỗ trợ sử dụng phần 2",PNG/21_Hinh_2_23_UC_G10_BA_2.png,SVG/21_Hinh_2_23_UC_G10_BA_2.svg,4
+22,Hình 2.24,G11 · Báo cáo và giám sát vận hành,PNG/22_Hinh_2_24_UC_G11.png,SVG/22_Hinh_2_24_UC_G11.svg,8
+23,Hình 2.25,G12 · Tài khoản và tài nguyên nền tảng phần 1,PNG/23_Hinh_2_25_UC_G12_BA_1.png,SVG/23_Hinh_2_25_UC_G12_BA_1.svg,6
+24,Hình 2.26,G12 · Tài khoản và tài nguyên nền tảng phần 2,PNG/24_Hinh_2_26_UC_G12_BA_2.png,SVG/24_Hinh_2_26_UC_G12_BA_2.svg,6
+25,Hình 2.27,G13 · Kiểm duyệt và chất lượng nội dung phần 1,PNG/25_Hinh_2_27_UC_G13_BA_1.png,SVG/25_Hinh_2_27_UC_G13_BA_1.svg,6
+26,Hình 2.28,G13 · Kiểm duyệt và chất lượng nội dung phần 2,PNG/26_Hinh_2_28_UC_G13_BA_2.png,SVG/26_Hinh_2_28_UC_G13_BA_2.svg,5
+27,Hình 2.29,G14 · Dịch vụ hỗ trợ khách hàng,PNG/27_Hinh_2_29_UC_G14.png,SVG/27_Hinh_2_29_UC_G14.svg,8
+28,Hình 2.30,G15 · Hồ sơ xác minh và gói dịch vụ,PNG/28_Hinh_2_30_UC_G15.png,SVG/28_Hinh_2_30_UC_G15.svg,6
+29,Hình 2.31,G16 · Quản trị chính sách và đối soát nền tảng phần 1,PNG/29_Hinh_2_31_UC_G16_BA_1.png,SVG/29_Hinh_2_31_UC_G16_BA_1.svg,5
+30,Hình 2.32,G16 · Quản trị chính sách và đối soát nền tảng phần 2,PNG/30_Hinh_2_32_UC_G16_BA_2.png,SVG/30_Hinh_2_32_UC_G16_BA_2.svg,4

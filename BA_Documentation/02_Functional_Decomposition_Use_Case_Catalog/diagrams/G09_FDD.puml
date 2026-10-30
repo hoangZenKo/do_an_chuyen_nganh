@@ -1,0 +1,12 @@
+@startwbs
+title Phân rã chức năng AS-IS — không phải sơ đồ Use Case
+* Hệ thống quản lý và tìm thuê nhà trọ
+** G09 — Bảo trì và chi phí vận hành
+*** G09.1 Yêu cầu và điều phối bảo trì
+**** UC-TEN-06 Gửi và trao đổi yêu cầu bảo trì
+**** UC-OPS-01 Tiếp nhận và theo dõi phiếu bảo trì
+**** UC-OPS-02 Phân công và cập nhật bảo trì
+*** G09.2 Hoàn thành và ghi chi phí
+**** UC-OPS-03 Hoàn tất bảo trì và liên kết khoản chi
+**** UC-BIL-19 Quản lý khoản chi vận hành
+@endwbs

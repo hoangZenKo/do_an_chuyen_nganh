@@ -1,0 +1,198 @@
+[
+  {
+    "id": "login",
+    "layer": "UI",
+    "status": "passed",
+    "startedAt": "2026-10-30T00:59:32.970Z",
+    "screenshot": "login.png",
+    "finishedAt": "2026-10-30T00:59:49.467Z"
+  },
+  {
+    "id": "02-dang-ky-nguoi-thue",
+    "layer": "UI",
+    "status": "passed",
+    "startedAt": "2026-10-30T00:59:49.467Z",
+    "screenshot": "02-dang-ky-nguoi-thue.png",
+    "finishedAt": "2026-10-30T01:00:00.329Z"
+  },
+  {
+    "id": "03-tao-sua-khu-tro",
+    "layer": "UI",
+    "status": "passed",
+    "startedAt": "2026-10-30T01:00:00.329Z",
+    "screenshot": "03-tao-sua-khu-tro.png",
+    "finishedAt": "2026-10-30T01:00:12.672Z"
+  },
+  {
+    "id": "04-tao-sua-phong",
+    "layer": "UI",
+    "status": "passed",
+    "startedAt": "2026-10-30T01:00:12.672Z",
+    "screenshot": "04-tao-sua-phong.png",
+    "finishedAt": "2026-10-30T01:00:31.218Z"
+  },
+  {
+    "id": "05-tao-sua-tim-nguoi-thue",
+    "layer": "UI",
+    "status": "passed",
+    "startedAt": "2026-10-30T01:00:31.220Z",
+    "screenshot": "05-tao-sua-tim-nguoi-thue.png",
+    "finishedAt": "2026-10-30T01:00:45.276Z"
+  },
+  {
+    "id": "06-tin-dang-va-kiem-duyet",
+    "layer": "UI",
+    "status": "passed",
+    "startedAt": "2026-10-30T01:00:45.277Z",
+    "screenshot": "06-tin-dang-va-kiem-duyet.png",
+    "finishedAt": "2026-10-30T01:01:08.253Z"
+  },
+  {
+    "id": "07-kham-pha-va-yeu-thich",
+    "layer": "UI",
+    "status": "passed",
+    "startedAt": "2026-10-30T01:01:08.253Z",
+    "screenshot": "07-kham-pha-va-yeu-thich.png",
+    "finishedAt": "2026-10-30T01:01:17.517Z"
+  },
+  {
+    "id": "07b-dat-lich-den-tao-hop-dong",
+    "layer": "UI",
+    "status": "passed",
+    "startedAt": "2026-10-30T01:01:17.517Z",
+    "screenshot": "07b-dat-lich-den-tao-hop-dong.png",
+    "finishedAt": "2026-10-30T01:01:48.430Z"
+  },
+  {
+    "id": "08-hop-dong-va-ban-giao",
+    "layer": "UI",
+    "status": "passed",
+    "startedAt": "2026-10-30T01:01:48.431Z",
+    "screenshot": "08-hop-dong-va-ban-giao.png",
+    "finishedAt": "2026-10-30T01:02:12.457Z"
+  },
+  {
+    "id": "09-thu-coc-va-doi-chieu",
+    "layer": "UI",
+    "status": "passed",
+    "startedAt": "2026-10-30T01:02:12.457Z",
+    "screenshot": "09-thu-coc-va-doi-chieu.png",
+    "finishedAt": "2026-10-30T01:02:27.977Z"
+  },
+  {
+    "id": "10-hoa-don-va-thanh-toan",
+    "layer": "UI",
+    "status": "passed",
+    "startedAt": "2026-10-30T01:02:27.978Z",
+    "screenshot": "10-hoa-don-va-thanh-toan.png",
+    "finishedAt": "2026-10-30T01:02:47.262Z"
+  },
+  {
+    "id": "10b-tao-hoa-don-qua-giao-dien",
+    "layer": "UI",
+    "status": "failed",
+    "startedAt": "2026-10-30T01:02:47.262Z",
+    "error": "AssertionError [ERR_ASSERTION]: Target was not built after scrolling.\n    at DemoUI.reveal (file:///Users/hoang/Rental_room_management/test/system_demo/system_demo.mjs:297:12)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async DemoUI.tap (file:///Users/hoang/Rental_room_management/test/system_demo/system_demo.mjs:303:5)\n    at async file:///Users/hoang/Rental_room_management/test/system_demo/system_demo.mjs:610:5\n    at async file:///Users/hoang/Rental_room_management/test/system_demo/system_demo.mjs:345:5\n    at async runCase (file:///Users/hoang/Rental_room_management/test/system_demo/system_demo.mjs:118:9)\n    at async scenario (file:///Users/hoang/Rental_room_management/test/system_demo/system_demo.mjs:340:18)\n    at async journeys (file:///Users/hoang/Rental_room_management/test/system_demo/system_demo.mjs:599:3)\n    at async visualJourneys (file:///Users/hoang/Rental_room_management/test/system_demo/system_demo.mjs:396:3)\n    at async main (file:///Users/hoang/Rental_room_management/test/system_demo/system_demo.mjs:920:5)",
+    "finishedAt": "2026-10-30T01:03:06.129Z",
+    "screenshot": "10b-tao-hoa-don-qua-giao-dien-FAILED.png"
+  },
+  {
+    "id": "11-sua-chua-hai-vai-tro",
+    "layer": "UI",
+    "status": "passed",
+    "startedAt": "2026-10-30T01:03:06.553Z",
+    "screenshot": "11-sua-chua-hai-vai-tro.png",
+    "finishedAt": "2026-10-30T01:03:33.395Z"
+  },
+  {
+    "id": "12-chi-phi-va-bao-cao",
+    "layer": "UI",
+    "status": "passed",
+    "startedAt": "2026-10-30T01:03:33.395Z",
+    "screenshot": "12-chi-phi-va-bao-cao.png",
+    "finishedAt": "2026-10-30T01:03:45.928Z"
+  },
+  {
+    "id": "13-gia-han-hai-vai-tro",
+    "layer": "UI",
+    "status": "passed",
+    "startedAt": "2026-10-30T01:03:45.929Z",
+    "screenshot": "13-gia-han-hai-vai-tro.png",
+    "finishedAt": "2026-10-30T01:04:12.334Z"
+  },
+  {
+    "id": "14-nguoi-o-cung",
+    "layer": "UI",
+    "status": "passed",
+    "startedAt": "2026-10-30T01:04:12.335Z",
+    "screenshot": "14-nguoi-o-cung.png",
+    "finishedAt": "2026-10-30T01:04:35.917Z"
+  },
+  {
+    "id": "15-thong-bao-tai-khoan",
+    "layer": "UI",
+    "status": "passed",
+    "startedAt": "2026-10-30T01:04:35.917Z",
+    "screenshot": "15-thong-bao-tai-khoan.png",
+    "finishedAt": "2026-10-30T01:04:51.920Z"
+  },
+  {
+    "id": "15b-ticket-ho-tro",
+    "layer": "UI",
+    "status": "failed",
+    "startedAt": "2026-10-30T01:04:51.920Z",
+    "error": "unknown error: WebDriverError: Cannot execute command waitForTappable, server response {\n  \"isError\": true,\n  \"response\": \"Timeout while executing waitForTappable: TimeoutException after 0:00:08.000000: Future not completed\\n#0      Future.timeout.<anonymous closure> (dart:async/future_impl.dart:1025:22)\\n<asynchronous suspension>\\n#1      FlutterDriverExtension.call (package:flutter_driver/src/extension/extension.dart:423:31)\\n<asynchronous suspension>\\n#2      BindingBase.registerServiceExtension.<anonymous closure> (package:flutter/src/foundation/binding.dart:960:18)\\n<asynchronous suspension>\\n#3      _runExtension.<anonymous closure> (dart:developer-patch/developer.dart:138:13)\\n<asynchronous suspension>\\n\",\n  \"type\": \"_extensionType\",\n  \"method\": \"ext.flutter.driver\"\n} when running \"execute/sync\" with method \"POST\"\n    at FetchRequest._request (file:///Users/hoang/Rental_room_management/test/system_demo/node_modules/webdriver/build/node.js:2229:19)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async Browser.wrapCommandFn (file:///Users/hoang/Rental_room_management/test/system_demo/node_modules/@wdio/utils/build/index.js:982:23)\n    at async Browser.wrapCommandFn (file:///Users/hoang/Rental_room_management/test/system_demo/node_modules/@wdio/utils/build/index.js:982:23)\n    at async DemoUI.tap (file:///Users/hoang/Rental_room_management/test/system_demo/system_demo.mjs:304:5)\n    at async file:///Users/hoang/Rental_room_management/test/system_demo/system_demo.mjs:684:5\n    at async file:///Users/hoang/Rental_room_management/test/system_demo/system_demo.mjs:345:5\n    at async runCase (file:///Users/hoang/Rental_room_management/test/system_demo/system_demo.mjs:118:9)\n    at async scenario (file:///Users/hoang/Rental_room_management/test/system_demo/system_demo.mjs:340:18)\n    at async journeys (file:///Users/hoang/Rental_room_management/test/system_demo/system_demo.mjs:681:3)",
+    "finishedAt": "2026-10-30T01:05:06.149Z",
+    "screenshot": "15b-ticket-ho-tro-FAILED.png"
+  },
+  {
+    "id": "15c-doi-mat-khau",
+    "layer": "UI",
+    "status": "failed",
+    "startedAt": "2026-10-30T01:05:06.373Z",
+    "error": "Error: Timeout: password change revokes session\n    at waitUntil (file:///Users/hoang/Rental_room_management/test/system_demo/system_demo.mjs:186:9)\n    at async file:///Users/hoang/Rental_room_management/test/system_demo/system_demo.mjs:702:7\n    at async file:///Users/hoang/Rental_room_management/test/system_demo/system_demo.mjs:345:5\n    at async runCase (file:///Users/hoang/Rental_room_management/test/system_demo/system_demo.mjs:118:9)\n    at async scenario (file:///Users/hoang/Rental_room_management/test/system_demo/system_demo.mjs:340:18)\n    at async journeys (file:///Users/hoang/Rental_room_management/test/system_demo/system_demo.mjs:696:3)\n    at async visualJourneys (file:///Users/hoang/Rental_room_management/test/system_demo/system_demo.mjs:396:3)\n    at async main (file:///Users/hoang/Rental_room_management/test/system_demo/system_demo.mjs:920:5)",
+    "finishedAt": "2026-10-30T01:06:16.566Z",
+    "screenshot": "15c-doi-mat-khau-FAILED.png"
+  },
+  {
+    "id": "15d-bieu-phi-phong",
+    "layer": "UI",
+    "status": "passed",
+    "startedAt": "2026-10-30T01:06:16.837Z",
+    "screenshot": "15d-bieu-phi-phong.png",
+    "finishedAt": "2026-10-30T01:06:30.161Z"
+  },
+  {
+    "id": "17-nhan-vien-theo-phan-quyen",
+    "layer": "UI",
+    "status": "passed",
+    "startedAt": "2026-10-30T01:06:30.162Z",
+    "screenshot": "17-nhan-vien-theo-phan-quyen.png",
+    "finishedAt": "2026-10-30T01:06:41.675Z"
+  },
+  {
+    "id": "17b-moi-nhan-vien",
+    "layer": "UI",
+    "status": "passed",
+    "startedAt": "2026-10-30T01:06:41.675Z",
+    "screenshot": "17b-moi-nhan-vien.png",
+    "finishedAt": "2026-10-30T01:06:55.415Z"
+  },
+  {
+    "id": "18-admin-quan-tri",
+    "layer": "screen",
+    "status": "passed",
+    "startedAt": "2026-10-30T01:06:55.415Z",
+    "screenshot": "18-admin-quan-tri.png",
+    "finishedAt": "2026-10-30T01:07:06.985Z"
+  },
+  {
+    "id": "19-yeu-cau-tra-phong",
+    "layer": "UI",
+    "status": "failed",
+    "startedAt": "2026-10-30T01:07:06.986Z",
+    "error": "AssertionError [ERR_ASSERTION]: Target was not built after scrolling.\n    at DemoUI.reveal (file:///Users/hoang/Rental_room_management/test/system_demo/system_demo.mjs:297:12)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async DemoUI.tap (file:///Users/hoang/Rental_room_management/test/system_demo/system_demo.mjs:303:5)\n    at async file:///Users/hoang/Rental_room_management/test/system_demo/system_demo.mjs:767:51\n    at async file:///Users/hoang/Rental_room_management/test/system_demo/system_demo.mjs:345:5\n    at async runCase (file:///Users/hoang/Rental_room_management/test/system_demo/system_demo.mjs:118:9)\n    at async scenario (file:///Users/hoang/Rental_room_management/test/system_demo/system_demo.mjs:340:18)\n    at async journeys (file:///Users/hoang/Rental_room_management/test/system_demo/system_demo.mjs:756:3)\n    at async visualJourneys (file:///Users/hoang/Rental_room_management/test/system_demo/system_demo.mjs:396:3)\n    at async main (file:///Users/hoang/Rental_room_management/test/system_demo/system_demo.mjs:920:5)",
+    "finishedAt": "2026-10-30T01:07:34.022Z",
+    "screenshot": "19-yeu-cau-tra-phong-FAILED.png"
+  }
+]

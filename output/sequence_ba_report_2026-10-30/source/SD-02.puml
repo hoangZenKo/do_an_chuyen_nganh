@@ -1,0 +1,142 @@
+@startuml
+skinparam backgroundColor white
+skinparam shadowing false
+skinparam dpi 240
+skinparam defaultFontName "Times New Roman"
+skinparam defaultFontSize 17
+skinparam defaultFontColor black
+skinparam titleFontSize 21
+skinparam titleFontColor black
+skinparam roundcorner 0
+skinparam maxMessageSize 270
+skinparam ParticipantPadding 30
+skinparam sequence {
+  ArrowColor #800000
+  ArrowThickness 1.2
+  LifeLineBorderColor #999999
+  LifeLineBackgroundColor #FFFFB9
+  ParticipantBackgroundColor #FFFFB9
+  ParticipantBorderColor #800000
+  ParticipantFontColor black
+  ActorBackgroundColor #FFFFB9
+  ActorBorderColor #800000
+  ActorFontColor black
+  BoundaryBackgroundColor #FFFFB9
+  BoundaryBorderColor #800000
+  ControlBackgroundColor #FFFFB9
+  ControlBorderColor #800000
+  EntityBackgroundColor #FFFFB9
+  EntityBorderColor #800000
+  DatabaseBackgroundColor #FFFFB9
+  DatabaseBorderColor #800000
+  GroupBackgroundColor #FFFFB9
+  GroupBodyBackgroundColor white
+  GroupBorderColor #888888
+  GroupFontColor black
+  GroupHeaderFontColor black
+  GroupFontSize 15
+  GroupHeaderFontSize 16
+  MessageAlign center
+}
+hide footbox
+<style>
+sequenceDiagram {
+ actor { BackgroundColor #FFFFB9
+ LineColor #800000 }
+ boundary { BackgroundColor #FFFFB9
+ LineColor #800000 }
+ control { BackgroundColor #FFFFB9
+ LineColor #800000 }
+ database { BackgroundColor #FFFFB9
+ LineColor #800000 }
+ activationBox { BackgroundColor #FFFFB9
+ LineColor #800000 }
+}
+</style>
+autonumber "<b>0.</b>"
+
+title SD-02. Đặt lịch xem phòng và lập hợp đồng từ lịch xem
+actor "Người tìm thuê" as A
+actor "Chủ trọ" as B
+boundary "<u>Giao diện</u>\n<u>lịch xem phòng</u>" as U #FFFFB9
+control "<u>Quản lý</u>\n<u>lịch xem và nhận thuê</u>" as C #FFFFB9
+database "<u>Cơ sở dữ liệu</u>" as D #FFFFB9
+A -> U: Chọn tin đăng và thời gian; gửi yêu cầu xem phòng
+activate U
+U -> C: Yêu cầu đặt lịch xem phòng
+activate C
+C -> D ++: Tra cứu tin đăng và lịch hẹn hai bên
+D --> C --: Tình trạng tin và các lịch hẹn hiện có
+C -> C: Kiểm tra tin còn nhận khách, thời gian hợp lệ và không trùng lịch
+alt Tin không khả dụng hoặc thời gian không đáp ứng quy định
+C --> U: Không đặt được lịch
+U --> A: Không đặt được lịch; thông báo lý do
+else Tin và thời gian hợp lệ; không trùng lịch
+C -> D ++: Lưu lịch chờ xác nhận và nội dung thông báo cho chủ trọ
+D --> C --: Yêu cầu xem phòng đã được ghi nhận
+C --> U: Lịch đang chờ chủ trọ xác nhận
+U --> A: Lịch đang chờ chủ trọ xác nhận
+end
+deactivate C
+deactivate U
+opt Có lịch chờ xác nhận; chủ trọ chọn xử lý
+B -> U: Xác nhận lịch hẹn còn trong tương lai
+activate U
+U -> C: Yêu cầu xác nhận lịch xem
+activate C
+C -> D ++: Tra cứu chủ tin, lịch hiện hành và tình trạng phòng
+D --> C --: Thông tin chủ tin, phòng và lịch hẹn
+C -> C: Kiểm tra quyền xác nhận, trạng thái lịch và khả năng nhận khách
+alt Lịch hoặc phòng đã thay đổi; lịch không còn hợp lệ
+C --> U: Không xác nhận
+U --> B: Không xác nhận; yêu cầu kiểm tra lại
+else Lịch còn đủ điều kiện
+C -> D ++: Lưu lịch đã xác nhận và nội dung thông báo người xem
+D --> C --: Lịch đã được xác nhận
+C --> U: Xác nhận lịch xem thành công
+U --> B: Xác nhận lịch xem thành công
+end
+deactivate C
+deactivate U
+end
+opt Lịch đã xác nhận và đã đến giờ hẹn
+B -> U: Ghi nhận khách đã xem phòng
+activate U
+U -> C: Yêu cầu hoàn tất lịch xem
+activate C
+C -> D ++: Tra cứu chủ tin và lịch hẹn hiện hành
+D --> C --: Người quản lý, thời gian và trạng thái lịch
+C -> C: Kiểm tra quyền xử lý, lịch đã xác nhận và đã đến giờ hẹn
+alt Đủ quyền và dữ liệu đáp ứng điều kiện xử lý
+C -> D ++: Lưu trạng thái lịch đã hoàn tất
+D --> C --: Lịch được ghi nhận đã xem
+C --> U: Đã ghi nhận khách xem phòng
+U --> B: Đã ghi nhận khách xem phòng
+else Không đáp ứng điều kiện xử lý
+C --> U: Không hoàn tất lịch
+U --> B: Không hoàn tất lịch; thông báo điều kiện chưa đáp ứng
+end
+deactivate C
+deactivate U
+end
+opt Chủ trọ chọn lập hợp đồng từ lịch đã hoàn tất
+B -> U: Nhập điều khoản và yêu cầu lập hợp đồng
+activate U
+U -> C: Yêu cầu lập hợp đồng từ lịch đã xem
+activate C
+C -> D ++: Tra cứu lịch xem, phòng, hợp đồng và hồ sơ người thuê
+D --> C --: Trạng thái lịch, phòng và hồ sơ nhận thuê hiện hành
+C -> C: Kiểm tra quyền lập hợp đồng, lịch đã hoàn tất và điều kiện nhận thuê
+alt Lịch, phòng hoặc người thuê không còn đủ điều kiện
+C --> U: Không tạo hợp đồng
+U --> B: Không tạo hợp đồng; thông báo lý do
+else Đủ điều kiện nhận thuê
+C -> D ++: Lưu hợp đồng, phòng có người ở, tin ẩn và các lịch bị hủy
+D --> C --: Các thay đổi được lưu cùng nhau; chưa ghi thu cọc
+C --> U: Lập hợp đồng thành công
+U --> B: Lập hợp đồng thành công; hiển thị người thuê và hợp đồng
+end
+deactivate C
+deactivate U
+end
+@enduml

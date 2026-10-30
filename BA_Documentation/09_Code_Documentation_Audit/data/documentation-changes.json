@@ -1,0 +1,183 @@
+{
+  "checkedAt": "2026-10-29T17:19:13.664Z",
+  "basis": "So mốc protected-hashes Giai đoạn 4 lịch sử với hiện tại; đây không phải khẳng định mọi khác biệt bắt đầu trong lượt này. Các thay đổi chủ đích được ghi rõ; bản mốc lịch sử không bị ghi đè.",
+  "sourceFilesChecked": 846,
+  "sourceFilesChanged": 0,
+  "trackedWorkingDiff": {
+    "unchangedFromAuditStart": true,
+    "beforeSha256": "cc9fd23e9c46d654e704b51232fd29c474e523783758c4bfbb808e1dc6916d15",
+    "afterSha256": "cc9fd23e9c46d654e704b51232fd29c474e523783758c4bfbb808e1dc6916d15"
+  },
+  "historicalProtectedDifferences": [
+    {
+      "file": "BA_Documentation/02_Functional_Decomposition_Use_Case_Catalog/.DS_Store",
+      "historicalSha256": "9ee6da45cc89583dd4726eef29b2502aa4af22ff5dfd5f3084ae79212f24e9b4",
+      "currentSha256": "4f998a002178d72ebe9a7fe637eacbac33feaf8f7b013d72c87fffeaa374d59a",
+      "classification": "metadata-macOS-da-khac-truoc-doi-chieu",
+      "reason": "Metadata không dùng làm bằng chứng nghiệp vụ; khác trước lượt kiểm tra."
+    },
+    {
+      "file": "BA_Documentation/02_Functional_Decomposition_Use_Case_Catalog/05_Use_Case_Catalog.md",
+      "historicalSha256": "d86fa58b1ea044932721c275f93a2c56d11b11c2c95986a5183a2ab090535d53",
+      "currentSha256": "ba3bfcee05c3075911060e2216560a8826b9d5adab7d9acee2e7ead9bfbacfba",
+      "classification": "tai-lieu-dinh-chinh-co-chu-dich",
+      "reason": "DC-01 sửa cách ghi nhận tiền cọc; DC-08 sửa đường dẫn lịch sử nếu thuộc truy vết."
+    },
+    {
+      "file": "BA_Documentation/02_Functional_Decomposition_Use_Case_Catalog/07_Traceability_and_Coverage.md",
+      "historicalSha256": "6ef040577faa6b394bba3e089de49c743289332a1cd64d04a56428bcc01c1c55",
+      "currentSha256": "47daeb01b2c047c8e78cb3650bea8b3688c29a912f55ad28bedb39cc0ccbf98b",
+      "classification": "tai-lieu-dinh-chinh-co-chu-dich",
+      "reason": "DC-01 sửa cách ghi nhận tiền cọc; DC-08 sửa đường dẫn lịch sử nếu thuộc truy vết."
+    },
+    {
+      "file": "BA_Documentation/02_Functional_Decomposition_Use_Case_Catalog/README.md",
+      "historicalSha256": "97617fa4e3f614ae8cd79580d964d9045f33774749675c5239e51f5179503e2b",
+      "currentSha256": "3d48e7661e4cfce1601dbbfc2bab43f195a99428c7bd31077105e3ab183b37fa",
+      "classification": "tai-lieu-dinh-chinh-co-chu-dich",
+      "reason": "Sửa đường dẫn danh mục lịch sử."
+    },
+    {
+      "file": "BA_Documentation/02_Functional_Decomposition_Use_Case_Catalog/Validation_Result.json",
+      "historicalSha256": "b0e308a14d200b437544e1e6516ce6ab12dd2fb303d4b8da028fa7c0f0ea185c",
+      "currentSha256": "cc9b0d2954d2e8dfe55726522e47ad5de49eeae180874397709d81e4d444ae9e",
+      "classification": "tai-lieu-dinh-chinh-co-chu-dich",
+      "reason": "Chạy lại kiểm tra tính nhất quán/truy vết."
+    },
+    {
+      "file": "BA_Documentation/02_Functional_Decomposition_Use_Case_Catalog/data/catalog.json",
+      "historicalSha256": "85868f2f097e0dfd6882a83e7bee86360ac9e7c4930c28d7726bda9018b47b9b",
+      "currentSha256": "6c5f3baf1c6bbfd192b73d2e38f68eb72d29502d52d80a10b0f4e177d9b6ed77",
+      "classification": "tai-lieu-dinh-chinh-co-chu-dich",
+      "reason": "DC-01 sửa cách ghi nhận tiền cọc; DC-08 sửa đường dẫn lịch sử nếu thuộc truy vết."
+    },
+    {
+      "file": "BA_Documentation/02_Functional_Decomposition_Use_Case_Catalog/data/traceability.json",
+      "historicalSha256": "e977fa3042beceae1f283b7c8255b21dc29110942f3db939d474eddfe9c44158",
+      "currentSha256": "ce8a3bf2c4347cd3dc54ebe5dc833a72e3313b281a0d76e61c64295af77e543f",
+      "classification": "tai-lieu-dinh-chinh-co-chu-dich",
+      "reason": "DC-01 sửa cách ghi nhận tiền cọc; DC-08 sửa đường dẫn lịch sử nếu thuộc truy vết."
+    },
+    {
+      "file": "BA_Documentation/05_Use_Case_Diagrams/.DS_Store",
+      "historicalSha256": "6b0a541cf5b0e85a3867704cc1ce4f23b0e8c8eaee074227e1911ef5717a2e83",
+      "currentSha256": "c5423b0fed07573f794ed9e4e5110baa5a628dfb6d9a081c5fe65c0e3c0c7075",
+      "classification": "metadata-macOS-da-khac-truoc-doi-chieu",
+      "reason": "Metadata không dùng làm bằng chứng nghiệp vụ; khác trước lượt kiểm tra."
+    },
+    {
+      "file": "BA_Documentation/05_Use_Case_Diagrams/Validation_Result.json",
+      "historicalSha256": "773d44d27026a4ae6cd9b33abfcef2024b112068ccc875228bec1ed1a6999b97",
+      "currentSha256": "0d9fd39c3db7ed7ea4b5503b010703286715d07823caf987bc3c5b28ac06cbef",
+      "classification": "tai-lieu-dinh-chinh-co-chu-dich",
+      "reason": "Chạy lại kiểm tra tính nhất quán/truy vết."
+    },
+    {
+      "file": "BA_Documentation/05_Use_Case_Diagrams/data/diagram-manifest.json",
+      "historicalSha256": "562952e2fb55fc3c0c63c19ca4c26e326f7f498a9dae11dc0da57739ca68eb07",
+      "currentSha256": "898c6d38afde3849ff658ade323595bea4d5951a363779c20aa065d1c853dbbc",
+      "classification": "tai-lieu-dinh-chinh-co-chu-dich",
+      "reason": "Cập nhật hash Catalog và truy vết sau đính chính, giữ auditAmendments và bản gốc."
+    }
+  ],
+  "additionalAmendedDocuments": [
+    {
+      "file": "BA_Documentation/README.md",
+      "currentSha256": "0ce175fdc65e9d7457c88bc5ffd6559d39547a96383d725461d4588f885d4a28",
+      "beforeSha256": null,
+      "reason": "Đính chính nội dung hoặc ghi kết quả kiểm tra mới; không có hash trước sửa độc lập cho riêng tệp này, không tự bịa giá trị trước."
+    },
+    {
+      "file": "BA_Documentation/06_Detailed_Use_Cases/data/behavioral-analysis.json",
+      "currentSha256": "5fcadb5f36b1e745623c8cb94d32d90f52ae6ac0130d30aa5dff365b50b6d4d1",
+      "beforeSha256": null,
+      "reason": "Đính chính nội dung hoặc ghi kết quả kiểm tra mới; không có hash trước sửa độc lập cho riêng tệp này, không tự bịa giá trị trước."
+    },
+    {
+      "file": "BA_Documentation/06_Detailed_Use_Cases/Markdown_Parse_Result.json",
+      "currentSha256": "3f26d08815d14a892306ea52bd4b0f20f9ec038577432ca824b38e636746ca06",
+      "beforeSha256": null,
+      "reason": "Đính chính nội dung hoặc ghi kết quả kiểm tra mới; không có hash trước sửa độc lập cho riêng tệp này, không tự bịa giá trị trước."
+    },
+    {
+      "file": "BA_Documentation/06_Detailed_Use_Cases/G04_PROPERTY/UC-OPT-07.3.md",
+      "currentSha256": "4dbfd4fe239bab047194e677d776c46824c4a916a03c59d8efb8f02b7bd1abcf",
+      "beforeSha256": null,
+      "reason": "Đính chính nội dung hoặc ghi kết quả kiểm tra mới; không có hash trước sửa độc lập cho riêng tệp này, không tự bịa giá trị trước."
+    },
+    {
+      "file": "BA_Documentation/06_Detailed_Use_Cases/G06_TENANCY/UC-TNT-05.md",
+      "currentSha256": "6fcf35933acb0598dace8545590792c00ac2023aada6f8d6cce7835b46278865",
+      "beforeSha256": null,
+      "reason": "Đính chính nội dung hoặc ghi kết quả kiểm tra mới; không có hash trước sửa độc lập cho riêng tệp này, không tự bịa giá trị trước."
+    },
+    {
+      "file": "BA_Documentation/06_Detailed_Use_Cases/G06_TENANCY/UC-TNT-12.1.md",
+      "currentSha256": "284d42924ee1fa2c6bd397d1361da93528195d089451a5effab99e8075c23793",
+      "beforeSha256": null,
+      "reason": "Đính chính nội dung hoặc ghi kết quả kiểm tra mới; không có hash trước sửa độc lập cho riêng tệp này, không tự bịa giá trị trước."
+    },
+    {
+      "file": "BA_Documentation/06_Detailed_Use_Cases/G15_VERIFICATION_PLANS/UC-ADM-18.1.md",
+      "currentSha256": "3d93f6ed2a55931e4414802dc93268f65b141cb62c04307082c187f1300f7351",
+      "beforeSha256": null,
+      "reason": "Đính chính nội dung hoặc ghi kết quả kiểm tra mới; không có hash trước sửa độc lập cho riêng tệp này, không tự bịa giá trị trước."
+    },
+    {
+      "file": "BA_Documentation/07_Report_Completion/README.md",
+      "currentSha256": "3d1adc9e946ae9bc691c5421fd86b6a14f7757938c5e8e8f83dfe7921fe8b9a5",
+      "beforeSha256": null,
+      "reason": "Đính chính nội dung hoặc ghi kết quả kiểm tra mới; không có hash trước sửa độc lập cho riêng tệp này, không tự bịa giá trị trước."
+    },
+    {
+      "file": "BA_Documentation/07_Report_Completion/tools/business_overrides.py",
+      "currentSha256": "4345460c12ceae0e270d8cb35ba3f9640e8c2d58d2dc536e3e79198cf59f6218",
+      "beforeSha256": null,
+      "reason": "Đính chính nội dung hoặc ghi kết quả kiểm tra mới; không có hash trước sửa độc lập cho riêng tệp này, không tự bịa giá trị trước."
+    },
+    {
+      "file": "BA_Documentation/07_Report_Completion/tools/prepare_content.py",
+      "currentSha256": "43edc01971ccbeef7d64f7f63130baf4d098f57ece2fb2b0d0ee36008e7908bc",
+      "beforeSha256": null,
+      "reason": "Đính chính nội dung hoặc ghi kết quả kiểm tra mới; không có hash trước sửa độc lập cho riêng tệp này, không tự bịa giá trị trước."
+    },
+    {
+      "file": "BA_Documentation/07_Report_Completion/data/business-report-content.json",
+      "currentSha256": "172e5f2bdfc2d8f13d7394e06e5c595f77a2e7c5df787436c0056f27852624df",
+      "beforeSha256": null,
+      "reason": "Đính chính nội dung hoặc ghi kết quả kiểm tra mới; không có hash trước sửa độc lập cho riêng tệp này, không tự bịa giá trị trước."
+    },
+    {
+      "file": "BA_Documentation/07_Report_Completion/data/layout-validation.json",
+      "currentSha256": "2b5b784bcbe9fccce946067fc7f179de523093123d994eb19b9294f33911752b",
+      "beforeSha256": null,
+      "reason": "Đính chính nội dung hoặc ghi kết quả kiểm tra mới; không có hash trước sửa độc lập cho riêng tệp này, không tự bịa giá trị trước."
+    }
+  ],
+  "archivedBaselines": [
+    "data/baselines/business-report-content-before-audit.json",
+    "data/baselines/catalog-before-audit.json",
+    "data/baselines/diagram-manifest-before-audit.json",
+    "data/baselines/protected-hashes-stage4-original.json"
+  ],
+  "affectedUseCases": [
+    "UC-ADM-18.1",
+    "UC-OPT-07.3",
+    "UC-SYS-05.1",
+    "UC-TNT-05",
+    "UC-TNT-12.1"
+  ],
+  "changedWordFields": 23,
+  "word": {
+    "source": "/Users/hoang/Desktop/ĐỒ ÁN/Bao_cao_Quan_ly_Nha_tro_V4_2026-10-29_BA.docx",
+    "sourceSha256": "16f8356d954a8b551da4fb196146d4a4065c2aa8b277dc7a094a7e8a64f95dce",
+    "output": "/Users/hoang/Desktop/ĐỒ ÁN/Bao_cao_Quan_ly_Nha_tro_V5_2026-10-30_Doi_chieu_Code.docx",
+    "outputSha256": "7512cd6a57b333a6fff4b60ed82a6c405e0dff9ebcaee2882427817d36f39e06"
+  },
+  "unchangedSemantics": {
+    "ucIds": true,
+    "actorAssignments": true,
+    "diagramAssociations": true
+  },
+  "limits": "Không tái lập mốc source; không thay trạng thái kiểm tra tĩnh thành nghiệm thu. Chỉ 43 UC đọc sâu các quy tắc ưu tiên."
+}

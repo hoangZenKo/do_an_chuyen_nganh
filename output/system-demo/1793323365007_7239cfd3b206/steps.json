@@ -1,0 +1,86 @@
+[
+  {
+    "time": "2026-10-30T01:23:28.010Z",
+    "text": "login"
+  },
+  {
+    "time": "2026-10-30T01:23:32.020Z",
+    "text": "ĐỔI VAI: TENANT"
+  },
+  {
+    "time": "2026-10-30T01:23:32.046Z",
+    "text": "Khach → /auth/login"
+  },
+  {
+    "time": "2026-10-30T01:23:32.764Z",
+    "text": "Nhập: Email address"
+  },
+  {
+    "time": "2026-10-30T01:23:33.554Z",
+    "text": "Nhập: Password"
+  },
+  {
+    "time": "2026-10-30T01:23:34.314Z",
+    "text": "Bấm: Log In"
+  },
+  {
+    "time": "2026-10-30T01:23:35.089Z",
+    "text": "ĐỔI VAI: LANDLORD"
+  },
+  {
+    "time": "2026-10-30T01:23:35.143Z",
+    "text": "Khach → /auth/login"
+  },
+  {
+    "time": "2026-10-30T01:23:35.906Z",
+    "text": "Nhập: Email address"
+  },
+  {
+    "time": "2026-10-30T01:23:36.656Z",
+    "text": "Nhập: Password"
+  },
+  {
+    "time": "2026-10-30T01:23:37.401Z",
+    "text": "Bấm: Log In"
+  },
+  {
+    "time": "2026-10-30T01:23:38.157Z",
+    "text": "ĐỔI VAI: STAFF"
+  },
+  {
+    "time": "2026-10-30T01:23:38.218Z",
+    "text": "Khach → /auth/login"
+  },
+  {
+    "time": "2026-10-30T01:23:38.938Z",
+    "text": "Nhập: Email address"
+  },
+  {
+    "time": "2026-10-30T01:23:39.676Z",
+    "text": "Nhập: Password"
+  },
+  {
+    "time": "2026-10-30T01:23:40.429Z",
+    "text": "Bấm: Log In"
+  },
+  {
+    "time": "2026-10-30T01:23:41.190Z",
+    "text": "ĐỔI VAI: ADMIN"
+  },
+  {
+    "time": "2026-10-30T01:23:41.228Z",
+    "text": "Khach → /auth/login"
+  },
+  {
+    "time": "2026-10-30T01:23:42.007Z",
+    "text": "Nhập: Email address"
+  },
+  {
+    "time": "2026-10-30T01:23:42.744Z",
+    "text": "Nhập: Password"
+  },
+  {
+    "time": "2026-10-30T01:23:43.482Z",
+    "text": "Bấm: Log In"
+  }
+]

@@ -1,0 +1,21 @@
+
+> rental-room-api@0.1.0 test:e2e
+> NODE_ENV=test jest --config ./test/jest-e2e.json --runInBand --runTestsByPath test/e2e/staff-lifecycle.e2e-spec.ts --runInBand
+
+PASS test/e2e/staff-lifecycle.e2e-spec.ts
+  Staff property scope and tenant lifecycle (disposable database)
+    ✓ isolates collections and direct IDs across property, room, tenant, invoice, maintenance, reports and dashboard (414 ms)
+    ✓ requires an explicit authorized property when staff browse tariff history (231 ms)
+    ✓ requires staff to propose tariffs rather than activating legacy room fees directly (210 ms)
+    ✓ revokes scopes on existing tokens, records scope audit atomically and cannot self-escalate (233 ms)
+    ✓ does not expose shared tenant financial history or receipts outside the assigned scope (220 ms)
+    ✓ creates and reviews tenant requests without silently modifying leases or settlement balances (278 ms)
+    ✓ validates target rooms, supports cancellation and scopes lifecycle review to the staff property (221 ms)
+    ✓ enforces co-occupant room capacity under concurrency and never returns identity numbers (251 ms)
+    ✓ checks tenant channel opt-out both before enqueue and again immediately before delivery (291 ms)
+
+Test Suites: 1 passed, 1 total
+Tests:       9 passed, 9 total
+Snapshots:   0 total
+Time:        4.017 s
+Ran all test suites within paths "test/e2e/staff-lifecycle.e2e-spec.ts".

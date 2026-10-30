@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1753" viewBox="0 0 1920 1753">
+<rect width="100%" height="100%" fill="white"/>
+<rect x="460" y="40" width="1000" height="1555" fill="white" stroke="black" stroke-width="2.5"/>
+<text x="960" y="99" font-family="Arial, sans-serif" font-size="31" font-weight="bold" fill="black" text-anchor="middle" dominant-baseline="central">Hệ thống quản lý nhà trọ</text>
+<g class="association" data-actor="A02" data-uc="UC-DIS-05">
+<polyline points="240.00,702.00 595.00,235.00" fill="none" stroke="black" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"/>
+</g>
+<g class="association" data-actor="A02" data-uc="UC-DIS-06.2">
+<polyline points="240.00,702.00 595.00,440.00" fill="none" stroke="black" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"/>
+</g>
+<g class="association" data-actor="A02" data-uc="UC-DIS-08">
+<polyline points="240.00,702.00 595.00,645.00" fill="none" stroke="black" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"/>
+</g>
+<g class="association" data-actor="A04" data-uc="UC-DIS-08">
+<polyline points="1680.00,1030.00 1325.00,645.00" fill="none" stroke="black" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"/>
+</g>
+<g class="association" data-actor="A04" data-uc="UC-DIS-09">
+<polyline points="1680.00,1030.00 1325.00,850.00" fill="none" stroke="black" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"/>
+</g>
+<g class="association" data-actor="A02" data-uc="UC-DIS-10">
+<polyline points="240.00,702.00 595.00,1055.00" fill="none" stroke="black" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"/>
+</g>
+<g class="association" data-actor="A02" data-uc="UC-TNT-12.2">
+<polyline points="240.00,702.00 595.00,1260.00" fill="none" stroke="black" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"/>
+</g>
+<g class="association" data-actor="A04" data-uc="UC-TNT-12.2">
+<polyline points="1680.00,1030.00 1325.00,1260.00" fill="none" stroke="black" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"/>
+</g>
+<g class="association" data-actor="A04" data-uc="UC-TNT-12.3">
+<polyline points="1680.00,1030.00 1325.00,1465.00" fill="none" stroke="black" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"/>
+</g>
+<rect x="1398.3" y="729.1" width="38.0" height="32.0" fill="white" stroke="none" stroke-width="0"/>
+<text x="1417.3" y="745.1" font-family="Arial, sans-serif" font-size="21" font-weight="bold" fill="black" text-anchor="middle" dominant-baseline="central">[1]</text>
+<rect x="1398.3" y="1184.2" width="38.0" height="32.0" fill="white" stroke="none" stroke-width="0"/>
+<text x="1417.3" y="1200.2" font-family="Arial, sans-serif" font-size="21" font-weight="bold" fill="black" text-anchor="middle" dominant-baseline="central">[2]</text>
+<ellipse cx="960.0" cy="235.0" rx="365.0" ry="78.0" fill="white" stroke="black" stroke-width="2.5"/>
+<text x="960" y="220.0" font-family="Arial, sans-serif" font-size="27" font-weight="bold" fill="black" text-anchor="middle" dominant-baseline="central">UC-DIS-05</text>
+<text x="960" y="250.0" font-family="Arial, sans-serif" font-size="25" font-weight="normal" fill="black" text-anchor="middle" dominant-baseline="central">Quản lý và gửi duyệt tin cho thuê</text>
+<ellipse cx="960.0" cy="440.0" rx="365.0" ry="78.0" fill="white" stroke="black" stroke-width="2.5"/>
+<text x="960" y="425.0" font-family="Arial, sans-serif" font-size="27" font-weight="bold" fill="black" text-anchor="middle" dominant-baseline="central">UC-DIS-06.2</text>
+<text x="960" y="455.0" font-family="Arial, sans-serif" font-size="25" font-weight="normal" fill="black" text-anchor="middle" dominant-baseline="central">Ẩn tin cho thuê của mình</text>
+<ellipse cx="960.0" cy="645.0" rx="365.0" ry="78.0" fill="white" stroke="black" stroke-width="2.5"/>
+<text x="960" y="630.0" font-family="Arial, sans-serif" font-size="27" font-weight="bold" fill="black" text-anchor="middle" dominant-baseline="central">UC-DIS-08</text>
+<text x="960" y="660.0" font-family="Arial, sans-serif" font-size="25" font-weight="normal" fill="black" text-anchor="middle" dominant-baseline="central">Quản lý khung giờ xem phòng</text>
+<ellipse cx="960.0" cy="850.0" rx="365.0" ry="78.0" fill="white" stroke="black" stroke-width="2.5"/>
+<text x="960" y="835.0" font-family="Arial, sans-serif" font-size="27" font-weight="bold" fill="black" text-anchor="middle" dominant-baseline="central">UC-DIS-09</text>
+<text x="960" y="865.0" font-family="Arial, sans-serif" font-size="25" font-weight="normal" fill="black" text-anchor="middle" dominant-baseline="central">Đặt và quản lý lịch xem của mình</text>
+<ellipse cx="960.0" cy="1055.0" rx="365.0" ry="78.0" fill="white" stroke="black" stroke-width="2.5"/>
+<text x="960" y="1040.0" font-family="Arial, sans-serif" font-size="27" font-weight="bold" fill="black" text-anchor="middle" dominant-baseline="central">UC-DIS-10</text>
+<text x="960" y="1070.0" font-family="Arial, sans-serif" font-size="25" font-weight="normal" fill="black" text-anchor="middle" dominant-baseline="central">Tiếp nhận và hoàn tất lịch xem</text>
+<ellipse cx="960.0" cy="1260.0" rx="365.0" ry="78.0" fill="white" stroke="black" stroke-width="2.5"/>
+<text x="960" y="1245.0" font-family="Arial, sans-serif" font-size="27" font-weight="bold" fill="black" text-anchor="middle" dominant-baseline="central">UC-TNT-12.2</text>
+<text x="960" y="1275.0" font-family="Arial, sans-serif" font-size="25" font-weight="normal" fill="black" text-anchor="middle" dominant-baseline="central">Lập biên bản bàn giao nhận phòng</text>
+<ellipse cx="960.0" cy="1465.0" rx="365.0" ry="78.0" fill="white" stroke="black" stroke-width="2.5"/>
+<text x="960" y="1450.0" font-family="Arial, sans-serif" font-size="27" font-weight="bold" fill="black" text-anchor="middle" dominant-baseline="central">UC-TNT-12.3</text>
+<text x="960" y="1480.0" font-family="Arial, sans-serif" font-size="25" font-weight="normal" fill="black" text-anchor="middle" dominant-baseline="central">Xác nhận biên bản bàn giao nhận phòng</text>
+<ellipse cx="170.0" cy="652.0" rx="23.0" ry="23.0" fill="white" stroke="black" stroke-width="3"/>
+<polyline points="170.00,675.00 170.00,785.00" fill="none" stroke="black" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+<polyline points="100.00,702.00 240.00,702.00" fill="none" stroke="black" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+<polyline points="170.00,785.00 121.00,842.00" fill="none" stroke="black" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+<polyline points="170.00,785.00 219.00,842.00" fill="none" stroke="black" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="170" y="882.0" font-family="Arial, sans-serif" font-size="26" font-weight="bold" fill="black" text-anchor="middle" dominant-baseline="central">A02</text>
+<text x="170" y="920.0" font-family="Arial, sans-serif" font-size="25" font-weight="normal" fill="black" text-anchor="middle" dominant-baseline="central">Chủ trọ</text>
+<ellipse cx="1750.0" cy="980.0" rx="23.0" ry="23.0" fill="white" stroke="black" stroke-width="3"/>
+<polyline points="1750.00,1003.00 1750.00,1113.00" fill="none" stroke="black" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+<polyline points="1680.00,1030.00 1820.00,1030.00" fill="none" stroke="black" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+<polyline points="1750.00,1113.00 1701.00,1170.00" fill="none" stroke="black" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+<polyline points="1750.00,1113.00 1799.00,1170.00" fill="none" stroke="black" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="1750" y="1210.0" font-family="Arial, sans-serif" font-size="26" font-weight="bold" fill="black" text-anchor="middle" dominant-baseline="central">A04</text>
+<text x="1750" y="1248.0" font-family="Arial, sans-serif" font-size="25" font-weight="normal" fill="black" text-anchor="middle" dominant-baseline="central">Người tìm phòng</text>
+<text x="1750" y="1279.0" font-family="Arial, sans-serif" font-size="25" font-weight="normal" fill="black" text-anchor="middle" dominant-baseline="central">hoặc người thuê</text>
+<text x="80" y="1647" font-family="Arial, sans-serif" font-size="23" font-weight="normal" fill="black" text-anchor="start" dominant-baseline="central">[1] A04 - UC-DIS-08: chỉ xem khung giờ.</text>
+<text x="80" y="1681" font-family="Arial, sans-serif" font-size="23" font-weight="normal" fill="black" text-anchor="start" dominant-baseline="central">[2] A04 - UC-TNT-12.2: chỉ xem biên bản.</text>
+</svg>

@@ -1,0 +1,17 @@
+@startwbs
+title Phân rã chức năng AS-IS — không phải sơ đồ Use Case
+* Hệ thống quản lý và tìm thuê nhà trọ
+** G11 — Báo cáo và giám sát vận hành
+*** G11.1 Theo dõi kinh doanh
+**** UC-OPT-01 Xem dashboard và bản đồ phòng
+**** UC-BIL-20 Phân tích và xuất báo cáo vận hành
+**** UC-ADM-01 Xem tổng quan nền tảng
+*** G11.2 Nhật ký kiểm tra
+**** UC-OPS-09 Tra cứu nhật ký vận hành
+**** UC-ADM-14 Tra cứu và xuất nhật ký quản trị
+*** G11.3 Báo cáo định kỳ nền tảng
+**** UC-ADM-16 Quản lý lịch và tải báo cáo Admin
+*** G11.4 Sự cố và chất lượng giao nhận
+**** UC-SUP-05.1 Giám sát và xử lý sự cố vận hành
+**** UC-SUP-05.2 Theo dõi hàng đợi giao nhận [Một phần]
+@endwbs

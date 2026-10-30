@@ -1,0 +1,3329 @@
+{
+  "status": "PASSED",
+  "executedAt": "2026-10-29T17:18:34.111Z",
+  "checks": 577,
+  "failures": [],
+  "diagrams": 28,
+  "modulePages": 21,
+  "actorPages": 6,
+  "useCases": 162,
+  "groups": 16,
+  "changedSources": [],
+  "coverageMissing": [],
+  "detailedDuplicates": [],
+  "results": [
+    {
+      "name": "catalog_snapshot_unchanged",
+      "passed": true,
+      "detail": "6c5f3baf1c6bbfd192b73d2e38f68eb72d29502d52d80a10b0f4e177d9b6ed77"
+    },
+    {
+      "name": "trace_snapshot_unchanged",
+      "passed": true,
+      "detail": "ce8a3bf2c4347cd3dc54ebe5dc833a72e3313b281a0d76e61c64295af77e543f"
+    },
+    {
+      "name": "commit_unchanged",
+      "passed": true,
+      "detail": "c565c29ee5742d38dfaea37aa8fa047f4b6793c0"
+    },
+    {
+      "name": "846_source_hashes_unchanged",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "162_detailed_uc_once",
+      "passed": true,
+      "detail": 162
+    },
+    {
+      "name": "16_groups_complete",
+      "passed": true,
+      "detail": [
+        [
+          "G01",
+          11
+        ],
+        [
+          "G02",
+          6
+        ],
+        [
+          "G03",
+          7
+        ],
+        [
+          "G04",
+          14
+        ],
+        [
+          "G05",
+          4
+        ],
+        [
+          "G06",
+          17
+        ],
+        [
+          "G07",
+          7
+        ],
+        [
+          "G08",
+          28
+        ],
+        [
+          "G09",
+          5
+        ],
+        [
+          "G10",
+          9
+        ],
+        [
+          "G11",
+          8
+        ],
+        [
+          "G12",
+          12
+        ],
+        [
+          "G13",
+          11
+        ],
+        [
+          "G14",
+          8
+        ],
+        [
+          "G15",
+          6
+        ],
+        [
+          "G16",
+          9
+        ]
+      ]
+    },
+    {
+      "name": "module_group_preserved",
+      "passed": true,
+      "detail": 21
+    },
+    {
+      "name": "21_module_pages",
+      "passed": true,
+      "detail": 21
+    },
+    {
+      "name": "overall_real_12_ucs_all_five_actors",
+      "passed": true,
+      "detail": [
+        "A01",
+        "A04",
+        "A02",
+        "A03",
+        "A05"
+      ]
+    },
+    {
+      "name": "no_unknown_actor",
+      "passed": true,
+      "detail": [
+        "A01",
+        "A02",
+        "A03",
+        "A04",
+        "A05",
+        "E01",
+        "E02",
+        "E03",
+        "E04",
+        "E05"
+      ]
+    },
+    {
+      "name": "no_uc_relationships_in_manifest",
+      "passed": true,
+      "detail": "Include/extend/generalization intentionally absent; documented semantic decision."
+    },
+    {
+      "name": "staff_all_57_primary_once",
+      "passed": true,
+      "detail": 57
+    },
+    {
+      "name": "staff_all_three_readonly_once",
+      "passed": true,
+      "detail": "Only 3 limited variants in A03 views"
+    },
+    {
+      "name": "Overall_Use_Case:standalone_boundary",
+      "passed": true,
+      "detail": "Overall_Use_Case.puml"
+    },
+    {
+      "name": "Overall_Use_Case:actors_outside_ellipses_inside",
+      "passed": true,
+      "detail": "Overall_Use_Case.puml"
+    },
+    {
+      "name": "Overall_Use_Case:exact_ids_names",
+      "passed": true,
+      "detail": 12
+    },
+    {
+      "name": "Overall_Use_Case:actor_declarations",
+      "passed": true,
+      "detail": [
+        "A01",
+        "A02",
+        "A03",
+        "A04",
+        "A05"
+      ]
+    },
+    {
+      "name": "Overall_Use_Case:associations_match_source",
+      "passed": true,
+      "detail": 15
+    },
+    {
+      "name": "Overall_Use_Case:no_invented_relationships",
+      "passed": true,
+      "detail": "No semantic or hidden layout edges"
+    },
+    {
+      "name": "Overall_Use_Case:primary_exact_catalog",
+      "passed": true,
+      "detail": "overall"
+    },
+    {
+      "name": "Overall_Use_Case:limited_approved_only",
+      "passed": true,
+      "detail": "No V promoted to P"
+    },
+    {
+      "name": "Overall_Use_Case:supporting_exact_catalog",
+      "passed": true,
+      "detail": "Provider links conditional"
+    },
+    {
+      "name": "Overall_Use_Case:no_blocked_staff",
+      "passed": true,
+      "detail": "Interceptor restrictions preserved"
+    },
+    {
+      "name": "Overall_Use_Case:every_uc_has_primary",
+      "passed": true,
+      "detail": 12
+    },
+    {
+      "name": "Overall_Use_Case:all_primary_edges_present",
+      "passed": true,
+      "detail": 12
+    },
+    {
+      "name": "Overall_Use_Case:status_labels_match",
+      "passed": true,
+      "detail": "Static vs partial/demo/mock"
+    },
+    {
+      "name": "Overall_Use_Case:evidence_files_lines_exist",
+      "passed": true,
+      "detail": "Evidence line bounds only, not an automatic semantic proof"
+    },
+    {
+      "name": "UC_G01_01_SYS_Public:standalone_boundary",
+      "passed": true,
+      "detail": "UC_G01_01_SYS_Public.puml"
+    },
+    {
+      "name": "UC_G01_01_SYS_Public:actors_outside_ellipses_inside",
+      "passed": true,
+      "detail": "UC_G01_01_SYS_Public.puml"
+    },
+    {
+      "name": "UC_G01_01_SYS_Public:exact_ids_names",
+      "passed": true,
+      "detail": 7
+    },
+    {
+      "name": "UC_G01_01_SYS_Public:actor_declarations",
+      "passed": true,
+      "detail": [
+        "A01",
+        "E01"
+      ]
+    },
+    {
+      "name": "UC_G01_01_SYS_Public:associations_match_source",
+      "passed": true,
+      "detail": 8
+    },
+    {
+      "name": "UC_G01_01_SYS_Public:no_invented_relationships",
+      "passed": true,
+      "detail": "No semantic or hidden layout edges"
+    },
+    {
+      "name": "UC_G01_01_SYS_Public:primary_exact_catalog",
+      "passed": true,
+      "detail": "module"
+    },
+    {
+      "name": "UC_G01_01_SYS_Public:limited_approved_only",
+      "passed": true,
+      "detail": "No V promoted to P"
+    },
+    {
+      "name": "UC_G01_01_SYS_Public:supporting_exact_catalog",
+      "passed": true,
+      "detail": "Provider links conditional"
+    },
+    {
+      "name": "UC_G01_01_SYS_Public:no_blocked_staff",
+      "passed": true,
+      "detail": "Interceptor restrictions preserved"
+    },
+    {
+      "name": "UC_G01_01_SYS_Public:every_uc_has_primary",
+      "passed": true,
+      "detail": 7
+    },
+    {
+      "name": "UC_G01_01_SYS_Public:all_primary_edges_present",
+      "passed": true,
+      "detail": 7
+    },
+    {
+      "name": "UC_G01_01_SYS_Public:status_labels_match",
+      "passed": true,
+      "detail": "Static vs partial/demo/mock"
+    },
+    {
+      "name": "UC_G01_01_SYS_Public:evidence_files_lines_exist",
+      "passed": true,
+      "detail": "Evidence line bounds only, not an automatic semantic proof"
+    },
+    {
+      "name": "UC_G01_02_SYS_Sessions:standalone_boundary",
+      "passed": true,
+      "detail": "UC_G01_02_SYS_Sessions.puml"
+    },
+    {
+      "name": "UC_G01_02_SYS_Sessions:actors_outside_ellipses_inside",
+      "passed": true,
+      "detail": "UC_G01_02_SYS_Sessions.puml"
+    },
+    {
+      "name": "UC_G01_02_SYS_Sessions:exact_ids_names",
+      "passed": true,
+      "detail": 4
+    },
+    {
+      "name": "UC_G01_02_SYS_Sessions:actor_declarations",
+      "passed": true,
+      "detail": [
+        "A02",
+        "A03",
+        "A04",
+        "A05"
+      ]
+    },
+    {
+      "name": "UC_G01_02_SYS_Sessions:associations_match_source",
+      "passed": true,
+      "detail": 13
+    },
+    {
+      "name": "UC_G01_02_SYS_Sessions:no_invented_relationships",
+      "passed": true,
+      "detail": "No semantic or hidden layout edges"
+    },
+    {
+      "name": "UC_G01_02_SYS_Sessions:primary_exact_catalog",
+      "passed": true,
+      "detail": "module"
+    },
+    {
+      "name": "UC_G01_02_SYS_Sessions:limited_approved_only",
+      "passed": true,
+      "detail": "No V promoted to P"
+    },
+    {
+      "name": "UC_G01_02_SYS_Sessions:supporting_exact_catalog",
+      "passed": true,
+      "detail": "Provider links conditional"
+    },
+    {
+      "name": "UC_G01_02_SYS_Sessions:no_blocked_staff",
+      "passed": true,
+      "detail": "Interceptor restrictions preserved"
+    },
+    {
+      "name": "UC_G01_02_SYS_Sessions:every_uc_has_primary",
+      "passed": true,
+      "detail": 4
+    },
+    {
+      "name": "UC_G01_02_SYS_Sessions:all_primary_edges_present",
+      "passed": true,
+      "detail": 4
+    },
+    {
+      "name": "UC_G01_02_SYS_Sessions:status_labels_match",
+      "passed": true,
+      "detail": "Static vs partial/demo/mock"
+    },
+    {
+      "name": "UC_G01_02_SYS_Sessions:evidence_files_lines_exist",
+      "passed": true,
+      "detail": "Evidence line bounds only, not an automatic semantic proof"
+    },
+    {
+      "name": "UC_G02:standalone_boundary",
+      "passed": true,
+      "detail": "UC_G02.puml"
+    },
+    {
+      "name": "UC_G02:actors_outside_ellipses_inside",
+      "passed": true,
+      "detail": "UC_G02.puml"
+    },
+    {
+      "name": "UC_G02:exact_ids_names",
+      "passed": true,
+      "detail": 6
+    },
+    {
+      "name": "UC_G02:actor_declarations",
+      "passed": true,
+      "detail": [
+        "A01",
+        "A04"
+      ]
+    },
+    {
+      "name": "UC_G02:associations_match_source",
+      "passed": true,
+      "detail": 10
+    },
+    {
+      "name": "UC_G02:no_invented_relationships",
+      "passed": true,
+      "detail": "No semantic or hidden layout edges"
+    },
+    {
+      "name": "UC_G02:primary_exact_catalog",
+      "passed": true,
+      "detail": "module"
+    },
+    {
+      "name": "UC_G02:limited_approved_only",
+      "passed": true,
+      "detail": "No V promoted to P"
+    },
+    {
+      "name": "UC_G02:supporting_exact_catalog",
+      "passed": true,
+      "detail": "Provider links conditional"
+    },
+    {
+      "name": "UC_G02:no_blocked_staff",
+      "passed": true,
+      "detail": "Interceptor restrictions preserved"
+    },
+    {
+      "name": "UC_G02:every_uc_has_primary",
+      "passed": true,
+      "detail": 6
+    },
+    {
+      "name": "UC_G02:all_primary_edges_present",
+      "passed": true,
+      "detail": 6
+    },
+    {
+      "name": "UC_G02:status_labels_match",
+      "passed": true,
+      "detail": "Static vs partial/demo/mock"
+    },
+    {
+      "name": "UC_G02:evidence_files_lines_exist",
+      "passed": true,
+      "detail": "Evidence line bounds only, not an automatic semantic proof"
+    },
+    {
+      "name": "UC_G03:standalone_boundary",
+      "passed": true,
+      "detail": "UC_G03.puml"
+    },
+    {
+      "name": "UC_G03:actors_outside_ellipses_inside",
+      "passed": true,
+      "detail": "UC_G03.puml"
+    },
+    {
+      "name": "UC_G03:exact_ids_names",
+      "passed": true,
+      "detail": 7
+    },
+    {
+      "name": "UC_G03:actor_declarations",
+      "passed": true,
+      "detail": [
+        "A02",
+        "A04"
+      ]
+    },
+    {
+      "name": "UC_G03:associations_match_source",
+      "passed": true,
+      "detail": 9
+    },
+    {
+      "name": "UC_G03:no_invented_relationships",
+      "passed": true,
+      "detail": "No semantic or hidden layout edges"
+    },
+    {
+      "name": "UC_G03:primary_exact_catalog",
+      "passed": true,
+      "detail": "module"
+    },
+    {
+      "name": "UC_G03:limited_approved_only",
+      "passed": true,
+      "detail": "No V promoted to P"
+    },
+    {
+      "name": "UC_G03:supporting_exact_catalog",
+      "passed": true,
+      "detail": "Provider links conditional"
+    },
+    {
+      "name": "UC_G03:no_blocked_staff",
+      "passed": true,
+      "detail": "Interceptor restrictions preserved"
+    },
+    {
+      "name": "UC_G03:every_uc_has_primary",
+      "passed": true,
+      "detail": 7
+    },
+    {
+      "name": "UC_G03:all_primary_edges_present",
+      "passed": true,
+      "detail": 7
+    },
+    {
+      "name": "UC_G03:status_labels_match",
+      "passed": true,
+      "detail": "Static vs partial/demo/mock"
+    },
+    {
+      "name": "UC_G03:evidence_files_lines_exist",
+      "passed": true,
+      "detail": "Evidence line bounds only, not an automatic semantic proof"
+    },
+    {
+      "name": "UC_G04:standalone_boundary",
+      "passed": true,
+      "detail": "UC_G04.puml"
+    },
+    {
+      "name": "UC_G04:actors_outside_ellipses_inside",
+      "passed": true,
+      "detail": "UC_G04.puml"
+    },
+    {
+      "name": "UC_G04:exact_ids_names",
+      "passed": true,
+      "detail": 14
+    },
+    {
+      "name": "UC_G04:actor_declarations",
+      "passed": true,
+      "detail": [
+        "A02",
+        "A03"
+      ]
+    },
+    {
+      "name": "UC_G04:associations_match_source",
+      "passed": true,
+      "detail": 27
+    },
+    {
+      "name": "UC_G04:no_invented_relationships",
+      "passed": true,
+      "detail": "No semantic or hidden layout edges"
+    },
+    {
+      "name": "UC_G04:primary_exact_catalog",
+      "passed": true,
+      "detail": "module"
+    },
+    {
+      "name": "UC_G04:limited_approved_only",
+      "passed": true,
+      "detail": "No V promoted to P"
+    },
+    {
+      "name": "UC_G04:supporting_exact_catalog",
+      "passed": true,
+      "detail": "Provider links conditional"
+    },
+    {
+      "name": "UC_G04:no_blocked_staff",
+      "passed": true,
+      "detail": "Interceptor restrictions preserved"
+    },
+    {
+      "name": "UC_G04:every_uc_has_primary",
+      "passed": true,
+      "detail": 14
+    },
+    {
+      "name": "UC_G04:all_primary_edges_present",
+      "passed": true,
+      "detail": 14
+    },
+    {
+      "name": "UC_G04:status_labels_match",
+      "passed": true,
+      "detail": "Static vs partial/demo/mock"
+    },
+    {
+      "name": "UC_G04:evidence_files_lines_exist",
+      "passed": true,
+      "detail": "Evidence line bounds only, not an automatic semantic proof"
+    },
+    {
+      "name": "UC_G05:standalone_boundary",
+      "passed": true,
+      "detail": "UC_G05.puml"
+    },
+    {
+      "name": "UC_G05:actors_outside_ellipses_inside",
+      "passed": true,
+      "detail": "UC_G05.puml"
+    },
+    {
+      "name": "UC_G05:exact_ids_names",
+      "passed": true,
+      "detail": 4
+    },
+    {
+      "name": "UC_G05:actor_declarations",
+      "passed": true,
+      "detail": [
+        "A02",
+        "A03"
+      ]
+    },
+    {
+      "name": "UC_G05:associations_match_source",
+      "passed": true,
+      "detail": 6
+    },
+    {
+      "name": "UC_G05:no_invented_relationships",
+      "passed": true,
+      "detail": "No semantic or hidden layout edges"
+    },
+    {
+      "name": "UC_G05:primary_exact_catalog",
+      "passed": true,
+      "detail": "module"
+    },
+    {
+      "name": "UC_G05:limited_approved_only",
+      "passed": true,
+      "detail": "No V promoted to P"
+    },
+    {
+      "name": "UC_G05:supporting_exact_catalog",
+      "passed": true,
+      "detail": "Provider links conditional"
+    },
+    {
+      "name": "UC_G05:no_blocked_staff",
+      "passed": true,
+      "detail": "Interceptor restrictions preserved"
+    },
+    {
+      "name": "UC_G05:every_uc_has_primary",
+      "passed": true,
+      "detail": 4
+    },
+    {
+      "name": "UC_G05:all_primary_edges_present",
+      "passed": true,
+      "detail": 4
+    },
+    {
+      "name": "UC_G05:status_labels_match",
+      "passed": true,
+      "detail": "Static vs partial/demo/mock"
+    },
+    {
+      "name": "UC_G05:evidence_files_lines_exist",
+      "passed": true,
+      "detail": "Evidence line bounds only, not an automatic semantic proof"
+    },
+    {
+      "name": "UC_G06_01_Tenant_Records:standalone_boundary",
+      "passed": true,
+      "detail": "UC_G06_01_Tenant_Records.puml"
+    },
+    {
+      "name": "UC_G06_01_Tenant_Records:actors_outside_ellipses_inside",
+      "passed": true,
+      "detail": "UC_G06_01_Tenant_Records.puml"
+    },
+    {
+      "name": "UC_G06_01_Tenant_Records:exact_ids_names",
+      "passed": true,
+      "detail": 8
+    },
+    {
+      "name": "UC_G06_01_Tenant_Records:actor_declarations",
+      "passed": true,
+      "detail": [
+        "A02",
+        "A03",
+        "A04"
+      ]
+    },
+    {
+      "name": "UC_G06_01_Tenant_Records:associations_match_source",
+      "passed": true,
+      "detail": 14
+    },
+    {
+      "name": "UC_G06_01_Tenant_Records:no_invented_relationships",
+      "passed": true,
+      "detail": "No semantic or hidden layout edges"
+    },
+    {
+      "name": "UC_G06_01_Tenant_Records:primary_exact_catalog",
+      "passed": true,
+      "detail": "module"
+    },
+    {
+      "name": "UC_G06_01_Tenant_Records:limited_approved_only",
+      "passed": true,
+      "detail": "No V promoted to P"
+    },
+    {
+      "name": "UC_G06_01_Tenant_Records:supporting_exact_catalog",
+      "passed": true,
+      "detail": "Provider links conditional"
+    },
+    {
+      "name": "UC_G06_01_Tenant_Records:no_blocked_staff",
+      "passed": true,
+      "detail": "Interceptor restrictions preserved"
+    },
+    {
+      "name": "UC_G06_01_Tenant_Records:every_uc_has_primary",
+      "passed": true,
+      "detail": 8
+    },
+    {
+      "name": "UC_G06_01_Tenant_Records:all_primary_edges_present",
+      "passed": true,
+      "detail": 8
+    },
+    {
+      "name": "UC_G06_01_Tenant_Records:status_labels_match",
+      "passed": true,
+      "detail": "Static vs partial/demo/mock"
+    },
+    {
+      "name": "UC_G06_01_Tenant_Records:evidence_files_lines_exist",
+      "passed": true,
+      "detail": "Evidence line bounds only, not an automatic semantic proof"
+    },
+    {
+      "name": "UC_G06_02_Leases_Deposits:standalone_boundary",
+      "passed": true,
+      "detail": "UC_G06_02_Leases_Deposits.puml"
+    },
+    {
+      "name": "UC_G06_02_Leases_Deposits:actors_outside_ellipses_inside",
+      "passed": true,
+      "detail": "UC_G06_02_Leases_Deposits.puml"
+    },
+    {
+      "name": "UC_G06_02_Leases_Deposits:exact_ids_names",
+      "passed": true,
+      "detail": 9
+    },
+    {
+      "name": "UC_G06_02_Leases_Deposits:actor_declarations",
+      "passed": true,
+      "detail": [
+        "A02",
+        "A03",
+        "A04"
+      ]
+    },
+    {
+      "name": "UC_G06_02_Leases_Deposits:associations_match_source",
+      "passed": true,
+      "detail": 16
+    },
+    {
+      "name": "UC_G06_02_Leases_Deposits:no_invented_relationships",
+      "passed": true,
+      "detail": "No semantic or hidden layout edges"
+    },
+    {
+      "name": "UC_G06_02_Leases_Deposits:primary_exact_catalog",
+      "passed": true,
+      "detail": "module"
+    },
+    {
+      "name": "UC_G06_02_Leases_Deposits:limited_approved_only",
+      "passed": true,
+      "detail": "No V promoted to P"
+    },
+    {
+      "name": "UC_G06_02_Leases_Deposits:supporting_exact_catalog",
+      "passed": true,
+      "detail": "Provider links conditional"
+    },
+    {
+      "name": "UC_G06_02_Leases_Deposits:no_blocked_staff",
+      "passed": true,
+      "detail": "Interceptor restrictions preserved"
+    },
+    {
+      "name": "UC_G06_02_Leases_Deposits:every_uc_has_primary",
+      "passed": true,
+      "detail": 9
+    },
+    {
+      "name": "UC_G06_02_Leases_Deposits:all_primary_edges_present",
+      "passed": true,
+      "detail": 9
+    },
+    {
+      "name": "UC_G06_02_Leases_Deposits:status_labels_match",
+      "passed": true,
+      "detail": "Static vs partial/demo/mock"
+    },
+    {
+      "name": "UC_G06_02_Leases_Deposits:evidence_files_lines_exist",
+      "passed": true,
+      "detail": "Evidence line bounds only, not an automatic semantic proof"
+    },
+    {
+      "name": "UC_G07:standalone_boundary",
+      "passed": true,
+      "detail": "UC_G07.puml"
+    },
+    {
+      "name": "UC_G07:actors_outside_ellipses_inside",
+      "passed": true,
+      "detail": "UC_G07.puml"
+    },
+    {
+      "name": "UC_G07:exact_ids_names",
+      "passed": true,
+      "detail": 7
+    },
+    {
+      "name": "UC_G07:actor_declarations",
+      "passed": true,
+      "detail": [
+        "A02",
+        "A03",
+        "A04"
+      ]
+    },
+    {
+      "name": "UC_G07:associations_match_source",
+      "passed": true,
+      "detail": 9
+    },
+    {
+      "name": "UC_G07:no_invented_relationships",
+      "passed": true,
+      "detail": "No semantic or hidden layout edges"
+    },
+    {
+      "name": "UC_G07:primary_exact_catalog",
+      "passed": true,
+      "detail": "module"
+    },
+    {
+      "name": "UC_G07:limited_approved_only",
+      "passed": true,
+      "detail": "No V promoted to P"
+    },
+    {
+      "name": "UC_G07:supporting_exact_catalog",
+      "passed": true,
+      "detail": "Provider links conditional"
+    },
+    {
+      "name": "UC_G07:no_blocked_staff",
+      "passed": true,
+      "detail": "Interceptor restrictions preserved"
+    },
+    {
+      "name": "UC_G07:every_uc_has_primary",
+      "passed": true,
+      "detail": 7
+    },
+    {
+      "name": "UC_G07:all_primary_edges_present",
+      "passed": true,
+      "detail": 7
+    },
+    {
+      "name": "UC_G07:status_labels_match",
+      "passed": true,
+      "detail": "Static vs partial/demo/mock"
+    },
+    {
+      "name": "UC_G07:evidence_files_lines_exist",
+      "passed": true,
+      "detail": "Evidence line bounds only, not an automatic semantic proof"
+    },
+    {
+      "name": "UC_G08_01_Invoices:standalone_boundary",
+      "passed": true,
+      "detail": "UC_G08_01_Invoices.puml"
+    },
+    {
+      "name": "UC_G08_01_Invoices:actors_outside_ellipses_inside",
+      "passed": true,
+      "detail": "UC_G08_01_Invoices.puml"
+    },
+    {
+      "name": "UC_G08_01_Invoices:exact_ids_names",
+      "passed": true,
+      "detail": 11
+    },
+    {
+      "name": "UC_G08_01_Invoices:actor_declarations",
+      "passed": true,
+      "detail": [
+        "A02",
+        "A03",
+        "A04"
+      ]
+    },
+    {
+      "name": "UC_G08_01_Invoices:associations_match_source",
+      "passed": true,
+      "detail": 21
+    },
+    {
+      "name": "UC_G08_01_Invoices:no_invented_relationships",
+      "passed": true,
+      "detail": "No semantic or hidden layout edges"
+    },
+    {
+      "name": "UC_G08_01_Invoices:primary_exact_catalog",
+      "passed": true,
+      "detail": "module"
+    },
+    {
+      "name": "UC_G08_01_Invoices:limited_approved_only",
+      "passed": true,
+      "detail": "No V promoted to P"
+    },
+    {
+      "name": "UC_G08_01_Invoices:supporting_exact_catalog",
+      "passed": true,
+      "detail": "Provider links conditional"
+    },
+    {
+      "name": "UC_G08_01_Invoices:no_blocked_staff",
+      "passed": true,
+      "detail": "Interceptor restrictions preserved"
+    },
+    {
+      "name": "UC_G08_01_Invoices:every_uc_has_primary",
+      "passed": true,
+      "detail": 11
+    },
+    {
+      "name": "UC_G08_01_Invoices:all_primary_edges_present",
+      "passed": true,
+      "detail": 11
+    },
+    {
+      "name": "UC_G08_01_Invoices:status_labels_match",
+      "passed": true,
+      "detail": "Static vs partial/demo/mock"
+    },
+    {
+      "name": "UC_G08_01_Invoices:evidence_files_lines_exist",
+      "passed": true,
+      "detail": "Evidence line bounds only, not an automatic semantic proof"
+    },
+    {
+      "name": "UC_G08_02_Collections:standalone_boundary",
+      "passed": true,
+      "detail": "UC_G08_02_Collections.puml"
+    },
+    {
+      "name": "UC_G08_02_Collections:actors_outside_ellipses_inside",
+      "passed": true,
+      "detail": "UC_G08_02_Collections.puml"
+    },
+    {
+      "name": "UC_G08_02_Collections:exact_ids_names",
+      "passed": true,
+      "detail": 10
+    },
+    {
+      "name": "UC_G08_02_Collections:actor_declarations",
+      "passed": true,
+      "detail": [
+        "A01",
+        "A02",
+        "A03",
+        "A04"
+      ]
+    },
+    {
+      "name": "UC_G08_02_Collections:associations_match_source",
+      "passed": true,
+      "detail": 18
+    },
+    {
+      "name": "UC_G08_02_Collections:no_invented_relationships",
+      "passed": true,
+      "detail": "No semantic or hidden layout edges"
+    },
+    {
+      "name": "UC_G08_02_Collections:primary_exact_catalog",
+      "passed": true,
+      "detail": "module"
+    },
+    {
+      "name": "UC_G08_02_Collections:limited_approved_only",
+      "passed": true,
+      "detail": "No V promoted to P"
+    },
+    {
+      "name": "UC_G08_02_Collections:supporting_exact_catalog",
+      "passed": true,
+      "detail": "Provider links conditional"
+    },
+    {
+      "name": "UC_G08_02_Collections:no_blocked_staff",
+      "passed": true,
+      "detail": "Interceptor restrictions preserved"
+    },
+    {
+      "name": "UC_G08_02_Collections:every_uc_has_primary",
+      "passed": true,
+      "detail": 10
+    },
+    {
+      "name": "UC_G08_02_Collections:all_primary_edges_present",
+      "passed": true,
+      "detail": 10
+    },
+    {
+      "name": "UC_G08_02_Collections:status_labels_match",
+      "passed": true,
+      "detail": "Static vs partial/demo/mock"
+    },
+    {
+      "name": "UC_G08_02_Collections:evidence_files_lines_exist",
+      "passed": true,
+      "detail": "Evidence line bounds only, not an automatic semantic proof"
+    },
+    {
+      "name": "UC_G08_03_Tariffs_Periods:standalone_boundary",
+      "passed": true,
+      "detail": "UC_G08_03_Tariffs_Periods.puml"
+    },
+    {
+      "name": "UC_G08_03_Tariffs_Periods:actors_outside_ellipses_inside",
+      "passed": true,
+      "detail": "UC_G08_03_Tariffs_Periods.puml"
+    },
+    {
+      "name": "UC_G08_03_Tariffs_Periods:exact_ids_names",
+      "passed": true,
+      "detail": 3
+    },
+    {
+      "name": "UC_G08_03_Tariffs_Periods:actor_declarations",
+      "passed": true,
+      "detail": [
+        "A02",
+        "A03"
+      ]
+    },
+    {
+      "name": "UC_G08_03_Tariffs_Periods:associations_match_source",
+      "passed": true,
+      "detail": 5
+    },
+    {
+      "name": "UC_G08_03_Tariffs_Periods:no_invented_relationships",
+      "passed": true,
+      "detail": "No semantic or hidden layout edges"
+    },
+    {
+      "name": "UC_G08_03_Tariffs_Periods:primary_exact_catalog",
+      "passed": true,
+      "detail": "module"
+    },
+    {
+      "name": "UC_G08_03_Tariffs_Periods:limited_approved_only",
+      "passed": true,
+      "detail": "No V promoted to P"
+    },
+    {
+      "name": "UC_G08_03_Tariffs_Periods:supporting_exact_catalog",
+      "passed": true,
+      "detail": "Provider links conditional"
+    },
+    {
+      "name": "UC_G08_03_Tariffs_Periods:no_blocked_staff",
+      "passed": true,
+      "detail": "Interceptor restrictions preserved"
+    },
+    {
+      "name": "UC_G08_03_Tariffs_Periods:every_uc_has_primary",
+      "passed": true,
+      "detail": 3
+    },
+    {
+      "name": "UC_G08_03_Tariffs_Periods:all_primary_edges_present",
+      "passed": true,
+      "detail": 3
+    },
+    {
+      "name": "UC_G08_03_Tariffs_Periods:status_labels_match",
+      "passed": true,
+      "detail": "Static vs partial/demo/mock"
+    },
+    {
+      "name": "UC_G08_03_Tariffs_Periods:evidence_files_lines_exist",
+      "passed": true,
+      "detail": "Evidence line bounds only, not an automatic semantic proof"
+    },
+    {
+      "name": "UC_G08_04_Reminders:standalone_boundary",
+      "passed": true,
+      "detail": "UC_G08_04_Reminders.puml"
+    },
+    {
+      "name": "UC_G08_04_Reminders:actors_outside_ellipses_inside",
+      "passed": true,
+      "detail": "UC_G08_04_Reminders.puml"
+    },
+    {
+      "name": "UC_G08_04_Reminders:exact_ids_names",
+      "passed": true,
+      "detail": 4
+    },
+    {
+      "name": "UC_G08_04_Reminders:actor_declarations",
+      "passed": true,
+      "detail": [
+        "A02",
+        "A03",
+        "A04",
+        "E01",
+        "E02"
+      ]
+    },
+    {
+      "name": "UC_G08_04_Reminders:associations_match_source",
+      "passed": true,
+      "detail": 8
+    },
+    {
+      "name": "UC_G08_04_Reminders:no_invented_relationships",
+      "passed": true,
+      "detail": "No semantic or hidden layout edges"
+    },
+    {
+      "name": "UC_G08_04_Reminders:primary_exact_catalog",
+      "passed": true,
+      "detail": "module"
+    },
+    {
+      "name": "UC_G08_04_Reminders:limited_approved_only",
+      "passed": true,
+      "detail": "No V promoted to P"
+    },
+    {
+      "name": "UC_G08_04_Reminders:supporting_exact_catalog",
+      "passed": true,
+      "detail": "Provider links conditional"
+    },
+    {
+      "name": "UC_G08_04_Reminders:no_blocked_staff",
+      "passed": true,
+      "detail": "Interceptor restrictions preserved"
+    },
+    {
+      "name": "UC_G08_04_Reminders:every_uc_has_primary",
+      "passed": true,
+      "detail": 4
+    },
+    {
+      "name": "UC_G08_04_Reminders:all_primary_edges_present",
+      "passed": true,
+      "detail": 4
+    },
+    {
+      "name": "UC_G08_04_Reminders:status_labels_match",
+      "passed": true,
+      "detail": "Static vs partial/demo/mock"
+    },
+    {
+      "name": "UC_G08_04_Reminders:evidence_files_lines_exist",
+      "passed": true,
+      "detail": "Evidence line bounds only, not an automatic semantic proof"
+    },
+    {
+      "name": "UC_G09:standalone_boundary",
+      "passed": true,
+      "detail": "UC_G09.puml"
+    },
+    {
+      "name": "UC_G09:actors_outside_ellipses_inside",
+      "passed": true,
+      "detail": "UC_G09.puml"
+    },
+    {
+      "name": "UC_G09:exact_ids_names",
+      "passed": true,
+      "detail": 5
+    },
+    {
+      "name": "UC_G09:actor_declarations",
+      "passed": true,
+      "detail": [
+        "A02",
+        "A03",
+        "A04"
+      ]
+    },
+    {
+      "name": "UC_G09:associations_match_source",
+      "passed": true,
+      "detail": 9
+    },
+    {
+      "name": "UC_G09:no_invented_relationships",
+      "passed": true,
+      "detail": "No semantic or hidden layout edges"
+    },
+    {
+      "name": "UC_G09:primary_exact_catalog",
+      "passed": true,
+      "detail": "module"
+    },
+    {
+      "name": "UC_G09:limited_approved_only",
+      "passed": true,
+      "detail": "No V promoted to P"
+    },
+    {
+      "name": "UC_G09:supporting_exact_catalog",
+      "passed": true,
+      "detail": "Provider links conditional"
+    },
+    {
+      "name": "UC_G09:no_blocked_staff",
+      "passed": true,
+      "detail": "Interceptor restrictions preserved"
+    },
+    {
+      "name": "UC_G09:every_uc_has_primary",
+      "passed": true,
+      "detail": 5
+    },
+    {
+      "name": "UC_G09:all_primary_edges_present",
+      "passed": true,
+      "detail": 5
+    },
+    {
+      "name": "UC_G09:status_labels_match",
+      "passed": true,
+      "detail": "Static vs partial/demo/mock"
+    },
+    {
+      "name": "UC_G09:evidence_files_lines_exist",
+      "passed": true,
+      "detail": "Evidence line bounds only, not an automatic semantic proof"
+    },
+    {
+      "name": "UC_G10:standalone_boundary",
+      "passed": true,
+      "detail": "UC_G10.puml"
+    },
+    {
+      "name": "UC_G10:actors_outside_ellipses_inside",
+      "passed": true,
+      "detail": "UC_G10.puml"
+    },
+    {
+      "name": "UC_G10:exact_ids_names",
+      "passed": true,
+      "detail": 9
+    },
+    {
+      "name": "UC_G10:actor_declarations",
+      "passed": true,
+      "detail": [
+        "A02",
+        "A04",
+        "A05",
+        "E04"
+      ]
+    },
+    {
+      "name": "UC_G10:associations_match_source",
+      "passed": true,
+      "detail": 13
+    },
+    {
+      "name": "UC_G10:no_invented_relationships",
+      "passed": true,
+      "detail": "No semantic or hidden layout edges"
+    },
+    {
+      "name": "UC_G10:primary_exact_catalog",
+      "passed": true,
+      "detail": "module"
+    },
+    {
+      "name": "UC_G10:limited_approved_only",
+      "passed": true,
+      "detail": "No V promoted to P"
+    },
+    {
+      "name": "UC_G10:supporting_exact_catalog",
+      "passed": true,
+      "detail": "Provider links conditional"
+    },
+    {
+      "name": "UC_G10:no_blocked_staff",
+      "passed": true,
+      "detail": "Interceptor restrictions preserved"
+    },
+    {
+      "name": "UC_G10:every_uc_has_primary",
+      "passed": true,
+      "detail": 9
+    },
+    {
+      "name": "UC_G10:all_primary_edges_present",
+      "passed": true,
+      "detail": 9
+    },
+    {
+      "name": "UC_G10:status_labels_match",
+      "passed": true,
+      "detail": "Static vs partial/demo/mock"
+    },
+    {
+      "name": "UC_G10:evidence_files_lines_exist",
+      "passed": true,
+      "detail": "Evidence line bounds only, not an automatic semantic proof"
+    },
+    {
+      "name": "UC_G11:standalone_boundary",
+      "passed": true,
+      "detail": "UC_G11.puml"
+    },
+    {
+      "name": "UC_G11:actors_outside_ellipses_inside",
+      "passed": true,
+      "detail": "UC_G11.puml"
+    },
+    {
+      "name": "UC_G11:exact_ids_names",
+      "passed": true,
+      "detail": 8
+    },
+    {
+      "name": "UC_G11:actor_declarations",
+      "passed": true,
+      "detail": [
+        "A02",
+        "A03",
+        "A05",
+        "E01",
+        "E05"
+      ]
+    },
+    {
+      "name": "UC_G11:associations_match_source",
+      "passed": true,
+      "detail": 12
+    },
+    {
+      "name": "UC_G11:no_invented_relationships",
+      "passed": true,
+      "detail": "No semantic or hidden layout edges"
+    },
+    {
+      "name": "UC_G11:primary_exact_catalog",
+      "passed": true,
+      "detail": "module"
+    },
+    {
+      "name": "UC_G11:limited_approved_only",
+      "passed": true,
+      "detail": "No V promoted to P"
+    },
+    {
+      "name": "UC_G11:supporting_exact_catalog",
+      "passed": true,
+      "detail": "Provider links conditional"
+    },
+    {
+      "name": "UC_G11:no_blocked_staff",
+      "passed": true,
+      "detail": "Interceptor restrictions preserved"
+    },
+    {
+      "name": "UC_G11:every_uc_has_primary",
+      "passed": true,
+      "detail": 8
+    },
+    {
+      "name": "UC_G11:all_primary_edges_present",
+      "passed": true,
+      "detail": 8
+    },
+    {
+      "name": "UC_G11:status_labels_match",
+      "passed": true,
+      "detail": "Static vs partial/demo/mock"
+    },
+    {
+      "name": "UC_G11:evidence_files_lines_exist",
+      "passed": true,
+      "detail": "Evidence line bounds only, not an automatic semantic proof"
+    },
+    {
+      "name": "UC_G12:standalone_boundary",
+      "passed": true,
+      "detail": "UC_G12.puml"
+    },
+    {
+      "name": "UC_G12:actors_outside_ellipses_inside",
+      "passed": true,
+      "detail": "UC_G12.puml"
+    },
+    {
+      "name": "UC_G12:exact_ids_names",
+      "passed": true,
+      "detail": 12
+    },
+    {
+      "name": "UC_G12:actor_declarations",
+      "passed": true,
+      "detail": [
+        "A05",
+        "E01"
+      ]
+    },
+    {
+      "name": "UC_G12:associations_match_source",
+      "passed": true,
+      "detail": 15
+    },
+    {
+      "name": "UC_G12:no_invented_relationships",
+      "passed": true,
+      "detail": "No semantic or hidden layout edges"
+    },
+    {
+      "name": "UC_G12:primary_exact_catalog",
+      "passed": true,
+      "detail": "module"
+    },
+    {
+      "name": "UC_G12:limited_approved_only",
+      "passed": true,
+      "detail": "No V promoted to P"
+    },
+    {
+      "name": "UC_G12:supporting_exact_catalog",
+      "passed": true,
+      "detail": "Provider links conditional"
+    },
+    {
+      "name": "UC_G12:no_blocked_staff",
+      "passed": true,
+      "detail": "Interceptor restrictions preserved"
+    },
+    {
+      "name": "UC_G12:every_uc_has_primary",
+      "passed": true,
+      "detail": 12
+    },
+    {
+      "name": "UC_G12:all_primary_edges_present",
+      "passed": true,
+      "detail": 12
+    },
+    {
+      "name": "UC_G12:status_labels_match",
+      "passed": true,
+      "detail": "Static vs partial/demo/mock"
+    },
+    {
+      "name": "UC_G12:evidence_files_lines_exist",
+      "passed": true,
+      "detail": "Evidence line bounds only, not an automatic semantic proof"
+    },
+    {
+      "name": "UC_G13:standalone_boundary",
+      "passed": true,
+      "detail": "UC_G13.puml"
+    },
+    {
+      "name": "UC_G13:actors_outside_ellipses_inside",
+      "passed": true,
+      "detail": "UC_G13.puml"
+    },
+    {
+      "name": "UC_G13:exact_ids_names",
+      "passed": true,
+      "detail": 11
+    },
+    {
+      "name": "UC_G13:actor_declarations",
+      "passed": true,
+      "detail": [
+        "A02",
+        "A04",
+        "A05"
+      ]
+    },
+    {
+      "name": "UC_G13:associations_match_source",
+      "passed": true,
+      "detail": 13
+    },
+    {
+      "name": "UC_G13:no_invented_relationships",
+      "passed": true,
+      "detail": "No semantic or hidden layout edges"
+    },
+    {
+      "name": "UC_G13:primary_exact_catalog",
+      "passed": true,
+      "detail": "module"
+    },
+    {
+      "name": "UC_G13:limited_approved_only",
+      "passed": true,
+      "detail": "No V promoted to P"
+    },
+    {
+      "name": "UC_G13:supporting_exact_catalog",
+      "passed": true,
+      "detail": "Provider links conditional"
+    },
+    {
+      "name": "UC_G13:no_blocked_staff",
+      "passed": true,
+      "detail": "Interceptor restrictions preserved"
+    },
+    {
+      "name": "UC_G13:every_uc_has_primary",
+      "passed": true,
+      "detail": 11
+    },
+    {
+      "name": "UC_G13:all_primary_edges_present",
+      "passed": true,
+      "detail": 11
+    },
+    {
+      "name": "UC_G13:status_labels_match",
+      "passed": true,
+      "detail": "Static vs partial/demo/mock"
+    },
+    {
+      "name": "UC_G13:evidence_files_lines_exist",
+      "passed": true,
+      "detail": "Evidence line bounds only, not an automatic semantic proof"
+    },
+    {
+      "name": "UC_G14:standalone_boundary",
+      "passed": true,
+      "detail": "UC_G14.puml"
+    },
+    {
+      "name": "UC_G14:actors_outside_ellipses_inside",
+      "passed": true,
+      "detail": "UC_G14.puml"
+    },
+    {
+      "name": "UC_G14:exact_ids_names",
+      "passed": true,
+      "detail": 8
+    },
+    {
+      "name": "UC_G14:actor_declarations",
+      "passed": true,
+      "detail": [
+        "A02",
+        "A04",
+        "A05",
+        "E03"
+      ]
+    },
+    {
+      "name": "UC_G14:associations_match_source",
+      "passed": true,
+      "detail": 14
+    },
+    {
+      "name": "UC_G14:no_invented_relationships",
+      "passed": true,
+      "detail": "No semantic or hidden layout edges"
+    },
+    {
+      "name": "UC_G14:primary_exact_catalog",
+      "passed": true,
+      "detail": "module"
+    },
+    {
+      "name": "UC_G14:limited_approved_only",
+      "passed": true,
+      "detail": "No V promoted to P"
+    },
+    {
+      "name": "UC_G14:supporting_exact_catalog",
+      "passed": true,
+      "detail": "Provider links conditional"
+    },
+    {
+      "name": "UC_G14:no_blocked_staff",
+      "passed": true,
+      "detail": "Interceptor restrictions preserved"
+    },
+    {
+      "name": "UC_G14:every_uc_has_primary",
+      "passed": true,
+      "detail": 8
+    },
+    {
+      "name": "UC_G14:all_primary_edges_present",
+      "passed": true,
+      "detail": 8
+    },
+    {
+      "name": "UC_G14:status_labels_match",
+      "passed": true,
+      "detail": "Static vs partial/demo/mock"
+    },
+    {
+      "name": "UC_G14:evidence_files_lines_exist",
+      "passed": true,
+      "detail": "Evidence line bounds only, not an automatic semantic proof"
+    },
+    {
+      "name": "UC_G15:standalone_boundary",
+      "passed": true,
+      "detail": "UC_G15.puml"
+    },
+    {
+      "name": "UC_G15:actors_outside_ellipses_inside",
+      "passed": true,
+      "detail": "UC_G15.puml"
+    },
+    {
+      "name": "UC_G15:exact_ids_names",
+      "passed": true,
+      "detail": 6
+    },
+    {
+      "name": "UC_G15:actor_declarations",
+      "passed": true,
+      "detail": [
+        "A02",
+        "A05"
+      ]
+    },
+    {
+      "name": "UC_G15:associations_match_source",
+      "passed": true,
+      "detail": 7
+    },
+    {
+      "name": "UC_G15:no_invented_relationships",
+      "passed": true,
+      "detail": "No semantic or hidden layout edges"
+    },
+    {
+      "name": "UC_G15:primary_exact_catalog",
+      "passed": true,
+      "detail": "module"
+    },
+    {
+      "name": "UC_G15:limited_approved_only",
+      "passed": true,
+      "detail": "No V promoted to P"
+    },
+    {
+      "name": "UC_G15:supporting_exact_catalog",
+      "passed": true,
+      "detail": "Provider links conditional"
+    },
+    {
+      "name": "UC_G15:no_blocked_staff",
+      "passed": true,
+      "detail": "Interceptor restrictions preserved"
+    },
+    {
+      "name": "UC_G15:every_uc_has_primary",
+      "passed": true,
+      "detail": 6
+    },
+    {
+      "name": "UC_G15:all_primary_edges_present",
+      "passed": true,
+      "detail": 6
+    },
+    {
+      "name": "UC_G15:status_labels_match",
+      "passed": true,
+      "detail": "Static vs partial/demo/mock"
+    },
+    {
+      "name": "UC_G15:evidence_files_lines_exist",
+      "passed": true,
+      "detail": "Evidence line bounds only, not an automatic semantic proof"
+    },
+    {
+      "name": "UC_G16:standalone_boundary",
+      "passed": true,
+      "detail": "UC_G16.puml"
+    },
+    {
+      "name": "UC_G16:actors_outside_ellipses_inside",
+      "passed": true,
+      "detail": "UC_G16.puml"
+    },
+    {
+      "name": "UC_G16:exact_ids_names",
+      "passed": true,
+      "detail": 9
+    },
+    {
+      "name": "UC_G16:actor_declarations",
+      "passed": true,
+      "detail": [
+        "A02",
+        "A04",
+        "A05"
+      ]
+    },
+    {
+      "name": "UC_G16:associations_match_source",
+      "passed": true,
+      "detail": 10
+    },
+    {
+      "name": "UC_G16:no_invented_relationships",
+      "passed": true,
+      "detail": "No semantic or hidden layout edges"
+    },
+    {
+      "name": "UC_G16:primary_exact_catalog",
+      "passed": true,
+      "detail": "module"
+    },
+    {
+      "name": "UC_G16:limited_approved_only",
+      "passed": true,
+      "detail": "No V promoted to P"
+    },
+    {
+      "name": "UC_G16:supporting_exact_catalog",
+      "passed": true,
+      "detail": "Provider links conditional"
+    },
+    {
+      "name": "UC_G16:no_blocked_staff",
+      "passed": true,
+      "detail": "Interceptor restrictions preserved"
+    },
+    {
+      "name": "UC_G16:every_uc_has_primary",
+      "passed": true,
+      "detail": 9
+    },
+    {
+      "name": "UC_G16:all_primary_edges_present",
+      "passed": true,
+      "detail": 9
+    },
+    {
+      "name": "UC_G16:status_labels_match",
+      "passed": true,
+      "detail": "Static vs partial/demo/mock"
+    },
+    {
+      "name": "UC_G16:evidence_files_lines_exist",
+      "passed": true,
+      "detail": "Evidence line bounds only, not an automatic semantic proof"
+    },
+    {
+      "name": "Actor_A03_01:standalone_boundary",
+      "passed": true,
+      "detail": "Actor_A03_01.puml"
+    },
+    {
+      "name": "Actor_A03_01:actors_outside_ellipses_inside",
+      "passed": true,
+      "detail": "Actor_A03_01.puml"
+    },
+    {
+      "name": "Actor_A03_01:exact_ids_names",
+      "passed": true,
+      "detail": 5
+    },
+    {
+      "name": "Actor_A03_01:actor_declarations",
+      "passed": true,
+      "detail": [
+        "A03"
+      ]
+    },
+    {
+      "name": "Actor_A03_01:associations_match_source",
+      "passed": true,
+      "detail": 5
+    },
+    {
+      "name": "Actor_A03_01:no_invented_relationships",
+      "passed": true,
+      "detail": "No semantic or hidden layout edges"
+    },
+    {
+      "name": "Actor_A03_01:primary_exact_catalog",
+      "passed": true,
+      "detail": "actor"
+    },
+    {
+      "name": "Actor_A03_01:limited_approved_only",
+      "passed": true,
+      "detail": "No V promoted to P"
+    },
+    {
+      "name": "Actor_A03_01:supporting_exact_catalog",
+      "passed": true,
+      "detail": "Provider links conditional"
+    },
+    {
+      "name": "Actor_A03_01:no_blocked_staff",
+      "passed": true,
+      "detail": "Interceptor restrictions preserved"
+    },
+    {
+      "name": "Actor_A03_01:every_uc_has_primary",
+      "passed": true,
+      "detail": 5
+    },
+    {
+      "name": "Actor_A03_01:all_primary_edges_present",
+      "passed": true,
+      "detail": 5
+    },
+    {
+      "name": "Actor_A03_01:status_labels_match",
+      "passed": true,
+      "detail": "Static vs partial/demo/mock"
+    },
+    {
+      "name": "Actor_A03_01:evidence_files_lines_exist",
+      "passed": true,
+      "detail": "Evidence line bounds only, not an automatic semantic proof"
+    },
+    {
+      "name": "Actor_A03_02:standalone_boundary",
+      "passed": true,
+      "detail": "Actor_A03_02.puml"
+    },
+    {
+      "name": "Actor_A03_02:actors_outside_ellipses_inside",
+      "passed": true,
+      "detail": "Actor_A03_02.puml"
+    },
+    {
+      "name": "Actor_A03_02:exact_ids_names",
+      "passed": true,
+      "detail": 13
+    },
+    {
+      "name": "Actor_A03_02:actor_declarations",
+      "passed": true,
+      "detail": [
+        "A03"
+      ]
+    },
+    {
+      "name": "Actor_A03_02:associations_match_source",
+      "passed": true,
+      "detail": 13
+    },
+    {
+      "name": "Actor_A03_02:no_invented_relationships",
+      "passed": true,
+      "detail": "No semantic or hidden layout edges"
+    },
+    {
+      "name": "Actor_A03_02:primary_exact_catalog",
+      "passed": true,
+      "detail": "actor"
+    },
+    {
+      "name": "Actor_A03_02:limited_approved_only",
+      "passed": true,
+      "detail": "No V promoted to P"
+    },
+    {
+      "name": "Actor_A03_02:supporting_exact_catalog",
+      "passed": true,
+      "detail": "Provider links conditional"
+    },
+    {
+      "name": "Actor_A03_02:no_blocked_staff",
+      "passed": true,
+      "detail": "Interceptor restrictions preserved"
+    },
+    {
+      "name": "Actor_A03_02:every_uc_has_primary",
+      "passed": true,
+      "detail": 13
+    },
+    {
+      "name": "Actor_A03_02:all_primary_edges_present",
+      "passed": true,
+      "detail": 13
+    },
+    {
+      "name": "Actor_A03_02:status_labels_match",
+      "passed": true,
+      "detail": "Static vs partial/demo/mock"
+    },
+    {
+      "name": "Actor_A03_02:evidence_files_lines_exist",
+      "passed": true,
+      "detail": "Evidence line bounds only, not an automatic semantic proof"
+    },
+    {
+      "name": "Actor_A03_03:standalone_boundary",
+      "passed": true,
+      "detail": "Actor_A03_03.puml"
+    },
+    {
+      "name": "Actor_A03_03:actors_outside_ellipses_inside",
+      "passed": true,
+      "detail": "Actor_A03_03.puml"
+    },
+    {
+      "name": "Actor_A03_03:exact_ids_names",
+      "passed": true,
+      "detail": 13
+    },
+    {
+      "name": "Actor_A03_03:actor_declarations",
+      "passed": true,
+      "detail": [
+        "A03"
+      ]
+    },
+    {
+      "name": "Actor_A03_03:associations_match_source",
+      "passed": true,
+      "detail": 13
+    },
+    {
+      "name": "Actor_A03_03:no_invented_relationships",
+      "passed": true,
+      "detail": "No semantic or hidden layout edges"
+    },
+    {
+      "name": "Actor_A03_03:primary_exact_catalog",
+      "passed": true,
+      "detail": "actor"
+    },
+    {
+      "name": "Actor_A03_03:limited_approved_only",
+      "passed": true,
+      "detail": "No V promoted to P"
+    },
+    {
+      "name": "Actor_A03_03:supporting_exact_catalog",
+      "passed": true,
+      "detail": "Provider links conditional"
+    },
+    {
+      "name": "Actor_A03_03:no_blocked_staff",
+      "passed": true,
+      "detail": "Interceptor restrictions preserved"
+    },
+    {
+      "name": "Actor_A03_03:every_uc_has_primary",
+      "passed": true,
+      "detail": 13
+    },
+    {
+      "name": "Actor_A03_03:all_primary_edges_present",
+      "passed": true,
+      "detail": 13
+    },
+    {
+      "name": "Actor_A03_03:status_labels_match",
+      "passed": true,
+      "detail": "Static vs partial/demo/mock"
+    },
+    {
+      "name": "Actor_A03_03:evidence_files_lines_exist",
+      "passed": true,
+      "detail": "Evidence line bounds only, not an automatic semantic proof"
+    },
+    {
+      "name": "Actor_A03_04:standalone_boundary",
+      "passed": true,
+      "detail": "Actor_A03_04.puml"
+    },
+    {
+      "name": "Actor_A03_04:actors_outside_ellipses_inside",
+      "passed": true,
+      "detail": "Actor_A03_04.puml"
+    },
+    {
+      "name": "Actor_A03_04:exact_ids_names",
+      "passed": true,
+      "detail": 8
+    },
+    {
+      "name": "Actor_A03_04:actor_declarations",
+      "passed": true,
+      "detail": [
+        "A03"
+      ]
+    },
+    {
+      "name": "Actor_A03_04:associations_match_source",
+      "passed": true,
+      "detail": 8
+    },
+    {
+      "name": "Actor_A03_04:no_invented_relationships",
+      "passed": true,
+      "detail": "No semantic or hidden layout edges"
+    },
+    {
+      "name": "Actor_A03_04:primary_exact_catalog",
+      "passed": true,
+      "detail": "actor"
+    },
+    {
+      "name": "Actor_A03_04:limited_approved_only",
+      "passed": true,
+      "detail": "No V promoted to P"
+    },
+    {
+      "name": "Actor_A03_04:supporting_exact_catalog",
+      "passed": true,
+      "detail": "Provider links conditional"
+    },
+    {
+      "name": "Actor_A03_04:no_blocked_staff",
+      "passed": true,
+      "detail": "Interceptor restrictions preserved"
+    },
+    {
+      "name": "Actor_A03_04:every_uc_has_primary",
+      "passed": true,
+      "detail": 8
+    },
+    {
+      "name": "Actor_A03_04:all_primary_edges_present",
+      "passed": true,
+      "detail": 8
+    },
+    {
+      "name": "Actor_A03_04:status_labels_match",
+      "passed": true,
+      "detail": "Static vs partial/demo/mock"
+    },
+    {
+      "name": "Actor_A03_04:evidence_files_lines_exist",
+      "passed": true,
+      "detail": "Evidence line bounds only, not an automatic semantic proof"
+    },
+    {
+      "name": "Actor_A03_05:standalone_boundary",
+      "passed": true,
+      "detail": "Actor_A03_05.puml"
+    },
+    {
+      "name": "Actor_A03_05:actors_outside_ellipses_inside",
+      "passed": true,
+      "detail": "Actor_A03_05.puml"
+    },
+    {
+      "name": "Actor_A03_05:exact_ids_names",
+      "passed": true,
+      "detail": 16
+    },
+    {
+      "name": "Actor_A03_05:actor_declarations",
+      "passed": true,
+      "detail": [
+        "A03"
+      ]
+    },
+    {
+      "name": "Actor_A03_05:associations_match_source",
+      "passed": true,
+      "detail": 16
+    },
+    {
+      "name": "Actor_A03_05:no_invented_relationships",
+      "passed": true,
+      "detail": "No semantic or hidden layout edges"
+    },
+    {
+      "name": "Actor_A03_05:primary_exact_catalog",
+      "passed": true,
+      "detail": "actor"
+    },
+    {
+      "name": "Actor_A03_05:limited_approved_only",
+      "passed": true,
+      "detail": "No V promoted to P"
+    },
+    {
+      "name": "Actor_A03_05:supporting_exact_catalog",
+      "passed": true,
+      "detail": "Provider links conditional"
+    },
+    {
+      "name": "Actor_A03_05:no_blocked_staff",
+      "passed": true,
+      "detail": "Interceptor restrictions preserved"
+    },
+    {
+      "name": "Actor_A03_05:every_uc_has_primary",
+      "passed": true,
+      "detail": 16
+    },
+    {
+      "name": "Actor_A03_05:all_primary_edges_present",
+      "passed": true,
+      "detail": 16
+    },
+    {
+      "name": "Actor_A03_05:status_labels_match",
+      "passed": true,
+      "detail": "Static vs partial/demo/mock"
+    },
+    {
+      "name": "Actor_A03_05:evidence_files_lines_exist",
+      "passed": true,
+      "detail": "Evidence line bounds only, not an automatic semantic proof"
+    },
+    {
+      "name": "Actor_A03_06:standalone_boundary",
+      "passed": true,
+      "detail": "Actor_A03_06.puml"
+    },
+    {
+      "name": "Actor_A03_06:actors_outside_ellipses_inside",
+      "passed": true,
+      "detail": "Actor_A03_06.puml"
+    },
+    {
+      "name": "Actor_A03_06:exact_ids_names",
+      "passed": true,
+      "detail": 5
+    },
+    {
+      "name": "Actor_A03_06:actor_declarations",
+      "passed": true,
+      "detail": [
+        "A03",
+        "E01"
+      ]
+    },
+    {
+      "name": "Actor_A03_06:associations_match_source",
+      "passed": true,
+      "detail": 6
+    },
+    {
+      "name": "Actor_A03_06:no_invented_relationships",
+      "passed": true,
+      "detail": "No semantic or hidden layout edges"
+    },
+    {
+      "name": "Actor_A03_06:primary_exact_catalog",
+      "passed": true,
+      "detail": "actor"
+    },
+    {
+      "name": "Actor_A03_06:limited_approved_only",
+      "passed": true,
+      "detail": "No V promoted to P"
+    },
+    {
+      "name": "Actor_A03_06:supporting_exact_catalog",
+      "passed": true,
+      "detail": "Provider links conditional"
+    },
+    {
+      "name": "Actor_A03_06:no_blocked_staff",
+      "passed": true,
+      "detail": "Interceptor restrictions preserved"
+    },
+    {
+      "name": "Actor_A03_06:every_uc_has_primary",
+      "passed": true,
+      "detail": 5
+    },
+    {
+      "name": "Actor_A03_06:all_primary_edges_present",
+      "passed": true,
+      "detail": 5
+    },
+    {
+      "name": "Actor_A03_06:status_labels_match",
+      "passed": true,
+      "detail": "Static vs partial/demo/mock"
+    },
+    {
+      "name": "Actor_A03_06:evidence_files_lines_exist",
+      "passed": true,
+      "detail": "Evidence line bounds only, not an automatic semantic proof"
+    },
+    {
+      "name": "render_all_real_plantuml",
+      "passed": true,
+      "detail": "PASSED"
+    },
+    {
+      "name": "render_hashes_match_current_sources_outputs",
+      "passed": true,
+      "detail": "Rerender required after any puml edit"
+    },
+    {
+      "name": "svg_png_dimensions_positive",
+      "passed": true,
+      "detail": 28
+    },
+    {
+      "name": "all_visual_inspections_recorded",
+      "passed": true,
+      "detail": 28
+    },
+    {
+      "name": "Overall_Use_Case:rendered_entities_exact",
+      "passed": true,
+      "detail": 17
+    },
+    {
+      "name": "Overall_Use_Case:rendered_ellipses_inside_boundary",
+      "passed": true,
+      "detail": [
+        336.021,
+        63.332,
+        265.87,
+        930
+      ]
+    },
+    {
+      "name": "Overall_Use_Case:rendered_ellipses_no_overlap",
+      "passed": true,
+      "detail": 12
+    },
+    {
+      "name": "Overall_Use_Case:rendered_actors_outside_boundary",
+      "passed": true,
+      "detail": [
+        "A01",
+        "A04",
+        "A02",
+        "A03",
+        "A05"
+      ]
+    },
+    {
+      "name": "Overall_Use_Case:rendered_associations_exact",
+      "passed": true,
+      "detail": 15
+    },
+    {
+      "name": "Overall_Use_Case:rendered_edges_touch_ellipses",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "UC_G01_01_SYS_Public:rendered_entities_exact",
+      "passed": true,
+      "detail": 9
+    },
+    {
+      "name": "UC_G01_01_SYS_Public:rendered_ellipses_inside_boundary",
+      "passed": true,
+      "detail": [
+        204.21,
+        63.332,
+        250.4,
+        581
+      ]
+    },
+    {
+      "name": "UC_G01_01_SYS_Public:rendered_ellipses_no_overlap",
+      "passed": true,
+      "detail": 7
+    },
+    {
+      "name": "UC_G01_01_SYS_Public:rendered_actors_outside_boundary",
+      "passed": true,
+      "detail": [
+        "A01",
+        "E01"
+      ]
+    },
+    {
+      "name": "UC_G01_01_SYS_Public:rendered_associations_exact",
+      "passed": true,
+      "detail": 8
+    },
+    {
+      "name": "UC_G01_01_SYS_Public:rendered_edges_touch_ellipses",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "UC_G01_02_SYS_Sessions:rendered_entities_exact",
+      "passed": true,
+      "detail": 8
+    },
+    {
+      "name": "UC_G01_02_SYS_Sessions:rendered_ellipses_inside_boundary",
+      "passed": true,
+      "detail": [
+        246.889,
+        81.142,
+        269.72,
+        323
+      ]
+    },
+    {
+      "name": "UC_G01_02_SYS_Sessions:rendered_ellipses_no_overlap",
+      "passed": true,
+      "detail": 4
+    },
+    {
+      "name": "UC_G01_02_SYS_Sessions:rendered_actors_outside_boundary",
+      "passed": true,
+      "detail": [
+        "A02",
+        "A03",
+        "A04",
+        "A05"
+      ]
+    },
+    {
+      "name": "UC_G01_02_SYS_Sessions:rendered_associations_exact",
+      "passed": true,
+      "detail": 13
+    },
+    {
+      "name": "UC_G01_02_SYS_Sessions:rendered_edges_touch_ellipses",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "UC_G02:rendered_entities_exact",
+      "passed": true,
+      "detail": 8
+    },
+    {
+      "name": "UC_G02:rendered_ellipses_inside_boundary",
+      "passed": true,
+      "detail": [
+        235.467,
+        63.332,
+        258.79,
+        475
+      ]
+    },
+    {
+      "name": "UC_G02:rendered_ellipses_no_overlap",
+      "passed": true,
+      "detail": 6
+    },
+    {
+      "name": "UC_G02:rendered_actors_outside_boundary",
+      "passed": true,
+      "detail": [
+        "A01",
+        "A04"
+      ]
+    },
+    {
+      "name": "UC_G02:rendered_associations_exact",
+      "passed": true,
+      "detail": 10
+    },
+    {
+      "name": "UC_G02:rendered_edges_touch_ellipses",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "UC_G03:rendered_entities_exact",
+      "passed": true,
+      "detail": 9
+    },
+    {
+      "name": "UC_G03:rendered_ellipses_inside_boundary",
+      "passed": true,
+      "detail": [
+        398.671,
+        63.332,
+        261.57,
+        564
+      ]
+    },
+    {
+      "name": "UC_G03:rendered_ellipses_no_overlap",
+      "passed": true,
+      "detail": 7
+    },
+    {
+      "name": "UC_G03:rendered_actors_outside_boundary",
+      "passed": true,
+      "detail": [
+        "A02",
+        "A04"
+      ]
+    },
+    {
+      "name": "UC_G03:rendered_associations_exact",
+      "passed": true,
+      "detail": 9
+    },
+    {
+      "name": "UC_G03:rendered_edges_touch_ellipses",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "UC_G04:rendered_entities_exact",
+      "passed": true,
+      "detail": 16
+    },
+    {
+      "name": "UC_G04:rendered_ellipses_inside_boundary",
+      "passed": true,
+      "detail": [
+        128.969,
+        63.332,
+        260.27,
+        1062
+      ]
+    },
+    {
+      "name": "UC_G04:rendered_ellipses_no_overlap",
+      "passed": true,
+      "detail": 14
+    },
+    {
+      "name": "UC_G04:rendered_actors_outside_boundary",
+      "passed": true,
+      "detail": [
+        "A02",
+        "A03"
+      ]
+    },
+    {
+      "name": "UC_G04:rendered_associations_exact",
+      "passed": true,
+      "detail": 27
+    },
+    {
+      "name": "UC_G04:rendered_edges_touch_ellipses",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "UC_G05:rendered_entities_exact",
+      "passed": true,
+      "detail": 6
+    },
+    {
+      "name": "UC_G05:rendered_ellipses_inside_boundary",
+      "passed": true,
+      "detail": [
+        127.694,
+        63.332,
+        244.82,
+        339
+      ]
+    },
+    {
+      "name": "UC_G05:rendered_ellipses_no_overlap",
+      "passed": true,
+      "detail": 4
+    },
+    {
+      "name": "UC_G05:rendered_actors_outside_boundary",
+      "passed": true,
+      "detail": [
+        "A02",
+        "A03"
+      ]
+    },
+    {
+      "name": "UC_G05:rendered_associations_exact",
+      "passed": true,
+      "detail": 6
+    },
+    {
+      "name": "UC_G05:rendered_edges_touch_ellipses",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "UC_G06_01_Tenant_Records:rendered_entities_exact",
+      "passed": true,
+      "detail": 11
+    },
+    {
+      "name": "UC_G06_01_Tenant_Records:rendered_ellipses_inside_boundary",
+      "passed": true,
+      "detail": [
+        250.694,
+        63.332,
+        262.11,
+        652
+      ]
+    },
+    {
+      "name": "UC_G06_01_Tenant_Records:rendered_ellipses_no_overlap",
+      "passed": true,
+      "detail": 8
+    },
+    {
+      "name": "UC_G06_01_Tenant_Records:rendered_actors_outside_boundary",
+      "passed": true,
+      "detail": [
+        "A02",
+        "A03",
+        "A04"
+      ]
+    },
+    {
+      "name": "UC_G06_01_Tenant_Records:rendered_associations_exact",
+      "passed": true,
+      "detail": 14
+    },
+    {
+      "name": "UC_G06_01_Tenant_Records:rendered_edges_touch_ellipses",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "UC_G06_02_Leases_Deposits:rendered_entities_exact",
+      "passed": true,
+      "detail": 12
+    },
+    {
+      "name": "UC_G06_02_Leases_Deposits:rendered_ellipses_inside_boundary",
+      "passed": true,
+      "detail": [
+        249.899,
+        63.332,
+        263.7,
+        694
+      ]
+    },
+    {
+      "name": "UC_G06_02_Leases_Deposits:rendered_ellipses_no_overlap",
+      "passed": true,
+      "detail": 9
+    },
+    {
+      "name": "UC_G06_02_Leases_Deposits:rendered_actors_outside_boundary",
+      "passed": true,
+      "detail": [
+        "A02",
+        "A03",
+        "A04"
+      ]
+    },
+    {
+      "name": "UC_G06_02_Leases_Deposits:rendered_associations_exact",
+      "passed": true,
+      "detail": 16
+    },
+    {
+      "name": "UC_G06_02_Leases_Deposits:rendered_edges_touch_ellipses",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "UC_G07:rendered_entities_exact",
+      "passed": true,
+      "detail": 10
+    },
+    {
+      "name": "UC_G07:rendered_ellipses_inside_boundary",
+      "passed": true,
+      "detail": [
+        250.369,
+        63.332,
+        262.76,
+        557
+      ]
+    },
+    {
+      "name": "UC_G07:rendered_ellipses_no_overlap",
+      "passed": true,
+      "detail": 7
+    },
+    {
+      "name": "UC_G07:rendered_actors_outside_boundary",
+      "passed": true,
+      "detail": [
+        "A04",
+        "A02",
+        "A03"
+      ]
+    },
+    {
+      "name": "UC_G07:rendered_associations_exact",
+      "passed": true,
+      "detail": 9
+    },
+    {
+      "name": "UC_G07:rendered_edges_touch_ellipses",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "UC_G08_01_Invoices:rendered_entities_exact",
+      "passed": true,
+      "detail": 14
+    },
+    {
+      "name": "UC_G08_01_Invoices:rendered_ellipses_inside_boundary",
+      "passed": true,
+      "detail": [
+        253.174,
+        63.332,
+        257.15,
+        856
+      ]
+    },
+    {
+      "name": "UC_G08_01_Invoices:rendered_ellipses_no_overlap",
+      "passed": true,
+      "detail": 11
+    },
+    {
+      "name": "UC_G08_01_Invoices:rendered_actors_outside_boundary",
+      "passed": true,
+      "detail": [
+        "A02",
+        "A03",
+        "A04"
+      ]
+    },
+    {
+      "name": "UC_G08_01_Invoices:rendered_associations_exact",
+      "passed": true,
+      "detail": 21
+    },
+    {
+      "name": "UC_G08_01_Invoices:rendered_edges_touch_ellipses",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "UC_G08_02_Collections:rendered_entities_exact",
+      "passed": true,
+      "detail": 14
+    },
+    {
+      "name": "UC_G08_02_Collections:rendered_ellipses_inside_boundary",
+      "passed": true,
+      "detail": [
+        397.7,
+        63.332,
+        290.64,
+        793
+      ]
+    },
+    {
+      "name": "UC_G08_02_Collections:rendered_ellipses_no_overlap",
+      "passed": true,
+      "detail": 10
+    },
+    {
+      "name": "UC_G08_02_Collections:rendered_actors_outside_boundary",
+      "passed": true,
+      "detail": [
+        "A02",
+        "A03",
+        "A04",
+        "A01"
+      ]
+    },
+    {
+      "name": "UC_G08_02_Collections:rendered_associations_exact",
+      "passed": true,
+      "detail": 18
+    },
+    {
+      "name": "UC_G08_02_Collections:rendered_edges_touch_ellipses",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "UC_G08_03_Tariffs_Periods:rendered_entities_exact",
+      "passed": true,
+      "detail": 5
+    },
+    {
+      "name": "UC_G08_03_Tariffs_Periods:rendered_ellipses_inside_boundary",
+      "passed": true,
+      "detail": [
+        153.654,
+        63.332,
+        245.9,
+        257
+      ]
+    },
+    {
+      "name": "UC_G08_03_Tariffs_Periods:rendered_ellipses_no_overlap",
+      "passed": true,
+      "detail": 3
+    },
+    {
+      "name": "UC_G08_03_Tariffs_Periods:rendered_actors_outside_boundary",
+      "passed": true,
+      "detail": [
+        "A02",
+        "A03"
+      ]
+    },
+    {
+      "name": "UC_G08_03_Tariffs_Periods:rendered_associations_exact",
+      "passed": true,
+      "detail": 5
+    },
+    {
+      "name": "UC_G08_03_Tariffs_Periods:rendered_edges_touch_ellipses",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "UC_G08_04_Reminders:rendered_entities_exact",
+      "passed": true,
+      "detail": 9
+    },
+    {
+      "name": "UC_G08_04_Reminders:rendered_ellipses_inside_boundary",
+      "passed": true,
+      "detail": [
+        209.7,
+        77.142,
+        268.31,
+        340
+      ]
+    },
+    {
+      "name": "UC_G08_04_Reminders:rendered_ellipses_no_overlap",
+      "passed": true,
+      "detail": 4
+    },
+    {
+      "name": "UC_G08_04_Reminders:rendered_actors_outside_boundary",
+      "passed": true,
+      "detail": [
+        "A02",
+        "A03",
+        "E01",
+        "E02",
+        "A04"
+      ]
+    },
+    {
+      "name": "UC_G08_04_Reminders:rendered_associations_exact",
+      "passed": true,
+      "detail": 8
+    },
+    {
+      "name": "UC_G08_04_Reminders:rendered_edges_touch_ellipses",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "UC_G09:rendered_entities_exact",
+      "passed": true,
+      "detail": 8
+    },
+    {
+      "name": "UC_G09:rendered_ellipses_inside_boundary",
+      "passed": true,
+      "detail": [
+        254.294,
+        63.332,
+        254.91,
+        406
+      ]
+    },
+    {
+      "name": "UC_G09:rendered_ellipses_no_overlap",
+      "passed": true,
+      "detail": 5
+    },
+    {
+      "name": "UC_G09:rendered_actors_outside_boundary",
+      "passed": true,
+      "detail": [
+        "A04",
+        "A02",
+        "A03"
+      ]
+    },
+    {
+      "name": "UC_G09:rendered_associations_exact",
+      "passed": true,
+      "detail": 9
+    },
+    {
+      "name": "UC_G09:rendered_edges_touch_ellipses",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "UC_G10:rendered_entities_exact",
+      "passed": true,
+      "detail": 13
+    },
+    {
+      "name": "UC_G10:rendered_ellipses_inside_boundary",
+      "passed": true,
+      "detail": [
+        209.7,
+        63.332,
+        304.13,
+        750
+      ]
+    },
+    {
+      "name": "UC_G10:rendered_ellipses_no_overlap",
+      "passed": true,
+      "detail": 9
+    },
+    {
+      "name": "UC_G10:rendered_actors_outside_boundary",
+      "passed": true,
+      "detail": [
+        "A02",
+        "A04",
+        "A05",
+        "E04"
+      ]
+    },
+    {
+      "name": "UC_G10:rendered_associations_exact",
+      "passed": true,
+      "detail": 13
+    },
+    {
+      "name": "UC_G10:rendered_edges_touch_ellipses",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "UC_G11:rendered_entities_exact",
+      "passed": true,
+      "detail": 13
+    },
+    {
+      "name": "UC_G11:rendered_ellipses_inside_boundary",
+      "passed": true,
+      "detail": [
+        198.2,
+        63.332,
+        270.67,
+        652
+      ]
+    },
+    {
+      "name": "UC_G11:rendered_ellipses_no_overlap",
+      "passed": true,
+      "detail": 8
+    },
+    {
+      "name": "UC_G11:rendered_actors_outside_boundary",
+      "passed": true,
+      "detail": [
+        "A02",
+        "A03",
+        "A05",
+        "E05",
+        "E01"
+      ]
+    },
+    {
+      "name": "UC_G11:rendered_associations_exact",
+      "passed": true,
+      "detail": 12
+    },
+    {
+      "name": "UC_G11:rendered_edges_touch_ellipses",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "UC_G12:rendered_entities_exact",
+      "passed": true,
+      "detail": 14
+    },
+    {
+      "name": "UC_G12:rendered_ellipses_inside_boundary",
+      "passed": true,
+      "detail": [
+        198.2,
+        63.332,
+        289.97,
+        1001
+      ]
+    },
+    {
+      "name": "UC_G12:rendered_ellipses_no_overlap",
+      "passed": true,
+      "detail": 12
+    },
+    {
+      "name": "UC_G12:rendered_actors_outside_boundary",
+      "passed": true,
+      "detail": [
+        "A05",
+        "E01"
+      ]
+    },
+    {
+      "name": "UC_G12:rendered_associations_exact",
+      "passed": true,
+      "detail": 15
+    },
+    {
+      "name": "UC_G12:rendered_edges_touch_ellipses",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "UC_G13:rendered_entities_exact",
+      "passed": true,
+      "detail": 14
+    },
+    {
+      "name": "UC_G13:rendered_ellipses_inside_boundary",
+      "passed": true,
+      "detail": [
+        434.611,
+        63.332,
+        269.69,
+        870
+      ]
+    },
+    {
+      "name": "UC_G13:rendered_ellipses_no_overlap",
+      "passed": true,
+      "detail": 11
+    },
+    {
+      "name": "UC_G13:rendered_actors_outside_boundary",
+      "passed": true,
+      "detail": [
+        "A04",
+        "A02",
+        "A05"
+      ]
+    },
+    {
+      "name": "UC_G13:rendered_associations_exact",
+      "passed": true,
+      "detail": 13
+    },
+    {
+      "name": "UC_G13:rendered_edges_touch_ellipses",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "UC_G14:rendered_entities_exact",
+      "passed": true,
+      "detail": 12
+    },
+    {
+      "name": "UC_G14:rendered_ellipses_inside_boundary",
+      "passed": true,
+      "detail": [
+        209.7,
+        64.142,
+        291.29,
+        647
+      ]
+    },
+    {
+      "name": "UC_G14:rendered_ellipses_no_overlap",
+      "passed": true,
+      "detail": 8
+    },
+    {
+      "name": "UC_G14:rendered_actors_outside_boundary",
+      "passed": true,
+      "detail": [
+        "A02",
+        "A04",
+        "A05",
+        "E03"
+      ]
+    },
+    {
+      "name": "UC_G14:rendered_associations_exact",
+      "passed": true,
+      "detail": 14
+    },
+    {
+      "name": "UC_G14:rendered_edges_touch_ellipses",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "UC_G15:rendered_entities_exact",
+      "passed": true,
+      "detail": 8
+    },
+    {
+      "name": "UC_G15:rendered_ellipses_inside_boundary",
+      "passed": true,
+      "detail": [
+        331.186,
+        63.332,
+        264.04,
+        486
+      ]
+    },
+    {
+      "name": "UC_G15:rendered_ellipses_no_overlap",
+      "passed": true,
+      "detail": 6
+    },
+    {
+      "name": "UC_G15:rendered_actors_outside_boundary",
+      "passed": true,
+      "detail": [
+        "A02",
+        "A05"
+      ]
+    },
+    {
+      "name": "UC_G15:rendered_associations_exact",
+      "passed": true,
+      "detail": 7
+    },
+    {
+      "name": "UC_G15:rendered_edges_touch_ellipses",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "UC_G16:rendered_entities_exact",
+      "passed": true,
+      "detail": 12
+    },
+    {
+      "name": "UC_G16:rendered_ellipses_inside_boundary",
+      "passed": true,
+      "detail": [
+        338.046,
+        107.142,
+        261.82,
+        707
+      ]
+    },
+    {
+      "name": "UC_G16:rendered_ellipses_no_overlap",
+      "passed": true,
+      "detail": 9
+    },
+    {
+      "name": "UC_G16:rendered_actors_outside_boundary",
+      "passed": true,
+      "detail": [
+        "A05",
+        "A02",
+        "A04"
+      ]
+    },
+    {
+      "name": "UC_G16:rendered_associations_exact",
+      "passed": true,
+      "detail": 10
+    },
+    {
+      "name": "UC_G16:rendered_edges_touch_ellipses",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "Actor_A03_01:rendered_entities_exact",
+      "passed": true,
+      "detail": 6
+    },
+    {
+      "name": "Actor_A03_01:rendered_ellipses_inside_boundary",
+      "passed": true,
+      "detail": [
+        399.946,
+        63.332,
+        269.73,
+        413
+      ]
+    },
+    {
+      "name": "Actor_A03_01:rendered_ellipses_no_overlap",
+      "passed": true,
+      "detail": 5
+    },
+    {
+      "name": "Actor_A03_01:rendered_actors_outside_boundary",
+      "passed": true,
+      "detail": [
+        "A03"
+      ]
+    },
+    {
+      "name": "Actor_A03_01:rendered_associations_exact",
+      "passed": true,
+      "detail": 5
+    },
+    {
+      "name": "Actor_A03_01:rendered_edges_touch_ellipses",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "Actor_A03_02:rendered_entities_exact",
+      "passed": true,
+      "detail": 14
+    },
+    {
+      "name": "Actor_A03_02:rendered_ellipses_inside_boundary",
+      "passed": true,
+      "detail": [
+        449.671,
+        63.332,
+        260.28,
+        989
+      ]
+    },
+    {
+      "name": "Actor_A03_02:rendered_ellipses_no_overlap",
+      "passed": true,
+      "detail": 13
+    },
+    {
+      "name": "Actor_A03_02:rendered_actors_outside_boundary",
+      "passed": true,
+      "detail": [
+        "A03"
+      ]
+    },
+    {
+      "name": "Actor_A03_02:rendered_associations_exact",
+      "passed": true,
+      "detail": 13
+    },
+    {
+      "name": "Actor_A03_02:rendered_edges_touch_ellipses",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "Actor_A03_03:rendered_entities_exact",
+      "passed": true,
+      "detail": 14
+    },
+    {
+      "name": "Actor_A03_03:rendered_ellipses_inside_boundary",
+      "passed": true,
+      "detail": [
+        446.461,
+        63.332,
+        263.7,
+        1008
+      ]
+    },
+    {
+      "name": "Actor_A03_03:rendered_ellipses_no_overlap",
+      "passed": true,
+      "detail": 13
+    },
+    {
+      "name": "Actor_A03_03:rendered_actors_outside_boundary",
+      "passed": true,
+      "detail": [
+        "A03"
+      ]
+    },
+    {
+      "name": "Actor_A03_03:rendered_associations_exact",
+      "passed": true,
+      "detail": 13
+    },
+    {
+      "name": "Actor_A03_03:rendered_edges_touch_ellipses",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "Actor_A03_04:rendered_entities_exact",
+      "passed": true,
+      "detail": 9
+    },
+    {
+      "name": "Actor_A03_04:rendered_ellipses_inside_boundary",
+      "passed": true,
+      "detail": [
+        523.41,
+        63.332,
+        265.88,
+        643
+      ]
+    },
+    {
+      "name": "Actor_A03_04:rendered_ellipses_no_overlap",
+      "passed": true,
+      "detail": 8
+    },
+    {
+      "name": "Actor_A03_04:rendered_actors_outside_boundary",
+      "passed": true,
+      "detail": [
+        "A03"
+      ]
+    },
+    {
+      "name": "Actor_A03_04:rendered_associations_exact",
+      "passed": true,
+      "detail": 8
+    },
+    {
+      "name": "Actor_A03_04:rendered_edges_touch_ellipses",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "Actor_A03_05:rendered_entities_exact",
+      "passed": true,
+      "detail": 17
+    },
+    {
+      "name": "Actor_A03_05:rendered_ellipses_inside_boundary",
+      "passed": true,
+      "detail": [
+        493.41,
+        63.332,
+        263.35,
+        1230
+      ]
+    },
+    {
+      "name": "Actor_A03_05:rendered_ellipses_no_overlap",
+      "passed": true,
+      "detail": 16
+    },
+    {
+      "name": "Actor_A03_05:rendered_actors_outside_boundary",
+      "passed": true,
+      "detail": [
+        "A03"
+      ]
+    },
+    {
+      "name": "Actor_A03_05:rendered_associations_exact",
+      "passed": true,
+      "detail": 16
+    },
+    {
+      "name": "Actor_A03_05:rendered_edges_touch_ellipses",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "Actor_A03_06:rendered_entities_exact",
+      "passed": true,
+      "detail": 7
+    },
+    {
+      "name": "Actor_A03_06:rendered_ellipses_inside_boundary",
+      "passed": true,
+      "detail": [
+        544.41,
+        63.332,
+        268.31,
+        423
+      ]
+    },
+    {
+      "name": "Actor_A03_06:rendered_ellipses_no_overlap",
+      "passed": true,
+      "detail": 5
+    },
+    {
+      "name": "Actor_A03_06:rendered_actors_outside_boundary",
+      "passed": true,
+      "detail": [
+        "A03",
+        "E01"
+      ]
+    },
+    {
+      "name": "Actor_A03_06:rendered_associations_exact",
+      "passed": true,
+      "detail": 6
+    },
+    {
+      "name": "Actor_A03_06:rendered_edges_touch_ellipses",
+      "passed": true,
+      "detail": []
+    }
+  ]
+}

@@ -1,0 +1,56 @@
+@startuml
+left to right direction
+skinparam defaultFontName SansSerif
+skinparam defaultFontSize 13
+skinparam backgroundColor #F8FAFC
+skinparam shadowing false
+skinparam ArrowColor #52647A
+skinparam ArrowThickness 1
+skinparam actorStyle stickman
+skinparam actorBorderColor #243A52
+skinparam actorFontColor #243A52
+skinparam actorBackgroundColor #FFFFFF
+skinparam usecase {
+  BackgroundColor #FFFFFF
+  BorderColor #327C83
+  FontColor #20354B
+  BackgroundColor<<Một phần>> #FFF0CE
+  BorderColor<<Một phần>> #B17917
+  BackgroundColor<<DEMO>> #FCE5DF
+  BorderColor<<DEMO>> #BC593A
+  BackgroundColor<<MÔ PHỎNG>> #E7EAF1
+  BorderColor<<MÔ PHỎNG>> #6C7488
+}
+skinparam rectangle {
+  BackgroundColor #EEF4F5
+  BorderColor #243A52
+  FontColor #243A52
+}
+skinparam titleFontColor #20354B
+skinparam titleFontSize 18
+skinparam nodesep 25
+skinparam ranksep 65
+title A03 · NHÂN VIÊN VẬN HÀNH\n<size:12>Trang 1/6 · Phiên và phạm vi nhân sự</size>
+caption AS-IS · 29/10/2026 · Snapshot c565c29 · Không biểu diễn trình tự xử lý
+actor "A03\nNhân viên vận hành" as A03
+rectangle "Hệ thống quản lý nhà trọ" as SYSTEM {
+  usecase "UC-SYS-05.1\nĐăng xuất phiên hiện tại" as UC_SYS_05_1
+  usecase "UC-SYS-05.2\nXem và thu hồi các phiên của\nmình" as UC_SYS_05_2
+  usecase "UC-SYS-07\nĐổi mật khẩu khi đang đăng nhập" as UC_SYS_07
+  usecase "UC-STF-04\nTra cứu nhân viên và phạm vi\nđược cấp" as UC_STF_04
+  usecase "UC-STF-01\nMời nhân viên và cấp phạm vi\nkhu trọ" as UC_STF_01
+}
+A03 -- UC_SYS_05_1
+A03 -- UC_SYS_05_2
+A03 -- UC_SYS_07
+A03 -- UC_STF_04 : tùy handler: staff.view
+A03 -[#3975AA]- UC_STF_01 : chỉ đọc nhân viên/preset
+legend bottom left
+  Đường liền: tương tác; không biểu diễn luồng điều khiển.
+  STAFF: permission theo handler + khu được giao + whitelist controller; không mặc định toàn quyền.
+  Đường xanh có nhãn: biến thể giới hạn (V), không được toàn bộ mục tiêu UC.
+  Mặc định: xác minh tĩnh, chưa nghiệm thu runtime; màu vàng: một phần, cam: DEMO, xám: mô phỏng.
+  Góc nhìn A03: nhãn liệt kê quyền tùy handler, KHÔNG yêu cầu đồng thời mọi quyền; giữ nguyên UC.
+  Quyền chi tiết, điều kiện và nguồn: Association_Traceability.md / data/diagram-manifest.json.
+endlegend
+@enduml

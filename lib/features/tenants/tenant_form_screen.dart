@@ -5,6 +5,8 @@ import 'package:go_router/go_router.dart';
 import '../../core/network/api_failure.dart';
 import '../../core/theme/app_theme.dart';
 import '../../models/tenant.dart';
+import '../auth/auth_navigation.dart';
+import 'tenant_management_theme.dart';
 import 'tenant_providers.dart';
 import 'widgets/form_widgets.dart';
 
@@ -26,8 +28,8 @@ class TenantFormScreen extends ConsumerWidget {
         loading: () => const Center(
             child: CircularProgressIndicator(color: AppTheme.primary)),
         error: (error, _) => Center(
-          child:
-              Text('$error', style: const TextStyle(color: Color(0xFF8891A8))),
+          child: Text('$error',
+              style: const TextStyle(color: TenantManagementTheme.muted)),
         ),
         data: (tenant) => _TenantForm(existing: tenant),
       ),
@@ -43,8 +45,16 @@ class _Scaffold extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFF0F1117),
-      appBar: AppBar(title: Text(title)),
+      backgroundColor: TenantManagementTheme.background,
+      appBar: AppBar(
+        title: Text(title),
+        leading: IconButton(
+          tooltip: 'Quay lại',
+          icon: const Icon(Icons.arrow_back),
+          onPressed: () =>
+              context.canPop() ? context.pop() : context.go(tenantsRoute),
+        ),
+      ),
       body: child,
     );
   }

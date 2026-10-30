@@ -16,6 +16,7 @@ import {
   UserRole,
   MaintenanceTicket,
   Payment,
+  Prisma,
 } from "@prisma/client";
 
 import { PrismaService } from "../prisma/prisma.service";
@@ -95,7 +96,6 @@ export class TenantPortalService {
 
   async dashboard(userId: string) {
     const tenant = await this.tenantProfile(userId);
-    const roomIds = tenant.leases.map((lease) => lease.roomId);
     const [invoices, tickets, notifications] = await Promise.all([
       this.prisma.invoice.findMany({
         where: {
@@ -106,19 +106,17 @@ export class TenantPortalService {
         orderBy: [{ dueDate: "asc" }, { issuedAt: "desc" }],
         include: this.invoiceInclude,
       }),
-      roomIds.length
-        ? this.prisma.maintenanceTicket.findMany({
-            where: {
-              roomId: { in: roomIds },
-              status: {
-                in: [MaintenanceStatus.OPEN, MaintenanceStatus.IN_PROGRESS],
-              },
-            },
-            orderBy: { updatedAt: "desc" },
-            take: 5,
-            include: this.ticketInclude,
-          })
-        : [],
+      this.prisma.maintenanceTicket.findMany({
+        where: {
+          ...this.maintenanceScope(tenant),
+          status: {
+            in: [MaintenanceStatus.OPEN, MaintenanceStatus.IN_PROGRESS],
+          },
+        },
+        orderBy: { updatedAt: "desc" },
+        take: 5,
+        include: this.ticketInclude,
+      }),
       this.notifications(userId),
     ]);
     const notificationData = notifications as {
@@ -197,7 +195,7 @@ export class TenantPortalService {
         orderBy: [{ dueDate: "asc" }, { issuedAt: "desc" }],
       }),
       this.prisma.maintenanceTicket.findMany({
-        where: { roomId: { in: tenant.leases.map((lease) => lease.roomId) } },
+        where: this.maintenanceScope(tenant),
         orderBy: { updatedAt: "desc" },
         take: 5,
       }),
@@ -370,14 +368,11 @@ export class TenantPortalService {
 
   async maintenance(userId: string) {
     const tenant = await this.tenantProfile(userId);
-    const roomIds = tenant.leases.map((lease) => lease.roomId);
-    const tickets = roomIds.length
-      ? await this.prisma.maintenanceTicket.findMany({
-          where: { roomId: { in: roomIds } },
-          orderBy: [{ reportedAt: "desc" }, { createdAt: "desc" }],
-          include: this.ticketInclude,
-        })
-      : [];
+    const tickets = await this.prisma.maintenanceTicket.findMany({
+      where: this.maintenanceScope(tenant),
+      orderBy: [{ reportedAt: "desc" }, { createdAt: "desc" }],
+      include: this.ticketInclude,
+    });
     return { data: tickets.map((ticket) => this.serializeTicket(ticket)) };
   }
 
@@ -513,9 +508,8 @@ export class TenantPortalService {
 
   private async tenantOwnedTicket(userId: string, ticketId: string) {
     const tenant = await this.tenantProfile(userId);
-    const roomIds = tenant.leases.map((lease) => lease.roomId);
     const ticket = await this.prisma.maintenanceTicket.findFirst({
-      where: { id: ticketId, roomId: { in: roomIds } },
+      where: { id: ticketId, ...this.maintenanceScope(tenant) },
       include: this.ticketInclude,
     });
     if (!ticket) {
@@ -527,6 +521,15 @@ export class TenantPortalService {
       });
     }
     return ticket;
+  }
+
+  private maintenanceScope(tenant: TenantProfile): Prisma.MaintenanceTicketWhereInput {
+    return {
+      landlordId: tenant.landlordId,
+      OR: tenant.leases
+        .filter((lease) => lease.status === LeaseStatus.ACTIVE)
+        .map((lease) => ({ roomId: lease.roomId, createdAt: { gte: lease.startDate } })),
+    };
   }
 
   private tenantProfile(userId: string) {
@@ -706,7 +709,6 @@ export class TenantPortalService {
       completedAt: ticket.completedAt?.toISOString() ?? null,
       estimatedCost: ticket.estimatedCost,
       actualCost: ticket.actualCost,
-      note: ticket.note,
       imageUrls: ticket.imageUrls,
       comments:
         ticket.comments?.map((comment) => this.serializeComment(comment)) ?? [],

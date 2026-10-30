@@ -1,0 +1,801 @@
+{
+  "headings": [
+    [
+      "Phân công thực hiện đồ án",
+      "ba_section_1",
+      0
+    ],
+    [
+      "1 Giới thiệu",
+      "ba_section_2",
+      0
+    ],
+    [
+      "1.1 Đặt vấn đề",
+      "ba_section_3",
+      1
+    ],
+    [
+      "1.2 Các giải pháp đã có",
+      "ba_section_4",
+      1
+    ],
+    [
+      "1.3 Giải pháp đề xuất",
+      "ba_section_5",
+      1
+    ],
+    [
+      "2 Thiết kế và triển khai",
+      "ba_section_6",
+      0
+    ],
+    [
+      "2.1 Các yêu cầu chức năng",
+      "ba_section_7",
+      1
+    ],
+    [
+      "2.1.1 Tác nhân và phạm vi truy cập",
+      "ba_section_8",
+      2
+    ],
+    [
+      "2.1.2 Thuật ngữ và quy tắc nghiệp vụ",
+      "ba_section_9",
+      2
+    ],
+    [
+      "2.2 Các yêu cầu phi chức năng",
+      "ba_section_10",
+      1
+    ],
+    [
+      "2.3 Các ràng buộc",
+      "ba_section_11",
+      1
+    ],
+    [
+      "2.3.1 Các ràng buộc về triển khai",
+      "ba_section_12",
+      2
+    ],
+    [
+      "2.3.2 Các ràng buộc kinh tế",
+      "ba_section_13",
+      2
+    ],
+    [
+      "2.3.3 Các ràng buộc về đạo đức",
+      "ba_section_14",
+      2
+    ],
+    [
+      "2.4 Mô hình hệ thống và thiết kế giải pháp",
+      "ba_section_15",
+      1
+    ],
+    [
+      "2.4.1 Danh mục và đặc tả Use Case",
+      "ba_section_16",
+      2
+    ],
+    [
+      "2.4.2 Mô hình Use Case",
+      "ba_section_17",
+      2
+    ],
+    [
+      "2.4.3 Mô hình lớp và đối tượng",
+      "ba_section_18",
+      2
+    ],
+    [
+      "2.4.4 Các biểu đồ tuần tự",
+      "ba_section_19",
+      2
+    ],
+    [
+      "2.4.5 Các màn hình giao diện người dùng",
+      "ba_section_20",
+      2
+    ],
+    [
+      "2.5 Thiết kế triển khai và các điểm cần đối chiếu",
+      "ba_section_21",
+      1
+    ],
+    [
+      "2.5.1 Cấu trúc mã nguồn và hợp đồng API",
+      "ba_section_22",
+      2
+    ],
+    [
+      "2.5.2 Tính tiền phân bổ và báo cáo",
+      "ba_section_23",
+      2
+    ],
+    [
+      "2.5.3 Phân quyền dữ liệu và tác vụ nền",
+      "ba_section_24",
+      2
+    ],
+    [
+      "2.5.4 Các lỗi lệch tài liệu đã được hiệu chỉnh",
+      "ba_section_25",
+      2
+    ],
+    [
+      "2.6 Kiểm chứng và đánh giá kết quả",
+      "ba_section_26",
+      1
+    ],
+    [
+      "2.6.1 Phương pháp và phạm vi kiểm tra",
+      "ba_section_27",
+      2
+    ],
+    [
+      "2.6.2 Các kịch bản kiểm chứng trọng yếu",
+      "ba_section_28",
+      2
+    ],
+    [
+      "2.6.3 Lỗi hiện hữu và giới hạn còn lại",
+      "ba_section_29",
+      2
+    ],
+    [
+      "3 Một số thành phần khác của đồ án",
+      "ba_section_30",
+      0
+    ],
+    [
+      "3.1 Kế hoạch dự án",
+      "ba_section_31",
+      1
+    ],
+    [
+      "3.2 Đảm bảo thực hiện đúng với đồ án cá nhân",
+      "ba_section_32",
+      1
+    ],
+    [
+      "3.3 Các vấn đề về đạo đức và làm việc chuyên nghiệp",
+      "ba_section_33",
+      1
+    ],
+    [
+      "3.4 Tác động xã hội",
+      "ba_section_34",
+      1
+    ],
+    [
+      "3.5 Kế hoạch cho kiến thức mới và chiến lược học tập",
+      "ba_section_35",
+      1
+    ],
+    [
+      "4 Kết luận",
+      "ba_section_36",
+      0
+    ],
+    [
+      "5 Tài liệu tham khảo",
+      "ba_section_37",
+      0
+    ],
+    [
+      "Phụ lục A Đối chiếu danh mục Use Case",
+      "ba_section_38",
+      0
+    ],
+    [
+      "A.1 Đối chiếu 131 mục của bản báo cáo trước",
+      "ba_section_39",
+      1
+    ],
+    [
+      "A.2 Đối chiếu 67 mục của bản thảo ban đầu",
+      "ba_section_40",
+      1
+    ],
+    [
+      "Phụ lục B Ma trận tác nhân và Use Case",
+      "ba_section_41",
+      0
+    ],
+    [
+      "G01 Tài khoản và an toàn truy cập",
+      "ba_section_42",
+      2
+    ],
+    [
+      "G02 Tìm và lựa chọn phòng",
+      "ba_section_43",
+      2
+    ],
+    [
+      "G03 Đăng tin, lịch xem và nhận phòng",
+      "ba_section_44",
+      2
+    ],
+    [
+      "G04 Khu trọ và cơ sở vật chất",
+      "ba_section_45",
+      2
+    ],
+    [
+      "G05 Nhân sự và ủy quyền vận hành",
+      "ba_section_46",
+      2
+    ],
+    [
+      "G06 Hồ sơ thuê, hợp đồng và tiền cọc",
+      "ba_section_47",
+      2
+    ],
+    [
+      "G07 Vòng đời thuê và quyết toán",
+      "ba_section_48",
+      2
+    ],
+    [
+      "G08 Hóa đơn, thu tiền và công nợ",
+      "ba_section_49",
+      2
+    ],
+    [
+      "G09 Bảo trì và chi phí vận hành",
+      "ba_section_50",
+      2
+    ],
+    [
+      "G10 Công việc, thông tin và hỗ trợ sử dụng",
+      "ba_section_51",
+      2
+    ],
+    [
+      "G11 Báo cáo và giám sát vận hành",
+      "ba_section_52",
+      2
+    ],
+    [
+      "G12 Tài khoản và tài nguyên nền tảng",
+      "ba_section_53",
+      2
+    ],
+    [
+      "G13 Kiểm duyệt và chất lượng nội dung",
+      "ba_section_54",
+      2
+    ],
+    [
+      "G14 Dịch vụ hỗ trợ khách hàng",
+      "ba_section_55",
+      2
+    ],
+    [
+      "G15 Hồ sơ xác minh và gói dịch vụ",
+      "ba_section_56",
+      2
+    ],
+    [
+      "G16 Quản trị chính sách và đối soát nền tảng",
+      "ba_section_57",
+      2
+    ],
+    [
+      "B.1 Tác nhân phối hợp theo từng Use Case",
+      "ba_section_58",
+      1
+    ],
+    [
+      "Phụ lục C Phạm vi đối chiếu và tài liệu kèm theo",
+      "ba_section_59",
+      0
+    ]
+  ],
+  "captions": [
+    [
+      "Hình 2.1 AR-01 Kiến trúc tổng thể và ranh giới tích hợp",
+      "ba_figure_1",
+      0
+    ],
+    [
+      "Hình 2.2 AR-02 Các lớp kiểm tra truy cập",
+      "ba_figure_2",
+      0
+    ],
+    [
+      "Hình 2.3 TỔNG THỂ HỆ THỐNG QUẢN LÝ NHÀ TRỌ",
+      "ba_figure_3",
+      0
+    ],
+    [
+      "Hình 2.4 G01 Đăng ký và tiếp nhận lời mời",
+      "ba_figure_4",
+      0
+    ],
+    [
+      "Hình 2.5 G01 Đăng nhập và bảo vệ tài khoản",
+      "ba_figure_5",
+      0
+    ],
+    [
+      "Hình 2.6 G02 Tìm và lựa chọn phòng",
+      "ba_figure_6",
+      0
+    ],
+    [
+      "Hình 2.7 G03 Đăng tin, lịch xem và nhận phòng",
+      "ba_figure_7",
+      0
+    ],
+    [
+      "Hình 2.8 G04 Khu trọ và cơ sở vật chất phần 1",
+      "ba_figure_8",
+      0
+    ],
+    [
+      "Hình 2.9 G04 Khu trọ và cơ sở vật chất phần 2",
+      "ba_figure_9",
+      0
+    ],
+    [
+      "Hình 2.10 G05 Nhân sự và ủy quyền vận hành",
+      "ba_figure_10",
+      0
+    ],
+    [
+      "Hình 2.11 G06 Hồ sơ người thuê và quyền truy cập",
+      "ba_figure_11",
+      0
+    ],
+    [
+      "Hình 2.12 G06 Hợp đồng và tiền cọc phần 1",
+      "ba_figure_12",
+      0
+    ],
+    [
+      "Hình 2.13 G06 Hợp đồng và tiền cọc phần 2",
+      "ba_figure_13",
+      0
+    ],
+    [
+      "Hình 2.14 G07 Vòng đời thuê và quyết toán",
+      "ba_figure_14",
+      0
+    ],
+    [
+      "Hình 2.15 G08 Chỉ số và hóa đơn phần 1",
+      "ba_figure_15",
+      0
+    ],
+    [
+      "Hình 2.16 G08 Chỉ số và hóa đơn phần 2",
+      "ba_figure_16",
+      0
+    ],
+    [
+      "Hình 2.17 G08 Thu tiền và thanh toán phần 1",
+      "ba_figure_17",
+      0
+    ],
+    [
+      "Hình 2.18 G08 Thu tiền và thanh toán phần 2",
+      "ba_figure_18",
+      0
+    ],
+    [
+      "Hình 2.19 G08 Biểu phí và kỳ thanh toán",
+      "ba_figure_19",
+      0
+    ],
+    [
+      "Hình 2.20 G08 Chính sách và thông báo nhắc nợ",
+      "ba_figure_20",
+      0
+    ],
+    [
+      "Hình 2.21 G09 Bảo trì và chi phí vận hành",
+      "ba_figure_21",
+      0
+    ],
+    [
+      "Hình 2.22 G10 Công việc, thông tin và hỗ trợ sử dụng phần 1",
+      "ba_figure_22",
+      0
+    ],
+    [
+      "Hình 2.23 G10 Công việc, thông tin và hỗ trợ sử dụng phần 2",
+      "ba_figure_23",
+      0
+    ],
+    [
+      "Hình 2.24 G11 Báo cáo và giám sát vận hành",
+      "ba_figure_24",
+      0
+    ],
+    [
+      "Hình 2.25 G12 Tài khoản và tài nguyên nền tảng phần 1",
+      "ba_figure_25",
+      0
+    ],
+    [
+      "Hình 2.26 G12 Tài khoản và tài nguyên nền tảng phần 2",
+      "ba_figure_26",
+      0
+    ],
+    [
+      "Hình 2.27 G13 Kiểm duyệt và chất lượng nội dung phần 1",
+      "ba_figure_27",
+      0
+    ],
+    [
+      "Hình 2.28 G13 Kiểm duyệt và chất lượng nội dung phần 2",
+      "ba_figure_28",
+      0
+    ],
+    [
+      "Hình 2.29 G14 Dịch vụ hỗ trợ khách hàng",
+      "ba_figure_29",
+      0
+    ],
+    [
+      "Hình 2.30 G15 Hồ sơ xác minh và gói dịch vụ",
+      "ba_figure_30",
+      0
+    ],
+    [
+      "Hình 2.31 G16 Quản trị chính sách và đối soát nền tảng phần 1",
+      "ba_figure_31",
+      0
+    ],
+    [
+      "Hình 2.32 G16 Quản trị chính sách và đối soát nền tảng phần 2",
+      "ba_figure_32",
+      0
+    ],
+    [
+      "Hình 2.33 CD-01 Tài khoản và phân quyền",
+      "ba_figure_33",
+      0
+    ],
+    [
+      "Hình 2.34 CD-02 Khu trọ phòng và dữ liệu phụ",
+      "ba_figure_34",
+      0
+    ],
+    [
+      "Hình 2.35 CD-03 Tìm phòng và lịch xem",
+      "ba_figure_35",
+      0
+    ],
+    [
+      "Hình 2.36 CD-04 Người thuê hợp đồng và vòng đời",
+      "ba_figure_36",
+      0
+    ],
+    [
+      "Hình 2.37 CD-05 Tiền cọc và quyết toán",
+      "ba_figure_37",
+      0
+    ],
+    [
+      "Hình 2.38 CD-06 Hóa đơn và giá phiên bản",
+      "ba_figure_38",
+      0
+    ],
+    [
+      "Hình 2.39 CD-07 Khoản thu phân bổ và hoàn tiền",
+      "ba_figure_39",
+      0
+    ],
+    [
+      "Hình 2.40 CD-08 Bảo trì và vận hành định kỳ",
+      "ba_figure_40",
+      0
+    ],
+    [
+      "Hình 2.41 CD-09 Thông báo và delivery",
+      "ba_figure_41",
+      0
+    ],
+    [
+      "Hình 2.42 CD-10 Quản trị nền tảng và đối soát",
+      "ba_figure_42",
+      0
+    ],
+    [
+      "Hình 2.43 CD-11 Hỗ trợ và báo cáo quản trị",
+      "ba_figure_43",
+      0
+    ],
+    [
+      "Hình 2.44 CD-12 Đánh giá tri thức và thanh toán demo",
+      "ba_figure_44",
+      0
+    ],
+    [
+      "Hình 2.45 CD-13 Lời mời tệp và ngữ cảnh tìm phòng",
+      "ba_figure_45",
+      0
+    ],
+    [
+      "Hình 2.46 CD-14 Mẫu thông báo nhóm nhận và automation",
+      "ba_figure_46",
+      0
+    ],
+    [
+      "Hình 2.47 CD-15 Audit phiên đặc quyền và tổ chức Admin",
+      "ba_figure_47",
+      0
+    ],
+    [
+      "Hình 2.48 CD-16 Telemetry sự cố và liên kết hỗ trợ",
+      "ba_figure_48",
+      0
+    ],
+    [
+      "Hình 2.49 CD-17 Chính sách mẫu hỗ trợ và preference nền tảng",
+      "ba_figure_49",
+      0
+    ],
+    [
+      "Hình 2.50 CD-18 Xác minh khu trọ và gói sử dụng nền tảng",
+      "ba_figure_50",
+      0
+    ],
+    [
+      "Hình 2.51 OD-01 Đối tượng khoản thu và hóa đơn thanh toán một phần",
+      "ba_figure_51",
+      0
+    ],
+    [
+      "Hình 2.52 SD-01 Đăng nhập và gia hạn phiên",
+      "ba_figure_52",
+      0
+    ],
+    [
+      "Hình 2.53 SD-02 Đặt lịch xem và tạo hợp đồng từ lịch",
+      "ba_figure_53",
+      0
+    ],
+    [
+      "Hình 2.54 SD-03 Tạo hợp đồng và ghi nhận cọc",
+      "ba_figure_54",
+      0
+    ],
+    [
+      "Hình 2.55 SD-04 Đề xuất và duyệt biểu phí",
+      "ba_figure_55",
+      0
+    ],
+    [
+      "Hình 2.56 SD-05 Xem trước và phát hành hóa đơn",
+      "ba_figure_56",
+      0
+    ],
+    [
+      "Hình 2.57 SD-06 Ghi khoản thu và phân bổ nhiều hóa đơn",
+      "ba_figure_57",
+      0
+    ],
+    [
+      "Hình 2.58 SD-07 Giải phóng phân bổ và ghi nhận hoàn tiền",
+      "ba_figure_58",
+      0
+    ],
+    [
+      "Hình 2.59 SD-08 Gửi và xét duyệt chứng từ thanh toán",
+      "ba_figure_59",
+      0
+    ],
+    [
+      "Hình 2.60 SD-09 Thay thế hoặc điều chỉnh hóa đơn",
+      "ba_figure_60",
+      0
+    ],
+    [
+      "Hình 2.61 SD-10 Quyết toán trả phòng và hoàn cọc",
+      "ba_figure_61",
+      0
+    ],
+    [
+      "Hình 2.62 SD-11 Yêu cầu và thực thi vòng đời thuê",
+      "ba_figure_62",
+      0
+    ],
+    [
+      "Hình 2.63 SD-12 Tiếp nhận và hoàn tất yêu cầu bảo trì",
+      "ba_figure_63",
+      0
+    ],
+    [
+      "Hình 2.64 SD-13 Báo cáo tháng và xuất CSV",
+      "ba_figure_64",
+      0
+    ],
+    [
+      "Hình 2.65 SD-14 Đình chỉ tài khoản khách hàng",
+      "ba_figure_65",
+      0
+    ],
+    [
+      "Hình 2.66 SD-15 Tra cứu inventory và chuyển kiểm duyệt tin",
+      "ba_figure_66",
+      0
+    ],
+    [
+      "Hình 2.67 SD-16 Đối soát khoản thu theo maker checker",
+      "ba_figure_67",
+      0
+    ],
+    [
+      "Hình 2.68 SD-17 Chatbot RAG và đọc nguồn theo quyền",
+      "ba_figure_68",
+      0
+    ],
+    [
+      "Hình 2.69 SD-18 Duyệt hồ sơ xác minh chủ trọ",
+      "ba_figure_69",
+      0
+    ],
+    [
+      "Hình 2.70 SD-19 Gán và kết thúc quyền sử dụng gói",
+      "ba_figure_70",
+      0
+    ],
+    [
+      "Hình 2.71 UI-01 Đăng nhập tài khoản — dữ liệu fixture, widget render",
+      "ba_figure_71",
+      0
+    ],
+    [
+      "Hình 2.72 UI-02 Đăng ký tài khoản — dữ liệu fixture, widget render",
+      "ba_figure_72",
+      0
+    ],
+    [
+      "Hình 2.73 UI-03 Khách vãng lai khám phá và tìm phòng — dữ liệu fixture, widget render",
+      "ba_figure_73",
+      0
+    ],
+    [
+      "Hình 2.74 UI-04 Khách vãng lai xem chi tiết tin phòng — dữ liệu fixture, widget render",
+      "ba_figure_74",
+      0
+    ],
+    [
+      "Hình 2.75 UI-05 Chủ trọ xem dashboard và bản đồ phòng — dữ liệu fixture, widget render",
+      "ba_figure_75",
+      0
+    ],
+    [
+      "Hình 2.76 UI-06 Chủ trọ tra cứu danh sách khu trọ — dữ liệu fixture, widget render",
+      "ba_figure_76",
+      0
+    ],
+    [
+      "Hình 2.77 UI-07 Chủ trọ cập nhật thông tin khu trọ — dữ liệu fixture, widget render",
+      "ba_figure_77",
+      0
+    ],
+    [
+      "Hình 2.78 UI-08 Chủ trọ xem chi tiết phòng — dữ liệu fixture, widget render",
+      "ba_figure_78",
+      0
+    ],
+    [
+      "Hình 2.79 UI-09 Chủ trọ mở luồng quyết toán trả phòng — dữ liệu fixture, widget render",
+      "ba_figure_79",
+      0
+    ],
+    [
+      "Hình 2.80 UI-10 Người thuê xem tổng quan phòng đang thuê — dữ liệu fixture, widget render",
+      "ba_figure_80",
+      0
+    ],
+    [
+      "Hình 2.81 UI-11 Người thuê xem danh sách hóa đơn — dữ liệu fixture, widget render",
+      "ba_figure_81",
+      0
+    ],
+    [
+      "Hình 2.82 UI-12 Người thuê xem chi tiết hóa đơn — dữ liệu fixture, widget render",
+      "ba_figure_82",
+      0
+    ],
+    [
+      "Hình 2.83 UI-13 Người thuê xem hợp đồng và tiền cọc — dữ liệu fixture, widget render",
+      "ba_figure_83",
+      0
+    ],
+    [
+      "Hình 2.84 UI-14 Người thuê theo dõi yêu cầu bảo trì — dữ liệu fixture, widget render",
+      "ba_figure_84",
+      0
+    ],
+    [
+      "Hình 2.85 UI-15 Người thuê xem thông báo — dữ liệu fixture, widget render",
+      "ba_figure_85",
+      0
+    ],
+    [
+      "Hình 2.86 UI-16 Chủ trọ quản lý người thuê — dữ liệu fixture, widget render",
+      "ba_figure_86",
+      0
+    ],
+    [
+      "Hình 2.87 UI-17 Chủ trọ quản lý hóa đơn và công nợ — dữ liệu fixture, widget render",
+      "ba_figure_87",
+      0
+    ],
+    [
+      "Hình 2.88 UI-18 Chủ trọ xem báo cáo theo tháng — dữ liệu fixture, widget render",
+      "ba_figure_88",
+      0
+    ],
+    [
+      "Hình 2.89 UI-19 Tổng quan Admin mới trên desktop — dữ liệu fixture, widget render",
+      "ba_figure_89",
+      0
+    ],
+    [
+      "Hình 2.90 UI-20 Tổng quan Admin mới trên màn hình hẹp — dữ liệu fixture, widget render",
+      "ba_figure_90",
+      0
+    ],
+    [
+      "Hình 2.91 UI-21 Danh sách tài khoản trong theme Admin mới — dữ liệu fixture, widget render",
+      "ba_figure_91",
+      0
+    ],
+    [
+      "Hình 2.92 UI-22 Chi tiết tài khoản trong theme Admin mới — dữ liệu fixture, widget render",
+      "ba_figure_92",
+      0
+    ],
+    [
+      "Hình 2.93 UI-23 Inventory khu trọ trong giao diện mới — dữ liệu fixture, widget render",
+      "ba_figure_93",
+      0
+    ],
+    [
+      "Hình 2.94 UI-24 Inventory phòng với trạng thái tin riêng — dữ liệu fixture, widget render",
+      "ba_figure_94",
+      0
+    ],
+    [
+      "Hình 2.95 UI-25 Inventory phòng mới trên mobile chữ lớn phần 1/2 — ảnh widget cắt nối tiếp, không đổi màu",
+      "ba_figure_95",
+      0
+    ],
+    [
+      "Hình 2.96 UI-25 Inventory phòng mới trên mobile chữ lớn phần 2/2 — ảnh widget cắt nối tiếp, không đổi màu",
+      "ba_figure_96",
+      0
+    ],
+    [
+      "Hình 2.97 UI-26 Chi tiết khu trong giao diện Admin mới phần 1/2 — ảnh widget cắt nối tiếp, không đổi màu",
+      "ba_figure_97",
+      0
+    ],
+    [
+      "Hình 2.98 UI-26 Chi tiết khu trong giao diện Admin mới phần 2/2 — ảnh widget cắt nối tiếp, không đổi màu",
+      "ba_figure_98",
+      0
+    ],
+    [
+      "Hình 2.99 UI-27 Form đề xuất biểu phí trên mobile — ảnh kiểm thử có sẵn trong workspace",
+      "ba_figure_99",
+      0
+    ],
+    [
+      "Hình 2.100 UI-28 Lịch sử và so sánh biểu phí trên tablet — ảnh kiểm thử có sẵn trong workspace",
+      "ba_figure_100",
+      0
+    ]
+  ]
+}

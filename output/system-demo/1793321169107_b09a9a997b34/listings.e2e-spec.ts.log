@@ -1,0 +1,23 @@
+
+> rental-room-api@0.1.0 test:e2e
+> NODE_ENV=test jest --config ./test/jest-e2e.json --runInBand --runTestsByPath test/e2e/listings.e2e-spec.ts --runInBand
+
+PASS test/e2e/listings.e2e-spec.ts (6.162 s)
+  Room listings E2E
+    ✓ registers a seeker without a rental profile and does not expose private portal data (335 ms)
+    ✓ publishes only reviewed listings using an explicit public projection (348 ms)
+    ✓ enforces role and owner isolation and rejects duplicate listings (415 ms)
+    ✓ handles rejection, resubmission, stale versions and withdraws edited content (468 ms)
+    ✓ immediately stops exposing occupied/inactive rooms, archived properties and disabled landlords (468 ms)
+    ✓ validates filters/content and supports filtering and pagination (450 ms)
+    ✓ withdraws publications through landlord or admin controls with an audit reason (430 ms)
+    ✓ filters real coordinate distances before pagination and excludes missing coordinates (401 ms)
+    ✓ persists student reports, rejects duplicate reports and protects moderation (398 ms)
+    ✓ records truthful verification and invalidates it when listing content changes (377 ms)
+    ✓ validates coordinate pairs and prevents forged verification in landlord content (305 ms)
+
+Test Suites: 1 passed, 1 total
+Tests:       11 passed, 11 total
+Snapshots:   0 total
+Time:        6.267 s
+Ran all test suites within paths "test/e2e/listings.e2e-spec.ts".

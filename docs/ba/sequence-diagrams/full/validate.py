@@ -33,7 +33,7 @@ def validate():
     aggregate = ET.parse(BASE / 'SEQUENCE_DIAGRAMS.drawio').getroot()
     assert len(aggregate.findall('diagram')) == 22
     specification = (ROOT / 'docs/ba/SEQUENCE_DIAGRAM_SPECIFICATION.md').read_text()
-    proposal = (ROOT / 'PROPOSAL_QUAN_LY_TRO.md').read_text()
+    proposal = (ROOT / 'docs/PROPOSAL_QUAN_LY_TRO.md').read_text()
     fragment_counts = {}
     total_messages = 0
     total_cells = 0

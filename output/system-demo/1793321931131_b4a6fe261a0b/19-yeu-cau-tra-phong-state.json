@@ -1,0 +1,22 @@
+{
+  "route": "/tenants/b9eee38d-b771-4303-8e12-7a99fbc040c5",
+  "apiBaseUrl": "http://127.0.0.1:58895/api/v1",
+  "texts": [
+    "Gia hạn · Đã duyệt yêu cầu",
+    "Đến: 31/12/2028\nDEMO muon gia han hop dong\nLý do xử lý: DEMO dong y gia han\nXử lý: 30/10/2026",
+    "Đã thực hiện · 30/10/2026",
+    "Trả phòng · Đã duyệt yêu cầu",
+    "Ngày dự kiến: 30/10/2026\nDEMO tra phong, chua xac nhan quyet toan\nLý do xử lý: DEMO tiep nhan yeu cau tra phong\nXử lý: 30/10/2026",
+    "Yêu cầu đã được đồng ý, chưa thực hiện. Trả/chuyển phòng phải xác nhận quyết toán trước.",
+    "Thực hiện yêu cầu đã duyệt",
+    "Người ở cùng",
+    "Danh sách này không bao gồm người đứng hợp đồng.",
+    "Chưa ghi nhận người ở cùng.",
+    "Thêm người ở cùng",
+    "Mở quyết toán hiện có",
+    "Yêu cầu & người ở cùng",
+    "Bấm: Trả phòng & quyết toán"
+  ],
+  "fields": [],
+  "errors": []
+}

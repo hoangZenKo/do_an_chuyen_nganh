@@ -1,0 +1,16 @@
+@startwbs
+title Phân rã chức năng AS-IS — không phải sơ đồ Use Case
+* Hệ thống quản lý và tìm thuê nhà trọ
+** G14 — Dịch vụ hỗ trợ khách hàng
+*** G14.1 Đề nghị và xử lý hỗ trợ
+**** UC-SUP-01 Gửi và theo dõi yêu cầu hỗ trợ [Một phần]
+**** UC-SUP-01.1 Tiếp nhận và xử lý hồ sơ hỗ trợ [Một phần]
+**** UC-SUP-03.2.1 Hợp nhất hồ sơ hỗ trợ trùng
+**** UC-SUP-03.2.2 Đánh giá kết quả hỗ trợ
+*** G14.2 Năng lực xử lý và SLA
+**** UC-SUP-02.1 Cấu hình phân công tự động hỗ trợ
+**** UC-SUP-02.2 Cấu hình và theo dõi SLA hỗ trợ
+*** G14.3 Công cụ làm việc của bộ phận hỗ trợ
+**** UC-SUP-03.2 Quản lý mẫu trả lời hỗ trợ
+**** UC-SUP-03.3 Lưu bộ lọc xử lý hỗ trợ
+@endwbs

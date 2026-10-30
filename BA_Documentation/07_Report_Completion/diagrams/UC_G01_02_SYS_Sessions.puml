@@ -1,0 +1,65 @@
+@startuml
+left to right direction
+skinparam defaultFontName SansSerif
+skinparam defaultFontSize 13
+skinparam backgroundColor #F8FAFC
+skinparam shadowing false
+skinparam ArrowColor #52647A
+skinparam ArrowThickness 1
+skinparam actorStyle stickman
+skinparam actorBorderColor #243A52
+skinparam actorFontColor #243A52
+skinparam actorBackgroundColor #FFFFFF
+skinparam usecase {
+  BackgroundColor #FFFFFF
+  BorderColor #327C83
+  FontColor #20354B
+  BackgroundColor<<Một phần>> #FFF0CE
+  BorderColor<<Một phần>> #B17917
+  BackgroundColor<<DEMO>> #FCE5DF
+  BorderColor<<DEMO>> #BC593A
+  BackgroundColor<<MÔ PHỎNG>> #E7EAF1
+  BorderColor<<MÔ PHỎNG>> #6C7488
+}
+skinparam rectangle {
+  BackgroundColor #EEF4F5
+  BorderColor #243A52
+  FontColor #243A52
+}
+skinparam titleFontColor #20354B
+skinparam titleFontSize 18
+skinparam nodesep 25
+skinparam ranksep 65
+title G01 · Tài khoản và an toàn truy cập\n<size:12>Trang 2/2 · Phiên đăng nhập, mật khẩu và xác thực nhiều yếu tố</size>
+
+actor "A02\nChủ trọ" as A02
+actor "A03\nNhân viên vận hành" as A03
+actor "A04\nNgười tìm phòng\nhoặc người thuê" as A04
+actor "A05\nQuản trị viên nền tảng" as A05
+rectangle "Hệ thống quản lý nhà trọ" as SYSTEM {
+  usecase "UC-SYS-05.1\nĐăng xuất khỏi phiên đang sử\ndụng" as UC_SYS_05_1
+  usecase "UC-SYS-05.2\nXem và thu hồi phiên truy cập\ncủa mình" as UC_SYS_05_2
+  usecase "UC-SYS-07\nĐổi mật khẩu khi đang đăng nhập" as UC_SYS_07
+  usecase "UC-ADM-07.1\nThiết lập xác thực nhiều yếu tố\ncho quản trị viên" as UC_ADM_07_1
+}
+A02 -- UC_SYS_05_1
+UC_SYS_05_1 -- A03
+A04 -- UC_SYS_05_1
+A05 -- UC_SYS_05_1
+A02 -- UC_SYS_05_2
+UC_SYS_05_2 -- A03
+A04 -- UC_SYS_05_2
+A05 -- UC_SYS_05_2
+A02 -- UC_SYS_07
+UC_SYS_07 -- A03
+A04 -- UC_SYS_07
+A05 -- UC_SYS_07
+A05 -- UC_ADM_07_1
+legend bottom left
+  Đường liền: tác nhân tham gia mục tiêu nghiệp vụ.
+  Đường xanh có nhãn: chỉ tham gia trong phạm vi giới hạn được nêu.
+  Nhân viên cần quyền phù hợp và khu được giao; quản trị viên cần đúng thẩm quyền.
+  Vàng: đáp ứng một phần. Cam: thanh toán thử nghiệm. Xám: trao đổi mô phỏng.
+  Không thể hiện thứ tự thực hiện; không suy ra quyền từ vị trí tác nhân.
+endlegend
+@enduml

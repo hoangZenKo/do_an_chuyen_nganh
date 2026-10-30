@@ -94,7 +94,7 @@ class MaintenanceRepository {
   }) {
     return _api.complete(id, {
       if (actualCost != null) 'actualCost': actualCost,
-      if (note != null && note.trim().isNotEmpty) 'note': note.trim(),
+      if (note != null) 'note': note.trim(),
       'createExpense': createExpense,
       if (completedAt != null) 'completedAt': completedAt,
     });
@@ -132,13 +132,12 @@ class MaintenanceRepository {
       if (status != null) 'status': status.wire,
       'priority': priority.name,
       'title': title.trim(),
-      if (description != null && description.trim().isNotEmpty)
-        'description': description.trim(),
+      if (description != null) 'description': description.trim(),
       if (reportedAt != null && reportedAt.trim().isNotEmpty)
         'reportedAt': reportedAt.trim(),
       if (estimatedCost != null) 'estimatedCost': estimatedCost,
       if (actualCost != null) 'actualCost': actualCost,
-      if (note != null && note.trim().isNotEmpty) 'note': note.trim(),
+      if (note != null) 'note': note.trim(),
       if (imageUrls.isNotEmpty) 'imageUrls': imageUrls,
     };
   }

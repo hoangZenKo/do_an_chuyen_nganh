@@ -1,0 +1,63 @@
+@startuml
+left to right direction
+skinparam defaultFontName SansSerif
+skinparam defaultFontSize 13
+skinparam backgroundColor #F8FAFC
+skinparam shadowing false
+skinparam ArrowColor #52647A
+skinparam ArrowThickness 1
+skinparam actorStyle stickman
+skinparam actorBorderColor #243A52
+skinparam actorFontColor #243A52
+skinparam actorBackgroundColor #FFFFFF
+skinparam usecase {
+  BackgroundColor #FFFFFF
+  BorderColor #327C83
+  FontColor #20354B
+  BackgroundColor<<Một phần>> #FFF0CE
+  BorderColor<<Một phần>> #B17917
+  BackgroundColor<<DEMO>> #FCE5DF
+  BorderColor<<DEMO>> #BC593A
+  BackgroundColor<<MÔ PHỎNG>> #E7EAF1
+  BorderColor<<MÔ PHỎNG>> #6C7488
+}
+skinparam rectangle {
+  BackgroundColor #EEF4F5
+  BorderColor #243A52
+  FontColor #243A52
+}
+skinparam titleFontColor #20354B
+skinparam titleFontSize 18
+skinparam nodesep 25
+skinparam ranksep 65
+title G08 Thu tiền và thanh toán phần 1
+
+
+actor "A02\nChủ trọ" as A02
+actor "A03\nNhân viên vận hành" as A03
+
+rectangle "Hệ thống quản lý nhà trọ" as SYSTEM {
+  usecase "UC-BIL-09\nGhi nhận thanh toán trực tiếp" as UC_BIL_09
+  usecase "UC-BIL-10\nTạo khoản thu cho người thuê" as UC_BIL_10
+  usecase "UC-BIL-11\nPhân bổ khoản thu cho hóa đơn" as UC_BIL_11
+  usecase "UC-BIL-12.1\nGiải phóng phân bổ khoản thu" as UC_BIL_12_1
+  usecase "UC-BIL-12.2\nĐảo thanh toán trực tiếp" as UC_BIL_12_2
+}
+A02 -- UC_BIL_09
+UC_BIL_09 -- A03
+A02 -- UC_BIL_10
+UC_BIL_10 -- A03
+A02 -- UC_BIL_11
+UC_BIL_11 -- A03
+A02 -- UC_BIL_12_1
+UC_BIL_12_1 -- A03
+A02 -- UC_BIL_12_2
+UC_BIL_12_2 -- A03
+legend bottom left
+  Đường liền: tác nhân tham gia mục tiêu nghiệp vụ.
+  Đường xanh có nhãn: chỉ tham gia trong phạm vi giới hạn được nêu.
+  Nhân viên cần quyền phù hợp và khu được giao; quản trị viên cần đúng thẩm quyền.
+  Vàng: đáp ứng một phần. Cam: thanh toán thử nghiệm. Xám: trao đổi mô phỏng.
+  Không thể hiện thứ tự thực hiện; không suy ra quyền từ vị trí tác nhân.
+endlegend
+@enduml

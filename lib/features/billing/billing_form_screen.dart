@@ -711,6 +711,8 @@ class _RoomStep extends StatelessWidget {
         DropdownButtonFormField<BillingLease>(
           value: selectedLease,
           isExpanded: true,
+          dropdownColor: _InvoiceColors.surface,
+          iconEnabledColor: _InvoiceColors.muted,
           items: leases
               .map(
                 (lease) => DropdownMenuItem(

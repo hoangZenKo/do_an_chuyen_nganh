@@ -1,0 +1,39 @@
+@startwbs
+title Phân rã chức năng AS-IS — không phải sơ đồ Use Case
+* Hệ thống quản lý và tìm thuê nhà trọ
+** G08 — Hóa đơn, thu tiền và công nợ
+*** G08.1 Chỉ số và phát hành hóa đơn
+**** UC-BIL-01 Ghi chỉ số điện nước theo kỳ
+**** UC-BIL-02 Xem trước và lập hóa đơn một hợp đồng
+**** UC-BIL-03 Lập hóa đơn hàng loạt
+**** UC-BIL-17.1 Cấu hình lập hóa đơn định kỳ
+**** UC-BIL-17.2 Xem trước và chạy đợt lập hóa đơn
+*** G08.2 Công nợ và điều chỉnh nghĩa vụ
+**** UC-BIL-04 Tra cứu hóa đơn và công nợ
+**** UC-BIL-05 Sửa hạn thanh toán hoặc ghi chú hóa đơn
+**** UC-BIL-06 Thay thế hóa đơn chưa có lịch sử thanh toán
+**** UC-BIL-07 Điều chỉnh tăng hoặc giảm hóa đơn
+**** UC-BIL-08.1 Hủy hóa đơn đủ điều kiện
+**** UC-TEN-03 Tra cứu hóa đơn của mình
+*** G08.3 Ghi nhận, phân bổ và hoàn thu
+**** UC-BIL-09 Ghi nhận thanh toán trực tiếp
+**** UC-BIL-10 Tạo khoản thu cho người thuê
+**** UC-BIL-11 Phân bổ khoản thu cho hóa đơn
+**** UC-BIL-12.1 Giải phóng phân bổ khoản thu
+**** UC-BIL-12.2 Đảo thanh toán trực tiếp
+**** UC-BIL-13 Ghi nhận hoàn tiền từ khoản thu
+*** G08.4 Chứng từ và kênh thanh toán
+**** UC-BIL-14 Xét duyệt chứng từ thanh toán
+**** UC-BIL-23 Cấu hình tài khoản nhận chuyển khoản
+**** UC-TEN-04 Gửi chứng từ chuyển khoản hóa đơn
+**** UC-TEN-05 Thanh toán bằng thẻ mô phỏng [Đã triển khai — DEMO]
+*** G08.5 Biểu phí và kiểm soát kỳ
+**** UC-BIL-15 Đề xuất biểu phí theo kỳ hiệu lực
+**** UC-BIL-16 Phân tích tác động và duyệt biểu phí
+**** UC-BIL-22 Khóa kỳ thanh toán của khu
+*** G08.6 Nhắc nợ và theo dõi gửi
+**** UC-BIL-18.1 Cấu hình chính sách nhắc nợ
+**** UC-BIL-18.2 Gửi nhắc nợ theo chính sách [Một phần]
+**** UC-BIL-18.3 Theo dõi và thử lại outbox hóa đơn
+**** UC-TEN-08.2 Chọn kênh nhận nhắc nợ
+@endwbs

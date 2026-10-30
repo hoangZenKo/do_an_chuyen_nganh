@@ -1,0 +1,13 @@
+
+> rental-room-api@0.1.0 test:e2e
+> NODE_ENV=test jest --config ./test/jest-e2e.json --runInBand --runTestsByPath test/e2e/admin-support-tools.e2e-spec.ts --runInBand
+
+PASS test/e2e/admin-support-tools.e2e-spec.ts
+  Support tools E2E
+    ✓ supports searchable labels, templates and requester feedback (289 ms)
+
+Test Suites: 1 passed, 1 total
+Tests:       1 passed, 1 total
+Snapshots:   0 total
+Time:        2.656 s
+Ran all test suites within paths "test/e2e/admin-support-tools.e2e-spec.ts".

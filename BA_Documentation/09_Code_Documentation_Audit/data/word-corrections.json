@@ -1,0 +1,308 @@
+{
+  "source": "/Users/hoang/Desktop/ĐỒ ÁN/Bao_cao_Quan_ly_Nha_tro_V4_2026-10-29_BA.docx",
+  "output": "/Users/hoang/Desktop/ĐỒ ÁN/Bao_cao_Quan_ly_Nha_tro_V5_2026-10-30_Doi_chieu_Code.docx",
+  "sourceSha256": "16f8356d954a8b551da4fb196146d4a4065c2aa8b277dc7a094a7e8a64f95dce",
+  "sourcePreserved": true,
+  "changedUseCases": [
+    "UC-ADM-18.1",
+    "UC-OPT-07.3",
+    "UC-SYS-05.1",
+    "UC-TNT-05",
+    "UC-TNT-12.1"
+  ],
+  "changedFields": [
+    {
+      "id": "UC-SYS-05.1",
+      "field": "Tiền điều kiện",
+      "before": "Tác nhân đã đăng nhập bằng tài khoản còn hoạt động và có quyền phù hợp. Thông tin được chọn phải thuộc phạm vi tác nhân được phép sử dụng; điều kiện trạng thái cụ thể được kiểm tra trong luồng.",
+      "after": "Ứng dụng đang có trạng thái hoặc thông tin đăng nhập cần kết thúc; không bắt buộc quyền truy cập hiện tại còn hiệu lực hoặc tài khoản còn hoạt động để dọn phiên tại thiết bị. Thu hồi trên hệ thống cần thông tin duy trì phiên tương ứng."
+    },
+    {
+      "id": "UC-SYS-05.1",
+      "field": "Phân quyền và bảo mật",
+      "before": "Chủ trọ: tài khoản/phiên của mình.\nNhân viên vận hành: phiên/tài khoản của mình.\nNgười tìm phòng hoặc người thuê: tài khoản/phiên của mình.\nQuản trị viên nền tảng: tài khoản/phiên của mình.\nQuản trị viên phải có quyền phù hợp, hoàn thành các bước xác minh được yêu cầu; quyền quản trị không thay thế quyền vận hành của chủ trọ.",
+      "after": "Người dùng rời phiên của mình, không phải xác minh lại mật khẩu hoặc hoàn thành xác thực bổ sung để đăng xuất. Việc thu hồi được xác định từ thông tin duy trì phiên mà ứng dụng đang giữ; không chọn tài khoản khác để đăng xuất. Đăng xuất tại thiết bị vẫn được thực hiện khi không liên lạc được với hệ thống."
+    },
+    {
+      "id": "UC-OPT-07.3",
+      "field": "Luồng thành công chính",
+      "before": "B1 — Người vận hành chọn xóa phòng.\nB2 — Hệ thống kiểm tra quyền và lịch sử hợp đồng, chỉ số, tài sản hoặc các quan hệ liên quan.\nB3 — Nếu không còn lịch sử ngăn xóa, hệ thống xóa phòng.\nB4 — Hệ thống thông báo kết quả.",
+      "after": "B1 — Người vận hành chọn xóa phòng.\nB2 — Hệ thống kiểm tra quyền, hợp đồng, chỉ số điện nước, hóa đơn, lịch xem và hồ sơ chuẩn bị lại phòng.\nB3 — Nếu không có lịch sử thuộc các nhóm ngăn xóa này, hệ thống xóa phòng.\nB4 — Hệ thống thông báo kết quả."
+    },
+    {
+      "id": "UC-OPT-07.3",
+      "field": "Hậu điều kiện thành công",
+      "before": "Phòng được xóa chỉ khi đủ điều kiện.",
+      "after": "Phòng được xóa chỉ khi đủ điều kiện; các thông tin phụ thuộc được xử lý theo quy tắc nêu trên."
+    },
+    {
+      "id": "UC-OPT-07.3",
+      "field": "Quy tắc nghiệp vụ",
+      "before": "BR-01 — Không tự xóa hợp đồng, giao dịch hoặc lịch sử chỉ số để xóa được phòng.",
+      "after": "BR-01 — Không tự xóa hợp đồng, giao dịch hoặc lịch sử chỉ số để xóa được phòng.\nBR-02 — Tài sản, lịch kiểm tra và phí dịch vụ riêng của phòng không được dùng làm điều kiện chặn xóa; các thông tin này bị xóa cùng phòng theo quan hệ lưu trữ hiện có."
+    },
+    {
+      "id": "UC-OPT-07.3",
+      "field": "Kết quả đầu ra",
+      "before": "Phòng được xóa chỉ khi đủ điều kiện.",
+      "after": "Phòng được xóa chỉ khi đủ điều kiện; các thông tin phụ thuộc được xử lý theo quy tắc nêu trên."
+    },
+    {
+      "id": "UC-TNT-05",
+      "field": "Mô tả nghiệp vụ",
+      "before": "Thiết lập quan hệ thuê có hiệu lực giữa người thuê và phòng, ghi cọc ban đầu và cập nhật tình trạng phòng; hỗ trợ nguồn lịch xem đủ điều kiện.",
+      "after": "Thiết lập quan hệ thuê có hiệu lực và cập nhật tình trạng phòng; tiền cọc thỏa thuận được lưu, cọc đã thu chỉ tự ghi khi lập trực tiếp với số tiền dương; hỗ trợ nguồn lịch xem đủ điều kiện."
+    },
+    {
+      "id": "UC-TNT-05",
+      "field": "Mục tiêu nghiệp vụ",
+      "before": "Thiết lập quan hệ thuê có hiệu lực giữa người thuê và phòng, ghi cọc ban đầu và cập nhật tình trạng phòng; hỗ trợ nguồn lịch xem đủ điều kiện.",
+      "after": "Thiết lập quan hệ thuê có hiệu lực và cập nhật tình trạng phòng; tiền cọc thỏa thuận được lưu, cọc đã thu chỉ tự ghi khi lập trực tiếp với số tiền dương; hỗ trợ nguồn lịch xem đủ điều kiện."
+    },
+    {
+      "id": "UC-TNT-05",
+      "field": "Sự kiện kích hoạt",
+      "before": "Người vận hành chọn phòng và người thuê để lập hợp đồng.",
+      "after": "Người vận hành chọn phòng và người thuê để lập hợp đồng trực tiếp."
+    },
+    {
+      "id": "UC-TNT-05",
+      "field": "Dữ liệu đầu vào và kiểm tra hợp lệ",
+      "before": "Phòng, hồ sơ người thuê, ngày bắt đầu và kết thúc, tiền thuê, tiền cọc và các điều khoản; lịch xem đã hoàn tất nếu lập từ lịch xem.\nKiểm tra bổ sung khi trường tương ứng được cung cấp trong trường hợp áp dụng:\nTiền cọc: từ 0 đến 2147483647.",
+      "after": "Phòng, hồ sơ người thuê, tiền thuê, tiền cọc và ngày bắt đầu. Lập trực tiếp cho phép bỏ trống ngày bắt đầu; lập từ lịch xem phải có ngày bắt đầu và thông tin lần cập nhật lịch. Chưa nhập ngày kết thúc trong chức năng lập mới.\nKiểm tra bổ sung khi trường tương ứng được cung cấp trong trường hợp áp dụng:\nTiền cọc: từ 0 đến 2147483647."
+    },
+    {
+      "id": "UC-TNT-05",
+      "field": "Luồng thành công chính",
+      "before": "B1 — Người vận hành chọn phòng và người thuê để lập hợp đồng.\nB2 — Hệ thống kiểm tra quyền, phòng và khu đang hoạt động, khả năng cho thuê và điều kiện người thuê.\nB3 — Hệ thống kiểm tra thời hạn, giá, sức chứa và các điều khoản.\nB4 — Hệ thống tạo hợp đồng, cập nhật tình trạng phòng và ghi nhận cọc theo dữ liệu được xác nhận.\nB5 — Hệ thống cung cấp hợp đồng vừa lập.",
+      "after": "B1 — Người vận hành chọn phòng và người thuê để lập hợp đồng trực tiếp.\nB2 — Hệ thống kiểm tra quyền; khu chưa lưu trữ, phòng đang hoạt động, không có hợp đồng hiệu lực và đã sẵn sàng cho thuê; người thuê đang hoạt động, đúng phạm vi.\nB3 — Hệ thống kiểm tra ngày bắt đầu, tiền thuê và tiền cọc; nếu bỏ trống ngày bắt đầu thì dùng thời điểm hiện tại.\nB4 — Hệ thống tạo hợp đồng có hiệu lực, chuyển phòng sang có người thuê; nếu tiền cọc dương thì ghi nhận khoản cọc đã thu.\nB5 — Hệ thống cung cấp hợp đồng vừa lập."
+    },
+    {
+      "id": "UC-TNT-05",
+      "field": "Luồng thay thế",
+      "before": "A1 — B1: Chủ trọ lập từ lịch xem đã hoàn tất: hệ thống kiểm tra lịch thuộc mình, thực hiện lập hợp đồng rồi đánh lịch đã chuyển thành hợp đồng và ẩn tin theo quy trình; kết thúc sau B5.",
+      "after": "A1 — B1: Chủ trọ lập từ lịch xem đã hoàn tất: hệ thống kiểm tra lịch, tin phòng và người xem đủ điều kiện, tạo hoặc sử dụng hồ sơ người thuê rồi lập hợp đồng; chỉ lưu tiền cọc thỏa thuận, không tự ghi khoản cọc đã thu. Hệ thống đánh lịch đã có hợp đồng, ẩn tin và hủy các lịch đang chờ hoặc đã xác nhận khác của tin; kết thúc sau khi trả kết quả."
+    },
+    {
+      "id": "UC-TNT-05",
+      "field": "Luồng ngoại lệ",
+      "before": "E1 — B2: Phòng không còn đủ điều kiện cho thuê hoặc người thuê ngoài phạm vi: không lập hợp đồng.\nE2 — B3: Thời hạn, giá hoặc sức chứa không hợp lệ: không ghi hợp đồng; người vận hành điều chỉnh.\nE3 — B1: Đăng nhập không còn hiệu lực hoặc không đủ quyền: không thực hiện yêu cầu; người dùng đăng nhập lại hoặc liên hệ người quản lý quyền.",
+      "after": "E1 — B2: Phòng không còn đủ điều kiện cho thuê hoặc người thuê ngoài phạm vi: không lập hợp đồng.\nE2 — B3: Ngày bắt đầu, tiền thuê hoặc tiền cọc không hợp lệ: không ghi hợp đồng; người vận hành điều chỉnh.\nE3 — B1: Đăng nhập không còn hiệu lực hoặc không đủ quyền: không thực hiện yêu cầu; người dùng đăng nhập lại hoặc liên hệ người quản lý quyền."
+    },
+    {
+      "id": "UC-TNT-05",
+      "field": "Hậu điều kiện thành công",
+      "before": "Hợp đồng được tạo và trạng thái phòng, cọc liên quan phản ánh kết quả lập.",
+      "after": "Hợp đồng có hiệu lực và phòng có người thuê. Tiền cọc thỏa thuận được lưu; khoản cọc đã thu chỉ được ghi tự động trong nhánh lập trực tiếp khi có số tiền dương."
+    },
+    {
+      "id": "UC-TNT-05",
+      "field": "Quy tắc nghiệp vụ",
+      "before": "BR-01 — Lập trực tiếp và lập từ lịch xem cùng phục vụ mục tiêu xác lập quan hệ thuê.\nBR-02 — Nhân viên không được dùng biến thể lập từ lịch xem chỉ vì có quyền lập hợp đồng trực tiếp.",
+      "after": "BR-01 — Lập mới chưa nhận ngày kết thúc; ngày kết thúc được quản lý tại chức năng cập nhật hoặc gia hạn.\nBR-02 — Lập trực tiếp ghi cọc đã thu khi tiền cọc dương; lập từ lịch xem không tự ghi giao dịch thu cọc dù có tiền cọc thỏa thuận.\nBR-03 — Không xác định kiểm tra số người so với sức chứa là quy tắc của thao tác lập hợp đồng trực tiếp; việc thêm người ở cùng và chuyển phòng có kiểm tra riêng.\nBR-04 — Nhân viên chỉ lập trực tiếp, không dùng biến thể lập từ lịch xem."
+    },
+    {
+      "id": "UC-TNT-05",
+      "field": "Kết quả đầu ra",
+      "before": "Hợp đồng được tạo và trạng thái phòng, cọc liên quan phản ánh kết quả lập.",
+      "after": "Hợp đồng có hiệu lực và phòng có người thuê. Tiền cọc thỏa thuận được lưu; khoản cọc đã thu chỉ được ghi tự động trong nhánh lập trực tiếp khi có số tiền dương."
+    },
+    {
+      "id": "UC-TNT-12.1",
+      "field": "Luồng thành công chính",
+      "before": "B1 — Người vận hành mở danh sách người ở cùng hợp đồng.\nB2 — Hệ thống kiểm tra quyền, tình trạng hợp đồng và sức chứa phòng.\nB3 — Người vận hành thêm, sửa hoặc gỡ thành viên theo thông tin được phép.\nB4 — Hệ thống kiểm tra và lưu danh sách sau cập nhật.",
+      "after": "B1 — Người vận hành mở danh sách người ở cùng hợp đồng.\nB2 — Khi thêm người, hệ thống kiểm tra quyền, hợp đồng còn hiệu lực, người thuê chính đang hoạt động và khu chưa lưu trữ.\nB3 — Người vận hành nhập người ở cùng; hệ thống kiểm tra thông tin và tổng số người, tính cả người thuê chính, không vượt sức chứa.\nB4 — Hệ thống lưu người được thêm và cung cấp danh sách."
+    },
+    {
+      "id": "UC-TNT-12.1",
+      "field": "Luồng thay thế",
+      "before": "A1 — B3: Chỉ xem danh sách: không thay đổi thành viên; kết thúc.",
+      "after": "A1 — B1: Chỉ xem danh sách: cung cấp dữ liệu thuộc phạm vi, không thay đổi thành viên; kết thúc.\nA2 — B2: Gỡ thành viên: hệ thống kiểm tra người đó thuộc hợp đồng còn hiệu lực trong phạm vi rồi gỡ; không áp dụng kiểm tra sức chứa như khi thêm."
+    },
+    {
+      "id": "UC-TNT-12.1",
+      "field": "Luồng ngoại lệ",
+      "before": "E1 — B2: Hợp đồng ngoài phạm vi hoặc thay đổi vượt sức chứa: không lưu.\nE2 — B3: Thông tin thành viên không hợp lệ: từ chối lần gửi.\nE3 — B1: Đăng nhập không còn hiệu lực hoặc không đủ quyền: không thực hiện yêu cầu; người dùng đăng nhập lại hoặc liên hệ người quản lý quyền.",
+      "after": "E1 — B2: Hợp đồng hoặc thành viên ngoài phạm vi, hợp đồng không còn hiệu lực: từ chối thay đổi.\nE2 — B3: Đã đủ sức chứa hoặc thông tin không hợp lệ: không thêm người.\nE3 — B1: Đăng nhập không còn hiệu lực hoặc không đủ quyền: không thực hiện yêu cầu; người dùng đăng nhập lại hoặc liên hệ người quản lý quyền."
+    },
+    {
+      "id": "UC-TNT-12.1",
+      "field": "Hậu điều kiện thành công",
+      "before": "Danh sách thành viên hợp đồng được duy trì đúng điều kiện.",
+      "after": "Danh sách thành viên được bổ sung hoặc gỡ đúng điều kiện."
+    },
+    {
+      "id": "UC-TNT-12.1",
+      "field": "Quy tắc nghiệp vụ",
+      "before": "BR-01 — Ghi người ở cùng không tự tạo tài khoản đăng nhập hoặc hợp đồng thuê riêng.",
+      "after": "BR-01 — Phạm vi hiện có gồm xem, thêm và gỡ; chưa có thao tác sửa trực tiếp thông tin thành viên.\nBR-02 — Ghi người ở cùng không tự tạo tài khoản đăng nhập hoặc hợp đồng thuê riêng.\nBR-03 — Sức chứa tính cả người thuê chính; khi phòng chưa quy định sức chứa thì áp dụng mức 100 người theo hiện trạng."
+    },
+    {
+      "id": "UC-TNT-12.1",
+      "field": "Kết quả đầu ra",
+      "before": "Danh sách thành viên hợp đồng được duy trì đúng điều kiện.",
+      "after": "Danh sách thành viên được bổ sung hoặc gỡ đúng điều kiện."
+    },
+    {
+      "id": "UC-ADM-18.1",
+      "field": "Quy tắc nghiệp vụ",
+      "before": "BR-01 — Chủ trọ không có quyền xét duyệt hồ sơ của mình.\nBR-02 — Quản trị viên hỗ trợ nộp không làm mất yêu cầu xét duyệt độc lập.",
+      "after": "BR-01 — Chủ trọ không có quyền xét duyệt hồ sơ của mình.\nBR-02 — Hệ thống không bắt buộc người xét khác quản trị viên đã hỗ trợ nộp; quản trị viên đó vẫn có thể xét nếu đủ quyền và điều kiện. Điều kiện không tự duyệt chỉ đối chiếu tài khoản người xét với chủ trọ được xác minh."
+    }
+  ],
+  "replacedImages": [
+    {
+      "caption": "Hình 2.3 TỔNG THỂ HỆ THỐNG QUẢN LÝ NHÀ TRỌ",
+      "image": "PNG/01_Hinh_2_03_Overall_Use_Case.png",
+      "sourceId": "Overall_Use_Case"
+    },
+    {
+      "caption": "Hình 2.4 G01 Đăng ký và tiếp nhận lời mời",
+      "image": "PNG/02_Hinh_2_04_UC_G01_01_SYS_Public.png",
+      "sourceId": "UC_G01_01_SYS_Public"
+    },
+    {
+      "caption": "Hình 2.5 G01 Đăng nhập và bảo vệ tài khoản",
+      "image": "PNG/03_Hinh_2_05_UC_G01_02_SYS_Sessions.png",
+      "sourceId": "UC_G01_02_SYS_Sessions"
+    },
+    {
+      "caption": "Hình 2.6 G02 Tìm và lựa chọn phòng",
+      "image": "PNG/04_Hinh_2_06_UC_G02.png",
+      "sourceId": "UC_G02"
+    },
+    {
+      "caption": "Hình 2.7 G03 Đăng tin, lịch xem và nhận phòng",
+      "image": "PNG/05_Hinh_2_07_UC_G03.png",
+      "sourceId": "UC_G03"
+    },
+    {
+      "caption": "Hình 2.8 G04 Khu trọ và cơ sở vật chất phần 1",
+      "image": "PNG/06_Hinh_2_08_UC_G04_BA_1.png",
+      "sourceId": "UC_G04_BA_1"
+    },
+    {
+      "caption": "Hình 2.9 G04 Khu trọ và cơ sở vật chất phần 2",
+      "image": "PNG/07_Hinh_2_09_UC_G04_BA_2.png",
+      "sourceId": "UC_G04_BA_2"
+    },
+    {
+      "caption": "Hình 2.10 G05 Nhân sự và ủy quyền vận hành",
+      "image": "PNG/08_Hinh_2_10_UC_G05.png",
+      "sourceId": "UC_G05"
+    },
+    {
+      "caption": "Hình 2.11 G06 Hồ sơ người thuê và quyền truy cập",
+      "image": "PNG/09_Hinh_2_11_UC_G06_01_Tenant_Records.png",
+      "sourceId": "UC_G06_01_Tenant_Records"
+    },
+    {
+      "caption": "Hình 2.12 G06 Hợp đồng và tiền cọc phần 1",
+      "image": "PNG/10_Hinh_2_12_UC_G06_02_Leases_Deposits_BA_1.png",
+      "sourceId": "UC_G06_02_Leases_Deposits_BA_1"
+    },
+    {
+      "caption": "Hình 2.13 G06 Hợp đồng và tiền cọc phần 2",
+      "image": "PNG/11_Hinh_2_13_UC_G06_02_Leases_Deposits_BA_2.png",
+      "sourceId": "UC_G06_02_Leases_Deposits_BA_2"
+    },
+    {
+      "caption": "Hình 2.14 G07 Vòng đời thuê và quyết toán",
+      "image": "PNG/12_Hinh_2_14_UC_G07.png",
+      "sourceId": "UC_G07"
+    },
+    {
+      "caption": "Hình 2.15 G08 Chỉ số và hóa đơn phần 1",
+      "image": "PNG/13_Hinh_2_15_UC_G08_01_Invoices_BA_1.png",
+      "sourceId": "UC_G08_01_Invoices_BA_1"
+    },
+    {
+      "caption": "Hình 2.16 G08 Chỉ số và hóa đơn phần 2",
+      "image": "PNG/14_Hinh_2_16_UC_G08_01_Invoices_BA_2.png",
+      "sourceId": "UC_G08_01_Invoices_BA_2"
+    },
+    {
+      "caption": "Hình 2.17 G08 Thu tiền và thanh toán phần 1",
+      "image": "PNG/15_Hinh_2_17_UC_G08_02_Collections_BA_1.png",
+      "sourceId": "UC_G08_02_Collections_BA_1"
+    },
+    {
+      "caption": "Hình 2.18 G08 Thu tiền và thanh toán phần 2",
+      "image": "PNG/16_Hinh_2_18_UC_G08_02_Collections_BA_2.png",
+      "sourceId": "UC_G08_02_Collections_BA_2"
+    },
+    {
+      "caption": "Hình 2.19 G08 Biểu phí và kỳ thanh toán",
+      "image": "PNG/17_Hinh_2_19_UC_G08_03_Tariffs_Periods.png",
+      "sourceId": "UC_G08_03_Tariffs_Periods"
+    },
+    {
+      "caption": "Hình 2.20 G08 Chính sách và thông báo nhắc nợ",
+      "image": "PNG/18_Hinh_2_20_UC_G08_04_Reminders.png",
+      "sourceId": "UC_G08_04_Reminders"
+    },
+    {
+      "caption": "Hình 2.21 G09 Bảo trì và chi phí vận hành",
+      "image": "PNG/19_Hinh_2_21_UC_G09.png",
+      "sourceId": "UC_G09"
+    },
+    {
+      "caption": "Hình 2.22 G10 Công việc, thông tin và hỗ trợ sử dụng phần 1",
+      "image": "PNG/20_Hinh_2_22_UC_G10_BA_1.png",
+      "sourceId": "UC_G10_BA_1"
+    },
+    {
+      "caption": "Hình 2.23 G10 Công việc, thông tin và hỗ trợ sử dụng phần 2",
+      "image": "PNG/21_Hinh_2_23_UC_G10_BA_2.png",
+      "sourceId": "UC_G10_BA_2"
+    },
+    {
+      "caption": "Hình 2.24 G11 Báo cáo và giám sát vận hành",
+      "image": "PNG/22_Hinh_2_24_UC_G11.png",
+      "sourceId": "UC_G11"
+    },
+    {
+      "caption": "Hình 2.25 G12 Tài khoản và tài nguyên nền tảng phần 1",
+      "image": "PNG/23_Hinh_2_25_UC_G12_BA_1.png",
+      "sourceId": "UC_G12_BA_1"
+    },
+    {
+      "caption": "Hình 2.26 G12 Tài khoản và tài nguyên nền tảng phần 2",
+      "image": "PNG/24_Hinh_2_26_UC_G12_BA_2.png",
+      "sourceId": "UC_G12_BA_2"
+    },
+    {
+      "caption": "Hình 2.27 G13 Kiểm duyệt và chất lượng nội dung phần 1",
+      "image": "PNG/25_Hinh_2_27_UC_G13_BA_1.png",
+      "sourceId": "UC_G13_BA_1"
+    },
+    {
+      "caption": "Hình 2.28 G13 Kiểm duyệt và chất lượng nội dung phần 2",
+      "image": "PNG/26_Hinh_2_28_UC_G13_BA_2.png",
+      "sourceId": "UC_G13_BA_2"
+    },
+    {
+      "caption": "Hình 2.29 G14 Dịch vụ hỗ trợ khách hàng",
+      "image": "PNG/27_Hinh_2_29_UC_G14.png",
+      "sourceId": "UC_G14"
+    },
+    {
+      "caption": "Hình 2.30 G15 Hồ sơ xác minh và gói dịch vụ",
+      "image": "PNG/28_Hinh_2_30_UC_G15.png",
+      "sourceId": "UC_G15"
+    },
+    {
+      "caption": "Hình 2.31 G16 Quản trị chính sách và đối soát nền tảng phần 1",
+      "image": "PNG/29_Hinh_2_31_UC_G16_BA_1.png",
+      "sourceId": "UC_G16_BA_1"
+    },
+    {
+      "caption": "Hình 2.32 G16 Quản trị chính sách và đối soát nền tảng phần 2",
+      "image": "PNG/30_Hinh_2_32_UC_G16_BA_2.png",
+      "sourceId": "UC_G16_BA_2"
+    }
+  ],
+  "verifiedTables": 162,
+  "navigationEntriesUpdated": 159,
+  "outputSha256": "7512cd6a57b333a6fff4b60ed82a6c405e0dff9ebcaee2882427817d36f39e06"
+}

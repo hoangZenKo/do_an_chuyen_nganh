@@ -1,0 +1,93 @@
+@startuml
+skinparam backgroundColor white
+skinparam shadowing false
+skinparam dpi 240
+skinparam defaultFontName "Times New Roman"
+skinparam defaultFontSize 17
+skinparam defaultFontColor black
+skinparam titleFontSize 21
+skinparam titleFontColor black
+skinparam roundcorner 0
+skinparam maxMessageSize 270
+skinparam ParticipantPadding 30
+skinparam sequence {
+  ArrowColor #800000
+  ArrowThickness 1.2
+  LifeLineBorderColor #999999
+  LifeLineBackgroundColor #FFFFB9
+  ParticipantBackgroundColor #FFFFB9
+  ParticipantBorderColor #800000
+  ParticipantFontColor black
+  ActorBackgroundColor #FFFFB9
+  ActorBorderColor #800000
+  ActorFontColor black
+  BoundaryBackgroundColor #FFFFB9
+  BoundaryBorderColor #800000
+  ControlBackgroundColor #FFFFB9
+  ControlBorderColor #800000
+  EntityBackgroundColor #FFFFB9
+  EntityBorderColor #800000
+  GroupBackgroundColor #FFFFB9
+  GroupBodyBackgroundColor white
+  GroupBorderColor #888888
+  GroupFontColor black
+  GroupHeaderFontColor black
+  GroupFontSize 15
+  GroupHeaderFontSize 16
+  MessageAlign center
+}
+hide footbox
+<style>
+sequenceDiagram {
+ actor { BackgroundColor #FFFFB9
+ LineColor #800000 }
+ boundary { BackgroundColor #FFFFB9
+ LineColor #800000 }
+ control { BackgroundColor #FFFFB9
+ LineColor #800000 }
+ entity { BackgroundColor #FFFFB9
+ LineColor #800000 }
+ activationBox { BackgroundColor #FFFFB9
+ LineColor #800000 }
+}
+</style>
+autonumber "<b>0.</b>"
+
+title SD-06. Ghi nhận khoản thu và phân bổ thanh toán
+actor "Chủ trọ" as A
+boundary "<u>Giao diện</u>\n<u>khoản thu</u>" as U #FFFFB9
+control "<u>Quản lý</u>\n<u>thu tiền</u>" as C #FFFFB9
+entity "<u>Khoản thu</u>\n<u>và công nợ hóa đơn</u>" as D #FFFFB9
+A -> U: Chọn người thuê; nhập tiền đã nhận và các hóa đơn phân bổ
+activate U
+U -> C: Yêu cầu ghi khoản thu và phân bổ thanh toán
+activate C
+C -> D ++: Đối chiếu lần ghi nhận trước, người thuê và số nợ từng hóa đơn
+D --> C --: Tình trạng yêu cầu và các số tiền còn được phân bổ
+alt Gửi lại đúng yêu cầu đã ghi nhận trước đó
+C --> U: Trả kết quả đã có
+U --> A: Trả kết quả đã có; không ghi thu lần nữa
+else Dùng lại lần ghi nhận nhưng đổi nội dung; hoặc lần mới có phân bổ sai
+C --> U: Không ghi khoản thu hoặc phân bổ
+U --> A: Không ghi khoản thu hoặc phân bổ; thông báo lý do
+else Yêu cầu mới hợp lệ; cùng người thuê; không vượt tiền và dư nợ
+C -> D ++: Ghi khoản đã nhận và toàn bộ phân bổ được chọn
+D --> C --: Khoản thu, phần đã thanh toán và tiền chưa phân bổ
+C --> U: Hiển thị khoản thu và công nợ sau phân bổ
+U --> A: Hiển thị khoản thu và công nợ sau phân bổ
+end
+deactivate C
+deactivate U
+opt Khoản thu còn tiền chưa phân bổ; chọn phân bổ thêm
+A -> U: Chọn hóa đơn còn nợ và số tiền phân bổ thêm
+activate U
+U -> C: Yêu cầu phân bổ tiền còn dư
+activate C
+C -> D ++: Đối chiếu yêu cầu và số dư mới nhất; lưu khi toàn bộ hợp lệ
+D --> C --: Kết quả phân bổ hoặc lý do từ chối; không ghi dở dang
+C --> U: Hiển thị tiền còn dư và dư nợ mới
+U --> A: Hiển thị tiền còn dư và dư nợ mới; hoặc lỗi cần sửa
+deactivate C
+deactivate U
+end
+@enduml

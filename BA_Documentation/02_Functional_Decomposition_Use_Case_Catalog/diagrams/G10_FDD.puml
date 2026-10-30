@@ -1,0 +1,18 @@
+@startwbs
+title Phân rã chức năng AS-IS — không phải sơ đồ Use Case
+* Hệ thống quản lý và tìm thuê nhà trọ
+** G10 — Công việc, thông tin và hỗ trợ sử dụng
+*** G10.1 Việc cần làm và chuẩn bị phòng
+**** UC-OPS-04 Theo dõi việc cần xử lý
+**** UC-OPS-05 Chuẩn bị phòng sau trả phòng
+*** G10.2 Vận hành lặp lại
+**** UC-OPS-06 Thiết lập lịch công việc định kỳ
+**** UC-OPS-06.1 Thực hiện checklist công việc định kỳ
+*** G10.3 Trao đổi và thông báo
+**** UC-OPS-07 Soạn và phát thông báo người thuê
+**** UC-SUP-04 Theo dõi thông báo cá nhân
+**** UC-TEN-09.2 Trao đổi tin nhắn Zalo mô phỏng [Đã triển khai — MÔ PHỎNG]
+**** UC-TEN-09.3 Đọc và xác nhận thông báo chủ trọ
+*** G10.4 Hướng dẫn sử dụng theo tri thức
+**** UC-SUP-06 Hỏi trợ lý AI và đọc nguồn hướng dẫn [Một phần]
+@endwbs

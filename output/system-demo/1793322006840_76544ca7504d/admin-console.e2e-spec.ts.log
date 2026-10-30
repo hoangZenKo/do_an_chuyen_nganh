@@ -1,0 +1,22 @@
+
+> rental-room-api@0.1.0 test:e2e
+> NODE_ENV=test jest --config ./test/jest-e2e.json --runInBand --runTestsByPath test/e2e/admin-console.e2e-spec.ts --runInBand
+
+PASS test/e2e/admin-console.e2e-spec.ts
+  Admin Console MVP
+    ✓ fails closed for missing profiles and separates moderator, support and analyst (444 ms)
+    ✓ paginates accounts and legacy resources with stable metadata and masking (288 ms)
+    ✓ suspends and restores without reviving access or refresh tokens; records reasons atomically (269 ms)
+    ✓ allows only one of two concurrent account status mutations (263 ms)
+    ✓ revokes sessions without changing account activation or deleting resources (283 ms)
+    ✓ audits support reads and PII reveal without leaking password, documents or financial mutations (319 ms)
+    ✓ keeps queue counts, assignments and decisions consistent under concurrent admins (358 ms)
+    ✓ rejects invalid assignees and exposes a permission-filtered dashboard (353 ms)
+    ✓ enforces MFA, blocks TOTP replay and consumes recovery codes once across refresh (469 ms)
+    ✓ consumes reset tokens once and never returns a token through public recovery (216 ms)
+
+Test Suites: 1 passed, 1 total
+Tests:       10 passed, 10 total
+Snapshots:   0 total
+Time:        4.941 s, estimated 8 s
+Ran all test suites within paths "test/e2e/admin-console.e2e-spec.ts".

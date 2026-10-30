@@ -1,0 +1,59 @@
+@startuml
+left to right direction
+skinparam defaultFontName SansSerif
+skinparam defaultFontSize 13
+skinparam backgroundColor #F8FAFC
+skinparam shadowing false
+skinparam ArrowColor #52647A
+skinparam ArrowThickness 1
+skinparam actorStyle stickman
+skinparam actorBorderColor #243A52
+skinparam actorFontColor #243A52
+skinparam actorBackgroundColor #FFFFFF
+skinparam usecase {
+  BackgroundColor #FFFFFF
+  BorderColor #327C83
+  FontColor #20354B
+  BackgroundColor<<Một phần>> #FFF0CE
+  BorderColor<<Một phần>> #B17917
+  BackgroundColor<<DEMO>> #FCE5DF
+  BorderColor<<DEMO>> #BC593A
+  BackgroundColor<<MÔ PHỎNG>> #E7EAF1
+  BorderColor<<MÔ PHỎNG>> #6C7488
+}
+skinparam rectangle {
+  BackgroundColor #EEF4F5
+  BorderColor #243A52
+  FontColor #243A52
+}
+skinparam titleFontColor #20354B
+skinparam titleFontSize 18
+skinparam nodesep 25
+skinparam ranksep 65
+title G15 · Hồ sơ xác minh và gói dịch vụ\n<size:12>Đầy đủ UC của nhóm nghiệp vụ</size>
+
+actor "A02\nChủ trọ" as A02
+actor "A05\nQuản trị viên nền tảng" as A05
+rectangle "Hệ thống quản lý nhà trọ" as SYSTEM {
+  usecase "UC-ADM-18.1\nNộp hồ sơ xác minh chủ trọ" as UC_ADM_18_1
+  usecase "UC-ADM-18\nXét duyệt hồ sơ xác minh chủ trọ" as UC_ADM_18
+  usecase "UC-ADM-19\nTrình và xét duyệt hồ sơ khu trọ" as UC_ADM_19
+  usecase "UC-ADM-20\nQuản lý danh mục gói dịch vụ" as UC_ADM_20
+  usecase "UC-ADM-21\nGán gói và xem lịch sử đăng ký" as UC_ADM_21
+  usecase "UC-ADM-22\nHủy quyền sử dụng gói đang hiệu\nlực" as UC_ADM_22
+}
+A02 -- UC_ADM_18_1
+A05 -- UC_ADM_18_1
+A05 -- UC_ADM_18
+A05 -- UC_ADM_19
+A05 -- UC_ADM_20
+A05 -- UC_ADM_21
+A05 -- UC_ADM_22
+legend bottom left
+  Đường liền: tác nhân tham gia mục tiêu nghiệp vụ.
+  Đường xanh có nhãn: chỉ tham gia trong phạm vi giới hạn được nêu.
+  Nhân viên cần quyền phù hợp và khu được giao; quản trị viên cần đúng thẩm quyền.
+  Vàng: đáp ứng một phần. Cam: thanh toán thử nghiệm. Xám: trao đổi mô phỏng.
+  Không thể hiện thứ tự thực hiện; không suy ra quyền từ vị trí tác nhân.
+endlegend
+@enduml

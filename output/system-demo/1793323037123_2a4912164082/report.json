@@ -1,0 +1,644 @@
+{
+  "runId": "1793323037123_2a4912164082",
+  "routes": [
+    {
+      "name": "housingFavoritesRoute",
+      "path": "/housing/favorites",
+      "role": "public",
+      "level": "screen-only; business assertions listed separately"
+    },
+    {
+      "name": "housingViewingsRoute",
+      "path": "/housing/viewings",
+      "role": "public",
+      "level": "screen-only; business assertions listed separately"
+    },
+    {
+      "name": "housingNoticesRoute",
+      "path": "/housing/notifications",
+      "role": "public",
+      "level": "screen-only; business assertions listed separately"
+    },
+    {
+      "name": "rentalPilotRoute",
+      "path": "/housing/pilot",
+      "role": "public",
+      "level": "screen-only; business assertions listed separately"
+    },
+    {
+      "name": "pilotFeedbackRoute",
+      "path": "/admin/pilot-feedback",
+      "role": "admin",
+      "level": "screen-only; business assertions listed separately"
+    },
+    {
+      "name": "exploreRoute",
+      "path": "/explore",
+      "role": "public",
+      "level": "screen-only; business assertions listed separately"
+    },
+    {
+      "name": "tenantPortalRoute",
+      "path": "/tenant",
+      "role": "tenant",
+      "level": "screen-only; business assertions listed separately"
+    },
+    {
+      "name": "seekerAccountRoute",
+      "path": "/explore/account",
+      "role": "public",
+      "level": "screen-only; business assertions listed separately"
+    },
+    {
+      "name": "publicListingRoute",
+      "path": "/explore/listings/:id",
+      "role": "public",
+      "level": "screen-only; business assertions listed separately"
+    },
+    {
+      "name": "landlordListingsRoute",
+      "path": "/listings",
+      "role": "landlord",
+      "level": "screen-only; business assertions listed separately"
+    },
+    {
+      "name": "adminListingsRoute",
+      "path": "/admin/listings",
+      "role": "admin",
+      "level": "screen-only; business assertions listed separately"
+    },
+    {
+      "name": "landlordReviewsRoute",
+      "path": "/listings/reviews",
+      "role": "landlord",
+      "level": "screen-only; business assertions listed separately"
+    },
+    {
+      "name": "adminReviewsRoute",
+      "path": "/admin/room-reviews",
+      "role": "admin",
+      "level": "screen-only; business assertions listed separately"
+    },
+    {
+      "name": "splashRoute",
+      "path": "/splash",
+      "role": "public",
+      "level": "screen-only; business assertions listed separately"
+    },
+    {
+      "name": "onboardingRoute",
+      "path": "/onboarding",
+      "role": "public",
+      "level": "screen-only; business assertions listed separately"
+    },
+    {
+      "name": "loginRoute",
+      "path": "/auth/login",
+      "role": "public",
+      "level": "screen-only; business assertions listed separately"
+    },
+    {
+      "name": "registerRoute",
+      "path": "/auth/register",
+      "role": "public",
+      "level": "screen-only; business assertions listed separately"
+    },
+    {
+      "name": "tenantInviteRoute",
+      "path": "/tenant/activate",
+      "role": "tenant",
+      "level": "screen-only; business assertions listed separately"
+    },
+    {
+      "name": "staffInviteRoute",
+      "path": "/staff/activate",
+      "role": "public",
+      "level": "screen-only; business assertions listed separately"
+    },
+    {
+      "name": "dashboardRoute",
+      "path": "/dashboard",
+      "role": "landlord",
+      "level": "screen-only; business assertions listed separately"
+    },
+    {
+      "name": "chatbotRoute",
+      "path": "/chatbot",
+      "role": "landlord",
+      "level": "screen-only; business assertions listed separately"
+    },
+    {
+      "name": "settingsRoute",
+      "path": "/settings",
+      "role": "landlord",
+      "level": "screen-only; business assertions listed separately"
+    },
+    {
+      "name": "settingsPasswordRoute",
+      "path": "/settings/password",
+      "role": "landlord",
+      "level": "screen-only; business assertions listed separately"
+    },
+    {
+      "name": "fakeZaloRoute",
+      "path": "/settings/fake-zalo",
+      "role": "landlord",
+      "level": "screen-only; business assertions listed separately"
+    },
+    {
+      "name": "tenantPasswordRoute",
+      "path": "/tenant/password",
+      "role": "tenant",
+      "level": "screen-only; business assertions listed separately"
+    },
+    {
+      "name": "tenantZaloRoute",
+      "path": "/tenant/zalo",
+      "role": "tenant",
+      "level": "screen-only; business assertions listed separately"
+    },
+    {
+      "name": "tenantNotificationsRoute",
+      "path": "/tenant/notifications",
+      "role": "tenant",
+      "level": "screen-only; business assertions listed separately"
+    },
+    {
+      "name": "tenantLeasesRoute",
+      "path": "/tenant/leases",
+      "role": "tenant",
+      "level": "screen-only; business assertions listed separately"
+    },
+    {
+      "name": "tenantInvoicesRoute",
+      "path": "/tenant/invoices",
+      "role": "tenant",
+      "level": "screen-only; business assertions listed separately"
+    },
+    {
+      "name": "tenantInvoiceDetailRoute",
+      "path": "/tenant/invoices/:id",
+      "role": "tenant",
+      "level": "screen-only; business assertions listed separately"
+    },
+    {
+      "name": "tenantMaintenanceRoute",
+      "path": "/tenant/maintenance",
+      "role": "tenant",
+      "level": "screen-only; business assertions listed separately"
+    },
+    {
+      "name": "accountAccessRoute",
+      "path": "/account/activate",
+      "role": "public",
+      "level": "screen-only; business assertions listed separately"
+    },
+    {
+      "name": "supportCenterRoute",
+      "path": "/support-center",
+      "role": "landlord",
+      "level": "screen-only; business assertions listed separately"
+    },
+    {
+      "name": "adminRoute",
+      "path": "/admin",
+      "role": "admin",
+      "level": "screen-only; business assertions listed separately"
+    },
+    {
+      "name": "adminVerificationsRoute",
+      "path": "/admin/landlord-verifications",
+      "role": "admin",
+      "level": "screen-only; business assertions listed separately"
+    },
+    {
+      "name": "adminPropertyReviewsRoute",
+      "path": "/admin/property-reviews",
+      "role": "admin",
+      "level": "screen-only; business assertions listed separately"
+    },
+    {
+      "name": "adminPlansRoute",
+      "path": "/admin/service-plans",
+      "role": "admin",
+      "level": "screen-only; business assertions listed separately"
+    },
+    {
+      "name": "adminSubscriptionsRoute",
+      "path": "/admin/subscriptions",
+      "role": "admin",
+      "level": "screen-only; business assertions listed separately"
+    },
+    {
+      "name": "adminAccountsRoute",
+      "path": "/admin/accounts",
+      "role": "admin",
+      "level": "screen-only; business assertions listed separately"
+    },
+    {
+      "name": "adminAuditLogsRoute",
+      "path": "/admin/audit-logs",
+      "role": "admin",
+      "level": "screen-only; business assertions listed separately"
+    },
+    {
+      "name": "adminOperationsRoute",
+      "path": "/admin/operations",
+      "role": "admin",
+      "level": "screen-only; business assertions listed separately"
+    },
+    {
+      "name": "adminModerationRoute",
+      "path": "/admin/moderation",
+      "role": "admin",
+      "level": "screen-only; business assertions listed separately"
+    },
+    {
+      "name": "adminSecurityRoute",
+      "path": "/admin/security",
+      "role": "admin",
+      "level": "screen-only; business assertions listed separately"
+    },
+    {
+      "name": "adminSessionsRoute",
+      "path": "/admin/sessions",
+      "role": "admin",
+      "level": "screen-only; business assertions listed separately"
+    },
+    {
+      "name": "adminSearchRoute",
+      "path": "/admin/search",
+      "role": "admin",
+      "level": "screen-only; business assertions listed separately"
+    },
+    {
+      "name": "adminPoliciesRoute",
+      "path": "/admin/moderation-policies",
+      "role": "admin",
+      "level": "screen-only; business assertions listed separately"
+    },
+    {
+      "name": "adminSupportRoute",
+      "path": "/admin/support",
+      "role": "admin",
+      "level": "screen-only; business assertions listed separately"
+    },
+    {
+      "name": "adminSupportCenterRoute",
+      "path": "/admin/support-center",
+      "role": "admin",
+      "level": "screen-only; business assertions listed separately"
+    },
+    {
+      "name": "adminTicketsRoute",
+      "path": "/admin/tickets",
+      "role": "admin",
+      "level": "screen-only; business assertions listed separately"
+    },
+    {
+      "name": "adminModerationV2Route",
+      "path": "/admin/moderation-v2",
+      "role": "admin",
+      "level": "screen-only; business assertions listed separately"
+    },
+    {
+      "name": "adminNotificationsRoute",
+      "path": "/admin/notifications",
+      "role": "admin",
+      "level": "screen-only; business assertions listed separately"
+    },
+    {
+      "name": "adminGovernanceRoute",
+      "path": "/admin/governance",
+      "role": "admin",
+      "level": "screen-only; business assertions listed separately"
+    },
+    {
+      "name": "adminFinanceReconciliationRoute",
+      "path": "/admin/finance-reconciliation",
+      "role": "admin",
+      "level": "screen-only; business assertions listed separately"
+    },
+    {
+      "name": "adminReportSchedulesRoute",
+      "path": "/admin/report-schedules",
+      "role": "admin",
+      "level": "screen-only; business assertions listed separately"
+    },
+    {
+      "name": "adminReportsRoute",
+      "path": "/admin/reports",
+      "role": "admin",
+      "level": "screen-only; business assertions listed separately"
+    },
+    {
+      "name": "adminTeamsRoute",
+      "path": "/admin/teams",
+      "role": "admin",
+      "level": "screen-only; business assertions listed separately"
+    },
+    {
+      "name": "adminPermissionSimulatorRoute",
+      "path": "/admin/permission-simulator",
+      "role": "admin",
+      "level": "screen-only; business assertions listed separately"
+    },
+    {
+      "name": "adminAdminsRoute",
+      "path": "/admin/admins",
+      "role": "admin",
+      "level": "screen-only; business assertions listed separately"
+    },
+    {
+      "name": "adminLandlordsRoute",
+      "path": "/admin/landlords",
+      "role": "admin",
+      "level": "screen-only; business assertions listed separately"
+    },
+    {
+      "name": "adminLandlordFormRoute",
+      "path": "/admin/landlords/form",
+      "role": "admin",
+      "level": "screen-only; business assertions listed separately"
+    },
+    {
+      "name": "adminLandlordDetailRoute",
+      "path": "/admin/landlords/:id",
+      "role": "admin",
+      "level": "screen-only; business assertions listed separately"
+    },
+    {
+      "name": "adminPropertiesRoute",
+      "path": "/admin/properties",
+      "role": "admin",
+      "level": "screen-only; business assertions listed separately"
+    },
+    {
+      "name": "adminRoomsRoute",
+      "path": "/admin/rooms",
+      "role": "admin",
+      "level": "screen-only; business assertions listed separately"
+    },
+    {
+      "name": "adminPropertyFormRoute",
+      "path": "/admin/properties/form",
+      "role": "admin",
+      "level": "screen-only; business assertions listed separately"
+    },
+    {
+      "name": "adminPropertyDetailRoute",
+      "path": "/admin/properties/:id",
+      "role": "admin",
+      "level": "screen-only; business assertions listed separately"
+    },
+    {
+      "name": "propertiesRoute",
+      "path": "/properties",
+      "role": "landlord",
+      "level": "screen-only; business assertions listed separately"
+    },
+    {
+      "name": "propertyFormRoute",
+      "path": "/properties/form",
+      "role": "landlord",
+      "level": "screen-only; business assertions listed separately"
+    },
+    {
+      "name": "roomFormRoute",
+      "path": "/rooms/form",
+      "role": "landlord",
+      "level": "screen-only; business assertions listed separately"
+    },
+    {
+      "name": "roomDetailRoute",
+      "path": "/rooms/:id",
+      "role": "landlord",
+      "level": "screen-only; business assertions listed separately"
+    },
+    {
+      "name": "tenantsRoute",
+      "path": "/tenants",
+      "role": "landlord",
+      "level": "screen-only; business assertions listed separately"
+    },
+    {
+      "name": "tenantFormRoute",
+      "path": "/tenants/form",
+      "role": "landlord",
+      "level": "screen-only; business assertions listed separately"
+    },
+    {
+      "name": "tenantDetailRoute",
+      "path": "/tenants/:id",
+      "role": "landlord",
+      "level": "screen-only; business assertions listed separately"
+    },
+    {
+      "name": "leaseFormRoute",
+      "path": "/leases/form",
+      "role": "landlord",
+      "level": "screen-only; business assertions listed separately"
+    },
+    {
+      "name": "billingRoute",
+      "path": "/billing",
+      "role": "landlord",
+      "level": "screen-only; business assertions listed separately"
+    },
+    {
+      "name": "bulkBillingRoute",
+      "path": "/billing/bulk",
+      "role": "landlord",
+      "level": "screen-only; business assertions listed separately"
+    },
+    {
+      "name": "billingFormRoute",
+      "path": "/billing/form",
+      "role": "landlord",
+      "level": "screen-only; business assertions listed separately"
+    },
+    {
+      "name": "billingTariffsRoute",
+      "path": "/billing/tariffs",
+      "role": "landlord",
+      "level": "screen-only; business assertions listed separately"
+    },
+    {
+      "name": "billingDetailRoute",
+      "path": "/billing/:id",
+      "role": "landlord",
+      "level": "screen-only; business assertions listed separately"
+    },
+    {
+      "name": "expensesRoute",
+      "path": "/expenses",
+      "role": "landlord",
+      "level": "screen-only; business assertions listed separately"
+    },
+    {
+      "name": "expenseFormRoute",
+      "path": "/expenses/form",
+      "role": "landlord",
+      "level": "screen-only; business assertions listed separately"
+    },
+    {
+      "name": "maintenanceRoute",
+      "path": "/maintenance",
+      "role": "landlord",
+      "level": "screen-only; business assertions listed separately"
+    },
+    {
+      "name": "maintenanceFormRoute",
+      "path": "/maintenance/form",
+      "role": "landlord",
+      "level": "screen-only; business assertions listed separately"
+    },
+    {
+      "name": "reportsRoute",
+      "path": "/reports",
+      "role": "landlord",
+      "level": "screen-only; business assertions listed separately"
+    },
+    {
+      "name": "staffRoute",
+      "path": "/staff",
+      "role": "landlord",
+      "level": "screen-only; business assertions listed separately"
+    },
+    {
+      "name": "auditRoute",
+      "path": "/audit",
+      "role": "landlord",
+      "level": "screen-only; business assertions listed separately"
+    },
+    {
+      "name": "notificationsRoute",
+      "path": "/notifications",
+      "role": "landlord",
+      "level": "screen-only; business assertions listed separately"
+    },
+    {
+      "name": "actionItemsRoute",
+      "path": "/actions",
+      "role": "landlord",
+      "level": "screen-only; business assertions listed separately"
+    },
+    {
+      "name": "p1OperationsRoute",
+      "path": "/operations/p1",
+      "role": "landlord",
+      "level": "screen-only; business assertions listed separately"
+    },
+    {
+      "name": "leaseExpiryRoute",
+      "path": "/lease-expiry",
+      "role": "landlord",
+      "level": "screen-only; business assertions listed separately"
+    }
+  ],
+  "selectedSections": [
+    "login",
+    "tenant",
+    "deposit",
+    "billing",
+    "support",
+    "checkout"
+  ],
+  "pendingCoverage": [
+    "Focused run only; not a full-system pass. Runtime errors in invoice cancellation and support are retained."
+  ],
+  "recovered": true,
+  "generatedAt": "2026-10-30T01:22:34.186Z",
+  "success": false,
+  "allFunctionsVerified": false,
+  "notSelectedSections": [
+    "inventory",
+    "property",
+    "room",
+    "listing",
+    "housing",
+    "contract",
+    "maintenance",
+    "expense",
+    "renewal",
+    "occupants",
+    "notifications",
+    "security",
+    "room-services",
+    "screens",
+    "staff",
+    "admin",
+    "regression"
+  ],
+  "counts": {
+    "passed": 5,
+    "failed": 3,
+    "blocked": 0
+  },
+  "results": [
+    {
+      "id": "login",
+      "layer": "UI",
+      "status": "passed",
+      "startedAt": "2026-10-30T01:18:00.340Z",
+      "screenshot": "login.png",
+      "finishedAt": "2026-10-30T01:18:16.948Z"
+    },
+    {
+      "id": "05-tao-sua-tim-nguoi-thue",
+      "layer": "UI",
+      "status": "passed",
+      "startedAt": "2026-10-30T01:18:16.949Z",
+      "screenshot": "05-tao-sua-tim-nguoi-thue.png",
+      "finishedAt": "2026-10-30T01:18:35.682Z"
+    },
+    {
+      "id": "09-thu-coc-va-doi-chieu",
+      "layer": "UI",
+      "status": "passed",
+      "startedAt": "2026-10-30T01:18:35.682Z",
+      "screenshot": "09-thu-coc-va-doi-chieu.png",
+      "finishedAt": "2026-10-30T01:18:48.646Z"
+    },
+    {
+      "id": "10-hoa-don-va-thanh-toan",
+      "layer": "UI",
+      "status": "passed",
+      "startedAt": "2026-10-30T01:18:48.647Z",
+      "screenshot": "10-hoa-don-va-thanh-toan.png",
+      "finishedAt": "2026-10-30T01:19:08.456Z"
+    },
+    {
+      "id": "10b-tao-hoa-don-qua-giao-dien",
+      "layer": "UI",
+      "status": "failed",
+      "startedAt": "2026-10-30T01:19:08.456Z",
+      "error": "AssertionError [ERR_ASSERTION]: Flutter runtime errors\n+ actual - expected\n\n+ [\n+   'A TextEditingController was used after being disposed.\\n' +\n+     'Once you have called dispose() on a TextEditingController, it can no longer be used.',\n+   'A RenderFlex overflowed by 99446 pixels on the bottom.',\n+   \"'package:flutter/src/widgets/framework.dart': Failed assertion: line 6179 pos 14: '_dependents.isEmpty': is not true.\"\n+ ]\n- []\n\n    at file:///Users/hoang/Rental_room_management/test/system_demo/system_demo.mjs:356:12\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async runCase (file:///Users/hoang/Rental_room_management/test/system_demo/system_demo.mjs:118:9)\n    at async scenario (file:///Users/hoang/Rental_room_management/test/system_demo/system_demo.mjs:349:18)\n    at async journeys (file:///Users/hoang/Rental_room_management/test/system_demo/system_demo.mjs:616:3)\n    at async visualJourneys (file:///Users/hoang/Rental_room_management/test/system_demo/system_demo.mjs:410:3)\n    at async main (file:///Users/hoang/Rental_room_management/test/system_demo/system_demo.mjs:955:7)",
+      "finishedAt": "2026-10-30T01:19:34.015Z",
+      "screenshot": "10b-tao-hoa-don-qua-giao-dien-FAILED.png"
+    },
+    {
+      "id": "15b-ticket-ho-tro",
+      "layer": "UI",
+      "status": "failed",
+      "startedAt": "2026-10-30T01:19:34.243Z",
+      "error": "AssertionError [ERR_ASSERTION]: Flutter runtime errors\n+ actual - expected\n\n+ [\n+   'Duplicate GlobalKeys detected in widget tree.\\n' +\n+     'The following GlobalKeys were specified multiple times in the widget tree. This will lead to parts of the widget tree being truncated unexpectedly, because the second time a key is seen, the previous instance is moved to the new location. The keys were:\\n' +\n+     '- [LabeledGlobalKey<_OverlayEntryWidgetState>#beff1]\\n' +\n+     '  [LabeledGlobalKey<_OverlayEntryWidgetState>#18b26]\\n' +\n+     'This was determined by noticing that after widgets with the above global keys were moved out of their previous parent, that previous parent never updated during this frame, meaning that it either did not update at all or updated before the widgets were moved, in either case implying that it still thinks that it should have a child with those global keys.\\n' +\n+     'The specific parent that did not update after having one or more children forcibly removed due to GlobalKey reparenting is:\\n' +\n+     '- _Theater(skipCount: 0, dependencies: [Directionality], renderObject: _RenderTheater#07278 NEEDS-LAYOUT NEEDS-COMPOSITING-BITS-UPDATE DETACHED)\\n' +\n+     'A GlobalKey can only be specified on one widget at a time in the widget tree.',\n+   'A RenderFlex overflowed by 12 pixels on the bottom.'\n+ ]\n- []\n\n    at file:///Users/hoang/Rental_room_management/test/system_demo/system_demo.mjs:356:12\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async runCase (file:///Users/hoang/Rental_room_management/test/system_demo/system_demo.mjs:118:9)\n    at async scenario (file:///Users/hoang/Rental_room_management/test/system_demo/system_demo.mjs:349:18)\n    at async journeys (file:///Users/hoang/Rental_room_management/test/system_demo/system_demo.mjs:702:3)\n    at async visualJourneys (file:///Users/hoang/Rental_room_management/test/system_demo/system_demo.mjs:410:3)\n    at async main (file:///Users/hoang/Rental_room_management/test/system_demo/system_demo.mjs:955:7)",
+      "finishedAt": "2026-10-30T01:19:51.473Z",
+      "screenshot": "15b-ticket-ho-tro-FAILED.png"
+    },
+    {
+      "id": "19-yeu-cau-tra-phong",
+      "layer": "UI",
+      "status": "passed",
+      "startedAt": "2026-10-30T01:19:51.728Z",
+      "screenshot": "19-yeu-cau-tra-phong.png",
+      "finishedAt": "2026-10-30T01:20:20.153Z"
+    },
+    {
+      "id": "cleanup:recovered-after-EPERM",
+      "layer": "infrastructure",
+      "status": "failed",
+      "error": "Original process stopped on kill EPERM before generating final report. Report recovered from progress.json; exact isolated database removed manually. Process cleanup fallback fixed afterward; see final smoke run."
+    }
+  ]
+}

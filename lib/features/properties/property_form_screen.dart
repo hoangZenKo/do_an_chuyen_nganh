@@ -8,6 +8,8 @@ import '../../models/property.dart';
 import '../rooms/room_providers.dart';
 import '../auth/auth_providers.dart';
 import '../billing/transfer_account_dialog.dart';
+import '../auth/auth_navigation.dart';
+import 'property_management_theme.dart';
 
 class PropertyFormScreen extends ConsumerWidget {
   const PropertyFormScreen({super.key, this.propertyId});
@@ -46,7 +48,7 @@ class PropertyFormScreen extends ConsumerWidget {
             return const Center(
               child: Text(
                 'Không tìm thấy khu trọ.',
-                style: TextStyle(color: Color(0xFF8891A8)),
+                style: TextStyle(color: PropertyManagementTheme.muted),
               ),
             );
           }
@@ -66,8 +68,16 @@ class _FormScaffold extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFF0F1117),
-      appBar: AppBar(title: Text(title)),
+      backgroundColor: PropertyManagementTheme.background,
+      appBar: AppBar(
+        title: Text(title),
+        leading: IconButton(
+          tooltip: 'Quay lại',
+          icon: const Icon(Icons.arrow_back),
+          onPressed: () =>
+              context.canPop() ? context.pop() : context.go(propertiesRoute),
+        ),
+      ),
       body: child,
     );
   }
@@ -88,12 +98,12 @@ class _LoadError extends StatelessWidget {
           mainAxisSize: MainAxisSize.min,
           children: [
             const Icon(Icons.cloud_off_rounded,
-                size: 52, color: Color(0xFF9CA3AF)),
+                size: 52, color: PropertyManagementTheme.muted),
             const SizedBox(height: 14),
             Text(
               message,
               textAlign: TextAlign.center,
-              style: const TextStyle(color: Color(0xFF8891A8)),
+              style: const TextStyle(color: PropertyManagementTheme.muted),
             ),
             const SizedBox(height: 12),
             TextButton(onPressed: onRetry, child: const Text('Thử lại')),
@@ -142,7 +152,9 @@ class _PropertyFormState extends ConsumerState<_PropertyForm> {
             name: _name.text.trim(),
             address: _address.text.trim(),
           );
-      if (mounted) context.pop();
+      if (mounted) {
+        context.canPop() ? context.pop() : context.go(propertiesRoute);
+      }
     } catch (_) {
       // Provider state renders the error banner.
     }
@@ -251,7 +263,7 @@ class _Label extends StatelessWidget {
         style: const TextStyle(
           fontSize: 13,
           fontWeight: FontWeight.w600,
-          color: Color(0xFFF0F2FF),
+          color: PropertyManagementTheme.ink,
         ),
       );
 }
@@ -282,17 +294,20 @@ class _Field extends StatelessWidget {
           controller: controller,
           validator: validator,
           maxLines: maxLines,
-          style: const TextStyle(fontSize: 15, color: Color(0xFFF0F2FF)),
+          style:
+              const TextStyle(fontSize: 15, color: PropertyManagementTheme.ink),
           decoration: InputDecoration(
             hintText: hint,
-            hintStyle: const TextStyle(color: Color(0xFF9CA3AF), fontSize: 14),
+            hintStyle: const TextStyle(
+                color: PropertyManagementTheme.muted, fontSize: 14),
             filled: true,
             fillColor: Colors.white,
             contentPadding:
                 const EdgeInsets.symmetric(horizontal: 16, vertical: 14),
             enabledBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(12),
-              borderSide: const BorderSide(color: Color(0xFF2E3348), width: 1),
+              borderSide: const BorderSide(
+                  color: PropertyManagementTheme.border, width: 1),
             ),
             focusedBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(12),
@@ -300,13 +315,13 @@ class _Field extends StatelessWidget {
             ),
             errorBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(12),
-              borderSide:
-                  const BorderSide(color: Color(0xFFEF4444), width: 1.2),
+              borderSide: const BorderSide(
+                  color: PropertyManagementTheme.error, width: 1.2),
             ),
             focusedErrorBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(12),
-              borderSide:
-                  const BorderSide(color: Color(0xFFEF4444), width: 1.8),
+              borderSide: const BorderSide(
+                  color: PropertyManagementTheme.error, width: 1.8),
             ),
           ),
         ),
@@ -333,12 +348,13 @@ class _ErrorBanner extends StatelessWidget {
       child: Row(
         children: [
           const Icon(Icons.error_outline_rounded,
-              size: 16, color: Color(0xFFDC2626)),
+              size: 16, color: PropertyManagementTheme.error),
           const SizedBox(width: 8),
           Expanded(
             child: Text(
               message,
-              style: const TextStyle(fontSize: 13, color: Color(0xFFDC2626)),
+              style: const TextStyle(
+                  fontSize: 13, color: PropertyManagementTheme.error),
             ),
           ),
         ],

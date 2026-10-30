@@ -1,0 +1,22 @@
+
+> rental-room-api@0.1.0 test:e2e
+> NODE_ENV=test jest --config ./test/jest-e2e.json --runInBand --runTestsByPath test/e2e/admin-operations-release.e2e-spec.ts --runInBand
+
+PASS test/e2e/admin-operations-release.e2e-spec.ts (6.821 s)
+  Admin operations release E2E
+    ✓ enforces live permissions and role boundaries for the release routes (642 ms)
+    ✓ revokes an admin target session with version protection and preserves self protection (464 ms)
+    ✓ returns a permission-scoped workspace action summary and paginates attention items (416 ms)
+    ✓ binds a single-use step-up to session, action and exact payload, and rejects expired/revoked grants (554 ms)
+    ✓ records independent access reviews with masking, audit and optimistic versions (409 ms)
+    ✓ protects the legacy landlord status route with the same single-use step-up (330 ms)
+    ✓ assigns, snoozes, wakes, recovers and reopens incidents without hiding active conditions (629 ms)
+    ✓ preserves SLA snapshots, pause/resume budgets and overdue time on reopen (396 ms)
+    ✓ deduplicates multi-level SLA escalation across competing workers and stops after resolution (411 ms)
+    ✓ keeps case links requester-scoped and filters timeline resources after permission revocation (442 ms)
+
+Test Suites: 1 passed, 1 total
+Tests:       10 passed, 10 total
+Snapshots:   0 total
+Time:        6.926 s
+Ran all test suites within paths "test/e2e/admin-operations-release.e2e-spec.ts".

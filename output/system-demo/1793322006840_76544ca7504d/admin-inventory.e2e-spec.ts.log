@@ -1,0 +1,20 @@
+
+> rental-room-api@0.1.0 test:e2e
+> NODE_ENV=test jest --config ./test/jest-e2e.json --runInBand --runTestsByPath test/e2e/admin-inventory.e2e-spec.ts --runInBand
+
+PASS test/e2e/admin-inventory.e2e-spec.ts
+  Admin inventory database acceptance
+    ✓ separates viewers from writers and validates reads without caching private data (435 ms)
+    ✓ keeps property metadata and full occupancy counts while bounding the preview to twenty rooms (273 ms)
+    ✓ paginates every room and combines internal price, occupancy, activity, owner and listing filters (277 ms)
+    ✓ opens exactly the UUID queue target and reuses claimed/versioned review without mutating room accounting (312 ms)
+    ✓ searches room, property and landlord across all pending pages while retaining assignment filters (351 ms)
+    ✓ treats wildcard characters literally and refuses unauthorized or overlong queue searches (361 ms)
+    ✓ finds reports, reviews and replies by related room, listing, property and landlord (353 ms)
+    ✓ preserves authorized property creation/update with audit and masked bounded detail (273 ms)
+
+Test Suites: 1 passed, 1 total
+Tests:       8 passed, 8 total
+Snapshots:   0 total
+Time:        4.361 s, estimated 6 s
+Ran all test suites within paths "test/e2e/admin-inventory.e2e-spec.ts".

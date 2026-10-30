@@ -1,0 +1,7 @@
+2026-10-30 01:09:09:392 [FlutterDriver@fd58] The following provided capabilities were not recognized by this driver:
+2026-10-30 01:09:09:392 [FlutterDriver@fd58]   bundleId
+2026-10-30 01:09:09:392 [FlutterDriver@fd58]   wdaLocalPort
+2026-10-30 01:09:09:394 [c69a2752][XCUITestDriver@7d09] The following provided capabilities were not recognized by this driver:
+2026-10-30 01:09:09:394 [c69a2752][XCUITestDriver@7d09]   observatoryWsUri
+2026-10-30 01:09:09:395 [c69a2752][XCUITestDriver@7d09] 'platformVersion' capability ('undefined') is not a valid version number. Consider fixing it or be ready to experience an inconsistent driver behavior.
+2026-10-30 01:09:09:511 [b6425f06][XCUITest] RemoteXPC devices listing unavailable: Tunnel registry port not found. Please run the tunnel creation script first See https://appium.github.io/appium-xcuitest-driver/latest/guides/remotexpc-tunnels-real-devices/ Falling back to appium-ios-device.

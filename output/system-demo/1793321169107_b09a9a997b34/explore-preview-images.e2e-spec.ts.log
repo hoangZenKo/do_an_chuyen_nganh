@@ -1,0 +1,15 @@
+
+> rental-room-api@0.1.0 test:e2e
+> NODE_ENV=test jest --config ./test/jest-e2e.json --runInBand --runTestsByPath test/e2e/explore-preview-images.e2e-spec.ts --runInBand
+
+PASS test/e2e/explore-preview-images.e2e-spec.ts (5.193 s)
+  Explore preview image registration
+    ✓ serves seeded photos and repairs legacy private or missing metadata without publishing private files (1908 ms)
+    ✓ backfills only published listing photos owned by the landlord and never private attachments (590 ms)
+    ✓ refuses to change permissions on a preview filename owned by another account (666 ms)
+
+Test Suites: 1 passed, 1 total
+Tests:       3 passed, 3 total
+Snapshots:   0 total
+Time:        5.306 s
+Ran all test suites within paths "test/e2e/explore-preview-images.e2e-spec.ts".

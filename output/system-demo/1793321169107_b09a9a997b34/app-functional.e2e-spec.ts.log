@@ -1,0 +1,65 @@
+
+> rental-room-api@0.1.0 test:e2e
+> NODE_ENV=test jest --config ./test/jest-e2e.json --runInBand --runTestsByPath test/e2e/app-functional.e2e-spec.ts --runInBand
+
+FAIL test/e2e/app-functional.e2e-spec.ts
+  App functional milestone (disposable database)
+    ✓ rejects duplicate submissions, stale reviews and stale cancellation; concurrent reviewers have one winner (365 ms)
+    ✓ executes renewal once and preserves deposit ledger and lease history (286 ms)
+    ✓ requires canonical settlement for checkout and exposes only the tenants own settlement (267 ms)
+    ✓ transfers only after settlement, copies co-occupants without erasing history and never invents a new deposit (279 ms)
+    ✓ rejects execution against a changed lease and filters lifecycle history by lease and status (182 ms)
+    ✕ queues one recovery token under resend limits, redeems once and revokes existing sessions (170 ms)
+    ✕ rejects expired recovery tokens without changing the password or consuming a session (191 ms)
+    ✓ limits tenant invite resends, invalidates the previous link and consumes activation exactly once (245 ms)
+    ✓ staff activation is one-time, property scoped and rejects expired invites (309 ms)
+    ✓ keeps uploaded proof pending, then records the canonical receipt allocation only after approval (278 ms)
+
+  ● App functional milestone (disposable database) › queues one recovery token under resend limits, redeems once and revokes existing sessions
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 1
+    Received: 0
+
+      124 |     expect((await api('auth/account-access/forgot', '', 'POST', { email: 'missing@example.test' })).json).toEqual(known.json);
+      125 |     await api('auth/account-access/forgot', '', 'POST', { email: owner.email });
+    > 126 |     expect(await harness.prisma.accountAccessToken.count({ where: { userId: owner.id } })).toBe(1);
+          |                                                                                            ^
+      127 |     const job = await harness.prisma.deliveryJob.findFirstOrThrow({ where: { token: { userId: owner.id } } });
+      128 |     const delivery = JSON.parse(harness.app.get(DeliveryCryptoService).decrypt(job.payload!));
+      129 |     const raw = new URL(delivery.actionUrl).hash.slice('#token='.length);
+
+      at Object.<anonymous> (test/e2e/app-functional.e2e-spec.ts:126:92)
+
+  ● App functional milestone (disposable database) › rejects expired recovery tokens without changing the password or consuming a session
+
+    PrismaClientKnownRequestError: 
+    Invalid `harness.prisma.deliveryJob.findFirstOrThrow()` invocation in
+    /Users/hoang/Rental_room_management/backend/test/e2e/app-functional.e2e-spec.ts:144:50
+
+      141 it('rejects expired recovery tokens without changing the password or consuming a session', async () => {
+      142   const user = await harness.prisma.user.findUniqueOrThrow({ where: { id: tenantUserId } });
+      143   await api('auth/account-access/forgot', '', 'POST', { email: user.email });
+    → 144   const job = await harness.prisma.deliveryJob.findFirstOrThrow(
+    An operation failed because it depends on one or more records that were required but not found. No record was found for a query.
+
+      142 |     const user = await harness.prisma.user.findUniqueOrThrow({ where: { id: tenantUserId } });
+      143 |     await api('auth/account-access/forgot', '', 'POST', { email: user.email });
+    > 144 |     const job = await harness.prisma.deliveryJob.findFirstOrThrow({ where: { token: { userId: user.id } } });
+          |                 ^
+      145 |     const payload = JSON.parse(harness.app.get(DeliveryCryptoService).decrypt(job.payload!));
+      146 |     await harness.prisma.accountAccessToken.update({ where: { id: job.tokenId! }, data: { expiresAt: new Date(Date.now() - 1) } });
+      147 |     expect((await api('auth/account-access/redeem', '', 'POST', { token: new URL(payload.actionUrl).hash.slice(7), password: 'NewStrongPassword!123' })).status).toBe(401);
+
+      at ei.handleRequestError (node_modules/@prisma/client/src/runtime/RequestHandler.ts:228:13)
+      at ei.handleAndLogRequestError (node_modules/@prisma/client/src/runtime/RequestHandler.ts:174:12)
+      at ei.request (node_modules/@prisma/client/src/runtime/RequestHandler.ts:143:12)
+      at a (node_modules/@prisma/client/src/runtime/getPrismaClient.ts:833:24)
+      at Object.<anonymous> (test/e2e/app-functional.e2e-spec.ts:144:17)
+
+Test Suites: 1 failed, 1 total
+Tests:       2 failed, 8 passed, 10 total
+Snapshots:   0 total
+Time:        4.608 s
+Ran all test suites within paths "test/e2e/app-functional.e2e-spec.ts".

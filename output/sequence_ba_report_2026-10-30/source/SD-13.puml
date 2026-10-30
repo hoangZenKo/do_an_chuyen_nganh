@@ -1,0 +1,98 @@
+@startuml
+skinparam backgroundColor white
+skinparam shadowing false
+skinparam dpi 240
+skinparam defaultFontName "Times New Roman"
+skinparam defaultFontSize 17
+skinparam defaultFontColor black
+skinparam titleFontSize 21
+skinparam titleFontColor black
+skinparam roundcorner 0
+skinparam maxMessageSize 270
+skinparam ParticipantPadding 30
+skinparam sequence {
+  ArrowColor #800000
+  ArrowThickness 1.2
+  LifeLineBorderColor #999999
+  LifeLineBackgroundColor #FFFFB9
+  ParticipantBackgroundColor #FFFFB9
+  ParticipantBorderColor #800000
+  ParticipantFontColor black
+  ActorBackgroundColor #FFFFB9
+  ActorBorderColor #800000
+  ActorFontColor black
+  BoundaryBackgroundColor #FFFFB9
+  BoundaryBorderColor #800000
+  ControlBackgroundColor #FFFFB9
+  ControlBorderColor #800000
+  EntityBackgroundColor #FFFFB9
+  EntityBorderColor #800000
+  DatabaseBackgroundColor #FFFFB9
+  DatabaseBorderColor #800000
+  GroupBackgroundColor #FFFFB9
+  GroupBodyBackgroundColor white
+  GroupBorderColor #888888
+  GroupFontColor black
+  GroupHeaderFontColor black
+  GroupFontSize 15
+  GroupHeaderFontSize 16
+  MessageAlign center
+}
+hide footbox
+<style>
+sequenceDiagram {
+ actor { BackgroundColor #FFFFB9
+ LineColor #800000 }
+ boundary { BackgroundColor #FFFFB9
+ LineColor #800000 }
+ control { BackgroundColor #FFFFB9
+ LineColor #800000 }
+ database { BackgroundColor #FFFFB9
+ LineColor #800000 }
+ activationBox { BackgroundColor #FFFFB9
+ LineColor #800000 }
+}
+</style>
+autonumber "<b>0.</b>"
+
+title SD-13. Xem báo cáo tháng và sao chép dữ liệu CSV
+actor "Chủ trọ" as A
+boundary "<u>Giao diện</u>\n<u>báo cáo</u>" as U #FFFFB9
+control "<u>Tổng hợp</u>\n<u>báo cáo tháng</u>" as C #FFFFB9
+database "<u>Cơ sở dữ liệu</u>" as D #FFFFB9
+A -> U: Chọn tháng và khu trọ; yêu cầu xem báo cáo
+activate U
+U -> C: Yêu cầu báo cáo theo tháng và khu trọ
+activate C
+C -> D ++: Tra cứu hóa đơn, thanh toán, chi phí, cọc và hợp đồng trong phạm vi
+D --> C --: Dữ liệu tháng của các khu trọ được phép xem
+C -> C: Kiểm tra phạm vi; tổng hợp thanh toán sau khoản đảo, chi phí, cọc và dư nợ
+alt Tháng không hợp lệ hoặc khu ngoài quyền
+C --> U: Không hiển thị báo cáo
+U --> A: Không hiển thị báo cáo; thông báo lý do
+else Tháng và phạm vi hợp lệ
+C --> U: Kết quả: báo cáo tháng và chi tiết hóa đơn
+U --> A: Hiển thị báo cáo tháng và chi tiết hóa đơn
+end
+deactivate C
+deactivate U
+opt Người dùng có quyền xuất chọn sao chép CSV
+A -> U: Yêu cầu xuất dữ liệu tháng đang chọn
+activate U
+U -> C: Yêu cầu xuất dữ liệu tháng đang chọn
+activate C
+C -> D ++: Tra cứu lại dữ liệu tháng trong phạm vi được phép xem
+D --> C --: Hóa đơn, thanh toán, chi phí, cọc và hợp đồng
+C -> C: Kiểm tra phạm vi; tổng hợp báo cáo và lập nội dung xuất
+alt Không còn quyền hoặc dữ liệu yêu cầu không hợp lệ
+C --> U: Không xuất dữ liệu
+U --> A: Không xuất dữ liệu; thông báo lý do
+else Đủ điều kiện xuất
+C --> U: Nội dung CSV của báo cáo tháng
+U -> U: Sao chép nội dung CSV vào bộ nhớ tạm
+U --> A: Thông báo đã sao chép; không tự tải tệp
+end
+deactivate C
+deactivate U
+end
+@enduml

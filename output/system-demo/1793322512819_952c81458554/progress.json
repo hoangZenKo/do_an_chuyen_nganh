@@ -1,0 +1,773 @@
+[
+  {
+    "id": "login",
+    "layer": "UI",
+    "status": "passed",
+    "startedAt": "2026-10-30T01:09:17.133Z",
+    "screenshot": "login.png",
+    "finishedAt": "2026-10-30T01:09:33.697Z"
+  },
+  {
+    "id": "04-tao-sua-phong",
+    "layer": "UI",
+    "status": "passed",
+    "startedAt": "2026-10-30T01:09:33.697Z",
+    "screenshot": "04-tao-sua-phong.png",
+    "finishedAt": "2026-10-30T01:09:55.408Z"
+  },
+  {
+    "id": "08-hop-dong-va-ban-giao",
+    "layer": "UI",
+    "status": "passed",
+    "startedAt": "2026-10-30T01:09:55.409Z",
+    "screenshot": "08-hop-dong-va-ban-giao.png",
+    "finishedAt": "2026-10-30T01:10:20.122Z"
+  },
+  {
+    "id": "09-thu-coc-va-doi-chieu",
+    "layer": "UI",
+    "status": "passed",
+    "startedAt": "2026-10-30T01:10:20.122Z",
+    "screenshot": "09-thu-coc-va-doi-chieu.png",
+    "finishedAt": "2026-10-30T01:10:35.985Z"
+  },
+  {
+    "id": "10-hoa-don-va-thanh-toan",
+    "layer": "UI",
+    "status": "passed",
+    "startedAt": "2026-10-30T01:10:35.985Z",
+    "screenshot": "10-hoa-don-va-thanh-toan.png",
+    "finishedAt": "2026-10-30T01:10:55.790Z"
+  },
+  {
+    "id": "10b-tao-hoa-don-qua-giao-dien",
+    "layer": "UI",
+    "status": "failed",
+    "startedAt": "2026-10-30T01:10:55.791Z",
+    "error": "AssertionError [ERR_ASSERTION]: Target was not built after scrolling.\n    at DemoUI.reveal (file:///Users/hoang/Rental_room_management/test/system_demo/system_demo.mjs:303:12)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async DemoUI.tap (file:///Users/hoang/Rental_room_management/test/system_demo/system_demo.mjs:309:5)\n    at async file:///Users/hoang/Rental_room_management/test/system_demo/system_demo.mjs:616:5\n    at async file:///Users/hoang/Rental_room_management/test/system_demo/system_demo.mjs:351:5\n    at async runCase (file:///Users/hoang/Rental_room_management/test/system_demo/system_demo.mjs:118:9)\n    at async scenario (file:///Users/hoang/Rental_room_management/test/system_demo/system_demo.mjs:346:18)\n    at async journeys (file:///Users/hoang/Rental_room_management/test/system_demo/system_demo.mjs:605:3)\n    at async visualJourneys (file:///Users/hoang/Rental_room_management/test/system_demo/system_demo.mjs:402:3)\n    at async main (file:///Users/hoang/Rental_room_management/test/system_demo/system_demo.mjs:931:5)",
+    "finishedAt": "2026-10-30T01:11:15.148Z",
+    "screenshot": "10b-tao-hoa-don-qua-giao-dien-FAILED.png"
+  },
+  {
+    "id": "11-sua-chua-hai-vai-tro",
+    "layer": "UI",
+    "status": "passed",
+    "startedAt": "2026-10-30T01:11:15.418Z",
+    "screenshot": "11-sua-chua-hai-vai-tro.png",
+    "finishedAt": "2026-10-30T01:11:42.869Z"
+  },
+  {
+    "id": "15b-ticket-ho-tro",
+    "layer": "UI",
+    "status": "failed",
+    "startedAt": "2026-10-30T01:11:42.869Z",
+    "error": "Error: Timeout: Expected text: DEMO admin da tiep nhan\n    at waitUntil (file:///Users/hoang/Rental_room_management/test/system_demo/system_demo.mjs:192:9)\n    at async DemoUI.expect (file:///Users/hoang/Rental_room_management/test/system_demo/system_demo.mjs:322:5)\n    at async file:///Users/hoang/Rental_room_management/test/system_demo/system_demo.mjs:697:5\n    at async file:///Users/hoang/Rental_room_management/test/system_demo/system_demo.mjs:351:5\n    at async runCase (file:///Users/hoang/Rental_room_management/test/system_demo/system_demo.mjs:118:9)\n    at async scenario (file:///Users/hoang/Rental_room_management/test/system_demo/system_demo.mjs:346:18)\n    at async journeys (file:///Users/hoang/Rental_room_management/test/system_demo/system_demo.mjs:687:3)\n    at async visualJourneys (file:///Users/hoang/Rental_room_management/test/system_demo/system_demo.mjs:402:3)\n    at async main (file:///Users/hoang/Rental_room_management/test/system_demo/system_demo.mjs:931:5)",
+    "finishedAt": "2026-10-30T01:12:17.620Z",
+    "screenshot": "15b-ticket-ho-tro-FAILED.png"
+  },
+  {
+    "id": "15c-doi-mat-khau",
+    "layer": "UI",
+    "status": "passed",
+    "startedAt": "2026-10-30T01:12:17.853Z",
+    "screenshot": "15c-doi-mat-khau.png",
+    "finishedAt": "2026-10-30T01:12:39.863Z"
+  },
+  {
+    "id": "15d-bieu-phi-phong",
+    "layer": "UI",
+    "status": "passed",
+    "startedAt": "2026-10-30T01:12:39.864Z",
+    "screenshot": "15d-bieu-phi-phong.png",
+    "finishedAt": "2026-10-30T01:12:50.096Z"
+  },
+  {
+    "id": "screen:tenant:/housing/favorites",
+    "layer": "screen",
+    "status": "passed",
+    "startedAt": "2026-10-30T01:12:53.043Z",
+    "screenshot": "screen-tenant-housingFavoritesRoute.png",
+    "finishedAt": "2026-10-30T01:12:55.147Z"
+  },
+  {
+    "id": "screen:tenant:/housing/viewings",
+    "layer": "screen",
+    "status": "passed",
+    "startedAt": "2026-10-30T01:12:55.148Z",
+    "screenshot": "screen-tenant-housingViewingsRoute.png",
+    "finishedAt": "2026-10-30T01:12:57.281Z"
+  },
+  {
+    "id": "screen:tenant:/housing/notifications",
+    "layer": "screen",
+    "status": "passed",
+    "startedAt": "2026-10-30T01:12:57.281Z",
+    "screenshot": "screen-tenant-housingNoticesRoute.png",
+    "finishedAt": "2026-10-30T01:12:59.430Z"
+  },
+  {
+    "id": "screen:tenant:/housing/pilot",
+    "layer": "screen",
+    "status": "passed",
+    "startedAt": "2026-10-30T01:12:59.430Z",
+    "screenshot": "screen-tenant-rentalPilotRoute.png",
+    "finishedAt": "2026-10-30T01:13:01.574Z"
+  },
+  {
+    "id": "screen:tenant:/explore",
+    "layer": "screen",
+    "status": "passed",
+    "startedAt": "2026-10-30T01:13:01.574Z",
+    "screenshot": "screen-tenant-exploreRoute.png",
+    "finishedAt": "2026-10-30T01:13:03.723Z"
+  },
+  {
+    "id": "screen:tenant:/tenant",
+    "layer": "screen",
+    "status": "passed",
+    "startedAt": "2026-10-30T01:13:03.723Z",
+    "screenshot": "screen-tenant-tenantPortalRoute.png",
+    "finishedAt": "2026-10-30T01:13:05.884Z"
+  },
+  {
+    "id": "screen:tenant:/explore/account",
+    "layer": "screen",
+    "status": "passed",
+    "startedAt": "2026-10-30T01:13:05.884Z",
+    "screenshot": "screen-tenant-seekerAccountRoute.png",
+    "finishedAt": "2026-10-30T01:13:08.045Z"
+  },
+  {
+    "id": "screen:tenant:/explore/listings/:id",
+    "layer": "screen",
+    "status": "passed",
+    "startedAt": "2026-10-30T01:13:08.045Z",
+    "screenshot": "screen-tenant-publicListingRoute.png",
+    "finishedAt": "2026-10-30T01:13:10.186Z"
+  },
+  {
+    "id": "screen:tenant:/tenant/password",
+    "layer": "screen",
+    "status": "passed",
+    "startedAt": "2026-10-30T01:13:10.186Z",
+    "screenshot": "screen-tenant-tenantPasswordRoute.png",
+    "finishedAt": "2026-10-30T01:13:12.358Z"
+  },
+  {
+    "id": "screen:tenant:/tenant/zalo",
+    "layer": "screen",
+    "status": "passed",
+    "startedAt": "2026-10-30T01:13:12.358Z",
+    "screenshot": "screen-tenant-tenantZaloRoute.png",
+    "finishedAt": "2026-10-30T01:13:14.485Z"
+  },
+  {
+    "id": "screen:tenant:/tenant/notifications",
+    "layer": "screen",
+    "status": "passed",
+    "startedAt": "2026-10-30T01:13:14.485Z",
+    "screenshot": "screen-tenant-tenantNotificationsRoute.png",
+    "finishedAt": "2026-10-30T01:13:16.632Z"
+  },
+  {
+    "id": "screen:tenant:/tenant/leases",
+    "layer": "screen",
+    "status": "passed",
+    "startedAt": "2026-10-30T01:13:16.632Z",
+    "screenshot": "screen-tenant-tenantLeasesRoute.png",
+    "finishedAt": "2026-10-30T01:13:18.778Z"
+  },
+  {
+    "id": "screen:tenant:/tenant/invoices",
+    "layer": "screen",
+    "status": "passed",
+    "startedAt": "2026-10-30T01:13:18.778Z",
+    "screenshot": "screen-tenant-tenantInvoicesRoute.png",
+    "finishedAt": "2026-10-30T01:13:20.925Z"
+  },
+  {
+    "id": "screen:tenant:/tenant/invoices/:id",
+    "layer": "screen",
+    "status": "passed",
+    "startedAt": "2026-10-30T01:13:20.925Z",
+    "screenshot": "screen-tenant-tenantInvoiceDetailRoute.png",
+    "finishedAt": "2026-10-30T01:13:23.073Z"
+  },
+  {
+    "id": "screen:tenant:/tenant/maintenance",
+    "layer": "screen",
+    "status": "passed",
+    "startedAt": "2026-10-30T01:13:23.073Z",
+    "screenshot": "screen-tenant-tenantMaintenanceRoute.png",
+    "finishedAt": "2026-10-30T01:13:25.197Z"
+  },
+  {
+    "id": "screen:landlord:/listings",
+    "layer": "screen",
+    "status": "passed",
+    "startedAt": "2026-10-30T01:13:28.136Z",
+    "screenshot": "screen-landlord-landlordListingsRoute.png",
+    "finishedAt": "2026-10-30T01:13:30.370Z"
+  },
+  {
+    "id": "screen:landlord:/listings/reviews",
+    "layer": "screen",
+    "status": "passed",
+    "startedAt": "2026-10-30T01:13:30.370Z",
+    "screenshot": "screen-landlord-landlordReviewsRoute.png",
+    "finishedAt": "2026-10-30T01:13:32.523Z"
+  },
+  {
+    "id": "screen:landlord:/dashboard",
+    "layer": "screen",
+    "status": "passed",
+    "startedAt": "2026-10-30T01:13:32.523Z",
+    "screenshot": "screen-landlord-dashboardRoute.png",
+    "finishedAt": "2026-10-30T01:13:34.643Z"
+  },
+  {
+    "id": "screen:landlord:/chatbot",
+    "layer": "screen",
+    "status": "passed",
+    "startedAt": "2026-10-30T01:13:34.643Z",
+    "screenshot": "screen-landlord-chatbotRoute.png",
+    "finishedAt": "2026-10-30T01:13:36.768Z"
+  },
+  {
+    "id": "screen:landlord:/settings",
+    "layer": "screen",
+    "status": "passed",
+    "startedAt": "2026-10-30T01:13:36.768Z",
+    "screenshot": "screen-landlord-settingsRoute.png",
+    "finishedAt": "2026-10-30T01:13:38.912Z"
+  },
+  {
+    "id": "screen:landlord:/settings/password",
+    "layer": "screen",
+    "status": "passed",
+    "startedAt": "2026-10-30T01:13:38.913Z",
+    "screenshot": "screen-landlord-settingsPasswordRoute.png",
+    "finishedAt": "2026-10-30T01:13:41.054Z"
+  },
+  {
+    "id": "screen:landlord:/settings/fake-zalo",
+    "layer": "screen",
+    "status": "passed",
+    "startedAt": "2026-10-30T01:13:41.054Z",
+    "screenshot": "screen-landlord-fakeZaloRoute.png",
+    "finishedAt": "2026-10-30T01:13:43.187Z"
+  },
+  {
+    "id": "screen:landlord:/support-center",
+    "layer": "screen",
+    "status": "passed",
+    "startedAt": "2026-10-30T01:13:43.187Z",
+    "screenshot": "screen-landlord-supportCenterRoute.png",
+    "finishedAt": "2026-10-30T01:13:45.323Z"
+  },
+  {
+    "id": "screen:landlord:/properties",
+    "layer": "screen",
+    "status": "passed",
+    "startedAt": "2026-10-30T01:13:45.323Z",
+    "screenshot": "screen-landlord-propertiesRoute.png",
+    "finishedAt": "2026-10-30T01:13:47.486Z"
+  },
+  {
+    "id": "screen:landlord:/properties/form",
+    "layer": "screen",
+    "status": "passed",
+    "startedAt": "2026-10-30T01:13:47.486Z",
+    "screenshot": "screen-landlord-propertyFormRoute.png",
+    "finishedAt": "2026-10-30T01:13:49.637Z"
+  },
+  {
+    "id": "screen:landlord:/rooms/form",
+    "layer": "screen",
+    "status": "passed",
+    "startedAt": "2026-10-30T01:13:49.637Z",
+    "screenshot": "screen-landlord-roomFormRoute.png",
+    "finishedAt": "2026-10-30T01:13:51.802Z"
+  },
+  {
+    "id": "screen:landlord:/rooms/:id",
+    "layer": "screen",
+    "status": "passed",
+    "startedAt": "2026-10-30T01:13:51.802Z",
+    "screenshot": "screen-landlord-roomDetailRoute.png",
+    "finishedAt": "2026-10-30T01:13:53.962Z"
+  },
+  {
+    "id": "screen:landlord:/tenants",
+    "layer": "screen",
+    "status": "passed",
+    "startedAt": "2026-10-30T01:13:53.962Z",
+    "screenshot": "screen-landlord-tenantsRoute.png",
+    "finishedAt": "2026-10-30T01:13:56.078Z"
+  },
+  {
+    "id": "screen:landlord:/tenants/form",
+    "layer": "screen",
+    "status": "passed",
+    "startedAt": "2026-10-30T01:13:56.078Z",
+    "screenshot": "screen-landlord-tenantFormRoute.png",
+    "finishedAt": "2026-10-30T01:13:58.231Z"
+  },
+  {
+    "id": "screen:landlord:/tenants/:id",
+    "layer": "screen",
+    "status": "passed",
+    "startedAt": "2026-10-30T01:13:58.231Z",
+    "screenshot": "screen-landlord-tenantDetailRoute.png",
+    "finishedAt": "2026-10-30T01:14:00.381Z"
+  },
+  {
+    "id": "screen:landlord:/leases/form",
+    "layer": "screen",
+    "status": "passed",
+    "startedAt": "2026-10-30T01:14:00.381Z",
+    "screenshot": "screen-landlord-leaseFormRoute.png",
+    "finishedAt": "2026-10-30T01:14:02.524Z"
+  },
+  {
+    "id": "screen:landlord:/billing",
+    "layer": "screen",
+    "status": "passed",
+    "startedAt": "2026-10-30T01:14:02.524Z",
+    "screenshot": "screen-landlord-billingRoute.png",
+    "finishedAt": "2026-10-30T01:14:04.713Z"
+  },
+  {
+    "id": "screen:landlord:/billing/bulk",
+    "layer": "screen",
+    "status": "passed",
+    "startedAt": "2026-10-30T01:14:04.713Z",
+    "screenshot": "screen-landlord-bulkBillingRoute.png",
+    "finishedAt": "2026-10-30T01:14:06.888Z"
+  },
+  {
+    "id": "screen:landlord:/billing/form",
+    "layer": "screen",
+    "status": "passed",
+    "startedAt": "2026-10-30T01:14:06.888Z",
+    "screenshot": "screen-landlord-billingFormRoute.png",
+    "finishedAt": "2026-10-30T01:14:09.054Z"
+  },
+  {
+    "id": "screen:landlord:/billing/tariffs",
+    "layer": "screen",
+    "status": "passed",
+    "startedAt": "2026-10-30T01:14:09.054Z",
+    "screenshot": "screen-landlord-billingTariffsRoute.png",
+    "finishedAt": "2026-10-30T01:14:11.180Z"
+  },
+  {
+    "id": "screen:landlord:/billing/:id",
+    "layer": "screen",
+    "status": "passed",
+    "startedAt": "2026-10-30T01:14:11.180Z",
+    "screenshot": "screen-landlord-billingDetailRoute.png",
+    "finishedAt": "2026-10-30T01:14:13.326Z"
+  },
+  {
+    "id": "screen:landlord:/expenses",
+    "layer": "screen",
+    "status": "passed",
+    "startedAt": "2026-10-30T01:14:13.326Z",
+    "screenshot": "screen-landlord-expensesRoute.png",
+    "finishedAt": "2026-10-30T01:14:15.476Z"
+  },
+  {
+    "id": "screen:landlord:/expenses/form",
+    "layer": "screen",
+    "status": "passed",
+    "startedAt": "2026-10-30T01:14:15.476Z",
+    "screenshot": "screen-landlord-expenseFormRoute.png",
+    "finishedAt": "2026-10-30T01:14:17.624Z"
+  },
+  {
+    "id": "screen:landlord:/maintenance",
+    "layer": "screen",
+    "status": "passed",
+    "startedAt": "2026-10-30T01:14:17.624Z",
+    "screenshot": "screen-landlord-maintenanceRoute.png",
+    "finishedAt": "2026-10-30T01:14:19.771Z"
+  },
+  {
+    "id": "screen:landlord:/maintenance/form",
+    "layer": "screen",
+    "status": "passed",
+    "startedAt": "2026-10-30T01:14:19.771Z",
+    "screenshot": "screen-landlord-maintenanceFormRoute.png",
+    "finishedAt": "2026-10-30T01:14:21.929Z"
+  },
+  {
+    "id": "screen:landlord:/reports",
+    "layer": "screen",
+    "status": "passed",
+    "startedAt": "2026-10-30T01:14:21.930Z",
+    "screenshot": "screen-landlord-reportsRoute.png",
+    "finishedAt": "2026-10-30T01:14:24.072Z"
+  },
+  {
+    "id": "screen:landlord:/staff",
+    "layer": "screen",
+    "status": "passed",
+    "startedAt": "2026-10-30T01:14:24.072Z",
+    "screenshot": "screen-landlord-staffRoute.png",
+    "finishedAt": "2026-10-30T01:14:26.215Z"
+  },
+  {
+    "id": "screen:landlord:/audit",
+    "layer": "screen",
+    "status": "passed",
+    "startedAt": "2026-10-30T01:14:26.215Z",
+    "screenshot": "screen-landlord-auditRoute.png",
+    "finishedAt": "2026-10-30T01:14:28.349Z"
+  },
+  {
+    "id": "screen:landlord:/notifications",
+    "layer": "screen",
+    "status": "passed",
+    "startedAt": "2026-10-30T01:14:28.349Z",
+    "screenshot": "screen-landlord-notificationsRoute.png",
+    "finishedAt": "2026-10-30T01:14:30.491Z"
+  },
+  {
+    "id": "screen:landlord:/actions",
+    "layer": "screen",
+    "status": "passed",
+    "startedAt": "2026-10-30T01:14:30.491Z",
+    "screenshot": "screen-landlord-actionItemsRoute.png",
+    "finishedAt": "2026-10-30T01:14:32.645Z"
+  },
+  {
+    "id": "screen:landlord:/operations/p1",
+    "layer": "screen",
+    "status": "passed",
+    "startedAt": "2026-10-30T01:14:32.645Z",
+    "screenshot": "screen-landlord-p1OperationsRoute.png",
+    "finishedAt": "2026-10-30T01:14:34.794Z"
+  },
+  {
+    "id": "screen:landlord:/lease-expiry",
+    "layer": "screen",
+    "status": "passed",
+    "startedAt": "2026-10-30T01:14:34.794Z",
+    "screenshot": "screen-landlord-leaseExpiryRoute.png",
+    "finishedAt": "2026-10-30T01:14:36.939Z"
+  },
+  {
+    "id": "screen:admin:/admin/pilot-feedback",
+    "layer": "screen",
+    "status": "passed",
+    "startedAt": "2026-10-30T01:14:39.894Z",
+    "screenshot": "screen-admin-pilotFeedbackRoute.png",
+    "finishedAt": "2026-10-30T01:14:42.051Z"
+  },
+  {
+    "id": "screen:admin:/admin/listings",
+    "layer": "screen",
+    "status": "passed",
+    "startedAt": "2026-10-30T01:14:42.051Z",
+    "screenshot": "screen-admin-adminListingsRoute.png",
+    "finishedAt": "2026-10-30T01:14:44.191Z"
+  },
+  {
+    "id": "screen:admin:/admin/room-reviews",
+    "layer": "screen",
+    "status": "passed",
+    "startedAt": "2026-10-30T01:14:44.191Z",
+    "screenshot": "screen-admin-adminReviewsRoute.png",
+    "finishedAt": "2026-10-30T01:14:46.325Z"
+  },
+  {
+    "id": "screen:admin:/admin",
+    "layer": "screen",
+    "status": "passed",
+    "startedAt": "2026-10-30T01:14:46.325Z",
+    "screenshot": "screen-admin-adminRoute.png",
+    "finishedAt": "2026-10-30T01:14:48.483Z"
+  },
+  {
+    "id": "screen:admin:/admin/landlord-verifications",
+    "layer": "screen",
+    "status": "passed",
+    "startedAt": "2026-10-30T01:14:48.483Z",
+    "screenshot": "screen-admin-adminVerificationsRoute.png",
+    "finishedAt": "2026-10-30T01:14:50.634Z"
+  },
+  {
+    "id": "screen:admin:/admin/property-reviews",
+    "layer": "screen",
+    "status": "passed",
+    "startedAt": "2026-10-30T01:14:50.634Z",
+    "screenshot": "screen-admin-adminPropertyReviewsRoute.png",
+    "finishedAt": "2026-10-30T01:14:52.779Z"
+  },
+  {
+    "id": "screen:admin:/admin/service-plans",
+    "layer": "screen",
+    "status": "passed",
+    "startedAt": "2026-10-30T01:14:52.779Z",
+    "screenshot": "screen-admin-adminPlansRoute.png",
+    "finishedAt": "2026-10-30T01:14:54.912Z"
+  },
+  {
+    "id": "screen:admin:/admin/subscriptions",
+    "layer": "screen",
+    "status": "passed",
+    "startedAt": "2026-10-30T01:14:54.912Z",
+    "screenshot": "screen-admin-adminSubscriptionsRoute.png",
+    "finishedAt": "2026-10-30T01:14:57.041Z"
+  },
+  {
+    "id": "screen:admin:/admin/accounts",
+    "layer": "screen",
+    "status": "passed",
+    "startedAt": "2026-10-30T01:14:57.041Z",
+    "screenshot": "screen-admin-adminAccountsRoute.png",
+    "finishedAt": "2026-10-30T01:14:59.201Z"
+  },
+  {
+    "id": "screen:admin:/admin/audit-logs",
+    "layer": "screen",
+    "status": "passed",
+    "startedAt": "2026-10-30T01:14:59.201Z",
+    "screenshot": "screen-admin-adminAuditLogsRoute.png",
+    "finishedAt": "2026-10-30T01:15:01.364Z"
+  },
+  {
+    "id": "screen:admin:/admin/operations",
+    "layer": "screen",
+    "status": "passed",
+    "startedAt": "2026-10-30T01:15:01.364Z",
+    "screenshot": "screen-admin-adminOperationsRoute.png",
+    "finishedAt": "2026-10-30T01:15:03.517Z"
+  },
+  {
+    "id": "screen:admin:/admin/moderation",
+    "layer": "screen",
+    "status": "passed",
+    "startedAt": "2026-10-30T01:15:03.517Z",
+    "screenshot": "screen-admin-adminModerationRoute.png",
+    "finishedAt": "2026-10-30T01:15:05.676Z"
+  },
+  {
+    "id": "screen:admin:/admin/security",
+    "layer": "screen",
+    "status": "passed",
+    "startedAt": "2026-10-30T01:15:05.676Z",
+    "screenshot": "screen-admin-adminSecurityRoute.png",
+    "finishedAt": "2026-10-30T01:15:07.839Z"
+  },
+  {
+    "id": "screen:admin:/admin/sessions",
+    "layer": "screen",
+    "status": "passed",
+    "startedAt": "2026-10-30T01:15:07.839Z",
+    "screenshot": "screen-admin-adminSessionsRoute.png",
+    "finishedAt": "2026-10-30T01:15:09.990Z"
+  },
+  {
+    "id": "screen:admin:/admin/search",
+    "layer": "screen",
+    "status": "passed",
+    "startedAt": "2026-10-30T01:15:09.990Z",
+    "screenshot": "screen-admin-adminSearchRoute.png",
+    "finishedAt": "2026-10-30T01:15:12.142Z"
+  },
+  {
+    "id": "screen:admin:/admin/moderation-policies",
+    "layer": "screen",
+    "status": "passed",
+    "startedAt": "2026-10-30T01:15:12.142Z",
+    "screenshot": "screen-admin-adminPoliciesRoute.png",
+    "finishedAt": "2026-10-30T01:15:14.285Z"
+  },
+  {
+    "id": "screen:admin:/admin/support",
+    "layer": "screen",
+    "status": "passed",
+    "startedAt": "2026-10-30T01:15:14.285Z",
+    "screenshot": "screen-admin-adminSupportRoute.png",
+    "finishedAt": "2026-10-30T01:15:16.466Z"
+  },
+  {
+    "id": "screen:admin:/admin/support-center",
+    "layer": "screen",
+    "status": "passed",
+    "startedAt": "2026-10-30T01:15:16.466Z",
+    "screenshot": "screen-admin-adminSupportCenterRoute.png",
+    "finishedAt": "2026-10-30T01:15:18.635Z"
+  },
+  {
+    "id": "screen:admin:/admin/tickets",
+    "layer": "screen",
+    "status": "passed",
+    "startedAt": "2026-10-30T01:15:18.636Z",
+    "screenshot": "screen-admin-adminTicketsRoute.png",
+    "finishedAt": "2026-10-30T01:15:20.787Z"
+  },
+  {
+    "id": "screen:admin:/admin/moderation-v2",
+    "layer": "screen",
+    "status": "passed",
+    "startedAt": "2026-10-30T01:15:20.787Z",
+    "screenshot": "screen-admin-adminModerationV2Route.png",
+    "finishedAt": "2026-10-30T01:15:22.923Z"
+  },
+  {
+    "id": "screen:admin:/admin/notifications",
+    "layer": "screen",
+    "status": "passed",
+    "startedAt": "2026-10-30T01:15:22.923Z",
+    "screenshot": "screen-admin-adminNotificationsRoute.png",
+    "finishedAt": "2026-10-30T01:15:25.064Z"
+  },
+  {
+    "id": "screen:admin:/admin/governance",
+    "layer": "screen",
+    "status": "passed",
+    "startedAt": "2026-10-30T01:15:25.064Z",
+    "screenshot": "screen-admin-adminGovernanceRoute.png",
+    "finishedAt": "2026-10-30T01:15:27.221Z"
+  },
+  {
+    "id": "screen:admin:/admin/finance-reconciliation",
+    "layer": "screen",
+    "status": "passed",
+    "startedAt": "2026-10-30T01:15:27.221Z",
+    "screenshot": "screen-admin-adminFinanceReconciliationRoute.png",
+    "finishedAt": "2026-10-30T01:15:29.367Z"
+  },
+  {
+    "id": "screen:admin:/admin/report-schedules",
+    "layer": "screen",
+    "status": "passed",
+    "startedAt": "2026-10-30T01:15:29.367Z",
+    "screenshot": "screen-admin-adminReportSchedulesRoute.png",
+    "finishedAt": "2026-10-30T01:15:31.534Z"
+  },
+  {
+    "id": "screen:admin:/admin/reports",
+    "layer": "screen",
+    "status": "passed",
+    "startedAt": "2026-10-30T01:15:31.534Z",
+    "screenshot": "screen-admin-adminReportsRoute.png",
+    "finishedAt": "2026-10-30T01:15:33.692Z"
+  },
+  {
+    "id": "screen:admin:/admin/teams",
+    "layer": "screen",
+    "status": "passed",
+    "startedAt": "2026-10-30T01:15:33.692Z",
+    "screenshot": "screen-admin-adminTeamsRoute.png",
+    "finishedAt": "2026-10-30T01:15:35.846Z"
+  },
+  {
+    "id": "screen:admin:/admin/permission-simulator",
+    "layer": "screen",
+    "status": "passed",
+    "startedAt": "2026-10-30T01:15:35.846Z",
+    "screenshot": "screen-admin-adminPermissionSimulatorRoute.png",
+    "finishedAt": "2026-10-30T01:15:37.982Z"
+  },
+  {
+    "id": "screen:admin:/admin/admins",
+    "layer": "screen",
+    "status": "passed",
+    "startedAt": "2026-10-30T01:15:37.982Z",
+    "screenshot": "screen-admin-adminAdminsRoute.png",
+    "finishedAt": "2026-10-30T01:15:40.127Z"
+  },
+  {
+    "id": "screen:admin:/admin/landlords",
+    "layer": "screen",
+    "status": "passed",
+    "startedAt": "2026-10-30T01:15:40.127Z",
+    "screenshot": "screen-admin-adminLandlordsRoute.png",
+    "finishedAt": "2026-10-30T01:15:42.280Z"
+  },
+  {
+    "id": "screen:admin:/admin/landlords/form",
+    "layer": "screen",
+    "status": "passed",
+    "startedAt": "2026-10-30T01:15:42.280Z",
+    "screenshot": "screen-admin-adminLandlordFormRoute.png",
+    "finishedAt": "2026-10-30T01:15:44.444Z"
+  },
+  {
+    "id": "screen:admin:/admin/landlords/:id",
+    "layer": "screen",
+    "status": "passed",
+    "startedAt": "2026-10-30T01:15:44.444Z",
+    "screenshot": "screen-admin-adminLandlordDetailRoute.png",
+    "finishedAt": "2026-10-30T01:15:46.584Z"
+  },
+  {
+    "id": "screen:admin:/admin/properties",
+    "layer": "screen",
+    "status": "passed",
+    "startedAt": "2026-10-30T01:15:46.584Z",
+    "screenshot": "screen-admin-adminPropertiesRoute.png",
+    "finishedAt": "2026-10-30T01:15:48.740Z"
+  },
+  {
+    "id": "screen:admin:/admin/rooms",
+    "layer": "screen",
+    "status": "passed",
+    "startedAt": "2026-10-30T01:15:48.740Z",
+    "screenshot": "screen-admin-adminRoomsRoute.png",
+    "finishedAt": "2026-10-30T01:15:50.908Z"
+  },
+  {
+    "id": "screen:admin:/admin/properties/form",
+    "layer": "screen",
+    "status": "passed",
+    "startedAt": "2026-10-30T01:15:50.908Z",
+    "screenshot": "screen-admin-adminPropertyFormRoute.png",
+    "finishedAt": "2026-10-30T01:15:53.064Z"
+  },
+  {
+    "id": "screen:admin:/admin/properties/:id",
+    "layer": "screen",
+    "status": "passed",
+    "startedAt": "2026-10-30T01:15:53.064Z",
+    "screenshot": "screen-admin-adminPropertyDetailRoute.png",
+    "finishedAt": "2026-10-30T01:15:55.216Z"
+  },
+  {
+    "id": "17-nhan-vien-theo-phan-quyen",
+    "layer": "UI",
+    "status": "passed",
+    "startedAt": "2026-10-30T01:15:55.216Z",
+    "screenshot": "17-nhan-vien-theo-phan-quyen.png",
+    "finishedAt": "2026-10-30T01:16:06.761Z"
+  },
+  {
+    "id": "17b-moi-nhan-vien",
+    "layer": "UI",
+    "status": "passed",
+    "startedAt": "2026-10-30T01:16:06.762Z",
+    "screenshot": "17b-moi-nhan-vien.png",
+    "finishedAt": "2026-10-30T01:16:20.642Z"
+  },
+  {
+    "id": "18-admin-quan-tri",
+    "layer": "screen",
+    "status": "passed",
+    "startedAt": "2026-10-30T01:16:20.643Z",
+    "screenshot": "18-admin-quan-tri.png",
+    "finishedAt": "2026-10-30T01:16:32.210Z"
+  },
+  {
+    "id": "19-yeu-cau-tra-phong",
+    "layer": "UI",
+    "status": "failed",
+    "startedAt": "2026-10-30T01:16:32.211Z",
+    "error": "AssertionError [ERR_ASSERTION]: Target was not built after scrolling.\n    at DemoUI.reveal (file:///Users/hoang/Rental_room_management/test/system_demo/system_demo.mjs:303:12)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async DemoUI.tap (file:///Users/hoang/Rental_room_management/test/system_demo/system_demo.mjs:309:5)\n    at async file:///Users/hoang/Rental_room_management/test/system_demo/system_demo.mjs:778:51\n    at async file:///Users/hoang/Rental_room_management/test/system_demo/system_demo.mjs:351:5\n    at async runCase (file:///Users/hoang/Rental_room_management/test/system_demo/system_demo.mjs:118:9)\n    at async scenario (file:///Users/hoang/Rental_room_management/test/system_demo/system_demo.mjs:346:18)\n    at async journeys (file:///Users/hoang/Rental_room_management/test/system_demo/system_demo.mjs:767:3)\n    at async visualJourneys (file:///Users/hoang/Rental_room_management/test/system_demo/system_demo.mjs:402:3)\n    at async main (file:///Users/hoang/Rental_room_management/test/system_demo/system_demo.mjs:931:5)",
+    "finishedAt": "2026-10-30T01:16:59.354Z",
+    "screenshot": "19-yeu-cau-tra-phong-FAILED.png"
+  }
+]

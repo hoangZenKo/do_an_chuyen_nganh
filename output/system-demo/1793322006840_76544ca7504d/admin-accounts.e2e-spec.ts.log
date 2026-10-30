@@ -1,0 +1,25 @@
+
+> rental-room-api@0.1.0 test:e2e
+> NODE_ENV=test jest --config ./test/jest-e2e.json --runInBand --runTestsByPath test/e2e/admin-accounts.e2e-spec.ts --runInBand
+
+[Nest] 14970  - 10/30/2026, 8:01:16 AM   ERROR [ApiErrorFilter] {"event":"request_failed","requestId":"e91fbe5e-2a3b-4630-b074-3b73e4e5d3db","method":"POST","route":"/api/v1/admin/accounts/:id/suspend","status":500,"code":"INTERNAL_SERVER_ERROR"}
+[Nest] 14970  - 10/30/2026, 8:01:16 AM   ERROR [ApiErrorFilter] {"event":"request_failed","requestId":"db817068-a37c-47a6-84f6-42a05517fd2b","method":"POST","route":"/api/v1/admin/accounts/:id/revoke-sessions","status":500,"code":"INTERNAL_SERVER_ERROR"}
+[Nest] 14970  - 10/30/2026, 8:01:16 AM   ERROR [ApiErrorFilter] {"event":"request_failed","requestId":"88f1df24-a9b0-4bd4-8c27-4e0b4af3b331","method":"POST","route":"/api/v1/admin/accounts/:id/reveal","status":500,"code":"INTERNAL_SERVER_ERROR"}
+[Nest] 14970  - 10/30/2026, 8:01:16 AM   ERROR [ApiErrorFilter] {"event":"request_failed","requestId":"e82ac536-4eb5-45ef-863d-2bc5db214bdd","method":"POST","route":"/api/v1/admin/accounts/:id/reset-password","status":503,"code":"INTERNAL_SERVER_ERROR"}
+[Nest] 14970  - 10/30/2026, 8:01:16 AM   ERROR [ApiErrorFilter] {"event":"request_failed","requestId":"4053bf71-485e-479f-b5ba-88e6fe534c4c","method":"POST","route":"/api/v1/admin/account-invites","status":503,"code":"INTERNAL_SERVER_ERROR"}
+PASS test/e2e/admin-accounts.e2e-spec.ts
+  Admin accounts database acceptance
+    ✓ combines trimmed search, role, status and inclusive Vietnam dates with stable pagination (315 ms)
+    ✓ returns masked detail, real counts/history and enforces live permission and target boundaries (469 ms)
+    ✓ physically revokes landlord and dependent staff sessions without restoring old tokens (466 ms)
+    ✓ counts only newly revoked session rows, including expired rows, and audits each version (291 ms)
+    ✓ rolls back status, dependent sessions and tokens, and fails closed on PII when audit insertion fails (379 ms)
+    ✓ reports missing recovery delivery truthfully and only acknowledges a persisted encrypted queue job (237 ms)
+    ✓ preserves MFA, self-change, stale-version and last-super-admin protections on the real database (332 ms)
+    ✓ reads and explicitly grants capabilities with validation, session revocation and no self-escalation (285 ms)
+
+Test Suites: 1 passed, 1 total
+Tests:       8 passed, 8 total
+Snapshots:   0 total
+Time:        4.563 s, estimated 7 s
+Ran all test suites within paths "test/e2e/admin-accounts.e2e-spec.ts".

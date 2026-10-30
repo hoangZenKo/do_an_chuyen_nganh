@@ -1,0 +1,39 @@
+
+> rental-room-api@0.1.0 test:e2e
+> NODE_ENV=test jest --config ./test/jest-e2e.json --runInBand --runTestsByPath test/e2e/lease-settlement.e2e-spec.ts --runInBand
+
+[Nest] 19245  - 10/30/2026, 8:03:24 AM   ERROR [ApiErrorFilter] {"event":"request_failed","requestId":"23aa833d-249a-4296-957a-3ff5d5fdfb49","method":"POST","route":"/api/v1/leases/:id/settlement/confirm","status":500,"code":"INTERNAL_SERVER_ERROR"}
+FAIL test/e2e/lease-settlement.e2e-spec.ts
+  Move-out settlement E2E (isolated database only)
+    ✓ settles a lease, starts turnover, and records the actual refund exactly once (428 ms)
+    ✓ rejects a stale preview without persisting any settlement or turnover (248 ms)
+    ✓ prevents post-settlement edits, renewals and manual deposit changes (241 ms)
+    ✓ does not charge rent already present on a non-demo invoice (254 ms)
+    ✓ rolls back settlement and deposit deductions if turnover creation fails (253 ms)
+    ✓ enforces ownership and DTO validation over HTTP (283 ms)
+    ✕ cannot create an invoice from stale lease state during settlement (260 ms)
+    ✓ cannot double-record concurrent refunds (259 ms)
+
+  ● Move-out settlement E2E (isolated database only) › cannot create an invoice from stale lease state during settlement
+
+    expect(received).toHaveLength(expected)
+
+    Expected length: 1
+    Received length: 0
+    Received array:  []
+
+      157 |     const statuses = responses.map(response => response.status);
+      158 |     expect(statuses.filter((status) => status === 201)).toHaveLength(1);
+    > 159 |     expect(statuses.filter((status) => status === 409)).toHaveLength(1);
+          |                                                         ^
+      160 |     const settlements = await harness.prisma.leaseSettlement.count({ where: { leaseId } });
+      161 |     const invoices = await harness.prisma.invoice.count({ where: { leaseId } });
+      162 |     expect(settlements + invoices).toBe(1);
+
+      at Object.<anonymous> (test/e2e/lease-settlement.e2e-spec.ts:159:57)
+
+Test Suites: 1 failed, 1 total
+Tests:       1 failed, 7 passed, 8 total
+Snapshots:   0 total
+Time:        4.31 s, estimated 5 s
+Ran all test suites within paths "test/e2e/lease-settlement.e2e-spec.ts".

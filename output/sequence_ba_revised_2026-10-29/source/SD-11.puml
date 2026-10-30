@@ -1,0 +1,123 @@
+@startuml
+skinparam backgroundColor white
+skinparam shadowing false
+skinparam dpi 240
+skinparam defaultFontName "Times New Roman"
+skinparam defaultFontSize 17
+skinparam defaultFontColor black
+skinparam titleFontSize 21
+skinparam titleFontColor black
+skinparam roundcorner 0
+skinparam maxMessageSize 270
+skinparam ParticipantPadding 30
+skinparam sequence {
+  ArrowColor #800000
+  ArrowThickness 1.2
+  LifeLineBorderColor #999999
+  LifeLineBackgroundColor #FFFFB9
+  ParticipantBackgroundColor #FFFFB9
+  ParticipantBorderColor #800000
+  ParticipantFontColor black
+  ActorBackgroundColor #FFFFB9
+  ActorBorderColor #800000
+  ActorFontColor black
+  BoundaryBackgroundColor #FFFFB9
+  BoundaryBorderColor #800000
+  ControlBackgroundColor #FFFFB9
+  ControlBorderColor #800000
+  EntityBackgroundColor #FFFFB9
+  EntityBorderColor #800000
+  GroupBackgroundColor #FFFFB9
+  GroupBodyBackgroundColor white
+  GroupBorderColor #888888
+  GroupFontColor black
+  GroupHeaderFontColor black
+  GroupFontSize 15
+  GroupHeaderFontSize 16
+  MessageAlign center
+}
+hide footbox
+<style>
+sequenceDiagram {
+ actor { BackgroundColor #FFFFB9
+ LineColor #800000 }
+ boundary { BackgroundColor #FFFFB9
+ LineColor #800000 }
+ control { BackgroundColor #FFFFB9
+ LineColor #800000 }
+ entity { BackgroundColor #FFFFB9
+ LineColor #800000 }
+ activationBox { BackgroundColor #FFFFB9
+ LineColor #800000 }
+}
+</style>
+autonumber "<b>0.</b>"
+
+title SD-11. Gửi, xét duyệt và thực hiện yêu cầu thay đổi thuê
+actor "Người thuê" as A
+actor "Chủ trọ" as B
+boundary "<u>Giao diện</u>\n<u>yêu cầu thuê</u>" as U #FFFFB9
+control "<u>Quản lý</u>\n<u>thay đổi thuê</u>" as C #FFFFB9
+entity "<u>Yêu cầu, hợp đồng</u>\n<u>và quyết toán</u>" as D #FFFFB9
+A -> U: Gửi yêu cầu gia hạn, chuyển phòng hoặc trả phòng
+activate U
+U -> C: Yêu cầu tiếp nhận thay đổi thuê
+activate C
+C -> D ++: Đối chiếu hợp đồng, thời gian, phòng đến và yêu cầu đang chờ
+D --> C --: Điều kiện gửi yêu cầu
+alt Dữ liệu sai, không thuộc người thuê hoặc trùng yêu cầu chờ
+C --> U: Không tiếp nhận
+U --> A: Không tiếp nhận; thông báo lý do
+else Đáp ứng điều kiện theo loại yêu cầu
+C -> D ++: Lưu yêu cầu chờ chủ trọ xét duyệt
+D --> C --: Yêu cầu đã được tiếp nhận
+C --> U: Yêu cầu đang chờ xử lý
+U --> A: Yêu cầu đang chờ xử lý; hợp đồng chưa thay đổi
+end
+deactivate C
+deactivate U
+opt Chủ trọ chọn xử lý yêu cầu đang chờ
+B -> U: Chấp thuận hoặc từ chối; nhập lý do
+activate U
+U -> C: Yêu cầu xét duyệt thay đổi thuê
+activate C
+C -> D ++: Đối chiếu và ghi quyết định khi dữ liệu còn hợp lệ
+D --> C --: Quyết định đã lưu hoặc điều kiện ngăn xử lý
+C --> U: Hiển thị kết quả duyệt
+U --> B: Hiển thị kết quả duyệt; chấp thuận chưa đồng nghĩa đã thực hiện
+deactivate C
+deactivate U
+end
+opt Yêu cầu được chấp thuận; chủ trọ chọn thực hiện
+B -> U: Xác nhận thực hiện; xác nhận giá thuê mới khi chuyển phòng
+activate U
+U -> C: Yêu cầu thực hiện thay đổi đã được duyệt
+activate C
+C -> D ++: Đối chiếu lần thực hiện trước, hợp đồng và điều kiện hiện hành
+D --> C --: Tình trạng yêu cầu và điều kiện theo loại thay đổi
+alt Gửi lại đúng lần thực hiện đã hoàn tất
+C --> U: Hiển thị kết quả đã có
+U --> B: Hiển thị kết quả đã có; không thực hiện thêm
+else Yêu cầu đổi hoặc điều kiện thực hiện không đáp ứng
+C --> U: Không thực hiện
+U --> B: Không thực hiện; hiển thị điều kiện cần xử lý
+else Gia hạn; hợp đồng đủ điều kiện
+C -> D ++: Gia hạn ngày kết thúc; lưu kết quả thực hiện
+D --> C --: Hợp đồng đã được gia hạn
+C --> U: Gia hạn hoàn tất
+U --> B: Gia hạn hoàn tất
+else Trả phòng; hợp đồng đã kết thúc và có quyết toán
+C -> D ++: Lưu kết quả hoàn tất yêu cầu trả phòng
+D --> C --: Yêu cầu đã được thực hiện
+C --> U: Hoàn tất yêu cầu trả phòng
+U --> B: Hoàn tất yêu cầu trả phòng
+else Chuyển phòng; đã quyết toán, đến ngày chuyển; phòng đến đủ điều kiện
+C -> D ++: Lập hợp đồng phòng mới; chuyển người ở cùng; lưu kết quả
+D --> C --: Hợp đồng mới được lập; không thu cọc mới trong bước này
+C --> U: Chuyển phòng hoàn tất
+U --> B: Chuyển phòng hoàn tất; hiển thị hợp đồng mới
+end
+deactivate C
+deactivate U
+end
+@enduml

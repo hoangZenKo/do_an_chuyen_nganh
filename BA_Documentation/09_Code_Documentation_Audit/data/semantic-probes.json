@@ -1,0 +1,30 @@
+{
+  "scope": "Documentation discrepancy reproduction with real application service classes and mocked persistence; no real database, network, provider or application files changed.",
+  "results": [
+    {
+      "name": "UC-TNT-05: CreateLeaseDto rejects endDate as non-whitelisted input",
+      "passed": true
+    },
+    {
+      "name": "UC-TNT-05: direct creation records positive deposit and has no capacity rule in this method",
+      "passed": true
+    },
+    {
+      "name": "UC-TNT-05: completed-viewing variant stores agreed deposit but creates no collected-deposit transaction",
+      "passed": true
+    },
+    {
+      "name": "UC-TNT-12.1: no occupant-update method exists in the actual service",
+      "passed": true
+    },
+    {
+      "name": "UC-OPT-07.3: RoomsService.remove does not inspect assets or inspections before deleting",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-18.1: same admin may submit then approve; only landlord-self review is explicitly rejected",
+      "passed": true
+    }
+  ],
+  "passed": 6
+}

@@ -1,0 +1,169 @@
+@startuml
+skinparam backgroundColor white
+skinparam shadowing false
+skinparam dpi 240
+skinparam defaultFontName "Times New Roman"
+skinparam defaultFontSize 17
+skinparam defaultFontColor black
+skinparam titleFontSize 21
+skinparam titleFontColor black
+skinparam roundcorner 0
+skinparam maxMessageSize 270
+skinparam ParticipantPadding 30
+skinparam sequence {
+  ArrowColor #800000
+  ArrowThickness 1.2
+  LifeLineBorderColor #999999
+  LifeLineBackgroundColor #FFFFB9
+  ParticipantBackgroundColor #FFFFB9
+  ParticipantBorderColor #800000
+  ParticipantFontColor black
+  ActorBackgroundColor #FFFFB9
+  ActorBorderColor #800000
+  ActorFontColor black
+  BoundaryBackgroundColor #FFFFB9
+  BoundaryBorderColor #800000
+  ControlBackgroundColor #FFFFB9
+  ControlBorderColor #800000
+  EntityBackgroundColor #FFFFB9
+  EntityBorderColor #800000
+  DatabaseBackgroundColor #FFFFB9
+  DatabaseBorderColor #800000
+  GroupBackgroundColor #FFFFB9
+  GroupBodyBackgroundColor white
+  GroupBorderColor #888888
+  GroupFontColor black
+  GroupHeaderFontColor black
+  GroupFontSize 15
+  GroupHeaderFontSize 16
+  MessageAlign center
+}
+hide footbox
+<style>
+sequenceDiagram {
+ actor { BackgroundColor #FFFFB9
+ LineColor #800000 }
+ boundary { BackgroundColor #FFFFB9
+ LineColor #800000 }
+ control { BackgroundColor #FFFFB9
+ LineColor #800000 }
+ database { BackgroundColor #FFFFB9
+ LineColor #800000 }
+ activationBox { BackgroundColor #FFFFB9
+ LineColor #800000 }
+}
+</style>
+autonumber "<b>0.</b>"
+
+title SD-12. Tiếp nhận và hoàn tất yêu cầu bảo trì
+actor "Người thuê" as A
+actor "Chủ trọ /\nnhân viên được phân quyền" as B
+boundary "<u>Giao diện</u>\n<u>bảo trì</u>" as U #FFFFB9
+control "<u>Quản lý</u>\n<u>bảo trì</u>" as C #FFFFB9
+database "<u>Cơ sở dữ liệu</u>" as D #FFFFB9
+A -> U: Gửi sự cố của phòng đang thuê và thông tin mô tả
+activate U
+U -> C: Yêu cầu tiếp nhận sự cố bảo trì
+activate C
+C -> D ++: Tra cứu hồ sơ người thuê và phòng đang thuê
+D --> C --: Hợp đồng và phòng thuộc người thuê
+C -> C: Kiểm tra phòng đang thuê và thông tin mô tả sự cố
+alt Đủ quyền và dữ liệu đáp ứng điều kiện xử lý
+C -> D ++: Lưu phiếu yêu cầu bảo trì
+D --> C --: Phiếu bảo trì đã được ghi nhận
+C --> U: Đã gửi yêu cầu bảo trì
+U --> A: Đã gửi yêu cầu bảo trì
+else Không đáp ứng điều kiện xử lý
+C --> U: Không tiếp nhận
+U --> A: Không tiếp nhận; thông báo thông tin cần kiểm tra
+end
+deactivate C
+deactivate U
+opt Có phiếu thuộc quyền quản lý; chọn phân công
+B -> U: Phân công người xử lý và cập nhật tiến độ
+activate U
+U -> C: Yêu cầu cập nhật xử lý bảo trì
+activate C
+C -> D ++: Tra cứu phiếu, người quản lý và người phụ trách
+D --> C --: Phiếu và phạm vi phụ trách hiện hành
+C -> C: Kiểm tra quyền phân công, người phụ trách và tiến độ được phép cập nhật
+alt Đủ quyền và dữ liệu đáp ứng điều kiện xử lý
+C -> D ++: Lưu người phụ trách, tiến độ và lịch sử xử lý
+D --> C --: Phiếu đã được cập nhật
+C --> U: Đã cập nhật phiếu bảo trì
+U --> B: Đã cập nhật phiếu bảo trì
+else Không đáp ứng điều kiện xử lý
+C --> U: Không cập nhật
+U --> B: Không cập nhật; thông báo điều kiện chưa đáp ứng
+end
+deactivate C
+deactivate U
+end
+loop Mỗi lần một bên có quyền gửi trao đổi cho phiếu
+alt Người thuê gửi trao đổi
+A -> U: Gửi nội dung trao đổi về phiếu
+activate U
+U -> C: Gửi nội dung trao đổi về phiếu
+activate C
+C -> D ++: Tra cứu phiếu và người thuê liên quan
+D --> C --: Phiếu và thông tin thuê liên quan
+C -> C: Kiểm tra quyền xem phiếu và nội dung trao đổi
+alt Đủ quyền và dữ liệu đáp ứng điều kiện xử lý
+C -> D ++: Lưu nội dung trao đổi của người thuê
+D --> C --: Nội dung đã lưu
+C --> U: Đã gửi nội dung trao đổi
+U --> A: Đã gửi nội dung trao đổi
+else Không đáp ứng điều kiện xử lý
+C --> U: Không gửi trao đổi
+U --> A: Không gửi trao đổi; thông báo lý do
+end
+deactivate C
+deactivate U
+else Chủ trọ hoặc nhân viên có quyền gửi trao đổi
+B -> U: Gửi nội dung trao đổi về phiếu
+activate U
+U -> C: Gửi nội dung trao đổi về phiếu
+activate C
+C -> D ++: Tra cứu phiếu và phạm vi phụ trách
+D --> C --: Phiếu và người phụ trách hiện hành
+C -> C: Kiểm tra quyền xử lý phiếu và nội dung trao đổi
+alt Đủ quyền và dữ liệu đáp ứng điều kiện xử lý
+C -> D ++: Lưu nội dung trao đổi của người xử lý
+D --> C --: Nội dung đã lưu
+C --> U: Đã gửi nội dung trao đổi
+U --> B: Đã gửi nội dung trao đổi
+else Không đáp ứng điều kiện xử lý
+C --> U: Không gửi trao đổi
+U --> B: Không gửi trao đổi; thông báo lý do
+end
+deactivate C
+deactivate U
+end
+end
+opt Người có quyền hoàn tất chọn kết thúc sửa chữa
+B -> U: Xác nhận hoàn tất; nhập chi phí và chọn ghi chi nếu cần
+activate U
+U -> C: Yêu cầu hoàn tất phiếu bảo trì
+activate C
+C -> D ++: Tra cứu phiếu và khoản chi đã liên kết
+D --> C --: Tình trạng phiếu và khoản chi đã có
+C -> C: Kiểm tra quyền hoàn tất, trạng thái phiếu và chi phí thực tế
+alt Phiếu đã hủy hoặc thay đổi chi phí đã gắn khoản chi
+C --> U: Không hoàn tất
+U --> B: Không hoàn tất; thông báo lý do
+else Phiếu đủ điều kiện hoàn tất
+group Lưu đồng bộ phiếu và khoản chi; có lỗi thì không lưu thay đổi
+opt Chọn ghi chi; chi phí lớn hơn 0; chưa có khoản chi liên kết
+C -> D ++: Lưu khoản chi sửa chữa và liên kết phiếu
+D --> C --: Khoản chi được tạo một lần
+end
+C -> D ++: Lưu phiếu đã hoàn tất và chi phí thực tế
+D --> C --: Phiếu được cập nhật
+end
+C --> U: Kết quả: phiếu hoàn tất và khoản chi nếu có
+U --> B: Hiển thị phiếu hoàn tất và khoản chi nếu có
+end
+deactivate C
+deactivate U
+end
+@enduml

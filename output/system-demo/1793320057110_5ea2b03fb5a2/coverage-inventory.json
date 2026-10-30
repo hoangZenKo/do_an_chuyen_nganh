@@ -1,0 +1,3643 @@
+{
+  "routes": [
+    {
+      "name": "housingFavoritesRoute",
+      "path": "/housing/favorites",
+      "role": "public",
+      "level": "screen-only; business assertions listed separately"
+    },
+    {
+      "name": "housingViewingsRoute",
+      "path": "/housing/viewings",
+      "role": "public",
+      "level": "screen-only; business assertions listed separately"
+    },
+    {
+      "name": "housingNoticesRoute",
+      "path": "/housing/notifications",
+      "role": "public",
+      "level": "screen-only; business assertions listed separately"
+    },
+    {
+      "name": "rentalPilotRoute",
+      "path": "/housing/pilot",
+      "role": "public",
+      "level": "screen-only; business assertions listed separately"
+    },
+    {
+      "name": "pilotFeedbackRoute",
+      "path": "/admin/pilot-feedback",
+      "role": "admin",
+      "level": "screen-only; business assertions listed separately"
+    },
+    {
+      "name": "exploreRoute",
+      "path": "/explore",
+      "role": "public",
+      "level": "screen-only; business assertions listed separately"
+    },
+    {
+      "name": "tenantPortalRoute",
+      "path": "/tenant",
+      "role": "tenant",
+      "level": "screen-only; business assertions listed separately"
+    },
+    {
+      "name": "seekerAccountRoute",
+      "path": "/explore/account",
+      "role": "public",
+      "level": "screen-only; business assertions listed separately"
+    },
+    {
+      "name": "publicListingRoute",
+      "path": "/explore/listings/:id",
+      "role": "public",
+      "level": "screen-only; business assertions listed separately"
+    },
+    {
+      "name": "landlordListingsRoute",
+      "path": "/listings",
+      "role": "landlord",
+      "level": "screen-only; business assertions listed separately"
+    },
+    {
+      "name": "adminListingsRoute",
+      "path": "/admin/listings",
+      "role": "admin",
+      "level": "screen-only; business assertions listed separately"
+    },
+    {
+      "name": "landlordReviewsRoute",
+      "path": "/listings/reviews",
+      "role": "landlord",
+      "level": "screen-only; business assertions listed separately"
+    },
+    {
+      "name": "adminReviewsRoute",
+      "path": "/admin/room-reviews",
+      "role": "admin",
+      "level": "screen-only; business assertions listed separately"
+    },
+    {
+      "name": "splashRoute",
+      "path": "/splash",
+      "role": "public",
+      "level": "screen-only; business assertions listed separately"
+    },
+    {
+      "name": "onboardingRoute",
+      "path": "/onboarding",
+      "role": "public",
+      "level": "screen-only; business assertions listed separately"
+    },
+    {
+      "name": "loginRoute",
+      "path": "/auth/login",
+      "role": "public",
+      "level": "screen-only; business assertions listed separately"
+    },
+    {
+      "name": "registerRoute",
+      "path": "/auth/register",
+      "role": "public",
+      "level": "screen-only; business assertions listed separately"
+    },
+    {
+      "name": "tenantInviteRoute",
+      "path": "/tenant/activate",
+      "role": "tenant",
+      "level": "screen-only; business assertions listed separately"
+    },
+    {
+      "name": "staffInviteRoute",
+      "path": "/staff/activate",
+      "role": "public",
+      "level": "screen-only; business assertions listed separately"
+    },
+    {
+      "name": "dashboardRoute",
+      "path": "/dashboard",
+      "role": "landlord",
+      "level": "screen-only; business assertions listed separately"
+    },
+    {
+      "name": "chatbotRoute",
+      "path": "/chatbot",
+      "role": "landlord",
+      "level": "screen-only; business assertions listed separately"
+    },
+    {
+      "name": "settingsRoute",
+      "path": "/settings",
+      "role": "landlord",
+      "level": "screen-only; business assertions listed separately"
+    },
+    {
+      "name": "settingsPasswordRoute",
+      "path": "/settings/password",
+      "role": "landlord",
+      "level": "screen-only; business assertions listed separately"
+    },
+    {
+      "name": "fakeZaloRoute",
+      "path": "/settings/fake-zalo",
+      "role": "landlord",
+      "level": "screen-only; business assertions listed separately"
+    },
+    {
+      "name": "tenantPasswordRoute",
+      "path": "/tenant/password",
+      "role": "tenant",
+      "level": "screen-only; business assertions listed separately"
+    },
+    {
+      "name": "tenantZaloRoute",
+      "path": "/tenant/zalo",
+      "role": "tenant",
+      "level": "screen-only; business assertions listed separately"
+    },
+    {
+      "name": "tenantNotificationsRoute",
+      "path": "/tenant/notifications",
+      "role": "tenant",
+      "level": "screen-only; business assertions listed separately"
+    },
+    {
+      "name": "tenantLeasesRoute",
+      "path": "/tenant/leases",
+      "role": "tenant",
+      "level": "screen-only; business assertions listed separately"
+    },
+    {
+      "name": "tenantInvoicesRoute",
+      "path": "/tenant/invoices",
+      "role": "tenant",
+      "level": "screen-only; business assertions listed separately"
+    },
+    {
+      "name": "tenantInvoiceDetailRoute",
+      "path": "/tenant/invoices/:id",
+      "role": "tenant",
+      "level": "screen-only; business assertions listed separately"
+    },
+    {
+      "name": "tenantMaintenanceRoute",
+      "path": "/tenant/maintenance",
+      "role": "tenant",
+      "level": "screen-only; business assertions listed separately"
+    },
+    {
+      "name": "accountAccessRoute",
+      "path": "/account/activate",
+      "role": "public",
+      "level": "screen-only; business assertions listed separately"
+    },
+    {
+      "name": "supportCenterRoute",
+      "path": "/support-center",
+      "role": "landlord",
+      "level": "screen-only; business assertions listed separately"
+    },
+    {
+      "name": "adminRoute",
+      "path": "/admin",
+      "role": "admin",
+      "level": "screen-only; business assertions listed separately"
+    },
+    {
+      "name": "adminVerificationsRoute",
+      "path": "/admin/landlord-verifications",
+      "role": "admin",
+      "level": "screen-only; business assertions listed separately"
+    },
+    {
+      "name": "adminPropertyReviewsRoute",
+      "path": "/admin/property-reviews",
+      "role": "admin",
+      "level": "screen-only; business assertions listed separately"
+    },
+    {
+      "name": "adminPlansRoute",
+      "path": "/admin/service-plans",
+      "role": "admin",
+      "level": "screen-only; business assertions listed separately"
+    },
+    {
+      "name": "adminSubscriptionsRoute",
+      "path": "/admin/subscriptions",
+      "role": "admin",
+      "level": "screen-only; business assertions listed separately"
+    },
+    {
+      "name": "adminAccountsRoute",
+      "path": "/admin/accounts",
+      "role": "admin",
+      "level": "screen-only; business assertions listed separately"
+    },
+    {
+      "name": "adminAuditLogsRoute",
+      "path": "/admin/audit-logs",
+      "role": "admin",
+      "level": "screen-only; business assertions listed separately"
+    },
+    {
+      "name": "adminOperationsRoute",
+      "path": "/admin/operations",
+      "role": "admin",
+      "level": "screen-only; business assertions listed separately"
+    },
+    {
+      "name": "adminModerationRoute",
+      "path": "/admin/moderation",
+      "role": "admin",
+      "level": "screen-only; business assertions listed separately"
+    },
+    {
+      "name": "adminSecurityRoute",
+      "path": "/admin/security",
+      "role": "admin",
+      "level": "screen-only; business assertions listed separately"
+    },
+    {
+      "name": "adminSessionsRoute",
+      "path": "/admin/sessions",
+      "role": "admin",
+      "level": "screen-only; business assertions listed separately"
+    },
+    {
+      "name": "adminSearchRoute",
+      "path": "/admin/search",
+      "role": "admin",
+      "level": "screen-only; business assertions listed separately"
+    },
+    {
+      "name": "adminPoliciesRoute",
+      "path": "/admin/moderation-policies",
+      "role": "admin",
+      "level": "screen-only; business assertions listed separately"
+    },
+    {
+      "name": "adminSupportRoute",
+      "path": "/admin/support",
+      "role": "admin",
+      "level": "screen-only; business assertions listed separately"
+    },
+    {
+      "name": "adminSupportCenterRoute",
+      "path": "/admin/support-center",
+      "role": "admin",
+      "level": "screen-only; business assertions listed separately"
+    },
+    {
+      "name": "adminTicketsRoute",
+      "path": "/admin/tickets",
+      "role": "admin",
+      "level": "screen-only; business assertions listed separately"
+    },
+    {
+      "name": "adminModerationV2Route",
+      "path": "/admin/moderation-v2",
+      "role": "admin",
+      "level": "screen-only; business assertions listed separately"
+    },
+    {
+      "name": "adminNotificationsRoute",
+      "path": "/admin/notifications",
+      "role": "admin",
+      "level": "screen-only; business assertions listed separately"
+    },
+    {
+      "name": "adminGovernanceRoute",
+      "path": "/admin/governance",
+      "role": "admin",
+      "level": "screen-only; business assertions listed separately"
+    },
+    {
+      "name": "adminFinanceReconciliationRoute",
+      "path": "/admin/finance-reconciliation",
+      "role": "admin",
+      "level": "screen-only; business assertions listed separately"
+    },
+    {
+      "name": "adminReportSchedulesRoute",
+      "path": "/admin/report-schedules",
+      "role": "admin",
+      "level": "screen-only; business assertions listed separately"
+    },
+    {
+      "name": "adminReportsRoute",
+      "path": "/admin/reports",
+      "role": "admin",
+      "level": "screen-only; business assertions listed separately"
+    },
+    {
+      "name": "adminTeamsRoute",
+      "path": "/admin/teams",
+      "role": "admin",
+      "level": "screen-only; business assertions listed separately"
+    },
+    {
+      "name": "adminPermissionSimulatorRoute",
+      "path": "/admin/permission-simulator",
+      "role": "admin",
+      "level": "screen-only; business assertions listed separately"
+    },
+    {
+      "name": "adminAdminsRoute",
+      "path": "/admin/admins",
+      "role": "admin",
+      "level": "screen-only; business assertions listed separately"
+    },
+    {
+      "name": "adminLandlordsRoute",
+      "path": "/admin/landlords",
+      "role": "admin",
+      "level": "screen-only; business assertions listed separately"
+    },
+    {
+      "name": "adminLandlordFormRoute",
+      "path": "/admin/landlords/form",
+      "role": "admin",
+      "level": "screen-only; business assertions listed separately"
+    },
+    {
+      "name": "adminLandlordDetailRoute",
+      "path": "/admin/landlords/:id",
+      "role": "admin",
+      "level": "screen-only; business assertions listed separately"
+    },
+    {
+      "name": "adminPropertiesRoute",
+      "path": "/admin/properties",
+      "role": "admin",
+      "level": "screen-only; business assertions listed separately"
+    },
+    {
+      "name": "adminRoomsRoute",
+      "path": "/admin/rooms",
+      "role": "admin",
+      "level": "screen-only; business assertions listed separately"
+    },
+    {
+      "name": "adminPropertyFormRoute",
+      "path": "/admin/properties/form",
+      "role": "admin",
+      "level": "screen-only; business assertions listed separately"
+    },
+    {
+      "name": "adminPropertyDetailRoute",
+      "path": "/admin/properties/:id",
+      "role": "admin",
+      "level": "screen-only; business assertions listed separately"
+    },
+    {
+      "name": "propertiesRoute",
+      "path": "/properties",
+      "role": "landlord",
+      "level": "screen-only; business assertions listed separately"
+    },
+    {
+      "name": "propertyFormRoute",
+      "path": "/properties/form",
+      "role": "landlord",
+      "level": "screen-only; business assertions listed separately"
+    },
+    {
+      "name": "roomFormRoute",
+      "path": "/rooms/form",
+      "role": "landlord",
+      "level": "screen-only; business assertions listed separately"
+    },
+    {
+      "name": "roomDetailRoute",
+      "path": "/rooms/:id",
+      "role": "landlord",
+      "level": "screen-only; business assertions listed separately"
+    },
+    {
+      "name": "tenantsRoute",
+      "path": "/tenants",
+      "role": "landlord",
+      "level": "screen-only; business assertions listed separately"
+    },
+    {
+      "name": "tenantFormRoute",
+      "path": "/tenants/form",
+      "role": "landlord",
+      "level": "screen-only; business assertions listed separately"
+    },
+    {
+      "name": "tenantDetailRoute",
+      "path": "/tenants/:id",
+      "role": "landlord",
+      "level": "screen-only; business assertions listed separately"
+    },
+    {
+      "name": "leaseFormRoute",
+      "path": "/leases/form",
+      "role": "landlord",
+      "level": "screen-only; business assertions listed separately"
+    },
+    {
+      "name": "billingRoute",
+      "path": "/billing",
+      "role": "landlord",
+      "level": "screen-only; business assertions listed separately"
+    },
+    {
+      "name": "bulkBillingRoute",
+      "path": "/billing/bulk",
+      "role": "landlord",
+      "level": "screen-only; business assertions listed separately"
+    },
+    {
+      "name": "billingFormRoute",
+      "path": "/billing/form",
+      "role": "landlord",
+      "level": "screen-only; business assertions listed separately"
+    },
+    {
+      "name": "billingTariffsRoute",
+      "path": "/billing/tariffs",
+      "role": "landlord",
+      "level": "screen-only; business assertions listed separately"
+    },
+    {
+      "name": "billingDetailRoute",
+      "path": "/billing/:id",
+      "role": "landlord",
+      "level": "screen-only; business assertions listed separately"
+    },
+    {
+      "name": "expensesRoute",
+      "path": "/expenses",
+      "role": "landlord",
+      "level": "screen-only; business assertions listed separately"
+    },
+    {
+      "name": "expenseFormRoute",
+      "path": "/expenses/form",
+      "role": "landlord",
+      "level": "screen-only; business assertions listed separately"
+    },
+    {
+      "name": "maintenanceRoute",
+      "path": "/maintenance",
+      "role": "landlord",
+      "level": "screen-only; business assertions listed separately"
+    },
+    {
+      "name": "maintenanceFormRoute",
+      "path": "/maintenance/form",
+      "role": "landlord",
+      "level": "screen-only; business assertions listed separately"
+    },
+    {
+      "name": "reportsRoute",
+      "path": "/reports",
+      "role": "landlord",
+      "level": "screen-only; business assertions listed separately"
+    },
+    {
+      "name": "staffRoute",
+      "path": "/staff",
+      "role": "landlord",
+      "level": "screen-only; business assertions listed separately"
+    },
+    {
+      "name": "auditRoute",
+      "path": "/audit",
+      "role": "landlord",
+      "level": "screen-only; business assertions listed separately"
+    },
+    {
+      "name": "notificationsRoute",
+      "path": "/notifications",
+      "role": "landlord",
+      "level": "screen-only; business assertions listed separately"
+    },
+    {
+      "name": "actionItemsRoute",
+      "path": "/actions",
+      "role": "landlord",
+      "level": "screen-only; business assertions listed separately"
+    },
+    {
+      "name": "p1OperationsRoute",
+      "path": "/operations/p1",
+      "role": "landlord",
+      "level": "screen-only; business assertions listed separately"
+    },
+    {
+      "name": "leaseExpiryRoute",
+      "path": "/lease-expiry",
+      "role": "landlord",
+      "level": "screen-only; business assertions listed separately"
+    }
+  ],
+  "actions": [
+    {
+      "file": "lib/features/reports/reports_screen.dart",
+      "text": "Xuất CSV",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/reports/reports_screen.dart",
+      "text": "Cấu hình",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/reports/reports_screen.dart",
+      "text": "Hủy",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/reports/reports_screen.dart",
+      "text": "Gửi Zalo",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/reports/reports_screen.dart",
+      "text": "Copy lời nhắc",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/onboarding/onboarding_screen.dart",
+      "text": "Skip",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/onboarding/onboarding_screen.dart",
+      "text": "Log In",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/onboarding/onboarding_screen.dart",
+      "text": "Create Account",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/billing/billing_form_screen.dart",
+      "text": "Hủy",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/billing/billing_form_screen.dart",
+      "text": "Phòng đang thuê",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/billing/invoice_adjustment_dialog.dart",
+      "text": "Hủy",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/billing/billing_aging_screen.dart",
+      "text": "Thử lại",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/billing/transfer_account_dialog.dart",
+      "text": "Đóng",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/billing/transfer_account_dialog.dart",
+      "text": "Bỏ ảnh QR",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/billing/transfer_account_dialog.dart",
+      "text": "Tải lại thông tin",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/billing/transfer_account_dialog.dart",
+      "text": "Đóng",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/billing/transfer_account_dialog.dart",
+      "text": "Lưu tài khoản",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/billing/payment_proof_review_dialog.dart",
+      "text": "Hủy",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/billing/invoice_replacement_screen.dart",
+      "text": "Thêm dòng phí",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/billing/invoice_replacement_screen.dart",
+      "text": "Xóa dòng phí",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/billing/invoice_detail_screen.dart",
+      "text": "Khoản thu, phân bổ và hoàn tiền",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/billing/invoice_detail_screen.dart",
+      "text": "Đối soát QR / online",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/billing/invoice_detail_screen.dart",
+      "text": "Tải lại",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/billing/invoice_detail_screen.dart",
+      "text": "Phát hành credit / debit note",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/billing/invoice_detail_screen.dart",
+      "text": "Tạo hóa đơn thay thế",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/billing/invoice_detail_screen.dart",
+      "text": "Duyệt",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/billing/invoice_detail_screen.dart",
+      "text": "Từ chối",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/billing/invoice_detail_screen.dart",
+      "text": "Sửa hóa đơn",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/billing/invoice_detail_screen.dart",
+      "text": "Thanh toán",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/billing/invoice_detail_screen.dart",
+      "text": "Hủy hóa đơn",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/billing/invoice_detail_screen.dart",
+      "text": "Copy hóa đơn",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/billing/invoice_detail_screen.dart",
+      "text": "Bản in",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/billing/invoice_detail_screen.dart",
+      "text": "Xuất PDF",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/billing/invoice_detail_screen.dart",
+      "text": "Nhắc nợ",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/billing/invoice_detail_screen.dart",
+      "text": "Nhắn tin",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/billing/invoice_detail_screen.dart",
+      "text": "Hoàn tác",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/billing/invoice_detail_screen.dart",
+      "text": "Thử lại",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/billing/invoice_detail_screen.dart",
+      "text": "Hủy",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/billing/invoice_detail_screen.dart",
+      "text": "Đóng",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/billing/invoice_detail_screen.dart",
+      "text": "Đóng",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/billing/invoice_detail_screen.dart",
+      "text": "Đóng",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/billing/invoice_detail_screen.dart",
+      "text": "Copy bản in",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/billing/payment_events_screen.dart",
+      "text": "Tải lại",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/billing/payment_events_screen.dart",
+      "text": "Thử lại",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/billing/billing_screen.dart",
+      "text": "Biểu phí khu trọ, phòng & điện nước",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/billing/billing_screen.dart",
+      "text": "Xem tuổi nợ theo người thuê / phòng / khu trọ",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/billing/billing_screen.dart",
+      "text": "Tạo hàng loạt",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/billing/billing_screen.dart",
+      "text": "Tạo hóa đơn",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/billing/billing_screen.dart",
+      "text": "Gửi Zalo",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/billing/billing_screen.dart",
+      "text": "Nhắn",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/billing/billing_screen.dart",
+      "text": "Copy",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/billing/billing_screen.dart",
+      "text": "Mở hóa đơn",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/billing/billing_screen.dart",
+      "text": "Duyệt",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/billing/billing_screen.dart",
+      "text": "Từ chối",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/billing/billing_screen.dart",
+      "text": "Mở hóa đơn",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/billing/billing_screen.dart",
+      "text": "Ghi nhận thanh toán",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/billing/billing_screen.dart",
+      "text": "Trễ hạn",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/billing/billing_screen.dart",
+      "text": "Sắp hạn",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/billing/billing_screen.dart",
+      "text": "Tạo hóa đơn tháng",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/billing/billing_screen.dart",
+      "text": "Tạo một hóa đơn",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/billing/billing_screen.dart",
+      "text": "Thử lại",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/billing/billing_screen.dart",
+      "text": "Hủy",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/billing/billing_tariffs_screen.dart",
+      "text": "Tải lại",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/billing/billing_tariffs_screen.dart",
+      "text": "Thử lại",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/billing/billing_tariffs_screen.dart",
+      "text": "Thêm bậc",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/billing/billing_tariffs_screen.dart",
+      "text": "Xóa bậc",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/billing/billing_tariffs_screen.dart",
+      "text": "Trang trước",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/billing/billing_tariffs_screen.dart",
+      "text": "Trang sau",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/billing/billing_tariffs_screen.dart",
+      "text": "Thử lại",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/billing/billing_tariffs_screen.dart",
+      "text": "Duyệt áp dụng",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/billing/billing_tariffs_screen.dart",
+      "text": "Từ chối",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/billing/billing_tariffs_screen.dart",
+      "text": "Thử lại",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/billing/billing_tariffs_screen.dart",
+      "text": "Hủy",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/billing/bulk_invoice_screen.dart",
+      "text": "Thử lại",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/billing/bulk_invoice_screen.dart",
+      "text": "Chọn khu trọ",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/billing/bulk_invoice_screen.dart",
+      "text": "Tải lại kỳ này",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/billing/bulk_invoice_screen.dart",
+      "text": "Hủy",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/billing/bulk_invoice_screen.dart",
+      "text": "Tạo hóa đơn",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/billing/bulk_invoice_screen.dart",
+      "text": "Hủy",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/billing/bulk_invoice_screen.dart",
+      "text": "Chạy",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/billing/bulk_invoice_screen.dart",
+      "text": "Lưu cấu hình",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/billing/bulk_invoice_screen.dart",
+      "text": "Chạy",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/billing/bulk_invoice_screen.dart",
+      "text": "Gửi nhắc Zalo",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/billing/bulk_invoice_screen.dart",
+      "text": "Danh sách hóa đơn",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/billing/billing_receipts_screen.dart",
+      "text": "Tải lại",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/billing/billing_receipts_screen.dart",
+      "text": "Thử lại",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/billing/billing_receipts_screen.dart",
+      "text": "Ghi nhận khoản thu",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/billing/billing_receipts_screen.dart",
+      "text": "Chưa tải được hóa đơn. Thử lại",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/billing/billing_receipts_screen.dart",
+      "text": "Phân bổ tiền dư",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/billing/billing_receipts_screen.dart",
+      "text": "Ghi nhận hoàn tiền",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/billing/billing_receipts_screen.dart",
+      "text": "Gỡ phân bổ về tiền dư",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/billing/billing_receipts_screen.dart",
+      "text": "Đóng",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/billing/billing_receipts_screen.dart",
+      "text": "Hủy",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/notifications/notifications_screen.dart",
+      "text": "Trung tâm gửi thông báo",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/tenant_portal/tenant_announcements_screen.dart",
+      "text": "Thử lại",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/tenant_portal/tenant_maintenance_screen.dart",
+      "text": "Báo sự cố",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/tenant_portal/tenant_maintenance_screen.dart",
+      "text": "Thử lại",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/tenant_portal/tenant_maintenance_screen.dart",
+      "text": "Báo sự cố",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/tenant_portal/tenant_maintenance_screen.dart",
+      "text": "Xem tất cả",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/tenant_portal/tenant_maintenance_screen.dart",
+      "text": "Hủy",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/tenant_portal/tenant_maintenance_screen.dart",
+      "text": "Gửi yêu cầu",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/tenant_portal/tenant_maintenance_screen.dart",
+      "text": "Đóng",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/tenant_portal/tenant_maintenance_screen.dart",
+      "text": "Gửi phản hồi",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/tenant_portal/tenant_manual_payment_screen.dart",
+      "text": "Thử lại",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/tenant_portal/tenant_manual_payment_screen.dart",
+      "text": "Tôi đã chuyển tiền — gửi chứng từ",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/tenant_portal/tenant_manual_payment_screen.dart",
+      "text": "Kiểm tra trạng thái xác nhận",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/tenant_portal/tenant_manual_payment_screen.dart",
+      "text": "Sao chép $label",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/tenant_portal/tenant_manual_payment_screen.dart",
+      "text": "Tải lại ảnh QR",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/tenant_portal/tenant_online_payment_screen.dart",
+      "text": "Hủy",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/tenant_portal/tenant_online_payment_screen.dart",
+      "text": "Tạo hóa đơn",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/tenant_portal/tenant_online_payment_screen.dart",
+      "text": "Xem hóa đơn",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/tenant_portal/tenant_online_payment_screen.dart",
+      "text": "Mở trang thanh toán",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/tenant_portal/tenant_online_payment_screen.dart",
+      "text": "Sao chép liên kết thanh toán",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/tenant_portal/tenant_online_payment_screen.dart",
+      "text": "Tạo hóa đơn kiểm thử",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/tenant_portal/tenant_online_payment_screen.dart",
+      "text": "Tạo QR cho số tiền còn lại",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/tenant_portal/tenant_online_payment_screen.dart",
+      "text": "Kiểm tra thanh toán",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/tenant_portal/tenant_online_payment_screen.dart",
+      "text": "Thử lại",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/tenant_portal/tenant_invoice_detail_screen.dart",
+      "text": "Thanh toán chuyển khoản",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/tenant_portal/tenant_invoice_detail_screen.dart",
+      "text": "Gửi chứng từ khoản đã thanh toán",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/tenant_portal/tenant_invoice_detail_screen.dart",
+      "text": "Thử thanh toán thẻ (không trừ tiền)",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/tenant_portal/tenant_invoice_detail_screen.dart",
+      "text": "Tải/chia sẻ PDF",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/tenant_portal/tenant_invoice_detail_screen.dart",
+      "text": "Copy",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/tenant_portal/tenant_invoice_detail_screen.dart",
+      "text": "Nhắn chủ trọ",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/tenant_portal/tenant_notifications_screen.dart",
+      "text": "Chủ trọ",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/tenant_portal/tenant_notifications_screen.dart",
+      "text": "Thử lại",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/tenant_portal/tenant_notifications_screen.dart",
+      "text": "Xem tất cả",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/tenant_portal/tenant_notifications_screen.dart",
+      "text": "Đọc hết",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/tenant_portal/tenant_notifications_screen.dart",
+      "text": "Đã hiểu",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/tenant_portal/tenant_payment_proof_dialog.dart",
+      "text": "Đóng",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/tenant_portal/tenant_payment_proof_dialog.dart",
+      "text": "Hủy",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/tenant_portal/tenant_payment_proof_dialog.dart",
+      "text": "Gửi",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/tenant_portal/tenant_zalo_screen.dart",
+      "text": "Nhắn chủ trọ",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/tenant_portal/tenant_zalo_screen.dart",
+      "text": "Copy nội dung",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/tenant_portal/tenant_zalo_screen.dart",
+      "text": "Gửi tin nhắn",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/tenant_portal/tenant_zalo_screen.dart",
+      "text": "Nhắn chủ trọ",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/tenant_portal/tenant_zalo_screen.dart",
+      "text": "Hủy",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/tenant_portal/tenant_zalo_screen.dart",
+      "text": "Gửi",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/tenant_portal/tenant_leases_screen.dart",
+      "text": "Thử lại",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/tenant_portal/tenant_leases_screen.dart",
+      "text": "Xem tất cả",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/tenant_portal/tenant_leases_screen.dart",
+      "text": "Yêu cầu, người ở cùng & quyết toán",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/tenant_portal/tenant_leases_screen.dart",
+      "text": "Bàn giao & đối chiếu cọc",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/tenant_portal/tenant_leases_screen.dart",
+      "text": "Đóng",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/tenant_portal/tenant_invoices_screen.dart",
+      "text": "Thử lại",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/tenant_portal/tenant_invoices_screen.dart",
+      "text": "Xem tất cả",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/tenant_portal/tenant_portal_screen.dart",
+      "text": "Trung tâm hỗ trợ",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/tenant_portal/tenant_portal_screen.dart",
+      "text": "Đổi mật khẩu",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/tenant_portal/tenant_portal_screen.dart",
+      "text": "Đăng xuất",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/tenant_portal/tenant_portal_screen.dart",
+      "text": "Chi tiết →",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/tenant_portal/tenant_portal_screen.dart",
+      "text": "Xem tất cả",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/tenant_portal/tenant_portal_screen.dart",
+      "text": "Xem tất cả",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/tenant_portal/tenant_portal_screen.dart",
+      "text": "Báo sửa chữa",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/tenant_portal/tenant_portal_screen.dart",
+      "text": "Xem tất cả",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/tenant_portal/tenant_portal_screen.dart",
+      "text": "Xem tất cả",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/tenant_portal/tenant_portal_screen.dart",
+      "text": "Xem tất cả",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/tenant_portal/tenant_portal_screen.dart",
+      "text": "Xem tất cả",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/tenant_portal/tenant_portal_screen.dart",
+      "text": "Thử lại",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/tenant_portal/tenant_portal_screen.dart",
+      "text": "Thử lại",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/tenant_portal/tenant_portal_screen.dart",
+      "text": "Bàn giao & tiền cọc",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/tenant_portal/tenant_portal_screen.dart",
+      "text": "Đánh dấu đã đọc",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/tenant_portal/tenant_portal_screen.dart",
+      "text": "Hủy",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/tenant_portal/tenant_portal_screen.dart",
+      "text": "Gửi",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/tenant_portal/tenant_portal_screen.dart",
+      "text": "Đóng",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/tenant_portal/tenant_portal_screen.dart",
+      "text": "Gửi",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/rooms/service_tariff_dialog.dart",
+      "text": "Hủy",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/rooms/room_detail_screen.dart",
+      "text": "Hủy",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/rooms/room_detail_screen.dart",
+      "text": "Thử lại",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/rooms/room_detail_screen.dart",
+      "text": "Thêm phí",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/rooms/room_detail_screen.dart",
+      "text": "Thêm tài sản",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/rooms/room_detail_screen.dart",
+      "text": "Hủy",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/rooms/room_detail_screen.dart",
+      "text": "Lưu",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/rooms/room_detail_screen.dart",
+      "text": "Tạo phiên bản mới",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/rooms/room_detail_screen.dart",
+      "text": "Lịch sử biểu phí",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/rooms/room_detail_screen.dart",
+      "text": "Xóa tài sản",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/rooms/room_detail_screen.dart",
+      "text": "Lên lịch kiểm tra",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/rooms/room_detail_screen.dart",
+      "text": "Chọn ngày",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/rooms/room_detail_screen.dart",
+      "text": "Hủy",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/rooms/room_detail_screen.dart",
+      "text": "Lưu",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/rooms/room_detail_screen.dart",
+      "text": "Hồ sơ",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/rooms/room_detail_screen.dart",
+      "text": "Nhắn",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/rooms/room_detail_screen.dart",
+      "text": "Kết thúc hợp đồng active trước khi ngưng sử dụng hoặc xóa phòng.",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/rooms/rooms_list_screen.dart",
+      "text": "Ngưng sử dụng",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/rooms/rooms_list_screen.dart",
+      "text": "Thử lại",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/staff/staff_scope_screen.dart",
+      "text": "Tải lại danh sách khu trọ",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/staff/staff_screen.dart",
+      "text": "Mời nhân viên",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/staff/staff_screen.dart",
+      "text": "Mời nhân viên",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/staff/staff_screen.dart",
+      "text": "Phạm vi / Kiểm tra quyền",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/staff/staff_screen.dart",
+      "text": "Copy",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/maintenance/maintenance_screen.dart",
+      "text": "Báo sửa chữa",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/maintenance/maintenance_screen.dart",
+      "text": "Báo sửa chữa",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/maintenance/maintenance_screen.dart",
+      "text": "Báo sửa chữa",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/maintenance/maintenance_screen.dart",
+      "text": "Thử lại",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/maintenance/maintenance_screen.dart",
+      "text": "Đóng",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/maintenance/maintenance_screen.dart",
+      "text": "Gửi",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/maintenance/maintenance_screen.dart",
+      "text": "Hủy",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/maintenance/maintenance_screen.dart",
+      "text": "Hủy",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/maintenance/maintenance_screen.dart",
+      "text": "Xóa",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/maintenance/maintenance_assignment_dialog.dart",
+      "text": "Đổi ngày hoàn thành",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/maintenance/maintenance_assignment_dialog.dart",
+      "text": "Hủy",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/properties/properties_list_screen.dart",
+      "text": "Thêm khu trọ",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/properties/properties_list_screen.dart",
+      "text": "Thêm khu trọ",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/properties/properties_list_screen.dart",
+      "text": "Hủy",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/properties/properties_list_screen.dart",
+      "text": "Archived",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/properties/properties_list_screen.dart",
+      "text": "Thử lại",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/properties/property_form_screen.dart",
+      "text": "Quay lại",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/properties/property_form_screen.dart",
+      "text": "Thử lại",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/properties/property_form_screen.dart",
+      "text": "Tài khoản nhận tiền",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/dashboard/room_map_dashboard.dart",
+      "text": "Chọn khu trọ",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/dashboard/room_map_dashboard.dart",
+      "text": "Thông báo",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/dashboard/room_map_dashboard.dart",
+      "text": "Tài khoản",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/dashboard/room_map_dashboard.dart",
+      "text": "Chọn tầng",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/dashboard/room_map_dashboard.dart",
+      "text": "Thanh toán chưa cập nhật. Thử lại",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/dashboard/room_map_dashboard.dart",
+      "text": "Nhóm phòng trước",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/dashboard/room_map_dashboard.dart",
+      "text": "Nhóm phòng sau",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/dashboard/room_map_dashboard.dart",
+      "text": "Thử lại",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/dashboard/dashboard_screen.dart",
+      "text": "Sơ đồ 3D",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/dashboard/dashboard_screen.dart",
+      "text": "Phòng",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/dashboard/dashboard_screen.dart",
+      "text": "Hóa đơn",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/dashboard/dashboard_screen.dart",
+      "text": "View all",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/dashboard/dashboard_screen.dart",
+      "text": "Danh sách",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/dashboard/dashboard_screen.dart",
+      "text": "Xử lý",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/dashboard/dashboard_screen.dart",
+      "text": "Báo cáo",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/dashboard/dashboard_screen.dart",
+      "text": "Xem hóa đơn trễ hạn",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/dashboard/dashboard_screen.dart",
+      "text": "Tất cả",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/operations/action_items_screen.dart",
+      "text": "Checklist và lịch định kỳ",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/operations/action_items_screen.dart",
+      "text": "Làm mới",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/operations/action_items_screen.dart",
+      "text": "DANH SÁCH CÔNG VIỆC",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/operations/action_items_screen.dart",
+      "text": "Trang trước",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/operations/action_items_screen.dart",
+      "text": "Trang sau",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/operations/action_items_screen.dart",
+      "text": "Thử lại",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/operations/action_items_dashboard_card.dart",
+      "text": "Thử lại",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/operations/p1_forms.dart",
+      "text": "Tải lại",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/operations/p1_operations_screen.dart",
+      "text": "Tải lại",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/operations/p1_operations_screen.dart",
+      "text": "Mẫu và nhóm người nhận",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/operations/p1_operations_screen.dart",
+      "text": "Thử lại",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/operations/p1_operations_screen.dart",
+      "text": "Trang trước",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/operations/p1_operations_screen.dart",
+      "text": "Trang sau",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/operations/p1_operations_screen.dart",
+      "text": "Hủy",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/operations/p1_operations_screen.dart",
+      "text": "Xác nhận",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/operations/p1_operations_screen.dart",
+      "text": "Giữ lịch",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/operations/p1_operations_screen.dart",
+      "text": "Hủy lịch gửi",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/tenants/tenants_list_screen.dart",
+      "text": "Thêm người thuê",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/tenants/tenants_list_screen.dart",
+      "text": "Inactive",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/tenants/tenants_list_screen.dart",
+      "text": "Chưa thuê",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/tenants/tenants_list_screen.dart",
+      "text": "Thử lại",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/tenants/tenant_lifecycle_screen.dart",
+      "text": "Tải lại trạng thái",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/tenants/tenant_lifecycle_screen.dart",
+      "text": "Gửi yêu cầu mới",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/tenants/tenant_lifecycle_screen.dart",
+      "text": "Hủy yêu cầu",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/tenants/tenant_lifecycle_screen.dart",
+      "text": "Duyệt",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/tenants/tenant_lifecycle_screen.dart",
+      "text": "Từ chối",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/tenants/tenant_lifecycle_screen.dart",
+      "text": "Thực hiện yêu cầu đã duyệt",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/tenants/tenant_lifecycle_screen.dart",
+      "text": "Xem thêm yêu cầu",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/tenants/tenant_lifecycle_screen.dart",
+      "text": "Xóa người ở cùng",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/tenants/tenant_lifecycle_screen.dart",
+      "text": "Thêm người ở cùng",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/tenants/tenant_lifecycle_screen.dart",
+      "text": "Mở quyết toán hiện có",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/tenants/tenant_lifecycle_screen.dart",
+      "text": "Tìm phòng",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/tenants/tenant_lifecycle_screen.dart",
+      "text": "Xem thêm phòng",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/tenants/tenant_lifecycle_screen.dart",
+      "text": "Không",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/tenants/tenant_lifecycle_screen.dart",
+      "text": "Xác nhận",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/tenants/tenant_lifecycle_screen.dart",
+      "text": "Hủy",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/tenants/tenant_lifecycle_screen.dart",
+      "text": "Xác nhận",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/tenants/lease_settlement_screen.dart",
+      "text": "Hủy",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/tenants/lease_settlement_screen.dart",
+      "text": "Xác nhận trả phòng",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/tenants/lease_settlement_screen.dart",
+      "text": "Xác nhận trả phòng",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/tenants/lease_settlement_screen.dart",
+      "text": "Ghi nhận đã hoàn cọc",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/tenants/lease_settlement_screen.dart",
+      "text": "Tải lại quyết toán",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/tenants/lease_settlement_screen.dart",
+      "text": "Xem trước quyết toán",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/tenants/lease_settlement_screen.dart",
+      "text": "Hủy",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/tenants/lease_settlement_screen.dart",
+      "text": "Ghi nhận",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/tenants/tenant_detail_screen.dart",
+      "text": "Quay lại",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/tenants/tenant_detail_screen.dart",
+      "text": "Sửa",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/tenants/tenant_detail_screen.dart",
+      "text": "Hủy",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/tenants/tenant_detail_screen.dart",
+      "text": "Gọi SĐT",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/tenants/tenant_detail_screen.dart",
+      "text": "Gửi Zalo",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/tenants/tenant_detail_screen.dart",
+      "text": "Inactive",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/tenants/tenant_detail_screen.dart",
+      "text": "Người thuê đang ngưng hoạt động nên không xuất hiện trong danh sách vận hành.",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/tenants/tenant_detail_screen.dart",
+      "text": "Kết thúc hợp đồng active trước khi ngưng hoạt động hoặc xóa người thuê.",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/tenants/tenant_detail_screen.dart",
+      "text": "Bàn giao & tiền cọc",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/tenants/tenant_detail_screen.dart",
+      "text": "Yêu cầu & người ở cùng",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/tenants/tenant_detail_screen.dart",
+      "text": "Gia hạn",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/tenants/tenant_detail_screen.dart",
+      "text": "Cọc",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/tenants/tenant_detail_screen.dart",
+      "text": "Xuất PDF hợp đồng",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/tenants/tenant_detail_screen.dart",
+      "text": "Hủy",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/tenants/tenant_detail_screen.dart",
+      "text": "Lưu",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/tenants/tenant_detail_screen.dart",
+      "text": "Hủy",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/tenants/tenant_detail_screen.dart",
+      "text": "Gia hạn",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/tenants/tenant_detail_screen.dart",
+      "text": "Copy",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/tenants/tenant_form_screen.dart",
+      "text": "Quay lại",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/admin/admin_property_detail_screen.dart",
+      "text": "Danh sách khu trọ",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/admin/admin_property_detail_screen.dart",
+      "text": "Hồ sơ duyệt khu trọ",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/admin/admin_property_detail_screen.dart",
+      "text": "Chỉnh sửa",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/admin/admin_property_detail_screen.dart",
+      "text": "Xem toàn bộ phòng của khu trọ",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/admin/admin_sessions_screen.dart",
+      "text": "Hủy",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/admin/admin_sessions_screen.dart",
+      "text": "Thu hồi",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/admin/admin_sessions_screen.dart",
+      "text": "Đăng xuất thiết bị khác",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/admin/admin_sessions_screen.dart",
+      "text": "Thu hồi phiên này",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/admin/admin_overview_chart.dart",
+      "text": "Ngày trước",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/admin/admin_overview_chart.dart",
+      "text": "Ngày tiếp",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/admin/admin_transactions_panel.dart",
+      "text": "Áp dụng tìm kiếm",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/admin/admin_transactions_panel.dart",
+      "text": "Mở đối soát",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/admin/admin_transactions_panel.dart",
+      "text": "Hồ sơ hỗ trợ",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/admin/admin_transactions_panel.dart",
+      "text": "Nhật ký",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/admin/admin_moderation_v2.dart",
+      "text": "Đóng",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/admin/admin_moderation_v2.dart",
+      "text": "Nhận xử lý",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/admin/admin_moderation_v2.dart",
+      "text": "Xét khiếu nại",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/admin/admin_sla_policy_screen.dart",
+      "text": "Cấu hình SLA",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/admin/admin_moderation_quality_panel.dart",
+      "text": "Khoảng tùy chỉnh",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/admin/admin_moderation_quality_panel.dart",
+      "text": "Mẫu trước",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/admin/admin_moderation_quality_panel.dart",
+      "text": "Mẫu tiếp",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/admin/admin_moderation_quality_panel.dart",
+      "text": "Ghi nhận QA",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/admin/admin_workflow_widgets.dart",
+      "text": "Hủy",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/admin/admin_workflow_widgets.dart",
+      "text": "Xác nhận",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/admin/admin_workflow_widgets.dart",
+      "text": "Trang trước",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/admin/admin_workflow_widgets.dart",
+      "text": "Trang sau",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/admin/admin_permissions_editor.dart",
+      "text": "Đóng",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/admin/admin_permissions_editor.dart",
+      "text": "Thử lại",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/admin/admin_permissions_editor.dart",
+      "text": "Tải bản mới",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/admin/admin_permissions_editor.dart",
+      "text": "Hủy",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/admin/admin_permissions_editor.dart",
+      "text": "Lưu thay đổi",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/admin/admin_accounts_panel.dart",
+      "text": "Bỏ lọc ngày",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/admin/admin_accounts_panel.dart",
+      "text": "Trang trước",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/admin/admin_accounts_panel.dart",
+      "text": "Trang sau",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/admin/admin_bulk_preview_dialog.dart",
+      "text": "Hủy",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/admin/admin_bulk_preview_dialog.dart",
+      "text": "Xác nhận xử lý",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/admin/admin_landlords_screen.dart",
+      "text": "Thêm chủ trọ",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/admin/admin_landlords_screen.dart",
+      "text": "Chỉnh sửa chủ trọ",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/admin/admin_rooms_screen.dart",
+      "text": "Bỏ lọc khu trọ",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/admin/admin_rooms_screen.dart",
+      "text": "Áp dụng giá",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/admin/admin_rooms_screen.dart",
+      "text": "Xóa lọc giá",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/admin/admin_inventory_widgets.dart",
+      "text": "Xem khu trọ",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/admin/admin_inventory_widgets.dart",
+      "text": "Kiểm duyệt tin này",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/admin/admin_notification_queue.dart",
+      "text": "Thử lại thông báo",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/admin/admin_landlord_detail_screen.dart",
+      "text": "Hồ sơ xác minh",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/admin/admin_landlord_detail_screen.dart",
+      "text": "Chỉnh sửa",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/admin/admin_landlord_detail_screen.dart",
+      "text": "Thêm khu trọ",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/admin/admin_landlord_detail_screen.dart",
+      "text": "Hủy",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/admin/admin_workspace_action_queue.dart",
+      "text": "Hiện cả nhóm không tồn đọng",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/admin/admin_workspace_action_queue.dart",
+      "text": "Tải lại các nguồn",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/admin/admin_workspace_action_queue.dart",
+      "text": "Dữ liệu có thể đã cũ · Làm mới",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/admin/admin_policies_screen.dart",
+      "text": "Soạn policy mới",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/admin/admin_policies_screen.dart",
+      "text": "Kích hoạt phiên bản này",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/admin/admin_properties_screen.dart",
+      "text": "Duyệt khu trọ",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/admin/admin_properties_screen.dart",
+      "text": "Thêm khu trọ",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/admin/admin_properties_screen.dart",
+      "text": "Xem chi tiết",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/admin/admin_properties_screen.dart",
+      "text": "Chỉnh sửa",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/admin/admin_account_detail_panel.dart",
+      "text": "Hủy",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/admin/admin_account_detail_panel.dart",
+      "text": "Xác nhận",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/admin/admin_account_detail_panel.dart",
+      "text": "Đóng",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/admin/admin_account_detail_panel.dart",
+      "text": "Đóng",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/admin/admin_account_detail_panel.dart",
+      "text": "Tải lại tài khoản",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/admin/admin_account_detail_panel.dart",
+      "text": "Thu hồi phiên",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/admin/admin_account_detail_panel.dart",
+      "text": "Gửi reset mật khẩu",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/admin/admin_account_detail_panel.dart",
+      "text": "Xem liên hệ có ghi log",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/admin/admin_account_detail_panel.dart",
+      "text": "Tra cứu nghiệp vụ chỉ đọc",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/admin/admin_production_panels.dart",
+      "text": "Hủy",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/admin/admin_production_panels.dart",
+      "text": "Xác nhận",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/admin/admin_production_panels.dart",
+      "text": "Thử lại",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/admin/admin_production_panels.dart",
+      "text": "Đóng",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/admin/admin_production_panels.dart",
+      "text": "Mở lịch báo cáo của tôi",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/admin/admin_production_panels.dart",
+      "text": "Sao chép bộ lọc",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/admin/admin_production_panels.dart",
+      "text": "Lịch sử / runbook",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/admin/admin_production_panels.dart",
+      "text": "Tiếp nhận",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/admin/admin_production_panels.dart",
+      "text": "Đóng",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/admin/admin_production_panels.dart",
+      "text": "Áp dụng bộ lọc",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/admin/admin_production_panels.dart",
+      "text": "Sao chép CSV",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/admin/admin_production_panels.dart",
+      "text": "Trang trước",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/admin/admin_production_panels.dart",
+      "text": "Trang sau",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/admin/admin_step_up.dart",
+      "text": "Hủy",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/admin/admin_step_up.dart",
+      "text": "Xác thực",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/admin/admin_workspace_screen.dart",
+      "text": "Trang trước",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/admin/admin_workspace_screen.dart",
+      "text": "Trang sau",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/admin/admin_workspace_screen.dart",
+      "text": "Xóa tìm kiếm",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/admin/admin_workspace_screen.dart",
+      "text": "Gửi lời mời",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/admin/admin_workspace_screen.dart",
+      "text": "Gửi lời mời",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/admin/admin_workspace_screen.dart",
+      "text": "Tra cứu có ghi nhật ký",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/admin/admin_workspace_screen.dart",
+      "text": "Tin đã duyệt / xác minh / danh mục",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/admin/admin_workspace_screen.dart",
+      "text": "Lịch sử đánh giá / ẩn nội dung",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/admin/admin_workspace_screen.dart",
+      "text": "Quá hạn",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/admin/admin_workspace_screen.dart",
+      "text": "Phân công / ghi chú / hạn",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/admin/admin_workspace_screen.dart",
+      "text": "Duyệt công khai",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/admin/admin_workspace_screen.dart",
+      "text": "Từ chối",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/admin/admin_workspace_screen.dart",
+      "text": "Đã xử lý",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/admin/admin_workspace_screen.dart",
+      "text": "Bỏ qua có lý do",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/admin/admin_workspace_screen.dart",
+      "text": "Duyệt",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/admin/admin_workspace_screen.dart",
+      "text": "Từ chối",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/admin/admin_workspace_screen.dart",
+      "text": "Hủy",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/admin/admin_workspace_screen.dart",
+      "text": "Xác nhận",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/admin/admin_finance_workflow.dart",
+      "text": "Nhập sao kê CSV",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/admin/admin_finance_workflow.dart",
+      "text": "Đề xuất xử lý",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/admin/admin_support_center.dart",
+      "text": "Làm mới",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/admin/admin_support_center.dart",
+      "text": "Yêu cầu hỗ trợ",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/admin/admin_support_center.dart",
+      "text": "Xác minh chủ trọ",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/admin/admin_support_center.dart",
+      "text": "Khiếu nại kiểm duyệt",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/admin/admin_support_center.dart",
+      "text": "Thông báo",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/admin/admin_support_center.dart",
+      "text": "Tạo yêu cầu",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/admin/admin_support_center.dart",
+      "text": "Tạo mẫu phản hồi",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/admin/admin_support_center.dart",
+      "text": "Kỹ năng / sức chứa",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/admin/admin_support_center.dart",
+      "text": "Lịch làm việc / SLA",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/admin/admin_support_center.dart",
+      "text": "Danh sách ticket",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/admin/admin_support_center.dart",
+      "text": "Lưu bộ lọc",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/admin/admin_support_center.dart",
+      "text": "Bỏ lọc nâng cao",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/admin/admin_support_center.dart",
+      "text": "Sao chép bộ lọc",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/admin/admin_support_center.dart",
+      "text": "Hồ sơ / timeline",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/admin/admin_support_center.dart",
+      "text": "Liên kết tài nguyên",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/admin/admin_support_center.dart",
+      "text": "Đánh giá hỗ trợ",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/admin/admin_support_center.dart",
+      "text": "Tự động phân công",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/admin/admin_support_center.dart",
+      "text": "Sửa nhãn",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/admin/admin_support_center.dart",
+      "text": "Gộp ticket",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/admin/admin_support_center.dart",
+      "text": "Phân công / SLA",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/admin/admin_support_center.dart",
+      "text": "Đính kèm ảnh / PDF (tối đa 8 MB)",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/admin/admin_support_center.dart",
+      "text": "Dùng mẫu phản hồi",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/admin/admin_support_center.dart",
+      "text": "Gửi phản hồi",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/admin/admin_support_center.dart",
+      "text": "Lưu ghi chú nội bộ",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/admin/admin_support_center.dart",
+      "text": "Đánh dấu tất cả đã đọc",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/admin/admin_support_center.dart",
+      "text": "Đánh dấu đã đọc",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/admin/admin_support_center.dart",
+      "text": "Khiếu nại",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/admin/admin_case_timeline_dialog.dart",
+      "text": "Đóng",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/admin/admin_lifecycle_panel.dart",
+      "text": "Gửi lại lời mời",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/admin/admin_lifecycle_panel.dart",
+      "text": "Thu hồi session",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/admin/admin_search_results.dart",
+      "text": "Về trang đầu",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/admin/admin_search_results.dart",
+      "text": "Trang trước",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/admin/admin_search_results.dart",
+      "text": "Trang sau",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/admin/admin_search_results.dart",
+      "text": "Sao chép liên kết tra cứu",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/admin/admin_security_screen.dart",
+      "text": "Thiết bị đăng nhập",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/admin/admin_security_screen.dart",
+      "text": "Đã lưu mã — đăng nhập lại",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/admin/admin_security_screen.dart",
+      "text": "Thử lại",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/admin/admin_security_screen.dart",
+      "text": "Về trang quản trị",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/admin/admin_security_screen.dart",
+      "text": "Đăng nhập lại với MFA",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/admin/admin_security_screen.dart",
+      "text": "Thiết lập MFA",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/admin/admin_security_screen.dart",
+      "text": "Xác nhận và bật MFA",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/admin/admin_overview_page.dart",
+      "text": "Thử lại",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/admin/admin_overview_page.dart",
+      "text": "Sao chép CSV",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/admin/admin_workspace_scaffold.dart",
+      "text": "Tìm kiếm",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/admin/admin_workspace_scaffold.dart",
+      "text": "Đóng",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/admin/admin_access_review_panel.dart",
+      "text": "Ghi nhận rà soát",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/admin/admin_workspace_states.dart",
+      "text": "Đăng nhập lại",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/admin/admin_workspace_states.dart",
+      "text": "Mở bảo mật",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/admin/admin_overview_shell.dart",
+      "text": "Tra cứu toàn hệ thống",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/admin/admin_overview_shell.dart",
+      "text": "Chuyển nhanh chức năng (Ctrl/Cmd K)",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/admin/admin_overview_shell.dart",
+      "text": "Bảo mật tài khoản",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/admin/admin_registry_screen.dart",
+      "text": "Gửi / bổ sung hồ sơ",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/admin/admin_registry_screen.dart",
+      "text": "Đăng ký dịch vụ",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/admin/admin_registry_screen.dart",
+      "text": "Danh mục gói",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/admin/admin_registry_screen.dart",
+      "text": "Đóng",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/admin/admin_registry_screen.dart",
+      "text": "Tài liệu & hội thoại",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/admin/admin_registry_screen.dart",
+      "text": "Chi tiết khu trọ",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/admin/admin_registry_screen.dart",
+      "text": "Nhật ký",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/admin/admin_registry_screen.dart",
+      "text": "Chỉnh sửa",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/admin/admin_registry_screen.dart",
+      "text": "Đổi gói",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/admin/admin_registry_screen.dart",
+      "text": "Hủy cấp gói",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/admin/admin_registry_screen.dart",
+      "text": "Tiếp nhận lại",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/admin/admin_registry_screen.dart",
+      "text": "Lịch sử",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/admin/admin_governance.dart",
+      "text": "Cấu hình rollout",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/admin/admin_governance.dart",
+      "text": "Tạo nhóm admin",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/admin/admin_governance.dart",
+      "text": "Sửa nhóm",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/admin/admin_governance.dart",
+      "text": "Thêm thành viên",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/admin/admin_governance.dart",
+      "text": "Xóa khỏi nhóm",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/admin/admin_governance.dart",
+      "text": "Kiểm tra quyền",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/admin/admin_governance.dart",
+      "text": "Tạo lịch báo cáo",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/admin/admin_governance.dart",
+      "text": "Sao chép CSV",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/admin/admin_governance.dart",
+      "text": "Thử lại báo cáo",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/listings/saved_searches_screen.dart",
+      "text": "Tải lại bộ lọc",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/listings/saved_searches_screen.dart",
+      "text": "Xóa bộ lọc",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/listings/saved_searches_screen.dart",
+      "text": "Tải lại thông báo",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/listings/saved_searches_screen.dart",
+      "text": "Trước",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/listings/saved_searches_screen.dart",
+      "text": "Sau",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/listings/manage_reviews_screen.dart",
+      "text": "Tải lại đánh giá",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/listings/manage_reviews_screen.dart",
+      "text": "Thử lại",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/listings/manage_reviews_screen.dart",
+      "text": "Trang trước",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/listings/manage_reviews_screen.dart",
+      "text": "Trang sau",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/listings/manage_reviews_screen.dart",
+      "text": "Đóng",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/listings/explore_screen.dart",
+      "text": "Quản lý",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/listings/explore_screen.dart",
+      "text": "Xóa",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/listings/explore_screen.dart",
+      "text": "So sánh",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/listings/explore_screen.dart",
+      "text": "Lưu tìm kiếm",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/listings/explore_screen.dart",
+      "text": "Trang trước",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/listings/explore_screen.dart",
+      "text": "Trang sau",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/listings/explore_screen.dart",
+      "text": "Tìm phòng",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/listings/explore_screen.dart",
+      "text": "Bộ lọc",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/listings/explore_screen.dart",
+      "text": "Xóa bộ lọc",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/listings/explore_screen.dart",
+      "text": "MỚI",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/listings/explore_screen.dart",
+      "text": "Hủy",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/listings/explore_screen.dart",
+      "text": "Lưu",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/listings/explore_screen.dart",
+      "text": "Thử tải danh sách trường",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/listings/explore_screen.dart",
+      "text": "Hủy",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/listings/explore_screen.dart",
+      "text": "Áp dụng",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/listings/listing_form_screen.dart",
+      "text": "Tải ảnh từ thiết bị",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/listings/listing_reports_screen.dart",
+      "text": "Đã xử lý",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/listings/listing_reports_screen.dart",
+      "text": "Không đủ căn cứ",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/listings/listing_reports_screen.dart",
+      "text": "Trang trước",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/listings/listing_reports_screen.dart",
+      "text": "Trang sau",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/listings/listing_reports_screen.dart",
+      "text": "Hủy",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/listings/listing_reports_screen.dart",
+      "text": "Lưu kết quả",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/listings/housing_dialog.dart",
+      "text": "Đóng",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/listings/housing_dialog.dart",
+      "text": "Đóng",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/listings/listing_journey_actions.dart",
+      "text": "Đăng nhập để lưu phòng / đặt lịch",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/listings/listing_journey_actions.dart",
+      "text": "Tải lại yêu thích",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/listings/listing_journey_actions.dart",
+      "text": "Đặt lịch xem phòng",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/listings/listing_report_dialog.dart",
+      "text": "Đóng",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/listings/listing_report_dialog.dart",
+      "text": "Hủy",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/listings/tenant_home_screen.dart",
+      "text": "Khám phá phòng",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/listings/tenant_home_screen.dart",
+      "text": "Kiểm tra liên kết hợp đồng",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/listings/seeker_account_screen.dart",
+      "text": "Đăng nhập",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/listings/seeker_account_screen.dart",
+      "text": "Tạo tài khoản",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/listings/listing_detail_screen.dart",
+      "text": "Quay lại",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/listings/listing_detail_screen.dart",
+      "text": "Báo cáo tin đăng",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/listings/listing_verification_dialog.dart",
+      "text": "Hủy",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/listings/listing_verification_dialog.dart",
+      "text": "Lưu xác minh",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/listings/review_composer.dart",
+      "text": "Hủy",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/listings/review_composer.dart",
+      "text": "Gỡ đánh giá",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/listings/review_composer.dart",
+      "text": "Tải lại đánh giá",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/listings/review_composer.dart",
+      "text": "Gửi đánh giá",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/listings/review_composer.dart",
+      "text": "Gỡ đánh giá",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/listings/review_composer.dart",
+      "text": "Thử lại",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/listings/review_composer.dart",
+      "text": "Trang trước",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/listings/review_composer.dart",
+      "text": "Trang sau",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/listings/housing_screen.dart",
+      "text": "Mở khung giờ",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/listings/housing_screen.dart",
+      "text": "Đổi lịch",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/listings/housing_screen.dart",
+      "text": "Bàn giao & tiền cọc",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/listings/housing_screen.dart",
+      "text": "Xác nhận lịch",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/listings/housing_screen.dart",
+      "text": "Đã xem phòng",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/listings/housing_screen.dart",
+      "text": "Tạo hợp đồng",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/listings/housing_screen.dart",
+      "text": "Hủy lịch",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/listings/housing_screen.dart",
+      "text": "Phòng đang thuê",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/listings/housing_screen.dart",
+      "text": "Trang trước",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/listings/housing_screen.dart",
+      "text": "Trang sau",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/listings/housing_screen.dart",
+      "text": "Thông báo xem phòng",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/listings/housing_screen.dart",
+      "text": "Tải lại",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/listings/housing_screen.dart",
+      "text": "Bỏ lưu phòng",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/listings/housing_screen.dart",
+      "text": "Gửi phản hồi",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/listings/manage_listings_screen.dart",
+      "text": "Đóng",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/listings/manage_listings_screen.dart",
+      "text": "Quản lý trường học",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/listings/manage_listings_screen.dart",
+      "text": "Báo cáo tin đăng",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/listings/manage_listings_screen.dart",
+      "text": "Xem trang khám phá",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/listings/manage_listings_screen.dart",
+      "text": "Tạo tin",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/listings/manage_listings_screen.dart",
+      "text": "Khung giờ xem",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/listings/manage_listings_screen.dart",
+      "text": "Chỉnh sửa",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/listings/manage_listings_screen.dart",
+      "text": "Gửi duyệt",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/listings/manage_listings_screen.dart",
+      "text": "Ẩn tin",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/listings/manage_listings_screen.dart",
+      "text": "Xác nhận còn phòng",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/listings/manage_listings_screen.dart",
+      "text": "Xác minh",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/listings/manage_listings_screen.dart",
+      "text": "Duyệt",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/listings/manage_listings_screen.dart",
+      "text": "Từ chối",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/listings/manage_listings_screen.dart",
+      "text": "Ẩn tin",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/listings/manage_listings_screen.dart",
+      "text": "Trang trước",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/listings/manage_listings_screen.dart",
+      "text": "Trang sau",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/listings/manage_listings_screen.dart",
+      "text": "Đóng",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/listings/manage_listings_screen.dart",
+      "text": "Đóng",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/listings/manage_listings_screen.dart",
+      "text": "Hủy",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/listings/manage_listings_screen.dart",
+      "text": "Xác nhận",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/listings/listing_widgets.dart",
+      "text": "Thử lại",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/listings/campus_management_screen.dart",
+      "text": "Thêm cơ sở",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/listings/campus_management_screen.dart",
+      "text": "Tải lại danh sách",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/listings/listing_comparison_screen.dart",
+      "text": "Cập nhật thông tin",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/listings/listing_comparison_screen.dart",
+      "text": "Bỏ chọn",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/listings/handover_screen.dart",
+      "text": "Đóng ảnh",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/listings/handover_screen.dart",
+      "text": "Bỏ ảnh",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/listings/handover_screen.dart",
+      "text": "Lưu biên bản bàn giao",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/listings/handover_screen.dart",
+      "text": "Xác nhận đã nhận phòng",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/listings/handover_screen.dart",
+      "text": "Tải lại biên bản",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/listings/viewing_slots_screen.dart",
+      "text": "Mở khung 30 phút",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/listings/viewing_slots_screen.dart",
+      "text": "Xóa khung giờ",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/expenses/expenses_screen.dart",
+      "text": "Thêm chi phí",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/expenses/expenses_screen.dart",
+      "text": "Thêm chi phí",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/expenses/expenses_screen.dart",
+      "text": "Thêm chi phí",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/expenses/expenses_screen.dart",
+      "text": "Thử lại",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/expenses/expenses_screen.dart",
+      "text": "Hủy",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/expenses/expenses_screen.dart",
+      "text": "Xóa",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/chatbot/chatbot_screen.dart",
+      "text": "Atrium",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/chatbot/chatbot_screen.dart",
+      "text": "Xóa cuộc trò chuyện",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/chatbot/chatbot_screen.dart",
+      "text": "Thử lại câu hỏi",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/chatbot/chatbot_screen.dart",
+      "text": "Gửi câu hỏi",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/chatbot/widgets/chat_source_sheet.dart",
+      "text": "Đóng nguồn",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/chatbot/widgets/chat_source_sheet.dart",
+      "text": "Tải lại nguồn",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/chatbot/widgets/chatbot_launcher.dart",
+      "text": "Hỏi trợ lý AI",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/chatbot/widgets/chat_message_bubble.dart",
+      "text": "Mở nguồn: ${source.title}",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/settings/settings_screen.dart",
+      "text": "Thử lại",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/settings/settings_screen.dart",
+      "text": "Quay lại Cài đặt",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/settings/settings_screen.dart",
+      "text": "Quét QR / Tải lại",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/settings/settings_screen.dart",
+      "text": "Tạo tin Zalo test",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/settings/settings_screen.dart",
+      "text": "Tin nhắc tiền trọ từ hệ thống",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/settings/settings_screen.dart",
+      "text": "Copy nội dung",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/settings/settings_screen.dart",
+      "text": "Tạo tin test",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/auth/password_recovery_dialog.dart",
+      "text": "Đóng",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/auth/register_screen.dart",
+      "text": "Close",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/auth/register_screen.dart",
+      "text": "Terms & Conditions",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/auth/register_screen.dart",
+      "text": "Log in",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/auth/account_access_screen.dart",
+      "text": "Đăng nhập",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/auth/account_access_screen.dart",
+      "text": "Yêu cầu liên kết khôi phục mới",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/auth/auth_form.dart",
+      "text": "Back",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/auth/login_screen.dart",
+      "text": "Forgot Password?",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/auth/login_screen.dart",
+      "text": "Khám phá phòng không cần đăng nhập",
+      "status": "requires scenario/assertion mapping"
+    },
+    {
+      "file": "lib/features/auth/login_screen.dart",
+      "text": "Sign up",
+      "status": "requires scenario/assertion mapping"
+    }
+  ],
+  "apiSuites": [
+    "admin-accounts.e2e-spec.ts",
+    "admin-completion.e2e-spec.ts",
+    "admin-console.e2e-spec.ts",
+    "admin-inventory.e2e-spec.ts",
+    "admin-moderation-policy.e2e-spec.ts",
+    "admin-next-sprints.e2e-spec.ts",
+    "admin-operations-release.e2e-spec.ts",
+    "admin-registry.e2e-spec.ts",
+    "admin-roadmap-inboxes.e2e-spec.ts",
+    "admin-search.e2e-spec.ts",
+    "admin-sprints.e2e-spec.ts",
+    "admin-support-tools.e2e-spec.ts",
+    "admin-workspace.e2e-spec.ts",
+    "admin.e2e-spec.ts",
+    "app-functional.e2e-spec.ts",
+    "auth.e2e-spec.ts",
+    "authorization-ownership.e2e-spec.ts",
+    "billing-production.e2e-spec.ts",
+    "chatbot.e2e-spec.ts",
+    "demo-card-payments.e2e-spec.ts",
+    "explore-preview-images.e2e-spec.ts",
+    "housing.e2e-spec.ts",
+    "invoice-tariffs.e2e-spec.ts",
+    "lease-billing-dashboard.e2e-spec.ts",
+    "lease-settlement.e2e-spec.ts",
+    "listings.e2e-spec.ts",
+    "maintenance-audit.e2e-spec.ts",
+    "manual-transfers.e2e-spec.ts",
+    "operations.e2e-spec.ts",
+    "p1-operations.e2e-spec.ts",
+    "production-safety.e2e-spec.ts",
+    "resource-lifecycle.e2e-spec.ts",
+    "reviews.e2e-spec.ts",
+    "security-discovery.e2e-spec.ts",
+    "staff-lifecycle.e2e-spec.ts",
+    "tenant-portal-priority.e2e-spec.ts"
+  ],
+  "widgetSuites": [
+    "test/data/lease_settlement_api_test.dart",
+    "test/data/onboarding/onboarding_preferences_test.dart",
+    "test/data/billing/manual_transfer_api_test.dart",
+    "test/data/billing/billing_receipt_api_test.dart",
+    "test/data/billing/billing_tariff_api_test.dart",
+    "test/data/billing/billing_api_test.dart",
+    "test/data/notifications/notifications_api_test.dart",
+    "test/data/tenant_portal/tenant_portal_api_test.dart",
+    "test/data/tenants_lifecycle_api_test.dart",
+    "test/data/tenant_lifecycle_requests_api_test.dart",
+    "test/data/dashboard/dashboard_api_test.dart",
+    "test/data/rooms_lifecycle_api_test.dart",
+    "test/data/operations/operations_api_test.dart",
+    "test/data/operations/p1_operations_api_test.dart",
+    "test/data/uploads/upload_api_test.dart",
+    "test/data/admin/admin_accounts_api_test.dart",
+    "test/data/admin/admin_step_up_api_test.dart",
+    "test/data/admin/admin_api_test.dart",
+    "test/data/admin/admin_inventory_api_test.dart",
+    "test/data/admin/finance_statement_csv_test.dart",
+    "test/data/listings/reviews_repository_test.dart",
+    "test/data/listings/listings_api_test.dart",
+    "test/data/listings/housing_repository_test.dart",
+    "test/data/chatbot/chatbot_api_test.dart",
+    "test/data/auth/auth_repository_test.dart",
+    "test/data/auth/token_refresh_coordinator_test.dart",
+    "test/data/auth/auth_api_test.dart",
+    "test/data/maintenance_repository_test.dart",
+    "test/properties_test.dart",
+    "test/widget_test.dart",
+    "test/features/reports/reports_screen_test.dart",
+    "test/features/onboarding/onboarding_persistence_test.dart",
+    "test/features/billing/billing_form_screen_test.dart",
+    "test/features/billing/invoice_adjustment_test.dart",
+    "test/features/billing/manual_review_confirmation_test.dart",
+    "test/features/billing/invoice_replacement_test.dart",
+    "test/features/billing/reminder_policy_test.dart",
+    "test/features/billing/billing_tariffs_screen_test.dart",
+    "test/features/billing/billing_receipts_screen_test.dart",
+    "test/features/billing/invoice_tariffs_test.dart",
+    "test/features/billing/invoice_timeline_test.dart",
+    "test/features/billing/meter_reading_fields_test.dart",
+    "test/features/billing/billing_filter_entry_test.dart",
+    "test/features/tenant_portal/tenant_maintenance_colors_test.dart",
+    "test/features/tenant_portal/tenant_maintenance_screen_test.dart",
+    "test/features/tenant_portal/tenant_manual_payment_test.dart",
+    "test/features/tenant_portal/tenant_p1_screens_test.dart",
+    "test/features/rooms/room_detail_screen_test.dart",
+    "test/features/maintenance/maintenance_colors_test.dart",
+    "test/features/maintenance/maintenance_actions_test.dart",
+    "test/features/maintenance/maintenance_completion_test.dart",
+    "test/features/maintenance/maintenance_form_validation_test.dart",
+    "test/features/properties/property_colors_test.dart",
+    "test/features/dashboard/room_map_dashboard_test.dart",
+    "test/features/dashboard/dashboard_chatbot_entry_test.dart",
+    "test/features/operations/action_destinations_test.dart",
+    "test/features/operations/action_items_screen_test.dart",
+    "test/features/tenants/tenant_management_colors_test.dart",
+    "test/features/tenants/tenant_deposit_dialog_test.dart",
+    "test/features/tenants/lease_settlement_screen_test.dart",
+    "test/features/tenants/lease_form_screen_test.dart",
+    "test/features/tenants/tenant_lifecycle_screen_test.dart",
+    "test/features/admin/admin_inbox_safety_test.dart",
+    "test/features/admin/admin_workspace_foundation_test.dart",
+    "test/features/admin/admin_transactions_panel_test.dart",
+    "test/features/admin/admin_workspace_flow_test.dart",
+    "test/features/admin/admin_permissions_editor_test.dart",
+    "test/features/admin/admin_inventory_panel_test.dart",
+    "test/features/admin/admin_route_theme_test.dart",
+    "test/features/admin/admin_overview_chart_test.dart",
+    "test/features/admin/admin_milestone_one_test.dart",
+    "test/features/admin/admin_registry_screen_test.dart",
+    "test/features/admin/admin_sprints_test.dart",
+    "test/features/admin/admin_sessions_test.dart",
+    "test/features/admin/admin_moderation_search_test.dart",
+    "test/features/admin/admin_accounts_workspace_test.dart",
+    "test/features/admin/admin_accounts_panel_test.dart",
+    "test/features/admin/admin_operations_release_test.dart",
+    "test/features/admin/admin_search_quality_test.dart",
+    "test/features/admin/admin_unified_shell_test.dart",
+    "test/features/admin/admin_account_detail_panel_test.dart",
+    "test/features/admin/admin_completion_session_test.dart",
+    "test/features/admin/admin_production_panels_test.dart",
+    "test/features/listings/listings_screen_test.dart",
+    "test/features/listings/student_discovery_test.dart",
+    "test/features/listings/housing_journey_test.dart",
+    "test/features/listings/housing_screen_test.dart",
+    "test/features/listings/discovery_tools_test.dart",
+    "test/features/listings/listing_taskbar_scroll_test.dart",
+    "test/features/listings/listing_navigation_test.dart",
+    "test/features/listings/reviews_screen_test.dart",
+    "test/features/chatbot/chatbot_session_test.dart",
+    "test/features/chatbot/chatbot_screen_test.dart",
+    "test/features/auth/register_screen_test.dart",
+    "test/features/auth/session_cache_isolation_test.dart",
+    "test/features/auth/auth_navigation_test.dart",
+    "test/features/auth/account_access_test.dart",
+    "test/features/settings/settings_screen_test.dart",
+    "test/dashboard_test.dart",
+    "test/rooms_test.dart",
+    "test/core/widgets/liquid_taskbar_insets_test.dart",
+    "test/core/widgets/liquid_bubble_navigation_test.dart",
+    "test/core/network/api_client_test.dart"
+  ]
+}

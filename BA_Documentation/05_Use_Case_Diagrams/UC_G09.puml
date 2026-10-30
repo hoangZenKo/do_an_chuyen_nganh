@@ -1,0 +1,60 @@
+@startuml
+left to right direction
+skinparam defaultFontName SansSerif
+skinparam defaultFontSize 13
+skinparam backgroundColor #F8FAFC
+skinparam shadowing false
+skinparam ArrowColor #52647A
+skinparam ArrowThickness 1
+skinparam actorStyle stickman
+skinparam actorBorderColor #243A52
+skinparam actorFontColor #243A52
+skinparam actorBackgroundColor #FFFFFF
+skinparam usecase {
+  BackgroundColor #FFFFFF
+  BorderColor #327C83
+  FontColor #20354B
+  BackgroundColor<<Một phần>> #FFF0CE
+  BorderColor<<Một phần>> #B17917
+  BackgroundColor<<DEMO>> #FCE5DF
+  BorderColor<<DEMO>> #BC593A
+  BackgroundColor<<MÔ PHỎNG>> #E7EAF1
+  BorderColor<<MÔ PHỎNG>> #6C7488
+}
+skinparam rectangle {
+  BackgroundColor #EEF4F5
+  BorderColor #243A52
+  FontColor #243A52
+}
+skinparam titleFontColor #20354B
+skinparam titleFontSize 18
+skinparam nodesep 25
+skinparam ranksep 65
+title G09 · Bảo trì và chi phí vận hành\n<size:12>Đầy đủ UC của nhóm nghiệp vụ</size>
+caption AS-IS · 29/10/2026 · Snapshot c565c29 · Không biểu diễn trình tự xử lý
+actor "A02\nChủ trọ" as A02
+actor "A03\nNhân viên vận hành" as A03
+actor "A04\nNgười tìm phòng/người\nthuê" as A04
+rectangle "Hệ thống quản lý nhà trọ" as SYSTEM {
+  usecase "UC-TEN-06\nGửi và trao đổi yêu cầu bảo trì" as UC_TEN_06
+  usecase "UC-OPS-01\nTiếp nhận và theo dõi phiếu bảo\ntrì" as UC_OPS_01
+  usecase "UC-OPS-02\nPhân công và cập nhật bảo trì" as UC_OPS_02
+  usecase "UC-OPS-03\nHoàn tất bảo trì và liên kết\nkhoản chi" as UC_OPS_03
+  usecase "UC-BIL-19\nQuản lý khoản chi vận hành" as UC_BIL_19
+}
+A04 -- UC_TEN_06
+A02 -- UC_OPS_01
+UC_OPS_01 -- A03
+A02 -- UC_OPS_02
+UC_OPS_02 -- A03
+A02 -- UC_OPS_03
+UC_OPS_03 -- A03
+A02 -- UC_BIL_19
+UC_BIL_19 -- A03
+legend bottom left
+  Đường liền: tương tác; không biểu diễn luồng điều khiển.
+  STAFF: permission theo handler + khu được giao + whitelist controller; không mặc định toàn quyền.
+  Mặc định: xác minh tĩnh, chưa nghiệm thu runtime; màu vàng: một phần, cam: DEMO, xám: mô phỏng.
+  Quyền chi tiết, điều kiện và nguồn: Association_Traceability.md / data/diagram-manifest.json.
+endlegend
+@enduml

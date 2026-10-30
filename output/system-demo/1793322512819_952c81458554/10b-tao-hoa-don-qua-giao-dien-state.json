@@ -1,0 +1,86 @@
+{
+  "route": "/billing/form",
+  "apiBaseUrl": "http://127.0.0.1:60646/api/v1",
+  "texts": [
+    "Khoản thu",
+    "Tiền phòng",
+    "3.000.000 đ / tháng",
+    "3.000.000 đ",
+    "Tiền điện",
+    "Nhập chỉ số và đơn giá theo kWh",
+    "0 đ",
+    "Chỉ số cũ",
+    "Chỉ số mới",
+    "Sử dụng",
+    "0 kWh",
+    "Đơn giá",
+    "Thành tiền",
+    "0 đ",
+    "Tiền nước",
+    "Nhập chỉ số và đơn giá theo m³",
+    "0 đ",
+    "Chỉ số cũ",
+    "Chỉ số mới",
+    "Sử dụng",
+    "0 m³",
+    "Đơn giá",
+    "Thành tiền",
+    "0 đ",
+    "Phí dịch vụ",
+    "Bật để thêm phụ thu",
+    "0 đ",
+    "Phụ thu khác",
+    "0",
+    "Thêm khoản thu khác",
+    "Tổng cộng (1 khoản)",
+    "3.000.000 đ",
+    "Chi tiết",
+    "Tạo hóa đơn",
+    "Hủy"
+  ],
+  "fields": [
+    {
+      "label": null,
+      "hint": null,
+      "readOnly": false,
+      "obscure": false
+    },
+    {
+      "label": null,
+      "hint": null,
+      "readOnly": false,
+      "obscure": false
+    },
+    {
+      "label": null,
+      "hint": null,
+      "readOnly": false,
+      "obscure": false
+    },
+    {
+      "label": null,
+      "hint": null,
+      "readOnly": false,
+      "obscure": false
+    },
+    {
+      "label": null,
+      "hint": null,
+      "readOnly": false,
+      "obscure": false
+    },
+    {
+      "label": null,
+      "hint": null,
+      "readOnly": false,
+      "obscure": false
+    },
+    {
+      "label": null,
+      "hint": "0",
+      "readOnly": false,
+      "obscure": false
+    }
+  ],
+  "errors": []
+}

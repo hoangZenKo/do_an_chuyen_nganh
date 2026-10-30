@@ -1,0 +1,20 @@
+@startwbs
+title Phân rã chức năng AS-IS — không phải sơ đồ Use Case
+* Hệ thống quản lý và tìm thuê nhà trọ
+** G12 — Tài khoản và tài nguyên nền tảng
+*** G12.1 Tài khoản khách hàng
+**** UC-ADM-02 Tra cứu tài khoản nền tảng
+**** UC-ADM-03.1 Tạo hoặc mời tài khoản chủ trọ [Một phần]
+**** UC-ADM-03.2 Cập nhật hồ sơ chủ trọ
+**** UC-ADM-04.1 Đình chỉ hoặc khôi phục tài khoản
+**** UC-ADM-04.3 Thu hồi phiên của tài khoản khác
+**** UC-ADM-05.1 Mở thông tin cá nhân được che
+**** UC-ADM-05.2 Yêu cầu khôi phục truy cập cho tài khoản [Một phần]
+*** G12.2 Nhân sự quản trị và rà soát quyền
+**** UC-ADM-06.1 Cấp và quản lý quyền quản trị viên [Một phần]
+**** UC-ADM-06.2 Rà soát quyền Admin định kỳ
+*** G12.3 Tài nguyên và ngữ cảnh toàn nền tảng
+**** UC-ADM-08 Tra cứu khu và phòng toàn nền tảng
+**** UC-ADM-09 Tạo hoặc cập nhật khu thay chủ trọ
+**** UC-ADM-10 Tìm kiếm và định vị tài nguyên
+@endwbs

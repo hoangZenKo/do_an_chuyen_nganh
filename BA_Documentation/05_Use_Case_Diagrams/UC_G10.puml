@@ -1,0 +1,70 @@
+@startuml
+left to right direction
+skinparam defaultFontName SansSerif
+skinparam defaultFontSize 13
+skinparam backgroundColor #F8FAFC
+skinparam shadowing false
+skinparam ArrowColor #52647A
+skinparam ArrowThickness 1
+skinparam actorStyle stickman
+skinparam actorBorderColor #243A52
+skinparam actorFontColor #243A52
+skinparam actorBackgroundColor #FFFFFF
+skinparam usecase {
+  BackgroundColor #FFFFFF
+  BorderColor #327C83
+  FontColor #20354B
+  BackgroundColor<<Một phần>> #FFF0CE
+  BorderColor<<Một phần>> #B17917
+  BackgroundColor<<DEMO>> #FCE5DF
+  BorderColor<<DEMO>> #BC593A
+  BackgroundColor<<MÔ PHỎNG>> #E7EAF1
+  BorderColor<<MÔ PHỎNG>> #6C7488
+}
+skinparam rectangle {
+  BackgroundColor #EEF4F5
+  BorderColor #243A52
+  FontColor #243A52
+}
+skinparam titleFontColor #20354B
+skinparam titleFontSize 18
+skinparam nodesep 25
+skinparam ranksep 65
+title G10 · Công việc, thông tin và hỗ trợ sử dụng\n<size:12>Đầy đủ UC của nhóm nghiệp vụ</size>
+caption AS-IS · 29/10/2026 · Snapshot c565c29 · Không biểu diễn trình tự xử lý
+actor "A02\nChủ trọ" as A02
+actor "A04\nNgười tìm phòng/người\nthuê" as A04
+actor "A05\nQuản trị viên nền tảng" as A05
+rectangle "Hệ thống quản lý nhà trọ" as SYSTEM {
+  usecase "UC-OPS-04\nTheo dõi việc cần xử lý" as UC_OPS_04
+  usecase "UC-OPS-05\nChuẩn bị phòng sau trả phòng" as UC_OPS_05
+  usecase "UC-OPS-06\nThiết lập lịch công việc định\nkỳ" as UC_OPS_06
+  usecase "UC-OPS-06.1\nThực hiện checklist công việc\nđịnh kỳ" as UC_OPS_06_1
+  usecase "UC-OPS-07\nSoạn và phát thông báo người\nthuê" as UC_OPS_07
+  usecase "UC-SUP-04\nTheo dõi thông báo cá nhân" as UC_SUP_04
+  usecase "UC-TEN-09.2\nTrao đổi tin nhắn Zalo mô phỏng" as UC_TEN_09_2 <<MÔ PHỎNG>>
+  usecase "UC-TEN-09.3\nĐọc và xác nhận thông báo chủ\ntrọ" as UC_TEN_09_3
+  usecase "UC-SUP-06\nHỏi trợ lý AI và đọc nguồn\nhướng dẫn" as UC_SUP_06 <<Một phần>>
+}
+actor "E04\nDịch vụ mô hình AI\n(có điều kiện)" as E04
+A02 -- UC_OPS_04
+A02 -- UC_OPS_05
+A02 -- UC_OPS_06
+A02 -- UC_OPS_06_1
+A02 -- UC_OPS_07
+A02 -- UC_SUP_04
+A04 -- UC_SUP_04
+A05 -- UC_SUP_04
+A02 -- UC_TEN_09_2
+A04 -- UC_TEN_09_2
+A04 -- UC_TEN_09_3
+A02 -- UC_SUP_06
+UC_SUP_06 -- E04 : nếu cấu hình/bật
+legend bottom left
+  Đường liền: tương tác; không biểu diễn luồng điều khiển.
+  ADMIN: capability theo handler + MFA/step-up nếu áp dụng; không kế thừa quyền chủ trọ.
+  E01–E05: hệ thống ngoài có adapter; chỉ tương tác ở nhánh cấu hình/bật tương ứng.
+  Mặc định: xác minh tĩnh, chưa nghiệm thu runtime; màu vàng: một phần, cam: DEMO, xám: mô phỏng.
+  Quyền chi tiết, điều kiện và nguồn: Association_Traceability.md / data/diagram-manifest.json.
+endlegend
+@enduml

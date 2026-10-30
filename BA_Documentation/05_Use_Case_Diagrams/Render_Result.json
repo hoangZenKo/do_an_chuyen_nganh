@@ -1,0 +1,1209 @@
+{
+  "status": "PASSED",
+  "executedAt": "2026-10-28T23:46:54.786Z",
+  "java": "/opt/homebrew/opt/openjdk@17/bin/java",
+  "javaVersion": "openjdk version \"17.0.15\" 2025-04-15\nOpenJDK Runtime Environment Homebrew (build 17.0.15+0)\nOpenJDK 64-Bit Server VM Homebrew (build 17.0.15+0, mixed mode, sharing)\n",
+  "jarSha256": "aa4a1d06f8911c4b842beff4828dd955be431692b631a312d04c0e9fab9581de",
+  "plantumlVersionProbe": {
+    "exitCode": 0,
+    "stdout": "PlantUML version 1.2026.9 / 18d0aae [2026-10-17 08:25:10 UTC]\n(GPL source distribution)\n\nBuild Version: 1.2026.9\nGit Commit: 18d0aae\nCompile Time: 2026-10-17 08:25:10 UTC\n\nJava Runtime: OpenJDK Runtime Environment\nJVM: OpenJDK 64-Bit Server VM\nDefault Encoding: UTF-8\nLanguage: en\nCountry: VN\n \nPLANTUML_LIMIT_SIZE: 16000\n\nGraphViz: dot - graphviz version 13.1.2 (@viz-js/viz WASM)\nInstallation seems OK. File generation OK\n",
+    "stderr": "",
+    "error": null
+  },
+  "renderer": "PlantUML 1.2026.9 / Graphviz dot",
+  "graphvizDot": "/Users/hoang/Rental_room_management/BA_Documentation/05_Use_Case_Diagrams/tools/graphviz-dot.cjs",
+  "graphvizProbe": "dot - graphviz version 13.1.2 (@viz-js/viz WASM)\n",
+  "networkRendering": false,
+  "note": "Local Graphviz via @viz-js/viz WASM or native dot. Each syntax/SVG/PNG command must exit 0.",
+  "diagrams": [
+    {
+      "id": "Overall_Use_Case",
+      "syntaxExitCode": 0,
+      "svgExitCode": 0,
+      "pngExitCode": 0,
+      "syntax": {
+        "exitCode": 0,
+        "stdout": "",
+        "stderr": "",
+        "error": null
+      },
+      "svgResult": {
+        "exitCode": 0,
+        "stdout": "",
+        "stderr": "",
+        "error": null
+      },
+      "pngResult": {
+        "exitCode": 0,
+        "stdout": "",
+        "stderr": "",
+        "error": null
+      },
+      "source": {
+        "file": "Overall_Use_Case.puml",
+        "sha256": "2d7f2169cdab2e469715ca6a7da1dd836b284469f71d0d71a7f62ba8898f682d"
+      },
+      "svg": {
+        "file": "rendered/Overall_Use_Case.svg",
+        "sha256": "a2e81510b0b1ad9cfc016631959302e6735be576276f56e9f1dc2490ccc34557",
+        "width": 744,
+        "height": 1144
+      },
+      "png": {
+        "file": "rendered/Overall_Use_Case.png",
+        "sha256": "29dcebb26416e002413b60d333283eaaa660b099566c3247238bd8c041d67483",
+        "width": 743,
+        "height": 1143
+      },
+      "visualInspection": "Đã xem contact sheet; kiểm tra trang phức tạp ở kích thước đầy đủ.",
+      "inspectionMode": "Contact sheet và ảnh kích thước đầy đủ"
+    },
+    {
+      "id": "UC_G01_01_SYS_Public",
+      "syntaxExitCode": 0,
+      "svgExitCode": 0,
+      "pngExitCode": 0,
+      "syntax": {
+        "exitCode": 0,
+        "stdout": "",
+        "stderr": "",
+        "error": null
+      },
+      "svgResult": {
+        "exitCode": 0,
+        "stdout": "",
+        "stderr": "",
+        "error": null
+      },
+      "pngResult": {
+        "exitCode": 0,
+        "stdout": "",
+        "stderr": "",
+        "error": null
+      },
+      "source": {
+        "file": "UC_G01_01_SYS_Public.puml",
+        "sha256": "b8dfd2331df632ec32018b303d7770eafcf2f6ca8045c479fbac74545d640af0"
+      },
+      "svg": {
+        "file": "rendered/UC_G01_01_SYS_Public.svg",
+        "sha256": "6d0b0fdf59ef91590d034d232b83602a498a258867952db4f12347b84a018cea",
+        "width": 787,
+        "height": 778
+      },
+      "png": {
+        "file": "rendered/UC_G01_01_SYS_Public.png",
+        "sha256": "e9ff4f847788b4389373df00abf685eb0424b57af8319bbacf7d0d8316503d12",
+        "width": 786,
+        "height": 777
+      },
+      "visualInspection": "Đã xem contact sheet; kiểm tra trang phức tạp ở kích thước đầy đủ.",
+      "inspectionMode": "Contact sheet"
+    },
+    {
+      "id": "UC_G01_02_SYS_Sessions",
+      "syntaxExitCode": 0,
+      "svgExitCode": 0,
+      "pngExitCode": 0,
+      "syntax": {
+        "exitCode": 0,
+        "stdout": "",
+        "stderr": "",
+        "error": null
+      },
+      "svgResult": {
+        "exitCode": 0,
+        "stdout": "",
+        "stderr": "",
+        "error": null
+      },
+      "pngResult": {
+        "exitCode": 0,
+        "stdout": "",
+        "stderr": "",
+        "error": null
+      },
+      "source": {
+        "file": "UC_G01_02_SYS_Sessions.puml",
+        "sha256": "c9865eb1db6054487aad58931c9bb42783c86dd583d8ad3088e96b2d1a7bc06e"
+      },
+      "svg": {
+        "file": "rendered/UC_G01_02_SYS_Sessions.svg",
+        "sha256": "4011a30098ff98947b6a6149689cad7b34d7f933a7df4cf5aa6e1bf165afb3c7",
+        "width": 744,
+        "height": 555
+      },
+      "png": {
+        "file": "rendered/UC_G01_02_SYS_Sessions.png",
+        "sha256": "4b654679208ac0ef88c04dd22f6a997d6b6d6916db8bc669c16b615be967a544",
+        "width": 743,
+        "height": 554
+      },
+      "visualInspection": "Đã xem contact sheet; kiểm tra trang phức tạp ở kích thước đầy đủ.",
+      "inspectionMode": "Contact sheet và ảnh kích thước đầy đủ"
+    },
+    {
+      "id": "UC_G02",
+      "syntaxExitCode": 0,
+      "svgExitCode": 0,
+      "pngExitCode": 0,
+      "syntax": {
+        "exitCode": 0,
+        "stdout": "",
+        "stderr": "",
+        "error": null
+      },
+      "svgResult": {
+        "exitCode": 0,
+        "stdout": "",
+        "stderr": "",
+        "error": null
+      },
+      "pngResult": {
+        "exitCode": 0,
+        "stdout": "",
+        "stderr": "",
+        "error": null
+      },
+      "source": {
+        "file": "UC_G02.puml",
+        "sha256": "d8cbf0e8d8683f4b64a9a0f5f8bba9b97932c83eb8b02897c7caf463a7ab44d4"
+      },
+      "svg": {
+        "file": "rendered/UC_G02.svg",
+        "sha256": "5ad89c74ad2395efec92949693ebaea739b9b1c860058c291df22870bc797fa8",
+        "width": 744,
+        "height": 656
+      },
+      "png": {
+        "file": "rendered/UC_G02.png",
+        "sha256": "1ec358282e599434ff30100fde98819ff23531b339056e8cf11747feb2d09c71",
+        "width": 743,
+        "height": 655
+      },
+      "visualInspection": "Đã xem contact sheet; kiểm tra trang phức tạp ở kích thước đầy đủ.",
+      "inspectionMode": "Contact sheet"
+    },
+    {
+      "id": "UC_G03",
+      "syntaxExitCode": 0,
+      "svgExitCode": 0,
+      "pngExitCode": 0,
+      "syntax": {
+        "exitCode": 0,
+        "stdout": "",
+        "stderr": "",
+        "error": null
+      },
+      "svgResult": {
+        "exitCode": 0,
+        "stdout": "",
+        "stderr": "",
+        "error": null
+      },
+      "pngResult": {
+        "exitCode": 0,
+        "stdout": "",
+        "stderr": "",
+        "error": null
+      },
+      "source": {
+        "file": "UC_G03.puml",
+        "sha256": "2ba14ede5d2dd7de3d0fee512176e8047f255f5707004af642a3584b26f03445"
+      },
+      "svg": {
+        "file": "rendered/UC_G03.svg",
+        "sha256": "49f7950c061299eea3b7323e07c2841b9be102aa4d8fbbeeb18629d90c9460ed",
+        "width": 744,
+        "height": 761
+      },
+      "png": {
+        "file": "rendered/UC_G03.png",
+        "sha256": "4eae1123debbd7f122398139d92793e7f1f0ec3aa2522addd4a368902b38fa4d",
+        "width": 743,
+        "height": 760
+      },
+      "visualInspection": "Đã xem contact sheet; kiểm tra trang phức tạp ở kích thước đầy đủ.",
+      "inspectionMode": "Contact sheet"
+    },
+    {
+      "id": "UC_G04",
+      "syntaxExitCode": 0,
+      "svgExitCode": 0,
+      "pngExitCode": 0,
+      "syntax": {
+        "exitCode": 0,
+        "stdout": "",
+        "stderr": "",
+        "error": null
+      },
+      "svgResult": {
+        "exitCode": 0,
+        "stdout": "",
+        "stderr": "",
+        "error": null
+      },
+      "pngResult": {
+        "exitCode": 0,
+        "stdout": "",
+        "stderr": "",
+        "error": null
+      },
+      "source": {
+        "file": "UC_G04.puml",
+        "sha256": "a3df8c422c26159fd906c9b6f438ccf6ca5001a960803cf65e0a14b21adcc99c"
+      },
+      "svg": {
+        "file": "rendered/UC_G04.svg",
+        "sha256": "30d98cdf7a021a0b724437deb2a18440d472c27fbb542a05fc5fa4d707edc718",
+        "width": 744,
+        "height": 1276
+      },
+      "png": {
+        "file": "rendered/UC_G04.png",
+        "sha256": "f1c859aa08b64ae60d72d52c82bb1e19bb28507eb76a0858788ecc4cc8dc9515",
+        "width": 743,
+        "height": 1275
+      },
+      "visualInspection": "Đã xem contact sheet; kiểm tra trang phức tạp ở kích thước đầy đủ.",
+      "inspectionMode": "Contact sheet và ảnh kích thước đầy đủ"
+    },
+    {
+      "id": "UC_G05",
+      "syntaxExitCode": 0,
+      "svgExitCode": 0,
+      "pngExitCode": 0,
+      "syntax": {
+        "exitCode": 0,
+        "stdout": "",
+        "stderr": "",
+        "error": null
+      },
+      "svgResult": {
+        "exitCode": 0,
+        "stdout": "",
+        "stderr": "",
+        "error": null
+      },
+      "pngResult": {
+        "exitCode": 0,
+        "stdout": "",
+        "stderr": "",
+        "error": null
+      },
+      "source": {
+        "file": "UC_G05.puml",
+        "sha256": "0a4541849af5d07d9f9d1dde91b7a4f31473ec43a3102f79dd32bbb92677bde0"
+      },
+      "svg": {
+        "file": "rendered/UC_G05.svg",
+        "sha256": "f66b37a4af6a85d928738ce8e19fa765fdf07d1940b6018036b06b29cffadcd1",
+        "width": 744,
+        "height": 553
+      },
+      "png": {
+        "file": "rendered/UC_G05.png",
+        "sha256": "48f822c26b28bcf0031304ab3a4314553ddc4457e31a5e3f9a3747c764c2ec93",
+        "width": 743,
+        "height": 552
+      },
+      "visualInspection": "Đã xem contact sheet; kiểm tra trang phức tạp ở kích thước đầy đủ.",
+      "inspectionMode": "Contact sheet"
+    },
+    {
+      "id": "UC_G06_01_Tenant_Records",
+      "syntaxExitCode": 0,
+      "svgExitCode": 0,
+      "pngExitCode": 0,
+      "syntax": {
+        "exitCode": 0,
+        "stdout": "",
+        "stderr": "",
+        "error": null
+      },
+      "svgResult": {
+        "exitCode": 0,
+        "stdout": "",
+        "stderr": "",
+        "error": null
+      },
+      "pngResult": {
+        "exitCode": 0,
+        "stdout": "",
+        "stderr": "",
+        "error": null
+      },
+      "source": {
+        "file": "UC_G06_01_Tenant_Records.puml",
+        "sha256": "fda874e577bc646b1ab9edb03838a467410bda76d3c7d87c671e2df33a05a671"
+      },
+      "svg": {
+        "file": "rendered/UC_G06_01_Tenant_Records.svg",
+        "sha256": "6899d8d86ff747a8ba712f49a3a0a9154219e9303873ddb7d5af974d2b362222",
+        "width": 744,
+        "height": 859
+      },
+      "png": {
+        "file": "rendered/UC_G06_01_Tenant_Records.png",
+        "sha256": "f38bbe709a8fdedda4b967c21909d97edd8e06f0ca05292d19b0eb6414c30a5c",
+        "width": 743,
+        "height": 858
+      },
+      "visualInspection": "Đã xem contact sheet; kiểm tra trang phức tạp ở kích thước đầy đủ.",
+      "inspectionMode": "Contact sheet"
+    },
+    {
+      "id": "UC_G06_02_Leases_Deposits",
+      "syntaxExitCode": 0,
+      "svgExitCode": 0,
+      "pngExitCode": 0,
+      "syntax": {
+        "exitCode": 0,
+        "stdout": "",
+        "stderr": "",
+        "error": null
+      },
+      "svgResult": {
+        "exitCode": 0,
+        "stdout": "",
+        "stderr": "",
+        "error": null
+      },
+      "pngResult": {
+        "exitCode": 0,
+        "stdout": "",
+        "stderr": "",
+        "error": null
+      },
+      "source": {
+        "file": "UC_G06_02_Leases_Deposits.puml",
+        "sha256": "acd787357552755c71acd6414f3f294062c9f06c2d1f62fc4bc909972b6adfc4"
+      },
+      "svg": {
+        "file": "rendered/UC_G06_02_Leases_Deposits.svg",
+        "sha256": "8b74b185ac96813c33751ab4b56eacf370ba9ffcdf239462fd75eb12f1b9478e",
+        "width": 744,
+        "height": 891
+      },
+      "png": {
+        "file": "rendered/UC_G06_02_Leases_Deposits.png",
+        "sha256": "6f92ee4b7ee54b8fdd434cb5f147c19a1cc25201f3b711aeb01f1a06bc28f4b6",
+        "width": 743,
+        "height": 890
+      },
+      "visualInspection": "Đã xem contact sheet; kiểm tra trang phức tạp ở kích thước đầy đủ.",
+      "inspectionMode": "Contact sheet"
+    },
+    {
+      "id": "UC_G07",
+      "syntaxExitCode": 0,
+      "svgExitCode": 0,
+      "pngExitCode": 0,
+      "syntax": {
+        "exitCode": 0,
+        "stdout": "",
+        "stderr": "",
+        "error": null
+      },
+      "svgResult": {
+        "exitCode": 0,
+        "stdout": "",
+        "stderr": "",
+        "error": null
+      },
+      "pngResult": {
+        "exitCode": 0,
+        "stdout": "",
+        "stderr": "",
+        "error": null
+      },
+      "source": {
+        "file": "UC_G07.puml",
+        "sha256": "39b8241b984fc900d7dcabcbe73090ee5e441c1daa7fac9597e84f1a03d4ea22"
+      },
+      "svg": {
+        "file": "rendered/UC_G07.svg",
+        "sha256": "4cae64b3ba5c4fa007d2afe59e49be8fe085387cfedc28fed86d7d2fd53aaae0",
+        "width": 744,
+        "height": 754
+      },
+      "png": {
+        "file": "rendered/UC_G07.png",
+        "sha256": "6264d200efac99934f54540cf490531dc10903caeb6be696fb3d63cd1947e4ef",
+        "width": 743,
+        "height": 753
+      },
+      "visualInspection": "Đã xem contact sheet; kiểm tra trang phức tạp ở kích thước đầy đủ.",
+      "inspectionMode": "Contact sheet"
+    },
+    {
+      "id": "UC_G08_01_Invoices",
+      "syntaxExitCode": 0,
+      "svgExitCode": 0,
+      "pngExitCode": 0,
+      "syntax": {
+        "exitCode": 0,
+        "stdout": "",
+        "stderr": "",
+        "error": null
+      },
+      "svgResult": {
+        "exitCode": 0,
+        "stdout": "",
+        "stderr": "",
+        "error": null
+      },
+      "pngResult": {
+        "exitCode": 0,
+        "stdout": "",
+        "stderr": "",
+        "error": null
+      },
+      "source": {
+        "file": "UC_G08_01_Invoices.puml",
+        "sha256": "a786d9cca72998e45087829f44295143656f344168d7561b1967c2ee7d79b207"
+      },
+      "svg": {
+        "file": "rendered/UC_G08_01_Invoices.svg",
+        "sha256": "e301ed5967416991d9435a632945fab3138897a6feb1a83f915acb982d183311",
+        "width": 744,
+        "height": 1067
+      },
+      "png": {
+        "file": "rendered/UC_G08_01_Invoices.png",
+        "sha256": "473ab29f8f251693891906a7f2762984fd03501e1dc12517589cd8e30e17e920",
+        "width": 743,
+        "height": 1066
+      },
+      "visualInspection": "Đã xem contact sheet; kiểm tra trang phức tạp ở kích thước đầy đủ.",
+      "inspectionMode": "Contact sheet"
+    },
+    {
+      "id": "UC_G08_02_Collections",
+      "syntaxExitCode": 0,
+      "svgExitCode": 0,
+      "pngExitCode": 0,
+      "syntax": {
+        "exitCode": 0,
+        "stdout": "",
+        "stderr": "",
+        "error": null
+      },
+      "svgResult": {
+        "exitCode": 0,
+        "stdout": "",
+        "stderr": "",
+        "error": null
+      },
+      "pngResult": {
+        "exitCode": 0,
+        "stdout": "",
+        "stderr": "",
+        "error": null
+      },
+      "source": {
+        "file": "UC_G08_02_Collections.puml",
+        "sha256": "f8c87038eda0cc95f778039c2683a4f631eb6d380be0f8bef0018dca19503cb7"
+      },
+      "svg": {
+        "file": "rendered/UC_G08_02_Collections.svg",
+        "sha256": "4fdce360df68305bd3a978679f6b866f8724fe4d190d4565e8ab961123fa1994",
+        "width": 878,
+        "height": 1016
+      },
+      "png": {
+        "file": "rendered/UC_G08_02_Collections.png",
+        "sha256": "4a5b9729a9df576170106f13ec54664329a8639415e34ad952831ff835870338",
+        "width": 877,
+        "height": 1015
+      },
+      "visualInspection": "Đã xem contact sheet; kiểm tra trang phức tạp ở kích thước đầy đủ.",
+      "inspectionMode": "Contact sheet"
+    },
+    {
+      "id": "UC_G08_03_Tariffs_Periods",
+      "syntaxExitCode": 0,
+      "svgExitCode": 0,
+      "pngExitCode": 0,
+      "syntax": {
+        "exitCode": 0,
+        "stdout": "",
+        "stderr": "",
+        "error": null
+      },
+      "svgResult": {
+        "exitCode": 0,
+        "stdout": "",
+        "stderr": "",
+        "error": null
+      },
+      "pngResult": {
+        "exitCode": 0,
+        "stdout": "",
+        "stderr": "",
+        "error": null
+      },
+      "source": {
+        "file": "UC_G08_03_Tariffs_Periods.puml",
+        "sha256": "2771a04e7329a2e861b9bd046008b29a747b7c3ee250d37a9af727c9b43091c2"
+      },
+      "svg": {
+        "file": "rendered/UC_G08_03_Tariffs_Periods.svg",
+        "sha256": "5560aa6af53fcaa30525f4aa3f5e184713adecde55523d5cb38ada329ef8893d",
+        "width": 744,
+        "height": 471
+      },
+      "png": {
+        "file": "rendered/UC_G08_03_Tariffs_Periods.png",
+        "sha256": "922def232f6f494efbfbd1beebebeaae759e5316569c069d5ac0d9bcf619bb0f",
+        "width": 743,
+        "height": 470
+      },
+      "visualInspection": "Đã xem contact sheet; kiểm tra trang phức tạp ở kích thước đầy đủ.",
+      "inspectionMode": "Contact sheet"
+    },
+    {
+      "id": "UC_G08_04_Reminders",
+      "syntaxExitCode": 0,
+      "svgExitCode": 0,
+      "pngExitCode": 0,
+      "syntax": {
+        "exitCode": 0,
+        "stdout": "",
+        "stderr": "",
+        "error": null
+      },
+      "svgResult": {
+        "exitCode": 0,
+        "stdout": "",
+        "stderr": "",
+        "error": null
+      },
+      "pngResult": {
+        "exitCode": 0,
+        "stdout": "",
+        "stderr": "",
+        "error": null
+      },
+      "source": {
+        "file": "UC_G08_04_Reminders.puml",
+        "sha256": "017e2439d78057609b85d06a4a77bcb3c88a19ce54e0ef613c2c6527c82ded05"
+      },
+      "svg": {
+        "file": "rendered/UC_G08_04_Reminders.svg",
+        "sha256": "9d2331562f72085399fb832c62d5c4df9a48a7154baeb0c11397a02f4e9addd9",
+        "width": 810,
+        "height": 598
+      },
+      "png": {
+        "file": "rendered/UC_G08_04_Reminders.png",
+        "sha256": "e4b60276862c02935b976a42b07aa2d704fb15967b35ab167bb93c299f6796da",
+        "width": 809,
+        "height": 597
+      },
+      "visualInspection": "Đã xem contact sheet; kiểm tra trang phức tạp ở kích thước đầy đủ.",
+      "inspectionMode": "Contact sheet và ảnh kích thước đầy đủ"
+    },
+    {
+      "id": "UC_G09",
+      "syntaxExitCode": 0,
+      "svgExitCode": 0,
+      "pngExitCode": 0,
+      "syntax": {
+        "exitCode": 0,
+        "stdout": "",
+        "stderr": "",
+        "error": null
+      },
+      "svgResult": {
+        "exitCode": 0,
+        "stdout": "",
+        "stderr": "",
+        "error": null
+      },
+      "pngResult": {
+        "exitCode": 0,
+        "stdout": "",
+        "stderr": "",
+        "error": null
+      },
+      "source": {
+        "file": "UC_G09.puml",
+        "sha256": "931f2c665374ca2f2bcbb9daafa75882f8a4f732547d920a1fdaf4ace02851c4"
+      },
+      "svg": {
+        "file": "rendered/UC_G09.svg",
+        "sha256": "179b94aff37bb2fb259342a70160bbe069e66f0a9ea8cc9fbfb031465b2da6ea",
+        "width": 744,
+        "height": 615
+      },
+      "png": {
+        "file": "rendered/UC_G09.png",
+        "sha256": "22e8a48cad6b6d6d3a075413ee9fd7ac0a330f34525c3d98b835b2bc7ce6d520",
+        "width": 743,
+        "height": 614
+      },
+      "visualInspection": "Đã xem contact sheet; kiểm tra trang phức tạp ở kích thước đầy đủ.",
+      "inspectionMode": "Contact sheet"
+    },
+    {
+      "id": "UC_G10",
+      "syntaxExitCode": 0,
+      "svgExitCode": 0,
+      "pngExitCode": 0,
+      "syntax": {
+        "exitCode": 0,
+        "stdout": "",
+        "stderr": "",
+        "error": null
+      },
+      "svgResult": {
+        "exitCode": 0,
+        "stdout": "",
+        "stderr": "",
+        "error": null
+      },
+      "pngResult": {
+        "exitCode": 0,
+        "stdout": "",
+        "stderr": "",
+        "error": null
+      },
+      "source": {
+        "file": "UC_G10.puml",
+        "sha256": "9926ef5dd5629032c91daa699625e3b8b45541e15e07a6ce56d42333d0e8f8bf"
+      },
+      "svg": {
+        "file": "rendered/UC_G10.svg",
+        "sha256": "31e85c716c5bd3df4af79aa89df096370522c89534aad274df927cb6d4743a26",
+        "width": 809,
+        "height": 971
+      },
+      "png": {
+        "file": "rendered/UC_G10.png",
+        "sha256": "3ef402748b5baf559e0ca3449446879128a856c186c29b14d608693348eb4850",
+        "width": 808,
+        "height": 970
+      },
+      "visualInspection": "Đã xem contact sheet; kiểm tra trang phức tạp ở kích thước đầy đủ.",
+      "inspectionMode": "Contact sheet"
+    },
+    {
+      "id": "UC_G11",
+      "syntaxExitCode": 0,
+      "svgExitCode": 0,
+      "pngExitCode": 0,
+      "syntax": {
+        "exitCode": 0,
+        "stdout": "",
+        "stderr": "",
+        "error": null
+      },
+      "svgResult": {
+        "exitCode": 0,
+        "stdout": "",
+        "stderr": "",
+        "error": null
+      },
+      "pngResult": {
+        "exitCode": 0,
+        "stdout": "",
+        "stderr": "",
+        "error": null
+      },
+      "source": {
+        "file": "UC_G11.puml",
+        "sha256": "27c4d12b90e04f76523c1ec8d702aed3a5c409806228d8af6fd05cb9626b9eef"
+      },
+      "svg": {
+        "file": "rendered/UC_G11.svg",
+        "sha256": "b53f0a63e3a33d9275a94dd5c3f8c0e538a69e187341dced4cf402f44c41764d",
+        "width": 801,
+        "height": 895
+      },
+      "png": {
+        "file": "rendered/UC_G11.png",
+        "sha256": "c88389b1efe1b61a36dfc82ed01237727adc2a2c0d9658a583e5d206c29c3073",
+        "width": 800,
+        "height": 894
+      },
+      "visualInspection": "Đã xem contact sheet; kiểm tra trang phức tạp ở kích thước đầy đủ.",
+      "inspectionMode": "Contact sheet"
+    },
+    {
+      "id": "UC_G12",
+      "syntaxExitCode": 0,
+      "svgExitCode": 0,
+      "pngExitCode": 0,
+      "syntax": {
+        "exitCode": 0,
+        "stdout": "",
+        "stderr": "",
+        "error": null
+      },
+      "svgResult": {
+        "exitCode": 0,
+        "stdout": "",
+        "stderr": "",
+        "error": null
+      },
+      "pngResult": {
+        "exitCode": 0,
+        "stdout": "",
+        "stderr": "",
+        "error": null
+      },
+      "source": {
+        "file": "UC_G12.puml",
+        "sha256": "842e02a8d0a50854448a5f0a24d89a6e84a74e4b322d97ee79fb81dbe4798028"
+      },
+      "svg": {
+        "file": "rendered/UC_G12.svg",
+        "sha256": "23484249da6b86503213e2db66da3fd99f51834dac9fb73759a9a78469ae961c",
+        "width": 821,
+        "height": 1215
+      },
+      "png": {
+        "file": "rendered/UC_G12.png",
+        "sha256": "d9c42d4e25dbff0fd515ece363835f2bf1b56d924940d7c4a5503c481f0dfcea",
+        "width": 820,
+        "height": 1214
+      },
+      "visualInspection": "Đã xem contact sheet; kiểm tra trang phức tạp ở kích thước đầy đủ.",
+      "inspectionMode": "Contact sheet"
+    },
+    {
+      "id": "UC_G13",
+      "syntaxExitCode": 0,
+      "svgExitCode": 0,
+      "pngExitCode": 0,
+      "syntax": {
+        "exitCode": 0,
+        "stdout": "",
+        "stderr": "",
+        "error": null
+      },
+      "svgResult": {
+        "exitCode": 0,
+        "stdout": "",
+        "stderr": "",
+        "error": null
+      },
+      "pngResult": {
+        "exitCode": 0,
+        "stdout": "",
+        "stderr": "",
+        "error": null
+      },
+      "source": {
+        "file": "UC_G13.puml",
+        "sha256": "8882ff32f930c1aafb58052055db5ba6fa9ee9ff630c262e14364b44d3dc1fdd"
+      },
+      "svg": {
+        "file": "rendered/UC_G13.svg",
+        "sha256": "29e02af488495208435e357649ef2f3b9b97a421768c9154845378cffdcfe362",
+        "width": 744,
+        "height": 1084
+      },
+      "png": {
+        "file": "rendered/UC_G13.png",
+        "sha256": "12ff4d6d8c829edffb65d0d2e662489d35802d07b6cf0c69becfe0f9525d1127",
+        "width": 743,
+        "height": 1083
+      },
+      "visualInspection": "Đã xem contact sheet; kiểm tra trang phức tạp ở kích thước đầy đủ.",
+      "inspectionMode": "Contact sheet"
+    },
+    {
+      "id": "UC_G14",
+      "syntaxExitCode": 0,
+      "svgExitCode": 0,
+      "pngExitCode": 0,
+      "syntax": {
+        "exitCode": 0,
+        "stdout": "",
+        "stderr": "",
+        "error": null
+      },
+      "svgResult": {
+        "exitCode": 0,
+        "stdout": "",
+        "stderr": "",
+        "error": null
+      },
+      "pngResult": {
+        "exitCode": 0,
+        "stdout": "",
+        "stderr": "",
+        "error": null
+      },
+      "source": {
+        "file": "UC_G14.puml",
+        "sha256": "57526a87ff558754b6408e8b6e96211f1fb3acd39ad498741c03314cef214407"
+      },
+      "svg": {
+        "file": "rendered/UC_G14.svg",
+        "sha256": "0c34b789975d07b9fe591c05f4853815f781c1417753f8ed169ef0a9b3a000dc",
+        "width": 823,
+        "height": 862
+      },
+      "png": {
+        "file": "rendered/UC_G14.png",
+        "sha256": "7a50ba5c5cdf442ee934e3c7dc04a9cc9ff160bed12268e5f161f24fc9dcfb9e",
+        "width": 822,
+        "height": 861
+      },
+      "visualInspection": "Đã xem contact sheet; kiểm tra trang phức tạp ở kích thước đầy đủ.",
+      "inspectionMode": "Contact sheet"
+    },
+    {
+      "id": "UC_G15",
+      "syntaxExitCode": 0,
+      "svgExitCode": 0,
+      "pngExitCode": 0,
+      "syntax": {
+        "exitCode": 0,
+        "stdout": "",
+        "stderr": "",
+        "error": null
+      },
+      "svgResult": {
+        "exitCode": 0,
+        "stdout": "",
+        "stderr": "",
+        "error": null
+      },
+      "pngResult": {
+        "exitCode": 0,
+        "stdout": "",
+        "stderr": "",
+        "error": null
+      },
+      "source": {
+        "file": "UC_G15.puml",
+        "sha256": "1c6ff557ba3adbfdffe0c3cfe1b900b5153e432e5e2460e798d772ca258436e8"
+      },
+      "svg": {
+        "file": "rendered/UC_G15.svg",
+        "sha256": "d42735b64986ed78d8b0a55535d94a27bd00acdeb1b56bbf1a8b485e069f7c97",
+        "width": 744,
+        "height": 683
+      },
+      "png": {
+        "file": "rendered/UC_G15.png",
+        "sha256": "c626a16db218c2f9701b2d572863ee02de742ffd9ec8eb688c0b5416644f5179",
+        "width": 743,
+        "height": 682
+      },
+      "visualInspection": "Đã xem contact sheet; kiểm tra trang phức tạp ở kích thước đầy đủ.",
+      "inspectionMode": "Contact sheet"
+    },
+    {
+      "id": "UC_G16",
+      "syntaxExitCode": 0,
+      "svgExitCode": 0,
+      "pngExitCode": 0,
+      "syntax": {
+        "exitCode": 0,
+        "stdout": "",
+        "stderr": "",
+        "error": null
+      },
+      "svgResult": {
+        "exitCode": 0,
+        "stdout": "",
+        "stderr": "",
+        "error": null
+      },
+      "pngResult": {
+        "exitCode": 0,
+        "stdout": "",
+        "stderr": "",
+        "error": null
+      },
+      "source": {
+        "file": "UC_G16.puml",
+        "sha256": "ed53c9c7be7fa2d4dc9b5ebba73d505211bf6bd8d7a23ef9ec2e6b1cf3d27807"
+      },
+      "svg": {
+        "file": "rendered/UC_G16.svg",
+        "sha256": "93ce9cb4cac77fb6dfc9b21c271846d08ef7b40d60c1547d2b711c4a682d75d6",
+        "width": 744,
+        "height": 948
+      },
+      "png": {
+        "file": "rendered/UC_G16.png",
+        "sha256": "806cf42e6f557df5042cd35bc1a1cbe19cc1078cc0e795a863548bf3582653cb",
+        "width": 743,
+        "height": 947
+      },
+      "visualInspection": "Đã xem contact sheet; kiểm tra trang phức tạp ở kích thước đầy đủ.",
+      "inspectionMode": "Contact sheet"
+    },
+    {
+      "id": "Actor_A03_01",
+      "syntaxExitCode": 0,
+      "svgExitCode": 0,
+      "pngExitCode": 0,
+      "syntax": {
+        "exitCode": 0,
+        "stdout": "",
+        "stderr": "",
+        "error": null
+      },
+      "svgResult": {
+        "exitCode": 0,
+        "stdout": "",
+        "stderr": "",
+        "error": null
+      },
+      "pngResult": {
+        "exitCode": 0,
+        "stdout": "",
+        "stderr": "",
+        "error": null
+      },
+      "source": {
+        "file": "Actor_A03_01.puml",
+        "sha256": "c5daff1b1cc9c2d0a52e0ddd0d5c8834223aa5d32f80a1921b6a02b5877f3c67"
+      },
+      "svg": {
+        "file": "rendered/Actor_A03_01.svg",
+        "sha256": "da4515757d55ff98242f96d614de1766690d1b7ffa2e46c3ef6ec76f0c2eab1c",
+        "width": 744,
+        "height": 643
+      },
+      "png": {
+        "file": "rendered/Actor_A03_01.png",
+        "sha256": "d11814e82c39b120ce9db3ebab40196d230e35fe11d824db71f12adb20b1c329",
+        "width": 743,
+        "height": 642
+      },
+      "visualInspection": "Đã xem contact sheet; kiểm tra trang phức tạp ở kích thước đầy đủ.",
+      "inspectionMode": "Contact sheet"
+    },
+    {
+      "id": "Actor_A03_02",
+      "syntaxExitCode": 0,
+      "svgExitCode": 0,
+      "pngExitCode": 0,
+      "syntax": {
+        "exitCode": 0,
+        "stdout": "",
+        "stderr": "",
+        "error": null
+      },
+      "svgResult": {
+        "exitCode": 0,
+        "stdout": "",
+        "stderr": "",
+        "error": null
+      },
+      "pngResult": {
+        "exitCode": 0,
+        "stdout": "",
+        "stderr": "",
+        "error": null
+      },
+      "source": {
+        "file": "Actor_A03_02.puml",
+        "sha256": "a2e213d588187c3ef79d0d17c0bac4547260c66499ef224fc1926bcccfabb469"
+      },
+      "svg": {
+        "file": "rendered/Actor_A03_02.svg",
+        "sha256": "245f52df25fb589e27455799bf7915980e96000c4794ae97063ff7d945029c9f",
+        "width": 744,
+        "height": 1219
+      },
+      "png": {
+        "file": "rendered/Actor_A03_02.png",
+        "sha256": "817e4ff8e6b9efdbf57cbdd94209b2123df91d46ebb29a2a71fa28039dce2cb0",
+        "width": 743,
+        "height": 1218
+      },
+      "visualInspection": "Đã xem contact sheet; kiểm tra trang phức tạp ở kích thước đầy đủ.",
+      "inspectionMode": "Contact sheet"
+    },
+    {
+      "id": "Actor_A03_03",
+      "syntaxExitCode": 0,
+      "svgExitCode": 0,
+      "pngExitCode": 0,
+      "syntax": {
+        "exitCode": 0,
+        "stdout": "",
+        "stderr": "",
+        "error": null
+      },
+      "svgResult": {
+        "exitCode": 0,
+        "stdout": "",
+        "stderr": "",
+        "error": null
+      },
+      "pngResult": {
+        "exitCode": 0,
+        "stdout": "",
+        "stderr": "",
+        "error": null
+      },
+      "source": {
+        "file": "Actor_A03_03.puml",
+        "sha256": "55f928249ffd65da5ad6133d7da4a83c71d5a798f95413a518501111aee01f86"
+      },
+      "svg": {
+        "file": "rendered/Actor_A03_03.svg",
+        "sha256": "8ba87cda15f47e47b7da55b96ce4d6c0b775115ffcbb44bfdeb19f6e807ec787",
+        "width": 744,
+        "height": 1222
+      },
+      "png": {
+        "file": "rendered/Actor_A03_03.png",
+        "sha256": "b6167fb0c81a3c27243a80fda564c7c811489dfee70e634c21ae25a6390a1ca4",
+        "width": 743,
+        "height": 1221
+      },
+      "visualInspection": "Đã xem contact sheet; kiểm tra trang phức tạp ở kích thước đầy đủ.",
+      "inspectionMode": "Contact sheet"
+    },
+    {
+      "id": "Actor_A03_04",
+      "syntaxExitCode": 0,
+      "svgExitCode": 0,
+      "pngExitCode": 0,
+      "syntax": {
+        "exitCode": 0,
+        "stdout": "",
+        "stderr": "",
+        "error": null
+      },
+      "svgResult": {
+        "exitCode": 0,
+        "stdout": "",
+        "stderr": "",
+        "error": null
+      },
+      "pngResult": {
+        "exitCode": 0,
+        "stdout": "",
+        "stderr": "",
+        "error": null
+      },
+      "source": {
+        "file": "Actor_A03_04.puml",
+        "sha256": "4046f0154d052b1d4a125bde1ed3dd372a868251aae26f12b658561648a9bab2"
+      },
+      "svg": {
+        "file": "rendered/Actor_A03_04.svg",
+        "sha256": "713e715c9a1f6db3cce71e0b64cdda788a592c80ddefa7ecaee8af2192f8f46b",
+        "width": 803,
+        "height": 858
+      },
+      "png": {
+        "file": "rendered/Actor_A03_04.png",
+        "sha256": "85aa15cc0e84a2e9f18f36d7dbeed19789fb12eaa6ba706cc3362b545375e657",
+        "width": 802,
+        "height": 857
+      },
+      "visualInspection": "Đã xem contact sheet; kiểm tra trang phức tạp ở kích thước đầy đủ.",
+      "inspectionMode": "Contact sheet"
+    },
+    {
+      "id": "Actor_A03_05",
+      "syntaxExitCode": 0,
+      "svgExitCode": 0,
+      "pngExitCode": 0,
+      "syntax": {
+        "exitCode": 0,
+        "stdout": "",
+        "stderr": "",
+        "error": null
+      },
+      "svgResult": {
+        "exitCode": 0,
+        "stdout": "",
+        "stderr": "",
+        "error": null
+      },
+      "pngResult": {
+        "exitCode": 0,
+        "stdout": "",
+        "stderr": "",
+        "error": null
+      },
+      "source": {
+        "file": "Actor_A03_05.puml",
+        "sha256": "87c0df424fbff873711e8ee4855ecbc5b10689aad9b39cc8237b37f6e5ca870e"
+      },
+      "svg": {
+        "file": "rendered/Actor_A03_05.svg",
+        "sha256": "061e02ba5366299bb017db83d033bafa641e17b9ed7eaa7ddf221473703f8f53",
+        "width": 770,
+        "height": 1459
+      },
+      "png": {
+        "file": "rendered/Actor_A03_05.png",
+        "sha256": "a3c10d400c88da7375f40aa6b895edf711dabbd89d3dd52688127f4cda84f596",
+        "width": 769,
+        "height": 1458
+      },
+      "visualInspection": "Đã xem contact sheet; kiểm tra trang phức tạp ở kích thước đầy đủ.",
+      "inspectionMode": "Contact sheet"
+    },
+    {
+      "id": "Actor_A03_06",
+      "syntaxExitCode": 0,
+      "svgExitCode": 0,
+      "pngExitCode": 0,
+      "syntax": {
+        "exitCode": 0,
+        "stdout": "",
+        "stderr": "",
+        "error": null
+      },
+      "svgResult": {
+        "exitCode": 0,
+        "stdout": "",
+        "stderr": "",
+        "error": null
+      },
+      "pngResult": {
+        "exitCode": 0,
+        "stdout": "",
+        "stderr": "",
+        "error": null
+      },
+      "source": {
+        "file": "Actor_A03_06.puml",
+        "sha256": "088ddebe9c672d87e6b5c06e7ddc22e5bdcf266a3b2bacee2bed1ea28b5611a7"
+      },
+      "svg": {
+        "file": "rendered/Actor_A03_06.svg",
+        "sha256": "50dd9a4872bb0203c6f09c51eb5395d357c22f3a26e5e240f8d7b0a665615978",
+        "width": 1145,
+        "height": 686
+      },
+      "png": {
+        "file": "rendered/Actor_A03_06.png",
+        "sha256": "a8b9fe6670fc8c0e6c906de6d6455a375ff8216bd1c19f9c5a66ad04b141f9c2",
+        "width": 1144,
+        "height": 685
+      },
+      "visualInspection": "Đã xem contact sheet; kiểm tra trang phức tạp ở kích thước đầy đủ.",
+      "inspectionMode": "Contact sheet và ảnh kích thước đầy đủ"
+    }
+  ],
+  "visualReview": {
+    "reviewedAt": "2026-10-28T23:50:35.879Z",
+    "contactSheets": 7,
+    "all28Reviewed": true,
+    "fullSizeDiagramIds": [
+      "Overall_Use_Case",
+      "UC_G01_02_SYS_Sessions",
+      "UC_G04",
+      "UC_G08_04_Reminders",
+      "Actor_A03_06"
+    ],
+    "notes": "Không thấy oval chồng nhau hoặc chữ bị cắt trong bản bàn giao. Một số đường giao ở nhóm nhiều actor vẫn tồn tại; chuyển STAFF đối diện Chủ trọ để giảm giao cắt. SVG giữ khả năng zoom."
+  }
+}

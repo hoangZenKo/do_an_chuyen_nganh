@@ -1,0 +1,15 @@
+@startwbs
+title Phân rã chức năng AS-IS — không phải sơ đồ Use Case
+* Hệ thống quản lý và tìm thuê nhà trọ
+** G03 — Đăng tin, lịch xem và nhận phòng
+*** G03.1 Quảng bá phòng cho thuê
+**** UC-DIS-05 Quản lý và gửi duyệt tin cho thuê
+**** UC-DIS-06.2 Ẩn tin cho thuê của mình
+*** G03.2 Tổ chức xem phòng
+**** UC-DIS-08 Quản lý khung giờ xem phòng
+**** UC-DIS-09 Đặt và quản lý lịch xem của mình
+**** UC-DIS-10 Tiếp nhận và hoàn tất lịch xem
+*** G03.3 Chốt thuê và bàn giao
+**** UC-TNT-12.2 Lập biên bản bàn giao nhận phòng
+**** UC-TNT-12.3 Xác nhận biên bản bàn giao nhận phòng
+@endwbs

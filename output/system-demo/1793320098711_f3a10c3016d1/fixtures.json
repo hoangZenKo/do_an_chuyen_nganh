@@ -1,0 +1,29 @@
+{
+  "landlordId": "27c477ec-e511-4170-8e42-a3f53ed6f5c0",
+  "tenantId": "8e5a6fff-7015-4c40-8bd8-60066b9cd120",
+  "staffId": "a74837e1-fe86-44e2-aca0-590621629773",
+  "adminId": "7bb73eef-9237-40bc-b396-9b7f3e9037a2",
+  "propertyId": "53efd7fc-4ca0-4ecd-9da9-0efb3a56b63b",
+  "roomId": "851369e8-3900-4ed4-a55b-e8266d4fe225",
+  "spareRoomId": "ce900405-6322-4a2d-a55c-ff3e6cbb0e78",
+  "tenantUserId": "47954b7e-bf98-440d-87da-38a4dd5268a5",
+  "leaseId": "18ff1fe5-05f4-4a96-908d-19f0e42ca5c1",
+  "renewalDate": "2028-12-31",
+  "listingId": "85d476ac-26e2-45fd-928d-784e4f75b1a3",
+  "month": "2026-10",
+  "invoiceId": "dcb6a00b-93d7-456e-98b5-24ccdf6e01c5",
+  "accounts": {
+    "landlord": {
+      "email": "landlord.1a59a1a202@example.test"
+    },
+    "tenant": {
+      "email": "tenant.b965cbc102@example.test"
+    },
+    "staff": {
+      "email": "staff.6ea19a8220@example.test"
+    },
+    "admin": {
+      "email": "admin.e0f6bf6226@example.test"
+    }
+  }
+}

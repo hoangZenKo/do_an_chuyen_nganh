@@ -1,0 +1,21 @@
+
+> rental-room-api@0.1.0 test:e2e
+> NODE_ENV=test jest --config ./test/jest-e2e.json --runInBand --runTestsByPath test/e2e/maintenance-audit.e2e-spec.ts --runInBand
+
+PASS test/e2e/maintenance-audit.e2e-spec.ts
+  Maintenance audit (isolated database)
+    ✓ rejects blank titles and comments after trimming, for both roles (26 ms)
+    ✓ rejects null patch strings rather than throwing HTTP 500 (20 ms)
+    ✓ does not return landlord internal notes in tenant list or dashboard (55 ms)
+    ✓ cannot read or comment on tickets before the current tenancy (23 ms)
+    ✓ creates only one expense when completion is retried concurrently (26 ms)
+    ✓ records lifecycle timestamps when status is changed through the edit endpoint (27 ms)
+    ✓ denies cross-landlord tickets and platform admin writes (120 ms)
+    ✓ keeps staff authorship and does not bypass complete permission with PATCH (115 ms)
+    ✓ does not expose maintenance after the lease ends (20 ms)
+
+Test Suites: 1 passed, 1 total
+Tests:       9 passed, 9 total
+Snapshots:   0 total
+Time:        2.46 s
+Ran all test suites within paths "test/e2e/maintenance-audit.e2e-spec.ts".

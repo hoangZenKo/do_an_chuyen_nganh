@@ -1,0 +1,17 @@
+
+> rental-room-api@0.1.0 test:e2e
+> NODE_ENV=test jest --config ./test/jest-e2e.json --runInBand --runTestsByPath test/e2e/admin-workspace.e2e-spec.ts --runInBand
+
+PASS test/e2e/admin-workspace.e2e-spec.ts
+  Admin workspace foundation E2E
+    ✓ enforces roles, live dashboard permission, no-store and query validation (401 ms)
+    ✓ counts distinct support deadline buckets, pauses resolution only and scopes unread notifications (316 ms)
+    ✓ restricts failed reports to owned, unexpired runs with a permitted report kind (342 ms)
+    ✓ returns partial data and unknown counts rather than a false zero when a source fails (241 ms)
+    ✓ filters and paginates bounded group buckets with no duplicate page entries (296 ms)
+
+Test Suites: 1 passed, 1 total
+Tests:       5 passed, 5 total
+Snapshots:   0 total
+Time:        3.379 s
+Ran all test suites within paths "test/e2e/admin-workspace.e2e-spec.ts".

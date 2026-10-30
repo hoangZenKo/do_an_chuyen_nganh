@@ -1,0 +1,61 @@
+@startuml
+left to right direction
+skinparam defaultFontName SansSerif
+skinparam defaultFontSize 13
+skinparam backgroundColor #F8FAFC
+skinparam shadowing false
+skinparam ArrowColor #52647A
+skinparam ArrowThickness 1
+skinparam actorStyle stickman
+skinparam actorBorderColor #243A52
+skinparam actorFontColor #243A52
+skinparam actorBackgroundColor #FFFFFF
+skinparam usecase {
+  BackgroundColor #FFFFFF
+  BorderColor #327C83
+  FontColor #20354B
+  BackgroundColor<<Một phần>> #FFF0CE
+  BorderColor<<Một phần>> #B17917
+  BackgroundColor<<DEMO>> #FCE5DF
+  BorderColor<<DEMO>> #BC593A
+  BackgroundColor<<MÔ PHỎNG>> #E7EAF1
+  BorderColor<<MÔ PHỎNG>> #6C7488
+}
+skinparam rectangle {
+  BackgroundColor #EEF4F5
+  BorderColor #243A52
+  FontColor #243A52
+}
+skinparam titleFontColor #20354B
+skinparam titleFontSize 18
+skinparam nodesep 25
+skinparam ranksep 65
+title G01 · Tài khoản và an toàn truy cập\n<size:12>Trang 1/2 · Đăng ký, đăng nhập và truy cập bằng liên kết</size>
+
+actor "A01\nKhách vãng lai" as A01
+rectangle "Hệ thống quản lý nhà trọ" as SYSTEM {
+  usecase "UC-SYS-01\nĐăng ký tài khoản chủ trọ" as UC_SYS_01
+  usecase "UC-SYS-02\nĐăng ký tài khoản tìm phòng" as UC_SYS_02
+  usecase "UC-SYS-03\nĐăng nhập" as UC_SYS_03
+  usecase "UC-SYS-06\nKhôi phục mật khẩu bằng liên kết\nmột lần" as UC_SYS_06 <<Một phần>>
+  usecase "UC-SYS-08\nKích hoạt tài khoản người thuê\ntừ lời mời" as UC_SYS_08
+  usecase "UC-SYS-09\nKích hoạt tài khoản nhân viên từ\nlời mời" as UC_SYS_09
+  usecase "UC-SYS-10\nThiết lập mật khẩu tài khoản\nđược mời" as UC_SYS_10
+}
+actor "E01\nĐơn vị gửi thư\nhoặc thông báo\n(có điều kiện)" as E01
+A01 -- UC_SYS_01
+A01 -- UC_SYS_02
+A01 -- UC_SYS_03
+A01 -- UC_SYS_06
+UC_SYS_06 -- E01 : khi sử dụng kênh này
+A01 -- UC_SYS_08
+A01 -- UC_SYS_09
+A01 -- UC_SYS_10
+legend bottom left
+  Đường liền: tác nhân tham gia mục tiêu nghiệp vụ.
+  Đường xanh có nhãn: chỉ tham gia trong phạm vi giới hạn được nêu.
+  Nhân viên cần quyền phù hợp và khu được giao; quản trị viên cần đúng thẩm quyền.
+  Vàng: đáp ứng một phần. Cam: thanh toán thử nghiệm. Xám: trao đổi mô phỏng.
+  Không thể hiện thứ tự thực hiện; không suy ra quyền từ vị trí tác nhân.
+endlegend
+@enduml

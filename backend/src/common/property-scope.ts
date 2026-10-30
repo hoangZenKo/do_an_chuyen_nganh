@@ -50,6 +50,7 @@ export class PropertyScopeInterceptor implements NestInterceptor {
     const handler = context.getHandler().name;
     const denied = () => { throw new ForbiddenException({ error: { code: 'STAFF_PROPERTY_SCOPE_REQUIRED', message: 'This action requires landlord access or a property-scoped workflow.' } }); };
     if (controller === 'AuthController') return next.handle();
+    if (controller === 'UploadsController' && handler === 'access') return next.handle();
     if (controller === 'StaffController') {
       if (!['list', 'presets'].includes(handler)) denied();
     } else if (!scopedControllers.has(controller)) denied();

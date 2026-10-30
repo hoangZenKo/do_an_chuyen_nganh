@@ -999,7 +999,11 @@ class _ExpandedTabContentState extends State<_ExpandedTabContent> {
         // Section header + tab selector pill
         Padding(
           padding: const EdgeInsets.fromLTRB(20, 28, 20, 0),
-          child: Row(
+          child: Wrap(
+            alignment: WrapAlignment.spaceBetween,
+            crossAxisAlignment: WrapCrossAlignment.center,
+            spacing: 16,
+            runSpacing: 12,
             children: [
               const Text(
                 'Chi tiết phòng',
@@ -1009,7 +1013,6 @@ class _ExpandedTabContentState extends State<_ExpandedTabContent> {
                   color: _kTextPrimary,
                 ),
               ),
-              const Spacer(),
               // Compact tab pill switcher
               Container(
                 padding: const EdgeInsets.symmetric(horizontal: 4, vertical: 4),
@@ -1017,7 +1020,7 @@ class _ExpandedTabContentState extends State<_ExpandedTabContent> {
                   color: const Color(0xFFEEF0F5),
                   borderRadius: BorderRadius.circular(14),
                 ),
-                child: Row(
+                child: Wrap(
                   children: [
                     for (var i = 0; i < 4; i++)
                       GestureDetector(
@@ -1769,7 +1772,10 @@ class _ContractTab extends ConsumerWidget {
           ),
           error: (_, __) => _SectionCard(
             title: 'Khách thuê',
-            child: Text(room.tenantName ?? 'Chưa có'),
+            child: Text(
+              room.tenantName ?? 'Chưa có',
+              style: const TextStyle(color: _kTextPrimary),
+            ),
           ),
           data: (leases) {
             Lease? active;
@@ -1790,10 +1796,12 @@ class _ContractTab extends ConsumerWidget {
                         Icon(Icons.person_outline_rounded,
                             size: 20, color: Color(0xFF9CA3AF)),
                         SizedBox(width: 10),
-                        Text(
-                          'Phòng đang trống — chưa có khách thuê',
-                          style:
-                              TextStyle(fontSize: 14, color: Color(0xFF8891A8)),
+                        Expanded(
+                          child: Text(
+                            'Phòng đang trống — chưa có khách thuê',
+                            style: TextStyle(
+                                fontSize: 14, color: Color(0xFF667085)),
+                          ),
                         ),
                       ],
                     ),
@@ -1842,10 +1850,12 @@ class _ContractTab extends ConsumerWidget {
                               children: [
                                 Text(
                                   active.tenantName ?? 'Khách thuê',
+                                  maxLines: 2,
+                                  overflow: TextOverflow.ellipsis,
                                   style: const TextStyle(
                                     fontSize: 16,
                                     fontWeight: FontWeight.w800,
-                                    color: Color(0xFFF0F2FF),
+                                    color: _kTextPrimary,
                                   ),
                                 ),
                                 const Text(
@@ -1860,6 +1870,8 @@ class _ContractTab extends ConsumerWidget {
                             onTap: () => context
                                 .push(tenantDetailPath(active!.tenantId)),
                             child: Container(
+                              constraints: const BoxConstraints(minHeight: 44),
+                              alignment: Alignment.center,
                               padding: const EdgeInsets.symmetric(
                                   horizontal: 10, vertical: 6),
                               decoration: BoxDecoration(
@@ -1886,6 +1898,8 @@ class _ContractTab extends ConsumerWidget {
                               template: 'call_back',
                             ),
                             child: Container(
+                              constraints: const BoxConstraints(minHeight: 44),
+                              alignment: Alignment.center,
                               padding: const EdgeInsets.symmetric(
                                   horizontal: 10, vertical: 6),
                               decoration: BoxDecoration(
@@ -1906,15 +1920,15 @@ class _ContractTab extends ConsumerWidget {
                         ],
                       ),
                       const SizedBox(height: 14),
-                      const Divider(height: 1, color: Color(0xFF22263A)),
+                      const Divider(height: 1, color: _kDivider),
                       _DetailRow(
                           label: 'Giá thuê',
                           value: formatCurrencyVnd(active.monthlyRent)),
-                      const Divider(height: 1, color: Color(0xFF22263A)),
+                      const Divider(height: 1, color: _kDivider),
                       _DetailRow(
                           label: 'Tiền cọc',
                           value: formatCurrencyVnd(active.deposit)),
-                      const Divider(height: 1, color: Color(0xFF22263A)),
+                      const Divider(height: 1, color: _kDivider),
                       _DetailRow(
                           label: 'Ngày bắt đầu',
                           value: formatDate(active.startDate)),
@@ -2051,7 +2065,7 @@ class _SectionCard extends StatelessWidget {
                   style: const TextStyle(
                     fontSize: 13,
                     fontWeight: FontWeight.w700,
-                    color: Color(0xFF8891A8),
+                    color: Color(0xFF667085),
                     letterSpacing: 0.3,
                   ),
                 ),
@@ -2079,14 +2093,20 @@ class _DetailRow extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Text(label,
-              style: const TextStyle(fontSize: 14, color: Color(0xFF8891A8))),
-          Text(
-            value,
-            style: const TextStyle(
-              fontSize: 14,
-              fontWeight: FontWeight.w600,
-              color: Color(0xFFF0F2FF),
+          Expanded(
+            child: Text(label,
+                style: const TextStyle(fontSize: 14, color: Color(0xFF667085))),
+          ),
+          const SizedBox(width: 12),
+          Flexible(
+            child: Text(
+              value,
+              textAlign: TextAlign.end,
+              style: const TextStyle(
+                fontSize: 14,
+                fontWeight: FontWeight.w600,
+                color: _kTextPrimary,
+              ),
             ),
           ),
         ],

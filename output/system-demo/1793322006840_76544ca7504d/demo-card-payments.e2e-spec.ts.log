@@ -1,0 +1,26 @@
+
+> rental-room-api@0.1.0 test:e2e
+> NODE_ENV=test jest --config ./test/jest-e2e.json --runInBand --runTestsByPath test/e2e/demo-card-payments.e2e-spec.ts --runInBand
+
+[Nest] 18356  - 10/30/2026, 8:02:50 AM   ERROR [ApiErrorFilter] {"event":"request_failed","requestId":"a4896e7a-c291-4013-bd36-9ef4c90fd974","method":"POST","route":"/api/v1/tenant/invoices/:id/payment-link","status":503,"code":"INTERNAL_SERVER_ERROR"}
+[Nest] 18356  - 10/30/2026, 8:02:50 AM   ERROR [ApiErrorFilter] {"event":"request_failed","requestId":"28487095-90a8-43c8-8b37-4aefe2756c83","method":"POST","route":"/api/v1/tenant/invoices/:id/payment-link","status":503,"code":"INTERNAL_SERVER_ERROR"}
+PASS test/e2e/demo-card-payments.e2e-spec.ts
+  Internal demo card checkout E2E
+    ✓ exposes status without creating a session (16 ms)
+    ✓ enforces invoice ownership and never accepts demo payment for a real invoice (20 ms)
+    ✓ requires opt in and blocks production even if configured (8 ms)
+    ✓ creates one reusable session without storing the bearer token or bank details (26 ms)
+    ✓ GET checkout cannot settle an invoice from query parameters and needs no inline script (24 ms)
+    ✓ rejects invalid cards, expired dates, arbitrary tokens and cross-origin browser submissions (20 ms)
+    ✓ concurrent confirmations settle once and store only Visa last4 (58 ms)
+    ✓ supports no-referrer native form POST with an opaque Origin and no browser JavaScript (29 ms)
+    ✓ rejects stale balances, cancelled and expired sessions even without prior polling (95 ms)
+    ✓ expires a stale QR, shows the remaining balance and does not recreate a paid invoice (17 ms)
+    ✓ isolates simulated balances from landlord financial reports (78 ms)
+    ✓ keeps real billing available for the same lease and month as a demo invoice (13 ms)
+
+Test Suites: 1 passed, 1 total
+Tests:       12 passed, 12 total
+Snapshots:   0 total
+Time:        2.571 s, estimated 3 s
+Ran all test suites within paths "test/e2e/demo-card-payments.e2e-spec.ts".

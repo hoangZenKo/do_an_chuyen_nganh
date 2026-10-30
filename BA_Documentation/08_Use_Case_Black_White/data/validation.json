@@ -1,0 +1,310 @@
+{
+  "imageCount": 30,
+  "moduleImageCount": 29,
+  "uniqueModuleUseCases": 162,
+  "eachModuleUseCaseOccursOnce": true,
+  "limitedAssociations": 7,
+  "resolutionDpi": 300,
+  "checks": [
+    {
+      "file": "PNG/01_Hinh_2_03_Overall_Use_Case.png",
+      "grayscale": true,
+      "ucIds": true,
+      "actors": true,
+      "associations": true,
+      "bounds": true,
+      "independentDirectAssociations": true,
+      "noSharedAssociationSegments": true
+    },
+    {
+      "file": "PNG/02_Hinh_2_04_UC_G01_01_SYS_Public.png",
+      "grayscale": true,
+      "ucIds": true,
+      "actors": true,
+      "associations": true,
+      "bounds": true,
+      "independentDirectAssociations": true,
+      "noSharedAssociationSegments": true
+    },
+    {
+      "file": "PNG/03_Hinh_2_05_UC_G01_02_SYS_Sessions.png",
+      "grayscale": true,
+      "ucIds": true,
+      "actors": true,
+      "associations": true,
+      "bounds": true,
+      "independentDirectAssociations": true,
+      "noSharedAssociationSegments": true
+    },
+    {
+      "file": "PNG/04_Hinh_2_06_UC_G02.png",
+      "grayscale": true,
+      "ucIds": true,
+      "actors": true,
+      "associations": true,
+      "bounds": true,
+      "independentDirectAssociations": true,
+      "noSharedAssociationSegments": true
+    },
+    {
+      "file": "PNG/05_Hinh_2_07_UC_G03.png",
+      "grayscale": true,
+      "ucIds": true,
+      "actors": true,
+      "associations": true,
+      "bounds": true,
+      "independentDirectAssociations": true,
+      "noSharedAssociationSegments": true
+    },
+    {
+      "file": "PNG/06_Hinh_2_08_UC_G04_BA_1.png",
+      "grayscale": true,
+      "ucIds": true,
+      "actors": true,
+      "associations": true,
+      "bounds": true,
+      "independentDirectAssociations": true,
+      "noSharedAssociationSegments": true
+    },
+    {
+      "file": "PNG/07_Hinh_2_09_UC_G04_BA_2.png",
+      "grayscale": true,
+      "ucIds": true,
+      "actors": true,
+      "associations": true,
+      "bounds": true,
+      "independentDirectAssociations": true,
+      "noSharedAssociationSegments": true
+    },
+    {
+      "file": "PNG/08_Hinh_2_10_UC_G05.png",
+      "grayscale": true,
+      "ucIds": true,
+      "actors": true,
+      "associations": true,
+      "bounds": true,
+      "independentDirectAssociations": true,
+      "noSharedAssociationSegments": true
+    },
+    {
+      "file": "PNG/09_Hinh_2_11_UC_G06_01_Tenant_Records.png",
+      "grayscale": true,
+      "ucIds": true,
+      "actors": true,
+      "associations": true,
+      "bounds": true,
+      "independentDirectAssociations": true,
+      "noSharedAssociationSegments": true
+    },
+    {
+      "file": "PNG/10_Hinh_2_12_UC_G06_02_Leases_Deposits_BA_1.png",
+      "grayscale": true,
+      "ucIds": true,
+      "actors": true,
+      "associations": true,
+      "bounds": true,
+      "independentDirectAssociations": true,
+      "noSharedAssociationSegments": true
+    },
+    {
+      "file": "PNG/11_Hinh_2_13_UC_G06_02_Leases_Deposits_BA_2.png",
+      "grayscale": true,
+      "ucIds": true,
+      "actors": true,
+      "associations": true,
+      "bounds": true,
+      "independentDirectAssociations": true,
+      "noSharedAssociationSegments": true
+    },
+    {
+      "file": "PNG/12_Hinh_2_14_UC_G07.png",
+      "grayscale": true,
+      "ucIds": true,
+      "actors": true,
+      "associations": true,
+      "bounds": true,
+      "independentDirectAssociations": true,
+      "noSharedAssociationSegments": true
+    },
+    {
+      "file": "PNG/13_Hinh_2_15_UC_G08_01_Invoices_BA_1.png",
+      "grayscale": true,
+      "ucIds": true,
+      "actors": true,
+      "associations": true,
+      "bounds": true,
+      "independentDirectAssociations": true,
+      "noSharedAssociationSegments": true
+    },
+    {
+      "file": "PNG/14_Hinh_2_16_UC_G08_01_Invoices_BA_2.png",
+      "grayscale": true,
+      "ucIds": true,
+      "actors": true,
+      "associations": true,
+      "bounds": true,
+      "independentDirectAssociations": true,
+      "noSharedAssociationSegments": true
+    },
+    {
+      "file": "PNG/15_Hinh_2_17_UC_G08_02_Collections_BA_1.png",
+      "grayscale": true,
+      "ucIds": true,
+      "actors": true,
+      "associations": true,
+      "bounds": true,
+      "independentDirectAssociations": true,
+      "noSharedAssociationSegments": true
+    },
+    {
+      "file": "PNG/16_Hinh_2_18_UC_G08_02_Collections_BA_2.png",
+      "grayscale": true,
+      "ucIds": true,
+      "actors": true,
+      "associations": true,
+      "bounds": true,
+      "independentDirectAssociations": true,
+      "noSharedAssociationSegments": true
+    },
+    {
+      "file": "PNG/17_Hinh_2_19_UC_G08_03_Tariffs_Periods.png",
+      "grayscale": true,
+      "ucIds": true,
+      "actors": true,
+      "associations": true,
+      "bounds": true,
+      "independentDirectAssociations": true,
+      "noSharedAssociationSegments": true
+    },
+    {
+      "file": "PNG/18_Hinh_2_20_UC_G08_04_Reminders.png",
+      "grayscale": true,
+      "ucIds": true,
+      "actors": true,
+      "associations": true,
+      "bounds": true,
+      "independentDirectAssociations": true,
+      "noSharedAssociationSegments": true
+    },
+    {
+      "file": "PNG/19_Hinh_2_21_UC_G09.png",
+      "grayscale": true,
+      "ucIds": true,
+      "actors": true,
+      "associations": true,
+      "bounds": true,
+      "independentDirectAssociations": true,
+      "noSharedAssociationSegments": true
+    },
+    {
+      "file": "PNG/20_Hinh_2_22_UC_G10_BA_1.png",
+      "grayscale": true,
+      "ucIds": true,
+      "actors": true,
+      "associations": true,
+      "bounds": true,
+      "independentDirectAssociations": true,
+      "noSharedAssociationSegments": true
+    },
+    {
+      "file": "PNG/21_Hinh_2_23_UC_G10_BA_2.png",
+      "grayscale": true,
+      "ucIds": true,
+      "actors": true,
+      "associations": true,
+      "bounds": true,
+      "independentDirectAssociations": true,
+      "noSharedAssociationSegments": true
+    },
+    {
+      "file": "PNG/22_Hinh_2_24_UC_G11.png",
+      "grayscale": true,
+      "ucIds": true,
+      "actors": true,
+      "associations": true,
+      "bounds": true,
+      "independentDirectAssociations": true,
+      "noSharedAssociationSegments": true
+    },
+    {
+      "file": "PNG/23_Hinh_2_25_UC_G12_BA_1.png",
+      "grayscale": true,
+      "ucIds": true,
+      "actors": true,
+      "associations": true,
+      "bounds": true,
+      "independentDirectAssociations": true,
+      "noSharedAssociationSegments": true
+    },
+    {
+      "file": "PNG/24_Hinh_2_26_UC_G12_BA_2.png",
+      "grayscale": true,
+      "ucIds": true,
+      "actors": true,
+      "associations": true,
+      "bounds": true,
+      "independentDirectAssociations": true,
+      "noSharedAssociationSegments": true
+    },
+    {
+      "file": "PNG/25_Hinh_2_27_UC_G13_BA_1.png",
+      "grayscale": true,
+      "ucIds": true,
+      "actors": true,
+      "associations": true,
+      "bounds": true,
+      "independentDirectAssociations": true,
+      "noSharedAssociationSegments": true
+    },
+    {
+      "file": "PNG/26_Hinh_2_28_UC_G13_BA_2.png",
+      "grayscale": true,
+      "ucIds": true,
+      "actors": true,
+      "associations": true,
+      "bounds": true,
+      "independentDirectAssociations": true,
+      "noSharedAssociationSegments": true
+    },
+    {
+      "file": "PNG/27_Hinh_2_29_UC_G14.png",
+      "grayscale": true,
+      "ucIds": true,
+      "actors": true,
+      "associations": true,
+      "bounds": true,
+      "independentDirectAssociations": true,
+      "noSharedAssociationSegments": true
+    },
+    {
+      "file": "PNG/28_Hinh_2_30_UC_G15.png",
+      "grayscale": true,
+      "ucIds": true,
+      "actors": true,
+      "associations": true,
+      "bounds": true,
+      "independentDirectAssociations": true,
+      "noSharedAssociationSegments": true
+    },
+    {
+      "file": "PNG/29_Hinh_2_31_UC_G16_BA_1.png",
+      "grayscale": true,
+      "ucIds": true,
+      "actors": true,
+      "associations": true,
+      "bounds": true,
+      "independentDirectAssociations": true,
+      "noSharedAssociationSegments": true
+    },
+    {
+      "file": "PNG/30_Hinh_2_32_UC_G16_BA_2.png",
+      "grayscale": true,
+      "ucIds": true,
+      "actors": true,
+      "associations": true,
+      "bounds": true,
+      "independentDirectAssociations": true,
+      "noSharedAssociationSegments": true
+    }
+  ]
+}

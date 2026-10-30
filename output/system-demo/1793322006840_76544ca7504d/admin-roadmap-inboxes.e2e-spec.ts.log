@@ -1,0 +1,15 @@
+
+> rental-room-api@0.1.0 test:e2e
+> NODE_ENV=test jest --config ./test/jest-e2e.json --runInBand --runTestsByPath test/e2e/admin-roadmap-inboxes.e2e-spec.ts --runInBand
+
+PASS test/e2e/admin-roadmap-inboxes.e2e-spec.ts
+  Admin roadmap inboxes and preview
+    ✓ intersects incident ownership, search and time window and paginates on the server (343 ms)
+    ✓ keeps SLA list counts equal to summary, intersects status and persists SLA saved views (312 ms)
+    ✓ previews real listing state without writing decisions, then blocks stale versions and revoked permissions (241 ms)
+
+Test Suites: 1 passed, 1 total
+Tests:       3 passed, 3 total
+Snapshots:   0 total
+Time:        2.58 s, estimated 4 s
+Ran all test suites within paths "test/e2e/admin-roadmap-inboxes.e2e-spec.ts".

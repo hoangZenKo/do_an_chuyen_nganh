@@ -4,10 +4,6 @@ Frontend không truy cập trực tiếp database; backend NestJS hiện nằm �
 
 ## Admin MVP - 3 giai đoạn (24/10/2026)
 
-= Email: admin@rental.local
-= Mật khẩu: Admin-a9161ba7cc0e5b180cd48b2ded1380b3555f
-= Quyền: super_admin
-
 ### 1. Phân quyền và bảo mật
 
 - Preset `super_admin`, `support`, `moderator`, `analyst`; API kiểm tra capability ở backend, không chỉ ẩn menu Flutter.
@@ -65,12 +61,16 @@ Admin cũ chưa có profile cần được provision qua bootstrap trước khi 
 - Flutter full suite chưa xanh: lượt trước còn lỗi dashboard/layout ngoài phạm vi admin; không coi đây là xác nhận full regression pass.
 - Cần manual smoke test UI trên trình duyệt/mobile, kiểm tra gửi email qua webhook thật và xác minh secrets/migration trên staging trước production.
 
+= Email: admin@rental.local
+= Mật khẩu: Admin-a9161ba7cc0e5b180cd48b2ded1380b3555f
+= Quyền: super_admin
+
 ## Local demo landlord account
 
 Nếu đã chạy seed demo trong backend, có thể đăng nhập tài khoản landlord demo:
 
-- Email: `landlord@demo.com`
-- Password: `DemoLandlord!2026`
+- Email: landlord@demo.com
+- Password: DemoLandlord!2026
 - Role: `landlord`
 
 Đây chỉ là tài khoản demo local để test flow landlord/dashboard; không dùng cho production và không phải tài khoản admin.
@@ -81,8 +81,8 @@ Tenant account không tự sinh từ public registration. Chủ trọ tạo hồ
 
 Credential demo nên dùng để dễ test local:
 
-- Email: `tenant@demo.com`
-- Password: `DemoTenant!2026`
+- Email: tenant@demo.com
+- Password: DemoTenant!2026
 - Role: `tenant`
 
 Cách tạo bằng Flutter:

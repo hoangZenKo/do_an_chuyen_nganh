@@ -1,0 +1,15 @@
+{
+  "checkedAt": "2026-10-29T01:46:29.535Z",
+  "snapshotCommit": "c565c29ee5742d38dfaea37aa8fa047f4b6793c0",
+  "sourceFileCount": 846,
+  "protectedFileCount": 994,
+  "changedFiles": [],
+  "missingFiles": [],
+  "trackedDiff": [
+    "D\tdocs/~$o_cao_Quan_ly_Nha_tro_V3_2026-10-28.docx"
+  ],
+  "approvedDeletion": [
+    "docs/~$o_cao_Quan_ly_Nha_tro_V3_2026-10-28.docx"
+  ],
+  "success": true
+}

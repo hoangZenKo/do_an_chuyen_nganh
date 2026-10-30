@@ -1,0 +1,557 @@
+<!doctype html><html lang="vi"><meta charset="utf-8"><title>Rental System Demo</title>
+    <style>body{font:16px Georgia;margin:32px;background:#f5f4ed;color:#182a35}table{border-collapse:collapse;width:100%}td,th{border:1px solid #aaa;padding:9px;text-align:left}pre{white-space:pre-wrap}.passed{color:#17603b}.failed,.blocked{color:#a52a22}</style>
+    <h1>Kiểm thử hệ thống — 1793320408610_09c4ff3fb8ed</h1>
+    <p>Có lỗi, ca bị chặn hoặc phạm vi chưa được kiểm chứng.</p>
+    <p>screen = chỉ mở màn hình; UI = thao tác và xác nhận nghiệp vụ; regression = bộ kiểm thử tự động hiện có. Không đánh đồng ba mức này.</p>
+    <table><tr><th>Phần</th><th>Mức kiểm thử</th><th>Kết quả</th><th>Chi tiết</th></tr><tr><td>login</td><td>UI</td><td class="failed">failed</td><td><pre>unknown error: WebDriverError: Cannot read properties of undefined (reading &#39;screenshot&#39;) when running &quot;screenshot&quot; with method &quot;GET&quot;
+    at FetchRequest._request (file:///Users/hoang/Rental_room_management/test/system_demo/node_modules/webdriver/build/node.js:2229:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async Browser.wrapCommandFn (file:///Users/hoang/Rental_room_management/test/system_demo/node_modules/@wdio/utils/build/index.js:982:23)
+    at async Browser.saveScreenshot (file:///Users/hoang/Rental_room_management/test/system_demo/node_modules/webdriverio/build/node.js:557:95)
+    at async Browser.wrapCommandFn (file:///Users/hoang/Rental_room_management/test/system_demo/node_modules/@wdio/utils/build/index.js:982:23)
+    at async DemoUI.screenshot (file:///Users/hoang/Rental_room_management/test/system_demo/system_demo.mjs:290:5)
+    at async file:///Users/hoang/Rental_room_management/test/system_demo/system_demo.mjs:305:24
+    at async runCase (file:///Users/hoang/Rental_room_management/test/system_demo/system_demo.mjs:96:9)
+    at async scenario (file:///Users/hoang/Rental_room_management/test/system_demo/system_demo.mjs:297:18)
+    at async journeys (file:///Users/hoang/Rental_room_management/test/system_demo/system_demo.mjs:370:3)</pre></td></tr></table>
+    <h2>Phạm vi cần bổ sung/kiểm tra thủ công</h2><pre>[
+  &quot;Native OS file/photo picker, PDF print/share sheet and external browser/Zalo/bank applications require separate native-device assertions.&quot;,
+  &quot;Live email/SMS, MFA enrollment, external storage and real payment providers are disabled in the disposable environment.&quot;,
+  &quot;UI flow coverage is the numbered scenarios, not every source action label. Remaining action labels are listed in coverage-inventory.json; API/widget suites provide a separate regression layer.&quot;
+]</pre>
+    <h2>Danh mục route từ mã nguồn</h2><pre>[
+  {
+    &quot;name&quot;: &quot;housingFavoritesRoute&quot;,
+    &quot;path&quot;: &quot;/housing/favorites&quot;,
+    &quot;role&quot;: &quot;public&quot;,
+    &quot;level&quot;: &quot;screen-only; business assertions listed separately&quot;
+  },
+  {
+    &quot;name&quot;: &quot;housingViewingsRoute&quot;,
+    &quot;path&quot;: &quot;/housing/viewings&quot;,
+    &quot;role&quot;: &quot;public&quot;,
+    &quot;level&quot;: &quot;screen-only; business assertions listed separately&quot;
+  },
+  {
+    &quot;name&quot;: &quot;housingNoticesRoute&quot;,
+    &quot;path&quot;: &quot;/housing/notifications&quot;,
+    &quot;role&quot;: &quot;public&quot;,
+    &quot;level&quot;: &quot;screen-only; business assertions listed separately&quot;
+  },
+  {
+    &quot;name&quot;: &quot;rentalPilotRoute&quot;,
+    &quot;path&quot;: &quot;/housing/pilot&quot;,
+    &quot;role&quot;: &quot;public&quot;,
+    &quot;level&quot;: &quot;screen-only; business assertions listed separately&quot;
+  },
+  {
+    &quot;name&quot;: &quot;pilotFeedbackRoute&quot;,
+    &quot;path&quot;: &quot;/admin/pilot-feedback&quot;,
+    &quot;role&quot;: &quot;admin&quot;,
+    &quot;level&quot;: &quot;screen-only; business assertions listed separately&quot;
+  },
+  {
+    &quot;name&quot;: &quot;exploreRoute&quot;,
+    &quot;path&quot;: &quot;/explore&quot;,
+    &quot;role&quot;: &quot;public&quot;,
+    &quot;level&quot;: &quot;screen-only; business assertions listed separately&quot;
+  },
+  {
+    &quot;name&quot;: &quot;tenantPortalRoute&quot;,
+    &quot;path&quot;: &quot;/tenant&quot;,
+    &quot;role&quot;: &quot;tenant&quot;,
+    &quot;level&quot;: &quot;screen-only; business assertions listed separately&quot;
+  },
+  {
+    &quot;name&quot;: &quot;seekerAccountRoute&quot;,
+    &quot;path&quot;: &quot;/explore/account&quot;,
+    &quot;role&quot;: &quot;public&quot;,
+    &quot;level&quot;: &quot;screen-only; business assertions listed separately&quot;
+  },
+  {
+    &quot;name&quot;: &quot;publicListingRoute&quot;,
+    &quot;path&quot;: &quot;/explore/listings/:id&quot;,
+    &quot;role&quot;: &quot;public&quot;,
+    &quot;level&quot;: &quot;screen-only; business assertions listed separately&quot;
+  },
+  {
+    &quot;name&quot;: &quot;landlordListingsRoute&quot;,
+    &quot;path&quot;: &quot;/listings&quot;,
+    &quot;role&quot;: &quot;landlord&quot;,
+    &quot;level&quot;: &quot;screen-only; business assertions listed separately&quot;
+  },
+  {
+    &quot;name&quot;: &quot;adminListingsRoute&quot;,
+    &quot;path&quot;: &quot;/admin/listings&quot;,
+    &quot;role&quot;: &quot;admin&quot;,
+    &quot;level&quot;: &quot;screen-only; business assertions listed separately&quot;
+  },
+  {
+    &quot;name&quot;: &quot;landlordReviewsRoute&quot;,
+    &quot;path&quot;: &quot;/listings/reviews&quot;,
+    &quot;role&quot;: &quot;landlord&quot;,
+    &quot;level&quot;: &quot;screen-only; business assertions listed separately&quot;
+  },
+  {
+    &quot;name&quot;: &quot;adminReviewsRoute&quot;,
+    &quot;path&quot;: &quot;/admin/room-reviews&quot;,
+    &quot;role&quot;: &quot;admin&quot;,
+    &quot;level&quot;: &quot;screen-only; business assertions listed separately&quot;
+  },
+  {
+    &quot;name&quot;: &quot;splashRoute&quot;,
+    &quot;path&quot;: &quot;/splash&quot;,
+    &quot;role&quot;: &quot;public&quot;,
+    &quot;level&quot;: &quot;screen-only; business assertions listed separately&quot;
+  },
+  {
+    &quot;name&quot;: &quot;onboardingRoute&quot;,
+    &quot;path&quot;: &quot;/onboarding&quot;,
+    &quot;role&quot;: &quot;public&quot;,
+    &quot;level&quot;: &quot;screen-only; business assertions listed separately&quot;
+  },
+  {
+    &quot;name&quot;: &quot;loginRoute&quot;,
+    &quot;path&quot;: &quot;/auth/login&quot;,
+    &quot;role&quot;: &quot;public&quot;,
+    &quot;level&quot;: &quot;screen-only; business assertions listed separately&quot;
+  },
+  {
+    &quot;name&quot;: &quot;registerRoute&quot;,
+    &quot;path&quot;: &quot;/auth/register&quot;,
+    &quot;role&quot;: &quot;public&quot;,
+    &quot;level&quot;: &quot;screen-only; business assertions listed separately&quot;
+  },
+  {
+    &quot;name&quot;: &quot;tenantInviteRoute&quot;,
+    &quot;path&quot;: &quot;/tenant/activate&quot;,
+    &quot;role&quot;: &quot;tenant&quot;,
+    &quot;level&quot;: &quot;screen-only; business assertions listed separately&quot;
+  },
+  {
+    &quot;name&quot;: &quot;staffInviteRoute&quot;,
+    &quot;path&quot;: &quot;/staff/activate&quot;,
+    &quot;role&quot;: &quot;public&quot;,
+    &quot;level&quot;: &quot;screen-only; business assertions listed separately&quot;
+  },
+  {
+    &quot;name&quot;: &quot;dashboardRoute&quot;,
+    &quot;path&quot;: &quot;/dashboard&quot;,
+    &quot;role&quot;: &quot;landlord&quot;,
+    &quot;level&quot;: &quot;screen-only; business assertions listed separately&quot;
+  },
+  {
+    &quot;name&quot;: &quot;chatbotRoute&quot;,
+    &quot;path&quot;: &quot;/chatbot&quot;,
+    &quot;role&quot;: &quot;landlord&quot;,
+    &quot;level&quot;: &quot;screen-only; business assertions listed separately&quot;
+  },
+  {
+    &quot;name&quot;: &quot;settingsRoute&quot;,
+    &quot;path&quot;: &quot;/settings&quot;,
+    &quot;role&quot;: &quot;landlord&quot;,
+    &quot;level&quot;: &quot;screen-only; business assertions listed separately&quot;
+  },
+  {
+    &quot;name&quot;: &quot;settingsPasswordRoute&quot;,
+    &quot;path&quot;: &quot;/settings/password&quot;,
+    &quot;role&quot;: &quot;landlord&quot;,
+    &quot;level&quot;: &quot;screen-only; business assertions listed separately&quot;
+  },
+  {
+    &quot;name&quot;: &quot;fakeZaloRoute&quot;,
+    &quot;path&quot;: &quot;/settings/fake-zalo&quot;,
+    &quot;role&quot;: &quot;landlord&quot;,
+    &quot;level&quot;: &quot;screen-only; business assertions listed separately&quot;
+  },
+  {
+    &quot;name&quot;: &quot;tenantPasswordRoute&quot;,
+    &quot;path&quot;: &quot;/tenant/password&quot;,
+    &quot;role&quot;: &quot;tenant&quot;,
+    &quot;level&quot;: &quot;screen-only; business assertions listed separately&quot;
+  },
+  {
+    &quot;name&quot;: &quot;tenantZaloRoute&quot;,
+    &quot;path&quot;: &quot;/tenant/zalo&quot;,
+    &quot;role&quot;: &quot;tenant&quot;,
+    &quot;level&quot;: &quot;screen-only; business assertions listed separately&quot;
+  },
+  {
+    &quot;name&quot;: &quot;tenantNotificationsRoute&quot;,
+    &quot;path&quot;: &quot;/tenant/notifications&quot;,
+    &quot;role&quot;: &quot;tenant&quot;,
+    &quot;level&quot;: &quot;screen-only; business assertions listed separately&quot;
+  },
+  {
+    &quot;name&quot;: &quot;tenantLeasesRoute&quot;,
+    &quot;path&quot;: &quot;/tenant/leases&quot;,
+    &quot;role&quot;: &quot;tenant&quot;,
+    &quot;level&quot;: &quot;screen-only; business assertions listed separately&quot;
+  },
+  {
+    &quot;name&quot;: &quot;tenantInvoicesRoute&quot;,
+    &quot;path&quot;: &quot;/tenant/invoices&quot;,
+    &quot;role&quot;: &quot;tenant&quot;,
+    &quot;level&quot;: &quot;screen-only; business assertions listed separately&quot;
+  },
+  {
+    &quot;name&quot;: &quot;tenantInvoiceDetailRoute&quot;,
+    &quot;path&quot;: &quot;/tenant/invoices/:id&quot;,
+    &quot;role&quot;: &quot;tenant&quot;,
+    &quot;level&quot;: &quot;screen-only; business assertions listed separately&quot;
+  },
+  {
+    &quot;name&quot;: &quot;tenantMaintenanceRoute&quot;,
+    &quot;path&quot;: &quot;/tenant/maintenance&quot;,
+    &quot;role&quot;: &quot;tenant&quot;,
+    &quot;level&quot;: &quot;screen-only; business assertions listed separately&quot;
+  },
+  {
+    &quot;name&quot;: &quot;accountAccessRoute&quot;,
+    &quot;path&quot;: &quot;/account/activate&quot;,
+    &quot;role&quot;: &quot;public&quot;,
+    &quot;level&quot;: &quot;screen-only; business assertions listed separately&quot;
+  },
+  {
+    &quot;name&quot;: &quot;supportCenterRoute&quot;,
+    &quot;path&quot;: &quot;/support-center&quot;,
+    &quot;role&quot;: &quot;landlord&quot;,
+    &quot;level&quot;: &quot;screen-only; business assertions listed separately&quot;
+  },
+  {
+    &quot;name&quot;: &quot;adminRoute&quot;,
+    &quot;path&quot;: &quot;/admin&quot;,
+    &quot;role&quot;: &quot;admin&quot;,
+    &quot;level&quot;: &quot;screen-only; business assertions listed separately&quot;
+  },
+  {
+    &quot;name&quot;: &quot;adminVerificationsRoute&quot;,
+    &quot;path&quot;: &quot;/admin/landlord-verifications&quot;,
+    &quot;role&quot;: &quot;admin&quot;,
+    &quot;level&quot;: &quot;screen-only; business assertions listed separately&quot;
+  },
+  {
+    &quot;name&quot;: &quot;adminPropertyReviewsRoute&quot;,
+    &quot;path&quot;: &quot;/admin/property-reviews&quot;,
+    &quot;role&quot;: &quot;admin&quot;,
+    &quot;level&quot;: &quot;screen-only; business assertions listed separately&quot;
+  },
+  {
+    &quot;name&quot;: &quot;adminPlansRoute&quot;,
+    &quot;path&quot;: &quot;/admin/service-plans&quot;,
+    &quot;role&quot;: &quot;admin&quot;,
+    &quot;level&quot;: &quot;screen-only; business assertions listed separately&quot;
+  },
+  {
+    &quot;name&quot;: &quot;adminSubscriptionsRoute&quot;,
+    &quot;path&quot;: &quot;/admin/subscriptions&quot;,
+    &quot;role&quot;: &quot;admin&quot;,
+    &quot;level&quot;: &quot;screen-only; business assertions listed separately&quot;
+  },
+  {
+    &quot;name&quot;: &quot;adminAccountsRoute&quot;,
+    &quot;path&quot;: &quot;/admin/accounts&quot;,
+    &quot;role&quot;: &quot;admin&quot;,
+    &quot;level&quot;: &quot;screen-only; business assertions listed separately&quot;
+  },
+  {
+    &quot;name&quot;: &quot;adminAuditLogsRoute&quot;,
+    &quot;path&quot;: &quot;/admin/audit-logs&quot;,
+    &quot;role&quot;: &quot;admin&quot;,
+    &quot;level&quot;: &quot;screen-only; business assertions listed separately&quot;
+  },
+  {
+    &quot;name&quot;: &quot;adminOperationsRoute&quot;,
+    &quot;path&quot;: &quot;/admin/operations&quot;,
+    &quot;role&quot;: &quot;admin&quot;,
+    &quot;level&quot;: &quot;screen-only; business assertions listed separately&quot;
+  },
+  {
+    &quot;name&quot;: &quot;adminModerationRoute&quot;,
+    &quot;path&quot;: &quot;/admin/moderation&quot;,
+    &quot;role&quot;: &quot;admin&quot;,
+    &quot;level&quot;: &quot;screen-only; business assertions listed separately&quot;
+  },
+  {
+    &quot;name&quot;: &quot;adminSecurityRoute&quot;,
+    &quot;path&quot;: &quot;/admin/security&quot;,
+    &quot;role&quot;: &quot;admin&quot;,
+    &quot;level&quot;: &quot;screen-only; business assertions listed separately&quot;
+  },
+  {
+    &quot;name&quot;: &quot;adminSessionsRoute&quot;,
+    &quot;path&quot;: &quot;/admin/sessions&quot;,
+    &quot;role&quot;: &quot;admin&quot;,
+    &quot;level&quot;: &quot;screen-only; business assertions listed separately&quot;
+  },
+  {
+    &quot;name&quot;: &quot;adminSearchRoute&quot;,
+    &quot;path&quot;: &quot;/admin/search&quot;,
+    &quot;role&quot;: &quot;admin&quot;,
+    &quot;level&quot;: &quot;screen-only; business assertions listed separately&quot;
+  },
+  {
+    &quot;name&quot;: &quot;adminPoliciesRoute&quot;,
+    &quot;path&quot;: &quot;/admin/moderation-policies&quot;,
+    &quot;role&quot;: &quot;admin&quot;,
+    &quot;level&quot;: &quot;screen-only; business assertions listed separately&quot;
+  },
+  {
+    &quot;name&quot;: &quot;adminSupportRoute&quot;,
+    &quot;path&quot;: &quot;/admin/support&quot;,
+    &quot;role&quot;: &quot;admin&quot;,
+    &quot;level&quot;: &quot;screen-only; business assertions listed separately&quot;
+  },
+  {
+    &quot;name&quot;: &quot;adminSupportCenterRoute&quot;,
+    &quot;path&quot;: &quot;/admin/support-center&quot;,
+    &quot;role&quot;: &quot;admin&quot;,
+    &quot;level&quot;: &quot;screen-only; business assertions listed separately&quot;
+  },
+  {
+    &quot;name&quot;: &quot;adminTicketsRoute&quot;,
+    &quot;path&quot;: &quot;/admin/tickets&quot;,
+    &quot;role&quot;: &quot;admin&quot;,
+    &quot;level&quot;: &quot;screen-only; business assertions listed separately&quot;
+  },
+  {
+    &quot;name&quot;: &quot;adminModerationV2Route&quot;,
+    &quot;path&quot;: &quot;/admin/moderation-v2&quot;,
+    &quot;role&quot;: &quot;admin&quot;,
+    &quot;level&quot;: &quot;screen-only; business assertions listed separately&quot;
+  },
+  {
+    &quot;name&quot;: &quot;adminNotificationsRoute&quot;,
+    &quot;path&quot;: &quot;/admin/notifications&quot;,
+    &quot;role&quot;: &quot;admin&quot;,
+    &quot;level&quot;: &quot;screen-only; business assertions listed separately&quot;
+  },
+  {
+    &quot;name&quot;: &quot;adminGovernanceRoute&quot;,
+    &quot;path&quot;: &quot;/admin/governance&quot;,
+    &quot;role&quot;: &quot;admin&quot;,
+    &quot;level&quot;: &quot;screen-only; business assertions listed separately&quot;
+  },
+  {
+    &quot;name&quot;: &quot;adminFinanceReconciliationRoute&quot;,
+    &quot;path&quot;: &quot;/admin/finance-reconciliation&quot;,
+    &quot;role&quot;: &quot;admin&quot;,
+    &quot;level&quot;: &quot;screen-only; business assertions listed separately&quot;
+  },
+  {
+    &quot;name&quot;: &quot;adminReportSchedulesRoute&quot;,
+    &quot;path&quot;: &quot;/admin/report-schedules&quot;,
+    &quot;role&quot;: &quot;admin&quot;,
+    &quot;level&quot;: &quot;screen-only; business assertions listed separately&quot;
+  },
+  {
+    &quot;name&quot;: &quot;adminReportsRoute&quot;,
+    &quot;path&quot;: &quot;/admin/reports&quot;,
+    &quot;role&quot;: &quot;admin&quot;,
+    &quot;level&quot;: &quot;screen-only; business assertions listed separately&quot;
+  },
+  {
+    &quot;name&quot;: &quot;adminTeamsRoute&quot;,
+    &quot;path&quot;: &quot;/admin/teams&quot;,
+    &quot;role&quot;: &quot;admin&quot;,
+    &quot;level&quot;: &quot;screen-only; business assertions listed separately&quot;
+  },
+  {
+    &quot;name&quot;: &quot;adminPermissionSimulatorRoute&quot;,
+    &quot;path&quot;: &quot;/admin/permission-simulator&quot;,
+    &quot;role&quot;: &quot;admin&quot;,
+    &quot;level&quot;: &quot;screen-only; business assertions listed separately&quot;
+  },
+  {
+    &quot;name&quot;: &quot;adminAdminsRoute&quot;,
+    &quot;path&quot;: &quot;/admin/admins&quot;,
+    &quot;role&quot;: &quot;admin&quot;,
+    &quot;level&quot;: &quot;screen-only; business assertions listed separately&quot;
+  },
+  {
+    &quot;name&quot;: &quot;adminLandlordsRoute&quot;,
+    &quot;path&quot;: &quot;/admin/landlords&quot;,
+    &quot;role&quot;: &quot;admin&quot;,
+    &quot;level&quot;: &quot;screen-only; business assertions listed separately&quot;
+  },
+  {
+    &quot;name&quot;: &quot;adminLandlordFormRoute&quot;,
+    &quot;path&quot;: &quot;/admin/landlords/form&quot;,
+    &quot;role&quot;: &quot;admin&quot;,
+    &quot;level&quot;: &quot;screen-only; business assertions listed separately&quot;
+  },
+  {
+    &quot;name&quot;: &quot;adminLandlordDetailRoute&quot;,
+    &quot;path&quot;: &quot;/admin/landlords/:id&quot;,
+    &quot;role&quot;: &quot;admin&quot;,
+    &quot;level&quot;: &quot;screen-only; business assertions listed separately&quot;
+  },
+  {
+    &quot;name&quot;: &quot;adminPropertiesRoute&quot;,
+    &quot;path&quot;: &quot;/admin/properties&quot;,
+    &quot;role&quot;: &quot;admin&quot;,
+    &quot;level&quot;: &quot;screen-only; business assertions listed separately&quot;
+  },
+  {
+    &quot;name&quot;: &quot;adminRoomsRoute&quot;,
+    &quot;path&quot;: &quot;/admin/rooms&quot;,
+    &quot;role&quot;: &quot;admin&quot;,
+    &quot;level&quot;: &quot;screen-only; business assertions listed separately&quot;
+  },
+  {
+    &quot;name&quot;: &quot;adminPropertyFormRoute&quot;,
+    &quot;path&quot;: &quot;/admin/properties/form&quot;,
+    &quot;role&quot;: &quot;admin&quot;,
+    &quot;level&quot;: &quot;screen-only; business assertions listed separately&quot;
+  },
+  {
+    &quot;name&quot;: &quot;adminPropertyDetailRoute&quot;,
+    &quot;path&quot;: &quot;/admin/properties/:id&quot;,
+    &quot;role&quot;: &quot;admin&quot;,
+    &quot;level&quot;: &quot;screen-only; business assertions listed separately&quot;
+  },
+  {
+    &quot;name&quot;: &quot;propertiesRoute&quot;,
+    &quot;path&quot;: &quot;/properties&quot;,
+    &quot;role&quot;: &quot;landlord&quot;,
+    &quot;level&quot;: &quot;screen-only; business assertions listed separately&quot;
+  },
+  {
+    &quot;name&quot;: &quot;propertyFormRoute&quot;,
+    &quot;path&quot;: &quot;/properties/form&quot;,
+    &quot;role&quot;: &quot;landlord&quot;,
+    &quot;level&quot;: &quot;screen-only; business assertions listed separately&quot;
+  },
+  {
+    &quot;name&quot;: &quot;roomFormRoute&quot;,
+    &quot;path&quot;: &quot;/rooms/form&quot;,
+    &quot;role&quot;: &quot;landlord&quot;,
+    &quot;level&quot;: &quot;screen-only; business assertions listed separately&quot;
+  },
+  {
+    &quot;name&quot;: &quot;roomDetailRoute&quot;,
+    &quot;path&quot;: &quot;/rooms/:id&quot;,
+    &quot;role&quot;: &quot;landlord&quot;,
+    &quot;level&quot;: &quot;screen-only; business assertions listed separately&quot;
+  },
+  {
+    &quot;name&quot;: &quot;tenantsRoute&quot;,
+    &quot;path&quot;: &quot;/tenants&quot;,
+    &quot;role&quot;: &quot;landlord&quot;,
+    &quot;level&quot;: &quot;screen-only; business assertions listed separately&quot;
+  },
+  {
+    &quot;name&quot;: &quot;tenantFormRoute&quot;,
+    &quot;path&quot;: &quot;/tenants/form&quot;,
+    &quot;role&quot;: &quot;landlord&quot;,
+    &quot;level&quot;: &quot;screen-only; business assertions listed separately&quot;
+  },
+  {
+    &quot;name&quot;: &quot;tenantDetailRoute&quot;,
+    &quot;path&quot;: &quot;/tenants/:id&quot;,
+    &quot;role&quot;: &quot;landlord&quot;,
+    &quot;level&quot;: &quot;screen-only; business assertions listed separately&quot;
+  },
+  {
+    &quot;name&quot;: &quot;leaseFormRoute&quot;,
+    &quot;path&quot;: &quot;/leases/form&quot;,
+    &quot;role&quot;: &quot;landlord&quot;,
+    &quot;level&quot;: &quot;screen-only; business assertions listed separately&quot;
+  },
+  {
+    &quot;name&quot;: &quot;billingRoute&quot;,
+    &quot;path&quot;: &quot;/billing&quot;,
+    &quot;role&quot;: &quot;landlord&quot;,
+    &quot;level&quot;: &quot;screen-only; business assertions listed separately&quot;
+  },
+  {
+    &quot;name&quot;: &quot;bulkBillingRoute&quot;,
+    &quot;path&quot;: &quot;/billing/bulk&quot;,
+    &quot;role&quot;: &quot;landlord&quot;,
+    &quot;level&quot;: &quot;screen-only; business assertions listed separately&quot;
+  },
+  {
+    &quot;name&quot;: &quot;billingFormRoute&quot;,
+    &quot;path&quot;: &quot;/billing/form&quot;,
+    &quot;role&quot;: &quot;landlord&quot;,
+    &quot;level&quot;: &quot;screen-only; business assertions listed separately&quot;
+  },
+  {
+    &quot;name&quot;: &quot;billingTariffsRoute&quot;,
+    &quot;path&quot;: &quot;/billing/tariffs&quot;,
+    &quot;role&quot;: &quot;landlord&quot;,
+    &quot;level&quot;: &quot;screen-only; business assertions listed separately&quot;
+  },
+  {
+    &quot;name&quot;: &quot;billingDetailRoute&quot;,
+    &quot;path&quot;: &quot;/billing/:id&quot;,
+    &quot;role&quot;: &quot;landlord&quot;,
+    &quot;level&quot;: &quot;screen-only; business assertions listed separately&quot;
+  },
+  {
+    &quot;name&quot;: &quot;expensesRoute&quot;,
+    &quot;path&quot;: &quot;/expenses&quot;,
+    &quot;role&quot;: &quot;landlord&quot;,
+    &quot;level&quot;: &quot;screen-only; business assertions listed separately&quot;
+  },
+  {
+    &quot;name&quot;: &quot;expenseFormRoute&quot;,
+    &quot;path&quot;: &quot;/expenses/form&quot;,
+    &quot;role&quot;: &quot;landlord&quot;,
+    &quot;level&quot;: &quot;screen-only; business assertions listed separately&quot;
+  },
+  {
+    &quot;name&quot;: &quot;maintenanceRoute&quot;,
+    &quot;path&quot;: &quot;/maintenance&quot;,
+    &quot;role&quot;: &quot;landlord&quot;,
+    &quot;level&quot;: &quot;screen-only; business assertions listed separately&quot;
+  },
+  {
+    &quot;name&quot;: &quot;maintenanceFormRoute&quot;,
+    &quot;path&quot;: &quot;/maintenance/form&quot;,
+    &quot;role&quot;: &quot;landlord&quot;,
+    &quot;level&quot;: &quot;screen-only; business assertions listed separately&quot;
+  },
+  {
+    &quot;name&quot;: &quot;reportsRoute&quot;,
+    &quot;path&quot;: &quot;/reports&quot;,
+    &quot;role&quot;: &quot;landlord&quot;,
+    &quot;level&quot;: &quot;screen-only; business assertions listed separately&quot;
+  },
+  {
+    &quot;name&quot;: &quot;staffRoute&quot;,
+    &quot;path&quot;: &quot;/staff&quot;,
+    &quot;role&quot;: &quot;landlord&quot;,
+    &quot;level&quot;: &quot;screen-only; business assertions listed separately&quot;
+  },
+  {
+    &quot;name&quot;: &quot;auditRoute&quot;,
+    &quot;path&quot;: &quot;/audit&quot;,
+    &quot;role&quot;: &quot;landlord&quot;,
+    &quot;level&quot;: &quot;screen-only; business assertions listed separately&quot;
+  },
+  {
+    &quot;name&quot;: &quot;notificationsRoute&quot;,
+    &quot;path&quot;: &quot;/notifications&quot;,
+    &quot;role&quot;: &quot;landlord&quot;,
+    &quot;level&quot;: &quot;screen-only; business assertions listed separately&quot;
+  },
+  {
+    &quot;name&quot;: &quot;actionItemsRoute&quot;,
+    &quot;path&quot;: &quot;/actions&quot;,
+    &quot;role&quot;: &quot;landlord&quot;,
+    &quot;level&quot;: &quot;screen-only; business assertions listed separately&quot;
+  },
+  {
+    &quot;name&quot;: &quot;p1OperationsRoute&quot;,
+    &quot;path&quot;: &quot;/operations/p1&quot;,
+    &quot;role&quot;: &quot;landlord&quot;,
+    &quot;level&quot;: &quot;screen-only; business assertions listed separately&quot;
+  },
+  {
+    &quot;name&quot;: &quot;leaseExpiryRoute&quot;,
+    &quot;path&quot;: &quot;/lease-expiry&quot;,
+    &quot;role&quot;: &quot;landlord&quot;,
+    &quot;level&quot;: &quot;screen-only; business assertions listed separately&quot;
+  }
+]</pre></html>

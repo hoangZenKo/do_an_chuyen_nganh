@@ -1,0 +1,77 @@
+@startuml
+left to right direction
+skinparam defaultFontName SansSerif
+skinparam defaultFontSize 13
+skinparam backgroundColor #F8FAFC
+skinparam shadowing false
+skinparam ArrowColor #52647A
+skinparam ArrowThickness 1
+skinparam actorStyle stickman
+skinparam actorBorderColor #243A52
+skinparam actorFontColor #243A52
+skinparam actorBackgroundColor #FFFFFF
+skinparam usecase {
+  BackgroundColor #FFFFFF
+  BorderColor #327C83
+  FontColor #20354B
+  BackgroundColor<<Một phần>> #FFF0CE
+  BorderColor<<Một phần>> #B17917
+  BackgroundColor<<DEMO>> #FCE5DF
+  BorderColor<<DEMO>> #BC593A
+  BackgroundColor<<MÔ PHỎNG>> #E7EAF1
+  BorderColor<<MÔ PHỎNG>> #6C7488
+}
+skinparam rectangle {
+  BackgroundColor #EEF4F5
+  BorderColor #243A52
+  FontColor #243A52
+}
+skinparam titleFontColor #20354B
+skinparam titleFontSize 18
+skinparam nodesep 25
+skinparam ranksep 65
+title A03 · NHÂN VIÊN VẬN HÀNH\n<size:12>Trang 5/6 · Chỉ số, hóa đơn và khoản thu</size>
+caption AS-IS · 29/10/2026 · Snapshot c565c29 · Không biểu diễn trình tự xử lý
+actor "A03\nNhân viên vận hành" as A03
+rectangle "Hệ thống quản lý nhà trọ" as SYSTEM {
+  usecase "UC-BIL-01\nGhi chỉ số điện nước theo kỳ" as UC_BIL_01
+  usecase "UC-BIL-02\nXem trước và lập hóa đơn một\nhợp đồng" as UC_BIL_02
+  usecase "UC-BIL-03\nLập hóa đơn hàng loạt" as UC_BIL_03
+  usecase "UC-BIL-04\nTra cứu hóa đơn và công nợ" as UC_BIL_04
+  usecase "UC-BIL-05\nSửa hạn thanh toán hoặc ghi chú\nhóa đơn" as UC_BIL_05
+  usecase "UC-BIL-06\nThay thế hóa đơn chưa có lịch\nsử thanh toán" as UC_BIL_06
+  usecase "UC-BIL-07\nĐiều chỉnh tăng hoặc giảm hóa\nđơn" as UC_BIL_07
+  usecase "UC-BIL-08.1\nHủy hóa đơn đủ điều kiện" as UC_BIL_08_1
+  usecase "UC-BIL-09\nGhi nhận thanh toán trực tiếp" as UC_BIL_09
+  usecase "UC-BIL-10\nTạo khoản thu cho người thuê" as UC_BIL_10
+  usecase "UC-BIL-11\nPhân bổ khoản thu cho hóa đơn" as UC_BIL_11
+  usecase "UC-BIL-12.1\nGiải phóng phân bổ khoản thu" as UC_BIL_12_1
+  usecase "UC-BIL-12.2\nĐảo thanh toán trực tiếp" as UC_BIL_12_2
+  usecase "UC-BIL-13\nGhi nhận hoàn tiền từ khoản thu" as UC_BIL_13
+  usecase "UC-BIL-17.1\nCấu hình lập hóa đơn định kỳ" as UC_BIL_17_1
+  usecase "UC-BIL-17.2\nXem trước và chạy đợt lập hóa\nđơn" as UC_BIL_17_2
+}
+A03 -- UC_BIL_01 : tùy handler: billing.view / billing.create
+A03 -- UC_BIL_02 : tùy handler: billing.view / billing.create
+A03 -- UC_BIL_03 : tùy handler: billing.create
+A03 -- UC_BIL_04 : tùy handler: billing.view
+A03 -- UC_BIL_05 : tùy handler: billing.create
+A03 -- UC_BIL_06 : tùy handler: billing.adjust
+A03 -- UC_BIL_07 : tùy handler: billing.adjust
+A03 -- UC_BIL_08_1 : tùy handler: billing.cancel
+A03 -- UC_BIL_09 : tùy handler: billing.record_payment
+A03 -- UC_BIL_10 : tùy handler: billing.view / billing.record_payment
+A03 -- UC_BIL_11 : tùy handler: billing.record_payment
+A03 -- UC_BIL_12_1 : tùy handler: billing.reverse_payment
+A03 -- UC_BIL_12_2 : tùy handler: billing.reverse_payment
+A03 -- UC_BIL_13 : tùy handler: billing.refund
+A03 -- UC_BIL_17_1 : tùy handler: billing.view / billing.create
+A03 -- UC_BIL_17_2 : tùy handler: billing.create
+legend bottom left
+  Đường liền: tương tác; không biểu diễn luồng điều khiển.
+  STAFF: permission theo handler + khu được giao + whitelist controller; không mặc định toàn quyền.
+  Mặc định: xác minh tĩnh, chưa nghiệm thu runtime; màu vàng: một phần, cam: DEMO, xám: mô phỏng.
+  Góc nhìn A03: nhãn liệt kê quyền tùy handler, KHÔNG yêu cầu đồng thời mọi quyền; giữ nguyên UC.
+  Quyền chi tiết, điều kiện và nguồn: Association_Traceability.md / data/diagram-manifest.json.
+endlegend
+@enduml

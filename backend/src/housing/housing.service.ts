@@ -221,9 +221,6 @@ export class HousingService {
         await this.reserveTime(tx, viewing.studentId, viewing.landlordId, viewing.listingId,
           false, viewing.scheduledAt, viewing.slotId ?? undefined, id);
       }
-      if (input.status === 'COMPLETED' && viewing.scheduledAt > new Date()) {
-        throw new ConflictException('Chỉ đánh dấu đã xem sau giờ hẹn.');
-      }
       const updated = await tx.roomViewing.update({ where: { id }, data: {
         status: input.status, version: { increment: 1 }, responseNote: input.note ?? '',
         ...(input.status === 'CANCELLED' ? { cancellationReason: input.note?.trim() ||

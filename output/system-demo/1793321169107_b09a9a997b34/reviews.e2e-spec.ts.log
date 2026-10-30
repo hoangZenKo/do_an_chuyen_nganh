@@ -1,0 +1,22 @@
+
+> rental-room-api@0.1.0 test:e2e
+> NODE_ENV=test jest --config ./test/jest-e2e.json --runInBand --runTestsByPath test/e2e/reviews.e2e-spec.ts --runInBand
+
+PASS test/e2e/reviews.e2e-spec.ts (5.244 s)
+  Verified room reviews E2E
+    ✓ accepts only verified tenants and keeps new reviews private until approval (361 ms)
+    ✓ requires accepted handover or an ended legacy stay of at least a day (314 ms)
+    ✓ rejects future and short legacy leases (298 ms)
+    ✓ enforces authentication, roles and tenant/landlord ownership (329 ms)
+    ✓ validates scores, body, versions and moderation notes (341 ms)
+    ✓ allows only one review per tenant, room and landlord across leases (374 ms)
+    ✓ moderates landlord replies separately and clears old replies after tenant edits (402 ms)
+    ✓ hides rejected reviews and replies and removes withdrawn scores from aggregates (386 ms)
+    ✓ rejects stale versions and serializes concurrent edit/moderation operations (324 ms)
+    ✓ rejects unpublished or demo listings and bounds pagination (352 ms)
+
+Test Suites: 1 passed, 1 total
+Tests:       10 passed, 10 total
+Snapshots:   0 total
+Time:        5.361 s
+Ran all test suites within paths "test/e2e/reviews.e2e-spec.ts".

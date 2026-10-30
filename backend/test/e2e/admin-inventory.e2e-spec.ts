@@ -129,6 +129,90 @@ describe('Admin inventory database acceptance', () => {
     expect((await harness!.prisma.room.findUniqueOrThrow({ where: { id: room.id } })).note).toBe('PRIVATE_ROOM_NOTE');
   });
 
+  it('searches room, property and landlord across all pending pages while retaining assignment filters', async () => {
+    const admin = await operator(), { owner, property, room, listing } = await inventory();
+    await harness!.prisma.user.update({ where: { id: owner.user.id }, data: { fullName: 'Nguyễn Bình An' } });
+    await harness!.prisma.property.update({ where: { id: property.id }, data: { name: 'Khu trọ Bình An' } });
+    const rooms = await harness!.prisma.room.findMany({ where: { propertyId: property.id, id: { not: room.id } } });
+    await Promise.all(rooms.map(item => pendingListing(item.id, 'Another pending listing')));
+    const search = (keyword: string, extra = '') => api(`/moderation/queue?kind=LISTING&search=${encodeURIComponent(keyword)}${extra}`, admin.accessToken);
+    for (const keyword of ['r11', room.id, room.id.toUpperCase(), room.id.slice(0, 8), listing.title]) {
+      const result = await search(keyword);
+      expect(result.status).toBe(200);
+      expect(result.json.meta.total).toBe(1);
+      expect(result.json.data[0].id).toBe(listing.id);
+      expectSafe(result.text, owner.email);
+    }
+    for (const keyword of ['khu trọ bình an', 'nguyễn bình an']) {
+      const result = await search(keyword, '&page=2');
+      expect(result.status).toBe(200);
+      expect(result.json.meta).toMatchObject({ page: 2, total: 25, pages: 2 });
+      expect(result.json.data).toHaveLength(5);
+    }
+    await harness!.prisma.moderationWorkItem.create({ data: { kind: 'LISTING', targetId: listing.id,
+      assigneeId: admin.id, priority: 'URGENT', dueAt: new Date(Date.now() - 60000), note: '' } });
+    const filtered = await search('Bình An', '&assignment=mine&priority=URGENT&overdue=true');
+    expect(filtered.json.meta.total).toBe(1);
+    expect(filtered.json.data[0].id).toBe(listing.id);
+    expect((await search('Bình An', '&assignment=unassigned')).json.meta.total).toBe(24);
+    await harness!.prisma.roomListing.update({ where: { id: listing.id }, data: { status: 'PUBLISHED' } });
+    expect((await search('R11')).json.meta.total).toBe(0);
+    expect((await search('Bình An')).json.meta.total).toBe(24);
+    expect((await search('   ')).json.meta.total).toBe(24);
+  });
+
+  it('treats wildcard characters literally and refuses unauthorized or overlong queue searches', async () => {
+    const admin = await operator(), { owner, room, listing } = await inventory();
+    await harness!.prisma.room.update({ where: { id: room.id }, data: { name: 'R_11%\\A' } });
+    const search = (keyword: string, token = admin.accessToken) => api(`/moderation/queue?kind=LISTING&search=${encodeURIComponent(keyword)}`, token);
+    for (const keyword of ['_', '%', '\\']) {
+      const result = await search(keyword);
+      expect(result.status).toBe(200);
+      expect(result.json.meta.total).toBe(1);
+      expect(result.json.data[0].id).toBe(listing.id);
+      expectSafe(result.text, owner.email);
+    }
+    for (const keyword of ['R%11', 'R_12', "' OR 1=1 --", 'not present']) {
+      const result = await search(keyword);
+      expect(result.status).toBe(200);
+      expect(result.json.meta.total).toBe(0);
+    }
+    expect((await search('a'.repeat(121))).status).toBe(400);
+    const analyst = await operator('analyst');
+    expect((await search('R_11', analyst.accessToken)).status).toBe(403);
+  });
+
+  it('finds reports, reviews and replies by related room, listing, property and landlord', async () => {
+    const admin = await operator(), { owner, property, room, listing } = await inventory();
+    const author = await harness!.prisma.user.create({ data: { role: 'TENANT', fullName: 'Review author',
+      email: `${randomUUID()}@test.vn`, passwordHash: 'test-only-no-login' } });
+    const tenant = await harness!.prisma.tenant.create({ data: { landlordId: owner.user.id, userId: author.id, fullName: 'Review author' } });
+    const lease = await harness!.prisma.lease.create({ data: { tenantId: tenant.id, roomId: room.id,
+      startDate: new Date(), monthlyRent: 3000000 } });
+    const report = await harness!.prisma.listingReport.create({ data: { listingId: listing.id,
+      reporterId: author.id, reason: 'Content issue', detail: 'Needs review' } });
+    const review = await harness!.prisma.roomReview.create({ data: { roomId: room.id, landlordId: owner.user.id,
+      authorId: author.id, leaseId: lease.id, roomRating: 4, costRating: 4, landlordRating: 4, areaRating: 4,
+      body: 'Review content', verificationSource: 'LEASE', tenancyVerifiedAt: new Date(),
+      replyBody: 'Landlord reply', replyStatus: 'PENDING' } });
+    const landlord = await harness!.prisma.user.findUniqueOrThrow({ where: { id: owner.user.id } });
+    for (const kind of ['REPORT', 'REVIEW', 'REPLY']) {
+      for (const keyword of [room.name, room.id, listing.title, property.name, landlord.fullName]) {
+        const result = await api(`/moderation/queue?kind=${kind}&search=${encodeURIComponent(keyword)}`, admin.accessToken);
+        expect(result.status).toBe(200);
+        expect(result.json.meta.total).toBe(1);
+        expect(result.json.data[0].id).toBe(kind === 'REPORT' ? report.id : review.id);
+        expectSafe(result.text, owner.email);
+      }
+    }
+    await harness!.prisma.roomReview.update({ where: { id: review.id }, data: { withdrawnAt: new Date() } });
+    for (const kind of ['REVIEW', 'REPLY']) {
+      expect((await api(`/moderation/queue?kind=${kind}&search=R11`, admin.accessToken)).json.meta.total).toBe(0);
+    }
+    await harness!.prisma.listingReport.update({ where: { id: report.id }, data: { status: 'RESOLVED' } });
+    expect((await api('/moderation/queue?kind=REPORT&search=R11', admin.accessToken)).json.meta.total).toBe(0);
+  });
+
   it('preserves authorized property creation/update with audit and masked bounded detail', async () => {
     const admin = await operator(), owner = await registerLandlord(harness!.baseUrl);
     const created = await api('/properties', admin.accessToken, { landlordId: owner.user.id, name: 'Created by admin', address: 'Admin address' });

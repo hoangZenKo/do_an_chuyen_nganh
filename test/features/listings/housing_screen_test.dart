@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:rental_room_management/core/network/api_failure.dart';
+import 'package:rental_room_management/core/theme/app_theme.dart';
 import 'package:rental_room_management/data/listings/housing_repository.dart';
 import 'package:rental_room_management/features/auth/auth_navigation.dart';
 import 'package:rental_room_management/features/auth/auth_providers.dart';
@@ -20,6 +21,7 @@ class HousingTestRepository extends HousingRepository {
   bool fail = false;
   bool enabled = false;
   String status = 'REQUESTED';
+  DateTime scheduledAt = DateTime.now().subtract(const Duration(days: 1));
   final changes = <String>[];
   Future<HousingPage<SavedRoom>> Function()? loadSaved;
   @override
@@ -49,7 +51,7 @@ class HousingTestRepository extends HousingRepository {
             address: 'Đường A',
             status: status,
             version: 1,
-            scheduledAt: DateTime.now().subtract(const Duration(days: 1)),
+            scheduledAt: scheduledAt,
             rent: 2500000,
             deposit: 2000000)
       ], page: page, total: 1);
@@ -72,21 +74,69 @@ void main() {
     repository = HousingTestRepository();
     container = ProviderContainer(overrides: [
       sessionControllerProvider.overrideWith(ChatTestSession.new),
-      housingRepositoryProvider.overrideWithValue(repository)
+      housingRepositoryProvider.overrideWithValue(repository),
+      roomViewingProvider.overrideWith(
+          (_, __) async => (await repository.viewings(1)).items.first),
     ]);
   });
   tearDown(() => container.dispose());
   Future<void> show(WidgetTester tester, Widget screen,
-      {double scale = 1}) async {
+      {double scale = 1, ThemeData? theme}) async {
     await tester.pumpWidget(UncontrolledProviderScope(
         container: container,
         child: MaterialApp(
+            theme: theme,
             builder: (context, child) => MediaQuery(
                 data: MediaQuery.of(context)
                     .copyWith(textScaler: TextScaler.linear(scale)),
                 child: child!),
             home: screen)));
     await tester.pumpAndSettle();
+  }
+
+  for (final width in [320.0, 390.0]) {
+    for (final detail in [false, true]) {
+      testWidgets(
+          'viewing ${detail ? 'detail' : 'list'} text stays readable over a dark app at width $width',
+          (tester) async {
+        tester.view.physicalSize = Size(width, 844);
+        tester.view.devicePixelRatio = 1;
+        addTearDown(tester.view.resetPhysicalSize);
+        addTearDown(tester.view.resetDevicePixelRatio);
+        await show(
+            tester,
+            HousingScreen(
+                section: HousingSection.viewings,
+                viewingId: detail ? 'v1' : null),
+            theme: AppTheme.dark);
+
+        for (final label in [
+          'Phòng có cửa sổ',
+          'Đường A',
+          'Người xem: Sinh viên A',
+          'Chờ xác nhận',
+        ]) {
+          final finder = find.text(label);
+          final element = tester.element(finder);
+          final theme = Theme.of(element);
+          final text = tester.widget<Text>(finder);
+          final color =
+              text.style?.color ?? DefaultTextStyle.of(element).style.color!;
+          final background = theme.scaffoldBackgroundColor;
+          final luminances = [
+            color.computeLuminance(),
+            background.computeLuminance(),
+          ]..sort();
+          expect(theme.brightness, Brightness.light);
+          expect((luminances.last + 0.05) / (luminances.first + 0.05),
+              greaterThanOrEqualTo(4.5),
+              reason: label);
+        }
+        expect(find.text('Xác nhận lịch'), findsOneWidget);
+        expect(find.text('Hủy lịch'), findsOneWidget);
+        expect(tester.takeException(), isNull);
+      });
+    }
   }
 
   test('housing routes require a compatible authenticated role', () {
@@ -190,11 +240,47 @@ void main() {
     expect(repository.changes, ['CONFIRMED']);
     expect(find.text('Đã xác nhận'), findsOneWidget);
   });
+  for (final detail in [false, true]) {
+    testWidgets(
+        'landlord confirms an early visit in ${detail ? 'detail' : 'list'} only after accepting the warning',
+        (tester) async {
+      repository.status = 'CONFIRMED';
+      repository.scheduledAt = DateTime.now().add(const Duration(days: 1));
+      await show(
+          tester,
+          HousingScreen(
+              section: HousingSection.viewings,
+              viewingId: detail ? 'v1' : null));
+
+      expect(find.text('Đã xem phòng'), findsOneWidget);
+      expect(find.text('Tạo hợp đồng'), findsNothing);
+      await tester.tap(find.text('Đã xem phòng'));
+      await tester.pumpAndSettle();
+      expect(find.textContaining('Lịch hẹn chưa tới giờ'), findsOneWidget);
+      expect(
+          find.textContaining('hai bên đã thực sự xem phòng'), findsOneWidget);
+      expect(repository.changes, isEmpty);
+      await tester.tap(find.text('Đóng'));
+      await tester.pumpAndSettle();
+      expect(repository.changes, isEmpty);
+
+      await tester.tap(find.text('Đã xem phòng'));
+      await tester.pumpAndSettle();
+      await tester.tap(find.text('Xác nhận'));
+      await tester.pumpAndSettle();
+      expect(repository.changes, ['COMPLETED']);
+      expect(find.text('Tạo hợp đồng'), findsOneWidget);
+      expect(tester.takeException(), isNull);
+    });
+  }
   testWidgets('tenant cannot confirm or create a lease', (tester) async {
+    repository.status = 'CONFIRMED';
+    repository.scheduledAt = DateTime.now().add(const Duration(days: 1));
     (container.read(sessionControllerProvider.notifier) as ChatTestSession)
         .change(chatSession('s', role: 'tenant'));
     await show(tester, const HousingScreen(section: HousingSection.viewings));
     expect(find.text('Xác nhận lịch'), findsNothing);
+    expect(find.text('Đã xem phòng'), findsNothing);
     expect(find.text('Tạo hợp đồng'), findsNothing);
     expect(find.text('Hủy lịch'), findsOneWidget);
   });

@@ -1,0 +1,36 @@
+{
+  "route": "/auth/login",
+  "apiBaseUrl": "http://127.0.0.1:58578/api/v1",
+  "texts": [
+    "Welcome Back",
+    "Log in to manage your Atrium Rooms.",
+    "ThrottlerException: Too Many Requests",
+    "Email address",
+    "Password",
+    "Remember me",
+    "Forgot Password?",
+    "Log In",
+    "Or continue with",
+    "Google",
+    "Apple",
+    "Khám phá phòng không cần đăng nhập",
+    "Don't have an account? ",
+    "Sign up",
+    "Bấm: Log In"
+  ],
+  "fields": [
+    {
+      "label": null,
+      "hint": "Email address",
+      "readOnly": false,
+      "obscure": false
+    },
+    {
+      "label": null,
+      "hint": "Password",
+      "readOnly": false,
+      "obscure": true
+    }
+  ],
+  "errors": []
+}

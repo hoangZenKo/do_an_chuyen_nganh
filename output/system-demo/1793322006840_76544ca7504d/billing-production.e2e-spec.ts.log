@@ -1,0 +1,46 @@
+
+> rental-room-api@0.1.0 test:e2e
+> NODE_ENV=test jest --config ./test/jest-e2e.json --runInBand --runTestsByPath test/e2e/billing-production.e2e-spec.ts --runInBand
+
+FAIL test/e2e/billing-production.e2e-spec.ts (6.522 s)
+  Production billing ledger (disposable database)
+    ✓ cancels only with a reason and replaces using a new immutable revision (419 ms)
+    ✓ appends credit/debit notes, preserves original lines and audits retries once (349 ms)
+    ✓ allocates one receipt across invoices, retains credit, releases and refunds with full history (325 ms)
+    ✓ rejects cross-landlord, cross-tenant, over-allocation and concurrent over-refund (278 ms)
+    ✓ serializes concurrent allocations so invoices cannot be overpaid (213 ms)
+    ✕ deduplicates reminders and skips delivery when payment was received (274 ms)
+    ✓ applies approved property service and tiered utility prices to preview and issue (284 ms)
+    ✓ deduplicates concurrent tariff proposals and serializes competing decisions (215 ms)
+    ✓ discloses room override exclusions and compares approved tariffs to their predecessor (259 ms)
+    ✓ blocks stale effective-order previews without weakening the live review guard (272 ms)
+    ✓ blocks invoice issuance and tariff activation for locked periods (243 ms)
+    ✓ reconciles a bank transfer to its full receipt, not the individual invoice allocations (315 ms)
+    ✓ requires a separate checker and revalidates receipt uniqueness during reconciliation approval (324 ms)
+    ✓ assigns only active landlord staff and keeps a custom SLA when editing unchanged priority (190 ms)
+    ✓ defaults SLA by priority and escalates each overdue deadline once under concurrency (194 ms)
+    ✓ links exactly one repair expense when completion is retried concurrently (256 ms)
+    ✓ passes the release readiness gate with the actual migrated columns and immutable/SLA triggers (237 ms)
+
+  ● Production billing ledger (disposable database) › deduplicates reminders and skips delivery when payment was received
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 1
+    Received: 0
+
+      124 |     const reminders = harness.app.get(BillingRemindersService);
+      125 |     await Promise.all([reminders.enqueue(now, landlordId), reminders.enqueue(now, landlordId)]);
+    > 126 |     expect(await harness.prisma.billingOutboxEvent.count({ where: { type: 'invoice.reminder' } })).toBe(1);
+          |                                                                                                    ^
+      127 |     const job = await harness.prisma.billingOutboxEvent.findFirstOrThrow({ where: { type: 'invoice.reminder' } });
+      128 |     await harness.app.get(BillingOutboxService).deliver(job.id, now);
+      129 |     expect(await harness.prisma.billingNotification.count()).toBe(1);
+
+      at Object.<anonymous> (test/e2e/billing-production.e2e-spec.ts:126:100)
+
+Test Suites: 1 failed, 1 total
+Tests:       1 failed, 16 passed, 17 total
+Snapshots:   0 total
+Time:        6.652 s, estimated 7 s
+Ran all test suites within paths "test/e2e/billing-production.e2e-spec.ts".

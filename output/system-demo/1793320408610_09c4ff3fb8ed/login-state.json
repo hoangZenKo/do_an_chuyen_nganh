@@ -1,0 +1,43 @@
+{
+  "route": "/admin",
+  "apiBaseUrl": "http://127.0.0.1:54083/api/v1",
+  "texts": [
+    "Welcome Back",
+    "Log in to manage your Atrium Rooms.",
+    "Email address",
+    "Password",
+    "Remember me",
+    "Forgot Password?",
+    "Or continue with",
+    "Google",
+    "Apple",
+    "Khám phá phòng không cần đăng nhập",
+    "Don't have an account? ",
+    "Sign up",
+    "Xin chào,",
+    "Quan tri DEMO",
+    "Q",
+    "Đang tải dữ liệu…",
+    "Tổng quan",
+    "Người dùng",
+    "Khu trọ",
+    "Báo cáo",
+    "Khác",
+    "Bấm: Log In"
+  ],
+  "fields": [
+    {
+      "label": null,
+      "hint": "Email address",
+      "readOnly": false,
+      "obscure": false
+    },
+    {
+      "label": null,
+      "hint": "Password",
+      "readOnly": false,
+      "obscure": true
+    }
+  ],
+  "errors": []
+}

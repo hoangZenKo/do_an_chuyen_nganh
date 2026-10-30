@@ -1,0 +1,85 @@
+@startuml
+skinparam backgroundColor white
+skinparam shadowing false
+skinparam dpi 240
+skinparam defaultFontName "Times New Roman"
+skinparam defaultFontSize 17
+skinparam defaultFontColor black
+skinparam titleFontSize 21
+skinparam titleFontColor black
+skinparam roundcorner 0
+skinparam maxMessageSize 270
+skinparam ParticipantPadding 30
+skinparam sequence {
+  ArrowColor #800000
+  ArrowThickness 1.2
+  LifeLineBorderColor #999999
+  LifeLineBackgroundColor #FFFFB9
+  ParticipantBackgroundColor #FFFFB9
+  ParticipantBorderColor #800000
+  ParticipantFontColor black
+  ActorBackgroundColor #FFFFB9
+  ActorBorderColor #800000
+  ActorFontColor black
+  BoundaryBackgroundColor #FFFFB9
+  BoundaryBorderColor #800000
+  ControlBackgroundColor #FFFFB9
+  ControlBorderColor #800000
+  EntityBackgroundColor #FFFFB9
+  EntityBorderColor #800000
+  GroupBackgroundColor #FFFFB9
+  GroupBodyBackgroundColor white
+  GroupBorderColor #888888
+  GroupFontColor black
+  GroupHeaderFontColor black
+  GroupFontSize 15
+  GroupHeaderFontSize 16
+  MessageAlign center
+}
+hide footbox
+<style>
+sequenceDiagram {
+ actor { BackgroundColor #FFFFB9
+ LineColor #800000 }
+ boundary { BackgroundColor #FFFFB9
+ LineColor #800000 }
+ control { BackgroundColor #FFFFB9
+ LineColor #800000 }
+ entity { BackgroundColor #FFFFB9
+ LineColor #800000 }
+ activationBox { BackgroundColor #FFFFB9
+ LineColor #800000 }
+}
+</style>
+autonumber "<b>0.</b>"
+
+title SD-03. Lập hợp đồng thuê phòng và ghi nhận cọc ban đầu
+actor "Chủ trọ" as A
+boundary "<u>Giao diện</u>\n<u>lập hợp đồng</u>" as U #FFFFB9
+control "<u>Quản lý</u>\n<u>hợp đồng thuê</u>" as C #FFFFB9
+entity "<u>Phòng, người thuê</u>\n<u>và hợp đồng</u>" as D #FFFFB9
+A -> U: Chọn phòng, người thuê; nhập điều khoản và tiền cọc
+activate U
+U -> C: Yêu cầu lập hợp đồng với thông tin đã nhập
+activate C
+C -> D ++: Tra cứu phòng, hồ sơ người thuê và hợp đồng đang hiệu lực
+D --> C --: Thông tin thuộc quyền quản lý và tình trạng phòng
+alt Ngoài quyền, dữ liệu sai, phòng bảo trì hoặc chưa sẵn sàng
+C --> U: Không lập hợp đồng
+U --> A: Không lập hợp đồng; chỉ rõ điều kiện chưa đáp ứng
+else Phòng đã có hợp đồng còn hiệu lực
+C --> U: Không lập hợp đồng
+U --> A: Không lập hợp đồng; phòng đã được thuê
+else Phòng và người thuê đủ điều kiện
+C -> D ++: Lập hợp đồng có hiệu lực; ghi nhận phòng có người ở
+D --> C --: Hợp đồng và tình trạng phòng được ghi nhận cùng nhau
+opt Tiền cọc ban đầu lớn hơn 0
+C -> D ++: Ghi nhận khoản cọc đã thu cho hợp đồng
+D --> C --: Khoản thu cọc được lưu vào lịch sử
+end
+C --> U: Lập hợp đồng thành công
+U --> A: Lập hợp đồng thành công; hiển thị thông tin hợp đồng
+end
+deactivate C
+deactivate U
+@enduml

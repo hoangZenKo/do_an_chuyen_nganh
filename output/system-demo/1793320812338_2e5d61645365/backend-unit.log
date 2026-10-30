@@ -1,0 +1,194 @@
+
+> rental-room-api@0.1.0 test
+> jest --runInBand
+
+PASS src/admin/admin-release-gate.spec.ts
+FAIL src/uploads/malware-scanner.service.spec.ts
+  ● MalwareScannerService › binds a clean verdict to the exact file hash
+
+    expect(received).resolves.toBe()
+
+    Received promise rejected instead of resolved
+    Rejected to value: [ServiceUnavailableException: Attachment scanner is not configured.]
+
+      13 |   it('binds a clean verdict to the exact file hash', async () => {
+      14 |     const provider = jest.spyOn(global, 'fetch').mockResolvedValue(new Response(JSON.stringify({ sha256, verdict: 'CLEAN' })));
+    > 15 |     await expect(configured().scan(bytes, 'image/png')).resolves.toBe(sha256);
+         |           ^
+      16 |     expect(provider.mock.calls[0][1]?.headers).toMatchObject({ 'x-content-sha256': sha256 });
+      17 |   });
+      18 |   it('rejects infected, unverified or failed scan results', async () => {
+
+      at expect (node_modules/expect/build/index.js:113:15)
+      at Object.<anonymous> (src/uploads/malware-scanner.service.spec.ts:15:11)
+
+  ● MalwareScannerService › rejects infected, unverified or failed scan results
+
+    expect(received).rejects.toThrow(expected)
+
+    Expected substring: "rejected"
+    Received message:   "Attachment scanner is not configured."
+
+          11 |     const endpoint = httpsEndpoint(this.config.get<string>('SUPPORT_SCAN_WEBHOOK_URL'));
+          12 |     const secret = this.config.get<string>('SUPPORT_SCAN_WEBHOOK_SECRET')?.trim();
+        > 13 |     if (!endpoint || !secret) throw new ServiceUnavailableException('Attachment scanner is not configured.');
+             |                                     ^
+          14 |     const sha256 = createHash('sha256').update(bytes).digest('hex');
+          15 |     try {
+          16 |       const response = await fetch(endpoint, { method: 'POST', redirect: 'error', signal: AbortSignal.timeout(15000),
+
+      at MalwareScannerService.scan (src/uploads/malware-scanner.service.ts:13:37)
+      at Object.<anonymous> (src/uploads/malware-scanner.service.spec.ts:20:31)
+      at Object.toThrow (node_modules/expect/build/index.js:218:22)
+      at Object.<anonymous> (src/uploads/malware-scanner.service.spec.ts:20:65)
+
+PASS src/auth/auth.service.spec.ts
+PASS src/admin/admin-release-http.spec.ts
+PASS src/admin/admin-accounts.http.spec.ts
+PASS src/admin/admin-route-catalog.spec.ts
+PASS src/admin/admin-inventory.http.spec.ts
+PASS src/billing/manual-transfer.service.spec.ts
+FAIL src/delivery/delivery-crypto.service.spec.ts
+  ● Encrypted delivery › requires a dedicated 256-bit key and authenticates ciphertext
+
+    expect(received).toThrow()
+
+    Received function did not throw
+
+      10 |     expect(JSON.parse(crypto.decrypt(encrypted))).toEqual({ token: 'super-private', email: 'person@example.com' });
+      11 |     const wrong = new DeliveryCryptoService(new ConfigService({ DELIVERY_ENCRYPTION_KEY: Buffer.alloc(32, 2).toString('base64') }));
+    > 12 |     expect(() => wrong.decrypt(encrypted)).toThrow();
+         |                                            ^
+      13 |     expect(new DeliveryCryptoService(new ConfigService()).ready()).toBe(false);
+      14 |   });
+      15 |   it('rejects insecure endpoints and embedded credentials', () => {
+
+      at Object.<anonymous> (src/delivery/delivery-crypto.service.spec.ts:12:44)
+
+PASS src/admin/admin-overview-analytics.http.spec.ts
+PASS src/admin/admin-account-governance.spec.ts
+PASS src/admin/admin-moderation-search.spec.ts
+PASS src/admin/admin-accounts.service.spec.ts
+PASS src/platform/platform-rules.spec.ts
+PASS src/tenants/tenant-invites.service.spec.ts
+PASS src/billing/billing-rules.spec.ts
+PASS src/admin/admin-search.service.spec.ts
+PASS src/admin/admin-pii-projection.spec.ts
+PASS src/chatbot/knowledge-importer.spec.ts
+PASS src/health/incident-workflow.service.spec.ts
+PASS src/common/landlord-resource-authorization.spec.ts
+PASS src/billing/billing.service.spec.ts
+PASS src/admin/admin-workspace.service.spec.ts
+PASS src/admin/admin-inventory.service.spec.ts
+PASS src/health/operations-queue.service.spec.ts
+PASS src/platform/moderation-policy-quality.spec.ts
+PASS src/health/schema-readiness.service.spec.ts
+PASS src/platform/moderation-preview.spec.ts
+PASS src/chatbot/knowledge-chunker.spec.ts
+PASS src/support/support-inbox.spec.ts
+PASS src/leases/settlements.service.spec.ts
+PASS src/admin/admin-overview-analytics.service.spec.ts
+PASS src/admin/admin-audit-query.service.spec.ts
+PASS src/admin/admin-lifecycle.service.spec.ts
+PASS src/platform/moderation-quality.service.spec.ts
+PASS src/admin/admin-transactions.service.spec.ts
+PASS src/uploads/admin-attachment-authorization.spec.ts
+PASS src/common/roles.guard.spec.ts
+PASS src/admin/admin-permissions.dto.spec.ts
+PASS src/chatbot/chatbot.service.spec.ts
+PASS src/billing/demo-card.gateway.spec.ts
+PASS src/billing/billing-tariffs.service.spec.ts
+PASS src/admin/admin-registry.service.spec.ts
+PASS src/health/operations-health.service.spec.ts
+PASS src/common/property-scope.spec.ts
+PASS src/auth/jwt.strategy.spec.ts
+PASS src/operations/recurring.service.spec.ts
+PASS src/chatbot/ollama.client.spec.ts
+PASS src/chatbot/knowledge-retriever.spec.ts
+PASS scripts/admin-release-preflight.spec.ts
+PASS src/dashboard/dashboard.service.spec.ts
+PASS src/billing/manual-transfer.dto.spec.ts
+PASS src/common/attachment-url.validator.spec.ts
+PASS src/billing/invoice-lines.spec.ts
+PASS src/auth/admin-mfa.service.spec.ts
+PASS src/admin/admin-property-review.service.spec.ts
+PASS src/auth/account-access.service.spec.ts
+PASS src/platform/finance-reconciliation.service.spec.ts
+PASS src/health/backup-telemetry.service.spec.ts
+PASS src/common/api-error.filter.spec.ts
+PASS src/rooms/service-tariff.spec.ts
+PASS src/admin/admin-access-review.service.spec.ts
+PASS src/support/business-calendar.spec.ts
+PASS src/common/subscription-entitlements.spec.ts
+PASS src/reports/billing-analytics.spec.ts
+PASS src/chatbot/chatbot.config.spec.ts
+PASS src/chatbot/chatbot-evaluation.spec.ts
+PASS src/billing/demo-checkout.page.spec.ts
+PASS src/chatbot/knowledge-import.cli.spec.ts
+PASS src/common/auth-role.spec.ts
+PASS src/auth/admin-step-up.policy.spec.ts
+PASS src/tenant-lifecycle/notification-channels.spec.ts
+
+Summary of all failing tests
+FAIL src/uploads/malware-scanner.service.spec.ts
+  ● MalwareScannerService › binds a clean verdict to the exact file hash
+
+    expect(received).resolves.toBe()
+
+    Received promise rejected instead of resolved
+    Rejected to value: [ServiceUnavailableException: Attachment scanner is not configured.]
+
+      13 |   it('binds a clean verdict to the exact file hash', async () => {
+      14 |     const provider = jest.spyOn(global, 'fetch').mockResolvedValue(new Response(JSON.stringify({ sha256, verdict: 'CLEAN' })));
+    > 15 |     await expect(configured().scan(bytes, 'image/png')).resolves.toBe(sha256);
+         |           ^
+      16 |     expect(provider.mock.calls[0][1]?.headers).toMatchObject({ 'x-content-sha256': sha256 });
+      17 |   });
+      18 |   it('rejects infected, unverified or failed scan results', async () => {
+
+      at expect (node_modules/expect/build/index.js:113:15)
+      at Object.<anonymous> (src/uploads/malware-scanner.service.spec.ts:15:11)
+
+  ● MalwareScannerService › rejects infected, unverified or failed scan results
+
+    expect(received).rejects.toThrow(expected)
+
+    Expected substring: "rejected"
+    Received message:   "Attachment scanner is not configured."
+
+          11 |     const endpoint = httpsEndpoint(this.config.get<string>('SUPPORT_SCAN_WEBHOOK_URL'));
+          12 |     const secret = this.config.get<string>('SUPPORT_SCAN_WEBHOOK_SECRET')?.trim();
+        > 13 |     if (!endpoint || !secret) throw new ServiceUnavailableException('Attachment scanner is not configured.');
+             |                                     ^
+          14 |     const sha256 = createHash('sha256').update(bytes).digest('hex');
+          15 |     try {
+          16 |       const response = await fetch(endpoint, { method: 'POST', redirect: 'error', signal: AbortSignal.timeout(15000),
+
+      at MalwareScannerService.scan (src/uploads/malware-scanner.service.ts:13:37)
+      at Object.<anonymous> (src/uploads/malware-scanner.service.spec.ts:20:31)
+      at Object.toThrow (node_modules/expect/build/index.js:218:22)
+      at Object.<anonymous> (src/uploads/malware-scanner.service.spec.ts:20:65)
+
+FAIL src/delivery/delivery-crypto.service.spec.ts
+  ● Encrypted delivery › requires a dedicated 256-bit key and authenticates ciphertext
+
+    expect(received).toThrow()
+
+    Received function did not throw
+
+      10 |     expect(JSON.parse(crypto.decrypt(encrypted))).toEqual({ token: 'super-private', email: 'person@example.com' });
+      11 |     const wrong = new DeliveryCryptoService(new ConfigService({ DELIVERY_ENCRYPTION_KEY: Buffer.alloc(32, 2).toString('base64') }));
+    > 12 |     expect(() => wrong.decrypt(encrypted)).toThrow();
+         |                                            ^
+      13 |     expect(new DeliveryCryptoService(new ConfigService()).ready()).toBe(false);
+      14 |   });
+      15 |   it('rejects insecure endpoints and embedded credentials', () => {
+
+      at Object.<anonymous> (src/delivery/delivery-crypto.service.spec.ts:12:44)
+
+
+Test Suites: 2 failed, 1 skipped, 70 passed, 72 of 73 total
+Tests:       3 failed, 7 skipped, 743 passed, 753 total
+Snapshots:   0 total
+Time:        9.193 s
+Ran all test suites.

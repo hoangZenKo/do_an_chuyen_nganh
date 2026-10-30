@@ -1,0 +1,33 @@
+{
+  "route": "/admin/listings",
+  "apiBaseUrl": "http://127.0.0.1:58578/api/v1",
+  "texts": [
+    "2 tin đăng",
+    "Không tải được ảnh",
+    "Đã duyệt nội dung",
+    "DEMO tin dang UI",
+    "Cần xác nhận phòng trống",
+    "Thủ Đức, Hồ Chí Minh · 28 m²",
+    "3.500.000 đ/tháng",
+    "· Cọc 3.000.000 đ",
+    "Bản nháp · phiên bản 1",
+    "Chưa có ảnh",
+    "Đã duyệt nội dung",
+    "DEMO - Phong trong co ban cong",
+    "Cần xác nhận phòng trống",
+    "Thủ Đức, Hồ Chí Minh · 28 m²",
+    "Wifi",
+    "3.200.000 đ/tháng",
+    "· Cọc 3.000.000 đ",
+    "Đã duyệt · phiên bản 1",
+    "Xác minh",
+    "Ẩn tin",
+    "Trang trước",
+    "Trang 1",
+    "Trang sau",
+    "Kiểm duyệt tin đăng",
+    "Bấm: Duyệt"
+  ],
+  "fields": [],
+  "errors": []
+}

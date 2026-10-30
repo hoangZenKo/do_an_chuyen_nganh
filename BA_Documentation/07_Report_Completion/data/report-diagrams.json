@@ -1,0 +1,589 @@
+[
+  {
+    "id": "Overall_Use_Case",
+    "file": "Overall_Use_Case.puml",
+    "kind": "overall",
+    "groupId": null,
+    "title": "TỔNG THỂ · HỆ THỐNG QUẢN LÝ NHÀ TRỌ",
+    "ucIds": [
+      "UC-SYS-03",
+      "UC-DIS-01",
+      "UC-DIS-09",
+      "UC-TEN-03",
+      "UC-TNT-05",
+      "UC-TNT-08",
+      "UC-BIL-16",
+      "UC-OPT-03.1",
+      "UC-OPT-01",
+      "UC-ADM-02",
+      "UC-ADM-11",
+      "UC-ADM-15"
+    ],
+    "actorIds": [
+      "A01",
+      "A02",
+      "A03",
+      "A04",
+      "A05"
+    ]
+  },
+  {
+    "id": "UC_G01_01_SYS_Public",
+    "file": "UC_G01_01_SYS_Public.puml",
+    "kind": "module",
+    "groupId": "G01",
+    "title": "G01 Đăng ký và tiếp nhận lời mời",
+    "ucIds": [
+      "UC-SYS-01",
+      "UC-SYS-02",
+      "UC-SYS-03",
+      "UC-SYS-06",
+      "UC-SYS-08",
+      "UC-SYS-09",
+      "UC-SYS-10"
+    ],
+    "actorIds": [
+      "A01",
+      "E01"
+    ]
+  },
+  {
+    "id": "UC_G01_02_SYS_Sessions",
+    "file": "UC_G01_02_SYS_Sessions.puml",
+    "kind": "module",
+    "groupId": "G01",
+    "title": "G01 Đăng nhập và bảo vệ tài khoản",
+    "ucIds": [
+      "UC-SYS-05.1",
+      "UC-SYS-05.2",
+      "UC-SYS-07",
+      "UC-ADM-07.1"
+    ],
+    "actorIds": [
+      "A02",
+      "A03",
+      "A04",
+      "A05"
+    ]
+  },
+  {
+    "id": "UC_G02",
+    "file": "UC_G02.puml",
+    "kind": "module",
+    "groupId": "G02",
+    "title": "G02 · Tìm và lựa chọn phòng",
+    "ucIds": [
+      "UC-DIS-01",
+      "UC-DIS-02",
+      "UC-DIS-03",
+      "UC-DIS-04",
+      "UC-DIS-16",
+      "UC-DIS-17"
+    ],
+    "actorIds": [
+      "A01",
+      "A04"
+    ]
+  },
+  {
+    "id": "UC_G03",
+    "file": "UC_G03.puml",
+    "kind": "module",
+    "groupId": "G03",
+    "title": "G03 · Đăng tin, lịch xem và nhận phòng",
+    "ucIds": [
+      "UC-DIS-05",
+      "UC-DIS-06.2",
+      "UC-DIS-08",
+      "UC-DIS-09",
+      "UC-DIS-10",
+      "UC-TNT-12.2",
+      "UC-TNT-12.3"
+    ],
+    "actorIds": [
+      "A02",
+      "A04"
+    ]
+  },
+  {
+    "id": "UC_G04_BA_1",
+    "file": "UC_G04_BA_1.puml",
+    "kind": "module",
+    "groupId": "G04",
+    "title": "G04 · Khu trọ và cơ sở vật chất phần 1",
+    "ucIds": [
+      "UC-OPT-02",
+      "UC-OPT-03.1",
+      "UC-OPT-03.2",
+      "UC-OPT-04.1",
+      "UC-OPT-04.3",
+      "UC-OPT-05",
+      "UC-OPT-06.1"
+    ],
+    "actorIds": [
+      "A02",
+      "A03"
+    ]
+  },
+  {
+    "id": "UC_G04_BA_2",
+    "file": "UC_G04_BA_2.puml",
+    "kind": "module",
+    "groupId": "G04",
+    "title": "G04 · Khu trọ và cơ sở vật chất phần 2",
+    "ucIds": [
+      "UC-OPT-06.2",
+      "UC-OPT-07.1",
+      "UC-OPT-07.2",
+      "UC-OPT-07.3",
+      "UC-OPT-08.1",
+      "UC-OPT-08.2",
+      "UC-OPT-09"
+    ],
+    "actorIds": [
+      "A02",
+      "A03"
+    ]
+  },
+  {
+    "id": "UC_G05",
+    "file": "UC_G05.puml",
+    "kind": "module",
+    "groupId": "G05",
+    "title": "G05 · Nhân sự và ủy quyền vận hành",
+    "ucIds": [
+      "UC-STF-01",
+      "UC-STF-02",
+      "UC-STF-04",
+      "UC-STF-03"
+    ],
+    "actorIds": [
+      "A02",
+      "A03"
+    ]
+  },
+  {
+    "id": "UC_G06_01_Tenant_Records",
+    "file": "UC_G06_01_Tenant_Records.puml",
+    "kind": "module",
+    "groupId": "G06",
+    "title": "G06 Hồ sơ người thuê và quyền truy cập",
+    "ucIds": [
+      "UC-TNT-01",
+      "UC-TNT-02.1",
+      "UC-TNT-02.2",
+      "UC-TNT-02.3",
+      "UC-TNT-02.4",
+      "UC-TNT-03",
+      "UC-TNT-03.1",
+      "UC-TEN-01"
+    ],
+    "actorIds": [
+      "A02",
+      "A03",
+      "A04"
+    ]
+  },
+  {
+    "id": "UC_G06_02_Leases_Deposits_BA_1",
+    "file": "UC_G06_02_Leases_Deposits_BA_1.puml",
+    "kind": "module",
+    "groupId": "G06",
+    "title": "G06 Hợp đồng và tiền cọc phần 1",
+    "ucIds": [
+      "UC-TNT-04",
+      "UC-TNT-05",
+      "UC-TNT-06.1",
+      "UC-TNT-06.2",
+      "UC-TNT-06.3"
+    ],
+    "actorIds": [
+      "A02",
+      "A03"
+    ]
+  },
+  {
+    "id": "UC_G06_02_Leases_Deposits_BA_2",
+    "file": "UC_G06_02_Leases_Deposits_BA_2.puml",
+    "kind": "module",
+    "groupId": "G06",
+    "title": "G06 Hợp đồng và tiền cọc phần 2",
+    "ucIds": [
+      "UC-TEN-02",
+      "UC-TNT-07",
+      "UC-TNT-12.1",
+      "UC-TEN-08.1"
+    ],
+    "actorIds": [
+      "A02",
+      "A03",
+      "A04"
+    ]
+  },
+  {
+    "id": "UC_G07",
+    "file": "UC_G07.puml",
+    "kind": "module",
+    "groupId": "G07",
+    "title": "G07 · Vòng đời thuê và quyết toán",
+    "ucIds": [
+      "UC-TEN-07.1",
+      "UC-TEN-07.2",
+      "UC-TEN-07.3",
+      "UC-TNT-10",
+      "UC-TNT-11",
+      "UC-TNT-08",
+      "UC-TNT-09"
+    ],
+    "actorIds": [
+      "A02",
+      "A03",
+      "A04"
+    ]
+  },
+  {
+    "id": "UC_G08_01_Invoices_BA_1",
+    "file": "UC_G08_01_Invoices_BA_1.puml",
+    "kind": "module",
+    "groupId": "G08",
+    "title": "G08 Chỉ số và hóa đơn phần 1",
+    "ucIds": [
+      "UC-BIL-01",
+      "UC-BIL-02",
+      "UC-BIL-03",
+      "UC-BIL-17.1",
+      "UC-BIL-17.2",
+      "UC-BIL-04"
+    ],
+    "actorIds": [
+      "A02",
+      "A03"
+    ]
+  },
+  {
+    "id": "UC_G08_01_Invoices_BA_2",
+    "file": "UC_G08_01_Invoices_BA_2.puml",
+    "kind": "module",
+    "groupId": "G08",
+    "title": "G08 Chỉ số và hóa đơn phần 2",
+    "ucIds": [
+      "UC-BIL-05",
+      "UC-BIL-06",
+      "UC-BIL-07",
+      "UC-BIL-08.1",
+      "UC-TEN-03"
+    ],
+    "actorIds": [
+      "A02",
+      "A03",
+      "A04"
+    ]
+  },
+  {
+    "id": "UC_G08_02_Collections_BA_1",
+    "file": "UC_G08_02_Collections_BA_1.puml",
+    "kind": "module",
+    "groupId": "G08",
+    "title": "G08 Thu tiền và thanh toán phần 1",
+    "ucIds": [
+      "UC-BIL-09",
+      "UC-BIL-10",
+      "UC-BIL-11",
+      "UC-BIL-12.1",
+      "UC-BIL-12.2"
+    ],
+    "actorIds": [
+      "A02",
+      "A03"
+    ]
+  },
+  {
+    "id": "UC_G08_02_Collections_BA_2",
+    "file": "UC_G08_02_Collections_BA_2.puml",
+    "kind": "module",
+    "groupId": "G08",
+    "title": "G08 Thu tiền và thanh toán phần 2",
+    "ucIds": [
+      "UC-BIL-13",
+      "UC-BIL-14",
+      "UC-BIL-23",
+      "UC-TEN-04",
+      "UC-TEN-05"
+    ],
+    "actorIds": [
+      "A01",
+      "A02",
+      "A03",
+      "A04"
+    ]
+  },
+  {
+    "id": "UC_G08_03_Tariffs_Periods",
+    "file": "UC_G08_03_Tariffs_Periods.puml",
+    "kind": "module",
+    "groupId": "G08",
+    "title": "G08 Biểu phí và kỳ thanh toán",
+    "ucIds": [
+      "UC-BIL-15",
+      "UC-BIL-16",
+      "UC-BIL-22"
+    ],
+    "actorIds": [
+      "A02",
+      "A03"
+    ]
+  },
+  {
+    "id": "UC_G08_04_Reminders",
+    "file": "UC_G08_04_Reminders.puml",
+    "kind": "module",
+    "groupId": "G08",
+    "title": "G08 Chính sách và thông báo nhắc nợ",
+    "ucIds": [
+      "UC-BIL-18.1",
+      "UC-BIL-18.2",
+      "UC-BIL-18.3",
+      "UC-TEN-08.2"
+    ],
+    "actorIds": [
+      "A02",
+      "A03",
+      "A04",
+      "E01",
+      "E02"
+    ]
+  },
+  {
+    "id": "UC_G09",
+    "file": "UC_G09.puml",
+    "kind": "module",
+    "groupId": "G09",
+    "title": "G09 · Bảo trì và chi phí vận hành",
+    "ucIds": [
+      "UC-TEN-06",
+      "UC-OPS-01",
+      "UC-OPS-02",
+      "UC-OPS-03",
+      "UC-BIL-19"
+    ],
+    "actorIds": [
+      "A02",
+      "A03",
+      "A04"
+    ]
+  },
+  {
+    "id": "UC_G10_BA_1",
+    "file": "UC_G10_BA_1.puml",
+    "kind": "module",
+    "groupId": "G10",
+    "title": "G10 · Công việc, thông tin và hỗ trợ sử dụng phần 1",
+    "ucIds": [
+      "UC-OPS-04",
+      "UC-OPS-05",
+      "UC-OPS-06",
+      "UC-OPS-06.1",
+      "UC-OPS-07"
+    ],
+    "actorIds": [
+      "A02"
+    ]
+  },
+  {
+    "id": "UC_G10_BA_2",
+    "file": "UC_G10_BA_2.puml",
+    "kind": "module",
+    "groupId": "G10",
+    "title": "G10 · Công việc, thông tin và hỗ trợ sử dụng phần 2",
+    "ucIds": [
+      "UC-SUP-04",
+      "UC-TEN-09.2",
+      "UC-TEN-09.3",
+      "UC-SUP-06"
+    ],
+    "actorIds": [
+      "A02",
+      "A04",
+      "A05",
+      "E04"
+    ]
+  },
+  {
+    "id": "UC_G11",
+    "file": "UC_G11.puml",
+    "kind": "module",
+    "groupId": "G11",
+    "title": "G11 · Báo cáo và giám sát vận hành",
+    "ucIds": [
+      "UC-OPT-01",
+      "UC-BIL-20",
+      "UC-ADM-01",
+      "UC-OPS-09",
+      "UC-ADM-14",
+      "UC-ADM-16",
+      "UC-SUP-05.1",
+      "UC-SUP-05.2"
+    ],
+    "actorIds": [
+      "A02",
+      "A03",
+      "A05",
+      "E01",
+      "E05"
+    ]
+  },
+  {
+    "id": "UC_G12_BA_1",
+    "file": "UC_G12_BA_1.puml",
+    "kind": "module",
+    "groupId": "G12",
+    "title": "G12 · Tài khoản và tài nguyên nền tảng phần 1",
+    "ucIds": [
+      "UC-ADM-02",
+      "UC-ADM-03.1",
+      "UC-ADM-03.2",
+      "UC-ADM-04.1",
+      "UC-ADM-04.3",
+      "UC-ADM-05.1"
+    ],
+    "actorIds": [
+      "A05",
+      "E01"
+    ]
+  },
+  {
+    "id": "UC_G12_BA_2",
+    "file": "UC_G12_BA_2.puml",
+    "kind": "module",
+    "groupId": "G12",
+    "title": "G12 · Tài khoản và tài nguyên nền tảng phần 2",
+    "ucIds": [
+      "UC-ADM-05.2",
+      "UC-ADM-06.1",
+      "UC-ADM-06.2",
+      "UC-ADM-08",
+      "UC-ADM-09",
+      "UC-ADM-10"
+    ],
+    "actorIds": [
+      "A05",
+      "E01"
+    ]
+  },
+  {
+    "id": "UC_G13_BA_1",
+    "file": "UC_G13_BA_1.puml",
+    "kind": "module",
+    "groupId": "G13",
+    "title": "G13 · Kiểm duyệt và chất lượng nội dung phần 1",
+    "ucIds": [
+      "UC-DIS-07",
+      "UC-DIS-12",
+      "UC-DIS-13.1",
+      "UC-ADM-11",
+      "UC-ADM-11.1",
+      "UC-ADM-12"
+    ],
+    "actorIds": [
+      "A02",
+      "A04",
+      "A05"
+    ]
+  },
+  {
+    "id": "UC_G13_BA_2",
+    "file": "UC_G13_BA_2.puml",
+    "kind": "module",
+    "groupId": "G13",
+    "title": "G13 · Kiểm duyệt và chất lượng nội dung phần 2",
+    "ucIds": [
+      "UC-ADM-12.1",
+      "UC-DIS-15",
+      "UC-ADM-13.1",
+      "UC-ADM-13.2",
+      "UC-ADM-13.3"
+    ],
+    "actorIds": [
+      "A02",
+      "A04",
+      "A05"
+    ]
+  },
+  {
+    "id": "UC_G14",
+    "file": "UC_G14.puml",
+    "kind": "module",
+    "groupId": "G14",
+    "title": "G14 · Dịch vụ hỗ trợ khách hàng",
+    "ucIds": [
+      "UC-SUP-01",
+      "UC-SUP-01.1",
+      "UC-SUP-03.2.1",
+      "UC-SUP-03.2.2",
+      "UC-SUP-02.1",
+      "UC-SUP-02.2",
+      "UC-SUP-03.2",
+      "UC-SUP-03.3"
+    ],
+    "actorIds": [
+      "A02",
+      "A04",
+      "A05",
+      "E03"
+    ]
+  },
+  {
+    "id": "UC_G15",
+    "file": "UC_G15.puml",
+    "kind": "module",
+    "groupId": "G15",
+    "title": "G15 · Hồ sơ xác minh và gói dịch vụ",
+    "ucIds": [
+      "UC-ADM-18.1",
+      "UC-ADM-18",
+      "UC-ADM-19",
+      "UC-ADM-20",
+      "UC-ADM-21",
+      "UC-ADM-22"
+    ],
+    "actorIds": [
+      "A02",
+      "A05"
+    ]
+  },
+  {
+    "id": "UC_G16_BA_1",
+    "file": "UC_G16_BA_1.puml",
+    "kind": "module",
+    "groupId": "G16",
+    "title": "G16 · Quản trị chính sách và đối soát nền tảng phần 1",
+    "ucIds": [
+      "UC-ADM-15",
+      "UC-ADM-15.1",
+      "UC-ADM-24",
+      "UC-ADM-17.1",
+      "UC-ADM-17.2"
+    ],
+    "actorIds": [
+      "A05"
+    ]
+  },
+  {
+    "id": "UC_G16_BA_2",
+    "file": "UC_G16_BA_2.puml",
+    "kind": "module",
+    "groupId": "G16",
+    "title": "G16 · Quản trị chính sách và đối soát nền tảng phần 2",
+    "ucIds": [
+      "UC-ADM-26",
+      "UC-ADM-23",
+      "UC-DIS-13.2",
+      "UC-ADM-27"
+    ],
+    "actorIds": [
+      "A02",
+      "A04",
+      "A05"
+    ]
+  }
+]

@@ -1,0 +1,232 @@
+@startwbs
+title Phân rã chức năng AS-IS — không phải sơ đồ Use Case
+* Hệ thống quản lý và tìm thuê nhà trọ
+** G01 — Tài khoản và an toàn truy cập
+*** G01.1 Đăng ký và kích hoạt
+**** UC-SYS-01 Đăng ký tài khoản chủ trọ
+**** UC-SYS-02 Đăng ký tài khoản tìm phòng
+**** UC-SYS-08 Kích hoạt tài khoản người thuê từ lời mời
+**** UC-SYS-09 Kích hoạt tài khoản nhân viên từ lời mời
+**** UC-SYS-10 Thiết lập mật khẩu tài khoản được mời
+*** G01.2 Đăng nhập và quản lý phiên
+**** UC-SYS-03 Đăng nhập
+**** UC-SYS-05.1 Đăng xuất phiên hiện tại
+**** UC-SYS-05.2 Xem và thu hồi các phiên của mình
+*** G01.3 Bảo vệ tài khoản
+**** UC-SYS-06 Khôi phục mật khẩu bằng liên kết một lần [Một phần]
+**** UC-SYS-07 Đổi mật khẩu khi đang đăng nhập
+**** UC-ADM-07.1 Thiết lập MFA Admin
+** G02 — Tìm và lựa chọn phòng
+*** G02.1 Khám phá phòng
+**** UC-DIS-01 Tìm và lọc tin phòng công khai
+**** UC-DIS-02 Xem chi tiết tin và đánh giá công khai
+*** G02.2 Lưu nhu cầu và theo dõi tin
+**** UC-DIS-03 Lưu và bỏ lưu phòng yêu thích
+**** UC-DIS-04 Lưu bộ lọc và theo dõi tin khớp
+*** G02.3 Đánh giá lựa chọn
+**** UC-DIS-16 So sánh các phòng quan tâm
+**** UC-DIS-17 Ước tính chi phí thuê phòng
+** G03 — Đăng tin, lịch xem và nhận phòng
+*** G03.1 Quảng bá phòng cho thuê
+**** UC-DIS-05 Quản lý và gửi duyệt tin cho thuê
+**** UC-DIS-06.2 Ẩn tin cho thuê của mình
+*** G03.2 Tổ chức xem phòng
+**** UC-DIS-08 Quản lý khung giờ xem phòng
+**** UC-DIS-09 Đặt và quản lý lịch xem của mình
+**** UC-DIS-10 Tiếp nhận và hoàn tất lịch xem
+*** G03.3 Chốt thuê và bàn giao
+**** UC-TNT-12.2 Lập biên bản bàn giao nhận phòng
+**** UC-TNT-12.3 Xác nhận biên bản bàn giao nhận phòng
+** G04 — Khu trọ và cơ sở vật chất
+*** G04.1 Danh mục và vòng đời khu trọ
+**** UC-OPT-02 Tra cứu khu trọ
+**** UC-OPT-03.1 Tạo khu trọ
+**** UC-OPT-03.2 Cập nhật thông tin khu trọ
+**** UC-OPT-04.1 Lưu trữ hoặc khôi phục khu trọ
+**** UC-OPT-04.3 Xóa khu trọ đủ điều kiện
+*** G04.2 Danh mục và vòng đời phòng
+**** UC-OPT-05 Tra cứu phòng và lịch sử liên quan
+**** UC-OPT-06.1 Tạo phòng
+**** UC-OPT-06.2 Cập nhật thông tin phòng
+**** UC-OPT-07.1 Đổi trạng thái sử dụng phòng
+**** UC-OPT-07.2 Vô hiệu hóa hoặc khôi phục phòng
+**** UC-OPT-07.3 Xóa phòng đủ điều kiện
+*** G04.3 Tài sản, kiểm tra và phí phòng
+**** UC-OPT-08.1 Quản lý tài sản phòng
+**** UC-OPT-08.2 Theo dõi lịch kiểm tra phòng
+**** UC-OPT-09 Quản lý phiên bản phí dịch vụ phòng
+** G05 — Nhân sự và ủy quyền vận hành
+*** G05.1 Nhân sự và phạm vi làm việc
+**** UC-STF-01 Mời nhân viên và cấp phạm vi khu trọ
+**** UC-STF-02 Cập nhật quyền trạng thái và phạm vi nhân viên
+**** UC-STF-04 Tra cứu nhân viên và phạm vi được cấp
+*** G05.2 Kiểm tra ủy quyền
+**** UC-STF-03 Mô phỏng quyền nhân viên
+** G06 — Hồ sơ thuê, hợp đồng và tiền cọc
+*** G06.1 Hồ sơ và tài khoản người thuê
+**** UC-TNT-01 Tra cứu hồ sơ người thuê và tổng quan
+**** UC-TNT-02.1 Tạo hồ sơ người thuê
+**** UC-TNT-02.2 Cập nhật hồ sơ người thuê
+**** UC-TNT-02.3 Vô hiệu hóa hoặc khôi phục người thuê
+**** UC-TNT-02.4 Xóa hồ sơ người thuê đủ điều kiện
+**** UC-TNT-03 Tạo lời mời truy cập cổng người thuê
+**** UC-TNT-03.1 Tạo trực tiếp tài khoản cho hồ sơ người thuê
+**** UC-TEN-01 Xem hồ sơ và tổng quan thuê của mình
+*** G06.2 Điều khoản và trạng thái hợp đồng
+**** UC-TNT-04 Tra cứu và xuất hợp đồng thuê
+**** UC-TNT-05 Lập hợp đồng thuê phòng
+**** UC-TNT-06.1 Cập nhật điều khoản hợp đồng
+**** UC-TNT-06.2 Gia hạn hợp đồng
+**** UC-TNT-06.3 Kết thúc hợp đồng
+**** UC-TEN-02 Tra cứu hợp đồng và quyết toán của mình
+*** G06.3 Tiền cọc và người ở cùng
+**** UC-TNT-07 Tra cứu và ghi giao dịch cọc
+**** UC-TNT-12.1 Quản lý người ở cùng hợp đồng
+**** UC-TEN-08.1 Xem người ở cùng hợp đồng
+** G07 — Vòng đời thuê và quyết toán
+*** G07.1 Đề nghị thay đổi quan hệ thuê
+**** UC-TEN-07.1 Đề nghị gia hạn thuê
+**** UC-TEN-07.2 Đề nghị chuyển phòng
+**** UC-TEN-07.3 Đề nghị trả phòng
+*** G07.2 Xét và thực hiện thay đổi
+**** UC-TNT-10 Xét duyệt yêu cầu vòng đời thuê
+**** UC-TNT-11 Thực thi yêu cầu vòng đời đã duyệt
+*** G07.3 Quyết toán và hoàn cọc
+**** UC-TNT-08 Xem trước và xác nhận quyết toán trả phòng
+**** UC-TNT-09 Ghi nhận đã hoàn cọc theo quyết toán
+** G08 — Hóa đơn, thu tiền và công nợ
+*** G08.1 Chỉ số và phát hành hóa đơn
+**** UC-BIL-01 Ghi chỉ số điện nước theo kỳ
+**** UC-BIL-02 Xem trước và lập hóa đơn một hợp đồng
+**** UC-BIL-03 Lập hóa đơn hàng loạt
+**** UC-BIL-17.1 Cấu hình lập hóa đơn định kỳ
+**** UC-BIL-17.2 Xem trước và chạy đợt lập hóa đơn
+*** G08.2 Công nợ và điều chỉnh nghĩa vụ
+**** UC-BIL-04 Tra cứu hóa đơn và công nợ
+**** UC-BIL-05 Sửa hạn thanh toán hoặc ghi chú hóa đơn
+**** UC-BIL-06 Thay thế hóa đơn chưa có lịch sử thanh toán
+**** UC-BIL-07 Điều chỉnh tăng hoặc giảm hóa đơn
+**** UC-BIL-08.1 Hủy hóa đơn đủ điều kiện
+**** UC-TEN-03 Tra cứu hóa đơn của mình
+*** G08.3 Ghi nhận, phân bổ và hoàn thu
+**** UC-BIL-09 Ghi nhận thanh toán trực tiếp
+**** UC-BIL-10 Tạo khoản thu cho người thuê
+**** UC-BIL-11 Phân bổ khoản thu cho hóa đơn
+**** UC-BIL-12.1 Giải phóng phân bổ khoản thu
+**** UC-BIL-12.2 Đảo thanh toán trực tiếp
+**** UC-BIL-13 Ghi nhận hoàn tiền từ khoản thu
+*** G08.4 Chứng từ và kênh thanh toán
+**** UC-BIL-14 Xét duyệt chứng từ thanh toán
+**** UC-BIL-23 Cấu hình tài khoản nhận chuyển khoản
+**** UC-TEN-04 Gửi chứng từ chuyển khoản hóa đơn
+**** UC-TEN-05 Thanh toán bằng thẻ mô phỏng [Đã triển khai — DEMO]
+*** G08.5 Biểu phí và kiểm soát kỳ
+**** UC-BIL-15 Đề xuất biểu phí theo kỳ hiệu lực
+**** UC-BIL-16 Phân tích tác động và duyệt biểu phí
+**** UC-BIL-22 Khóa kỳ thanh toán của khu
+*** G08.6 Nhắc nợ và theo dõi gửi
+**** UC-BIL-18.1 Cấu hình chính sách nhắc nợ
+**** UC-BIL-18.2 Gửi nhắc nợ theo chính sách [Một phần]
+**** UC-BIL-18.3 Theo dõi và thử lại outbox hóa đơn
+**** UC-TEN-08.2 Chọn kênh nhận nhắc nợ
+** G09 — Bảo trì và chi phí vận hành
+*** G09.1 Yêu cầu và điều phối bảo trì
+**** UC-TEN-06 Gửi và trao đổi yêu cầu bảo trì
+**** UC-OPS-01 Tiếp nhận và theo dõi phiếu bảo trì
+**** UC-OPS-02 Phân công và cập nhật bảo trì
+*** G09.2 Hoàn thành và ghi chi phí
+**** UC-OPS-03 Hoàn tất bảo trì và liên kết khoản chi
+**** UC-BIL-19 Quản lý khoản chi vận hành
+** G10 — Công việc, thông tin và hỗ trợ sử dụng
+*** G10.1 Việc cần làm và chuẩn bị phòng
+**** UC-OPS-04 Theo dõi việc cần xử lý
+**** UC-OPS-05 Chuẩn bị phòng sau trả phòng
+*** G10.2 Vận hành lặp lại
+**** UC-OPS-06 Thiết lập lịch công việc định kỳ
+**** UC-OPS-06.1 Thực hiện checklist công việc định kỳ
+*** G10.3 Trao đổi và thông báo
+**** UC-OPS-07 Soạn và phát thông báo người thuê
+**** UC-SUP-04 Theo dõi thông báo cá nhân
+**** UC-TEN-09.2 Trao đổi tin nhắn Zalo mô phỏng [Đã triển khai — MÔ PHỎNG]
+**** UC-TEN-09.3 Đọc và xác nhận thông báo chủ trọ
+*** G10.4 Hướng dẫn sử dụng theo tri thức
+**** UC-SUP-06 Hỏi trợ lý AI và đọc nguồn hướng dẫn [Một phần]
+** G11 — Báo cáo và giám sát vận hành
+*** G11.1 Theo dõi kinh doanh
+**** UC-OPT-01 Xem dashboard và bản đồ phòng
+**** UC-BIL-20 Phân tích và xuất báo cáo vận hành
+**** UC-ADM-01 Xem tổng quan nền tảng
+*** G11.2 Nhật ký kiểm tra
+**** UC-OPS-09 Tra cứu nhật ký vận hành
+**** UC-ADM-14 Tra cứu và xuất nhật ký quản trị
+*** G11.3 Báo cáo định kỳ nền tảng
+**** UC-ADM-16 Quản lý lịch và tải báo cáo Admin
+*** G11.4 Sự cố và chất lượng giao nhận
+**** UC-SUP-05.1 Giám sát và xử lý sự cố vận hành
+**** UC-SUP-05.2 Theo dõi hàng đợi giao nhận [Một phần]
+** G12 — Tài khoản và tài nguyên nền tảng
+*** G12.1 Tài khoản khách hàng
+**** UC-ADM-02 Tra cứu tài khoản nền tảng
+**** UC-ADM-03.1 Tạo hoặc mời tài khoản chủ trọ [Một phần]
+**** UC-ADM-03.2 Cập nhật hồ sơ chủ trọ
+**** UC-ADM-04.1 Đình chỉ hoặc khôi phục tài khoản
+**** UC-ADM-04.3 Thu hồi phiên của tài khoản khác
+**** UC-ADM-05.1 Mở thông tin cá nhân được che
+**** UC-ADM-05.2 Yêu cầu khôi phục truy cập cho tài khoản [Một phần]
+*** G12.2 Nhân sự quản trị và rà soát quyền
+**** UC-ADM-06.1 Cấp và quản lý quyền quản trị viên [Một phần]
+**** UC-ADM-06.2 Rà soát quyền Admin định kỳ
+*** G12.3 Tài nguyên và ngữ cảnh toàn nền tảng
+**** UC-ADM-08 Tra cứu khu và phòng toàn nền tảng
+**** UC-ADM-09 Tạo hoặc cập nhật khu thay chủ trọ
+**** UC-ADM-10 Tìm kiếm và định vị tài nguyên
+** G13 — Kiểm duyệt và chất lượng nội dung
+*** G13.1 Đánh giá và phản ánh nội dung
+**** UC-DIS-07 Báo cáo tin phòng không phù hợp
+**** UC-DIS-12 Viết sửa và rút đánh giá phòng đã thuê
+**** UC-DIS-13.1 Trả lời đánh giá phòng
+*** G13.2 Quyết định nội dung và xác minh tin
+**** UC-ADM-11 Tiếp nhận và kiểm duyệt tin cho thuê
+**** UC-ADM-11.1 Xác minh thông tin tin cho thuê
+**** UC-ADM-12 Kiểm duyệt đánh giá và phản hồi phòng
+**** UC-ADM-12.1 Xử lý báo cáo vi phạm tin đăng
+*** G13.3 Kháng nghị, chính sách và chất lượng
+**** UC-DIS-15 Xem quyết định và gửi kháng nghị kiểm duyệt
+**** UC-ADM-13.1 Quản lý chính sách kiểm duyệt
+**** UC-ADM-13.2 Xử lý kháng nghị kiểm duyệt
+**** UC-ADM-13.3 Đánh giá chất lượng kiểm duyệt
+** G14 — Dịch vụ hỗ trợ khách hàng
+*** G14.1 Đề nghị và xử lý hỗ trợ
+**** UC-SUP-01 Gửi và theo dõi yêu cầu hỗ trợ [Một phần]
+**** UC-SUP-01.1 Tiếp nhận và xử lý hồ sơ hỗ trợ [Một phần]
+**** UC-SUP-03.2.1 Hợp nhất hồ sơ hỗ trợ trùng
+**** UC-SUP-03.2.2 Đánh giá kết quả hỗ trợ
+*** G14.2 Năng lực xử lý và SLA
+**** UC-SUP-02.1 Cấu hình phân công tự động hỗ trợ
+**** UC-SUP-02.2 Cấu hình và theo dõi SLA hỗ trợ
+*** G14.3 Công cụ làm việc của bộ phận hỗ trợ
+**** UC-SUP-03.2 Quản lý mẫu trả lời hỗ trợ
+**** UC-SUP-03.3 Lưu bộ lọc xử lý hỗ trợ
+** G15 — Hồ sơ xác minh và gói dịch vụ
+*** G15.1 Hồ sơ xác minh và xét duyệt khu
+**** UC-ADM-18.1 Nộp hồ sơ xác minh chủ trọ
+**** UC-ADM-18 Xét duyệt hồ sơ xác minh chủ trọ
+**** UC-ADM-19 Trình và xét duyệt hồ sơ khu trọ
+*** G15.2 Gói và quyền sử dụng dịch vụ
+**** UC-ADM-20 Quản lý danh mục gói dịch vụ
+**** UC-ADM-21 Gán gói và xem lịch sử đăng ký
+**** UC-ADM-22 Hủy quyền sử dụng gói đang hiệu lực
+** G16 — Quản trị chính sách và đối soát nền tảng
+*** G16.1 Đối soát và kiểm soát tài chính
+**** UC-ADM-15 Chuẩn bị đối soát sao kê
+**** UC-ADM-15.1 Duyệt đề xuất đối soát sao kê
+**** UC-ADM-24 Tra cứu giao dịch tài chính nền tảng
+*** G16.2 Tổ chức và chính sách quyền
+**** UC-ADM-17.1 Cấu hình bật tắt tính năng nền tảng
+**** UC-ADM-17.2 Quản lý nhóm Admin
+**** UC-ADM-26 Mô phỏng quyền Admin
+*** G16.3 Danh mục và phản hồi thử nghiệm
+**** UC-ADM-23 Quản lý danh mục cơ sở trường
+**** UC-DIS-13.2 Gửi phản hồi về thử nghiệm tìm phòng
+**** UC-ADM-27 Đọc phản hồi thử nghiệm tìm phòng
+@endwbs

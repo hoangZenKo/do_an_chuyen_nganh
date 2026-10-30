@@ -1,0 +1,1065 @@
+<!doctype html><html lang="vi"><meta charset="utf-8"><title>Rental System Demo</title>
+    <style>body{font:16px Georgia;margin:32px;background:#f5f4ed;color:#182a35}table{border-collapse:collapse;width:100%}td,th{border:1px solid #aaa;padding:9px;text-align:left}pre{white-space:pre-wrap}.passed{color:#17603b}.failed,.blocked{color:#a52a22}</style>
+    <h1>Kiểm thử hệ thống — 1793321169107_b09a9a997b34</h1>
+    <p>Có lỗi hoặc ca bị chặn trong phạm vi đã chọn.</p>
+    <p>screen = chỉ mở màn hình; UI = thao tác và xác nhận nghiệp vụ; regression = bộ kiểm thử tự động hiện có. Không đánh đồng ba mức này.</p>
+    <table><tr><th>Phần</th><th>Mức kiểm thử</th><th>Kết quả</th><th>Chi tiết</th></tr><tr><td>regression:flutter-all</td><td>regression</td><td class="failed">failed</td><td><pre>Error: /Users/hoang/development/flutter/bin/flutter failed (1)
+01:01 +733 -1: /Users/hoang/Rental_room_management/test/data/tenant_portal/tenant_portal_api_test.dart: maintenance requests tenant/maintenance and parses list                                        01:01 +734 -1: /Users/hoang/Rental_room_management/test/data/notifications/notifications_api_test.dart: maps Dio failures to ApiFailure                                                                01:01 +735 -1: /Users/hoang/Rental_room_management/test/data/notifications/notifications_api_test.dart: maps Dio failures to ApiFailure                                                                01:01 +736 -1: /Users/hoang/Rental_room_management/test/data/tenant_portal/tenant_portal_api_test.dart: addMaintenanceComment posts comment and unwraps nested data                                    01:01 +737 -1: /Users/hoang/Rental_room_management/test/data/tenant_portal/tenant_portal_api_test.dart: addMaintenanceComment posts comment and unwraps nested data                                    01:01 +737 -1: /Users/hoang/Rental_room_management/test/data/tenant_portal/tenant_portal_api_test.dart: maps Dio failures to ApiFailure                                                                01:01 +738 -1: /Users/hoang/Rental_room_management/test/data/billing/billing_api_test.dart: activeLeases requests endpoint and parses data envelope                                                    01:01 +739 -1: /Users/hoang/Rental_room_management/test/data/billing/billing_api_test.dart: activeLeases requests endpoint and parses data envelope                                                    01:01 +739 -1: /Users/hoang/Rental_room_management/test/data/billing/billing_api_test.dart: invoices serializes filters and parses bare list responses                                                 01:01 +740 -1: /Users/hoang/Rental_room_management/test/data/billing/billing_tariff_api_test.dart: parses property versions without losing scope, tiers or review reason                               01:02 +740 -1: /Users/hoang/Rental_room_management/test/data/billing/billing_tariff_api_test.dart: parses property versions without losing scope, tiers or review reason                               01:02 +741 -1: /Users/hoang/Rental_room_management/test/data/billing/billing_tariff_api_test.dart: parses property versions without losing scope, tiers or review reason                               01:02 +742 -1: /Users/hoang/Rental_room_management/test/data/billing/billing_tariff_api_test.dart: parses property versions without losing scope, tiers or review reason                               01:02 +743 -1: /Users/hoang/Rental_room_management/test/data/billing/billing_tariff_api_test.dart: parses property versions without losing scope, tiers or review reason                               01:02 +744 -1: /Users/hoang/Rental_room_management/test/data/billing/billing_tariff_api_test.dart: parses property versions without losing scope, tiers or review reason                               01:02 +745 -1: /Users/hoang/Rental_room_management/test/data/billing/billing_tariff_api_test.dart: parses property versions without losing scope, tiers or review reason                               01:02 +746 -1: /Users/hoang/Rental_room_management/test/data/billing/billing_tariff_api_test.dart: parses property versions without losing scope, tiers or review reason                               01:02 +747 -1: /Users/hoang/Rental_room_management/test/data/billing/billing_tariff_api_test.dart: parses property versions without losing scope, tiers or review reason                               01:02 +748 -1: /Users/hoang/Rental_room_management/test/data/billing/billing_tariff_api_test.dart: parses property versions without losing scope, tiers or review reason                               01:02 +749 -1: /Users/hoang/Rental_room_management/test/data/billing/billing_tariff_api_test.dart: parses property versions without losing scope, tiers or review reason                               01:02 +750 -1: /Users/hoang/Rental_room_management/test/data/billing/billing_tariff_api_test.dart: parses property versions without losing scope, tiers or review reason                               01:02 +751 -1: /Users/hoang/Rental_room_management/test/data/billing/billing_tariff_api_test.dart: parses property versions without losing scope, tiers or review reason                               01:02 +752 -1: /Users/hoang/Rental_room_management/test/data/billing/billing_tariff_api_test.dart: parses property versions without losing scope, tiers or review reason                               01:02 +753 -1: /Users/hoang/Rental_room_management/test/data/billing/billing_tariff_api_test.dart: parses property versions without losing scope, tiers or review reason                               01:02 +754 -1: /Users/hoang/Rental_room_management/test/data/billing/billing_tariff_api_test.dart: parses property versions without losing scope, tiers or review reason                               01:02 +755 -1: /Users/hoang/Rental_room_management/test/data/billing/billing_api_test.dart: runInvoiceReminders posts query params and parses send result                                              01:02 +756 -1: /Users/hoang/Rental_room_management/test/data/billing/billing_tariff_api_test.dart: posts a complete proposal through existing command API                                              01:02 +757 -1: /Users/hoang/Rental_room_management/test/data/billing/billing_tariff_api_test.dart: posts a complete proposal through existing command API                                              01:02 +758 -1: /Users/hoang/Rental_room_management/test/data/billing/billing_api_test.dart: maps Dio failures to ApiFailure                                                                            01:02 +759 -1: /Users/hoang/Rental_room_management/test/data/billing/billing_api_test.dart: maps Dio failures to ApiFailure                                                                            01:02 +760 -1: /Users/hoang/Rental_room_management/test/data/billing/billing_tariff_api_test.dart: reviews with a stable caller-supplied command key and audit reason                                  01:02 +761 -1: /Users/hoang/Rental_room_management/test/data/billing/billing_tariff_api_test.dart: reviews with a stable caller-supplied command key and audit reason                                  01:02 +761 -1: /Users/hoang/Rental_room_management/test/data/billing/billing_tariff_api_test.dart: conflicts and permission failures are surfaced without replay                                       01:02 +762 -1: /Users/hoang/Rental_room_management/test/data/billing/billing_tariff_api_test.dart: conflicts and permission failures are surfaced without replay                                       01:02 +762 -1: /Users/hoang/Rental_room_management/test/data/billing/billing_tariff_api_test.dart: old impact payloads remain readable without new metadata                                            01:02 +763 -1: /Users/hoang/Rental_room_management/test/data/billing/billing_tariff_api_test.dart: old impact payloads remain readable without new metadata                                            01:02 +763 -1: loading /Users/hoang/Rental_room_management/test/data/billing/billing_receipt_api_test.dart                                                                                             01:02 +763 -1: /Users/hoang/Rental_room_management/test/data/billing/billing_receipt_api_test.dart: loads tenant receipts with allocation and refund history                                           01:02 +764 -1: /Users/hoang/Rental_room_management/test/data/billing/billing_receipt_api_test.dart: loads tenant receipts with allocation and refund history                                           01:02 +764 -1: /Users/hoang/Rental_room_management/test/data/billing/billing_receipt_api_test.dart: releases allocations with a reason and stable command key                                          01:02 +765 -1: /Users/hoang/Rental_room_management/test/data/billing/billing_receipt_api_test.dart: releases allocations with a reason and stable command key                                          01:02 +765 -1: /Users/hoang/Rental_room_management/test/data/billing/billing_receipt_api_test.dart: posts refunds without deleting the receipt or its payments                                         01:02 +766 -1: /Users/hoang/Rental_room_management/test/data/billing/billing_receipt_api_test.dart: posts refunds without deleting the receipt or its payments                                         01:03 +766 -1: /Users/hoang/Rental_room_management/test/data/billing/billing_receipt_api_test.dart: posts refunds without deleting the receipt or its payments                                         01:03 +766 -1: loading /Users/hoang/Rental_room_management/test/data/billing/manual_transfer_api_test.dart                                                                                             01:03 +766 -1: /Users/hoang/Rental_room_management/test/data/billing/manual_transfer_api_test.dart: fetches a per-property account and preserves the account number as text                            01:03 +767 -1: /Users/hoang/Rental_room_management/test/data/billing/manual_transfer_api_test.dart: fetches a per-property account and preserves the account number as text                            01:03 +767 -1: /Users/hoang/Rental_room_management/test/data/billing/manual_transfer_api_test.dart: sends full versioned settings and an explicit null when removing QR                                01:03 +768 -1: /Users/hoang/Rental_room_management/test/data/billing/manual_transfer_api_test.dart: sends full versioned settings and an explicit null when removing QR                                01:03 +768 -1: /Users/hoang/Rental_room_management/test/data/billing/manual_transfer_api_test.dart: parses pending balance without treating it as payment confirmation                                 01:03 +769 -1: /Users/hoang/Rental_room_management/test/data/billing/manual_transfer_api_test.dart: parses pending balance without treating it as payment confirmation                                 01:03 +769 -1: /Users/hoang/Rental_room_management/test/data/billing/manual_transfer_api_test.dart: preserves stale-write conflicts rather than retrying automatically                                 01:03 +770 -1: /Users/hoang/Rental_room_management/test/data/billing/manual_transfer_api_test.dart: preserves stale-write conflicts rather than retrying automatically                                 01:03 +770 -1: /Users/hoang/Rental_room_management/test/data/billing/manual_transfer_api_test.dart: rejects malformed successful instructions                                                          01:03 +771 -1: /Users/hoang/Rental_room_management/test/data/billing/manual_transfer_api_test.dart: rejects malformed successful instructions                                                          01:03 +771 -1: loading /Users/hoang/Rental_room_management/test/data/onboarding/onboarding_preferences_test.dart                                                                                       01:03 +771 -1: /Users/hoang/Rental_room_management/test/data/onboarding/onboarding_preferences_test.dart: is incomplete when the completion key is absent                                              01:03 +772 -1: /Users/hoang/Rental_room_management/test/data/onboarding/onboarding_preferences_test.dart: is incomplete when the completion key is absent                                              01:03 +772 -1: /Users/hoang/Rental_room_management/test/data/onboarding/onboarding_preferences_test.dart: marks onboarding as completed                                                                01:03 +773 -1: /Users/hoang/Rental_room_management/test/data/onboarding/onboarding_preferences_test.dart: marks onboarding as completed                                                                01:03 +773 -1: loading /Users/hoang/Rental_room_management/test/data/lease_settlement_api_test.dart                                                                                                    01:03 +773 -1: /Users/hoang/Rental_room_management/test/data/lease_settlement_api_test.dart: loads an absent settlement without inventing a record                                                     01:03 +774 -1: /Users/hoang/Rental_room_management/test/data/lease_settlement_api_test.dart: loads an absent settlement without inventing a record                                                     01:03 +774 -1: /Users/hoang/Rental_room_management/test/data/lease_settlement_api_test.dart: loads an existing settlement                                                                              01:03 +775 -1: /Users/hoang/Rental_room_management/test/data/lease_settlement_api_test.dart: loads an existing settlement                                                                              01:03 +775 -1: /Users/hoang/Rental_room_management/test/data/lease_settlement_api_test.dart: preview binds the owner and preserves the request exactly                                                 01:03 +776 -1: /Users/hoang/Rental_room_management/test/data/lease_settlement_api_test.dart: preview binds the owner and preserves the request exactly                                                 01:03 +776 -1: /Users/hoang/Rental_room_management/test/data/lease_settlement_api_test.dart: confirm binds the owner and preserves the request exactly                                                 01:03 +777 -1: /Users/hoang/Rental_room_management/test/data/lease_settlement_api_test.dart: confirm binds the owner and preserves the request exactly                                                 01:03 +777 -1: /Users/hoang/Rental_room_management/test/data/lease_settlement_api_test.dart: refund binds the owner and preserves the request exactly                                                  01:03 +778 -1: /Users/hoang/Rental_room_management/test/data/lease_settlement_api_test.dart: refund binds the owner and preserves the request exactly                                                  01:03 +778 -1: /Users/hoang/Rental_room_management/test/data/lease_settlement_api_test.dart: does not send anything without a session identity                                                         01:03 +779 -1: /Users/hoang/Rental_room_management/test/data/lease_settlement_api_test.dart: does not send anything without a session identity                                                         01:03 +779 -1: /Users/hoang/Rental_room_management/test/data/lease_settlement_api_test.dart: preserves conflict status and message so the UI clears stale previews                                     01:03 +780 -1: /Users/hoang/Rental_room_management/test/data/lease_settlement_api_test.dart: preserves conflict status and message so the UI clears stale previews                                     01:03 +780 -1: /Users/hoang/Rental_room_management/test/data/lease_settlement_api_test.dart: rejects null mutation data and malformed successful responses                                             01:03 +781 -1: /Users/hoang/Rental_room_management/test/data/lease_settlement_api_test.dart: rejects null mutation data and malformed successful responses                                             01:03 +781 -1: /Users/hoang/Rental_room_management/test/data/lease_settlement_api_test.dart: rejects a preview without a valid fingerprint                                                             01:03 +782 -1: /Users/hoang/Rental_room_management/test/data/lease_settlement_api_test.dart: rejects a preview without a valid fingerprint                                                             01:03 +782 -1: Some tests failed.                                                                                                                                                                      
+
+    at ChildProcess.&lt;anonymous&gt; (file:///Users/hoang/Rental_room_management/test/system_demo/system_demo.mjs:136:44)
+    at ChildProcess.emit (node:events:508:28)
+    at maybeClose (node:internal/child_process:1101:16)
+    at ChildProcess._handle.onexit (node:internal/child_process:305:5)</pre></td></tr><tr><td>regression:backend-unit</td><td>regression</td><td class="failed">failed</td><td><pre>Error: npm failed (1)
+
+&gt; rental-room-api@0.1.0 test
+&gt; jest --runInBand
+
+FAIL src/uploads/malware-scanner.service.spec.ts
+  ● MalwareScannerService › binds a clean verdict to the exact file hash
+
+    expect(received).resolves.toBe()
+
+    Received promise rejected instead of resolved
+    Rejected to value: [ServiceUnavailableException: Attachment scanner is not configured.]
+
+      13 |   it(&#39;binds a clean verdict to the exact file hash&#39;, async () =&gt; {
+      14 |     const provider = jest.spyOn(global, &#39;fetch&#39;).mockResolvedValue(new Response(JSON.stringify({ sha256, verdict: &#39;CLEAN&#39; })));
+    &gt; 15 |     await expect(configured().scan(bytes, &#39;image/png&#39;)).resolves.toBe(sha256);
+         |           ^
+      16 |     expect(provider.mock.calls[0][1]?.headers).toMatchObject({ &#39;x-content-sha256&#39;: sha256 });
+      17 |   });
+      18 |   it(&#39;rejects infected, unverified or failed scan results&#39;, async () =&gt; {
+
+      at expect (node_modules/expect/build/index.js:113:15)
+      at Object.&lt;anonymous&gt; (src/uploads/malware-scanner.service.spec.ts:15:11)
+
+  ● MalwareScannerService › rejects infected, unverified or failed scan results
+
+    expect(received).rejects.toThrow(expected)
+
+    Expected substring: &quot;rejected&quot;
+    Received message:   &quot;Attachment scanner is not configured.&quot;
+
+          11 |     const endpoint = httpsEndpoint(this.config.get&lt;string&gt;(&#39;SUPPORT_SCAN_WEBHOOK_URL&#39;));
+          12 |     const secret = this.config.get&lt;string&gt;(&#39;SUPPORT_SCAN_WEBHOOK_SECRET&#39;)?.trim();
+        &gt; 13 |     if (!endpoint || !secret) throw new ServiceUnavailableException(&#39;Attachment scanner is not configured.&#39;);
+             |                                     ^
+          14 |     const sha256 = createHash(&#39;sha256&#39;).update(bytes).digest(&#39;hex&#39;);
+          15 |     try {
+          16 |       const response = await fetch(endpoint, { method: &#39;POST&#39;, redirect: &#39;error&#39;, signal: AbortSignal.timeout(15000),
+
+      at MalwareScannerService.scan (src/uploads/malware-scanner.service.ts:13:37)
+      at Object.&lt;anonymous&gt; (src/uploads/malware-scanner.service.spec.ts:20:31)
+      at Object.toThrow (node_modules/expect/build/index.js:218:22)
+      at Object.&lt;anonymous&gt; (src/uploads/malware-scanner.service.spec.ts:20:65)
+
+FAIL src/delivery/delivery-crypto.service.spec.ts
+  ● Encrypted delivery › requires a dedicated 256-bit key and authenticates ciphertext
+
+    expect(received).toThrow()
+
+    Received function did not throw
+
+      10 |     expect(JSON.parse(crypto.decrypt(encrypted))).toEqual({ token: &#39;super-private&#39;, email: &#39;person@example.com&#39; });
+      11 |     const wrong = new DeliveryCryptoService(new ConfigService({ DELIVERY_ENCRYPTION_KEY: Buffer.alloc(32, 2).toString(&#39;base64&#39;) }));
+    &gt; 12 |     expect(() =&gt; wrong.decrypt(encrypted)).toThrow();
+         |                                            ^
+      13 |     expect(new DeliveryCryptoService(new ConfigService()).ready()).toBe(false);
+      14 |   });
+      15 |   it(&#39;rejects insecure endpoints and embedded credentials&#39;, () =&gt; {
+
+      at Object.&lt;anonymous&gt; (src/delivery/delivery-crypto.service.spec.ts:12:44)
+
+PASS src/admin/admin-release-gate.spec.ts
+PASS src/auth/auth.service.spec.ts
+PASS src/admin/admin-release-http.spec.ts
+PASS src/admin/admin-route-catalog.spec.ts
+PASS src/admin/admin-accounts.http.spec.ts
+PASS src/common/landlord-resource-authorization.spec.ts
+PASS src/admin/admin-overview-analytics.http.spec.ts
+PASS src/admin/admin-inventory.http.spec.ts
+PASS src/admin/admin-account-governance.spec.ts
+PASS src/admin/admin-search.service.spec.ts
+PASS src/platform/moderation-preview.spec.ts
+PASS src/health/incident-workflow.service.spec.ts
+PASS src/billing/billing.service.spec.ts
+PASS src/admin/admin-accounts.service.spec.ts
+PASS src/platform/platform-rules.spec.ts
+PASS src/admin/admin-moderation-search.spec.ts
+PASS src/admin/admin-transactions.service.spec.ts
+PASS src/admin/admin-inventory.service.spec.ts
+PASS src/platform/moderation-policy-quality.spec.ts
+PASS src/health/operations-queue.service.spec.ts
+PASS src/support/support-inbox.spec.ts
+PASS src/admin/admin-workspace.service.spec.ts
+PASS src/admin/admin-overview-analytics.service.spec.ts
+PASS src/admin/admin-audit-query.service.spec.ts
+PASS src/chatbot/knowledge-chunker.spec.ts
+PASS src/common/roles.guard.spec.ts
+PASS src/admin/admin-pii-projection.spec.ts
+PASS src/platform/moderation-quality.service.spec.ts
+PASS src/chatbot/knowledge-importer.spec.ts
+PASS src/leases/settlements.service.spec.ts
+PASS src/billing/billing-tariffs.service.spec.ts
+PASS src/common/property-scope.spec.ts
+PASS src/tenants/tenant-invites.service.spec.ts
+PASS src/health/operations-health.service.spec.ts
+PASS src/dashboard/dashboard.service.spec.ts
+PASS src/admin/admin-lifecycle.service.spec.ts
+PASS src/uploads/admin-attachment-authorization.spec.ts
+PASS src/admin/admin-permissions.dto.spec.ts
+PASS src/billing/billing-rules.spec.ts
+PASS src/health/schema-readiness.service.spec.ts
+PASS src/health/backup-telemetry.service.spec.ts
+PASS src/common/api-error.filter.spec.ts
+PASS src/admin/admin-registry.service.spec.ts
+PASS src/billing/manual-transfer.service.spec.ts
+PASS src/auth/jwt.strategy.spec.ts
+PASS src/rooms/service-tariff.spec.ts
+PASS src/platform/finance-reconciliation.service.spec.ts
+PASS src/common/attachment-url.validator.spec.ts
+PASS src/chatbot/chatbot.service.spec.ts
+PASS src/auth/admin-mfa.service.spec.ts
+PASS src/billing/invoice-lines.spec.ts
+PASS src/auth/account-access.service.spec.ts
+PASS src/admin/admin-property-review.service.spec.ts
+PASS src/admin/admin-access-review.service.spec.ts
+PASS src/operations/recurring.service.spec.ts
+PASS src/billing/demo-card.gateway.spec.ts
+PASS scripts/admin-release-preflight.spec.ts
+PASS src/billing/manual-transfer.dto.spec.ts
+PASS src/common/subscription-entitlements.spec.ts
+PASS src/support/business-calendar.spec.ts
+PASS src/chatbot/ollama.client.spec.ts
+PASS src/reports/billing-analytics.spec.ts
+PASS src/chatbot/knowledge-retriever.spec.ts
+PASS src/chatbot/chatbot.config.spec.ts
+PASS src/chatbot/chatbot-evaluation.spec.ts
+PASS src/billing/demo-checkout.page.spec.ts
+PASS src/common/auth-role.spec.ts
+PASS src/chatbot/knowledge-import.cli.spec.ts
+PASS src/auth/admin-step-up.policy.spec.ts
+PASS src/tenant-lifecycle/notification-channels.spec.ts
+
+Summary of all failing tests
+FAIL src/uploads/malware-scanner.service.spec.ts
+  ● MalwareScannerService › binds a clean verdict to the exact file hash
+
+    expect(received).resolves.toBe()
+
+    Received promise rejected instead of resolved
+    Rejected to value: [ServiceUnavailableException: Attachment scanner is not configured.]
+
+      13 |   it(&#39;binds a clean verdict to the exact file hash&#39;, async () =&gt; {
+      14 |     const provider = jest.spyOn(global, &#39;fetch&#39;).mockResolvedValue(new Response(JSON.stringify({ sha256, verdict: &#39;CLEAN&#39; })));
+    &gt; 15 |     await expect(configured().scan(bytes, &#39;image/png&#39;)).resolves.toBe(sha256);
+         |           ^
+      16 |     expect(provider.mock.calls[0][1]?.headers).toMatchObject({ &#39;x-content-sha256&#39;: sha256 });
+      17 |   });
+      18 |   it(&#39;rejects infected, unverified or failed scan results&#39;, async () =&gt; {
+
+      at expect (node_modules/expect/build/index.js:113:15)
+      at Object.&lt;anonymous&gt; (src/uploads/malware-scanner.service.spec.ts:15:11)
+
+  ● MalwareScannerService › rejects infected, unverified or failed scan results
+
+    expect(received).rejects.toThrow(expected)
+
+    Expected substring: &quot;rejected&quot;
+    Received message:   &quot;Attachment scanner is not configured.&quot;
+
+          11 |     const endpoint = httpsEndpoint(this.config.get&lt;string&gt;(&#39;SUPPORT_SCAN_WEBHOOK_URL&#39;));
+          12 |     const secret = this.config.get&lt;string&gt;(&#39;SUPPORT_SCAN_WEBHOOK_SECRET&#39;)?.trim();
+        &gt; 13 |     if (!endpoint || !secret) throw new ServiceUnavailableException(&#39;Attachment scanner is not configured.&#39;);
+             |                                     ^
+          14 |     const sha256 = createHash(&#39;sha256&#39;).update(bytes).digest(&#39;hex&#39;);
+          15 |     try {
+          16 |       const response = await fetch(endpoint, { method: &#39;POST&#39;, redirect: &#39;error&#39;, signal: AbortSignal.timeout(15000),
+
+      at MalwareScannerService.scan (src/uploads/malware-scanner.service.ts:13:37)
+      at Object.&lt;anonymous&gt; (src/uploads/malware-scanner.service.spec.ts:20:31)
+      at Object.toThrow (node_modules/expect/build/index.js:218:22)
+      at Object.&lt;anonymous&gt; (src/uploads/malware-scanner.service.spec.ts:20:65)
+
+FAIL src/delivery/delivery-crypto.service.spec.ts
+  ● Encrypted delivery › requires a dedicated 256-bit key and authenticates ciphertext
+
+    expect(received).toThrow()
+
+    Received function did not throw
+
+      10 |     expect(JSON.parse(crypto.decrypt(encrypted))).toEqual({ token: &#39;super-private&#39;, email: &#39;person@example.com&#39; });
+      11 |     const wrong = new DeliveryCryptoService(new ConfigService({ DELIVERY_ENCRYPTION_KEY: Buffer.alloc(32, 2).toString(&#39;base64&#39;) }));
+    &gt; 12 |     expect(() =&gt; wrong.decrypt(encrypted)).toThrow();
+         |                                            ^
+      13 |     expect(new DeliveryCryptoService(new ConfigService()).ready()).toBe(false);
+      14 |   });
+      15 |   it(&#39;rejects insecure endpoints and embedded credentials&#39;, () =&gt; {
+
+      at Object.&lt;anonymous&gt; (src/delivery/delivery-crypto.service.spec.ts:12:44)
+
+
+Test Suites: 2 failed, 1 skipped, 70 passed, 72 of 73 total
+Tests:       3 failed, 7 skipped, 743 passed, 753 total
+Snapshots:   0 total
+Time:        9.857 s
+Ran all test suites.
+
+    at ChildProcess.&lt;anonymous&gt; (file:///Users/hoang/Rental_room_management/test/system_demo/system_demo.mjs:136:44)
+    at ChildProcess.emit (node:events:508:28)
+    at maybeClose (node:internal/child_process:1101:16)
+    at Socket.&lt;anonymous&gt; (node:internal/child_process:457:11)
+    at Socket.emit (node:events:508:28)
+    at Pipe.&lt;anonymous&gt; (node:net:346:12)</pre></td></tr><tr><td>regression:api:admin-accounts.e2e-spec.ts</td><td>regression</td><td class="passed">passed</td><td><pre></pre></td></tr><tr><td>regression:api:admin-completion.e2e-spec.ts</td><td>regression</td><td class="passed">passed</td><td><pre></pre></td></tr><tr><td>regression:api:admin-console.e2e-spec.ts</td><td>regression</td><td class="passed">passed</td><td><pre></pre></td></tr><tr><td>regression:api:admin-inventory.e2e-spec.ts</td><td>regression</td><td class="passed">passed</td><td><pre></pre></td></tr><tr><td>regression:api:admin-moderation-policy.e2e-spec.ts</td><td>regression</td><td class="passed">passed</td><td><pre></pre></td></tr><tr><td>regression:api:admin-next-sprints.e2e-spec.ts</td><td>regression</td><td class="passed">passed</td><td><pre></pre></td></tr><tr><td>regression:api:admin-operations-release.e2e-spec.ts</td><td>regression</td><td class="passed">passed</td><td><pre></pre></td></tr><tr><td>regression:api:admin-registry.e2e-spec.ts</td><td>regression</td><td class="passed">passed</td><td><pre></pre></td></tr><tr><td>regression:api:admin-roadmap-inboxes.e2e-spec.ts</td><td>regression</td><td class="passed">passed</td><td><pre></pre></td></tr><tr><td>regression:api:admin-search.e2e-spec.ts</td><td>regression</td><td class="passed">passed</td><td><pre></pre></td></tr><tr><td>regression:api:admin-sprints.e2e-spec.ts</td><td>regression</td><td class="passed">passed</td><td><pre></pre></td></tr><tr><td>regression:api:admin-support-tools.e2e-spec.ts</td><td>regression</td><td class="passed">passed</td><td><pre></pre></td></tr><tr><td>regression:api:admin-workspace.e2e-spec.ts</td><td>regression</td><td class="passed">passed</td><td><pre></pre></td></tr><tr><td>regression:api:admin.e2e-spec.ts</td><td>regression</td><td class="passed">passed</td><td><pre></pre></td></tr><tr><td>regression:api:app-functional.e2e-spec.ts</td><td>regression</td><td class="failed">failed</td><td><pre>Error: npm failed (1)
+
+&gt; rental-room-api@0.1.0 test:e2e
+&gt; NODE_ENV=test jest --config ./test/jest-e2e.json --runInBand --runTestsByPath test/e2e/app-functional.e2e-spec.ts --runInBand
+
+FAIL test/e2e/app-functional.e2e-spec.ts
+  App functional milestone (disposable database)
+    ✓ rejects duplicate submissions, stale reviews and stale cancellation; concurrent reviewers have one winner (365 ms)
+    ✓ executes renewal once and preserves deposit ledger and lease history (286 ms)
+    ✓ requires canonical settlement for checkout and exposes only the tenants own settlement (267 ms)
+    ✓ transfers only after settlement, copies co-occupants without erasing history and never invents a new deposit (279 ms)
+    ✓ rejects execution against a changed lease and filters lifecycle history by lease and status (182 ms)
+    ✕ queues one recovery token under resend limits, redeems once and revokes existing sessions (170 ms)
+    ✕ rejects expired recovery tokens without changing the password or consuming a session (191 ms)
+    ✓ limits tenant invite resends, invalidates the previous link and consumes activation exactly once (245 ms)
+    ✓ staff activation is one-time, property scoped and rejects expired invites (309 ms)
+    ✓ keeps uploaded proof pending, then records the canonical receipt allocation only after approval (278 ms)
+
+  ● App functional milestone (disposable database) › queues one recovery token under resend limits, redeems once and revokes existing sessions
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 1
+    Received: 0
+
+      124 |     expect((await api(&#39;auth/account-access/forgot&#39;, &#39;&#39;, &#39;POST&#39;, { email: &#39;missing@example.test&#39; })).json).toEqual(known.json);
+      125 |     await api(&#39;auth/account-access/forgot&#39;, &#39;&#39;, &#39;POST&#39;, { email: owner.email });
+    &gt; 126 |     expect(await harness.prisma.accountAccessToken.count({ where: { userId: owner.id } })).toBe(1);
+          |                                                                                            ^
+      127 |     const job = await harness.prisma.deliveryJob.findFirstOrThrow({ where: { token: { userId: owner.id } } });
+      128 |     const delivery = JSON.parse(harness.app.get(DeliveryCryptoService).decrypt(job.payload!));
+      129 |     const raw = new URL(delivery.actionUrl).hash.slice(&#39;#token=&#39;.length);
+
+      at Object.&lt;anonymous&gt; (test/e2e/app-functional.e2e-spec.ts:126:92)
+
+  ● App functional milestone (disposable database) › rejects expired recovery tokens without changing the password or consuming a session
+
+    PrismaClientKnownRequestError: 
+    Invalid `harness.prisma.deliveryJob.findFirstOrThrow()` invocation in
+    /Users/hoang/Rental_room_management/backend/test/e2e/app-functional.e2e-spec.ts:144:50
+
+      141 it(&#39;rejects expired recovery tokens without changing the password or consuming a session&#39;, async () =&gt; {
+      142   const user = await harness.prisma.user.findUniqueOrThrow({ where: { id: tenantUserId } });
+      143   await api(&#39;auth/account-access/forgot&#39;, &#39;&#39;, &#39;POST&#39;, { email: user.email });
+    → 144   const job = await harness.prisma.deliveryJob.findFirstOrThrow(
+    An operation failed because it depends on one or more records that were required but not found. No record was found for a query.
+
+      142 |     const user = await harness.prisma.user.findUniqueOrThrow({ where: { id: tenantUserId } });
+      143 |     await api(&#39;auth/account-access/forgot&#39;, &#39;&#39;, &#39;POST&#39;, { email: user.email });
+    &gt; 144 |     const job = await harness.prisma.deliveryJob.findFirstOrThrow({ where: { token: { userId: user.id } } });
+          |                 ^
+      145 |     const payload = JSON.parse(harness.app.get(DeliveryCryptoService).decrypt(job.payload!));
+      146 |     await harness.prisma.accountAccessToken.update({ where: { id: job.tokenId! }, data: { expiresAt: new Date(Date.now() - 1) } });
+      147 |     expect((await api(&#39;auth/account-access/redeem&#39;, &#39;&#39;, &#39;POST&#39;, { token: new URL(payload.actionUrl).hash.slice(7), password: &#39;NewStrongPassword!123&#39; })).status).toBe(401);
+
+      at ei.handleRequestError (node_modules/@prisma/client/src/runtime/RequestHandler.ts:228:13)
+      at ei.handleAndLogRequestError (node_modules/@prisma/client/src/runtime/RequestHandler.ts:174:12)
+      at ei.request (node_modules/@prisma/client/src/runtime/RequestHandler.ts:143:12)
+      at a (node_modules/@prisma/client/src/runtime/getPrismaClient.ts:833:24)
+      at Object.&lt;anonymous&gt; (test/e2e/app-functional.e2e-spec.ts:144:17)
+
+Test Suites: 1 failed, 1 total
+Tests:       2 failed, 8 passed, 10 total
+Snapshots:   0 total
+Time:        4.608 s
+Ran all test suites within paths &quot;test/e2e/app-functional.e2e-spec.ts&quot;.
+
+    at ChildProcess.&lt;anonymous&gt; (file:///Users/hoang/Rental_room_management/test/system_demo/system_demo.mjs:136:44)
+    at ChildProcess.emit (node:events:508:28)
+    at maybeClose (node:internal/child_process:1101:16)
+    at ChildProcess._handle.onexit (node:internal/child_process:305:5)</pre></td></tr><tr><td>regression:api:auth.e2e-spec.ts</td><td>regression</td><td class="passed">passed</td><td><pre></pre></td></tr><tr><td>regression:api:authorization-ownership.e2e-spec.ts</td><td>regression</td><td class="passed">passed</td><td><pre></pre></td></tr><tr><td>regression:api:billing-production.e2e-spec.ts</td><td>regression</td><td class="failed">failed</td><td><pre>Error: npm failed (1)
+
+&gt; rental-room-api@0.1.0 test:e2e
+&gt; NODE_ENV=test jest --config ./test/jest-e2e.json --runInBand --runTestsByPath test/e2e/billing-production.e2e-spec.ts --runInBand
+
+FAIL test/e2e/billing-production.e2e-spec.ts (6.277 s)
+  Production billing ledger (disposable database)
+    ✓ cancels only with a reason and replaces using a new immutable revision (363 ms)
+    ✓ appends credit/debit notes, preserves original lines and audits retries once (281 ms)
+    ✓ allocates one receipt across invoices, retains credit, releases and refunds with full history (274 ms)
+    ✓ rejects cross-landlord, cross-tenant, over-allocation and concurrent over-refund (295 ms)
+    ✓ serializes concurrent allocations so invoices cannot be overpaid (278 ms)
+    ✕ deduplicates reminders and skips delivery when payment was received (274 ms)
+    ✓ applies approved property service and tiered utility prices to preview and issue (257 ms)
+    ✓ deduplicates concurrent tariff proposals and serializes competing decisions (258 ms)
+    ✓ discloses room override exclusions and compares approved tariffs to their predecessor (262 ms)
+    ✓ blocks stale effective-order previews without weakening the live review guard (238 ms)
+    ✓ blocks invoice issuance and tariff activation for locked periods (230 ms)
+    ✓ reconciles a bank transfer to its full receipt, not the individual invoice allocations (273 ms)
+    ✓ requires a separate checker and revalidates receipt uniqueness during reconciliation approval (341 ms)
+    ✓ assigns only active landlord staff and keeps a custom SLA when editing unchanged priority (221 ms)
+    ✓ defaults SLA by priority and escalates each overdue deadline once under concurrency (204 ms)
+    ✓ links exactly one repair expense when completion is retried concurrently (218 ms)
+    ✓ passes the release readiness gate with the actual migrated columns and immutable/SLA triggers (184 ms)
+
+  ● Production billing ledger (disposable database) › deduplicates reminders and skips delivery when payment was received
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 1
+    Received: 0
+
+      124 |     const reminders = harness.app.get(BillingRemindersService);
+      125 |     await Promise.all([reminders.enqueue(now, landlordId), reminders.enqueue(now, landlordId)]);
+    &gt; 126 |     expect(await harness.prisma.billingOutboxEvent.count({ where: { type: &#39;invoice.reminder&#39; } })).toBe(1);
+          |                                                                                                    ^
+      127 |     const job = await harness.prisma.billingOutboxEvent.findFirstOrThrow({ where: { type: &#39;invoice.reminder&#39; } });
+      128 |     await harness.app.get(BillingOutboxService).deliver(job.id, now);
+      129 |     expect(await harness.prisma.billingNotification.count()).toBe(1);
+
+      at Object.&lt;anonymous&gt; (test/e2e/billing-production.e2e-spec.ts:126:100)
+
+Test Suites: 1 failed, 1 total
+Tests:       1 failed, 16 passed, 17 total
+Snapshots:   0 total
+Time:        6.394 s
+Ran all test suites within paths &quot;test/e2e/billing-production.e2e-spec.ts&quot;.
+
+    at ChildProcess.&lt;anonymous&gt; (file:///Users/hoang/Rental_room_management/test/system_demo/system_demo.mjs:136:44)
+    at ChildProcess.emit (node:events:508:28)
+    at maybeClose (node:internal/child_process:1101:16)
+    at ChildProcess._handle.onexit (node:internal/child_process:305:5)</pre></td></tr><tr><td>regression:api:chatbot.e2e-spec.ts</td><td>regression</td><td class="passed">passed</td><td><pre></pre></td></tr><tr><td>regression:api:demo-card-payments.e2e-spec.ts</td><td>regression</td><td class="passed">passed</td><td><pre></pre></td></tr><tr><td>regression:api:explore-preview-images.e2e-spec.ts</td><td>regression</td><td class="passed">passed</td><td><pre></pre></td></tr><tr><td>regression:api:housing.e2e-spec.ts</td><td>regression</td><td class="passed">passed</td><td><pre></pre></td></tr><tr><td>regression:api:invoice-tariffs.e2e-spec.ts</td><td>regression</td><td class="passed">passed</td><td><pre></pre></td></tr><tr><td>regression:api:lease-billing-dashboard.e2e-spec.ts</td><td>regression</td><td class="passed">passed</td><td><pre></pre></td></tr><tr><td>regression:api:lease-settlement.e2e-spec.ts</td><td>regression</td><td class="failed">failed</td><td><pre>Error: npm failed (1)
+
+&gt; rental-room-api@0.1.0 test:e2e
+&gt; NODE_ENV=test jest --config ./test/jest-e2e.json --runInBand --runTestsByPath test/e2e/lease-settlement.e2e-spec.ts --runInBand
+
+[Nest] 7388  - 10/30/2026, 7:50:03 AM   ERROR [ApiErrorFilter] {&quot;event&quot;:&quot;request_failed&quot;,&quot;requestId&quot;:&quot;339747c3-c70b-4824-8c3e-60b36019d6a2&quot;,&quot;method&quot;:&quot;POST&quot;,&quot;route&quot;:&quot;/api/v1/leases/:id/settlement/confirm&quot;,&quot;status&quot;:500,&quot;code&quot;:&quot;INTERNAL_SERVER_ERROR&quot;}
+FAIL test/e2e/lease-settlement.e2e-spec.ts
+  Move-out settlement E2E (isolated database only)
+    ✓ settles a lease, starts turnover, and records the actual refund exactly once (403 ms)
+    ✓ rejects a stale preview without persisting any settlement or turnover (275 ms)
+    ✓ prevents post-settlement edits, renewals and manual deposit changes (275 ms)
+    ✓ does not charge rent already present on a non-demo invoice (217 ms)
+    ✓ rolls back settlement and deposit deductions if turnover creation fails (233 ms)
+    ✓ enforces ownership and DTO validation over HTTP (189 ms)
+    ✕ cannot create an invoice from stale lease state during settlement (228 ms)
+    ✓ cannot double-record concurrent refunds (271 ms)
+
+  ● Move-out settlement E2E (isolated database only) › cannot create an invoice from stale lease state during settlement
+
+    expect(received).toHaveLength(expected)
+
+    Expected length: 1
+    Received length: 0
+    Received array:  []
+
+      157 |     const statuses = responses.map(response =&gt; response.status);
+      158 |     expect(statuses.filter((status) =&gt; status === 201)).toHaveLength(1);
+    &gt; 159 |     expect(statuses.filter((status) =&gt; status === 409)).toHaveLength(1);
+          |                                                         ^
+      160 |     const settlements = await harness.prisma.leaseSettlement.count({ where: { leaseId } });
+      161 |     const invoices = await harness.prisma.invoice.count({ where: { leaseId } });
+      162 |     expect(settlements + invoices).toBe(1);
+
+      at Object.&lt;anonymous&gt; (test/e2e/lease-settlement.e2e-spec.ts:159:57)
+
+Test Suites: 1 failed, 1 total
+Tests:       1 failed, 7 passed, 8 total
+Snapshots:   0 total
+Time:        4.325 s
+Ran all test suites within paths &quot;test/e2e/lease-settlement.e2e-spec.ts&quot;.
+
+    at ChildProcess.&lt;anonymous&gt; (file:///Users/hoang/Rental_room_management/test/system_demo/system_demo.mjs:136:44)
+    at ChildProcess.emit (node:events:508:28)
+    at maybeClose (node:internal/child_process:1101:16)
+    at ChildProcess._handle.onexit (node:internal/child_process:305:5)</pre></td></tr><tr><td>regression:api:listings.e2e-spec.ts</td><td>regression</td><td class="passed">passed</td><td><pre></pre></td></tr><tr><td>regression:api:maintenance-audit.e2e-spec.ts</td><td>regression</td><td class="passed">passed</td><td><pre></pre></td></tr><tr><td>regression:api:manual-transfers.e2e-spec.ts</td><td>regression</td><td class="passed">passed</td><td><pre></pre></td></tr><tr><td>regression:api:operations.e2e-spec.ts</td><td>regression</td><td class="failed">failed</td><td><pre>Error: npm failed (1)
+
+&gt; rental-room-api@0.1.0 test:e2e
+&gt; NODE_ENV=test jest --config ./test/jest-e2e.json --runInBand --runTestsByPath test/e2e/operations.e2e-spec.ts --runInBand
+
+FAIL test/e2e/operations.e2e-spec.ts
+  Landlord operations E2E
+    ✓ aggregates all categories with truthful counts, dates and exact destinations (23 ms)
+    ✓ filters by category without losing global summary counts (19 ms)
+    ✓ scopes property filters and rejects foreign properties (17 ms)
+    ✓ never reveals another landlord actions (13 ms)
+    ✓ validates query page=0 (2 ms)
+    ✓ validates query page=1.5 (1 ms)
+    ✓ validates query limit=51 (1 ms)
+    ✓ validates query limit=0 (2 ms)
+    ✓ validates query category=unknown (2 ms)
+    ✓ validates query propertyId=invalid (1 ms)
+    ✓ paginates deterministically with no duplicate or missing items (40 ms)
+    ✓ supports existing notification read records and idempotent action reads (24 ms)
+    ✕ filters staff counts and rows by resource permissions, without notification permission (6 ms)
+    ✕ requires operation permission and returns no inaccessible resources (7 ms)
+    ✓ rejects anonymous, tenant and admin callers (72 ms)
+    ✓ removes resolved tasks and distinguishes due-soon, nonurgent and expired tasks (19 ms)
+
+  ● Landlord operations E2E › filters staff counts and rows by resource permissions, without notification permission
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 200
+    Received: 403
+
+      160 |     const token = await staffToken([&#39;operation.view&#39;, &#39;maintenance.view&#39;]);
+      161 |     const result = await get(&#39;&#39;, token);
+    &gt; 162 |     expect(result.status).toBe(200);
+          |                           ^
+      163 |     expect(result.json!.data.summary).toMatchObject({ total: 2, pendingViewings: 0, overdueInvoices: 0, openMaintenance: 2 });
+      164 |     expect(result.json!.data.categories).toEqual([&#39;maintenance&#39;]);
+      165 |     expect((await get(&#39;?category=invoice&#39;, token)).status).toBe(403);
+
+      at Object.&lt;anonymous&gt; (test/e2e/operations.e2e-spec.ts:162:27)
+
+  ● Landlord operations E2E › requires operation permission and returns no inaccessible resources
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 200
+    Received: 403
+
+      176 |     expect((await get(&#39;&#39;, await staffToken([&#39;maintenance.view&#39;]))).status).toBe(403);
+      177 |     const empty = await get(&#39;&#39;, await staffToken([&#39;operation.view&#39;]));
+    &gt; 178 |     expect(empty.status).toBe(200);
+          |                          ^
+      179 |     expect(empty.json!.data.items).toEqual([]);
+      180 |     expect(empty.json!.data.summary.total).toBe(0);
+      181 |   });
+
+      at Object.&lt;anonymous&gt; (test/e2e/operations.e2e-spec.ts:178:26)
+
+Test Suites: 1 failed, 1 total
+Tests:       2 failed, 14 passed, 16 total
+Snapshots:   0 total
+Time:        2.256 s
+Ran all test suites within paths &quot;test/e2e/operations.e2e-spec.ts&quot;.
+
+    at ChildProcess.&lt;anonymous&gt; (file:///Users/hoang/Rental_room_management/test/system_demo/system_demo.mjs:136:44)
+    at ChildProcess.emit (node:events:508:28)
+    at maybeClose (node:internal/child_process:1101:16)
+    at ChildProcess._handle.onexit (node:internal/child_process:305:5)</pre></td></tr><tr><td>regression:api:p1-operations.e2e-spec.ts</td><td>regression</td><td class="passed">passed</td><td><pre></pre></td></tr><tr><td>regression:api:production-safety.e2e-spec.ts</td><td>regression</td><td class="failed">failed</td><td><pre>Error: npm failed (1)
+
+&gt; rental-room-api@0.1.0 test:e2e
+&gt; NODE_ENV=test jest --config ./test/jest-e2e.json --runInBand --runTestsByPath test/e2e/production-safety.e2e-spec.ts --runInBand
+
+FAIL test/e2e/production-safety.e2e-spec.ts
+  Production safety
+    ✓ runs the read-only staging smoke CLI against the isolated local API (512 ms)
+    ✓ protects operations data and correlates sensitive admin audit requests (385 ms)
+    ✓ exports bounded, injection-safe CSV and exposes only redacted detail (306 ms)
+    ✓ persists retries without raw tokens, uses the same idempotency key and serializes competing workers (196 ms)
+    ✕ cancels superseded and expired jobs, and stops retrying permanent provider failures (152 ms)
+    ✓ deduplicates alerts, acknowledges with a version, and auto-resolves recovered conditions (307 ms)
+    ✓ does not keep delivery incidents open for historical dead jobs (173 ms)
+
+  ● Production safety › cancels superseded and expired jobs, and stops retrying permanent provider failures
+
+    HttpException: Vui lòng chờ trước khi yêu cầu gửi lại.
+
+      32 |       const count = await tx.accountAccessToken.count({ where: { userId, purpose, createdAt: { gte: since } } });
+      33 |       if ((latest &amp;&amp; latest.createdAt.getTime() &gt; Date.now() - 60_000) || count &gt;= 5) {
+    &gt; 34 |         throw new HttpException(&#39;Vui lòng chờ trước khi yêu cầu gửi lại.&#39;, 429);
+         |               ^
+      35 |       }
+      36 |     }
+      37 |     await tx.deliveryJob.updateMany({ where: { token: { userId, purpose }, status: { in: [&#39;PENDING&#39;, &#39;PROCESSING&#39;] } },
+
+      at AccountAccessService.enqueue (src/auth/account-access.service.ts:34:15)
+      at Proxy._transactionWithCallback (node_modules/@prisma/client/src/runtime/getPrismaClient.ts:722:18)
+      at Object.&lt;anonymous&gt; (test/e2e/production-safety.e2e-spec.ts:109:21)
+
+Test Suites: 1 failed, 1 total
+Tests:       1 failed, 6 passed, 7 total
+Snapshots:   0 total
+Time:        3.738 s
+Ran all test suites within paths &quot;test/e2e/production-safety.e2e-spec.ts&quot;.
+
+    at ChildProcess.&lt;anonymous&gt; (file:///Users/hoang/Rental_room_management/test/system_demo/system_demo.mjs:136:44)
+    at ChildProcess.emit (node:events:508:28)
+    at maybeClose (node:internal/child_process:1101:16)
+    at ChildProcess._handle.onexit (node:internal/child_process:305:5)</pre></td></tr><tr><td>regression:api:resource-lifecycle.e2e-spec.ts</td><td>regression</td><td class="passed">passed</td><td><pre></pre></td></tr><tr><td>regression:api:reviews.e2e-spec.ts</td><td>regression</td><td class="passed">passed</td><td><pre></pre></td></tr><tr><td>regression:api:security-discovery.e2e-spec.ts</td><td>regression</td><td class="failed">failed</td><td><pre>Error: npm failed (1)
+
+&gt; rental-room-api@0.1.0 test:e2e
+&gt; NODE_ENV=test jest --config ./test/jest-e2e.json --runInBand --runTestsByPath test/e2e/security-discovery.e2e-spec.ts --runInBand
+
+FAIL test/e2e/security-discovery.e2e-spec.ts
+  Security and discovery regressions
+    ✓ serializes duplicate proof approvals and competing refunds (382 ms)
+    ✕ keeps receipts private, validates bytes and permits only authorized sharing (334 ms)
+    ✓ revokes other sessions, refresh tokens and private file links on password change (389 ms)
+    ✓ returns validation errors rather than server errors for invalid dates (246 ms)
+    ✓ filters by full estimated budget and availability freshness (291 ms)
+    ✓ allows only admins to manage real campus coordinates and active state (263 ms)
+    ✓ saves filters, sends deduplicated in-app alerts and enforces account boundaries (379 ms)
+    ✓ does not alert for historical listings, paused searches or more than ten saved searches (317 ms)
+    ✓ scans all matching pages without truncating notifications at fifty (381 ms)
+
+  ● Security and discovery regressions › keeps receipts private, validates bytes and permits only authorized sharing
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 200
+    Received: 404
+
+      91 |     expect((await call(`/uploads/${file.json.data.fileName}/access`, staffToken)).status).toBe(404);
+      92 |     await harness.prisma.staffProfile.update({ where: { userId: staff.id }, data: { permissions: [&#39;billing.view&#39;] } });
+    &gt; 93 |     expect((await call(`/uploads/${file.json.data.fileName}/access`, staffToken)).status).toBe(200);
+         |                                                                                           ^
+      94 |     const stolen = await upload(other);
+      95 |     expect((await call(`/tenant/invoices/${invoice.id}/payment-proofs`, student, { amount: 100000, proofImageUrls: [stolen.json.data.url] })).status).toBe(400);
+      96 |     expect((await upload(student, Buffer.from(&#39;&lt;html&gt;not an image&lt;/html&gt;&#39;))).status).toBe(400);
+
+      at Object.&lt;anonymous&gt; (test/e2e/security-discovery.e2e-spec.ts:93:91)
+
+Test Suites: 1 failed, 1 total
+Tests:       1 failed, 8 passed, 9 total
+Snapshots:   0 total
+Time:        4.747 s, estimated 5 s
+Ran all test suites within paths &quot;test/e2e/security-discovery.e2e-spec.ts&quot;.
+
+    at ChildProcess.&lt;anonymous&gt; (file:///Users/hoang/Rental_room_management/test/system_demo/system_demo.mjs:136:44)
+    at ChildProcess.emit (node:events:508:28)
+    at maybeClose (node:internal/child_process:1101:16)
+    at ChildProcess._handle.onexit (node:internal/child_process:305:5)</pre></td></tr><tr><td>regression:api:staff-lifecycle.e2e-spec.ts</td><td>regression</td><td class="passed">passed</td><td><pre></pre></td></tr><tr><td>regression:api:tenant-portal-priority.e2e-spec.ts</td><td>regression</td><td class="passed">passed</td><td><pre></pre></td></tr></table>
+    <h2>Phạm vi cần bổ sung/kiểm tra thủ công</h2><pre>[]</pre>
+    <h2>Danh mục route từ mã nguồn</h2><pre>[
+  {
+    &quot;name&quot;: &quot;housingFavoritesRoute&quot;,
+    &quot;path&quot;: &quot;/housing/favorites&quot;,
+    &quot;role&quot;: &quot;public&quot;,
+    &quot;level&quot;: &quot;screen-only; business assertions listed separately&quot;
+  },
+  {
+    &quot;name&quot;: &quot;housingViewingsRoute&quot;,
+    &quot;path&quot;: &quot;/housing/viewings&quot;,
+    &quot;role&quot;: &quot;public&quot;,
+    &quot;level&quot;: &quot;screen-only; business assertions listed separately&quot;
+  },
+  {
+    &quot;name&quot;: &quot;housingNoticesRoute&quot;,
+    &quot;path&quot;: &quot;/housing/notifications&quot;,
+    &quot;role&quot;: &quot;public&quot;,
+    &quot;level&quot;: &quot;screen-only; business assertions listed separately&quot;
+  },
+  {
+    &quot;name&quot;: &quot;rentalPilotRoute&quot;,
+    &quot;path&quot;: &quot;/housing/pilot&quot;,
+    &quot;role&quot;: &quot;public&quot;,
+    &quot;level&quot;: &quot;screen-only; business assertions listed separately&quot;
+  },
+  {
+    &quot;name&quot;: &quot;pilotFeedbackRoute&quot;,
+    &quot;path&quot;: &quot;/admin/pilot-feedback&quot;,
+    &quot;role&quot;: &quot;admin&quot;,
+    &quot;level&quot;: &quot;screen-only; business assertions listed separately&quot;
+  },
+  {
+    &quot;name&quot;: &quot;exploreRoute&quot;,
+    &quot;path&quot;: &quot;/explore&quot;,
+    &quot;role&quot;: &quot;public&quot;,
+    &quot;level&quot;: &quot;screen-only; business assertions listed separately&quot;
+  },
+  {
+    &quot;name&quot;: &quot;tenantPortalRoute&quot;,
+    &quot;path&quot;: &quot;/tenant&quot;,
+    &quot;role&quot;: &quot;tenant&quot;,
+    &quot;level&quot;: &quot;screen-only; business assertions listed separately&quot;
+  },
+  {
+    &quot;name&quot;: &quot;seekerAccountRoute&quot;,
+    &quot;path&quot;: &quot;/explore/account&quot;,
+    &quot;role&quot;: &quot;public&quot;,
+    &quot;level&quot;: &quot;screen-only; business assertions listed separately&quot;
+  },
+  {
+    &quot;name&quot;: &quot;publicListingRoute&quot;,
+    &quot;path&quot;: &quot;/explore/listings/:id&quot;,
+    &quot;role&quot;: &quot;public&quot;,
+    &quot;level&quot;: &quot;screen-only; business assertions listed separately&quot;
+  },
+  {
+    &quot;name&quot;: &quot;landlordListingsRoute&quot;,
+    &quot;path&quot;: &quot;/listings&quot;,
+    &quot;role&quot;: &quot;landlord&quot;,
+    &quot;level&quot;: &quot;screen-only; business assertions listed separately&quot;
+  },
+  {
+    &quot;name&quot;: &quot;adminListingsRoute&quot;,
+    &quot;path&quot;: &quot;/admin/listings&quot;,
+    &quot;role&quot;: &quot;admin&quot;,
+    &quot;level&quot;: &quot;screen-only; business assertions listed separately&quot;
+  },
+  {
+    &quot;name&quot;: &quot;landlordReviewsRoute&quot;,
+    &quot;path&quot;: &quot;/listings/reviews&quot;,
+    &quot;role&quot;: &quot;landlord&quot;,
+    &quot;level&quot;: &quot;screen-only; business assertions listed separately&quot;
+  },
+  {
+    &quot;name&quot;: &quot;adminReviewsRoute&quot;,
+    &quot;path&quot;: &quot;/admin/room-reviews&quot;,
+    &quot;role&quot;: &quot;admin&quot;,
+    &quot;level&quot;: &quot;screen-only; business assertions listed separately&quot;
+  },
+  {
+    &quot;name&quot;: &quot;splashRoute&quot;,
+    &quot;path&quot;: &quot;/splash&quot;,
+    &quot;role&quot;: &quot;public&quot;,
+    &quot;level&quot;: &quot;screen-only; business assertions listed separately&quot;
+  },
+  {
+    &quot;name&quot;: &quot;onboardingRoute&quot;,
+    &quot;path&quot;: &quot;/onboarding&quot;,
+    &quot;role&quot;: &quot;public&quot;,
+    &quot;level&quot;: &quot;screen-only; business assertions listed separately&quot;
+  },
+  {
+    &quot;name&quot;: &quot;loginRoute&quot;,
+    &quot;path&quot;: &quot;/auth/login&quot;,
+    &quot;role&quot;: &quot;public&quot;,
+    &quot;level&quot;: &quot;screen-only; business assertions listed separately&quot;
+  },
+  {
+    &quot;name&quot;: &quot;registerRoute&quot;,
+    &quot;path&quot;: &quot;/auth/register&quot;,
+    &quot;role&quot;: &quot;public&quot;,
+    &quot;level&quot;: &quot;screen-only; business assertions listed separately&quot;
+  },
+  {
+    &quot;name&quot;: &quot;tenantInviteRoute&quot;,
+    &quot;path&quot;: &quot;/tenant/activate&quot;,
+    &quot;role&quot;: &quot;tenant&quot;,
+    &quot;level&quot;: &quot;screen-only; business assertions listed separately&quot;
+  },
+  {
+    &quot;name&quot;: &quot;staffInviteRoute&quot;,
+    &quot;path&quot;: &quot;/staff/activate&quot;,
+    &quot;role&quot;: &quot;public&quot;,
+    &quot;level&quot;: &quot;screen-only; business assertions listed separately&quot;
+  },
+  {
+    &quot;name&quot;: &quot;dashboardRoute&quot;,
+    &quot;path&quot;: &quot;/dashboard&quot;,
+    &quot;role&quot;: &quot;landlord&quot;,
+    &quot;level&quot;: &quot;screen-only; business assertions listed separately&quot;
+  },
+  {
+    &quot;name&quot;: &quot;chatbotRoute&quot;,
+    &quot;path&quot;: &quot;/chatbot&quot;,
+    &quot;role&quot;: &quot;landlord&quot;,
+    &quot;level&quot;: &quot;screen-only; business assertions listed separately&quot;
+  },
+  {
+    &quot;name&quot;: &quot;settingsRoute&quot;,
+    &quot;path&quot;: &quot;/settings&quot;,
+    &quot;role&quot;: &quot;landlord&quot;,
+    &quot;level&quot;: &quot;screen-only; business assertions listed separately&quot;
+  },
+  {
+    &quot;name&quot;: &quot;settingsPasswordRoute&quot;,
+    &quot;path&quot;: &quot;/settings/password&quot;,
+    &quot;role&quot;: &quot;landlord&quot;,
+    &quot;level&quot;: &quot;screen-only; business assertions listed separately&quot;
+  },
+  {
+    &quot;name&quot;: &quot;fakeZaloRoute&quot;,
+    &quot;path&quot;: &quot;/settings/fake-zalo&quot;,
+    &quot;role&quot;: &quot;landlord&quot;,
+    &quot;level&quot;: &quot;screen-only; business assertions listed separately&quot;
+  },
+  {
+    &quot;name&quot;: &quot;tenantPasswordRoute&quot;,
+    &quot;path&quot;: &quot;/tenant/password&quot;,
+    &quot;role&quot;: &quot;tenant&quot;,
+    &quot;level&quot;: &quot;screen-only; business assertions listed separately&quot;
+  },
+  {
+    &quot;name&quot;: &quot;tenantZaloRoute&quot;,
+    &quot;path&quot;: &quot;/tenant/zalo&quot;,
+    &quot;role&quot;: &quot;tenant&quot;,
+    &quot;level&quot;: &quot;screen-only; business assertions listed separately&quot;
+  },
+  {
+    &quot;name&quot;: &quot;tenantNotificationsRoute&quot;,
+    &quot;path&quot;: &quot;/tenant/notifications&quot;,
+    &quot;role&quot;: &quot;tenant&quot;,
+    &quot;level&quot;: &quot;screen-only; business assertions listed separately&quot;
+  },
+  {
+    &quot;name&quot;: &quot;tenantLeasesRoute&quot;,
+    &quot;path&quot;: &quot;/tenant/leases&quot;,
+    &quot;role&quot;: &quot;tenant&quot;,
+    &quot;level&quot;: &quot;screen-only; business assertions listed separately&quot;
+  },
+  {
+    &quot;name&quot;: &quot;tenantInvoicesRoute&quot;,
+    &quot;path&quot;: &quot;/tenant/invoices&quot;,
+    &quot;role&quot;: &quot;tenant&quot;,
+    &quot;level&quot;: &quot;screen-only; business assertions listed separately&quot;
+  },
+  {
+    &quot;name&quot;: &quot;tenantInvoiceDetailRoute&quot;,
+    &quot;path&quot;: &quot;/tenant/invoices/:id&quot;,
+    &quot;role&quot;: &quot;tenant&quot;,
+    &quot;level&quot;: &quot;screen-only; business assertions listed separately&quot;
+  },
+  {
+    &quot;name&quot;: &quot;tenantMaintenanceRoute&quot;,
+    &quot;path&quot;: &quot;/tenant/maintenance&quot;,
+    &quot;role&quot;: &quot;tenant&quot;,
+    &quot;level&quot;: &quot;screen-only; business assertions listed separately&quot;
+  },
+  {
+    &quot;name&quot;: &quot;accountAccessRoute&quot;,
+    &quot;path&quot;: &quot;/account/activate&quot;,
+    &quot;role&quot;: &quot;public&quot;,
+    &quot;level&quot;: &quot;screen-only; business assertions listed separately&quot;
+  },
+  {
+    &quot;name&quot;: &quot;supportCenterRoute&quot;,
+    &quot;path&quot;: &quot;/support-center&quot;,
+    &quot;role&quot;: &quot;landlord&quot;,
+    &quot;level&quot;: &quot;screen-only; business assertions listed separately&quot;
+  },
+  {
+    &quot;name&quot;: &quot;adminRoute&quot;,
+    &quot;path&quot;: &quot;/admin&quot;,
+    &quot;role&quot;: &quot;admin&quot;,
+    &quot;level&quot;: &quot;screen-only; business assertions listed separately&quot;
+  },
+  {
+    &quot;name&quot;: &quot;adminVerificationsRoute&quot;,
+    &quot;path&quot;: &quot;/admin/landlord-verifications&quot;,
+    &quot;role&quot;: &quot;admin&quot;,
+    &quot;level&quot;: &quot;screen-only; business assertions listed separately&quot;
+  },
+  {
+    &quot;name&quot;: &quot;adminPropertyReviewsRoute&quot;,
+    &quot;path&quot;: &quot;/admin/property-reviews&quot;,
+    &quot;role&quot;: &quot;admin&quot;,
+    &quot;level&quot;: &quot;screen-only; business assertions listed separately&quot;
+  },
+  {
+    &quot;name&quot;: &quot;adminPlansRoute&quot;,
+    &quot;path&quot;: &quot;/admin/service-plans&quot;,
+    &quot;role&quot;: &quot;admin&quot;,
+    &quot;level&quot;: &quot;screen-only; business assertions listed separately&quot;
+  },
+  {
+    &quot;name&quot;: &quot;adminSubscriptionsRoute&quot;,
+    &quot;path&quot;: &quot;/admin/subscriptions&quot;,
+    &quot;role&quot;: &quot;admin&quot;,
+    &quot;level&quot;: &quot;screen-only; business assertions listed separately&quot;
+  },
+  {
+    &quot;name&quot;: &quot;adminAccountsRoute&quot;,
+    &quot;path&quot;: &quot;/admin/accounts&quot;,
+    &quot;role&quot;: &quot;admin&quot;,
+    &quot;level&quot;: &quot;screen-only; business assertions listed separately&quot;
+  },
+  {
+    &quot;name&quot;: &quot;adminAuditLogsRoute&quot;,
+    &quot;path&quot;: &quot;/admin/audit-logs&quot;,
+    &quot;role&quot;: &quot;admin&quot;,
+    &quot;level&quot;: &quot;screen-only; business assertions listed separately&quot;
+  },
+  {
+    &quot;name&quot;: &quot;adminOperationsRoute&quot;,
+    &quot;path&quot;: &quot;/admin/operations&quot;,
+    &quot;role&quot;: &quot;admin&quot;,
+    &quot;level&quot;: &quot;screen-only; business assertions listed separately&quot;
+  },
+  {
+    &quot;name&quot;: &quot;adminModerationRoute&quot;,
+    &quot;path&quot;: &quot;/admin/moderation&quot;,
+    &quot;role&quot;: &quot;admin&quot;,
+    &quot;level&quot;: &quot;screen-only; business assertions listed separately&quot;
+  },
+  {
+    &quot;name&quot;: &quot;adminSecurityRoute&quot;,
+    &quot;path&quot;: &quot;/admin/security&quot;,
+    &quot;role&quot;: &quot;admin&quot;,
+    &quot;level&quot;: &quot;screen-only; business assertions listed separately&quot;
+  },
+  {
+    &quot;name&quot;: &quot;adminSessionsRoute&quot;,
+    &quot;path&quot;: &quot;/admin/sessions&quot;,
+    &quot;role&quot;: &quot;admin&quot;,
+    &quot;level&quot;: &quot;screen-only; business assertions listed separately&quot;
+  },
+  {
+    &quot;name&quot;: &quot;adminSearchRoute&quot;,
+    &quot;path&quot;: &quot;/admin/search&quot;,
+    &quot;role&quot;: &quot;admin&quot;,
+    &quot;level&quot;: &quot;screen-only; business assertions listed separately&quot;
+  },
+  {
+    &quot;name&quot;: &quot;adminPoliciesRoute&quot;,
+    &quot;path&quot;: &quot;/admin/moderation-policies&quot;,
+    &quot;role&quot;: &quot;admin&quot;,
+    &quot;level&quot;: &quot;screen-only; business assertions listed separately&quot;
+  },
+  {
+    &quot;name&quot;: &quot;adminSupportRoute&quot;,
+    &quot;path&quot;: &quot;/admin/support&quot;,
+    &quot;role&quot;: &quot;admin&quot;,
+    &quot;level&quot;: &quot;screen-only; business assertions listed separately&quot;
+  },
+  {
+    &quot;name&quot;: &quot;adminSupportCenterRoute&quot;,
+    &quot;path&quot;: &quot;/admin/support-center&quot;,
+    &quot;role&quot;: &quot;admin&quot;,
+    &quot;level&quot;: &quot;screen-only; business assertions listed separately&quot;
+  },
+  {
+    &quot;name&quot;: &quot;adminTicketsRoute&quot;,
+    &quot;path&quot;: &quot;/admin/tickets&quot;,
+    &quot;role&quot;: &quot;admin&quot;,
+    &quot;level&quot;: &quot;screen-only; business assertions listed separately&quot;
+  },
+  {
+    &quot;name&quot;: &quot;adminModerationV2Route&quot;,
+    &quot;path&quot;: &quot;/admin/moderation-v2&quot;,
+    &quot;role&quot;: &quot;admin&quot;,
+    &quot;level&quot;: &quot;screen-only; business assertions listed separately&quot;
+  },
+  {
+    &quot;name&quot;: &quot;adminNotificationsRoute&quot;,
+    &quot;path&quot;: &quot;/admin/notifications&quot;,
+    &quot;role&quot;: &quot;admin&quot;,
+    &quot;level&quot;: &quot;screen-only; business assertions listed separately&quot;
+  },
+  {
+    &quot;name&quot;: &quot;adminGovernanceRoute&quot;,
+    &quot;path&quot;: &quot;/admin/governance&quot;,
+    &quot;role&quot;: &quot;admin&quot;,
+    &quot;level&quot;: &quot;screen-only; business assertions listed separately&quot;
+  },
+  {
+    &quot;name&quot;: &quot;adminFinanceReconciliationRoute&quot;,
+    &quot;path&quot;: &quot;/admin/finance-reconciliation&quot;,
+    &quot;role&quot;: &quot;admin&quot;,
+    &quot;level&quot;: &quot;screen-only; business assertions listed separately&quot;
+  },
+  {
+    &quot;name&quot;: &quot;adminReportSchedulesRoute&quot;,
+    &quot;path&quot;: &quot;/admin/report-schedules&quot;,
+    &quot;role&quot;: &quot;admin&quot;,
+    &quot;level&quot;: &quot;screen-only; business assertions listed separately&quot;
+  },
+  {
+    &quot;name&quot;: &quot;adminReportsRoute&quot;,
+    &quot;path&quot;: &quot;/admin/reports&quot;,
+    &quot;role&quot;: &quot;admin&quot;,
+    &quot;level&quot;: &quot;screen-only; business assertions listed separately&quot;
+  },
+  {
+    &quot;name&quot;: &quot;adminTeamsRoute&quot;,
+    &quot;path&quot;: &quot;/admin/teams&quot;,
+    &quot;role&quot;: &quot;admin&quot;,
+    &quot;level&quot;: &quot;screen-only; business assertions listed separately&quot;
+  },
+  {
+    &quot;name&quot;: &quot;adminPermissionSimulatorRoute&quot;,
+    &quot;path&quot;: &quot;/admin/permission-simulator&quot;,
+    &quot;role&quot;: &quot;admin&quot;,
+    &quot;level&quot;: &quot;screen-only; business assertions listed separately&quot;
+  },
+  {
+    &quot;name&quot;: &quot;adminAdminsRoute&quot;,
+    &quot;path&quot;: &quot;/admin/admins&quot;,
+    &quot;role&quot;: &quot;admin&quot;,
+    &quot;level&quot;: &quot;screen-only; business assertions listed separately&quot;
+  },
+  {
+    &quot;name&quot;: &quot;adminLandlordsRoute&quot;,
+    &quot;path&quot;: &quot;/admin/landlords&quot;,
+    &quot;role&quot;: &quot;admin&quot;,
+    &quot;level&quot;: &quot;screen-only; business assertions listed separately&quot;
+  },
+  {
+    &quot;name&quot;: &quot;adminLandlordFormRoute&quot;,
+    &quot;path&quot;: &quot;/admin/landlords/form&quot;,
+    &quot;role&quot;: &quot;admin&quot;,
+    &quot;level&quot;: &quot;screen-only; business assertions listed separately&quot;
+  },
+  {
+    &quot;name&quot;: &quot;adminLandlordDetailRoute&quot;,
+    &quot;path&quot;: &quot;/admin/landlords/:id&quot;,
+    &quot;role&quot;: &quot;admin&quot;,
+    &quot;level&quot;: &quot;screen-only; business assertions listed separately&quot;
+  },
+  {
+    &quot;name&quot;: &quot;adminPropertiesRoute&quot;,
+    &quot;path&quot;: &quot;/admin/properties&quot;,
+    &quot;role&quot;: &quot;admin&quot;,
+    &quot;level&quot;: &quot;screen-only; business assertions listed separately&quot;
+  },
+  {
+    &quot;name&quot;: &quot;adminRoomsRoute&quot;,
+    &quot;path&quot;: &quot;/admin/rooms&quot;,
+    &quot;role&quot;: &quot;admin&quot;,
+    &quot;level&quot;: &quot;screen-only; business assertions listed separately&quot;
+  },
+  {
+    &quot;name&quot;: &quot;adminPropertyFormRoute&quot;,
+    &quot;path&quot;: &quot;/admin/properties/form&quot;,
+    &quot;role&quot;: &quot;admin&quot;,
+    &quot;level&quot;: &quot;screen-only; business assertions listed separately&quot;
+  },
+  {
+    &quot;name&quot;: &quot;adminPropertyDetailRoute&quot;,
+    &quot;path&quot;: &quot;/admin/properties/:id&quot;,
+    &quot;role&quot;: &quot;admin&quot;,
+    &quot;level&quot;: &quot;screen-only; business assertions listed separately&quot;
+  },
+  {
+    &quot;name&quot;: &quot;propertiesRoute&quot;,
+    &quot;path&quot;: &quot;/properties&quot;,
+    &quot;role&quot;: &quot;landlord&quot;,
+    &quot;level&quot;: &quot;screen-only; business assertions listed separately&quot;
+  },
+  {
+    &quot;name&quot;: &quot;propertyFormRoute&quot;,
+    &quot;path&quot;: &quot;/properties/form&quot;,
+    &quot;role&quot;: &quot;landlord&quot;,
+    &quot;level&quot;: &quot;screen-only; business assertions listed separately&quot;
+  },
+  {
+    &quot;name&quot;: &quot;roomFormRoute&quot;,
+    &quot;path&quot;: &quot;/rooms/form&quot;,
+    &quot;role&quot;: &quot;landlord&quot;,
+    &quot;level&quot;: &quot;screen-only; business assertions listed separately&quot;
+  },
+  {
+    &quot;name&quot;: &quot;roomDetailRoute&quot;,
+    &quot;path&quot;: &quot;/rooms/:id&quot;,
+    &quot;role&quot;: &quot;landlord&quot;,
+    &quot;level&quot;: &quot;screen-only; business assertions listed separately&quot;
+  },
+  {
+    &quot;name&quot;: &quot;tenantsRoute&quot;,
+    &quot;path&quot;: &quot;/tenants&quot;,
+    &quot;role&quot;: &quot;landlord&quot;,
+    &quot;level&quot;: &quot;screen-only; business assertions listed separately&quot;
+  },
+  {
+    &quot;name&quot;: &quot;tenantFormRoute&quot;,
+    &quot;path&quot;: &quot;/tenants/form&quot;,
+    &quot;role&quot;: &quot;landlord&quot;,
+    &quot;level&quot;: &quot;screen-only; business assertions listed separately&quot;
+  },
+  {
+    &quot;name&quot;: &quot;tenantDetailRoute&quot;,
+    &quot;path&quot;: &quot;/tenants/:id&quot;,
+    &quot;role&quot;: &quot;landlord&quot;,
+    &quot;level&quot;: &quot;screen-only; business assertions listed separately&quot;
+  },
+  {
+    &quot;name&quot;: &quot;leaseFormRoute&quot;,
+    &quot;path&quot;: &quot;/leases/form&quot;,
+    &quot;role&quot;: &quot;landlord&quot;,
+    &quot;level&quot;: &quot;screen-only; business assertions listed separately&quot;
+  },
+  {
+    &quot;name&quot;: &quot;billingRoute&quot;,
+    &quot;path&quot;: &quot;/billing&quot;,
+    &quot;role&quot;: &quot;landlord&quot;,
+    &quot;level&quot;: &quot;screen-only; business assertions listed separately&quot;
+  },
+  {
+    &quot;name&quot;: &quot;bulkBillingRoute&quot;,
+    &quot;path&quot;: &quot;/billing/bulk&quot;,
+    &quot;role&quot;: &quot;landlord&quot;,
+    &quot;level&quot;: &quot;screen-only; business assertions listed separately&quot;
+  },
+  {
+    &quot;name&quot;: &quot;billingFormRoute&quot;,
+    &quot;path&quot;: &quot;/billing/form&quot;,
+    &quot;role&quot;: &quot;landlord&quot;,
+    &quot;level&quot;: &quot;screen-only; business assertions listed separately&quot;
+  },
+  {
+    &quot;name&quot;: &quot;billingTariffsRoute&quot;,
+    &quot;path&quot;: &quot;/billing/tariffs&quot;,
+    &quot;role&quot;: &quot;landlord&quot;,
+    &quot;level&quot;: &quot;screen-only; business assertions listed separately&quot;
+  },
+  {
+    &quot;name&quot;: &quot;billingDetailRoute&quot;,
+    &quot;path&quot;: &quot;/billing/:id&quot;,
+    &quot;role&quot;: &quot;landlord&quot;,
+    &quot;level&quot;: &quot;screen-only; business assertions listed separately&quot;
+  },
+  {
+    &quot;name&quot;: &quot;expensesRoute&quot;,
+    &quot;path&quot;: &quot;/expenses&quot;,
+    &quot;role&quot;: &quot;landlord&quot;,
+    &quot;level&quot;: &quot;screen-only; business assertions listed separately&quot;
+  },
+  {
+    &quot;name&quot;: &quot;expenseFormRoute&quot;,
+    &quot;path&quot;: &quot;/expenses/form&quot;,
+    &quot;role&quot;: &quot;landlord&quot;,
+    &quot;level&quot;: &quot;screen-only; business assertions listed separately&quot;
+  },
+  {
+    &quot;name&quot;: &quot;maintenanceRoute&quot;,
+    &quot;path&quot;: &quot;/maintenance&quot;,
+    &quot;role&quot;: &quot;landlord&quot;,
+    &quot;level&quot;: &quot;screen-only; business assertions listed separately&quot;
+  },
+  {
+    &quot;name&quot;: &quot;maintenanceFormRoute&quot;,
+    &quot;path&quot;: &quot;/maintenance/form&quot;,
+    &quot;role&quot;: &quot;landlord&quot;,
+    &quot;level&quot;: &quot;screen-only; business assertions listed separately&quot;
+  },
+  {
+    &quot;name&quot;: &quot;reportsRoute&quot;,
+    &quot;path&quot;: &quot;/reports&quot;,
+    &quot;role&quot;: &quot;landlord&quot;,
+    &quot;level&quot;: &quot;screen-only; business assertions listed separately&quot;
+  },
+  {
+    &quot;name&quot;: &quot;staffRoute&quot;,
+    &quot;path&quot;: &quot;/staff&quot;,
+    &quot;role&quot;: &quot;landlord&quot;,
+    &quot;level&quot;: &quot;screen-only; business assertions listed separately&quot;
+  },
+  {
+    &quot;name&quot;: &quot;auditRoute&quot;,
+    &quot;path&quot;: &quot;/audit&quot;,
+    &quot;role&quot;: &quot;landlord&quot;,
+    &quot;level&quot;: &quot;screen-only; business assertions listed separately&quot;
+  },
+  {
+    &quot;name&quot;: &quot;notificationsRoute&quot;,
+    &quot;path&quot;: &quot;/notifications&quot;,
+    &quot;role&quot;: &quot;landlord&quot;,
+    &quot;level&quot;: &quot;screen-only; business assertions listed separately&quot;
+  },
+  {
+    &quot;name&quot;: &quot;actionItemsRoute&quot;,
+    &quot;path&quot;: &quot;/actions&quot;,
+    &quot;role&quot;: &quot;landlord&quot;,
+    &quot;level&quot;: &quot;screen-only; business assertions listed separately&quot;
+  },
+  {
+    &quot;name&quot;: &quot;p1OperationsRoute&quot;,
+    &quot;path&quot;: &quot;/operations/p1&quot;,
+    &quot;role&quot;: &quot;landlord&quot;,
+    &quot;level&quot;: &quot;screen-only; business assertions listed separately&quot;
+  },
+  {
+    &quot;name&quot;: &quot;leaseExpiryRoute&quot;,
+    &quot;path&quot;: &quot;/lease-expiry&quot;,
+    &quot;role&quot;: &quot;landlord&quot;,
+    &quot;level&quot;: &quot;screen-only; business assertions listed separately&quot;
+  }
+]</pre></html>

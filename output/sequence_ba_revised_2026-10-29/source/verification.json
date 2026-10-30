@@ -1,0 +1,816 @@
+{
+  "report_sha256": "16f8356d954a8b551da4fb196146d4a4065c2aa8b277dc7a094a7e8a64f95dce",
+  "diagrams": [
+    {
+      "id": "SD-01",
+      "title": "Đăng nhập và duy trì phiên sử dụng",
+      "sources": [
+        {
+          "path": "backend/src/auth/auth.service.ts",
+          "symbols": [
+            "login",
+            "refresh",
+            "issueSession"
+          ],
+          "lines": {
+            "login": 71,
+            "refresh": 91,
+            "issueSession": 179
+          },
+          "sha256": "3c5bffa0396e703b7d51d96949831360e376d6927f3fce067a723dadb4cb5bf0"
+        },
+        {
+          "path": "lib/features/auth/login_screen.dart",
+          "symbols": [
+            "_submit"
+          ],
+          "lines": {
+            "_submit": 37
+          },
+          "sha256": "29a57fa3dd02ee2885a5f9e850eaccd89b146af86df2796eab5f6c1f5560f8af"
+        },
+        {
+          "path": "lib/features/auth/auth_navigation.dart",
+          "symbols": [
+            "homeRouteForSession"
+          ],
+          "lines": {
+            "homeRouteForSession": 264
+          },
+          "sha256": "85a67137aac4e2c0cc79bdfd1b0f4c9ac498ef7e03843decd03d2813fcb1b464"
+        },
+        {
+          "path": "lib/data/auth/auth_repository.dart",
+          "symbols": [
+            "restore"
+          ],
+          "lines": {
+            "restore": 43
+          },
+          "sha256": "01c0b29bf87fdfaa31178422d918a63b5882f95d0148ec31335e5a3873476dcc"
+        }
+      ],
+      "pixels": [
+        2778,
+        3365
+      ],
+      "dpi": [
+        299.9994,
+        299.9994
+      ],
+      "sha256": "1d255014106aada4cd823d22717eceb317131abd8d3cd6237e291225c00efd6e"
+    },
+    {
+      "id": "SD-02",
+      "title": "Đặt lịch xem phòng và lập hợp đồng từ lịch xem",
+      "sources": [
+        {
+          "path": "backend/src/housing/housing.service.ts",
+          "symbols": [
+            "book",
+            "update",
+            "createLease"
+          ],
+          "lines": {
+            "book": 83,
+            "update": 208,
+            "createLease": 240
+          },
+          "sha256": "9260f60d85a55c0bc65db5c6279d8848f6bea02da4bc16fc1bae831a06d07854"
+        },
+        {
+          "path": "backend/src/leases/leases.service.ts",
+          "symbols": [
+            "createWithinTransaction"
+          ],
+          "lines": {
+            "createWithinTransaction": 93
+          },
+          "sha256": "a180f67b708e91e08994725833bceb25b7ac97f408c8941d9886c702709e9eb1"
+        },
+        {
+          "path": "lib/features/listings/housing_screen.dart",
+          "symbols": [
+            "_viewingAction"
+          ],
+          "lines": {
+            "_viewingAction": 67
+          },
+          "sha256": "cc53d6607af9bcdc98a5fd141a7f58eabbe5d91dccbd6660e855c1994be3eae8"
+        },
+        {
+          "path": "lib/features/listings/housing_dialog.dart",
+          "symbols": [],
+          "lines": {},
+          "sha256": "235988025d9810ee824f71baad5ada2c8cad1b822eeae172cb98be41082556e8"
+        }
+      ],
+      "pixels": [
+        2991,
+        4591
+      ],
+      "dpi": [
+        299.9994,
+        299.9994
+      ],
+      "sha256": "dd55f5766b7a285d2b1cdaf0b88497e5c3888811037c3293c44f6e504fe04829"
+    },
+    {
+      "id": "SD-03",
+      "title": "Lập hợp đồng thuê phòng và ghi nhận cọc ban đầu",
+      "sources": [
+        {
+          "path": "backend/src/leases/leases.service.ts",
+          "symbols": [
+            "create",
+            "createWithinTransaction"
+          ],
+          "lines": {
+            "create": 87,
+            "createWithinTransaction": 93
+          },
+          "sha256": "a180f67b708e91e08994725833bceb25b7ac97f408c8941d9886c702709e9eb1"
+        },
+        {
+          "path": "lib/features/tenants/lease_form_screen.dart",
+          "symbols": [],
+          "lines": {},
+          "sha256": "91ad7e8d4d791a5af80ded885163327a1a2e540a6f6908ede9061fc22ea45ce9"
+        }
+      ],
+      "pixels": [
+        2692,
+        2331
+      ],
+      "dpi": [
+        299.9994,
+        299.9994
+      ],
+      "sha256": "87a4e8c46a9b70b73574ac5aa0e92e262d141c6f5517e31968529226b94bb436"
+    },
+    {
+      "id": "SD-04",
+      "title": "Đề xuất và xét duyệt biểu phí",
+      "sources": [
+        {
+          "path": "backend/src/billing/billing-tariffs.service.ts",
+          "symbols": [
+            "propose",
+            "impact",
+            "review"
+          ],
+          "lines": {
+            "propose": 25,
+            "impact": 44,
+            "review": 67
+          },
+          "sha256": "e0033d0b3fc75efd248a115b323c514444fe495e08a5d474684fcb8186662a18"
+        },
+        {
+          "path": "lib/features/billing/billing_tariffs_screen.dart",
+          "symbols": [],
+          "lines": {},
+          "sha256": "fd4b8d49fef915a0af954cade9cdbfa82d63e5205f0a7fb2dd0b647d45bb9445"
+        }
+      ],
+      "pixels": [
+        2682,
+        3749
+      ],
+      "dpi": [
+        299.9994,
+        299.9994
+      ],
+      "sha256": "10dcb9fbc19d1224a5555f6d8007ae72c7fe0b9360f385ba2adadb8627c20fec"
+    },
+    {
+      "id": "SD-05",
+      "title": "Xem trước và phát hành hóa đơn tháng",
+      "sources": [
+        {
+          "path": "backend/src/billing/billing.service.ts",
+          "symbols": [
+            "createInvoice",
+            "bulkInvoicePreflight",
+            "createBulkInvoices"
+          ],
+          "lines": {
+            "createInvoice": 291,
+            "bulkInvoicePreflight": 384,
+            "createBulkInvoices": 460
+          },
+          "sha256": "45271709a402e2034a553e83d01d24a8cac4772e742ccb95011848dc7269c3ee"
+        },
+        {
+          "path": "backend/src/billing/billing-tariffs.service.ts",
+          "symbols": [
+            "preview"
+          ],
+          "lines": {
+            "preview": 100
+          },
+          "sha256": "e0033d0b3fc75efd248a115b323c514444fe495e08a5d474684fcb8186662a18"
+        },
+        {
+          "path": "lib/features/billing/bulk_invoice_screen.dart",
+          "symbols": [
+            "_submit"
+          ],
+          "lines": {
+            "_submit": 304
+          },
+          "sha256": "01114d475302a2c069050b39ca776769812897dd6bfa8586f16778c34a4dc7e6"
+        }
+      ],
+      "pixels": [
+        2706,
+        3386
+      ],
+      "dpi": [
+        299.9994,
+        299.9994
+      ],
+      "sha256": "b877efc01308087e44978b7fca15902ca1bacadef18f54ac6e274f041473dab6"
+    },
+    {
+      "id": "SD-06",
+      "title": "Ghi nhận khoản thu và phân bổ thanh toán",
+      "sources": [
+        {
+          "path": "backend/src/billing/billing-ledger.service.ts",
+          "symbols": [
+            "createReceipt",
+            "allocate",
+            "allocateLines"
+          ],
+          "lines": {
+            "createReceipt": 88,
+            "allocate": 101,
+            "allocateLines": 175
+          },
+          "sha256": "1da9486ba1b4f4511bd7f73cd49183344b5119204ffcf6d26691c0725306fb6f"
+        },
+        {
+          "path": "backend/src/billing/billing-commands.service.ts",
+          "symbols": [
+            "execute"
+          ],
+          "lines": {
+            "execute": 13
+          },
+          "sha256": "f0a04fdcbf7c3c9c416c1f3bf42a894cbbcd0bd8ec34294e79fe583e43302875"
+        },
+        {
+          "path": "lib/features/billing/billing_receipts_screen.dart",
+          "symbols": [],
+          "lines": {},
+          "sha256": "86b8df9aa78bb7e590c9abdb9e7d233082f4e4ef381d68265d64b337aace25ad"
+        }
+      ],
+      "pixels": [
+        2625,
+        2862
+      ],
+      "dpi": [
+        299.9994,
+        299.9994
+      ],
+      "sha256": "21b25f8f311fa3aef7a01f7df2a93867a1311bdb837538c6c8cbd5a5a32b9eeb"
+    },
+    {
+      "id": "SD-07",
+      "title": "Gỡ phân bổ và ghi nhận hoàn tiền khoản thu",
+      "sources": [
+        {
+          "path": "backend/src/billing/billing-ledger.service.ts",
+          "symbols": [
+            "release",
+            "refund"
+          ],
+          "lines": {
+            "release": 111,
+            "refund": 132
+          },
+          "sha256": "1da9486ba1b4f4511bd7f73cd49183344b5119204ffcf6d26691c0725306fb6f"
+        },
+        {
+          "path": "backend/src/billing/billing-commands.service.ts",
+          "symbols": [
+            "execute"
+          ],
+          "lines": {
+            "execute": 13
+          },
+          "sha256": "f0a04fdcbf7c3c9c416c1f3bf42a894cbbcd0bd8ec34294e79fe583e43302875"
+        },
+        {
+          "path": "lib/features/billing/billing_receipts_screen.dart",
+          "symbols": [],
+          "lines": {},
+          "sha256": "86b8df9aa78bb7e590c9abdb9e7d233082f4e4ef381d68265d64b337aace25ad"
+        }
+      ],
+      "pixels": [
+        2699,
+        3498
+      ],
+      "dpi": [
+        299.9994,
+        299.9994
+      ],
+      "sha256": "7c2eb6889458473ce66dde6cfacd7d03558d8fb1114cf9727e18203b5557d10d"
+    },
+    {
+      "id": "SD-08",
+      "title": "Gửi và xét duyệt chứng từ thanh toán",
+      "sources": [
+        {
+          "path": "backend/src/tenant-portal/tenant-portal.service.ts",
+          "symbols": [
+            "submitPaymentProof"
+          ],
+          "lines": {
+            "submitPaymentProof": 426
+          },
+          "sha256": "477edcc2d839aa4fe04e77e39e9de8e59b0a5a1b75a2647f49ab903a7afe273f"
+        },
+        {
+          "path": "backend/src/billing/billing.service.ts",
+          "symbols": [
+            "reviewPaymentProof"
+          ],
+          "lines": {
+            "reviewPaymentProof": 1053
+          },
+          "sha256": "45271709a402e2034a553e83d01d24a8cac4772e742ccb95011848dc7269c3ee"
+        },
+        {
+          "path": "lib/features/billing/payment_proof_review_dialog.dart",
+          "symbols": [],
+          "lines": {},
+          "sha256": "12f1dfdb4c4273e0e07422cb71f7b7580a4e7ca1ef5303e1e45a5927caf192a0"
+        },
+        {
+          "path": "lib/features/tenant_portal/tenant_payment_proof_dialog.dart",
+          "symbols": [],
+          "lines": {},
+          "sha256": "38833cea25747d861e72c6f8fb5dc0e9cfeec9ede712a9903802a4d93d0153cb"
+        }
+      ],
+      "pixels": [
+        2980,
+        3741
+      ],
+      "dpi": [
+        299.9994,
+        299.9994
+      ],
+      "sha256": "ea7a408d6780936e843bf3c0361c0aadf9ff0f6630f8c18f5771bfa9b3be172b"
+    },
+    {
+      "id": "SD-09",
+      "title": "Thay thế hoặc điều chỉnh hóa đơn",
+      "sources": [
+        {
+          "path": "backend/src/billing/billing-ledger.service.ts",
+          "symbols": [
+            "replace",
+            "adjust"
+          ],
+          "lines": {
+            "replace": 25,
+            "adjust": 60
+          },
+          "sha256": "1da9486ba1b4f4511bd7f73cd49183344b5119204ffcf6d26691c0725306fb6f"
+        },
+        {
+          "path": "lib/features/billing/invoice_replacement_screen.dart",
+          "symbols": [],
+          "lines": {},
+          "sha256": "718b8218baef6d002b80069bec91cfa304487ff40cb23dc0f1cbe303f6eb0d35"
+        },
+        {
+          "path": "lib/features/billing/invoice_adjustment_dialog.dart",
+          "symbols": [],
+          "lines": {},
+          "sha256": "379a82f972281df5980cb10d5c2a332b47279d14e7310ea2ba83940d02b00c05"
+        }
+      ],
+      "pixels": [
+        2765,
+        2854
+      ],
+      "dpi": [
+        299.9994,
+        299.9994
+      ],
+      "sha256": "f3de1dfc91bc63f1e289ec4fdd51064c48d5994af0bf7720c7c3a3d285b2d921"
+    },
+    {
+      "id": "SD-10",
+      "title": "Quyết toán trả phòng và ghi nhận hoàn cọc",
+      "sources": [
+        {
+          "path": "backend/src/leases/settlements.service.ts",
+          "symbols": [
+            "preview",
+            "confirm",
+            "recordRefund",
+            "calculate"
+          ],
+          "lines": {
+            "preview": 53,
+            "confirm": 61,
+            "recordRefund": 101,
+            "calculate": 138
+          },
+          "sha256": "37a2a121e8c293d1cdd57ea16669e42cfec9ee9597648ef94d5630dbf2e98072"
+        },
+        {
+          "path": "lib/features/tenants/lease_settlement_screen.dart",
+          "symbols": [],
+          "lines": {},
+          "sha256": "f118cf695bfb1c8a4d4c654c8d519cd666e73ea5a14eb8c61568067a3dc0d784"
+        }
+      ],
+      "pixels": [
+        2767,
+        4343
+      ],
+      "dpi": [
+        299.9994,
+        299.9994
+      ],
+      "sha256": "75c2c61caf3971b46b92f4a977eed2065bd7be94b28555b7f460d3b707415f24"
+    },
+    {
+      "id": "SD-11",
+      "title": "Gửi, xét duyệt và thực hiện yêu cầu thay đổi thuê",
+      "sources": [
+        {
+          "path": "backend/src/tenant-lifecycle/tenant-lifecycle.service.ts",
+          "symbols": [
+            "createRequest",
+            "decideRequest",
+            "executeRequest"
+          ],
+          "lines": {
+            "createRequest": 61,
+            "decideRequest": 102,
+            "executeRequest": 148
+          },
+          "sha256": "812d0246d169759f82e695bbc7bc0b703f6d9fec2d0562714b2a5d32fa72798c"
+        },
+        {
+          "path": "lib/features/tenants/tenant_lifecycle_screen.dart",
+          "symbols": [
+            "_review",
+            "_execute"
+          ],
+          "lines": {
+            "_review": 141,
+            "_execute": 170
+          },
+          "sha256": "54a24c6e5e0bb9e872c9767d8aac640196980b4a52f5be3ca8184731059bb49a"
+        }
+      ],
+      "pixels": [
+        2954,
+        4797
+      ],
+      "dpi": [
+        299.9994,
+        299.9994
+      ],
+      "sha256": "ea543170a1f52d09c0a6c0939c2fbb32858cb3c55e8c3aba21ec985b8d34956b"
+    },
+    {
+      "id": "SD-12",
+      "title": "Tiếp nhận và hoàn tất yêu cầu bảo trì",
+      "sources": [
+        {
+          "path": "backend/src/tenant-portal/tenant-portal.service.ts",
+          "symbols": [
+            "createMaintenance",
+            "addMaintenanceComment"
+          ],
+          "lines": {
+            "createMaintenance": 384,
+            "addMaintenanceComment": 407
+          },
+          "sha256": "477edcc2d839aa4fe04e77e39e9de8e59b0a5a1b75a2647f49ab903a7afe273f"
+        },
+        {
+          "path": "backend/src/maintenance/maintenance.service.ts",
+          "symbols": [
+            "update",
+            "updateStatus",
+            "addComment",
+            "complete"
+          ],
+          "lines": {
+            "update": 142,
+            "updateStatus": 203,
+            "addComment": 272,
+            "complete": 227
+          },
+          "sha256": "05a7fd9f7f26daa4d4ce7928616a57067bf906f75655e47eaa5735f2e193858d"
+        },
+        {
+          "path": "lib/features/maintenance/maintenance_screen.dart",
+          "symbols": [],
+          "lines": {},
+          "sha256": "db7c3a4b533fdeedca80574aa02f3607bb8450e89d0fed0154b51dabab9215e0"
+        }
+      ],
+      "pixels": [
+        3225,
+        4689
+      ],
+      "dpi": [
+        299.9994,
+        299.9994
+      ],
+      "sha256": "7497ffb2dba920bc03e144e7cdd1c3b956d0b56daddb6ed3f693c9b784296e90"
+    },
+    {
+      "id": "SD-13",
+      "title": "Xem báo cáo tháng và sao chép dữ liệu CSV",
+      "sources": [
+        {
+          "path": "backend/src/reports/reports.service.ts",
+          "symbols": [
+            "monthly",
+            "monthlyExport"
+          ],
+          "lines": {
+            "monthly": 18,
+            "monthlyExport": 141
+          },
+          "sha256": "c921f140dca130fbd7ceaf3d0c70075230779feeba590603ef9985de246c637f"
+        },
+        {
+          "path": "lib/features/reports/reports_screen.dart",
+          "symbols": [
+            "_exportCsv"
+          ],
+          "lines": {
+            "_exportCsv": 89
+          },
+          "sha256": "f5e5f52f95559e174acd6759a70c7cddc927e9a503a652222a76a283fd612c0a"
+        }
+      ],
+      "pixels": [
+        2712,
+        2658
+      ],
+      "dpi": [
+        299.9994,
+        299.9994
+      ],
+      "sha256": "9d2e2420d7e95702f44ab5965829a93406ed79ae3699ef3ad635636a0a0869fe"
+    },
+    {
+      "id": "SD-14",
+      "title": "Đình chỉ và khôi phục tài khoản khách hàng",
+      "sources": [
+        {
+          "path": "backend/src/admin/admin-console.service.ts",
+          "symbols": [
+            "status"
+          ],
+          "lines": {
+            "status": 56
+          },
+          "sha256": "3358794d393728f7db406aa9fc37324314b5f1a1179e528a7522dd88aa18a5af"
+        },
+        {
+          "path": "lib/features/admin/admin_accounts_screen.dart",
+          "symbols": [],
+          "lines": {},
+          "sha256": "1aa9598293d5dccb0e021b938b1ead99e39327b102393979ff8197dd2d826319"
+        }
+      ],
+      "pixels": [
+        2778,
+        2808
+      ],
+      "dpi": [
+        299.9994,
+        299.9994
+      ],
+      "sha256": "7265af036972da8e4570e16bbae2ae4f1e234b63b3bf005bcaec5751cd3a3f3c"
+    },
+    {
+      "id": "SD-15",
+      "title": "Tra cứu phòng và xử lý kiểm duyệt tin đăng",
+      "sources": [
+        {
+          "path": "backend/src/admin/admin.service.ts",
+          "symbols": [
+            "rooms"
+          ],
+          "lines": {
+            "rooms": 162
+          },
+          "sha256": "cf1a932567c64a5064a0abc81f0863f6c5da9dc347cbba013d117603e240a7e4"
+        },
+        {
+          "path": "backend/src/admin/admin-console.service.ts",
+          "symbols": [
+            "work",
+            "moderationItem"
+          ],
+          "lines": {
+            "work": 251,
+            "moderationItem": 274
+          },
+          "sha256": "3358794d393728f7db406aa9fc37324314b5f1a1179e528a7522dd88aa18a5af"
+        },
+        {
+          "path": "backend/src/listings/listings.service.ts",
+          "symbols": [
+            "review",
+            "mutate"
+          ],
+          "lines": {
+            "review": 130,
+            "mutate": 158
+          },
+          "sha256": "6f54ab821a9408b481b7a4b57bd7f93ed82455aea717a5752b6ceb7fe5f0c550"
+        },
+        {
+          "path": "lib/features/admin/admin_inventory_widgets.dart",
+          "symbols": [],
+          "lines": {},
+          "sha256": "edf249fb02a955d2521df02a22856b9438ad27863194a73522789502583949f8"
+        }
+      ],
+      "pixels": [
+        2725,
+        3793
+      ],
+      "dpi": [
+        299.9994,
+        299.9994
+      ],
+      "sha256": "61ed74397abb1d0f5403ec6345f1c4025cd6014a47804f75826108fac6e33f26"
+    },
+    {
+      "id": "SD-16",
+      "title": "Đối soát khoản thu theo nguyên tắc hai người",
+      "sources": [
+        {
+          "path": "backend/src/platform/finance-reconciliation.service.ts",
+          "symbols": [
+            "importStatement",
+            "propose",
+            "review",
+            "validateReceipt"
+          ],
+          "lines": {
+            "importStatement": 18,
+            "propose": 100,
+            "review": 131,
+            "validateReceipt": 75
+          },
+          "sha256": "aa2e0d048bf59e7b465bce9191242a269d85c32f79a60d778230bf325ef776fd"
+        },
+        {
+          "path": "lib/features/admin/admin_finance_workflow.dart",
+          "symbols": [],
+          "lines": {},
+          "sha256": "c2e64e0ad1358db868a4e9899ee9bc15c9fc6bcff2a57d5780918d1d9128f733"
+        }
+      ],
+      "pixels": [
+        3274,
+        4819
+      ],
+      "dpi": [
+        299.9994,
+        299.9994
+      ],
+      "sha256": "1384d62eda72c31a31ce7c7c793473a055ab45cb0da474fc439a4a177002bb56"
+    },
+    {
+      "id": "SD-17",
+      "title": "Hỏi hướng dẫn sử dụng và đọc nguồn được phép",
+      "sources": [
+        {
+          "path": "backend/src/chatbot/chatbot.service.ts",
+          "symbols": [
+            "ask",
+            "answer",
+            "getSource",
+            "validateAnswer"
+          ],
+          "lines": {
+            "ask": 24,
+            "answer": 69,
+            "getSource": 64,
+            "validateAnswer": 117
+          },
+          "sha256": "705e40239448f4ed47cf2a2107f924d877da4ca67c11e58caf2184b5acf98d92"
+        },
+        {
+          "path": "backend/src/chatbot/knowledge.repository.ts",
+          "symbols": [],
+          "lines": {},
+          "sha256": "64e61a6f3115d83a18cdd65f689aa830bc469a742ba7ec93022805fabfe9a777"
+        },
+        {
+          "path": "lib/features/chatbot/chatbot_screen.dart",
+          "symbols": [
+            "_send"
+          ],
+          "lines": {
+            "_send": 26
+          },
+          "sha256": "faf05e6cb1fc19e93077f60735641076c81d5f9b2363b7d79d2b859bc2a7565e"
+        },
+        {
+          "path": "lib/features/chatbot/widgets/chat_source_sheet.dart",
+          "symbols": [],
+          "lines": {},
+          "sha256": "8f123a7d644150bd9a88fc9dd1aff83a0added39921c026675bfec6976ddabe1"
+        }
+      ],
+      "pixels": [
+        2758,
+        3852
+      ],
+      "dpi": [
+        299.9994,
+        299.9994
+      ],
+      "sha256": "8f63ae4031a935ae69bbb31fa0f1dc5b8391792c2efe09745494654c41c6334f"
+    },
+    {
+      "id": "SD-18",
+      "title": "Xét duyệt hồ sơ xác minh chủ trọ",
+      "sources": [
+        {
+          "path": "backend/src/admin/admin-verification.service.ts",
+          "symbols": [
+            "list",
+            "review"
+          ],
+          "lines": {
+            "list": 22,
+            "review": 56
+          },
+          "sha256": "03abb6f73d8abca0e4fe0ed58dafdd51421ff392e8b734e45711c3f6c6c7395c"
+        },
+        {
+          "path": "lib/features/admin/admin_production_panels.dart",
+          "symbols": [],
+          "lines": {},
+          "sha256": "78df0ab2ea502daf0222ea0e82cebcbc1731a06ac8bd88574bf422666eae5375"
+        }
+      ],
+      "pixels": [
+        2689,
+        2904
+      ],
+      "dpi": [
+        299.9994,
+        299.9994
+      ],
+      "sha256": "99566b40b5f00720b41d02fb166c5476ef5e89678b7619af5a09b9d8c7d83663"
+    },
+    {
+      "id": "SD-19",
+      "title": "Gán và kết thúc quyền sử dụng gói",
+      "sources": [
+        {
+          "path": "backend/src/admin/admin-plans.service.ts",
+          "symbols": [
+            "assign",
+            "cancel"
+          ],
+          "lines": {
+            "assign": 74,
+            "cancel": 109
+          },
+          "sha256": "db8bf9a854d665acae890b6a3002680171638386edc7720cefc6f021ff2a5c69"
+        },
+        {
+          "path": "lib/features/admin/admin_production_panels.dart",
+          "symbols": [],
+          "lines": {},
+          "sha256": "78df0ab2ea502daf0222ea0e82cebcbc1731a06ac8bd88574bf422666eae5375"
+        }
+      ],
+      "pixels": [
+        2792,
+        2995
+      ],
+      "dpi": [
+        299.9994,
+        299.9994
+      ],
+      "sha256": "30fc412ab2a0a30ac32af99807ddaae9ee4932840b0417788ebb510c437464e2"
+    }
+  ]
+}

@@ -1,0 +1,70 @@
+@startuml
+left to right direction
+skinparam defaultFontName SansSerif
+skinparam defaultFontSize 13
+skinparam backgroundColor #F8FAFC
+skinparam shadowing false
+skinparam ArrowColor #52647A
+skinparam ArrowThickness 1
+skinparam actorStyle stickman
+skinparam actorBorderColor #243A52
+skinparam actorFontColor #243A52
+skinparam actorBackgroundColor #FFFFFF
+skinparam usecase {
+  BackgroundColor #FFFFFF
+  BorderColor #327C83
+  FontColor #20354B
+  BackgroundColor<<Một phần>> #FFF0CE
+  BorderColor<<Một phần>> #B17917
+  BackgroundColor<<DEMO>> #FCE5DF
+  BorderColor<<DEMO>> #BC593A
+  BackgroundColor<<MÔ PHỎNG>> #E7EAF1
+  BorderColor<<MÔ PHỎNG>> #6C7488
+}
+skinparam rectangle {
+  BackgroundColor #EEF4F5
+  BorderColor #243A52
+  FontColor #243A52
+}
+skinparam titleFontColor #20354B
+skinparam titleFontSize 18
+skinparam nodesep 25
+skinparam ranksep 65
+title G14 · Dịch vụ hỗ trợ khách hàng\n<size:12>Đầy đủ UC của nhóm nghiệp vụ</size>
+caption AS-IS · 29/10/2026 · Snapshot c565c29 · Không biểu diễn trình tự xử lý
+actor "A02\nChủ trọ" as A02
+actor "A04\nNgười tìm phòng/người\nthuê" as A04
+actor "A05\nQuản trị viên nền tảng" as A05
+rectangle "Hệ thống quản lý nhà trọ" as SYSTEM {
+  usecase "UC-SUP-01\nGửi và theo dõi yêu cầu hỗ trợ" as UC_SUP_01 <<Một phần>>
+  usecase "UC-SUP-01.1\nTiếp nhận và xử lý hồ sơ hỗ trợ" as UC_SUP_01_1 <<Một phần>>
+  usecase "UC-SUP-03.2.1\nHợp nhất hồ sơ hỗ trợ trùng" as UC_SUP_03_2_1
+  usecase "UC-SUP-03.2.2\nĐánh giá kết quả hỗ trợ" as UC_SUP_03_2_2
+  usecase "UC-SUP-02.1\nCấu hình phân công tự động hỗ\ntrợ" as UC_SUP_02_1
+  usecase "UC-SUP-02.2\nCấu hình và theo dõi SLA hỗ trợ" as UC_SUP_02_2
+  usecase "UC-SUP-03.2\nQuản lý mẫu trả lời hỗ trợ" as UC_SUP_03_2
+  usecase "UC-SUP-03.3\nLưu bộ lọc xử lý hỗ trợ" as UC_SUP_03_3
+}
+actor "E03\nDịch vụ quét tệp hỗ trợ\n(có điều kiện)" as E03
+A02 -- UC_SUP_01
+A04 -- UC_SUP_01
+A05 -- UC_SUP_01
+UC_SUP_01 -- E03 : nếu cấu hình/bật
+A05 -- UC_SUP_01_1
+UC_SUP_01_1 -- E03 : nếu cấu hình/bật
+A05 -- UC_SUP_03_2_1
+A02 -- UC_SUP_03_2_2
+A04 -- UC_SUP_03_2_2
+A05 -- UC_SUP_03_2_2
+A05 -- UC_SUP_02_1
+A05 -- UC_SUP_02_2
+A05 -- UC_SUP_03_2
+A05 -- UC_SUP_03_3
+legend bottom left
+  Đường liền: tương tác; không biểu diễn luồng điều khiển.
+  ADMIN: capability theo handler + MFA/step-up nếu áp dụng; không kế thừa quyền chủ trọ.
+  E01–E05: hệ thống ngoài có adapter; chỉ tương tác ở nhánh cấu hình/bật tương ứng.
+  Mặc định: xác minh tĩnh, chưa nghiệm thu runtime; màu vàng: một phần, cam: DEMO, xám: mô phỏng.
+  Quyền chi tiết, điều kiện và nguồn: Association_Traceability.md / data/diagram-manifest.json.
+endlegend
+@enduml

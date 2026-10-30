@@ -1,0 +1,5409 @@
+{
+  "schemaVersion": "1.0",
+  "stage": 2,
+  "date": "2026-10-29",
+  "timezone": "Asia/Ho_Chi_Minh",
+  "snapshotCommit": "c565c29ee5742d38dfaea37aa8fa047f4b6793c0",
+  "scope": "Static AS-IS, no detailed UC specifications or UML Use Case Diagrams",
+  "groups": [
+    {
+      "id": "G01",
+      "name": "Tài khoản và an toàn truy cập",
+      "ucCount": 11
+    },
+    {
+      "id": "G02",
+      "name": "Tìm và lựa chọn phòng",
+      "ucCount": 6
+    },
+    {
+      "id": "G03",
+      "name": "Đăng tin, lịch xem và nhận phòng",
+      "ucCount": 7
+    },
+    {
+      "id": "G04",
+      "name": "Khu trọ và cơ sở vật chất",
+      "ucCount": 14
+    },
+    {
+      "id": "G05",
+      "name": "Nhân sự và ủy quyền vận hành",
+      "ucCount": 4
+    },
+    {
+      "id": "G06",
+      "name": "Hồ sơ thuê, hợp đồng và tiền cọc",
+      "ucCount": 17
+    },
+    {
+      "id": "G07",
+      "name": "Vòng đời thuê và quyết toán",
+      "ucCount": 7
+    },
+    {
+      "id": "G08",
+      "name": "Hóa đơn, thu tiền và công nợ",
+      "ucCount": 28
+    },
+    {
+      "id": "G09",
+      "name": "Bảo trì và chi phí vận hành",
+      "ucCount": 5
+    },
+    {
+      "id": "G10",
+      "name": "Công việc, thông tin và hỗ trợ sử dụng",
+      "ucCount": 9
+    },
+    {
+      "id": "G11",
+      "name": "Báo cáo và giám sát vận hành",
+      "ucCount": 8
+    },
+    {
+      "id": "G12",
+      "name": "Tài khoản và tài nguyên nền tảng",
+      "ucCount": 12
+    },
+    {
+      "id": "G13",
+      "name": "Kiểm duyệt và chất lượng nội dung",
+      "ucCount": 11
+    },
+    {
+      "id": "G14",
+      "name": "Dịch vụ hỗ trợ khách hàng",
+      "ucCount": 8
+    },
+    {
+      "id": "G15",
+      "name": "Hồ sơ xác minh và gói dịch vụ",
+      "ucCount": 6
+    },
+    {
+      "id": "G16",
+      "name": "Quản trị chính sách và đối soát nền tảng",
+      "ucCount": 9
+    }
+  ],
+  "actors": [
+    {
+      "id": "A01",
+      "name": "Khách/chưa đăng nhập",
+      "role": null
+    },
+    {
+      "id": "A02",
+      "name": "Chủ trọ",
+      "role": "LANDLORD"
+    },
+    {
+      "id": "A03",
+      "name": "Nhân viên vận hành",
+      "role": "STAFF"
+    },
+    {
+      "id": "A04",
+      "name": "Người tìm phòng/người thuê",
+      "role": "TENANT"
+    },
+    {
+      "id": "A05",
+      "name": "Quản trị viên nền tảng",
+      "role": "ADMIN"
+    }
+  ],
+  "externalActors": [
+    {
+      "id": "E01",
+      "name": "Dịch vụ giao liên kết/thông báo bên ngoài",
+      "mode": "Có điều kiện",
+      "evidence": [
+        "backend/src/delivery/delivery.service.ts",
+        "backend/src/billing/billing-reminders.service.ts",
+        "backend/src/support/notification-delivery.service.ts"
+      ]
+    },
+    {
+      "id": "E02",
+      "name": "Nhà cung cấp Zalo ZNS",
+      "mode": "Có điều kiện",
+      "evidence": [
+        "backend/src/notifications/zalo-zns.service.ts"
+      ]
+    },
+    {
+      "id": "E03",
+      "name": "Dịch vụ quét tệp hỗ trợ",
+      "mode": "Có điều kiện",
+      "evidence": [
+        "backend/src/support/support-attachment.service.ts",
+        "backend/src/uploads/malware-scanner.service.ts"
+      ]
+    },
+    {
+      "id": "E04",
+      "name": "Dịch vụ mô hình AI",
+      "mode": "Có điều kiện",
+      "evidence": [
+        "backend/src/chatbot/ollama.client.ts"
+      ]
+    },
+    {
+      "id": "E05",
+      "name": "Kho lưu kết quả báo cáo ngoài hệ thống",
+      "mode": "Tùy cấu hình",
+      "evidence": [
+        "backend/src/platform/admin-report-worker.service.ts"
+      ]
+    }
+  ],
+  "functions": {
+    "G01": [
+      [
+        "Đăng ký và kích hoạt",
+        [
+          "UC-SYS-01",
+          "UC-SYS-02",
+          "UC-SYS-08",
+          "UC-SYS-09",
+          "UC-SYS-10"
+        ]
+      ],
+      [
+        "Đăng nhập và quản lý phiên",
+        [
+          "UC-SYS-03",
+          "UC-SYS-05.1",
+          "UC-SYS-05.2"
+        ]
+      ],
+      [
+        "Bảo vệ tài khoản",
+        [
+          "UC-SYS-06",
+          "UC-SYS-07",
+          "UC-ADM-07.1"
+        ]
+      ]
+    ],
+    "G02": [
+      [
+        "Khám phá phòng",
+        [
+          "UC-DIS-01",
+          "UC-DIS-02"
+        ]
+      ],
+      [
+        "Lưu nhu cầu và theo dõi tin",
+        [
+          "UC-DIS-03",
+          "UC-DIS-04"
+        ]
+      ],
+      [
+        "Đánh giá lựa chọn",
+        [
+          "UC-DIS-16",
+          "UC-DIS-17"
+        ]
+      ]
+    ],
+    "G03": [
+      [
+        "Quảng bá phòng cho thuê",
+        [
+          "UC-DIS-05",
+          "UC-DIS-06.2"
+        ]
+      ],
+      [
+        "Tổ chức xem phòng",
+        [
+          "UC-DIS-08",
+          "UC-DIS-09",
+          "UC-DIS-10"
+        ]
+      ],
+      [
+        "Chốt thuê và bàn giao",
+        [
+          "UC-TNT-12.2",
+          "UC-TNT-12.3"
+        ]
+      ]
+    ],
+    "G04": [
+      [
+        "Danh mục và vòng đời khu trọ",
+        [
+          "UC-OPT-02",
+          "UC-OPT-03.1",
+          "UC-OPT-03.2",
+          "UC-OPT-04.1",
+          "UC-OPT-04.3"
+        ]
+      ],
+      [
+        "Danh mục và vòng đời phòng",
+        [
+          "UC-OPT-05",
+          "UC-OPT-06.1",
+          "UC-OPT-06.2",
+          "UC-OPT-07.1",
+          "UC-OPT-07.2",
+          "UC-OPT-07.3"
+        ]
+      ],
+      [
+        "Tài sản, kiểm tra và phí phòng",
+        [
+          "UC-OPT-08.1",
+          "UC-OPT-08.2",
+          "UC-OPT-09"
+        ]
+      ]
+    ],
+    "G05": [
+      [
+        "Nhân sự và phạm vi làm việc",
+        [
+          "UC-STF-01",
+          "UC-STF-02",
+          "UC-STF-04"
+        ]
+      ],
+      [
+        "Kiểm tra ủy quyền",
+        [
+          "UC-STF-03"
+        ]
+      ]
+    ],
+    "G06": [
+      [
+        "Hồ sơ và tài khoản người thuê",
+        [
+          "UC-TNT-01",
+          "UC-TNT-02.1",
+          "UC-TNT-02.2",
+          "UC-TNT-02.3",
+          "UC-TNT-02.4",
+          "UC-TNT-03",
+          "UC-TNT-03.1",
+          "UC-TEN-01"
+        ]
+      ],
+      [
+        "Điều khoản và trạng thái hợp đồng",
+        [
+          "UC-TNT-04",
+          "UC-TNT-05",
+          "UC-TNT-06.1",
+          "UC-TNT-06.2",
+          "UC-TNT-06.3",
+          "UC-TEN-02"
+        ]
+      ],
+      [
+        "Tiền cọc và người ở cùng",
+        [
+          "UC-TNT-07",
+          "UC-TNT-12.1",
+          "UC-TEN-08.1"
+        ]
+      ]
+    ],
+    "G07": [
+      [
+        "Đề nghị thay đổi quan hệ thuê",
+        [
+          "UC-TEN-07.1",
+          "UC-TEN-07.2",
+          "UC-TEN-07.3"
+        ]
+      ],
+      [
+        "Xét và thực hiện thay đổi",
+        [
+          "UC-TNT-10",
+          "UC-TNT-11"
+        ]
+      ],
+      [
+        "Quyết toán và hoàn cọc",
+        [
+          "UC-TNT-08",
+          "UC-TNT-09"
+        ]
+      ]
+    ],
+    "G08": [
+      [
+        "Chỉ số và phát hành hóa đơn",
+        [
+          "UC-BIL-01",
+          "UC-BIL-02",
+          "UC-BIL-03",
+          "UC-BIL-17.1",
+          "UC-BIL-17.2"
+        ]
+      ],
+      [
+        "Công nợ và điều chỉnh nghĩa vụ",
+        [
+          "UC-BIL-04",
+          "UC-BIL-05",
+          "UC-BIL-06",
+          "UC-BIL-07",
+          "UC-BIL-08.1",
+          "UC-TEN-03"
+        ]
+      ],
+      [
+        "Ghi nhận, phân bổ và hoàn thu",
+        [
+          "UC-BIL-09",
+          "UC-BIL-10",
+          "UC-BIL-11",
+          "UC-BIL-12.1",
+          "UC-BIL-12.2",
+          "UC-BIL-13"
+        ]
+      ],
+      [
+        "Chứng từ và kênh thanh toán",
+        [
+          "UC-BIL-14",
+          "UC-BIL-23",
+          "UC-TEN-04",
+          "UC-TEN-05"
+        ]
+      ],
+      [
+        "Biểu phí và kiểm soát kỳ",
+        [
+          "UC-BIL-15",
+          "UC-BIL-16",
+          "UC-BIL-22"
+        ]
+      ],
+      [
+        "Nhắc nợ và theo dõi gửi",
+        [
+          "UC-BIL-18.1",
+          "UC-BIL-18.2",
+          "UC-BIL-18.3",
+          "UC-TEN-08.2"
+        ]
+      ]
+    ],
+    "G09": [
+      [
+        "Yêu cầu và điều phối bảo trì",
+        [
+          "UC-TEN-06",
+          "UC-OPS-01",
+          "UC-OPS-02"
+        ]
+      ],
+      [
+        "Hoàn thành và ghi chi phí",
+        [
+          "UC-OPS-03",
+          "UC-BIL-19"
+        ]
+      ]
+    ],
+    "G10": [
+      [
+        "Việc cần làm và chuẩn bị phòng",
+        [
+          "UC-OPS-04",
+          "UC-OPS-05"
+        ]
+      ],
+      [
+        "Vận hành lặp lại",
+        [
+          "UC-OPS-06",
+          "UC-OPS-06.1"
+        ]
+      ],
+      [
+        "Trao đổi và thông báo",
+        [
+          "UC-OPS-07",
+          "UC-SUP-04",
+          "UC-TEN-09.2",
+          "UC-TEN-09.3"
+        ]
+      ],
+      [
+        "Hướng dẫn sử dụng theo tri thức",
+        [
+          "UC-SUP-06"
+        ]
+      ]
+    ],
+    "G11": [
+      [
+        "Theo dõi kinh doanh",
+        [
+          "UC-OPT-01",
+          "UC-BIL-20",
+          "UC-ADM-01"
+        ]
+      ],
+      [
+        "Nhật ký kiểm tra",
+        [
+          "UC-OPS-09",
+          "UC-ADM-14"
+        ]
+      ],
+      [
+        "Báo cáo định kỳ nền tảng",
+        [
+          "UC-ADM-16"
+        ]
+      ],
+      [
+        "Sự cố và chất lượng giao nhận",
+        [
+          "UC-SUP-05.1",
+          "UC-SUP-05.2"
+        ]
+      ]
+    ],
+    "G12": [
+      [
+        "Tài khoản khách hàng",
+        [
+          "UC-ADM-02",
+          "UC-ADM-03.1",
+          "UC-ADM-03.2",
+          "UC-ADM-04.1",
+          "UC-ADM-04.3",
+          "UC-ADM-05.1",
+          "UC-ADM-05.2"
+        ]
+      ],
+      [
+        "Nhân sự quản trị và rà soát quyền",
+        [
+          "UC-ADM-06.1",
+          "UC-ADM-06.2"
+        ]
+      ],
+      [
+        "Tài nguyên và ngữ cảnh toàn nền tảng",
+        [
+          "UC-ADM-08",
+          "UC-ADM-09",
+          "UC-ADM-10"
+        ]
+      ]
+    ],
+    "G13": [
+      [
+        "Đánh giá và phản ánh nội dung",
+        [
+          "UC-DIS-07",
+          "UC-DIS-12",
+          "UC-DIS-13.1"
+        ]
+      ],
+      [
+        "Quyết định nội dung và xác minh tin",
+        [
+          "UC-ADM-11",
+          "UC-ADM-11.1",
+          "UC-ADM-12",
+          "UC-ADM-12.1"
+        ]
+      ],
+      [
+        "Kháng nghị, chính sách và chất lượng",
+        [
+          "UC-DIS-15",
+          "UC-ADM-13.1",
+          "UC-ADM-13.2",
+          "UC-ADM-13.3"
+        ]
+      ]
+    ],
+    "G14": [
+      [
+        "Đề nghị và xử lý hỗ trợ",
+        [
+          "UC-SUP-01",
+          "UC-SUP-01.1",
+          "UC-SUP-03.2.1",
+          "UC-SUP-03.2.2"
+        ]
+      ],
+      [
+        "Năng lực xử lý và SLA",
+        [
+          "UC-SUP-02.1",
+          "UC-SUP-02.2"
+        ]
+      ],
+      [
+        "Công cụ làm việc của bộ phận hỗ trợ",
+        [
+          "UC-SUP-03.2",
+          "UC-SUP-03.3"
+        ]
+      ]
+    ],
+    "G15": [
+      [
+        "Hồ sơ xác minh và xét duyệt khu",
+        [
+          "UC-ADM-18.1",
+          "UC-ADM-18",
+          "UC-ADM-19"
+        ]
+      ],
+      [
+        "Gói và quyền sử dụng dịch vụ",
+        [
+          "UC-ADM-20",
+          "UC-ADM-21",
+          "UC-ADM-22"
+        ]
+      ]
+    ],
+    "G16": [
+      [
+        "Đối soát và kiểm soát tài chính",
+        [
+          "UC-ADM-15",
+          "UC-ADM-15.1",
+          "UC-ADM-24"
+        ]
+      ],
+      [
+        "Tổ chức và chính sách quyền",
+        [
+          "UC-ADM-17.1",
+          "UC-ADM-17.2",
+          "UC-ADM-26"
+        ]
+      ],
+      [
+        "Danh mục và phản hồi thử nghiệm",
+        [
+          "UC-ADM-23",
+          "UC-DIS-13.2",
+          "UC-ADM-27"
+        ]
+      ]
+    ]
+  },
+  "useCases": [
+    {
+      "id": "UC-ADM-07.1",
+      "title": "Thiết lập MFA Admin",
+      "businessGroup": "G01",
+      "primaryActorIds": [
+        "A05"
+      ],
+      "primaryActor": "Quản trị viên nền tảng (A05)",
+      "supportingActorIds": [],
+      "goal": "Tạo và xác nhận cấu hình MFA với mã khôi phục",
+      "status": "Xác minh tĩnh",
+      "bindings": [
+        "AdminSecurityController.status",
+        "AdminSecurityController.enroll",
+        "AdminSecurityController.confirm"
+      ],
+      "featureIds": [
+        "F-142"
+      ],
+      "rule": "",
+      "notes": "AdminSecurityController dùng JWT trực tiếp cho bước thiết lập MFA; không gán capability giả cho endpoint này.",
+      "matrix": {
+        "A01": "—",
+        "A02": "—",
+        "A03": "—",
+        "A04": "—",
+        "A05": "P* — MFA: phiên ADMIN + profile; kiểm role trong controller"
+      }
+    },
+    {
+      "id": "UC-SYS-01",
+      "title": "Đăng ký tài khoản chủ trọ",
+      "businessGroup": "G01",
+      "primaryActorIds": [
+        "A01"
+      ],
+      "primaryActor": "Khách/chưa đăng nhập (A01)",
+      "supportingActorIds": [],
+      "goal": "Thiết lập tài khoản chủ trọ để bắt đầu quản lý nhà trọ; nhận phiên theo kết quả đăng ký.",
+      "status": "Xác minh tĩnh",
+      "bindings": [
+        "AuthController.register"
+      ],
+      "featureIds": [
+        "F-001"
+      ],
+      "rule": "",
+      "notes": "Tạo User và cấp phiên là hai đơn vị ghi khác nhau; lỗi cấp phiên sau khi tạo có thể để lại User.",
+      "matrix": {
+        "A01": "P — đủ dữ liệu/token theo UC",
+        "A02": "—",
+        "A03": "—",
+        "A04": "—",
+        "A05": "—"
+      }
+    },
+    {
+      "id": "UC-SYS-02",
+      "title": "Đăng ký tài khoản tìm phòng",
+      "businessGroup": "G01",
+      "primaryActorIds": [
+        "A01"
+      ],
+      "primaryActor": "Khách/chưa đăng nhập (A01)",
+      "supportingActorIds": [],
+      "goal": "Thiết lập tài khoản tìm phòng để lưu nhu cầu và đặt lịch; chưa mặc nhiên có hồ sơ thuê hoặc hợp đồng.",
+      "status": "Xác minh tĩnh",
+      "bindings": [
+        "AuthController.registerSeeker"
+      ],
+      "featureIds": [
+        "F-002"
+      ],
+      "rule": "",
+      "notes": "",
+      "matrix": {
+        "A01": "P — đủ dữ liệu/token theo UC",
+        "A02": "—",
+        "A03": "—",
+        "A04": "—",
+        "A05": "—"
+      }
+    },
+    {
+      "id": "UC-SYS-03",
+      "title": "Đăng nhập",
+      "businessGroup": "G01",
+      "primaryActorIds": [
+        "A01"
+      ],
+      "primaryActor": "Khách/chưa đăng nhập (A01)",
+      "supportingActorIds": [],
+      "goal": "Nhận phiên đúng danh tính và điều hướng theo vai trò",
+      "status": "Xác minh tĩnh",
+      "bindings": [
+        "AuthController.login"
+      ],
+      "featureIds": [
+        "F-003"
+      ],
+      "rule": "",
+      "notes": "",
+      "matrix": {
+        "A01": "P — chủ tài khoản chưa đăng nhập",
+        "A02": "—",
+        "A03": "—",
+        "A04": "—",
+        "A05": "—"
+      }
+    },
+    {
+      "id": "UC-SYS-05.1",
+      "title": "Đăng xuất phiên hiện tại",
+      "businessGroup": "G01",
+      "primaryActorIds": [
+        "A02",
+        "A03",
+        "A04",
+        "A05"
+      ],
+      "primaryActor": "Chủ trọ (A02); Nhân viên vận hành (A03); Người tìm phòng/người thuê (A04); Quản trị viên nền tảng (A05)",
+      "supportingActorIds": [],
+      "goal": "Thu hồi phiên gắn refresh token và rời phiên cục bộ",
+      "status": "Xác minh tĩnh",
+      "bindings": [
+        "AuthController.logout"
+      ],
+      "featureIds": [
+        "F-005"
+      ],
+      "rule": "",
+      "notes": "",
+      "matrix": {
+        "A01": "—",
+        "A02": "P — tài khoản/phiên của mình",
+        "A03": "P — phiên/tài khoản của mình",
+        "A04": "P — tài khoản/phiên của mình",
+        "A05": "P — tài khoản/phiên của mình"
+      }
+    },
+    {
+      "id": "UC-SYS-05.2",
+      "title": "Xem và thu hồi các phiên của mình",
+      "businessGroup": "G01",
+      "primaryActorIds": [
+        "A02",
+        "A03",
+        "A04",
+        "A05"
+      ],
+      "primaryActor": "Chủ trọ (A02); Nhân viên vận hành (A03); Người tìm phòng/người thuê (A04); Quản trị viên nền tảng (A05)",
+      "supportingActorIds": [],
+      "goal": "Kiểm soát thiết bị đang truy cập tài khoản",
+      "status": "Xác minh tĩnh",
+      "bindings": [
+        "AuthController.sessions",
+        "AuthController.revokeSession",
+        "AuthController.revokeOtherSessions"
+      ],
+      "featureIds": [
+        "F-144"
+      ],
+      "rule": "",
+      "notes": "",
+      "matrix": {
+        "A01": "—",
+        "A02": "P — tài khoản/phiên của mình",
+        "A03": "P — phiên/tài khoản của mình",
+        "A04": "P — tài khoản/phiên của mình",
+        "A05": "P — tài khoản/phiên của mình"
+      }
+    },
+    {
+      "id": "UC-SYS-06",
+      "title": "Khôi phục mật khẩu bằng liên kết một lần",
+      "businessGroup": "G01",
+      "primaryActorIds": [
+        "A01"
+      ],
+      "primaryActor": "Khách/chưa đăng nhập (A01)",
+      "supportingActorIds": [
+        "E01"
+      ],
+      "goal": "Đặt lại mật khẩu qua token giao nhận riêng",
+      "status": "Một phần",
+      "bindings": [
+        "AccountAccessController.forgot",
+        "AccountAccessController.redeem"
+      ],
+      "featureIds": [
+        "F-006"
+      ],
+      "rule": "",
+      "notes": " Đã có token, thu hồi phiên và job giao link; chưa kiểm chứng email/provider thật.",
+      "matrix": {
+        "A01": "P — chủ tài khoản chưa đăng nhập",
+        "A02": "—",
+        "A03": "—",
+        "A04": "—",
+        "A05": "—"
+      }
+    },
+    {
+      "id": "UC-SYS-07",
+      "title": "Đổi mật khẩu khi đang đăng nhập",
+      "businessGroup": "G01",
+      "primaryActorIds": [
+        "A02",
+        "A03",
+        "A04",
+        "A05"
+      ],
+      "primaryActor": "Chủ trọ (A02); Nhân viên vận hành (A03); Người tìm phòng/người thuê (A04); Quản trị viên nền tảng (A05)",
+      "supportingActorIds": [],
+      "goal": "Thay mật khẩu sau khi xác minh mật khẩu hiện tại",
+      "status": "Xác minh tĩnh",
+      "bindings": [
+        "AuthController.changePassword"
+      ],
+      "featureIds": [
+        "F-005"
+      ],
+      "rule": "",
+      "notes": "",
+      "matrix": {
+        "A01": "—",
+        "A02": "P — tài khoản/phiên của mình",
+        "A03": "P — phiên/tài khoản của mình",
+        "A04": "P — tài khoản/phiên của mình",
+        "A05": "P — tài khoản/phiên của mình"
+      }
+    },
+    {
+      "id": "UC-SYS-08",
+      "title": "Kích hoạt tài khoản người thuê từ lời mời",
+      "businessGroup": "G01",
+      "primaryActorIds": [
+        "A01"
+      ],
+      "primaryActor": "Khách/chưa đăng nhập (A01)",
+      "supportingActorIds": [],
+      "goal": "Nhận quyền vào cổng người thuê, gắn đúng hồ sơ đã được chủ trọ mời.",
+      "status": "Xác minh tĩnh",
+      "bindings": [
+        "TenantInvitesController.accept"
+      ],
+      "featureIds": [
+        "F-027"
+      ],
+      "rule": "",
+      "notes": "",
+      "matrix": {
+        "A01": "P — đủ dữ liệu/token theo UC",
+        "A02": "—",
+        "A03": "—",
+        "A04": "—",
+        "A05": "—"
+      }
+    },
+    {
+      "id": "UC-SYS-09",
+      "title": "Kích hoạt tài khoản nhân viên từ lời mời",
+      "businessGroup": "G01",
+      "primaryActorIds": [
+        "A01"
+      ],
+      "primaryActor": "Khách/chưa đăng nhập (A01)",
+      "supportingActorIds": [],
+      "goal": "Nhận tài khoản nhân viên với quyền và khu trọ đã được chủ trọ cấp qua lời mời.",
+      "status": "Xác minh tĩnh",
+      "bindings": [
+        "StaffController.accept"
+      ],
+      "featureIds": [
+        "F-008"
+      ],
+      "rule": "",
+      "notes": "Bổ sung vì bản V3 chưa tách mục tiêu kích hoạt STAFF.",
+      "matrix": {
+        "A01": "P — đủ dữ liệu/token theo UC",
+        "A02": "—",
+        "A03": "—",
+        "A04": "—",
+        "A05": "—"
+      }
+    },
+    {
+      "id": "UC-SYS-10",
+      "title": "Thiết lập mật khẩu tài khoản được mời",
+      "businessGroup": "G01",
+      "primaryActorIds": [
+        "A01"
+      ],
+      "primaryActor": "Khách/chưa đăng nhập (A01)",
+      "supportingActorIds": [],
+      "goal": "Đặt mật khẩu bằng liên kết mời một lần rồi đăng nhập; không tự chọn vai trò hoặc cấp quyền mới.",
+      "status": "Xác minh tĩnh",
+      "bindings": [
+        "AccountAccessController.redeem"
+      ],
+      "featureIds": [
+        "F-006"
+      ],
+      "rule": "",
+      "notes": "Dùng cùng cơ chế redeem với khôi phục mật khẩu nhưng mục tiêu kích hoạt tài khoản đã được quản trị tạo. Service không phân nhánh kiểm purpose tại redeem; không thêm bảo đảm purpose không có trong code.",
+      "matrix": {
+        "A01": "P — đủ dữ liệu/token theo UC",
+        "A02": "—",
+        "A03": "—",
+        "A04": "—",
+        "A05": "—"
+      }
+    },
+    {
+      "id": "UC-DIS-01",
+      "title": "Tìm và lọc tin phòng công khai",
+      "businessGroup": "G02",
+      "primaryActorIds": [
+        "A01",
+        "A04"
+      ],
+      "primaryActor": "Khách/chưa đăng nhập (A01); Người tìm phòng/người thuê (A04)",
+      "supportingActorIds": [],
+      "goal": "Tìm tin công khai theo bộ lọc và cơ sở trường",
+      "status": "Xác minh tĩnh",
+      "bindings": [
+        "PublicListingsController.list",
+        "PublicCampusesController.list"
+      ],
+      "featureIds": [
+        "F-086",
+        "F-093",
+        "F-087"
+      ],
+      "rule": "Tin công khai cần PUBLISHED, phòng active và VACANT, khu không archived, chủ trọ active; lọc trường học là nhánh tìm kiếm.",
+      "notes": "",
+      "matrix": {
+        "A01": "P — công khai",
+        "A02": "V — truy cập công khai, không suy quyền menu",
+        "A03": "—",
+        "A04": "P* — TENANT; đúng chủ sở hữu/điều kiện dữ liệu",
+        "A05": "V — truy cập công khai, không suy quyền menu"
+      }
+    },
+    {
+      "id": "UC-DIS-02",
+      "title": "Xem chi tiết tin và đánh giá công khai",
+      "businessGroup": "G02",
+      "primaryActorIds": [
+        "A01",
+        "A04"
+      ],
+      "primaryActor": "Khách/chưa đăng nhập (A01); Người tìm phòng/người thuê (A04)",
+      "supportingActorIds": [],
+      "goal": "Đọc nội dung tin còn hiển thị cùng đánh giá được duyệt",
+      "status": "Xác minh tĩnh",
+      "bindings": [
+        "PublicListingsController.detail",
+        "PublicRoomReviewsController.list"
+      ],
+      "featureIds": [
+        "F-086",
+        "F-109"
+      ],
+      "rule": "",
+      "notes": "",
+      "matrix": {
+        "A01": "P — công khai",
+        "A02": "V — truy cập công khai, không suy quyền menu",
+        "A03": "—",
+        "A04": "P* — TENANT; đúng chủ sở hữu/điều kiện dữ liệu",
+        "A05": "V — truy cập công khai, không suy quyền menu"
+      }
+    },
+    {
+      "id": "UC-DIS-03",
+      "title": "Lưu và bỏ lưu phòng yêu thích",
+      "businessGroup": "G02",
+      "primaryActorIds": [
+        "A04"
+      ],
+      "primaryActor": "Người tìm phòng/người thuê (A04)",
+      "supportingActorIds": [],
+      "goal": "Duy trì danh sách tin quan tâm của mình",
+      "status": "Xác minh tĩnh",
+      "bindings": [
+        "HousingController.favorites",
+        "HousingController.favorite",
+        "HousingController.save",
+        "HousingController.remove"
+      ],
+      "featureIds": [
+        "F-097"
+      ],
+      "rule": "",
+      "notes": "",
+      "matrix": {
+        "A01": "—",
+        "A02": "—",
+        "A03": "—",
+        "A04": "P* — TENANT; đúng chủ sở hữu/điều kiện dữ liệu",
+        "A05": "—"
+      }
+    },
+    {
+      "id": "UC-DIS-04",
+      "title": "Lưu bộ lọc và theo dõi tin khớp",
+      "businessGroup": "G02",
+      "primaryActorIds": [
+        "A04"
+      ],
+      "primaryActor": "Người tìm phòng/người thuê (A04)",
+      "supportingActorIds": [],
+      "goal": "Lưu tối đa 10 tìm kiếm và đọc cảnh báo kết quả mới",
+      "status": "Xác minh tĩnh",
+      "bindings": [
+        "SavedSearchesController.list",
+        "SavedSearchesController.create",
+        "SavedSearchesController.alerts",
+        "SavedSearchesController.read",
+        "SavedSearchesController.status",
+        "SavedSearchesController.remove"
+      ],
+      "featureIds": [
+        "F-094",
+        "F-095"
+      ],
+      "rule": "",
+      "notes": "Không có endpoint sửa filters của tìm kiếm đã lưu; chỉ tạo bật tắt xóa và đọc cảnh báo.",
+      "matrix": {
+        "A01": "—",
+        "A02": "—",
+        "A03": "—",
+        "A04": "P* — TENANT; đúng chủ sở hữu/điều kiện dữ liệu",
+        "A05": "—"
+      }
+    },
+    {
+      "id": "UC-DIS-16",
+      "title": "So sánh các phòng quan tâm",
+      "businessGroup": "G02",
+      "primaryActorIds": [
+        "A01",
+        "A04"
+      ],
+      "primaryActor": "Khách/chưa đăng nhập (A01); Người tìm phòng/người thuê (A04)",
+      "supportingActorIds": [],
+      "goal": "So sánh tối đa ba tin trong phiên giao diện để chọn phòng phù hợp.",
+      "status": "Xác minh tĩnh",
+      "bindings": [
+        "LOCAL.comparison"
+      ],
+      "featureIds": [
+        "F-096"
+      ],
+      "rule": "Trạng thái so sánh trong Riverpod, tối đa 3 tin; không có bằng chứng lưu lâu dài ở backend.",
+      "notes": "",
+      "matrix": {
+        "A01": "P — công khai",
+        "A02": "V — truy cập công khai, không suy quyền menu",
+        "A03": "—",
+        "A04": "P* — TENANT; đúng chủ sở hữu/điều kiện dữ liệu",
+        "A05": "V — truy cập công khai, không suy quyền menu"
+      }
+    },
+    {
+      "id": "UC-DIS-17",
+      "title": "Ước tính chi phí thuê phòng",
+      "businessGroup": "G02",
+      "primaryActorIds": [
+        "A01",
+        "A04"
+      ],
+      "primaryActor": "Khách/chưa đăng nhập (A01); Người tìm phòng/người thuê (A04)",
+      "supportingActorIds": [],
+      "goal": "Ước tính chi phí ở, chi phí mỗi người và chi phí vào ở từ giá niêm yết; không tạo hóa đơn.",
+      "status": "Xác minh tĩnh",
+      "bindings": [
+        "LOCAL.costEstimate"
+      ],
+      "featureIds": [
+        "F-176"
+      ],
+      "rule": "Ước tính frontend từ tin: thuê, điện, nước, dịch vụ, gửi xe; chia người và tiền cọc vào ở. Không phải hóa đơn hay cam kết thu.",
+      "notes": "",
+      "matrix": {
+        "A01": "P — công khai",
+        "A02": "V — truy cập công khai, không suy quyền menu",
+        "A03": "—",
+        "A04": "P* — TENANT; đúng chủ sở hữu/điều kiện dữ liệu",
+        "A05": "V — truy cập công khai, không suy quyền menu"
+      }
+    },
+    {
+      "id": "UC-DIS-05",
+      "title": "Quản lý và gửi duyệt tin cho thuê",
+      "businessGroup": "G03",
+      "primaryActorIds": [
+        "A02"
+      ],
+      "primaryActor": "Chủ trọ (A02)",
+      "supportingActorIds": [],
+      "goal": "Chuẩn bị, cập nhật và gửi tin phòng thuộc mình để kiểm duyệt, duy trì thông tin còn phòng.",
+      "status": "Xác minh tĩnh",
+      "bindings": [
+        "LandlordListingsController.list",
+        "LandlordListingsController.create",
+        "LandlordListingsController.update",
+        "LandlordListingsController.submit",
+        "LandlordListingsController.confirm"
+      ],
+      "featureIds": [
+        "F-088",
+        "F-089"
+      ],
+      "rule": "",
+      "notes": "",
+      "matrix": {
+        "A01": "—",
+        "A02": "P* — dữ liệu thuộc mình; điều kiện service",
+        "A03": "—",
+        "A04": "—",
+        "A05": "—"
+      }
+    },
+    {
+      "id": "UC-DIS-06.2",
+      "title": "Ẩn tin cho thuê của mình",
+      "businessGroup": "G03",
+      "primaryActorIds": [
+        "A02"
+      ],
+      "primaryActor": "Chủ trọ (A02)",
+      "supportingActorIds": [],
+      "goal": "Ngừng công khai tin mà không xóa lịch sử",
+      "status": "Xác minh tĩnh",
+      "bindings": [
+        "LandlordListingsController.hide"
+      ],
+      "featureIds": [
+        "F-089"
+      ],
+      "rule": "",
+      "notes": "",
+      "matrix": {
+        "A01": "—",
+        "A02": "P* — dữ liệu thuộc mình; điều kiện service",
+        "A03": "—",
+        "A04": "—",
+        "A05": "—"
+      }
+    },
+    {
+      "id": "UC-DIS-08",
+      "title": "Quản lý khung giờ xem phòng",
+      "businessGroup": "G03",
+      "primaryActorIds": [
+        "A02"
+      ],
+      "primaryActor": "Chủ trọ (A02)",
+      "supportingActorIds": [],
+      "goal": "Mở hoặc gỡ khung giờ cho lịch xem tin của mình",
+      "status": "Xác minh tĩnh",
+      "bindings": [
+        "HousingController.slots",
+        "HousingController.addSlot",
+        "HousingController.removeSlot"
+      ],
+      "featureIds": [
+        "F-098"
+      ],
+      "rule": "Slot 15–120 phút, giới hạn số lịch sắp tới; TENANT chỉ đọc slot.",
+      "notes": "",
+      "matrix": {
+        "A01": "—",
+        "A02": "P* — dữ liệu thuộc mình; điều kiện service",
+        "A03": "—",
+        "A04": "V — chỉ xem dữ liệu liên quan",
+        "A05": "—"
+      }
+    },
+    {
+      "id": "UC-DIS-09",
+      "title": "Đặt và quản lý lịch xem của mình",
+      "businessGroup": "G03",
+      "primaryActorIds": [
+        "A04"
+      ],
+      "primaryActor": "Người tìm phòng/người thuê (A04)",
+      "supportingActorIds": [],
+      "goal": "Chọn lịch hợp lệ, theo dõi, đổi hoặc hủy lịch xem do mình đặt trong các trạng thái được phép.",
+      "status": "Xác minh tĩnh",
+      "bindings": [
+        "HousingController.book",
+        "HousingController.viewings",
+        "HousingController.viewing",
+        "HousingController.reschedule",
+        "HousingController.update"
+      ],
+      "featureIds": [
+        "F-099",
+        "F-100"
+      ],
+      "rule": "Đặt trước ít nhất 15 phút, không quá 90 ngày; kiểm tra trùng lịch của hai bên; reschedule là TENANT.",
+      "notes": "",
+      "matrix": {
+        "A01": "—",
+        "A02": "V — xem/phản hồi tại UC-DIS-10",
+        "A03": "—",
+        "A04": "P* — TENANT; đúng chủ sở hữu/điều kiện dữ liệu",
+        "A05": "—"
+      }
+    },
+    {
+      "id": "UC-DIS-10",
+      "title": "Tiếp nhận và hoàn tất lịch xem",
+      "businessGroup": "G03",
+      "primaryActorIds": [
+        "A02"
+      ],
+      "primaryActor": "Chủ trọ (A02)",
+      "supportingActorIds": [],
+      "goal": "Xác nhận, từ chối, hủy hoặc ghi hoàn tất lịch xem tại tin của mình.",
+      "status": "Xác minh tĩnh",
+      "bindings": [
+        "HousingController.viewings",
+        "HousingController.viewing",
+        "HousingController.update"
+      ],
+      "featureIds": [
+        "F-099",
+        "F-100"
+      ],
+      "rule": "LANDLORD xử lý lịch của tin mình; hoàn tất là điều kiện cho chuyển lịch thành hợp đồng.",
+      "notes": "",
+      "matrix": {
+        "A01": "—",
+        "A02": "P* — dữ liệu thuộc mình; điều kiện service",
+        "A03": "—",
+        "A04": "V — đổi/hủy của mình tại UC-DIS-09",
+        "A05": "—"
+      }
+    },
+    {
+      "id": "UC-DIS-13.2",
+      "title": "Gửi phản hồi về thử nghiệm tìm phòng",
+      "businessGroup": "G16",
+      "primaryActorIds": [
+        "A02",
+        "A04"
+      ],
+      "primaryActor": "Chủ trọ (A02); Người tìm phòng/người thuê (A04)",
+      "supportingActorIds": [],
+      "goal": "Ghi PilotFeedback khi khu vực thử nghiệm được mở",
+      "status": "Xác minh tĩnh",
+      "bindings": [
+        "HousingController.pilot",
+        "HousingController.feedback"
+      ],
+      "featureIds": [
+        "F-104"
+      ],
+      "rule": "",
+      "notes": " HousingController.pilot cho ADMIN đọc cấu hình; HousingController.feedback chỉ LANDLORD/TENANT. Không gán ADMIN là Actor gửi phản hồi.",
+      "matrix": {
+        "A01": "—",
+        "A02": "P* — dữ liệu thuộc mình; điều kiện service",
+        "A03": "—",
+        "A04": "P* — TENANT; đúng chủ sở hữu/điều kiện dữ liệu",
+        "A05": "V — chỉ đọc cấu hình pilot; không gửi phản hồi"
+      }
+    },
+    {
+      "id": "UC-TNT-12.2",
+      "title": "Lập biên bản bàn giao nhận phòng",
+      "businessGroup": "G03",
+      "primaryActorIds": [
+        "A02"
+      ],
+      "primaryActor": "Chủ trọ (A02)",
+      "supportingActorIds": [],
+      "goal": "Ghi nhận hiện trạng, chỉ số và hình ảnh để hai bên đối chiếu lúc nhận phòng.",
+      "status": "Xác minh tĩnh",
+      "bindings": [
+        "HousingController.handover",
+        "HousingController.saveHandover"
+      ],
+      "featureIds": [
+        "F-102"
+      ],
+      "rule": "",
+      "notes": "",
+      "matrix": {
+        "A01": "—",
+        "A02": "P* — dữ liệu thuộc mình; điều kiện service",
+        "A03": "—",
+        "A04": "V — chỉ xem dữ liệu liên quan",
+        "A05": "—"
+      }
+    },
+    {
+      "id": "UC-TNT-12.3",
+      "title": "Xác nhận biên bản bàn giao nhận phòng",
+      "businessGroup": "G03",
+      "primaryActorIds": [
+        "A04"
+      ],
+      "primaryActor": "Người tìm phòng/người thuê (A04)",
+      "supportingActorIds": [],
+      "goal": "Xác nhận đúng phiên bản biên bản nhận phòng của hợp đồng đã đến ngày hiệu lực.",
+      "status": "Xác minh tĩnh",
+      "bindings": [
+        "HousingController.acceptHandover"
+      ],
+      "featureIds": [
+        "F-102"
+      ],
+      "rule": "",
+      "notes": "",
+      "matrix": {
+        "A01": "—",
+        "A02": "—",
+        "A03": "—",
+        "A04": "P* — TENANT; đúng chủ sở hữu/điều kiện dữ liệu",
+        "A05": "—"
+      }
+    },
+    {
+      "id": "UC-OPT-02",
+      "title": "Tra cứu khu trọ",
+      "businessGroup": "G04",
+      "primaryActorIds": [
+        "A02",
+        "A03"
+      ],
+      "primaryActor": "Chủ trọ (A02); Nhân viên vận hành (A03)",
+      "supportingActorIds": [],
+      "goal": "Đọc khu trọ theo bộ lọc lifecycle và phạm vi",
+      "status": "Xác minh tĩnh",
+      "bindings": [
+        "PropertiesController.list",
+        "PropertiesController.getById"
+      ],
+      "featureIds": [
+        "F-011"
+      ],
+      "rule": "",
+      "notes": "",
+      "matrix": {
+        "A01": "—",
+        "A02": "P* — dữ liệu thuộc mình; điều kiện service",
+        "A03": "P* — property.view; theo hành vi + scope",
+        "A04": "—",
+        "A05": "—"
+      }
+    },
+    {
+      "id": "UC-OPT-03.1",
+      "title": "Tạo khu trọ",
+      "businessGroup": "G04",
+      "primaryActorIds": [
+        "A02"
+      ],
+      "primaryActor": "Chủ trọ (A02)",
+      "supportingActorIds": [],
+      "goal": "Bổ sung khu trọ mới vào danh mục kinh doanh trong hạn mức gói được áp dụng.",
+      "status": "Xác minh tĩnh",
+      "bindings": [
+        "PropertiesController.create"
+      ],
+      "featureIds": [
+        "F-012"
+      ],
+      "rule": "",
+      "notes": "",
+      "matrix": {
+        "A01": "—",
+        "A02": "P* — dữ liệu thuộc mình; điều kiện service",
+        "A03": "B — interceptor chặn",
+        "A04": "—",
+        "A05": "—"
+      }
+    },
+    {
+      "id": "UC-OPT-03.2",
+      "title": "Cập nhật thông tin khu trọ",
+      "businessGroup": "G04",
+      "primaryActorIds": [
+        "A02",
+        "A03"
+      ],
+      "primaryActor": "Chủ trọ (A02); Nhân viên vận hành (A03)",
+      "supportingActorIds": [],
+      "goal": "Sửa tên và địa chỉ khu thuộc phạm vi",
+      "status": "Xác minh tĩnh",
+      "bindings": [
+        "PropertiesController.update"
+      ],
+      "featureIds": [
+        "F-013"
+      ],
+      "rule": "",
+      "notes": "",
+      "matrix": {
+        "A01": "—",
+        "A02": "P* — dữ liệu thuộc mình; điều kiện service",
+        "A03": "P* — property.manage; theo hành vi + scope",
+        "A04": "—",
+        "A05": "—"
+      }
+    },
+    {
+      "id": "UC-OPT-04.1",
+      "title": "Lưu trữ hoặc khôi phục khu trọ",
+      "businessGroup": "G04",
+      "primaryActorIds": [
+        "A02",
+        "A03"
+      ],
+      "primaryActor": "Chủ trọ (A02); Nhân viên vận hành (A03)",
+      "supportingActorIds": [],
+      "goal": "Tạm ngừng hoặc đưa khu trọ trở lại vận hành, bảo toàn lịch sử và kiểm tra hợp đồng/hạn mức.",
+      "status": "Xác minh tĩnh",
+      "bindings": [
+        "PropertiesController.updateStatus"
+      ],
+      "featureIds": [
+        "F-014"
+      ],
+      "rule": "",
+      "notes": "",
+      "matrix": {
+        "A01": "—",
+        "A02": "P* — dữ liệu thuộc mình; điều kiện service",
+        "A03": "P* — property.manage; theo hành vi + scope",
+        "A04": "—",
+        "A05": "—"
+      }
+    },
+    {
+      "id": "UC-OPT-04.3",
+      "title": "Xóa khu trọ đủ điều kiện",
+      "businessGroup": "G04",
+      "primaryActorIds": [
+        "A02",
+        "A03"
+      ],
+      "primaryActor": "Chủ trọ (A02); Nhân viên vận hành (A03)",
+      "supportingActorIds": [],
+      "goal": "Xóa vật lý khi các ràng buộc phụ thuộc cho phép",
+      "status": "Xác minh tĩnh",
+      "bindings": [
+        "PropertiesController.remove"
+      ],
+      "featureIds": [
+        "F-015"
+      ],
+      "rule": "",
+      "notes": "",
+      "matrix": {
+        "A01": "—",
+        "A02": "P* — dữ liệu thuộc mình; điều kiện service",
+        "A03": "P* — property.manage; theo hành vi + scope",
+        "A04": "—",
+        "A05": "—"
+      }
+    },
+    {
+      "id": "UC-OPT-05",
+      "title": "Tra cứu phòng và lịch sử liên quan",
+      "businessGroup": "G04",
+      "primaryActorIds": [
+        "A02",
+        "A03"
+      ],
+      "primaryActor": "Chủ trọ (A02); Nhân viên vận hành (A03)",
+      "supportingActorIds": [],
+      "goal": "Tra cứu thông tin phòng và lịch sử liên quan trong khu trọ được phép quản lý.",
+      "status": "Xác minh tĩnh",
+      "bindings": [
+        "PropertyRoomsController.list",
+        "RoomsController.getById"
+      ],
+      "featureIds": [
+        "F-016"
+      ],
+      "rule": "",
+      "notes": "",
+      "matrix": {
+        "A01": "—",
+        "A02": "P* — dữ liệu thuộc mình; điều kiện service",
+        "A03": "P* — room.view; theo hành vi + scope",
+        "A04": "—",
+        "A05": "—"
+      }
+    },
+    {
+      "id": "UC-OPT-06.1",
+      "title": "Tạo phòng",
+      "businessGroup": "G04",
+      "primaryActorIds": [
+        "A02",
+        "A03"
+      ],
+      "primaryActor": "Chủ trọ (A02); Nhân viên vận hành (A03)",
+      "supportingActorIds": [],
+      "goal": "Bổ sung phòng có thể vận hành trong khu đang hoạt động, trong hạn mức được áp dụng.",
+      "status": "Xác minh tĩnh",
+      "bindings": [
+        "PropertyRoomsController.create"
+      ],
+      "featureIds": [
+        "F-017"
+      ],
+      "rule": "",
+      "notes": "",
+      "matrix": {
+        "A01": "—",
+        "A02": "P* — dữ liệu thuộc mình; điều kiện service",
+        "A03": "P* — room.manage; theo hành vi + scope",
+        "A04": "—",
+        "A05": "—"
+      }
+    },
+    {
+      "id": "UC-OPT-06.2",
+      "title": "Cập nhật thông tin phòng",
+      "businessGroup": "G04",
+      "primaryActorIds": [
+        "A02",
+        "A03"
+      ],
+      "primaryActor": "Chủ trọ (A02); Nhân viên vận hành (A03)",
+      "supportingActorIds": [],
+      "goal": "Cập nhật thông tin phòng mà không tự ghi đè giá của hợp đồng đã lập.",
+      "status": "Xác minh tĩnh",
+      "bindings": [
+        "RoomsController.update"
+      ],
+      "featureIds": [
+        "F-017"
+      ],
+      "rule": "",
+      "notes": "",
+      "matrix": {
+        "A01": "—",
+        "A02": "P* — dữ liệu thuộc mình; điều kiện service",
+        "A03": "P* — room.manage; theo hành vi + scope",
+        "A04": "—",
+        "A05": "—"
+      }
+    },
+    {
+      "id": "UC-OPT-07.1",
+      "title": "Đổi trạng thái sử dụng phòng",
+      "businessGroup": "G04",
+      "primaryActorIds": [
+        "A02",
+        "A03"
+      ],
+      "primaryActor": "Chủ trọ (A02); Nhân viên vận hành (A03)",
+      "supportingActorIds": [],
+      "goal": "Cập nhật trạng thái sử dụng phòng phù hợp hợp đồng và quy trình chuẩn bị lại phòng.",
+      "status": "Xác minh tĩnh",
+      "bindings": [
+        "RoomsController.update"
+      ],
+      "featureIds": [
+        "F-017"
+      ],
+      "rule": "Không được mô tả chuyển trạng thái phòng tùy ý: lease ACTIVE, isActive và turnover ràng buộc trạng thái.",
+      "notes": "Cùng PATCH với sửa phòng nhưng mục tiêu đổi trạng thái được giữ riêng; không có endpoint status nghiệp vụ riêng.",
+      "matrix": {
+        "A01": "—",
+        "A02": "P* — dữ liệu thuộc mình; điều kiện service",
+        "A03": "P* — room.manage; theo hành vi + scope",
+        "A04": "—",
+        "A05": "—"
+      }
+    },
+    {
+      "id": "UC-OPT-07.2",
+      "title": "Vô hiệu hóa hoặc khôi phục phòng",
+      "businessGroup": "G04",
+      "primaryActorIds": [
+        "A02",
+        "A03"
+      ],
+      "primaryActor": "Chủ trọ (A02); Nhân viên vận hành (A03)",
+      "supportingActorIds": [],
+      "goal": "Tạm ngừng hoặc tái sử dụng phòng mà vẫn bảo toàn lịch sử nghiệp vụ.",
+      "status": "Xác minh tĩnh",
+      "bindings": [
+        "RoomsController.updateStatus"
+      ],
+      "featureIds": [
+        "F-018"
+      ],
+      "rule": "",
+      "notes": "",
+      "matrix": {
+        "A01": "—",
+        "A02": "P* — dữ liệu thuộc mình; điều kiện service",
+        "A03": "P* — room.manage; theo hành vi + scope",
+        "A04": "—",
+        "A05": "—"
+      }
+    },
+    {
+      "id": "UC-OPT-07.3",
+      "title": "Xóa phòng đủ điều kiện",
+      "businessGroup": "G04",
+      "primaryActorIds": [
+        "A02",
+        "A03"
+      ],
+      "primaryActor": "Chủ trọ (A02); Nhân viên vận hành (A03)",
+      "supportingActorIds": [],
+      "goal": "Xóa phòng sau kiểm tra hợp đồng chỉ số hóa đơn lịch xem turnover",
+      "status": "Xác minh tĩnh",
+      "bindings": [
+        "RoomsController.remove"
+      ],
+      "featureIds": [
+        "F-019"
+      ],
+      "rule": "",
+      "notes": "",
+      "matrix": {
+        "A01": "—",
+        "A02": "P* — dữ liệu thuộc mình; điều kiện service",
+        "A03": "P* — room.manage; theo hành vi + scope",
+        "A04": "—",
+        "A05": "—"
+      }
+    },
+    {
+      "id": "UC-OPT-08.1",
+      "title": "Quản lý tài sản phòng",
+      "businessGroup": "G04",
+      "primaryActorIds": [
+        "A02",
+        "A03"
+      ],
+      "primaryActor": "Chủ trọ (A02); Nhân viên vận hành (A03)",
+      "supportingActorIds": [],
+      "goal": "Duy trì danh mục, số lượng và tình trạng tài sản gắn với phòng.",
+      "status": "Xác minh tĩnh",
+      "bindings": [
+        "RoomsController.assets",
+        "RoomsController.createAsset",
+        "RoomsController.updateAsset",
+        "RoomsController.removeAsset"
+      ],
+      "featureIds": [
+        "F-020"
+      ],
+      "rule": "",
+      "notes": "",
+      "matrix": {
+        "A01": "—",
+        "A02": "P* — dữ liệu thuộc mình; điều kiện service",
+        "A03": "P* — room.view, room.manage; theo hành vi + scope",
+        "A04": "—",
+        "A05": "—"
+      }
+    },
+    {
+      "id": "UC-OPT-08.2",
+      "title": "Theo dõi lịch kiểm tra phòng",
+      "businessGroup": "G04",
+      "primaryActorIds": [
+        "A02",
+        "A03"
+      ],
+      "primaryActor": "Chủ trọ (A02); Nhân viên vận hành (A03)",
+      "supportingActorIds": [],
+      "goal": "Lập kế hoạch, ghi kết quả và hoàn tất kiểm tra hiện trạng phòng.",
+      "status": "Xác minh tĩnh",
+      "bindings": [
+        "RoomsController.inspections",
+        "RoomsController.createInspection",
+        "RoomsController.updateInspection",
+        "RoomsController.completeInspection",
+        "RoomsController.removeInspection"
+      ],
+      "featureIds": [
+        "F-021"
+      ],
+      "rule": "",
+      "notes": "",
+      "matrix": {
+        "A01": "—",
+        "A02": "P* — dữ liệu thuộc mình; điều kiện service",
+        "A03": "P* — room.view, room.manage; theo hành vi + scope",
+        "A04": "—",
+        "A05": "—"
+      }
+    },
+    {
+      "id": "UC-OPT-09",
+      "title": "Quản lý phiên bản phí dịch vụ phòng",
+      "businessGroup": "G04",
+      "primaryActorIds": [
+        "A02"
+      ],
+      "primaryActor": "Chủ trọ (A02)",
+      "supportingActorIds": [],
+      "goal": "Thiết lập phí dịch vụ theo kỳ hiệu lực và tra cứu lịch sử phiên bản; nhân viên không được ghi phí.",
+      "status": "Xác minh tĩnh",
+      "bindings": [
+        "RoomsController.serviceFees",
+        "RoomsController.createServiceFee",
+        "RoomsController.updateServiceFee",
+        "RoomsController.tariffVersions",
+        "RoomsController.removeServiceFee"
+      ],
+      "featureIds": [
+        "F-022"
+      ],
+      "rule": "Đọc service fees/tariff versions: STAFF room.view + scope. Tạo/sửa/xóa phí: chỉ LANDLORD.",
+      "notes": "",
+      "matrix": {
+        "A01": "—",
+        "A02": "P* — dữ liệu thuộc mình; điều kiện service",
+        "A03": "V — chỉ đọc: room.view + scope",
+        "A04": "—",
+        "A05": "—"
+      }
+    },
+    {
+      "id": "UC-STF-01",
+      "title": "Mời nhân viên và cấp phạm vi khu trọ",
+      "businessGroup": "G05",
+      "primaryActorIds": [
+        "A02"
+      ],
+      "primaryActor": "Chủ trọ (A02)",
+      "supportingActorIds": [],
+      "goal": "Tạo lời mời với tập quyền và propertyIds thuộc mình",
+      "status": "Xác minh tĩnh",
+      "bindings": [
+        "StaffController.presets",
+        "StaffController.list",
+        "StaffController.createInvite"
+      ],
+      "featureIds": [
+        "F-007",
+        "F-008"
+      ],
+      "rule": "",
+      "notes": "LANDLORD tạo lời mời và nhận inviteCode/activationPath để chia sẻ; code không gửi email. STAFF chỉ list/presets, không được tạo invite.",
+      "matrix": {
+        "A01": "—",
+        "A02": "P* — dữ liệu thuộc mình; điều kiện service",
+        "A03": "V — chỉ đọc: staff.view + scope",
+        "A04": "—",
+        "A05": "—"
+      }
+    },
+    {
+      "id": "UC-STF-02",
+      "title": "Cập nhật quyền trạng thái và phạm vi nhân viên",
+      "businessGroup": "G05",
+      "primaryActorIds": [
+        "A02"
+      ],
+      "primaryActor": "Chủ trọ (A02)",
+      "supportingActorIds": [],
+      "goal": "Đổi quyền preset khu được cấp và trạng thái nhân viên",
+      "status": "Xác minh tĩnh",
+      "bindings": [
+        "StaffController.update"
+      ],
+      "featureIds": [
+        "F-009"
+      ],
+      "rule": "",
+      "notes": "Dù decorator có STAFF và staff.manage, interceptor không cho STAFF tự cập nhật quyền.",
+      "matrix": {
+        "A01": "—",
+        "A02": "P* — dữ liệu thuộc mình; điều kiện service",
+        "A03": "B — interceptor chặn",
+        "A04": "—",
+        "A05": "—"
+      }
+    },
+    {
+      "id": "UC-STF-03",
+      "title": "Mô phỏng quyền nhân viên",
+      "businessGroup": "G05",
+      "primaryActorIds": [
+        "A02"
+      ],
+      "primaryActor": "Chủ trọ (A02)",
+      "supportingActorIds": [],
+      "goal": "Kiểm tra quyền hiệu lực mà không đổi cấp quyền",
+      "status": "Xác minh tĩnh",
+      "bindings": [
+        "StaffController.simulate"
+      ],
+      "featureIds": [
+        "F-010"
+      ],
+      "rule": "",
+      "notes": "",
+      "matrix": {
+        "A01": "—",
+        "A02": "P* — dữ liệu thuộc mình; điều kiện service",
+        "A03": "—",
+        "A04": "—",
+        "A05": "—"
+      }
+    },
+    {
+      "id": "UC-STF-04",
+      "title": "Tra cứu nhân viên và phạm vi được cấp",
+      "businessGroup": "G05",
+      "primaryActorIds": [
+        "A02",
+        "A03"
+      ],
+      "primaryActor": "Chủ trọ (A02); Nhân viên vận hành (A03)",
+      "supportingActorIds": [],
+      "goal": "Đọc danh sách nhân viên/preset trong phạm vi được cấp mà không tạo lời mời hoặc thay quyền.",
+      "status": "Xác minh tĩnh",
+      "bindings": [
+        "StaffController.list",
+        "StaffController.presets"
+      ],
+      "featureIds": [
+        "F-007"
+      ],
+      "rule": "",
+      "notes": "STAFF được phép hai handler list/presets; service lọc nhân viên theo propertyScopes giao với khu được cấp.",
+      "matrix": {
+        "A01": "—",
+        "A02": "P* — dữ liệu thuộc mình; điều kiện service",
+        "A03": "P* — staff.view; theo hành vi + scope",
+        "A04": "—",
+        "A05": "—"
+      }
+    },
+    {
+      "id": "UC-TEN-01",
+      "title": "Xem hồ sơ và tổng quan thuê của mình",
+      "businessGroup": "G06",
+      "primaryActorIds": [
+        "A04"
+      ],
+      "primaryActor": "Người tìm phòng/người thuê (A04)",
+      "supportingActorIds": [],
+      "goal": "Tra cứu hồ sơ và tổng quan quan hệ thuê gắn với tài khoản của mình.",
+      "status": "Xác minh tĩnh",
+      "bindings": [
+        "TenantPortalController.me",
+        "TenantPortalController.dashboard"
+      ],
+      "featureIds": [
+        "F-074"
+      ],
+      "rule": "",
+      "notes": "",
+      "matrix": {
+        "A01": "—",
+        "A02": "—",
+        "A03": "—",
+        "A04": "P* — Tenant/lease/invoice của mình",
+        "A05": "—"
+      }
+    },
+    {
+      "id": "UC-TEN-02",
+      "title": "Tra cứu hợp đồng và quyết toán của mình",
+      "businessGroup": "G06",
+      "primaryActorIds": [
+        "A04"
+      ],
+      "primaryActor": "Người tìm phòng/người thuê (A04)",
+      "supportingActorIds": [],
+      "goal": "Tra cứu hợp đồng, cọc và quyết toán thuộc mình mà không sửa điều khoản.",
+      "status": "Xác minh tĩnh",
+      "bindings": [
+        "TenantPortalController.leases",
+        "TenantLifecyclePortalController.settlement"
+      ],
+      "featureIds": [
+        "F-036",
+        "F-074",
+        "F-119"
+      ],
+      "rule": "",
+      "notes": " Chưa thấy UI cổng TENANT nối shareLeasePdf; chỉ xác minh đọc hợp đồng/quyết toán, không cấp quyền xuất hợp đồng PDF từ việc dùng chung model.",
+      "matrix": {
+        "A01": "—",
+        "A02": "—",
+        "A03": "—",
+        "A04": "P* — Tenant/lease/invoice của mình",
+        "A05": "—"
+      }
+    },
+    {
+      "id": "UC-TEN-08.1",
+      "title": "Xem người ở cùng hợp đồng",
+      "businessGroup": "G06",
+      "primaryActorIds": [
+        "A04"
+      ],
+      "primaryActor": "Người tìm phòng/người thuê (A04)",
+      "supportingActorIds": [],
+      "goal": "Đọc occupants nhưng không tự thêm hoặc xóa",
+      "status": "Xác minh tĩnh",
+      "bindings": [
+        "TenantLifecyclePortalController.occupants"
+      ],
+      "featureIds": [
+        "F-041"
+      ],
+      "rule": "Người thuê chỉ xem người ở cùng; không tự thêm/xóa occupant.",
+      "notes": "",
+      "matrix": {
+        "A01": "—",
+        "A02": "—",
+        "A03": "—",
+        "A04": "P* — Tenant/lease/invoice của mình",
+        "A05": "—"
+      }
+    },
+    {
+      "id": "UC-TNT-01",
+      "title": "Tra cứu hồ sơ người thuê và tổng quan",
+      "businessGroup": "G06",
+      "primaryActorIds": [
+        "A02",
+        "A03"
+      ],
+      "primaryActor": "Chủ trọ (A02); Nhân viên vận hành (A03)",
+      "supportingActorIds": [],
+      "goal": "Tra cứu hồ sơ và tổng quan tài chính/lịch sử thuê của khách thuộc phạm vi quản lý.",
+      "status": "Xác minh tĩnh",
+      "bindings": [
+        "TenantsController.list",
+        "TenantsController.getById",
+        "TenantsController.overview"
+      ],
+      "featureIds": [
+        "F-023",
+        "F-024"
+      ],
+      "rule": "",
+      "notes": "",
+      "matrix": {
+        "A01": "—",
+        "A02": "P* — dữ liệu thuộc mình; điều kiện service",
+        "A03": "P* — tenant.view; theo hành vi + scope",
+        "A04": "—",
+        "A05": "—"
+      }
+    },
+    {
+      "id": "UC-TNT-02.1",
+      "title": "Tạo hồ sơ người thuê",
+      "businessGroup": "G06",
+      "primaryActorIds": [
+        "A02",
+        "A03"
+      ],
+      "primaryActor": "Chủ trọ (A02); Nhân viên vận hành (A03)",
+      "supportingActorIds": [],
+      "goal": "Lập hồ sơ khách thuê để quản lý quan hệ thuê, chưa tự cấp tài khoản đăng nhập.",
+      "status": "Xác minh tĩnh",
+      "bindings": [
+        "TenantsController.create"
+      ],
+      "featureIds": [
+        "F-023"
+      ],
+      "rule": "",
+      "notes": "",
+      "matrix": {
+        "A01": "—",
+        "A02": "P* — dữ liệu thuộc mình; điều kiện service",
+        "A03": "P* — tenant.manage; theo hành vi + scope",
+        "A04": "—",
+        "A05": "—"
+      }
+    },
+    {
+      "id": "UC-TNT-02.2",
+      "title": "Cập nhật hồ sơ người thuê",
+      "businessGroup": "G06",
+      "primaryActorIds": [
+        "A02",
+        "A03"
+      ],
+      "primaryActor": "Chủ trọ (A02); Nhân viên vận hành (A03)",
+      "supportingActorIds": [],
+      "goal": "Cập nhật thông tin cá nhân và liên hệ của khách thuê thuộc phạm vi quản lý.",
+      "status": "Xác minh tĩnh",
+      "bindings": [
+        "TenantsController.update"
+      ],
+      "featureIds": [
+        "F-023"
+      ],
+      "rule": "",
+      "notes": "",
+      "matrix": {
+        "A01": "—",
+        "A02": "P* — dữ liệu thuộc mình; điều kiện service",
+        "A03": "P* — tenant.manage; theo hành vi + scope",
+        "A04": "—",
+        "A05": "—"
+      }
+    },
+    {
+      "id": "UC-TNT-02.3",
+      "title": "Vô hiệu hóa hoặc khôi phục người thuê",
+      "businessGroup": "G06",
+      "primaryActorIds": [
+        "A02",
+        "A03"
+      ],
+      "primaryActor": "Chủ trọ (A02); Nhân viên vận hành (A03)",
+      "supportingActorIds": [],
+      "goal": "Ngừng hoặc khôi phục hoạt động hồ sơ khách thuê theo ràng buộc hợp đồng hiện tại.",
+      "status": "Xác minh tĩnh",
+      "bindings": [
+        "TenantsController.updateStatus"
+      ],
+      "featureIds": [
+        "F-025"
+      ],
+      "rule": "",
+      "notes": "",
+      "matrix": {
+        "A01": "—",
+        "A02": "P* — dữ liệu thuộc mình; điều kiện service",
+        "A03": "P* — tenant.manage; theo hành vi + scope",
+        "A04": "—",
+        "A05": "—"
+      }
+    },
+    {
+      "id": "UC-TNT-02.4",
+      "title": "Xóa hồ sơ người thuê đủ điều kiện",
+      "businessGroup": "G06",
+      "primaryActorIds": [
+        "A02",
+        "A03"
+      ],
+      "primaryActor": "Chủ trọ (A02); Nhân viên vận hành (A03)",
+      "supportingActorIds": [],
+      "goal": "Loại hồ sơ khách thuê chỉ khi các ràng buộc dữ liệu cho phép xóa.",
+      "status": "Xác minh tĩnh",
+      "bindings": [
+        "TenantsController.remove"
+      ],
+      "featureIds": [
+        "F-025"
+      ],
+      "rule": "",
+      "notes": "",
+      "matrix": {
+        "A01": "—",
+        "A02": "P* — dữ liệu thuộc mình; điều kiện service",
+        "A03": "P* — tenant.manage; theo hành vi + scope",
+        "A04": "—",
+        "A05": "—"
+      }
+    },
+    {
+      "id": "UC-TNT-03",
+      "title": "Tạo lời mời truy cập cổng người thuê",
+      "businessGroup": "G06",
+      "primaryActorIds": [
+        "A02"
+      ],
+      "primaryActor": "Chủ trọ (A02)",
+      "supportingActorIds": [],
+      "goal": "Tạo mã/liên kết kích hoạt một lần để khách thuê được vào cổng thông tin của hồ sơ đã có.",
+      "status": "Xác minh tĩnh",
+      "bindings": [
+        "TenantInvitesController.create"
+      ],
+      "featureIds": [
+        "F-027"
+      ],
+      "rule": "",
+      "notes": "LANDLORD nhận inviteCode/activationPath để chia sẻ; không khẳng định email tự gửi. STAFF bị PropertyScopeInterceptor chặn TenantInvitesController.",
+      "matrix": {
+        "A01": "—",
+        "A02": "P* — dữ liệu thuộc mình; điều kiện service",
+        "A03": "B — interceptor chặn",
+        "A04": "—",
+        "A05": "—"
+      }
+    },
+    {
+      "id": "UC-TNT-03.1",
+      "title": "Tạo trực tiếp tài khoản cho hồ sơ người thuê",
+      "businessGroup": "G06",
+      "primaryActorIds": [
+        "A02",
+        "A03"
+      ],
+      "primaryActor": "Chủ trọ (A02); Nhân viên vận hành (A03)",
+      "supportingActorIds": [],
+      "goal": "Cấp tài khoản đăng nhập liên kết trực tiếp hồ sơ người thuê đã có.",
+      "status": "Xác minh tĩnh",
+      "bindings": [
+        "TenantsController.createAccount"
+      ],
+      "featureIds": [
+        "F-026"
+      ],
+      "rule": "STAFF tenant.manage có thể tạo tài khoản trực tiếp vì TenantsController được whitelist; khác UC mời qua TenantInvitesController bị chặn.",
+      "notes": "",
+      "matrix": {
+        "A01": "—",
+        "A02": "P* — dữ liệu thuộc mình; điều kiện service",
+        "A03": "P* — tenant.manage; theo hành vi + scope",
+        "A04": "—",
+        "A05": "—"
+      }
+    },
+    {
+      "id": "UC-TNT-04",
+      "title": "Tra cứu và xuất hợp đồng thuê",
+      "businessGroup": "G06",
+      "primaryActorIds": [
+        "A02",
+        "A03"
+      ],
+      "primaryActor": "Chủ trọ (A02); Nhân viên vận hành (A03)",
+      "supportingActorIds": [],
+      "goal": "Đọc hợp đồng theo phòng người thuê và số ngày cảnh báo",
+      "status": "Xác minh tĩnh",
+      "bindings": [
+        "LeasesController.expiring",
+        "RoomLeasesController.list",
+        "TenantLeasesController.list",
+        "LOCAL.leasePdf"
+      ],
+      "featureIds": [
+        "F-029",
+        "F-032",
+        "F-119"
+      ],
+      "rule": "",
+      "notes": "",
+      "matrix": {
+        "A01": "—",
+        "A02": "P* — dữ liệu thuộc mình; điều kiện service",
+        "A03": "P* — lease.view; theo hành vi + scope",
+        "A04": "—",
+        "A05": "—"
+      }
+    },
+    {
+      "id": "UC-TNT-05",
+      "title": "Lập hợp đồng thuê phòng",
+      "businessGroup": "G06",
+      "primaryActorIds": [
+        "A02",
+        "A03"
+      ],
+      "primaryActor": "Chủ trọ (A02); Nhân viên vận hành (A03)",
+      "supportingActorIds": [],
+      "goal": "Thiết lập quan hệ thuê có hiệu lực và cập nhật tình trạng phòng; tiền cọc thỏa thuận được lưu, cọc đã thu chỉ tự ghi khi lập trực tiếp với số tiền dương; hỗ trợ nguồn lịch xem đủ điều kiện.",
+      "status": "Xác minh tĩnh",
+      "bindings": [
+        "LeasesController.create",
+        "HousingController.lease"
+      ],
+      "featureIds": [
+        "F-028",
+        "F-101"
+      ],
+      "rule": "Tạo lease ACTIVE và chuyển phòng OCCUPIED trong transaction; một lease ACTIVE/phòng. Create DTO không nhận endDate; chỉnh hạn ở luồng sau. Biến thể từ lịch xem chỉ LANDLORD: lịch phải COMPLETED, chuyển LEASED và ẩn tin. STAFF chỉ luồng tạo trực tiếp, không dùng HousingController. Nhánh lập từ lịch xem gọi createWithinTransaction với recordDeposit=false: lưu tiền cọc thỏa thuận nhưng không tự ghi COLLECTED. Nhánh lập trực tiếp mới tự ghi COLLECTED khi deposit dương.",
+      "notes": "",
+      "matrix": {
+        "A01": "—",
+        "A02": "P* — dữ liệu thuộc mình; điều kiện service",
+        "A03": "P* — lease.manage; theo hành vi + scope; không tạo từ lịch xem",
+        "A04": "—",
+        "A05": "—"
+      }
+    },
+    {
+      "id": "UC-TNT-06.1",
+      "title": "Cập nhật điều khoản hợp đồng",
+      "businessGroup": "G06",
+      "primaryActorIds": [
+        "A02",
+        "A03"
+      ],
+      "primaryActor": "Chủ trọ (A02); Nhân viên vận hành (A03)",
+      "supportingActorIds": [],
+      "goal": "Điều chỉnh điều khoản hợp đồng và giữ lịch sử thay đổi để tra cứu.",
+      "status": "Xác minh tĩnh",
+      "bindings": [
+        "LeasesController.update"
+      ],
+      "featureIds": [
+        "F-030"
+      ],
+      "rule": "",
+      "notes": "",
+      "matrix": {
+        "A01": "—",
+        "A02": "P* — dữ liệu thuộc mình; điều kiện service",
+        "A03": "P* — lease.manage; theo hành vi + scope",
+        "A04": "—",
+        "A05": "—"
+      }
+    },
+    {
+      "id": "UC-TNT-06.2",
+      "title": "Gia hạn hợp đồng",
+      "businessGroup": "G06",
+      "primaryActorIds": [
+        "A02",
+        "A03"
+      ],
+      "primaryActor": "Chủ trọ (A02); Nhân viên vận hành (A03)",
+      "supportingActorIds": [],
+      "goal": "Kéo dài thời hạn hợp đồng đang hoạt động khi đáp ứng điều kiện chưa quyết toán.",
+      "status": "Xác minh tĩnh",
+      "bindings": [
+        "LeasesController.renew"
+      ],
+      "featureIds": [
+        "F-030"
+      ],
+      "rule": "ACTIVE, endDate mới lớn hơn endDate hiện tại và chưa quyết toán; không tự thanh toán cọc/nợ.",
+      "notes": "",
+      "matrix": {
+        "A01": "—",
+        "A02": "P* — dữ liệu thuộc mình; điều kiện service",
+        "A03": "P* — lease.manage; theo hành vi + scope",
+        "A04": "—",
+        "A05": "—"
+      }
+    },
+    {
+      "id": "UC-TNT-06.3",
+      "title": "Kết thúc hợp đồng",
+      "businessGroup": "G06",
+      "primaryActorIds": [
+        "A02",
+        "A03"
+      ],
+      "primaryActor": "Chủ trọ (A02); Nhân viên vận hành (A03)",
+      "supportingActorIds": [],
+      "goal": "Chấm dứt quan hệ thuê và mở quy trình chuẩn bị lại phòng, chưa tự quyết toán.",
+      "status": "Xác minh tĩnh",
+      "bindings": [
+        "LeasesController.end"
+      ],
+      "featureIds": [
+        "F-031"
+      ],
+      "rule": "Kết thúc lease đặt ENDED, phòng MAINTENANCE và mở turnover; không tự quyết toán hay đưa phòng VACANT.",
+      "notes": "",
+      "matrix": {
+        "A01": "—",
+        "A02": "P* — dữ liệu thuộc mình; điều kiện service",
+        "A03": "P* — lease.manage; theo hành vi + scope",
+        "A04": "—",
+        "A05": "—"
+      }
+    },
+    {
+      "id": "UC-TNT-07",
+      "title": "Tra cứu và ghi giao dịch cọc",
+      "businessGroup": "G06",
+      "primaryActorIds": [
+        "A02",
+        "A03"
+      ],
+      "primaryActor": "Chủ trọ (A02); Nhân viên vận hành (A03)",
+      "supportingActorIds": [],
+      "goal": "Theo dõi và ghi các khoản thu, hoàn, khấu trừ hoặc điều chỉnh cọc trong giới hạn số dư.",
+      "status": "Xác minh tĩnh",
+      "bindings": [
+        "LeasesController.deposits",
+        "LeasesController.createDeposit"
+      ],
+      "featureIds": [
+        "F-033"
+      ],
+      "rule": "Thu/hoàn/khấu trừ cọc theo ledger; không vượt số dư; đã quyết toán thì chặn đường biến động cọc cũ.",
+      "notes": "",
+      "matrix": {
+        "A01": "—",
+        "A02": "P* — dữ liệu thuộc mình; điều kiện service",
+        "A03": "P* — lease.view, lease.manage; theo hành vi + scope",
+        "A04": "—",
+        "A05": "—"
+      }
+    },
+    {
+      "id": "UC-TNT-12.1",
+      "title": "Quản lý người ở cùng hợp đồng",
+      "businessGroup": "G06",
+      "primaryActorIds": [
+        "A02",
+        "A03"
+      ],
+      "primaryActor": "Chủ trọ (A02); Nhân viên vận hành (A03)",
+      "supportingActorIds": [],
+      "goal": "Duy trì danh sách người ở cùng hợp đồng trong giới hạn sức chứa phòng.",
+      "status": "Xác minh tĩnh",
+      "bindings": [
+        "TenantLifecycleController.occupants",
+        "TenantLifecycleController.addOccupant",
+        "TenantLifecycleController.removeOccupant"
+      ],
+      "featureIds": [
+        "F-041"
+      ],
+      "rule": "",
+      "notes": "",
+      "matrix": {
+        "A01": "—",
+        "A02": "P* — dữ liệu thuộc mình; điều kiện service",
+        "A03": "P* — lease.view, lease.manage; theo hành vi + scope",
+        "A04": "—",
+        "A05": "—"
+      }
+    },
+    {
+      "id": "UC-TEN-07.1",
+      "title": "Đề nghị gia hạn thuê",
+      "businessGroup": "G07",
+      "primaryActorIds": [
+        "A04"
+      ],
+      "primaryActor": "Người tìm phòng/người thuê (A04)",
+      "supportingActorIds": [],
+      "goal": "Gửi, theo dõi hoặc hủy đề nghị gia hạn hợp đồng của mình; chưa tự thay đổi thời hạn.",
+      "status": "Xác minh tĩnh",
+      "bindings": [
+        "TenantLifecyclePortalController.requests",
+        "TenantLifecyclePortalController.create",
+        "TenantLifecyclePortalController.cancel"
+      ],
+      "featureIds": [
+        "F-037"
+      ],
+      "rule": "",
+      "notes": "",
+      "matrix": {
+        "A01": "—",
+        "A02": "—",
+        "A03": "—",
+        "A04": "P* — Tenant/lease/invoice của mình",
+        "A05": "—"
+      }
+    },
+    {
+      "id": "UC-TEN-07.2",
+      "title": "Đề nghị chuyển phòng",
+      "businessGroup": "G07",
+      "primaryActorIds": [
+        "A04"
+      ],
+      "primaryActor": "Người tìm phòng/người thuê (A04)",
+      "supportingActorIds": [],
+      "goal": "Tra cứu phòng đủ điều kiện, gửi/theo dõi hoặc hủy đề nghị chuyển phòng; chưa tạo hợp đồng mới.",
+      "status": "Xác minh tĩnh",
+      "bindings": [
+        "TenantLifecyclePortalController.requests",
+        "TenantLifecyclePortalController.create",
+        "TenantLifecyclePortalController.cancel",
+        "TenantLifecyclePortalController.transferRooms"
+      ],
+      "featureIds": [
+        "F-037",
+        "F-040"
+      ],
+      "rule": "",
+      "notes": "",
+      "matrix": {
+        "A01": "—",
+        "A02": "—",
+        "A03": "—",
+        "A04": "P* — Tenant/lease/invoice của mình",
+        "A05": "—"
+      }
+    },
+    {
+      "id": "UC-TEN-07.3",
+      "title": "Đề nghị trả phòng",
+      "businessGroup": "G07",
+      "primaryActorIds": [
+        "A04"
+      ],
+      "primaryActor": "Người tìm phòng/người thuê (A04)",
+      "supportingActorIds": [],
+      "goal": "Gửi, theo dõi hoặc hủy đề nghị trả phòng để được xét và thực hiện sau; chưa tự kết thúc/quyết toán hợp đồng.",
+      "status": "Xác minh tĩnh",
+      "bindings": [
+        "TenantLifecyclePortalController.requests",
+        "TenantLifecyclePortalController.create",
+        "TenantLifecyclePortalController.cancel"
+      ],
+      "featureIds": [
+        "F-037"
+      ],
+      "rule": "",
+      "notes": "",
+      "matrix": {
+        "A01": "—",
+        "A02": "—",
+        "A03": "—",
+        "A04": "P* — Tenant/lease/invoice của mình",
+        "A05": "—"
+      }
+    },
+    {
+      "id": "UC-TNT-08",
+      "title": "Xem trước và xác nhận quyết toán trả phòng",
+      "businessGroup": "G07",
+      "primaryActorIds": [
+        "A02"
+      ],
+      "primaryActor": "Chủ trọ (A02)",
+      "supportingActorIds": [],
+      "goal": "Chốt snapshot chi phí cọc và nghĩa vụ còn lại không tự chuyển tiền",
+      "status": "Xác minh tĩnh",
+      "bindings": [
+        "LeasesController.settlement",
+        "LeasesController.previewSettlement",
+        "LeasesController.confirmSettlement"
+      ],
+      "featureIds": [
+        "F-034",
+        "F-036"
+      ],
+      "rule": "Chốt tiền thuê theo ngày gồm ngày checkout nếu kỳ chưa được lập; cọc chỉ bù khoản quyết toán. Nợ hóa đơn cũ được trình bày riêng, không tự tất toán; fingerprint/idempotency.",
+      "notes": "",
+      "matrix": {
+        "A01": "—",
+        "A02": "P* — dữ liệu thuộc mình; điều kiện service",
+        "A03": "—",
+        "A04": "—",
+        "A05": "—"
+      }
+    },
+    {
+      "id": "UC-TNT-09",
+      "title": "Ghi nhận đã hoàn cọc theo quyết toán",
+      "businessGroup": "G07",
+      "primaryActorIds": [
+        "A02"
+      ],
+      "primaryActor": "Chủ trọ (A02)",
+      "supportingActorIds": [],
+      "goal": "Ghi nhận khoản hoàn cọc theo quyết toán đã được thực trả, có lịch sử kiểm tra.",
+      "status": "Xác minh tĩnh",
+      "bindings": [
+        "LeasesController.recordSettlementRefund"
+      ],
+      "featureIds": [
+        "F-035"
+      ],
+      "rule": "Chỉ ghi nhận hoàn cọc đã thực hiện, không chuyển tiền qua ngân hàng.",
+      "notes": "",
+      "matrix": {
+        "A01": "—",
+        "A02": "P* — dữ liệu thuộc mình; điều kiện service",
+        "A03": "—",
+        "A04": "—",
+        "A05": "—"
+      }
+    },
+    {
+      "id": "UC-TNT-10",
+      "title": "Xét duyệt yêu cầu vòng đời thuê",
+      "businessGroup": "G07",
+      "primaryActorIds": [
+        "A02",
+        "A03"
+      ],
+      "primaryActor": "Chủ trọ (A02); Nhân viên vận hành (A03)",
+      "supportingActorIds": [],
+      "goal": "Đặt APPROVED hoặc REJECTED chưa tự đổi hợp đồng",
+      "status": "Xác minh tĩnh",
+      "bindings": [
+        "TenantLifecycleController.requests",
+        "TenantLifecycleController.review"
+      ],
+      "featureIds": [
+        "F-037",
+        "F-038"
+      ],
+      "rule": "APPROVED không đồng nghĩa đã thực thi; chưa thay lease chỉ bằng quyết định.",
+      "notes": "",
+      "matrix": {
+        "A01": "—",
+        "A02": "P* — dữ liệu thuộc mình; điều kiện service",
+        "A03": "P* — lease.view, lease.manage; theo hành vi + scope",
+        "A04": "—",
+        "A05": "—"
+      }
+    },
+    {
+      "id": "UC-TNT-11",
+      "title": "Thực thi yêu cầu vòng đời đã duyệt",
+      "businessGroup": "G07",
+      "primaryActorIds": [
+        "A02",
+        "A03"
+      ],
+      "primaryActor": "Chủ trọ (A02); Nhân viên vận hành (A03)",
+      "supportingActorIds": [],
+      "goal": "Thực hiện đề nghị gia hạn, chuyển hoặc trả phòng đã được duyệt, bảo đảm không thực hiện trùng và đáp ứng điều kiện hợp đồng.",
+      "status": "Xác minh tĩnh",
+      "bindings": [
+        "TenantLifecycleController.execute"
+      ],
+      "featureIds": [
+        "F-039"
+      ],
+      "rule": "Thực thi một lần theo requestKey; chuyển/trả phòng cần lease kết thúc và quyết toán theo nhánh; chuyển phòng tạo lease mới và kiểm tra sức chứa.",
+      "notes": "",
+      "matrix": {
+        "A01": "—",
+        "A02": "P* — dữ liệu thuộc mình; điều kiện service",
+        "A03": "P* — lease.manage; theo hành vi + scope",
+        "A04": "—",
+        "A05": "—"
+      }
+    },
+    {
+      "id": "UC-BIL-01",
+      "title": "Ghi chỉ số điện nước theo kỳ",
+      "businessGroup": "G08",
+      "primaryActorIds": [
+        "A02",
+        "A03"
+      ],
+      "primaryActor": "Chủ trọ (A02); Nhân viên vận hành (A03)",
+      "supportingActorIds": [],
+      "goal": "Lưu lượng tiêu thụ và số tiền của phòng loại tiện ích kỳ",
+      "status": "Xác minh tĩnh",
+      "bindings": [
+        "BillingController.meterReadings",
+        "BillingController.createMeterReading"
+      ],
+      "featureIds": [
+        "F-043",
+        "F-044"
+      ],
+      "rule": "Chỉ số mới không nhỏ hơn chỉ số cũ, đơn giá dương; số liệu theo phòng/kỳ/loại tiện ích.",
+      "notes": "",
+      "matrix": {
+        "A01": "—",
+        "A02": "P* — dữ liệu thuộc mình; điều kiện service",
+        "A03": "P* — billing.view, billing.create; theo hành vi + scope",
+        "A04": "—",
+        "A05": "—"
+      }
+    },
+    {
+      "id": "UC-BIL-02",
+      "title": "Xem trước và lập hóa đơn một hợp đồng",
+      "businessGroup": "G08",
+      "primaryActorIds": [
+        "A02",
+        "A03"
+      ],
+      "primaryActor": "Chủ trọ (A02); Nhân viên vận hành (A03)",
+      "supportingActorIds": [],
+      "goal": "Phát hành hóa đơn với các dòng giá chụp tại kỳ lập",
+      "status": "Xác minh tĩnh",
+      "bindings": [
+        "BillingController.activeLeases",
+        "BillingController.previewInvoice",
+        "BillingController.createInvoice"
+      ],
+      "featureIds": [
+        "F-043",
+        "F-045",
+        "F-061"
+      ],
+      "rule": "Đóng băng line item/giá ở thời điểm lập; chống trùng theo leaseId, billingMonth, isDemo, revision sau các migration.",
+      "notes": "",
+      "matrix": {
+        "A01": "—",
+        "A02": "P* — dữ liệu thuộc mình; điều kiện service",
+        "A03": "P* — billing.view, billing.create; theo hành vi + scope",
+        "A04": "—",
+        "A05": "—"
+      }
+    },
+    {
+      "id": "UC-BIL-03",
+      "title": "Lập hóa đơn hàng loạt",
+      "businessGroup": "G08",
+      "primaryActorIds": [
+        "A02",
+        "A03"
+      ],
+      "primaryActor": "Chủ trọ (A02); Nhân viên vận hành (A03)",
+      "supportingActorIds": [],
+      "goal": "Kiểm tra trước và tạo kết quả cho từng hợp đồng đủ điều kiện",
+      "status": "Xác minh tĩnh",
+      "bindings": [
+        "BillingController.bulkInvoicePreflight",
+        "BillingController.createBulkInvoices"
+      ],
+      "featureIds": [
+        "F-046"
+      ],
+      "rule": "Preflight và kết quả từng hợp đồng là bước của lập hàng loạt, không tách thành UC kiểm tra trùng.",
+      "notes": "",
+      "matrix": {
+        "A01": "—",
+        "A02": "P* — dữ liệu thuộc mình; điều kiện service",
+        "A03": "P* — billing.create; theo hành vi + scope",
+        "A04": "—",
+        "A05": "—"
+      }
+    },
+    {
+      "id": "UC-BIL-04",
+      "title": "Tra cứu hóa đơn và công nợ",
+      "businessGroup": "G08",
+      "primaryActorIds": [
+        "A02",
+        "A03"
+      ],
+      "primaryActor": "Chủ trọ (A02); Nhân viên vận hành (A03)",
+      "supportingActorIds": [],
+      "goal": "Đọc số còn phải thu và nhóm ngày quá hạn",
+      "status": "Xác minh tĩnh",
+      "bindings": [
+        "BillingController.invoices",
+        "BillingController.invoice",
+        "BillingController.aging",
+        "BillingController.reminders",
+        "LOCAL.invoicePdf",
+        "LandlordOnlinePaymentsController.status",
+        "LandlordOnlinePaymentsController.events"
+      ],
+      "featureIds": [
+        "F-048",
+        "F-060",
+        "F-066",
+        "F-067",
+        "F-119"
+      ],
+      "rule": "",
+      "notes": "",
+      "matrix": {
+        "A01": "—",
+        "A02": "P* — dữ liệu thuộc mình; điều kiện service",
+        "A03": "P* — billing.view; theo hành vi + scope",
+        "A04": "—",
+        "A05": "—"
+      }
+    },
+    {
+      "id": "UC-BIL-05",
+      "title": "Sửa hạn thanh toán hoặc ghi chú hóa đơn",
+      "businessGroup": "G08",
+      "primaryActorIds": [
+        "A02",
+        "A03"
+      ],
+      "primaryActor": "Chủ trọ (A02); Nhân viên vận hành (A03)",
+      "supportingActorIds": [],
+      "goal": "Đổi hạn và ghi chú mà không ghi đè dòng tiền",
+      "status": "Xác minh tĩnh",
+      "bindings": [
+        "BillingController.updateInvoice"
+      ],
+      "featureIds": [
+        "F-049"
+      ],
+      "rule": "",
+      "notes": "",
+      "matrix": {
+        "A01": "—",
+        "A02": "P* — dữ liệu thuộc mình; điều kiện service",
+        "A03": "P* — billing.create; theo hành vi + scope",
+        "A04": "—",
+        "A05": "—"
+      }
+    },
+    {
+      "id": "UC-BIL-06",
+      "title": "Thay thế hóa đơn chưa có lịch sử thanh toán",
+      "businessGroup": "G08",
+      "primaryActorIds": [
+        "A02",
+        "A03"
+      ],
+      "primaryActor": "Chủ trọ (A02); Nhân viên vận hành (A03)",
+      "supportingActorIds": [],
+      "goal": "Hủy bản gốc và tạo revision mới có liên kết truy vết",
+      "status": "Xác minh tĩnh",
+      "bindings": [
+        "BillingController.replaceInvoice"
+      ],
+      "featureIds": [
+        "F-054"
+      ],
+      "rule": "",
+      "notes": "",
+      "matrix": {
+        "A01": "—",
+        "A02": "P* — dữ liệu thuộc mình; điều kiện service",
+        "A03": "P* — billing.adjust; theo hành vi + scope",
+        "A04": "—",
+        "A05": "—"
+      }
+    },
+    {
+      "id": "UC-BIL-07",
+      "title": "Điều chỉnh tăng hoặc giảm hóa đơn",
+      "businessGroup": "G08",
+      "primaryActorIds": [
+        "A02",
+        "A03"
+      ],
+      "primaryActor": "Chủ trọ (A02); Nhân viên vận hành (A03)",
+      "supportingActorIds": [],
+      "goal": "Thay đổi nghĩa vụ hóa đơn bằng điều chỉnh tăng/giảm theo số tiền hoặc tỷ lệ có truy vết.",
+      "status": "Xác minh tĩnh",
+      "bindings": [
+        "BillingController.adjustInvoice"
+      ],
+      "featureIds": [
+        "F-055"
+      ],
+      "rule": "",
+      "notes": "",
+      "matrix": {
+        "A01": "—",
+        "A02": "P* — dữ liệu thuộc mình; điều kiện service",
+        "A03": "P* — billing.adjust; theo hành vi + scope",
+        "A04": "—",
+        "A05": "—"
+      }
+    },
+    {
+      "id": "UC-BIL-08.1",
+      "title": "Hủy hóa đơn đủ điều kiện",
+      "businessGroup": "G08",
+      "primaryActorIds": [
+        "A02",
+        "A03"
+      ],
+      "primaryActor": "Chủ trọ (A02); Nhân viên vận hành (A03)",
+      "supportingActorIds": [],
+      "goal": "Ngừng hiệu lực thu của hóa đơn sai hoặc không còn cần thu khi chưa có lịch sử thanh toán.",
+      "status": "Xác minh tĩnh",
+      "bindings": [
+        "BillingController.cancelInvoice"
+      ],
+      "featureIds": [
+        "F-053"
+      ],
+      "rule": "",
+      "notes": "",
+      "matrix": {
+        "A01": "—",
+        "A02": "P* — dữ liệu thuộc mình; điều kiện service",
+        "A03": "P* — billing.cancel; theo hành vi + scope",
+        "A04": "—",
+        "A05": "—"
+      }
+    },
+    {
+      "id": "UC-BIL-09",
+      "title": "Ghi nhận thanh toán trực tiếp",
+      "businessGroup": "G08",
+      "primaryActorIds": [
+        "A02",
+        "A03"
+      ],
+      "primaryActor": "Chủ trọ (A02); Nhân viên vận hành (A03)",
+      "supportingActorIds": [],
+      "goal": "Ghi số tiền người thuê đã trả cho hóa đơn thật, không vượt nghĩa vụ còn lại.",
+      "status": "Xác minh tĩnh",
+      "bindings": [
+        "BillingController.recordPayment"
+      ],
+      "featureIds": [
+        "F-050"
+      ],
+      "rule": "Khoản trả dương, không vượt dư; chặn demo/hóa đơn hủy. Không đồng nghĩa thu tiền trực tiếp từ ngân hàng.",
+      "notes": "",
+      "matrix": {
+        "A01": "—",
+        "A02": "P* — dữ liệu thuộc mình; điều kiện service",
+        "A03": "P* — billing.record_payment; theo hành vi + scope",
+        "A04": "—",
+        "A05": "—"
+      }
+    },
+    {
+      "id": "UC-BIL-10",
+      "title": "Tạo khoản thu cho người thuê",
+      "businessGroup": "G08",
+      "primaryActorIds": [
+        "A02",
+        "A03"
+      ],
+      "primaryActor": "Chủ trọ (A02); Nhân viên vận hành (A03)",
+      "supportingActorIds": [],
+      "goal": "Ghi số tiền đã nhận từ người thuê, theo dõi phần còn khả dụng chưa phân bổ.",
+      "status": "Xác minh tĩnh",
+      "bindings": [
+        "BillingController.receipts",
+        "BillingController.createReceipt"
+      ],
+      "featureIds": [
+        "F-056"
+      ],
+      "rule": "",
+      "notes": "",
+      "matrix": {
+        "A01": "—",
+        "A02": "P* — dữ liệu thuộc mình; điều kiện service",
+        "A03": "P* — billing.view, billing.record_payment; theo hành vi + scope",
+        "A04": "—",
+        "A05": "—"
+      }
+    },
+    {
+      "id": "UC-BIL-11",
+      "title": "Phân bổ khoản thu cho hóa đơn",
+      "businessGroup": "G08",
+      "primaryActorIds": [
+        "A02",
+        "A03"
+      ],
+      "primaryActor": "Chủ trọ (A02); Nhân viên vận hành (A03)",
+      "supportingActorIds": [],
+      "goal": "Dùng phần tiền thu còn khả dụng để thanh toán các hóa đơn của cùng người thuê.",
+      "status": "Xác minh tĩnh",
+      "bindings": [
+        "BillingController.allocateReceipt"
+      ],
+      "featureIds": [
+        "F-057"
+      ],
+      "rule": "",
+      "notes": "",
+      "matrix": {
+        "A01": "—",
+        "A02": "P* — dữ liệu thuộc mình; điều kiện service",
+        "A03": "P* — billing.record_payment; theo hành vi + scope",
+        "A04": "—",
+        "A05": "—"
+      }
+    },
+    {
+      "id": "UC-BIL-12.1",
+      "title": "Giải phóng phân bổ khoản thu",
+      "businessGroup": "G08",
+      "primaryActorIds": [
+        "A02",
+        "A03"
+      ],
+      "primaryActor": "Chủ trọ (A02); Nhân viên vận hành (A03)",
+      "supportingActorIds": [],
+      "goal": "Hủy phân bổ tiền thu đã ghi sai và khôi phục phần tiền có thể dùng lại, giữ lịch sử đảo.",
+      "status": "Xác minh tĩnh",
+      "bindings": [
+        "BillingController.releaseAllocation"
+      ],
+      "featureIds": [
+        "F-058"
+      ],
+      "rule": "",
+      "notes": "",
+      "matrix": {
+        "A01": "—",
+        "A02": "P* — dữ liệu thuộc mình; điều kiện service",
+        "A03": "P* — billing.reverse_payment; theo hành vi + scope",
+        "A04": "—",
+        "A05": "—"
+      }
+    },
+    {
+      "id": "UC-BIL-12.2",
+      "title": "Đảo thanh toán trực tiếp",
+      "businessGroup": "G08",
+      "primaryActorIds": [
+        "A02",
+        "A03"
+      ],
+      "primaryActor": "Chủ trọ (A02); Nhân viên vận hành (A03)",
+      "supportingActorIds": [],
+      "goal": "Hủy tác động khoản thanh toán ghi sai bằng giao dịch đảo có truy vết, không sửa xóa lịch sử.",
+      "status": "Xác minh tĩnh",
+      "bindings": [
+        "BillingController.reversePayment"
+      ],
+      "featureIds": [
+        "F-052"
+      ],
+      "rule": "",
+      "notes": "",
+      "matrix": {
+        "A01": "—",
+        "A02": "P* — dữ liệu thuộc mình; điều kiện service",
+        "A03": "P* — billing.reverse_payment; theo hành vi + scope",
+        "A04": "—",
+        "A05": "—"
+      }
+    },
+    {
+      "id": "UC-BIL-13",
+      "title": "Ghi nhận hoàn tiền từ khoản thu",
+      "businessGroup": "G08",
+      "primaryActorIds": [
+        "A02",
+        "A03"
+      ],
+      "primaryActor": "Chủ trọ (A02); Nhân viên vận hành (A03)",
+      "supportingActorIds": [],
+      "goal": "Ghi khoản đã hoàn từ tiền thu chưa phân bổ cho người thuê, có tham chiếu và không vượt số dư.",
+      "status": "Xác minh tĩnh",
+      "bindings": [
+        "BillingController.refundReceipt"
+      ],
+      "featureIds": [
+        "F-059"
+      ],
+      "rule": "Chỉ hoàn từ tiền khả dụng chưa phân bổ; ghi ReceiptRefund, không lệnh chuyển tiền.",
+      "notes": "",
+      "matrix": {
+        "A01": "—",
+        "A02": "P* — dữ liệu thuộc mình; điều kiện service",
+        "A03": "P* — billing.refund; theo hành vi + scope",
+        "A04": "—",
+        "A05": "—"
+      }
+    },
+    {
+      "id": "UC-BIL-14",
+      "title": "Xét duyệt chứng từ thanh toán",
+      "businessGroup": "G08",
+      "primaryActorIds": [
+        "A02",
+        "A03"
+      ],
+      "primaryActor": "Chủ trọ (A02); Nhân viên vận hành (A03)",
+      "supportingActorIds": [],
+      "goal": "Chấp thuận hoặc từ chối chứng từ do người thuê gửi; chỉ ghi đã trả khi chứng từ được chấp thuận.",
+      "status": "Xác minh tĩnh",
+      "bindings": [
+        "BillingController.paymentProofs",
+        "BillingController.reviewPaymentProof"
+      ],
+      "featureIds": [
+        "F-051"
+      ],
+      "rule": "Chấp thuận tạo receipt/payment/allocation; từ chối không tăng paidAmount. Cần billing.view để đọc và billing.approve_payment_proof để quyết.",
+      "notes": "",
+      "matrix": {
+        "A01": "—",
+        "A02": "P* — dữ liệu thuộc mình; điều kiện service",
+        "A03": "P* — billing.view, billing.approve_payment_proof; theo hành vi + scope",
+        "A04": "—",
+        "A05": "—"
+      }
+    },
+    {
+      "id": "UC-BIL-15",
+      "title": "Đề xuất biểu phí theo kỳ hiệu lực",
+      "businessGroup": "G08",
+      "primaryActorIds": [
+        "A02",
+        "A03"
+      ],
+      "primaryActor": "Chủ trọ (A02); Nhân viên vận hành (A03)",
+      "supportingActorIds": [],
+      "goal": "Đề nghị mức phí mới theo thời điểm hiệu lực để được chủ trọ xem xét.",
+      "status": "Xác minh tĩnh",
+      "bindings": [
+        "BillingController.tariffsList",
+        "BillingController.proposeTariff"
+      ],
+      "featureIds": [
+        "F-061"
+      ],
+      "rule": "",
+      "notes": "",
+      "matrix": {
+        "A01": "—",
+        "A02": "P* — dữ liệu thuộc mình; điều kiện service",
+        "A03": "P* — billing.view, billing.create; theo hành vi + scope",
+        "A04": "—",
+        "A05": "—"
+      }
+    },
+    {
+      "id": "UC-BIL-16",
+      "title": "Phân tích tác động và duyệt biểu phí",
+      "businessGroup": "G08",
+      "primaryActorIds": [
+        "A02"
+      ],
+      "primaryActor": "Chủ trọ (A02)",
+      "supportingActorIds": [],
+      "goal": "Duyệt hoặc từ chối đề xuất sau kiểm tra kỳ đã phát hành hoặc khóa",
+      "status": "Xác minh tĩnh",
+      "bindings": [
+        "BillingController.tariffImpact",
+        "BillingController.reviewTariff"
+      ],
+      "featureIds": [
+        "F-061",
+        "F-062"
+      ],
+      "rule": "STAFF billing.view chỉ xem tác động; reviewTariff chỉ LANDLORD dù danh sách permission có billing.tariff_approve.",
+      "notes": "Controller reviewTariff là LANDLORD-only dù tồn tại tên permission billing.tariff_approve.",
+      "matrix": {
+        "A01": "—",
+        "A02": "P* — dữ liệu thuộc mình; điều kiện service",
+        "A03": "V — chỉ đọc: billing.view + scope",
+        "A04": "—",
+        "A05": "—"
+      }
+    },
+    {
+      "id": "UC-BIL-17.1",
+      "title": "Cấu hình lập hóa đơn định kỳ",
+      "businessGroup": "G08",
+      "primaryActorIds": [
+        "A02",
+        "A03"
+      ],
+      "primaryActor": "Chủ trọ (A02); Nhân viên vận hành (A03)",
+      "supportingActorIds": [],
+      "goal": "Lưu lịch lập hóa đơn theo khu",
+      "status": "Xác minh tĩnh",
+      "bindings": [
+        "BillingController.billingAutomation",
+        "BillingController.updateBillingAutomation"
+      ],
+      "featureIds": [
+        "F-047"
+      ],
+      "rule": "STAFF: đọc billing.view; sửa billing.create, kèm propertyIds. Không dùng billing.policy để suy quyền.",
+      "notes": "",
+      "matrix": {
+        "A01": "—",
+        "A02": "P* — dữ liệu thuộc mình; điều kiện service",
+        "A03": "P* — billing.view, billing.create; theo hành vi + scope",
+        "A04": "—",
+        "A05": "—"
+      }
+    },
+    {
+      "id": "UC-BIL-17.2",
+      "title": "Xem trước và chạy đợt lập hóa đơn",
+      "businessGroup": "G08",
+      "primaryActorIds": [
+        "A02",
+        "A03"
+      ],
+      "primaryActor": "Chủ trọ (A02); Nhân viên vận hành (A03)",
+      "supportingActorIds": [],
+      "goal": "Lập hóa đơn theo đợt từ cấu hình đã lưu và theo dõi kết quả của kỳ được chọn.",
+      "status": "Xác minh tĩnh",
+      "bindings": [
+        "BillingController.billingAutomationPreview",
+        "BillingController.runBillingAutomation"
+      ],
+      "featureIds": [
+        "F-047"
+      ],
+      "rule": "STAFF preview/run cần billing.create; chạy đợt do người dùng và worker dùng chung nghiệp vụ, worker không là Actor ngoài hệ thống.",
+      "notes": "",
+      "matrix": {
+        "A01": "—",
+        "A02": "P* — dữ liệu thuộc mình; điều kiện service",
+        "A03": "P* — billing.create; theo hành vi + scope",
+        "A04": "—",
+        "A05": "—"
+      }
+    },
+    {
+      "id": "UC-BIL-18.1",
+      "title": "Cấu hình chính sách nhắc nợ",
+      "businessGroup": "G08",
+      "primaryActorIds": [
+        "A02",
+        "A03"
+      ],
+      "primaryActor": "Chủ trọ (A02); Nhân viên vận hành (A03)",
+      "supportingActorIds": [],
+      "goal": "Lưu chính sách mặc định hoặc ghi đè theo khu",
+      "status": "Xác minh tĩnh",
+      "bindings": [
+        "BillingController.reminderPolicy",
+        "BillingController.updateReminderPolicy"
+      ],
+      "featureIds": [
+        "F-113"
+      ],
+      "rule": "STAFF cần billing.policy và propertyId trong phạm vi được giao cho cả đọc/cập nhật.",
+      "notes": "",
+      "matrix": {
+        "A01": "—",
+        "A02": "P* — dữ liệu thuộc mình; điều kiện service",
+        "A03": "P* — billing.policy; theo hành vi + scope; propertyId bắt buộc",
+        "A04": "—",
+        "A05": "—"
+      }
+    },
+    {
+      "id": "UC-BIL-18.2",
+      "title": "Gửi nhắc nợ theo chính sách",
+      "businessGroup": "G08",
+      "primaryActorIds": [
+        "A02",
+        "A03"
+      ],
+      "primaryActor": "Chủ trọ (A02); Nhân viên vận hành (A03)",
+      "supportingActorIds": [
+        "E01",
+        "E02"
+      ],
+      "goal": "Chọn phạm vi/chính sách và xếp hàng nhắc nghĩa vụ hóa đơn; xem kết quả nội bộ, không đảm bảo provider đã giao.",
+      "status": "Một phần",
+      "bindings": [
+        "BillingController.runReminders",
+        "BillingController.enqueueReminders",
+        "NotificationsController.sendInvoiceRemindersZalo"
+      ],
+      "featureIds": [
+        "F-111",
+        "F-113"
+      ],
+      "rule": "STAFF chỉ đường BillingController với billing.policy + propertyId được giao; đường NotificationsController/ZNS bị chặn STAFF. APP, webhook nhắc nợ và ZNS không được đồng nhất.",
+      "notes": " APP/outbox có triển khai; EMAIL/ZALO/webhook/ZNS phụ thuộc cấu hình và chưa xác nhận giao thực.",
+      "matrix": {
+        "A01": "—",
+        "A02": "P* — dữ liệu thuộc mình; điều kiện service",
+        "A03": "P* — billing.policy; theo hành vi + scope; propertyId bắt buộc",
+        "A04": "—",
+        "A05": "—"
+      }
+    },
+    {
+      "id": "UC-BIL-18.3",
+      "title": "Theo dõi và thử lại outbox hóa đơn",
+      "businessGroup": "G08",
+      "primaryActorIds": [
+        "A02"
+      ],
+      "primaryActor": "Chủ trọ (A02)",
+      "supportingActorIds": [],
+      "goal": "Đọc sự kiện và yêu cầu thử lại theo trạng thái được phép",
+      "status": "Xác minh tĩnh",
+      "bindings": [
+        "BillingController.outboxEvents",
+        "BillingController.retryOutbox"
+      ],
+      "featureIds": [
+        "F-114"
+      ],
+      "rule": "Chỉ LANDLORD dùng outboxEvents/retryOutbox vì interceptor chặn STAFF dù decorator có quyền.",
+      "notes": "Interceptor không cho STAFF dùng outboxEvents hoặc retryOutbox.",
+      "matrix": {
+        "A01": "—",
+        "A02": "P* — dữ liệu thuộc mình; điều kiện service",
+        "A03": "B — interceptor chặn",
+        "A04": "—",
+        "A05": "—"
+      }
+    },
+    {
+      "id": "UC-BIL-22",
+      "title": "Khóa kỳ thanh toán của khu",
+      "businessGroup": "G08",
+      "primaryActorIds": [
+        "A02"
+      ],
+      "primaryActor": "Chủ trọ (A02)",
+      "supportingActorIds": [],
+      "goal": "Đóng kỳ thanh toán của khu trọ để ngăn thay đổi ngoài quy tắc cho phép.",
+      "status": "Xác minh tĩnh",
+      "bindings": [
+        "BillingController.lockPeriod"
+      ],
+      "featureIds": [
+        "F-063"
+      ],
+      "rule": "Chỉ LANDLORD khóa kỳ; không suy ra quyền STAFF từ permission enum.",
+      "notes": "",
+      "matrix": {
+        "A01": "—",
+        "A02": "P* — dữ liệu thuộc mình; điều kiện service",
+        "A03": "—",
+        "A04": "—",
+        "A05": "—"
+      }
+    },
+    {
+      "id": "UC-BIL-23",
+      "title": "Cấu hình tài khoản nhận chuyển khoản",
+      "businessGroup": "G08",
+      "primaryActorIds": [
+        "A02"
+      ],
+      "primaryActor": "Chủ trọ (A02)",
+      "supportingActorIds": [],
+      "goal": "Thiết lập ngân hàng, tài khoản và QR nhận tiền để người thuê xem hướng dẫn chuyển khoản.",
+      "status": "Xác minh tĩnh",
+      "bindings": [
+        "TransferAccountController.account",
+        "TransferAccountController.save"
+      ],
+      "featureIds": [
+        "F-064"
+      ],
+      "rule": "",
+      "notes": "",
+      "matrix": {
+        "A01": "—",
+        "A02": "P* — dữ liệu thuộc mình; điều kiện service",
+        "A03": "—",
+        "A04": "—",
+        "A05": "—"
+      }
+    },
+    {
+      "id": "UC-TEN-03",
+      "title": "Tra cứu hóa đơn của mình",
+      "businessGroup": "G08",
+      "primaryActorIds": [
+        "A04"
+      ],
+      "primaryActor": "Người tìm phòng/người thuê (A04)",
+      "supportingActorIds": [],
+      "goal": "Tra cứu nghĩa vụ, trạng thái và chi tiết hóa đơn của mình; xuất PDF khi giao diện hỗ trợ.",
+      "status": "Xác minh tĩnh",
+      "bindings": [
+        "TenantPortalController.invoices",
+        "TenantPortalController.invoice",
+        "LOCAL.invoicePdf"
+      ],
+      "featureIds": [
+        "F-074",
+        "F-119"
+      ],
+      "rule": "",
+      "notes": "",
+      "matrix": {
+        "A01": "—",
+        "A02": "—",
+        "A03": "—",
+        "A04": "P* — Tenant/lease/invoice của mình",
+        "A05": "—"
+      }
+    },
+    {
+      "id": "UC-TEN-04",
+      "title": "Gửi chứng từ chuyển khoản hóa đơn",
+      "businessGroup": "G08",
+      "primaryActorIds": [
+        "A04"
+      ],
+      "primaryActor": "Người tìm phòng/người thuê (A04)",
+      "supportingActorIds": [],
+      "goal": "Lấy hướng dẫn chuyển khoản và gửi bằng chứng cho hóa đơn của mình để chờ xét duyệt; chưa tự ghi đã trả.",
+      "status": "Xác minh tĩnh",
+      "bindings": [
+        "TenantPortalController.submitPaymentProof",
+        "TransferInstructionsController.instructions"
+      ],
+      "featureIds": [
+        "F-065"
+      ],
+      "rule": "",
+      "notes": "",
+      "matrix": {
+        "A01": "—",
+        "A02": "—",
+        "A03": "—",
+        "A04": "P* — Tenant/lease/invoice của mình",
+        "A05": "—"
+      }
+    },
+    {
+      "id": "UC-TEN-05",
+      "title": "Thanh toán bằng thẻ mô phỏng",
+      "businessGroup": "G08",
+      "primaryActorIds": [
+        "A04"
+      ],
+      "primaryActor": "Người tìm phòng/người thuê (A04)",
+      "supportingActorIds": [],
+      "goal": "Trải nghiệm trả một hóa đơn kiểm thử bằng trang thẻ mô phỏng nội bộ, hoàn toàn không thu tiền thật.",
+      "status": "Đã triển khai — DEMO",
+      "bindings": [
+        "TenantOnlinePaymentsController.create",
+        "TenantOnlinePaymentsController.demoInvoice",
+        "TenantOnlinePaymentsController.status",
+        "DemoCardPaymentController.checkout",
+        "DemoCardPaymentController.confirm"
+      ],
+      "featureIds": [
+        "F-066",
+        "F-067"
+      ],
+      "rule": "",
+      "notes": "Chỉ bật ngoài production và DEMO_PAYMENTS_ENABLED=true; không có cổng thu thẻ tiền thật được xác nhận. Chỉ isDemo/DEMO_CARD, không có thu tiền ngân hàng thực.",
+      "matrix": {
+        "A01": "V — chỉ checkout có token demo hợp lệ",
+        "A02": "V — chỉ tra trạng thái/sự kiện demo ở UC-BIL-04",
+        "A03": "—",
+        "A04": "P* — Tenant/lease/invoice của mình",
+        "A05": "—"
+      }
+    },
+    {
+      "id": "UC-TEN-08.2",
+      "title": "Chọn kênh nhận nhắc nợ",
+      "businessGroup": "G08",
+      "primaryActorIds": [
+        "A04"
+      ],
+      "primaryActor": "Người tìm phòng/người thuê (A04)",
+      "supportingActorIds": [],
+      "goal": "Đặt enabled và các kênh nhắc nợ được hỗ trợ",
+      "status": "Xác minh tĩnh",
+      "bindings": [
+        "TenantLifecyclePortalController.preference",
+        "TenantLifecyclePortalController.savePreference"
+      ],
+      "featureIds": [
+        "F-042"
+      ],
+      "rule": "",
+      "notes": "",
+      "matrix": {
+        "A01": "—",
+        "A02": "—",
+        "A03": "—",
+        "A04": "P* — Tenant/lease/invoice của mình",
+        "A05": "—"
+      }
+    },
+    {
+      "id": "UC-BIL-19",
+      "title": "Quản lý khoản chi vận hành",
+      "businessGroup": "G09",
+      "primaryActorIds": [
+        "A02",
+        "A03"
+      ],
+      "primaryActor": "Chủ trọ (A02); Nhân viên vận hành (A03)",
+      "supportingActorIds": [],
+      "goal": "Lưu khoản Expense riêng với tiền thuê và tiền cọc",
+      "status": "Xác minh tĩnh",
+      "bindings": [
+        "ExpensesController.list",
+        "ExpensesController.create",
+        "ExpensesController.getById",
+        "ExpensesController.update",
+        "ExpensesController.remove"
+      ],
+      "featureIds": [
+        "F-069"
+      ],
+      "rule": "",
+      "notes": "",
+      "matrix": {
+        "A01": "—",
+        "A02": "P* — dữ liệu thuộc mình; điều kiện service",
+        "A03": "P* — expense.view, expense.manage; theo hành vi + scope",
+        "A04": "—",
+        "A05": "—"
+      }
+    },
+    {
+      "id": "UC-OPS-01",
+      "title": "Tiếp nhận và theo dõi phiếu bảo trì",
+      "businessGroup": "G09",
+      "primaryActorIds": [
+        "A02",
+        "A03"
+      ],
+      "primaryActor": "Chủ trọ (A02); Nhân viên vận hành (A03)",
+      "supportingActorIds": [],
+      "goal": "Duy trì ticket nội dung bình luận và xóa theo điều kiện",
+      "status": "Xác minh tĩnh",
+      "bindings": [
+        "MaintenanceController.list",
+        "MaintenanceController.create",
+        "MaintenanceController.getById",
+        "MaintenanceController.addComment",
+        "MaintenanceController.remove"
+      ],
+      "featureIds": [
+        "F-070",
+        "F-072"
+      ],
+      "rule": "",
+      "notes": "",
+      "matrix": {
+        "A01": "—",
+        "A02": "P* — dữ liệu thuộc mình; điều kiện service",
+        "A03": "P* — maintenance.view, maintenance.manage; theo hành vi + scope",
+        "A04": "—",
+        "A05": "—"
+      }
+    },
+    {
+      "id": "UC-OPS-02",
+      "title": "Phân công và cập nhật bảo trì",
+      "businessGroup": "G09",
+      "primaryActorIds": [
+        "A02",
+        "A03"
+      ],
+      "primaryActor": "Chủ trọ (A02); Nhân viên vận hành (A03)",
+      "supportingActorIds": [],
+      "goal": "Gán nhân viên tiến độ hạn xử lý và chạy kiểm tra SLA",
+      "status": "Xác minh tĩnh",
+      "bindings": [
+        "MaintenanceController.assignees",
+        "MaintenanceController.update",
+        "MaintenanceController.updateStatus",
+        "MaintenanceController.escalate"
+      ],
+      "featureIds": [
+        "F-070",
+        "F-071",
+        "F-073"
+      ],
+      "rule": "STAFF không gọi escalate; thao tác thủ công chỉ LANDLORD. Worker SLA là thành phần nội bộ.",
+      "notes": "STAFF được một số thao tác bảo trì nhưng bị chặn escalate ở interceptor.",
+      "matrix": {
+        "A01": "—",
+        "A02": "P* — dữ liệu thuộc mình; điều kiện service",
+        "A03": "P* — maintenance.manage; theo hành vi + scope; không escalate",
+        "A04": "—",
+        "A05": "—"
+      }
+    },
+    {
+      "id": "UC-OPS-03",
+      "title": "Hoàn tất bảo trì và liên kết khoản chi",
+      "businessGroup": "G09",
+      "primaryActorIds": [
+        "A02",
+        "A03"
+      ],
+      "primaryActor": "Chủ trọ (A02); Nhân viên vận hành (A03)",
+      "supportingActorIds": [],
+      "goal": "Chốt bảo trì đã hoàn tất và ghi khoản chi sửa chữa liên quan khi có, không tạo chi phí trùng.",
+      "status": "Xác minh tĩnh",
+      "bindings": [
+        "MaintenanceController.complete"
+      ],
+      "featureIds": [
+        "F-072"
+      ],
+      "rule": "Hoàn thành có thể tạo Expense REPAIR một lần; không đếm lại khoản chi thành UC mới.",
+      "notes": "",
+      "matrix": {
+        "A01": "—",
+        "A02": "P* — dữ liệu thuộc mình; điều kiện service",
+        "A03": "P* — maintenance.complete; theo hành vi + scope",
+        "A04": "—",
+        "A05": "—"
+      }
+    },
+    {
+      "id": "UC-TEN-06",
+      "title": "Gửi và trao đổi yêu cầu bảo trì",
+      "businessGroup": "G09",
+      "primaryActorIds": [
+        "A04"
+      ],
+      "primaryActor": "Người tìm phòng/người thuê (A04)",
+      "supportingActorIds": [],
+      "goal": "Tạo ticket và bình luận cho phòng gắn hợp đồng của mình",
+      "status": "Xác minh tĩnh",
+      "bindings": [
+        "TenantPortalController.maintenance",
+        "TenantPortalController.createMaintenance",
+        "TenantPortalController.addMaintenanceComment"
+      ],
+      "featureIds": [
+        "F-075"
+      ],
+      "rule": "TENANT cần hợp đồng ACTIVE để tạo yêu cầu đúng phòng; không cấp quyền maintenance.manage của chủ trọ.",
+      "notes": "",
+      "matrix": {
+        "A01": "—",
+        "A02": "—",
+        "A03": "—",
+        "A04": "P* — Tenant/lease/invoice của mình",
+        "A05": "—"
+      }
+    },
+    {
+      "id": "UC-OPS-04",
+      "title": "Theo dõi việc cần xử lý",
+      "businessGroup": "G10",
+      "primaryActorIds": [
+        "A02"
+      ],
+      "primaryActor": "Chủ trọ (A02)",
+      "supportingActorIds": [],
+      "goal": "Đọc action items và đánh dấu đã xem theo tài khoản",
+      "status": "Xác minh tĩnh",
+      "bindings": [
+        "OperationsController.actionItems",
+        "OperationsController.markRead"
+      ],
+      "featureIds": [
+        "F-078",
+        "F-079"
+      ],
+      "rule": "",
+      "notes": "OperationsController không nằm trong allowlist của PropertyScopeInterceptor; STAFF bị từ chối.",
+      "matrix": {
+        "A01": "—",
+        "A02": "P* — dữ liệu thuộc mình; điều kiện service",
+        "A03": "B — interceptor chặn",
+        "A04": "—",
+        "A05": "—"
+      }
+    },
+    {
+      "id": "UC-OPS-05",
+      "title": "Chuẩn bị phòng sau trả phòng",
+      "businessGroup": "G10",
+      "primaryActorIds": [
+        "A02"
+      ],
+      "primaryActor": "Chủ trọ (A02)",
+      "supportingActorIds": [],
+      "goal": "Đưa phòng đã nhận lại qua kiểm tra, sửa chữa và dọn dẹp để đủ điều kiện cho thuê tiếp.",
+      "status": "Xác minh tĩnh",
+      "bindings": [
+        "P1OperationsController.list",
+        "P1OperationsController.create",
+        "P1OperationsController.advance"
+      ],
+      "featureIds": [
+        "F-080"
+      ],
+      "rule": "RETURNED → INSPECTION → REPAIR → CLEANING → READY; sửa chữa chưa xong chặn đi tiếp; chỉ đưa VACANT khi pipeline hoàn tất.",
+      "notes": "P1OperationsController có decorator STAFF nhưng interceptor chặn toàn controller với STAFF.",
+      "matrix": {
+        "A01": "—",
+        "A02": "P* — dữ liệu thuộc mình; điều kiện service",
+        "A03": "B — interceptor chặn",
+        "A04": "—",
+        "A05": "—"
+      }
+    },
+    {
+      "id": "UC-OPS-06",
+      "title": "Thiết lập lịch công việc định kỳ",
+      "businessGroup": "G10",
+      "primaryActorIds": [
+        "A02"
+      ],
+      "primaryActor": "Chủ trọ (A02)",
+      "supportingActorIds": [],
+      "goal": "Tạo và bật/tắt quy tắc công việc lặp lại cho khu/phòng để phát sinh đầu việc.",
+      "status": "Xác minh tĩnh",
+      "bindings": [
+        "P1OperationsController.templates",
+        "P1OperationsController.createRecurring",
+        "P1OperationsController.toggle",
+        "P1OperationsController.options"
+      ],
+      "featureIds": [
+        "F-080",
+        "F-081"
+      ],
+      "rule": "",
+      "notes": "P1OperationsController có decorator STAFF nhưng interceptor chặn toàn controller với STAFF.",
+      "matrix": {
+        "A01": "—",
+        "A02": "P* — dữ liệu thuộc mình; điều kiện service",
+        "A03": "B — interceptor chặn",
+        "A04": "—",
+        "A05": "—"
+      }
+    },
+    {
+      "id": "UC-OPS-06.1",
+      "title": "Thực hiện checklist công việc định kỳ",
+      "businessGroup": "G10",
+      "primaryActorIds": [
+        "A02"
+      ],
+      "primaryActor": "Chủ trọ (A02)",
+      "supportingActorIds": [],
+      "goal": "Theo dõi và xác nhận hoàn thành đầu việc được sinh từ lịch công việc.",
+      "status": "Xác minh tĩnh",
+      "bindings": [
+        "P1OperationsController.tasks",
+        "P1OperationsController.check"
+      ],
+      "featureIds": [
+        "F-082"
+      ],
+      "rule": "",
+      "notes": "P1OperationsController có decorator STAFF nhưng interceptor chặn toàn controller với STAFF.",
+      "matrix": {
+        "A01": "—",
+        "A02": "P* — dữ liệu thuộc mình; điều kiện service",
+        "A03": "B — interceptor chặn",
+        "A04": "—",
+        "A05": "—"
+      }
+    },
+    {
+      "id": "UC-OPS-07",
+      "title": "Soạn và phát thông báo người thuê",
+      "businessGroup": "G10",
+      "primaryActorIds": [
+        "A02"
+      ],
+      "primaryActor": "Chủ trọ (A02)",
+      "supportingActorIds": [],
+      "goal": "Lưu mẫu nhóm lịch thông báo và theo dõi lượt đọc",
+      "status": "Xác minh tĩnh",
+      "bindings": [
+        "AnnouncementsController.list",
+        "AnnouncementsController.templates",
+        "AnnouncementsController.groups",
+        "AnnouncementsController.createTemplate",
+        "AnnouncementsController.createGroup",
+        "AnnouncementsController.create",
+        "AnnouncementsController.receipts",
+        "AnnouncementsController.cancel"
+      ],
+      "featureIds": [
+        "F-083",
+        "F-084",
+        "F-085"
+      ],
+      "rule": "",
+      "notes": "AnnouncementsController có decorator STAFF nhưng interceptor chặn toàn controller với STAFF.",
+      "matrix": {
+        "A01": "—",
+        "A02": "P* — dữ liệu thuộc mình; điều kiện service",
+        "A03": "B — interceptor chặn",
+        "A04": "—",
+        "A05": "—"
+      }
+    },
+    {
+      "id": "UC-SUP-04",
+      "title": "Theo dõi thông báo cá nhân",
+      "businessGroup": "G10",
+      "primaryActorIds": [
+        "A02",
+        "A04",
+        "A05"
+      ],
+      "primaryActor": "Chủ trọ (A02); Người tìm phòng/người thuê (A04); Quản trị viên nền tảng (A05)",
+      "supportingActorIds": [],
+      "goal": "Đọc, xác nhận đã đọc và chọn sở thích thông báo của mình qua các hộp thư được cấp; nguồn portal/vận hành/nền tảng vẫn tách biệt.",
+      "status": "Xác minh tĩnh",
+      "bindings": [
+        "NotificationCenterController.list",
+        "NotificationCenterController.preferences",
+        "NotificationCenterController.updatePreferences",
+        "NotificationCenterController.markRead",
+        "NotificationCenterController.markAllRead",
+        "SupportController.listNotifications",
+        "SupportController.markNotification",
+        "SupportController.markAllNotifications",
+        "HousingController.notifications",
+        "HousingController.read",
+        "TenantPortalController.notifications",
+        "TenantPortalController.markNotificationRead",
+        "NotificationsController.list",
+        "NotificationsController.markRead"
+      ],
+      "featureIds": [
+        "F-076",
+        "F-103",
+        "F-110",
+        "F-115",
+        "F-155"
+      ],
+      "rule": "Gộp mục tiêu đọc thông báo, không đồng nhất Notification, HousingNotification và PlatformNotification. Theo đúng handler; STAFF bị chặn tất cả các nguồn thông báo này.",
+      "notes": "Chỉ phần endpoint cho LANDLORD TENANT ADMIN được coi truy cập được; STAFF bị chặn bởi interceptor.",
+      "matrix": {
+        "A01": "—",
+        "A02": "P* — dữ liệu thuộc mình; điều kiện service",
+        "A03": "B — interceptor chặn",
+        "A04": "P* — TENANT; đúng chủ sở hữu/điều kiện dữ liệu",
+        "A05": "P* — admin.notifications.view; theo handler"
+      }
+    },
+    {
+      "id": "UC-SUP-06",
+      "title": "Hỏi trợ lý AI và đọc nguồn hướng dẫn",
+      "businessGroup": "G10",
+      "primaryActorIds": [
+        "A02"
+      ],
+      "primaryActor": "Chủ trọ (A02)",
+      "supportingActorIds": [
+        "E04"
+      ],
+      "goal": "Nhận hướng dẫn sử dụng có nguồn trong phạm vi tri thức được phép, hoặc thông báo chưa đủ bằng chứng.",
+      "status": "Một phần",
+      "bindings": [
+        "ChatbotController.ask",
+        "ChatbotController.source"
+      ],
+      "featureIds": [
+        "F-121"
+      ],
+      "rule": "Chỉ hướng dẫn có nguồn theo GLOBAL/LANDLORD/PROPERTY; tối đa 3 đoạn; không có dữ liệu thì fallback; không trả lời trực tiếp số dư sống hay tự thao tác nghiệp vụ.",
+      "notes": " Retrieval, scope và fallback có code/test; chưa gọi model Ollama thật trong khảo sát.",
+      "matrix": {
+        "A01": "—",
+        "A02": "P* — dữ liệu thuộc mình; điều kiện service",
+        "A03": "—",
+        "A04": "—",
+        "A05": "—"
+      }
+    },
+    {
+      "id": "UC-TEN-09.2",
+      "title": "Trao đổi tin nhắn Zalo mô phỏng",
+      "businessGroup": "G10",
+      "primaryActorIds": [
+        "A02",
+        "A04"
+      ],
+      "primaryActor": "Chủ trọ (A02); Người tìm phòng/người thuê (A04)",
+      "supportingActorIds": [],
+      "goal": "Trao đổi và kiểm tra tin nhắn lưu nội bộ ứng dụng; không mô tả là kết nối Zalo OA thật.",
+      "status": "Đã triển khai — MÔ PHỎNG",
+      "bindings": [
+        "TenantPortalController.zaloMessages",
+        "TenantPortalController.createZaloMessage",
+        "TenantPortalController.markZaloMessageRead",
+        "NotificationsController.createZaloTestMessage",
+        "NotificationsController.createZaloManualMessage",
+        "NotificationsController.deliveryLogs"
+      ],
+      "featureIds": [
+        "F-077",
+        "F-110",
+        "F-112"
+      ],
+      "rule": "",
+      "notes": " Tin được lưu nội bộ, không mặc định gửi ra Zalo.",
+      "matrix": {
+        "A01": "—",
+        "A02": "P* — dữ liệu thuộc mình; điều kiện service",
+        "A03": "B — interceptor chặn",
+        "A04": "P* — Tenant/lease/invoice của mình",
+        "A05": "—"
+      }
+    },
+    {
+      "id": "UC-TEN-09.3",
+      "title": "Đọc và xác nhận thông báo chủ trọ",
+      "businessGroup": "G10",
+      "primaryActorIds": [
+        "A04"
+      ],
+      "primaryActor": "Người tìm phòng/người thuê (A04)",
+      "supportingActorIds": [],
+      "goal": "Ghi lượt đọc hoặc acknowledgement Announcement",
+      "status": "Xác minh tĩnh",
+      "bindings": [
+        "TenantAnnouncementsController.list",
+        "TenantAnnouncementsController.read"
+      ],
+      "featureIds": [
+        "F-085"
+      ],
+      "rule": "",
+      "notes": "",
+      "matrix": {
+        "A01": "—",
+        "A02": "—",
+        "A03": "—",
+        "A04": "P* — Tenant/lease/invoice của mình",
+        "A05": "—"
+      }
+    },
+    {
+      "id": "UC-ADM-01",
+      "title": "Xem tổng quan nền tảng",
+      "businessGroup": "G11",
+      "primaryActorIds": [
+        "A05"
+      ],
+      "primaryActor": "Quản trị viên nền tảng (A05)",
+      "supportingActorIds": [],
+      "goal": "Đọc overview analytics và công việc chờ theo quyền",
+      "status": "Xác minh tĩnh",
+      "bindings": [
+        "AdminController.overview",
+        "AdminOverviewAnalyticsController.overview",
+        "AdminConsoleController.analytics",
+        "AdminWorkspaceController.summary",
+        "AdminWorkspaceController.actionItems"
+      ],
+      "featureIds": [
+        "F-131",
+        "F-132"
+      ],
+      "rule": "",
+      "notes": "",
+      "matrix": {
+        "A01": "—",
+        "A02": "—",
+        "A03": "—",
+        "A04": "—",
+        "A05": "P* — admin.dashboard.view; theo handler"
+      }
+    },
+    {
+      "id": "UC-ADM-14",
+      "title": "Tra cứu và xuất nhật ký quản trị",
+      "businessGroup": "G11",
+      "primaryActorIds": [
+        "A05"
+      ],
+      "primaryActor": "Quản trị viên nền tảng (A05)",
+      "supportingActorIds": [],
+      "goal": "Đọc audit và xuất dữ liệu trong phạm vi capability",
+      "status": "Xác minh tĩnh",
+      "bindings": [
+        "AdminConsoleController.audit",
+        "AdminConsoleController.auditDetail",
+        "AdminConsoleController.auditExport"
+      ],
+      "featureIds": [
+        "F-174"
+      ],
+      "rule": "",
+      "notes": "",
+      "matrix": {
+        "A01": "—",
+        "A02": "—",
+        "A03": "—",
+        "A04": "—",
+        "A05": "P* — admin.audit.view, admin.audit.export; theo handler"
+      }
+    },
+    {
+      "id": "UC-ADM-16",
+      "title": "Quản lý lịch và tải báo cáo Admin",
+      "businessGroup": "G11",
+      "primaryActorIds": [
+        "A05"
+      ],
+      "primaryActor": "Quản trị viên nền tảng (A05)",
+      "supportingActorIds": [
+        "E05"
+      ],
+      "goal": "Lập lịch theo timezone chạy và tải kết quả của mình",
+      "status": "Xác minh tĩnh",
+      "bindings": [
+        "GovernanceController.schedules",
+        "GovernanceController.createSchedule",
+        "GovernanceController.updateSchedule",
+        "GovernanceController.runSchedule",
+        "GovernanceController.runs",
+        "GovernanceController.download",
+        "GovernanceController.link",
+        "GovernanceController.retry"
+      ],
+      "featureIds": [
+        "F-168",
+        "F-169"
+      ],
+      "rule": "Lịch/run thuộc chủ sở hữu, tái kiểm quyền lúc chạy; kết quả TTL 7 ngày, feature flag; object storage tùy cấu hình.",
+      "notes": "",
+      "matrix": {
+        "A01": "—",
+        "A02": "—",
+        "A03": "—",
+        "A04": "—",
+        "A05": "P* — admin.reports.manage; theo handler"
+      }
+    },
+    {
+      "id": "UC-BIL-20",
+      "title": "Phân tích và xuất báo cáo vận hành",
+      "businessGroup": "G11",
+      "primaryActorIds": [
+        "A02",
+        "A03"
+      ],
+      "primaryActor": "Chủ trọ (A02); Nhân viên vận hành (A03)",
+      "supportingActorIds": [],
+      "goal": "Đánh giá thu, chi, công nợ và công suất theo định nghĩa của báo cáo; xuất CSV khi có quyền tương ứng.",
+      "status": "Xác minh tĩnh",
+      "bindings": [
+        "ReportsController.monthly",
+        "ReportsController.analytics",
+        "ReportsController.monthlyExport"
+      ],
+      "featureIds": [
+        "F-117",
+        "F-118"
+      ],
+      "rule": "",
+      "notes": "",
+      "matrix": {
+        "A01": "—",
+        "A02": "P* — dữ liệu thuộc mình; điều kiện service",
+        "A03": "P* — report.view, report.export; theo hành vi + scope",
+        "A04": "—",
+        "A05": "—"
+      }
+    },
+    {
+      "id": "UC-OPS-09",
+      "title": "Tra cứu nhật ký vận hành",
+      "businessGroup": "G11",
+      "primaryActorIds": [
+        "A02"
+      ],
+      "primaryActor": "Chủ trọ (A02)",
+      "supportingActorIds": [],
+      "goal": "Đọc AuditLog thuộc chủ trọ theo bộ lọc",
+      "status": "Xác minh tĩnh",
+      "bindings": [
+        "AuditController.list"
+      ],
+      "featureIds": [
+        "F-120"
+      ],
+      "rule": "",
+      "notes": "AuditController có decorator STAFF nhưng interceptor chặn toàn controller với STAFF.",
+      "matrix": {
+        "A01": "—",
+        "A02": "P* — dữ liệu thuộc mình; điều kiện service",
+        "A03": "B — interceptor chặn",
+        "A04": "—",
+        "A05": "—"
+      }
+    },
+    {
+      "id": "UC-OPT-01",
+      "title": "Xem dashboard và bản đồ phòng",
+      "businessGroup": "G11",
+      "primaryActorIds": [
+        "A02",
+        "A03"
+      ],
+      "primaryActor": "Chủ trọ (A02); Nhân viên vận hành (A03)",
+      "supportingActorIds": [],
+      "goal": "Theo dõi chỉ số và mở phòng trong phạm vi được cấp",
+      "status": "Xác minh tĩnh",
+      "bindings": [
+        "DashboardController.metrics"
+      ],
+      "featureIds": [
+        "F-116"
+      ],
+      "rule": "",
+      "notes": "",
+      "matrix": {
+        "A01": "—",
+        "A02": "P* — dữ liệu thuộc mình; điều kiện service",
+        "A03": "P* — report.view; theo hành vi + scope",
+        "A04": "—",
+        "A05": "—"
+      }
+    },
+    {
+      "id": "UC-SUP-05.1",
+      "title": "Giám sát và xử lý sự cố vận hành",
+      "businessGroup": "G11",
+      "primaryActorIds": [
+        "A05"
+      ],
+      "primaryActor": "Quản trị viên nền tảng (A05)",
+      "supportingActorIds": [],
+      "goal": "Đọc sự cố và thực hiện action đúng trạng thái",
+      "status": "Xác minh tĩnh",
+      "bindings": [
+        "IncidentWorkflowController.list",
+        "IncidentWorkflowController.assignees",
+        "IncidentWorkflowController.detail",
+        "IncidentWorkflowController.action",
+        "AdminConsoleController.operationsHealth",
+        "AdminConsoleController.acknowledgeIncident"
+      ],
+      "featureIds": [
+        "F-171",
+        "F-172"
+      ],
+      "rule": "Quản trị nhận/giao/hoãn/xử lý sự cố; release summary có productionAccepted:false, không là xác nhận đạt production.",
+      "notes": "",
+      "matrix": {
+        "A01": "—",
+        "A02": "—",
+        "A03": "—",
+        "A04": "—",
+        "A05": "P* — admin.operations.view, admin.operations.manage; theo handler"
+      }
+    },
+    {
+      "id": "UC-SUP-05.2",
+      "title": "Theo dõi hàng đợi giao nhận",
+      "businessGroup": "G11",
+      "primaryActorIds": [
+        "A05"
+      ],
+      "primaryActor": "Quản trị viên nền tảng (A05)",
+      "supportingActorIds": [
+        "E01"
+      ],
+      "goal": "Đọc metadata job và thử lại notification đủ điều kiện",
+      "status": "Một phần",
+      "bindings": [
+        "OperationsQueueController.list",
+        "NotificationDeliveryController.queue",
+        "NotificationDeliveryController.retry"
+      ],
+      "featureIds": [
+        "F-156",
+        "F-173"
+      ],
+      "rule": "",
+      "notes": " Theo dõi/retry job có code; chưa xác nhận dịch vụ giao nhận ngoài hệ thống.",
+      "matrix": {
+        "A01": "—",
+        "A02": "—",
+        "A03": "—",
+        "A04": "—",
+        "A05": "P* — admin.operations.view, admin.operations.manage; theo handler"
+      }
+    },
+    {
+      "id": "UC-ADM-02",
+      "title": "Tra cứu tài khoản nền tảng",
+      "businessGroup": "G12",
+      "primaryActorIds": [
+        "A05"
+      ],
+      "primaryActor": "Quản trị viên nền tảng (A05)",
+      "supportingActorIds": [],
+      "goal": "Đọc thông tin khách hàng được che theo projection",
+      "status": "Xác minh tĩnh",
+      "bindings": [
+        "AdminConsoleController.accounts",
+        "AdminConsoleController.account",
+        "AdminController.listLandlords",
+        "AdminController.getLandlord"
+      ],
+      "featureIds": [
+        "F-124",
+        "F-133"
+      ],
+      "rule": "Console accounts cần accounts.view; endpoint /admin/landlords cũ cần accounts.manage. Không gộp thành quyền đọc mặc định cho cả hai.",
+      "notes": "",
+      "matrix": {
+        "A01": "—",
+        "A02": "—",
+        "A03": "—",
+        "A04": "—",
+        "A05": "P* — admin.accounts.view, admin.accounts.manage; theo handler"
+      }
+    },
+    {
+      "id": "UC-ADM-03.1",
+      "title": "Tạo hoặc mời tài khoản chủ trọ",
+      "businessGroup": "G12",
+      "primaryActorIds": [
+        "A05"
+      ],
+      "primaryActor": "Quản trị viên nền tảng (A05)",
+      "supportingActorIds": [
+        "E01"
+      ],
+      "goal": "Tạo tài khoản LANDLORD hoặc công việc kích hoạt theo endpoint",
+      "status": "Một phần",
+      "bindings": [
+        "AdminController.createLandlord",
+        "AdminConsoleController.invite"
+      ],
+      "featureIds": [
+        "F-135",
+        "F-127"
+      ],
+      "rule": "Invite ADMIN/LANDLORD dùng cùng endpoint: mục tiêu này chỉ role=LANDLORD, cần dashboard.view + kiểm accounts.manage tại service; nhánh dev trực tiếp riêng.",
+      "notes": " Nhánh mật khẩu trực tiếp giới hạn môi trường dev; nhánh lời mời phụ thuộc giao link ngoài.",
+      "matrix": {
+        "A01": "—",
+        "A02": "—",
+        "A03": "—",
+        "A04": "—",
+        "A05": "P* — admin.accounts.manage, admin.dashboard.view; theo handler"
+      }
+    },
+    {
+      "id": "UC-ADM-03.2",
+      "title": "Cập nhật hồ sơ chủ trọ",
+      "businessGroup": "G12",
+      "primaryActorIds": [
+        "A05"
+      ],
+      "primaryActor": "Quản trị viên nền tảng (A05)",
+      "supportingActorIds": [],
+      "goal": "Sửa dữ liệu chủ trọ không thay quyền Admin",
+      "status": "Xác minh tĩnh",
+      "bindings": [
+        "AdminController.updateLandlord"
+      ],
+      "featureIds": [
+        "F-134"
+      ],
+      "rule": "",
+      "notes": "",
+      "matrix": {
+        "A01": "—",
+        "A02": "—",
+        "A03": "—",
+        "A04": "—",
+        "A05": "P* — admin.accounts.manage; theo handler"
+      }
+    },
+    {
+      "id": "UC-ADM-04.1",
+      "title": "Đình chỉ hoặc khôi phục tài khoản",
+      "businessGroup": "G12",
+      "primaryActorIds": [
+        "A05"
+      ],
+      "primaryActor": "Quản trị viên nền tảng (A05)",
+      "supportingActorIds": [],
+      "goal": "Ngừng/cho phép tài khoản tiếp tục hoạt động theo thẩm quyền, bảo toàn dữ liệu và hiệu lực thu hồi phiên.",
+      "status": "Xác minh tĩnh",
+      "bindings": [
+        "AdminConsoleController.suspend",
+        "AdminController.updateLandlordStatus",
+        "AdminConsoleController.restore"
+      ],
+      "featureIds": [
+        "F-125"
+      ],
+      "rule": "",
+      "notes": "",
+      "matrix": {
+        "A01": "—",
+        "A02": "—",
+        "A03": "—",
+        "A04": "—",
+        "A05": "P* — admin.accounts.suspend; theo handler"
+      }
+    },
+    {
+      "id": "UC-ADM-04.3",
+      "title": "Thu hồi phiên của tài khoản khác",
+      "businessGroup": "G12",
+      "primaryActorIds": [
+        "A05"
+      ],
+      "primaryActor": "Quản trị viên nền tảng (A05)",
+      "supportingActorIds": [],
+      "goal": "Vô hiệu session và refresh token không xóa dữ liệu tài chính",
+      "status": "Xác minh tĩnh",
+      "bindings": [
+        "AdminConsoleController.revoke",
+        "AdminLifecycleController.revoke"
+      ],
+      "featureIds": [
+        "F-125",
+        "F-145"
+      ],
+      "rule": "Thu hồi khách hàng: sessions.revoke; thu hồi Admin khác: admins.manage và sessions.revoke cùng điều kiện service, không gán cùng quyền cho mọi loại tài khoản.",
+      "notes": "",
+      "matrix": {
+        "A01": "—",
+        "A02": "—",
+        "A03": "—",
+        "A04": "—",
+        "A05": "P* — admin.sessions.revoke, admin.admins.manage; theo handler"
+      }
+    },
+    {
+      "id": "UC-ADM-05.1",
+      "title": "Mở thông tin cá nhân được che",
+      "businessGroup": "G12",
+      "primaryActorIds": [
+        "A05"
+      ],
+      "primaryActor": "Quản trị viên nền tảng (A05)",
+      "supportingActorIds": [],
+      "goal": "Xem dữ liệu cá nhân đang được che khi có lý do, quyền phù hợp và dấu vết kiểm tra.",
+      "status": "Xác minh tĩnh",
+      "bindings": [
+        "AdminConsoleController.reveal"
+      ],
+      "featureIds": [
+        "F-126"
+      ],
+      "rule": "",
+      "notes": "",
+      "matrix": {
+        "A01": "—",
+        "A02": "—",
+        "A03": "—",
+        "A04": "—",
+        "A05": "P* — admin.pii.reveal; theo handler"
+      }
+    },
+    {
+      "id": "UC-ADM-05.2",
+      "title": "Yêu cầu khôi phục truy cập cho tài khoản",
+      "businessGroup": "G12",
+      "primaryActorIds": [
+        "A05"
+      ],
+      "primaryActor": "Quản trị viên nền tảng (A05)",
+      "supportingActorIds": [
+        "E01"
+      ],
+      "goal": "Xếp hàng liên kết đặt mật khẩu không trả mật khẩu mới",
+      "status": "Một phần",
+      "bindings": [
+        "AdminConsoleController.reset"
+      ],
+      "featureIds": [
+        "F-127"
+      ],
+      "rule": "",
+      "notes": " Xếp hàng yêu cầu khôi phục; chưa xác nhận email thực.",
+      "matrix": {
+        "A01": "—",
+        "A02": "—",
+        "A03": "—",
+        "A04": "—",
+        "A05": "P* — admin.accounts.manage; theo handler"
+      }
+    },
+    {
+      "id": "UC-ADM-06.1",
+      "title": "Cấp và quản lý quyền quản trị viên",
+      "businessGroup": "G12",
+      "primaryActorIds": [
+        "A05"
+      ],
+      "primaryActor": "Quản trị viên nền tảng (A05)",
+      "supportingActorIds": [
+        "E01"
+      ],
+      "goal": "Cập nhật preset hoặc quyền trong tập được phép ủy quyền",
+      "status": "Một phần",
+      "bindings": [
+        "AdminConsoleController.admins",
+        "AdminConsoleController.adminAccess",
+        "AdminConsoleController.profile",
+        "AdminConsoleController.invite",
+        "AdminLifecycleController.detail",
+        "AdminLifecycleController.resend"
+      ],
+      "featureIds": [
+        "F-124",
+        "F-127",
+        "F-128",
+        "F-145"
+      ],
+      "rule": "Invite role=ADMIN cần dashboard.view, admins.manage, MFA và không vượt quyền người mời; preset mời chỉ support/moderator/analyst. Cập nhật tùy biến theo quyền super_admin; không tự đổi mình, giữ super_admin hoạt động cuối.",
+      "notes": " Có cấp quyền/lời mời/gửi lại; giao nhận kích hoạt bên ngoài chưa được kiểm chứng.",
+      "matrix": {
+        "A01": "—",
+        "A02": "—",
+        "A03": "—",
+        "A04": "—",
+        "A05": "P* — admin.admins.manage, admin.dashboard.view; theo handler"
+      }
+    },
+    {
+      "id": "UC-ADM-06.2",
+      "title": "Rà soát quyền Admin định kỳ",
+      "businessGroup": "G12",
+      "primaryActorIds": [
+        "A05"
+      ],
+      "primaryActor": "Quản trị viên nền tảng (A05)",
+      "supportingActorIds": [],
+      "goal": "Lưu kết quả rà soát và hạn rà soát tiếp theo cho người khác",
+      "status": "Xác minh tĩnh",
+      "bindings": [
+        "AdminAccessReviewController.catalog",
+        "AdminAccessReviewController.list",
+        "AdminAccessReviewController.review"
+      ],
+      "featureIds": [
+        "F-145"
+      ],
+      "rule": "",
+      "notes": "",
+      "matrix": {
+        "A01": "—",
+        "A02": "—",
+        "A03": "—",
+        "A04": "—",
+        "A05": "P* — admin.admins.manage; theo handler"
+      }
+    },
+    {
+      "id": "UC-ADM-08",
+      "title": "Tra cứu khu và phòng toàn nền tảng",
+      "businessGroup": "G12",
+      "primaryActorIds": [
+        "A05"
+      ],
+      "primaryActor": "Quản trị viên nền tảng (A05)",
+      "supportingActorIds": [],
+      "goal": "Đọc kho phòng và trạng thái tin tách biệt",
+      "status": "Xác minh tĩnh",
+      "bindings": [
+        "AdminController.listProperties",
+        "AdminController.getProperty",
+        "AdminController.rooms"
+      ],
+      "featureIds": [
+        "F-133"
+      ],
+      "rule": "",
+      "notes": "",
+      "matrix": {
+        "A01": "—",
+        "A02": "—",
+        "A03": "—",
+        "A04": "—",
+        "A05": "P* — admin.properties.view; theo handler"
+      }
+    },
+    {
+      "id": "UC-ADM-09",
+      "title": "Tạo hoặc cập nhật khu thay chủ trọ",
+      "businessGroup": "G12",
+      "primaryActorIds": [
+        "A05"
+      ],
+      "primaryActor": "Quản trị viên nền tảng (A05)",
+      "supportingActorIds": [],
+      "goal": "Khai báo hoặc chỉnh thông tin khu trọ thay cho chủ trọ qua chức năng quản trị.",
+      "status": "Xác minh tĩnh",
+      "bindings": [
+        "AdminController.createProperty",
+        "AdminController.updateProperty"
+      ],
+      "featureIds": [
+        "F-134"
+      ],
+      "rule": "",
+      "notes": "",
+      "matrix": {
+        "A01": "—",
+        "A02": "—",
+        "A03": "—",
+        "A04": "—",
+        "A05": "P* — admin.properties.manage; theo handler"
+      }
+    },
+    {
+      "id": "UC-ADM-10",
+      "title": "Tìm kiếm và định vị tài nguyên",
+      "businessGroup": "G12",
+      "primaryActorIds": [
+        "A05"
+      ],
+      "primaryActor": "Quản trị viên nền tảng (A05)",
+      "supportingActorIds": [],
+      "goal": "Trả kết quả từng loại được quyền đọc không vượt capability",
+      "status": "Xác minh tĩnh",
+      "bindings": [
+        "AdminSearchController.searchAll",
+        "AdminSearchController.resources",
+        "AdminSearchController.detail"
+      ],
+      "featureIds": [
+        "F-136"
+      ],
+      "rule": "",
+      "notes": "",
+      "matrix": {
+        "A01": "—",
+        "A02": "—",
+        "A03": "—",
+        "A04": "—",
+        "A05": "P* — admin.dashboard.view; theo handler"
+      }
+    },
+    {
+      "id": "UC-ADM-11",
+      "title": "Tiếp nhận và kiểm duyệt tin cho thuê",
+      "businessGroup": "G13",
+      "primaryActorIds": [
+        "A05"
+      ],
+      "primaryActor": "Quản trị viên nền tảng (A05)",
+      "supportingActorIds": [],
+      "goal": "Nhận/giao việc và quyết định công khai, từ chối hoặc ẩn tin; batch/preview là biến thể theo capability riêng.",
+      "status": "Xác minh tĩnh",
+      "bindings": [
+        "AdminConsoleController.queue",
+        "AdminConsoleController.work",
+        "AdminConsoleController.item",
+        "AdminListingsController.list",
+        "AdminListingsController.review",
+        "ModerationV2Controller.bulk",
+        "ModerationV2Controller.preview"
+      ],
+      "featureIds": [
+        "F-088",
+        "F-090",
+        "F-130",
+        "F-159"
+      ],
+      "rule": "",
+      "notes": "",
+      "matrix": {
+        "A01": "—",
+        "A02": "—",
+        "A03": "—",
+        "A04": "—",
+        "A05": "P* — admin.dashboard.view, admin.listings.moderate, admin.moderation.bulk; theo handler"
+      }
+    },
+    {
+      "id": "UC-ADM-11.1",
+      "title": "Xác minh thông tin tin cho thuê",
+      "businessGroup": "G13",
+      "primaryActorIds": [
+        "A05"
+      ],
+      "primaryActor": "Quản trị viên nền tảng (A05)",
+      "supportingActorIds": [],
+      "goal": "Ghi trạng thái xác minh thông tin tin/chủ/phòng; tách với quyết định công khai và hồ sơ xác minh chủ trọ.",
+      "status": "Xác minh tĩnh",
+      "bindings": [
+        "AdminListingsController.list",
+        "AdminListingsController.verify"
+      ],
+      "featureIds": [
+        "F-088",
+        "F-091"
+      ],
+      "rule": "",
+      "notes": "",
+      "matrix": {
+        "A01": "—",
+        "A02": "—",
+        "A03": "—",
+        "A04": "—",
+        "A05": "P* — admin.listings.moderate; theo handler"
+      }
+    },
+    {
+      "id": "UC-ADM-12",
+      "title": "Kiểm duyệt đánh giá và phản hồi phòng",
+      "businessGroup": "G13",
+      "primaryActorIds": [
+        "A05"
+      ],
+      "primaryActor": "Quản trị viên nền tảng (A05)",
+      "supportingActorIds": [],
+      "goal": "Chấp thuận/ẩn đánh giá và phản hồi của chủ trọ theo quyền kiểm duyệt đánh giá.",
+      "status": "Xác minh tĩnh",
+      "bindings": [
+        "AdminRoomReviewsController.queue",
+        "AdminRoomReviewsController.moderate",
+        "AdminRoomReviewsController.reply"
+      ],
+      "featureIds": [
+        "F-108"
+      ],
+      "rule": "",
+      "notes": "",
+      "matrix": {
+        "A01": "—",
+        "A02": "—",
+        "A03": "—",
+        "A04": "—",
+        "A05": "P* — admin.reviews.moderate; theo handler"
+      }
+    },
+    {
+      "id": "UC-ADM-12.1",
+      "title": "Xử lý báo cáo vi phạm tin đăng",
+      "businessGroup": "G13",
+      "primaryActorIds": [
+        "A05"
+      ],
+      "primaryActor": "Quản trị viên nền tảng (A05)",
+      "supportingActorIds": [],
+      "goal": "Kết luận báo cáo về tin đăng để xử lý nội dung bị phản ánh theo quyền kiểm duyệt tin.",
+      "status": "Xác minh tĩnh",
+      "bindings": [
+        "AdminListingsController.reports",
+        "AdminListingsController.reviewReport"
+      ],
+      "featureIds": [
+        "F-092"
+      ],
+      "rule": "",
+      "notes": "",
+      "matrix": {
+        "A01": "—",
+        "A02": "—",
+        "A03": "—",
+        "A04": "—",
+        "A05": "P* — admin.listings.moderate; theo handler"
+      }
+    },
+    {
+      "id": "UC-ADM-13.1",
+      "title": "Quản lý chính sách kiểm duyệt",
+      "businessGroup": "G13",
+      "primaryActorIds": [
+        "A05"
+      ],
+      "primaryActor": "Quản trị viên nền tảng (A05)",
+      "supportingActorIds": [],
+      "goal": "Quản lý các phiên bản chính sách kiểm duyệt và xác định bản đang hiệu lực.",
+      "status": "Xác minh tĩnh",
+      "bindings": [
+        "ModerationPolicyController.list",
+        "ModerationPolicyController.create",
+        "ModerationPolicyController.activate"
+      ],
+      "featureIds": [
+        "F-160"
+      ],
+      "rule": "",
+      "notes": "",
+      "matrix": {
+        "A01": "—",
+        "A02": "—",
+        "A03": "—",
+        "A04": "—",
+        "A05": "P* — admin.moderation.reports, admin.admins.manage; theo handler"
+      }
+    },
+    {
+      "id": "UC-ADM-13.2",
+      "title": "Xử lý kháng nghị kiểm duyệt",
+      "businessGroup": "G13",
+      "primaryActorIds": [
+        "A05"
+      ],
+      "primaryActor": "Quản trị viên nền tảng (A05)",
+      "supportingActorIds": [],
+      "goal": "Phân công và đưa ra kết luận độc lập về kháng nghị đối với quyết định kiểm duyệt.",
+      "status": "Xác minh tĩnh",
+      "bindings": [
+        "ModerationV2Controller.decisions",
+        "ModerationV2Controller.history",
+        "ModerationV2Controller.appeals",
+        "ModerationV2Controller.assign",
+        "ModerationV2Controller.resolve",
+        "ModerationV2Controller.reports"
+      ],
+      "featureIds": [
+        "F-157",
+        "F-158"
+      ],
+      "rule": "Reviewer không là người ra quyết định gốc; cần quyền kháng nghị và quyền nội dung tương ứng theo service.",
+      "notes": "",
+      "matrix": {
+        "A01": "—",
+        "A02": "—",
+        "A03": "—",
+        "A04": "—",
+        "A05": "P* — admin.moderation.reports, admin.dashboard.view, admin.moderation.appeals; theo handler"
+      }
+    },
+    {
+      "id": "UC-ADM-13.3",
+      "title": "Đánh giá chất lượng kiểm duyệt",
+      "businessGroup": "G13",
+      "primaryActorIds": [
+        "A05"
+      ],
+      "primaryActor": "Quản trị viên nền tảng (A05)",
+      "supportingActorIds": [],
+      "goal": "Lấy mẫu và đánh giá quyết định không tự đánh giá mình",
+      "status": "Xác minh tĩnh",
+      "bindings": [
+        "ModerationPolicyController.quality",
+        "ModerationPolicyController.samples",
+        "ModerationPolicyController.sample",
+        "ModerationPolicyController.review"
+      ],
+      "featureIds": [
+        "F-161"
+      ],
+      "rule": "Đánh giá độc lập với người ra quyết định; không tự áp chế tài.",
+      "notes": "",
+      "matrix": {
+        "A01": "—",
+        "A02": "—",
+        "A03": "—",
+        "A04": "—",
+        "A05": "P* — admin.moderation.reports; theo handler"
+      }
+    },
+    {
+      "id": "UC-DIS-07",
+      "title": "Báo cáo tin phòng không phù hợp",
+      "businessGroup": "G13",
+      "primaryActorIds": [
+        "A04"
+      ],
+      "primaryActor": "Người tìm phòng/người thuê (A04)",
+      "supportingActorIds": [],
+      "goal": "Gửi ListingReport để admin xử lý",
+      "status": "Xác minh tĩnh",
+      "bindings": [
+        "StudentListingsController.report"
+      ],
+      "featureIds": [
+        "F-092"
+      ],
+      "rule": "",
+      "notes": "",
+      "matrix": {
+        "A01": "—",
+        "A02": "—",
+        "A03": "—",
+        "A04": "P* — TENANT; đúng chủ sở hữu/điều kiện dữ liệu",
+        "A05": "—"
+      }
+    },
+    {
+      "id": "UC-DIS-12",
+      "title": "Viết sửa và rút đánh giá phòng đã thuê",
+      "businessGroup": "G13",
+      "primaryActorIds": [
+        "A04"
+      ],
+      "primaryActor": "Người tìm phòng/người thuê (A04)",
+      "supportingActorIds": [],
+      "goal": "Gửi nội dung gắn hợp đồng đủ điều kiện để kiểm duyệt",
+      "status": "Xác minh tĩnh",
+      "bindings": [
+        "RoomReviewsController.context",
+        "RoomReviewsController.create",
+        "RoomReviewsController.update",
+        "RoomReviewsController.withdraw"
+      ],
+      "featureIds": [
+        "F-105",
+        "F-106"
+      ],
+      "rule": "Cần bàn giao đã chấp nhận hoặc nhánh lịch sử thuê đã kết thúc đủ điều kiện; sửa đưa lại chờ duyệt; rút không cho admin đăng lại tùy ý.",
+      "notes": "",
+      "matrix": {
+        "A01": "—",
+        "A02": "—",
+        "A03": "—",
+        "A04": "P* — lease đủ điều kiện đánh giá",
+        "A05": "—"
+      }
+    },
+    {
+      "id": "UC-DIS-13.1",
+      "title": "Trả lời đánh giá phòng",
+      "businessGroup": "G13",
+      "primaryActorIds": [
+        "A02"
+      ],
+      "primaryActor": "Chủ trọ (A02)",
+      "supportingActorIds": [],
+      "goal": "Gửi phản hồi của chủ trọ qua kiểm duyệt riêng",
+      "status": "Xác minh tĩnh",
+      "bindings": [
+        "RoomReviewsController.landlord",
+        "RoomReviewsController.reply"
+      ],
+      "featureIds": [
+        "F-107"
+      ],
+      "rule": "",
+      "notes": "",
+      "matrix": {
+        "A01": "—",
+        "A02": "P* — dữ liệu thuộc mình; điều kiện service",
+        "A03": "—",
+        "A04": "—",
+        "A05": "—"
+      }
+    },
+    {
+      "id": "UC-DIS-15",
+      "title": "Xem quyết định và gửi kháng nghị kiểm duyệt",
+      "businessGroup": "G13",
+      "primaryActorIds": [
+        "A02",
+        "A04"
+      ],
+      "primaryActor": "Chủ trọ (A02); Người tìm phòng/người thuê (A04)",
+      "supportingActorIds": [],
+      "goal": "Đề nghị xem lại quyết định thuộc tài nguyên của mình",
+      "status": "Xác minh tĩnh",
+      "bindings": [
+        "MyModerationController.decisions",
+        "MyModerationController.appeals",
+        "MyModerationController.appeal",
+        "MyModerationController.features"
+      ],
+      "featureIds": [
+        "F-157",
+        "F-158",
+        "F-164"
+      ],
+      "rule": "Chỉ quyết định bất lợi thuộc ownerId của mình, trong 14 ngày và chưa bị thay thế/kháng nghị trùng. ADMIN chỉ có đường đọc/gửi cho tài nguyên chính mình nếu có, không mặc định quyền của chủ trọ.",
+      "notes": "",
+      "matrix": {
+        "A01": "—",
+        "A02": "P* — dữ liệu thuộc mình; điều kiện service",
+        "A03": "B — interceptor chặn",
+        "A04": "P* — TENANT; đúng chủ sở hữu/điều kiện dữ liệu",
+        "A05": "V — dashboard.view + ownerId của quyết định"
+      }
+    },
+    {
+      "id": "UC-SUP-01",
+      "title": "Gửi và theo dõi yêu cầu hỗ trợ",
+      "businessGroup": "G14",
+      "primaryActorIds": [
+        "A02",
+        "A04",
+        "A05"
+      ],
+      "primaryActor": "Chủ trọ (A02); Người tìm phòng/người thuê (A04); Quản trị viên nền tảng (A05)",
+      "supportingActorIds": [
+        "E03"
+      ],
+      "goal": "Tạo hồ sơ hỗ trợ của mình, trao đổi với người xử lý và theo dõi kết quả; mở lại bằng phản hồi trong thời hạn cho phép.",
+      "status": "Một phần",
+      "bindings": [
+        "SupportController.create",
+        "SupportController.list",
+        "SupportController.detail",
+        "SupportController.reply",
+        "SupportAttachmentController.upload"
+      ],
+      "featureIds": [
+        "F-146",
+        "F-151"
+      ],
+      "rule": "Ticket của requester; nội dung internal không công khai; trả lời mở lại RESOLVED trong 7 ngày, CLOSED không trả lời. Có feature flag support.user_tickets.",
+      "notes": "Decorator nhận STAFF nhưng interceptor chặn SupportController; không suy quyền thực thi từ decorator. Luồng ticket có triển khai; biến thể tệp đính kèm fail-closed khi scanner chưa có, chưa xác nhận scanner thật.",
+      "matrix": {
+        "A01": "—",
+        "A02": "P* — dữ liệu thuộc mình; điều kiện service",
+        "A03": "B — interceptor chặn",
+        "A04": "P* — ticket do mình yêu cầu",
+        "A05": "P* — admin.dashboard.view, admin.support.read, admin.support.manage; theo handler"
+      }
+    },
+    {
+      "id": "UC-SUP-01.1",
+      "title": "Tiếp nhận và xử lý hồ sơ hỗ trợ",
+      "businessGroup": "G14",
+      "primaryActorIds": [
+        "A05"
+      ],
+      "primaryActor": "Quản trị viên nền tảng (A05)",
+      "supportingActorIds": [
+        "E03"
+      ],
+      "goal": "Nhận/giao hồ sơ, phản hồi công khai, ghi chú nội bộ và kết thúc xử lý theo quyền, phạm vi người xử lý.",
+      "status": "Một phần",
+      "bindings": [
+        "SupportController.list",
+        "SupportController.assignees",
+        "SupportController.teams",
+        "SupportController.detail",
+        "SupportController.reply",
+        "SupportController.note",
+        "SupportController.assign",
+        "SupportController.status",
+        "AdminConsoleController.context",
+        "SupportAttachmentController.upload",
+        "SupportCaseController.timeline",
+        "SupportCaseController.link",
+        "SupportToolsController.labels"
+      ],
+      "featureIds": [
+        "F-129",
+        "F-146",
+        "F-147",
+        "F-148",
+        "F-151",
+        "F-152"
+      ],
+      "rule": "Controller cho nhiều role nhưng service.manage đòi ADMIN support.read/manage; không phải mọi chủ trọ/TENANT đều ghi chú, giao việc hay đổi trạng thái. Tệp tối đa 8MB, tối đa 20/ticket; chỉ CLEAN/hash hợp lệ; scanner chưa có thì fail-closed.",
+      "notes": "Decorator nhận STAFF nhưng interceptor chặn SupportController; không suy quyền thực thi từ decorator. Quyền xử lý ticket có code; tệp kèm cần scanner/storage và chưa kiểm chứng runtime ngoài.",
+      "matrix": {
+        "A01": "—",
+        "A02": "—",
+        "A03": "B — interceptor chặn",
+        "A04": "—",
+        "A05": "P* — admin.support.read, admin.support.manage; theo handler"
+      }
+    },
+    {
+      "id": "UC-SUP-02.1",
+      "title": "Cấu hình phân công tự động hỗ trợ",
+      "businessGroup": "G14",
+      "primaryActorIds": [
+        "A05"
+      ],
+      "primaryActor": "Quản trị viên nền tảng (A05)",
+      "supportingActorIds": [],
+      "goal": "Đặt skills và phân công theo khả dụng của người xử lý",
+      "status": "Xác minh tĩnh",
+      "bindings": [
+        "SupportWorkflowController.skills",
+        "SupportWorkflowController.setSkills",
+        "SupportWorkflowController.autoAssign"
+      ],
+      "featureIds": [
+        "F-150"
+      ],
+      "rule": "skills/autoAssign cần đồng thời support.read, support.manage, admins.manage theo metadata; không tạo Actor Agent độc lập với ADMIN.",
+      "notes": "",
+      "matrix": {
+        "A01": "—",
+        "A02": "—",
+        "A03": "—",
+        "A04": "—",
+        "A05": "P* — admin.support.read, admin.support.manage, admin.admins.manage; theo handler"
+      }
+    },
+    {
+      "id": "UC-SUP-02.2",
+      "title": "Cấu hình và theo dõi SLA hỗ trợ",
+      "businessGroup": "G14",
+      "primaryActorIds": [
+        "A05"
+      ],
+      "primaryActor": "Quản trị viên nền tảng (A05)",
+      "supportingActorIds": [],
+      "goal": "Lưu lịch giờ làm và chính sách thời hạn hỗ trợ",
+      "status": "Xác minh tĩnh",
+      "bindings": [
+        "SupportSlaController.policy",
+        "SupportSlaController.update"
+      ],
+      "featureIds": [
+        "F-153",
+        "F-154"
+      ],
+      "rule": "",
+      "notes": "",
+      "matrix": {
+        "A01": "—",
+        "A02": "—",
+        "A03": "—",
+        "A04": "—",
+        "A05": "P* — admin.support.read, admin.support.manage, admin.admins.manage; theo handler"
+      }
+    },
+    {
+      "id": "UC-SUP-03.2",
+      "title": "Quản lý mẫu trả lời hỗ trợ",
+      "businessGroup": "G14",
+      "primaryActorIds": [
+        "A05"
+      ],
+      "primaryActor": "Quản trị viên nền tảng (A05)",
+      "supportingActorIds": [],
+      "goal": "Duy trì bộ mẫu phản hồi phục vụ trả lời hỗ trợ nhất quán.",
+      "status": "Xác minh tĩnh",
+      "bindings": [
+        "SupportToolsController.templates",
+        "SupportToolsController.create",
+        "SupportToolsController.update"
+      ],
+      "featureIds": [
+        "F-148"
+      ],
+      "rule": "",
+      "notes": "",
+      "matrix": {
+        "A01": "—",
+        "A02": "—",
+        "A03": "—",
+        "A04": "—",
+        "A05": "P* — admin.support.read, admin.support.manage; theo handler"
+      }
+    },
+    {
+      "id": "UC-SUP-03.2.1",
+      "title": "Hợp nhất hồ sơ hỗ trợ trùng",
+      "businessGroup": "G14",
+      "primaryActorIds": [
+        "A05"
+      ],
+      "primaryActor": "Quản trị viên nền tảng (A05)",
+      "supportingActorIds": [],
+      "goal": "Liên kết hồ sơ trùng về hồ sơ chính có kiểm soát, tránh xử lý lặp và giữ lịch sử.",
+      "status": "Xác minh tĩnh",
+      "bindings": [
+        "SupportToolsController.merge"
+      ],
+      "featureIds": [
+        "F-148"
+      ],
+      "rule": "",
+      "notes": "",
+      "matrix": {
+        "A01": "—",
+        "A02": "—",
+        "A03": "—",
+        "A04": "—",
+        "A05": "P* — admin.support.read, admin.support.manage; theo handler"
+      }
+    },
+    {
+      "id": "UC-SUP-03.2.2",
+      "title": "Đánh giá kết quả hỗ trợ",
+      "businessGroup": "G14",
+      "primaryActorIds": [
+        "A02",
+        "A04",
+        "A05"
+      ],
+      "primaryActor": "Chủ trọ (A02); Người tìm phòng/người thuê (A04); Quản trị viên nền tảng (A05)",
+      "supportingActorIds": [],
+      "goal": "Gửi phản hồi một lần cho hồ sơ của mình đã được giải quyết/đóng.",
+      "status": "Xác minh tĩnh",
+      "bindings": [
+        "SupportToolsController.feedback"
+      ],
+      "featureIds": [
+        "F-149"
+      ],
+      "rule": "Requester đúng ticket; một lần sau RESOLVED/CLOSED, không ticket đã merged.",
+      "notes": "",
+      "matrix": {
+        "A01": "—",
+        "A02": "P* — dữ liệu thuộc mình; điều kiện service",
+        "A03": "B — interceptor chặn",
+        "A04": "P* — ticket do mình yêu cầu",
+        "A05": "P* — admin.dashboard.view; theo handler"
+      }
+    },
+    {
+      "id": "UC-SUP-03.3",
+      "title": "Lưu bộ lọc xử lý hỗ trợ",
+      "businessGroup": "G14",
+      "primaryActorIds": [
+        "A05"
+      ],
+      "primaryActor": "Quản trị viên nền tảng (A05)",
+      "supportingActorIds": [],
+      "goal": "Lưu bộ lọc riêng để quay lại tập hồ sơ hỗ trợ cần xử lý.",
+      "status": "Xác minh tĩnh",
+      "bindings": [
+        "SupportWorkflowController.views",
+        "SupportWorkflowController.createView",
+        "SupportWorkflowController.updateView",
+        "SupportWorkflowController.deleteView"
+      ],
+      "featureIds": [
+        "F-150"
+      ],
+      "rule": "",
+      "notes": "",
+      "matrix": {
+        "A01": "—",
+        "A02": "—",
+        "A03": "—",
+        "A04": "—",
+        "A05": "P* — admin.support.read, admin.support.manage; theo handler"
+      }
+    },
+    {
+      "id": "UC-ADM-18",
+      "title": "Xét duyệt hồ sơ xác minh chủ trọ",
+      "businessGroup": "G15",
+      "primaryActorIds": [
+        "A05"
+      ],
+      "primaryActor": "Quản trị viên nền tảng (A05)",
+      "supportingActorIds": [],
+      "goal": "Xét hồ sơ và chứng cứ của chủ trọ để ghi quyết định xác minh có kiểm soát thay đổi.",
+      "status": "Xác minh tĩnh",
+      "bindings": [
+        "AdminRegistryController.verifications",
+        "AdminRegistryController.reviewVerification"
+      ],
+      "featureIds": [
+        "F-137"
+      ],
+      "rule": "",
+      "notes": "Hai vai trò dùng endpoint khác nhau; không gán quyền xét duyệt cho chủ trọ.",
+      "matrix": {
+        "A01": "—",
+        "A02": "—",
+        "A03": "—",
+        "A04": "—",
+        "A05": "P* — admin.verifications.view, admin.support.read, admin.verifications.manage; theo handler"
+      }
+    },
+    {
+      "id": "UC-ADM-18.1",
+      "title": "Nộp hồ sơ xác minh chủ trọ",
+      "businessGroup": "G15",
+      "primaryActorIds": [
+        "A02",
+        "A05"
+      ],
+      "primaryActor": "Chủ trọ (A02); Quản trị viên nền tảng (A05)",
+      "supportingActorIds": [],
+      "goal": "Cung cấp hồ sơ và bằng chứng hỗ trợ để được xét xác minh chủ trọ.",
+      "status": "Xác minh tĩnh",
+      "bindings": [
+        "LandlordVerificationController.own",
+        "LandlordVerificationController.submit",
+        "AdminRegistryController.submitVerification"
+      ],
+      "featureIds": [
+        "F-137"
+      ],
+      "rule": "",
+      "notes": "Hai vai trò dùng endpoint khác nhau; không gán quyền xét duyệt cho chủ trọ.",
+      "matrix": {
+        "A01": "—",
+        "A02": "P* — dữ liệu thuộc mình; điều kiện service",
+        "A03": "—",
+        "A04": "—",
+        "A05": "P* — admin.verifications.manage, admin.support.read; theo handler"
+      }
+    },
+    {
+      "id": "UC-ADM-19",
+      "title": "Trình và xét duyệt hồ sơ khu trọ",
+      "businessGroup": "G15",
+      "primaryActorIds": [
+        "A05"
+      ],
+      "primaryActor": "Quản trị viên nền tảng (A05)",
+      "supportingActorIds": [],
+      "goal": "Duyệt snapshot khu khi thông tin chưa thay đổi",
+      "status": "Xác minh tĩnh",
+      "bindings": [
+        "AdminRegistryController.propertyReviews",
+        "AdminRegistryController.submitProperty",
+        "AdminRegistryController.reviewProperty"
+      ],
+      "featureIds": [
+        "F-138"
+      ],
+      "rule": "Trình/xét khu ở đây do ADMIN có properties.manage; chưa có bằng chứng chủ trọ tự trình. Hồ sơ xét khu khác verified của tin.",
+      "notes": "Endpoint trình hồ sơ khu hiện dành ADMIN; không ghi bước này do LANDLORD thực hiện.",
+      "matrix": {
+        "A01": "—",
+        "A02": "—",
+        "A03": "—",
+        "A04": "—",
+        "A05": "P* — admin.properties.view, admin.properties.manage; theo handler"
+      }
+    },
+    {
+      "id": "UC-ADM-20",
+      "title": "Quản lý danh mục gói dịch vụ",
+      "businessGroup": "G15",
+      "primaryActorIds": [
+        "A05"
+      ],
+      "primaryActor": "Quản trị viên nền tảng (A05)",
+      "supportingActorIds": [],
+      "goal": "Quản lý nội dung, phiên bản điều khoản và hạn mức của các gói dịch vụ.",
+      "status": "Xác minh tĩnh",
+      "bindings": [
+        "AdminRegistryController.servicePlans",
+        "AdminRegistryController.savePlan"
+      ],
+      "featureIds": [
+        "F-139"
+      ],
+      "rule": "Quản lý phiên bản điều khoản/hạn mức; đọc plans.view, ghi plans.manage.",
+      "notes": "",
+      "matrix": {
+        "A01": "—",
+        "A02": "—",
+        "A03": "—",
+        "A04": "—",
+        "A05": "P* — admin.plans.view, admin.plans.manage; theo handler"
+      }
+    },
+    {
+      "id": "UC-ADM-21",
+      "title": "Gán gói và xem lịch sử đăng ký",
+      "businessGroup": "G15",
+      "primaryActorIds": [
+        "A05"
+      ],
+      "primaryActor": "Quản trị viên nền tảng (A05)",
+      "supportingActorIds": [],
+      "goal": "Cấp gói dịch vụ cho chủ trọ và tra cứu lịch sử quyền sử dụng đã ghi nhận.",
+      "status": "Xác minh tĩnh",
+      "bindings": [
+        "AdminRegistryController.subscriptions",
+        "AdminRegistryController.subscriptionEvents",
+        "AdminRegistryController.assignSubscription"
+      ],
+      "featureIds": [
+        "F-140"
+      ],
+      "rule": "Chỉ gán gói và lịch sử, không có UC thanh toán mua gói. Quota chỉ áp nếu đã có subscription; hết hạn chặn tăng inventory, không xóa dữ liệu.",
+      "notes": "",
+      "matrix": {
+        "A01": "—",
+        "A02": "—",
+        "A03": "—",
+        "A04": "—",
+        "A05": "P* — admin.plans.view, admin.plans.manage; theo handler"
+      }
+    },
+    {
+      "id": "UC-ADM-22",
+      "title": "Hủy quyền sử dụng gói đang hiệu lực",
+      "businessGroup": "G15",
+      "primaryActorIds": [
+        "A05"
+      ],
+      "primaryActor": "Quản trị viên nền tảng (A05)",
+      "supportingActorIds": [],
+      "goal": "Kết thúc hiệu lực không tự hoàn tiền hoặc xóa khu phòng",
+      "status": "Xác minh tĩnh",
+      "bindings": [
+        "AdminRegistryController.cancelSubscription"
+      ],
+      "featureIds": [
+        "F-140"
+      ],
+      "rule": "Chấm dứt quyền dùng gói không tự hoàn tiền, không xóa khu/phòng.",
+      "notes": "",
+      "matrix": {
+        "A01": "—",
+        "A02": "—",
+        "A03": "—",
+        "A04": "—",
+        "A05": "P* — admin.plans.manage; theo handler"
+      }
+    },
+    {
+      "id": "UC-ADM-15",
+      "title": "Chuẩn bị đối soát sao kê",
+      "businessGroup": "G16",
+      "primaryActorIds": [
+        "A05"
+      ],
+      "primaryActor": "Quản trị viên nền tảng (A05)",
+      "supportingActorIds": [],
+      "goal": "Nhập sao kê, tra cứu ứng viên và lập đề xuất ghép/bỏ ghép với chứng từ sẵn có.",
+      "status": "Xác minh tĩnh",
+      "bindings": [
+        "FinanceReconciliationController.importStatement",
+        "FinanceReconciliationController.lines",
+        "FinanceReconciliationController.propose",
+        "FinanceReconciliationController.candidates",
+        "FinanceReconciliationController.proposals"
+      ],
+      "featureIds": [
+        "F-166",
+        "F-167"
+      ],
+      "rule": "Nhập sao kê và đề xuất ghép chứng từ đã có; không suy ra kết nối tài khoản ngân hàng trực tiếp.",
+      "notes": "Đối soát tham chiếu khoản thu đã có; không đồng nghĩa tự nhận tiền ngân hàng hoặc tự ghi Payment.",
+      "matrix": {
+        "A01": "—",
+        "A02": "—",
+        "A03": "—",
+        "A04": "—",
+        "A05": "P* — admin.finance.read, admin.finance.reconcile; theo handler"
+      }
+    },
+    {
+      "id": "UC-ADM-15.1",
+      "title": "Duyệt đề xuất đối soát sao kê",
+      "businessGroup": "G16",
+      "primaryActorIds": [
+        "A05"
+      ],
+      "primaryActor": "Quản trị viên nền tảng (A05)",
+      "supportingActorIds": [],
+      "goal": "Chấp thuận/từ chối đề xuất ghép hoặc bỏ ghép do người khác lập, không thực hiện chuyển tiền.",
+      "status": "Xác minh tĩnh",
+      "bindings": [
+        "FinanceReconciliationController.proposals",
+        "FinanceReconciliationController.approve",
+        "FinanceReconciliationController.reject"
+      ],
+      "featureIds": [
+        "F-167"
+      ],
+      "rule": "Checker phải khác maker dù cùng role/capability; chỉ ghi kết quả đối soát, không chuyển tiền.",
+      "notes": "Đối soát tham chiếu khoản thu đã có; không đồng nghĩa tự nhận tiền ngân hàng hoặc tự ghi Payment.",
+      "matrix": {
+        "A01": "—",
+        "A02": "—",
+        "A03": "—",
+        "A04": "—",
+        "A05": "P* — admin.finance.read, admin.finance.reconcile; theo handler"
+      }
+    },
+    {
+      "id": "UC-ADM-17.1",
+      "title": "Cấu hình bật tắt tính năng nền tảng",
+      "businessGroup": "G16",
+      "primaryActorIds": [
+        "A05"
+      ],
+      "primaryActor": "Quản trị viên nền tảng (A05)",
+      "supportingActorIds": [],
+      "goal": "Kiểm soát bật/tắt và phạm vi triển khai tính năng theo người dùng/vai trò trong các khóa cho phép.",
+      "status": "Xác minh tĩnh",
+      "bindings": [
+        "GovernanceController.flagsList",
+        "GovernanceController.effective",
+        "GovernanceController.flagsUpdate"
+      ],
+      "featureIds": [
+        "F-164"
+      ],
+      "rule": "",
+      "notes": "",
+      "matrix": {
+        "A01": "—",
+        "A02": "—",
+        "A03": "—",
+        "A04": "—",
+        "A05": "P* — admin.flags.manage, admin.dashboard.view; theo handler"
+      }
+    },
+    {
+      "id": "UC-ADM-17.2",
+      "title": "Quản lý nhóm Admin",
+      "businessGroup": "G16",
+      "primaryActorIds": [
+        "A05"
+      ],
+      "primaryActor": "Quản trị viên nền tảng (A05)",
+      "supportingActorIds": [],
+      "goal": "Duy trì nhóm quản trị và thành viên để tổ chức xử lý công việc nền tảng.",
+      "status": "Xác minh tĩnh",
+      "bindings": [
+        "GovernanceController.team",
+        "GovernanceController.teams",
+        "GovernanceController.createTeam",
+        "GovernanceController.addMember",
+        "GovernanceController.updateTeam",
+        "GovernanceController.removeMember"
+      ],
+      "featureIds": [
+        "F-162"
+      ],
+      "rule": "",
+      "notes": "",
+      "matrix": {
+        "A01": "—",
+        "A02": "—",
+        "A03": "—",
+        "A04": "—",
+        "A05": "P* — admin.teams.manage; theo handler"
+      }
+    },
+    {
+      "id": "UC-ADM-23",
+      "title": "Quản lý danh mục cơ sở trường",
+      "businessGroup": "G16",
+      "primaryActorIds": [
+        "A05"
+      ],
+      "primaryActor": "Quản trị viên nền tảng (A05)",
+      "supportingActorIds": [],
+      "goal": "Duy trì dữ liệu cơ sở trường phục vụ tìm phòng theo vị trí.",
+      "status": "Xác minh tĩnh",
+      "bindings": [
+        "AdminCampusesController.list",
+        "AdminCampusesController.create",
+        "AdminCampusesController.update"
+      ],
+      "featureIds": [
+        "F-093"
+      ],
+      "rule": "",
+      "notes": "",
+      "matrix": {
+        "A01": "—",
+        "A02": "—",
+        "A03": "—",
+        "A04": "—",
+        "A05": "P* — admin.campuses.manage; theo handler"
+      }
+    },
+    {
+      "id": "UC-ADM-24",
+      "title": "Tra cứu giao dịch tài chính nền tảng",
+      "businessGroup": "G16",
+      "primaryActorIds": [
+        "A05"
+      ],
+      "primaryActor": "Quản trị viên nền tảng (A05)",
+      "supportingActorIds": [],
+      "goal": "Đọc dữ liệu giao dịch theo projection quản trị",
+      "status": "Xác minh tĩnh",
+      "bindings": [
+        "AdminRegistryController.transactionList",
+        "GovernanceController.finance"
+      ],
+      "featureIds": [
+        "F-141",
+        "F-165"
+      ],
+      "rule": "",
+      "notes": "",
+      "matrix": {
+        "A01": "—",
+        "A02": "—",
+        "A03": "—",
+        "A04": "—",
+        "A05": "P* — admin.finance.read; theo handler"
+      }
+    },
+    {
+      "id": "UC-ADM-26",
+      "title": "Mô phỏng quyền Admin",
+      "businessGroup": "G16",
+      "primaryActorIds": [
+        "A05"
+      ],
+      "primaryActor": "Quản trị viên nền tảng (A05)",
+      "supportingActorIds": [],
+      "goal": "Tính quyền được phép không thay hồ sơ cấp quyền",
+      "status": "Xác minh tĩnh",
+      "bindings": [
+        "GovernanceController.simulate"
+      ],
+      "featureIds": [
+        "F-163"
+      ],
+      "rule": "",
+      "notes": "",
+      "matrix": {
+        "A01": "—",
+        "A02": "—",
+        "A03": "—",
+        "A04": "—",
+        "A05": "P* — admin.permissions.simulate; theo handler"
+      }
+    },
+    {
+      "id": "UC-ADM-27",
+      "title": "Đọc phản hồi thử nghiệm tìm phòng",
+      "businessGroup": "G16",
+      "primaryActorIds": [
+        "A05"
+      ],
+      "primaryActor": "Quản trị viên nền tảng (A05)",
+      "supportingActorIds": [],
+      "goal": "Đọc PilotFeedback và thống kê theo trang",
+      "status": "Xác minh tĩnh",
+      "bindings": [
+        "HousingController.feedbackList"
+      ],
+      "featureIds": [
+        "F-104"
+      ],
+      "rule": "",
+      "notes": "",
+      "matrix": {
+        "A01": "—",
+        "A02": "—",
+        "A03": "—",
+        "A04": "—",
+        "A05": "P* — admin.listings.moderate; theo handler"
+      }
+    }
+  ]
+}

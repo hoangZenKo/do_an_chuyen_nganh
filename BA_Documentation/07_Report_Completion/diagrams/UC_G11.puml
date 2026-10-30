@@ -1,0 +1,69 @@
+@startuml
+left to right direction
+skinparam defaultFontName SansSerif
+skinparam defaultFontSize 13
+skinparam backgroundColor #F8FAFC
+skinparam shadowing false
+skinparam ArrowColor #52647A
+skinparam ArrowThickness 1
+skinparam actorStyle stickman
+skinparam actorBorderColor #243A52
+skinparam actorFontColor #243A52
+skinparam actorBackgroundColor #FFFFFF
+skinparam usecase {
+  BackgroundColor #FFFFFF
+  BorderColor #327C83
+  FontColor #20354B
+  BackgroundColor<<Một phần>> #FFF0CE
+  BorderColor<<Một phần>> #B17917
+  BackgroundColor<<DEMO>> #FCE5DF
+  BorderColor<<DEMO>> #BC593A
+  BackgroundColor<<MÔ PHỎNG>> #E7EAF1
+  BorderColor<<MÔ PHỎNG>> #6C7488
+}
+skinparam rectangle {
+  BackgroundColor #EEF4F5
+  BorderColor #243A52
+  FontColor #243A52
+}
+skinparam titleFontColor #20354B
+skinparam titleFontSize 18
+skinparam nodesep 25
+skinparam ranksep 65
+title G11 · Báo cáo và giám sát vận hành\n<size:12>Đầy đủ UC của nhóm nghiệp vụ</size>
+
+actor "A02\nChủ trọ" as A02
+actor "A03\nNhân viên vận hành" as A03
+actor "A05\nQuản trị viên nền tảng" as A05
+rectangle "Hệ thống quản lý nhà trọ" as SYSTEM {
+  usecase "UC-OPT-01\nXem tổng quan và bản đồ phòng" as UC_OPT_01
+  usecase "UC-BIL-20\nPhân tích và xuất báo cáo vận\nhành" as UC_BIL_20
+  usecase "UC-ADM-01\nXem tổng quan hoạt động nền tảng" as UC_ADM_01
+  usecase "UC-OPS-09\nTra cứu nhật ký vận hành" as UC_OPS_09
+  usecase "UC-ADM-14\nTra cứu nhật ký quản trị" as UC_ADM_14
+  usecase "UC-ADM-16\nLập lịch và tải báo cáo quản trị" as UC_ADM_16
+  usecase "UC-SUP-05.1\nGiám sát và xử lý sự cố vận hành" as UC_SUP_05_1
+  usecase "UC-SUP-05.2\nTheo dõi và gửi lại thông báo\ncần chuyển" as UC_SUP_05_2 <<Một phần>>
+}
+actor "E01\nĐơn vị gửi thư\nhoặc thông báo\n(có điều kiện)" as E01
+actor "E05\nKho lưu kết quả báo cáo\nngoài hệ thống\n(có điều kiện)" as E05
+A02 -- UC_OPT_01
+UC_OPT_01 -- A03
+A02 -- UC_BIL_20
+UC_BIL_20 -- A03
+A05 -- UC_ADM_01
+A02 -- UC_OPS_09
+A05 -- UC_ADM_14
+A05 -- UC_ADM_16
+UC_ADM_16 -- E05 : khi sử dụng kênh này
+A05 -- UC_SUP_05_1
+A05 -- UC_SUP_05_2
+UC_SUP_05_2 -- E01 : khi sử dụng kênh này
+legend bottom left
+  Đường liền: tác nhân tham gia mục tiêu nghiệp vụ.
+  Đường xanh có nhãn: chỉ tham gia trong phạm vi giới hạn được nêu.
+  Nhân viên cần quyền phù hợp và khu được giao; quản trị viên cần đúng thẩm quyền.
+  Vàng: đáp ứng một phần. Cam: thanh toán thử nghiệm. Xám: trao đổi mô phỏng.
+  Không thể hiện thứ tự thực hiện; không suy ra quyền từ vị trí tác nhân.
+endlegend
+@enduml

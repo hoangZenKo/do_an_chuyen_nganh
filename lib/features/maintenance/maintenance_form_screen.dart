@@ -4,7 +4,6 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../core/network/api_failure.dart';
-import '../../core/theme/app_theme.dart';
 import '../../models/maintenance.dart';
 import '../../models/property.dart';
 import '../../models/room.dart';
@@ -55,26 +54,29 @@ class _MaintenanceFormScreenState extends ConsumerState<MaintenanceFormScreen> {
     if (widget.ticketId == null) {
       ticketAsync = const AsyncValue<MaintenanceTicket?>.data(null);
     } else {
-      ticketAsync =
-          ref.watch(maintenanceDetailProvider(widget.ticketId!)).whenData((value) {
+      ticketAsync = ref
+          .watch(maintenanceDetailProvider(widget.ticketId!))
+          .whenData((value) {
         _hydrate(value);
         return value;
       });
     }
 
     return Scaffold(
-      backgroundColor: const Color(0xFF0F1117),
+      backgroundColor: Theme.of(context).scaffoldBackgroundColor,
       appBar: AppBar(
         title: Text(widget.ticketId == null ? 'Báo sửa chữa' : 'Sửa yêu cầu'),
       ),
       body: ticketAsync.when(
-        loading: () => const Center(
-          child: CircularProgressIndicator(color: AppTheme.primary),
+        loading: () => Center(
+          child: CircularProgressIndicator(
+              color: Theme.of(context).colorScheme.primary),
         ),
         error: (error, _) => Center(child: Text('$error')),
         data: (_) => propertiesAsync.when(
-          loading: () => const Center(
-            child: CircularProgressIndicator(color: AppTheme.primary),
+          loading: () => Center(
+            child: CircularProgressIndicator(
+                color: Theme.of(context).colorScheme.primary),
           ),
           error: (error, _) => Center(child: Text('$error')),
           data: (properties) {
@@ -91,7 +93,11 @@ class _MaintenanceFormScreenState extends ConsumerState<MaintenanceFormScreen> {
             }
             if (_propertyId == null ||
                 !properties.any((property) => property.id == _propertyId)) {
-              _propertyId = properties.first.id;
+              final selected = ref.read(selectedPropertyProvider);
+              _propertyId =
+                  properties.any((property) => property.id == selected)
+                      ? selected
+                      : properties.first.id;
             }
 
             final selectedProperty = properties.firstWhere(
@@ -131,8 +137,8 @@ class _MaintenanceFormScreenState extends ConsumerState<MaintenanceFormScreen> {
                   ),
                   const SizedBox(height: 16),
                   roomsAsync.when(
-                    loading: () => const LinearProgressIndicator(
-                      color: AppTheme.primary,
+                    loading: () => LinearProgressIndicator(
+                      color: Theme.of(context).colorScheme.primary,
                     ),
                     error: (error, _) => Text('$error'),
                     data: (rooms) {
@@ -210,6 +216,7 @@ class _MaintenanceFormScreenState extends ConsumerState<MaintenanceFormScreen> {
                     label: 'Chi phí dự kiến (đ)',
                     keyboardType: TextInputType.number,
                     inputFormatters: [FilteringTextInputFormatter.digitsOnly],
+                    validator: _validCost,
                   ),
                   if (widget.ticketId != null) ...[
                     const SizedBox(height: 16),
@@ -218,6 +225,7 @@ class _MaintenanceFormScreenState extends ConsumerState<MaintenanceFormScreen> {
                       label: 'Chi phí thực tế (đ)',
                       keyboardType: TextInputType.number,
                       inputFormatters: [FilteringTextInputFormatter.digitsOnly],
+                      validator: _validCost,
                     ),
                   ],
                   const SizedBox(height: 16),
@@ -291,8 +299,22 @@ class _MaintenanceFormScreenState extends ConsumerState<MaintenanceFormScreen> {
   }
 
   String? _requiredDate(String? value) {
-    if (value == null || value.trim().isEmpty) return 'Nhập ngày hợp lệ.';
-    return DateTime.tryParse(value.trim()) == null ? 'Nhập ngày hợp lệ.' : null;
+    final text = value?.trim() ?? '';
+    final parsed = DateTime.tryParse(text);
+    if (!RegExp(r'^\d{4}-\d{2}-\d{2}$').hasMatch(text) ||
+        parsed == null ||
+        _isoDate(parsed) != text) {
+      return 'Nhập ngày hợp lệ (YYYY-MM-DD).';
+    }
+    return null;
+  }
+
+  String? _validCost(String? value) {
+    if (value == null || value.trim().isEmpty) return null;
+    final amount = int.tryParse(value.trim());
+    return amount == null || amount < 0 || amount > 2147483647
+        ? 'Chi phí phải từ 0 đến 2.147.483.647 đ.'
+        : null;
   }
 
   String _friendlyError(Object? error) {
@@ -332,14 +354,13 @@ class _RoomDropdown extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     if (rooms.isEmpty) {
-      return const Text(
+      return Text(
         'Khu trọ này chưa có phòng để báo sửa chữa.',
-        style: TextStyle(color: Color(0xFF8891A8)),
+        style: TextStyle(color: Theme.of(context).colorScheme.onSurfaceVariant),
       );
     }
-    final currentRoomId = rooms.any((room) => room.id == roomId)
-        ? roomId
-        : rooms.first.id;
+    final currentRoomId =
+        rooms.any((room) => room.id == roomId) ? roomId : rooms.first.id;
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -369,16 +390,6 @@ int? _intOrNull(String value) {
   return int.tryParse(trimmed);
 }
 
-InputDecoration _inputDecoration() => InputDecoration(
-      filled: true,
-      fillColor: Colors.white,
-      contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 14),
-      enabledBorder: OutlineInputBorder(
-        borderRadius: BorderRadius.circular(12),
-        borderSide: const BorderSide(color: Color(0xFF2E3348)),
-      ),
-      focusedBorder: OutlineInputBorder(
-        borderRadius: BorderRadius.circular(12),
-        borderSide: const BorderSide(color: AppTheme.primary, width: 1.8),
-      ),
+InputDecoration _inputDecoration() => const InputDecoration(
+      contentPadding: EdgeInsets.symmetric(horizontal: 16, vertical: 14),
     );

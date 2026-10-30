@@ -1,0 +1,3388 @@
+{
+  "executedAt": "2026-10-29T01:41:23.441Z",
+  "kind": "unit/mock và HTTP nội bộ mock — không DB E2E/provider thật",
+  "workingDirectory": "/Users/hoang/Rental_room_management/backend",
+  "command": "node node_modules/jest/bin/jest.js --runInBand --testPathPatterns='src/.*\\.spec\\.ts$' --testPathIgnorePatterns='knowledge.repository.spec.ts' --json --outputFile=/tmp/ba-stage4-final-unit-tests.json",
+  "success": true,
+  "passedSuites": 71,
+  "totalSuites": 71,
+  "passedTests": 736,
+  "totalTests": 736,
+  "excluded": [
+    "backend/src/chatbot/knowledge.repository.spec.ts — khởi tạo PrismaClient/$connect, không dùng DB chưa xác định an toàn",
+    "backend/test/e2e/** — không chạy harness resetDatabase",
+    "Flutter/browser và provider email/ZNS/scanner/Ollama/storage — chưa thực thi"
+  ],
+  "suites": [
+    {
+      "file": "backend/scripts/admin-release-preflight.spec.ts",
+      "status": "passed",
+      "tests": [
+        {
+          "name": "Read-only admin release preflight never promotes configured integrations to acceptance or includes secret values",
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "file": "backend/src/admin/admin-access-review.service.spec.ts",
+      "status": "passed",
+      "tests": [
+        {
+          "name": "Access review lifecycle signals uses historical activity, not just unrevoked sessions; masks PII and flags overdue/unreviewed/inactive admins",
+          "status": "passed"
+        },
+        {
+          "name": "Access review lifecycle signals blocks self approval and stale reviewVersion, and audits before/after in the mutation transaction",
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "file": "backend/src/admin/admin-account-governance.spec.ts",
+      "status": "passed",
+      "tests": [
+        {
+          "name": "Existing administrator governance and customer recovery contracts blocks self role changes, stale versions and removing the last super admin",
+          "status": "passed"
+        },
+        {
+          "name": "Existing administrator governance and customer recovery contracts does not change permissions or sessions when MFA fails",
+          "status": "passed"
+        },
+        {
+          "name": "Existing administrator governance and customer recovery contracts deactivation revokes sessions, cancels pending deliveries and audits before/after",
+          "status": "passed"
+        },
+        {
+          "name": "Existing administrator governance and customer recovery contracts password recovery only returns queue acceptance, never a password or token",
+          "status": "passed"
+        },
+        {
+          "name": "Existing administrator governance and customer recovery contracts a missing delivery provider cannot report a reset or invitation as queued",
+          "status": "passed"
+        },
+        {
+          "name": "Existing administrator governance and customer recovery contracts explicit capability grants persists only explicitly chosen grants and revokes sessions in the audit transaction",
+          "status": "passed"
+        },
+        {
+          "name": "Existing administrator governance and customer recovery contracts explicit capability grants rejects malformed or dashboard-less grants: []",
+          "status": "passed"
+        },
+        {
+          "name": "Existing administrator governance and customer recovery contracts explicit capability grants rejects malformed or dashboard-less grants: [\"admin.plans.view\"]",
+          "status": "passed"
+        },
+        {
+          "name": "Existing administrator governance and customer recovery contracts explicit capability grants rejects malformed or dashboard-less grants: [\"admin.dashboard.view\",\"admin.unknown\"]",
+          "status": "passed"
+        },
+        {
+          "name": "Existing administrator governance and customer recovery contracts explicit capability grants rejects malformed or dashboard-less grants: [\"admin.dashboard.view\",\"admin.dashboard.view\"]",
+          "status": "passed"
+        },
+        {
+          "name": "Existing administrator governance and customer recovery contracts explicit capability grants rejects malformed or dashboard-less grants: null",
+          "status": "passed"
+        },
+        {
+          "name": "Existing administrator governance and customer recovery contracts explicit capability grants requires a live active super-admin profile and cannot delegate a missing permission",
+          "status": "passed"
+        },
+        {
+          "name": "Existing administrator governance and customer recovery contracts explicit capability grants does not allow an incomplete super-admin preset even when another super admin exists",
+          "status": "passed"
+        },
+        {
+          "name": "Existing administrator governance and customer recovery contracts explicit capability grants cannot bypass delegation limits by omitting the explicit permission list",
+          "status": "passed"
+        },
+        {
+          "name": "Existing administrator governance and customer recovery contracts explicit capability grants cannot invite an administrator with permissions the operator does not hold",
+          "status": "passed"
+        },
+        {
+          "name": "Existing administrator governance and customer recovery contracts explicit capability grants shows assigned and preset permissions without returning PII or MFA secrets",
+          "status": "passed"
+        },
+        {
+          "name": "Existing administrator governance and customer recovery contracts explicit capability grants does not offer editing for self or when the live operator has no grant authority",
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "file": "backend/src/admin/admin-accounts.http.spec.ts",
+      "status": "passed",
+      "tests": [
+        {
+          "name": "Admin accounts HTTP contract (mock persistence) fails closed for anonymous, customer roles, revoked capability and session",
+          "status": "passed"
+        },
+        {
+          "name": "Admin accounts HTTP contract (mock persistence) transforms bounded query, trims search and disables list/detail caching",
+          "status": "passed"
+        },
+        {
+          "name": "Admin accounts HTTP contract (mock persistence) requires a single-use step-up bound to the exact suspension version/reason",
+          "status": "passed"
+        },
+        {
+          "name": "Admin accounts HTTP contract (mock persistence) requires action-specific capabilities, not just account read permission",
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "file": "backend/src/admin/admin-accounts.service.spec.ts",
+      "status": "passed",
+      "tests": [
+        {
+          "name": "Admin account management rejects reversed account creation ranges before querying persistence",
+          "status": "passed"
+        },
+        {
+          "name": "Admin account management masks contacts, keeps version/metadata and bounds server pagination",
+          "status": "passed"
+        },
+        {
+          "name": "Admin account management suspends customer and dependent staff sessions, auditing both versions atomically",
+          "status": "passed"
+        },
+        {
+          "name": "Admin account management rejects a stale status version without token, session or audit writes",
+          "status": "passed"
+        },
+        {
+          "name": "Admin account management revoke reports the number of revoked sessions and records it in audit",
+          "status": "passed"
+        },
+        {
+          "name": "Admin account management keeps administrator accounts outside customer session revoke",
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "file": "backend/src/admin/admin-audit-query.service.spec.ts",
+      "status": "passed",
+      "tests": [
+        {
+          "name": "Admin audit safety escapes CSV delimiters, quotes, newlines and formula prefixes",
+          "status": "passed"
+        },
+        {
+          "name": "Admin audit safety redacts credentials, contact details and signed links recursively",
+          "status": "passed"
+        },
+        {
+          "name": "Admin audit safety rejects reversed date ranges and composes filters rather than replacing ownership",
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "file": "backend/src/admin/admin-inventory.http.spec.ts",
+      "status": "passed",
+      "tests": [
+        {
+          "name": "Admin inventory HTTP read boundaries allows property viewers without write permission and returns no-store responses",
+          "status": "passed"
+        },
+        {
+          "name": "Admin inventory HTTP read boundaries validates pagination, UUIDs, price filters and enums before dispatch",
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "file": "backend/src/admin/admin-inventory.service.spec.ts",
+      "status": "passed",
+      "tests": [
+        {
+          "name": "Admin property and room inventory bounds the property preview while retaining full counts and lifecycle fields",
+          "status": "passed"
+        },
+        {
+          "name": "Admin property and room inventory returns stable page metadata and masks owner contacts without exposing tenant data",
+          "status": "passed"
+        },
+        {
+          "name": "Admin property and room inventory rejects reversed prices before persistence and supports rooms without listings",
+          "status": "passed"
+        },
+        {
+          "name": "Admin property and room inventory returns 404 for a missing property",
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "file": "backend/src/admin/admin-lifecycle.service.spec.ts",
+      "status": "passed",
+      "tests": [
+        {
+          "name": "Admin lifecycle safety resends an expired admin invite using the existing one-time token queue with before/after audit",
+          "status": "passed"
+        },
+        {
+          "name": "Admin lifecycle safety applies a database-state cooldown, not only a per-process throttle",
+          "status": "passed"
+        },
+        {
+          "name": "Admin lifecycle safety never mistakes invalidation for activation and blocks resends after actual redemption",
+          "status": "passed"
+        },
+        {
+          "name": "Admin lifecycle safety blocks self action, non-admin IDOR, inactive targets, and missing provider configuration",
+          "status": "passed"
+        },
+        {
+          "name": "Admin lifecycle safety revokes sessions and refresh tokens atomically with a versioned audit; rejects duplicate submit",
+          "status": "passed"
+        },
+        {
+          "name": "Admin lifecycle safety counts only active sessions for the current userVersion and keeps history bounded",
+          "status": "passed"
+        },
+        {
+          "name": "Admin lifecycle safety fails the transaction when audit persistence fails instead of acknowledging a sensitive change",
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "file": "backend/src/admin/admin-overview-analytics.http.spec.ts",
+      "status": "passed",
+      "tests": [
+        {
+          "name": "overview analytics HTTP authorization and validation requires an authenticated admin with dashboard rights and MFA",
+          "status": "passed"
+        },
+        {
+          "name": "overview analytics HTTP authorization and validation defaults to 30 days and forbids shared caching",
+          "status": "passed"
+        },
+        {
+          "name": "overview analytics HTTP authorization and validation accepts only supported periods and rejects unknown query parameters",
+          "status": "passed"
+        },
+        {
+          "name": "overview analytics HTTP authorization and validation rejects a disabled or expired actor before analytics executes",
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "file": "backend/src/admin/admin-overview-analytics.service.spec.ts",
+      "status": "passed",
+      "tests": [
+        {
+          "name": "admin overview analytics validates and defaults the 7-day calendar range",
+          "status": "passed"
+        },
+        {
+          "name": "admin overview analytics validates and defaults the 30-day calendar range",
+          "status": "passed"
+        },
+        {
+          "name": "admin overview analytics validates and defaults the 90-day calendar range",
+          "status": "passed"
+        },
+        {
+          "name": "admin overview analytics validates and defaults the 180-day calendar range",
+          "status": "passed"
+        },
+        {
+          "name": "admin overview analytics rejects unsupported ranges and correctly crosses midnight in Vietnam",
+          "status": "passed"
+        },
+        {
+          "name": "admin overview analytics does not invent growth from a zero baseline and handles negative net cash",
+          "status": "passed"
+        },
+        {
+          "name": "admin overview analytics aggregates all roles, room statuses and true rental reversals in one snapshot",
+          "status": "passed"
+        },
+        {
+          "name": "admin overview analytics omits sensitive fields and never queries finance without capability",
+          "status": "passed"
+        },
+        {
+          "name": "admin overview analytics returns an unavailable occupancy ratio for an empty inventory",
+          "status": "passed"
+        },
+        {
+          "name": "admin overview analytics rejects missing dashboard rights or a non-admin before reading the database",
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "file": "backend/src/admin/admin-permissions.dto.spec.ts",
+      "status": "passed",
+      "tests": [
+        {
+          "name": "Explicit administrator permission validation preserves older preset commands and accepts a bounded explicit list",
+          "status": "passed"
+        },
+        {
+          "name": "Explicit administrator permission validation rejects invalid grants null",
+          "status": "passed"
+        },
+        {
+          "name": "Explicit administrator permission validation rejects invalid grants []",
+          "status": "passed"
+        },
+        {
+          "name": "Explicit administrator permission validation rejects invalid grants \"admin.dashboard.view\"",
+          "status": "passed"
+        },
+        {
+          "name": "Explicit administrator permission validation rejects invalid grants [\"admin.unknown\"]",
+          "status": "passed"
+        },
+        {
+          "name": "Explicit administrator permission validation rejects invalid grants [\"admin.dashboard.view\",\"admin.dashboard.view\"]",
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "file": "backend/src/admin/admin-pii-projection.spec.ts",
+      "status": "passed",
+      "tests": [
+        {
+          "name": "Legacy admin contact projection masks contacts on landlord and property list/detail instead of bypassing PII reveal",
+          "status": "passed"
+        },
+        {
+          "name": "Legacy admin contact projection masks team/member emails and emits no MFA secret material",
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "file": "backend/src/admin/admin-property-review.service.spec.ts",
+      "status": "passed",
+      "tests": [
+        {
+          "name": "property review safety approves a matching snapshot and audits in the same transaction",
+          "status": "passed"
+        },
+        {
+          "name": "property review safety refuses changed information, archived properties and stale versions",
+          "status": "passed"
+        },
+        {
+          "name": "property review safety allows a changed pending snapshot to be resubmitted without approval",
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "file": "backend/src/admin/admin-registry.service.spec.ts",
+      "status": "passed",
+      "tests": [
+        {
+          "name": "admin verification transitions reviews the expected version and audits without leaking documents",
+          "status": "passed"
+        },
+        {
+          "name": "admin verification transitions refuses stale versions, terminal decisions and concurrent updates",
+          "status": "passed"
+        },
+        {
+          "name": "admin verification transitions will not approve inactive owners or unscanned/mismatched evidence",
+          "status": "passed"
+        },
+        {
+          "name": "admin verification transitions blocks reviewing your own verification request",
+          "status": "passed"
+        },
+        {
+          "name": "service plans and subscription administration snapshots terms and records assignment as non-financial history",
+          "status": "passed"
+        },
+        {
+          "name": "service plans and subscription administration rejects stale plan revisions and unsafe downgrades",
+          "status": "passed"
+        },
+        {
+          "name": "service plans and subscription administration cancels current entitlement without refunds or deleting inventory",
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "file": "backend/src/admin/admin-release-gate.spec.ts",
+      "status": "passed",
+      "tests": [
+        {
+          "name": "discovered admin release permission matrix discovers the lifecycle and operations surfaces rather than a fixed controller allowlist",
+          "status": "passed"
+        },
+        {
+          "name": "discovered admin release permission matrix GET /admin/access-reviews is fail-closed for admin capability revocation",
+          "status": "passed"
+        },
+        {
+          "name": "discovered admin release permission matrix POST /admin/access-reviews/:id is fail-closed for admin capability revocation",
+          "status": "passed"
+        },
+        {
+          "name": "discovered admin release permission matrix POST /admin/account-invites is fail-closed for admin capability revocation",
+          "status": "passed"
+        },
+        {
+          "name": "discovered admin release permission matrix GET /admin/accounts is fail-closed for admin capability revocation",
+          "status": "passed"
+        },
+        {
+          "name": "discovered admin release permission matrix GET /admin/accounts/:id is fail-closed for admin capability revocation",
+          "status": "passed"
+        },
+        {
+          "name": "discovered admin release permission matrix POST /admin/accounts/:id/reset-password is fail-closed for admin capability revocation",
+          "status": "passed"
+        },
+        {
+          "name": "discovered admin release permission matrix POST /admin/accounts/:id/restore is fail-closed for admin capability revocation",
+          "status": "passed"
+        },
+        {
+          "name": "discovered admin release permission matrix POST /admin/accounts/:id/reveal is fail-closed for admin capability revocation",
+          "status": "passed"
+        },
+        {
+          "name": "discovered admin release permission matrix POST /admin/accounts/:id/revoke-sessions is fail-closed for admin capability revocation",
+          "status": "passed"
+        },
+        {
+          "name": "discovered admin release permission matrix POST /admin/accounts/:id/suspend is fail-closed for admin capability revocation",
+          "status": "passed"
+        },
+        {
+          "name": "discovered admin release permission matrix GET /admin/admins is fail-closed for admin capability revocation",
+          "status": "passed"
+        },
+        {
+          "name": "discovered admin release permission matrix PATCH /admin/admins/:id is fail-closed for admin capability revocation",
+          "status": "passed"
+        },
+        {
+          "name": "discovered admin release permission matrix GET /admin/admins/:id/access is fail-closed for admin capability revocation",
+          "status": "passed"
+        },
+        {
+          "name": "discovered admin release permission matrix GET /admin/admins/:id/lifecycle is fail-closed for admin capability revocation",
+          "status": "passed"
+        },
+        {
+          "name": "discovered admin release permission matrix POST /admin/admins/:id/resend-invite is fail-closed for admin capability revocation",
+          "status": "passed"
+        },
+        {
+          "name": "discovered admin release permission matrix POST /admin/admins/:id/revoke-sessions is fail-closed for admin capability revocation",
+          "status": "passed"
+        },
+        {
+          "name": "discovered admin release permission matrix GET /admin/analytics/overview is fail-closed for admin capability revocation",
+          "status": "passed"
+        },
+        {
+          "name": "discovered admin release permission matrix GET /admin/analytics/summary is fail-closed for admin capability revocation",
+          "status": "passed"
+        },
+        {
+          "name": "discovered admin release permission matrix GET /admin/audit-logs is fail-closed for admin capability revocation",
+          "status": "passed"
+        },
+        {
+          "name": "discovered admin release permission matrix GET /admin/audit-logs/:id is fail-closed for admin capability revocation",
+          "status": "passed"
+        },
+        {
+          "name": "discovered admin release permission matrix POST /admin/audit-logs/export is fail-closed for admin capability revocation",
+          "status": "passed"
+        },
+        {
+          "name": "discovered admin release permission matrix GET /admin/campuses is fail-closed for admin capability revocation",
+          "status": "passed"
+        },
+        {
+          "name": "discovered admin release permission matrix POST /admin/campuses is fail-closed for admin capability revocation",
+          "status": "passed"
+        },
+        {
+          "name": "discovered admin release permission matrix PATCH /admin/campuses/:id is fail-closed for admin capability revocation",
+          "status": "passed"
+        },
+        {
+          "name": "discovered admin release permission matrix GET /admin/feature-flags is fail-closed for admin capability revocation",
+          "status": "passed"
+        },
+        {
+          "name": "discovered admin release permission matrix PATCH /admin/feature-flags/:key is fail-closed for admin capability revocation",
+          "status": "passed"
+        },
+        {
+          "name": "discovered admin release permission matrix GET /admin/feature-flags/effective is fail-closed for admin capability revocation",
+          "status": "passed"
+        },
+        {
+          "name": "discovered admin release permission matrix GET /admin/finance/reconciliation is fail-closed for admin capability revocation",
+          "status": "passed"
+        },
+        {
+          "name": "discovered admin release permission matrix GET /admin/finance/reconciliation-proposals is fail-closed for admin capability revocation",
+          "status": "passed"
+        },
+        {
+          "name": "discovered admin release permission matrix POST /admin/finance/reconciliation-proposals/:id/approve is fail-closed for admin capability revocation",
+          "status": "passed"
+        },
+        {
+          "name": "discovered admin release permission matrix POST /admin/finance/reconciliation-proposals/:id/reject is fail-closed for admin capability revocation",
+          "status": "passed"
+        },
+        {
+          "name": "discovered admin release permission matrix GET /admin/finance/statement-lines is fail-closed for admin capability revocation",
+          "status": "passed"
+        },
+        {
+          "name": "discovered admin release permission matrix GET /admin/finance/statement-lines/:id/candidates is fail-closed for admin capability revocation",
+          "status": "passed"
+        },
+        {
+          "name": "discovered admin release permission matrix POST /admin/finance/statement-lines/:id/proposals is fail-closed for admin capability revocation",
+          "status": "passed"
+        },
+        {
+          "name": "discovered admin release permission matrix POST /admin/finance/statements is fail-closed for admin capability revocation",
+          "status": "passed"
+        },
+        {
+          "name": "discovered admin release permission matrix GET /admin/finance/transactions is fail-closed for admin capability revocation",
+          "status": "passed"
+        },
+        {
+          "name": "discovered admin release permission matrix GET /admin/landlord-verifications is fail-closed for admin capability revocation",
+          "status": "passed"
+        },
+        {
+          "name": "discovered admin release permission matrix POST /admin/landlord-verifications is fail-closed for admin capability revocation",
+          "status": "passed"
+        },
+        {
+          "name": "discovered admin release permission matrix POST /admin/landlord-verifications/:id/review is fail-closed for admin capability revocation",
+          "status": "passed"
+        },
+        {
+          "name": "discovered admin release permission matrix GET /admin/landlords is fail-closed for admin capability revocation",
+          "status": "passed"
+        },
+        {
+          "name": "discovered admin release permission matrix POST /admin/landlords is fail-closed for admin capability revocation",
+          "status": "passed"
+        },
+        {
+          "name": "discovered admin release permission matrix GET /admin/landlords/:id is fail-closed for admin capability revocation",
+          "status": "passed"
+        },
+        {
+          "name": "discovered admin release permission matrix PATCH /admin/landlords/:id is fail-closed for admin capability revocation",
+          "status": "passed"
+        },
+        {
+          "name": "discovered admin release permission matrix PATCH /admin/landlords/:id/status is fail-closed for admin capability revocation",
+          "status": "passed"
+        },
+        {
+          "name": "discovered admin release permission matrix POST /admin/landlords/:id/subscription is fail-closed for admin capability revocation",
+          "status": "passed"
+        },
+        {
+          "name": "discovered admin release permission matrix GET /admin/listings is fail-closed for admin capability revocation",
+          "status": "passed"
+        },
+        {
+          "name": "discovered admin release permission matrix POST /admin/listings/:id/review is fail-closed for admin capability revocation",
+          "status": "passed"
+        },
+        {
+          "name": "discovered admin release permission matrix POST /admin/listings/:id/verification is fail-closed for admin capability revocation",
+          "status": "passed"
+        },
+        {
+          "name": "discovered admin release permission matrix GET /admin/listings/reports is fail-closed for admin capability revocation",
+          "status": "passed"
+        },
+        {
+          "name": "discovered admin release permission matrix POST /admin/listings/reports/:id/review is fail-closed for admin capability revocation",
+          "status": "passed"
+        },
+        {
+          "name": "discovered admin release permission matrix GET /admin/me/capabilities is fail-closed for admin capability revocation",
+          "status": "passed"
+        },
+        {
+          "name": "discovered admin release permission matrix GET /admin/me/security preserves the self-enrollment role/profile gate without an MFA circular dependency",
+          "status": "passed"
+        },
+        {
+          "name": "discovered admin release permission matrix POST /admin/me/security/confirm preserves the self-enrollment role/profile gate without an MFA circular dependency",
+          "status": "passed"
+        },
+        {
+          "name": "discovered admin release permission matrix POST /admin/me/security/enroll preserves the self-enrollment role/profile gate without an MFA circular dependency",
+          "status": "passed"
+        },
+        {
+          "name": "discovered admin release permission matrix POST /admin/me/security/step-up is fail-closed for admin capability revocation",
+          "status": "passed"
+        },
+        {
+          "name": "discovered admin release permission matrix GET /admin/moderation-policies is fail-closed for admin capability revocation",
+          "status": "passed"
+        },
+        {
+          "name": "discovered admin release permission matrix POST /admin/moderation-policies is fail-closed for admin capability revocation",
+          "status": "passed"
+        },
+        {
+          "name": "discovered admin release permission matrix POST /admin/moderation-policies/:id/activate is fail-closed for admin capability revocation",
+          "status": "passed"
+        },
+        {
+          "name": "discovered admin release permission matrix GET /admin/moderation-policies/quality is fail-closed for admin capability revocation",
+          "status": "passed"
+        },
+        {
+          "name": "discovered admin release permission matrix GET /admin/moderation-policies/quality/samples is fail-closed for admin capability revocation",
+          "status": "passed"
+        },
+        {
+          "name": "discovered admin release permission matrix GET /admin/moderation-policies/quality/samples/:id is fail-closed for admin capability revocation",
+          "status": "passed"
+        },
+        {
+          "name": "discovered admin release permission matrix POST /admin/moderation-policies/quality/samples/:id/review is fail-closed for admin capability revocation",
+          "status": "passed"
+        },
+        {
+          "name": "discovered admin release permission matrix GET /admin/moderation-v2/appeals is fail-closed for admin capability revocation",
+          "status": "passed"
+        },
+        {
+          "name": "discovered admin release permission matrix POST /admin/moderation-v2/appeals/:id/assign is fail-closed for admin capability revocation",
+          "status": "passed"
+        },
+        {
+          "name": "discovered admin release permission matrix POST /admin/moderation-v2/appeals/:id/resolve is fail-closed for admin capability revocation",
+          "status": "passed"
+        },
+        {
+          "name": "discovered admin release permission matrix POST /admin/moderation-v2/bulk is fail-closed for admin capability revocation",
+          "status": "passed"
+        },
+        {
+          "name": "discovered admin release permission matrix POST /admin/moderation-v2/bulk/preview is fail-closed for admin capability revocation",
+          "status": "passed"
+        },
+        {
+          "name": "discovered admin release permission matrix GET /admin/moderation-v2/decisions is fail-closed for admin capability revocation",
+          "status": "passed"
+        },
+        {
+          "name": "discovered admin release permission matrix GET /admin/moderation-v2/history/:kind/:id is fail-closed for admin capability revocation",
+          "status": "passed"
+        },
+        {
+          "name": "discovered admin release permission matrix GET /admin/moderation-v2/reports is fail-closed for admin capability revocation",
+          "status": "passed"
+        },
+        {
+          "name": "discovered admin release permission matrix GET /admin/moderation/items/:kind/:id is fail-closed for admin capability revocation",
+          "status": "passed"
+        },
+        {
+          "name": "discovered admin release permission matrix GET /admin/moderation/queue is fail-closed for admin capability revocation",
+          "status": "passed"
+        },
+        {
+          "name": "discovered admin release permission matrix POST /admin/moderation/work is fail-closed for admin capability revocation",
+          "status": "passed"
+        },
+        {
+          "name": "discovered admin release permission matrix GET /admin/operations/delivery-jobs is fail-closed for admin capability revocation",
+          "status": "passed"
+        },
+        {
+          "name": "discovered admin release permission matrix GET /admin/operations/health is fail-closed for admin capability revocation",
+          "status": "passed"
+        },
+        {
+          "name": "discovered admin release permission matrix GET /admin/operations/incidents is fail-closed for admin capability revocation",
+          "status": "passed"
+        },
+        {
+          "name": "discovered admin release permission matrix GET /admin/operations/incidents/:id is fail-closed for admin capability revocation",
+          "status": "passed"
+        },
+        {
+          "name": "discovered admin release permission matrix POST /admin/operations/incidents/:id/acknowledge is fail-closed for admin capability revocation",
+          "status": "passed"
+        },
+        {
+          "name": "discovered admin release permission matrix POST /admin/operations/incidents/:id/actions is fail-closed for admin capability revocation",
+          "status": "passed"
+        },
+        {
+          "name": "discovered admin release permission matrix GET /admin/operations/incidents/assignees is fail-closed for admin capability revocation",
+          "status": "passed"
+        },
+        {
+          "name": "discovered admin release permission matrix GET /admin/operations/notification-delivery is fail-closed for admin capability revocation",
+          "status": "passed"
+        },
+        {
+          "name": "discovered admin release permission matrix POST /admin/operations/notification-delivery/:id/retry is fail-closed for admin capability revocation",
+          "status": "passed"
+        },
+        {
+          "name": "discovered admin release permission matrix GET /admin/overview is fail-closed for admin capability revocation",
+          "status": "passed"
+        },
+        {
+          "name": "discovered admin release permission matrix GET /admin/permission-catalog is fail-closed for admin capability revocation",
+          "status": "passed"
+        },
+        {
+          "name": "discovered admin release permission matrix POST /admin/permissions/simulate is fail-closed for admin capability revocation",
+          "status": "passed"
+        },
+        {
+          "name": "discovered admin release permission matrix GET /admin/properties is fail-closed for admin capability revocation",
+          "status": "passed"
+        },
+        {
+          "name": "discovered admin release permission matrix POST /admin/properties is fail-closed for admin capability revocation",
+          "status": "passed"
+        },
+        {
+          "name": "discovered admin release permission matrix GET /admin/properties/:id is fail-closed for admin capability revocation",
+          "status": "passed"
+        },
+        {
+          "name": "discovered admin release permission matrix PATCH /admin/properties/:id is fail-closed for admin capability revocation",
+          "status": "passed"
+        },
+        {
+          "name": "discovered admin release permission matrix POST /admin/properties/:id/submit-review is fail-closed for admin capability revocation",
+          "status": "passed"
+        },
+        {
+          "name": "discovered admin release permission matrix GET /admin/property-reviews is fail-closed for admin capability revocation",
+          "status": "passed"
+        },
+        {
+          "name": "discovered admin release permission matrix POST /admin/property-reviews/:id/review is fail-closed for admin capability revocation",
+          "status": "passed"
+        },
+        {
+          "name": "discovered admin release permission matrix GET /admin/report-runs/:id/download is fail-closed for admin capability revocation",
+          "status": "passed"
+        },
+        {
+          "name": "discovered admin release permission matrix POST /admin/report-runs/:id/download-link is fail-closed for admin capability revocation",
+          "status": "passed"
+        },
+        {
+          "name": "discovered admin release permission matrix POST /admin/report-runs/:id/retry is fail-closed for admin capability revocation",
+          "status": "passed"
+        },
+        {
+          "name": "discovered admin release permission matrix GET /admin/report-schedules is fail-closed for admin capability revocation",
+          "status": "passed"
+        },
+        {
+          "name": "discovered admin release permission matrix POST /admin/report-schedules is fail-closed for admin capability revocation",
+          "status": "passed"
+        },
+        {
+          "name": "discovered admin release permission matrix PATCH /admin/report-schedules/:id is fail-closed for admin capability revocation",
+          "status": "passed"
+        },
+        {
+          "name": "discovered admin release permission matrix POST /admin/report-schedules/:id/run is fail-closed for admin capability revocation",
+          "status": "passed"
+        },
+        {
+          "name": "discovered admin release permission matrix GET /admin/report-schedules/:id/runs is fail-closed for admin capability revocation",
+          "status": "passed"
+        },
+        {
+          "name": "discovered admin release permission matrix GET /admin/resources is fail-closed for admin capability revocation",
+          "status": "passed"
+        },
+        {
+          "name": "discovered admin release permission matrix GET /admin/resources/:id is fail-closed for admin capability revocation",
+          "status": "passed"
+        },
+        {
+          "name": "discovered admin release permission matrix GET /admin/room-reviews is fail-closed for admin capability revocation",
+          "status": "passed"
+        },
+        {
+          "name": "discovered admin release permission matrix POST /admin/room-reviews/:id/moderate is fail-closed for admin capability revocation",
+          "status": "passed"
+        },
+        {
+          "name": "discovered admin release permission matrix POST /admin/room-reviews/:id/reply/moderate is fail-closed for admin capability revocation",
+          "status": "passed"
+        },
+        {
+          "name": "discovered admin release permission matrix GET /admin/rooms is fail-closed for admin capability revocation",
+          "status": "passed"
+        },
+        {
+          "name": "discovered admin release permission matrix GET /admin/search is fail-closed for admin capability revocation",
+          "status": "passed"
+        },
+        {
+          "name": "discovered admin release permission matrix GET /admin/service-plans is fail-closed for admin capability revocation",
+          "status": "passed"
+        },
+        {
+          "name": "discovered admin release permission matrix POST /admin/service-plans is fail-closed for admin capability revocation",
+          "status": "passed"
+        },
+        {
+          "name": "discovered admin release permission matrix GET /admin/subscriptions is fail-closed for admin capability revocation",
+          "status": "passed"
+        },
+        {
+          "name": "discovered admin release permission matrix POST /admin/subscriptions/:id/cancel is fail-closed for admin capability revocation",
+          "status": "passed"
+        },
+        {
+          "name": "discovered admin release permission matrix GET /admin/subscriptions/:id/events is fail-closed for admin capability revocation",
+          "status": "passed"
+        },
+        {
+          "name": "discovered admin release permission matrix POST /admin/support-cases/:id/links is fail-closed for admin capability revocation",
+          "status": "passed"
+        },
+        {
+          "name": "discovered admin release permission matrix POST /admin/support-cases/:id/timeline is fail-closed for admin capability revocation",
+          "status": "passed"
+        },
+        {
+          "name": "discovered admin release permission matrix POST /admin/support-context is fail-closed for admin capability revocation",
+          "status": "passed"
+        },
+        {
+          "name": "discovered admin release permission matrix GET /admin/support-sla-policy is fail-closed for admin capability revocation",
+          "status": "passed"
+        },
+        {
+          "name": "discovered admin release permission matrix PATCH /admin/support-sla-policy is fail-closed for admin capability revocation",
+          "status": "passed"
+        },
+        {
+          "name": "discovered admin release permission matrix GET /admin/team is fail-closed for admin capability revocation",
+          "status": "passed"
+        },
+        {
+          "name": "discovered admin release permission matrix GET /admin/teams is fail-closed for admin capability revocation",
+          "status": "passed"
+        },
+        {
+          "name": "discovered admin release permission matrix POST /admin/teams is fail-closed for admin capability revocation",
+          "status": "passed"
+        },
+        {
+          "name": "discovered admin release permission matrix PATCH /admin/teams/:id is fail-closed for admin capability revocation",
+          "status": "passed"
+        },
+        {
+          "name": "discovered admin release permission matrix POST /admin/teams/:id/members is fail-closed for admin capability revocation",
+          "status": "passed"
+        },
+        {
+          "name": "discovered admin release permission matrix POST /admin/teams/:id/members/:userId/remove is fail-closed for admin capability revocation",
+          "status": "passed"
+        },
+        {
+          "name": "discovered admin release permission matrix GET /admin/workspace/action-items is fail-closed for admin capability revocation",
+          "status": "passed"
+        },
+        {
+          "name": "discovered admin release permission matrix GET /admin/workspace/summary is fail-closed for admin capability revocation",
+          "status": "passed"
+        },
+        {
+          "name": "discovered admin release permission matrix GET /housing/feedback is fail-closed for admin capability revocation",
+          "status": "passed"
+        },
+        {
+          "name": "discovered admin release permission matrix GET /housing/pilot is fail-closed for admin capability revocation",
+          "status": "passed"
+        },
+        {
+          "name": "discovered admin release permission matrix GET /moderation/appeals is fail-closed for admin capability revocation",
+          "status": "passed"
+        },
+        {
+          "name": "discovered admin release permission matrix POST /moderation/appeals is fail-closed for admin capability revocation",
+          "status": "passed"
+        },
+        {
+          "name": "discovered admin release permission matrix GET /moderation/decisions is fail-closed for admin capability revocation",
+          "status": "passed"
+        },
+        {
+          "name": "discovered admin release permission matrix GET /moderation/features is fail-closed for admin capability revocation",
+          "status": "passed"
+        },
+        {
+          "name": "discovered admin release permission matrix GET /notification-center is fail-closed for admin capability revocation",
+          "status": "passed"
+        },
+        {
+          "name": "discovered admin release permission matrix POST /notification-center/:id/read is fail-closed for admin capability revocation",
+          "status": "passed"
+        },
+        {
+          "name": "discovered admin release permission matrix GET /notification-center/preferences is fail-closed for admin capability revocation",
+          "status": "passed"
+        },
+        {
+          "name": "discovered admin release permission matrix PATCH /notification-center/preferences is fail-closed for admin capability revocation",
+          "status": "passed"
+        },
+        {
+          "name": "discovered admin release permission matrix POST /notification-center/read-all is fail-closed for admin capability revocation",
+          "status": "passed"
+        },
+        {
+          "name": "discovered admin release permission matrix GET /support/notifications is fail-closed for admin capability revocation",
+          "status": "passed"
+        },
+        {
+          "name": "discovered admin release permission matrix POST /support/notifications/:id/read is fail-closed for admin capability revocation",
+          "status": "passed"
+        },
+        {
+          "name": "discovered admin release permission matrix POST /support/notifications/read-all is fail-closed for admin capability revocation",
+          "status": "passed"
+        },
+        {
+          "name": "discovered admin release permission matrix GET /support/skills is fail-closed for admin capability revocation",
+          "status": "passed"
+        },
+        {
+          "name": "discovered admin release permission matrix PATCH /support/skills/:id is fail-closed for admin capability revocation",
+          "status": "passed"
+        },
+        {
+          "name": "discovered admin release permission matrix GET /support/templates is fail-closed for admin capability revocation",
+          "status": "passed"
+        },
+        {
+          "name": "discovered admin release permission matrix POST /support/templates is fail-closed for admin capability revocation",
+          "status": "passed"
+        },
+        {
+          "name": "discovered admin release permission matrix PATCH /support/templates/:id is fail-closed for admin capability revocation",
+          "status": "passed"
+        },
+        {
+          "name": "discovered admin release permission matrix GET /support/tickets is fail-closed for admin capability revocation",
+          "status": "passed"
+        },
+        {
+          "name": "discovered admin release permission matrix POST /support/tickets is fail-closed for admin capability revocation",
+          "status": "passed"
+        },
+        {
+          "name": "discovered admin release permission matrix GET /support/tickets/:id is fail-closed for admin capability revocation",
+          "status": "passed"
+        },
+        {
+          "name": "discovered admin release permission matrix PATCH /support/tickets/:id/assignment is fail-closed for admin capability revocation",
+          "status": "passed"
+        },
+        {
+          "name": "discovered admin release permission matrix POST /support/tickets/:id/attachments is fail-closed for admin capability revocation",
+          "status": "passed"
+        },
+        {
+          "name": "discovered admin release permission matrix POST /support/tickets/:id/auto-assign is fail-closed for admin capability revocation",
+          "status": "passed"
+        },
+        {
+          "name": "discovered admin release permission matrix POST /support/tickets/:id/feedback is fail-closed for admin capability revocation",
+          "status": "passed"
+        },
+        {
+          "name": "discovered admin release permission matrix PATCH /support/tickets/:id/labels is fail-closed for admin capability revocation",
+          "status": "passed"
+        },
+        {
+          "name": "discovered admin release permission matrix POST /support/tickets/:id/merge is fail-closed for admin capability revocation",
+          "status": "passed"
+        },
+        {
+          "name": "discovered admin release permission matrix POST /support/tickets/:id/notes is fail-closed for admin capability revocation",
+          "status": "passed"
+        },
+        {
+          "name": "discovered admin release permission matrix POST /support/tickets/:id/replies is fail-closed for admin capability revocation",
+          "status": "passed"
+        },
+        {
+          "name": "discovered admin release permission matrix PATCH /support/tickets/:id/status is fail-closed for admin capability revocation",
+          "status": "passed"
+        },
+        {
+          "name": "discovered admin release permission matrix GET /support/tickets/assignees is fail-closed for admin capability revocation",
+          "status": "passed"
+        },
+        {
+          "name": "discovered admin release permission matrix GET /support/tickets/teams is fail-closed for admin capability revocation",
+          "status": "passed"
+        },
+        {
+          "name": "discovered admin release permission matrix GET /support/views is fail-closed for admin capability revocation",
+          "status": "passed"
+        },
+        {
+          "name": "discovered admin release permission matrix POST /support/views is fail-closed for admin capability revocation",
+          "status": "passed"
+        },
+        {
+          "name": "discovered admin release permission matrix DELETE /support/views/:id is fail-closed for admin capability revocation",
+          "status": "passed"
+        },
+        {
+          "name": "discovered admin release permission matrix PATCH /support/views/:id is fail-closed for admin capability revocation",
+          "status": "passed"
+        },
+        {
+          "name": "discovered admin release permission matrix GET /uploads/:filename/access is fail-closed for admin capability revocation",
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "file": "backend/src/admin/admin-release-http.spec.ts",
+      "status": "passed",
+      "tests": [
+        {
+          "name": "Admin lifecycle HTTP release gate (mock persistence, no database/reset) rejects anonymous, staff, landlord and tenant HTTP calls, not just hidden menus",
+          "status": "passed"
+        },
+        {
+          "name": "Admin lifecycle HTTP release gate (mock persistence, no database/reset) loads permissions at the next request and rejects revoked sessions or changed userVersion",
+          "status": "passed"
+        },
+        {
+          "name": "Admin lifecycle HTTP release gate (mock persistence, no database/reset) requires fresh single-use step-up with an exact payload and both revoke capabilities",
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "file": "backend/src/admin/admin-route-catalog.spec.ts",
+      "status": "passed",
+      "tests": [
+        {
+          "name": "admin route capability catalog AdminRegistryController.transactionList declares an admin role and known capabilities",
+          "status": "passed"
+        },
+        {
+          "name": "admin route capability catalog AdminRegistryController.verifications declares an admin role and known capabilities",
+          "status": "passed"
+        },
+        {
+          "name": "admin route capability catalog AdminRegistryController.submitVerification declares an admin role and known capabilities",
+          "status": "passed"
+        },
+        {
+          "name": "admin route capability catalog AdminRegistryController.reviewVerification declares an admin role and known capabilities",
+          "status": "passed"
+        },
+        {
+          "name": "admin route capability catalog AdminRegistryController.propertyReviews declares an admin role and known capabilities",
+          "status": "passed"
+        },
+        {
+          "name": "admin route capability catalog AdminRegistryController.submitProperty declares an admin role and known capabilities",
+          "status": "passed"
+        },
+        {
+          "name": "admin route capability catalog AdminRegistryController.reviewProperty declares an admin role and known capabilities",
+          "status": "passed"
+        },
+        {
+          "name": "admin route capability catalog AdminRegistryController.servicePlans declares an admin role and known capabilities",
+          "status": "passed"
+        },
+        {
+          "name": "admin route capability catalog AdminRegistryController.savePlan declares an admin role and known capabilities",
+          "status": "passed"
+        },
+        {
+          "name": "admin route capability catalog AdminRegistryController.subscriptions declares an admin role and known capabilities",
+          "status": "passed"
+        },
+        {
+          "name": "admin route capability catalog AdminRegistryController.subscriptionEvents declares an admin role and known capabilities",
+          "status": "passed"
+        },
+        {
+          "name": "admin route capability catalog AdminRegistryController.assignSubscription declares an admin role and known capabilities",
+          "status": "passed"
+        },
+        {
+          "name": "admin route capability catalog AdminRegistryController.cancelSubscription declares an admin role and known capabilities",
+          "status": "passed"
+        },
+        {
+          "name": "admin route capability catalog AdminController.overview declares an admin role and known capabilities",
+          "status": "passed"
+        },
+        {
+          "name": "admin route capability catalog AdminController.listLandlords declares an admin role and known capabilities",
+          "status": "passed"
+        },
+        {
+          "name": "admin route capability catalog AdminController.createLandlord declares an admin role and known capabilities",
+          "status": "passed"
+        },
+        {
+          "name": "admin route capability catalog AdminController.getLandlord declares an admin role and known capabilities",
+          "status": "passed"
+        },
+        {
+          "name": "admin route capability catalog AdminController.updateLandlord declares an admin role and known capabilities",
+          "status": "passed"
+        },
+        {
+          "name": "admin route capability catalog AdminController.updateLandlordStatus declares an admin role and known capabilities",
+          "status": "passed"
+        },
+        {
+          "name": "admin route capability catalog AdminController.listProperties declares an admin role and known capabilities",
+          "status": "passed"
+        },
+        {
+          "name": "admin route capability catalog AdminController.createProperty declares an admin role and known capabilities",
+          "status": "passed"
+        },
+        {
+          "name": "admin route capability catalog AdminController.getProperty declares an admin role and known capabilities",
+          "status": "passed"
+        },
+        {
+          "name": "admin route capability catalog AdminController.rooms declares an admin role and known capabilities",
+          "status": "passed"
+        },
+        {
+          "name": "admin route capability catalog AdminController.updateProperty declares an admin role and known capabilities",
+          "status": "passed"
+        },
+        {
+          "name": "admin route capability catalog AdminConsoleController.capabilities declares an admin role and known capabilities",
+          "status": "passed"
+        },
+        {
+          "name": "admin route capability catalog AdminConsoleController.accounts declares an admin role and known capabilities",
+          "status": "passed"
+        },
+        {
+          "name": "admin route capability catalog AdminConsoleController.account declares an admin role and known capabilities",
+          "status": "passed"
+        },
+        {
+          "name": "admin route capability catalog AdminConsoleController.suspend declares an admin role and known capabilities",
+          "status": "passed"
+        },
+        {
+          "name": "admin route capability catalog AdminConsoleController.restore declares an admin role and known capabilities",
+          "status": "passed"
+        },
+        {
+          "name": "admin route capability catalog AdminConsoleController.revoke declares an admin role and known capabilities",
+          "status": "passed"
+        },
+        {
+          "name": "admin route capability catalog AdminConsoleController.reveal declares an admin role and known capabilities",
+          "status": "passed"
+        },
+        {
+          "name": "admin route capability catalog AdminConsoleController.reset declares an admin role and known capabilities",
+          "status": "passed"
+        },
+        {
+          "name": "admin route capability catalog AdminConsoleController.invite declares an admin role and known capabilities",
+          "status": "passed"
+        },
+        {
+          "name": "admin route capability catalog AdminConsoleController.admins declares an admin role and known capabilities",
+          "status": "passed"
+        },
+        {
+          "name": "admin route capability catalog AdminConsoleController.adminAccess declares an admin role and known capabilities",
+          "status": "passed"
+        },
+        {
+          "name": "admin route capability catalog AdminConsoleController.profile declares an admin role and known capabilities",
+          "status": "passed"
+        },
+        {
+          "name": "admin route capability catalog AdminConsoleController.audit declares an admin role and known capabilities",
+          "status": "passed"
+        },
+        {
+          "name": "admin route capability catalog AdminConsoleController.auditDetail declares an admin role and known capabilities",
+          "status": "passed"
+        },
+        {
+          "name": "admin route capability catalog AdminConsoleController.auditExport declares an admin role and known capabilities",
+          "status": "passed"
+        },
+        {
+          "name": "admin route capability catalog AdminConsoleController.context declares an admin role and known capabilities",
+          "status": "passed"
+        },
+        {
+          "name": "admin route capability catalog AdminConsoleController.queue declares an admin role and known capabilities",
+          "status": "passed"
+        },
+        {
+          "name": "admin route capability catalog AdminConsoleController.work declares an admin role and known capabilities",
+          "status": "passed"
+        },
+        {
+          "name": "admin route capability catalog AdminConsoleController.item declares an admin role and known capabilities",
+          "status": "passed"
+        },
+        {
+          "name": "admin route capability catalog AdminConsoleController.analytics declares an admin role and known capabilities",
+          "status": "passed"
+        },
+        {
+          "name": "admin route capability catalog AdminConsoleController.operationsHealth declares an admin role and known capabilities",
+          "status": "passed"
+        },
+        {
+          "name": "admin route capability catalog AdminConsoleController.acknowledgeIncident declares an admin role and known capabilities",
+          "status": "passed"
+        },
+        {
+          "name": "admin route capability catalog AdminAccessReviewController.catalog declares an admin role and known capabilities",
+          "status": "passed"
+        },
+        {
+          "name": "admin route capability catalog AdminAccessReviewController.list declares an admin role and known capabilities",
+          "status": "passed"
+        },
+        {
+          "name": "admin route capability catalog AdminAccessReviewController.review declares an admin role and known capabilities",
+          "status": "passed"
+        },
+        {
+          "name": "admin route capability catalog AdminSearchController.searchAll declares an admin role and known capabilities",
+          "status": "passed"
+        },
+        {
+          "name": "admin route capability catalog AdminSearchController.resources declares an admin role and known capabilities",
+          "status": "passed"
+        },
+        {
+          "name": "admin route capability catalog AdminSearchController.detail declares an admin role and known capabilities",
+          "status": "passed"
+        },
+        {
+          "name": "admin route capability catalog GovernanceController.team declares an admin role and known capabilities",
+          "status": "passed"
+        },
+        {
+          "name": "admin route capability catalog GovernanceController.teams declares an admin role and known capabilities",
+          "status": "passed"
+        },
+        {
+          "name": "admin route capability catalog GovernanceController.createTeam declares an admin role and known capabilities",
+          "status": "passed"
+        },
+        {
+          "name": "admin route capability catalog GovernanceController.addMember declares an admin role and known capabilities",
+          "status": "passed"
+        },
+        {
+          "name": "admin route capability catalog GovernanceController.updateTeam declares an admin role and known capabilities",
+          "status": "passed"
+        },
+        {
+          "name": "admin route capability catalog GovernanceController.removeMember declares an admin role and known capabilities",
+          "status": "passed"
+        },
+        {
+          "name": "admin route capability catalog GovernanceController.simulate declares an admin role and known capabilities",
+          "status": "passed"
+        },
+        {
+          "name": "admin route capability catalog GovernanceController.flagsList declares an admin role and known capabilities",
+          "status": "passed"
+        },
+        {
+          "name": "admin route capability catalog GovernanceController.effective declares an admin role and known capabilities",
+          "status": "passed"
+        },
+        {
+          "name": "admin route capability catalog GovernanceController.flagsUpdate declares an admin role and known capabilities",
+          "status": "passed"
+        },
+        {
+          "name": "admin route capability catalog GovernanceController.finance declares an admin role and known capabilities",
+          "status": "passed"
+        },
+        {
+          "name": "admin route capability catalog GovernanceController.schedules declares an admin role and known capabilities",
+          "status": "passed"
+        },
+        {
+          "name": "admin route capability catalog GovernanceController.createSchedule declares an admin role and known capabilities",
+          "status": "passed"
+        },
+        {
+          "name": "admin route capability catalog GovernanceController.updateSchedule declares an admin role and known capabilities",
+          "status": "passed"
+        },
+        {
+          "name": "admin route capability catalog GovernanceController.runSchedule declares an admin role and known capabilities",
+          "status": "passed"
+        },
+        {
+          "name": "admin route capability catalog GovernanceController.runs declares an admin role and known capabilities",
+          "status": "passed"
+        },
+        {
+          "name": "admin route capability catalog GovernanceController.retry declares an admin role and known capabilities",
+          "status": "passed"
+        },
+        {
+          "name": "admin route capability catalog GovernanceController.link declares an admin role and known capabilities",
+          "status": "passed"
+        },
+        {
+          "name": "admin route capability catalog GovernanceController.download declares an admin role and known capabilities",
+          "status": "passed"
+        },
+        {
+          "name": "admin route capability catalog ModerationV2Controller.decisions declares an admin role and known capabilities",
+          "status": "passed"
+        },
+        {
+          "name": "admin route capability catalog ModerationV2Controller.history declares an admin role and known capabilities",
+          "status": "passed"
+        },
+        {
+          "name": "admin route capability catalog ModerationV2Controller.appeals declares an admin role and known capabilities",
+          "status": "passed"
+        },
+        {
+          "name": "admin route capability catalog ModerationV2Controller.assign declares an admin role and known capabilities",
+          "status": "passed"
+        },
+        {
+          "name": "admin route capability catalog ModerationV2Controller.resolve declares an admin role and known capabilities",
+          "status": "passed"
+        },
+        {
+          "name": "admin route capability catalog ModerationV2Controller.bulk declares an admin role and known capabilities",
+          "status": "passed"
+        },
+        {
+          "name": "admin route capability catalog ModerationV2Controller.preview declares an admin role and known capabilities",
+          "status": "passed"
+        },
+        {
+          "name": "admin route capability catalog ModerationV2Controller.reports declares an admin role and known capabilities",
+          "status": "passed"
+        },
+        {
+          "name": "admin route capability catalog SupportCaseController.timeline declares an admin role and known capabilities",
+          "status": "passed"
+        },
+        {
+          "name": "admin route capability catalog SupportCaseController.link declares an admin role and known capabilities",
+          "status": "passed"
+        },
+        {
+          "name": "admin route capability catalog SupportSlaController.policy declares an admin role and known capabilities",
+          "status": "passed"
+        },
+        {
+          "name": "admin route capability catalog SupportSlaController.update declares an admin role and known capabilities",
+          "status": "passed"
+        },
+        {
+          "name": "admin route capability catalog IncidentWorkflowController.list declares an admin role and known capabilities",
+          "status": "passed"
+        },
+        {
+          "name": "admin route capability catalog IncidentWorkflowController.assignees declares an admin role and known capabilities",
+          "status": "passed"
+        },
+        {
+          "name": "admin route capability catalog IncidentWorkflowController.detail declares an admin role and known capabilities",
+          "status": "passed"
+        },
+        {
+          "name": "admin route capability catalog IncidentWorkflowController.action declares an admin role and known capabilities",
+          "status": "passed"
+        },
+        {
+          "name": "admin route capability catalog AdminStepUpController.issue declares an admin role and known capabilities",
+          "status": "passed"
+        },
+        {
+          "name": "admin route capability catalog SupportWorkflowController.views declares an admin role and known capabilities",
+          "status": "passed"
+        },
+        {
+          "name": "admin route capability catalog SupportWorkflowController.createView declares an admin role and known capabilities",
+          "status": "passed"
+        },
+        {
+          "name": "admin route capability catalog SupportWorkflowController.updateView declares an admin role and known capabilities",
+          "status": "passed"
+        },
+        {
+          "name": "admin route capability catalog SupportWorkflowController.deleteView declares an admin role and known capabilities",
+          "status": "passed"
+        },
+        {
+          "name": "admin route capability catalog SupportWorkflowController.skills declares an admin role and known capabilities",
+          "status": "passed"
+        },
+        {
+          "name": "admin route capability catalog SupportWorkflowController.setSkills declares an admin role and known capabilities",
+          "status": "passed"
+        },
+        {
+          "name": "admin route capability catalog SupportWorkflowController.autoAssign declares an admin role and known capabilities",
+          "status": "passed"
+        },
+        {
+          "name": "admin route capability catalog ModerationPolicyController.list declares an admin role and known capabilities",
+          "status": "passed"
+        },
+        {
+          "name": "admin route capability catalog ModerationPolicyController.quality declares an admin role and known capabilities",
+          "status": "passed"
+        },
+        {
+          "name": "admin route capability catalog ModerationPolicyController.samples declares an admin role and known capabilities",
+          "status": "passed"
+        },
+        {
+          "name": "admin route capability catalog ModerationPolicyController.sample declares an admin role and known capabilities",
+          "status": "passed"
+        },
+        {
+          "name": "admin route capability catalog ModerationPolicyController.review declares an admin role and known capabilities",
+          "status": "passed"
+        },
+        {
+          "name": "admin route capability catalog ModerationPolicyController.create declares an admin role and known capabilities",
+          "status": "passed"
+        },
+        {
+          "name": "admin route capability catalog ModerationPolicyController.activate declares an admin role and known capabilities",
+          "status": "passed"
+        },
+        {
+          "name": "admin route capability catalog FinanceReconciliationController.importStatement declares an admin role and known capabilities",
+          "status": "passed"
+        },
+        {
+          "name": "admin route capability catalog FinanceReconciliationController.lines declares an admin role and known capabilities",
+          "status": "passed"
+        },
+        {
+          "name": "admin route capability catalog FinanceReconciliationController.propose declares an admin role and known capabilities",
+          "status": "passed"
+        },
+        {
+          "name": "admin route capability catalog FinanceReconciliationController.candidates declares an admin role and known capabilities",
+          "status": "passed"
+        },
+        {
+          "name": "admin route capability catalog FinanceReconciliationController.proposals declares an admin role and known capabilities",
+          "status": "passed"
+        },
+        {
+          "name": "admin route capability catalog FinanceReconciliationController.approve declares an admin role and known capabilities",
+          "status": "passed"
+        },
+        {
+          "name": "admin route capability catalog FinanceReconciliationController.reject declares an admin role and known capabilities",
+          "status": "passed"
+        },
+        {
+          "name": "admin route capability catalog NotificationDeliveryController.queue declares an admin role and known capabilities",
+          "status": "passed"
+        },
+        {
+          "name": "admin route capability catalog NotificationDeliveryController.retry declares an admin role and known capabilities",
+          "status": "passed"
+        },
+        {
+          "name": "admin route capability catalog AdminWorkspaceController.summary declares an admin role and known capabilities",
+          "status": "passed"
+        },
+        {
+          "name": "admin route capability catalog AdminWorkspaceController.actionItems declares an admin role and known capabilities",
+          "status": "passed"
+        },
+        {
+          "name": "admin route capability catalog AdminLifecycleController.detail declares an admin role and known capabilities",
+          "status": "passed"
+        },
+        {
+          "name": "admin route capability catalog AdminLifecycleController.resend declares an admin role and known capabilities",
+          "status": "passed"
+        },
+        {
+          "name": "admin route capability catalog AdminLifecycleController.revoke declares an admin role and known capabilities",
+          "status": "passed"
+        },
+        {
+          "name": "admin route capability catalog OperationsQueueController.list declares an admin role and known capabilities",
+          "status": "passed"
+        },
+        {
+          "name": "admin route capability catalog AdminOverviewAnalyticsController.overview declares an admin role and known capabilities",
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "file": "backend/src/admin/admin-search.service.spec.ts",
+      "status": "passed",
+      "tests": [
+        {
+          "name": "AdminSearchService paginates payment search, returns metadata and atomically audits sensitive reads",
+          "status": "passed"
+        },
+        {
+          "name": "AdminSearchService fails closed when a caller requests a kind outside its permission set",
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "file": "backend/src/admin/admin-transactions.service.spec.ts",
+      "status": "passed",
+      "tests": [
+        {
+          "name": "admin transaction investigation uses bounded safe projections and transactional access auditing",
+          "status": "passed"
+        },
+        {
+          "name": "admin transaction investigation refuses unbounded ranges and mismatched type/status filters",
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "file": "backend/src/admin/admin-workspace.service.spec.ts",
+      "status": "passed",
+      "tests": [
+        {
+          "name": "AdminWorkspaceService never queries unauthorized sources",
+          "status": "passed"
+        },
+        {
+          "name": "AdminWorkspaceService sums only action buckets and scopes unread notifications to the actor",
+          "status": "passed"
+        },
+        {
+          "name": "AdminWorkspaceService keeps successful sources when one source fails and never substitutes zero",
+          "status": "passed"
+        },
+        {
+          "name": "AdminWorkspaceService preserves report ownership, expiry and per-kind capabilities",
+          "status": "passed"
+        },
+        {
+          "name": "AdminWorkspaceService excludes merged and closed tickets and separates due-soon from overdue",
+          "status": "passed"
+        },
+        {
+          "name": "AdminWorkspaceService queries moderation only for the actor permitted kinds",
+          "status": "passed"
+        },
+        {
+          "name": "AdminWorkspaceService paginates group buckets without including notification counts as tasks",
+          "status": "passed"
+        },
+        {
+          "name": "AdminWorkspaceService rejects a cursor outside the current permission scope",
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "file": "backend/src/auth/account-access.service.spec.ts",
+      "status": "passed",
+      "tests": [
+        {
+          "name": "AccountAccessService rate-limits repeated non-admin account access sends",
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "file": "backend/src/auth/admin-mfa.service.spec.ts",
+      "status": "passed",
+      "tests": [
+        {
+          "name": "Admin TOTP primitives matches RFC 6238 SHA1 vector at 59",
+          "status": "passed"
+        },
+        {
+          "name": "Admin TOTP primitives matches RFC 6238 SHA1 vector at 1111111109",
+          "status": "passed"
+        },
+        {
+          "name": "Admin TOTP primitives matches RFC 6238 SHA1 vector at 1111111111",
+          "status": "passed"
+        },
+        {
+          "name": "Admin TOTP primitives matches RFC 6238 SHA1 vector at 1234567890",
+          "status": "passed"
+        },
+        {
+          "name": "Admin TOTP primitives matches RFC 6238 SHA1 vector at 2000000000",
+          "status": "passed"
+        },
+        {
+          "name": "Admin TOTP primitives matches RFC 6238 SHA1 vector at 20000000000",
+          "status": "passed"
+        },
+        {
+          "name": "Admin TOTP primitives encodes authenticator secrets as unpadded base32",
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "file": "backend/src/auth/admin-step-up.policy.spec.ts",
+      "status": "passed",
+      "tests": [
+        {
+          "name": "admin step-up request policy protects registry mutations: /admin/landlord-verifications/id/review",
+          "status": "passed"
+        },
+        {
+          "name": "admin step-up request policy protects registry mutations: /admin/property-reviews/id/review",
+          "status": "passed"
+        },
+        {
+          "name": "admin step-up request policy protects registry mutations: /admin/service-plans",
+          "status": "passed"
+        },
+        {
+          "name": "admin step-up request policy protects registry mutations: /admin/landlords/id/subscription",
+          "status": "passed"
+        },
+        {
+          "name": "admin step-up request policy protects registry mutations: /admin/subscriptions/id/cancel",
+          "status": "passed"
+        },
+        {
+          "name": "admin step-up request policy matches only sensitive admin routes",
+          "status": "passed"
+        },
+        {
+          "name": "admin step-up request policy canonicalizes payload key order for single-request grants",
+          "status": "passed"
+        },
+        {
+          "name": "admin step-up request policy protects case-insensitive and percent-encoded Express route aliases",
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "file": "backend/src/auth/auth.service.spec.ts",
+      "status": "passed",
+      "tests": [
+        {
+          "name": "AuthService registers as a landlord and normalizes the email",
+          "status": "passed"
+        },
+        {
+          "name": "AuthService maps concurrent duplicate email errors to conflict",
+          "status": "passed"
+        },
+        {
+          "name": "AuthService rejects inactive users at login",
+          "status": "passed"
+        },
+        {
+          "name": "AuthService changes password after verifying the current password",
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "file": "backend/src/auth/jwt.strategy.spec.ts",
+      "status": "passed",
+      "tests": [
+        {
+          "name": "JwtStrategy maps an active landlord to a typed auth user",
+          "status": "passed"
+        },
+        {
+          "name": "JwtStrategy maps an active admin to a typed auth user",
+          "status": "passed"
+        },
+        {
+          "name": "JwtStrategy rejects non-access tokens",
+          "status": "passed"
+        },
+        {
+          "name": "JwtStrategy rejects missing or inactive users",
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "file": "backend/src/billing/billing-rules.spec.ts",
+      "status": "passed",
+      "tests": [
+        {
+          "name": "Production billing rules uses Vietnam calendar days at the UTC day boundary",
+          "status": "passed"
+        },
+        {
+          "name": "Production billing rules buckets 2026-10-25 as overdue1To7",
+          "status": "passed"
+        },
+        {
+          "name": "Production billing rules buckets 2026-10-19 as overdue1To7",
+          "status": "passed"
+        },
+        {
+          "name": "Production billing rules buckets 2026-10-18 as overdue8To30",
+          "status": "passed"
+        },
+        {
+          "name": "Production billing rules buckets 2026-09-26 as overdue8To30",
+          "status": "passed"
+        },
+        {
+          "name": "Production billing rules buckets 2026-09-25 as overdueOver30",
+          "status": "passed"
+        },
+        {
+          "name": "Production billing rules keeps undated debt visible instead of silently dropping it",
+          "status": "passed"
+        },
+        {
+          "name": "Production billing rules rejects a whitespace-only cancellation reason",
+          "status": "passed"
+        },
+        {
+          "name": "Production billing rules canonicalizes object key order for retry hashes",
+          "status": "passed"
+        },
+        {
+          "name": "Production billing rules matches the exact scheduled reminder offsets",
+          "status": "passed"
+        },
+        {
+          "name": "Production billing rules calculates progressive utility tiers without repricing the lower band",
+          "status": "passed"
+        },
+        {
+          "name": "Production billing rules rejects overlapping and capped final tiers and monetary overflow",
+          "status": "passed"
+        },
+        {
+          "name": "Production billing rules bounds exponential retry backoff",
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "file": "backend/src/billing/billing-tariffs.service.spec.ts",
+      "status": "passed",
+      "tests": [
+        {
+          "name": "Billing tariff impact preview rejects an omitted property filter before any unscoped tariff read",
+          "status": "passed"
+        },
+        {
+          "name": "Billing tariff impact preview compares to another approved version, not the viewed document itself",
+          "status": "passed"
+        },
+        {
+          "name": "Billing tariff impact preview separates overridden rooms while preserving conservative issued-period guards",
+          "status": "passed"
+        },
+        {
+          "name": "Billing tariff impact preview blocks same effective month against latest approved version",
+          "status": "passed"
+        },
+        {
+          "name": "Billing tariff impact preview blocks later effective month against latest approved version",
+          "status": "passed"
+        },
+        {
+          "name": "Billing tariff impact preview returns closed, stale and already-reviewed reasons without offering approval",
+          "status": "passed"
+        },
+        {
+          "name": "Billing tariff impact preview keeps landlord and staff property scope checks on direct IDs",
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "file": "backend/src/billing/billing.service.spec.ts",
+      "status": "passed",
+      "tests": [
+        {
+          "name": "BillingService rejects a lease ended or changed after invoice preflight",
+          "status": "passed"
+        },
+        {
+          "name": "BillingService revalidates bulk billing leases under lock before any new charges",
+          "status": "passed"
+        },
+        {
+          "name": "BillingService creates invoice and meter readings in one transaction",
+          "status": "passed"
+        },
+        {
+          "name": "BillingService keeps legacy invoice payload working",
+          "status": "passed"
+        },
+        {
+          "name": "BillingService rejects invalid meter readings before writing",
+          "status": "passed"
+        },
+        {
+          "name": "BillingService rejects inactive leases when creating invoices",
+          "status": "passed"
+        },
+        {
+          "name": "BillingService rejects billing months outside the lease period",
+          "status": "passed"
+        },
+        {
+          "name": "BillingService maps invoice unique violations to INVOICE_EXISTS",
+          "status": "passed"
+        },
+        {
+          "name": "BillingService maps meter reading unique violations to METER_READING_EXISTS",
+          "status": "passed"
+        },
+        {
+          "name": "BillingService preflights bulk invoices for an owned property",
+          "status": "passed"
+        },
+        {
+          "name": "BillingService skips due billing automation until current meter readings exist",
+          "status": "passed"
+        },
+        {
+          "name": "BillingService runs due billing automation once readings are ready",
+          "status": "passed"
+        },
+        {
+          "name": "BillingService creates bulk invoices and reuses existing meter readings",
+          "status": "passed"
+        },
+        {
+          "name": "BillingService rejects bulk invoice generation for foreign or archived properties",
+          "status": "passed"
+        },
+        {
+          "name": "BillingService updates an unpaid invoice without payment history",
+          "status": "passed"
+        },
+        {
+          "name": "BillingService rejects invoice updates after payment",
+          "status": "passed"
+        },
+        {
+          "name": "BillingService records a partial payment using an invoice row lock",
+          "status": "passed"
+        },
+        {
+          "name": "BillingService marks invoice as paid when a payment exactly matches remaining amount",
+          "status": "passed"
+        },
+        {
+          "name": "BillingService rejects payments greater than the remaining amount",
+          "status": "passed"
+        },
+        {
+          "name": "BillingService rejects additional payments for already paid invoices",
+          "status": "passed"
+        },
+        {
+          "name": "BillingService rejects payments for cancelled invoices",
+          "status": "passed"
+        },
+        {
+          "name": "BillingService rejects invalid paidAt values at service level",
+          "status": "passed"
+        },
+        {
+          "name": "BillingService reverses a payment with a signed reversal ledger entry",
+          "status": "passed"
+        },
+        {
+          "name": "BillingService does not reverse the same payment twice",
+          "status": "passed"
+        },
+        {
+          "name": "BillingService does not reverse reversal payments",
+          "status": "passed"
+        },
+        {
+          "name": "BillingService returns PAYMENT_NOT_FOUND when the payment is not on the invoice",
+          "status": "passed"
+        },
+        {
+          "name": "BillingService cancels invoices that have no payment history",
+          "status": "passed"
+        },
+        {
+          "name": "BillingService does not cancel invoices with any payment history",
+          "status": "passed"
+        },
+        {
+          "name": "BillingService does not cancel an already cancelled invoice again",
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "file": "backend/src/billing/demo-card.gateway.spec.ts",
+      "status": "passed",
+      "tests": [
+        {
+          "name": "DemoCardGateway derives an opaque token that cannot be reconstructed from its database hash",
+          "status": "passed"
+        },
+        {
+          "name": "DemoCardGateway rejects production even when the demo flag is set",
+          "status": "passed"
+        },
+        {
+          "name": "DemoCardGateway requires explicit local opt in",
+          "status": "passed"
+        },
+        {
+          "name": "DemoCardGateway accepts only the documented internal demo card",
+          "status": "passed"
+        },
+        {
+          "name": "DemoCardGateway rejects invalid or tampered input without echoing sensitive values",
+          "status": "passed"
+        },
+        {
+          "name": "DemoCardGateway rejects invalid or tampered input without echoing sensitive values",
+          "status": "passed"
+        },
+        {
+          "name": "DemoCardGateway rejects invalid or tampered input without echoing sensitive values",
+          "status": "passed"
+        },
+        {
+          "name": "DemoCardGateway rejects invalid or tampered input without echoing sensitive values",
+          "status": "passed"
+        },
+        {
+          "name": "DemoCardGateway rejects invalid or tampered input without echoing sensitive values",
+          "status": "passed"
+        },
+        {
+          "name": "DemoCardGateway rejects invalid or tampered input without echoing sensitive values",
+          "status": "passed"
+        },
+        {
+          "name": "DemoCardGateway rejects invalid or tampered input without echoing sensitive values",
+          "status": "passed"
+        },
+        {
+          "name": "DemoCardGateway rejects invalid or tampered input without echoing sensitive values",
+          "status": "passed"
+        },
+        {
+          "name": "DemoCardGateway rejects invalid or tampered input without echoing sensitive values",
+          "status": "passed"
+        },
+        {
+          "name": "DemoCardGateway rejects unsafe checkout origins: javascript:alert(1)",
+          "status": "passed"
+        },
+        {
+          "name": "DemoCardGateway rejects unsafe checkout origins: https://user:password@example.com",
+          "status": "passed"
+        },
+        {
+          "name": "DemoCardGateway rejects unsafe checkout origins: https://example.com?redirect=evil",
+          "status": "passed"
+        },
+        {
+          "name": "DemoCardGateway rejects unsafe checkout origins: https://example.com/wrong",
+          "status": "passed"
+        },
+        {
+          "name": "DemoCardGateway normalizes API base paths and supports LAN addresses",
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "file": "backend/src/billing/demo-checkout.page.spec.ts",
+      "status": "passed",
+      "tests": [
+        {
+          "name": "Payment checkout copy uses product labels while clearly identifying the test environment",
+          "status": "passed"
+        },
+        {
+          "name": "Payment checkout copy shows a completed payment without leaving a payment form",
+          "status": "passed"
+        },
+        {
+          "name": "Payment checkout copy escapes server error messages and rejects invalid form tokens",
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "file": "backend/src/billing/invoice-lines.spec.ts",
+      "status": "passed",
+      "tests": [
+        {
+          "name": "invoice line snapshots calculates totals and preserves tariff provenance",
+          "status": "passed"
+        },
+        {
+          "name": "invoice line snapshots serializes legacy invoices without inventing tariff data",
+          "status": "passed"
+        },
+        {
+          "name": "invoice line snapshots rejects overflowing totals rather than persisting partial invoice data",
+          "status": "passed"
+        },
+        {
+          "name": "invoice line snapshots rejects utility amounts inconsistent with quantity times price",
+          "status": "passed"
+        },
+        {
+          "name": "invoice line snapshots copies tariff values rather than keeping references to mutable fee inputs",
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "file": "backend/src/billing/manual-transfer.dto.spec.ts",
+      "status": "passed",
+      "tests": [
+        {
+          "name": "Manual transfer account validation trims labels but preserves leading zeros",
+          "status": "passed"
+        },
+        {
+          "name": "Manual transfer account validation rejects malformed recipient settings: {\"bankName\":\" \"}",
+          "status": "passed"
+        },
+        {
+          "name": "Manual transfer account validation rejects malformed recipient settings: {\"accountName\":\"\"}",
+          "status": "passed"
+        },
+        {
+          "name": "Manual transfer account validation rejects malformed recipient settings: {\"accountNumber\":\"12\"}",
+          "status": "passed"
+        },
+        {
+          "name": "Manual transfer account validation rejects malformed recipient settings: {\"accountNumber\":\"1234 5678\"}",
+          "status": "passed"
+        },
+        {
+          "name": "Manual transfer account validation rejects malformed recipient settings: {\"accountNumber\":\"javascript:bad\"}",
+          "status": "passed"
+        },
+        {
+          "name": "Manual transfer account validation rejects malformed recipient settings: {\"accountNumber\":null}",
+          "status": "passed"
+        },
+        {
+          "name": "Manual transfer account validation rejects malformed recipient settings: {\"enabled\":null}",
+          "status": "passed"
+        },
+        {
+          "name": "Manual transfer account validation rejects malformed recipient settings: {\"version\":-1}",
+          "status": "passed"
+        },
+        {
+          "name": "Manual transfer account validation rejects malformed recipient settings: {\"qrImagePath\":\"https://external.test/qr.png\"}",
+          "status": "passed"
+        },
+        {
+          "name": "Manual transfer account validation rejects malformed recipient settings: {\"qrImagePath\":\"/uploads/../qr.png\"}",
+          "status": "passed"
+        },
+        {
+          "name": "Manual transfer account validation rejects malformed recipient settings: {\"qrImagePath\":\"/uploads/proof.pdf\"}",
+          "status": "passed"
+        },
+        {
+          "name": "Manual transfer account validation accepts clearing an optional QR image without clearing the account",
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "file": "backend/src/billing/manual-transfer.service.spec.ts",
+      "status": "passed",
+      "tests": [
+        {
+          "name": "Manual transfer recipient configuration stores a versioned account and audits only safe metadata",
+          "status": "passed"
+        },
+        {
+          "name": "Manual transfer recipient configuration rejects stale versions and properties not owned by the requester",
+          "status": "passed"
+        },
+        {
+          "name": "Manual transfer recipient configuration never grants staff authority to change the bank recipient",
+          "status": "passed"
+        },
+        {
+          "name": "Manual transfer recipient configuration rejects unknown QR uploads and accepts only private images belonging to the owner",
+          "status": "passed"
+        },
+        {
+          "name": "Manual transfer recipient configuration returns only owned invoice instructions and reserves amounts already pending review",
+          "status": "passed"
+        },
+        {
+          "name": "Manual transfer recipient configuration does not offer transfer instructions for demo, cancelled or fully paid invoices",
+          "status": "passed"
+        },
+        {
+          "name": "Manual transfer recipient configuration returns no recipient when configuration is missing or disabled",
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "file": "backend/src/chatbot/chatbot-evaluation.spec.ts",
+      "status": "passed",
+      "tests": [
+        {
+          "name": "MVP evaluation gate has exactly 30 unique cases and checklists for all model questions",
+          "status": "passed"
+        },
+        {
+          "name": "MVP evaluation gate uses nearest-rank percentiles and never treats no samples as zero latency",
+          "status": "passed"
+        },
+        {
+          "name": "MVP evaluation gate requires sample count, retrieval, fallback, security and latency thresholds",
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "file": "backend/src/chatbot/chatbot.config.spec.ts",
+      "status": "passed",
+      "tests": [
+        {
+          "name": "loadChatbotConfig defaults to a disabled feature and loopback inference",
+          "status": "passed"
+        },
+        {
+          "name": "loadChatbotConfig rejects invalid config {\"CHATBOT_ENABLED\":\"maybe\"}",
+          "status": "passed"
+        },
+        {
+          "name": "loadChatbotConfig rejects invalid config {\"CHATBOT_TIMEOUT_MS\":\"NaN\"}",
+          "status": "passed"
+        },
+        {
+          "name": "loadChatbotConfig rejects invalid config {\"CHATBOT_TIMEOUT_MS\":\"-1\"}",
+          "status": "passed"
+        },
+        {
+          "name": "loadChatbotConfig rejects invalid config {\"OLLAMA_BASE_URL\":\"file:///tmp/model\"}",
+          "status": "passed"
+        },
+        {
+          "name": "loadChatbotConfig rejects invalid config {\"OLLAMA_BASE_URL\":\"https://user:secret@example.org\"}",
+          "status": "passed"
+        },
+        {
+          "name": "loadChatbotConfig rejects invalid config {\"OLLAMA_BASE_URL\":\"https://example.org\"}",
+          "status": "passed"
+        },
+        {
+          "name": "loadChatbotConfig rejects invalid config {\"OLLAMA_BASE_URL\":\"http://192.168.1.10:11434\"}",
+          "status": "passed"
+        },
+        {
+          "name": "loadChatbotConfig rejects invalid config {\"OLLAMA_EMBED_DIGEST\":\"short\"}",
+          "status": "passed"
+        },
+        {
+          "name": "loadChatbotConfig rejects invalid config {\"RAG_MIN_SCORE\":\"2\"}",
+          "status": "passed"
+        },
+        {
+          "name": "loadChatbotConfig requires pinned embedding and calibrated retrieval score before enabling chat",
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "file": "backend/src/chatbot/chatbot.service.spec.ts",
+      "status": "passed",
+      "tests": [
+        {
+          "name": "ChatbotService returns verified citations and a server request ID",
+          "status": "passed"
+        },
+        {
+          "name": "ChatbotService does not generate when retrieval has no evidence",
+          "status": "passed"
+        },
+        {
+          "name": "ChatbotService never invents a current balance or multi-turn context",
+          "status": "passed"
+        },
+        {
+          "name": "ChatbotService rejects invalid citation IDs: %j",
+          "status": "passed"
+        },
+        {
+          "name": "ChatbotService rejects invalid citation IDs: \"invented\"",
+          "status": "passed"
+        },
+        {
+          "name": "ChatbotService rejects invalid citation IDs: \"c1\"",
+          "status": "passed"
+        },
+        {
+          "name": "ChatbotService discards the answer when a supplied source changes while generating",
+          "status": "passed"
+        },
+        {
+          "name": "ChatbotService rechecks every supplied source even when the model cites only one",
+          "status": "passed"
+        },
+        {
+          "name": "ChatbotService ignores model prose when the model admits missing evidence",
+          "status": "passed"
+        },
+        {
+          "name": "ChatbotService does not downgrade incompatible indexes to missing evidence",
+          "status": "passed"
+        },
+        {
+          "name": "ChatbotService bounds the entire pipeline and releases the slot after timeout",
+          "status": "passed"
+        },
+        {
+          "name": "ChatbotService rejects a second concurrent inference without a queue",
+          "status": "passed"
+        },
+        {
+          "name": "ChatbotService retries context overflow only once with fewer sources",
+          "status": "passed"
+        },
+        {
+          "name": "ChatbotService does not retry other model failures",
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "file": "backend/src/chatbot/knowledge-chunker.spec.ts",
+      "status": "passed",
+      "tests": [
+        {
+          "name": "chunkMarkdown preserves headings and normalizes line endings",
+          "status": "passed"
+        },
+        {
+          "name": "chunkMarkdown bounds long paragraphs and retains all content in order with overlap",
+          "status": "passed"
+        },
+        {
+          "name": "chunkMarkdown handles an unbroken string and ignores headings inside fenced code",
+          "status": "passed"
+        },
+        {
+          "name": "chunkMarkdown excludes editorial HTML comments from searchable text",
+          "status": "passed"
+        },
+        {
+          "name": "chunkMarkdown rejects empty, heading-only, binary and oversize content",
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "file": "backend/src/chatbot/knowledge-import.cli.spec.ts",
+      "status": "passed",
+      "tests": [
+        {
+          "name": "knowledge import CLI arguments requires an explicit manifest file",
+          "status": "passed"
+        },
+        {
+          "name": "knowledge import CLI arguments accepts only a stable key for revocation",
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "file": "backend/src/chatbot/knowledge-importer.spec.ts",
+      "status": "passed",
+      "tests": [
+        {
+          "name": "KnowledgeImporter imports a reviewed document and pins the embedding model before and after embedding",
+          "status": "passed"
+        },
+        {
+          "name": "KnowledgeImporter rejects drafts before calling Ollama or writing to the database",
+          "status": "passed"
+        },
+        {
+          "name": "KnowledgeImporter preflights every entry before importing any document",
+          "status": "passed"
+        },
+        {
+          "name": "KnowledgeImporter rejects path escape ../outside.md",
+          "status": "passed"
+        },
+        {
+          "name": "KnowledgeImporter rejects path escape linked.md",
+          "status": "passed"
+        },
+        {
+          "name": "KnowledgeImporter rejects a manifest outside the knowledge root",
+          "status": "passed"
+        },
+        {
+          "name": "KnowledgeImporter rejects invalid metadata {\"approvedBy\":\"\"}",
+          "status": "passed"
+        },
+        {
+          "name": "KnowledgeImporter rejects invalid metadata {\"approvedAt\":\"not-date\"}",
+          "status": "passed"
+        },
+        {
+          "name": "KnowledgeImporter rejects invalid metadata {\"scope\":\"GLOBAL\",\"landlordId\":\"owner\"}",
+          "status": "passed"
+        },
+        {
+          "name": "KnowledgeImporter rejects invalid metadata {\"scope\":\"PROPERTY\",\"landlordId\":\"owner\"}",
+          "status": "passed"
+        },
+        {
+          "name": "KnowledgeImporter rejects invalid metadata {\"file\":\"guide.pdf\"}",
+          "status": "passed"
+        },
+        {
+          "name": "KnowledgeImporter rejects invalid metadata {\"unexpected\":true}",
+          "status": "passed"
+        },
+        {
+          "name": "KnowledgeImporter rejects duplicate keys and invalid UTF-8",
+          "status": "passed"
+        },
+        {
+          "name": "KnowledgeImporter rejects remote/model-changing manifests and destination property escape",
+          "status": "passed"
+        },
+        {
+          "name": "KnowledgeImporter skips identical imports without generating vectors",
+          "status": "passed"
+        },
+        {
+          "name": "KnowledgeImporter leaves the previous index untouched after an embedding failure or changed model",
+          "status": "passed"
+        },
+        {
+          "name": "KnowledgeImporter rejects invalid vectors even when a client implementation bypasses adapter validation",
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "file": "backend/src/chatbot/knowledge-retriever.spec.ts",
+      "status": "passed",
+      "tests": [
+        {
+          "name": "cosineSimilarity ranks identical, opposite, and orthogonal vectors",
+          "status": "passed"
+        },
+        {
+          "name": "cosineSimilarity rejects invalid vectors [0,0]",
+          "status": "passed"
+        },
+        {
+          "name": "cosineSimilarity rejects invalid vectors [1]",
+          "status": "passed"
+        },
+        {
+          "name": "cosineSimilarity rejects invalid vectors [null]",
+          "status": "passed"
+        },
+        {
+          "name": "cosineSimilarity rejects invalid vectors []",
+          "status": "passed"
+        },
+        {
+          "name": "KnowledgeRetriever embeds the question and returns the best three eligible chunks without vector data",
+          "status": "passed"
+        },
+        {
+          "name": "KnowledgeRetriever returns no evidence under the calibrated threshold",
+          "status": "passed"
+        },
+        {
+          "name": "KnowledgeRetriever uses Vietnamese topic terms in titles and headings to rerank generic passages",
+          "status": "passed"
+        },
+        {
+          "name": "KnowledgeRetriever reranks exact Vietnamese matches and returns at most one chunk per document",
+          "status": "passed"
+        },
+        {
+          "name": "KnowledgeRetriever returns empty evidence for a truly empty corpus without embedding",
+          "status": "passed"
+        },
+        {
+          "name": "KnowledgeRetriever checks the live digest before embedding nonempty scoped candidates",
+          "status": "passed"
+        },
+        {
+          "name": "KnowledgeRetriever does not convert an index-version error into empty evidence",
+          "status": "passed"
+        },
+        {
+          "name": "KnowledgeRetriever fails closed on invalid query vectors and malformed rows",
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "file": "backend/src/chatbot/ollama.client.spec.ts",
+      "status": "passed",
+      "tests": [
+        {
+          "name": "OllamaClient embeds a batch without truncation and preserves the abort signal",
+          "status": "passed"
+        },
+        {
+          "name": "OllamaClient rejects invalid embedding batch {\"embeddings\":[[]]}",
+          "status": "passed"
+        },
+        {
+          "name": "OllamaClient rejects invalid embedding batch {\"embeddings\":[[0,0]]}",
+          "status": "passed"
+        },
+        {
+          "name": "OllamaClient rejects invalid embedding batch {\"embeddings\":[[null,1]]}",
+          "status": "passed"
+        },
+        {
+          "name": "OllamaClient rejects invalid embedding batch {\"embeddings\":[[\"1\",2]]}",
+          "status": "passed"
+        },
+        {
+          "name": "OllamaClient rejects invalid embedding batch {\"embeddings\":[[1,0],[0,1]]}",
+          "status": "passed"
+        },
+        {
+          "name": "OllamaClient rejects invalid embedding batch {\"embeddings\":[]}",
+          "status": "passed"
+        },
+        {
+          "name": "OllamaClient rejects mixed vector dimensions and dimensions changing across calls",
+          "status": "passed"
+        },
+        {
+          "name": "OllamaClient rejects input before making a request",
+          "status": "passed"
+        },
+        {
+          "name": "OllamaClient checks the full embedding digest rather than trusting a mutable tag",
+          "status": "passed"
+        },
+        {
+          "name": "OllamaClient sends sources as data and validates structured answers",
+          "status": "passed"
+        },
+        {
+          "name": "OllamaClient rejects invalid answers {\"answer\":\"invented\",\"sourceIds\":[\"other\"],\"insufficientEvidence\":false}",
+          "status": "passed"
+        },
+        {
+          "name": "OllamaClient rejects invalid answers {\"answer\":\"invented\",\"sourceIds\":[],\"insufficientEvidence\":false}",
+          "status": "passed"
+        },
+        {
+          "name": "OllamaClient rejects invalid answers {\"answer\":\"\",\"sourceIds\":[\"source-1\"],\"insufficientEvidence\":false}",
+          "status": "passed"
+        },
+        {
+          "name": "OllamaClient rejects invalid answers {\"answer\":\"no\",\"sourceIds\":[\"source-1\"],\"insufficientEvidence\":true}",
+          "status": "passed"
+        },
+        {
+          "name": "OllamaClient rejects invalid answers {\"answer\":\"no\",\"sourceIds\":[],\"insufficientEvidence\":\"true\"}",
+          "status": "passed"
+        },
+        {
+          "name": "OllamaClient accepts an explicit insufficient-evidence answer",
+          "status": "passed"
+        },
+        {
+          "name": "OllamaClient rejects malformed JSON and incomplete generation",
+          "status": "passed"
+        },
+        {
+          "name": "OllamaClient maps unavailable and HTTP errors without exposing response contents or retrying",
+          "status": "passed"
+        },
+        {
+          "name": "OllamaClient distinguishes context overflow from an offline model",
+          "status": "passed"
+        },
+        {
+          "name": "OllamaClient maps abort to timeout, including when the caller is already aborted",
+          "status": "passed"
+        },
+        {
+          "name": "OllamaClient does not forward sensitive diagnostic text from malformed model error bodies",
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "file": "backend/src/common/api-error.filter.spec.ts",
+      "status": "passed",
+      "tests": [
+        {
+          "name": "ApiErrorFilter preserves stable application error codes",
+          "status": "passed"
+        },
+        {
+          "name": "ApiErrorFilter normalizes validation messages without reflecting request payloads",
+          "status": "passed"
+        },
+        {
+          "name": "ApiErrorFilter redacts unknown and server errors from clients and logs",
+          "status": "passed"
+        },
+        {
+          "name": "ApiErrorFilter redacts unknown and server errors from clients and logs",
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "file": "backend/src/common/attachment-url.validator.spec.ts",
+      "status": "passed",
+      "tests": [
+        {
+          "name": "Attachment URL validation accepts /uploads/1234-abcd.png",
+          "status": "passed"
+        },
+        {
+          "name": "Attachment URL validation accepts /uploads/receipt.pdf",
+          "status": "passed"
+        },
+        {
+          "name": "Attachment URL validation accepts https://example.com/receipt.png",
+          "status": "passed"
+        },
+        {
+          "name": "Attachment URL validation accepts http://localhost:3000/uploads/proof.png",
+          "status": "passed"
+        },
+        {
+          "name": "Attachment URL validation rejects ",
+          "status": "passed"
+        },
+        {
+          "name": "Attachment URL validation rejects /uploads/",
+          "status": "passed"
+        },
+        {
+          "name": "Attachment URL validation rejects //evil.example/proof.png",
+          "status": "passed"
+        },
+        {
+          "name": "Attachment URL validation rejects /uploads/../.env",
+          "status": "passed"
+        },
+        {
+          "name": "Attachment URL validation rejects /uploads/%2e%2e%2fsecret",
+          "status": "passed"
+        },
+        {
+          "name": "Attachment URL validation rejects /uploads/a.png?redirect=evil",
+          "status": "passed"
+        },
+        {
+          "name": "Attachment URL validation rejects javascript:alert(1)",
+          "status": "passed"
+        },
+        {
+          "name": "Attachment URL validation rejects file:///etc/passwd",
+          "status": "passed"
+        },
+        {
+          "name": "Attachment URL validation rejects data:image/png;base64,abc",
+          "status": "passed"
+        },
+        {
+          "name": "Attachment URL validation rejects ftp://example.com/image.png",
+          "status": "passed"
+        },
+        {
+          "name": "Attachment URL validation rejects https://user:password@example.com/image.png",
+          "status": "passed"
+        },
+        {
+          "name": "Attachment URL validation rejects null",
+          "status": "passed"
+        },
+        {
+          "name": "Attachment URL validation rejects 1",
+          "status": "passed"
+        },
+        {
+          "name": "Attachment URL validation accepts the upload response across proof, maintenance and comment DTOs",
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "file": "backend/src/common/auth-role.spec.ts",
+      "status": "passed",
+      "tests": [
+        {
+          "name": "toAuthRole maps landlord to lowercase wire role",
+          "status": "passed"
+        },
+        {
+          "name": "toAuthRole maps admin to lowercase wire role",
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "file": "backend/src/common/landlord-resource-authorization.spec.ts",
+      "status": "passed",
+      "tests": [
+        {
+          "name": "landlord resource authorization metadata DashboardController declares landlord/staff roles",
+          "status": "passed"
+        },
+        {
+          "name": "landlord resource authorization metadata PropertiesController declares landlord/staff roles",
+          "status": "passed"
+        },
+        {
+          "name": "landlord resource authorization metadata PropertyRoomsController declares landlord/staff roles",
+          "status": "passed"
+        },
+        {
+          "name": "landlord resource authorization metadata RoomsController declares landlord/staff roles",
+          "status": "passed"
+        },
+        {
+          "name": "landlord resource authorization metadata TenantsController declares landlord/staff roles",
+          "status": "passed"
+        },
+        {
+          "name": "landlord resource authorization metadata LeasesController declares landlord/staff roles",
+          "status": "passed"
+        },
+        {
+          "name": "landlord resource authorization metadata RoomLeasesController declares landlord/staff roles",
+          "status": "passed"
+        },
+        {
+          "name": "landlord resource authorization metadata TenantLeasesController declares landlord/staff roles",
+          "status": "passed"
+        },
+        {
+          "name": "landlord resource authorization metadata BillingController declares landlord/staff roles",
+          "status": "passed"
+        },
+        {
+          "name": "landlord resource authorization metadata Roles decorator composes JWT auth and role guard semantics",
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "file": "backend/src/common/property-scope.spec.ts",
+      "status": "passed",
+      "tests": [
+        {
+          "name": "Staff property authorization context is fail-closed for missing staff scopes but does not limit landlord/worker queries",
+          "status": "passed"
+        },
+        {
+          "name": "Staff property authorization context requires an assigned lease and denies tenants whose history spans unassigned properties",
+          "status": "passed"
+        },
+        {
+          "name": "Staff property authorization context preserves scope through Observable subscription and asynchronous database calls without leaking across requests",
+          "status": "passed"
+        },
+        {
+          "name": "Staff property authorization context denies unconverted modules, global reminder mutations, staff administration and property creation",
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "file": "backend/src/common/roles.guard.spec.ts",
+      "status": "passed",
+      "tests": [
+        {
+          "name": "RolesGuard allows access when no roles metadata is present",
+          "status": "passed"
+        },
+        {
+          "name": "RolesGuard allows landlord users on landlord-only routes",
+          "status": "passed"
+        },
+        {
+          "name": "RolesGuard rejects admin users on landlord-only routes",
+          "status": "passed"
+        },
+        {
+          "name": "RolesGuard rejects missing authenticated users",
+          "status": "passed"
+        },
+        {
+          "name": "RolesGuard passes handler and class targets to metadata lookup",
+          "status": "passed"
+        },
+        {
+          "name": "RolesGuard denies admin without capability metadata or explicit permission",
+          "status": "passed"
+        },
+        {
+          "name": "RolesGuard requires an MFA-verified session when MFA is required",
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "file": "backend/src/common/subscription-entitlements.spec.ts",
+      "status": "passed",
+      "tests": [
+        {
+          "name": "subscription entitlement enforcement serializes owner inventory changes and rejects growth beyond snapshot limits",
+          "status": "passed"
+        },
+        {
+          "name": "subscription entitlement enforcement denies growth after expiry but never deletes existing inventory",
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "file": "backend/src/dashboard/dashboard.service.spec.ts",
+      "status": "passed",
+      "tests": [
+        {
+          "name": "DashboardService scopes every aggregate query to the authenticated landlord",
+          "status": "passed"
+        },
+        {
+          "name": "DashboardService rejects a property that is not owned by the landlord",
+          "status": "passed"
+        },
+        {
+          "name": "DashboardService maps counts, outstanding totals, revenue buckets, attention and invoices",
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "file": "backend/src/delivery/delivery-crypto.service.spec.ts",
+      "status": "passed",
+      "tests": [
+        {
+          "name": "Encrypted delivery requires a dedicated 256-bit key and authenticates ciphertext",
+          "status": "passed"
+        },
+        {
+          "name": "Encrypted delivery rejects insecure endpoints and embedded credentials",
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "file": "backend/src/health/backup-telemetry.service.spec.ts",
+      "status": "passed",
+      "tests": [
+        {
+          "name": "BackupTelemetryService accepts only signed, database-bound, durable telemetry",
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "file": "backend/src/health/incident-workflow.service.spec.ts",
+      "status": "passed",
+      "tests": [
+        {
+          "name": "Incident inbox filters intersects actor assignment, explicit owner, status, severity, time window and search",
+          "status": "passed"
+        },
+        {
+          "name": "Incident inbox filters supports unassigned items without converting an empty result into an error",
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "file": "backend/src/health/operations-health.service.spec.ts",
+      "status": "passed",
+      "tests": [
+        {
+          "name": "Operations readiness projection does not confuse database reachability with schema readiness, or invent backup age",
+          "status": "passed"
+        },
+        {
+          "name": "Operations readiness projection redacts readiness inspection errors and distinguishes unavailable from a passing check",
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "file": "backend/src/health/operations-queue.service.spec.ts",
+      "status": "passed",
+      "tests": [
+        {
+          "name": "Operations delivery queue projection bounds the query, filters state, selects no payload and never permits unsafe manual replay",
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "file": "backend/src/health/schema-readiness.service.spec.ts",
+      "status": "passed",
+      "tests": [
+        {
+          "name": "Schema readiness release gate requires every migration, not just the latest marker",
+          "status": "passed"
+        },
+        {
+          "name": "Schema readiness release gate blocks checksum drift, failed migrations and a database newer than the API",
+          "status": "passed"
+        },
+        {
+          "name": "Schema readiness release gate loads only SQL migrations and fingerprints exact source bytes",
+          "status": "passed"
+        },
+        {
+          "name": "Schema readiness release gate keeps liveness available but returns sanitized 503 for incompatible schema",
+          "status": "passed"
+        },
+        {
+          "name": "Schema readiness release gate checks the actual auth schema even with a complete migration history",
+          "status": "passed"
+        },
+        {
+          "name": "Schema readiness release gate keeps billing readiness tied to receipt reconciliation and maintenance SLA columns",
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "file": "backend/src/leases/settlements.service.spec.ts",
+      "status": "passed",
+      "tests": [
+        {
+          "name": "LeaseSettlementsService denies tenant before querying any data",
+          "status": "passed"
+        },
+        {
+          "name": "LeaseSettlementsService denies staff before querying any data",
+          "status": "passed"
+        },
+        {
+          "name": "LeaseSettlementsService denies admin before querying any data",
+          "status": "passed"
+        },
+        {
+          "name": "LeaseSettlementsService scopes ownership and returns 404 for another landlord",
+          "status": "passed"
+        },
+        {
+          "name": "LeaseSettlementsService combines ledger entries, prorated rent and utility charges without mutating data",
+          "status": "passed"
+        },
+        {
+          "name": "LeaseSettlementsService keeps existing invoices separate and never bills rent twice",
+          "status": "passed"
+        },
+        {
+          "name": "LeaseSettlementsService leaves an explicit amount due when charges exceed the deposit",
+          "status": "passed"
+        },
+        {
+          "name": "LeaseSettlementsService rejects invalid move-out date 2026-02-30",
+          "status": "passed"
+        },
+        {
+          "name": "LeaseSettlementsService rejects invalid move-out date 2099-01-01",
+          "status": "passed"
+        },
+        {
+          "name": "LeaseSettlementsService rejects invalid move-out date 2026-07-31",
+          "status": "passed"
+        },
+        {
+          "name": "LeaseSettlementsService rejects final readings below the current meter baseline",
+          "status": "passed"
+        },
+        {
+          "name": "LeaseSettlementsService rejects unpriced utility usage and future invoices",
+          "status": "passed"
+        },
+        {
+          "name": "LeaseSettlementsService rejects stale fingerprints before creating a settlement or ledger entry",
+          "status": "passed"
+        },
+        {
+          "name": "LeaseSettlementsService confirms atomically and returns the same settlement for an identical retry",
+          "status": "passed"
+        },
+        {
+          "name": "LeaseSettlementsService records a refund only once, preserving the settlement version",
+          "status": "passed"
+        },
+        {
+          "name": "LeaseSettlementsService rejects stale refund versions and a changed deposit balance",
+          "status": "passed"
+        },
+        {
+          "name": "lease settlement calculations calculates rent inclusively for a partial month",
+          "status": "passed"
+        },
+        {
+          "name": "lease settlement calculations uses the lease start date when it begins inside the move-out month",
+          "status": "passed"
+        },
+        {
+          "name": "lease settlement calculations rejects a move-out date before the occupied period",
+          "status": "passed"
+        },
+        {
+          "name": "lease settlement calculations rejects unsafe or negative money values",
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "file": "backend/src/operations/recurring.service.spec.ts",
+      "status": "passed",
+      "tests": [
+        {
+          "name": "Vietnam recurring operation calendar clamps end of month and restores the original local anchor day",
+          "status": "passed"
+        },
+        {
+          "name": "Vietnam recurring operation calendar handles leap years, quarters, intervals and year boundaries",
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "file": "backend/src/platform/finance-reconciliation.service.spec.ts",
+      "status": "passed",
+      "tests": [
+        {
+          "name": "FinanceReconciliationService requires a separate checker for maker-checker approval",
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "file": "backend/src/platform/moderation-policy-quality.spec.ts",
+      "status": "passed",
+      "tests": [
+        {
+          "name": "Moderation quality read model uses event-time bounds for each metric, and does not mislabel reopen as an overturn",
+          "status": "passed"
+        },
+        {
+          "name": "Moderation quality read model only includes CSAT with support read permission",
+          "status": "passed"
+        },
+        {
+          "name": "Moderation quality read model rejects unsupported windows/timezones and does not query for revoked permissions",
+          "status": "passed"
+        },
+        {
+          "name": "Moderation quality read model renders the same explicit instant using the requested timezone, including DST",
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "file": "backend/src/platform/moderation-preview.spec.ts",
+      "status": "passed",
+      "tests": [
+        {
+          "name": "Read-only bulk moderation preview returns ready items without invoking mutation services",
+          "status": "passed"
+        },
+        {
+          "name": "Read-only bulk moderation preview checks the feature flag before opening any transaction",
+          "status": "passed"
+        },
+        {
+          "name": "Read-only bulk moderation preview never reads targets or assignment without kind permission",
+          "status": "passed"
+        },
+        {
+          "name": "Read-only bulk moderation preview rejects duplicate targets before querying",
+          "status": "passed"
+        },
+        {
+          "name": "Read-only bulk moderation preview blocks a stale version and does not run availability queries",
+          "status": "passed"
+        },
+        {
+          "name": "Read-only bulk moderation preview blocks publishing an unavailable room and rechecks all availability predicates",
+          "status": "passed"
+        },
+        {
+          "name": "Read-only bulk moderation preview does not disclose a target assigned to another moderator",
+          "status": "passed"
+        },
+        {
+          "name": "Read-only bulk moderation preview rejects withdrawn reviews and replies without approved parent content",
+          "status": "passed"
+        },
+        {
+          "name": "Read-only bulk moderation preview propagates database failures rather than presenting partial readiness",
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "file": "backend/src/platform/moderation-quality.service.spec.ts",
+      "status": "passed",
+      "tests": [
+        {
+          "name": "ModerationQualityService samples deterministically within an explicit bounded window and excludes the actor own decisions",
+          "status": "passed"
+        },
+        {
+          "name": "ModerationQualityService rejects invalid/future windows and self-review",
+          "status": "passed"
+        },
+        {
+          "name": "ModerationQualityService uses version conflict and atomic audit for one QA review",
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "file": "backend/src/platform/platform-rules.spec.ts",
+      "status": "passed",
+      "tests": [
+        {
+          "name": "Platform rules sets URGENT response and resolution SLA",
+          "status": "passed"
+        },
+        {
+          "name": "Platform rules sets HIGH response and resolution SLA",
+          "status": "passed"
+        },
+        {
+          "name": "Platform rules sets NORMAL response and resolution SLA",
+          "status": "passed"
+        },
+        {
+          "name": "Platform rules sets LOW response and resolution SLA",
+          "status": "passed"
+        },
+        {
+          "name": "Platform rules calculates initial UTC run today or tomorrow without modifying reference",
+          "status": "passed"
+        },
+        {
+          "name": "Platform rules advances DAILY in UTC",
+          "status": "passed"
+        },
+        {
+          "name": "Platform rules advances WEEKLY in UTC",
+          "status": "passed"
+        },
+        {
+          "name": "Platform rules advances MONTHLY in UTC",
+          "status": "passed"
+        },
+        {
+          "name": "Platform rules clamps monthly runs to the last valid day, including leap years",
+          "status": "passed"
+        },
+        {
+          "name": "Platform rules enforces enabled, role allowlists and zero/full rollout",
+          "status": "passed"
+        },
+        {
+          "name": "Platform rules schedules local business hours in Vietnam and quarter-hour timezones",
+          "status": "passed"
+        },
+        {
+          "name": "Platform rules skips nonexistent DST hours and selects the earliest future ambiguous hour",
+          "status": "passed"
+        },
+        {
+          "name": "Platform rules makes percentage rollout deterministic and monotonic",
+          "status": "passed"
+        },
+        {
+          "name": "Platform rules escapes CSV formulas, commas, quotes and newlines",
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "file": "backend/src/reports/billing-analytics.spec.ts",
+      "status": "passed",
+      "tests": [
+        {
+          "name": "billing analytics read model computes MRR, collection, occupancy and overdue days with explicit definitions",
+          "status": "passed"
+        },
+        {
+          "name": "billing analytics read model returns null rates when there is no denominator",
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "file": "backend/src/rooms/service-tariff.spec.ts",
+      "status": "passed",
+      "tests": [
+        {
+          "name": "versioned service tariff selection selects the latest version effective for the billing month",
+          "status": "passed"
+        },
+        {
+          "name": "versioned service tariff selection does not use a future version for an earlier invoice",
+          "status": "passed"
+        },
+        {
+          "name": "versioned service tariff selection falls back to legacy mutable fee records",
+          "status": "passed"
+        },
+        {
+          "name": "versioned service tariff selection uses historical activity, not the mutable latest projection, for earlier months",
+          "status": "passed"
+        },
+        {
+          "name": "versioned service tariff selection does not charge a fee before its first effective period",
+          "status": "passed"
+        },
+        {
+          "name": "versioned service tariff selection uses the Vietnamese billing month at the UTC month boundary",
+          "status": "passed"
+        },
+        {
+          "name": "versioned service tariff selection rejects noncanonical effective dates: 2026-13-01",
+          "status": "passed"
+        },
+        {
+          "name": "versioned service tariff selection rejects noncanonical effective dates: 2026-11-15",
+          "status": "passed"
+        },
+        {
+          "name": "versioned service tariff selection rejects noncanonical effective dates: 2026-11-01T07:00:00+07:00",
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "file": "backend/src/support/business-calendar.spec.ts",
+      "status": "passed",
+      "tests": [
+        {
+          "name": "support business calendar skips weekends without rounding away seconds",
+          "status": "passed"
+        },
+        {
+          "name": "support business calendar skips configured holidays",
+          "status": "passed"
+        },
+        {
+          "name": "support business calendar does not count closed hours in elapsed work",
+          "status": "passed"
+        },
+        {
+          "name": "support business calendar honours IANA offsets rather than the host timezone",
+          "status": "passed"
+        },
+        {
+          "name": "support business calendar counts actual work through the spring DST gap",
+          "status": "passed"
+        },
+        {
+          "name": "support business calendar counts the repeated fall DST hour once in real elapsed time",
+          "status": "passed"
+        },
+        {
+          "name": "support business calendar clamps a nonexistent opening time to the next valid wall time",
+          "status": "passed"
+        },
+        {
+          "name": "support business calendar preserves already overdue deadlines on resume",
+          "status": "passed"
+        },
+        {
+          "name": "support business calendar preserves only the remaining work budget on resume",
+          "status": "passed"
+        },
+        {
+          "name": "support business calendar does not restart a paused clock on reassignment or repeated pause",
+          "status": "passed"
+        },
+        {
+          "name": "support business calendar keeps legacy elapsed-hour deadlines when business policy is disabled",
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "file": "backend/src/support/support-inbox.spec.ts",
+      "status": "passed",
+      "tests": [
+        {
+          "name": "Support inbox filtering pauses resolution but still tracks a missing first response",
+          "status": "passed"
+        },
+        {
+          "name": "Support inbox filtering uses a disjoint one-hour due-soon window",
+          "status": "passed"
+        },
+        {
+          "name": "Support inbox filtering intersects explicit status, ownership, priority and SLA filters",
+          "status": "passed"
+        },
+        {
+          "name": "Support inbox filtering scopes requester searches and does not search internal messages",
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "file": "backend/src/tenant-lifecycle/notification-channels.spec.ts",
+      "status": "passed",
+      "tests": [
+        {
+          "name": "Tenant reminder consent defaults to in-app only, not external email or Zalo delivery",
+          "status": "passed"
+        },
+        {
+          "name": "Tenant reminder consent requires both an enabled preference and an explicitly selected supported channel",
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "file": "backend/src/tenants/tenant-invites.service.spec.ts",
+      "status": "passed",
+      "tests": [
+        {
+          "name": "TenantInvitesService creates a hashed activation invite for an active tenant",
+          "status": "passed"
+        },
+        {
+          "name": "TenantInvitesService rejects invite creation when the tenant is missing",
+          "status": "passed"
+        },
+        {
+          "name": "TenantInvitesService rejects invite creation when tenant already has an account",
+          "status": "passed"
+        },
+        {
+          "name": "TenantInvitesService rejects invite creation when the email is already registered",
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "file": "backend/src/uploads/admin-attachment-authorization.spec.ts",
+      "status": "passed",
+      "tests": [
+        {
+          "name": "Support attachment release authorization requires support capability for internal notes, regardless of uploaded-file ownership",
+          "status": "passed"
+        },
+        {
+          "name": "Support attachment release authorization checks requester ownership for non-internal attachments instead of trusting a filename",
+          "status": "passed"
+        },
+        {
+          "name": "Support attachment release authorization binds new URLs to session and rechecks live permission and userVersion before reading bytes",
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "file": "backend/src/uploads/malware-scanner.service.spec.ts",
+      "status": "passed",
+      "tests": [
+        {
+          "name": "MalwareScannerService does not accept unconfigured scanners",
+          "status": "passed"
+        },
+        {
+          "name": "MalwareScannerService binds a clean verdict to the exact file hash",
+          "status": "passed"
+        },
+        {
+          "name": "MalwareScannerService rejects infected, unverified or failed scan results",
+          "status": "passed"
+        }
+      ]
+    }
+  ]
+}

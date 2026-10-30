@@ -1,0 +1,146 @@
+[
+  {
+    "id": "login",
+    "layer": "UI",
+    "status": "passed",
+    "startedAt": "2026-10-30T00:48:11.986Z",
+    "screenshot": "login.png",
+    "finishedAt": "2026-10-30T00:48:24.804Z"
+  },
+  {
+    "id": "03-tao-sua-khu-tro",
+    "layer": "UI",
+    "status": "passed",
+    "startedAt": "2026-10-30T00:48:24.805Z",
+    "screenshot": "03-tao-sua-khu-tro.png",
+    "finishedAt": "2026-10-30T00:48:34.844Z"
+  },
+  {
+    "id": "04-tao-sua-phong",
+    "layer": "UI",
+    "status": "failed",
+    "startedAt": "2026-10-30T00:48:34.844Z",
+    "error": "unknown error: WebDriverError: Cannot execute command waitFor, server response {\n  \"isError\": true,\n  \"response\": \"Timeout while executing waitFor: TimeoutException after 0:00:00.500000: Future not completed\\n#0      Future.timeout.<anonymous closure> (dart:async/future_impl.dart:1025:22)\\n<asynchronous suspension>\\n#1      FlutterDriverExtension.call (package:flutter_driver/src/extension/extension.dart:423:31)\\n<asynchronous suspension>\\n#2      BindingBase.registerServiceExtension.<anonymous closure> (package:flutter/src/foundation/binding.dart:960:18)\\n<asynchronous suspension>\\n#3      _runExtension.<anonymous closure> (dart:developer-patch/developer.dart:138:13)\\n<asynchronous suspension>\\n\",\n  \"type\": \"_extensionType\",\n  \"method\": \"ext.flutter.driver\"\n} when running \"execute/sync\" with method \"POST\"\n    at FetchRequest._request (file:///Users/hoang/Rental_room_management/test/system_demo/node_modules/webdriver/build/node.js:2229:19)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async Browser.wrapCommandFn (file:///Users/hoang/Rental_room_management/test/system_demo/node_modules/@wdio/utils/build/index.js:982:23)\n    at async Browser.wrapCommandFn (file:///Users/hoang/Rental_room_management/test/system_demo/node_modules/@wdio/utils/build/index.js:982:23)\n    at async DemoUI.reveal (file:///Users/hoang/Rental_room_management/test/system_demo/system_demo.mjs:263:9)\n    at async DemoUI.tap (file:///Users/hoang/Rental_room_management/test/system_demo/system_demo.mjs:278:5)\n    at async file:///Users/hoang/Rental_room_management/test/system_demo/system_demo.mjs:433:5\n    at async file:///Users/hoang/Rental_room_management/test/system_demo/system_demo.mjs:318:5\n    at async runCase (file:///Users/hoang/Rental_room_management/test/system_demo/system_demo.mjs:98:9)\n    at async scenario (file:///Users/hoang/Rental_room_management/test/system_demo/system_demo.mjs:313:18)",
+    "finishedAt": "2026-10-30T00:48:55.790Z",
+    "screenshot": "04-tao-sua-phong-FAILED.png"
+  },
+  {
+    "id": "05-tao-sua-tim-nguoi-thue",
+    "layer": "UI",
+    "status": "passed",
+    "startedAt": "2026-10-30T00:48:56.009Z",
+    "screenshot": "05-tao-sua-tim-nguoi-thue.png",
+    "finishedAt": "2026-10-30T00:49:07.189Z"
+  },
+  {
+    "id": "06-tin-dang-va-kiem-duyet",
+    "layer": "UI",
+    "status": "blocked",
+    "startedAt": "2026-10-30T00:49:07.189Z",
+    "error": "Prerequisites failed/not selected: 04-tao-sua-phong"
+  },
+  {
+    "id": "07-kham-pha-va-yeu-thich",
+    "layer": "UI",
+    "status": "passed",
+    "startedAt": "2026-10-30T00:49:07.189Z",
+    "screenshot": "07-kham-pha-va-yeu-thich.png",
+    "finishedAt": "2026-10-30T00:49:15.026Z"
+  },
+  {
+    "id": "08-hop-dong-va-ban-giao",
+    "layer": "UI",
+    "status": "passed",
+    "startedAt": "2026-10-30T00:49:15.026Z",
+    "screenshot": "08-hop-dong-va-ban-giao.png",
+    "finishedAt": "2026-10-30T00:49:32.207Z"
+  },
+  {
+    "id": "09-thu-coc-va-doi-chieu",
+    "layer": "UI",
+    "status": "passed",
+    "startedAt": "2026-10-30T00:49:32.208Z",
+    "screenshot": "09-thu-coc-va-doi-chieu.png",
+    "finishedAt": "2026-10-30T00:49:45.357Z"
+  },
+  {
+    "id": "10-hoa-don-va-thanh-toan",
+    "layer": "UI",
+    "status": "passed",
+    "startedAt": "2026-10-30T00:49:45.357Z",
+    "screenshot": "10-hoa-don-va-thanh-toan.png",
+    "finishedAt": "2026-10-30T00:50:01.192Z"
+  },
+  {
+    "id": "11-sua-chua-hai-vai-tro",
+    "layer": "UI",
+    "status": "failed",
+    "startedAt": "2026-10-30T00:50:01.192Z",
+    "error": "unknown error: WebDriverError: The process has received SIGTERM signal when running \"element/eyJmaW5kZXJUeXBlIjoiRGVtb0ZpbmRlciIsImtpbmQiOiJUZXh0IiwidmFsdWUiOiLEkGFuZyB44butIGzDvSIsImluZGV4IjoiMCJ9/click\" with method \"POST\"\n    at FetchRequest._request (file:///Users/hoang/Rental_room_management/test/system_demo/node_modules/webdriver/build/node.js:2229:19)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async Browser.wrapCommandFn (file:///Users/hoang/Rental_room_management/test/system_demo/node_modules/@wdio/utils/build/index.js:982:23)\n    at async DemoUI.tap (file:///Users/hoang/Rental_room_management/test/system_demo/system_demo.mjs:279:5)\n    at async file:///Users/hoang/Rental_room_management/test/system_demo/system_demo.mjs:544:54\n    at async file:///Users/hoang/Rental_room_management/test/system_demo/system_demo.mjs:318:5\n    at async runCase (file:///Users/hoang/Rental_room_management/test/system_demo/system_demo.mjs:98:9)\n    at async scenario (file:///Users/hoang/Rental_room_management/test/system_demo/system_demo.mjs:313:18)\n    at async journeys (file:///Users/hoang/Rental_room_management/test/system_demo/system_demo.mjs:537:3)\n    at async visualJourneys (file:///Users/hoang/Rental_room_management/test/system_demo/system_demo.mjs:368:3)",
+    "finishedAt": "2026-10-30T00:51:51.404Z",
+    "screenshot": "11-sua-chua-hai-vai-tro-FAILED.png"
+  },
+  {
+    "id": "12-chi-phi-va-bao-cao",
+    "layer": "UI",
+    "status": "failed",
+    "startedAt": "2026-10-30T00:51:51.614Z",
+    "error": "Error: WebDriverError: Request failed with error code ECONNREFUSED when running \"execute/sync\" with method \"POST\"\n    at FetchRequest._libRequest (file:///Users/hoang/Rental_room_management/test/system_demo/node_modules/webdriver/build/node.js:2168:13)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async FetchRequest._request (file:///Users/hoang/Rental_room_management/test/system_demo/node_modules/webdriver/build/node.js:2194:20)\n    at async Browser.wrapCommandFn (file:///Users/hoang/Rental_room_management/test/system_demo/node_modules/@wdio/utils/build/index.js:982:23)\n    at async Browser.wrapCommandFn (file:///Users/hoang/Rental_room_management/test/system_demo/node_modules/@wdio/utils/build/index.js:982:23)\n    at async DemoUI.bridge (file:///Users/hoang/Rental_room_management/test/system_demo/system_demo.mjs:241:20)\n    at async DemoUI.caption (file:///Users/hoang/Rental_room_management/test/system_demo/system_demo.mjs:249:5)\n    at async file:///Users/hoang/Rental_room_management/test/system_demo/system_demo.mjs:315:5\n    at async runCase (file:///Users/hoang/Rental_room_management/test/system_demo/system_demo.mjs:98:9)\n    at async scenario (file:///Users/hoang/Rental_room_management/test/system_demo/system_demo.mjs:313:18)",
+    "finishedAt": "2026-10-30T00:51:51.615Z",
+    "screenshot": "12-chi-phi-va-bao-cao-FAILED.png"
+  },
+  {
+    "id": "13-gia-han-hai-vai-tro",
+    "layer": "UI",
+    "status": "failed",
+    "startedAt": "2026-10-30T00:51:51.872Z",
+    "error": "Error: WebDriverError: Request failed with error code ECONNREFUSED when running \"execute/sync\" with method \"POST\"\n    at FetchRequest._libRequest (file:///Users/hoang/Rental_room_management/test/system_demo/node_modules/webdriver/build/node.js:2168:13)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async FetchRequest._request (file:///Users/hoang/Rental_room_management/test/system_demo/node_modules/webdriver/build/node.js:2194:20)\n    at async Browser.wrapCommandFn (file:///Users/hoang/Rental_room_management/test/system_demo/node_modules/@wdio/utils/build/index.js:982:23)\n    at async Browser.wrapCommandFn (file:///Users/hoang/Rental_room_management/test/system_demo/node_modules/@wdio/utils/build/index.js:982:23)\n    at async DemoUI.bridge (file:///Users/hoang/Rental_room_management/test/system_demo/system_demo.mjs:241:20)\n    at async DemoUI.caption (file:///Users/hoang/Rental_room_management/test/system_demo/system_demo.mjs:249:5)\n    at async file:///Users/hoang/Rental_room_management/test/system_demo/system_demo.mjs:315:5\n    at async runCase (file:///Users/hoang/Rental_room_management/test/system_demo/system_demo.mjs:98:9)\n    at async scenario (file:///Users/hoang/Rental_room_management/test/system_demo/system_demo.mjs:313:18)",
+    "finishedAt": "2026-10-30T00:51:51.873Z",
+    "screenshot": "13-gia-han-hai-vai-tro-FAILED.png"
+  },
+  {
+    "id": "14-nguoi-o-cung",
+    "layer": "UI",
+    "status": "failed",
+    "startedAt": "2026-10-30T00:51:52.118Z",
+    "error": "Error: WebDriverError: Request failed with error code ECONNREFUSED when running \"execute/sync\" with method \"POST\"\n    at FetchRequest._libRequest (file:///Users/hoang/Rental_room_management/test/system_demo/node_modules/webdriver/build/node.js:2168:13)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async FetchRequest._request (file:///Users/hoang/Rental_room_management/test/system_demo/node_modules/webdriver/build/node.js:2194:20)\n    at async Browser.wrapCommandFn (file:///Users/hoang/Rental_room_management/test/system_demo/node_modules/@wdio/utils/build/index.js:982:23)\n    at async Browser.wrapCommandFn (file:///Users/hoang/Rental_room_management/test/system_demo/node_modules/@wdio/utils/build/index.js:982:23)\n    at async DemoUI.bridge (file:///Users/hoang/Rental_room_management/test/system_demo/system_demo.mjs:241:20)\n    at async DemoUI.caption (file:///Users/hoang/Rental_room_management/test/system_demo/system_demo.mjs:249:5)\n    at async file:///Users/hoang/Rental_room_management/test/system_demo/system_demo.mjs:315:5\n    at async runCase (file:///Users/hoang/Rental_room_management/test/system_demo/system_demo.mjs:98:9)\n    at async scenario (file:///Users/hoang/Rental_room_management/test/system_demo/system_demo.mjs:313:18)",
+    "finishedAt": "2026-10-30T00:51:52.118Z",
+    "screenshot": "14-nguoi-o-cung-FAILED.png"
+  },
+  {
+    "id": "15-thong-bao-tai-khoan",
+    "layer": "UI",
+    "status": "failed",
+    "startedAt": "2026-10-30T00:51:52.370Z",
+    "error": "Error: WebDriverError: Request failed with error code ECONNREFUSED when running \"execute/sync\" with method \"POST\"\n    at FetchRequest._libRequest (file:///Users/hoang/Rental_room_management/test/system_demo/node_modules/webdriver/build/node.js:2168:13)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async FetchRequest._request (file:///Users/hoang/Rental_room_management/test/system_demo/node_modules/webdriver/build/node.js:2194:20)\n    at async Browser.wrapCommandFn (file:///Users/hoang/Rental_room_management/test/system_demo/node_modules/@wdio/utils/build/index.js:982:23)\n    at async Browser.wrapCommandFn (file:///Users/hoang/Rental_room_management/test/system_demo/node_modules/@wdio/utils/build/index.js:982:23)\n    at async DemoUI.bridge (file:///Users/hoang/Rental_room_management/test/system_demo/system_demo.mjs:241:20)\n    at async DemoUI.caption (file:///Users/hoang/Rental_room_management/test/system_demo/system_demo.mjs:249:5)\n    at async file:///Users/hoang/Rental_room_management/test/system_demo/system_demo.mjs:315:5\n    at async runCase (file:///Users/hoang/Rental_room_management/test/system_demo/system_demo.mjs:98:9)\n    at async scenario (file:///Users/hoang/Rental_room_management/test/system_demo/system_demo.mjs:313:18)",
+    "finishedAt": "2026-10-30T00:51:52.370Z",
+    "screenshot": "15-thong-bao-tai-khoan-FAILED.png"
+  },
+  {
+    "id": "17-nhan-vien-theo-phan-quyen",
+    "layer": "UI",
+    "status": "failed",
+    "startedAt": "2026-10-30T00:51:52.616Z",
+    "error": "Error: WebDriverError: Request failed with error code ECONNREFUSED when running \"execute/sync\" with method \"POST\"\n    at FetchRequest._libRequest (file:///Users/hoang/Rental_room_management/test/system_demo/node_modules/webdriver/build/node.js:2168:13)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async FetchRequest._request (file:///Users/hoang/Rental_room_management/test/system_demo/node_modules/webdriver/build/node.js:2194:20)\n    at async Browser.wrapCommandFn (file:///Users/hoang/Rental_room_management/test/system_demo/node_modules/@wdio/utils/build/index.js:982:23)\n    at async Browser.wrapCommandFn (file:///Users/hoang/Rental_room_management/test/system_demo/node_modules/@wdio/utils/build/index.js:982:23)\n    at async DemoUI.bridge (file:///Users/hoang/Rental_room_management/test/system_demo/system_demo.mjs:241:20)\n    at async DemoUI.caption (file:///Users/hoang/Rental_room_management/test/system_demo/system_demo.mjs:249:5)\n    at async file:///Users/hoang/Rental_room_management/test/system_demo/system_demo.mjs:315:5\n    at async runCase (file:///Users/hoang/Rental_room_management/test/system_demo/system_demo.mjs:98:9)\n    at async scenario (file:///Users/hoang/Rental_room_management/test/system_demo/system_demo.mjs:313:18)",
+    "finishedAt": "2026-10-30T00:51:52.617Z",
+    "screenshot": "17-nhan-vien-theo-phan-quyen-FAILED.png"
+  },
+  {
+    "id": "18-admin-quan-tri",
+    "layer": "UI",
+    "status": "failed",
+    "startedAt": "2026-10-30T00:51:52.860Z",
+    "error": "Error: WebDriverError: Request failed with error code ECONNREFUSED when running \"execute/sync\" with method \"POST\"\n    at FetchRequest._libRequest (file:///Users/hoang/Rental_room_management/test/system_demo/node_modules/webdriver/build/node.js:2168:13)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async FetchRequest._request (file:///Users/hoang/Rental_room_management/test/system_demo/node_modules/webdriver/build/node.js:2194:20)\n    at async Browser.wrapCommandFn (file:///Users/hoang/Rental_room_management/test/system_demo/node_modules/@wdio/utils/build/index.js:982:23)\n    at async Browser.wrapCommandFn (file:///Users/hoang/Rental_room_management/test/system_demo/node_modules/@wdio/utils/build/index.js:982:23)\n    at async DemoUI.bridge (file:///Users/hoang/Rental_room_management/test/system_demo/system_demo.mjs:241:20)\n    at async DemoUI.caption (file:///Users/hoang/Rental_room_management/test/system_demo/system_demo.mjs:249:5)\n    at async file:///Users/hoang/Rental_room_management/test/system_demo/system_demo.mjs:315:5\n    at async runCase (file:///Users/hoang/Rental_room_management/test/system_demo/system_demo.mjs:98:9)\n    at async scenario (file:///Users/hoang/Rental_room_management/test/system_demo/system_demo.mjs:313:18)",
+    "finishedAt": "2026-10-30T00:51:52.861Z",
+    "screenshot": "18-admin-quan-tri-FAILED.png"
+  },
+  {
+    "id": "19-yeu-cau-tra-phong",
+    "layer": "UI",
+    "status": "failed",
+    "startedAt": "2026-10-30T00:51:53.114Z",
+    "error": "Error: WebDriverError: Request failed with error code ECONNREFUSED when running \"execute/sync\" with method \"POST\"\n    at FetchRequest._libRequest (file:///Users/hoang/Rental_room_management/test/system_demo/node_modules/webdriver/build/node.js:2168:13)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async FetchRequest._request (file:///Users/hoang/Rental_room_management/test/system_demo/node_modules/webdriver/build/node.js:2194:20)\n    at async Browser.wrapCommandFn (file:///Users/hoang/Rental_room_management/test/system_demo/node_modules/@wdio/utils/build/index.js:982:23)\n    at async Browser.wrapCommandFn (file:///Users/hoang/Rental_room_management/test/system_demo/node_modules/@wdio/utils/build/index.js:982:23)\n    at async DemoUI.bridge (file:///Users/hoang/Rental_room_management/test/system_demo/system_demo.mjs:241:20)\n    at async DemoUI.caption (file:///Users/hoang/Rental_room_management/test/system_demo/system_demo.mjs:249:5)\n    at async file:///Users/hoang/Rental_room_management/test/system_demo/system_demo.mjs:315:5\n    at async runCase (file:///Users/hoang/Rental_room_management/test/system_demo/system_demo.mjs:98:9)\n    at async scenario (file:///Users/hoang/Rental_room_management/test/system_demo/system_demo.mjs:313:18)",
+    "finishedAt": "2026-10-30T00:51:53.114Z",
+    "screenshot": "19-yeu-cau-tra-phong-FAILED.png"
+  }
+]

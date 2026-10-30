@@ -3,13 +3,13 @@ import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
-import '../../core/theme/app_theme.dart';
 import '../../core/utils/format.dart';
 import '../../models/maintenance.dart';
 import '../auth/auth_navigation.dart';
 import '../auth/auth_providers.dart';
 import 'maintenance_providers.dart';
 import 'maintenance_assignment_dialog.dart';
+import 'maintenance_attachments.dart';
 
 class MaintenanceScreen extends ConsumerStatefulWidget {
   const MaintenanceScreen({super.key, this.ticketId});
@@ -79,7 +79,7 @@ class _MaintenanceScreenState extends ConsumerState<MaintenanceScreen> {
     final ticketsAsync = ref.watch(maintenanceListProvider(query));
 
     return Scaffold(
-      backgroundColor: const Color(0xFF0F1117),
+      backgroundColor: Theme.of(context).scaffoldBackgroundColor,
       appBar: AppBar(
         title: const Text('Sửa chữa'),
         actions: [
@@ -92,8 +92,9 @@ class _MaintenanceScreenState extends ConsumerState<MaintenanceScreen> {
         ],
       ),
       body: ticketsAsync.when(
-        loading: () => const Center(
-          child: CircularProgressIndicator(color: AppTheme.primary),
+        loading: () => Center(
+          child: CircularProgressIndicator(
+              color: Theme.of(context).colorScheme.primary),
         ),
         error: (error, _) => _CenteredError(
           message: '$error',
@@ -102,7 +103,7 @@ class _MaintenanceScreenState extends ConsumerState<MaintenanceScreen> {
         data: (result) {
           final items = _visibleItems(result.items);
           return RefreshIndicator(
-            color: AppTheme.primary,
+            color: Theme.of(context).colorScheme.primary,
             onRefresh: () async =>
                 ref.invalidate(maintenanceListProvider(query)),
             child: CustomScrollView(
@@ -188,8 +189,7 @@ Widget _ticketCard(BuildContext context, WidgetRef ref,
     onEdit: canManage
         ? () => context.push(maintenanceFormPath(ticketId: ticket.id))
         : null,
-    onComment:
-        canManage ? () => _showCommentDialog(context, ref, ticket) : null,
+    onComment: canManage ? () => _showCommentDialog(context, ticket) : null,
     onStart: canManage
         ? () => _setStatus(context, ref, ticket, MaintenanceStatus.inProgress)
         : null,
@@ -219,13 +219,13 @@ class _MaintenanceHeader extends StatelessWidget {
           children: [
             Row(
               children: [
-                const Expanded(
+                Expanded(
                   child: Text(
                     'Báo sửa chữa',
                     style: TextStyle(
                       fontSize: 26,
                       fontWeight: FontWeight.w900,
-                      color: Color(0xFFF0F2FF),
+                      color: Theme.of(context).colorScheme.onSurface,
                     ),
                   ),
                 ),
@@ -235,8 +235,8 @@ class _MaintenanceHeader extends StatelessWidget {
                     icon: const Icon(Icons.add_rounded),
                     tooltip: 'Báo sửa chữa',
                     style: IconButton.styleFrom(
-                      backgroundColor: AppTheme.primary,
-                      foregroundColor: Colors.white,
+                      backgroundColor: Theme.of(context).colorScheme.primary,
+                      foregroundColor: Theme.of(context).colorScheme.onPrimary,
                     ),
                   ),
               ],
@@ -264,7 +264,7 @@ class _MaintenanceHeader extends StatelessWidget {
                   child: _SummaryTile(
                     label: 'Thực chi',
                     value: formatCurrencyVnd(summary.actualCost),
-                    color: const Color(0xFFDC2626),
+                    color: Theme.of(context).colorScheme.error,
                   ),
                 ),
               ],
@@ -302,9 +302,6 @@ class _MaintenanceFilters extends StatelessWidget {
             decoration: const InputDecoration(
               prefixIcon: Icon(Icons.search_rounded),
               hintText: 'Tìm theo tiêu đề, phòng, ghi chú',
-              filled: true,
-              fillColor: Colors.white,
-              border: OutlineInputBorder(),
             ),
           ),
           const SizedBox(height: 8),
@@ -385,9 +382,9 @@ class _MaintenanceCard extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.all(14),
       decoration: BoxDecoration(
-        color: Colors.white,
+        color: Theme.of(context).colorScheme.surface,
         borderRadius: BorderRadius.circular(8),
-        border: Border.all(color: const Color(0xFF2E3348)),
+        border: Border.all(color: Theme.of(context).colorScheme.outline),
       ),
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -410,10 +407,10 @@ class _MaintenanceCard extends StatelessWidget {
                   ticket.title,
                   maxLines: 2,
                   overflow: TextOverflow.ellipsis,
-                  style: const TextStyle(
+                  style: TextStyle(
                     fontSize: 15,
                     fontWeight: FontWeight.w900,
-                    color: Color(0xFFF0F2FF),
+                    color: Theme.of(context).colorScheme.onSurface,
                   ),
                 ),
                 const SizedBox(height: 6),
@@ -436,8 +433,9 @@ class _MaintenanceCard extends StatelessWidget {
                     if (ticket.propertyName != null) ticket.propertyName!,
                     formatDate(ticket.reportedAt),
                   ].join(' · '),
-                  style:
-                      const TextStyle(fontSize: 12, color: Color(0xFF8891A8)),
+                  style: TextStyle(
+                      fontSize: 12,
+                      color: Theme.of(context).colorScheme.onSurfaceVariant),
                 ),
                 if (ticket.description != null &&
                     ticket.description!.trim().isNotEmpty) ...[
@@ -446,8 +444,9 @@ class _MaintenanceCard extends StatelessWidget {
                     ticket.description!,
                     maxLines: 2,
                     overflow: TextOverflow.ellipsis,
-                    style:
-                        const TextStyle(fontSize: 12, color: Color(0xFF4B5563)),
+                    style: TextStyle(
+                        fontSize: 12,
+                        color: Theme.of(context).colorScheme.onSurfaceVariant),
                   ),
                 ],
                 if (ticket.assigneeName != null || ticket.dueAt != null) ...[
@@ -469,12 +468,16 @@ class _MaintenanceCard extends StatelessWidget {
                       if (ticket.actualCost != null)
                         'Thực tế ${formatCurrencyVnd(ticket.actualCost!)}',
                     ].join(' · '),
-                    style: const TextStyle(
+                    style: TextStyle(
                       fontSize: 12,
                       fontWeight: FontWeight.w700,
-                      color: Color(0xFFF0F2FF),
+                      color: Theme.of(context).colorScheme.onSurface,
                     ),
                   ),
+                ],
+                if (ticket.imageUrls.isNotEmpty) ...[
+                  const SizedBox(height: 8),
+                  MaintenanceAttachments(urls: ticket.imageUrls),
                 ],
               ],
             ),
@@ -503,7 +506,9 @@ class _MaintenanceCard extends StatelessWidget {
                 if (ticket.status == MaintenanceStatus.open && onStart != null)
                   const PopupMenuItem(
                       value: 'start', child: Text('Đang xử lý')),
-                if (!ticket.isDone && onComplete != null)
+                if (!ticket.isDone &&
+                    ticket.status != MaintenanceStatus.cancelled &&
+                    onComplete != null)
                   const PopupMenuItem(
                       value: 'complete', child: Text('Hoàn tất')),
                 if (onComment != null)
@@ -533,6 +538,7 @@ class _Badge extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final foreground = _accentForeground(context, color);
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 9, vertical: 5),
       decoration: BoxDecoration(
@@ -541,8 +547,8 @@ class _Badge extends StatelessWidget {
       ),
       child: Text(
         label,
-        style:
-            TextStyle(fontSize: 11, fontWeight: FontWeight.w800, color: color),
+        style: TextStyle(
+            fontSize: 11, fontWeight: FontWeight.w800, color: foreground),
       ),
     );
   }
@@ -564,15 +570,17 @@ class _SummaryTile extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.all(12),
       decoration: BoxDecoration(
-        color: Colors.white,
+        color: Theme.of(context).colorScheme.surface,
         borderRadius: BorderRadius.circular(8),
-        border: Border.all(color: const Color(0xFF2E3348)),
+        border: Border.all(color: Theme.of(context).colorScheme.outline),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(label,
-              style: const TextStyle(fontSize: 11, color: Color(0xFF8891A8))),
+              style: TextStyle(
+                  fontSize: 11,
+                  color: Theme.of(context).colorScheme.onSurfaceVariant)),
           const SizedBox(height: 6),
           FittedBox(
             fit: BoxFit.scaleDown,
@@ -582,7 +590,7 @@ class _SummaryTile extends StatelessWidget {
               style: TextStyle(
                 fontSize: 17,
                 fontWeight: FontWeight.w900,
-                color: color,
+                color: _accentForeground(context, color),
               ),
             ),
           ),
@@ -607,16 +615,19 @@ class _FilterChip extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final active = color ?? AppTheme.primary;
+    final colors = Theme.of(context).colorScheme;
+    final active = color ?? colors.primary;
     return GestureDetector(
       onTap: onTap,
       child: Container(
         padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 7),
         decoration: BoxDecoration(
-          color: selected ? active.withValues(alpha: 0.12) : Colors.white,
+          color: selected
+              ? Color.alphaBlend(active.withValues(alpha: 0.12), colors.surface)
+              : colors.surface,
           borderRadius: BorderRadius.circular(999),
           border: Border.all(
-            color: selected ? active : const Color(0xFF2E3348),
+            color: selected ? active : colors.outline,
           ),
         ),
         child: Text(
@@ -624,12 +635,20 @@ class _FilterChip extends StatelessWidget {
           style: TextStyle(
             fontSize: 12,
             fontWeight: FontWeight.w700,
-            color: selected ? active : const Color(0xFF8891A8),
+            color: selected
+                ? _accentForeground(context, active)
+                : colors.onSurfaceVariant,
           ),
         ),
       ),
     );
   }
+}
+
+Color _accentForeground(BuildContext context, Color color) {
+  final colors = Theme.of(context).colorScheme;
+  return Color.lerp(color, colors.onSurface,
+      colors.brightness == Brightness.dark ? 0.30 : 0.45)!;
 }
 
 class _EmptyMaintenance extends StatelessWidget {
@@ -645,21 +664,26 @@ class _EmptyMaintenance extends StatelessWidget {
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            const Icon(
+            Icon(
               Icons.construction_rounded,
               size: 56,
-              color: Color(0xFF9CA3AF),
+              color: Theme.of(context).colorScheme.onSurfaceVariant,
             ),
             const SizedBox(height: 14),
-            const Text(
+            Text(
               'Chưa có yêu cầu sửa chữa',
-              style: TextStyle(fontSize: 18, fontWeight: FontWeight.w800),
+              style: TextStyle(
+                  fontSize: 18,
+                  fontWeight: FontWeight.w800,
+                  color: Theme.of(context).colorScheme.onSurface),
             ),
             const SizedBox(height: 8),
-            const Text(
+            Text(
               'Ghi nhận hỏng hóc theo từng phòng và chốt chi phí khi hoàn tất.',
               textAlign: TextAlign.center,
-              style: TextStyle(fontSize: 14, color: Color(0xFF8891A8)),
+              style: TextStyle(
+                  fontSize: 14,
+                  color: Theme.of(context).colorScheme.onSurfaceVariant),
             ),
             const SizedBox(height: 18),
             if (onAdd != null)
@@ -689,13 +713,15 @@ class _CenteredError extends StatelessWidget {
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            const Icon(Icons.cloud_off_rounded,
-                size: 52, color: Color(0xFF9CA3AF)),
+            Icon(Icons.cloud_off_rounded,
+                size: 52,
+                color: Theme.of(context).colorScheme.onSurfaceVariant),
             const SizedBox(height: 14),
             Text(
               message,
               textAlign: TextAlign.center,
-              style: const TextStyle(color: Color(0xFF8891A8)),
+              style: TextStyle(
+                  color: Theme.of(context).colorScheme.onSurfaceVariant),
             ),
             const SizedBox(height: 12),
             TextButton(onPressed: onRetry, child: const Text('Thử lại')),
@@ -732,81 +758,109 @@ Future<void> _setStatus(
 
 Future<void> _showCommentDialog(
   BuildContext context,
-  WidgetRef ref,
   MaintenanceTicket ticket,
 ) async {
+  await showDialog<void>(
+    context: context,
+    builder: (_) => _MaintenanceCommentDialog(ticket: ticket),
+  );
+}
+
+class _MaintenanceCommentDialog extends ConsumerStatefulWidget {
+  const _MaintenanceCommentDialog({required this.ticket});
+
+  final MaintenanceTicket ticket;
+
+  @override
+  ConsumerState<_MaintenanceCommentDialog> createState() =>
+      _MaintenanceCommentDialogState();
+}
+
+class _MaintenanceCommentDialogState
+    extends ConsumerState<_MaintenanceCommentDialog> {
   final body = TextEditingController();
   String? error;
   var loading = false;
 
-  await showDialog<void>(
-    context: context,
-    builder: (dialogContext) => StatefulBuilder(
-      builder: (context, setState) => AlertDialog(
-        title: Text(ticket.title),
-        content: SingleChildScrollView(
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              for (final comment in ticket.comments) ...[
-                Text(
-                  '${comment.authorName ?? comment.authorRole} · ${formatDate(comment.createdAt)}',
-                  style:
-                      const TextStyle(fontSize: 12, color: Color(0xFF8891A8)),
-                ),
-                Text(comment.body),
-                const SizedBox(height: 10),
-              ],
-              TextField(
-                controller: body,
-                maxLines: 3,
-                decoration: const InputDecoration(labelText: 'Phản hồi'),
-              ),
-              if (error != null) ...[
-                const SizedBox(height: 10),
-                Text(error!, style: const TextStyle(color: Color(0xFFDC2626))),
-              ],
-            ],
-          ),
-        ),
-        actions: [
-          TextButton(
-            onPressed: loading ? null : () => Navigator.pop(dialogContext),
-            child: const Text('Đóng'),
-          ),
-          ElevatedButton(
-            onPressed: loading
-                ? null
-                : () async {
-                    if (body.text.trim().isEmpty) {
-                      setState(() => error = 'Nhập nội dung phản hồi.');
-                      return;
-                    }
-                    setState(() {
-                      loading = true;
-                      error = null;
-                    });
-                    try {
-                      await ref
-                          .read(maintenanceActionControllerProvider.notifier)
-                          .addComment(ticket.id, body: body.text);
-                      if (dialogContext.mounted) Navigator.pop(dialogContext);
-                    } catch (err) {
-                      setState(() {
-                        loading = false;
-                        error = '$err';
-                      });
-                    }
-                  },
-            child: const Text('Gửi'),
-          ),
-        ],
-      ),
-    ),
-  );
+  @override
+  void dispose() {
+    body.dispose();
+    super.dispose();
+  }
 
-  body.dispose();
+  @override
+  Widget build(BuildContext context) {
+    final ticket = widget.ticket;
+    return AlertDialog(
+      title: Text(ticket.title),
+      content: SingleChildScrollView(
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            for (final comment in ticket.comments) ...[
+              Text(
+                '${comment.authorName ?? comment.authorRole} · ${formatDate(comment.createdAt)}',
+                style: TextStyle(
+                    fontSize: 12,
+                    color: Theme.of(context).colorScheme.onSurfaceVariant),
+              ),
+              Text(comment.body),
+              if (comment.imageUrls.isNotEmpty)
+                MaintenanceAttachments(urls: comment.imageUrls),
+              const SizedBox(height: 10),
+            ],
+            TextField(
+              controller: body,
+              maxLines: 3,
+              decoration: const InputDecoration(labelText: 'Phản hồi'),
+            ),
+            if (error != null) ...[
+              const SizedBox(height: 10),
+              Text(error!,
+                  style: TextStyle(color: Theme.of(context).colorScheme.error)),
+            ],
+          ],
+        ),
+      ),
+      actions: [
+        TextButton(
+          onPressed: loading ? null : () => Navigator.pop(context),
+          child: const Text('Đóng'),
+        ),
+        ElevatedButton(
+          onPressed: loading
+              ? null
+              : () async {
+                  if (body.text.trim().isEmpty) {
+                    setState(() => error = 'Nhập nội dung phản hồi.');
+                    return;
+                  }
+                  setState(() {
+                    loading = true;
+                    error = null;
+                  });
+                  try {
+                    await ref
+                        .read(maintenanceActionControllerProvider.notifier)
+                        .addComment(ticket.id, body: body.text);
+                    if (context.mounted &&
+                        ModalRoute.of(context)?.isCurrent == true) {
+                      Navigator.pop(context);
+                    }
+                  } catch (err) {
+                    if (!mounted) return;
+                    setState(() {
+                      loading = false;
+                      error = '$err';
+                    });
+                  }
+                },
+          child: const Text('Gửi'),
+        ),
+      ],
+    );
+  }
 }
 
 Future<void> _completeTicket(
@@ -814,80 +868,119 @@ Future<void> _completeTicket(
   WidgetRef ref,
   MaintenanceTicket ticket,
 ) async {
-  final amount = TextEditingController(
-    text: (ticket.actualCost ?? ticket.estimatedCost ?? '').toString(),
-  );
-  final note = TextEditingController(text: ticket.note ?? '');
-  var createExpense = ticket.expenseId == null;
-
-  final confirmed = await showDialog<bool>(
+  await showDialog<void>(
     context: context,
-    builder: (context) => StatefulBuilder(
-      builder: (context, setState) => AlertDialog(
-        title: const Text('Hoàn tất sửa chữa'),
-        content: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            TextField(
-              controller: amount,
-              keyboardType: TextInputType.number,
-              inputFormatters: [FilteringTextInputFormatter.digitsOnly],
-              decoration: const InputDecoration(labelText: 'Chi phí thực tế'),
-            ),
-            TextField(
-              controller: note,
-              maxLines: 2,
-              decoration: const InputDecoration(labelText: 'Ghi chú'),
-            ),
-            CheckboxListTile(
-              value: createExpense,
-              contentPadding: EdgeInsets.zero,
-              onChanged: ticket.expenseId == null
-                  ? (value) => setState(() => createExpense = value ?? true)
-                  : null,
-              title: const Text('Tạo chi phí sửa chữa'),
-              controlAffinity: ListTileControlAffinity.leading,
-            ),
-          ],
-        ),
-        actions: [
-          TextButton(
-            onPressed: () => Navigator.pop(context, false),
-            child: const Text('Hủy'),
-          ),
-          ElevatedButton(
-            onPressed: () => Navigator.pop(context, true),
-            child: const Text('Hoàn tất'),
-          ),
-        ],
-      ),
-    ),
+    builder: (_) => _CompleteMaintenanceDialog(ticket: ticket),
   );
+}
 
-  final parsedAmount = int.tryParse(amount.text.trim());
-  final noteText = note.text;
-  amount.dispose();
-  note.dispose();
-  if (confirmed != true) return;
+class _CompleteMaintenanceDialog extends ConsumerStatefulWidget {
+  const _CompleteMaintenanceDialog({required this.ticket});
+  final MaintenanceTicket ticket;
 
-  try {
-    await ref.read(maintenanceActionControllerProvider.notifier).complete(
-          ticket.id,
-          actualCost: parsedAmount,
-          note: noteText,
-          createExpense: createExpense,
-        );
-    if (context.mounted) {
+  @override
+  ConsumerState<_CompleteMaintenanceDialog> createState() =>
+      _CompleteMaintenanceDialogState();
+}
+
+class _CompleteMaintenanceDialogState
+    extends ConsumerState<_CompleteMaintenanceDialog> {
+  late final amount = TextEditingController(
+    text: (widget.ticket.actualCost ?? widget.ticket.estimatedCost ?? '')
+        .toString(),
+  );
+  late final note = TextEditingController(text: widget.ticket.note ?? '');
+  late var createExpense = widget.ticket.expenseId == null;
+  bool loading = false;
+  String? error;
+
+  @override
+  void dispose() {
+    amount.dispose();
+    note.dispose();
+    super.dispose();
+  }
+
+  Future<void> _submit() async {
+    if (loading) return;
+    final text = amount.text.trim();
+    final actualCost = text.isEmpty ? null : int.tryParse(text);
+    if (text.isNotEmpty &&
+        (actualCost == null || actualCost < 0 || actualCost > 2147483647)) {
+      setState(() => error = 'Chi phí phải từ 0 đến 2.147.483.647 đ.');
+      return;
+    }
+    setState(() {
+      loading = true;
+      error = null;
+    });
+    try {
+      await ref.read(maintenanceActionControllerProvider.notifier).complete(
+            widget.ticket.id,
+            actualCost: actualCost,
+            note: note.text,
+            createExpense: createExpense,
+          );
+      if (!mounted || ModalRoute.of(context)?.isCurrent != true) return;
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(content: Text('Đã hoàn tất sửa chữa.')),
       );
+      Navigator.pop(context);
+    } catch (err) {
+      if (!mounted) return;
+      setState(() {
+        loading = false;
+        error = '$err';
+      });
     }
-  } catch (error) {
-    if (context.mounted) {
-      ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text('$error')),
-      );
-    }
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return AlertDialog(
+      title: const Text('Hoàn tất sửa chữa'),
+      content: SingleChildScrollView(
+          child: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          TextField(
+            controller: amount,
+            enabled: !loading && widget.ticket.expenseId == null,
+            keyboardType: TextInputType.number,
+            inputFormatters: [FilteringTextInputFormatter.digitsOnly],
+            decoration: const InputDecoration(labelText: 'Chi phí thực tế'),
+          ),
+          TextField(
+            controller: note,
+            enabled: !loading,
+            maxLines: 2,
+            decoration: const InputDecoration(labelText: 'Ghi chú'),
+          ),
+          CheckboxListTile(
+            value: createExpense,
+            contentPadding: EdgeInsets.zero,
+            onChanged: !loading && widget.ticket.expenseId == null
+                ? (value) => setState(() => createExpense = value ?? true)
+                : null,
+            title: const Text('Tạo chi phí sửa chữa'),
+            controlAffinity: ListTileControlAffinity.leading,
+          ),
+          if (error != null)
+            Text(error!,
+                style: TextStyle(color: Theme.of(context).colorScheme.error)),
+        ],
+      )),
+      actions: [
+        TextButton(
+          onPressed: loading ? null : () => Navigator.pop(context),
+          child: const Text('Hủy'),
+        ),
+        ElevatedButton(
+          onPressed: loading ? null : _submit,
+          child: Text(loading ? 'Đang lưu...' : 'Hoàn tất'),
+        ),
+      ],
+    );
   }
 }
 

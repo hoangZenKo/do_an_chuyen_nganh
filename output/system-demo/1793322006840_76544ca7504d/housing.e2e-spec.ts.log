@@ -1,0 +1,33 @@
+
+> rental-room-api@0.1.0 test:e2e
+> NODE_ENV=test jest --config ./test/jest-e2e.json --runInBand --runTestsByPath test/e2e/housing.e2e-spec.ts --runInBand
+
+PASS test/e2e/housing.e2e-spec.ts (11.083 s)
+  Student housing journey E2E
+    ✓ persists favorites idempotently per account, retains unavailable markers and supports removal (452 ms)
+    ✓ validates dates, timezone, pagination, ownership and unavailable rooms (365 ms)
+    ✓ prevents duplicate concurrent booking and scopes schedules and notifications to participants (499 ms)
+    ✓ rejects stale updates and premature lease creation; cancellation allows rebooking (419 ms)
+    ✓ lets only the owning landlord complete a confirmed visit before its scheduled time (422 ms)
+    ✓ atomically converts a completed visit into a linked lease without inventing a deposit payment (467 ms)
+    ✓ serializes concurrent lease conversions and rolls back when room availability changes (391 ms)
+    ✓ continues from the new lease into invoices, uploaded payment proof, approval and maintenance (502 ms)
+    ✓ does not link a tenant or create a lease if the room became inactive (391 ms)
+    ✓ does not expose viewings or notifications to staff/admin accounts (323 ms)
+    ✓ publishes landlord-only slots and serializes two students competing for the same time (387 ms)
+    ✓ keeps slot-only mode when the landlord deletes all openings and permits adjacent slots (390 ms)
+    ✓ rejects invalid slot lengths and bookings that do not match the actual opening (545 ms)
+    ✓ serializes overlapping student bookings across different landlords (466 ms)
+    ✓ reschedules atomically, clears confirmation, rejects stale/foreign edits and shows cancellation reasons (500 ms)
+    ✓ rejects cross-listing landlord overlaps and leaves the old appointment intact on failed rescheduling (582 ms)
+    ✓ sends one in-app reminder per confirmed appointment to both parties, even with competing workers (509 ms)
+    ✓ hands over with private photos, scopes participants and separates agreed deposit from actual transactions (535 ms)
+    ✓ rejects invalid handover readings, external/public/unowned photos and premature move-in confirmation (422 ms)
+    ✓ rejects booking and saving illustrative listings (305 ms)
+    ✓ collects pilot feedback only in the configured area and limits review to administrators (306 ms)
+
+Test Suites: 1 passed, 1 total
+Tests:       21 passed, 21 total
+Snapshots:   0 total
+Time:        11.188 s
+Ran all test suites within paths "test/e2e/housing.e2e-spec.ts".

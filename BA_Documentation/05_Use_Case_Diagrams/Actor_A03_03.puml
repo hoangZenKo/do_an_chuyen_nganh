@@ -1,0 +1,71 @@
+@startuml
+left to right direction
+skinparam defaultFontName SansSerif
+skinparam defaultFontSize 13
+skinparam backgroundColor #F8FAFC
+skinparam shadowing false
+skinparam ArrowColor #52647A
+skinparam ArrowThickness 1
+skinparam actorStyle stickman
+skinparam actorBorderColor #243A52
+skinparam actorFontColor #243A52
+skinparam actorBackgroundColor #FFFFFF
+skinparam usecase {
+  BackgroundColor #FFFFFF
+  BorderColor #327C83
+  FontColor #20354B
+  BackgroundColor<<Một phần>> #FFF0CE
+  BorderColor<<Một phần>> #B17917
+  BackgroundColor<<DEMO>> #FCE5DF
+  BorderColor<<DEMO>> #BC593A
+  BackgroundColor<<MÔ PHỎNG>> #E7EAF1
+  BorderColor<<MÔ PHỎNG>> #6C7488
+}
+skinparam rectangle {
+  BackgroundColor #EEF4F5
+  BorderColor #243A52
+  FontColor #243A52
+}
+skinparam titleFontColor #20354B
+skinparam titleFontSize 18
+skinparam nodesep 25
+skinparam ranksep 65
+title A03 · NHÂN VIÊN VẬN HÀNH\n<size:12>Trang 3/6 · Hồ sơ, hợp đồng và tiền cọc</size>
+caption AS-IS · 29/10/2026 · Snapshot c565c29 · Không biểu diễn trình tự xử lý
+actor "A03\nNhân viên vận hành" as A03
+rectangle "Hệ thống quản lý nhà trọ" as SYSTEM {
+  usecase "UC-TNT-01\nTra cứu hồ sơ người thuê và\ntổng quan" as UC_TNT_01
+  usecase "UC-TNT-02.1\nTạo hồ sơ người thuê" as UC_TNT_02_1
+  usecase "UC-TNT-02.2\nCập nhật hồ sơ người thuê" as UC_TNT_02_2
+  usecase "UC-TNT-02.3\nVô hiệu hóa hoặc khôi phục\nngười thuê" as UC_TNT_02_3
+  usecase "UC-TNT-02.4\nXóa hồ sơ người thuê đủ điều\nkiện" as UC_TNT_02_4
+  usecase "UC-TNT-03.1\nTạo trực tiếp tài khoản cho hồ\nsơ người thuê" as UC_TNT_03_1
+  usecase "UC-TNT-04\nTra cứu và xuất hợp đồng thuê" as UC_TNT_04
+  usecase "UC-TNT-05\nLập hợp đồng thuê phòng" as UC_TNT_05
+  usecase "UC-TNT-06.1\nCập nhật điều khoản hợp đồng" as UC_TNT_06_1
+  usecase "UC-TNT-06.2\nGia hạn hợp đồng" as UC_TNT_06_2
+  usecase "UC-TNT-06.3\nKết thúc hợp đồng" as UC_TNT_06_3
+  usecase "UC-TNT-07\nTra cứu và ghi giao dịch cọc" as UC_TNT_07
+  usecase "UC-TNT-12.1\nQuản lý người ở cùng hợp đồng" as UC_TNT_12_1
+}
+A03 -- UC_TNT_01 : tùy handler: tenant.view
+A03 -- UC_TNT_02_1 : tùy handler: tenant.manage
+A03 -- UC_TNT_02_2 : tùy handler: tenant.manage
+A03 -- UC_TNT_02_3 : tùy handler: tenant.manage
+A03 -- UC_TNT_02_4 : tùy handler: tenant.manage
+A03 -- UC_TNT_03_1 : tùy handler: tenant.manage
+A03 -- UC_TNT_04 : tùy handler: lease.view
+A03 -- UC_TNT_05 : tùy handler: lease.manage
+A03 -- UC_TNT_06_1 : tùy handler: lease.manage
+A03 -- UC_TNT_06_2 : tùy handler: lease.manage
+A03 -- UC_TNT_06_3 : tùy handler: lease.manage
+A03 -- UC_TNT_07 : tùy handler: lease.view / lease.manage
+A03 -- UC_TNT_12_1 : tùy handler: lease.view / lease.manage
+legend bottom left
+  Đường liền: tương tác; không biểu diễn luồng điều khiển.
+  STAFF: permission theo handler + khu được giao + whitelist controller; không mặc định toàn quyền.
+  Mặc định: xác minh tĩnh, chưa nghiệm thu runtime; màu vàng: một phần, cam: DEMO, xám: mô phỏng.
+  Góc nhìn A03: nhãn liệt kê quyền tùy handler, KHÔNG yêu cầu đồng thời mọi quyền; giữ nguyên UC.
+  Quyền chi tiết, điều kiện và nguồn: Association_Traceability.md / data/diagram-manifest.json.
+endlegend
+@enduml

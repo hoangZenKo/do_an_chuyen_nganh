@@ -1,0 +1,62 @@
+@startuml
+left to right direction
+skinparam defaultFontName SansSerif
+skinparam defaultFontSize 13
+skinparam backgroundColor #F8FAFC
+skinparam shadowing false
+skinparam ArrowColor #52647A
+skinparam ArrowThickness 1
+skinparam actorStyle stickman
+skinparam actorBorderColor #243A52
+skinparam actorFontColor #243A52
+skinparam actorBackgroundColor #FFFFFF
+skinparam usecase {
+  BackgroundColor #FFFFFF
+  BorderColor #327C83
+  FontColor #20354B
+  BackgroundColor<<Một phần>> #FFF0CE
+  BorderColor<<Một phần>> #B17917
+  BackgroundColor<<DEMO>> #FCE5DF
+  BorderColor<<DEMO>> #BC593A
+  BackgroundColor<<MÔ PHỎNG>> #E7EAF1
+  BorderColor<<MÔ PHỎNG>> #6C7488
+}
+skinparam rectangle {
+  BackgroundColor #EEF4F5
+  BorderColor #243A52
+  FontColor #243A52
+}
+skinparam titleFontColor #20354B
+skinparam titleFontSize 18
+skinparam nodesep 25
+skinparam ranksep 65
+title G08 · Hóa đơn, thu tiền và công nợ\n<size:12>Trang 4/4 · Chính sách nhắc nợ và giao nhận</size>
+caption AS-IS · 29/10/2026 · Snapshot c565c29 · Không biểu diễn trình tự xử lý
+actor "A02\nChủ trọ" as A02
+actor "A03\nNhân viên vận hành" as A03
+actor "A04\nNgười tìm phòng/người\nthuê" as A04
+rectangle "Hệ thống quản lý nhà trọ" as SYSTEM {
+  usecase "UC-BIL-18.1\nCấu hình chính sách nhắc nợ" as UC_BIL_18_1
+  usecase "UC-BIL-18.2\nGửi nhắc nợ theo chính sách" as UC_BIL_18_2 <<Một phần>>
+  usecase "UC-BIL-18.3\nTheo dõi và thử lại outbox hóa\nđơn" as UC_BIL_18_3
+  usecase "UC-TEN-08.2\nChọn kênh nhận nhắc nợ" as UC_TEN_08_2
+}
+actor "E01\nDịch vụ giao liên\nkết/thông báo bên ngoài\n(có điều kiện)" as E01
+actor "E02\nNhà cung cấp Zalo ZNS\n(có điều kiện)" as E02
+A02 -- UC_BIL_18_1
+UC_BIL_18_1 -- A03
+A02 -- UC_BIL_18_2
+UC_BIL_18_2 -- A03
+UC_BIL_18_2 -- E01 : nếu cấu hình/bật
+UC_BIL_18_2 -- E02 : nếu cấu hình/bật
+A02 -- UC_BIL_18_3
+A04 -- UC_TEN_08_2
+legend bottom left
+  Đường liền: tương tác; không biểu diễn luồng điều khiển.
+  STAFF: permission theo handler + khu được giao + whitelist controller; không mặc định toàn quyền.
+  Nhắc nợ: STAFF chỉ BillingController + billing.policy + propertyId; ZNS trực tiếp chỉ Chủ trọ.
+  E01–E05: hệ thống ngoài có adapter; chỉ tương tác ở nhánh cấu hình/bật tương ứng.
+  Mặc định: xác minh tĩnh, chưa nghiệm thu runtime; màu vàng: một phần, cam: DEMO, xám: mô phỏng.
+  Quyền chi tiết, điều kiện và nguồn: Association_Traceability.md / data/diagram-manifest.json.
+endlegend
+@enduml

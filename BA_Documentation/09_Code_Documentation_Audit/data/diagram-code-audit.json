@@ -1,0 +1,3617 @@
+{
+  "imageCount": 30,
+  "associations": 272,
+  "limited": 7,
+  "checks": [
+    {
+      "diagram": "Overall_Use_Case",
+      "actorId": "A01",
+      "ucId": "UC-SYS-03",
+      "limited": false,
+      "label": "",
+      "method": "Đọc bảo vệ riêng/đường công khai hoặc xử lý tại ứng dụng",
+      "evidence": [
+        "backend/src/auth/auth.controller.ts"
+      ],
+      "detail": "Đã đối chiếu đường đăng ký/đăng nhập/khôi phục/kích hoạt công khai; ràng buộc đầu vào và lời mời vẫn áp dụng.",
+      "fullAcceptance": false
+    },
+    {
+      "diagram": "Overall_Use_Case",
+      "actorId": "A01",
+      "ucId": "UC-DIS-01",
+      "limited": false,
+      "label": "",
+      "method": "Đọc bảo vệ riêng/đường công khai hoặc xử lý tại ứng dụng",
+      "evidence": [
+        "backend/src/listings/listings.controller.ts",
+        "backend/src/listings/listings.service.ts"
+      ],
+      "detail": "Đọc công khai không yêu cầu vai trò; người tìm phòng cũng sử dụng được.",
+      "fullAcceptance": false
+    },
+    {
+      "diagram": "Overall_Use_Case",
+      "actorId": "A04",
+      "ucId": "UC-DIS-01",
+      "limited": false,
+      "label": "",
+      "method": "Đọc bảo vệ riêng/đường công khai hoặc xử lý tại ứng dụng",
+      "evidence": [
+        "backend/src/listings/listings.controller.ts",
+        "backend/src/listings/listings.service.ts"
+      ],
+      "detail": "Đọc công khai không yêu cầu vai trò; người tìm phòng cũng sử dụng được.",
+      "fullAcceptance": false
+    },
+    {
+      "diagram": "Overall_Use_Case",
+      "actorId": "A04",
+      "ucId": "UC-DIS-09",
+      "limited": false,
+      "label": "",
+      "method": "Thử RolesGuard + PropertyScopeInterceptor; còn điều kiện riêng trong xử lý",
+      "evidence": [
+        "backend/src/housing/housing.controller.ts"
+      ],
+      "detail": "Đúng lớp vai trò/phạm vi đã thử; không coi là chấp nhận mọi thao tác của UC.",
+      "fullAcceptance": false
+    },
+    {
+      "diagram": "Overall_Use_Case",
+      "actorId": "A04",
+      "ucId": "UC-TEN-03",
+      "limited": false,
+      "label": "",
+      "method": "Thử RolesGuard + PropertyScopeInterceptor; còn điều kiện riêng trong xử lý",
+      "evidence": [
+        "backend/src/tenant-portal/tenant-portal.controller.ts"
+      ],
+      "detail": "Đúng lớp vai trò/phạm vi đã thử; không coi là chấp nhận mọi thao tác của UC.",
+      "fullAcceptance": false
+    },
+    {
+      "diagram": "Overall_Use_Case",
+      "actorId": "A02",
+      "ucId": "UC-TNT-05",
+      "limited": false,
+      "label": "",
+      "method": "Thử RolesGuard + PropertyScopeInterceptor; còn điều kiện riêng trong xử lý",
+      "evidence": [
+        "backend/src/leases/leases.controller.ts",
+        "backend/src/housing/housing.controller.ts"
+      ],
+      "detail": "Đúng lớp vai trò/phạm vi đã thử; không coi là chấp nhận mọi thao tác của UC.",
+      "fullAcceptance": false
+    },
+    {
+      "diagram": "Overall_Use_Case",
+      "actorId": "A03",
+      "ucId": "UC-TNT-05",
+      "limited": false,
+      "label": "",
+      "method": "Thử RolesGuard + PropertyScopeInterceptor; còn điều kiện riêng trong xử lý",
+      "evidence": [
+        "backend/src/leases/leases.controller.ts"
+      ],
+      "detail": "Đúng lớp vai trò/phạm vi đã thử; không coi là chấp nhận mọi thao tác của UC.",
+      "fullAcceptance": false
+    },
+    {
+      "diagram": "Overall_Use_Case",
+      "actorId": "A02",
+      "ucId": "UC-TNT-08",
+      "limited": false,
+      "label": "",
+      "method": "Thử RolesGuard + PropertyScopeInterceptor; còn điều kiện riêng trong xử lý",
+      "evidence": [
+        "backend/src/leases/leases.controller.ts"
+      ],
+      "detail": "Đúng lớp vai trò/phạm vi đã thử; không coi là chấp nhận mọi thao tác của UC.",
+      "fullAcceptance": false
+    },
+    {
+      "diagram": "Overall_Use_Case",
+      "actorId": "A02",
+      "ucId": "UC-BIL-16",
+      "limited": false,
+      "label": "",
+      "method": "Thử RolesGuard + PropertyScopeInterceptor; còn điều kiện riêng trong xử lý",
+      "evidence": [
+        "backend/src/billing/billing.controller.ts"
+      ],
+      "detail": "Đúng lớp vai trò/phạm vi đã thử; không coi là chấp nhận mọi thao tác của UC.",
+      "fullAcceptance": false
+    },
+    {
+      "diagram": "Overall_Use_Case",
+      "actorId": "A02",
+      "ucId": "UC-OPT-03.1",
+      "limited": false,
+      "label": "",
+      "method": "Thử RolesGuard + PropertyScopeInterceptor; còn điều kiện riêng trong xử lý",
+      "evidence": [
+        "backend/src/properties/properties.controller.ts"
+      ],
+      "detail": "Đúng lớp vai trò/phạm vi đã thử; không coi là chấp nhận mọi thao tác của UC.",
+      "fullAcceptance": false
+    },
+    {
+      "diagram": "Overall_Use_Case",
+      "actorId": "A02",
+      "ucId": "UC-OPT-01",
+      "limited": false,
+      "label": "",
+      "method": "Thử RolesGuard + PropertyScopeInterceptor; còn điều kiện riêng trong xử lý",
+      "evidence": [
+        "backend/src/dashboard/dashboard.controller.ts"
+      ],
+      "detail": "Đúng lớp vai trò/phạm vi đã thử; không coi là chấp nhận mọi thao tác của UC.",
+      "fullAcceptance": false
+    },
+    {
+      "diagram": "Overall_Use_Case",
+      "actorId": "A03",
+      "ucId": "UC-OPT-01",
+      "limited": false,
+      "label": "",
+      "method": "Thử RolesGuard + PropertyScopeInterceptor; còn điều kiện riêng trong xử lý",
+      "evidence": [
+        "backend/src/dashboard/dashboard.controller.ts"
+      ],
+      "detail": "Đúng lớp vai trò/phạm vi đã thử; không coi là chấp nhận mọi thao tác của UC.",
+      "fullAcceptance": false
+    },
+    {
+      "diagram": "Overall_Use_Case",
+      "actorId": "A05",
+      "ucId": "UC-ADM-02",
+      "limited": false,
+      "label": "",
+      "method": "Thử RolesGuard + PropertyScopeInterceptor; còn điều kiện riêng trong xử lý",
+      "evidence": [
+        "backend/src/admin/admin-console.controller.ts",
+        "backend/src/admin/admin.controller.ts"
+      ],
+      "detail": "Đúng lớp vai trò/phạm vi đã thử; không coi là chấp nhận mọi thao tác của UC.",
+      "fullAcceptance": false
+    },
+    {
+      "diagram": "Overall_Use_Case",
+      "actorId": "A05",
+      "ucId": "UC-ADM-11",
+      "limited": false,
+      "label": "",
+      "method": "Thử RolesGuard + PropertyScopeInterceptor; còn điều kiện riêng trong xử lý",
+      "evidence": [
+        "backend/src/admin/admin-console.controller.ts",
+        "backend/src/listings/listings.controller.ts",
+        "backend/src/platform/moderation-v2.controller.ts"
+      ],
+      "detail": "Đúng lớp vai trò/phạm vi đã thử; không coi là chấp nhận mọi thao tác của UC.",
+      "fullAcceptance": false
+    },
+    {
+      "diagram": "Overall_Use_Case",
+      "actorId": "A05",
+      "ucId": "UC-ADM-15",
+      "limited": false,
+      "label": "",
+      "method": "Thử RolesGuard + PropertyScopeInterceptor; còn điều kiện riêng trong xử lý",
+      "evidence": [
+        "backend/src/platform/finance-reconciliation.controller.ts"
+      ],
+      "detail": "Đúng lớp vai trò/phạm vi đã thử; không coi là chấp nhận mọi thao tác của UC.",
+      "fullAcceptance": false
+    },
+    {
+      "diagram": "UC_G01_01_SYS_Public",
+      "actorId": "A01",
+      "ucId": "UC-SYS-01",
+      "limited": false,
+      "label": "",
+      "method": "Đọc bảo vệ riêng/đường công khai hoặc xử lý tại ứng dụng",
+      "evidence": [
+        "backend/src/auth/auth.controller.ts"
+      ],
+      "detail": "Đã đối chiếu đường đăng ký/đăng nhập/khôi phục/kích hoạt công khai; ràng buộc đầu vào và lời mời vẫn áp dụng.",
+      "fullAcceptance": false
+    },
+    {
+      "diagram": "UC_G01_01_SYS_Public",
+      "actorId": "A01",
+      "ucId": "UC-SYS-02",
+      "limited": false,
+      "label": "",
+      "method": "Đọc bảo vệ riêng/đường công khai hoặc xử lý tại ứng dụng",
+      "evidence": [
+        "backend/src/auth/auth.controller.ts"
+      ],
+      "detail": "Đã đối chiếu đường đăng ký/đăng nhập/khôi phục/kích hoạt công khai; ràng buộc đầu vào và lời mời vẫn áp dụng.",
+      "fullAcceptance": false
+    },
+    {
+      "diagram": "UC_G01_01_SYS_Public",
+      "actorId": "A01",
+      "ucId": "UC-SYS-03",
+      "limited": false,
+      "label": "",
+      "method": "Đọc bảo vệ riêng/đường công khai hoặc xử lý tại ứng dụng",
+      "evidence": [
+        "backend/src/auth/auth.controller.ts"
+      ],
+      "detail": "Đã đối chiếu đường đăng ký/đăng nhập/khôi phục/kích hoạt công khai; ràng buộc đầu vào và lời mời vẫn áp dụng.",
+      "fullAcceptance": false
+    },
+    {
+      "diagram": "UC_G01_01_SYS_Public",
+      "actorId": "A01",
+      "ucId": "UC-SYS-06",
+      "limited": false,
+      "label": "",
+      "method": "Đọc bảo vệ riêng/đường công khai hoặc xử lý tại ứng dụng",
+      "evidence": [
+        "backend/src/auth/account-access.controller.ts"
+      ],
+      "detail": "Đã đối chiếu đường đăng ký/đăng nhập/khôi phục/kích hoạt công khai; ràng buộc đầu vào và lời mời vẫn áp dụng.",
+      "fullAcceptance": false
+    },
+    {
+      "diagram": "UC_G01_01_SYS_Public",
+      "actorId": "E01",
+      "ucId": "UC-SYS-06",
+      "limited": false,
+      "label": "khi sử dụng kênh này",
+      "method": "Đối chiếu điểm tích hợp có điều kiện; chưa gọi nhà cung cấp",
+      "evidence": [
+        "backend/src/delivery/delivery.service.ts",
+        "backend/src/billing/billing-outbox.service.ts",
+        "backend/src/support/notification-delivery.service.ts"
+      ],
+      "detail": "Chỉ tham gia khi kênh tương ứng sử dụng và được cấu hình; không xác nhận giao nhận.",
+      "fullAcceptance": false
+    },
+    {
+      "diagram": "UC_G01_01_SYS_Public",
+      "actorId": "A01",
+      "ucId": "UC-SYS-08",
+      "limited": false,
+      "label": "",
+      "method": "Đọc bảo vệ riêng/đường công khai hoặc xử lý tại ứng dụng",
+      "evidence": [
+        "backend/src/tenants/tenant-invites.controller.ts"
+      ],
+      "detail": "Đã đối chiếu đường đăng ký/đăng nhập/khôi phục/kích hoạt công khai; ràng buộc đầu vào và lời mời vẫn áp dụng.",
+      "fullAcceptance": false
+    },
+    {
+      "diagram": "UC_G01_01_SYS_Public",
+      "actorId": "A01",
+      "ucId": "UC-SYS-09",
+      "limited": false,
+      "label": "",
+      "method": "Đọc bảo vệ riêng/đường công khai hoặc xử lý tại ứng dụng",
+      "evidence": [
+        "backend/src/staff/staff.controller.ts"
+      ],
+      "detail": "Đã đối chiếu đường đăng ký/đăng nhập/khôi phục/kích hoạt công khai; ràng buộc đầu vào và lời mời vẫn áp dụng.",
+      "fullAcceptance": false
+    },
+    {
+      "diagram": "UC_G01_01_SYS_Public",
+      "actorId": "A01",
+      "ucId": "UC-SYS-10",
+      "limited": false,
+      "label": "",
+      "method": "Đọc bảo vệ riêng/đường công khai hoặc xử lý tại ứng dụng",
+      "evidence": [
+        "backend/src/auth/account-access.controller.ts"
+      ],
+      "detail": "Đã đối chiếu đường đăng ký/đăng nhập/khôi phục/kích hoạt công khai; ràng buộc đầu vào và lời mời vẫn áp dụng.",
+      "fullAcceptance": false
+    },
+    {
+      "diagram": "UC_G01_02_SYS_Sessions",
+      "actorId": "A02",
+      "ucId": "UC-SYS-05.1",
+      "limited": false,
+      "label": "",
+      "method": "Đọc bảo vệ riêng/đường công khai hoặc xử lý tại ứng dụng",
+      "evidence": [
+        "backend/src/auth/auth.controller.ts",
+        "backend/src/auth/auth.service.ts"
+      ],
+      "detail": "Endpoint logout không yêu cầu JWT; sở hữu thông tin duy trì phiên quyết định phiên bị thu hồi, không quyền quản trị.",
+      "fullAcceptance": false
+    },
+    {
+      "diagram": "UC_G01_02_SYS_Sessions",
+      "actorId": "A03",
+      "ucId": "UC-SYS-05.1",
+      "limited": false,
+      "label": "",
+      "method": "Đọc bảo vệ riêng/đường công khai hoặc xử lý tại ứng dụng",
+      "evidence": [
+        "backend/src/auth/auth.controller.ts",
+        "backend/src/auth/auth.service.ts"
+      ],
+      "detail": "Endpoint logout không yêu cầu JWT; sở hữu thông tin duy trì phiên quyết định phiên bị thu hồi, không quyền quản trị.",
+      "fullAcceptance": false
+    },
+    {
+      "diagram": "UC_G01_02_SYS_Sessions",
+      "actorId": "A04",
+      "ucId": "UC-SYS-05.1",
+      "limited": false,
+      "label": "",
+      "method": "Đọc bảo vệ riêng/đường công khai hoặc xử lý tại ứng dụng",
+      "evidence": [
+        "backend/src/auth/auth.controller.ts",
+        "backend/src/auth/auth.service.ts"
+      ],
+      "detail": "Endpoint logout không yêu cầu JWT; sở hữu thông tin duy trì phiên quyết định phiên bị thu hồi, không quyền quản trị.",
+      "fullAcceptance": false
+    },
+    {
+      "diagram": "UC_G01_02_SYS_Sessions",
+      "actorId": "A05",
+      "ucId": "UC-SYS-05.1",
+      "limited": false,
+      "label": "",
+      "method": "Đọc bảo vệ riêng/đường công khai hoặc xử lý tại ứng dụng",
+      "evidence": [
+        "backend/src/auth/auth.controller.ts",
+        "backend/src/auth/auth.service.ts"
+      ],
+      "detail": "Endpoint logout không yêu cầu JWT; sở hữu thông tin duy trì phiên quyết định phiên bị thu hồi, không quyền quản trị.",
+      "fullAcceptance": false
+    },
+    {
+      "diagram": "UC_G01_02_SYS_Sessions",
+      "actorId": "A02",
+      "ucId": "UC-SYS-05.2",
+      "limited": false,
+      "label": "",
+      "method": "Đọc bảo vệ riêng/đường công khai hoặc xử lý tại ứng dụng",
+      "evidence": [
+        "backend/src/auth/auth.controller.ts",
+        "backend/src/auth/auth.service.ts"
+      ],
+      "detail": "JWT riêng; các phương thức xác định userId từ người dùng hiện tại.",
+      "fullAcceptance": false
+    },
+    {
+      "diagram": "UC_G01_02_SYS_Sessions",
+      "actorId": "A03",
+      "ucId": "UC-SYS-05.2",
+      "limited": false,
+      "label": "",
+      "method": "Đọc bảo vệ riêng/đường công khai hoặc xử lý tại ứng dụng",
+      "evidence": [
+        "backend/src/auth/auth.controller.ts",
+        "backend/src/auth/auth.service.ts"
+      ],
+      "detail": "JWT riêng; các phương thức xác định userId từ người dùng hiện tại.",
+      "fullAcceptance": false
+    },
+    {
+      "diagram": "UC_G01_02_SYS_Sessions",
+      "actorId": "A04",
+      "ucId": "UC-SYS-05.2",
+      "limited": false,
+      "label": "",
+      "method": "Đọc bảo vệ riêng/đường công khai hoặc xử lý tại ứng dụng",
+      "evidence": [
+        "backend/src/auth/auth.controller.ts",
+        "backend/src/auth/auth.service.ts"
+      ],
+      "detail": "JWT riêng; các phương thức xác định userId từ người dùng hiện tại.",
+      "fullAcceptance": false
+    },
+    {
+      "diagram": "UC_G01_02_SYS_Sessions",
+      "actorId": "A05",
+      "ucId": "UC-SYS-05.2",
+      "limited": false,
+      "label": "",
+      "method": "Đọc bảo vệ riêng/đường công khai hoặc xử lý tại ứng dụng",
+      "evidence": [
+        "backend/src/auth/auth.controller.ts",
+        "backend/src/auth/auth.service.ts"
+      ],
+      "detail": "JWT riêng; các phương thức xác định userId từ người dùng hiện tại.",
+      "fullAcceptance": false
+    },
+    {
+      "diagram": "UC_G01_02_SYS_Sessions",
+      "actorId": "A02",
+      "ucId": "UC-SYS-07",
+      "limited": false,
+      "label": "",
+      "method": "Đọc bảo vệ riêng/đường công khai hoặc xử lý tại ứng dụng",
+      "evidence": [
+        "backend/src/auth/auth.controller.ts",
+        "backend/src/auth/auth.service.ts"
+      ],
+      "detail": "JWT riêng; kiểm mật khẩu hiện tại của userId trong phiên.",
+      "fullAcceptance": false
+    },
+    {
+      "diagram": "UC_G01_02_SYS_Sessions",
+      "actorId": "A03",
+      "ucId": "UC-SYS-07",
+      "limited": false,
+      "label": "",
+      "method": "Đọc bảo vệ riêng/đường công khai hoặc xử lý tại ứng dụng",
+      "evidence": [
+        "backend/src/auth/auth.controller.ts",
+        "backend/src/auth/auth.service.ts"
+      ],
+      "detail": "JWT riêng; kiểm mật khẩu hiện tại của userId trong phiên.",
+      "fullAcceptance": false
+    },
+    {
+      "diagram": "UC_G01_02_SYS_Sessions",
+      "actorId": "A04",
+      "ucId": "UC-SYS-07",
+      "limited": false,
+      "label": "",
+      "method": "Đọc bảo vệ riêng/đường công khai hoặc xử lý tại ứng dụng",
+      "evidence": [
+        "backend/src/auth/auth.controller.ts",
+        "backend/src/auth/auth.service.ts"
+      ],
+      "detail": "JWT riêng; kiểm mật khẩu hiện tại của userId trong phiên.",
+      "fullAcceptance": false
+    },
+    {
+      "diagram": "UC_G01_02_SYS_Sessions",
+      "actorId": "A05",
+      "ucId": "UC-SYS-07",
+      "limited": false,
+      "label": "",
+      "method": "Đọc bảo vệ riêng/đường công khai hoặc xử lý tại ứng dụng",
+      "evidence": [
+        "backend/src/auth/auth.controller.ts",
+        "backend/src/auth/auth.service.ts"
+      ],
+      "detail": "JWT riêng; kiểm mật khẩu hiện tại của userId trong phiên.",
+      "fullAcceptance": false
+    },
+    {
+      "diagram": "UC_G01_02_SYS_Sessions",
+      "actorId": "A05",
+      "ucId": "UC-ADM-07.1",
+      "limited": false,
+      "label": "",
+      "method": "Đọc bảo vệ riêng/đường công khai hoặc xử lý tại ứng dụng",
+      "evidence": [
+        "backend/src/auth/admin-security.controller.ts"
+      ],
+      "detail": "JWT riêng và kiểm role ADMIN trong profile, không suy công khai do thiếu @Roles.",
+      "fullAcceptance": false
+    },
+    {
+      "diagram": "UC_G02",
+      "actorId": "A01",
+      "ucId": "UC-DIS-01",
+      "limited": false,
+      "label": "",
+      "method": "Đọc bảo vệ riêng/đường công khai hoặc xử lý tại ứng dụng",
+      "evidence": [
+        "backend/src/listings/listings.controller.ts",
+        "backend/src/listings/listings.service.ts"
+      ],
+      "detail": "Đọc công khai không yêu cầu vai trò; người tìm phòng cũng sử dụng được.",
+      "fullAcceptance": false
+    },
+    {
+      "diagram": "UC_G02",
+      "actorId": "A04",
+      "ucId": "UC-DIS-01",
+      "limited": false,
+      "label": "",
+      "method": "Đọc bảo vệ riêng/đường công khai hoặc xử lý tại ứng dụng",
+      "evidence": [
+        "backend/src/listings/listings.controller.ts",
+        "backend/src/listings/listings.service.ts"
+      ],
+      "detail": "Đọc công khai không yêu cầu vai trò; người tìm phòng cũng sử dụng được.",
+      "fullAcceptance": false
+    },
+    {
+      "diagram": "UC_G02",
+      "actorId": "A01",
+      "ucId": "UC-DIS-02",
+      "limited": false,
+      "label": "",
+      "method": "Đọc bảo vệ riêng/đường công khai hoặc xử lý tại ứng dụng",
+      "evidence": [
+        "backend/src/listings/listings.controller.ts",
+        "backend/src/reviews/reviews.controller.ts"
+      ],
+      "detail": "Đọc tin/đánh giá công khai, lọc trạng thái; không đồng nghĩa có quyền sửa/đánh giá.",
+      "fullAcceptance": false
+    },
+    {
+      "diagram": "UC_G02",
+      "actorId": "A04",
+      "ucId": "UC-DIS-02",
+      "limited": false,
+      "label": "",
+      "method": "Đọc bảo vệ riêng/đường công khai hoặc xử lý tại ứng dụng",
+      "evidence": [
+        "backend/src/listings/listings.controller.ts",
+        "backend/src/reviews/reviews.controller.ts"
+      ],
+      "detail": "Đọc tin/đánh giá công khai, lọc trạng thái; không đồng nghĩa có quyền sửa/đánh giá.",
+      "fullAcceptance": false
+    },
+    {
+      "diagram": "UC_G02",
+      "actorId": "A04",
+      "ucId": "UC-DIS-03",
+      "limited": false,
+      "label": "",
+      "method": "Thử RolesGuard + PropertyScopeInterceptor; còn điều kiện riêng trong xử lý",
+      "evidence": [
+        "backend/src/housing/housing.controller.ts"
+      ],
+      "detail": "Đúng lớp vai trò/phạm vi đã thử; không coi là chấp nhận mọi thao tác của UC.",
+      "fullAcceptance": false
+    },
+    {
+      "diagram": "UC_G02",
+      "actorId": "A04",
+      "ucId": "UC-DIS-04",
+      "limited": false,
+      "label": "",
+      "method": "Thử RolesGuard + PropertyScopeInterceptor; còn điều kiện riêng trong xử lý",
+      "evidence": [
+        "backend/src/listings/saved-searches.controller.ts"
+      ],
+      "detail": "Đúng lớp vai trò/phạm vi đã thử; không coi là chấp nhận mọi thao tác của UC.",
+      "fullAcceptance": false
+    },
+    {
+      "diagram": "UC_G02",
+      "actorId": "A01",
+      "ucId": "UC-DIS-16",
+      "limited": false,
+      "label": "",
+      "method": "Đọc bảo vệ riêng/đường công khai hoặc xử lý tại ứng dụng",
+      "evidence": [
+        "lib/features/listings/listings_providers.dart",
+        "lib/features/listings/listing_comparison_screen.dart"
+      ],
+      "detail": "Trạng thái so sánh trong ứng dụng, không yêu cầu đăng nhập; tối đa ba tin.",
+      "fullAcceptance": false
+    },
+    {
+      "diagram": "UC_G02",
+      "actorId": "A04",
+      "ucId": "UC-DIS-16",
+      "limited": false,
+      "label": "",
+      "method": "Đọc bảo vệ riêng/đường công khai hoặc xử lý tại ứng dụng",
+      "evidence": [
+        "lib/features/listings/listings_providers.dart",
+        "lib/features/listings/listing_comparison_screen.dart"
+      ],
+      "detail": "Trạng thái so sánh trong ứng dụng, không yêu cầu đăng nhập; tối đa ba tin.",
+      "fullAcceptance": false
+    },
+    {
+      "diagram": "UC_G02",
+      "actorId": "A01",
+      "ucId": "UC-DIS-17",
+      "limited": false,
+      "label": "",
+      "method": "Đọc bảo vệ riêng/đường công khai hoặc xử lý tại ứng dụng",
+      "evidence": [
+        "lib/models/student_discovery.dart",
+        "lib/features/listings/student_listing_widgets.dart"
+      ],
+      "detail": "Ước tính tại ứng dụng từ tin công khai, không là thao tác tài chính.",
+      "fullAcceptance": false
+    },
+    {
+      "diagram": "UC_G02",
+      "actorId": "A04",
+      "ucId": "UC-DIS-17",
+      "limited": false,
+      "label": "",
+      "method": "Đọc bảo vệ riêng/đường công khai hoặc xử lý tại ứng dụng",
+      "evidence": [
+        "lib/models/student_discovery.dart",
+        "lib/features/listings/student_listing_widgets.dart"
+      ],
+      "detail": "Ước tính tại ứng dụng từ tin công khai, không là thao tác tài chính.",
+      "fullAcceptance": false
+    },
+    {
+      "diagram": "UC_G03",
+      "actorId": "A02",
+      "ucId": "UC-DIS-05",
+      "limited": false,
+      "label": "",
+      "method": "Thử RolesGuard + PropertyScopeInterceptor; còn điều kiện riêng trong xử lý",
+      "evidence": [
+        "backend/src/listings/listings.controller.ts"
+      ],
+      "detail": "Đúng lớp vai trò/phạm vi đã thử; không coi là chấp nhận mọi thao tác của UC.",
+      "fullAcceptance": false
+    },
+    {
+      "diagram": "UC_G03",
+      "actorId": "A02",
+      "ucId": "UC-DIS-06.2",
+      "limited": false,
+      "label": "",
+      "method": "Thử RolesGuard + PropertyScopeInterceptor; còn điều kiện riêng trong xử lý",
+      "evidence": [
+        "backend/src/listings/listings.controller.ts"
+      ],
+      "detail": "Đúng lớp vai trò/phạm vi đã thử; không coi là chấp nhận mọi thao tác của UC.",
+      "fullAcceptance": false
+    },
+    {
+      "diagram": "UC_G03",
+      "actorId": "A02",
+      "ucId": "UC-DIS-08",
+      "limited": false,
+      "label": "",
+      "method": "Thử RolesGuard + PropertyScopeInterceptor; còn điều kiện riêng trong xử lý",
+      "evidence": [
+        "backend/src/housing/housing.controller.ts"
+      ],
+      "detail": "Đúng lớp vai trò/phạm vi đã thử; không coi là chấp nhận mọi thao tác của UC.",
+      "fullAcceptance": false
+    },
+    {
+      "diagram": "UC_G03",
+      "actorId": "A04",
+      "ucId": "UC-DIS-08",
+      "limited": true,
+      "label": "chỉ xem khung giờ",
+      "method": "Thử RolesGuard + PropertyScopeInterceptor; còn điều kiện riêng trong xử lý",
+      "evidence": [
+        "backend/src/housing/housing.controller.ts"
+      ],
+      "detail": "Đúng lớp vai trò/phạm vi đã thử; không coi là chấp nhận mọi thao tác của UC.",
+      "fullAcceptance": false
+    },
+    {
+      "diagram": "UC_G03",
+      "actorId": "A04",
+      "ucId": "UC-DIS-09",
+      "limited": false,
+      "label": "",
+      "method": "Thử RolesGuard + PropertyScopeInterceptor; còn điều kiện riêng trong xử lý",
+      "evidence": [
+        "backend/src/housing/housing.controller.ts"
+      ],
+      "detail": "Đúng lớp vai trò/phạm vi đã thử; không coi là chấp nhận mọi thao tác của UC.",
+      "fullAcceptance": false
+    },
+    {
+      "diagram": "UC_G03",
+      "actorId": "A02",
+      "ucId": "UC-DIS-10",
+      "limited": false,
+      "label": "",
+      "method": "Thử RolesGuard + PropertyScopeInterceptor; còn điều kiện riêng trong xử lý",
+      "evidence": [
+        "backend/src/housing/housing.controller.ts"
+      ],
+      "detail": "Đúng lớp vai trò/phạm vi đã thử; không coi là chấp nhận mọi thao tác của UC.",
+      "fullAcceptance": false
+    },
+    {
+      "diagram": "UC_G03",
+      "actorId": "A02",
+      "ucId": "UC-TNT-12.2",
+      "limited": false,
+      "label": "",
+      "method": "Thử RolesGuard + PropertyScopeInterceptor; còn điều kiện riêng trong xử lý",
+      "evidence": [
+        "backend/src/housing/housing.controller.ts"
+      ],
+      "detail": "Đúng lớp vai trò/phạm vi đã thử; không coi là chấp nhận mọi thao tác của UC.",
+      "fullAcceptance": false
+    },
+    {
+      "diagram": "UC_G03",
+      "actorId": "A04",
+      "ucId": "UC-TNT-12.2",
+      "limited": true,
+      "label": "chỉ xem biên bản",
+      "method": "Thử RolesGuard + PropertyScopeInterceptor; còn điều kiện riêng trong xử lý",
+      "evidence": [
+        "backend/src/housing/housing.controller.ts"
+      ],
+      "detail": "Đúng lớp vai trò/phạm vi đã thử; không coi là chấp nhận mọi thao tác của UC.",
+      "fullAcceptance": false
+    },
+    {
+      "diagram": "UC_G03",
+      "actorId": "A04",
+      "ucId": "UC-TNT-12.3",
+      "limited": false,
+      "label": "",
+      "method": "Thử RolesGuard + PropertyScopeInterceptor; còn điều kiện riêng trong xử lý",
+      "evidence": [
+        "backend/src/housing/housing.controller.ts"
+      ],
+      "detail": "Đúng lớp vai trò/phạm vi đã thử; không coi là chấp nhận mọi thao tác của UC.",
+      "fullAcceptance": false
+    },
+    {
+      "diagram": "UC_G04_BA_1",
+      "actorId": "A02",
+      "ucId": "UC-OPT-02",
+      "limited": false,
+      "label": "",
+      "method": "Thử RolesGuard + PropertyScopeInterceptor; còn điều kiện riêng trong xử lý",
+      "evidence": [
+        "backend/src/properties/properties.controller.ts"
+      ],
+      "detail": "Đúng lớp vai trò/phạm vi đã thử; không coi là chấp nhận mọi thao tác của UC.",
+      "fullAcceptance": false
+    },
+    {
+      "diagram": "UC_G04_BA_1",
+      "actorId": "A03",
+      "ucId": "UC-OPT-02",
+      "limited": false,
+      "label": "",
+      "method": "Thử RolesGuard + PropertyScopeInterceptor; còn điều kiện riêng trong xử lý",
+      "evidence": [
+        "backend/src/properties/properties.controller.ts"
+      ],
+      "detail": "Đúng lớp vai trò/phạm vi đã thử; không coi là chấp nhận mọi thao tác của UC.",
+      "fullAcceptance": false
+    },
+    {
+      "diagram": "UC_G04_BA_1",
+      "actorId": "A02",
+      "ucId": "UC-OPT-03.1",
+      "limited": false,
+      "label": "",
+      "method": "Thử RolesGuard + PropertyScopeInterceptor; còn điều kiện riêng trong xử lý",
+      "evidence": [
+        "backend/src/properties/properties.controller.ts"
+      ],
+      "detail": "Đúng lớp vai trò/phạm vi đã thử; không coi là chấp nhận mọi thao tác của UC.",
+      "fullAcceptance": false
+    },
+    {
+      "diagram": "UC_G04_BA_1",
+      "actorId": "A02",
+      "ucId": "UC-OPT-03.2",
+      "limited": false,
+      "label": "",
+      "method": "Thử RolesGuard + PropertyScopeInterceptor; còn điều kiện riêng trong xử lý",
+      "evidence": [
+        "backend/src/properties/properties.controller.ts"
+      ],
+      "detail": "Đúng lớp vai trò/phạm vi đã thử; không coi là chấp nhận mọi thao tác của UC.",
+      "fullAcceptance": false
+    },
+    {
+      "diagram": "UC_G04_BA_1",
+      "actorId": "A03",
+      "ucId": "UC-OPT-03.2",
+      "limited": false,
+      "label": "",
+      "method": "Thử RolesGuard + PropertyScopeInterceptor; còn điều kiện riêng trong xử lý",
+      "evidence": [
+        "backend/src/properties/properties.controller.ts"
+      ],
+      "detail": "Đúng lớp vai trò/phạm vi đã thử; không coi là chấp nhận mọi thao tác của UC.",
+      "fullAcceptance": false
+    },
+    {
+      "diagram": "UC_G04_BA_1",
+      "actorId": "A02",
+      "ucId": "UC-OPT-04.1",
+      "limited": false,
+      "label": "",
+      "method": "Thử RolesGuard + PropertyScopeInterceptor; còn điều kiện riêng trong xử lý",
+      "evidence": [
+        "backend/src/properties/properties.controller.ts"
+      ],
+      "detail": "Đúng lớp vai trò/phạm vi đã thử; không coi là chấp nhận mọi thao tác của UC.",
+      "fullAcceptance": false
+    },
+    {
+      "diagram": "UC_G04_BA_1",
+      "actorId": "A03",
+      "ucId": "UC-OPT-04.1",
+      "limited": false,
+      "label": "",
+      "method": "Thử RolesGuard + PropertyScopeInterceptor; còn điều kiện riêng trong xử lý",
+      "evidence": [
+        "backend/src/properties/properties.controller.ts"
+      ],
+      "detail": "Đúng lớp vai trò/phạm vi đã thử; không coi là chấp nhận mọi thao tác của UC.",
+      "fullAcceptance": false
+    },
+    {
+      "diagram": "UC_G04_BA_1",
+      "actorId": "A02",
+      "ucId": "UC-OPT-04.3",
+      "limited": false,
+      "label": "",
+      "method": "Thử RolesGuard + PropertyScopeInterceptor; còn điều kiện riêng trong xử lý",
+      "evidence": [
+        "backend/src/properties/properties.controller.ts"
+      ],
+      "detail": "Đúng lớp vai trò/phạm vi đã thử; không coi là chấp nhận mọi thao tác của UC.",
+      "fullAcceptance": false
+    },
+    {
+      "diagram": "UC_G04_BA_1",
+      "actorId": "A03",
+      "ucId": "UC-OPT-04.3",
+      "limited": false,
+      "label": "",
+      "method": "Thử RolesGuard + PropertyScopeInterceptor; còn điều kiện riêng trong xử lý",
+      "evidence": [
+        "backend/src/properties/properties.controller.ts"
+      ],
+      "detail": "Đúng lớp vai trò/phạm vi đã thử; không coi là chấp nhận mọi thao tác của UC.",
+      "fullAcceptance": false
+    },
+    {
+      "diagram": "UC_G04_BA_1",
+      "actorId": "A02",
+      "ucId": "UC-OPT-05",
+      "limited": false,
+      "label": "",
+      "method": "Thử RolesGuard + PropertyScopeInterceptor; còn điều kiện riêng trong xử lý",
+      "evidence": [
+        "backend/src/rooms/rooms.controller.ts"
+      ],
+      "detail": "Đúng lớp vai trò/phạm vi đã thử; không coi là chấp nhận mọi thao tác của UC.",
+      "fullAcceptance": false
+    },
+    {
+      "diagram": "UC_G04_BA_1",
+      "actorId": "A03",
+      "ucId": "UC-OPT-05",
+      "limited": false,
+      "label": "",
+      "method": "Thử RolesGuard + PropertyScopeInterceptor; còn điều kiện riêng trong xử lý",
+      "evidence": [
+        "backend/src/rooms/rooms.controller.ts"
+      ],
+      "detail": "Đúng lớp vai trò/phạm vi đã thử; không coi là chấp nhận mọi thao tác của UC.",
+      "fullAcceptance": false
+    },
+    {
+      "diagram": "UC_G04_BA_1",
+      "actorId": "A02",
+      "ucId": "UC-OPT-06.1",
+      "limited": false,
+      "label": "",
+      "method": "Thử RolesGuard + PropertyScopeInterceptor; còn điều kiện riêng trong xử lý",
+      "evidence": [
+        "backend/src/rooms/rooms.controller.ts"
+      ],
+      "detail": "Đúng lớp vai trò/phạm vi đã thử; không coi là chấp nhận mọi thao tác của UC.",
+      "fullAcceptance": false
+    },
+    {
+      "diagram": "UC_G04_BA_1",
+      "actorId": "A03",
+      "ucId": "UC-OPT-06.1",
+      "limited": false,
+      "label": "",
+      "method": "Thử RolesGuard + PropertyScopeInterceptor; còn điều kiện riêng trong xử lý",
+      "evidence": [
+        "backend/src/rooms/rooms.controller.ts"
+      ],
+      "detail": "Đúng lớp vai trò/phạm vi đã thử; không coi là chấp nhận mọi thao tác của UC.",
+      "fullAcceptance": false
+    },
+    {
+      "diagram": "UC_G04_BA_2",
+      "actorId": "A02",
+      "ucId": "UC-OPT-06.2",
+      "limited": false,
+      "label": "",
+      "method": "Thử RolesGuard + PropertyScopeInterceptor; còn điều kiện riêng trong xử lý",
+      "evidence": [
+        "backend/src/rooms/rooms.controller.ts"
+      ],
+      "detail": "Đúng lớp vai trò/phạm vi đã thử; không coi là chấp nhận mọi thao tác của UC.",
+      "fullAcceptance": false
+    },
+    {
+      "diagram": "UC_G04_BA_2",
+      "actorId": "A03",
+      "ucId": "UC-OPT-06.2",
+      "limited": false,
+      "label": "",
+      "method": "Thử RolesGuard + PropertyScopeInterceptor; còn điều kiện riêng trong xử lý",
+      "evidence": [
+        "backend/src/rooms/rooms.controller.ts"
+      ],
+      "detail": "Đúng lớp vai trò/phạm vi đã thử; không coi là chấp nhận mọi thao tác của UC.",
+      "fullAcceptance": false
+    },
+    {
+      "diagram": "UC_G04_BA_2",
+      "actorId": "A02",
+      "ucId": "UC-OPT-07.1",
+      "limited": false,
+      "label": "",
+      "method": "Thử RolesGuard + PropertyScopeInterceptor; còn điều kiện riêng trong xử lý",
+      "evidence": [
+        "backend/src/rooms/rooms.controller.ts"
+      ],
+      "detail": "Đúng lớp vai trò/phạm vi đã thử; không coi là chấp nhận mọi thao tác của UC.",
+      "fullAcceptance": false
+    },
+    {
+      "diagram": "UC_G04_BA_2",
+      "actorId": "A03",
+      "ucId": "UC-OPT-07.1",
+      "limited": false,
+      "label": "",
+      "method": "Thử RolesGuard + PropertyScopeInterceptor; còn điều kiện riêng trong xử lý",
+      "evidence": [
+        "backend/src/rooms/rooms.controller.ts"
+      ],
+      "detail": "Đúng lớp vai trò/phạm vi đã thử; không coi là chấp nhận mọi thao tác của UC.",
+      "fullAcceptance": false
+    },
+    {
+      "diagram": "UC_G04_BA_2",
+      "actorId": "A02",
+      "ucId": "UC-OPT-07.2",
+      "limited": false,
+      "label": "",
+      "method": "Thử RolesGuard + PropertyScopeInterceptor; còn điều kiện riêng trong xử lý",
+      "evidence": [
+        "backend/src/rooms/rooms.controller.ts"
+      ],
+      "detail": "Đúng lớp vai trò/phạm vi đã thử; không coi là chấp nhận mọi thao tác của UC.",
+      "fullAcceptance": false
+    },
+    {
+      "diagram": "UC_G04_BA_2",
+      "actorId": "A03",
+      "ucId": "UC-OPT-07.2",
+      "limited": false,
+      "label": "",
+      "method": "Thử RolesGuard + PropertyScopeInterceptor; còn điều kiện riêng trong xử lý",
+      "evidence": [
+        "backend/src/rooms/rooms.controller.ts"
+      ],
+      "detail": "Đúng lớp vai trò/phạm vi đã thử; không coi là chấp nhận mọi thao tác của UC.",
+      "fullAcceptance": false
+    },
+    {
+      "diagram": "UC_G04_BA_2",
+      "actorId": "A02",
+      "ucId": "UC-OPT-07.3",
+      "limited": false,
+      "label": "",
+      "method": "Thử RolesGuard + PropertyScopeInterceptor; còn điều kiện riêng trong xử lý",
+      "evidence": [
+        "backend/src/rooms/rooms.controller.ts"
+      ],
+      "detail": "Đúng lớp vai trò/phạm vi đã thử; không coi là chấp nhận mọi thao tác của UC.",
+      "fullAcceptance": false
+    },
+    {
+      "diagram": "UC_G04_BA_2",
+      "actorId": "A03",
+      "ucId": "UC-OPT-07.3",
+      "limited": false,
+      "label": "",
+      "method": "Thử RolesGuard + PropertyScopeInterceptor; còn điều kiện riêng trong xử lý",
+      "evidence": [
+        "backend/src/rooms/rooms.controller.ts"
+      ],
+      "detail": "Đúng lớp vai trò/phạm vi đã thử; không coi là chấp nhận mọi thao tác của UC.",
+      "fullAcceptance": false
+    },
+    {
+      "diagram": "UC_G04_BA_2",
+      "actorId": "A02",
+      "ucId": "UC-OPT-08.1",
+      "limited": false,
+      "label": "",
+      "method": "Thử RolesGuard + PropertyScopeInterceptor; còn điều kiện riêng trong xử lý",
+      "evidence": [
+        "backend/src/rooms/rooms.controller.ts"
+      ],
+      "detail": "Đúng lớp vai trò/phạm vi đã thử; không coi là chấp nhận mọi thao tác của UC.",
+      "fullAcceptance": false
+    },
+    {
+      "diagram": "UC_G04_BA_2",
+      "actorId": "A03",
+      "ucId": "UC-OPT-08.1",
+      "limited": false,
+      "label": "",
+      "method": "Thử RolesGuard + PropertyScopeInterceptor; còn điều kiện riêng trong xử lý",
+      "evidence": [
+        "backend/src/rooms/rooms.controller.ts"
+      ],
+      "detail": "Đúng lớp vai trò/phạm vi đã thử; không coi là chấp nhận mọi thao tác của UC.",
+      "fullAcceptance": false
+    },
+    {
+      "diagram": "UC_G04_BA_2",
+      "actorId": "A02",
+      "ucId": "UC-OPT-08.2",
+      "limited": false,
+      "label": "",
+      "method": "Thử RolesGuard + PropertyScopeInterceptor; còn điều kiện riêng trong xử lý",
+      "evidence": [
+        "backend/src/rooms/rooms.controller.ts"
+      ],
+      "detail": "Đúng lớp vai trò/phạm vi đã thử; không coi là chấp nhận mọi thao tác của UC.",
+      "fullAcceptance": false
+    },
+    {
+      "diagram": "UC_G04_BA_2",
+      "actorId": "A03",
+      "ucId": "UC-OPT-08.2",
+      "limited": false,
+      "label": "",
+      "method": "Thử RolesGuard + PropertyScopeInterceptor; còn điều kiện riêng trong xử lý",
+      "evidence": [
+        "backend/src/rooms/rooms.controller.ts"
+      ],
+      "detail": "Đúng lớp vai trò/phạm vi đã thử; không coi là chấp nhận mọi thao tác của UC.",
+      "fullAcceptance": false
+    },
+    {
+      "diagram": "UC_G04_BA_2",
+      "actorId": "A02",
+      "ucId": "UC-OPT-09",
+      "limited": false,
+      "label": "",
+      "method": "Thử RolesGuard + PropertyScopeInterceptor; còn điều kiện riêng trong xử lý",
+      "evidence": [
+        "backend/src/rooms/rooms.controller.ts"
+      ],
+      "detail": "Đúng lớp vai trò/phạm vi đã thử; không coi là chấp nhận mọi thao tác của UC.",
+      "fullAcceptance": false
+    },
+    {
+      "diagram": "UC_G04_BA_2",
+      "actorId": "A03",
+      "ucId": "UC-OPT-09",
+      "limited": true,
+      "label": "chỉ đọc phí/phiên bản",
+      "method": "Thử RolesGuard + PropertyScopeInterceptor; còn điều kiện riêng trong xử lý",
+      "evidence": [
+        "backend/src/rooms/rooms.controller.ts"
+      ],
+      "detail": "Đúng lớp vai trò/phạm vi đã thử; không coi là chấp nhận mọi thao tác của UC.",
+      "fullAcceptance": false
+    },
+    {
+      "diagram": "UC_G05",
+      "actorId": "A02",
+      "ucId": "UC-STF-01",
+      "limited": false,
+      "label": "",
+      "method": "Thử RolesGuard + PropertyScopeInterceptor; còn điều kiện riêng trong xử lý",
+      "evidence": [
+        "backend/src/staff/staff.controller.ts"
+      ],
+      "detail": "Đúng lớp vai trò/phạm vi đã thử; không coi là chấp nhận mọi thao tác của UC.",
+      "fullAcceptance": false
+    },
+    {
+      "diagram": "UC_G05",
+      "actorId": "A03",
+      "ucId": "UC-STF-01",
+      "limited": true,
+      "label": "chỉ xem nhân viên và bộ quyền mẫu",
+      "method": "Thử RolesGuard + PropertyScopeInterceptor; còn điều kiện riêng trong xử lý",
+      "evidence": [
+        "backend/src/staff/staff.controller.ts"
+      ],
+      "detail": "Đúng lớp vai trò/phạm vi đã thử; không coi là chấp nhận mọi thao tác của UC.",
+      "fullAcceptance": false
+    },
+    {
+      "diagram": "UC_G05",
+      "actorId": "A02",
+      "ucId": "UC-STF-02",
+      "limited": false,
+      "label": "",
+      "method": "Thử RolesGuard + PropertyScopeInterceptor; còn điều kiện riêng trong xử lý",
+      "evidence": [
+        "backend/src/staff/staff.controller.ts"
+      ],
+      "detail": "Đúng lớp vai trò/phạm vi đã thử; không coi là chấp nhận mọi thao tác của UC.",
+      "fullAcceptance": false
+    },
+    {
+      "diagram": "UC_G05",
+      "actorId": "A02",
+      "ucId": "UC-STF-04",
+      "limited": false,
+      "label": "",
+      "method": "Thử RolesGuard + PropertyScopeInterceptor; còn điều kiện riêng trong xử lý",
+      "evidence": [
+        "backend/src/staff/staff.controller.ts"
+      ],
+      "detail": "Đúng lớp vai trò/phạm vi đã thử; không coi là chấp nhận mọi thao tác của UC.",
+      "fullAcceptance": false
+    },
+    {
+      "diagram": "UC_G05",
+      "actorId": "A03",
+      "ucId": "UC-STF-04",
+      "limited": false,
+      "label": "",
+      "method": "Thử RolesGuard + PropertyScopeInterceptor; còn điều kiện riêng trong xử lý",
+      "evidence": [
+        "backend/src/staff/staff.controller.ts"
+      ],
+      "detail": "Đúng lớp vai trò/phạm vi đã thử; không coi là chấp nhận mọi thao tác của UC.",
+      "fullAcceptance": false
+    },
+    {
+      "diagram": "UC_G05",
+      "actorId": "A02",
+      "ucId": "UC-STF-03",
+      "limited": false,
+      "label": "",
+      "method": "Thử RolesGuard + PropertyScopeInterceptor; còn điều kiện riêng trong xử lý",
+      "evidence": [
+        "backend/src/staff/staff.controller.ts"
+      ],
+      "detail": "Đúng lớp vai trò/phạm vi đã thử; không coi là chấp nhận mọi thao tác của UC.",
+      "fullAcceptance": false
+    },
+    {
+      "diagram": "UC_G06_01_Tenant_Records",
+      "actorId": "A02",
+      "ucId": "UC-TNT-01",
+      "limited": false,
+      "label": "",
+      "method": "Thử RolesGuard + PropertyScopeInterceptor; còn điều kiện riêng trong xử lý",
+      "evidence": [
+        "backend/src/tenants/tenants.controller.ts"
+      ],
+      "detail": "Đúng lớp vai trò/phạm vi đã thử; không coi là chấp nhận mọi thao tác của UC.",
+      "fullAcceptance": false
+    },
+    {
+      "diagram": "UC_G06_01_Tenant_Records",
+      "actorId": "A03",
+      "ucId": "UC-TNT-01",
+      "limited": false,
+      "label": "",
+      "method": "Thử RolesGuard + PropertyScopeInterceptor; còn điều kiện riêng trong xử lý",
+      "evidence": [
+        "backend/src/tenants/tenants.controller.ts"
+      ],
+      "detail": "Đúng lớp vai trò/phạm vi đã thử; không coi là chấp nhận mọi thao tác của UC.",
+      "fullAcceptance": false
+    },
+    {
+      "diagram": "UC_G06_01_Tenant_Records",
+      "actorId": "A02",
+      "ucId": "UC-TNT-02.1",
+      "limited": false,
+      "label": "",
+      "method": "Thử RolesGuard + PropertyScopeInterceptor; còn điều kiện riêng trong xử lý",
+      "evidence": [
+        "backend/src/tenants/tenants.controller.ts"
+      ],
+      "detail": "Đúng lớp vai trò/phạm vi đã thử; không coi là chấp nhận mọi thao tác của UC.",
+      "fullAcceptance": false
+    },
+    {
+      "diagram": "UC_G06_01_Tenant_Records",
+      "actorId": "A03",
+      "ucId": "UC-TNT-02.1",
+      "limited": false,
+      "label": "",
+      "method": "Thử RolesGuard + PropertyScopeInterceptor; còn điều kiện riêng trong xử lý",
+      "evidence": [
+        "backend/src/tenants/tenants.controller.ts"
+      ],
+      "detail": "Đúng lớp vai trò/phạm vi đã thử; không coi là chấp nhận mọi thao tác của UC.",
+      "fullAcceptance": false
+    },
+    {
+      "diagram": "UC_G06_01_Tenant_Records",
+      "actorId": "A02",
+      "ucId": "UC-TNT-02.2",
+      "limited": false,
+      "label": "",
+      "method": "Thử RolesGuard + PropertyScopeInterceptor; còn điều kiện riêng trong xử lý",
+      "evidence": [
+        "backend/src/tenants/tenants.controller.ts"
+      ],
+      "detail": "Đúng lớp vai trò/phạm vi đã thử; không coi là chấp nhận mọi thao tác của UC.",
+      "fullAcceptance": false
+    },
+    {
+      "diagram": "UC_G06_01_Tenant_Records",
+      "actorId": "A03",
+      "ucId": "UC-TNT-02.2",
+      "limited": false,
+      "label": "",
+      "method": "Thử RolesGuard + PropertyScopeInterceptor; còn điều kiện riêng trong xử lý",
+      "evidence": [
+        "backend/src/tenants/tenants.controller.ts"
+      ],
+      "detail": "Đúng lớp vai trò/phạm vi đã thử; không coi là chấp nhận mọi thao tác của UC.",
+      "fullAcceptance": false
+    },
+    {
+      "diagram": "UC_G06_01_Tenant_Records",
+      "actorId": "A02",
+      "ucId": "UC-TNT-02.3",
+      "limited": false,
+      "label": "",
+      "method": "Thử RolesGuard + PropertyScopeInterceptor; còn điều kiện riêng trong xử lý",
+      "evidence": [
+        "backend/src/tenants/tenants.controller.ts"
+      ],
+      "detail": "Đúng lớp vai trò/phạm vi đã thử; không coi là chấp nhận mọi thao tác của UC.",
+      "fullAcceptance": false
+    },
+    {
+      "diagram": "UC_G06_01_Tenant_Records",
+      "actorId": "A03",
+      "ucId": "UC-TNT-02.3",
+      "limited": false,
+      "label": "",
+      "method": "Thử RolesGuard + PropertyScopeInterceptor; còn điều kiện riêng trong xử lý",
+      "evidence": [
+        "backend/src/tenants/tenants.controller.ts"
+      ],
+      "detail": "Đúng lớp vai trò/phạm vi đã thử; không coi là chấp nhận mọi thao tác của UC.",
+      "fullAcceptance": false
+    },
+    {
+      "diagram": "UC_G06_01_Tenant_Records",
+      "actorId": "A02",
+      "ucId": "UC-TNT-02.4",
+      "limited": false,
+      "label": "",
+      "method": "Thử RolesGuard + PropertyScopeInterceptor; còn điều kiện riêng trong xử lý",
+      "evidence": [
+        "backend/src/tenants/tenants.controller.ts"
+      ],
+      "detail": "Đúng lớp vai trò/phạm vi đã thử; không coi là chấp nhận mọi thao tác của UC.",
+      "fullAcceptance": false
+    },
+    {
+      "diagram": "UC_G06_01_Tenant_Records",
+      "actorId": "A03",
+      "ucId": "UC-TNT-02.4",
+      "limited": false,
+      "label": "",
+      "method": "Thử RolesGuard + PropertyScopeInterceptor; còn điều kiện riêng trong xử lý",
+      "evidence": [
+        "backend/src/tenants/tenants.controller.ts"
+      ],
+      "detail": "Đúng lớp vai trò/phạm vi đã thử; không coi là chấp nhận mọi thao tác của UC.",
+      "fullAcceptance": false
+    },
+    {
+      "diagram": "UC_G06_01_Tenant_Records",
+      "actorId": "A02",
+      "ucId": "UC-TNT-03",
+      "limited": false,
+      "label": "",
+      "method": "Thử RolesGuard + PropertyScopeInterceptor; còn điều kiện riêng trong xử lý",
+      "evidence": [
+        "backend/src/tenants/tenant-invites.controller.ts"
+      ],
+      "detail": "Đúng lớp vai trò/phạm vi đã thử; không coi là chấp nhận mọi thao tác của UC.",
+      "fullAcceptance": false
+    },
+    {
+      "diagram": "UC_G06_01_Tenant_Records",
+      "actorId": "A02",
+      "ucId": "UC-TNT-03.1",
+      "limited": false,
+      "label": "",
+      "method": "Thử RolesGuard + PropertyScopeInterceptor; còn điều kiện riêng trong xử lý",
+      "evidence": [
+        "backend/src/tenants/tenants.controller.ts"
+      ],
+      "detail": "Đúng lớp vai trò/phạm vi đã thử; không coi là chấp nhận mọi thao tác của UC.",
+      "fullAcceptance": false
+    },
+    {
+      "diagram": "UC_G06_01_Tenant_Records",
+      "actorId": "A03",
+      "ucId": "UC-TNT-03.1",
+      "limited": false,
+      "label": "",
+      "method": "Thử RolesGuard + PropertyScopeInterceptor; còn điều kiện riêng trong xử lý",
+      "evidence": [
+        "backend/src/tenants/tenants.controller.ts"
+      ],
+      "detail": "Đúng lớp vai trò/phạm vi đã thử; không coi là chấp nhận mọi thao tác của UC.",
+      "fullAcceptance": false
+    },
+    {
+      "diagram": "UC_G06_01_Tenant_Records",
+      "actorId": "A04",
+      "ucId": "UC-TEN-01",
+      "limited": false,
+      "label": "",
+      "method": "Thử RolesGuard + PropertyScopeInterceptor; còn điều kiện riêng trong xử lý",
+      "evidence": [
+        "backend/src/tenant-portal/tenant-portal.controller.ts"
+      ],
+      "detail": "Đúng lớp vai trò/phạm vi đã thử; không coi là chấp nhận mọi thao tác của UC.",
+      "fullAcceptance": false
+    },
+    {
+      "diagram": "UC_G06_02_Leases_Deposits_BA_1",
+      "actorId": "A02",
+      "ucId": "UC-TNT-04",
+      "limited": false,
+      "label": "",
+      "method": "Thử RolesGuard + PropertyScopeInterceptor; còn điều kiện riêng trong xử lý",
+      "evidence": [
+        "backend/src/leases/leases.controller.ts"
+      ],
+      "detail": "Đúng lớp vai trò/phạm vi đã thử; không coi là chấp nhận mọi thao tác của UC.",
+      "fullAcceptance": false
+    },
+    {
+      "diagram": "UC_G06_02_Leases_Deposits_BA_1",
+      "actorId": "A03",
+      "ucId": "UC-TNT-04",
+      "limited": false,
+      "label": "",
+      "method": "Thử RolesGuard + PropertyScopeInterceptor; còn điều kiện riêng trong xử lý",
+      "evidence": [
+        "backend/src/leases/leases.controller.ts"
+      ],
+      "detail": "Đúng lớp vai trò/phạm vi đã thử; không coi là chấp nhận mọi thao tác của UC.",
+      "fullAcceptance": false
+    },
+    {
+      "diagram": "UC_G06_02_Leases_Deposits_BA_1",
+      "actorId": "A02",
+      "ucId": "UC-TNT-05",
+      "limited": false,
+      "label": "",
+      "method": "Thử RolesGuard + PropertyScopeInterceptor; còn điều kiện riêng trong xử lý",
+      "evidence": [
+        "backend/src/leases/leases.controller.ts",
+        "backend/src/housing/housing.controller.ts"
+      ],
+      "detail": "Đúng lớp vai trò/phạm vi đã thử; không coi là chấp nhận mọi thao tác của UC.",
+      "fullAcceptance": false
+    },
+    {
+      "diagram": "UC_G06_02_Leases_Deposits_BA_1",
+      "actorId": "A03",
+      "ucId": "UC-TNT-05",
+      "limited": false,
+      "label": "",
+      "method": "Thử RolesGuard + PropertyScopeInterceptor; còn điều kiện riêng trong xử lý",
+      "evidence": [
+        "backend/src/leases/leases.controller.ts"
+      ],
+      "detail": "Đúng lớp vai trò/phạm vi đã thử; không coi là chấp nhận mọi thao tác của UC.",
+      "fullAcceptance": false
+    },
+    {
+      "diagram": "UC_G06_02_Leases_Deposits_BA_1",
+      "actorId": "A02",
+      "ucId": "UC-TNT-06.1",
+      "limited": false,
+      "label": "",
+      "method": "Thử RolesGuard + PropertyScopeInterceptor; còn điều kiện riêng trong xử lý",
+      "evidence": [
+        "backend/src/leases/leases.controller.ts"
+      ],
+      "detail": "Đúng lớp vai trò/phạm vi đã thử; không coi là chấp nhận mọi thao tác của UC.",
+      "fullAcceptance": false
+    },
+    {
+      "diagram": "UC_G06_02_Leases_Deposits_BA_1",
+      "actorId": "A03",
+      "ucId": "UC-TNT-06.1",
+      "limited": false,
+      "label": "",
+      "method": "Thử RolesGuard + PropertyScopeInterceptor; còn điều kiện riêng trong xử lý",
+      "evidence": [
+        "backend/src/leases/leases.controller.ts"
+      ],
+      "detail": "Đúng lớp vai trò/phạm vi đã thử; không coi là chấp nhận mọi thao tác của UC.",
+      "fullAcceptance": false
+    },
+    {
+      "diagram": "UC_G06_02_Leases_Deposits_BA_1",
+      "actorId": "A02",
+      "ucId": "UC-TNT-06.2",
+      "limited": false,
+      "label": "",
+      "method": "Thử RolesGuard + PropertyScopeInterceptor; còn điều kiện riêng trong xử lý",
+      "evidence": [
+        "backend/src/leases/leases.controller.ts"
+      ],
+      "detail": "Đúng lớp vai trò/phạm vi đã thử; không coi là chấp nhận mọi thao tác của UC.",
+      "fullAcceptance": false
+    },
+    {
+      "diagram": "UC_G06_02_Leases_Deposits_BA_1",
+      "actorId": "A03",
+      "ucId": "UC-TNT-06.2",
+      "limited": false,
+      "label": "",
+      "method": "Thử RolesGuard + PropertyScopeInterceptor; còn điều kiện riêng trong xử lý",
+      "evidence": [
+        "backend/src/leases/leases.controller.ts"
+      ],
+      "detail": "Đúng lớp vai trò/phạm vi đã thử; không coi là chấp nhận mọi thao tác của UC.",
+      "fullAcceptance": false
+    },
+    {
+      "diagram": "UC_G06_02_Leases_Deposits_BA_1",
+      "actorId": "A02",
+      "ucId": "UC-TNT-06.3",
+      "limited": false,
+      "label": "",
+      "method": "Thử RolesGuard + PropertyScopeInterceptor; còn điều kiện riêng trong xử lý",
+      "evidence": [
+        "backend/src/leases/leases.controller.ts"
+      ],
+      "detail": "Đúng lớp vai trò/phạm vi đã thử; không coi là chấp nhận mọi thao tác của UC.",
+      "fullAcceptance": false
+    },
+    {
+      "diagram": "UC_G06_02_Leases_Deposits_BA_1",
+      "actorId": "A03",
+      "ucId": "UC-TNT-06.3",
+      "limited": false,
+      "label": "",
+      "method": "Thử RolesGuard + PropertyScopeInterceptor; còn điều kiện riêng trong xử lý",
+      "evidence": [
+        "backend/src/leases/leases.controller.ts"
+      ],
+      "detail": "Đúng lớp vai trò/phạm vi đã thử; không coi là chấp nhận mọi thao tác của UC.",
+      "fullAcceptance": false
+    },
+    {
+      "diagram": "UC_G06_02_Leases_Deposits_BA_2",
+      "actorId": "A04",
+      "ucId": "UC-TEN-02",
+      "limited": false,
+      "label": "",
+      "method": "Thử RolesGuard + PropertyScopeInterceptor; còn điều kiện riêng trong xử lý",
+      "evidence": [
+        "backend/src/tenant-portal/tenant-portal.controller.ts",
+        "backend/src/tenant-lifecycle/tenant-lifecycle.controller.ts"
+      ],
+      "detail": "Đúng lớp vai trò/phạm vi đã thử; không coi là chấp nhận mọi thao tác của UC.",
+      "fullAcceptance": false
+    },
+    {
+      "diagram": "UC_G06_02_Leases_Deposits_BA_2",
+      "actorId": "A02",
+      "ucId": "UC-TNT-07",
+      "limited": false,
+      "label": "",
+      "method": "Thử RolesGuard + PropertyScopeInterceptor; còn điều kiện riêng trong xử lý",
+      "evidence": [
+        "backend/src/leases/leases.controller.ts"
+      ],
+      "detail": "Đúng lớp vai trò/phạm vi đã thử; không coi là chấp nhận mọi thao tác của UC.",
+      "fullAcceptance": false
+    },
+    {
+      "diagram": "UC_G06_02_Leases_Deposits_BA_2",
+      "actorId": "A03",
+      "ucId": "UC-TNT-07",
+      "limited": false,
+      "label": "",
+      "method": "Thử RolesGuard + PropertyScopeInterceptor; còn điều kiện riêng trong xử lý",
+      "evidence": [
+        "backend/src/leases/leases.controller.ts"
+      ],
+      "detail": "Đúng lớp vai trò/phạm vi đã thử; không coi là chấp nhận mọi thao tác của UC.",
+      "fullAcceptance": false
+    },
+    {
+      "diagram": "UC_G06_02_Leases_Deposits_BA_2",
+      "actorId": "A02",
+      "ucId": "UC-TNT-12.1",
+      "limited": false,
+      "label": "",
+      "method": "Thử RolesGuard + PropertyScopeInterceptor; còn điều kiện riêng trong xử lý",
+      "evidence": [
+        "backend/src/tenant-lifecycle/tenant-lifecycle.controller.ts"
+      ],
+      "detail": "Đúng lớp vai trò/phạm vi đã thử; không coi là chấp nhận mọi thao tác của UC.",
+      "fullAcceptance": false
+    },
+    {
+      "diagram": "UC_G06_02_Leases_Deposits_BA_2",
+      "actorId": "A03",
+      "ucId": "UC-TNT-12.1",
+      "limited": false,
+      "label": "",
+      "method": "Thử RolesGuard + PropertyScopeInterceptor; còn điều kiện riêng trong xử lý",
+      "evidence": [
+        "backend/src/tenant-lifecycle/tenant-lifecycle.controller.ts"
+      ],
+      "detail": "Đúng lớp vai trò/phạm vi đã thử; không coi là chấp nhận mọi thao tác của UC.",
+      "fullAcceptance": false
+    },
+    {
+      "diagram": "UC_G06_02_Leases_Deposits_BA_2",
+      "actorId": "A04",
+      "ucId": "UC-TEN-08.1",
+      "limited": false,
+      "label": "",
+      "method": "Thử RolesGuard + PropertyScopeInterceptor; còn điều kiện riêng trong xử lý",
+      "evidence": [
+        "backend/src/tenant-lifecycle/tenant-lifecycle.controller.ts"
+      ],
+      "detail": "Đúng lớp vai trò/phạm vi đã thử; không coi là chấp nhận mọi thao tác của UC.",
+      "fullAcceptance": false
+    },
+    {
+      "diagram": "UC_G07",
+      "actorId": "A04",
+      "ucId": "UC-TEN-07.1",
+      "limited": false,
+      "label": "",
+      "method": "Thử RolesGuard + PropertyScopeInterceptor; còn điều kiện riêng trong xử lý",
+      "evidence": [
+        "backend/src/tenant-lifecycle/tenant-lifecycle.controller.ts"
+      ],
+      "detail": "Đúng lớp vai trò/phạm vi đã thử; không coi là chấp nhận mọi thao tác của UC.",
+      "fullAcceptance": false
+    },
+    {
+      "diagram": "UC_G07",
+      "actorId": "A04",
+      "ucId": "UC-TEN-07.2",
+      "limited": false,
+      "label": "",
+      "method": "Thử RolesGuard + PropertyScopeInterceptor; còn điều kiện riêng trong xử lý",
+      "evidence": [
+        "backend/src/tenant-lifecycle/tenant-lifecycle.controller.ts"
+      ],
+      "detail": "Đúng lớp vai trò/phạm vi đã thử; không coi là chấp nhận mọi thao tác của UC.",
+      "fullAcceptance": false
+    },
+    {
+      "diagram": "UC_G07",
+      "actorId": "A04",
+      "ucId": "UC-TEN-07.3",
+      "limited": false,
+      "label": "",
+      "method": "Thử RolesGuard + PropertyScopeInterceptor; còn điều kiện riêng trong xử lý",
+      "evidence": [
+        "backend/src/tenant-lifecycle/tenant-lifecycle.controller.ts"
+      ],
+      "detail": "Đúng lớp vai trò/phạm vi đã thử; không coi là chấp nhận mọi thao tác của UC.",
+      "fullAcceptance": false
+    },
+    {
+      "diagram": "UC_G07",
+      "actorId": "A02",
+      "ucId": "UC-TNT-10",
+      "limited": false,
+      "label": "",
+      "method": "Thử RolesGuard + PropertyScopeInterceptor; còn điều kiện riêng trong xử lý",
+      "evidence": [
+        "backend/src/tenant-lifecycle/tenant-lifecycle.controller.ts"
+      ],
+      "detail": "Đúng lớp vai trò/phạm vi đã thử; không coi là chấp nhận mọi thao tác của UC.",
+      "fullAcceptance": false
+    },
+    {
+      "diagram": "UC_G07",
+      "actorId": "A03",
+      "ucId": "UC-TNT-10",
+      "limited": false,
+      "label": "",
+      "method": "Thử RolesGuard + PropertyScopeInterceptor; còn điều kiện riêng trong xử lý",
+      "evidence": [
+        "backend/src/tenant-lifecycle/tenant-lifecycle.controller.ts"
+      ],
+      "detail": "Đúng lớp vai trò/phạm vi đã thử; không coi là chấp nhận mọi thao tác của UC.",
+      "fullAcceptance": false
+    },
+    {
+      "diagram": "UC_G07",
+      "actorId": "A02",
+      "ucId": "UC-TNT-11",
+      "limited": false,
+      "label": "",
+      "method": "Thử RolesGuard + PropertyScopeInterceptor; còn điều kiện riêng trong xử lý",
+      "evidence": [
+        "backend/src/tenant-lifecycle/tenant-lifecycle.controller.ts"
+      ],
+      "detail": "Đúng lớp vai trò/phạm vi đã thử; không coi là chấp nhận mọi thao tác của UC.",
+      "fullAcceptance": false
+    },
+    {
+      "diagram": "UC_G07",
+      "actorId": "A03",
+      "ucId": "UC-TNT-11",
+      "limited": false,
+      "label": "",
+      "method": "Thử RolesGuard + PropertyScopeInterceptor; còn điều kiện riêng trong xử lý",
+      "evidence": [
+        "backend/src/tenant-lifecycle/tenant-lifecycle.controller.ts"
+      ],
+      "detail": "Đúng lớp vai trò/phạm vi đã thử; không coi là chấp nhận mọi thao tác của UC.",
+      "fullAcceptance": false
+    },
+    {
+      "diagram": "UC_G07",
+      "actorId": "A02",
+      "ucId": "UC-TNT-08",
+      "limited": false,
+      "label": "",
+      "method": "Thử RolesGuard + PropertyScopeInterceptor; còn điều kiện riêng trong xử lý",
+      "evidence": [
+        "backend/src/leases/leases.controller.ts"
+      ],
+      "detail": "Đúng lớp vai trò/phạm vi đã thử; không coi là chấp nhận mọi thao tác của UC.",
+      "fullAcceptance": false
+    },
+    {
+      "diagram": "UC_G07",
+      "actorId": "A02",
+      "ucId": "UC-TNT-09",
+      "limited": false,
+      "label": "",
+      "method": "Thử RolesGuard + PropertyScopeInterceptor; còn điều kiện riêng trong xử lý",
+      "evidence": [
+        "backend/src/leases/leases.controller.ts"
+      ],
+      "detail": "Đúng lớp vai trò/phạm vi đã thử; không coi là chấp nhận mọi thao tác của UC.",
+      "fullAcceptance": false
+    },
+    {
+      "diagram": "UC_G08_01_Invoices_BA_1",
+      "actorId": "A02",
+      "ucId": "UC-BIL-01",
+      "limited": false,
+      "label": "",
+      "method": "Thử RolesGuard + PropertyScopeInterceptor; còn điều kiện riêng trong xử lý",
+      "evidence": [
+        "backend/src/billing/billing.controller.ts"
+      ],
+      "detail": "Đúng lớp vai trò/phạm vi đã thử; không coi là chấp nhận mọi thao tác của UC.",
+      "fullAcceptance": false
+    },
+    {
+      "diagram": "UC_G08_01_Invoices_BA_1",
+      "actorId": "A03",
+      "ucId": "UC-BIL-01",
+      "limited": false,
+      "label": "",
+      "method": "Thử RolesGuard + PropertyScopeInterceptor; còn điều kiện riêng trong xử lý",
+      "evidence": [
+        "backend/src/billing/billing.controller.ts"
+      ],
+      "detail": "Đúng lớp vai trò/phạm vi đã thử; không coi là chấp nhận mọi thao tác của UC.",
+      "fullAcceptance": false
+    },
+    {
+      "diagram": "UC_G08_01_Invoices_BA_1",
+      "actorId": "A02",
+      "ucId": "UC-BIL-02",
+      "limited": false,
+      "label": "",
+      "method": "Thử RolesGuard + PropertyScopeInterceptor; còn điều kiện riêng trong xử lý",
+      "evidence": [
+        "backend/src/billing/billing.controller.ts"
+      ],
+      "detail": "Đúng lớp vai trò/phạm vi đã thử; không coi là chấp nhận mọi thao tác của UC.",
+      "fullAcceptance": false
+    },
+    {
+      "diagram": "UC_G08_01_Invoices_BA_1",
+      "actorId": "A03",
+      "ucId": "UC-BIL-02",
+      "limited": false,
+      "label": "",
+      "method": "Thử RolesGuard + PropertyScopeInterceptor; còn điều kiện riêng trong xử lý",
+      "evidence": [
+        "backend/src/billing/billing.controller.ts"
+      ],
+      "detail": "Đúng lớp vai trò/phạm vi đã thử; không coi là chấp nhận mọi thao tác của UC.",
+      "fullAcceptance": false
+    },
+    {
+      "diagram": "UC_G08_01_Invoices_BA_1",
+      "actorId": "A02",
+      "ucId": "UC-BIL-03",
+      "limited": false,
+      "label": "",
+      "method": "Thử RolesGuard + PropertyScopeInterceptor; còn điều kiện riêng trong xử lý",
+      "evidence": [
+        "backend/src/billing/billing.controller.ts"
+      ],
+      "detail": "Đúng lớp vai trò/phạm vi đã thử; không coi là chấp nhận mọi thao tác của UC.",
+      "fullAcceptance": false
+    },
+    {
+      "diagram": "UC_G08_01_Invoices_BA_1",
+      "actorId": "A03",
+      "ucId": "UC-BIL-03",
+      "limited": false,
+      "label": "",
+      "method": "Thử RolesGuard + PropertyScopeInterceptor; còn điều kiện riêng trong xử lý",
+      "evidence": [
+        "backend/src/billing/billing.controller.ts"
+      ],
+      "detail": "Đúng lớp vai trò/phạm vi đã thử; không coi là chấp nhận mọi thao tác của UC.",
+      "fullAcceptance": false
+    },
+    {
+      "diagram": "UC_G08_01_Invoices_BA_1",
+      "actorId": "A02",
+      "ucId": "UC-BIL-17.1",
+      "limited": false,
+      "label": "",
+      "method": "Thử RolesGuard + PropertyScopeInterceptor; còn điều kiện riêng trong xử lý",
+      "evidence": [
+        "backend/src/billing/billing.controller.ts"
+      ],
+      "detail": "Đúng lớp vai trò/phạm vi đã thử; không coi là chấp nhận mọi thao tác của UC.",
+      "fullAcceptance": false
+    },
+    {
+      "diagram": "UC_G08_01_Invoices_BA_1",
+      "actorId": "A03",
+      "ucId": "UC-BIL-17.1",
+      "limited": false,
+      "label": "",
+      "method": "Thử RolesGuard + PropertyScopeInterceptor; còn điều kiện riêng trong xử lý",
+      "evidence": [
+        "backend/src/billing/billing.controller.ts"
+      ],
+      "detail": "Đúng lớp vai trò/phạm vi đã thử; không coi là chấp nhận mọi thao tác của UC.",
+      "fullAcceptance": false
+    },
+    {
+      "diagram": "UC_G08_01_Invoices_BA_1",
+      "actorId": "A02",
+      "ucId": "UC-BIL-17.2",
+      "limited": false,
+      "label": "",
+      "method": "Thử RolesGuard + PropertyScopeInterceptor; còn điều kiện riêng trong xử lý",
+      "evidence": [
+        "backend/src/billing/billing.controller.ts"
+      ],
+      "detail": "Đúng lớp vai trò/phạm vi đã thử; không coi là chấp nhận mọi thao tác của UC.",
+      "fullAcceptance": false
+    },
+    {
+      "diagram": "UC_G08_01_Invoices_BA_1",
+      "actorId": "A03",
+      "ucId": "UC-BIL-17.2",
+      "limited": false,
+      "label": "",
+      "method": "Thử RolesGuard + PropertyScopeInterceptor; còn điều kiện riêng trong xử lý",
+      "evidence": [
+        "backend/src/billing/billing.controller.ts"
+      ],
+      "detail": "Đúng lớp vai trò/phạm vi đã thử; không coi là chấp nhận mọi thao tác của UC.",
+      "fullAcceptance": false
+    },
+    {
+      "diagram": "UC_G08_01_Invoices_BA_1",
+      "actorId": "A02",
+      "ucId": "UC-BIL-04",
+      "limited": false,
+      "label": "",
+      "method": "Thử RolesGuard + PropertyScopeInterceptor; còn điều kiện riêng trong xử lý",
+      "evidence": [
+        "backend/src/billing/billing.controller.ts",
+        "backend/src/billing/online-payments.controller.ts"
+      ],
+      "detail": "Đúng lớp vai trò/phạm vi đã thử; không coi là chấp nhận mọi thao tác của UC.",
+      "fullAcceptance": false
+    },
+    {
+      "diagram": "UC_G08_01_Invoices_BA_1",
+      "actorId": "A03",
+      "ucId": "UC-BIL-04",
+      "limited": false,
+      "label": "",
+      "method": "Thử RolesGuard + PropertyScopeInterceptor; còn điều kiện riêng trong xử lý",
+      "evidence": [
+        "backend/src/billing/billing.controller.ts"
+      ],
+      "detail": "Đúng lớp vai trò/phạm vi đã thử; không coi là chấp nhận mọi thao tác của UC.",
+      "fullAcceptance": false
+    },
+    {
+      "diagram": "UC_G08_01_Invoices_BA_2",
+      "actorId": "A02",
+      "ucId": "UC-BIL-05",
+      "limited": false,
+      "label": "",
+      "method": "Thử RolesGuard + PropertyScopeInterceptor; còn điều kiện riêng trong xử lý",
+      "evidence": [
+        "backend/src/billing/billing.controller.ts"
+      ],
+      "detail": "Đúng lớp vai trò/phạm vi đã thử; không coi là chấp nhận mọi thao tác của UC.",
+      "fullAcceptance": false
+    },
+    {
+      "diagram": "UC_G08_01_Invoices_BA_2",
+      "actorId": "A03",
+      "ucId": "UC-BIL-05",
+      "limited": false,
+      "label": "",
+      "method": "Thử RolesGuard + PropertyScopeInterceptor; còn điều kiện riêng trong xử lý",
+      "evidence": [
+        "backend/src/billing/billing.controller.ts"
+      ],
+      "detail": "Đúng lớp vai trò/phạm vi đã thử; không coi là chấp nhận mọi thao tác của UC.",
+      "fullAcceptance": false
+    },
+    {
+      "diagram": "UC_G08_01_Invoices_BA_2",
+      "actorId": "A02",
+      "ucId": "UC-BIL-06",
+      "limited": false,
+      "label": "",
+      "method": "Thử RolesGuard + PropertyScopeInterceptor; còn điều kiện riêng trong xử lý",
+      "evidence": [
+        "backend/src/billing/billing.controller.ts"
+      ],
+      "detail": "Đúng lớp vai trò/phạm vi đã thử; không coi là chấp nhận mọi thao tác của UC.",
+      "fullAcceptance": false
+    },
+    {
+      "diagram": "UC_G08_01_Invoices_BA_2",
+      "actorId": "A03",
+      "ucId": "UC-BIL-06",
+      "limited": false,
+      "label": "",
+      "method": "Thử RolesGuard + PropertyScopeInterceptor; còn điều kiện riêng trong xử lý",
+      "evidence": [
+        "backend/src/billing/billing.controller.ts"
+      ],
+      "detail": "Đúng lớp vai trò/phạm vi đã thử; không coi là chấp nhận mọi thao tác của UC.",
+      "fullAcceptance": false
+    },
+    {
+      "diagram": "UC_G08_01_Invoices_BA_2",
+      "actorId": "A02",
+      "ucId": "UC-BIL-07",
+      "limited": false,
+      "label": "",
+      "method": "Thử RolesGuard + PropertyScopeInterceptor; còn điều kiện riêng trong xử lý",
+      "evidence": [
+        "backend/src/billing/billing.controller.ts"
+      ],
+      "detail": "Đúng lớp vai trò/phạm vi đã thử; không coi là chấp nhận mọi thao tác của UC.",
+      "fullAcceptance": false
+    },
+    {
+      "diagram": "UC_G08_01_Invoices_BA_2",
+      "actorId": "A03",
+      "ucId": "UC-BIL-07",
+      "limited": false,
+      "label": "",
+      "method": "Thử RolesGuard + PropertyScopeInterceptor; còn điều kiện riêng trong xử lý",
+      "evidence": [
+        "backend/src/billing/billing.controller.ts"
+      ],
+      "detail": "Đúng lớp vai trò/phạm vi đã thử; không coi là chấp nhận mọi thao tác của UC.",
+      "fullAcceptance": false
+    },
+    {
+      "diagram": "UC_G08_01_Invoices_BA_2",
+      "actorId": "A02",
+      "ucId": "UC-BIL-08.1",
+      "limited": false,
+      "label": "",
+      "method": "Thử RolesGuard + PropertyScopeInterceptor; còn điều kiện riêng trong xử lý",
+      "evidence": [
+        "backend/src/billing/billing.controller.ts"
+      ],
+      "detail": "Đúng lớp vai trò/phạm vi đã thử; không coi là chấp nhận mọi thao tác của UC.",
+      "fullAcceptance": false
+    },
+    {
+      "diagram": "UC_G08_01_Invoices_BA_2",
+      "actorId": "A03",
+      "ucId": "UC-BIL-08.1",
+      "limited": false,
+      "label": "",
+      "method": "Thử RolesGuard + PropertyScopeInterceptor; còn điều kiện riêng trong xử lý",
+      "evidence": [
+        "backend/src/billing/billing.controller.ts"
+      ],
+      "detail": "Đúng lớp vai trò/phạm vi đã thử; không coi là chấp nhận mọi thao tác của UC.",
+      "fullAcceptance": false
+    },
+    {
+      "diagram": "UC_G08_01_Invoices_BA_2",
+      "actorId": "A04",
+      "ucId": "UC-TEN-03",
+      "limited": false,
+      "label": "",
+      "method": "Thử RolesGuard + PropertyScopeInterceptor; còn điều kiện riêng trong xử lý",
+      "evidence": [
+        "backend/src/tenant-portal/tenant-portal.controller.ts"
+      ],
+      "detail": "Đúng lớp vai trò/phạm vi đã thử; không coi là chấp nhận mọi thao tác của UC.",
+      "fullAcceptance": false
+    },
+    {
+      "diagram": "UC_G08_02_Collections_BA_1",
+      "actorId": "A02",
+      "ucId": "UC-BIL-09",
+      "limited": false,
+      "label": "",
+      "method": "Thử RolesGuard + PropertyScopeInterceptor; còn điều kiện riêng trong xử lý",
+      "evidence": [
+        "backend/src/billing/billing.controller.ts"
+      ],
+      "detail": "Đúng lớp vai trò/phạm vi đã thử; không coi là chấp nhận mọi thao tác của UC.",
+      "fullAcceptance": false
+    },
+    {
+      "diagram": "UC_G08_02_Collections_BA_1",
+      "actorId": "A03",
+      "ucId": "UC-BIL-09",
+      "limited": false,
+      "label": "",
+      "method": "Thử RolesGuard + PropertyScopeInterceptor; còn điều kiện riêng trong xử lý",
+      "evidence": [
+        "backend/src/billing/billing.controller.ts"
+      ],
+      "detail": "Đúng lớp vai trò/phạm vi đã thử; không coi là chấp nhận mọi thao tác của UC.",
+      "fullAcceptance": false
+    },
+    {
+      "diagram": "UC_G08_02_Collections_BA_1",
+      "actorId": "A02",
+      "ucId": "UC-BIL-10",
+      "limited": false,
+      "label": "",
+      "method": "Thử RolesGuard + PropertyScopeInterceptor; còn điều kiện riêng trong xử lý",
+      "evidence": [
+        "backend/src/billing/billing.controller.ts"
+      ],
+      "detail": "Đúng lớp vai trò/phạm vi đã thử; không coi là chấp nhận mọi thao tác của UC.",
+      "fullAcceptance": false
+    },
+    {
+      "diagram": "UC_G08_02_Collections_BA_1",
+      "actorId": "A03",
+      "ucId": "UC-BIL-10",
+      "limited": false,
+      "label": "",
+      "method": "Thử RolesGuard + PropertyScopeInterceptor; còn điều kiện riêng trong xử lý",
+      "evidence": [
+        "backend/src/billing/billing.controller.ts"
+      ],
+      "detail": "Đúng lớp vai trò/phạm vi đã thử; không coi là chấp nhận mọi thao tác của UC.",
+      "fullAcceptance": false
+    },
+    {
+      "diagram": "UC_G08_02_Collections_BA_1",
+      "actorId": "A02",
+      "ucId": "UC-BIL-11",
+      "limited": false,
+      "label": "",
+      "method": "Thử RolesGuard + PropertyScopeInterceptor; còn điều kiện riêng trong xử lý",
+      "evidence": [
+        "backend/src/billing/billing.controller.ts"
+      ],
+      "detail": "Đúng lớp vai trò/phạm vi đã thử; không coi là chấp nhận mọi thao tác của UC.",
+      "fullAcceptance": false
+    },
+    {
+      "diagram": "UC_G08_02_Collections_BA_1",
+      "actorId": "A03",
+      "ucId": "UC-BIL-11",
+      "limited": false,
+      "label": "",
+      "method": "Thử RolesGuard + PropertyScopeInterceptor; còn điều kiện riêng trong xử lý",
+      "evidence": [
+        "backend/src/billing/billing.controller.ts"
+      ],
+      "detail": "Đúng lớp vai trò/phạm vi đã thử; không coi là chấp nhận mọi thao tác của UC.",
+      "fullAcceptance": false
+    },
+    {
+      "diagram": "UC_G08_02_Collections_BA_1",
+      "actorId": "A02",
+      "ucId": "UC-BIL-12.1",
+      "limited": false,
+      "label": "",
+      "method": "Thử RolesGuard + PropertyScopeInterceptor; còn điều kiện riêng trong xử lý",
+      "evidence": [
+        "backend/src/billing/billing.controller.ts"
+      ],
+      "detail": "Đúng lớp vai trò/phạm vi đã thử; không coi là chấp nhận mọi thao tác của UC.",
+      "fullAcceptance": false
+    },
+    {
+      "diagram": "UC_G08_02_Collections_BA_1",
+      "actorId": "A03",
+      "ucId": "UC-BIL-12.1",
+      "limited": false,
+      "label": "",
+      "method": "Thử RolesGuard + PropertyScopeInterceptor; còn điều kiện riêng trong xử lý",
+      "evidence": [
+        "backend/src/billing/billing.controller.ts"
+      ],
+      "detail": "Đúng lớp vai trò/phạm vi đã thử; không coi là chấp nhận mọi thao tác của UC.",
+      "fullAcceptance": false
+    },
+    {
+      "diagram": "UC_G08_02_Collections_BA_1",
+      "actorId": "A02",
+      "ucId": "UC-BIL-12.2",
+      "limited": false,
+      "label": "",
+      "method": "Thử RolesGuard + PropertyScopeInterceptor; còn điều kiện riêng trong xử lý",
+      "evidence": [
+        "backend/src/billing/billing.controller.ts"
+      ],
+      "detail": "Đúng lớp vai trò/phạm vi đã thử; không coi là chấp nhận mọi thao tác của UC.",
+      "fullAcceptance": false
+    },
+    {
+      "diagram": "UC_G08_02_Collections_BA_1",
+      "actorId": "A03",
+      "ucId": "UC-BIL-12.2",
+      "limited": false,
+      "label": "",
+      "method": "Thử RolesGuard + PropertyScopeInterceptor; còn điều kiện riêng trong xử lý",
+      "evidence": [
+        "backend/src/billing/billing.controller.ts"
+      ],
+      "detail": "Đúng lớp vai trò/phạm vi đã thử; không coi là chấp nhận mọi thao tác của UC.",
+      "fullAcceptance": false
+    },
+    {
+      "diagram": "UC_G08_02_Collections_BA_2",
+      "actorId": "A02",
+      "ucId": "UC-BIL-13",
+      "limited": false,
+      "label": "",
+      "method": "Thử RolesGuard + PropertyScopeInterceptor; còn điều kiện riêng trong xử lý",
+      "evidence": [
+        "backend/src/billing/billing.controller.ts"
+      ],
+      "detail": "Đúng lớp vai trò/phạm vi đã thử; không coi là chấp nhận mọi thao tác của UC.",
+      "fullAcceptance": false
+    },
+    {
+      "diagram": "UC_G08_02_Collections_BA_2",
+      "actorId": "A03",
+      "ucId": "UC-BIL-13",
+      "limited": false,
+      "label": "",
+      "method": "Thử RolesGuard + PropertyScopeInterceptor; còn điều kiện riêng trong xử lý",
+      "evidence": [
+        "backend/src/billing/billing.controller.ts"
+      ],
+      "detail": "Đúng lớp vai trò/phạm vi đã thử; không coi là chấp nhận mọi thao tác của UC.",
+      "fullAcceptance": false
+    },
+    {
+      "diagram": "UC_G08_02_Collections_BA_2",
+      "actorId": "A02",
+      "ucId": "UC-BIL-14",
+      "limited": false,
+      "label": "",
+      "method": "Thử RolesGuard + PropertyScopeInterceptor; còn điều kiện riêng trong xử lý",
+      "evidence": [
+        "backend/src/billing/billing.controller.ts"
+      ],
+      "detail": "Đúng lớp vai trò/phạm vi đã thử; không coi là chấp nhận mọi thao tác của UC.",
+      "fullAcceptance": false
+    },
+    {
+      "diagram": "UC_G08_02_Collections_BA_2",
+      "actorId": "A03",
+      "ucId": "UC-BIL-14",
+      "limited": false,
+      "label": "",
+      "method": "Thử RolesGuard + PropertyScopeInterceptor; còn điều kiện riêng trong xử lý",
+      "evidence": [
+        "backend/src/billing/billing.controller.ts"
+      ],
+      "detail": "Đúng lớp vai trò/phạm vi đã thử; không coi là chấp nhận mọi thao tác của UC.",
+      "fullAcceptance": false
+    },
+    {
+      "diagram": "UC_G08_02_Collections_BA_2",
+      "actorId": "A02",
+      "ucId": "UC-BIL-23",
+      "limited": false,
+      "label": "",
+      "method": "Thử RolesGuard + PropertyScopeInterceptor; còn điều kiện riêng trong xử lý",
+      "evidence": [
+        "backend/src/billing/manual-transfer.controller.ts"
+      ],
+      "detail": "Đúng lớp vai trò/phạm vi đã thử; không coi là chấp nhận mọi thao tác của UC.",
+      "fullAcceptance": false
+    },
+    {
+      "diagram": "UC_G08_02_Collections_BA_2",
+      "actorId": "A04",
+      "ucId": "UC-TEN-04",
+      "limited": false,
+      "label": "",
+      "method": "Thử RolesGuard + PropertyScopeInterceptor; còn điều kiện riêng trong xử lý",
+      "evidence": [
+        "backend/src/tenant-portal/tenant-portal.controller.ts",
+        "backend/src/billing/manual-transfer.controller.ts"
+      ],
+      "detail": "Đúng lớp vai trò/phạm vi đã thử; không coi là chấp nhận mọi thao tác của UC.",
+      "fullAcceptance": false
+    },
+    {
+      "diagram": "UC_G08_02_Collections_BA_2",
+      "actorId": "A04",
+      "ucId": "UC-TEN-05",
+      "limited": false,
+      "label": "",
+      "method": "Thử RolesGuard + PropertyScopeInterceptor; còn điều kiện riêng trong xử lý",
+      "evidence": [
+        "backend/src/billing/online-payments.controller.ts"
+      ],
+      "detail": "Khách chỉ mở/xác nhận liên kết DEMO hợp lệ; không có quyền chọn hóa đơn khác hoặc thanh toán tiền thật.",
+      "fullAcceptance": false
+    },
+    {
+      "diagram": "UC_G08_02_Collections_BA_2",
+      "actorId": "A01",
+      "ucId": "UC-TEN-05",
+      "limited": true,
+      "label": "chỉ mở liên kết thanh toán thử nghiệm còn hiệu lực",
+      "method": "Đọc bảo vệ riêng/đường công khai hoặc xử lý tại ứng dụng",
+      "evidence": [
+        "backend/src/billing/online-payments.controller.ts",
+        "backend/src/billing/demo-card.gateway.ts"
+      ],
+      "detail": "Khách chỉ mở/xác nhận liên kết DEMO hợp lệ; không có quyền chọn hóa đơn khác hoặc thanh toán tiền thật.",
+      "fullAcceptance": false
+    },
+    {
+      "diagram": "UC_G08_03_Tariffs_Periods",
+      "actorId": "A02",
+      "ucId": "UC-BIL-15",
+      "limited": false,
+      "label": "",
+      "method": "Thử RolesGuard + PropertyScopeInterceptor; còn điều kiện riêng trong xử lý",
+      "evidence": [
+        "backend/src/billing/billing.controller.ts"
+      ],
+      "detail": "Đúng lớp vai trò/phạm vi đã thử; không coi là chấp nhận mọi thao tác của UC.",
+      "fullAcceptance": false
+    },
+    {
+      "diagram": "UC_G08_03_Tariffs_Periods",
+      "actorId": "A03",
+      "ucId": "UC-BIL-15",
+      "limited": false,
+      "label": "",
+      "method": "Thử RolesGuard + PropertyScopeInterceptor; còn điều kiện riêng trong xử lý",
+      "evidence": [
+        "backend/src/billing/billing.controller.ts"
+      ],
+      "detail": "Đúng lớp vai trò/phạm vi đã thử; không coi là chấp nhận mọi thao tác của UC.",
+      "fullAcceptance": false
+    },
+    {
+      "diagram": "UC_G08_03_Tariffs_Periods",
+      "actorId": "A02",
+      "ucId": "UC-BIL-16",
+      "limited": false,
+      "label": "",
+      "method": "Thử RolesGuard + PropertyScopeInterceptor; còn điều kiện riêng trong xử lý",
+      "evidence": [
+        "backend/src/billing/billing.controller.ts"
+      ],
+      "detail": "Đúng lớp vai trò/phạm vi đã thử; không coi là chấp nhận mọi thao tác của UC.",
+      "fullAcceptance": false
+    },
+    {
+      "diagram": "UC_G08_03_Tariffs_Periods",
+      "actorId": "A03",
+      "ucId": "UC-BIL-16",
+      "limited": true,
+      "label": "chỉ đọc tác động",
+      "method": "Thử RolesGuard + PropertyScopeInterceptor; còn điều kiện riêng trong xử lý",
+      "evidence": [
+        "backend/src/billing/billing.controller.ts"
+      ],
+      "detail": "Đúng lớp vai trò/phạm vi đã thử; không coi là chấp nhận mọi thao tác của UC.",
+      "fullAcceptance": false
+    },
+    {
+      "diagram": "UC_G08_03_Tariffs_Periods",
+      "actorId": "A02",
+      "ucId": "UC-BIL-22",
+      "limited": false,
+      "label": "",
+      "method": "Thử RolesGuard + PropertyScopeInterceptor; còn điều kiện riêng trong xử lý",
+      "evidence": [
+        "backend/src/billing/billing.controller.ts"
+      ],
+      "detail": "Đúng lớp vai trò/phạm vi đã thử; không coi là chấp nhận mọi thao tác của UC.",
+      "fullAcceptance": false
+    },
+    {
+      "diagram": "UC_G08_04_Reminders",
+      "actorId": "A02",
+      "ucId": "UC-BIL-18.1",
+      "limited": false,
+      "label": "",
+      "method": "Thử RolesGuard + PropertyScopeInterceptor; còn điều kiện riêng trong xử lý",
+      "evidence": [
+        "backend/src/billing/billing.controller.ts"
+      ],
+      "detail": "Đúng lớp vai trò/phạm vi đã thử; không coi là chấp nhận mọi thao tác của UC.",
+      "fullAcceptance": false
+    },
+    {
+      "diagram": "UC_G08_04_Reminders",
+      "actorId": "A03",
+      "ucId": "UC-BIL-18.1",
+      "limited": false,
+      "label": "",
+      "method": "Thử RolesGuard + PropertyScopeInterceptor; còn điều kiện riêng trong xử lý",
+      "evidence": [
+        "backend/src/billing/billing.controller.ts"
+      ],
+      "detail": "Đúng lớp vai trò/phạm vi đã thử; không coi là chấp nhận mọi thao tác của UC.",
+      "fullAcceptance": false
+    },
+    {
+      "diagram": "UC_G08_04_Reminders",
+      "actorId": "A02",
+      "ucId": "UC-BIL-18.2",
+      "limited": false,
+      "label": "",
+      "method": "Thử RolesGuard + PropertyScopeInterceptor; còn điều kiện riêng trong xử lý",
+      "evidence": [
+        "backend/src/billing/billing.controller.ts",
+        "backend/src/notifications/notifications.controller.ts"
+      ],
+      "detail": "Đúng lớp vai trò/phạm vi đã thử; không coi là chấp nhận mọi thao tác của UC.",
+      "fullAcceptance": false
+    },
+    {
+      "diagram": "UC_G08_04_Reminders",
+      "actorId": "A03",
+      "ucId": "UC-BIL-18.2",
+      "limited": false,
+      "label": "",
+      "method": "Thử RolesGuard + PropertyScopeInterceptor; còn điều kiện riêng trong xử lý",
+      "evidence": [
+        "backend/src/billing/billing.controller.ts"
+      ],
+      "detail": "Đúng lớp vai trò/phạm vi đã thử; không coi là chấp nhận mọi thao tác của UC.",
+      "fullAcceptance": false
+    },
+    {
+      "diagram": "UC_G08_04_Reminders",
+      "actorId": "E01",
+      "ucId": "UC-BIL-18.2",
+      "limited": false,
+      "label": "khi sử dụng kênh này",
+      "method": "Đối chiếu điểm tích hợp có điều kiện; chưa gọi nhà cung cấp",
+      "evidence": [
+        "backend/src/delivery/delivery.service.ts",
+        "backend/src/billing/billing-outbox.service.ts",
+        "backend/src/support/notification-delivery.service.ts"
+      ],
+      "detail": "Chỉ tham gia khi kênh tương ứng sử dụng và được cấu hình; không xác nhận giao nhận.",
+      "fullAcceptance": false
+    },
+    {
+      "diagram": "UC_G08_04_Reminders",
+      "actorId": "E02",
+      "ucId": "UC-BIL-18.2",
+      "limited": false,
+      "label": "khi sử dụng kênh này",
+      "method": "Đối chiếu điểm tích hợp có điều kiện; chưa gọi nhà cung cấp",
+      "evidence": [
+        "backend/src/notifications/zalo-zns.service.ts"
+      ],
+      "detail": "Chỉ tham gia khi kênh tương ứng sử dụng và được cấu hình; không xác nhận giao nhận.",
+      "fullAcceptance": false
+    },
+    {
+      "diagram": "UC_G08_04_Reminders",
+      "actorId": "A02",
+      "ucId": "UC-BIL-18.3",
+      "limited": false,
+      "label": "",
+      "method": "Thử RolesGuard + PropertyScopeInterceptor; còn điều kiện riêng trong xử lý",
+      "evidence": [
+        "backend/src/billing/billing.controller.ts"
+      ],
+      "detail": "Đúng lớp vai trò/phạm vi đã thử; không coi là chấp nhận mọi thao tác của UC.",
+      "fullAcceptance": false
+    },
+    {
+      "diagram": "UC_G08_04_Reminders",
+      "actorId": "A04",
+      "ucId": "UC-TEN-08.2",
+      "limited": false,
+      "label": "",
+      "method": "Thử RolesGuard + PropertyScopeInterceptor; còn điều kiện riêng trong xử lý",
+      "evidence": [
+        "backend/src/tenant-lifecycle/tenant-lifecycle.controller.ts"
+      ],
+      "detail": "Đúng lớp vai trò/phạm vi đã thử; không coi là chấp nhận mọi thao tác của UC.",
+      "fullAcceptance": false
+    },
+    {
+      "diagram": "UC_G09",
+      "actorId": "A04",
+      "ucId": "UC-TEN-06",
+      "limited": false,
+      "label": "",
+      "method": "Thử RolesGuard + PropertyScopeInterceptor; còn điều kiện riêng trong xử lý",
+      "evidence": [
+        "backend/src/tenant-portal/tenant-portal.controller.ts"
+      ],
+      "detail": "Đúng lớp vai trò/phạm vi đã thử; không coi là chấp nhận mọi thao tác của UC.",
+      "fullAcceptance": false
+    },
+    {
+      "diagram": "UC_G09",
+      "actorId": "A02",
+      "ucId": "UC-OPS-01",
+      "limited": false,
+      "label": "",
+      "method": "Thử RolesGuard + PropertyScopeInterceptor; còn điều kiện riêng trong xử lý",
+      "evidence": [
+        "backend/src/maintenance/maintenance.controller.ts"
+      ],
+      "detail": "Đúng lớp vai trò/phạm vi đã thử; không coi là chấp nhận mọi thao tác của UC.",
+      "fullAcceptance": false
+    },
+    {
+      "diagram": "UC_G09",
+      "actorId": "A03",
+      "ucId": "UC-OPS-01",
+      "limited": false,
+      "label": "",
+      "method": "Thử RolesGuard + PropertyScopeInterceptor; còn điều kiện riêng trong xử lý",
+      "evidence": [
+        "backend/src/maintenance/maintenance.controller.ts"
+      ],
+      "detail": "Đúng lớp vai trò/phạm vi đã thử; không coi là chấp nhận mọi thao tác của UC.",
+      "fullAcceptance": false
+    },
+    {
+      "diagram": "UC_G09",
+      "actorId": "A02",
+      "ucId": "UC-OPS-02",
+      "limited": false,
+      "label": "",
+      "method": "Thử RolesGuard + PropertyScopeInterceptor; còn điều kiện riêng trong xử lý",
+      "evidence": [
+        "backend/src/maintenance/maintenance.controller.ts"
+      ],
+      "detail": "Đúng lớp vai trò/phạm vi đã thử; không coi là chấp nhận mọi thao tác của UC.",
+      "fullAcceptance": false
+    },
+    {
+      "diagram": "UC_G09",
+      "actorId": "A03",
+      "ucId": "UC-OPS-02",
+      "limited": false,
+      "label": "",
+      "method": "Thử RolesGuard + PropertyScopeInterceptor; còn điều kiện riêng trong xử lý",
+      "evidence": [
+        "backend/src/maintenance/maintenance.controller.ts"
+      ],
+      "detail": "Đúng lớp vai trò/phạm vi đã thử; không coi là chấp nhận mọi thao tác của UC.",
+      "fullAcceptance": false
+    },
+    {
+      "diagram": "UC_G09",
+      "actorId": "A02",
+      "ucId": "UC-OPS-03",
+      "limited": false,
+      "label": "",
+      "method": "Thử RolesGuard + PropertyScopeInterceptor; còn điều kiện riêng trong xử lý",
+      "evidence": [
+        "backend/src/maintenance/maintenance.controller.ts"
+      ],
+      "detail": "Đúng lớp vai trò/phạm vi đã thử; không coi là chấp nhận mọi thao tác của UC.",
+      "fullAcceptance": false
+    },
+    {
+      "diagram": "UC_G09",
+      "actorId": "A03",
+      "ucId": "UC-OPS-03",
+      "limited": false,
+      "label": "",
+      "method": "Thử RolesGuard + PropertyScopeInterceptor; còn điều kiện riêng trong xử lý",
+      "evidence": [
+        "backend/src/maintenance/maintenance.controller.ts"
+      ],
+      "detail": "Đúng lớp vai trò/phạm vi đã thử; không coi là chấp nhận mọi thao tác của UC.",
+      "fullAcceptance": false
+    },
+    {
+      "diagram": "UC_G09",
+      "actorId": "A02",
+      "ucId": "UC-BIL-19",
+      "limited": false,
+      "label": "",
+      "method": "Thử RolesGuard + PropertyScopeInterceptor; còn điều kiện riêng trong xử lý",
+      "evidence": [
+        "backend/src/expenses/expenses.controller.ts"
+      ],
+      "detail": "Đúng lớp vai trò/phạm vi đã thử; không coi là chấp nhận mọi thao tác của UC.",
+      "fullAcceptance": false
+    },
+    {
+      "diagram": "UC_G09",
+      "actorId": "A03",
+      "ucId": "UC-BIL-19",
+      "limited": false,
+      "label": "",
+      "method": "Thử RolesGuard + PropertyScopeInterceptor; còn điều kiện riêng trong xử lý",
+      "evidence": [
+        "backend/src/expenses/expenses.controller.ts"
+      ],
+      "detail": "Đúng lớp vai trò/phạm vi đã thử; không coi là chấp nhận mọi thao tác của UC.",
+      "fullAcceptance": false
+    },
+    {
+      "diagram": "UC_G10_BA_1",
+      "actorId": "A02",
+      "ucId": "UC-OPS-04",
+      "limited": false,
+      "label": "",
+      "method": "Thử RolesGuard + PropertyScopeInterceptor; còn điều kiện riêng trong xử lý",
+      "evidence": [
+        "backend/src/operations/operations.controller.ts"
+      ],
+      "detail": "Đúng lớp vai trò/phạm vi đã thử; không coi là chấp nhận mọi thao tác của UC.",
+      "fullAcceptance": false
+    },
+    {
+      "diagram": "UC_G10_BA_1",
+      "actorId": "A02",
+      "ucId": "UC-OPS-05",
+      "limited": false,
+      "label": "",
+      "method": "Thử RolesGuard + PropertyScopeInterceptor; còn điều kiện riêng trong xử lý",
+      "evidence": [
+        "backend/src/operations/p1.controller.ts"
+      ],
+      "detail": "Đúng lớp vai trò/phạm vi đã thử; không coi là chấp nhận mọi thao tác của UC.",
+      "fullAcceptance": false
+    },
+    {
+      "diagram": "UC_G10_BA_1",
+      "actorId": "A02",
+      "ucId": "UC-OPS-06",
+      "limited": false,
+      "label": "",
+      "method": "Thử RolesGuard + PropertyScopeInterceptor; còn điều kiện riêng trong xử lý",
+      "evidence": [
+        "backend/src/operations/p1.controller.ts"
+      ],
+      "detail": "Đúng lớp vai trò/phạm vi đã thử; không coi là chấp nhận mọi thao tác của UC.",
+      "fullAcceptance": false
+    },
+    {
+      "diagram": "UC_G10_BA_1",
+      "actorId": "A02",
+      "ucId": "UC-OPS-06.1",
+      "limited": false,
+      "label": "",
+      "method": "Thử RolesGuard + PropertyScopeInterceptor; còn điều kiện riêng trong xử lý",
+      "evidence": [
+        "backend/src/operations/p1.controller.ts"
+      ],
+      "detail": "Đúng lớp vai trò/phạm vi đã thử; không coi là chấp nhận mọi thao tác của UC.",
+      "fullAcceptance": false
+    },
+    {
+      "diagram": "UC_G10_BA_1",
+      "actorId": "A02",
+      "ucId": "UC-OPS-07",
+      "limited": false,
+      "label": "",
+      "method": "Thử RolesGuard + PropertyScopeInterceptor; còn điều kiện riêng trong xử lý",
+      "evidence": [
+        "backend/src/notifications/announcements.controller.ts"
+      ],
+      "detail": "Đúng lớp vai trò/phạm vi đã thử; không coi là chấp nhận mọi thao tác của UC.",
+      "fullAcceptance": false
+    },
+    {
+      "diagram": "UC_G10_BA_2",
+      "actorId": "A02",
+      "ucId": "UC-SUP-04",
+      "limited": false,
+      "label": "",
+      "method": "Thử RolesGuard + PropertyScopeInterceptor; còn điều kiện riêng trong xử lý",
+      "evidence": [
+        "backend/src/support/notification-center.controller.ts",
+        "backend/src/support/support.controller.ts",
+        "backend/src/housing/housing.controller.ts",
+        "backend/src/notifications/notifications.controller.ts"
+      ],
+      "detail": "Đúng lớp vai trò/phạm vi đã thử; không coi là chấp nhận mọi thao tác của UC.",
+      "fullAcceptance": false
+    },
+    {
+      "diagram": "UC_G10_BA_2",
+      "actorId": "A04",
+      "ucId": "UC-SUP-04",
+      "limited": false,
+      "label": "",
+      "method": "Thử RolesGuard + PropertyScopeInterceptor; còn điều kiện riêng trong xử lý",
+      "evidence": [
+        "backend/src/support/notification-center.controller.ts",
+        "backend/src/support/support.controller.ts",
+        "backend/src/housing/housing.controller.ts",
+        "backend/src/tenant-portal/tenant-portal.controller.ts"
+      ],
+      "detail": "Đúng lớp vai trò/phạm vi đã thử; không coi là chấp nhận mọi thao tác của UC.",
+      "fullAcceptance": false
+    },
+    {
+      "diagram": "UC_G10_BA_2",
+      "actorId": "A05",
+      "ucId": "UC-SUP-04",
+      "limited": false,
+      "label": "",
+      "method": "Thử RolesGuard + PropertyScopeInterceptor; còn điều kiện riêng trong xử lý",
+      "evidence": [
+        "backend/src/support/notification-center.controller.ts",
+        "backend/src/support/support.controller.ts"
+      ],
+      "detail": "Đúng lớp vai trò/phạm vi đã thử; không coi là chấp nhận mọi thao tác của UC.",
+      "fullAcceptance": false
+    },
+    {
+      "diagram": "UC_G10_BA_2",
+      "actorId": "A02",
+      "ucId": "UC-TEN-09.2",
+      "limited": false,
+      "label": "",
+      "method": "Thử RolesGuard + PropertyScopeInterceptor; còn điều kiện riêng trong xử lý",
+      "evidence": [
+        "backend/src/notifications/notifications.controller.ts"
+      ],
+      "detail": "Đúng lớp vai trò/phạm vi đã thử; không coi là chấp nhận mọi thao tác của UC.",
+      "fullAcceptance": false
+    },
+    {
+      "diagram": "UC_G10_BA_2",
+      "actorId": "A04",
+      "ucId": "UC-TEN-09.2",
+      "limited": false,
+      "label": "",
+      "method": "Thử RolesGuard + PropertyScopeInterceptor; còn điều kiện riêng trong xử lý",
+      "evidence": [
+        "backend/src/tenant-portal/tenant-portal.controller.ts"
+      ],
+      "detail": "Đúng lớp vai trò/phạm vi đã thử; không coi là chấp nhận mọi thao tác của UC.",
+      "fullAcceptance": false
+    },
+    {
+      "diagram": "UC_G10_BA_2",
+      "actorId": "A04",
+      "ucId": "UC-TEN-09.3",
+      "limited": false,
+      "label": "",
+      "method": "Thử RolesGuard + PropertyScopeInterceptor; còn điều kiện riêng trong xử lý",
+      "evidence": [
+        "backend/src/notifications/announcements.controller.ts"
+      ],
+      "detail": "Đúng lớp vai trò/phạm vi đã thử; không coi là chấp nhận mọi thao tác của UC.",
+      "fullAcceptance": false
+    },
+    {
+      "diagram": "UC_G10_BA_2",
+      "actorId": "A02",
+      "ucId": "UC-SUP-06",
+      "limited": false,
+      "label": "",
+      "method": "Thử RolesGuard + PropertyScopeInterceptor; còn điều kiện riêng trong xử lý",
+      "evidence": [
+        "backend/src/chatbot/chatbot.controller.ts"
+      ],
+      "detail": "Đúng lớp vai trò/phạm vi đã thử; không coi là chấp nhận mọi thao tác của UC.",
+      "fullAcceptance": false
+    },
+    {
+      "diagram": "UC_G10_BA_2",
+      "actorId": "E04",
+      "ucId": "UC-SUP-06",
+      "limited": false,
+      "label": "khi sử dụng kênh này",
+      "method": "Đối chiếu điểm tích hợp có điều kiện; chưa gọi nhà cung cấp",
+      "evidence": [
+        "backend/src/chatbot/ollama.client.ts"
+      ],
+      "detail": "Chỉ tham gia khi kênh tương ứng sử dụng và được cấu hình; không xác nhận giao nhận.",
+      "fullAcceptance": false
+    },
+    {
+      "diagram": "UC_G11",
+      "actorId": "A02",
+      "ucId": "UC-OPT-01",
+      "limited": false,
+      "label": "",
+      "method": "Thử RolesGuard + PropertyScopeInterceptor; còn điều kiện riêng trong xử lý",
+      "evidence": [
+        "backend/src/dashboard/dashboard.controller.ts"
+      ],
+      "detail": "Đúng lớp vai trò/phạm vi đã thử; không coi là chấp nhận mọi thao tác của UC.",
+      "fullAcceptance": false
+    },
+    {
+      "diagram": "UC_G11",
+      "actorId": "A03",
+      "ucId": "UC-OPT-01",
+      "limited": false,
+      "label": "",
+      "method": "Thử RolesGuard + PropertyScopeInterceptor; còn điều kiện riêng trong xử lý",
+      "evidence": [
+        "backend/src/dashboard/dashboard.controller.ts"
+      ],
+      "detail": "Đúng lớp vai trò/phạm vi đã thử; không coi là chấp nhận mọi thao tác của UC.",
+      "fullAcceptance": false
+    },
+    {
+      "diagram": "UC_G11",
+      "actorId": "A02",
+      "ucId": "UC-BIL-20",
+      "limited": false,
+      "label": "",
+      "method": "Thử RolesGuard + PropertyScopeInterceptor; còn điều kiện riêng trong xử lý",
+      "evidence": [
+        "backend/src/reports/reports.controller.ts"
+      ],
+      "detail": "Đúng lớp vai trò/phạm vi đã thử; không coi là chấp nhận mọi thao tác của UC.",
+      "fullAcceptance": false
+    },
+    {
+      "diagram": "UC_G11",
+      "actorId": "A03",
+      "ucId": "UC-BIL-20",
+      "limited": false,
+      "label": "",
+      "method": "Thử RolesGuard + PropertyScopeInterceptor; còn điều kiện riêng trong xử lý",
+      "evidence": [
+        "backend/src/reports/reports.controller.ts"
+      ],
+      "detail": "Đúng lớp vai trò/phạm vi đã thử; không coi là chấp nhận mọi thao tác của UC.",
+      "fullAcceptance": false
+    },
+    {
+      "diagram": "UC_G11",
+      "actorId": "A05",
+      "ucId": "UC-ADM-01",
+      "limited": false,
+      "label": "",
+      "method": "Thử RolesGuard + PropertyScopeInterceptor; còn điều kiện riêng trong xử lý",
+      "evidence": [
+        "backend/src/admin/admin.controller.ts",
+        "backend/src/admin/admin-overview-analytics.controller.ts",
+        "backend/src/admin/admin-console.controller.ts",
+        "backend/src/admin/admin-workspace.controller.ts"
+      ],
+      "detail": "Đúng lớp vai trò/phạm vi đã thử; không coi là chấp nhận mọi thao tác của UC.",
+      "fullAcceptance": false
+    },
+    {
+      "diagram": "UC_G11",
+      "actorId": "A02",
+      "ucId": "UC-OPS-09",
+      "limited": false,
+      "label": "",
+      "method": "Thử RolesGuard + PropertyScopeInterceptor; còn điều kiện riêng trong xử lý",
+      "evidence": [
+        "backend/src/audit/audit.controller.ts"
+      ],
+      "detail": "Đúng lớp vai trò/phạm vi đã thử; không coi là chấp nhận mọi thao tác của UC.",
+      "fullAcceptance": false
+    },
+    {
+      "diagram": "UC_G11",
+      "actorId": "A05",
+      "ucId": "UC-ADM-14",
+      "limited": false,
+      "label": "",
+      "method": "Thử RolesGuard + PropertyScopeInterceptor; còn điều kiện riêng trong xử lý",
+      "evidence": [
+        "backend/src/admin/admin-console.controller.ts"
+      ],
+      "detail": "Đúng lớp vai trò/phạm vi đã thử; không coi là chấp nhận mọi thao tác của UC.",
+      "fullAcceptance": false
+    },
+    {
+      "diagram": "UC_G11",
+      "actorId": "A05",
+      "ucId": "UC-ADM-16",
+      "limited": false,
+      "label": "",
+      "method": "Thử RolesGuard + PropertyScopeInterceptor; còn điều kiện riêng trong xử lý",
+      "evidence": [
+        "backend/src/platform/governance.controller.ts"
+      ],
+      "detail": "Đúng lớp vai trò/phạm vi đã thử; không coi là chấp nhận mọi thao tác của UC.",
+      "fullAcceptance": false
+    },
+    {
+      "diagram": "UC_G11",
+      "actorId": "E05",
+      "ucId": "UC-ADM-16",
+      "limited": false,
+      "label": "khi sử dụng kênh này",
+      "method": "Đối chiếu điểm tích hợp có điều kiện; chưa gọi nhà cung cấp",
+      "evidence": [
+        "backend/src/platform/admin-report-worker.service.ts",
+        "backend/src/platform/report-object-storage.service.ts"
+      ],
+      "detail": "Chỉ tham gia khi kênh tương ứng sử dụng và được cấu hình; không xác nhận giao nhận.",
+      "fullAcceptance": false
+    },
+    {
+      "diagram": "UC_G11",
+      "actorId": "A05",
+      "ucId": "UC-SUP-05.1",
+      "limited": false,
+      "label": "",
+      "method": "Thử RolesGuard + PropertyScopeInterceptor; còn điều kiện riêng trong xử lý",
+      "evidence": [
+        "backend/src/health/incident-workflow.controller.ts",
+        "backend/src/admin/admin-console.controller.ts"
+      ],
+      "detail": "Đúng lớp vai trò/phạm vi đã thử; không coi là chấp nhận mọi thao tác của UC.",
+      "fullAcceptance": false
+    },
+    {
+      "diagram": "UC_G11",
+      "actorId": "A05",
+      "ucId": "UC-SUP-05.2",
+      "limited": false,
+      "label": "",
+      "method": "Thử RolesGuard + PropertyScopeInterceptor; còn điều kiện riêng trong xử lý",
+      "evidence": [
+        "backend/src/health/operations-queue.controller.ts",
+        "backend/src/support/notification-delivery.controller.ts"
+      ],
+      "detail": "Đúng lớp vai trò/phạm vi đã thử; không coi là chấp nhận mọi thao tác của UC.",
+      "fullAcceptance": false
+    },
+    {
+      "diagram": "UC_G11",
+      "actorId": "E01",
+      "ucId": "UC-SUP-05.2",
+      "limited": false,
+      "label": "khi sử dụng kênh này",
+      "method": "Đối chiếu điểm tích hợp có điều kiện; chưa gọi nhà cung cấp",
+      "evidence": [
+        "backend/src/delivery/delivery.service.ts",
+        "backend/src/billing/billing-outbox.service.ts",
+        "backend/src/support/notification-delivery.service.ts"
+      ],
+      "detail": "Chỉ tham gia khi kênh tương ứng sử dụng và được cấu hình; không xác nhận giao nhận.",
+      "fullAcceptance": false
+    },
+    {
+      "diagram": "UC_G12_BA_1",
+      "actorId": "A05",
+      "ucId": "UC-ADM-02",
+      "limited": false,
+      "label": "",
+      "method": "Thử RolesGuard + PropertyScopeInterceptor; còn điều kiện riêng trong xử lý",
+      "evidence": [
+        "backend/src/admin/admin-console.controller.ts",
+        "backend/src/admin/admin.controller.ts"
+      ],
+      "detail": "Đúng lớp vai trò/phạm vi đã thử; không coi là chấp nhận mọi thao tác của UC.",
+      "fullAcceptance": false
+    },
+    {
+      "diagram": "UC_G12_BA_1",
+      "actorId": "A05",
+      "ucId": "UC-ADM-03.1",
+      "limited": false,
+      "label": "",
+      "method": "Thử RolesGuard + PropertyScopeInterceptor; còn điều kiện riêng trong xử lý",
+      "evidence": [
+        "backend/src/admin/admin.controller.ts",
+        "backend/src/admin/admin-console.controller.ts"
+      ],
+      "detail": "Đúng lớp vai trò/phạm vi đã thử; không coi là chấp nhận mọi thao tác của UC.",
+      "fullAcceptance": false
+    },
+    {
+      "diagram": "UC_G12_BA_1",
+      "actorId": "E01",
+      "ucId": "UC-ADM-03.1",
+      "limited": false,
+      "label": "khi sử dụng kênh này",
+      "method": "Đối chiếu điểm tích hợp có điều kiện; chưa gọi nhà cung cấp",
+      "evidence": [
+        "backend/src/delivery/delivery.service.ts",
+        "backend/src/billing/billing-outbox.service.ts",
+        "backend/src/support/notification-delivery.service.ts"
+      ],
+      "detail": "Chỉ tham gia khi kênh tương ứng sử dụng và được cấu hình; không xác nhận giao nhận.",
+      "fullAcceptance": false
+    },
+    {
+      "diagram": "UC_G12_BA_1",
+      "actorId": "A05",
+      "ucId": "UC-ADM-03.2",
+      "limited": false,
+      "label": "",
+      "method": "Thử RolesGuard + PropertyScopeInterceptor; còn điều kiện riêng trong xử lý",
+      "evidence": [
+        "backend/src/admin/admin.controller.ts"
+      ],
+      "detail": "Đúng lớp vai trò/phạm vi đã thử; không coi là chấp nhận mọi thao tác của UC.",
+      "fullAcceptance": false
+    },
+    {
+      "diagram": "UC_G12_BA_1",
+      "actorId": "A05",
+      "ucId": "UC-ADM-04.1",
+      "limited": false,
+      "label": "",
+      "method": "Thử RolesGuard + PropertyScopeInterceptor; còn điều kiện riêng trong xử lý",
+      "evidence": [
+        "backend/src/admin/admin-console.controller.ts",
+        "backend/src/admin/admin.controller.ts"
+      ],
+      "detail": "Đúng lớp vai trò/phạm vi đã thử; không coi là chấp nhận mọi thao tác của UC.",
+      "fullAcceptance": false
+    },
+    {
+      "diagram": "UC_G12_BA_1",
+      "actorId": "A05",
+      "ucId": "UC-ADM-04.3",
+      "limited": false,
+      "label": "",
+      "method": "Thử RolesGuard + PropertyScopeInterceptor; còn điều kiện riêng trong xử lý",
+      "evidence": [
+        "backend/src/admin/admin-console.controller.ts",
+        "backend/src/admin/admin-lifecycle.controller.ts"
+      ],
+      "detail": "Đúng lớp vai trò/phạm vi đã thử; không coi là chấp nhận mọi thao tác của UC.",
+      "fullAcceptance": false
+    },
+    {
+      "diagram": "UC_G12_BA_1",
+      "actorId": "A05",
+      "ucId": "UC-ADM-05.1",
+      "limited": false,
+      "label": "",
+      "method": "Thử RolesGuard + PropertyScopeInterceptor; còn điều kiện riêng trong xử lý",
+      "evidence": [
+        "backend/src/admin/admin-console.controller.ts"
+      ],
+      "detail": "Đúng lớp vai trò/phạm vi đã thử; không coi là chấp nhận mọi thao tác của UC.",
+      "fullAcceptance": false
+    },
+    {
+      "diagram": "UC_G12_BA_2",
+      "actorId": "A05",
+      "ucId": "UC-ADM-05.2",
+      "limited": false,
+      "label": "",
+      "method": "Thử RolesGuard + PropertyScopeInterceptor; còn điều kiện riêng trong xử lý",
+      "evidence": [
+        "backend/src/admin/admin-console.controller.ts"
+      ],
+      "detail": "Đúng lớp vai trò/phạm vi đã thử; không coi là chấp nhận mọi thao tác của UC.",
+      "fullAcceptance": false
+    },
+    {
+      "diagram": "UC_G12_BA_2",
+      "actorId": "E01",
+      "ucId": "UC-ADM-05.2",
+      "limited": false,
+      "label": "khi sử dụng kênh này",
+      "method": "Đối chiếu điểm tích hợp có điều kiện; chưa gọi nhà cung cấp",
+      "evidence": [
+        "backend/src/delivery/delivery.service.ts",
+        "backend/src/billing/billing-outbox.service.ts",
+        "backend/src/support/notification-delivery.service.ts"
+      ],
+      "detail": "Chỉ tham gia khi kênh tương ứng sử dụng và được cấu hình; không xác nhận giao nhận.",
+      "fullAcceptance": false
+    },
+    {
+      "diagram": "UC_G12_BA_2",
+      "actorId": "A05",
+      "ucId": "UC-ADM-06.1",
+      "limited": false,
+      "label": "",
+      "method": "Thử RolesGuard + PropertyScopeInterceptor; còn điều kiện riêng trong xử lý",
+      "evidence": [
+        "backend/src/admin/admin-console.controller.ts",
+        "backend/src/admin/admin-lifecycle.controller.ts"
+      ],
+      "detail": "Đúng lớp vai trò/phạm vi đã thử; không coi là chấp nhận mọi thao tác của UC.",
+      "fullAcceptance": false
+    },
+    {
+      "diagram": "UC_G12_BA_2",
+      "actorId": "E01",
+      "ucId": "UC-ADM-06.1",
+      "limited": false,
+      "label": "khi sử dụng kênh này",
+      "method": "Đối chiếu điểm tích hợp có điều kiện; chưa gọi nhà cung cấp",
+      "evidence": [
+        "backend/src/delivery/delivery.service.ts",
+        "backend/src/billing/billing-outbox.service.ts",
+        "backend/src/support/notification-delivery.service.ts"
+      ],
+      "detail": "Chỉ tham gia khi kênh tương ứng sử dụng và được cấu hình; không xác nhận giao nhận.",
+      "fullAcceptance": false
+    },
+    {
+      "diagram": "UC_G12_BA_2",
+      "actorId": "A05",
+      "ucId": "UC-ADM-06.2",
+      "limited": false,
+      "label": "",
+      "method": "Thử RolesGuard + PropertyScopeInterceptor; còn điều kiện riêng trong xử lý",
+      "evidence": [
+        "backend/src/admin/admin-access-review.controller.ts"
+      ],
+      "detail": "Đúng lớp vai trò/phạm vi đã thử; không coi là chấp nhận mọi thao tác của UC.",
+      "fullAcceptance": false
+    },
+    {
+      "diagram": "UC_G12_BA_2",
+      "actorId": "A05",
+      "ucId": "UC-ADM-08",
+      "limited": false,
+      "label": "",
+      "method": "Thử RolesGuard + PropertyScopeInterceptor; còn điều kiện riêng trong xử lý",
+      "evidence": [
+        "backend/src/admin/admin.controller.ts"
+      ],
+      "detail": "Đúng lớp vai trò/phạm vi đã thử; không coi là chấp nhận mọi thao tác của UC.",
+      "fullAcceptance": false
+    },
+    {
+      "diagram": "UC_G12_BA_2",
+      "actorId": "A05",
+      "ucId": "UC-ADM-09",
+      "limited": false,
+      "label": "",
+      "method": "Thử RolesGuard + PropertyScopeInterceptor; còn điều kiện riêng trong xử lý",
+      "evidence": [
+        "backend/src/admin/admin.controller.ts"
+      ],
+      "detail": "Đúng lớp vai trò/phạm vi đã thử; không coi là chấp nhận mọi thao tác của UC.",
+      "fullAcceptance": false
+    },
+    {
+      "diagram": "UC_G12_BA_2",
+      "actorId": "A05",
+      "ucId": "UC-ADM-10",
+      "limited": false,
+      "label": "",
+      "method": "Thử RolesGuard + PropertyScopeInterceptor; còn điều kiện riêng trong xử lý",
+      "evidence": [
+        "backend/src/admin/admin-search.controller.ts"
+      ],
+      "detail": "Đúng lớp vai trò/phạm vi đã thử; không coi là chấp nhận mọi thao tác của UC.",
+      "fullAcceptance": false
+    },
+    {
+      "diagram": "UC_G13_BA_1",
+      "actorId": "A04",
+      "ucId": "UC-DIS-07",
+      "limited": false,
+      "label": "",
+      "method": "Thử RolesGuard + PropertyScopeInterceptor; còn điều kiện riêng trong xử lý",
+      "evidence": [
+        "backend/src/listings/listings.controller.ts"
+      ],
+      "detail": "Đúng lớp vai trò/phạm vi đã thử; không coi là chấp nhận mọi thao tác của UC.",
+      "fullAcceptance": false
+    },
+    {
+      "diagram": "UC_G13_BA_1",
+      "actorId": "A04",
+      "ucId": "UC-DIS-12",
+      "limited": false,
+      "label": "",
+      "method": "Thử RolesGuard + PropertyScopeInterceptor; còn điều kiện riêng trong xử lý",
+      "evidence": [
+        "backend/src/reviews/reviews.controller.ts"
+      ],
+      "detail": "Đúng lớp vai trò/phạm vi đã thử; không coi là chấp nhận mọi thao tác của UC.",
+      "fullAcceptance": false
+    },
+    {
+      "diagram": "UC_G13_BA_1",
+      "actorId": "A02",
+      "ucId": "UC-DIS-13.1",
+      "limited": false,
+      "label": "",
+      "method": "Thử RolesGuard + PropertyScopeInterceptor; còn điều kiện riêng trong xử lý",
+      "evidence": [
+        "backend/src/reviews/reviews.controller.ts"
+      ],
+      "detail": "Đúng lớp vai trò/phạm vi đã thử; không coi là chấp nhận mọi thao tác của UC.",
+      "fullAcceptance": false
+    },
+    {
+      "diagram": "UC_G13_BA_1",
+      "actorId": "A05",
+      "ucId": "UC-ADM-11",
+      "limited": false,
+      "label": "",
+      "method": "Thử RolesGuard + PropertyScopeInterceptor; còn điều kiện riêng trong xử lý",
+      "evidence": [
+        "backend/src/admin/admin-console.controller.ts",
+        "backend/src/listings/listings.controller.ts",
+        "backend/src/platform/moderation-v2.controller.ts"
+      ],
+      "detail": "Đúng lớp vai trò/phạm vi đã thử; không coi là chấp nhận mọi thao tác của UC.",
+      "fullAcceptance": false
+    },
+    {
+      "diagram": "UC_G13_BA_1",
+      "actorId": "A05",
+      "ucId": "UC-ADM-11.1",
+      "limited": false,
+      "label": "",
+      "method": "Thử RolesGuard + PropertyScopeInterceptor; còn điều kiện riêng trong xử lý",
+      "evidence": [
+        "backend/src/listings/listings.controller.ts"
+      ],
+      "detail": "Đúng lớp vai trò/phạm vi đã thử; không coi là chấp nhận mọi thao tác của UC.",
+      "fullAcceptance": false
+    },
+    {
+      "diagram": "UC_G13_BA_1",
+      "actorId": "A05",
+      "ucId": "UC-ADM-12",
+      "limited": false,
+      "label": "",
+      "method": "Thử RolesGuard + PropertyScopeInterceptor; còn điều kiện riêng trong xử lý",
+      "evidence": [
+        "backend/src/reviews/reviews.controller.ts"
+      ],
+      "detail": "Đúng lớp vai trò/phạm vi đã thử; không coi là chấp nhận mọi thao tác của UC.",
+      "fullAcceptance": false
+    },
+    {
+      "diagram": "UC_G13_BA_2",
+      "actorId": "A05",
+      "ucId": "UC-ADM-12.1",
+      "limited": false,
+      "label": "",
+      "method": "Thử RolesGuard + PropertyScopeInterceptor; còn điều kiện riêng trong xử lý",
+      "evidence": [
+        "backend/src/listings/listings.controller.ts"
+      ],
+      "detail": "Đúng lớp vai trò/phạm vi đã thử; không coi là chấp nhận mọi thao tác của UC.",
+      "fullAcceptance": false
+    },
+    {
+      "diagram": "UC_G13_BA_2",
+      "actorId": "A02",
+      "ucId": "UC-DIS-15",
+      "limited": false,
+      "label": "",
+      "method": "Thử RolesGuard + PropertyScopeInterceptor; còn điều kiện riêng trong xử lý",
+      "evidence": [
+        "backend/src/platform/moderation-v2.controller.ts"
+      ],
+      "detail": "Đúng lớp vai trò/phạm vi đã thử; không coi là chấp nhận mọi thao tác của UC.",
+      "fullAcceptance": false
+    },
+    {
+      "diagram": "UC_G13_BA_2",
+      "actorId": "A04",
+      "ucId": "UC-DIS-15",
+      "limited": false,
+      "label": "",
+      "method": "Thử RolesGuard + PropertyScopeInterceptor; còn điều kiện riêng trong xử lý",
+      "evidence": [
+        "backend/src/platform/moderation-v2.controller.ts"
+      ],
+      "detail": "Đúng lớp vai trò/phạm vi đã thử; không coi là chấp nhận mọi thao tác của UC.",
+      "fullAcceptance": false
+    },
+    {
+      "diagram": "UC_G13_BA_2",
+      "actorId": "A05",
+      "ucId": "UC-DIS-15",
+      "limited": true,
+      "label": "chỉ xem thông tin liên quan đến mình",
+      "method": "Thử RolesGuard + PropertyScopeInterceptor; còn điều kiện riêng trong xử lý",
+      "evidence": [
+        "backend/src/platform/moderation-v2.controller.ts"
+      ],
+      "detail": "Đúng lớp vai trò/phạm vi đã thử; không coi là chấp nhận mọi thao tác của UC.",
+      "fullAcceptance": false
+    },
+    {
+      "diagram": "UC_G13_BA_2",
+      "actorId": "A05",
+      "ucId": "UC-ADM-13.1",
+      "limited": false,
+      "label": "",
+      "method": "Thử RolesGuard + PropertyScopeInterceptor; còn điều kiện riêng trong xử lý",
+      "evidence": [
+        "backend/src/platform/moderation-policy.controller.ts"
+      ],
+      "detail": "Đúng lớp vai trò/phạm vi đã thử; không coi là chấp nhận mọi thao tác của UC.",
+      "fullAcceptance": false
+    },
+    {
+      "diagram": "UC_G13_BA_2",
+      "actorId": "A05",
+      "ucId": "UC-ADM-13.2",
+      "limited": false,
+      "label": "",
+      "method": "Thử RolesGuard + PropertyScopeInterceptor; còn điều kiện riêng trong xử lý",
+      "evidence": [
+        "backend/src/platform/moderation-v2.controller.ts"
+      ],
+      "detail": "Đúng lớp vai trò/phạm vi đã thử; không coi là chấp nhận mọi thao tác của UC.",
+      "fullAcceptance": false
+    },
+    {
+      "diagram": "UC_G13_BA_2",
+      "actorId": "A05",
+      "ucId": "UC-ADM-13.3",
+      "limited": false,
+      "label": "",
+      "method": "Thử RolesGuard + PropertyScopeInterceptor; còn điều kiện riêng trong xử lý",
+      "evidence": [
+        "backend/src/platform/moderation-policy.controller.ts"
+      ],
+      "detail": "Đúng lớp vai trò/phạm vi đã thử; không coi là chấp nhận mọi thao tác của UC.",
+      "fullAcceptance": false
+    },
+    {
+      "diagram": "UC_G14",
+      "actorId": "A02",
+      "ucId": "UC-SUP-01",
+      "limited": false,
+      "label": "",
+      "method": "Thử RolesGuard + PropertyScopeInterceptor; còn điều kiện riêng trong xử lý",
+      "evidence": [
+        "backend/src/support/support.controller.ts",
+        "backend/src/support/support-attachment.controller.ts"
+      ],
+      "detail": "Đúng lớp vai trò/phạm vi đã thử; không coi là chấp nhận mọi thao tác của UC.",
+      "fullAcceptance": false
+    },
+    {
+      "diagram": "UC_G14",
+      "actorId": "A04",
+      "ucId": "UC-SUP-01",
+      "limited": false,
+      "label": "",
+      "method": "Thử RolesGuard + PropertyScopeInterceptor; còn điều kiện riêng trong xử lý",
+      "evidence": [
+        "backend/src/support/support.controller.ts",
+        "backend/src/support/support-attachment.controller.ts"
+      ],
+      "detail": "Đúng lớp vai trò/phạm vi đã thử; không coi là chấp nhận mọi thao tác của UC.",
+      "fullAcceptance": false
+    },
+    {
+      "diagram": "UC_G14",
+      "actorId": "A05",
+      "ucId": "UC-SUP-01",
+      "limited": false,
+      "label": "",
+      "method": "Thử RolesGuard + PropertyScopeInterceptor; còn điều kiện riêng trong xử lý",
+      "evidence": [
+        "backend/src/support/support.controller.ts",
+        "backend/src/support/support-attachment.controller.ts"
+      ],
+      "detail": "Đúng lớp vai trò/phạm vi đã thử; không coi là chấp nhận mọi thao tác của UC.",
+      "fullAcceptance": false
+    },
+    {
+      "diagram": "UC_G14",
+      "actorId": "E03",
+      "ucId": "UC-SUP-01",
+      "limited": false,
+      "label": "khi sử dụng kênh này",
+      "method": "Đối chiếu điểm tích hợp có điều kiện; chưa gọi nhà cung cấp",
+      "evidence": [
+        "backend/src/uploads/malware-scanner.service.ts",
+        "backend/src/support/support-attachment.service.ts"
+      ],
+      "detail": "Chỉ tham gia khi kênh tương ứng sử dụng và được cấu hình; không xác nhận giao nhận.",
+      "fullAcceptance": false
+    },
+    {
+      "diagram": "UC_G14",
+      "actorId": "A05",
+      "ucId": "UC-SUP-01.1",
+      "limited": false,
+      "label": "",
+      "method": "Thử RolesGuard + PropertyScopeInterceptor; còn điều kiện riêng trong xử lý",
+      "evidence": [
+        "backend/src/support/support.controller.ts",
+        "backend/src/admin/admin-console.controller.ts",
+        "backend/src/support/support-attachment.controller.ts",
+        "backend/src/support/support-case.controller.ts",
+        "backend/src/support/support-tools.controller.ts"
+      ],
+      "detail": "Đúng lớp vai trò/phạm vi đã thử; không coi là chấp nhận mọi thao tác của UC.",
+      "fullAcceptance": false
+    },
+    {
+      "diagram": "UC_G14",
+      "actorId": "E03",
+      "ucId": "UC-SUP-01.1",
+      "limited": false,
+      "label": "khi sử dụng kênh này",
+      "method": "Đối chiếu điểm tích hợp có điều kiện; chưa gọi nhà cung cấp",
+      "evidence": [
+        "backend/src/uploads/malware-scanner.service.ts",
+        "backend/src/support/support-attachment.service.ts"
+      ],
+      "detail": "Chỉ tham gia khi kênh tương ứng sử dụng và được cấu hình; không xác nhận giao nhận.",
+      "fullAcceptance": false
+    },
+    {
+      "diagram": "UC_G14",
+      "actorId": "A05",
+      "ucId": "UC-SUP-03.2.1",
+      "limited": false,
+      "label": "",
+      "method": "Thử RolesGuard + PropertyScopeInterceptor; còn điều kiện riêng trong xử lý",
+      "evidence": [
+        "backend/src/support/support-tools.controller.ts"
+      ],
+      "detail": "Đúng lớp vai trò/phạm vi đã thử; không coi là chấp nhận mọi thao tác của UC.",
+      "fullAcceptance": false
+    },
+    {
+      "diagram": "UC_G14",
+      "actorId": "A02",
+      "ucId": "UC-SUP-03.2.2",
+      "limited": false,
+      "label": "",
+      "method": "Thử RolesGuard + PropertyScopeInterceptor; còn điều kiện riêng trong xử lý",
+      "evidence": [
+        "backend/src/support/support-tools.controller.ts"
+      ],
+      "detail": "Đúng lớp vai trò/phạm vi đã thử; không coi là chấp nhận mọi thao tác của UC.",
+      "fullAcceptance": false
+    },
+    {
+      "diagram": "UC_G14",
+      "actorId": "A04",
+      "ucId": "UC-SUP-03.2.2",
+      "limited": false,
+      "label": "",
+      "method": "Thử RolesGuard + PropertyScopeInterceptor; còn điều kiện riêng trong xử lý",
+      "evidence": [
+        "backend/src/support/support-tools.controller.ts"
+      ],
+      "detail": "Đúng lớp vai trò/phạm vi đã thử; không coi là chấp nhận mọi thao tác của UC.",
+      "fullAcceptance": false
+    },
+    {
+      "diagram": "UC_G14",
+      "actorId": "A05",
+      "ucId": "UC-SUP-03.2.2",
+      "limited": false,
+      "label": "",
+      "method": "Thử RolesGuard + PropertyScopeInterceptor; còn điều kiện riêng trong xử lý",
+      "evidence": [
+        "backend/src/support/support-tools.controller.ts"
+      ],
+      "detail": "Đúng lớp vai trò/phạm vi đã thử; không coi là chấp nhận mọi thao tác của UC.",
+      "fullAcceptance": false
+    },
+    {
+      "diagram": "UC_G14",
+      "actorId": "A05",
+      "ucId": "UC-SUP-02.1",
+      "limited": false,
+      "label": "",
+      "method": "Thử RolesGuard + PropertyScopeInterceptor; còn điều kiện riêng trong xử lý",
+      "evidence": [
+        "backend/src/support/support-workflow.controller.ts"
+      ],
+      "detail": "Đúng lớp vai trò/phạm vi đã thử; không coi là chấp nhận mọi thao tác của UC.",
+      "fullAcceptance": false
+    },
+    {
+      "diagram": "UC_G14",
+      "actorId": "A05",
+      "ucId": "UC-SUP-02.2",
+      "limited": false,
+      "label": "",
+      "method": "Thử RolesGuard + PropertyScopeInterceptor; còn điều kiện riêng trong xử lý",
+      "evidence": [
+        "backend/src/support/support-sla.controller.ts"
+      ],
+      "detail": "Đúng lớp vai trò/phạm vi đã thử; không coi là chấp nhận mọi thao tác của UC.",
+      "fullAcceptance": false
+    },
+    {
+      "diagram": "UC_G14",
+      "actorId": "A05",
+      "ucId": "UC-SUP-03.2",
+      "limited": false,
+      "label": "",
+      "method": "Thử RolesGuard + PropertyScopeInterceptor; còn điều kiện riêng trong xử lý",
+      "evidence": [
+        "backend/src/support/support-tools.controller.ts"
+      ],
+      "detail": "Đúng lớp vai trò/phạm vi đã thử; không coi là chấp nhận mọi thao tác của UC.",
+      "fullAcceptance": false
+    },
+    {
+      "diagram": "UC_G14",
+      "actorId": "A05",
+      "ucId": "UC-SUP-03.3",
+      "limited": false,
+      "label": "",
+      "method": "Thử RolesGuard + PropertyScopeInterceptor; còn điều kiện riêng trong xử lý",
+      "evidence": [
+        "backend/src/support/support-workflow.controller.ts"
+      ],
+      "detail": "Đúng lớp vai trò/phạm vi đã thử; không coi là chấp nhận mọi thao tác của UC.",
+      "fullAcceptance": false
+    },
+    {
+      "diagram": "UC_G15",
+      "actorId": "A02",
+      "ucId": "UC-ADM-18.1",
+      "limited": false,
+      "label": "",
+      "method": "Thử RolesGuard + PropertyScopeInterceptor; còn điều kiện riêng trong xử lý",
+      "evidence": [
+        "backend/src/admin/admin-registry.controller.ts"
+      ],
+      "detail": "Đúng lớp vai trò/phạm vi đã thử; không coi là chấp nhận mọi thao tác của UC.",
+      "fullAcceptance": false
+    },
+    {
+      "diagram": "UC_G15",
+      "actorId": "A05",
+      "ucId": "UC-ADM-18.1",
+      "limited": false,
+      "label": "",
+      "method": "Thử RolesGuard + PropertyScopeInterceptor; còn điều kiện riêng trong xử lý",
+      "evidence": [
+        "backend/src/admin/admin-registry.controller.ts"
+      ],
+      "detail": "Đúng lớp vai trò/phạm vi đã thử; không coi là chấp nhận mọi thao tác của UC.",
+      "fullAcceptance": false
+    },
+    {
+      "diagram": "UC_G15",
+      "actorId": "A05",
+      "ucId": "UC-ADM-18",
+      "limited": false,
+      "label": "",
+      "method": "Thử RolesGuard + PropertyScopeInterceptor; còn điều kiện riêng trong xử lý",
+      "evidence": [
+        "backend/src/admin/admin-registry.controller.ts"
+      ],
+      "detail": "Đúng lớp vai trò/phạm vi đã thử; không coi là chấp nhận mọi thao tác của UC.",
+      "fullAcceptance": false
+    },
+    {
+      "diagram": "UC_G15",
+      "actorId": "A05",
+      "ucId": "UC-ADM-19",
+      "limited": false,
+      "label": "",
+      "method": "Thử RolesGuard + PropertyScopeInterceptor; còn điều kiện riêng trong xử lý",
+      "evidence": [
+        "backend/src/admin/admin-registry.controller.ts"
+      ],
+      "detail": "Đúng lớp vai trò/phạm vi đã thử; không coi là chấp nhận mọi thao tác của UC.",
+      "fullAcceptance": false
+    },
+    {
+      "diagram": "UC_G15",
+      "actorId": "A05",
+      "ucId": "UC-ADM-20",
+      "limited": false,
+      "label": "",
+      "method": "Thử RolesGuard + PropertyScopeInterceptor; còn điều kiện riêng trong xử lý",
+      "evidence": [
+        "backend/src/admin/admin-registry.controller.ts"
+      ],
+      "detail": "Đúng lớp vai trò/phạm vi đã thử; không coi là chấp nhận mọi thao tác của UC.",
+      "fullAcceptance": false
+    },
+    {
+      "diagram": "UC_G15",
+      "actorId": "A05",
+      "ucId": "UC-ADM-21",
+      "limited": false,
+      "label": "",
+      "method": "Thử RolesGuard + PropertyScopeInterceptor; còn điều kiện riêng trong xử lý",
+      "evidence": [
+        "backend/src/admin/admin-registry.controller.ts"
+      ],
+      "detail": "Đúng lớp vai trò/phạm vi đã thử; không coi là chấp nhận mọi thao tác của UC.",
+      "fullAcceptance": false
+    },
+    {
+      "diagram": "UC_G15",
+      "actorId": "A05",
+      "ucId": "UC-ADM-22",
+      "limited": false,
+      "label": "",
+      "method": "Thử RolesGuard + PropertyScopeInterceptor; còn điều kiện riêng trong xử lý",
+      "evidence": [
+        "backend/src/admin/admin-registry.controller.ts"
+      ],
+      "detail": "Đúng lớp vai trò/phạm vi đã thử; không coi là chấp nhận mọi thao tác của UC.",
+      "fullAcceptance": false
+    },
+    {
+      "diagram": "UC_G16_BA_1",
+      "actorId": "A05",
+      "ucId": "UC-ADM-15",
+      "limited": false,
+      "label": "",
+      "method": "Thử RolesGuard + PropertyScopeInterceptor; còn điều kiện riêng trong xử lý",
+      "evidence": [
+        "backend/src/platform/finance-reconciliation.controller.ts"
+      ],
+      "detail": "Đúng lớp vai trò/phạm vi đã thử; không coi là chấp nhận mọi thao tác của UC.",
+      "fullAcceptance": false
+    },
+    {
+      "diagram": "UC_G16_BA_1",
+      "actorId": "A05",
+      "ucId": "UC-ADM-15.1",
+      "limited": false,
+      "label": "",
+      "method": "Thử RolesGuard + PropertyScopeInterceptor; còn điều kiện riêng trong xử lý",
+      "evidence": [
+        "backend/src/platform/finance-reconciliation.controller.ts"
+      ],
+      "detail": "Đúng lớp vai trò/phạm vi đã thử; không coi là chấp nhận mọi thao tác của UC.",
+      "fullAcceptance": false
+    },
+    {
+      "diagram": "UC_G16_BA_1",
+      "actorId": "A05",
+      "ucId": "UC-ADM-24",
+      "limited": false,
+      "label": "",
+      "method": "Thử RolesGuard + PropertyScopeInterceptor; còn điều kiện riêng trong xử lý",
+      "evidence": [
+        "backend/src/admin/admin-registry.controller.ts",
+        "backend/src/platform/governance.controller.ts"
+      ],
+      "detail": "Đúng lớp vai trò/phạm vi đã thử; không coi là chấp nhận mọi thao tác của UC.",
+      "fullAcceptance": false
+    },
+    {
+      "diagram": "UC_G16_BA_1",
+      "actorId": "A05",
+      "ucId": "UC-ADM-17.1",
+      "limited": false,
+      "label": "",
+      "method": "Thử RolesGuard + PropertyScopeInterceptor; còn điều kiện riêng trong xử lý",
+      "evidence": [
+        "backend/src/platform/governance.controller.ts"
+      ],
+      "detail": "Đúng lớp vai trò/phạm vi đã thử; không coi là chấp nhận mọi thao tác của UC.",
+      "fullAcceptance": false
+    },
+    {
+      "diagram": "UC_G16_BA_1",
+      "actorId": "A05",
+      "ucId": "UC-ADM-17.2",
+      "limited": false,
+      "label": "",
+      "method": "Thử RolesGuard + PropertyScopeInterceptor; còn điều kiện riêng trong xử lý",
+      "evidence": [
+        "backend/src/platform/governance.controller.ts"
+      ],
+      "detail": "Đúng lớp vai trò/phạm vi đã thử; không coi là chấp nhận mọi thao tác của UC.",
+      "fullAcceptance": false
+    },
+    {
+      "diagram": "UC_G16_BA_2",
+      "actorId": "A05",
+      "ucId": "UC-ADM-26",
+      "limited": false,
+      "label": "",
+      "method": "Thử RolesGuard + PropertyScopeInterceptor; còn điều kiện riêng trong xử lý",
+      "evidence": [
+        "backend/src/platform/governance.controller.ts"
+      ],
+      "detail": "Đúng lớp vai trò/phạm vi đã thử; không coi là chấp nhận mọi thao tác của UC.",
+      "fullAcceptance": false
+    },
+    {
+      "diagram": "UC_G16_BA_2",
+      "actorId": "A05",
+      "ucId": "UC-ADM-23",
+      "limited": false,
+      "label": "",
+      "method": "Thử RolesGuard + PropertyScopeInterceptor; còn điều kiện riêng trong xử lý",
+      "evidence": [
+        "backend/src/listings/listings.controller.ts"
+      ],
+      "detail": "Đúng lớp vai trò/phạm vi đã thử; không coi là chấp nhận mọi thao tác của UC.",
+      "fullAcceptance": false
+    },
+    {
+      "diagram": "UC_G16_BA_2",
+      "actorId": "A02",
+      "ucId": "UC-DIS-13.2",
+      "limited": false,
+      "label": "",
+      "method": "Thử RolesGuard + PropertyScopeInterceptor; còn điều kiện riêng trong xử lý",
+      "evidence": [
+        "backend/src/housing/housing.controller.ts"
+      ],
+      "detail": "Đúng lớp vai trò/phạm vi đã thử; không coi là chấp nhận mọi thao tác của UC.",
+      "fullAcceptance": false
+    },
+    {
+      "diagram": "UC_G16_BA_2",
+      "actorId": "A04",
+      "ucId": "UC-DIS-13.2",
+      "limited": false,
+      "label": "",
+      "method": "Thử RolesGuard + PropertyScopeInterceptor; còn điều kiện riêng trong xử lý",
+      "evidence": [
+        "backend/src/housing/housing.controller.ts"
+      ],
+      "detail": "Đúng lớp vai trò/phạm vi đã thử; không coi là chấp nhận mọi thao tác của UC.",
+      "fullAcceptance": false
+    },
+    {
+      "diagram": "UC_G16_BA_2",
+      "actorId": "A05",
+      "ucId": "UC-ADM-27",
+      "limited": false,
+      "label": "",
+      "method": "Thử RolesGuard + PropertyScopeInterceptor; còn điều kiện riêng trong xử lý",
+      "evidence": [
+        "backend/src/housing/housing.controller.ts"
+      ],
+      "detail": "Đúng lớp vai trò/phạm vi đã thử; không coi là chấp nhận mọi thao tác của UC.",
+      "fullAcceptance": false
+    }
+  ]
+}

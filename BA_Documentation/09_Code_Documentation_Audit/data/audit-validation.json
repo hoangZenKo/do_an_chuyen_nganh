@@ -1,0 +1,205 @@
+{
+  "checkedAt": "2026-10-29T17:19:14.403156+00:00",
+  "status": "PASSED",
+  "checks": [
+    {
+      "name": "catalog_ids_groups_actors_status_preserved",
+      "passed": true,
+      "detail": "162 UC; không tự nâng trạng thái xác minh hoặc đổi tác nhân"
+    },
+    {
+      "name": "application_source_integrity",
+      "passed": true,
+      "detail": {
+        "files": 846,
+        "changed": []
+      }
+    },
+    {
+      "name": "independent_code_audit",
+      "passed": true,
+      "detail": {
+        "useCases": 162,
+        "routes": 405,
+        "anchors": 857,
+        "missingAnchors": 0,
+        "aclMismatches": 0,
+        "sourceHashChanges": 0,
+        "testsPassed": 736,
+        "testsSkipped": 7
+      }
+    },
+    {
+      "name": "targeted_semantic_reproductions",
+      "passed": true,
+      "detail": "Documentation discrepancy reproduction with real application service classes and mocked persistence; no real database, network, provider or application files changed."
+    },
+    {
+      "name": "five_uc_twenty_three_field_amendments",
+      "passed": true,
+      "detail": [
+        "UC-ADM-18.1",
+        "UC-OPT-07.3",
+        "UC-SYS-05.1",
+        "UC-TNT-05",
+        "UC-TNT-12.1"
+      ]
+    },
+    {
+      "name": "word_all_162_uc_tables",
+      "passed": true,
+      "detail": "162 bảng, mỗi bảng 20 thuộc tính khớp dữ liệu đã đính chính"
+    },
+    {
+      "name": "source_word_preserved_and_final_hash",
+      "passed": true,
+      "detail": {
+        "source": "/Users/hoang/Desktop/ĐỒ ÁN/Bao_cao_Quan_ly_Nha_tro_V4_2026-10-29_BA.docx",
+        "output": "/Users/hoang/Desktop/ĐỒ ÁN/Bao_cao_Quan_ly_Nha_tro_V5_2026-10-30_Doi_chieu_Code.docx"
+      }
+    },
+    {
+      "name": "report_uc_business_language",
+      "passed": true,
+      "detail": {
+        "technical_terms_found": [],
+        "scope": "Kiểm tra từ khóa hỗ trợ; không thay thế đọc biên tập"
+      }
+    },
+    {
+      "name": "thirty_black_white_diagrams_embedded",
+      "passed": true,
+      "detail": {
+        "verified_images": 30
+      }
+    },
+    {
+      "name": "module_diagrams_cover_162_once",
+      "passed": true,
+      "detail": {
+        "image_count": 30,
+        "module_uc_count": 162
+      }
+    },
+    {
+      "name": "diagram_sources_match_image_manifest",
+      "passed": true,
+      "detail": {
+        "matched": 30
+      }
+    },
+    {
+      "name": "diagram_association_evidence",
+      "passed": true,
+      "detail": {
+        "associations": 272,
+        "limited": 7,
+        "full_acceptance_claimed": false
+      }
+    },
+    {
+      "name": "independent_two_point_lines",
+      "passed": true,
+      "detail": "Mỗi liên kết một nét riêng; không đường gom"
+    },
+    {
+      "name": "navigation_159_page_references",
+      "passed": true,
+      "detail": {
+        "entries": 159
+      }
+    },
+    {
+      "name": "rendered_layout_bounds",
+      "passed": true,
+      "detail": {
+        "pdfPageCount": 413,
+        "pageImageCount": 413,
+        "blankPages": [],
+        "textOutsidePage": [],
+        "representativePages": {
+          "matrix": 3,
+          "diagram": 303,
+          "specification": 31
+        },
+        "contactSheets": 9,
+        "scope": "Kiểm tra khung trang và tạo ảnh tổng quan; cần đọc ảnh để đánh giá bố cục, không thay thế nghiệm thu nghiệp vụ."
+      }
+    },
+    {
+      "name": "historical_stage4_hash_baseline_not_rebased",
+      "passed": true,
+      "detail": "Giữ mốc lịch sử, không đổi hash để che sửa tài liệu"
+    },
+    {
+      "name": "saved_validation_02_Functional_Decomposition_Use_Case_Catalog",
+      "passed": true,
+      "detail": {
+        "status": "PASSED",
+        "scope": "Nhất quán/truy vết, không chứng nhận toàn bộ ngữ nghĩa"
+      }
+    },
+    {
+      "name": "saved_validation_05_Use_Case_Diagrams",
+      "passed": true,
+      "detail": {
+        "status": "PASSED",
+        "scope": "Nhất quán/truy vết, không chứng nhận toàn bộ ngữ nghĩa"
+      }
+    },
+    {
+      "name": "markdown_162_spec_tables",
+      "passed": true,
+      "detail": "162 bảng cú pháp hợp lệ và đúng hash lúc kiểm tra"
+    },
+    {
+      "name": "executed_backend_tests",
+      "passed": true,
+      "detail": {
+        "passed": 736,
+        "skipped": 7,
+        "scope": "Unit/mock, không E2E"
+      }
+    },
+    {
+      "name": "executed_flutter_tests",
+      "passed": true,
+      "detail": {
+        "passed": 678,
+        "files": 55
+      }
+    },
+    {
+      "name": "amendment_log_matches_current_documents",
+      "passed": true,
+      "detail": {
+        "amended_documents": 22
+      }
+    }
+  ],
+  "visualReview": {
+    "contact_sheets_reviewed": [
+      "QA/final-word/contact-1.jpg",
+      "QA/final-word/contact-2.jpg",
+      "QA/final-word/contact-3.jpg",
+      "QA/final-word/contact-4.jpg",
+      "QA/final-word/contact-5.jpg",
+      "QA/final-word/contact-6.jpg",
+      "QA/final-word/contact-7.jpg",
+      "QA/final-word/contact-8.jpg",
+      "QA/final-word/contact-9.jpg"
+    ],
+    "pages_reviewed_at_readable_scale": [
+      118,
+      274,
+      298
+    ],
+    "scope": "Đọc 9 ảnh tổng quan phủ 413 trang và 3 trang phóng lớn; không nhận đã đọc thủ công mọi câu của báo cáo"
+  },
+  "limits": [
+    "162 UC kiểm tra truy vết và đầu mối quyền; 43 UC đọc sâu các quy tắc ưu tiên, chưa rà hết từng phát biểu thủ công",
+    "Chưa nghiệm thu DB, nhà cung cấp bên ngoài hoặc mọi luồng đầu-cuối",
+    "Sơ đồ lớp/tương tác và phần ngoài UC trong báo cáo được giữ, chưa kiểm chứng lại"
+  ],
+  "certifies100Percent": false
+}

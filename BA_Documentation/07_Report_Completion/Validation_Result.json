@@ -1,0 +1,6573 @@
+{
+  "date": "2026-10-29",
+  "output": "/Users/hoang/Desktop/ĐỒ ÁN/Bao_cao_Quan_ly_Nha_tro_V4_2026-10-29_BA.docx",
+  "checks": 1638,
+  "passed": 1638,
+  "failed": [],
+  "useCaseCount": 162,
+  "groupCount": 16,
+  "humanActorCount": 5,
+  "reportDiagramCount": 30,
+  "statusDistribution": {
+    "Xác minh tĩnh": 151,
+    "Một phần": 9,
+    "Đã triển khai — DEMO": 1,
+    "Đã triển khai — MÔ PHỎNG": 1
+  },
+  "checksDetail": [
+    {
+      "name": "Original Word unchanged",
+      "passed": true
+    },
+    {
+      "name": "162 unique Use Cases",
+      "passed": true
+    },
+    {
+      "name": "Catalog ID equality",
+      "passed": true
+    },
+    {
+      "name": "Unchanged status distribution",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-07.1 20 attributes",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-07.1 unchanged actor and status",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-07.1 business wording",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-07.1 consecutive main steps",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-07.1 branch references valid",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-07.1 evidence exists",
+      "passed": true
+    },
+    {
+      "name": "UC-SYS-01 20 attributes",
+      "passed": true
+    },
+    {
+      "name": "UC-SYS-01 unchanged actor and status",
+      "passed": true
+    },
+    {
+      "name": "UC-SYS-01 business wording",
+      "passed": true
+    },
+    {
+      "name": "UC-SYS-01 consecutive main steps",
+      "passed": true
+    },
+    {
+      "name": "UC-SYS-01 branch references valid",
+      "passed": true
+    },
+    {
+      "name": "UC-SYS-01 evidence exists",
+      "passed": true
+    },
+    {
+      "name": "UC-SYS-02 20 attributes",
+      "passed": true
+    },
+    {
+      "name": "UC-SYS-02 unchanged actor and status",
+      "passed": true
+    },
+    {
+      "name": "UC-SYS-02 business wording",
+      "passed": true
+    },
+    {
+      "name": "UC-SYS-02 consecutive main steps",
+      "passed": true
+    },
+    {
+      "name": "UC-SYS-02 branch references valid",
+      "passed": true
+    },
+    {
+      "name": "UC-SYS-02 evidence exists",
+      "passed": true
+    },
+    {
+      "name": "UC-SYS-03 20 attributes",
+      "passed": true
+    },
+    {
+      "name": "UC-SYS-03 unchanged actor and status",
+      "passed": true
+    },
+    {
+      "name": "UC-SYS-03 business wording",
+      "passed": true
+    },
+    {
+      "name": "UC-SYS-03 consecutive main steps",
+      "passed": true
+    },
+    {
+      "name": "UC-SYS-03 branch references valid",
+      "passed": true
+    },
+    {
+      "name": "UC-SYS-03 evidence exists",
+      "passed": true
+    },
+    {
+      "name": "UC-SYS-05.1 20 attributes",
+      "passed": true
+    },
+    {
+      "name": "UC-SYS-05.1 unchanged actor and status",
+      "passed": true
+    },
+    {
+      "name": "UC-SYS-05.1 business wording",
+      "passed": true
+    },
+    {
+      "name": "UC-SYS-05.1 consecutive main steps",
+      "passed": true
+    },
+    {
+      "name": "UC-SYS-05.1 branch references valid",
+      "passed": true
+    },
+    {
+      "name": "UC-SYS-05.1 evidence exists",
+      "passed": true
+    },
+    {
+      "name": "UC-SYS-05.2 20 attributes",
+      "passed": true
+    },
+    {
+      "name": "UC-SYS-05.2 unchanged actor and status",
+      "passed": true
+    },
+    {
+      "name": "UC-SYS-05.2 business wording",
+      "passed": true
+    },
+    {
+      "name": "UC-SYS-05.2 consecutive main steps",
+      "passed": true
+    },
+    {
+      "name": "UC-SYS-05.2 branch references valid",
+      "passed": true
+    },
+    {
+      "name": "UC-SYS-05.2 evidence exists",
+      "passed": true
+    },
+    {
+      "name": "UC-SYS-06 20 attributes",
+      "passed": true
+    },
+    {
+      "name": "UC-SYS-06 unchanged actor and status",
+      "passed": true
+    },
+    {
+      "name": "UC-SYS-06 business wording",
+      "passed": true
+    },
+    {
+      "name": "UC-SYS-06 consecutive main steps",
+      "passed": true
+    },
+    {
+      "name": "UC-SYS-06 branch references valid",
+      "passed": true
+    },
+    {
+      "name": "UC-SYS-06 evidence exists",
+      "passed": true
+    },
+    {
+      "name": "UC-SYS-07 20 attributes",
+      "passed": true
+    },
+    {
+      "name": "UC-SYS-07 unchanged actor and status",
+      "passed": true
+    },
+    {
+      "name": "UC-SYS-07 business wording",
+      "passed": true
+    },
+    {
+      "name": "UC-SYS-07 consecutive main steps",
+      "passed": true
+    },
+    {
+      "name": "UC-SYS-07 branch references valid",
+      "passed": true
+    },
+    {
+      "name": "UC-SYS-07 evidence exists",
+      "passed": true
+    },
+    {
+      "name": "UC-SYS-08 20 attributes",
+      "passed": true
+    },
+    {
+      "name": "UC-SYS-08 unchanged actor and status",
+      "passed": true
+    },
+    {
+      "name": "UC-SYS-08 business wording",
+      "passed": true
+    },
+    {
+      "name": "UC-SYS-08 consecutive main steps",
+      "passed": true
+    },
+    {
+      "name": "UC-SYS-08 branch references valid",
+      "passed": true
+    },
+    {
+      "name": "UC-SYS-08 evidence exists",
+      "passed": true
+    },
+    {
+      "name": "UC-SYS-09 20 attributes",
+      "passed": true
+    },
+    {
+      "name": "UC-SYS-09 unchanged actor and status",
+      "passed": true
+    },
+    {
+      "name": "UC-SYS-09 business wording",
+      "passed": true
+    },
+    {
+      "name": "UC-SYS-09 consecutive main steps",
+      "passed": true
+    },
+    {
+      "name": "UC-SYS-09 branch references valid",
+      "passed": true
+    },
+    {
+      "name": "UC-SYS-09 evidence exists",
+      "passed": true
+    },
+    {
+      "name": "UC-SYS-10 20 attributes",
+      "passed": true
+    },
+    {
+      "name": "UC-SYS-10 unchanged actor and status",
+      "passed": true
+    },
+    {
+      "name": "UC-SYS-10 business wording",
+      "passed": true
+    },
+    {
+      "name": "UC-SYS-10 consecutive main steps",
+      "passed": true
+    },
+    {
+      "name": "UC-SYS-10 branch references valid",
+      "passed": true
+    },
+    {
+      "name": "UC-SYS-10 evidence exists",
+      "passed": true
+    },
+    {
+      "name": "UC-DIS-01 20 attributes",
+      "passed": true
+    },
+    {
+      "name": "UC-DIS-01 unchanged actor and status",
+      "passed": true
+    },
+    {
+      "name": "UC-DIS-01 business wording",
+      "passed": true
+    },
+    {
+      "name": "UC-DIS-01 consecutive main steps",
+      "passed": true
+    },
+    {
+      "name": "UC-DIS-01 branch references valid",
+      "passed": true
+    },
+    {
+      "name": "UC-DIS-01 evidence exists",
+      "passed": true
+    },
+    {
+      "name": "UC-DIS-02 20 attributes",
+      "passed": true
+    },
+    {
+      "name": "UC-DIS-02 unchanged actor and status",
+      "passed": true
+    },
+    {
+      "name": "UC-DIS-02 business wording",
+      "passed": true
+    },
+    {
+      "name": "UC-DIS-02 consecutive main steps",
+      "passed": true
+    },
+    {
+      "name": "UC-DIS-02 branch references valid",
+      "passed": true
+    },
+    {
+      "name": "UC-DIS-02 evidence exists",
+      "passed": true
+    },
+    {
+      "name": "UC-DIS-03 20 attributes",
+      "passed": true
+    },
+    {
+      "name": "UC-DIS-03 unchanged actor and status",
+      "passed": true
+    },
+    {
+      "name": "UC-DIS-03 business wording",
+      "passed": true
+    },
+    {
+      "name": "UC-DIS-03 consecutive main steps",
+      "passed": true
+    },
+    {
+      "name": "UC-DIS-03 branch references valid",
+      "passed": true
+    },
+    {
+      "name": "UC-DIS-03 evidence exists",
+      "passed": true
+    },
+    {
+      "name": "UC-DIS-04 20 attributes",
+      "passed": true
+    },
+    {
+      "name": "UC-DIS-04 unchanged actor and status",
+      "passed": true
+    },
+    {
+      "name": "UC-DIS-04 business wording",
+      "passed": true
+    },
+    {
+      "name": "UC-DIS-04 consecutive main steps",
+      "passed": true
+    },
+    {
+      "name": "UC-DIS-04 branch references valid",
+      "passed": true
+    },
+    {
+      "name": "UC-DIS-04 evidence exists",
+      "passed": true
+    },
+    {
+      "name": "UC-DIS-16 20 attributes",
+      "passed": true
+    },
+    {
+      "name": "UC-DIS-16 unchanged actor and status",
+      "passed": true
+    },
+    {
+      "name": "UC-DIS-16 business wording",
+      "passed": true
+    },
+    {
+      "name": "UC-DIS-16 consecutive main steps",
+      "passed": true
+    },
+    {
+      "name": "UC-DIS-16 branch references valid",
+      "passed": true
+    },
+    {
+      "name": "UC-DIS-16 evidence exists",
+      "passed": true
+    },
+    {
+      "name": "UC-DIS-17 20 attributes",
+      "passed": true
+    },
+    {
+      "name": "UC-DIS-17 unchanged actor and status",
+      "passed": true
+    },
+    {
+      "name": "UC-DIS-17 business wording",
+      "passed": true
+    },
+    {
+      "name": "UC-DIS-17 consecutive main steps",
+      "passed": true
+    },
+    {
+      "name": "UC-DIS-17 branch references valid",
+      "passed": true
+    },
+    {
+      "name": "UC-DIS-17 evidence exists",
+      "passed": true
+    },
+    {
+      "name": "UC-DIS-05 20 attributes",
+      "passed": true
+    },
+    {
+      "name": "UC-DIS-05 unchanged actor and status",
+      "passed": true
+    },
+    {
+      "name": "UC-DIS-05 business wording",
+      "passed": true
+    },
+    {
+      "name": "UC-DIS-05 consecutive main steps",
+      "passed": true
+    },
+    {
+      "name": "UC-DIS-05 branch references valid",
+      "passed": true
+    },
+    {
+      "name": "UC-DIS-05 evidence exists",
+      "passed": true
+    },
+    {
+      "name": "UC-DIS-06.2 20 attributes",
+      "passed": true
+    },
+    {
+      "name": "UC-DIS-06.2 unchanged actor and status",
+      "passed": true
+    },
+    {
+      "name": "UC-DIS-06.2 business wording",
+      "passed": true
+    },
+    {
+      "name": "UC-DIS-06.2 consecutive main steps",
+      "passed": true
+    },
+    {
+      "name": "UC-DIS-06.2 branch references valid",
+      "passed": true
+    },
+    {
+      "name": "UC-DIS-06.2 evidence exists",
+      "passed": true
+    },
+    {
+      "name": "UC-DIS-08 20 attributes",
+      "passed": true
+    },
+    {
+      "name": "UC-DIS-08 unchanged actor and status",
+      "passed": true
+    },
+    {
+      "name": "UC-DIS-08 business wording",
+      "passed": true
+    },
+    {
+      "name": "UC-DIS-08 consecutive main steps",
+      "passed": true
+    },
+    {
+      "name": "UC-DIS-08 branch references valid",
+      "passed": true
+    },
+    {
+      "name": "UC-DIS-08 evidence exists",
+      "passed": true
+    },
+    {
+      "name": "UC-DIS-09 20 attributes",
+      "passed": true
+    },
+    {
+      "name": "UC-DIS-09 unchanged actor and status",
+      "passed": true
+    },
+    {
+      "name": "UC-DIS-09 business wording",
+      "passed": true
+    },
+    {
+      "name": "UC-DIS-09 consecutive main steps",
+      "passed": true
+    },
+    {
+      "name": "UC-DIS-09 branch references valid",
+      "passed": true
+    },
+    {
+      "name": "UC-DIS-09 evidence exists",
+      "passed": true
+    },
+    {
+      "name": "UC-DIS-10 20 attributes",
+      "passed": true
+    },
+    {
+      "name": "UC-DIS-10 unchanged actor and status",
+      "passed": true
+    },
+    {
+      "name": "UC-DIS-10 business wording",
+      "passed": true
+    },
+    {
+      "name": "UC-DIS-10 consecutive main steps",
+      "passed": true
+    },
+    {
+      "name": "UC-DIS-10 branch references valid",
+      "passed": true
+    },
+    {
+      "name": "UC-DIS-10 evidence exists",
+      "passed": true
+    },
+    {
+      "name": "UC-DIS-13.2 20 attributes",
+      "passed": true
+    },
+    {
+      "name": "UC-DIS-13.2 unchanged actor and status",
+      "passed": true
+    },
+    {
+      "name": "UC-DIS-13.2 business wording",
+      "passed": true
+    },
+    {
+      "name": "UC-DIS-13.2 consecutive main steps",
+      "passed": true
+    },
+    {
+      "name": "UC-DIS-13.2 branch references valid",
+      "passed": true
+    },
+    {
+      "name": "UC-DIS-13.2 evidence exists",
+      "passed": true
+    },
+    {
+      "name": "UC-TNT-12.2 20 attributes",
+      "passed": true
+    },
+    {
+      "name": "UC-TNT-12.2 unchanged actor and status",
+      "passed": true
+    },
+    {
+      "name": "UC-TNT-12.2 business wording",
+      "passed": true
+    },
+    {
+      "name": "UC-TNT-12.2 consecutive main steps",
+      "passed": true
+    },
+    {
+      "name": "UC-TNT-12.2 branch references valid",
+      "passed": true
+    },
+    {
+      "name": "UC-TNT-12.2 evidence exists",
+      "passed": true
+    },
+    {
+      "name": "UC-TNT-12.3 20 attributes",
+      "passed": true
+    },
+    {
+      "name": "UC-TNT-12.3 unchanged actor and status",
+      "passed": true
+    },
+    {
+      "name": "UC-TNT-12.3 business wording",
+      "passed": true
+    },
+    {
+      "name": "UC-TNT-12.3 consecutive main steps",
+      "passed": true
+    },
+    {
+      "name": "UC-TNT-12.3 branch references valid",
+      "passed": true
+    },
+    {
+      "name": "UC-TNT-12.3 evidence exists",
+      "passed": true
+    },
+    {
+      "name": "UC-OPT-02 20 attributes",
+      "passed": true
+    },
+    {
+      "name": "UC-OPT-02 unchanged actor and status",
+      "passed": true
+    },
+    {
+      "name": "UC-OPT-02 business wording",
+      "passed": true
+    },
+    {
+      "name": "UC-OPT-02 consecutive main steps",
+      "passed": true
+    },
+    {
+      "name": "UC-OPT-02 branch references valid",
+      "passed": true
+    },
+    {
+      "name": "UC-OPT-02 evidence exists",
+      "passed": true
+    },
+    {
+      "name": "UC-OPT-03.1 20 attributes",
+      "passed": true
+    },
+    {
+      "name": "UC-OPT-03.1 unchanged actor and status",
+      "passed": true
+    },
+    {
+      "name": "UC-OPT-03.1 business wording",
+      "passed": true
+    },
+    {
+      "name": "UC-OPT-03.1 consecutive main steps",
+      "passed": true
+    },
+    {
+      "name": "UC-OPT-03.1 branch references valid",
+      "passed": true
+    },
+    {
+      "name": "UC-OPT-03.1 evidence exists",
+      "passed": true
+    },
+    {
+      "name": "UC-OPT-03.2 20 attributes",
+      "passed": true
+    },
+    {
+      "name": "UC-OPT-03.2 unchanged actor and status",
+      "passed": true
+    },
+    {
+      "name": "UC-OPT-03.2 business wording",
+      "passed": true
+    },
+    {
+      "name": "UC-OPT-03.2 consecutive main steps",
+      "passed": true
+    },
+    {
+      "name": "UC-OPT-03.2 branch references valid",
+      "passed": true
+    },
+    {
+      "name": "UC-OPT-03.2 evidence exists",
+      "passed": true
+    },
+    {
+      "name": "UC-OPT-04.1 20 attributes",
+      "passed": true
+    },
+    {
+      "name": "UC-OPT-04.1 unchanged actor and status",
+      "passed": true
+    },
+    {
+      "name": "UC-OPT-04.1 business wording",
+      "passed": true
+    },
+    {
+      "name": "UC-OPT-04.1 consecutive main steps",
+      "passed": true
+    },
+    {
+      "name": "UC-OPT-04.1 branch references valid",
+      "passed": true
+    },
+    {
+      "name": "UC-OPT-04.1 evidence exists",
+      "passed": true
+    },
+    {
+      "name": "UC-OPT-04.3 20 attributes",
+      "passed": true
+    },
+    {
+      "name": "UC-OPT-04.3 unchanged actor and status",
+      "passed": true
+    },
+    {
+      "name": "UC-OPT-04.3 business wording",
+      "passed": true
+    },
+    {
+      "name": "UC-OPT-04.3 consecutive main steps",
+      "passed": true
+    },
+    {
+      "name": "UC-OPT-04.3 branch references valid",
+      "passed": true
+    },
+    {
+      "name": "UC-OPT-04.3 evidence exists",
+      "passed": true
+    },
+    {
+      "name": "UC-OPT-05 20 attributes",
+      "passed": true
+    },
+    {
+      "name": "UC-OPT-05 unchanged actor and status",
+      "passed": true
+    },
+    {
+      "name": "UC-OPT-05 business wording",
+      "passed": true
+    },
+    {
+      "name": "UC-OPT-05 consecutive main steps",
+      "passed": true
+    },
+    {
+      "name": "UC-OPT-05 branch references valid",
+      "passed": true
+    },
+    {
+      "name": "UC-OPT-05 evidence exists",
+      "passed": true
+    },
+    {
+      "name": "UC-OPT-06.1 20 attributes",
+      "passed": true
+    },
+    {
+      "name": "UC-OPT-06.1 unchanged actor and status",
+      "passed": true
+    },
+    {
+      "name": "UC-OPT-06.1 business wording",
+      "passed": true
+    },
+    {
+      "name": "UC-OPT-06.1 consecutive main steps",
+      "passed": true
+    },
+    {
+      "name": "UC-OPT-06.1 branch references valid",
+      "passed": true
+    },
+    {
+      "name": "UC-OPT-06.1 evidence exists",
+      "passed": true
+    },
+    {
+      "name": "UC-OPT-06.2 20 attributes",
+      "passed": true
+    },
+    {
+      "name": "UC-OPT-06.2 unchanged actor and status",
+      "passed": true
+    },
+    {
+      "name": "UC-OPT-06.2 business wording",
+      "passed": true
+    },
+    {
+      "name": "UC-OPT-06.2 consecutive main steps",
+      "passed": true
+    },
+    {
+      "name": "UC-OPT-06.2 branch references valid",
+      "passed": true
+    },
+    {
+      "name": "UC-OPT-06.2 evidence exists",
+      "passed": true
+    },
+    {
+      "name": "UC-OPT-07.1 20 attributes",
+      "passed": true
+    },
+    {
+      "name": "UC-OPT-07.1 unchanged actor and status",
+      "passed": true
+    },
+    {
+      "name": "UC-OPT-07.1 business wording",
+      "passed": true
+    },
+    {
+      "name": "UC-OPT-07.1 consecutive main steps",
+      "passed": true
+    },
+    {
+      "name": "UC-OPT-07.1 branch references valid",
+      "passed": true
+    },
+    {
+      "name": "UC-OPT-07.1 evidence exists",
+      "passed": true
+    },
+    {
+      "name": "UC-OPT-07.2 20 attributes",
+      "passed": true
+    },
+    {
+      "name": "UC-OPT-07.2 unchanged actor and status",
+      "passed": true
+    },
+    {
+      "name": "UC-OPT-07.2 business wording",
+      "passed": true
+    },
+    {
+      "name": "UC-OPT-07.2 consecutive main steps",
+      "passed": true
+    },
+    {
+      "name": "UC-OPT-07.2 branch references valid",
+      "passed": true
+    },
+    {
+      "name": "UC-OPT-07.2 evidence exists",
+      "passed": true
+    },
+    {
+      "name": "UC-OPT-07.3 20 attributes",
+      "passed": true
+    },
+    {
+      "name": "UC-OPT-07.3 unchanged actor and status",
+      "passed": true
+    },
+    {
+      "name": "UC-OPT-07.3 business wording",
+      "passed": true
+    },
+    {
+      "name": "UC-OPT-07.3 consecutive main steps",
+      "passed": true
+    },
+    {
+      "name": "UC-OPT-07.3 branch references valid",
+      "passed": true
+    },
+    {
+      "name": "UC-OPT-07.3 evidence exists",
+      "passed": true
+    },
+    {
+      "name": "UC-OPT-08.1 20 attributes",
+      "passed": true
+    },
+    {
+      "name": "UC-OPT-08.1 unchanged actor and status",
+      "passed": true
+    },
+    {
+      "name": "UC-OPT-08.1 business wording",
+      "passed": true
+    },
+    {
+      "name": "UC-OPT-08.1 consecutive main steps",
+      "passed": true
+    },
+    {
+      "name": "UC-OPT-08.1 branch references valid",
+      "passed": true
+    },
+    {
+      "name": "UC-OPT-08.1 evidence exists",
+      "passed": true
+    },
+    {
+      "name": "UC-OPT-08.2 20 attributes",
+      "passed": true
+    },
+    {
+      "name": "UC-OPT-08.2 unchanged actor and status",
+      "passed": true
+    },
+    {
+      "name": "UC-OPT-08.2 business wording",
+      "passed": true
+    },
+    {
+      "name": "UC-OPT-08.2 consecutive main steps",
+      "passed": true
+    },
+    {
+      "name": "UC-OPT-08.2 branch references valid",
+      "passed": true
+    },
+    {
+      "name": "UC-OPT-08.2 evidence exists",
+      "passed": true
+    },
+    {
+      "name": "UC-OPT-09 20 attributes",
+      "passed": true
+    },
+    {
+      "name": "UC-OPT-09 unchanged actor and status",
+      "passed": true
+    },
+    {
+      "name": "UC-OPT-09 business wording",
+      "passed": true
+    },
+    {
+      "name": "UC-OPT-09 consecutive main steps",
+      "passed": true
+    },
+    {
+      "name": "UC-OPT-09 branch references valid",
+      "passed": true
+    },
+    {
+      "name": "UC-OPT-09 evidence exists",
+      "passed": true
+    },
+    {
+      "name": "UC-STF-01 20 attributes",
+      "passed": true
+    },
+    {
+      "name": "UC-STF-01 unchanged actor and status",
+      "passed": true
+    },
+    {
+      "name": "UC-STF-01 business wording",
+      "passed": true
+    },
+    {
+      "name": "UC-STF-01 consecutive main steps",
+      "passed": true
+    },
+    {
+      "name": "UC-STF-01 branch references valid",
+      "passed": true
+    },
+    {
+      "name": "UC-STF-01 evidence exists",
+      "passed": true
+    },
+    {
+      "name": "UC-STF-02 20 attributes",
+      "passed": true
+    },
+    {
+      "name": "UC-STF-02 unchanged actor and status",
+      "passed": true
+    },
+    {
+      "name": "UC-STF-02 business wording",
+      "passed": true
+    },
+    {
+      "name": "UC-STF-02 consecutive main steps",
+      "passed": true
+    },
+    {
+      "name": "UC-STF-02 branch references valid",
+      "passed": true
+    },
+    {
+      "name": "UC-STF-02 evidence exists",
+      "passed": true
+    },
+    {
+      "name": "UC-STF-03 20 attributes",
+      "passed": true
+    },
+    {
+      "name": "UC-STF-03 unchanged actor and status",
+      "passed": true
+    },
+    {
+      "name": "UC-STF-03 business wording",
+      "passed": true
+    },
+    {
+      "name": "UC-STF-03 consecutive main steps",
+      "passed": true
+    },
+    {
+      "name": "UC-STF-03 branch references valid",
+      "passed": true
+    },
+    {
+      "name": "UC-STF-03 evidence exists",
+      "passed": true
+    },
+    {
+      "name": "UC-STF-04 20 attributes",
+      "passed": true
+    },
+    {
+      "name": "UC-STF-04 unchanged actor and status",
+      "passed": true
+    },
+    {
+      "name": "UC-STF-04 business wording",
+      "passed": true
+    },
+    {
+      "name": "UC-STF-04 consecutive main steps",
+      "passed": true
+    },
+    {
+      "name": "UC-STF-04 branch references valid",
+      "passed": true
+    },
+    {
+      "name": "UC-STF-04 evidence exists",
+      "passed": true
+    },
+    {
+      "name": "UC-TEN-01 20 attributes",
+      "passed": true
+    },
+    {
+      "name": "UC-TEN-01 unchanged actor and status",
+      "passed": true
+    },
+    {
+      "name": "UC-TEN-01 business wording",
+      "passed": true
+    },
+    {
+      "name": "UC-TEN-01 consecutive main steps",
+      "passed": true
+    },
+    {
+      "name": "UC-TEN-01 branch references valid",
+      "passed": true
+    },
+    {
+      "name": "UC-TEN-01 evidence exists",
+      "passed": true
+    },
+    {
+      "name": "UC-TEN-02 20 attributes",
+      "passed": true
+    },
+    {
+      "name": "UC-TEN-02 unchanged actor and status",
+      "passed": true
+    },
+    {
+      "name": "UC-TEN-02 business wording",
+      "passed": true
+    },
+    {
+      "name": "UC-TEN-02 consecutive main steps",
+      "passed": true
+    },
+    {
+      "name": "UC-TEN-02 branch references valid",
+      "passed": true
+    },
+    {
+      "name": "UC-TEN-02 evidence exists",
+      "passed": true
+    },
+    {
+      "name": "UC-TEN-08.1 20 attributes",
+      "passed": true
+    },
+    {
+      "name": "UC-TEN-08.1 unchanged actor and status",
+      "passed": true
+    },
+    {
+      "name": "UC-TEN-08.1 business wording",
+      "passed": true
+    },
+    {
+      "name": "UC-TEN-08.1 consecutive main steps",
+      "passed": true
+    },
+    {
+      "name": "UC-TEN-08.1 branch references valid",
+      "passed": true
+    },
+    {
+      "name": "UC-TEN-08.1 evidence exists",
+      "passed": true
+    },
+    {
+      "name": "UC-TNT-01 20 attributes",
+      "passed": true
+    },
+    {
+      "name": "UC-TNT-01 unchanged actor and status",
+      "passed": true
+    },
+    {
+      "name": "UC-TNT-01 business wording",
+      "passed": true
+    },
+    {
+      "name": "UC-TNT-01 consecutive main steps",
+      "passed": true
+    },
+    {
+      "name": "UC-TNT-01 branch references valid",
+      "passed": true
+    },
+    {
+      "name": "UC-TNT-01 evidence exists",
+      "passed": true
+    },
+    {
+      "name": "UC-TNT-02.1 20 attributes",
+      "passed": true
+    },
+    {
+      "name": "UC-TNT-02.1 unchanged actor and status",
+      "passed": true
+    },
+    {
+      "name": "UC-TNT-02.1 business wording",
+      "passed": true
+    },
+    {
+      "name": "UC-TNT-02.1 consecutive main steps",
+      "passed": true
+    },
+    {
+      "name": "UC-TNT-02.1 branch references valid",
+      "passed": true
+    },
+    {
+      "name": "UC-TNT-02.1 evidence exists",
+      "passed": true
+    },
+    {
+      "name": "UC-TNT-02.2 20 attributes",
+      "passed": true
+    },
+    {
+      "name": "UC-TNT-02.2 unchanged actor and status",
+      "passed": true
+    },
+    {
+      "name": "UC-TNT-02.2 business wording",
+      "passed": true
+    },
+    {
+      "name": "UC-TNT-02.2 consecutive main steps",
+      "passed": true
+    },
+    {
+      "name": "UC-TNT-02.2 branch references valid",
+      "passed": true
+    },
+    {
+      "name": "UC-TNT-02.2 evidence exists",
+      "passed": true
+    },
+    {
+      "name": "UC-TNT-02.3 20 attributes",
+      "passed": true
+    },
+    {
+      "name": "UC-TNT-02.3 unchanged actor and status",
+      "passed": true
+    },
+    {
+      "name": "UC-TNT-02.3 business wording",
+      "passed": true
+    },
+    {
+      "name": "UC-TNT-02.3 consecutive main steps",
+      "passed": true
+    },
+    {
+      "name": "UC-TNT-02.3 branch references valid",
+      "passed": true
+    },
+    {
+      "name": "UC-TNT-02.3 evidence exists",
+      "passed": true
+    },
+    {
+      "name": "UC-TNT-02.4 20 attributes",
+      "passed": true
+    },
+    {
+      "name": "UC-TNT-02.4 unchanged actor and status",
+      "passed": true
+    },
+    {
+      "name": "UC-TNT-02.4 business wording",
+      "passed": true
+    },
+    {
+      "name": "UC-TNT-02.4 consecutive main steps",
+      "passed": true
+    },
+    {
+      "name": "UC-TNT-02.4 branch references valid",
+      "passed": true
+    },
+    {
+      "name": "UC-TNT-02.4 evidence exists",
+      "passed": true
+    },
+    {
+      "name": "UC-TNT-03 20 attributes",
+      "passed": true
+    },
+    {
+      "name": "UC-TNT-03 unchanged actor and status",
+      "passed": true
+    },
+    {
+      "name": "UC-TNT-03 business wording",
+      "passed": true
+    },
+    {
+      "name": "UC-TNT-03 consecutive main steps",
+      "passed": true
+    },
+    {
+      "name": "UC-TNT-03 branch references valid",
+      "passed": true
+    },
+    {
+      "name": "UC-TNT-03 evidence exists",
+      "passed": true
+    },
+    {
+      "name": "UC-TNT-03.1 20 attributes",
+      "passed": true
+    },
+    {
+      "name": "UC-TNT-03.1 unchanged actor and status",
+      "passed": true
+    },
+    {
+      "name": "UC-TNT-03.1 business wording",
+      "passed": true
+    },
+    {
+      "name": "UC-TNT-03.1 consecutive main steps",
+      "passed": true
+    },
+    {
+      "name": "UC-TNT-03.1 branch references valid",
+      "passed": true
+    },
+    {
+      "name": "UC-TNT-03.1 evidence exists",
+      "passed": true
+    },
+    {
+      "name": "UC-TNT-04 20 attributes",
+      "passed": true
+    },
+    {
+      "name": "UC-TNT-04 unchanged actor and status",
+      "passed": true
+    },
+    {
+      "name": "UC-TNT-04 business wording",
+      "passed": true
+    },
+    {
+      "name": "UC-TNT-04 consecutive main steps",
+      "passed": true
+    },
+    {
+      "name": "UC-TNT-04 branch references valid",
+      "passed": true
+    },
+    {
+      "name": "UC-TNT-04 evidence exists",
+      "passed": true
+    },
+    {
+      "name": "UC-TNT-05 20 attributes",
+      "passed": true
+    },
+    {
+      "name": "UC-TNT-05 unchanged actor and status",
+      "passed": true
+    },
+    {
+      "name": "UC-TNT-05 business wording",
+      "passed": true
+    },
+    {
+      "name": "UC-TNT-05 consecutive main steps",
+      "passed": true
+    },
+    {
+      "name": "UC-TNT-05 branch references valid",
+      "passed": true
+    },
+    {
+      "name": "UC-TNT-05 evidence exists",
+      "passed": true
+    },
+    {
+      "name": "UC-TNT-06.1 20 attributes",
+      "passed": true
+    },
+    {
+      "name": "UC-TNT-06.1 unchanged actor and status",
+      "passed": true
+    },
+    {
+      "name": "UC-TNT-06.1 business wording",
+      "passed": true
+    },
+    {
+      "name": "UC-TNT-06.1 consecutive main steps",
+      "passed": true
+    },
+    {
+      "name": "UC-TNT-06.1 branch references valid",
+      "passed": true
+    },
+    {
+      "name": "UC-TNT-06.1 evidence exists",
+      "passed": true
+    },
+    {
+      "name": "UC-TNT-06.2 20 attributes",
+      "passed": true
+    },
+    {
+      "name": "UC-TNT-06.2 unchanged actor and status",
+      "passed": true
+    },
+    {
+      "name": "UC-TNT-06.2 business wording",
+      "passed": true
+    },
+    {
+      "name": "UC-TNT-06.2 consecutive main steps",
+      "passed": true
+    },
+    {
+      "name": "UC-TNT-06.2 branch references valid",
+      "passed": true
+    },
+    {
+      "name": "UC-TNT-06.2 evidence exists",
+      "passed": true
+    },
+    {
+      "name": "UC-TNT-06.3 20 attributes",
+      "passed": true
+    },
+    {
+      "name": "UC-TNT-06.3 unchanged actor and status",
+      "passed": true
+    },
+    {
+      "name": "UC-TNT-06.3 business wording",
+      "passed": true
+    },
+    {
+      "name": "UC-TNT-06.3 consecutive main steps",
+      "passed": true
+    },
+    {
+      "name": "UC-TNT-06.3 branch references valid",
+      "passed": true
+    },
+    {
+      "name": "UC-TNT-06.3 evidence exists",
+      "passed": true
+    },
+    {
+      "name": "UC-TNT-07 20 attributes",
+      "passed": true
+    },
+    {
+      "name": "UC-TNT-07 unchanged actor and status",
+      "passed": true
+    },
+    {
+      "name": "UC-TNT-07 business wording",
+      "passed": true
+    },
+    {
+      "name": "UC-TNT-07 consecutive main steps",
+      "passed": true
+    },
+    {
+      "name": "UC-TNT-07 branch references valid",
+      "passed": true
+    },
+    {
+      "name": "UC-TNT-07 evidence exists",
+      "passed": true
+    },
+    {
+      "name": "UC-TNT-12.1 20 attributes",
+      "passed": true
+    },
+    {
+      "name": "UC-TNT-12.1 unchanged actor and status",
+      "passed": true
+    },
+    {
+      "name": "UC-TNT-12.1 business wording",
+      "passed": true
+    },
+    {
+      "name": "UC-TNT-12.1 consecutive main steps",
+      "passed": true
+    },
+    {
+      "name": "UC-TNT-12.1 branch references valid",
+      "passed": true
+    },
+    {
+      "name": "UC-TNT-12.1 evidence exists",
+      "passed": true
+    },
+    {
+      "name": "UC-TEN-07.1 20 attributes",
+      "passed": true
+    },
+    {
+      "name": "UC-TEN-07.1 unchanged actor and status",
+      "passed": true
+    },
+    {
+      "name": "UC-TEN-07.1 business wording",
+      "passed": true
+    },
+    {
+      "name": "UC-TEN-07.1 consecutive main steps",
+      "passed": true
+    },
+    {
+      "name": "UC-TEN-07.1 branch references valid",
+      "passed": true
+    },
+    {
+      "name": "UC-TEN-07.1 evidence exists",
+      "passed": true
+    },
+    {
+      "name": "UC-TEN-07.2 20 attributes",
+      "passed": true
+    },
+    {
+      "name": "UC-TEN-07.2 unchanged actor and status",
+      "passed": true
+    },
+    {
+      "name": "UC-TEN-07.2 business wording",
+      "passed": true
+    },
+    {
+      "name": "UC-TEN-07.2 consecutive main steps",
+      "passed": true
+    },
+    {
+      "name": "UC-TEN-07.2 branch references valid",
+      "passed": true
+    },
+    {
+      "name": "UC-TEN-07.2 evidence exists",
+      "passed": true
+    },
+    {
+      "name": "UC-TEN-07.3 20 attributes",
+      "passed": true
+    },
+    {
+      "name": "UC-TEN-07.3 unchanged actor and status",
+      "passed": true
+    },
+    {
+      "name": "UC-TEN-07.3 business wording",
+      "passed": true
+    },
+    {
+      "name": "UC-TEN-07.3 consecutive main steps",
+      "passed": true
+    },
+    {
+      "name": "UC-TEN-07.3 branch references valid",
+      "passed": true
+    },
+    {
+      "name": "UC-TEN-07.3 evidence exists",
+      "passed": true
+    },
+    {
+      "name": "UC-TNT-08 20 attributes",
+      "passed": true
+    },
+    {
+      "name": "UC-TNT-08 unchanged actor and status",
+      "passed": true
+    },
+    {
+      "name": "UC-TNT-08 business wording",
+      "passed": true
+    },
+    {
+      "name": "UC-TNT-08 consecutive main steps",
+      "passed": true
+    },
+    {
+      "name": "UC-TNT-08 branch references valid",
+      "passed": true
+    },
+    {
+      "name": "UC-TNT-08 evidence exists",
+      "passed": true
+    },
+    {
+      "name": "UC-TNT-09 20 attributes",
+      "passed": true
+    },
+    {
+      "name": "UC-TNT-09 unchanged actor and status",
+      "passed": true
+    },
+    {
+      "name": "UC-TNT-09 business wording",
+      "passed": true
+    },
+    {
+      "name": "UC-TNT-09 consecutive main steps",
+      "passed": true
+    },
+    {
+      "name": "UC-TNT-09 branch references valid",
+      "passed": true
+    },
+    {
+      "name": "UC-TNT-09 evidence exists",
+      "passed": true
+    },
+    {
+      "name": "UC-TNT-10 20 attributes",
+      "passed": true
+    },
+    {
+      "name": "UC-TNT-10 unchanged actor and status",
+      "passed": true
+    },
+    {
+      "name": "UC-TNT-10 business wording",
+      "passed": true
+    },
+    {
+      "name": "UC-TNT-10 consecutive main steps",
+      "passed": true
+    },
+    {
+      "name": "UC-TNT-10 branch references valid",
+      "passed": true
+    },
+    {
+      "name": "UC-TNT-10 evidence exists",
+      "passed": true
+    },
+    {
+      "name": "UC-TNT-11 20 attributes",
+      "passed": true
+    },
+    {
+      "name": "UC-TNT-11 unchanged actor and status",
+      "passed": true
+    },
+    {
+      "name": "UC-TNT-11 business wording",
+      "passed": true
+    },
+    {
+      "name": "UC-TNT-11 consecutive main steps",
+      "passed": true
+    },
+    {
+      "name": "UC-TNT-11 branch references valid",
+      "passed": true
+    },
+    {
+      "name": "UC-TNT-11 evidence exists",
+      "passed": true
+    },
+    {
+      "name": "UC-BIL-01 20 attributes",
+      "passed": true
+    },
+    {
+      "name": "UC-BIL-01 unchanged actor and status",
+      "passed": true
+    },
+    {
+      "name": "UC-BIL-01 business wording",
+      "passed": true
+    },
+    {
+      "name": "UC-BIL-01 consecutive main steps",
+      "passed": true
+    },
+    {
+      "name": "UC-BIL-01 branch references valid",
+      "passed": true
+    },
+    {
+      "name": "UC-BIL-01 evidence exists",
+      "passed": true
+    },
+    {
+      "name": "UC-BIL-02 20 attributes",
+      "passed": true
+    },
+    {
+      "name": "UC-BIL-02 unchanged actor and status",
+      "passed": true
+    },
+    {
+      "name": "UC-BIL-02 business wording",
+      "passed": true
+    },
+    {
+      "name": "UC-BIL-02 consecutive main steps",
+      "passed": true
+    },
+    {
+      "name": "UC-BIL-02 branch references valid",
+      "passed": true
+    },
+    {
+      "name": "UC-BIL-02 evidence exists",
+      "passed": true
+    },
+    {
+      "name": "UC-BIL-03 20 attributes",
+      "passed": true
+    },
+    {
+      "name": "UC-BIL-03 unchanged actor and status",
+      "passed": true
+    },
+    {
+      "name": "UC-BIL-03 business wording",
+      "passed": true
+    },
+    {
+      "name": "UC-BIL-03 consecutive main steps",
+      "passed": true
+    },
+    {
+      "name": "UC-BIL-03 branch references valid",
+      "passed": true
+    },
+    {
+      "name": "UC-BIL-03 evidence exists",
+      "passed": true
+    },
+    {
+      "name": "UC-BIL-04 20 attributes",
+      "passed": true
+    },
+    {
+      "name": "UC-BIL-04 unchanged actor and status",
+      "passed": true
+    },
+    {
+      "name": "UC-BIL-04 business wording",
+      "passed": true
+    },
+    {
+      "name": "UC-BIL-04 consecutive main steps",
+      "passed": true
+    },
+    {
+      "name": "UC-BIL-04 branch references valid",
+      "passed": true
+    },
+    {
+      "name": "UC-BIL-04 evidence exists",
+      "passed": true
+    },
+    {
+      "name": "UC-BIL-05 20 attributes",
+      "passed": true
+    },
+    {
+      "name": "UC-BIL-05 unchanged actor and status",
+      "passed": true
+    },
+    {
+      "name": "UC-BIL-05 business wording",
+      "passed": true
+    },
+    {
+      "name": "UC-BIL-05 consecutive main steps",
+      "passed": true
+    },
+    {
+      "name": "UC-BIL-05 branch references valid",
+      "passed": true
+    },
+    {
+      "name": "UC-BIL-05 evidence exists",
+      "passed": true
+    },
+    {
+      "name": "UC-BIL-06 20 attributes",
+      "passed": true
+    },
+    {
+      "name": "UC-BIL-06 unchanged actor and status",
+      "passed": true
+    },
+    {
+      "name": "UC-BIL-06 business wording",
+      "passed": true
+    },
+    {
+      "name": "UC-BIL-06 consecutive main steps",
+      "passed": true
+    },
+    {
+      "name": "UC-BIL-06 branch references valid",
+      "passed": true
+    },
+    {
+      "name": "UC-BIL-06 evidence exists",
+      "passed": true
+    },
+    {
+      "name": "UC-BIL-07 20 attributes",
+      "passed": true
+    },
+    {
+      "name": "UC-BIL-07 unchanged actor and status",
+      "passed": true
+    },
+    {
+      "name": "UC-BIL-07 business wording",
+      "passed": true
+    },
+    {
+      "name": "UC-BIL-07 consecutive main steps",
+      "passed": true
+    },
+    {
+      "name": "UC-BIL-07 branch references valid",
+      "passed": true
+    },
+    {
+      "name": "UC-BIL-07 evidence exists",
+      "passed": true
+    },
+    {
+      "name": "UC-BIL-08.1 20 attributes",
+      "passed": true
+    },
+    {
+      "name": "UC-BIL-08.1 unchanged actor and status",
+      "passed": true
+    },
+    {
+      "name": "UC-BIL-08.1 business wording",
+      "passed": true
+    },
+    {
+      "name": "UC-BIL-08.1 consecutive main steps",
+      "passed": true
+    },
+    {
+      "name": "UC-BIL-08.1 branch references valid",
+      "passed": true
+    },
+    {
+      "name": "UC-BIL-08.1 evidence exists",
+      "passed": true
+    },
+    {
+      "name": "UC-BIL-09 20 attributes",
+      "passed": true
+    },
+    {
+      "name": "UC-BIL-09 unchanged actor and status",
+      "passed": true
+    },
+    {
+      "name": "UC-BIL-09 business wording",
+      "passed": true
+    },
+    {
+      "name": "UC-BIL-09 consecutive main steps",
+      "passed": true
+    },
+    {
+      "name": "UC-BIL-09 branch references valid",
+      "passed": true
+    },
+    {
+      "name": "UC-BIL-09 evidence exists",
+      "passed": true
+    },
+    {
+      "name": "UC-BIL-10 20 attributes",
+      "passed": true
+    },
+    {
+      "name": "UC-BIL-10 unchanged actor and status",
+      "passed": true
+    },
+    {
+      "name": "UC-BIL-10 business wording",
+      "passed": true
+    },
+    {
+      "name": "UC-BIL-10 consecutive main steps",
+      "passed": true
+    },
+    {
+      "name": "UC-BIL-10 branch references valid",
+      "passed": true
+    },
+    {
+      "name": "UC-BIL-10 evidence exists",
+      "passed": true
+    },
+    {
+      "name": "UC-BIL-11 20 attributes",
+      "passed": true
+    },
+    {
+      "name": "UC-BIL-11 unchanged actor and status",
+      "passed": true
+    },
+    {
+      "name": "UC-BIL-11 business wording",
+      "passed": true
+    },
+    {
+      "name": "UC-BIL-11 consecutive main steps",
+      "passed": true
+    },
+    {
+      "name": "UC-BIL-11 branch references valid",
+      "passed": true
+    },
+    {
+      "name": "UC-BIL-11 evidence exists",
+      "passed": true
+    },
+    {
+      "name": "UC-BIL-12.1 20 attributes",
+      "passed": true
+    },
+    {
+      "name": "UC-BIL-12.1 unchanged actor and status",
+      "passed": true
+    },
+    {
+      "name": "UC-BIL-12.1 business wording",
+      "passed": true
+    },
+    {
+      "name": "UC-BIL-12.1 consecutive main steps",
+      "passed": true
+    },
+    {
+      "name": "UC-BIL-12.1 branch references valid",
+      "passed": true
+    },
+    {
+      "name": "UC-BIL-12.1 evidence exists",
+      "passed": true
+    },
+    {
+      "name": "UC-BIL-12.2 20 attributes",
+      "passed": true
+    },
+    {
+      "name": "UC-BIL-12.2 unchanged actor and status",
+      "passed": true
+    },
+    {
+      "name": "UC-BIL-12.2 business wording",
+      "passed": true
+    },
+    {
+      "name": "UC-BIL-12.2 consecutive main steps",
+      "passed": true
+    },
+    {
+      "name": "UC-BIL-12.2 branch references valid",
+      "passed": true
+    },
+    {
+      "name": "UC-BIL-12.2 evidence exists",
+      "passed": true
+    },
+    {
+      "name": "UC-BIL-13 20 attributes",
+      "passed": true
+    },
+    {
+      "name": "UC-BIL-13 unchanged actor and status",
+      "passed": true
+    },
+    {
+      "name": "UC-BIL-13 business wording",
+      "passed": true
+    },
+    {
+      "name": "UC-BIL-13 consecutive main steps",
+      "passed": true
+    },
+    {
+      "name": "UC-BIL-13 branch references valid",
+      "passed": true
+    },
+    {
+      "name": "UC-BIL-13 evidence exists",
+      "passed": true
+    },
+    {
+      "name": "UC-BIL-14 20 attributes",
+      "passed": true
+    },
+    {
+      "name": "UC-BIL-14 unchanged actor and status",
+      "passed": true
+    },
+    {
+      "name": "UC-BIL-14 business wording",
+      "passed": true
+    },
+    {
+      "name": "UC-BIL-14 consecutive main steps",
+      "passed": true
+    },
+    {
+      "name": "UC-BIL-14 branch references valid",
+      "passed": true
+    },
+    {
+      "name": "UC-BIL-14 evidence exists",
+      "passed": true
+    },
+    {
+      "name": "UC-BIL-15 20 attributes",
+      "passed": true
+    },
+    {
+      "name": "UC-BIL-15 unchanged actor and status",
+      "passed": true
+    },
+    {
+      "name": "UC-BIL-15 business wording",
+      "passed": true
+    },
+    {
+      "name": "UC-BIL-15 consecutive main steps",
+      "passed": true
+    },
+    {
+      "name": "UC-BIL-15 branch references valid",
+      "passed": true
+    },
+    {
+      "name": "UC-BIL-15 evidence exists",
+      "passed": true
+    },
+    {
+      "name": "UC-BIL-16 20 attributes",
+      "passed": true
+    },
+    {
+      "name": "UC-BIL-16 unchanged actor and status",
+      "passed": true
+    },
+    {
+      "name": "UC-BIL-16 business wording",
+      "passed": true
+    },
+    {
+      "name": "UC-BIL-16 consecutive main steps",
+      "passed": true
+    },
+    {
+      "name": "UC-BIL-16 branch references valid",
+      "passed": true
+    },
+    {
+      "name": "UC-BIL-16 evidence exists",
+      "passed": true
+    },
+    {
+      "name": "UC-BIL-17.1 20 attributes",
+      "passed": true
+    },
+    {
+      "name": "UC-BIL-17.1 unchanged actor and status",
+      "passed": true
+    },
+    {
+      "name": "UC-BIL-17.1 business wording",
+      "passed": true
+    },
+    {
+      "name": "UC-BIL-17.1 consecutive main steps",
+      "passed": true
+    },
+    {
+      "name": "UC-BIL-17.1 branch references valid",
+      "passed": true
+    },
+    {
+      "name": "UC-BIL-17.1 evidence exists",
+      "passed": true
+    },
+    {
+      "name": "UC-BIL-17.2 20 attributes",
+      "passed": true
+    },
+    {
+      "name": "UC-BIL-17.2 unchanged actor and status",
+      "passed": true
+    },
+    {
+      "name": "UC-BIL-17.2 business wording",
+      "passed": true
+    },
+    {
+      "name": "UC-BIL-17.2 consecutive main steps",
+      "passed": true
+    },
+    {
+      "name": "UC-BIL-17.2 branch references valid",
+      "passed": true
+    },
+    {
+      "name": "UC-BIL-17.2 evidence exists",
+      "passed": true
+    },
+    {
+      "name": "UC-BIL-18.1 20 attributes",
+      "passed": true
+    },
+    {
+      "name": "UC-BIL-18.1 unchanged actor and status",
+      "passed": true
+    },
+    {
+      "name": "UC-BIL-18.1 business wording",
+      "passed": true
+    },
+    {
+      "name": "UC-BIL-18.1 consecutive main steps",
+      "passed": true
+    },
+    {
+      "name": "UC-BIL-18.1 branch references valid",
+      "passed": true
+    },
+    {
+      "name": "UC-BIL-18.1 evidence exists",
+      "passed": true
+    },
+    {
+      "name": "UC-BIL-18.2 20 attributes",
+      "passed": true
+    },
+    {
+      "name": "UC-BIL-18.2 unchanged actor and status",
+      "passed": true
+    },
+    {
+      "name": "UC-BIL-18.2 business wording",
+      "passed": true
+    },
+    {
+      "name": "UC-BIL-18.2 consecutive main steps",
+      "passed": true
+    },
+    {
+      "name": "UC-BIL-18.2 branch references valid",
+      "passed": true
+    },
+    {
+      "name": "UC-BIL-18.2 evidence exists",
+      "passed": true
+    },
+    {
+      "name": "UC-BIL-18.3 20 attributes",
+      "passed": true
+    },
+    {
+      "name": "UC-BIL-18.3 unchanged actor and status",
+      "passed": true
+    },
+    {
+      "name": "UC-BIL-18.3 business wording",
+      "passed": true
+    },
+    {
+      "name": "UC-BIL-18.3 consecutive main steps",
+      "passed": true
+    },
+    {
+      "name": "UC-BIL-18.3 branch references valid",
+      "passed": true
+    },
+    {
+      "name": "UC-BIL-18.3 evidence exists",
+      "passed": true
+    },
+    {
+      "name": "UC-BIL-22 20 attributes",
+      "passed": true
+    },
+    {
+      "name": "UC-BIL-22 unchanged actor and status",
+      "passed": true
+    },
+    {
+      "name": "UC-BIL-22 business wording",
+      "passed": true
+    },
+    {
+      "name": "UC-BIL-22 consecutive main steps",
+      "passed": true
+    },
+    {
+      "name": "UC-BIL-22 branch references valid",
+      "passed": true
+    },
+    {
+      "name": "UC-BIL-22 evidence exists",
+      "passed": true
+    },
+    {
+      "name": "UC-BIL-23 20 attributes",
+      "passed": true
+    },
+    {
+      "name": "UC-BIL-23 unchanged actor and status",
+      "passed": true
+    },
+    {
+      "name": "UC-BIL-23 business wording",
+      "passed": true
+    },
+    {
+      "name": "UC-BIL-23 consecutive main steps",
+      "passed": true
+    },
+    {
+      "name": "UC-BIL-23 branch references valid",
+      "passed": true
+    },
+    {
+      "name": "UC-BIL-23 evidence exists",
+      "passed": true
+    },
+    {
+      "name": "UC-TEN-03 20 attributes",
+      "passed": true
+    },
+    {
+      "name": "UC-TEN-03 unchanged actor and status",
+      "passed": true
+    },
+    {
+      "name": "UC-TEN-03 business wording",
+      "passed": true
+    },
+    {
+      "name": "UC-TEN-03 consecutive main steps",
+      "passed": true
+    },
+    {
+      "name": "UC-TEN-03 branch references valid",
+      "passed": true
+    },
+    {
+      "name": "UC-TEN-03 evidence exists",
+      "passed": true
+    },
+    {
+      "name": "UC-TEN-04 20 attributes",
+      "passed": true
+    },
+    {
+      "name": "UC-TEN-04 unchanged actor and status",
+      "passed": true
+    },
+    {
+      "name": "UC-TEN-04 business wording",
+      "passed": true
+    },
+    {
+      "name": "UC-TEN-04 consecutive main steps",
+      "passed": true
+    },
+    {
+      "name": "UC-TEN-04 branch references valid",
+      "passed": true
+    },
+    {
+      "name": "UC-TEN-04 evidence exists",
+      "passed": true
+    },
+    {
+      "name": "UC-TEN-05 20 attributes",
+      "passed": true
+    },
+    {
+      "name": "UC-TEN-05 unchanged actor and status",
+      "passed": true
+    },
+    {
+      "name": "UC-TEN-05 business wording",
+      "passed": true
+    },
+    {
+      "name": "UC-TEN-05 consecutive main steps",
+      "passed": true
+    },
+    {
+      "name": "UC-TEN-05 branch references valid",
+      "passed": true
+    },
+    {
+      "name": "UC-TEN-05 evidence exists",
+      "passed": true
+    },
+    {
+      "name": "UC-TEN-08.2 20 attributes",
+      "passed": true
+    },
+    {
+      "name": "UC-TEN-08.2 unchanged actor and status",
+      "passed": true
+    },
+    {
+      "name": "UC-TEN-08.2 business wording",
+      "passed": true
+    },
+    {
+      "name": "UC-TEN-08.2 consecutive main steps",
+      "passed": true
+    },
+    {
+      "name": "UC-TEN-08.2 branch references valid",
+      "passed": true
+    },
+    {
+      "name": "UC-TEN-08.2 evidence exists",
+      "passed": true
+    },
+    {
+      "name": "UC-BIL-19 20 attributes",
+      "passed": true
+    },
+    {
+      "name": "UC-BIL-19 unchanged actor and status",
+      "passed": true
+    },
+    {
+      "name": "UC-BIL-19 business wording",
+      "passed": true
+    },
+    {
+      "name": "UC-BIL-19 consecutive main steps",
+      "passed": true
+    },
+    {
+      "name": "UC-BIL-19 branch references valid",
+      "passed": true
+    },
+    {
+      "name": "UC-BIL-19 evidence exists",
+      "passed": true
+    },
+    {
+      "name": "UC-OPS-01 20 attributes",
+      "passed": true
+    },
+    {
+      "name": "UC-OPS-01 unchanged actor and status",
+      "passed": true
+    },
+    {
+      "name": "UC-OPS-01 business wording",
+      "passed": true
+    },
+    {
+      "name": "UC-OPS-01 consecutive main steps",
+      "passed": true
+    },
+    {
+      "name": "UC-OPS-01 branch references valid",
+      "passed": true
+    },
+    {
+      "name": "UC-OPS-01 evidence exists",
+      "passed": true
+    },
+    {
+      "name": "UC-OPS-02 20 attributes",
+      "passed": true
+    },
+    {
+      "name": "UC-OPS-02 unchanged actor and status",
+      "passed": true
+    },
+    {
+      "name": "UC-OPS-02 business wording",
+      "passed": true
+    },
+    {
+      "name": "UC-OPS-02 consecutive main steps",
+      "passed": true
+    },
+    {
+      "name": "UC-OPS-02 branch references valid",
+      "passed": true
+    },
+    {
+      "name": "UC-OPS-02 evidence exists",
+      "passed": true
+    },
+    {
+      "name": "UC-OPS-03 20 attributes",
+      "passed": true
+    },
+    {
+      "name": "UC-OPS-03 unchanged actor and status",
+      "passed": true
+    },
+    {
+      "name": "UC-OPS-03 business wording",
+      "passed": true
+    },
+    {
+      "name": "UC-OPS-03 consecutive main steps",
+      "passed": true
+    },
+    {
+      "name": "UC-OPS-03 branch references valid",
+      "passed": true
+    },
+    {
+      "name": "UC-OPS-03 evidence exists",
+      "passed": true
+    },
+    {
+      "name": "UC-TEN-06 20 attributes",
+      "passed": true
+    },
+    {
+      "name": "UC-TEN-06 unchanged actor and status",
+      "passed": true
+    },
+    {
+      "name": "UC-TEN-06 business wording",
+      "passed": true
+    },
+    {
+      "name": "UC-TEN-06 consecutive main steps",
+      "passed": true
+    },
+    {
+      "name": "UC-TEN-06 branch references valid",
+      "passed": true
+    },
+    {
+      "name": "UC-TEN-06 evidence exists",
+      "passed": true
+    },
+    {
+      "name": "UC-OPS-04 20 attributes",
+      "passed": true
+    },
+    {
+      "name": "UC-OPS-04 unchanged actor and status",
+      "passed": true
+    },
+    {
+      "name": "UC-OPS-04 business wording",
+      "passed": true
+    },
+    {
+      "name": "UC-OPS-04 consecutive main steps",
+      "passed": true
+    },
+    {
+      "name": "UC-OPS-04 branch references valid",
+      "passed": true
+    },
+    {
+      "name": "UC-OPS-04 evidence exists",
+      "passed": true
+    },
+    {
+      "name": "UC-OPS-05 20 attributes",
+      "passed": true
+    },
+    {
+      "name": "UC-OPS-05 unchanged actor and status",
+      "passed": true
+    },
+    {
+      "name": "UC-OPS-05 business wording",
+      "passed": true
+    },
+    {
+      "name": "UC-OPS-05 consecutive main steps",
+      "passed": true
+    },
+    {
+      "name": "UC-OPS-05 branch references valid",
+      "passed": true
+    },
+    {
+      "name": "UC-OPS-05 evidence exists",
+      "passed": true
+    },
+    {
+      "name": "UC-OPS-06 20 attributes",
+      "passed": true
+    },
+    {
+      "name": "UC-OPS-06 unchanged actor and status",
+      "passed": true
+    },
+    {
+      "name": "UC-OPS-06 business wording",
+      "passed": true
+    },
+    {
+      "name": "UC-OPS-06 consecutive main steps",
+      "passed": true
+    },
+    {
+      "name": "UC-OPS-06 branch references valid",
+      "passed": true
+    },
+    {
+      "name": "UC-OPS-06 evidence exists",
+      "passed": true
+    },
+    {
+      "name": "UC-OPS-06.1 20 attributes",
+      "passed": true
+    },
+    {
+      "name": "UC-OPS-06.1 unchanged actor and status",
+      "passed": true
+    },
+    {
+      "name": "UC-OPS-06.1 business wording",
+      "passed": true
+    },
+    {
+      "name": "UC-OPS-06.1 consecutive main steps",
+      "passed": true
+    },
+    {
+      "name": "UC-OPS-06.1 branch references valid",
+      "passed": true
+    },
+    {
+      "name": "UC-OPS-06.1 evidence exists",
+      "passed": true
+    },
+    {
+      "name": "UC-OPS-07 20 attributes",
+      "passed": true
+    },
+    {
+      "name": "UC-OPS-07 unchanged actor and status",
+      "passed": true
+    },
+    {
+      "name": "UC-OPS-07 business wording",
+      "passed": true
+    },
+    {
+      "name": "UC-OPS-07 consecutive main steps",
+      "passed": true
+    },
+    {
+      "name": "UC-OPS-07 branch references valid",
+      "passed": true
+    },
+    {
+      "name": "UC-OPS-07 evidence exists",
+      "passed": true
+    },
+    {
+      "name": "UC-SUP-04 20 attributes",
+      "passed": true
+    },
+    {
+      "name": "UC-SUP-04 unchanged actor and status",
+      "passed": true
+    },
+    {
+      "name": "UC-SUP-04 business wording",
+      "passed": true
+    },
+    {
+      "name": "UC-SUP-04 consecutive main steps",
+      "passed": true
+    },
+    {
+      "name": "UC-SUP-04 branch references valid",
+      "passed": true
+    },
+    {
+      "name": "UC-SUP-04 evidence exists",
+      "passed": true
+    },
+    {
+      "name": "UC-SUP-06 20 attributes",
+      "passed": true
+    },
+    {
+      "name": "UC-SUP-06 unchanged actor and status",
+      "passed": true
+    },
+    {
+      "name": "UC-SUP-06 business wording",
+      "passed": true
+    },
+    {
+      "name": "UC-SUP-06 consecutive main steps",
+      "passed": true
+    },
+    {
+      "name": "UC-SUP-06 branch references valid",
+      "passed": true
+    },
+    {
+      "name": "UC-SUP-06 evidence exists",
+      "passed": true
+    },
+    {
+      "name": "UC-TEN-09.2 20 attributes",
+      "passed": true
+    },
+    {
+      "name": "UC-TEN-09.2 unchanged actor and status",
+      "passed": true
+    },
+    {
+      "name": "UC-TEN-09.2 business wording",
+      "passed": true
+    },
+    {
+      "name": "UC-TEN-09.2 consecutive main steps",
+      "passed": true
+    },
+    {
+      "name": "UC-TEN-09.2 branch references valid",
+      "passed": true
+    },
+    {
+      "name": "UC-TEN-09.2 evidence exists",
+      "passed": true
+    },
+    {
+      "name": "UC-TEN-09.3 20 attributes",
+      "passed": true
+    },
+    {
+      "name": "UC-TEN-09.3 unchanged actor and status",
+      "passed": true
+    },
+    {
+      "name": "UC-TEN-09.3 business wording",
+      "passed": true
+    },
+    {
+      "name": "UC-TEN-09.3 consecutive main steps",
+      "passed": true
+    },
+    {
+      "name": "UC-TEN-09.3 branch references valid",
+      "passed": true
+    },
+    {
+      "name": "UC-TEN-09.3 evidence exists",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-01 20 attributes",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-01 unchanged actor and status",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-01 business wording",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-01 consecutive main steps",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-01 branch references valid",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-01 evidence exists",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-14 20 attributes",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-14 unchanged actor and status",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-14 business wording",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-14 consecutive main steps",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-14 branch references valid",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-14 evidence exists",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-16 20 attributes",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-16 unchanged actor and status",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-16 business wording",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-16 consecutive main steps",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-16 branch references valid",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-16 evidence exists",
+      "passed": true
+    },
+    {
+      "name": "UC-BIL-20 20 attributes",
+      "passed": true
+    },
+    {
+      "name": "UC-BIL-20 unchanged actor and status",
+      "passed": true
+    },
+    {
+      "name": "UC-BIL-20 business wording",
+      "passed": true
+    },
+    {
+      "name": "UC-BIL-20 consecutive main steps",
+      "passed": true
+    },
+    {
+      "name": "UC-BIL-20 branch references valid",
+      "passed": true
+    },
+    {
+      "name": "UC-BIL-20 evidence exists",
+      "passed": true
+    },
+    {
+      "name": "UC-OPS-09 20 attributes",
+      "passed": true
+    },
+    {
+      "name": "UC-OPS-09 unchanged actor and status",
+      "passed": true
+    },
+    {
+      "name": "UC-OPS-09 business wording",
+      "passed": true
+    },
+    {
+      "name": "UC-OPS-09 consecutive main steps",
+      "passed": true
+    },
+    {
+      "name": "UC-OPS-09 branch references valid",
+      "passed": true
+    },
+    {
+      "name": "UC-OPS-09 evidence exists",
+      "passed": true
+    },
+    {
+      "name": "UC-OPT-01 20 attributes",
+      "passed": true
+    },
+    {
+      "name": "UC-OPT-01 unchanged actor and status",
+      "passed": true
+    },
+    {
+      "name": "UC-OPT-01 business wording",
+      "passed": true
+    },
+    {
+      "name": "UC-OPT-01 consecutive main steps",
+      "passed": true
+    },
+    {
+      "name": "UC-OPT-01 branch references valid",
+      "passed": true
+    },
+    {
+      "name": "UC-OPT-01 evidence exists",
+      "passed": true
+    },
+    {
+      "name": "UC-SUP-05.1 20 attributes",
+      "passed": true
+    },
+    {
+      "name": "UC-SUP-05.1 unchanged actor and status",
+      "passed": true
+    },
+    {
+      "name": "UC-SUP-05.1 business wording",
+      "passed": true
+    },
+    {
+      "name": "UC-SUP-05.1 consecutive main steps",
+      "passed": true
+    },
+    {
+      "name": "UC-SUP-05.1 branch references valid",
+      "passed": true
+    },
+    {
+      "name": "UC-SUP-05.1 evidence exists",
+      "passed": true
+    },
+    {
+      "name": "UC-SUP-05.2 20 attributes",
+      "passed": true
+    },
+    {
+      "name": "UC-SUP-05.2 unchanged actor and status",
+      "passed": true
+    },
+    {
+      "name": "UC-SUP-05.2 business wording",
+      "passed": true
+    },
+    {
+      "name": "UC-SUP-05.2 consecutive main steps",
+      "passed": true
+    },
+    {
+      "name": "UC-SUP-05.2 branch references valid",
+      "passed": true
+    },
+    {
+      "name": "UC-SUP-05.2 evidence exists",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-02 20 attributes",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-02 unchanged actor and status",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-02 business wording",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-02 consecutive main steps",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-02 branch references valid",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-02 evidence exists",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-03.1 20 attributes",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-03.1 unchanged actor and status",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-03.1 business wording",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-03.1 consecutive main steps",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-03.1 branch references valid",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-03.1 evidence exists",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-03.2 20 attributes",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-03.2 unchanged actor and status",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-03.2 business wording",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-03.2 consecutive main steps",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-03.2 branch references valid",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-03.2 evidence exists",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-04.1 20 attributes",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-04.1 unchanged actor and status",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-04.1 business wording",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-04.1 consecutive main steps",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-04.1 branch references valid",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-04.1 evidence exists",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-04.3 20 attributes",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-04.3 unchanged actor and status",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-04.3 business wording",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-04.3 consecutive main steps",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-04.3 branch references valid",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-04.3 evidence exists",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-05.1 20 attributes",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-05.1 unchanged actor and status",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-05.1 business wording",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-05.1 consecutive main steps",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-05.1 branch references valid",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-05.1 evidence exists",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-05.2 20 attributes",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-05.2 unchanged actor and status",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-05.2 business wording",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-05.2 consecutive main steps",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-05.2 branch references valid",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-05.2 evidence exists",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-06.1 20 attributes",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-06.1 unchanged actor and status",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-06.1 business wording",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-06.1 consecutive main steps",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-06.1 branch references valid",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-06.1 evidence exists",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-06.2 20 attributes",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-06.2 unchanged actor and status",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-06.2 business wording",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-06.2 consecutive main steps",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-06.2 branch references valid",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-06.2 evidence exists",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-08 20 attributes",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-08 unchanged actor and status",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-08 business wording",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-08 consecutive main steps",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-08 branch references valid",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-08 evidence exists",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-09 20 attributes",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-09 unchanged actor and status",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-09 business wording",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-09 consecutive main steps",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-09 branch references valid",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-09 evidence exists",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-10 20 attributes",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-10 unchanged actor and status",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-10 business wording",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-10 consecutive main steps",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-10 branch references valid",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-10 evidence exists",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-11 20 attributes",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-11 unchanged actor and status",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-11 business wording",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-11 consecutive main steps",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-11 branch references valid",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-11 evidence exists",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-11.1 20 attributes",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-11.1 unchanged actor and status",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-11.1 business wording",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-11.1 consecutive main steps",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-11.1 branch references valid",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-11.1 evidence exists",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-12 20 attributes",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-12 unchanged actor and status",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-12 business wording",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-12 consecutive main steps",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-12 branch references valid",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-12 evidence exists",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-12.1 20 attributes",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-12.1 unchanged actor and status",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-12.1 business wording",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-12.1 consecutive main steps",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-12.1 branch references valid",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-12.1 evidence exists",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-13.1 20 attributes",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-13.1 unchanged actor and status",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-13.1 business wording",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-13.1 consecutive main steps",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-13.1 branch references valid",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-13.1 evidence exists",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-13.2 20 attributes",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-13.2 unchanged actor and status",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-13.2 business wording",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-13.2 consecutive main steps",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-13.2 branch references valid",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-13.2 evidence exists",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-13.3 20 attributes",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-13.3 unchanged actor and status",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-13.3 business wording",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-13.3 consecutive main steps",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-13.3 branch references valid",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-13.3 evidence exists",
+      "passed": true
+    },
+    {
+      "name": "UC-DIS-07 20 attributes",
+      "passed": true
+    },
+    {
+      "name": "UC-DIS-07 unchanged actor and status",
+      "passed": true
+    },
+    {
+      "name": "UC-DIS-07 business wording",
+      "passed": true
+    },
+    {
+      "name": "UC-DIS-07 consecutive main steps",
+      "passed": true
+    },
+    {
+      "name": "UC-DIS-07 branch references valid",
+      "passed": true
+    },
+    {
+      "name": "UC-DIS-07 evidence exists",
+      "passed": true
+    },
+    {
+      "name": "UC-DIS-12 20 attributes",
+      "passed": true
+    },
+    {
+      "name": "UC-DIS-12 unchanged actor and status",
+      "passed": true
+    },
+    {
+      "name": "UC-DIS-12 business wording",
+      "passed": true
+    },
+    {
+      "name": "UC-DIS-12 consecutive main steps",
+      "passed": true
+    },
+    {
+      "name": "UC-DIS-12 branch references valid",
+      "passed": true
+    },
+    {
+      "name": "UC-DIS-12 evidence exists",
+      "passed": true
+    },
+    {
+      "name": "UC-DIS-13.1 20 attributes",
+      "passed": true
+    },
+    {
+      "name": "UC-DIS-13.1 unchanged actor and status",
+      "passed": true
+    },
+    {
+      "name": "UC-DIS-13.1 business wording",
+      "passed": true
+    },
+    {
+      "name": "UC-DIS-13.1 consecutive main steps",
+      "passed": true
+    },
+    {
+      "name": "UC-DIS-13.1 branch references valid",
+      "passed": true
+    },
+    {
+      "name": "UC-DIS-13.1 evidence exists",
+      "passed": true
+    },
+    {
+      "name": "UC-DIS-15 20 attributes",
+      "passed": true
+    },
+    {
+      "name": "UC-DIS-15 unchanged actor and status",
+      "passed": true
+    },
+    {
+      "name": "UC-DIS-15 business wording",
+      "passed": true
+    },
+    {
+      "name": "UC-DIS-15 consecutive main steps",
+      "passed": true
+    },
+    {
+      "name": "UC-DIS-15 branch references valid",
+      "passed": true
+    },
+    {
+      "name": "UC-DIS-15 evidence exists",
+      "passed": true
+    },
+    {
+      "name": "UC-SUP-01 20 attributes",
+      "passed": true
+    },
+    {
+      "name": "UC-SUP-01 unchanged actor and status",
+      "passed": true
+    },
+    {
+      "name": "UC-SUP-01 business wording",
+      "passed": true
+    },
+    {
+      "name": "UC-SUP-01 consecutive main steps",
+      "passed": true
+    },
+    {
+      "name": "UC-SUP-01 branch references valid",
+      "passed": true
+    },
+    {
+      "name": "UC-SUP-01 evidence exists",
+      "passed": true
+    },
+    {
+      "name": "UC-SUP-01.1 20 attributes",
+      "passed": true
+    },
+    {
+      "name": "UC-SUP-01.1 unchanged actor and status",
+      "passed": true
+    },
+    {
+      "name": "UC-SUP-01.1 business wording",
+      "passed": true
+    },
+    {
+      "name": "UC-SUP-01.1 consecutive main steps",
+      "passed": true
+    },
+    {
+      "name": "UC-SUP-01.1 branch references valid",
+      "passed": true
+    },
+    {
+      "name": "UC-SUP-01.1 evidence exists",
+      "passed": true
+    },
+    {
+      "name": "UC-SUP-02.1 20 attributes",
+      "passed": true
+    },
+    {
+      "name": "UC-SUP-02.1 unchanged actor and status",
+      "passed": true
+    },
+    {
+      "name": "UC-SUP-02.1 business wording",
+      "passed": true
+    },
+    {
+      "name": "UC-SUP-02.1 consecutive main steps",
+      "passed": true
+    },
+    {
+      "name": "UC-SUP-02.1 branch references valid",
+      "passed": true
+    },
+    {
+      "name": "UC-SUP-02.1 evidence exists",
+      "passed": true
+    },
+    {
+      "name": "UC-SUP-02.2 20 attributes",
+      "passed": true
+    },
+    {
+      "name": "UC-SUP-02.2 unchanged actor and status",
+      "passed": true
+    },
+    {
+      "name": "UC-SUP-02.2 business wording",
+      "passed": true
+    },
+    {
+      "name": "UC-SUP-02.2 consecutive main steps",
+      "passed": true
+    },
+    {
+      "name": "UC-SUP-02.2 branch references valid",
+      "passed": true
+    },
+    {
+      "name": "UC-SUP-02.2 evidence exists",
+      "passed": true
+    },
+    {
+      "name": "UC-SUP-03.2 20 attributes",
+      "passed": true
+    },
+    {
+      "name": "UC-SUP-03.2 unchanged actor and status",
+      "passed": true
+    },
+    {
+      "name": "UC-SUP-03.2 business wording",
+      "passed": true
+    },
+    {
+      "name": "UC-SUP-03.2 consecutive main steps",
+      "passed": true
+    },
+    {
+      "name": "UC-SUP-03.2 branch references valid",
+      "passed": true
+    },
+    {
+      "name": "UC-SUP-03.2 evidence exists",
+      "passed": true
+    },
+    {
+      "name": "UC-SUP-03.2.1 20 attributes",
+      "passed": true
+    },
+    {
+      "name": "UC-SUP-03.2.1 unchanged actor and status",
+      "passed": true
+    },
+    {
+      "name": "UC-SUP-03.2.1 business wording",
+      "passed": true
+    },
+    {
+      "name": "UC-SUP-03.2.1 consecutive main steps",
+      "passed": true
+    },
+    {
+      "name": "UC-SUP-03.2.1 branch references valid",
+      "passed": true
+    },
+    {
+      "name": "UC-SUP-03.2.1 evidence exists",
+      "passed": true
+    },
+    {
+      "name": "UC-SUP-03.2.2 20 attributes",
+      "passed": true
+    },
+    {
+      "name": "UC-SUP-03.2.2 unchanged actor and status",
+      "passed": true
+    },
+    {
+      "name": "UC-SUP-03.2.2 business wording",
+      "passed": true
+    },
+    {
+      "name": "UC-SUP-03.2.2 consecutive main steps",
+      "passed": true
+    },
+    {
+      "name": "UC-SUP-03.2.2 branch references valid",
+      "passed": true
+    },
+    {
+      "name": "UC-SUP-03.2.2 evidence exists",
+      "passed": true
+    },
+    {
+      "name": "UC-SUP-03.3 20 attributes",
+      "passed": true
+    },
+    {
+      "name": "UC-SUP-03.3 unchanged actor and status",
+      "passed": true
+    },
+    {
+      "name": "UC-SUP-03.3 business wording",
+      "passed": true
+    },
+    {
+      "name": "UC-SUP-03.3 consecutive main steps",
+      "passed": true
+    },
+    {
+      "name": "UC-SUP-03.3 branch references valid",
+      "passed": true
+    },
+    {
+      "name": "UC-SUP-03.3 evidence exists",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-18 20 attributes",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-18 unchanged actor and status",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-18 business wording",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-18 consecutive main steps",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-18 branch references valid",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-18 evidence exists",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-18.1 20 attributes",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-18.1 unchanged actor and status",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-18.1 business wording",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-18.1 consecutive main steps",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-18.1 branch references valid",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-18.1 evidence exists",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-19 20 attributes",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-19 unchanged actor and status",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-19 business wording",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-19 consecutive main steps",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-19 branch references valid",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-19 evidence exists",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-20 20 attributes",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-20 unchanged actor and status",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-20 business wording",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-20 consecutive main steps",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-20 branch references valid",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-20 evidence exists",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-21 20 attributes",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-21 unchanged actor and status",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-21 business wording",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-21 consecutive main steps",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-21 branch references valid",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-21 evidence exists",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-22 20 attributes",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-22 unchanged actor and status",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-22 business wording",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-22 consecutive main steps",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-22 branch references valid",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-22 evidence exists",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-15 20 attributes",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-15 unchanged actor and status",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-15 business wording",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-15 consecutive main steps",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-15 branch references valid",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-15 evidence exists",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-15.1 20 attributes",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-15.1 unchanged actor and status",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-15.1 business wording",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-15.1 consecutive main steps",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-15.1 branch references valid",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-15.1 evidence exists",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-17.1 20 attributes",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-17.1 unchanged actor and status",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-17.1 business wording",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-17.1 consecutive main steps",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-17.1 branch references valid",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-17.1 evidence exists",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-17.2 20 attributes",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-17.2 unchanged actor and status",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-17.2 business wording",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-17.2 consecutive main steps",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-17.2 branch references valid",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-17.2 evidence exists",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-23 20 attributes",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-23 unchanged actor and status",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-23 business wording",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-23 consecutive main steps",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-23 branch references valid",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-23 evidence exists",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-24 20 attributes",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-24 unchanged actor and status",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-24 business wording",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-24 consecutive main steps",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-24 branch references valid",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-24 evidence exists",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-26 20 attributes",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-26 unchanged actor and status",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-26 business wording",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-26 consecutive main steps",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-26 branch references valid",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-26 evidence exists",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-27 20 attributes",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-27 unchanged actor and status",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-27 business wording",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-27 consecutive main steps",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-27 branch references valid",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-27 evidence exists",
+      "passed": true
+    },
+    {
+      "name": "Overall_Use_Case declarations equal manifest",
+      "passed": true
+    },
+    {
+      "name": "Overall_Use_Case rendered image exists",
+      "passed": true
+    },
+    {
+      "name": "Overall_Use_Case no undeclared association ['A01', 'UC_SYS_03']",
+      "passed": true
+    },
+    {
+      "name": "Overall_Use_Case no undeclared association ['A01', 'UC_DIS_01']",
+      "passed": true
+    },
+    {
+      "name": "Overall_Use_Case no undeclared association ['A04', 'UC_DIS_01']",
+      "passed": true
+    },
+    {
+      "name": "Overall_Use_Case no undeclared association ['A04', 'UC_DIS_09']",
+      "passed": true
+    },
+    {
+      "name": "Overall_Use_Case no undeclared association ['A04', 'UC_TEN_03']",
+      "passed": true
+    },
+    {
+      "name": "Overall_Use_Case no undeclared association ['A02', 'UC_TNT_05']",
+      "passed": true
+    },
+    {
+      "name": "Overall_Use_Case no undeclared association ['A03', 'UC_TNT_05']",
+      "passed": true
+    },
+    {
+      "name": "Overall_Use_Case no undeclared association ['A02', 'UC_TNT_08']",
+      "passed": true
+    },
+    {
+      "name": "Overall_Use_Case no undeclared association ['A02', 'UC_BIL_16']",
+      "passed": true
+    },
+    {
+      "name": "Overall_Use_Case no undeclared association ['A02', 'UC_OPT_03_1']",
+      "passed": true
+    },
+    {
+      "name": "Overall_Use_Case no undeclared association ['A02', 'UC_OPT_01']",
+      "passed": true
+    },
+    {
+      "name": "Overall_Use_Case no undeclared association ['A03', 'UC_OPT_01']",
+      "passed": true
+    },
+    {
+      "name": "Overall_Use_Case no undeclared association ['A05', 'UC_ADM_02']",
+      "passed": true
+    },
+    {
+      "name": "Overall_Use_Case no undeclared association ['A05', 'UC_ADM_11']",
+      "passed": true
+    },
+    {
+      "name": "Overall_Use_Case no undeclared association ['A05', 'UC_ADM_15']",
+      "passed": true
+    },
+    {
+      "name": "UC_G01_01_SYS_Public declarations equal manifest",
+      "passed": true
+    },
+    {
+      "name": "UC_G01_01_SYS_Public rendered image exists",
+      "passed": true
+    },
+    {
+      "name": "UC_G01_01_SYS_Public no undeclared association ['A01', 'UC_SYS_01']",
+      "passed": true
+    },
+    {
+      "name": "UC_G01_01_SYS_Public no undeclared association ['A01', 'UC_SYS_02']",
+      "passed": true
+    },
+    {
+      "name": "UC_G01_01_SYS_Public no undeclared association ['A01', 'UC_SYS_03']",
+      "passed": true
+    },
+    {
+      "name": "UC_G01_01_SYS_Public no undeclared association ['A01', 'UC_SYS_06']",
+      "passed": true
+    },
+    {
+      "name": "UC_G01_01_SYS_Public no undeclared association ['UC_SYS_06', 'E01']",
+      "passed": true
+    },
+    {
+      "name": "UC_G01_01_SYS_Public no undeclared association ['A01', 'UC_SYS_08']",
+      "passed": true
+    },
+    {
+      "name": "UC_G01_01_SYS_Public no undeclared association ['A01', 'UC_SYS_09']",
+      "passed": true
+    },
+    {
+      "name": "UC_G01_01_SYS_Public no undeclared association ['A01', 'UC_SYS_10']",
+      "passed": true
+    },
+    {
+      "name": "UC_G01_02_SYS_Sessions declarations equal manifest",
+      "passed": true
+    },
+    {
+      "name": "UC_G01_02_SYS_Sessions rendered image exists",
+      "passed": true
+    },
+    {
+      "name": "UC_G01_02_SYS_Sessions no undeclared association ['A02', 'UC_SYS_05_1']",
+      "passed": true
+    },
+    {
+      "name": "UC_G01_02_SYS_Sessions no undeclared association ['UC_SYS_05_1', 'A03']",
+      "passed": true
+    },
+    {
+      "name": "UC_G01_02_SYS_Sessions no undeclared association ['A04', 'UC_SYS_05_1']",
+      "passed": true
+    },
+    {
+      "name": "UC_G01_02_SYS_Sessions no undeclared association ['A05', 'UC_SYS_05_1']",
+      "passed": true
+    },
+    {
+      "name": "UC_G01_02_SYS_Sessions no undeclared association ['A02', 'UC_SYS_05_2']",
+      "passed": true
+    },
+    {
+      "name": "UC_G01_02_SYS_Sessions no undeclared association ['UC_SYS_05_2', 'A03']",
+      "passed": true
+    },
+    {
+      "name": "UC_G01_02_SYS_Sessions no undeclared association ['A04', 'UC_SYS_05_2']",
+      "passed": true
+    },
+    {
+      "name": "UC_G01_02_SYS_Sessions no undeclared association ['A05', 'UC_SYS_05_2']",
+      "passed": true
+    },
+    {
+      "name": "UC_G01_02_SYS_Sessions no undeclared association ['A02', 'UC_SYS_07']",
+      "passed": true
+    },
+    {
+      "name": "UC_G01_02_SYS_Sessions no undeclared association ['UC_SYS_07', 'A03']",
+      "passed": true
+    },
+    {
+      "name": "UC_G01_02_SYS_Sessions no undeclared association ['A04', 'UC_SYS_07']",
+      "passed": true
+    },
+    {
+      "name": "UC_G01_02_SYS_Sessions no undeclared association ['A05', 'UC_SYS_07']",
+      "passed": true
+    },
+    {
+      "name": "UC_G01_02_SYS_Sessions no undeclared association ['A05', 'UC_ADM_07_1']",
+      "passed": true
+    },
+    {
+      "name": "UC_G02 declarations equal manifest",
+      "passed": true
+    },
+    {
+      "name": "UC_G02 rendered image exists",
+      "passed": true
+    },
+    {
+      "name": "UC_G02 no undeclared association ['A01', 'UC_DIS_01']",
+      "passed": true
+    },
+    {
+      "name": "UC_G02 no undeclared association ['UC_DIS_01', 'A04']",
+      "passed": true
+    },
+    {
+      "name": "UC_G02 no undeclared association ['A01', 'UC_DIS_02']",
+      "passed": true
+    },
+    {
+      "name": "UC_G02 no undeclared association ['UC_DIS_02', 'A04']",
+      "passed": true
+    },
+    {
+      "name": "UC_G02 no undeclared association ['UC_DIS_03', 'A04']",
+      "passed": true
+    },
+    {
+      "name": "UC_G02 no undeclared association ['UC_DIS_04', 'A04']",
+      "passed": true
+    },
+    {
+      "name": "UC_G02 no undeclared association ['A01', 'UC_DIS_16']",
+      "passed": true
+    },
+    {
+      "name": "UC_G02 no undeclared association ['UC_DIS_16', 'A04']",
+      "passed": true
+    },
+    {
+      "name": "UC_G02 no undeclared association ['A01', 'UC_DIS_17']",
+      "passed": true
+    },
+    {
+      "name": "UC_G02 no undeclared association ['UC_DIS_17', 'A04']",
+      "passed": true
+    },
+    {
+      "name": "UC_G03 declarations equal manifest",
+      "passed": true
+    },
+    {
+      "name": "UC_G03 rendered image exists",
+      "passed": true
+    },
+    {
+      "name": "UC_G03 no undeclared association ['A02', 'UC_DIS_05']",
+      "passed": true
+    },
+    {
+      "name": "UC_G03 no undeclared association ['A02', 'UC_DIS_06_2']",
+      "passed": true
+    },
+    {
+      "name": "UC_G03 no undeclared association ['A02', 'UC_DIS_08']",
+      "passed": true
+    },
+    {
+      "name": "UC_G03 no undeclared association ['A04', 'UC_DIS_08']",
+      "passed": true
+    },
+    {
+      "name": "UC_G03 no undeclared association ['A04', 'UC_DIS_09']",
+      "passed": true
+    },
+    {
+      "name": "UC_G03 no undeclared association ['A02', 'UC_DIS_10']",
+      "passed": true
+    },
+    {
+      "name": "UC_G03 no undeclared association ['A02', 'UC_TNT_12_2']",
+      "passed": true
+    },
+    {
+      "name": "UC_G03 no undeclared association ['A04', 'UC_TNT_12_2']",
+      "passed": true
+    },
+    {
+      "name": "UC_G03 no undeclared association ['A04', 'UC_TNT_12_3']",
+      "passed": true
+    },
+    {
+      "name": "UC_G04_BA_1 declarations equal manifest",
+      "passed": true
+    },
+    {
+      "name": "UC_G04_BA_1 rendered image exists",
+      "passed": true
+    },
+    {
+      "name": "UC_G04_BA_1 no undeclared association ['A02', 'UC_OPT_02']",
+      "passed": true
+    },
+    {
+      "name": "UC_G04_BA_1 no undeclared association ['UC_OPT_02', 'A03']",
+      "passed": true
+    },
+    {
+      "name": "UC_G04_BA_1 no undeclared association ['A02', 'UC_OPT_03_1']",
+      "passed": true
+    },
+    {
+      "name": "UC_G04_BA_1 no undeclared association ['A02', 'UC_OPT_03_2']",
+      "passed": true
+    },
+    {
+      "name": "UC_G04_BA_1 no undeclared association ['UC_OPT_03_2', 'A03']",
+      "passed": true
+    },
+    {
+      "name": "UC_G04_BA_1 no undeclared association ['A02', 'UC_OPT_04_1']",
+      "passed": true
+    },
+    {
+      "name": "UC_G04_BA_1 no undeclared association ['UC_OPT_04_1', 'A03']",
+      "passed": true
+    },
+    {
+      "name": "UC_G04_BA_1 no undeclared association ['A02', 'UC_OPT_04_3']",
+      "passed": true
+    },
+    {
+      "name": "UC_G04_BA_1 no undeclared association ['UC_OPT_04_3', 'A03']",
+      "passed": true
+    },
+    {
+      "name": "UC_G04_BA_1 no undeclared association ['A02', 'UC_OPT_05']",
+      "passed": true
+    },
+    {
+      "name": "UC_G04_BA_1 no undeclared association ['UC_OPT_05', 'A03']",
+      "passed": true
+    },
+    {
+      "name": "UC_G04_BA_1 no undeclared association ['A02', 'UC_OPT_06_1']",
+      "passed": true
+    },
+    {
+      "name": "UC_G04_BA_1 no undeclared association ['UC_OPT_06_1', 'A03']",
+      "passed": true
+    },
+    {
+      "name": "UC_G04_BA_2 declarations equal manifest",
+      "passed": true
+    },
+    {
+      "name": "UC_G04_BA_2 rendered image exists",
+      "passed": true
+    },
+    {
+      "name": "UC_G04_BA_2 no undeclared association ['A02', 'UC_OPT_06_2']",
+      "passed": true
+    },
+    {
+      "name": "UC_G04_BA_2 no undeclared association ['UC_OPT_06_2', 'A03']",
+      "passed": true
+    },
+    {
+      "name": "UC_G04_BA_2 no undeclared association ['A02', 'UC_OPT_07_1']",
+      "passed": true
+    },
+    {
+      "name": "UC_G04_BA_2 no undeclared association ['UC_OPT_07_1', 'A03']",
+      "passed": true
+    },
+    {
+      "name": "UC_G04_BA_2 no undeclared association ['A02', 'UC_OPT_07_2']",
+      "passed": true
+    },
+    {
+      "name": "UC_G04_BA_2 no undeclared association ['UC_OPT_07_2', 'A03']",
+      "passed": true
+    },
+    {
+      "name": "UC_G04_BA_2 no undeclared association ['A02', 'UC_OPT_07_3']",
+      "passed": true
+    },
+    {
+      "name": "UC_G04_BA_2 no undeclared association ['UC_OPT_07_3', 'A03']",
+      "passed": true
+    },
+    {
+      "name": "UC_G04_BA_2 no undeclared association ['A02', 'UC_OPT_08_1']",
+      "passed": true
+    },
+    {
+      "name": "UC_G04_BA_2 no undeclared association ['UC_OPT_08_1', 'A03']",
+      "passed": true
+    },
+    {
+      "name": "UC_G04_BA_2 no undeclared association ['A02', 'UC_OPT_08_2']",
+      "passed": true
+    },
+    {
+      "name": "UC_G04_BA_2 no undeclared association ['UC_OPT_08_2', 'A03']",
+      "passed": true
+    },
+    {
+      "name": "UC_G04_BA_2 no undeclared association ['A02', 'UC_OPT_09']",
+      "passed": true
+    },
+    {
+      "name": "UC_G04_BA_2 no undeclared association ['UC_OPT_09', 'A03']",
+      "passed": true
+    },
+    {
+      "name": "UC_G05 declarations equal manifest",
+      "passed": true
+    },
+    {
+      "name": "UC_G05 rendered image exists",
+      "passed": true
+    },
+    {
+      "name": "UC_G05 no undeclared association ['A02', 'UC_STF_01']",
+      "passed": true
+    },
+    {
+      "name": "UC_G05 no undeclared association ['UC_STF_01', 'A03']",
+      "passed": true
+    },
+    {
+      "name": "UC_G05 no undeclared association ['A02', 'UC_STF_02']",
+      "passed": true
+    },
+    {
+      "name": "UC_G05 no undeclared association ['A02', 'UC_STF_04']",
+      "passed": true
+    },
+    {
+      "name": "UC_G05 no undeclared association ['UC_STF_04', 'A03']",
+      "passed": true
+    },
+    {
+      "name": "UC_G05 no undeclared association ['A02', 'UC_STF_03']",
+      "passed": true
+    },
+    {
+      "name": "UC_G06_01_Tenant_Records declarations equal manifest",
+      "passed": true
+    },
+    {
+      "name": "UC_G06_01_Tenant_Records rendered image exists",
+      "passed": true
+    },
+    {
+      "name": "UC_G06_01_Tenant_Records no undeclared association ['A02', 'UC_TNT_01']",
+      "passed": true
+    },
+    {
+      "name": "UC_G06_01_Tenant_Records no undeclared association ['UC_TNT_01', 'A03']",
+      "passed": true
+    },
+    {
+      "name": "UC_G06_01_Tenant_Records no undeclared association ['A02', 'UC_TNT_02_1']",
+      "passed": true
+    },
+    {
+      "name": "UC_G06_01_Tenant_Records no undeclared association ['UC_TNT_02_1', 'A03']",
+      "passed": true
+    },
+    {
+      "name": "UC_G06_01_Tenant_Records no undeclared association ['A02', 'UC_TNT_02_2']",
+      "passed": true
+    },
+    {
+      "name": "UC_G06_01_Tenant_Records no undeclared association ['UC_TNT_02_2', 'A03']",
+      "passed": true
+    },
+    {
+      "name": "UC_G06_01_Tenant_Records no undeclared association ['A02', 'UC_TNT_02_3']",
+      "passed": true
+    },
+    {
+      "name": "UC_G06_01_Tenant_Records no undeclared association ['UC_TNT_02_3', 'A03']",
+      "passed": true
+    },
+    {
+      "name": "UC_G06_01_Tenant_Records no undeclared association ['A02', 'UC_TNT_02_4']",
+      "passed": true
+    },
+    {
+      "name": "UC_G06_01_Tenant_Records no undeclared association ['UC_TNT_02_4', 'A03']",
+      "passed": true
+    },
+    {
+      "name": "UC_G06_01_Tenant_Records no undeclared association ['A02', 'UC_TNT_03']",
+      "passed": true
+    },
+    {
+      "name": "UC_G06_01_Tenant_Records no undeclared association ['A02', 'UC_TNT_03_1']",
+      "passed": true
+    },
+    {
+      "name": "UC_G06_01_Tenant_Records no undeclared association ['UC_TNT_03_1', 'A03']",
+      "passed": true
+    },
+    {
+      "name": "UC_G06_01_Tenant_Records no undeclared association ['A04', 'UC_TEN_01']",
+      "passed": true
+    },
+    {
+      "name": "UC_G06_02_Leases_Deposits_BA_1 declarations equal manifest",
+      "passed": true
+    },
+    {
+      "name": "UC_G06_02_Leases_Deposits_BA_1 rendered image exists",
+      "passed": true
+    },
+    {
+      "name": "UC_G06_02_Leases_Deposits_BA_1 no undeclared association ['A02', 'UC_TNT_04']",
+      "passed": true
+    },
+    {
+      "name": "UC_G06_02_Leases_Deposits_BA_1 no undeclared association ['UC_TNT_04', 'A03']",
+      "passed": true
+    },
+    {
+      "name": "UC_G06_02_Leases_Deposits_BA_1 no undeclared association ['A02', 'UC_TNT_05']",
+      "passed": true
+    },
+    {
+      "name": "UC_G06_02_Leases_Deposits_BA_1 no undeclared association ['UC_TNT_05', 'A03']",
+      "passed": true
+    },
+    {
+      "name": "UC_G06_02_Leases_Deposits_BA_1 no undeclared association ['A02', 'UC_TNT_06_1']",
+      "passed": true
+    },
+    {
+      "name": "UC_G06_02_Leases_Deposits_BA_1 no undeclared association ['UC_TNT_06_1', 'A03']",
+      "passed": true
+    },
+    {
+      "name": "UC_G06_02_Leases_Deposits_BA_1 no undeclared association ['A02', 'UC_TNT_06_2']",
+      "passed": true
+    },
+    {
+      "name": "UC_G06_02_Leases_Deposits_BA_1 no undeclared association ['UC_TNT_06_2', 'A03']",
+      "passed": true
+    },
+    {
+      "name": "UC_G06_02_Leases_Deposits_BA_1 no undeclared association ['A02', 'UC_TNT_06_3']",
+      "passed": true
+    },
+    {
+      "name": "UC_G06_02_Leases_Deposits_BA_1 no undeclared association ['UC_TNT_06_3', 'A03']",
+      "passed": true
+    },
+    {
+      "name": "UC_G06_02_Leases_Deposits_BA_2 declarations equal manifest",
+      "passed": true
+    },
+    {
+      "name": "UC_G06_02_Leases_Deposits_BA_2 rendered image exists",
+      "passed": true
+    },
+    {
+      "name": "UC_G06_02_Leases_Deposits_BA_2 no undeclared association ['A04', 'UC_TEN_02']",
+      "passed": true
+    },
+    {
+      "name": "UC_G06_02_Leases_Deposits_BA_2 no undeclared association ['A02', 'UC_TNT_07']",
+      "passed": true
+    },
+    {
+      "name": "UC_G06_02_Leases_Deposits_BA_2 no undeclared association ['UC_TNT_07', 'A03']",
+      "passed": true
+    },
+    {
+      "name": "UC_G06_02_Leases_Deposits_BA_2 no undeclared association ['A02', 'UC_TNT_12_1']",
+      "passed": true
+    },
+    {
+      "name": "UC_G06_02_Leases_Deposits_BA_2 no undeclared association ['UC_TNT_12_1', 'A03']",
+      "passed": true
+    },
+    {
+      "name": "UC_G06_02_Leases_Deposits_BA_2 no undeclared association ['A04', 'UC_TEN_08_1']",
+      "passed": true
+    },
+    {
+      "name": "UC_G07 declarations equal manifest",
+      "passed": true
+    },
+    {
+      "name": "UC_G07 rendered image exists",
+      "passed": true
+    },
+    {
+      "name": "UC_G07 no undeclared association ['A04', 'UC_TEN_07_1']",
+      "passed": true
+    },
+    {
+      "name": "UC_G07 no undeclared association ['A04', 'UC_TEN_07_2']",
+      "passed": true
+    },
+    {
+      "name": "UC_G07 no undeclared association ['A04', 'UC_TEN_07_3']",
+      "passed": true
+    },
+    {
+      "name": "UC_G07 no undeclared association ['A02', 'UC_TNT_10']",
+      "passed": true
+    },
+    {
+      "name": "UC_G07 no undeclared association ['UC_TNT_10', 'A03']",
+      "passed": true
+    },
+    {
+      "name": "UC_G07 no undeclared association ['A02', 'UC_TNT_11']",
+      "passed": true
+    },
+    {
+      "name": "UC_G07 no undeclared association ['UC_TNT_11', 'A03']",
+      "passed": true
+    },
+    {
+      "name": "UC_G07 no undeclared association ['A02', 'UC_TNT_08']",
+      "passed": true
+    },
+    {
+      "name": "UC_G07 no undeclared association ['A02', 'UC_TNT_09']",
+      "passed": true
+    },
+    {
+      "name": "UC_G08_01_Invoices_BA_1 declarations equal manifest",
+      "passed": true
+    },
+    {
+      "name": "UC_G08_01_Invoices_BA_1 rendered image exists",
+      "passed": true
+    },
+    {
+      "name": "UC_G08_01_Invoices_BA_1 no undeclared association ['A02', 'UC_BIL_01']",
+      "passed": true
+    },
+    {
+      "name": "UC_G08_01_Invoices_BA_1 no undeclared association ['UC_BIL_01', 'A03']",
+      "passed": true
+    },
+    {
+      "name": "UC_G08_01_Invoices_BA_1 no undeclared association ['A02', 'UC_BIL_02']",
+      "passed": true
+    },
+    {
+      "name": "UC_G08_01_Invoices_BA_1 no undeclared association ['UC_BIL_02', 'A03']",
+      "passed": true
+    },
+    {
+      "name": "UC_G08_01_Invoices_BA_1 no undeclared association ['A02', 'UC_BIL_03']",
+      "passed": true
+    },
+    {
+      "name": "UC_G08_01_Invoices_BA_1 no undeclared association ['UC_BIL_03', 'A03']",
+      "passed": true
+    },
+    {
+      "name": "UC_G08_01_Invoices_BA_1 no undeclared association ['A02', 'UC_BIL_17_1']",
+      "passed": true
+    },
+    {
+      "name": "UC_G08_01_Invoices_BA_1 no undeclared association ['UC_BIL_17_1', 'A03']",
+      "passed": true
+    },
+    {
+      "name": "UC_G08_01_Invoices_BA_1 no undeclared association ['A02', 'UC_BIL_17_2']",
+      "passed": true
+    },
+    {
+      "name": "UC_G08_01_Invoices_BA_1 no undeclared association ['UC_BIL_17_2', 'A03']",
+      "passed": true
+    },
+    {
+      "name": "UC_G08_01_Invoices_BA_1 no undeclared association ['A02', 'UC_BIL_04']",
+      "passed": true
+    },
+    {
+      "name": "UC_G08_01_Invoices_BA_1 no undeclared association ['UC_BIL_04', 'A03']",
+      "passed": true
+    },
+    {
+      "name": "UC_G08_01_Invoices_BA_2 declarations equal manifest",
+      "passed": true
+    },
+    {
+      "name": "UC_G08_01_Invoices_BA_2 rendered image exists",
+      "passed": true
+    },
+    {
+      "name": "UC_G08_01_Invoices_BA_2 no undeclared association ['A02', 'UC_BIL_05']",
+      "passed": true
+    },
+    {
+      "name": "UC_G08_01_Invoices_BA_2 no undeclared association ['UC_BIL_05', 'A03']",
+      "passed": true
+    },
+    {
+      "name": "UC_G08_01_Invoices_BA_2 no undeclared association ['A02', 'UC_BIL_06']",
+      "passed": true
+    },
+    {
+      "name": "UC_G08_01_Invoices_BA_2 no undeclared association ['UC_BIL_06', 'A03']",
+      "passed": true
+    },
+    {
+      "name": "UC_G08_01_Invoices_BA_2 no undeclared association ['A02', 'UC_BIL_07']",
+      "passed": true
+    },
+    {
+      "name": "UC_G08_01_Invoices_BA_2 no undeclared association ['UC_BIL_07', 'A03']",
+      "passed": true
+    },
+    {
+      "name": "UC_G08_01_Invoices_BA_2 no undeclared association ['A02', 'UC_BIL_08_1']",
+      "passed": true
+    },
+    {
+      "name": "UC_G08_01_Invoices_BA_2 no undeclared association ['UC_BIL_08_1', 'A03']",
+      "passed": true
+    },
+    {
+      "name": "UC_G08_01_Invoices_BA_2 no undeclared association ['A04', 'UC_TEN_03']",
+      "passed": true
+    },
+    {
+      "name": "UC_G08_02_Collections_BA_1 declarations equal manifest",
+      "passed": true
+    },
+    {
+      "name": "UC_G08_02_Collections_BA_1 rendered image exists",
+      "passed": true
+    },
+    {
+      "name": "UC_G08_02_Collections_BA_1 no undeclared association ['A02', 'UC_BIL_09']",
+      "passed": true
+    },
+    {
+      "name": "UC_G08_02_Collections_BA_1 no undeclared association ['UC_BIL_09', 'A03']",
+      "passed": true
+    },
+    {
+      "name": "UC_G08_02_Collections_BA_1 no undeclared association ['A02', 'UC_BIL_10']",
+      "passed": true
+    },
+    {
+      "name": "UC_G08_02_Collections_BA_1 no undeclared association ['UC_BIL_10', 'A03']",
+      "passed": true
+    },
+    {
+      "name": "UC_G08_02_Collections_BA_1 no undeclared association ['A02', 'UC_BIL_11']",
+      "passed": true
+    },
+    {
+      "name": "UC_G08_02_Collections_BA_1 no undeclared association ['UC_BIL_11', 'A03']",
+      "passed": true
+    },
+    {
+      "name": "UC_G08_02_Collections_BA_1 no undeclared association ['A02', 'UC_BIL_12_1']",
+      "passed": true
+    },
+    {
+      "name": "UC_G08_02_Collections_BA_1 no undeclared association ['UC_BIL_12_1', 'A03']",
+      "passed": true
+    },
+    {
+      "name": "UC_G08_02_Collections_BA_1 no undeclared association ['A02', 'UC_BIL_12_2']",
+      "passed": true
+    },
+    {
+      "name": "UC_G08_02_Collections_BA_1 no undeclared association ['UC_BIL_12_2', 'A03']",
+      "passed": true
+    },
+    {
+      "name": "UC_G08_02_Collections_BA_2 declarations equal manifest",
+      "passed": true
+    },
+    {
+      "name": "UC_G08_02_Collections_BA_2 rendered image exists",
+      "passed": true
+    },
+    {
+      "name": "UC_G08_02_Collections_BA_2 no undeclared association ['A02', 'UC_BIL_13']",
+      "passed": true
+    },
+    {
+      "name": "UC_G08_02_Collections_BA_2 no undeclared association ['UC_BIL_13', 'A03']",
+      "passed": true
+    },
+    {
+      "name": "UC_G08_02_Collections_BA_2 no undeclared association ['A02', 'UC_BIL_14']",
+      "passed": true
+    },
+    {
+      "name": "UC_G08_02_Collections_BA_2 no undeclared association ['UC_BIL_14', 'A03']",
+      "passed": true
+    },
+    {
+      "name": "UC_G08_02_Collections_BA_2 no undeclared association ['A02', 'UC_BIL_23']",
+      "passed": true
+    },
+    {
+      "name": "UC_G08_02_Collections_BA_2 no undeclared association ['A04', 'UC_TEN_04']",
+      "passed": true
+    },
+    {
+      "name": "UC_G08_02_Collections_BA_2 no undeclared association ['A04', 'UC_TEN_05']",
+      "passed": true
+    },
+    {
+      "name": "UC_G08_02_Collections_BA_2 no undeclared association ['A01', 'UC_TEN_05']",
+      "passed": true
+    },
+    {
+      "name": "UC_G08_03_Tariffs_Periods declarations equal manifest",
+      "passed": true
+    },
+    {
+      "name": "UC_G08_03_Tariffs_Periods rendered image exists",
+      "passed": true
+    },
+    {
+      "name": "UC_G08_03_Tariffs_Periods no undeclared association ['A02', 'UC_BIL_15']",
+      "passed": true
+    },
+    {
+      "name": "UC_G08_03_Tariffs_Periods no undeclared association ['UC_BIL_15', 'A03']",
+      "passed": true
+    },
+    {
+      "name": "UC_G08_03_Tariffs_Periods no undeclared association ['A02', 'UC_BIL_16']",
+      "passed": true
+    },
+    {
+      "name": "UC_G08_03_Tariffs_Periods no undeclared association ['UC_BIL_16', 'A03']",
+      "passed": true
+    },
+    {
+      "name": "UC_G08_03_Tariffs_Periods no undeclared association ['A02', 'UC_BIL_22']",
+      "passed": true
+    },
+    {
+      "name": "UC_G08_04_Reminders declarations equal manifest",
+      "passed": true
+    },
+    {
+      "name": "UC_G08_04_Reminders rendered image exists",
+      "passed": true
+    },
+    {
+      "name": "UC_G08_04_Reminders no undeclared association ['A02', 'UC_BIL_18_1']",
+      "passed": true
+    },
+    {
+      "name": "UC_G08_04_Reminders no undeclared association ['UC_BIL_18_1', 'A03']",
+      "passed": true
+    },
+    {
+      "name": "UC_G08_04_Reminders no undeclared association ['A02', 'UC_BIL_18_2']",
+      "passed": true
+    },
+    {
+      "name": "UC_G08_04_Reminders no undeclared association ['UC_BIL_18_2', 'A03']",
+      "passed": true
+    },
+    {
+      "name": "UC_G08_04_Reminders no undeclared association ['UC_BIL_18_2', 'E01']",
+      "passed": true
+    },
+    {
+      "name": "UC_G08_04_Reminders no undeclared association ['UC_BIL_18_2', 'E02']",
+      "passed": true
+    },
+    {
+      "name": "UC_G08_04_Reminders no undeclared association ['A02', 'UC_BIL_18_3']",
+      "passed": true
+    },
+    {
+      "name": "UC_G08_04_Reminders no undeclared association ['A04', 'UC_TEN_08_2']",
+      "passed": true
+    },
+    {
+      "name": "UC_G09 declarations equal manifest",
+      "passed": true
+    },
+    {
+      "name": "UC_G09 rendered image exists",
+      "passed": true
+    },
+    {
+      "name": "UC_G09 no undeclared association ['A04', 'UC_TEN_06']",
+      "passed": true
+    },
+    {
+      "name": "UC_G09 no undeclared association ['A02', 'UC_OPS_01']",
+      "passed": true
+    },
+    {
+      "name": "UC_G09 no undeclared association ['UC_OPS_01', 'A03']",
+      "passed": true
+    },
+    {
+      "name": "UC_G09 no undeclared association ['A02', 'UC_OPS_02']",
+      "passed": true
+    },
+    {
+      "name": "UC_G09 no undeclared association ['UC_OPS_02', 'A03']",
+      "passed": true
+    },
+    {
+      "name": "UC_G09 no undeclared association ['A02', 'UC_OPS_03']",
+      "passed": true
+    },
+    {
+      "name": "UC_G09 no undeclared association ['UC_OPS_03', 'A03']",
+      "passed": true
+    },
+    {
+      "name": "UC_G09 no undeclared association ['A02', 'UC_BIL_19']",
+      "passed": true
+    },
+    {
+      "name": "UC_G09 no undeclared association ['UC_BIL_19', 'A03']",
+      "passed": true
+    },
+    {
+      "name": "UC_G10_BA_1 declarations equal manifest",
+      "passed": true
+    },
+    {
+      "name": "UC_G10_BA_1 rendered image exists",
+      "passed": true
+    },
+    {
+      "name": "UC_G10_BA_1 no undeclared association ['A02', 'UC_OPS_04']",
+      "passed": true
+    },
+    {
+      "name": "UC_G10_BA_1 no undeclared association ['A02', 'UC_OPS_05']",
+      "passed": true
+    },
+    {
+      "name": "UC_G10_BA_1 no undeclared association ['A02', 'UC_OPS_06']",
+      "passed": true
+    },
+    {
+      "name": "UC_G10_BA_1 no undeclared association ['A02', 'UC_OPS_06_1']",
+      "passed": true
+    },
+    {
+      "name": "UC_G10_BA_1 no undeclared association ['A02', 'UC_OPS_07']",
+      "passed": true
+    },
+    {
+      "name": "UC_G10_BA_2 declarations equal manifest",
+      "passed": true
+    },
+    {
+      "name": "UC_G10_BA_2 rendered image exists",
+      "passed": true
+    },
+    {
+      "name": "UC_G10_BA_2 no undeclared association ['A02', 'UC_SUP_04']",
+      "passed": true
+    },
+    {
+      "name": "UC_G10_BA_2 no undeclared association ['A04', 'UC_SUP_04']",
+      "passed": true
+    },
+    {
+      "name": "UC_G10_BA_2 no undeclared association ['A05', 'UC_SUP_04']",
+      "passed": true
+    },
+    {
+      "name": "UC_G10_BA_2 no undeclared association ['A02', 'UC_TEN_09_2']",
+      "passed": true
+    },
+    {
+      "name": "UC_G10_BA_2 no undeclared association ['A04', 'UC_TEN_09_2']",
+      "passed": true
+    },
+    {
+      "name": "UC_G10_BA_2 no undeclared association ['A04', 'UC_TEN_09_3']",
+      "passed": true
+    },
+    {
+      "name": "UC_G10_BA_2 no undeclared association ['A02', 'UC_SUP_06']",
+      "passed": true
+    },
+    {
+      "name": "UC_G10_BA_2 no undeclared association ['UC_SUP_06', 'E04']",
+      "passed": true
+    },
+    {
+      "name": "UC_G11 declarations equal manifest",
+      "passed": true
+    },
+    {
+      "name": "UC_G11 rendered image exists",
+      "passed": true
+    },
+    {
+      "name": "UC_G11 no undeclared association ['A02', 'UC_OPT_01']",
+      "passed": true
+    },
+    {
+      "name": "UC_G11 no undeclared association ['UC_OPT_01', 'A03']",
+      "passed": true
+    },
+    {
+      "name": "UC_G11 no undeclared association ['A02', 'UC_BIL_20']",
+      "passed": true
+    },
+    {
+      "name": "UC_G11 no undeclared association ['UC_BIL_20', 'A03']",
+      "passed": true
+    },
+    {
+      "name": "UC_G11 no undeclared association ['A05', 'UC_ADM_01']",
+      "passed": true
+    },
+    {
+      "name": "UC_G11 no undeclared association ['A02', 'UC_OPS_09']",
+      "passed": true
+    },
+    {
+      "name": "UC_G11 no undeclared association ['A05', 'UC_ADM_14']",
+      "passed": true
+    },
+    {
+      "name": "UC_G11 no undeclared association ['A05', 'UC_ADM_16']",
+      "passed": true
+    },
+    {
+      "name": "UC_G11 no undeclared association ['UC_ADM_16', 'E05']",
+      "passed": true
+    },
+    {
+      "name": "UC_G11 no undeclared association ['A05', 'UC_SUP_05_1']",
+      "passed": true
+    },
+    {
+      "name": "UC_G11 no undeclared association ['A05', 'UC_SUP_05_2']",
+      "passed": true
+    },
+    {
+      "name": "UC_G11 no undeclared association ['UC_SUP_05_2', 'E01']",
+      "passed": true
+    },
+    {
+      "name": "UC_G12_BA_1 declarations equal manifest",
+      "passed": true
+    },
+    {
+      "name": "UC_G12_BA_1 rendered image exists",
+      "passed": true
+    },
+    {
+      "name": "UC_G12_BA_1 no undeclared association ['A05', 'UC_ADM_02']",
+      "passed": true
+    },
+    {
+      "name": "UC_G12_BA_1 no undeclared association ['A05', 'UC_ADM_03_1']",
+      "passed": true
+    },
+    {
+      "name": "UC_G12_BA_1 no undeclared association ['UC_ADM_03_1', 'E01']",
+      "passed": true
+    },
+    {
+      "name": "UC_G12_BA_1 no undeclared association ['A05', 'UC_ADM_03_2']",
+      "passed": true
+    },
+    {
+      "name": "UC_G12_BA_1 no undeclared association ['A05', 'UC_ADM_04_1']",
+      "passed": true
+    },
+    {
+      "name": "UC_G12_BA_1 no undeclared association ['A05', 'UC_ADM_04_3']",
+      "passed": true
+    },
+    {
+      "name": "UC_G12_BA_1 no undeclared association ['A05', 'UC_ADM_05_1']",
+      "passed": true
+    },
+    {
+      "name": "UC_G12_BA_2 declarations equal manifest",
+      "passed": true
+    },
+    {
+      "name": "UC_G12_BA_2 rendered image exists",
+      "passed": true
+    },
+    {
+      "name": "UC_G12_BA_2 no undeclared association ['A05', 'UC_ADM_05_2']",
+      "passed": true
+    },
+    {
+      "name": "UC_G12_BA_2 no undeclared association ['UC_ADM_05_2', 'E01']",
+      "passed": true
+    },
+    {
+      "name": "UC_G12_BA_2 no undeclared association ['A05', 'UC_ADM_06_1']",
+      "passed": true
+    },
+    {
+      "name": "UC_G12_BA_2 no undeclared association ['UC_ADM_06_1', 'E01']",
+      "passed": true
+    },
+    {
+      "name": "UC_G12_BA_2 no undeclared association ['A05', 'UC_ADM_06_2']",
+      "passed": true
+    },
+    {
+      "name": "UC_G12_BA_2 no undeclared association ['A05', 'UC_ADM_08']",
+      "passed": true
+    },
+    {
+      "name": "UC_G12_BA_2 no undeclared association ['A05', 'UC_ADM_09']",
+      "passed": true
+    },
+    {
+      "name": "UC_G12_BA_2 no undeclared association ['A05', 'UC_ADM_10']",
+      "passed": true
+    },
+    {
+      "name": "UC_G13_BA_1 declarations equal manifest",
+      "passed": true
+    },
+    {
+      "name": "UC_G13_BA_1 rendered image exists",
+      "passed": true
+    },
+    {
+      "name": "UC_G13_BA_1 no undeclared association ['A04', 'UC_DIS_07']",
+      "passed": true
+    },
+    {
+      "name": "UC_G13_BA_1 no undeclared association ['A04', 'UC_DIS_12']",
+      "passed": true
+    },
+    {
+      "name": "UC_G13_BA_1 no undeclared association ['A02', 'UC_DIS_13_1']",
+      "passed": true
+    },
+    {
+      "name": "UC_G13_BA_1 no undeclared association ['A05', 'UC_ADM_11']",
+      "passed": true
+    },
+    {
+      "name": "UC_G13_BA_1 no undeclared association ['A05', 'UC_ADM_11_1']",
+      "passed": true
+    },
+    {
+      "name": "UC_G13_BA_1 no undeclared association ['A05', 'UC_ADM_12']",
+      "passed": true
+    },
+    {
+      "name": "UC_G13_BA_2 declarations equal manifest",
+      "passed": true
+    },
+    {
+      "name": "UC_G13_BA_2 rendered image exists",
+      "passed": true
+    },
+    {
+      "name": "UC_G13_BA_2 no undeclared association ['A05', 'UC_ADM_12_1']",
+      "passed": true
+    },
+    {
+      "name": "UC_G13_BA_2 no undeclared association ['A02', 'UC_DIS_15']",
+      "passed": true
+    },
+    {
+      "name": "UC_G13_BA_2 no undeclared association ['A04', 'UC_DIS_15']",
+      "passed": true
+    },
+    {
+      "name": "UC_G13_BA_2 no undeclared association ['A05', 'UC_DIS_15']",
+      "passed": true
+    },
+    {
+      "name": "UC_G13_BA_2 no undeclared association ['A05', 'UC_ADM_13_1']",
+      "passed": true
+    },
+    {
+      "name": "UC_G13_BA_2 no undeclared association ['A05', 'UC_ADM_13_2']",
+      "passed": true
+    },
+    {
+      "name": "UC_G13_BA_2 no undeclared association ['A05', 'UC_ADM_13_3']",
+      "passed": true
+    },
+    {
+      "name": "UC_G14 declarations equal manifest",
+      "passed": true
+    },
+    {
+      "name": "UC_G14 rendered image exists",
+      "passed": true
+    },
+    {
+      "name": "UC_G14 no undeclared association ['A02', 'UC_SUP_01']",
+      "passed": true
+    },
+    {
+      "name": "UC_G14 no undeclared association ['A04', 'UC_SUP_01']",
+      "passed": true
+    },
+    {
+      "name": "UC_G14 no undeclared association ['A05', 'UC_SUP_01']",
+      "passed": true
+    },
+    {
+      "name": "UC_G14 no undeclared association ['UC_SUP_01', 'E03']",
+      "passed": true
+    },
+    {
+      "name": "UC_G14 no undeclared association ['A05', 'UC_SUP_01_1']",
+      "passed": true
+    },
+    {
+      "name": "UC_G14 no undeclared association ['UC_SUP_01_1', 'E03']",
+      "passed": true
+    },
+    {
+      "name": "UC_G14 no undeclared association ['A05', 'UC_SUP_03_2_1']",
+      "passed": true
+    },
+    {
+      "name": "UC_G14 no undeclared association ['A02', 'UC_SUP_03_2_2']",
+      "passed": true
+    },
+    {
+      "name": "UC_G14 no undeclared association ['A04', 'UC_SUP_03_2_2']",
+      "passed": true
+    },
+    {
+      "name": "UC_G14 no undeclared association ['A05', 'UC_SUP_03_2_2']",
+      "passed": true
+    },
+    {
+      "name": "UC_G14 no undeclared association ['A05', 'UC_SUP_02_1']",
+      "passed": true
+    },
+    {
+      "name": "UC_G14 no undeclared association ['A05', 'UC_SUP_02_2']",
+      "passed": true
+    },
+    {
+      "name": "UC_G14 no undeclared association ['A05', 'UC_SUP_03_2']",
+      "passed": true
+    },
+    {
+      "name": "UC_G14 no undeclared association ['A05', 'UC_SUP_03_3']",
+      "passed": true
+    },
+    {
+      "name": "UC_G15 declarations equal manifest",
+      "passed": true
+    },
+    {
+      "name": "UC_G15 rendered image exists",
+      "passed": true
+    },
+    {
+      "name": "UC_G15 no undeclared association ['A02', 'UC_ADM_18_1']",
+      "passed": true
+    },
+    {
+      "name": "UC_G15 no undeclared association ['A05', 'UC_ADM_18_1']",
+      "passed": true
+    },
+    {
+      "name": "UC_G15 no undeclared association ['A05', 'UC_ADM_18']",
+      "passed": true
+    },
+    {
+      "name": "UC_G15 no undeclared association ['A05', 'UC_ADM_19']",
+      "passed": true
+    },
+    {
+      "name": "UC_G15 no undeclared association ['A05', 'UC_ADM_20']",
+      "passed": true
+    },
+    {
+      "name": "UC_G15 no undeclared association ['A05', 'UC_ADM_21']",
+      "passed": true
+    },
+    {
+      "name": "UC_G15 no undeclared association ['A05', 'UC_ADM_22']",
+      "passed": true
+    },
+    {
+      "name": "UC_G16_BA_1 declarations equal manifest",
+      "passed": true
+    },
+    {
+      "name": "UC_G16_BA_1 rendered image exists",
+      "passed": true
+    },
+    {
+      "name": "UC_G16_BA_1 no undeclared association ['A05', 'UC_ADM_15']",
+      "passed": true
+    },
+    {
+      "name": "UC_G16_BA_1 no undeclared association ['A05', 'UC_ADM_15_1']",
+      "passed": true
+    },
+    {
+      "name": "UC_G16_BA_1 no undeclared association ['A05', 'UC_ADM_24']",
+      "passed": true
+    },
+    {
+      "name": "UC_G16_BA_1 no undeclared association ['A05', 'UC_ADM_17_1']",
+      "passed": true
+    },
+    {
+      "name": "UC_G16_BA_1 no undeclared association ['A05', 'UC_ADM_17_2']",
+      "passed": true
+    },
+    {
+      "name": "UC_G16_BA_2 declarations equal manifest",
+      "passed": true
+    },
+    {
+      "name": "UC_G16_BA_2 rendered image exists",
+      "passed": true
+    },
+    {
+      "name": "UC_G16_BA_2 no undeclared association ['A05', 'UC_ADM_26']",
+      "passed": true
+    },
+    {
+      "name": "UC_G16_BA_2 no undeclared association ['A05', 'UC_ADM_23']",
+      "passed": true
+    },
+    {
+      "name": "UC_G16_BA_2 no undeclared association ['A02', 'UC_DIS_13_2']",
+      "passed": true
+    },
+    {
+      "name": "UC_G16_BA_2 no undeclared association ['A04', 'UC_DIS_13_2']",
+      "passed": true
+    },
+    {
+      "name": "UC_G16_BA_2 no undeclared association ['A05', 'UC_ADM_27']",
+      "passed": true
+    },
+    {
+      "name": "Module diagrams cover every UC exactly once",
+      "passed": true
+    },
+    {
+      "name": "All report associations equal canonical associations",
+      "passed": true,
+      "detail": "[]"
+    },
+    {
+      "name": "Exactly 162 continuous specification tables",
+      "passed": true
+    },
+    {
+      "name": "All specification IDs present",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-07.1 Word values equal reviewed content",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-07.1 repeated header identifies UC",
+      "passed": true
+    },
+    {
+      "name": "UC-SYS-01 Word values equal reviewed content",
+      "passed": true
+    },
+    {
+      "name": "UC-SYS-01 repeated header identifies UC",
+      "passed": true
+    },
+    {
+      "name": "UC-SYS-02 Word values equal reviewed content",
+      "passed": true
+    },
+    {
+      "name": "UC-SYS-02 repeated header identifies UC",
+      "passed": true
+    },
+    {
+      "name": "UC-SYS-03 Word values equal reviewed content",
+      "passed": true
+    },
+    {
+      "name": "UC-SYS-03 repeated header identifies UC",
+      "passed": true
+    },
+    {
+      "name": "UC-SYS-05.1 Word values equal reviewed content",
+      "passed": true
+    },
+    {
+      "name": "UC-SYS-05.1 repeated header identifies UC",
+      "passed": true
+    },
+    {
+      "name": "UC-SYS-05.2 Word values equal reviewed content",
+      "passed": true
+    },
+    {
+      "name": "UC-SYS-05.2 repeated header identifies UC",
+      "passed": true
+    },
+    {
+      "name": "UC-SYS-06 Word values equal reviewed content",
+      "passed": true
+    },
+    {
+      "name": "UC-SYS-06 repeated header identifies UC",
+      "passed": true
+    },
+    {
+      "name": "UC-SYS-07 Word values equal reviewed content",
+      "passed": true
+    },
+    {
+      "name": "UC-SYS-07 repeated header identifies UC",
+      "passed": true
+    },
+    {
+      "name": "UC-SYS-08 Word values equal reviewed content",
+      "passed": true
+    },
+    {
+      "name": "UC-SYS-08 repeated header identifies UC",
+      "passed": true
+    },
+    {
+      "name": "UC-SYS-09 Word values equal reviewed content",
+      "passed": true
+    },
+    {
+      "name": "UC-SYS-09 repeated header identifies UC",
+      "passed": true
+    },
+    {
+      "name": "UC-SYS-10 Word values equal reviewed content",
+      "passed": true
+    },
+    {
+      "name": "UC-SYS-10 repeated header identifies UC",
+      "passed": true
+    },
+    {
+      "name": "UC-DIS-01 Word values equal reviewed content",
+      "passed": true
+    },
+    {
+      "name": "UC-DIS-01 repeated header identifies UC",
+      "passed": true
+    },
+    {
+      "name": "UC-DIS-02 Word values equal reviewed content",
+      "passed": true
+    },
+    {
+      "name": "UC-DIS-02 repeated header identifies UC",
+      "passed": true
+    },
+    {
+      "name": "UC-DIS-03 Word values equal reviewed content",
+      "passed": true
+    },
+    {
+      "name": "UC-DIS-03 repeated header identifies UC",
+      "passed": true
+    },
+    {
+      "name": "UC-DIS-04 Word values equal reviewed content",
+      "passed": true
+    },
+    {
+      "name": "UC-DIS-04 repeated header identifies UC",
+      "passed": true
+    },
+    {
+      "name": "UC-DIS-16 Word values equal reviewed content",
+      "passed": true
+    },
+    {
+      "name": "UC-DIS-16 repeated header identifies UC",
+      "passed": true
+    },
+    {
+      "name": "UC-DIS-17 Word values equal reviewed content",
+      "passed": true
+    },
+    {
+      "name": "UC-DIS-17 repeated header identifies UC",
+      "passed": true
+    },
+    {
+      "name": "UC-DIS-05 Word values equal reviewed content",
+      "passed": true
+    },
+    {
+      "name": "UC-DIS-05 repeated header identifies UC",
+      "passed": true
+    },
+    {
+      "name": "UC-DIS-06.2 Word values equal reviewed content",
+      "passed": true
+    },
+    {
+      "name": "UC-DIS-06.2 repeated header identifies UC",
+      "passed": true
+    },
+    {
+      "name": "UC-DIS-08 Word values equal reviewed content",
+      "passed": true
+    },
+    {
+      "name": "UC-DIS-08 repeated header identifies UC",
+      "passed": true
+    },
+    {
+      "name": "UC-DIS-09 Word values equal reviewed content",
+      "passed": true
+    },
+    {
+      "name": "UC-DIS-09 repeated header identifies UC",
+      "passed": true
+    },
+    {
+      "name": "UC-DIS-10 Word values equal reviewed content",
+      "passed": true
+    },
+    {
+      "name": "UC-DIS-10 repeated header identifies UC",
+      "passed": true
+    },
+    {
+      "name": "UC-DIS-13.2 Word values equal reviewed content",
+      "passed": true
+    },
+    {
+      "name": "UC-DIS-13.2 repeated header identifies UC",
+      "passed": true
+    },
+    {
+      "name": "UC-TNT-12.2 Word values equal reviewed content",
+      "passed": true
+    },
+    {
+      "name": "UC-TNT-12.2 repeated header identifies UC",
+      "passed": true
+    },
+    {
+      "name": "UC-TNT-12.3 Word values equal reviewed content",
+      "passed": true
+    },
+    {
+      "name": "UC-TNT-12.3 repeated header identifies UC",
+      "passed": true
+    },
+    {
+      "name": "UC-OPT-02 Word values equal reviewed content",
+      "passed": true
+    },
+    {
+      "name": "UC-OPT-02 repeated header identifies UC",
+      "passed": true
+    },
+    {
+      "name": "UC-OPT-03.1 Word values equal reviewed content",
+      "passed": true
+    },
+    {
+      "name": "UC-OPT-03.1 repeated header identifies UC",
+      "passed": true
+    },
+    {
+      "name": "UC-OPT-03.2 Word values equal reviewed content",
+      "passed": true
+    },
+    {
+      "name": "UC-OPT-03.2 repeated header identifies UC",
+      "passed": true
+    },
+    {
+      "name": "UC-OPT-04.1 Word values equal reviewed content",
+      "passed": true
+    },
+    {
+      "name": "UC-OPT-04.1 repeated header identifies UC",
+      "passed": true
+    },
+    {
+      "name": "UC-OPT-04.3 Word values equal reviewed content",
+      "passed": true
+    },
+    {
+      "name": "UC-OPT-04.3 repeated header identifies UC",
+      "passed": true
+    },
+    {
+      "name": "UC-OPT-05 Word values equal reviewed content",
+      "passed": true
+    },
+    {
+      "name": "UC-OPT-05 repeated header identifies UC",
+      "passed": true
+    },
+    {
+      "name": "UC-OPT-06.1 Word values equal reviewed content",
+      "passed": true
+    },
+    {
+      "name": "UC-OPT-06.1 repeated header identifies UC",
+      "passed": true
+    },
+    {
+      "name": "UC-OPT-06.2 Word values equal reviewed content",
+      "passed": true
+    },
+    {
+      "name": "UC-OPT-06.2 repeated header identifies UC",
+      "passed": true
+    },
+    {
+      "name": "UC-OPT-07.1 Word values equal reviewed content",
+      "passed": true
+    },
+    {
+      "name": "UC-OPT-07.1 repeated header identifies UC",
+      "passed": true
+    },
+    {
+      "name": "UC-OPT-07.2 Word values equal reviewed content",
+      "passed": true
+    },
+    {
+      "name": "UC-OPT-07.2 repeated header identifies UC",
+      "passed": true
+    },
+    {
+      "name": "UC-OPT-07.3 Word values equal reviewed content",
+      "passed": true
+    },
+    {
+      "name": "UC-OPT-07.3 repeated header identifies UC",
+      "passed": true
+    },
+    {
+      "name": "UC-OPT-08.1 Word values equal reviewed content",
+      "passed": true
+    },
+    {
+      "name": "UC-OPT-08.1 repeated header identifies UC",
+      "passed": true
+    },
+    {
+      "name": "UC-OPT-08.2 Word values equal reviewed content",
+      "passed": true
+    },
+    {
+      "name": "UC-OPT-08.2 repeated header identifies UC",
+      "passed": true
+    },
+    {
+      "name": "UC-OPT-09 Word values equal reviewed content",
+      "passed": true
+    },
+    {
+      "name": "UC-OPT-09 repeated header identifies UC",
+      "passed": true
+    },
+    {
+      "name": "UC-STF-01 Word values equal reviewed content",
+      "passed": true
+    },
+    {
+      "name": "UC-STF-01 repeated header identifies UC",
+      "passed": true
+    },
+    {
+      "name": "UC-STF-02 Word values equal reviewed content",
+      "passed": true
+    },
+    {
+      "name": "UC-STF-02 repeated header identifies UC",
+      "passed": true
+    },
+    {
+      "name": "UC-STF-03 Word values equal reviewed content",
+      "passed": true
+    },
+    {
+      "name": "UC-STF-03 repeated header identifies UC",
+      "passed": true
+    },
+    {
+      "name": "UC-STF-04 Word values equal reviewed content",
+      "passed": true
+    },
+    {
+      "name": "UC-STF-04 repeated header identifies UC",
+      "passed": true
+    },
+    {
+      "name": "UC-TEN-01 Word values equal reviewed content",
+      "passed": true
+    },
+    {
+      "name": "UC-TEN-01 repeated header identifies UC",
+      "passed": true
+    },
+    {
+      "name": "UC-TEN-02 Word values equal reviewed content",
+      "passed": true
+    },
+    {
+      "name": "UC-TEN-02 repeated header identifies UC",
+      "passed": true
+    },
+    {
+      "name": "UC-TEN-08.1 Word values equal reviewed content",
+      "passed": true
+    },
+    {
+      "name": "UC-TEN-08.1 repeated header identifies UC",
+      "passed": true
+    },
+    {
+      "name": "UC-TNT-01 Word values equal reviewed content",
+      "passed": true
+    },
+    {
+      "name": "UC-TNT-01 repeated header identifies UC",
+      "passed": true
+    },
+    {
+      "name": "UC-TNT-02.1 Word values equal reviewed content",
+      "passed": true
+    },
+    {
+      "name": "UC-TNT-02.1 repeated header identifies UC",
+      "passed": true
+    },
+    {
+      "name": "UC-TNT-02.2 Word values equal reviewed content",
+      "passed": true
+    },
+    {
+      "name": "UC-TNT-02.2 repeated header identifies UC",
+      "passed": true
+    },
+    {
+      "name": "UC-TNT-02.3 Word values equal reviewed content",
+      "passed": true
+    },
+    {
+      "name": "UC-TNT-02.3 repeated header identifies UC",
+      "passed": true
+    },
+    {
+      "name": "UC-TNT-02.4 Word values equal reviewed content",
+      "passed": true
+    },
+    {
+      "name": "UC-TNT-02.4 repeated header identifies UC",
+      "passed": true
+    },
+    {
+      "name": "UC-TNT-03 Word values equal reviewed content",
+      "passed": true
+    },
+    {
+      "name": "UC-TNT-03 repeated header identifies UC",
+      "passed": true
+    },
+    {
+      "name": "UC-TNT-03.1 Word values equal reviewed content",
+      "passed": true
+    },
+    {
+      "name": "UC-TNT-03.1 repeated header identifies UC",
+      "passed": true
+    },
+    {
+      "name": "UC-TNT-04 Word values equal reviewed content",
+      "passed": true
+    },
+    {
+      "name": "UC-TNT-04 repeated header identifies UC",
+      "passed": true
+    },
+    {
+      "name": "UC-TNT-05 Word values equal reviewed content",
+      "passed": true
+    },
+    {
+      "name": "UC-TNT-05 repeated header identifies UC",
+      "passed": true
+    },
+    {
+      "name": "UC-TNT-06.1 Word values equal reviewed content",
+      "passed": true
+    },
+    {
+      "name": "UC-TNT-06.1 repeated header identifies UC",
+      "passed": true
+    },
+    {
+      "name": "UC-TNT-06.2 Word values equal reviewed content",
+      "passed": true
+    },
+    {
+      "name": "UC-TNT-06.2 repeated header identifies UC",
+      "passed": true
+    },
+    {
+      "name": "UC-TNT-06.3 Word values equal reviewed content",
+      "passed": true
+    },
+    {
+      "name": "UC-TNT-06.3 repeated header identifies UC",
+      "passed": true
+    },
+    {
+      "name": "UC-TNT-07 Word values equal reviewed content",
+      "passed": true
+    },
+    {
+      "name": "UC-TNT-07 repeated header identifies UC",
+      "passed": true
+    },
+    {
+      "name": "UC-TNT-12.1 Word values equal reviewed content",
+      "passed": true
+    },
+    {
+      "name": "UC-TNT-12.1 repeated header identifies UC",
+      "passed": true
+    },
+    {
+      "name": "UC-TEN-07.1 Word values equal reviewed content",
+      "passed": true
+    },
+    {
+      "name": "UC-TEN-07.1 repeated header identifies UC",
+      "passed": true
+    },
+    {
+      "name": "UC-TEN-07.2 Word values equal reviewed content",
+      "passed": true
+    },
+    {
+      "name": "UC-TEN-07.2 repeated header identifies UC",
+      "passed": true
+    },
+    {
+      "name": "UC-TEN-07.3 Word values equal reviewed content",
+      "passed": true
+    },
+    {
+      "name": "UC-TEN-07.3 repeated header identifies UC",
+      "passed": true
+    },
+    {
+      "name": "UC-TNT-08 Word values equal reviewed content",
+      "passed": true
+    },
+    {
+      "name": "UC-TNT-08 repeated header identifies UC",
+      "passed": true
+    },
+    {
+      "name": "UC-TNT-09 Word values equal reviewed content",
+      "passed": true
+    },
+    {
+      "name": "UC-TNT-09 repeated header identifies UC",
+      "passed": true
+    },
+    {
+      "name": "UC-TNT-10 Word values equal reviewed content",
+      "passed": true
+    },
+    {
+      "name": "UC-TNT-10 repeated header identifies UC",
+      "passed": true
+    },
+    {
+      "name": "UC-TNT-11 Word values equal reviewed content",
+      "passed": true
+    },
+    {
+      "name": "UC-TNT-11 repeated header identifies UC",
+      "passed": true
+    },
+    {
+      "name": "UC-BIL-01 Word values equal reviewed content",
+      "passed": true
+    },
+    {
+      "name": "UC-BIL-01 repeated header identifies UC",
+      "passed": true
+    },
+    {
+      "name": "UC-BIL-02 Word values equal reviewed content",
+      "passed": true
+    },
+    {
+      "name": "UC-BIL-02 repeated header identifies UC",
+      "passed": true
+    },
+    {
+      "name": "UC-BIL-03 Word values equal reviewed content",
+      "passed": true
+    },
+    {
+      "name": "UC-BIL-03 repeated header identifies UC",
+      "passed": true
+    },
+    {
+      "name": "UC-BIL-04 Word values equal reviewed content",
+      "passed": true
+    },
+    {
+      "name": "UC-BIL-04 repeated header identifies UC",
+      "passed": true
+    },
+    {
+      "name": "UC-BIL-05 Word values equal reviewed content",
+      "passed": true
+    },
+    {
+      "name": "UC-BIL-05 repeated header identifies UC",
+      "passed": true
+    },
+    {
+      "name": "UC-BIL-06 Word values equal reviewed content",
+      "passed": true
+    },
+    {
+      "name": "UC-BIL-06 repeated header identifies UC",
+      "passed": true
+    },
+    {
+      "name": "UC-BIL-07 Word values equal reviewed content",
+      "passed": true
+    },
+    {
+      "name": "UC-BIL-07 repeated header identifies UC",
+      "passed": true
+    },
+    {
+      "name": "UC-BIL-08.1 Word values equal reviewed content",
+      "passed": true
+    },
+    {
+      "name": "UC-BIL-08.1 repeated header identifies UC",
+      "passed": true
+    },
+    {
+      "name": "UC-BIL-09 Word values equal reviewed content",
+      "passed": true
+    },
+    {
+      "name": "UC-BIL-09 repeated header identifies UC",
+      "passed": true
+    },
+    {
+      "name": "UC-BIL-10 Word values equal reviewed content",
+      "passed": true
+    },
+    {
+      "name": "UC-BIL-10 repeated header identifies UC",
+      "passed": true
+    },
+    {
+      "name": "UC-BIL-11 Word values equal reviewed content",
+      "passed": true
+    },
+    {
+      "name": "UC-BIL-11 repeated header identifies UC",
+      "passed": true
+    },
+    {
+      "name": "UC-BIL-12.1 Word values equal reviewed content",
+      "passed": true
+    },
+    {
+      "name": "UC-BIL-12.1 repeated header identifies UC",
+      "passed": true
+    },
+    {
+      "name": "UC-BIL-12.2 Word values equal reviewed content",
+      "passed": true
+    },
+    {
+      "name": "UC-BIL-12.2 repeated header identifies UC",
+      "passed": true
+    },
+    {
+      "name": "UC-BIL-13 Word values equal reviewed content",
+      "passed": true
+    },
+    {
+      "name": "UC-BIL-13 repeated header identifies UC",
+      "passed": true
+    },
+    {
+      "name": "UC-BIL-14 Word values equal reviewed content",
+      "passed": true
+    },
+    {
+      "name": "UC-BIL-14 repeated header identifies UC",
+      "passed": true
+    },
+    {
+      "name": "UC-BIL-15 Word values equal reviewed content",
+      "passed": true
+    },
+    {
+      "name": "UC-BIL-15 repeated header identifies UC",
+      "passed": true
+    },
+    {
+      "name": "UC-BIL-16 Word values equal reviewed content",
+      "passed": true
+    },
+    {
+      "name": "UC-BIL-16 repeated header identifies UC",
+      "passed": true
+    },
+    {
+      "name": "UC-BIL-17.1 Word values equal reviewed content",
+      "passed": true
+    },
+    {
+      "name": "UC-BIL-17.1 repeated header identifies UC",
+      "passed": true
+    },
+    {
+      "name": "UC-BIL-17.2 Word values equal reviewed content",
+      "passed": true
+    },
+    {
+      "name": "UC-BIL-17.2 repeated header identifies UC",
+      "passed": true
+    },
+    {
+      "name": "UC-BIL-18.1 Word values equal reviewed content",
+      "passed": true
+    },
+    {
+      "name": "UC-BIL-18.1 repeated header identifies UC",
+      "passed": true
+    },
+    {
+      "name": "UC-BIL-18.2 Word values equal reviewed content",
+      "passed": true
+    },
+    {
+      "name": "UC-BIL-18.2 repeated header identifies UC",
+      "passed": true
+    },
+    {
+      "name": "UC-BIL-18.3 Word values equal reviewed content",
+      "passed": true
+    },
+    {
+      "name": "UC-BIL-18.3 repeated header identifies UC",
+      "passed": true
+    },
+    {
+      "name": "UC-BIL-22 Word values equal reviewed content",
+      "passed": true
+    },
+    {
+      "name": "UC-BIL-22 repeated header identifies UC",
+      "passed": true
+    },
+    {
+      "name": "UC-BIL-23 Word values equal reviewed content",
+      "passed": true
+    },
+    {
+      "name": "UC-BIL-23 repeated header identifies UC",
+      "passed": true
+    },
+    {
+      "name": "UC-TEN-03 Word values equal reviewed content",
+      "passed": true
+    },
+    {
+      "name": "UC-TEN-03 repeated header identifies UC",
+      "passed": true
+    },
+    {
+      "name": "UC-TEN-04 Word values equal reviewed content",
+      "passed": true
+    },
+    {
+      "name": "UC-TEN-04 repeated header identifies UC",
+      "passed": true
+    },
+    {
+      "name": "UC-TEN-05 Word values equal reviewed content",
+      "passed": true
+    },
+    {
+      "name": "UC-TEN-05 repeated header identifies UC",
+      "passed": true
+    },
+    {
+      "name": "UC-TEN-08.2 Word values equal reviewed content",
+      "passed": true
+    },
+    {
+      "name": "UC-TEN-08.2 repeated header identifies UC",
+      "passed": true
+    },
+    {
+      "name": "UC-BIL-19 Word values equal reviewed content",
+      "passed": true
+    },
+    {
+      "name": "UC-BIL-19 repeated header identifies UC",
+      "passed": true
+    },
+    {
+      "name": "UC-OPS-01 Word values equal reviewed content",
+      "passed": true
+    },
+    {
+      "name": "UC-OPS-01 repeated header identifies UC",
+      "passed": true
+    },
+    {
+      "name": "UC-OPS-02 Word values equal reviewed content",
+      "passed": true
+    },
+    {
+      "name": "UC-OPS-02 repeated header identifies UC",
+      "passed": true
+    },
+    {
+      "name": "UC-OPS-03 Word values equal reviewed content",
+      "passed": true
+    },
+    {
+      "name": "UC-OPS-03 repeated header identifies UC",
+      "passed": true
+    },
+    {
+      "name": "UC-TEN-06 Word values equal reviewed content",
+      "passed": true
+    },
+    {
+      "name": "UC-TEN-06 repeated header identifies UC",
+      "passed": true
+    },
+    {
+      "name": "UC-OPS-04 Word values equal reviewed content",
+      "passed": true
+    },
+    {
+      "name": "UC-OPS-04 repeated header identifies UC",
+      "passed": true
+    },
+    {
+      "name": "UC-OPS-05 Word values equal reviewed content",
+      "passed": true
+    },
+    {
+      "name": "UC-OPS-05 repeated header identifies UC",
+      "passed": true
+    },
+    {
+      "name": "UC-OPS-06 Word values equal reviewed content",
+      "passed": true
+    },
+    {
+      "name": "UC-OPS-06 repeated header identifies UC",
+      "passed": true
+    },
+    {
+      "name": "UC-OPS-06.1 Word values equal reviewed content",
+      "passed": true
+    },
+    {
+      "name": "UC-OPS-06.1 repeated header identifies UC",
+      "passed": true
+    },
+    {
+      "name": "UC-OPS-07 Word values equal reviewed content",
+      "passed": true
+    },
+    {
+      "name": "UC-OPS-07 repeated header identifies UC",
+      "passed": true
+    },
+    {
+      "name": "UC-SUP-04 Word values equal reviewed content",
+      "passed": true
+    },
+    {
+      "name": "UC-SUP-04 repeated header identifies UC",
+      "passed": true
+    },
+    {
+      "name": "UC-SUP-06 Word values equal reviewed content",
+      "passed": true
+    },
+    {
+      "name": "UC-SUP-06 repeated header identifies UC",
+      "passed": true
+    },
+    {
+      "name": "UC-TEN-09.2 Word values equal reviewed content",
+      "passed": true
+    },
+    {
+      "name": "UC-TEN-09.2 repeated header identifies UC",
+      "passed": true
+    },
+    {
+      "name": "UC-TEN-09.3 Word values equal reviewed content",
+      "passed": true
+    },
+    {
+      "name": "UC-TEN-09.3 repeated header identifies UC",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-01 Word values equal reviewed content",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-01 repeated header identifies UC",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-14 Word values equal reviewed content",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-14 repeated header identifies UC",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-16 Word values equal reviewed content",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-16 repeated header identifies UC",
+      "passed": true
+    },
+    {
+      "name": "UC-BIL-20 Word values equal reviewed content",
+      "passed": true
+    },
+    {
+      "name": "UC-BIL-20 repeated header identifies UC",
+      "passed": true
+    },
+    {
+      "name": "UC-OPS-09 Word values equal reviewed content",
+      "passed": true
+    },
+    {
+      "name": "UC-OPS-09 repeated header identifies UC",
+      "passed": true
+    },
+    {
+      "name": "UC-OPT-01 Word values equal reviewed content",
+      "passed": true
+    },
+    {
+      "name": "UC-OPT-01 repeated header identifies UC",
+      "passed": true
+    },
+    {
+      "name": "UC-SUP-05.1 Word values equal reviewed content",
+      "passed": true
+    },
+    {
+      "name": "UC-SUP-05.1 repeated header identifies UC",
+      "passed": true
+    },
+    {
+      "name": "UC-SUP-05.2 Word values equal reviewed content",
+      "passed": true
+    },
+    {
+      "name": "UC-SUP-05.2 repeated header identifies UC",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-02 Word values equal reviewed content",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-02 repeated header identifies UC",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-03.1 Word values equal reviewed content",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-03.1 repeated header identifies UC",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-03.2 Word values equal reviewed content",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-03.2 repeated header identifies UC",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-04.1 Word values equal reviewed content",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-04.1 repeated header identifies UC",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-04.3 Word values equal reviewed content",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-04.3 repeated header identifies UC",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-05.1 Word values equal reviewed content",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-05.1 repeated header identifies UC",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-05.2 Word values equal reviewed content",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-05.2 repeated header identifies UC",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-06.1 Word values equal reviewed content",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-06.1 repeated header identifies UC",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-06.2 Word values equal reviewed content",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-06.2 repeated header identifies UC",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-08 Word values equal reviewed content",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-08 repeated header identifies UC",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-09 Word values equal reviewed content",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-09 repeated header identifies UC",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-10 Word values equal reviewed content",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-10 repeated header identifies UC",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-11 Word values equal reviewed content",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-11 repeated header identifies UC",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-11.1 Word values equal reviewed content",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-11.1 repeated header identifies UC",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-12 Word values equal reviewed content",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-12 repeated header identifies UC",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-12.1 Word values equal reviewed content",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-12.1 repeated header identifies UC",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-13.1 Word values equal reviewed content",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-13.1 repeated header identifies UC",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-13.2 Word values equal reviewed content",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-13.2 repeated header identifies UC",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-13.3 Word values equal reviewed content",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-13.3 repeated header identifies UC",
+      "passed": true
+    },
+    {
+      "name": "UC-DIS-07 Word values equal reviewed content",
+      "passed": true
+    },
+    {
+      "name": "UC-DIS-07 repeated header identifies UC",
+      "passed": true
+    },
+    {
+      "name": "UC-DIS-12 Word values equal reviewed content",
+      "passed": true
+    },
+    {
+      "name": "UC-DIS-12 repeated header identifies UC",
+      "passed": true
+    },
+    {
+      "name": "UC-DIS-13.1 Word values equal reviewed content",
+      "passed": true
+    },
+    {
+      "name": "UC-DIS-13.1 repeated header identifies UC",
+      "passed": true
+    },
+    {
+      "name": "UC-DIS-15 Word values equal reviewed content",
+      "passed": true
+    },
+    {
+      "name": "UC-DIS-15 repeated header identifies UC",
+      "passed": true
+    },
+    {
+      "name": "UC-SUP-01 Word values equal reviewed content",
+      "passed": true
+    },
+    {
+      "name": "UC-SUP-01 repeated header identifies UC",
+      "passed": true
+    },
+    {
+      "name": "UC-SUP-01.1 Word values equal reviewed content",
+      "passed": true
+    },
+    {
+      "name": "UC-SUP-01.1 repeated header identifies UC",
+      "passed": true
+    },
+    {
+      "name": "UC-SUP-02.1 Word values equal reviewed content",
+      "passed": true
+    },
+    {
+      "name": "UC-SUP-02.1 repeated header identifies UC",
+      "passed": true
+    },
+    {
+      "name": "UC-SUP-02.2 Word values equal reviewed content",
+      "passed": true
+    },
+    {
+      "name": "UC-SUP-02.2 repeated header identifies UC",
+      "passed": true
+    },
+    {
+      "name": "UC-SUP-03.2 Word values equal reviewed content",
+      "passed": true
+    },
+    {
+      "name": "UC-SUP-03.2 repeated header identifies UC",
+      "passed": true
+    },
+    {
+      "name": "UC-SUP-03.2.1 Word values equal reviewed content",
+      "passed": true
+    },
+    {
+      "name": "UC-SUP-03.2.1 repeated header identifies UC",
+      "passed": true
+    },
+    {
+      "name": "UC-SUP-03.2.2 Word values equal reviewed content",
+      "passed": true
+    },
+    {
+      "name": "UC-SUP-03.2.2 repeated header identifies UC",
+      "passed": true
+    },
+    {
+      "name": "UC-SUP-03.3 Word values equal reviewed content",
+      "passed": true
+    },
+    {
+      "name": "UC-SUP-03.3 repeated header identifies UC",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-18 Word values equal reviewed content",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-18 repeated header identifies UC",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-18.1 Word values equal reviewed content",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-18.1 repeated header identifies UC",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-19 Word values equal reviewed content",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-19 repeated header identifies UC",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-20 Word values equal reviewed content",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-20 repeated header identifies UC",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-21 Word values equal reviewed content",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-21 repeated header identifies UC",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-22 Word values equal reviewed content",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-22 repeated header identifies UC",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-15 Word values equal reviewed content",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-15 repeated header identifies UC",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-15.1 Word values equal reviewed content",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-15.1 repeated header identifies UC",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-17.1 Word values equal reviewed content",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-17.1 repeated header identifies UC",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-17.2 Word values equal reviewed content",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-17.2 repeated header identifies UC",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-23 Word values equal reviewed content",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-23 repeated header identifies UC",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-24 Word values equal reviewed content",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-24 repeated header identifies UC",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-26 Word values equal reviewed content",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-26 repeated header identifies UC",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-27 Word values equal reviewed content",
+      "passed": true
+    },
+    {
+      "name": "UC-ADM-27 repeated header identifies UC",
+      "passed": true
+    },
+    {
+      "name": "Protected source Catalog and canonical UML unchanged",
+      "passed": true
+    },
+    {
+      "name": "Word archive integrity",
+      "passed": true
+    }
+  ],
+  "limits": "Đối chiếu nội dung và cấu trúc báo cáo; không phải kết quả nghiệm thu ứng dụng."
+}

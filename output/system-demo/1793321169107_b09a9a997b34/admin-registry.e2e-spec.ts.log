@@ -1,0 +1,18 @@
+
+> rental-room-api@0.1.0 test:e2e
+> NODE_ENV=test jest --config ./test/jest-e2e.json --runInBand --runTestsByPath test/e2e/admin-registry.e2e-spec.ts --runInBand
+
+PASS test/e2e/admin-registry.e2e-spec.ts
+  Admin registry acceptance
+    ✓ keeps plan administration non-financial and protects stale revisions (289 ms)
+    ✓ assigns a snapshot only to an active landlord (308 ms)
+    ✓ owner verification is private, requires scanned evidence and has versioned audited decisions (327 ms)
+    ✓ exposes current property approval separately from archival and detects edited snapshots (310 ms)
+    ✓ restricts transaction investigation and redacts payment secrets without ledger mutation (300 ms)
+    ✓ serializes concurrent inventory growth against assigned quotas (298 ms)
+
+Test Suites: 1 passed, 1 total
+Tests:       6 passed, 6 total
+Snapshots:   0 total
+Time:        3.944 s
+Ran all test suites within paths "test/e2e/admin-registry.e2e-spec.ts".

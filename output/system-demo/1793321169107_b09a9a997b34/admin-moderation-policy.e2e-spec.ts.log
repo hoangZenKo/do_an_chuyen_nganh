@@ -1,0 +1,13 @@
+
+> rental-room-api@0.1.0 test:e2e
+> NODE_ENV=test jest --config ./test/jest-e2e.json --runInBand --runTestsByPath test/e2e/admin-moderation-policy.e2e-spec.ts --runInBand
+
+PASS test/e2e/admin-moderation-policy.e2e-spec.ts
+  Moderation policy E2E
+    ✓ versions policies, activates one policy per kind and exposes quality metrics (324 ms)
+
+Test Suites: 1 passed, 1 total
+Tests:       1 passed, 1 total
+Snapshots:   0 total
+Time:        2.935 s
+Ran all test suites within paths "test/e2e/admin-moderation-policy.e2e-spec.ts".

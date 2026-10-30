@@ -1,0 +1,60 @@
+[
+  {
+    "id": "login",
+    "layer": "UI",
+    "status": "passed",
+    "startedAt": "2026-10-30T01:18:00.340Z",
+    "screenshot": "login.png",
+    "finishedAt": "2026-10-30T01:18:16.948Z"
+  },
+  {
+    "id": "05-tao-sua-tim-nguoi-thue",
+    "layer": "UI",
+    "status": "passed",
+    "startedAt": "2026-10-30T01:18:16.949Z",
+    "screenshot": "05-tao-sua-tim-nguoi-thue.png",
+    "finishedAt": "2026-10-30T01:18:35.682Z"
+  },
+  {
+    "id": "09-thu-coc-va-doi-chieu",
+    "layer": "UI",
+    "status": "passed",
+    "startedAt": "2026-10-30T01:18:35.682Z",
+    "screenshot": "09-thu-coc-va-doi-chieu.png",
+    "finishedAt": "2026-10-30T01:18:48.646Z"
+  },
+  {
+    "id": "10-hoa-don-va-thanh-toan",
+    "layer": "UI",
+    "status": "passed",
+    "startedAt": "2026-10-30T01:18:48.647Z",
+    "screenshot": "10-hoa-don-va-thanh-toan.png",
+    "finishedAt": "2026-10-30T01:19:08.456Z"
+  },
+  {
+    "id": "10b-tao-hoa-don-qua-giao-dien",
+    "layer": "UI",
+    "status": "failed",
+    "startedAt": "2026-10-30T01:19:08.456Z",
+    "error": "AssertionError [ERR_ASSERTION]: Flutter runtime errors\n+ actual - expected\n\n+ [\n+   'A TextEditingController was used after being disposed.\\n' +\n+     'Once you have called dispose() on a TextEditingController, it can no longer be used.',\n+   'A RenderFlex overflowed by 99446 pixels on the bottom.',\n+   \"'package:flutter/src/widgets/framework.dart': Failed assertion: line 6179 pos 14: '_dependents.isEmpty': is not true.\"\n+ ]\n- []\n\n    at file:///Users/hoang/Rental_room_management/test/system_demo/system_demo.mjs:356:12\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async runCase (file:///Users/hoang/Rental_room_management/test/system_demo/system_demo.mjs:118:9)\n    at async scenario (file:///Users/hoang/Rental_room_management/test/system_demo/system_demo.mjs:349:18)\n    at async journeys (file:///Users/hoang/Rental_room_management/test/system_demo/system_demo.mjs:616:3)\n    at async visualJourneys (file:///Users/hoang/Rental_room_management/test/system_demo/system_demo.mjs:410:3)\n    at async main (file:///Users/hoang/Rental_room_management/test/system_demo/system_demo.mjs:955:7)",
+    "finishedAt": "2026-10-30T01:19:34.015Z",
+    "screenshot": "10b-tao-hoa-don-qua-giao-dien-FAILED.png"
+  },
+  {
+    "id": "15b-ticket-ho-tro",
+    "layer": "UI",
+    "status": "failed",
+    "startedAt": "2026-10-30T01:19:34.243Z",
+    "error": "AssertionError [ERR_ASSERTION]: Flutter runtime errors\n+ actual - expected\n\n+ [\n+   'Duplicate GlobalKeys detected in widget tree.\\n' +\n+     'The following GlobalKeys were specified multiple times in the widget tree. This will lead to parts of the widget tree being truncated unexpectedly, because the second time a key is seen, the previous instance is moved to the new location. The keys were:\\n' +\n+     '- [LabeledGlobalKey<_OverlayEntryWidgetState>#beff1]\\n' +\n+     '  [LabeledGlobalKey<_OverlayEntryWidgetState>#18b26]\\n' +\n+     'This was determined by noticing that after widgets with the above global keys were moved out of their previous parent, that previous parent never updated during this frame, meaning that it either did not update at all or updated before the widgets were moved, in either case implying that it still thinks that it should have a child with those global keys.\\n' +\n+     'The specific parent that did not update after having one or more children forcibly removed due to GlobalKey reparenting is:\\n' +\n+     '- _Theater(skipCount: 0, dependencies: [Directionality], renderObject: _RenderTheater#07278 NEEDS-LAYOUT NEEDS-COMPOSITING-BITS-UPDATE DETACHED)\\n' +\n+     'A GlobalKey can only be specified on one widget at a time in the widget tree.',\n+   'A RenderFlex overflowed by 12 pixels on the bottom.'\n+ ]\n- []\n\n    at file:///Users/hoang/Rental_room_management/test/system_demo/system_demo.mjs:356:12\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async runCase (file:///Users/hoang/Rental_room_management/test/system_demo/system_demo.mjs:118:9)\n    at async scenario (file:///Users/hoang/Rental_room_management/test/system_demo/system_demo.mjs:349:18)\n    at async journeys (file:///Users/hoang/Rental_room_management/test/system_demo/system_demo.mjs:702:3)\n    at async visualJourneys (file:///Users/hoang/Rental_room_management/test/system_demo/system_demo.mjs:410:3)\n    at async main (file:///Users/hoang/Rental_room_management/test/system_demo/system_demo.mjs:955:7)",
+    "finishedAt": "2026-10-30T01:19:51.473Z",
+    "screenshot": "15b-ticket-ho-tro-FAILED.png"
+  },
+  {
+    "id": "19-yeu-cau-tra-phong",
+    "layer": "UI",
+    "status": "passed",
+    "startedAt": "2026-10-30T01:19:51.728Z",
+    "screenshot": "19-yeu-cau-tra-phong.png",
+    "finishedAt": "2026-10-30T01:20:20.153Z"
+  }
+]

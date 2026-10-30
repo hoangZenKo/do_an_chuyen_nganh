@@ -1,0 +1,109 @@
+@startuml
+skinparam backgroundColor white
+skinparam shadowing false
+skinparam dpi 240
+skinparam defaultFontName "Times New Roman"
+skinparam defaultFontSize 17
+skinparam defaultFontColor black
+skinparam titleFontSize 21
+skinparam titleFontColor black
+skinparam roundcorner 0
+skinparam maxMessageSize 270
+skinparam ParticipantPadding 30
+skinparam sequence {
+  ArrowColor #800000
+  ArrowThickness 1.2
+  LifeLineBorderColor #999999
+  LifeLineBackgroundColor #FFFFB9
+  ParticipantBackgroundColor #FFFFB9
+  ParticipantBorderColor #800000
+  ParticipantFontColor black
+  ActorBackgroundColor #FFFFB9
+  ActorBorderColor #800000
+  ActorFontColor black
+  BoundaryBackgroundColor #FFFFB9
+  BoundaryBorderColor #800000
+  ControlBackgroundColor #FFFFB9
+  ControlBorderColor #800000
+  EntityBackgroundColor #FFFFB9
+  EntityBorderColor #800000
+  GroupBackgroundColor #FFFFB9
+  GroupBodyBackgroundColor white
+  GroupBorderColor #888888
+  GroupFontColor black
+  GroupHeaderFontColor black
+  GroupFontSize 15
+  GroupHeaderFontSize 16
+  MessageAlign center
+}
+hide footbox
+<style>
+sequenceDiagram {
+ actor { BackgroundColor #FFFFB9
+ LineColor #800000 }
+ boundary { BackgroundColor #FFFFB9
+ LineColor #800000 }
+ control { BackgroundColor #FFFFB9
+ LineColor #800000 }
+ entity { BackgroundColor #FFFFB9
+ LineColor #800000 }
+ activationBox { BackgroundColor #FFFFB9
+ LineColor #800000 }
+}
+</style>
+autonumber "<b>0.</b>"
+
+title SD-17. Hỏi hướng dẫn sử dụng và đọc nguồn được phép
+actor "Chủ trọ" as A
+boundary "<u>Giao diện</u>\n<u>trợ lý hướng dẫn</u>" as U #FFFFB9
+control "<u>Tư vấn</u>\n<u>hướng dẫn sử dụng</u>" as C #FFFFB9
+entity "<u>Tài liệu hướng dẫn</u>\n<u>theo quyền sử dụng</u>" as D #FFFFB9
+A -> U: Nhập câu hỏi và phạm vi khu trọ nếu cần
+activate U
+U -> C: Yêu cầu hướng dẫn sử dụng theo phạm vi đã chọn
+activate C
+alt Trợ lý tắt, bận, quá thời gian hoặc phạm vi không được phép
+C --> U: Chưa thể trả lời
+U --> A: Chưa thể trả lời; thông báo lý do
+else Câu hỏi thiếu ngữ cảnh hoặc yêu cầu số liệu hoạt động hiện tại
+C --> U: Yêu cầu làm rõ hoặc nêu giới hạn
+U --> A: Yêu cầu làm rõ hoặc nêu giới hạn; không cung cấp số liệu trực tiếp
+else Câu hỏi hướng dẫn hợp lệ và được phép
+C -> D ++: Tìm nội dung hướng dẫn thuộc phạm vi được đọc
+D --> C --: Các đoạn hướng dẫn phù hợp hoặc không có nguồn
+alt Không có nguồn đủ căn cứ
+C --> U: Thông báo chưa đủ căn cứ để trả lời
+U --> A: Thông báo chưa đủ căn cứ để trả lời
+else Có tài liệu phù hợp
+C -> C: Soạn câu trả lời và đối chiếu trích dẫn với tài liệu
+C -> D ++: Đối chiếu hiệu lực và quyền đọc nguồn đã dùng
+D --> C --: Tình trạng nguồn tại thời điểm trả lời
+alt Câu trả lời hợp lệ và nguồn vẫn được phép sử dụng
+C --> U: Hiển thị hướng dẫn và nguồn tham khảo
+U --> A: Hiển thị hướng dẫn và nguồn tham khảo
+else Nội dung không đủ căn cứ, không hợp lệ hoặc nguồn đã thay đổi
+C --> U: Thông báo chưa thể cung cấp câu trả lời có căn cứ
+U --> A: Thông báo chưa thể cung cấp câu trả lời có căn cứ
+end
+end
+end
+deactivate C
+deactivate U
+opt Có nguồn tham khảo; chủ trọ chọn đọc
+A -> U: Yêu cầu mở nguồn tham khảo
+activate U
+U -> C: Yêu cầu mở nguồn tham khảo
+activate C
+C -> D ++: Kiểm tra lại quyền đọc và hiệu lực nguồn
+D --> C --: Nội dung được phép hoặc điều kiện từ chối
+alt Nguồn còn hiệu lực và có quyền đọc
+C --> U: Hiển thị nội dung nguồn hướng dẫn
+U --> A: Hiển thị nội dung nguồn hướng dẫn
+else Nguồn không còn khả dụng hoặc không được phép
+C --> U: Không mở nguồn
+U --> A: Không mở nguồn; thông báo lý do
+end
+deactivate C
+deactivate U
+end
+@enduml

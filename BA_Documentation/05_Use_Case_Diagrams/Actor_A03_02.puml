@@ -1,0 +1,72 @@
+@startuml
+left to right direction
+skinparam defaultFontName SansSerif
+skinparam defaultFontSize 13
+skinparam backgroundColor #F8FAFC
+skinparam shadowing false
+skinparam ArrowColor #52647A
+skinparam ArrowThickness 1
+skinparam actorStyle stickman
+skinparam actorBorderColor #243A52
+skinparam actorFontColor #243A52
+skinparam actorBackgroundColor #FFFFFF
+skinparam usecase {
+  BackgroundColor #FFFFFF
+  BorderColor #327C83
+  FontColor #20354B
+  BackgroundColor<<Một phần>> #FFF0CE
+  BorderColor<<Một phần>> #B17917
+  BackgroundColor<<DEMO>> #FCE5DF
+  BorderColor<<DEMO>> #BC593A
+  BackgroundColor<<MÔ PHỎNG>> #E7EAF1
+  BorderColor<<MÔ PHỎNG>> #6C7488
+}
+skinparam rectangle {
+  BackgroundColor #EEF4F5
+  BorderColor #243A52
+  FontColor #243A52
+}
+skinparam titleFontColor #20354B
+skinparam titleFontSize 18
+skinparam nodesep 25
+skinparam ranksep 65
+title A03 · NHÂN VIÊN VẬN HÀNH\n<size:12>Trang 2/6 · Khu trọ, phòng và tài sản</size>
+caption AS-IS · 29/10/2026 · Snapshot c565c29 · Không biểu diễn trình tự xử lý
+actor "A03\nNhân viên vận hành" as A03
+rectangle "Hệ thống quản lý nhà trọ" as SYSTEM {
+  usecase "UC-OPT-02\nTra cứu khu trọ" as UC_OPT_02
+  usecase "UC-OPT-03.2\nCập nhật thông tin khu trọ" as UC_OPT_03_2
+  usecase "UC-OPT-04.1\nLưu trữ hoặc khôi phục khu trọ" as UC_OPT_04_1
+  usecase "UC-OPT-04.3\nXóa khu trọ đủ điều kiện" as UC_OPT_04_3
+  usecase "UC-OPT-05\nTra cứu phòng và lịch sử liên\nquan" as UC_OPT_05
+  usecase "UC-OPT-06.1\nTạo phòng" as UC_OPT_06_1
+  usecase "UC-OPT-06.2\nCập nhật thông tin phòng" as UC_OPT_06_2
+  usecase "UC-OPT-07.1\nĐổi trạng thái sử dụng phòng" as UC_OPT_07_1
+  usecase "UC-OPT-07.2\nVô hiệu hóa hoặc khôi phục\nphòng" as UC_OPT_07_2
+  usecase "UC-OPT-07.3\nXóa phòng đủ điều kiện" as UC_OPT_07_3
+  usecase "UC-OPT-08.1\nQuản lý tài sản phòng" as UC_OPT_08_1
+  usecase "UC-OPT-08.2\nTheo dõi lịch kiểm tra phòng" as UC_OPT_08_2
+  usecase "UC-OPT-09\nQuản lý phiên bản phí dịch vụ\nphòng" as UC_OPT_09
+}
+A03 -- UC_OPT_02 : tùy handler: property.view
+A03 -- UC_OPT_03_2 : tùy handler: property.manage
+A03 -- UC_OPT_04_1 : tùy handler: property.manage
+A03 -- UC_OPT_04_3 : tùy handler: property.manage
+A03 -- UC_OPT_05 : tùy handler: room.view
+A03 -- UC_OPT_06_1 : tùy handler: room.manage
+A03 -- UC_OPT_06_2 : tùy handler: room.manage
+A03 -- UC_OPT_07_1 : tùy handler: room.manage
+A03 -- UC_OPT_07_2 : tùy handler: room.manage
+A03 -- UC_OPT_07_3 : tùy handler: room.manage
+A03 -- UC_OPT_08_1 : tùy handler: room.view / room.manage
+A03 -- UC_OPT_08_2 : tùy handler: room.view / room.manage
+A03 -[#3975AA]- UC_OPT_09 : chỉ đọc phí/phiên bản
+legend bottom left
+  Đường liền: tương tác; không biểu diễn luồng điều khiển.
+  STAFF: permission theo handler + khu được giao + whitelist controller; không mặc định toàn quyền.
+  Đường xanh có nhãn: biến thể giới hạn (V), không được toàn bộ mục tiêu UC.
+  Mặc định: xác minh tĩnh, chưa nghiệm thu runtime; màu vàng: một phần, cam: DEMO, xám: mô phỏng.
+  Góc nhìn A03: nhãn liệt kê quyền tùy handler, KHÔNG yêu cầu đồng thời mọi quyền; giữ nguyên UC.
+  Quyền chi tiết, điều kiện và nguồn: Association_Traceability.md / data/diagram-manifest.json.
+endlegend
+@enduml

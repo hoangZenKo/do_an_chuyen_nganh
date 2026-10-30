@@ -1,0 +1,273 @@
+{
+  "status": "PASSED",
+  "checkedAt": "2026-10-29T17:18:34.026Z",
+  "repositoryRoot": "/Users/hoang/Rental_room_management",
+  "snapshotCommit": "c565c29ee5742d38dfaea37aa8fa047f4b6793c0",
+  "applicationTestsRun": false,
+  "checks": {
+    "unique_162_uc_ids": {
+      "passed": true,
+      "detail": 162
+    },
+    "sixteen_business_groups": {
+      "passed": true,
+      "detail": [
+        [
+          "G01",
+          11
+        ],
+        [
+          "G02",
+          6
+        ],
+        [
+          "G03",
+          7
+        ],
+        [
+          "G04",
+          14
+        ],
+        [
+          "G05",
+          4
+        ],
+        [
+          "G06",
+          17
+        ],
+        [
+          "G07",
+          7
+        ],
+        [
+          "G08",
+          28
+        ],
+        [
+          "G09",
+          5
+        ],
+        [
+          "G10",
+          9
+        ],
+        [
+          "G11",
+          8
+        ],
+        [
+          "G12",
+          12
+        ],
+        [
+          "G13",
+          11
+        ],
+        [
+          "G14",
+          8
+        ],
+        [
+          "G15",
+          6
+        ],
+        [
+          "G16",
+          9
+        ]
+      ]
+    },
+    "five_primary_five_external_actors": {
+      "passed": true,
+      "detail": [
+        5,
+        5
+      ]
+    },
+    "mandatory_catalog_fields": {
+      "passed": true,
+      "detail": "Business goals and actual actors required"
+    },
+    "matrix_same_uc_and_actor_set": {
+      "passed": true,
+      "detail": 162
+    },
+    "fdd_exact_uc_coverage": {
+      "passed": true,
+      "detail": 162
+    },
+    "fdd_business_group_alignment": {
+      "passed": true,
+      "detail": "Each UC exactly one business group"
+    },
+    "trace_records_same_uc_set": {
+      "passed": true,
+      "detail": 162
+    },
+    "405_unique_endpoints_disposition": {
+      "passed": true,
+      "detail": 405
+    },
+    "395_uc_10_technical_endpoints": {
+      "passed": true,
+      "detail": [
+        395,
+        10
+      ]
+    },
+    "all_bindings_linked_to_route_or_local_logic": {
+      "passed": true,
+      "detail": "No missing controller binding"
+    },
+    "180_survey_items_disposition": {
+      "passed": true,
+      "detail": 180
+    },
+    "164_prior_ids_crosswalk": {
+      "passed": true,
+      "detail": 164
+    },
+    "63_historical_ids_crosswalk": {
+      "passed": true,
+      "detail": 63
+    },
+    "id_balance_164_minus17_plus15": {
+      "passed": true,
+      "detail": "164 - 17 + 15 = 162"
+    },
+    "decisions_resolve_to_valid_targets": {
+      "passed": true,
+      "detail": 27
+    },
+    "verification_states": {
+      "passed": true,
+      "detail": {
+        "Xác minh tĩnh": 151,
+        "Một phần": 9,
+        "Đã triển khai — DEMO": 1,
+        "Đã triển khai — MÔ PHỎNG": 1
+      }
+    },
+    "three_unverified_not_uc": {
+      "passed": true,
+      "detail": [
+        "GAP-01",
+        "GAP-02",
+        "GAP-03"
+      ]
+    },
+    "staff_sensitive_role_boundaries": {
+      "passed": true,
+      "detail": "No inferred fee-write/tariff-approve/period-lock/invite rights; direct tenant account and staff lookup retained"
+    },
+    "staff_primary_has_allowed_handler": {
+      "passed": true,
+      "detail": "Role + interceptor, not decorators alone"
+    },
+    "lease_creation_not_duplicated": {
+      "passed": true,
+      "detail": "Direct/viewing variants consolidated"
+    },
+    "tenant_lease_pdf_not_inferred": {
+      "passed": true,
+      "detail": "No portal lease PDF link found"
+    },
+    "846_source_hashes_unchanged": {
+      "passed": true,
+      "detail": []
+    },
+    "all_evidence_file_line_anchors_exist": {
+      "passed": true,
+      "detail": {
+        "checked": 1260,
+        "invalid": []
+      }
+    },
+    "markdown_catalog_162_rows": {
+      "passed": true,
+      "detail": 162
+    },
+    "markdown_matrix_162_rows": {
+      "passed": true,
+      "detail": 162
+    },
+    "plantuml_wbs_not_uc_diagram": {
+      "passed": true,
+      "detail": 162
+    },
+    "group_fdd_G01": {
+      "passed": true,
+      "detail": 11
+    },
+    "group_fdd_G02": {
+      "passed": true,
+      "detail": 6
+    },
+    "group_fdd_G03": {
+      "passed": true,
+      "detail": 7
+    },
+    "group_fdd_G04": {
+      "passed": true,
+      "detail": 14
+    },
+    "group_fdd_G05": {
+      "passed": true,
+      "detail": 4
+    },
+    "group_fdd_G06": {
+      "passed": true,
+      "detail": 17
+    },
+    "group_fdd_G07": {
+      "passed": true,
+      "detail": 7
+    },
+    "group_fdd_G08": {
+      "passed": true,
+      "detail": 28
+    },
+    "group_fdd_G09": {
+      "passed": true,
+      "detail": 5
+    },
+    "group_fdd_G10": {
+      "passed": true,
+      "detail": 9
+    },
+    "group_fdd_G11": {
+      "passed": true,
+      "detail": 8
+    },
+    "group_fdd_G12": {
+      "passed": true,
+      "detail": 12
+    },
+    "group_fdd_G13": {
+      "passed": true,
+      "detail": 11
+    },
+    "group_fdd_G14": {
+      "passed": true,
+      "detail": 8
+    },
+    "group_fdd_G15": {
+      "passed": true,
+      "detail": 6
+    },
+    "group_fdd_G16": {
+      "passed": true,
+      "detail": 9
+    },
+    "17_svg_valid_xml": {
+      "passed": true,
+      "detail": 17
+    },
+    "no_unresolved_placeholders": {
+      "passed": true,
+      "detail": []
+    }
+  },
+  "failures": []
+}

@@ -1,0 +1,108 @@
+@startuml
+skinparam backgroundColor white
+skinparam shadowing false
+skinparam dpi 240
+skinparam defaultFontName "Times New Roman"
+skinparam defaultFontSize 17
+skinparam defaultFontColor black
+skinparam titleFontSize 21
+skinparam titleFontColor black
+skinparam roundcorner 0
+skinparam maxMessageSize 270
+skinparam ParticipantPadding 30
+skinparam sequence {
+  ArrowColor #800000
+  ArrowThickness 1.2
+  LifeLineBorderColor #999999
+  LifeLineBackgroundColor #FFFFB9
+  ParticipantBackgroundColor #FFFFB9
+  ParticipantBorderColor #800000
+  ParticipantFontColor black
+  ActorBackgroundColor #FFFFB9
+  ActorBorderColor #800000
+  ActorFontColor black
+  BoundaryBackgroundColor #FFFFB9
+  BoundaryBorderColor #800000
+  ControlBackgroundColor #FFFFB9
+  ControlBorderColor #800000
+  EntityBackgroundColor #FFFFB9
+  EntityBorderColor #800000
+  GroupBackgroundColor #FFFFB9
+  GroupBodyBackgroundColor white
+  GroupBorderColor #888888
+  GroupFontColor black
+  GroupHeaderFontColor black
+  GroupFontSize 15
+  GroupHeaderFontSize 16
+  MessageAlign center
+}
+hide footbox
+<style>
+sequenceDiagram {
+ actor { BackgroundColor #FFFFB9
+ LineColor #800000 }
+ boundary { BackgroundColor #FFFFB9
+ LineColor #800000 }
+ control { BackgroundColor #FFFFB9
+ LineColor #800000 }
+ entity { BackgroundColor #FFFFB9
+ LineColor #800000 }
+ activationBox { BackgroundColor #FFFFB9
+ LineColor #800000 }
+}
+</style>
+autonumber "<b>0.</b>"
+
+title SD-04. Đề xuất và xét duyệt biểu phí
+actor "Chủ trọ" as A
+boundary "<u>Giao diện</u>\n<u>biểu phí</u>" as U #FFFFB9
+control "<u>Quản lý</u>\n<u>biểu phí</u>" as C #FFFFB9
+entity "<u>Biểu phí</u>\n<u>và kỳ tính tiền</u>" as D #FFFFB9
+A -> U: Nhập mức phí, phạm vi và tháng hiệu lực; gửi đề xuất
+activate U
+U -> C: Yêu cầu ghi nhận đề xuất biểu phí
+activate C
+C -> D ++: Kiểm tra phạm vi; lưu đề xuất hợp lệ
+D --> C --: Đề xuất chờ duyệt hoặc điều kiện không hợp lệ
+C --> U: Hiển thị kết quả gửi đề xuất
+U --> A: Hiển thị kết quả gửi đề xuất
+deactivate C
+deactivate U
+opt Có đề xuất; người dùng có quyền duyệt chọn xem tác động
+A -> U: Yêu cầu xem phạm vi ảnh hưởng của đề xuất
+activate U
+U -> C: Yêu cầu xem phạm vi ảnh hưởng của đề xuất
+activate C
+C -> D ++: Tra cứu giá hiện hành, phòng áp dụng, hóa đơn và kỳ đã khóa
+D --> C --: Phạm vi ảnh hưởng và các lý do chặn phê duyệt
+C --> U: Hiển thị tác động và khả năng phê duyệt
+U --> A: Hiển thị tác động và khả năng phê duyệt
+deactivate C
+deactivate U
+A -> U: Chọn chấp thuận hoặc từ chối; nhập lý do
+activate U
+U -> C: Yêu cầu xét duyệt đề xuất biểu phí
+activate C
+C -> D ++: Đối chiếu lại đề xuất và kỳ hiệu lực hiện hành
+D --> C --: Trạng thái đề xuất và điều kiện áp dụng mới nhất
+alt Đề xuất đã được xử lý hoặc ngoài quyền
+C --> U: Không ghi quyết định
+U --> A: Không ghi quyết định; yêu cầu tải lại
+else Còn chờ duyệt; người duyệt chọn từ chối
+C -> D ++: Lưu quyết định từ chối và lý do
+D --> C --: Đề xuất bị từ chối; không áp dụng mức phí
+C --> U: Đã từ chối đề xuất
+U --> A: Đã từ chối đề xuất
+else Chọn duyệt nhưng kỳ đã tính tiền, khóa hoặc sai thứ tự hiệu lực
+C --> U: Không phê duyệt
+U --> A: Không phê duyệt; hiển thị lý do chặn
+else Chọn duyệt và đủ điều kiện áp dụng
+C -> D ++: Lưu biểu phí được duyệt theo tháng hiệu lực
+D --> C --: Biểu phí được phê duyệt; giữ lịch sử giá
+C --> U: Đã phê duyệt biểu phí
+U --> A: Đã phê duyệt biểu phí
+end
+deactivate C
+deactivate U
+end
+@enduml

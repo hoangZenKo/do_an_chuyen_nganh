@@ -1,0 +1,60 @@
+@startuml
+left to right direction
+skinparam defaultFontName SansSerif
+skinparam defaultFontSize 13
+skinparam backgroundColor #F8FAFC
+skinparam shadowing false
+skinparam ArrowColor #52647A
+skinparam ArrowThickness 1
+skinparam actorStyle stickman
+skinparam actorBorderColor #243A52
+skinparam actorFontColor #243A52
+skinparam actorBackgroundColor #FFFFFF
+skinparam usecase {
+  BackgroundColor #FFFFFF
+  BorderColor #327C83
+  FontColor #20354B
+  BackgroundColor<<Một phần>> #FFF0CE
+  BorderColor<<Một phần>> #B17917
+  BackgroundColor<<DEMO>> #FCE5DF
+  BorderColor<<DEMO>> #BC593A
+  BackgroundColor<<MÔ PHỎNG>> #E7EAF1
+  BorderColor<<MÔ PHỎNG>> #6C7488
+}
+skinparam rectangle {
+  BackgroundColor #EEF4F5
+  BorderColor #243A52
+  FontColor #243A52
+}
+skinparam titleFontColor #20354B
+skinparam titleFontSize 18
+skinparam nodesep 25
+skinparam ranksep 65
+title G02 · Tìm và lựa chọn phòng\n<size:12>Đầy đủ UC của nhóm nghiệp vụ</size>
+caption AS-IS · 29/10/2026 · Snapshot c565c29 · Không biểu diễn trình tự xử lý
+actor "A01\nKhách/chưa đăng nhập" as A01
+actor "A04\nNgười tìm phòng/người\nthuê" as A04
+rectangle "Hệ thống quản lý nhà trọ" as SYSTEM {
+  usecase "UC-DIS-01\nTìm và lọc tin phòng công khai" as UC_DIS_01
+  usecase "UC-DIS-02\nXem chi tiết tin và đánh giá\ncông khai" as UC_DIS_02
+  usecase "UC-DIS-03\nLưu và bỏ lưu phòng yêu thích" as UC_DIS_03
+  usecase "UC-DIS-04\nLưu bộ lọc và theo dõi tin khớp" as UC_DIS_04
+  usecase "UC-DIS-16\nSo sánh các phòng quan tâm" as UC_DIS_16
+  usecase "UC-DIS-17\nƯớc tính chi phí thuê phòng" as UC_DIS_17
+}
+A01 -- UC_DIS_01
+UC_DIS_01 -- A04
+A01 -- UC_DIS_02
+UC_DIS_02 -- A04
+UC_DIS_03 -- A04
+UC_DIS_04 -- A04
+A01 -- UC_DIS_16
+UC_DIS_16 -- A04
+A01 -- UC_DIS_17
+UC_DIS_17 -- A04
+legend bottom left
+  Đường liền: tương tác; không biểu diễn luồng điều khiển.
+  Mặc định: xác minh tĩnh, chưa nghiệm thu runtime; màu vàng: một phần, cam: DEMO, xám: mô phỏng.
+  Quyền chi tiết, điều kiện và nguồn: Association_Traceability.md / data/diagram-manifest.json.
+endlegend
+@enduml

@@ -1,0 +1,129 @@
+@startuml
+skinparam backgroundColor white
+skinparam shadowing false
+skinparam dpi 240
+skinparam defaultFontName "Times New Roman"
+skinparam defaultFontSize 17
+skinparam defaultFontColor black
+skinparam titleFontSize 21
+skinparam titleFontColor black
+skinparam roundcorner 0
+skinparam maxMessageSize 270
+skinparam ParticipantPadding 30
+skinparam sequence {
+  ArrowColor #800000
+  ArrowThickness 1.2
+  LifeLineBorderColor #999999
+  LifeLineBackgroundColor #FFFFB9
+  ParticipantBackgroundColor #FFFFB9
+  ParticipantBorderColor #800000
+  ParticipantFontColor black
+  ActorBackgroundColor #FFFFB9
+  ActorBorderColor #800000
+  ActorFontColor black
+  BoundaryBackgroundColor #FFFFB9
+  BoundaryBorderColor #800000
+  ControlBackgroundColor #FFFFB9
+  ControlBorderColor #800000
+  EntityBackgroundColor #FFFFB9
+  EntityBorderColor #800000
+  GroupBackgroundColor #FFFFB9
+  GroupBodyBackgroundColor white
+  GroupBorderColor #888888
+  GroupFontColor black
+  GroupHeaderFontColor black
+  GroupFontSize 15
+  GroupHeaderFontSize 16
+  MessageAlign center
+}
+hide footbox
+<style>
+sequenceDiagram {
+ actor { BackgroundColor #FFFFB9
+ LineColor #800000 }
+ boundary { BackgroundColor #FFFFB9
+ LineColor #800000 }
+ control { BackgroundColor #FFFFB9
+ LineColor #800000 }
+ entity { BackgroundColor #FFFFB9
+ LineColor #800000 }
+ activationBox { BackgroundColor #FFFFB9
+ LineColor #800000 }
+}
+</style>
+autonumber "<b>0.</b>"
+
+title SD-02. Đặt lịch xem phòng và lập hợp đồng từ lịch xem
+actor "Người tìm thuê" as A
+actor "Chủ trọ" as B
+boundary "<u>Giao diện</u>\n<u>lịch xem phòng</u>" as U #FFFFB9
+control "<u>Quản lý</u>\n<u>lịch xem và nhận thuê</u>" as C #FFFFB9
+entity "<u>Lịch xem, tin đăng</u>\n<u>và hợp đồng</u>" as D #FFFFB9
+A -> U: Chọn tin đăng và thời gian; gửi yêu cầu xem phòng
+activate U
+U -> C: Yêu cầu đặt lịch xem phòng
+activate C
+C -> D ++: Đối chiếu tin còn nhận khách và lịch hẹn hai bên
+D --> C --: Tình trạng tin, khung giờ và lịch trùng
+alt Tin không khả dụng hoặc thời gian không đáp ứng quy định
+C --> U: Không đặt được lịch
+U --> A: Không đặt được lịch; thông báo lý do
+else Tin và thời gian hợp lệ; không trùng lịch
+C -> D ++: Lưu lịch chờ xác nhận và thông báo cho chủ trọ
+D --> C --: Yêu cầu xem phòng đã được ghi nhận
+C --> U: Lịch đang chờ chủ trọ xác nhận
+U --> A: Lịch đang chờ chủ trọ xác nhận
+end
+deactivate C
+deactivate U
+opt Có lịch chờ xác nhận; chủ trọ chọn xử lý
+B -> U: Xác nhận lịch hẹn còn trong tương lai
+activate U
+U -> C: Yêu cầu xác nhận lịch xem
+activate C
+C -> D ++: Đối chiếu quyền, lịch hiện hành và khả năng nhận khách
+D --> C --: Kết quả kiểm tra lịch hẹn
+alt Lịch hoặc phòng đã thay đổi; lịch không còn hợp lệ
+C --> U: Không xác nhận
+U --> B: Không xác nhận; yêu cầu kiểm tra lại
+else Lịch còn đủ điều kiện
+C -> D ++: Ghi lịch đã xác nhận và thông báo người xem
+D --> C --: Lịch đã được xác nhận
+C --> U: Xác nhận lịch xem thành công
+U --> B: Xác nhận lịch xem thành công
+end
+deactivate C
+deactivate U
+end
+opt Lịch đã xác nhận và đã đến giờ hẹn
+B -> U: Ghi nhận khách đã xem phòng
+activate U
+U -> C: Yêu cầu hoàn tất lịch xem
+activate C
+C -> D ++: Đối chiếu và cập nhật lịch đủ điều kiện
+D --> C --: Lịch hoàn tất hoặc không thể cập nhật
+C --> U: Hiển thị kết quả ghi nhận đã xem
+U --> B: Hiển thị kết quả ghi nhận đã xem
+deactivate C
+deactivate U
+end
+opt Chủ trọ chọn lập hợp đồng từ lịch đã hoàn tất
+B -> U: Nhập điều khoản và yêu cầu lập hợp đồng
+activate U
+U -> C: Yêu cầu lập hợp đồng từ lịch đã xem
+activate C
+C -> D ++: Đối chiếu lịch xem, phòng và hồ sơ người thuê
+D --> C --: Điều kiện nhận thuê hiện hành
+alt Lịch, phòng hoặc người thuê không còn đủ điều kiện
+C --> U: Không tạo hợp đồng
+U --> B: Không tạo hợp đồng; thông báo lý do
+else Đủ điều kiện nhận thuê
+C -> D ++: Lập hợp đồng; ghi phòng có người ở; ẩn tin; hủy lịch còn lại
+D --> C --: Hợp đồng đã lập; chưa ghi nhận thu cọc
+C --> U: Lập hợp đồng thành công
+U --> B: Lập hợp đồng thành công; hiển thị người thuê và hợp đồng
+end
+deactivate C
+deactivate U
+end
+@enduml

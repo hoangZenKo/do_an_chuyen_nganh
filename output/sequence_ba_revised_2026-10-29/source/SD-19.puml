@@ -1,0 +1,100 @@
+@startuml
+skinparam backgroundColor white
+skinparam shadowing false
+skinparam dpi 240
+skinparam defaultFontName "Times New Roman"
+skinparam defaultFontSize 17
+skinparam defaultFontColor black
+skinparam titleFontSize 21
+skinparam titleFontColor black
+skinparam roundcorner 0
+skinparam maxMessageSize 270
+skinparam ParticipantPadding 30
+skinparam sequence {
+  ArrowColor #800000
+  ArrowThickness 1.2
+  LifeLineBorderColor #999999
+  LifeLineBackgroundColor #FFFFB9
+  ParticipantBackgroundColor #FFFFB9
+  ParticipantBorderColor #800000
+  ParticipantFontColor black
+  ActorBackgroundColor #FFFFB9
+  ActorBorderColor #800000
+  ActorFontColor black
+  BoundaryBackgroundColor #FFFFB9
+  BoundaryBorderColor #800000
+  ControlBackgroundColor #FFFFB9
+  ControlBorderColor #800000
+  EntityBackgroundColor #FFFFB9
+  EntityBorderColor #800000
+  GroupBackgroundColor #FFFFB9
+  GroupBodyBackgroundColor white
+  GroupBorderColor #888888
+  GroupFontColor black
+  GroupHeaderFontColor black
+  GroupFontSize 15
+  GroupHeaderFontSize 16
+  MessageAlign center
+}
+hide footbox
+<style>
+sequenceDiagram {
+ actor { BackgroundColor #FFFFB9
+ LineColor #800000 }
+ boundary { BackgroundColor #FFFFB9
+ LineColor #800000 }
+ control { BackgroundColor #FFFFB9
+ LineColor #800000 }
+ entity { BackgroundColor #FFFFB9
+ LineColor #800000 }
+ activationBox { BackgroundColor #FFFFB9
+ LineColor #800000 }
+}
+</style>
+autonumber "<b>0.</b>"
+
+title SD-19. Gán và kết thúc quyền sử dụng gói
+actor "Quản trị viên" as A
+boundary "<u>Giao diện</u>\n<u>quản lý gói</u>" as U #FFFFB9
+control "<u>Quản lý</u>\n<u>quyền sử dụng gói</u>" as C #FFFFB9
+entity "<u>Gói dịch vụ</u>\n<u>và quyền của chủ trọ</u>" as D #FFFFB9
+A -> U: Chọn chủ trọ, gói, hạn sử dụng và lý do gán gói
+activate U
+U -> C: Yêu cầu gán quyền sử dụng gói
+activate C
+C -> D ++: Đối chiếu tài khoản, gói, quyền hiện hành và số khu, phòng
+D --> C --: Điều kiện sử dụng và hạn mức của gói
+alt Tài khoản, gói ngừng hoạt động; hạn sai hoặc dữ liệu đã đổi
+C --> U: Không gán gói
+U --> A: Không gán gói; yêu cầu kiểm tra lại
+else Số khu hoặc phòng hiện có vượt hạn mức gói
+C --> U: Không gán gói
+U --> A: Không gán gói; không xóa dữ liệu để ép theo hạn mức
+else Đủ điều kiện gán hoặc thay gói
+C -> D ++: Ghi quyền sử dụng, điều kiện gói và lịch sử thay đổi
+D --> C --: Quyền sử dụng gói được cập nhật; không ghi thu tiền
+C --> U: Gán gói thành công
+U --> A: Gán gói thành công; hiển thị quyền và thời hạn
+end
+deactivate C
+deactivate U
+opt Quyền sử dụng đang hiệu lực; chọn kết thúc
+A -> U: Yêu cầu kết thúc gói và nhập lý do
+activate U
+U -> C: Yêu cầu kết thúc quyền sử dụng gói
+activate C
+C -> D ++: Đối chiếu quyền sử dụng hiện hành
+D --> C --: Trạng thái hiệu lực mới nhất
+alt Quyền đã đổi hoặc đã kết thúc
+C --> U: Không kết thúc lại
+U --> A: Không kết thúc lại; yêu cầu tải lại
+else Quyền vẫn đang có hiệu lực
+C -> D ++: Ghi thời điểm kết thúc và lịch sử xử lý
+D --> C --: Quyền sử dụng gói đã kết thúc
+C --> U: Kết thúc gói
+U --> A: Kết thúc gói; không hoàn tiền và không xóa dữ liệu
+end
+deactivate C
+deactivate U
+end
+@enduml

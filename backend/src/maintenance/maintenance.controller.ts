@@ -3,6 +3,7 @@ import {
   Controller,
   Delete,
   Get,
+  ForbiddenException,
   HttpCode,
   HttpStatus,
   Param,
@@ -20,6 +21,7 @@ import {
 } from '../common/current-user.decorator';
 import { RequirePermissions } from '../common/permissions.decorator';
 import { Roles } from '../common/roles.decorator';
+import { UserRole } from '@prisma/client';
 import { CompleteMaintenanceTicketDto } from './dto/complete-maintenance-ticket.dto';
 import { CreateMaintenanceCommentDto } from './dto/create-maintenance-comment.dto';
 import { CreateMaintenanceTicketDto } from './dto/create-maintenance-ticket.dto';
@@ -89,6 +91,7 @@ export class MaintenanceController {
     @Param('id') id: string,
     @Body() input: UpdateMaintenanceTicketDto,
   ) {
+    this.assertCompletionPermission(user, input.status);
     const landlordId = landlordScopeId(user);
     const result = await this.maintenance.update(landlordId, id, input);
     await this.audit.recordSafe({
@@ -110,6 +113,7 @@ export class MaintenanceController {
     @Param('id') id: string,
     @Body() input: UpdateMaintenanceStatusDto,
   ) {
+    this.assertCompletionPermission(user, input.status);
     const landlordId = landlordScopeId(user);
     const result = await this.maintenance.updateStatus(landlordId, id, input);
     await this.audit.recordSafe({
@@ -158,6 +162,7 @@ export class MaintenanceController {
       id,
       user.userId,
       input,
+      user.role === AuthRole.STAFF ? UserRole.STAFF : UserRole.LANDLORD,
     );
     await this.audit.recordSafe({
       landlordId,
@@ -187,5 +192,12 @@ export class MaintenanceController {
       resourceId: id,
       summary: 'Xóa phiếu bảo trì',
     });
+  }
+
+  private assertCompletionPermission(user: AuthUser, status?: string) {
+    if (status?.toUpperCase() === 'DONE' && user.role === AuthRole.STAFF &&
+        !user.permissions?.includes('maintenance.complete')) {
+      throw new ForbiddenException('Completing maintenance requires maintenance.complete.');
+    }
   }
 }

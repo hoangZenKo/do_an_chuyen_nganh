@@ -193,6 +193,63 @@ flutter run --dart-define=API_BASE_URL=http://localhost:3000/api/v1
 
 Trên thiết bị thật, `localhost` trỏ tới chính thiết bị; dùng IP LAN hoặc HTTPS host của máy chạy API.
 
+#### Chạy đồng thời hai giả lập iOS: chủ trọ và tenant
+
+Hai giả lập cài cùng app nhưng giữ phiên đăng nhập riêng. Chỉ chạy **một backend và một database** trên Mac; cả hai app dùng `http://localhost:3000/api/v1`.
+
+**Chuẩn bị lần đầu:** kiểm tra thiết bị và runtime có sẵn:
+
+```sh
+xcrun simctl list devices available
+xcrun simctl list devicetypes
+xcrun simctl list runtimes
+```
+
+Máy phát triển hiện dùng `iPhone 16` và runtime iOS 18.4. Nếu chưa có giả lập tên `iPhone Tenant`, tạo **một lần**:
+
+```sh
+xcrun simctl create \
+  "iPhone Tenant" \
+  com.apple.CoreSimulator.SimDeviceType.iPhone-16 \
+  com.apple.CoreSimulator.SimRuntime.iOS-18-4
+```
+
+Nếu máy khác không có iOS 18.4, thay device type/runtime bằng ID từ danh sách trên. Không chạy lại lệnh `create` mỗi lần vì sẽ tạo thêm thiết bị trùng tên.
+
+**Mỗi lần chạy:** mở Simulator, giữ `iPhone 16` đang chạy và mở thêm máy tenant. Bỏ qua lệnh `boot` nếu máy tenant đã ở trạng thái `Booted`:
+
+```sh
+open -a Simulator
+xcrun simctl boot "iPhone Tenant"
+xcrun simctl bootstatus "iPhone Tenant" -b
+```
+
+Nếu chưa mở máy chủ trọ, chọn **Simulator → File → Open Simulator → iPhone 16**. Nếu cửa sổ tenant chưa hiện, chọn **Window → iPhone Tenant**.
+
+**Tab Terminal chủ trọ:** nếu app đang chạy trên `iPhone 16` thì giữ nguyên, không chạy thêm phiên Flutter cho cùng máy. Nếu chưa chạy:
+
+```sh
+cd /Users/hoang/Rental_room_management
+flutter pub get
+flutter run -d "iPhone 16" \
+  --dart-define=API_BASE_URL=http://localhost:3000/api/v1
+```
+
+Đợi app thứ nhất mở xong rồi mở **tab Terminal mới** (`Cmd + T`) để chạy tenant:
+
+```sh
+cd /Users/hoang/Rental_room_management
+flutter run -d "iPhone Tenant" \
+  --dart-define=API_BASE_URL=http://localhost:3000/api/v1
+```
+
+- `iPhone 16`: đăng nhập tài khoản chủ trọ.
+- `iPhone Tenant`: đăng nhập tài khoản tenant đã liên kết với người thuê/hợp đồng của chủ trọ đó.
+- Giữ hai tab Flutter và backend chạy. `r` hot reload riêng app của tab hiện tại; `q` dừng phiên Flutter đó.
+- Nếu Flutter báo nhiều thiết bị trùng tên, chạy `flutter devices` rồi thay tên sau `-d` bằng UUID của đúng giả lập.
+- Có thể test chủ trọ tạo hóa đơn → tenant xem/gửi chứng từ → chủ trọ xác nhận. Tải lại màn hình nếu dữ liệu chưa tự cập nhật.
+- Nếu dùng Zalo demo trên cả hai máy, cài app Zalo riêng lên từng giả lập theo bước 4, chỉ rõ `-d "iPhone 16"` hoặc `-d "iPhone Tenant"`.
+
 ### 4. Nếu dùng app Zalo riêng
 
 Luồng hiện tại tách làm 2 Flutter app:
@@ -225,6 +282,69 @@ xcrun simctl uninstall booted com.example.rental_room_management
 ```
 
 Nếu platform folders thực sự bị thiếu, mới chạy `flutter create .`. Không chạy lệnh này theo quick start khi project đã có `ios/`, `android/` hoặc platform configuration cần giữ.
+
+### 5. Chạy Ollama cho trợ lý tài liệu
+
+Ollama chạy **một lần trên Mac**, không chạy trong từng giả lập. Luồng gọi là Flutter → backend NestJS → Ollama. Chatbot hiện chỉ dành cho **chủ trọ**, không phải tenant; chỉ trả lời từ tài liệu đã duyệt, không đọc công nợ trực tiếp hoặc thực hiện thao tác nghiệp vụ.
+
+**Chạy lại hằng ngày khi model và chatbot đã được thiết lập:**
+
+1. Kiểm tra Ollama bằng `curl http://127.0.0.1:11434/api/tags`.
+2. Nếu không kết nối được, mở một tab Terminal riêng và giữ tiến trình này chạy:
+
+```sh
+OLLAMA_HOST=127.0.0.1:11434 ollama serve
+```
+
+3. Giữ backend chạy theo bước 1 và Flutter theo bước 3. Nếu vừa sửa `backend/.env`, dừng backend bằng `Ctrl + C` rồi chạy lại `npm run start:dev` trong `backend/`.
+4. Trên app chủ trọ, mở biểu tượng quyển sách ở Dashboard hoặc **More / Management Menu → Trợ lý tài liệu**, rồi gửi câu hỏi mới.
+
+Nếu `ollama serve` báo `address already in use`, kiểm tra lại `/api/tags`: có thể Ollama app hoặc một tiến trình Ollama khác đã phục vụ cổng 11434; không cần chạy thêm server.
+
+**Thiết lập lần đầu trên máy mới:** nếu chưa có lệnh `ollama`, cài bằng Homebrew:
+
+```sh
+brew install ollama
+```
+
+Khởi động `ollama serve` như trên, rồi mở tab Terminal khác để tải các model còn thiếu:
+
+```sh
+ollama pull qwen2.5:7b
+ollama pull embeddinggemma:latest
+ollama list
+curl http://127.0.0.1:11434/api/tags
+```
+
+Không cần `pull` mỗi lần chạy. Không tự cập nhật model embedding cho database đã có chỉ mục: tag `latest` có thể đổi digest và khiến chỉ mục không tương thích.
+
+Chỉ sửa các biến chatbot trong `backend/.env`, giữ nguyên database/JWT/cấu hình khác; **không chép đè `.env` đang dùng bằng `.env.example`**:
+
+```env
+CHATBOT_ENABLED=false
+OLLAMA_BASE_URL=http://127.0.0.1:11434
+OLLAMA_CHAT_MODEL=qwen2.5:7b
+OLLAMA_EMBED_MODEL=embeddinggemma:latest
+OLLAMA_EMBED_DIGEST=<digest 64 ky tu hex cua embeddinggemma:latest tu /api/tags>
+OLLAMA_EMBED_DIMENSIONS=768
+CHATBOT_TIMEOUT_MS=60000
+KNOWLEDGE_ROOT=knowledge
+```
+
+Thay placeholder digest trước khi khởi động backend; dùng digest **model embedding**, không phải model chat. Giữ Ollama ở loopback, không mở cổng 11434 ra internet và không đổi URL Flutter sang cổng này.
+
+Với database mới, cần migration chatbot, tài liệu được duyệt, import chỉ mục và hiệu chỉnh `RAG_MIN_SCORE` trước khi đổi `CHATBOT_ENABLED=true`. Thiếu digest hoặc score khi bật chatbot sẽ gây `CHATBOT_INVALID_CONFIG`. Chỉ import sau khi xác nhận `DATABASE_URL` đúng đích và manifest đã được duyệt; dừng backend trong lúc bảo trì chỉ mục:
+
+```sh
+cd /Users/hoang/Rental_room_management/backend
+npm run knowledge:import -- --manifest knowledge/manifest.json
+```
+
+Không cần import lại mỗi lần bật máy. Nếu đổi model embedding/digest hoặc tài liệu, thực hiện lại quy trình import/đánh giá theo runbook, không chỉ thay digest để bỏ qua lỗi tương thích.
+
+Cấu hình local được ghi nhận ngày **22/10/2026** đã có 6 tài liệu được duyệt, 19 chunks và score thử nghiệm `RAG_MIN_SCORE=0.4423`. Đây là dữ liệu lịch sử cho corpus/model tương ứng, **không phải ngưỡng mặc định cho mọi máy hoặc xác nhận đạt pilot/production**. Xem [local setup](backend/docs/chatbot-local-setup-2026-10-22.md), [runbook](backend/docs/chatbot-mvp-runbook.md) và [API/pilot gates](backend/docs/chatbot-api-and-pilot.md) trước khi bật trên môi trường mới.
+
+Kiểm tra model đang nạp bằng `ollama ps`; giải phóng RAM khi không dùng bằng `ollama stop qwen2.5:7b` và `ollama stop embeddinggemma:latest`. Hai giả lập cùng model 7B có thể gây áp lực RAM; nếu máy chậm, đóng app không cần thiết. Các lệnh CLI Ollama tham khảo từ [tài liệu chính thức](https://docs.ollama.com/cli).
 
 ## Authentication endpoints
 
@@ -429,7 +549,9 @@ prisma/seed.ts
 prisma/bootstrap-admin.ts
 ```
 
-Xem [`IMPLEMENTATION_MAP.md`](IMPLEMENTATION_MAP.md) để biết mỗi feature cần những file nào và flow code end-to-end. Xem [`IMPLEMENTATION_CHECKLIST.md`](IMPLEMENTATION_CHECKLIST.md) để biết trạng thái code/test/verification, [`PROJECT_STATUS.md`](PROJECT_STATUS.md) để xem snapshot và giới hạn hiện tại, và [`UPDATE_LOG.md`](UPDATE_LOG.md) để xem lịch sử thay đổi.
+Tài liệu dự án được tập trung trong `docs/`; thư mục gốc chỉ giữ `README.md` và `ADMIN_SETUP.md`.
+
+Xem [`IMPLEMENTATION_MAP.md`](docs/IMPLEMENTATION_MAP.md) để biết mỗi feature cần những file nào và flow code end-to-end. Xem [`IMPLEMENTATION_CHECKLIST.md`](docs/IMPLEMENTATION_CHECKLIST.md) để biết trạng thái code/test/verification, [`PROJECT_STATUS.md`](docs/PROJECT_STATUS.md) để xem snapshot và giới hạn hiện tại, và [`UPDATE_LOG.md`](docs/UPDATE_LOG.md) để xem lịch sử thay đổi.
 
 ## Security notes
 

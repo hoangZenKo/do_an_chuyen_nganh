@@ -1,0 +1,96 @@
+@startuml
+skinparam backgroundColor white
+skinparam shadowing false
+skinparam dpi 240
+skinparam defaultFontName "Times New Roman"
+skinparam defaultFontSize 17
+skinparam defaultFontColor black
+skinparam titleFontSize 21
+skinparam titleFontColor black
+skinparam roundcorner 0
+skinparam maxMessageSize 270
+skinparam ParticipantPadding 30
+skinparam sequence {
+  ArrowColor #800000
+  ArrowThickness 1.2
+  LifeLineBorderColor #999999
+  LifeLineBackgroundColor #FFFFB9
+  ParticipantBackgroundColor #FFFFB9
+  ParticipantBorderColor #800000
+  ParticipantFontColor black
+  ActorBackgroundColor #FFFFB9
+  ActorBorderColor #800000
+  ActorFontColor black
+  BoundaryBackgroundColor #FFFFB9
+  BoundaryBorderColor #800000
+  ControlBackgroundColor #FFFFB9
+  ControlBorderColor #800000
+  EntityBackgroundColor #FFFFB9
+  EntityBorderColor #800000
+  GroupBackgroundColor #FFFFB9
+  GroupBodyBackgroundColor white
+  GroupBorderColor #888888
+  GroupFontColor black
+  GroupHeaderFontColor black
+  GroupFontSize 15
+  GroupHeaderFontSize 16
+  MessageAlign center
+}
+hide footbox
+<style>
+sequenceDiagram {
+ actor { BackgroundColor #FFFFB9
+ LineColor #800000 }
+ boundary { BackgroundColor #FFFFB9
+ LineColor #800000 }
+ control { BackgroundColor #FFFFB9
+ LineColor #800000 }
+ entity { BackgroundColor #FFFFB9
+ LineColor #800000 }
+ activationBox { BackgroundColor #FFFFB9
+ LineColor #800000 }
+}
+</style>
+autonumber "<b>0.</b>"
+
+title SD-18. Xét duyệt hồ sơ xác minh chủ trọ
+actor "Quản trị viên" as A
+boundary "<u>Giao diện</u>\n<u>hồ sơ xác minh</u>" as U #FFFFB9
+control "<u>Quản lý</u>\n<u>xác minh chủ trọ</u>" as C #FFFFB9
+entity "<u>Hồ sơ xác minh</u>\n<u>và chứng cứ hỗ trợ</u>" as D #FFFFB9
+A -> U: Lọc và mở hồ sơ chủ trọ đang chờ xác minh
+activate U
+U -> C: Yêu cầu tra cứu hồ sơ xác minh
+activate C
+C -> D ++: Tra cứu hồ sơ và chứng cứ gắn với yêu cầu hỗ trợ
+D --> C --: Hồ sơ, trạng thái và chứng cứ được phép xem
+C --> U: Hiển thị hồ sơ để kiểm tra
+U --> A: Hiển thị hồ sơ để kiểm tra
+deactivate C
+deactivate U
+A -> U: Chọn chấp thuận, từ chối hoặc yêu cầu bổ sung; nhập lý do
+activate U
+U -> C: Yêu cầu xét duyệt hồ sơ xác minh
+activate C
+C -> D ++: Đối chiếu người xét duyệt, hồ sơ và chứng cứ hiện hành
+D --> C --: Điều kiện xét duyệt mới nhất
+alt Tự duyệt hồ sơ, hồ sơ đã đổi hoặc không còn chờ
+C --> U: Không ghi quyết định
+U --> A: Không ghi quyết định; thông báo lý do
+else Chọn chấp thuận nhưng chủ trọ hoặc chứng cứ không đủ điều kiện
+C --> U: Không xác minh
+U --> A: Không xác minh; yêu cầu kiểm tra tài khoản và chứng cứ
+else Chọn chấp thuận; tài khoản hoạt động, phiếu đúng chủ trọ chưa gộp, chứng cứ đã kiểm tra an\ntoàn
+C -> D ++: Lưu chấp thuận, người duyệt và căn cứ chứng minh
+D --> C --: Chủ trọ được ghi nhận đã xác minh
+C --> U: Đã xác minh chủ trọ
+U --> A: Đã xác minh chủ trọ
+else Chọn từ chối hoặc yêu cầu bổ sung; hồ sơ còn hợp lệ
+C -> D ++: Lưu quyết định và lý do; giữ căn cứ xét duyệt
+D --> C --: Hồ sơ bị từ chối hoặc cần bổ sung
+C --> U: Hiển thị trạng thái hồ sơ và lý do
+U --> A: Hiển thị trạng thái hồ sơ và lý do
+end
+deactivate C
+deactivate U
+@enduml

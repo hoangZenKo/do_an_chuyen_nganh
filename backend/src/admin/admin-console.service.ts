@@ -227,10 +227,31 @@ export class AdminConsoleService {
 
   private queueWhere(actor: AuthUser, query: AdminQueueQuery) {
     if (!actor.permissions?.includes(adminPermissionForWork(query.kind))) throw new ForbiddenException();
+    const search = query.search?.trim();
+    const exactId = search && isUUID(search) ? search.toLowerCase() : null;
+    const pattern = `%${(search ?? '').replace(/[\\%_]/g, '\\$&')}%`;
+    const searchFilter = !search ? Prisma.empty : Prisma.sql`AND (
+      ${exactId ? Prisma.sql`q.id::text = ${exactId}` : Prisma.sql`q.title ILIKE ${pattern}`}
+      OR EXISTS (
+        SELECT 1 FROM "Room" r
+        JOIN "Property" p ON p.id = r."propertyId"
+        JOIN "User" landlord ON landlord.id = p."landlordId"
+        LEFT JOIN "RoomListing" listing ON listing."roomId" = r.id
+        WHERE r.id = CASE q.kind
+          WHEN 'LISTING' THEN (SELECT l."roomId" FROM "RoomListing" l WHERE l.id = q.id)
+          WHEN 'REPORT' THEN (SELECT l."roomId" FROM "ListingReport" report
+            JOIN "RoomListing" l ON l.id = report."listingId" WHERE report.id = q.id)
+          ELSE (SELECT review."roomId" FROM "RoomReview" review WHERE review.id = q.id)
+        END
+        AND ${exactId ? Prisma.sql`r.id::text = ${exactId}` : Prisma.sql`(
+          r.id::text ILIKE ${pattern} OR r.name ILIKE ${pattern}
+          OR listing.title ILIKE ${pattern} OR p.name ILIKE ${pattern}
+          OR landlord."fullName" ILIKE ${pattern}
+        )`}
+      )
+    )`;
     return Prisma.sql`q.kind = ${query.kind}
-      ${query.search ? isUUID(query.search)
-        ? Prisma.sql`AND q.id::text = ${query.search.toLowerCase()}`
-        : Prisma.sql`AND q.title ILIKE ${`%${query.search}%`}` : Prisma.empty}
+      ${searchFilter}
       ${query.assignment === 'mine' ? Prisma.sql`AND w."assigneeId" = ${actor.userId}` : query.assignment === 'unassigned' ? Prisma.sql`AND w."assigneeId" IS NULL` : Prisma.empty}
       ${query.priority ? Prisma.sql`AND COALESCE(w.priority, 'NORMAL') = ${query.priority}` : Prisma.empty}
       ${query.overdue === 'true' ? Prisma.sql`AND COALESCE(w."dueAt", q."createdAt" + INTERVAL '48 hours') < NOW()` : Prisma.empty}`;

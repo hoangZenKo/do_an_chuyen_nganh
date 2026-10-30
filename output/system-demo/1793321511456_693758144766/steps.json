@@ -1,0 +1,1358 @@
+[
+  {
+    "time": "2026-10-30T00:52:31.391Z",
+    "text": "login"
+  },
+  {
+    "time": "2026-10-30T00:52:35.402Z",
+    "text": "ĐỔI VAI: TENANT"
+  },
+  {
+    "time": "2026-10-30T00:52:35.420Z",
+    "text": "Khach → /auth/login"
+  },
+  {
+    "time": "2026-10-30T00:52:35.750Z",
+    "text": "Nhập: Email address"
+  },
+  {
+    "time": "2026-10-30T00:52:36.121Z",
+    "text": "Nhập: Password"
+  },
+  {
+    "time": "2026-10-30T00:52:36.453Z",
+    "text": "Bấm: Log In"
+  },
+  {
+    "time": "2026-10-30T00:52:36.813Z",
+    "text": "ĐỔI VAI: LANDLORD"
+  },
+  {
+    "time": "2026-10-30T00:52:36.838Z",
+    "text": "Khach → /auth/login"
+  },
+  {
+    "time": "2026-10-30T00:52:37.179Z",
+    "text": "Nhập: Email address"
+  },
+  {
+    "time": "2026-10-30T00:52:37.520Z",
+    "text": "Nhập: Password"
+  },
+  {
+    "time": "2026-10-30T00:52:37.854Z",
+    "text": "Bấm: Log In"
+  },
+  {
+    "time": "2026-10-30T00:52:38.196Z",
+    "text": "ĐỔI VAI: STAFF"
+  },
+  {
+    "time": "2026-10-30T00:52:38.222Z",
+    "text": "Khach → /auth/login"
+  },
+  {
+    "time": "2026-10-30T00:52:38.597Z",
+    "text": "Nhập: Email address"
+  },
+  {
+    "time": "2026-10-30T00:52:38.935Z",
+    "text": "Nhập: Password"
+  },
+  {
+    "time": "2026-10-30T00:52:39.271Z",
+    "text": "Bấm: Log In"
+  },
+  {
+    "time": "2026-10-30T00:52:39.617Z",
+    "text": "ĐỔI VAI: ADMIN"
+  },
+  {
+    "time": "2026-10-30T00:52:39.647Z",
+    "text": "Khach → /auth/login"
+  },
+  {
+    "time": "2026-10-30T00:52:39.966Z",
+    "text": "Nhập: Email address"
+  },
+  {
+    "time": "2026-10-30T00:52:40.299Z",
+    "text": "Nhập: Password"
+  },
+  {
+    "time": "2026-10-30T00:52:40.657Z",
+    "text": "Bấm: Log In"
+  },
+  {
+    "time": "2026-10-30T00:52:41.237Z",
+    "text": "03-tao-sua-khu-tro"
+  },
+  {
+    "time": "2026-10-30T00:52:45.249Z",
+    "text": "ĐỔI VAI: LANDLORD"
+  },
+  {
+    "time": "2026-10-30T00:52:45.291Z",
+    "text": "Khach → /auth/login"
+  },
+  {
+    "time": "2026-10-30T00:52:45.638Z",
+    "text": "Nhập: Email address"
+  },
+  {
+    "time": "2026-10-30T00:52:45.969Z",
+    "text": "Nhập: Password"
+  },
+  {
+    "time": "2026-10-30T00:52:46.322Z",
+    "text": "Bấm: Log In"
+  },
+  {
+    "time": "2026-10-30T00:52:46.677Z",
+    "text": "landlord → /properties/form"
+  },
+  {
+    "time": "2026-10-30T00:52:46.994Z",
+    "text": "Nhập: Tên khu trọ"
+  },
+  {
+    "time": "2026-10-30T00:52:47.329Z",
+    "text": "Nhập: Địa chỉ"
+  },
+  {
+    "time": "2026-10-30T00:52:47.672Z",
+    "text": "Bấm: Tạo khu trọ"
+  },
+  {
+    "time": "2026-10-30T00:52:48.034Z",
+    "text": "landlord → /properties/form?propertyId=9a45963d-42b2-4c7e-9890-c0d1837cb634"
+  },
+  {
+    "time": "2026-10-30T00:52:48.351Z",
+    "text": "Nhập: Tên khu trọ"
+  },
+  {
+    "time": "2026-10-30T00:52:48.693Z",
+    "text": "Bấm: Lưu thay đổi"
+  },
+  {
+    "time": "2026-10-30T00:52:49.272Z",
+    "text": "04-tao-sua-phong"
+  },
+  {
+    "time": "2026-10-30T00:52:53.281Z",
+    "text": "landlord → /dashboard"
+  },
+  {
+    "time": "2026-10-30T00:52:53.598Z",
+    "text": "landlord → /properties"
+  },
+  {
+    "time": "2026-10-30T00:52:53.913Z",
+    "text": "Bấm: Khu tro KIEM THU"
+  },
+  {
+    "time": "2026-10-30T00:52:54.239Z",
+    "text": "landlord → /rooms/form"
+  },
+  {
+    "time": "2026-10-30T00:52:54.556Z",
+    "text": "Nhập: Tên phòng"
+  },
+  {
+    "time": "2026-10-30T00:52:54.892Z",
+    "text": "Nhập: Tầng"
+  },
+  {
+    "time": "2026-10-30T00:52:55.245Z",
+    "text": "Nhập: Diện tích (m²)"
+  },
+  {
+    "time": "2026-10-30T00:52:55.574Z",
+    "text": "Nhập: Giá thuê (đ)"
+  },
+  {
+    "time": "2026-10-30T00:52:55.889Z",
+    "text": "Nhập: Sức chứa (người)"
+  },
+  {
+    "time": "2026-10-30T00:52:56.222Z",
+    "text": "Bấm: Tạo phòng"
+  },
+  {
+    "time": "2026-10-30T00:52:58.794Z",
+    "text": "landlord → /rooms/form?roomId=7a040651-e4cc-4344-9697-fe31fc742697"
+  },
+  {
+    "time": "2026-10-30T00:52:59.116Z",
+    "text": "Nhập: Ghi chú"
+  },
+  {
+    "time": "2026-10-30T00:52:59.571Z",
+    "text": "Bấm: Lưu thay đổi"
+  },
+  {
+    "time": "2026-10-30T00:52:59.928Z",
+    "text": "landlord → /rooms/7a040651-e4cc-4344-9697-fe31fc742697"
+  },
+  {
+    "time": "2026-10-30T00:53:00.251Z",
+    "text": "Bấm: Info"
+  },
+  {
+    "time": "2026-10-30T00:53:00.709Z",
+    "text": "Bấm: Ảnh"
+  },
+  {
+    "time": "2026-10-30T00:53:01.051Z",
+    "text": "Bấm: Lịch"
+  },
+  {
+    "time": "2026-10-30T00:53:01.388Z",
+    "text": "Bấm: Hợp đồng"
+  },
+  {
+    "time": "2026-10-30T00:53:02.119Z",
+    "text": "05-tao-sua-tim-nguoi-thue"
+  },
+  {
+    "time": "2026-10-30T00:53:06.131Z",
+    "text": "landlord → /tenants/form"
+  },
+  {
+    "time": "2026-10-30T00:53:06.453Z",
+    "text": "Nhập: Họ tên"
+  },
+  {
+    "time": "2026-10-30T00:53:06.790Z",
+    "text": "Nhập: Số điện thoại"
+  },
+  {
+    "time": "2026-10-30T00:53:07.142Z",
+    "text": "Nhập: CCCD/CMND"
+  },
+  {
+    "time": "2026-10-30T00:53:07.469Z",
+    "text": "Nhập: Ghi chú"
+  },
+  {
+    "time": "2026-10-30T00:53:07.785Z",
+    "text": "Bấm: Thêm người thuê"
+  },
+  {
+    "time": "2026-10-30T00:53:08.106Z",
+    "text": "landlord → /tenants/form?tenantId=22b8b5bf-8346-488d-8f97-bd40f01d037c"
+  },
+  {
+    "time": "2026-10-30T00:53:08.424Z",
+    "text": "Nhập: Ghi chú"
+  },
+  {
+    "time": "2026-10-30T00:53:08.762Z",
+    "text": "Bấm: Lưu thay đổi"
+  },
+  {
+    "time": "2026-10-30T00:53:09.111Z",
+    "text": "landlord → /rooms/106d6aba-39a3-4dc7-a093-e5b62ee67b23"
+  },
+  {
+    "time": "2026-10-30T00:53:09.436Z",
+    "text": "Bấm: Hợp đồng"
+  },
+  {
+    "time": "2026-10-30T00:53:09.876Z",
+    "text": "Bấm: Hồ sơ"
+  },
+  {
+    "time": "2026-10-30T00:53:10.330Z",
+    "text": "Bấm: Quay lại"
+  },
+  {
+    "time": "2026-10-30T00:53:10.927Z",
+    "text": "06-tin-dang-va-kiem-duyet"
+  },
+  {
+    "time": "2026-10-30T00:53:14.939Z",
+    "text": "landlord → /listings"
+  },
+  {
+    "time": "2026-10-30T00:53:15.258Z",
+    "text": "Bấm: Tạo tin"
+  },
+  {
+    "time": "2026-10-30T00:53:15.593Z",
+    "text": "Bấm: Chọn phòng trống"
+  },
+  {
+    "time": "2026-10-30T00:53:15.919Z",
+    "text": "Bấm: UI-DEMO-B201"
+  },
+  {
+    "time": "2026-10-30T00:53:16.243Z",
+    "text": "Nhập: Tiêu đề"
+  },
+  {
+    "time": "2026-10-30T00:53:16.574Z",
+    "text": "Nhập: Mô tả công khai"
+  },
+  {
+    "time": "2026-10-30T00:53:17.019Z",
+    "text": "Nhập: Tỉnh / Thành phố"
+  },
+  {
+    "time": "2026-10-30T00:53:17.469Z",
+    "text": "Nhập: Quận / Huyện"
+  },
+  {
+    "time": "2026-10-30T00:53:17.923Z",
+    "text": "Nhập: Địa chỉ được phép công khai"
+  },
+  {
+    "time": "2026-10-30T00:53:18.356Z",
+    "text": "Nhập: Giá thuê (đ/tháng)"
+  },
+  {
+    "time": "2026-10-30T00:53:18.805Z",
+    "text": "Nhập: Tiền cọc (đ)"
+  },
+  {
+    "time": "2026-10-30T00:53:19.235Z",
+    "text": "Nhập: Diện tích (m²)"
+  },
+  {
+    "time": "2026-10-30T00:53:19.690Z",
+    "text": "Nhập: Ảnh (mỗi dòng một URL ảnh)"
+  },
+  {
+    "time": "2026-10-30T00:53:20.155Z",
+    "text": "Bấm: Lưu bản nháp"
+  },
+  {
+    "time": "2026-10-30T00:53:20.500Z",
+    "text": "Bấm: Gửi duyệt"
+  },
+  {
+    "time": "2026-10-30T00:53:20.957Z",
+    "text": "ĐỔI VAI: ADMIN"
+  },
+  {
+    "time": "2026-10-30T00:53:20.998Z",
+    "text": "Khach → /auth/login"
+  },
+  {
+    "time": "2026-10-30T00:53:21.313Z",
+    "text": "Nhập: Email address"
+  },
+  {
+    "time": "2026-10-30T00:53:21.638Z",
+    "text": "Nhập: Password"
+  },
+  {
+    "time": "2026-10-30T00:53:21.969Z",
+    "text": "Bấm: Log In"
+  },
+  {
+    "time": "2026-10-30T00:53:22.286Z",
+    "text": "admin → /admin/listings"
+  },
+  {
+    "time": "2026-10-30T00:53:22.597Z",
+    "text": "Bấm: Duyệt"
+  },
+  {
+    "time": "2026-10-30T00:53:27.967Z",
+    "text": "07-kham-pha-va-yeu-thich"
+  },
+  {
+    "time": "2026-10-30T00:53:31.976Z",
+    "text": "ĐỔI VAI: TENANT"
+  },
+  {
+    "time": "2026-10-30T00:53:32.023Z",
+    "text": "Khach → /auth/login"
+  },
+  {
+    "time": "2026-10-30T00:53:32.360Z",
+    "text": "Nhập: Email address"
+  },
+  {
+    "time": "2026-10-30T00:53:32.701Z",
+    "text": "Nhập: Password"
+  },
+  {
+    "time": "2026-10-30T00:53:33.040Z",
+    "text": "Bấm: Log In"
+  },
+  {
+    "time": "2026-10-30T00:53:33.378Z",
+    "text": "tenant → /explore/listings/7cbd57b9-8ae8-40a2-94b2-702cbcbd314d"
+  },
+  {
+    "time": "2026-10-30T00:53:33.696Z",
+    "text": "Bấm: Lưu yêu thích"
+  },
+  {
+    "time": "2026-10-30T00:53:34.030Z",
+    "text": "tenant → /housing/favorites"
+  },
+  {
+    "time": "2026-10-30T00:53:34.606Z",
+    "text": "07b-dat-lich-den-tao-hop-dong"
+  },
+  {
+    "time": "2026-10-30T00:53:38.616Z",
+    "text": "ĐỔI VAI: SEEKER"
+  },
+  {
+    "time": "2026-10-30T00:53:38.665Z",
+    "text": "Khach → /auth/login"
+  },
+  {
+    "time": "2026-10-30T00:53:39.012Z",
+    "text": "Nhập: Email address"
+  },
+  {
+    "time": "2026-10-30T00:53:39.338Z",
+    "text": "Nhập: Password"
+  },
+  {
+    "time": "2026-10-30T00:53:39.686Z",
+    "text": "Bấm: Log In"
+  },
+  {
+    "time": "2026-10-30T00:53:40.034Z",
+    "text": "seeker → /explore/listings/7cbd57b9-8ae8-40a2-94b2-702cbcbd314d"
+  },
+  {
+    "time": "2026-10-30T00:53:40.357Z",
+    "text": "Bấm: Đặt lịch xem phòng"
+  },
+  {
+    "time": "2026-10-30T00:53:40.684Z",
+    "text": "Nhập: Ghi chú (không bắt buộc)"
+  },
+  {
+    "time": "2026-10-30T00:53:41.024Z",
+    "text": "Bấm: Xác nhận"
+  },
+  {
+    "time": "2026-10-30T00:53:41.361Z",
+    "text": "seeker → /housing/viewings"
+  },
+  {
+    "time": "2026-10-30T00:53:41.690Z",
+    "text": "Bấm: Đổi lịch"
+  },
+  {
+    "time": "2026-10-30T00:53:42.016Z",
+    "text": "Nhập: Ghi chú (không bắt buộc)"
+  },
+  {
+    "time": "2026-10-30T00:53:42.357Z",
+    "text": "Bấm: Xác nhận"
+  },
+  {
+    "time": "2026-10-30T00:53:42.699Z",
+    "text": "Bấm: Hủy lịch"
+  },
+  {
+    "time": "2026-10-30T00:53:43.024Z",
+    "text": "Nhập: Lý do hủy lịch"
+  },
+  {
+    "time": "2026-10-30T00:53:43.368Z",
+    "text": "Bấm: Xác nhận"
+  },
+  {
+    "time": "2026-10-30T00:53:43.710Z",
+    "text": "seeker → /explore/listings/7cbd57b9-8ae8-40a2-94b2-702cbcbd314d"
+  },
+  {
+    "time": "2026-10-30T00:53:44.031Z",
+    "text": "Bấm: Đặt lịch xem phòng"
+  },
+  {
+    "time": "2026-10-30T00:53:44.367Z",
+    "text": "Nhập: Ghi chú (không bắt buộc)"
+  },
+  {
+    "time": "2026-10-30T00:53:44.706Z",
+    "text": "Bấm: Xác nhận"
+  },
+  {
+    "time": "2026-10-30T00:53:45.034Z",
+    "text": "ĐỔI VAI: LANDLORD"
+  },
+  {
+    "time": "2026-10-30T00:53:45.058Z",
+    "text": "Khach → /auth/login"
+  },
+  {
+    "time": "2026-10-30T00:53:45.376Z",
+    "text": "Nhập: Email address"
+  },
+  {
+    "time": "2026-10-30T00:53:45.705Z",
+    "text": "Nhập: Password"
+  },
+  {
+    "time": "2026-10-30T00:53:46.035Z",
+    "text": "Bấm: Log In"
+  },
+  {
+    "time": "2026-10-30T00:53:46.369Z",
+    "text": "landlord → /housing/viewings"
+  },
+  {
+    "time": "2026-10-30T00:53:46.686Z",
+    "text": "Bấm: Xác nhận lịch"
+  },
+  {
+    "time": "2026-10-30T00:53:47.024Z",
+    "text": "Bấm: Xác nhận"
+  },
+  {
+    "time": "2026-10-30T00:53:47.370Z",
+    "text": "Bấm: Đã xem phòng"
+  },
+  {
+    "time": "2026-10-30T00:53:47.696Z",
+    "text": "Bấm: Xác nhận"
+  },
+  {
+    "time": "2026-10-30T00:53:48.029Z",
+    "text": "Bấm: Tạo hợp đồng"
+  },
+  {
+    "time": "2026-10-30T00:53:48.364Z",
+    "text": "Nhập: Tiền thuê / tháng"
+  },
+  {
+    "time": "2026-10-30T00:53:48.704Z",
+    "text": "Nhập: Tiền cọc thỏa thuận"
+  },
+  {
+    "time": "2026-10-30T00:53:49.052Z",
+    "text": "Bấm: Xác nhận"
+  },
+  {
+    "time": "2026-10-30T00:53:49.385Z",
+    "text": "ĐỔI VAI: SEEKER"
+  },
+  {
+    "time": "2026-10-30T00:53:49.415Z",
+    "text": "Khach → /auth/login"
+  },
+  {
+    "time": "2026-10-30T00:53:49.732Z",
+    "text": "Nhập: Email address"
+  },
+  {
+    "time": "2026-10-30T00:53:50.055Z",
+    "text": "Nhập: Password"
+  },
+  {
+    "time": "2026-10-30T00:53:50.392Z",
+    "text": "Bấm: Log In"
+  },
+  {
+    "time": "2026-10-30T00:53:50.730Z",
+    "text": "seeker → /tenant/leases"
+  },
+  {
+    "time": "2026-10-30T00:53:51.300Z",
+    "text": "08-hop-dong-va-ban-giao"
+  },
+  {
+    "time": "2026-10-30T00:53:55.308Z",
+    "text": "ĐỔI VAI: TENANT"
+  },
+  {
+    "time": "2026-10-30T00:53:55.334Z",
+    "text": "Khach → /auth/login"
+  },
+  {
+    "time": "2026-10-30T00:53:55.639Z",
+    "text": "Nhập: Email address"
+  },
+  {
+    "time": "2026-10-30T00:53:55.952Z",
+    "text": "Nhập: Password"
+  },
+  {
+    "time": "2026-10-30T00:53:56.267Z",
+    "text": "Bấm: Log In"
+  },
+  {
+    "time": "2026-10-30T00:53:56.589Z",
+    "text": "tenant → /tenant/leases"
+  },
+  {
+    "time": "2026-10-30T00:53:56.899Z",
+    "text": "Bấm: Phòng DEMO-A101 · Khu tro KIEM THU"
+  },
+  {
+    "time": "2026-10-30T00:53:57.216Z",
+    "text": "Bấm: Bàn giao & đối chiếu cọc"
+  },
+  {
+    "time": "2026-10-30T00:53:57.526Z",
+    "text": "ĐỔI VAI: LANDLORD"
+  },
+  {
+    "time": "2026-10-30T00:53:57.548Z",
+    "text": "Khach → /auth/login"
+  },
+  {
+    "time": "2026-10-30T00:53:57.855Z",
+    "text": "Nhập: Email address"
+  },
+  {
+    "time": "2026-10-30T00:53:58.172Z",
+    "text": "Nhập: Password"
+  },
+  {
+    "time": "2026-10-30T00:53:58.485Z",
+    "text": "Bấm: Log In"
+  },
+  {
+    "time": "2026-10-30T00:53:58.810Z",
+    "text": "landlord → /tenants/1e4dcd95-3aca-4546-80a4-cbb20fc8d7c2"
+  },
+  {
+    "time": "2026-10-30T00:53:59.117Z",
+    "text": "Bấm: Bàn giao & tiền cọc"
+  },
+  {
+    "time": "2026-10-30T00:53:59.919Z",
+    "text": "Nhập: Chỉ số điện ban đầu (kWh)"
+  },
+  {
+    "time": "2026-10-30T00:54:00.239Z",
+    "text": "Nhập: Chỉ số nước ban đầu (m³)"
+  },
+  {
+    "time": "2026-10-30T00:54:00.553Z",
+    "text": "Nhập: Hiện trạng, tài sản và hư hỏng có sẵn"
+  },
+  {
+    "time": "2026-10-30T00:54:00.986Z",
+    "text": "Bấm: Lưu biên bản bàn giao"
+  },
+  {
+    "time": "2026-10-30T00:54:01.438Z",
+    "text": "ĐỔI VAI: TENANT"
+  },
+  {
+    "time": "2026-10-30T00:54:01.473Z",
+    "text": "Khach → /auth/login"
+  },
+  {
+    "time": "2026-10-30T00:54:01.815Z",
+    "text": "Nhập: Email address"
+  },
+  {
+    "time": "2026-10-30T00:54:02.146Z",
+    "text": "Nhập: Password"
+  },
+  {
+    "time": "2026-10-30T00:54:02.487Z",
+    "text": "Bấm: Log In"
+  },
+  {
+    "time": "2026-10-30T00:54:02.837Z",
+    "text": "tenant → /tenant/leases"
+  },
+  {
+    "time": "2026-10-30T00:54:03.158Z",
+    "text": "Bấm: Phòng DEMO-A101 · Khu tro KIEM THU"
+  },
+  {
+    "time": "2026-10-30T00:54:03.493Z",
+    "text": "Bấm: Bàn giao & đối chiếu cọc"
+  },
+  {
+    "time": "2026-10-30T00:54:03.820Z",
+    "text": "Bấm: Checkbox"
+  },
+  {
+    "time": "2026-10-30T00:54:04.258Z",
+    "text": "Bấm: Xác nhận đã nhận phòng"
+  },
+  {
+    "time": "2026-10-30T00:54:04.963Z",
+    "text": "09-thu-coc-va-doi-chieu"
+  },
+  {
+    "time": "2026-10-30T00:54:08.972Z",
+    "text": "ĐỔI VAI: LANDLORD"
+  },
+  {
+    "time": "2026-10-30T00:54:09.010Z",
+    "text": "Khach → /auth/login"
+  },
+  {
+    "time": "2026-10-30T00:54:09.328Z",
+    "text": "Nhập: Email address"
+  },
+  {
+    "time": "2026-10-30T00:54:09.668Z",
+    "text": "Nhập: Password"
+  },
+  {
+    "time": "2026-10-30T00:54:10.008Z",
+    "text": "Bấm: Log In"
+  },
+  {
+    "time": "2026-10-30T00:54:10.351Z",
+    "text": "landlord → /tenants/1e4dcd95-3aca-4546-80a4-cbb20fc8d7c2"
+  },
+  {
+    "time": "2026-10-30T00:54:10.668Z",
+    "text": "Bấm: Cọc"
+  },
+  {
+    "time": "2026-10-30T00:54:11.526Z",
+    "text": "Nhập: Số tiền"
+  },
+  {
+    "time": "2026-10-30T00:54:11.874Z",
+    "text": "Nhập: Ghi chú"
+  },
+  {
+    "time": "2026-10-30T00:54:12.225Z",
+    "text": "Bấm: Lưu"
+  },
+  {
+    "time": "2026-10-30T00:54:12.571Z",
+    "text": "ĐỔI VAI: TENANT"
+  },
+  {
+    "time": "2026-10-30T00:54:12.607Z",
+    "text": "Khach → /auth/login"
+  },
+  {
+    "time": "2026-10-30T00:54:12.945Z",
+    "text": "Nhập: Email address"
+  },
+  {
+    "time": "2026-10-30T00:54:13.263Z",
+    "text": "Nhập: Password"
+  },
+  {
+    "time": "2026-10-30T00:54:13.612Z",
+    "text": "Bấm: Log In"
+  },
+  {
+    "time": "2026-10-30T00:54:13.964Z",
+    "text": "tenant → /tenant/leases"
+  },
+  {
+    "time": "2026-10-30T00:54:14.290Z",
+    "text": "Bấm: Phòng DEMO-A101 · Khu tro KIEM THU"
+  },
+  {
+    "time": "2026-10-30T00:54:14.866Z",
+    "text": "10-hoa-don-va-thanh-toan"
+  },
+  {
+    "time": "2026-10-30T00:54:18.876Z",
+    "text": "tenant → /tenant/invoices/200df3fc-54a5-4f23-ae28-bc0030ec3771"
+  },
+  {
+    "time": "2026-10-30T00:54:19.197Z",
+    "text": "Bấm: Gửi chứng từ khoản đã thanh toán"
+  },
+  {
+    "time": "2026-10-30T00:54:19.631Z",
+    "text": "Nhập: Số tiền đã trả"
+  },
+  {
+    "time": "2026-10-30T00:54:19.973Z",
+    "text": "Nhập: Ghi chú"
+  },
+  {
+    "time": "2026-10-30T00:54:20.320Z",
+    "text": "Bấm: Upload ảnh/chứng từ"
+  },
+  {
+    "time": "2026-10-30T00:54:20.681Z",
+    "text": "Bấm: Gửi"
+  },
+  {
+    "time": "2026-10-30T00:54:21.020Z",
+    "text": "ĐỔI VAI: LANDLORD"
+  },
+  {
+    "time": "2026-10-30T00:54:21.054Z",
+    "text": "Khach → /auth/login"
+  },
+  {
+    "time": "2026-10-30T00:54:21.394Z",
+    "text": "Nhập: Email address"
+  },
+  {
+    "time": "2026-10-30T00:54:21.719Z",
+    "text": "Nhập: Password"
+  },
+  {
+    "time": "2026-10-30T00:54:22.055Z",
+    "text": "Bấm: Log In"
+  },
+  {
+    "time": "2026-10-30T00:54:22.400Z",
+    "text": "landlord → /billing/200df3fc-54a5-4f23-ae28-bc0030ec3771"
+  },
+  {
+    "time": "2026-10-30T00:54:22.722Z",
+    "text": "Bấm: Duyệt"
+  },
+  {
+    "time": "2026-10-30T00:54:23.543Z",
+    "text": "Bấm: Checkbox"
+  },
+  {
+    "time": "2026-10-30T00:54:23.887Z",
+    "text": "Nhập: Ghi chú cho thanh toán"
+  },
+  {
+    "time": "2026-10-30T00:54:24.213Z",
+    "text": "Bấm: Duyệt"
+  },
+  {
+    "time": "2026-10-30T00:54:24.560Z",
+    "text": "ĐỔI VAI: TENANT"
+  },
+  {
+    "time": "2026-10-30T00:54:24.591Z",
+    "text": "Khach → /auth/login"
+  },
+  {
+    "time": "2026-10-30T00:54:24.926Z",
+    "text": "Nhập: Email address"
+  },
+  {
+    "time": "2026-10-30T00:54:25.251Z",
+    "text": "Nhập: Password"
+  },
+  {
+    "time": "2026-10-30T00:54:25.569Z",
+    "text": "Bấm: Log In"
+  },
+  {
+    "time": "2026-10-30T00:54:46.204Z",
+    "text": "10b-tao-hoa-don-qua-giao-dien"
+  },
+  {
+    "time": "2026-10-30T00:54:50.212Z",
+    "text": "ĐỔI VAI: LANDLORD"
+  },
+  {
+    "time": "2026-10-30T00:54:50.235Z",
+    "text": "Khach → /auth/login"
+  },
+  {
+    "time": "2026-10-30T00:54:50.552Z",
+    "text": "Nhập: Email address"
+  },
+  {
+    "time": "2026-10-30T00:54:50.880Z",
+    "text": "Nhập: Password"
+  },
+  {
+    "time": "2026-10-30T00:54:51.224Z",
+    "text": "Bấm: Log In"
+  },
+  {
+    "time": "2026-10-30T00:55:11.876Z",
+    "text": "11-sua-chua-hai-vai-tro"
+  },
+  {
+    "time": "2026-10-30T00:55:15.883Z",
+    "text": "ĐỔI VAI: TENANT"
+  },
+  {
+    "time": "2026-10-30T00:55:15.889Z",
+    "text": "Khach → /auth/login"
+  },
+  {
+    "time": "2026-10-30T00:55:16.202Z",
+    "text": "Nhập: Email address"
+  },
+  {
+    "time": "2026-10-30T00:55:16.528Z",
+    "text": "Nhập: Password"
+  },
+  {
+    "time": "2026-10-30T00:55:16.876Z",
+    "text": "Bấm: Log In"
+  },
+  {
+    "time": "2026-10-30T00:55:37.510Z",
+    "text": "12-chi-phi-va-bao-cao"
+  },
+  {
+    "time": "2026-10-30T00:55:41.519Z",
+    "text": "ĐỔI VAI: LANDLORD"
+  },
+  {
+    "time": "2026-10-30T00:55:41.538Z",
+    "text": "Khach → /auth/login"
+  },
+  {
+    "time": "2026-10-30T00:55:41.862Z",
+    "text": "Nhập: Email address"
+  },
+  {
+    "time": "2026-10-30T00:55:42.189Z",
+    "text": "Nhập: Password"
+  },
+  {
+    "time": "2026-10-30T00:55:42.522Z",
+    "text": "Bấm: Log In"
+  },
+  {
+    "time": "2026-10-30T00:55:42.857Z",
+    "text": "landlord → /expenses/form"
+  },
+  {
+    "time": "2026-10-30T00:55:43.172Z",
+    "text": "Nhập: Tiêu đề"
+  },
+  {
+    "time": "2026-10-30T00:55:43.607Z",
+    "text": "Nhập: Số tiền (đ)"
+  },
+  {
+    "time": "2026-10-30T00:55:44.056Z",
+    "text": "Nhập: Ghi chú"
+  },
+  {
+    "time": "2026-10-30T00:55:44.490Z",
+    "text": "Bấm: Thêm chi phí"
+  },
+  {
+    "time": "2026-10-30T00:55:44.837Z",
+    "text": "landlord → /expenses"
+  },
+  {
+    "time": "2026-10-30T00:55:45.174Z",
+    "text": "landlord → /reports"
+  },
+  {
+    "time": "2026-10-30T00:55:45.695Z",
+    "text": "13-gia-han-hai-vai-tro"
+  },
+  {
+    "time": "2026-10-30T00:55:49.706Z",
+    "text": "ĐỔI VAI: TENANT"
+  },
+  {
+    "time": "2026-10-30T00:55:49.756Z",
+    "text": "Khach → /auth/login"
+  },
+  {
+    "time": "2026-10-30T00:55:50.102Z",
+    "text": "Nhập: Email address"
+  },
+  {
+    "time": "2026-10-30T00:55:50.422Z",
+    "text": "Nhập: Password"
+  },
+  {
+    "time": "2026-10-30T00:55:50.752Z",
+    "text": "Bấm: Log In"
+  },
+  {
+    "time": "2026-10-30T00:55:51.099Z",
+    "text": "tenant → /tenant/leases"
+  },
+  {
+    "time": "2026-10-30T00:55:51.418Z",
+    "text": "Bấm: Phòng DEMO-A101 · Khu tro KIEM THU"
+  },
+  {
+    "time": "2026-10-30T00:55:51.740Z",
+    "text": "Bấm: Yêu cầu, người ở cùng & quyết toán"
+  },
+  {
+    "time": "2026-10-30T00:55:52.216Z",
+    "text": "Bấm: Gửi yêu cầu mới"
+  },
+  {
+    "time": "2026-10-30T00:55:52.542Z",
+    "text": "Nhập: Gia hạn đến ngày (YYYY-MM-DD)"
+  },
+  {
+    "time": "2026-10-30T00:55:52.867Z",
+    "text": "Nhập: Lý do / ghi chú"
+  },
+  {
+    "time": "2026-10-30T00:55:53.204Z",
+    "text": "Bấm: Gửi yêu cầu"
+  },
+  {
+    "time": "2026-10-30T00:55:53.548Z",
+    "text": "ĐỔI VAI: LANDLORD"
+  },
+  {
+    "time": "2026-10-30T00:55:53.584Z",
+    "text": "Khach → /auth/login"
+  },
+  {
+    "time": "2026-10-30T00:55:53.924Z",
+    "text": "Nhập: Email address"
+  },
+  {
+    "time": "2026-10-30T00:55:54.250Z",
+    "text": "Nhập: Password"
+  },
+  {
+    "time": "2026-10-30T00:55:54.586Z",
+    "text": "Bấm: Log In"
+  },
+  {
+    "time": "2026-10-30T00:55:54.919Z",
+    "text": "landlord → /tenants/1e4dcd95-3aca-4546-80a4-cbb20fc8d7c2"
+  },
+  {
+    "time": "2026-10-30T00:55:55.238Z",
+    "text": "Bấm: Yêu cầu & người ở cùng"
+  },
+  {
+    "time": "2026-10-30T00:55:56.470Z",
+    "text": "Bấm: Duyệt"
+  },
+  {
+    "time": "2026-10-30T00:55:56.787Z",
+    "text": "Nhập: Lý do xử lý"
+  },
+  {
+    "time": "2026-10-30T00:55:57.107Z",
+    "text": "Bấm: Xác nhận"
+  },
+  {
+    "time": "2026-10-30T00:55:57.455Z",
+    "text": "Bấm: Thực hiện yêu cầu đã duyệt"
+  },
+  {
+    "time": "2026-10-30T00:55:58.275Z",
+    "text": "Bấm: Xác nhận"
+  },
+  {
+    "time": "2026-10-30T00:55:58.630Z",
+    "text": "ĐỔI VAI: TENANT"
+  },
+  {
+    "time": "2026-10-30T00:55:58.673Z",
+    "text": "Khach → /auth/login"
+  },
+  {
+    "time": "2026-10-30T00:55:59.011Z",
+    "text": "Nhập: Email address"
+  },
+  {
+    "time": "2026-10-30T00:55:59.325Z",
+    "text": "Nhập: Password"
+  },
+  {
+    "time": "2026-10-30T00:55:59.658Z",
+    "text": "Bấm: Log In"
+  },
+  {
+    "time": "2026-10-30T00:56:00.012Z",
+    "text": "tenant → /tenant/leases"
+  },
+  {
+    "time": "2026-10-30T00:56:00.335Z",
+    "text": "Bấm: Phòng DEMO-A101 · Khu tro KIEM THU"
+  },
+  {
+    "time": "2026-10-30T00:56:00.660Z",
+    "text": "Bấm: Yêu cầu, người ở cùng & quyết toán"
+  },
+  {
+    "time": "2026-10-30T00:56:01.357Z",
+    "text": "14-nguoi-o-cung"
+  },
+  {
+    "time": "2026-10-30T00:56:05.378Z",
+    "text": "ĐỔI VAI: LANDLORD"
+  },
+  {
+    "time": "2026-10-30T00:56:05.442Z",
+    "text": "Khach → /auth/login"
+  },
+  {
+    "time": "2026-10-30T00:56:05.760Z",
+    "text": "Nhập: Email address"
+  },
+  {
+    "time": "2026-10-30T00:56:06.169Z",
+    "text": "Nhập: Password"
+  },
+  {
+    "time": "2026-10-30T00:56:06.510Z",
+    "text": "Bấm: Log In"
+  },
+  {
+    "time": "2026-10-30T00:56:06.845Z",
+    "text": "landlord → /tenants/1e4dcd95-3aca-4546-80a4-cbb20fc8d7c2"
+  },
+  {
+    "time": "2026-10-30T00:56:07.163Z",
+    "text": "Bấm: Yêu cầu & người ở cùng"
+  },
+  {
+    "time": "2026-10-30T00:56:08.401Z",
+    "text": "Bấm: Thêm người ở cùng"
+  },
+  {
+    "time": "2026-10-30T00:56:08.726Z",
+    "text": "Nhập: Họ và tên"
+  },
+  {
+    "time": "2026-10-30T00:56:09.057Z",
+    "text": "Bấm: Xác nhận"
+  },
+  {
+    "time": "2026-10-30T00:56:09.760Z",
+    "text": "ĐỔI VAI: TENANT"
+  },
+  {
+    "time": "2026-10-30T00:56:09.800Z",
+    "text": "Khach → /auth/login"
+  },
+  {
+    "time": "2026-10-30T00:56:10.142Z",
+    "text": "Nhập: Email address"
+  },
+  {
+    "time": "2026-10-30T00:56:10.472Z",
+    "text": "Nhập: Password"
+  },
+  {
+    "time": "2026-10-30T00:56:10.805Z",
+    "text": "Bấm: Log In"
+  },
+  {
+    "time": "2026-10-30T00:56:11.148Z",
+    "text": "tenant → /tenant/leases"
+  },
+  {
+    "time": "2026-10-30T00:56:11.460Z",
+    "text": "Bấm: Phòng DEMO-A101 · Khu tro KIEM THU"
+  },
+  {
+    "time": "2026-10-30T00:56:11.791Z",
+    "text": "Bấm: Yêu cầu, người ở cùng & quyết toán"
+  },
+  {
+    "time": "2026-10-30T00:56:12.271Z",
+    "text": "ĐỔI VAI: LANDLORD"
+  },
+  {
+    "time": "2026-10-30T00:56:12.299Z",
+    "text": "Khach → /auth/login"
+  },
+  {
+    "time": "2026-10-30T00:56:12.616Z",
+    "text": "Nhập: Email address"
+  },
+  {
+    "time": "2026-10-30T00:56:12.936Z",
+    "text": "Nhập: Password"
+  },
+  {
+    "time": "2026-10-30T00:56:13.273Z",
+    "text": "Bấm: Log In"
+  },
+  {
+    "time": "2026-10-30T00:56:13.619Z",
+    "text": "landlord → /tenants/1e4dcd95-3aca-4546-80a4-cbb20fc8d7c2"
+  },
+  {
+    "time": "2026-10-30T00:56:13.940Z",
+    "text": "Bấm: Yêu cầu & người ở cùng"
+  },
+  {
+    "time": "2026-10-30T00:56:15.169Z",
+    "text": "Bấm: Xóa người ở cùng"
+  },
+  {
+    "time": "2026-10-30T00:56:15.506Z",
+    "text": "Bấm: Xác nhận"
+  },
+  {
+    "time": "2026-10-30T00:56:16.078Z",
+    "text": "15-thong-bao-tai-khoan"
+  },
+  {
+    "time": "2026-10-30T00:56:20.086Z",
+    "text": "ĐỔI VAI: TENANT"
+  },
+  {
+    "time": "2026-10-30T00:56:20.117Z",
+    "text": "Khach → /auth/login"
+  },
+  {
+    "time": "2026-10-30T00:56:20.439Z",
+    "text": "Nhập: Email address"
+  },
+  {
+    "time": "2026-10-30T00:56:20.753Z",
+    "text": "Nhập: Password"
+  },
+  {
+    "time": "2026-10-30T00:56:21.089Z",
+    "text": "Bấm: Log In"
+  },
+  {
+    "time": "2026-10-30T00:56:21.446Z",
+    "text": "tenant → /tenant/notifications"
+  },
+  {
+    "time": "2026-10-30T00:56:21.772Z",
+    "text": "tenant → /housing/notifications"
+  },
+  {
+    "time": "2026-10-30T00:56:22.097Z",
+    "text": "tenant → /explore/account"
+  },
+  {
+    "time": "2026-10-30T00:56:22.420Z",
+    "text": "tenant → /tenant/zalo"
+  },
+  {
+    "time": "2026-10-30T00:56:22.746Z",
+    "text": "ĐỔI VAI: LANDLORD"
+  },
+  {
+    "time": "2026-10-30T00:56:22.784Z",
+    "text": "Khach → /auth/login"
+  },
+  {
+    "time": "2026-10-30T00:56:23.124Z",
+    "text": "Nhập: Email address"
+  },
+  {
+    "time": "2026-10-30T00:56:23.456Z",
+    "text": "Nhập: Password"
+  },
+  {
+    "time": "2026-10-30T00:56:23.790Z",
+    "text": "Bấm: Log In"
+  },
+  {
+    "time": "2026-10-30T00:56:24.130Z",
+    "text": "landlord → /notifications"
+  },
+  {
+    "time": "2026-10-30T00:56:24.453Z",
+    "text": "landlord → /settings"
+  },
+  {
+    "time": "2026-10-30T00:56:24.787Z",
+    "text": "landlord → /settings/fake-zalo"
+  },
+  {
+    "time": "2026-10-30T00:56:25.107Z",
+    "text": "landlord → /support-center"
+  },
+  {
+    "time": "2026-10-30T00:56:25.675Z",
+    "text": "17-nhan-vien-theo-phan-quyen"
+  },
+  {
+    "time": "2026-10-30T00:56:29.686Z",
+    "text": "ĐỔI VAI: STAFF"
+  },
+  {
+    "time": "2026-10-30T00:56:29.724Z",
+    "text": "Khach → /auth/login"
+  },
+  {
+    "time": "2026-10-30T00:56:30.035Z",
+    "text": "Nhập: Email address"
+  },
+  {
+    "time": "2026-10-30T00:56:30.357Z",
+    "text": "Nhập: Password"
+  },
+  {
+    "time": "2026-10-30T00:56:30.704Z",
+    "text": "Bấm: Log In"
+  },
+  {
+    "time": "2026-10-30T00:56:31.050Z",
+    "text": "staff → /dashboard"
+  },
+  {
+    "time": "2026-10-30T00:56:31.368Z",
+    "text": "staff → /properties"
+  },
+  {
+    "time": "2026-10-30T00:56:31.687Z",
+    "text": "staff → /rooms/106d6aba-39a3-4dc7-a093-e5b62ee67b23"
+  },
+  {
+    "time": "2026-10-30T00:56:32.021Z",
+    "text": "staff → /billing"
+  },
+  {
+    "time": "2026-10-30T00:56:32.346Z",
+    "text": "staff → /maintenance"
+  },
+  {
+    "time": "2026-10-30T00:56:32.665Z",
+    "text": "staff → /audit"
+  },
+  {
+    "time": "2026-10-30T00:56:33.229Z",
+    "text": "18-admin-quan-tri"
+  },
+  {
+    "time": "2026-10-30T00:56:37.238Z",
+    "text": "ĐỔI VAI: ADMIN"
+  },
+  {
+    "time": "2026-10-30T00:56:37.257Z",
+    "text": "Khach → /auth/login"
+  },
+  {
+    "time": "2026-10-30T00:56:37.578Z",
+    "text": "Nhập: Email address"
+  },
+  {
+    "time": "2026-10-30T00:56:37.903Z",
+    "text": "Nhập: Password"
+  },
+  {
+    "time": "2026-10-30T00:56:38.240Z",
+    "text": "Bấm: Log In"
+  },
+  {
+    "time": "2026-10-30T00:56:58.875Z",
+    "text": "19-yeu-cau-tra-phong"
+  },
+  {
+    "time": "2026-10-30T00:57:02.882Z",
+    "text": "ĐỔI VAI: TENANT"
+  },
+  {
+    "time": "2026-10-30T00:57:02.901Z",
+    "text": "Khach → /auth/login"
+  },
+  {
+    "time": "2026-10-30T00:57:03.215Z",
+    "text": "Nhập: Email address"
+  },
+  {
+    "time": "2026-10-30T00:57:03.550Z",
+    "text": "Nhập: Password"
+  },
+  {
+    "time": "2026-10-30T00:57:03.887Z",
+    "text": "Bấm: Log In"
+  }
+]

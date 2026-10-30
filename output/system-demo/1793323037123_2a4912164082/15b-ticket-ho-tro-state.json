@@ -1,0 +1,37 @@
+{
+  "route": "/support-center?ticketId=3200b87e-fe4c-40b6-bedb-3af4fc4844d2",
+  "apiBaseUrl": "http://127.0.0.1:61074/api/v1",
+  "sessionRole": "landlord",
+  "texts": [
+    "Yêu cầu hỗ trợ",
+    "Xác minh chủ trọ",
+    "Khiếu nại kiểm duyệt",
+    "Thông báo",
+    "Tạo yêu cầu",
+    "Danh sách ticket",
+    "Đính kèm ảnh / PDF (tối đa 8 MB)",
+    "Chu tro DEMO",
+    "30/10/2026 08:19",
+    "Quan tri DEMO",
+    "30/10/2026 08:19",
+    "Nội dung phản hồi",
+    "Nội dung gửi sẽ hiển thị cho người yêu cầu. Ghi chú nội bộ chỉ admin thấy.",
+    "0/5000",
+    "Gửi phản hồi",
+    "Trung tâm hỗ trợ",
+    "DEMO ticket duoc tao tu giao dien, khong phai su co that",
+    "DEMO admin da tiep nhan yeu cau ho tro"
+  ],
+  "fields": [
+    {
+      "label": "Nội dung phản hồi",
+      "hint": "Nội dung gửi sẽ hiển thị cho người yêu cầu. Ghi chú nội bộ chỉ admin thấy.",
+      "readOnly": false,
+      "obscure": false
+    }
+  ],
+  "errors": [
+    "Duplicate GlobalKeys detected in widget tree.\nThe following GlobalKeys were specified multiple times in the widget tree. This will lead to parts of the widget tree being truncated unexpectedly, because the second time a key is seen, the previous instance is moved to the new location. The keys were:\n- [LabeledGlobalKey<_OverlayEntryWidgetState>#beff1]\n  [LabeledGlobalKey<_OverlayEntryWidgetState>#18b26]\nThis was determined by noticing that after widgets with the above global keys were moved out of their previous parent, that previous parent never updated during this frame, meaning that it either did not update at all or updated before the widgets were moved, in either case implying that it still thinks that it should have a child with those global keys.\nThe specific parent that did not update after having one or more children forcibly removed due to GlobalKey reparenting is:\n- _Theater(skipCount: 0, dependencies: [Directionality], renderObject: _RenderTheater#07278 NEEDS-LAYOUT NEEDS-COMPOSITING-BITS-UPDATE DETACHED)\nA GlobalKey can only be specified on one widget at a time in the widget tree.",
+    "A RenderFlex overflowed by 12 pixels on the bottom."
+  ]
+}

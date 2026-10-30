@@ -1,0 +1,103 @@
+{
+  "date": "2026-10-29",
+  "svgRenderedSuccessfully": 17,
+  "renderEngine": "sharp/libvips",
+  "renderResults": [
+    {
+      "file": "02_FDD.svg",
+      "width": 1800,
+      "height": 12862
+    },
+    {
+      "file": "diagrams/G01_FDD.svg",
+      "width": 1800,
+      "height": 1018
+    },
+    {
+      "file": "diagrams/G02_FDD.svg",
+      "width": 1800,
+      "height": 688
+    },
+    {
+      "file": "diagrams/G03_FDD.svg",
+      "width": 1800,
+      "height": 754
+    },
+    {
+      "file": "diagrams/G04_FDD.svg",
+      "width": 1800,
+      "height": 1216
+    },
+    {
+      "file": "diagrams/G05_FDD.svg",
+      "width": 1800,
+      "height": 532
+    },
+    {
+      "file": "diagrams/G06_FDD.svg",
+      "width": 1800,
+      "height": 1414
+    },
+    {
+      "file": "diagrams/G07_FDD.svg",
+      "width": 1800,
+      "height": 754
+    },
+    {
+      "file": "diagrams/G08_FDD.svg",
+      "width": 1800,
+      "height": 2212
+    },
+    {
+      "file": "diagrams/G09_FDD.svg",
+      "width": 1800,
+      "height": 598
+    },
+    {
+      "file": "diagrams/G10_FDD.svg",
+      "width": 1800,
+      "height": 910
+    },
+    {
+      "file": "diagrams/G11_FDD.svg",
+      "width": 1800,
+      "height": 844
+    },
+    {
+      "file": "diagrams/G12_FDD.svg",
+      "width": 1800,
+      "height": 1084
+    },
+    {
+      "file": "diagrams/G13_FDD.svg",
+      "width": 1800,
+      "height": 1018
+    },
+    {
+      "file": "diagrams/G14_FDD.svg",
+      "width": 1800,
+      "height": 820
+    },
+    {
+      "file": "diagrams/G15_FDD.svg",
+      "width": 1800,
+      "height": 664
+    },
+    {
+      "file": "diagrams/G16_FDD.svg",
+      "width": 1800,
+      "height": 886
+    }
+  ],
+  "visuallyInspected": [
+    "diagrams/G02_FDD.svg",
+    "diagrams/G08_FDD.svg"
+  ],
+  "plantUML": {
+    "notation": "WBS",
+    "staticallyChecked": true,
+    "nativeCompilationRun": false,
+    "reason": "Java runtime unavailable; readable diagrams are supplied as independently rendered SVG."
+  },
+  "note": "All diagrams are functional hierarchies, not UML Use Case Diagrams."
+}

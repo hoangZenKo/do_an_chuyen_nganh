@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import '../../core/theme/app_theme.dart';
 import '../../core/utils/format.dart';
 import '../../models/reports.dart';
 import '../notifications/notifications_providers.dart';
@@ -32,7 +31,7 @@ class ReportsScreen extends ConsumerWidget {
     final month = ref.watch(selectedReportMonthProvider);
 
     return Scaffold(
-      backgroundColor: const Color(0xFF0F1117),
+      backgroundColor: Theme.of(context).scaffoldBackgroundColor,
       appBar: AppBar(
         title: const Text('Báo cáo'),
         actions: [
@@ -44,7 +43,7 @@ class ReportsScreen extends ConsumerWidget {
         ],
       ),
       body: RefreshIndicator(
-        color: AppTheme.primary,
+        color: Theme.of(context).colorScheme.primary,
         onRefresh: () async {
           ref.invalidate(monthlyReportProvider);
           ref.invalidate(billingRemindersProvider);
@@ -142,11 +141,14 @@ class ReminderPolicyCard extends ConsumerWidget {
             ),
           ]),
           Text('Phạm vi: $scope',
-              style: const TextStyle(color: Color(0xFF8891A8))),
+              style: TextStyle(
+                  color: Theme.of(context).colorScheme.onSurfaceVariant)),
           const SizedBox(height: 6),
           Text(enabled ? 'Đang bật' : 'Đang tắt',
               style: TextStyle(
-                  color: enabled ? AppTheme.primary : const Color(0xFFDC2626),
+                  color: enabled
+                      ? Theme.of(context).colorScheme.primary
+                      : Theme.of(context).colorScheme.error,
                   fontWeight: FontWeight.w800)),
           Text(
               'Trước hạn: ${before.isEmpty ? 'không nhắc' : '${before.join(', ')} ngày'} · Quá hạn: ${overdue.isEmpty ? 'không nhắc' : '${overdue.join(', ')} ngày'}${effective['onDueDate'] == true ? ' · đúng hạn' : ''}'),
@@ -411,7 +413,9 @@ class _ReportSummary extends StatelessWidget {
           _MetricRow('Hoàn/khấu trừ cọc', summary.depositReturned),
           Text(
             '${summary.activeLeases} hợp đồng active · ${summary.invoiceCount} hóa đơn',
-            style: const TextStyle(fontSize: 12, color: Color(0xFF8891A8)),
+            style: TextStyle(
+                fontSize: 12,
+                color: Theme.of(context).colorScheme.onSurfaceVariant),
           ),
         ],
       ),
@@ -532,9 +536,9 @@ class _InvoiceDebtCard extends StatelessWidget {
                     subtitle: Text(invoice.tenantName ?? 'Khách thuê'),
                     trailing: Text(
                       formatCurrencyVnd(invoice.remainingAmount),
-                      style: const TextStyle(
+                      style: TextStyle(
                         fontWeight: FontWeight.w900,
-                        color: Color(0xFFDC2626),
+                        color: Theme.of(context).colorScheme.error,
                       ),
                     ),
                   ),
@@ -569,7 +573,7 @@ class _MetricRow extends StatelessWidget {
             formatCurrencyVnd(amount),
             style: TextStyle(
               fontWeight: strong ? FontWeight.w900 : FontWeight.w700,
-              color: danger ? const Color(0xFFDC2626) : null,
+              color: danger ? Theme.of(context).colorScheme.error : null,
             ),
           ),
         ],
@@ -596,11 +600,12 @@ class _LoadingCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const _Card(
+    return _Card(
       child: Center(
         child: Padding(
-          padding: EdgeInsets.all(20),
-          child: CircularProgressIndicator(color: AppTheme.primary),
+          padding: const EdgeInsets.all(20),
+          child: CircularProgressIndicator(
+              color: Theme.of(context).colorScheme.primary),
         ),
       ),
     );
@@ -613,14 +618,18 @@ class _Card extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final colors = Theme.of(context).colorScheme;
     return Container(
       padding: const EdgeInsets.all(16),
       decoration: BoxDecoration(
-        color: Colors.white,
+        color: colors.surface,
         borderRadius: BorderRadius.circular(8),
-        border: Border.all(color: const Color(0xFF2E3348)),
+        border: Border.all(color: colors.outline),
       ),
-      child: child,
+      child: DefaultTextStyle.merge(
+        style: TextStyle(color: colors.onSurface),
+        child: child,
+      ),
     );
   }
 }

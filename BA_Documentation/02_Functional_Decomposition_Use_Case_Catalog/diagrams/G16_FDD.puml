@@ -1,0 +1,17 @@
+@startwbs
+title Phân rã chức năng AS-IS — không phải sơ đồ Use Case
+* Hệ thống quản lý và tìm thuê nhà trọ
+** G16 — Quản trị chính sách và đối soát nền tảng
+*** G16.1 Đối soát và kiểm soát tài chính
+**** UC-ADM-15 Chuẩn bị đối soát sao kê
+**** UC-ADM-15.1 Duyệt đề xuất đối soát sao kê
+**** UC-ADM-24 Tra cứu giao dịch tài chính nền tảng
+*** G16.2 Tổ chức và chính sách quyền
+**** UC-ADM-17.1 Cấu hình bật tắt tính năng nền tảng
+**** UC-ADM-17.2 Quản lý nhóm Admin
+**** UC-ADM-26 Mô phỏng quyền Admin
+*** G16.3 Danh mục và phản hồi thử nghiệm
+**** UC-ADM-23 Quản lý danh mục cơ sở trường
+**** UC-DIS-13.2 Gửi phản hồi về thử nghiệm tìm phòng
+**** UC-ADM-27 Đọc phản hồi thử nghiệm tìm phòng
+@endwbs

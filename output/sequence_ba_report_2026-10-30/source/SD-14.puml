@@ -1,0 +1,105 @@
+@startuml
+skinparam backgroundColor white
+skinparam shadowing false
+skinparam dpi 240
+skinparam defaultFontName "Times New Roman"
+skinparam defaultFontSize 17
+skinparam defaultFontColor black
+skinparam titleFontSize 21
+skinparam titleFontColor black
+skinparam roundcorner 0
+skinparam maxMessageSize 270
+skinparam ParticipantPadding 30
+skinparam sequence {
+  ArrowColor #800000
+  ArrowThickness 1.2
+  LifeLineBorderColor #999999
+  LifeLineBackgroundColor #FFFFB9
+  ParticipantBackgroundColor #FFFFB9
+  ParticipantBorderColor #800000
+  ParticipantFontColor black
+  ActorBackgroundColor #FFFFB9
+  ActorBorderColor #800000
+  ActorFontColor black
+  BoundaryBackgroundColor #FFFFB9
+  BoundaryBorderColor #800000
+  ControlBackgroundColor #FFFFB9
+  ControlBorderColor #800000
+  EntityBackgroundColor #FFFFB9
+  EntityBorderColor #800000
+  DatabaseBackgroundColor #FFFFB9
+  DatabaseBorderColor #800000
+  GroupBackgroundColor #FFFFB9
+  GroupBodyBackgroundColor white
+  GroupBorderColor #888888
+  GroupFontColor black
+  GroupHeaderFontColor black
+  GroupFontSize 15
+  GroupHeaderFontSize 16
+  MessageAlign center
+}
+hide footbox
+<style>
+sequenceDiagram {
+ actor { BackgroundColor #FFFFB9
+ LineColor #800000 }
+ boundary { BackgroundColor #FFFFB9
+ LineColor #800000 }
+ control { BackgroundColor #FFFFB9
+ LineColor #800000 }
+ database { BackgroundColor #FFFFB9
+ LineColor #800000 }
+ activationBox { BackgroundColor #FFFFB9
+ LineColor #800000 }
+}
+</style>
+autonumber "<b>0.</b>"
+
+title SD-14. Đình chỉ và khôi phục tài khoản khách hàng
+actor "Quản trị viên" as A
+boundary "<u>Giao diện</u>\n<u>quản lý tài khoản</u>" as U #FFFFB9
+control "<u>Quản lý</u>\n<u>trạng thái tài khoản</u>" as C #FFFFB9
+database "<u>Cơ sở dữ liệu</u>" as D #FFFFB9
+A -> U: Chọn tài khoản khách hàng; nhập lý do đình chỉ
+activate U
+U -> C: Yêu cầu đình chỉ tài khoản khách hàng
+activate C
+C -> D ++: Tra cứu loại tài khoản, trạng thái và các phiên đã cấp
+D --> C --: Thông tin tài khoản và phiên sử dụng hiện hành
+C -> C: Kiểm tra quyền xử lý, loại tài khoản và trạng thái chưa thay đổi
+alt Không đủ quyền, là quản trị viên hoặc tình trạng đã thay đổi
+C --> U: Không đình chỉ
+U --> A: Không đình chỉ; yêu cầu kiểm tra lại
+else Tài khoản khách hàng đủ điều kiện đình chỉ
+C -> D ++: Đình chỉ tài khoản; thu hồi quyền dùng các phiên đã cấp
+D --> C --: Tài khoản bị đình chỉ và lịch sử xử lý được lưu
+opt Tài khoản bị đình chỉ là chủ trọ
+C -> D ++: Thu hồi phiên của nhân viên thuộc chủ trọ
+D --> C --: Nhân viên không tiếp tục truy cập bằng phiên cũ
+end
+C --> U: Đình chỉ thành công
+U --> A: Đình chỉ thành công; giữ dữ liệu và lịch sử tài chính
+end
+deactivate C
+deactivate U
+opt Tài khoản đang bị đình chỉ; chọn khôi phục
+A -> U: Yêu cầu khôi phục tài khoản và nhập lý do
+activate U
+U -> C: Yêu cầu khôi phục tài khoản và nhập lý do
+activate C
+C -> D ++: Tra cứu tài khoản và trạng thái hiện hành
+D --> C --: Loại tài khoản và trạng thái mới nhất
+C -> C: Kiểm tra quyền xử lý và điều kiện khôi phục tài khoản
+alt Đủ quyền và dữ liệu đáp ứng điều kiện xử lý
+C -> D ++: Lưu tài khoản hoạt động và lịch sử khôi phục
+D --> C --: Tài khoản đã khôi phục; phiên cũ vẫn bị thu hồi
+C --> U: Đã khôi phục
+U --> A: Đã khôi phục; người dùng cần đăng nhập lại
+else Không đáp ứng điều kiện xử lý
+C --> U: Không khôi phục
+U --> A: Không khôi phục; yêu cầu kiểm tra trạng thái hiện hành
+end
+deactivate C
+deactivate U
+end
+@enduml

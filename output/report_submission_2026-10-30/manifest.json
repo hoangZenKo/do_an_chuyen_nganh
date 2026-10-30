@@ -1,0 +1,1195 @@
+{
+  "input": "/Users/hoang/Desktop/ĐỒ ÁN/Report_finnal.docx",
+  "input_sha256": "c3a7baad71aac9d8e094c7362792ed143c724cf2ea83059293044dd7e3271c1c",
+  "diagrams": [
+    {
+      "id": "SD-01",
+      "source_sha256": "0a2854bd08bb4535007c58a906a183f06d3b549a8a72391bd1a3b1d121624b8d",
+      "parts": 3,
+      "cuts": [
+        0,
+        1280,
+        2467,
+        3745
+      ],
+      "pixels": [
+        2747,
+        3745
+      ],
+      "repeated_header_pixels": 337
+    },
+    {
+      "id": "SD-02",
+      "source_sha256": "7d517a3a928bad649ebd0aa85d72aad34511d60cef39f5ad02310241aa9216df",
+      "parts": 5,
+      "cuts": [
+        0,
+        1325,
+        2640,
+        3951,
+        5269,
+        5825
+      ],
+      "pixels": [
+        2961,
+        5825
+      ],
+      "repeated_header_pixels": 337
+    },
+    {
+      "id": "SD-03",
+      "source_sha256": "89d391cb6b1820f985c511c2748bf9686c8ba9491b8d163635874e2861b3a426",
+      "parts": 2,
+      "cuts": [
+        0,
+        1256,
+        2582
+      ],
+      "pixels": [
+        2814,
+        2582
+      ],
+      "repeated_header_pixels": 337
+    },
+    {
+      "id": "SD-04",
+      "source_sha256": "dace8f06d19a0c959a176943e02087bd92bf4ca73b5a859c26311d3bcf643415",
+      "parts": 4,
+      "cuts": [
+        0,
+        1265,
+        2412,
+        3614,
+        4769
+      ],
+      "pixels": [
+        2696,
+        4769
+      ],
+      "repeated_header_pixels": 337
+    },
+    {
+      "id": "SD-05",
+      "source_sha256": "c89c57de66078661d598c40af718842b40476c49e889f5055003fe96a7748a11",
+      "parts": 4,
+      "cuts": [
+        0,
+        1299,
+        2530,
+        3660,
+        4024
+      ],
+      "pixels": [
+        2767,
+        4024
+      ],
+      "repeated_header_pixels": 337
+    },
+    {
+      "id": "SD-06",
+      "source_sha256": "7fbe669686d656f785646d10cac1453eea49cae499a8bd88825b9c7f2b17cfa5",
+      "parts": 4,
+      "cuts": [
+        0,
+        1206,
+        2406,
+        3587,
+        3933
+      ],
+      "pixels": [
+        2708,
+        3933
+      ],
+      "repeated_header_pixels": 337
+    },
+    {
+      "id": "SD-07",
+      "source_sha256": "5f4398b85ca6927c78cbccb258f76ef113aaaeb31382106e53fdd67745104bf5",
+      "parts": 4,
+      "cuts": [
+        0,
+        1183,
+        2338,
+        3505,
+        3878
+      ],
+      "pixels": [
+        2644,
+        3878
+      ],
+      "repeated_header_pixels": 337
+    },
+    {
+      "id": "SD-08",
+      "source_sha256": "9dc925a3983f75f095260d255c825a6feac74e3c54736dd8584743366a84a1e7",
+      "parts": 3,
+      "cuts": [
+        0,
+        1371,
+        2701,
+        4121
+      ],
+      "pixels": [
+        2920,
+        4121
+      ],
+      "repeated_header_pixels": 337
+    },
+    {
+      "id": "SD-09",
+      "source_sha256": "2d28a1e1a08719c845a6d382a819fd5d8fb1eef3c2db5f43f3ed8645de3f037f",
+      "parts": 3,
+      "cuts": [
+        0,
+        1250,
+        2458,
+        3020
+      ],
+      "pixels": [
+        2707,
+        3020
+      ],
+      "repeated_header_pixels": 337
+    },
+    {
+      "id": "SD-10",
+      "source_sha256": "cb8bb0658908c3875b8376008665ca2a93fba19b956819f911756641888b2255",
+      "parts": 4,
+      "cuts": [
+        0,
+        1226,
+        2429,
+        3562,
+        4839
+      ],
+      "pixels": [
+        2692,
+        4839
+      ],
+      "repeated_header_pixels": 337
+    },
+    {
+      "id": "SD-11",
+      "source_sha256": "a69e276e1c559943e5c6ed9e984e136f0c54e159212c8f57e92a8e296367cb92",
+      "parts": 5,
+      "cuts": [
+        0,
+        1367,
+        2697,
+        4000,
+        5278,
+        5964
+      ],
+      "pixels": [
+        2912,
+        5964
+      ],
+      "repeated_header_pixels": 337
+    },
+    {
+      "id": "SD-12",
+      "source_sha256": "02555121254062bf1382267254a65ab4accf99be7a139065ec7483dcdfd2c971",
+      "parts": 5,
+      "cuts": [
+        0,
+        1541,
+        2953,
+        4460,
+        5929,
+        7502
+      ],
+      "pixels": [
+        3303,
+        7502
+      ],
+      "repeated_header_pixels": 386
+    },
+    {
+      "id": "SD-13",
+      "source_sha256": "ef1af5efa027dbe83aa3ddf95592c4e28b9cad65b8e1b30ff13c160dcfacc12a",
+      "parts": 3,
+      "cuts": [
+        0,
+        1157,
+        2303,
+        3037
+      ],
+      "pixels": [
+        2668,
+        3037
+      ],
+      "repeated_header_pixels": 337
+    },
+    {
+      "id": "SD-14",
+      "source_sha256": "c1dfeba329671e338e088bd31ca8024dce48e9fa107902fb561918d868225051",
+      "parts": 3,
+      "cuts": [
+        0,
+        1289,
+        2485,
+        3760
+      ],
+      "pixels": [
+        2746,
+        3760
+      ],
+      "repeated_header_pixels": 337
+    },
+    {
+      "id": "SD-15",
+      "source_sha256": "a86ad89abd6620652b8911210dde8fc38a9f757d34cd4c45ba0891a5eef0ea2f",
+      "parts": 4,
+      "cuts": [
+        0,
+        1293,
+        2569,
+        3845,
+        4648
+      ],
+      "pixels": [
+        2819,
+        4648
+      ],
+      "repeated_header_pixels": 337
+    },
+    {
+      "id": "SD-16",
+      "source_sha256": "94b48e6a9a3f304a8f4fb64eb191a7f0bb1a74668243a06d7f00109b6ca53dd4",
+      "parts": 5,
+      "cuts": [
+        0,
+        1532,
+        3004,
+        4466,
+        5896,
+        7320
+      ],
+      "pixels": [
+        3262,
+        7320
+      ],
+      "repeated_header_pixels": 386
+    },
+    {
+      "id": "SD-17",
+      "source_sha256": "577de33c15427ad85f198a1a87443c7d990e7ab90ccd3f2a8101f54433e640c9",
+      "parts": 4,
+      "cuts": [
+        0,
+        1173,
+        2275,
+        3387,
+        4348
+      ],
+      "pixels": [
+        2709,
+        4348
+      ],
+      "repeated_header_pixels": 337
+    },
+    {
+      "id": "SD-18",
+      "source_sha256": "e97343c2695e83536d52d91649f6aa678a29d9446eeef23c68317e9d05a9df5c",
+      "parts": 3,
+      "cuts": [
+        0,
+        1219,
+        2379,
+        3118
+      ],
+      "pixels": [
+        2653,
+        3118
+      ],
+      "repeated_header_pixels": 337
+    },
+    {
+      "id": "SD-19",
+      "source_sha256": "f7c4ceeee48e3462199e73a780b125ca55bb9accca9fa20bfc4f0455a4002650",
+      "parts": 3,
+      "cuts": [
+        0,
+        1234,
+        2458,
+        3375
+      ],
+      "pixels": [
+        2729,
+        3375
+      ],
+      "repeated_header_pixels": 337
+    }
+  ],
+  "toc": [
+    {
+      "title": "Phân công thực hiện đồ án",
+      "level": 1,
+      "anchor": "ReportHeading001",
+      "page": "v",
+      "physical_page": 6
+    },
+    {
+      "title": "1 Giới thiệu",
+      "level": 1,
+      "anchor": "ReportHeading002",
+      "page": "1",
+      "physical_page": 7
+    },
+    {
+      "title": "1.1 Đặt vấn đề",
+      "level": 2,
+      "anchor": "ReportHeading003",
+      "page": "1",
+      "physical_page": 7
+    },
+    {
+      "title": "1.2 Các giải pháp đã có",
+      "level": 2,
+      "anchor": "ReportHeading004",
+      "page": "1",
+      "physical_page": 7
+    },
+    {
+      "title": "1.3 Giải pháp đề xuất",
+      "level": 2,
+      "anchor": "ReportHeading005",
+      "page": "2",
+      "physical_page": 8
+    },
+    {
+      "title": "2 Thiết kế và triển khai",
+      "level": 1,
+      "anchor": "ReportHeading006",
+      "page": "4",
+      "physical_page": 10
+    },
+    {
+      "title": "2.1 Các yêu cầu chức năng",
+      "level": 2,
+      "anchor": "ReportHeading007",
+      "page": "4",
+      "physical_page": 10
+    },
+    {
+      "title": "2.1.1 Tác nhân và phạm vi truy cập",
+      "level": 3,
+      "anchor": "ReportHeading008",
+      "page": "4",
+      "physical_page": 10
+    },
+    {
+      "title": "2.1.2 Thuật ngữ và quy tắc nghiệp vụ",
+      "level": 3,
+      "anchor": "ReportHeading009",
+      "page": "6",
+      "physical_page": 12
+    },
+    {
+      "title": "2.2 Các yêu cầu phi chức năng",
+      "level": 2,
+      "anchor": "ReportHeading010",
+      "page": "7",
+      "physical_page": 13
+    },
+    {
+      "title": "2.3 Các ràng buộc",
+      "level": 2,
+      "anchor": "ReportHeading011",
+      "page": "9",
+      "physical_page": 15
+    },
+    {
+      "title": "2.3.1 Các ràng buộc về triển khai",
+      "level": 3,
+      "anchor": "ReportHeading012",
+      "page": "9",
+      "physical_page": 15
+    },
+    {
+      "title": "2.3.2 Các ràng buộc kinh tế",
+      "level": 3,
+      "anchor": "ReportHeading013",
+      "page": "9",
+      "physical_page": 15
+    },
+    {
+      "title": "2.3.3 Các ràng buộc về đạo đức",
+      "level": 3,
+      "anchor": "ReportHeading014",
+      "page": "9",
+      "physical_page": 15
+    },
+    {
+      "title": "2.4 Mô hình hệ thống và thiết kế giải pháp",
+      "level": 2,
+      "anchor": "ReportHeading015",
+      "page": "11",
+      "physical_page": 17
+    },
+    {
+      "title": "2.4.1 Danh mục và đặc tả Use Case",
+      "level": 3,
+      "anchor": "ReportHeading016",
+      "page": "12",
+      "physical_page": 18
+    },
+    {
+      "title": "2.4.2 Mô hình Use Case",
+      "level": 3,
+      "anchor": "ReportHeading017",
+      "page": "281",
+      "physical_page": 287
+    },
+    {
+      "title": "2.4.3 Mô hình lớp và đối tượng",
+      "level": 3,
+      "anchor": "ReportHeading018",
+      "page": "311",
+      "physical_page": 317
+    },
+    {
+      "title": "2.4.4 Các biểu đồ tuần tự",
+      "level": 3,
+      "anchor": "ReportHeading019",
+      "page": "331",
+      "physical_page": 337
+    },
+    {
+      "title": "2.4.5 Các màn hình giao diện người dùng",
+      "level": 3,
+      "anchor": "ReportHeading020",
+      "page": "403",
+      "physical_page": 409
+    },
+    {
+      "title": "2.5 Thiết kế triển khai và các điểm cần đối chiếu",
+      "level": 2,
+      "anchor": "ReportHeading021",
+      "page": "434",
+      "physical_page": 440
+    },
+    {
+      "title": "2.5.1 Cấu trúc mã nguồn và hợp đồng API",
+      "level": 3,
+      "anchor": "ReportHeading022",
+      "page": "434",
+      "physical_page": 440
+    },
+    {
+      "title": "2.5.2 Tính tiền phân bổ và báo cáo",
+      "level": 3,
+      "anchor": "ReportHeading023",
+      "page": "434",
+      "physical_page": 440
+    },
+    {
+      "title": "2.5.3 Phân quyền dữ liệu và tác vụ nền",
+      "level": 3,
+      "anchor": "ReportHeading024",
+      "page": "435",
+      "physical_page": 441
+    },
+    {
+      "title": "2.5.4 Các lỗi lệch tài liệu đã được hiệu chỉnh",
+      "level": 3,
+      "anchor": "ReportHeading025",
+      "page": "436",
+      "physical_page": 442
+    },
+    {
+      "title": "2.6 Kiểm chứng và đánh giá kết quả",
+      "level": 2,
+      "anchor": "ReportHeading026",
+      "page": "438",
+      "physical_page": 444
+    },
+    {
+      "title": "2.6.1 Phương pháp và phạm vi kiểm tra",
+      "level": 3,
+      "anchor": "ReportHeading027",
+      "page": "438",
+      "physical_page": 444
+    },
+    {
+      "title": "2.6.2 Các kịch bản kiểm chứng trọng yếu",
+      "level": 3,
+      "anchor": "ReportHeading028",
+      "page": "439",
+      "physical_page": 445
+    },
+    {
+      "title": "2.6.3 Lỗi hiện hữu và giới hạn còn lại",
+      "level": 3,
+      "anchor": "ReportHeading029",
+      "page": "440",
+      "physical_page": 446
+    },
+    {
+      "title": "3 Một số thành phần khác của đồ án",
+      "level": 1,
+      "anchor": "ReportHeading030",
+      "page": "441",
+      "physical_page": 447
+    },
+    {
+      "title": "3.1 Kế hoạch dự án",
+      "level": 2,
+      "anchor": "ReportHeading031",
+      "page": "441",
+      "physical_page": 447
+    },
+    {
+      "title": "3.2 Đảm bảo thực hiện đúng với đồ án cá nhân",
+      "level": 2,
+      "anchor": "ReportHeading032",
+      "page": "441",
+      "physical_page": 447
+    },
+    {
+      "title": "3.3 Các vấn đề về đạo đức và làm việc chuyên nghiệp",
+      "level": 2,
+      "anchor": "ReportHeading033",
+      "page": "442",
+      "physical_page": 448
+    },
+    {
+      "title": "3.4 Tác động xã hội",
+      "level": 2,
+      "anchor": "ReportHeading034",
+      "page": "443",
+      "physical_page": 449
+    },
+    {
+      "title": "3.5 Kế hoạch cho kiến thức mới và chiến lược học tập",
+      "level": 2,
+      "anchor": "ReportHeading035",
+      "page": "443",
+      "physical_page": 449
+    },
+    {
+      "title": "4 Kết luận",
+      "level": 1,
+      "anchor": "ReportHeading036",
+      "page": "444",
+      "physical_page": 450
+    },
+    {
+      "title": "5 Tài liệu tham khảo",
+      "level": 1,
+      "anchor": "ReportHeading037",
+      "page": "445",
+      "physical_page": 451
+    }
+  ],
+  "figures": [
+    {
+      "title": "Hình 2.1 AR-01 Kiến trúc tổng thể và ranh giới tích hợp",
+      "anchor": "ReportFigure001",
+      "page": "11",
+      "physical_page": 17
+    },
+    {
+      "title": "Hình 2.2 AR-02 Các lớp kiểm tra truy cập",
+      "anchor": "ReportFigure002",
+      "page": "12",
+      "physical_page": 18
+    },
+    {
+      "title": "Hình 2.3 TỔNG THỂ HỆ THỐNG QUẢN LÝ NHÀ TRỌ",
+      "anchor": "ReportFigure003",
+      "page": "281",
+      "physical_page": 287
+    },
+    {
+      "title": "Hình 2.4 G01 Đăng ký và tiếp nhận lời mời",
+      "anchor": "ReportFigure004",
+      "page": "282",
+      "physical_page": 288
+    },
+    {
+      "title": "Hình 2.5 G01 Đăng nhập và bảo vệ tài khoản",
+      "anchor": "ReportFigure005",
+      "page": "283",
+      "physical_page": 289
+    },
+    {
+      "title": "Hình 2.6 G02 Tìm và lựa chọn phòng",
+      "anchor": "ReportFigure006",
+      "page": "284",
+      "physical_page": 290
+    },
+    {
+      "title": "Hình 2.7 G03 Đăng tin, lịch xem và nhận phòng",
+      "anchor": "ReportFigure007",
+      "page": "285",
+      "physical_page": 291
+    },
+    {
+      "title": "Hình 2.8 G04 Khu trọ và cơ sở vật chất phần 1",
+      "anchor": "ReportFigure008",
+      "page": "286",
+      "physical_page": 292
+    },
+    {
+      "title": "Hình 2.9 G04 Khu trọ và cơ sở vật chất phần 2",
+      "anchor": "ReportFigure009",
+      "page": "287",
+      "physical_page": 293
+    },
+    {
+      "title": "Hình 2.10 G05 Nhân sự và ủy quyền vận hành",
+      "anchor": "ReportFigure010",
+      "page": "288",
+      "physical_page": 294
+    },
+    {
+      "title": "Hình 2.11 G06 Hồ sơ người thuê và quyền truy cập",
+      "anchor": "ReportFigure011",
+      "page": "289",
+      "physical_page": 295
+    },
+    {
+      "title": "Hình 2.12 G06 Hợp đồng và tiền cọc phần 1",
+      "anchor": "ReportFigure012",
+      "page": "290",
+      "physical_page": 296
+    },
+    {
+      "title": "Hình 2.13 G06 Hợp đồng và tiền cọc phần 2",
+      "anchor": "ReportFigure013",
+      "page": "291",
+      "physical_page": 297
+    },
+    {
+      "title": "Hình 2.14 G07 Vòng đời thuê và quyết toán",
+      "anchor": "ReportFigure014",
+      "page": "292",
+      "physical_page": 298
+    },
+    {
+      "title": "Hình 2.15 G08 Chỉ số và hóa đơn phần 1",
+      "anchor": "ReportFigure015",
+      "page": "293",
+      "physical_page": 299
+    },
+    {
+      "title": "Hình 2.16 G08 Chỉ số và hóa đơn phần 2",
+      "anchor": "ReportFigure016",
+      "page": "294",
+      "physical_page": 300
+    },
+    {
+      "title": "Hình 2.17 G08 Thu tiền và thanh toán phần 1",
+      "anchor": "ReportFigure017",
+      "page": "295",
+      "physical_page": 301
+    },
+    {
+      "title": "Hình 2.18 G08 Thu tiền và thanh toán phần 2",
+      "anchor": "ReportFigure018",
+      "page": "296",
+      "physical_page": 302
+    },
+    {
+      "title": "Hình 2.19 G08 Biểu phí và kỳ thanh toán",
+      "anchor": "ReportFigure019",
+      "page": "297",
+      "physical_page": 303
+    },
+    {
+      "title": "Hình 2.20 G08 Chính sách và thông báo nhắc nợ",
+      "anchor": "ReportFigure020",
+      "page": "298",
+      "physical_page": 304
+    },
+    {
+      "title": "Hình 2.21 G09 Bảo trì và chi phí vận hành",
+      "anchor": "ReportFigure021",
+      "page": "299",
+      "physical_page": 305
+    },
+    {
+      "title": "Hình 2.22 G10 Công việc, thông tin và hỗ trợ sử dụng phần 1",
+      "anchor": "ReportFigure022",
+      "page": "300",
+      "physical_page": 306
+    },
+    {
+      "title": "Hình 2.23 G10 Công việc, thông tin và hỗ trợ sử dụng phần 2",
+      "anchor": "ReportFigure023",
+      "page": "301",
+      "physical_page": 307
+    },
+    {
+      "title": "Hình 2.24 G11 Báo cáo và giám sát vận hành",
+      "anchor": "ReportFigure024",
+      "page": "302",
+      "physical_page": 308
+    },
+    {
+      "title": "Hình 2.25 G12 Tài khoản và tài nguyên nền tảng phần 1",
+      "anchor": "ReportFigure025",
+      "page": "303",
+      "physical_page": 309
+    },
+    {
+      "title": "Hình 2.26 G12 Tài khoản và tài nguyên nền tảng phần 2",
+      "anchor": "ReportFigure026",
+      "page": "304",
+      "physical_page": 310
+    },
+    {
+      "title": "Hình 2.27 G13 Kiểm duyệt và chất lượng nội dung phần 1",
+      "anchor": "ReportFigure027",
+      "page": "305",
+      "physical_page": 311
+    },
+    {
+      "title": "Hình 2.28 G13 Kiểm duyệt và chất lượng nội dung phần 2",
+      "anchor": "ReportFigure028",
+      "page": "306",
+      "physical_page": 312
+    },
+    {
+      "title": "Hình 2.29 G14 Dịch vụ hỗ trợ khách hàng",
+      "anchor": "ReportFigure029",
+      "page": "307",
+      "physical_page": 313
+    },
+    {
+      "title": "Hình 2.30 G15 Hồ sơ xác minh và gói dịch vụ",
+      "anchor": "ReportFigure030",
+      "page": "308",
+      "physical_page": 314
+    },
+    {
+      "title": "Hình 2.31 G16 Quản trị chính sách và đối soát nền tảng phần 1",
+      "anchor": "ReportFigure031",
+      "page": "309",
+      "physical_page": 315
+    },
+    {
+      "title": "Hình 2.32 G16 Quản trị chính sách và đối soát nền tảng phần 2",
+      "anchor": "ReportFigure032",
+      "page": "310",
+      "physical_page": 316
+    },
+    {
+      "title": "Hình 2.33 CD-01 Tài khoản và phân quyền",
+      "anchor": "ReportFigure033",
+      "page": "312",
+      "physical_page": 318
+    },
+    {
+      "title": "Hình 2.34 CD-02 Khu trọ phòng và dữ liệu phụ",
+      "anchor": "ReportFigure034",
+      "page": "313",
+      "physical_page": 319
+    },
+    {
+      "title": "Hình 2.35 CD-03 Tìm phòng và lịch xem",
+      "anchor": "ReportFigure035",
+      "page": "314",
+      "physical_page": 320
+    },
+    {
+      "title": "Hình 2.36 CD-04 Người thuê hợp đồng và vòng đời",
+      "anchor": "ReportFigure036",
+      "page": "315",
+      "physical_page": 321
+    },
+    {
+      "title": "Hình 2.37 CD-05 Tiền cọc và quyết toán",
+      "anchor": "ReportFigure037",
+      "page": "316",
+      "physical_page": 322
+    },
+    {
+      "title": "Hình 2.38 CD-06 Hóa đơn và giá phiên bản",
+      "anchor": "ReportFigure038",
+      "page": "317",
+      "physical_page": 323
+    },
+    {
+      "title": "Hình 2.39 CD-07 Khoản thu phân bổ và hoàn tiền",
+      "anchor": "ReportFigure039",
+      "page": "318",
+      "physical_page": 324
+    },
+    {
+      "title": "Hình 2.40 CD-08 Bảo trì và vận hành định kỳ",
+      "anchor": "ReportFigure040",
+      "page": "319",
+      "physical_page": 325
+    },
+    {
+      "title": "Hình 2.41 CD-09 Thông báo và delivery",
+      "anchor": "ReportFigure041",
+      "page": "320",
+      "physical_page": 326
+    },
+    {
+      "title": "Hình 2.42 CD-10 Quản trị nền tảng và đối soát",
+      "anchor": "ReportFigure042",
+      "page": "321",
+      "physical_page": 327
+    },
+    {
+      "title": "Hình 2.43 CD-11 Hỗ trợ và báo cáo quản trị",
+      "anchor": "ReportFigure043",
+      "page": "322",
+      "physical_page": 328
+    },
+    {
+      "title": "Hình 2.44 CD-12 Đánh giá tri thức và thanh toán demo",
+      "anchor": "ReportFigure044",
+      "page": "323",
+      "physical_page": 329
+    },
+    {
+      "title": "Hình 2.45 CD-13 Lời mời tệp và ngữ cảnh tìm phòng",
+      "anchor": "ReportFigure045",
+      "page": "324",
+      "physical_page": 330
+    },
+    {
+      "title": "Hình 2.46 CD-14 Mẫu thông báo nhóm nhận và automation",
+      "anchor": "ReportFigure046",
+      "page": "325",
+      "physical_page": 331
+    },
+    {
+      "title": "Hình 2.47 CD-15 Audit phiên đặc quyền và tổ chức Admin",
+      "anchor": "ReportFigure047",
+      "page": "326",
+      "physical_page": 332
+    },
+    {
+      "title": "Hình 2.48 CD-16 Telemetry sự cố và liên kết hỗ trợ",
+      "anchor": "ReportFigure048",
+      "page": "327",
+      "physical_page": 333
+    },
+    {
+      "title": "Hình 2.49 CD-17 Chính sách mẫu hỗ trợ và preference nền tảng",
+      "anchor": "ReportFigure049",
+      "page": "328",
+      "physical_page": 334
+    },
+    {
+      "title": "Hình 2.50 CD-18 Xác minh khu trọ và gói sử dụng nền tảng",
+      "anchor": "ReportFigure050",
+      "page": "329",
+      "physical_page": 335
+    },
+    {
+      "title": "Hình 2.51 OD-01 Đối tượng khoản thu và hóa đơn thanh toán một phần",
+      "anchor": "ReportFigure051",
+      "page": "330",
+      "physical_page": 336
+    },
+    {
+      "title": "Hình 2.52 SD-01 Đăng nhập và duy trì phiên sử dụng (phần 1/3)",
+      "anchor": "ReportFigure052",
+      "page": "332",
+      "physical_page": 338
+    },
+    {
+      "title": "Hình 2.53 SD-02 Đặt lịch xem phòng và lập hợp đồng từ lịch xem (phần 1/5)",
+      "anchor": "ReportFigure053",
+      "page": "335",
+      "physical_page": 341
+    },
+    {
+      "title": "Hình 2.54 SD-03 Lập hợp đồng thuê phòng và ghi nhận cọc ban đầu (phần 1/2)",
+      "anchor": "ReportFigure054",
+      "page": "340",
+      "physical_page": 346
+    },
+    {
+      "title": "Hình 2.55 SD-04 Đề xuất và xét duyệt biểu phí (phần 1/4)",
+      "anchor": "ReportFigure055",
+      "page": "342",
+      "physical_page": 348
+    },
+    {
+      "title": "Hình 2.56 SD-05 Xem trước và phát hành hóa đơn tháng (phần 1/4)",
+      "anchor": "ReportFigure056",
+      "page": "346",
+      "physical_page": 352
+    },
+    {
+      "title": "Hình 2.57 SD-06 Ghi nhận khoản thu và phân bổ thanh toán (phần 1/4)",
+      "anchor": "ReportFigure057",
+      "page": "350",
+      "physical_page": 356
+    },
+    {
+      "title": "Hình 2.58 SD-07 Gỡ phân bổ và ghi nhận hoàn tiền khoản thu (phần 1/4)",
+      "anchor": "ReportFigure058",
+      "page": "354",
+      "physical_page": 360
+    },
+    {
+      "title": "Hình 2.59 SD-08 Gửi và xét duyệt chứng từ thanh toán (phần 1/3)",
+      "anchor": "ReportFigure059",
+      "page": "358",
+      "physical_page": 364
+    },
+    {
+      "title": "Hình 2.60 SD-09 Thay thế hoặc điều chỉnh hóa đơn (phần 1/3)",
+      "anchor": "ReportFigure060",
+      "page": "361",
+      "physical_page": 367
+    },
+    {
+      "title": "Hình 2.61 SD-10 Quyết toán trả phòng và ghi nhận hoàn cọc (phần 1/4)",
+      "anchor": "ReportFigure061",
+      "page": "364",
+      "physical_page": 370
+    },
+    {
+      "title": "Hình 2.62 SD-11 Gửi, xét duyệt và thực hiện yêu cầu thay đổi thuê (phần 1/5)",
+      "anchor": "ReportFigure062",
+      "page": "368",
+      "physical_page": 374
+    },
+    {
+      "title": "Hình 2.63 SD-12 Tiếp nhận và hoàn tất yêu cầu bảo trì (phần 1/5)",
+      "anchor": "ReportFigure063",
+      "page": "373",
+      "physical_page": 379
+    },
+    {
+      "title": "Hình 2.64 SD-13 Xem báo cáo tháng và sao chép dữ liệu CSV (phần 1/3)",
+      "anchor": "ReportFigure064",
+      "page": "378",
+      "physical_page": 384
+    },
+    {
+      "title": "Hình 2.65 SD-14 Đình chỉ và khôi phục tài khoản khách hàng (phần 1/3)",
+      "anchor": "ReportFigure065",
+      "page": "381",
+      "physical_page": 387
+    },
+    {
+      "title": "Hình 2.66 SD-15 Tra cứu phòng và xử lý kiểm duyệt tin đăng (phần 1/4)",
+      "anchor": "ReportFigure066",
+      "page": "384",
+      "physical_page": 390
+    },
+    {
+      "title": "Hình 2.67 SD-16 Nhập sao kê và xét duyệt đề nghị đối soát (phần 1/5)",
+      "anchor": "ReportFigure067",
+      "page": "388",
+      "physical_page": 394
+    },
+    {
+      "title": "Hình 2.68 SD-17 Hỏi hướng dẫn sử dụng và đọc nguồn được phép (phần 1/4)",
+      "anchor": "ReportFigure068",
+      "page": "393",
+      "physical_page": 399
+    },
+    {
+      "title": "Hình 2.69 SD-18 Xét duyệt hồ sơ xác minh chủ trọ (phần 1/3)",
+      "anchor": "ReportFigure069",
+      "page": "397",
+      "physical_page": 403
+    },
+    {
+      "title": "Hình 2.70 SD-19 Gán và kết thúc quyền sử dụng gói (phần 1/3)",
+      "anchor": "ReportFigure070",
+      "page": "400",
+      "physical_page": 406
+    },
+    {
+      "title": "Hình 2.71 UI-01 Đăng nhập tài khoản — dữ liệu fixture, widget render",
+      "anchor": "ReportFigure071",
+      "page": "404",
+      "physical_page": 410
+    },
+    {
+      "title": "Hình 2.72 UI-02 Đăng ký tài khoản — dữ liệu fixture, widget render",
+      "anchor": "ReportFigure072",
+      "page": "405",
+      "physical_page": 411
+    },
+    {
+      "title": "Hình 2.73 UI-03 Khách vãng lai khám phá và tìm phòng — dữ liệu fixture, widget render",
+      "anchor": "ReportFigure073",
+      "page": "406",
+      "physical_page": 412
+    },
+    {
+      "title": "Hình 2.74 UI-04 Khách vãng lai xem chi tiết tin phòng — dữ liệu fixture, widget render",
+      "anchor": "ReportFigure074",
+      "page": "407",
+      "physical_page": 413
+    },
+    {
+      "title": "Hình 2.75 UI-05 Chủ trọ xem dashboard và bản đồ phòng — dữ liệu fixture, widget render",
+      "anchor": "ReportFigure075",
+      "page": "408",
+      "physical_page": 414
+    },
+    {
+      "title": "Hình 2.76 UI-06 Chủ trọ tra cứu danh sách khu trọ — dữ liệu fixture, widget render",
+      "anchor": "ReportFigure076",
+      "page": "409",
+      "physical_page": 415
+    },
+    {
+      "title": "Hình 2.77 UI-07 Chủ trọ cập nhật thông tin khu trọ — dữ liệu fixture, widget render",
+      "anchor": "ReportFigure077",
+      "page": "410",
+      "physical_page": 416
+    },
+    {
+      "title": "Hình 2.78 UI-08 Chủ trọ xem chi tiết phòng — dữ liệu fixture, widget render",
+      "anchor": "ReportFigure078",
+      "page": "411",
+      "physical_page": 417
+    },
+    {
+      "title": "Hình 2.79 UI-09 Chủ trọ mở luồng quyết toán trả phòng — dữ liệu fixture, widget render",
+      "anchor": "ReportFigure079",
+      "page": "412",
+      "physical_page": 418
+    },
+    {
+      "title": "Hình 2.80 UI-10 Người thuê xem tổng quan phòng đang thuê — dữ liệu fixture, widget render",
+      "anchor": "ReportFigure080",
+      "page": "413",
+      "physical_page": 419
+    },
+    {
+      "title": "Hình 2.81 UI-11 Người thuê xem danh sách hóa đơn — dữ liệu fixture, widget render",
+      "anchor": "ReportFigure081",
+      "page": "414",
+      "physical_page": 420
+    },
+    {
+      "title": "Hình 2.82 UI-12 Người thuê xem chi tiết hóa đơn — dữ liệu fixture, widget render",
+      "anchor": "ReportFigure082",
+      "page": "415",
+      "physical_page": 421
+    },
+    {
+      "title": "Hình 2.83 UI-13 Người thuê xem hợp đồng và tiền cọc — dữ liệu fixture, widget render",
+      "anchor": "ReportFigure083",
+      "page": "416",
+      "physical_page": 422
+    },
+    {
+      "title": "Hình 2.84 UI-14 Người thuê theo dõi yêu cầu bảo trì — dữ liệu fixture, widget render",
+      "anchor": "ReportFigure084",
+      "page": "417",
+      "physical_page": 423
+    },
+    {
+      "title": "Hình 2.85 UI-15 Người thuê xem thông báo — dữ liệu fixture, widget render",
+      "anchor": "ReportFigure085",
+      "page": "418",
+      "physical_page": 424
+    },
+    {
+      "title": "Hình 2.86 UI-16 Chủ trọ quản lý người thuê — dữ liệu fixture, widget render",
+      "anchor": "ReportFigure086",
+      "page": "419",
+      "physical_page": 425
+    },
+    {
+      "title": "Hình 2.87 UI-17 Chủ trọ quản lý hóa đơn và công nợ — dữ liệu fixture, widget render",
+      "anchor": "ReportFigure087",
+      "page": "420",
+      "physical_page": 426
+    },
+    {
+      "title": "Hình 2.88 UI-18 Chủ trọ xem báo cáo theo tháng — dữ liệu fixture, widget render",
+      "anchor": "ReportFigure088",
+      "page": "421",
+      "physical_page": 427
+    },
+    {
+      "title": "Hình 2.89 UI-19 Tổng quan Admin mới trên desktop — dữ liệu fixture, widget render",
+      "anchor": "ReportFigure089",
+      "page": "422",
+      "physical_page": 428
+    },
+    {
+      "title": "Hình 2.90 UI-20 Tổng quan Admin mới trên màn hình hẹp — dữ liệu fixture, widget render",
+      "anchor": "ReportFigure090",
+      "page": "423",
+      "physical_page": 429
+    },
+    {
+      "title": "Hình 2.91 UI-21 Danh sách tài khoản trong theme Admin mới — dữ liệu fixture, widget render",
+      "anchor": "ReportFigure091",
+      "page": "424",
+      "physical_page": 430
+    },
+    {
+      "title": "Hình 2.92 UI-22 Chi tiết tài khoản trong theme Admin mới — dữ liệu fixture, widget render",
+      "anchor": "ReportFigure092",
+      "page": "425",
+      "physical_page": 431
+    },
+    {
+      "title": "Hình 2.93 UI-23 Inventory khu trọ trong giao diện mới — dữ liệu fixture, widget render",
+      "anchor": "ReportFigure093",
+      "page": "426",
+      "physical_page": 432
+    },
+    {
+      "title": "Hình 2.94 UI-24 Inventory phòng với trạng thái tin riêng — dữ liệu fixture, widget render",
+      "anchor": "ReportFigure094",
+      "page": "427",
+      "physical_page": 433
+    },
+    {
+      "title": "Hình 2.95 UI-25 Inventory phòng mới trên mobile chữ lớn phần 1/2 — ảnh widget cắt nối tiếp, không đổi màu",
+      "anchor": "ReportFigure095",
+      "page": "428",
+      "physical_page": 434
+    },
+    {
+      "title": "Hình 2.96 UI-25 Inventory phòng mới trên mobile chữ lớn phần 2/2 — ảnh widget cắt nối tiếp, không đổi màu",
+      "anchor": "ReportFigure096",
+      "page": "429",
+      "physical_page": 435
+    },
+    {
+      "title": "Hình 2.97 UI-26 Chi tiết khu trong giao diện Admin mới phần 1/2 — ảnh widget cắt nối tiếp, không đổi màu",
+      "anchor": "ReportFigure097",
+      "page": "430",
+      "physical_page": 436
+    },
+    {
+      "title": "Hình 2.98 UI-26 Chi tiết khu trong giao diện Admin mới phần 2/2 — ảnh widget cắt nối tiếp, không đổi màu",
+      "anchor": "ReportFigure098",
+      "page": "431",
+      "physical_page": 437
+    },
+    {
+      "title": "Hình 2.99 UI-27 Form đề xuất biểu phí trên mobile — ảnh kiểm thử có sẵn trong workspace",
+      "anchor": "ReportFigure099",
+      "page": "432",
+      "physical_page": 438
+    },
+    {
+      "title": "Hình 2.100 UI-28 Lịch sử và so sánh biểu phí trên tablet — ảnh kiểm thử có sẵn trong workspace",
+      "anchor": "ReportFigure100",
+      "page": "433",
+      "physical_page": 439
+    },
+    {
+      "title": "Hình 3.1 KH-01 Gantt tham chiếu 8 tuần để hoàn thiện và nghiệm thu",
+      "anchor": "ReportFigure101",
+      "page": "441",
+      "physical_page": 447
+    }
+  ],
+  "pages": 452,
+  "main_starts_at_physical_page": 7
+}

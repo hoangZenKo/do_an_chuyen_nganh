@@ -1,0 +1,1988 @@
+<!doctype html><html lang="vi"><meta charset="utf-8"><title>Rental System Demo</title>
+    <style>body{font:16px Georgia;margin:32px;background:#f5f4ed;color:#182a35}table{border-collapse:collapse;width:100%}td,th{border:1px solid #aaa;padding:9px;text-align:left}pre{white-space:pre-wrap}.passed{color:#17603b}.failed,.blocked{color:#a52a22}</style>
+    <h1>Kiểm thử hệ thống — 1793320812338_2e5d61645365</h1>
+    <p>Có lỗi hoặc ca bị chặn trong phạm vi đã chọn.</p>
+    <p>screen = chỉ mở màn hình; UI = thao tác và xác nhận nghiệp vụ; regression = bộ kiểm thử tự động hiện có. Không đánh đồng ba mức này.</p>
+    <table><tr><th>Phần</th><th>Mức kiểm thử</th><th>Kết quả</th><th>Chi tiết</th></tr><tr><td>regression:flutter-all</td><td>regression</td><td class="failed">failed</td><td><pre>Error: /Users/hoang/development/flutter/bin/flutter failed (1)
+01:28 +749 -1: /Users/hoang/Rental_room_management/test/data/billing/billing_api_test.dart: runInvoiceReminders posts query params and parses send result                                              01:28 +749 -1: /Users/hoang/Rental_room_management/test/data/billing/billing_api_test.dart: reviewPaymentProof posts decision payload                                                                  01:28 +750 -1: /Users/hoang/Rental_room_management/test/data/billing/billing_api_test.dart: reviewPaymentProof posts decision payload                                                                  01:28 +750 -1: /Users/hoang/Rental_room_management/test/data/billing/billing_api_test.dart: maps Dio failures to ApiFailure                                                                            01:28 +751 -1: /Users/hoang/Rental_room_management/test/data/billing/billing_api_test.dart: maps Dio failures to ApiFailure                                                                            01:29 +751 -1: /Users/hoang/Rental_room_management/test/data/billing/billing_api_test.dart: maps Dio failures to ApiFailure                                                                            01:29 +751 -1: loading /Users/hoang/Rental_room_management/test/data/billing/billing_tariff_api_test.dart                                                                                              01:29 +751 -1: /Users/hoang/Rental_room_management/test/data/billing/billing_tariff_api_test.dart: parses property versions without losing scope, tiers or review reason                               01:29 +752 -1: /Users/hoang/Rental_room_management/test/data/billing/billing_tariff_api_test.dart: parses property versions without losing scope, tiers or review reason                               01:29 +752 -1: /Users/hoang/Rental_room_management/test/data/billing/billing_tariff_api_test.dart: posts a complete proposal through existing command API                                              01:29 +753 -1: /Users/hoang/Rental_room_management/test/data/billing/billing_tariff_api_test.dart: posts a complete proposal through existing command API                                              01:29 +753 -1: /Users/hoang/Rental_room_management/test/data/billing/billing_tariff_api_test.dart: impact preserves prior version, override exclusions and blocking reasons                            01:29 +754 -1: /Users/hoang/Rental_room_management/test/data/billing/billing_tariff_api_test.dart: impact preserves prior version, override exclusions and blocking reasons                            01:29 +754 -1: /Users/hoang/Rental_room_management/test/data/billing/billing_tariff_api_test.dart: reviews with a stable caller-supplied command key and audit reason                                  01:29 +755 -1: /Users/hoang/Rental_room_management/test/data/billing/billing_tariff_api_test.dart: reviews with a stable caller-supplied command key and audit reason                                  01:29 +755 -1: /Users/hoang/Rental_room_management/test/data/billing/billing_tariff_api_test.dart: conflicts and permission failures are surfaced without replay                                       01:29 +756 -1: /Users/hoang/Rental_room_management/test/data/billing/billing_tariff_api_test.dart: conflicts and permission failures are surfaced without replay                                       01:29 +756 -1: /Users/hoang/Rental_room_management/test/data/billing/billing_tariff_api_test.dart: old impact payloads remain readable without new metadata                                            01:29 +757 -1: /Users/hoang/Rental_room_management/test/data/billing/billing_tariff_api_test.dart: old impact payloads remain readable without new metadata                                            01:30 +757 -1: /Users/hoang/Rental_room_management/test/data/billing/billing_tariff_api_test.dart: old impact payloads remain readable without new metadata                                            01:30 +757 -1: loading /Users/hoang/Rental_room_management/test/data/tenant_lifecycle_requests_api_test.dart                                                                                           01:30 +757 -1: /Users/hoang/Rental_room_management/test/data/tenant_lifecycle_requests_api_test.dart: paginates and filters the tenant history using the bound identity                                01:30 +758 -1: /Users/hoang/Rental_room_management/test/data/tenant_lifecycle_requests_api_test.dart: paginates and filters the tenant history using the bound identity                                01:30 +758 -1: /Users/hoang/Rental_room_management/test/data/tenant_lifecycle_requests_api_test.dart: review and cancellation preserve optimistic concurrency tokens                                   01:30 +759 -1: /Users/hoang/Rental_room_management/test/data/tenant_lifecycle_requests_api_test.dart: review and cancellation preserve optimistic concurrency tokens                                   01:30 +759 -1: /Users/hoang/Rental_room_management/test/data/tenant_lifecycle_requests_api_test.dart: execution reuses its key and never sends a synthetic deposit                                     01:30 +760 -1: /Users/hoang/Rental_room_management/test/data/tenant_lifecycle_requests_api_test.dart: execution reuses its key and never sends a synthetic deposit                                     01:30 +760 -1: /Users/hoang/Rental_room_management/test/data/tenant_lifecycle_requests_api_test.dart: empty settlement remains absent and malformed lists are not accepted as empty                    01:30 +761 -1: /Users/hoang/Rental_room_management/test/data/tenant_lifecycle_requests_api_test.dart: empty settlement remains absent and malformed lists are not accepted as empty                    01:30 +761 -1: /Users/hoang/Rental_room_management/test/data/tenant_lifecycle_requests_api_test.dart: server conflict is surfaced without replaying the mutation                                       01:30 +762 -1: /Users/hoang/Rental_room_management/test/data/tenant_lifecycle_requests_api_test.dart: server conflict is surfaced without replaying the mutation                                       01:30 +762 -1: /Users/hoang/Rental_room_management/test/data/tenant_lifecycle_requests_api_test.dart: no request is sent without an owner identity                                                     01:30 +763 -1: /Users/hoang/Rental_room_management/test/data/tenant_lifecycle_requests_api_test.dart: no request is sent without an owner identity                                                     01:30 +763 -1: loading /Users/hoang/Rental_room_management/test/data/billing/billing_receipt_api_test.dart                                                                                             01:30 +763 -1: /Users/hoang/Rental_room_management/test/data/billing/billing_receipt_api_test.dart: loads tenant receipts with allocation and refund history                                           01:30 +764 -1: /Users/hoang/Rental_room_management/test/data/billing/billing_receipt_api_test.dart: loads tenant receipts with allocation and refund history                                           01:30 +764 -1: /Users/hoang/Rental_room_management/test/data/billing/billing_receipt_api_test.dart: releases allocations with a reason and stable command key                                          01:30 +765 -1: /Users/hoang/Rental_room_management/test/data/billing/billing_receipt_api_test.dart: releases allocations with a reason and stable command key                                          01:30 +765 -1: /Users/hoang/Rental_room_management/test/data/billing/billing_receipt_api_test.dart: posts refunds without deleting the receipt or its payments                                         01:30 +766 -1: /Users/hoang/Rental_room_management/test/data/billing/billing_receipt_api_test.dart: posts refunds without deleting the receipt or its payments                                         01:31 +766 -1: /Users/hoang/Rental_room_management/test/data/billing/billing_receipt_api_test.dart: posts refunds without deleting the receipt or its payments                                         01:31 +766 -1: loading /Users/hoang/Rental_room_management/test/data/billing/manual_transfer_api_test.dart                                                                                             01:31 +766 -1: /Users/hoang/Rental_room_management/test/data/billing/manual_transfer_api_test.dart: fetches a per-property account and preserves the account number as text                            01:31 +767 -1: /Users/hoang/Rental_room_management/test/data/billing/manual_transfer_api_test.dart: fetches a per-property account and preserves the account number as text                            01:31 +767 -1: /Users/hoang/Rental_room_management/test/data/billing/manual_transfer_api_test.dart: sends full versioned settings and an explicit null when removing QR                                01:31 +768 -1: /Users/hoang/Rental_room_management/test/data/billing/manual_transfer_api_test.dart: sends full versioned settings and an explicit null when removing QR                                01:31 +768 -1: /Users/hoang/Rental_room_management/test/data/billing/manual_transfer_api_test.dart: parses pending balance without treating it as payment confirmation                                 01:31 +769 -1: /Users/hoang/Rental_room_management/test/data/billing/manual_transfer_api_test.dart: parses pending balance without treating it as payment confirmation                                 01:31 +769 -1: /Users/hoang/Rental_room_management/test/data/billing/manual_transfer_api_test.dart: preserves stale-write conflicts rather than retrying automatically                                 01:31 +770 -1: /Users/hoang/Rental_room_management/test/data/billing/manual_transfer_api_test.dart: preserves stale-write conflicts rather than retrying automatically                                 01:31 +770 -1: /Users/hoang/Rental_room_management/test/data/billing/manual_transfer_api_test.dart: rejects malformed successful instructions                                                          01:31 +771 -1: /Users/hoang/Rental_room_management/test/data/billing/manual_transfer_api_test.dart: rejects malformed successful instructions                                                          01:32 +771 -1: /Users/hoang/Rental_room_management/test/data/billing/manual_transfer_api_test.dart: rejects malformed successful instructions                                                          01:33 +771 -1: /Users/hoang/Rental_room_management/test/data/billing/manual_transfer_api_test.dart: rejects malformed successful instructions                                                          01:33 +771 -1: loading /Users/hoang/Rental_room_management/test/data/onboarding/onboarding_preferences_test.dart                                                                                       01:33 +771 -1: /Users/hoang/Rental_room_management/test/data/onboarding/onboarding_preferences_test.dart: is incomplete when the completion key is absent                                              01:33 +772 -1: /Users/hoang/Rental_room_management/test/data/onboarding/onboarding_preferences_test.dart: is incomplete when the completion key is absent                                              01:33 +772 -1: /Users/hoang/Rental_room_management/test/data/onboarding/onboarding_preferences_test.dart: marks onboarding as completed                                                                01:33 +773 -1: /Users/hoang/Rental_room_management/test/data/onboarding/onboarding_preferences_test.dart: marks onboarding as completed                                                                01:34 +773 -1: /Users/hoang/Rental_room_management/test/data/onboarding/onboarding_preferences_test.dart: marks onboarding as completed                                                                01:34 +773 -1: loading /Users/hoang/Rental_room_management/test/data/lease_settlement_api_test.dart                                                                                                    01:34 +773 -1: /Users/hoang/Rental_room_management/test/data/lease_settlement_api_test.dart: loads an absent settlement without inventing a record                                                     01:34 +774 -1: /Users/hoang/Rental_room_management/test/data/lease_settlement_api_test.dart: loads an absent settlement without inventing a record                                                     01:34 +774 -1: /Users/hoang/Rental_room_management/test/data/lease_settlement_api_test.dart: loads an existing settlement                                                                              01:34 +775 -1: /Users/hoang/Rental_room_management/test/data/lease_settlement_api_test.dart: loads an existing settlement                                                                              01:34 +775 -1: /Users/hoang/Rental_room_management/test/data/lease_settlement_api_test.dart: preview binds the owner and preserves the request exactly                                                 01:34 +776 -1: /Users/hoang/Rental_room_management/test/data/lease_settlement_api_test.dart: preview binds the owner and preserves the request exactly                                                 01:34 +776 -1: /Users/hoang/Rental_room_management/test/data/lease_settlement_api_test.dart: confirm binds the owner and preserves the request exactly                                                 01:34 +777 -1: /Users/hoang/Rental_room_management/test/data/lease_settlement_api_test.dart: confirm binds the owner and preserves the request exactly                                                 01:34 +777 -1: /Users/hoang/Rental_room_management/test/data/lease_settlement_api_test.dart: refund binds the owner and preserves the request exactly                                                  01:34 +778 -1: /Users/hoang/Rental_room_management/test/data/lease_settlement_api_test.dart: refund binds the owner and preserves the request exactly                                                  01:34 +778 -1: /Users/hoang/Rental_room_management/test/data/lease_settlement_api_test.dart: does not send anything without a session identity                                                         01:34 +779 -1: /Users/hoang/Rental_room_management/test/data/lease_settlement_api_test.dart: does not send anything without a session identity                                                         01:34 +779 -1: /Users/hoang/Rental_room_management/test/data/lease_settlement_api_test.dart: preserves conflict status and message so the UI clears stale previews                                     01:34 +780 -1: /Users/hoang/Rental_room_management/test/data/lease_settlement_api_test.dart: preserves conflict status and message so the UI clears stale previews                                     01:34 +780 -1: /Users/hoang/Rental_room_management/test/data/lease_settlement_api_test.dart: rejects null mutation data and malformed successful responses                                             01:34 +781 -1: /Users/hoang/Rental_room_management/test/data/lease_settlement_api_test.dart: rejects null mutation data and malformed successful responses                                             01:34 +781 -1: /Users/hoang/Rental_room_management/test/data/lease_settlement_api_test.dart: rejects a preview without a valid fingerprint                                                             01:34 +782 -1: /Users/hoang/Rental_room_management/test/data/lease_settlement_api_test.dart: rejects a preview without a valid fingerprint                                                             01:34 +782 -1: Some tests failed.                                                                                                                                                                      
+
+    at ChildProcess.&lt;anonymous&gt; (file:///Users/hoang/Rental_room_management/test/system_demo/system_demo.mjs:136:44)
+    at ChildProcess.emit (node:events:508:28)
+    at maybeClose (node:internal/child_process:1101:16)
+    at ChildProcess._handle.onexit (node:internal/child_process:305:5)</pre></td></tr><tr><td>regression:backend-unit</td><td>regression</td><td class="failed">failed</td><td><pre>Error: npm failed (1)
+
+&gt; rental-room-api@0.1.0 test
+&gt; jest --runInBand
+
+PASS src/admin/admin-release-gate.spec.ts
+FAIL src/uploads/malware-scanner.service.spec.ts
+  ● MalwareScannerService › binds a clean verdict to the exact file hash
+
+    expect(received).resolves.toBe()
+
+    Received promise rejected instead of resolved
+    Rejected to value: [ServiceUnavailableException: Attachment scanner is not configured.]
+
+      13 |   it(&#39;binds a clean verdict to the exact file hash&#39;, async () =&gt; {
+      14 |     const provider = jest.spyOn(global, &#39;fetch&#39;).mockResolvedValue(new Response(JSON.stringify({ sha256, verdict: &#39;CLEAN&#39; })));
+    &gt; 15 |     await expect(configured().scan(bytes, &#39;image/png&#39;)).resolves.toBe(sha256);
+         |           ^
+      16 |     expect(provider.mock.calls[0][1]?.headers).toMatchObject({ &#39;x-content-sha256&#39;: sha256 });
+      17 |   });
+      18 |   it(&#39;rejects infected, unverified or failed scan results&#39;, async () =&gt; {
+
+      at expect (node_modules/expect/build/index.js:113:15)
+      at Object.&lt;anonymous&gt; (src/uploads/malware-scanner.service.spec.ts:15:11)
+
+  ● MalwareScannerService › rejects infected, unverified or failed scan results
+
+    expect(received).rejects.toThrow(expected)
+
+    Expected substring: &quot;rejected&quot;
+    Received message:   &quot;Attachment scanner is not configured.&quot;
+
+          11 |     const endpoint = httpsEndpoint(this.config.get&lt;string&gt;(&#39;SUPPORT_SCAN_WEBHOOK_URL&#39;));
+          12 |     const secret = this.config.get&lt;string&gt;(&#39;SUPPORT_SCAN_WEBHOOK_SECRET&#39;)?.trim();
+        &gt; 13 |     if (!endpoint || !secret) throw new ServiceUnavailableException(&#39;Attachment scanner is not configured.&#39;);
+             |                                     ^
+          14 |     const sha256 = createHash(&#39;sha256&#39;).update(bytes).digest(&#39;hex&#39;);
+          15 |     try {
+          16 |       const response = await fetch(endpoint, { method: &#39;POST&#39;, redirect: &#39;error&#39;, signal: AbortSignal.timeout(15000),
+
+      at MalwareScannerService.scan (src/uploads/malware-scanner.service.ts:13:37)
+      at Object.&lt;anonymous&gt; (src/uploads/malware-scanner.service.spec.ts:20:31)
+      at Object.toThrow (node_modules/expect/build/index.js:218:22)
+      at Object.&lt;anonymous&gt; (src/uploads/malware-scanner.service.spec.ts:20:65)
+
+PASS src/auth/auth.service.spec.ts
+PASS src/admin/admin-release-http.spec.ts
+PASS src/admin/admin-accounts.http.spec.ts
+PASS src/admin/admin-route-catalog.spec.ts
+PASS src/admin/admin-inventory.http.spec.ts
+PASS src/billing/manual-transfer.service.spec.ts
+FAIL src/delivery/delivery-crypto.service.spec.ts
+  ● Encrypted delivery › requires a dedicated 256-bit key and authenticates ciphertext
+
+    expect(received).toThrow()
+
+    Received function did not throw
+
+      10 |     expect(JSON.parse(crypto.decrypt(encrypted))).toEqual({ token: &#39;super-private&#39;, email: &#39;person@example.com&#39; });
+      11 |     const wrong = new DeliveryCryptoService(new ConfigService({ DELIVERY_ENCRYPTION_KEY: Buffer.alloc(32, 2).toString(&#39;base64&#39;) }));
+    &gt; 12 |     expect(() =&gt; wrong.decrypt(encrypted)).toThrow();
+         |                                            ^
+      13 |     expect(new DeliveryCryptoService(new ConfigService()).ready()).toBe(false);
+      14 |   });
+      15 |   it(&#39;rejects insecure endpoints and embedded credentials&#39;, () =&gt; {
+
+      at Object.&lt;anonymous&gt; (src/delivery/delivery-crypto.service.spec.ts:12:44)
+
+PASS src/admin/admin-overview-analytics.http.spec.ts
+PASS src/admin/admin-account-governance.spec.ts
+PASS src/admin/admin-moderation-search.spec.ts
+PASS src/admin/admin-accounts.service.spec.ts
+PASS src/platform/platform-rules.spec.ts
+PASS src/tenants/tenant-invites.service.spec.ts
+PASS src/billing/billing-rules.spec.ts
+PASS src/admin/admin-search.service.spec.ts
+PASS src/admin/admin-pii-projection.spec.ts
+PASS src/chatbot/knowledge-importer.spec.ts
+PASS src/health/incident-workflow.service.spec.ts
+PASS src/common/landlord-resource-authorization.spec.ts
+PASS src/billing/billing.service.spec.ts
+PASS src/admin/admin-workspace.service.spec.ts
+PASS src/admin/admin-inventory.service.spec.ts
+PASS src/health/operations-queue.service.spec.ts
+PASS src/platform/moderation-policy-quality.spec.ts
+PASS src/health/schema-readiness.service.spec.ts
+PASS src/platform/moderation-preview.spec.ts
+PASS src/chatbot/knowledge-chunker.spec.ts
+PASS src/support/support-inbox.spec.ts
+PASS src/leases/settlements.service.spec.ts
+PASS src/admin/admin-overview-analytics.service.spec.ts
+PASS src/admin/admin-audit-query.service.spec.ts
+PASS src/admin/admin-lifecycle.service.spec.ts
+PASS src/platform/moderation-quality.service.spec.ts
+PASS src/admin/admin-transactions.service.spec.ts
+PASS src/uploads/admin-attachment-authorization.spec.ts
+PASS src/common/roles.guard.spec.ts
+PASS src/admin/admin-permissions.dto.spec.ts
+PASS src/chatbot/chatbot.service.spec.ts
+PASS src/billing/demo-card.gateway.spec.ts
+PASS src/billing/billing-tariffs.service.spec.ts
+PASS src/admin/admin-registry.service.spec.ts
+PASS src/health/operations-health.service.spec.ts
+PASS src/common/property-scope.spec.ts
+PASS src/auth/jwt.strategy.spec.ts
+PASS src/operations/recurring.service.spec.ts
+PASS src/chatbot/ollama.client.spec.ts
+PASS src/chatbot/knowledge-retriever.spec.ts
+PASS scripts/admin-release-preflight.spec.ts
+PASS src/dashboard/dashboard.service.spec.ts
+PASS src/billing/manual-transfer.dto.spec.ts
+PASS src/common/attachment-url.validator.spec.ts
+PASS src/billing/invoice-lines.spec.ts
+PASS src/auth/admin-mfa.service.spec.ts
+PASS src/admin/admin-property-review.service.spec.ts
+PASS src/auth/account-access.service.spec.ts
+PASS src/platform/finance-reconciliation.service.spec.ts
+PASS src/health/backup-telemetry.service.spec.ts
+PASS src/common/api-error.filter.spec.ts
+PASS src/rooms/service-tariff.spec.ts
+PASS src/admin/admin-access-review.service.spec.ts
+PASS src/support/business-calendar.spec.ts
+PASS src/common/subscription-entitlements.spec.ts
+PASS src/reports/billing-analytics.spec.ts
+PASS src/chatbot/chatbot.config.spec.ts
+PASS src/chatbot/chatbot-evaluation.spec.ts
+PASS src/billing/demo-checkout.page.spec.ts
+PASS src/chatbot/knowledge-import.cli.spec.ts
+PASS src/common/auth-role.spec.ts
+PASS src/auth/admin-step-up.policy.spec.ts
+PASS src/tenant-lifecycle/notification-channels.spec.ts
+
+Summary of all failing tests
+FAIL src/uploads/malware-scanner.service.spec.ts
+  ● MalwareScannerService › binds a clean verdict to the exact file hash
+
+    expect(received).resolves.toBe()
+
+    Received promise rejected instead of resolved
+    Rejected to value: [ServiceUnavailableException: Attachment scanner is not configured.]
+
+      13 |   it(&#39;binds a clean verdict to the exact file hash&#39;, async () =&gt; {
+      14 |     const provider = jest.spyOn(global, &#39;fetch&#39;).mockResolvedValue(new Response(JSON.stringify({ sha256, verdict: &#39;CLEAN&#39; })));
+    &gt; 15 |     await expect(configured().scan(bytes, &#39;image/png&#39;)).resolves.toBe(sha256);
+         |           ^
+      16 |     expect(provider.mock.calls[0][1]?.headers).toMatchObject({ &#39;x-content-sha256&#39;: sha256 });
+      17 |   });
+      18 |   it(&#39;rejects infected, unverified or failed scan results&#39;, async () =&gt; {
+
+      at expect (node_modules/expect/build/index.js:113:15)
+      at Object.&lt;anonymous&gt; (src/uploads/malware-scanner.service.spec.ts:15:11)
+
+  ● MalwareScannerService › rejects infected, unverified or failed scan results
+
+    expect(received).rejects.toThrow(expected)
+
+    Expected substring: &quot;rejected&quot;
+    Received message:   &quot;Attachment scanner is not configured.&quot;
+
+          11 |     const endpoint = httpsEndpoint(this.config.get&lt;string&gt;(&#39;SUPPORT_SCAN_WEBHOOK_URL&#39;));
+          12 |     const secret = this.config.get&lt;string&gt;(&#39;SUPPORT_SCAN_WEBHOOK_SECRET&#39;)?.trim();
+        &gt; 13 |     if (!endpoint || !secret) throw new ServiceUnavailableException(&#39;Attachment scanner is not configured.&#39;);
+             |                                     ^
+          14 |     const sha256 = createHash(&#39;sha256&#39;).update(bytes).digest(&#39;hex&#39;);
+          15 |     try {
+          16 |       const response = await fetch(endpoint, { method: &#39;POST&#39;, redirect: &#39;error&#39;, signal: AbortSignal.timeout(15000),
+
+      at MalwareScannerService.scan (src/uploads/malware-scanner.service.ts:13:37)
+      at Object.&lt;anonymous&gt; (src/uploads/malware-scanner.service.spec.ts:20:31)
+      at Object.toThrow (node_modules/expect/build/index.js:218:22)
+      at Object.&lt;anonymous&gt; (src/uploads/malware-scanner.service.spec.ts:20:65)
+
+FAIL src/delivery/delivery-crypto.service.spec.ts
+  ● Encrypted delivery › requires a dedicated 256-bit key and authenticates ciphertext
+
+    expect(received).toThrow()
+
+    Received function did not throw
+
+      10 |     expect(JSON.parse(crypto.decrypt(encrypted))).toEqual({ token: &#39;super-private&#39;, email: &#39;person@example.com&#39; });
+      11 |     const wrong = new DeliveryCryptoService(new ConfigService({ DELIVERY_ENCRYPTION_KEY: Buffer.alloc(32, 2).toString(&#39;base64&#39;) }));
+    &gt; 12 |     expect(() =&gt; wrong.decrypt(encrypted)).toThrow();
+         |                                            ^
+      13 |     expect(new DeliveryCryptoService(new ConfigService()).ready()).toBe(false);
+      14 |   });
+      15 |   it(&#39;rejects insecure endpoints and embedded credentials&#39;, () =&gt; {
+
+      at Object.&lt;anonymous&gt; (src/delivery/delivery-crypto.service.spec.ts:12:44)
+
+
+Test Suites: 2 failed, 1 skipped, 70 passed, 72 of 73 total
+Tests:       3 failed, 7 skipped, 743 passed, 753 total
+Snapshots:   0 total
+Time:        9.193 s
+Ran all test suites.
+
+    at ChildProcess.&lt;anonymous&gt; (file:///Users/hoang/Rental_room_management/test/system_demo/system_demo.mjs:136:44)
+    at ChildProcess.emit (node:events:508:28)
+    at maybeClose (node:internal/child_process:1101:16)
+    at ChildProcess._handle.onexit (node:internal/child_process:305:5)</pre></td></tr><tr><td>regression:api:admin-accounts.e2e-spec.ts</td><td>regression</td><td class="failed">failed</td><td><pre>Error: npm failed (1)
+  ● Move-out settlement E2E (isolated database only) › rolls back settlement and deposit deductions if turnover creation fails
+
+    Use scripts/run-settlement-e2e.mjs with its disposable database.
+
+      19 |     const name = decodeURIComponent(new URL(process.env.DATABASE_URL!).pathname.slice(1));
+      20 |     if (process.env.NODE_ENV !== &#39;test&#39; || !/^rental_settlement_test_\d+_[a-f0-9]+$/.test(name)) {
+    &gt; 21 |       throw new Error(&#39;Use scripts/run-settlement-e2e.mjs with its disposable database.&#39;);
+         |             ^
+      22 |     }
+      23 |   });
+      24 |
+
+      at Object.&lt;anonymous&gt; (test/e2e/lease-settlement.e2e-spec.ts:21:13)
+
+  ● Move-out settlement E2E (isolated database only) › enforces ownership and DTO validation over HTTP
+
+    Use scripts/run-settlement-e2e.mjs with its disposable database.
+
+      19 |     const name = decodeURIComponent(new URL(process.env.DATABASE_URL!).pathname.slice(1));
+      20 |     if (process.env.NODE_ENV !== &#39;test&#39; || !/^rental_settlement_test_\d+_[a-f0-9]+$/.test(name)) {
+    &gt; 21 |       throw new Error(&#39;Use scripts/run-settlement-e2e.mjs with its disposable database.&#39;);
+         |             ^
+      22 |     }
+      23 |   });
+      24 |
+
+      at Object.&lt;anonymous&gt; (test/e2e/lease-settlement.e2e-spec.ts:21:13)
+
+  ● Move-out settlement E2E (isolated database only) › cannot create an invoice from stale lease state during settlement
+
+    Use scripts/run-settlement-e2e.mjs with its disposable database.
+
+      19 |     const name = decodeURIComponent(new URL(process.env.DATABASE_URL!).pathname.slice(1));
+      20 |     if (process.env.NODE_ENV !== &#39;test&#39; || !/^rental_settlement_test_\d+_[a-f0-9]+$/.test(name)) {
+    &gt; 21 |       throw new Error(&#39;Use scripts/run-settlement-e2e.mjs with its disposable database.&#39;);
+         |             ^
+      22 |     }
+      23 |   });
+      24 |
+
+      at Object.&lt;anonymous&gt; (test/e2e/lease-settlement.e2e-spec.ts:21:13)
+
+  ● Move-out settlement E2E (isolated database only) › cannot double-record concurrent refunds
+
+    Use scripts/run-settlement-e2e.mjs with its disposable database.
+
+      19 |     const name = decodeURIComponent(new URL(process.env.DATABASE_URL!).pathname.slice(1));
+      20 |     if (process.env.NODE_ENV !== &#39;test&#39; || !/^rental_settlement_test_\d+_[a-f0-9]+$/.test(name)) {
+    &gt; 21 |       throw new Error(&#39;Use scripts/run-settlement-e2e.mjs with its disposable database.&#39;);
+         |             ^
+      22 |     }
+      23 |   });
+      24 |
+
+      at Object.&lt;anonymous&gt; (test/e2e/lease-settlement.e2e-spec.ts:21:13)
+
+FAIL test/e2e/invoice-tariffs.e2e-spec.ts
+  ● Invoice lines and service tariffs (disposable database) › stores atomic line snapshots and never reprices issued invoices
+
+    Use scripts/run-invoice-tariffs-e2e.mjs with its disposable database.
+
+      32 |     const name = new URL(process.env.DATABASE_URL!).pathname.slice(1);
+      33 |     if (process.env.NODE_ENV !== &#39;test&#39; || !/^rental_(invoice|billing)_test_\d+_[a-f0-9]+$/.test(name)) {
+    &gt; 34 |       throw new Error(&#39;Use scripts/run-invoice-tariffs-e2e.mjs with its disposable database.&#39;);
+         |             ^
+      35 |     }
+      36 |   });
+      37 |   beforeEach(async () =&gt; {
+
+      at Object.&lt;anonymous&gt; (test/e2e/invoice-tariffs.e2e-spec.ts:34:13)
+
+  ● Invoice lines and service tariffs (disposable database) › uses the same effective tariffs in preflight, bulk and single creation, including retries
+
+    Use scripts/run-invoice-tariffs-e2e.mjs with its disposable database.
+
+      32 |     const name = new URL(process.env.DATABASE_URL!).pathname.slice(1);
+      33 |     if (process.env.NODE_ENV !== &#39;test&#39; || !/^rental_(invoice|billing)_test_\d+_[a-f0-9]+$/.test(name)) {
+    &gt; 34 |       throw new Error(&#39;Use scripts/run-invoice-tariffs-e2e.mjs with its disposable database.&#39;);
+         |             ^
+      35 |     }
+      36 |   });
+      37 |   beforeEach(async () =&gt; {
+
+      at Object.&lt;anonymous&gt; (test/e2e/invoice-tariffs.e2e-spec.ts:34:13)
+
+  ● Invoice lines and service tariffs (disposable database) › schedules fee retirement without deleting historical charges
+
+    Use scripts/run-invoice-tariffs-e2e.mjs with its disposable database.
+
+      32 |     const name = new URL(process.env.DATABASE_URL!).pathname.slice(1);
+      33 |     if (process.env.NODE_ENV !== &#39;test&#39; || !/^rental_(invoice|billing)_test_\d+_[a-f0-9]+$/.test(name)) {
+    &gt; 34 |       throw new Error(&#39;Use scripts/run-invoice-tariffs-e2e.mjs with its disposable database.&#39;);
+         |             ^
+      35 |     }
+      36 |   });
+      37 |   beforeEach(async () =&gt; {
+
+      at Object.&lt;anonymous&gt; (test/e2e/invoice-tariffs.e2e-spec.ts:34:13)
+
+  ● Invoice lines and service tariffs (disposable database) › rejects retroactive, duplicate, stale, blank and already-invoiced changes
+
+    Use scripts/run-invoice-tariffs-e2e.mjs with its disposable database.
+
+      32 |     const name = new URL(process.env.DATABASE_URL!).pathname.slice(1);
+      33 |     if (process.env.NODE_ENV !== &#39;test&#39; || !/^rental_(invoice|billing)_test_\d+_[a-f0-9]+$/.test(name)) {
+    &gt; 34 |       throw new Error(&#39;Use scripts/run-invoice-tariffs-e2e.mjs with its disposable database.&#39;);
+         |             ^
+      35 |     }
+      36 |   });
+      37 |   beforeEach(async () =&gt; {
+
+      at Object.&lt;anonymous&gt; (test/e2e/invoice-tariffs.e2e-spec.ts:34:13)
+
+  ● Invoice lines and service tariffs (disposable database) › serializes concurrent tariff edits and rejects stale versions
+
+    Use scripts/run-invoice-tariffs-e2e.mjs with its disposable database.
+
+      32 |     const name = new URL(process.env.DATABASE_URL!).pathname.slice(1);
+      33 |     if (process.env.NODE_ENV !== &#39;test&#39; || !/^rental_(invoice|billing)_test_\d+_[a-f0-9]+$/.test(name)) {
+    &gt; 34 |       throw new Error(&#39;Use scripts/run-invoice-tariffs-e2e.mjs with its disposable database.&#39;);
+         |             ^
+      35 |     }
+      36 |   });
+      37 |   beforeEach(async () =&gt; {
+
+      at Object.&lt;anonymous&gt; (test/e2e/invoice-tariffs.e2e-spec.ts:34:13)
+
+  ● Invoice lines and service tariffs (disposable database) › blocks legacy tariff creation and version changes across a locked period
+
+    Use scripts/run-invoice-tariffs-e2e.mjs with its disposable database.
+
+      32 |     const name = new URL(process.env.DATABASE_URL!).pathname.slice(1);
+      33 |     if (process.env.NODE_ENV !== &#39;test&#39; || !/^rental_(invoice|billing)_test_\d+_[a-f0-9]+$/.test(name)) {
+    &gt; 34 |       throw new Error(&#39;Use scripts/run-invoice-tariffs-e2e.mjs with its disposable database.&#39;);
+         |             ^
+      35 |     }
+      36 |   });
+      37 |   beforeEach(async () =&gt; {
+
+      at Object.&lt;anonymous&gt; (test/e2e/invoice-tariffs.e2e-spec.ts:34:13)
+
+  ● Invoice lines and service tariffs (disposable database) › enforces ownership and exposes identical line snapshots to the tenant
+
+    Use scripts/run-invoice-tariffs-e2e.mjs with its disposable database.
+
+      32 |     const name = new URL(process.env.DATABASE_URL!).pathname.slice(1);
+      33 |     if (process.env.NODE_ENV !== &#39;test&#39; || !/^rental_(invoice|billing)_test_\d+_[a-f0-9]+$/.test(name)) {
+    &gt; 34 |       throw new Error(&#39;Use scripts/run-invoice-tariffs-e2e.mjs with its disposable database.&#39;);
+         |             ^
+      35 |     }
+      36 |   });
+      37 |   beforeEach(async () =&gt; {
+
+      at Object.&lt;anonymous&gt; (test/e2e/invoice-tariffs.e2e-spec.ts:34:13)
+
+  ● Invoice lines and service tariffs (disposable database) › rejects database-level mutations of published snapshots
+
+    Use scripts/run-invoice-tariffs-e2e.mjs with its disposable database.
+
+      32 |     const name = new URL(process.env.DATABASE_URL!).pathname.slice(1);
+      33 |     if (process.env.NODE_ENV !== &#39;test&#39; || !/^rental_(invoice|billing)_test_\d+_[a-f0-9]+$/.test(name)) {
+    &gt; 34 |       throw new Error(&#39;Use scripts/run-invoice-tariffs-e2e.mjs with its disposable database.&#39;);
+         |             ^
+      35 |     }
+      36 |   });
+      37 |   beforeEach(async () =&gt; {
+
+      at Object.&lt;anonymous&gt; (test/e2e/invoice-tariffs.e2e-spec.ts:34:13)
+
+FAIL test/e2e/staff-lifecycle.e2e-spec.ts
+  ● Staff property scope and tenant lifecycle (disposable database) › isolates collections and direct IDs across property, room, tenant, invoice, maintenance, reports and dashboard
+
+    Use the disposable billing production runner.
+
+      16 |
+      17 |   beforeAll(async () =&gt; {
+    &gt; 18 |     if (process.env.NODE_ENV !== &#39;test&#39; || !/^rental_billing_test_\d+_[a-f0-9]+$/.test(new URL(process.env.DATABASE_URL!).pathname.slice(1))) throw new Error(&#39;Use the disposable billing production runner.&#39;);
+         |                                                                                                                                                     ^
+      19 |   });
+      20 |   afterEach(async () =&gt; { if (harness) await closeE2eHarness(harness); });
+      21 |   beforeEach(async () =&gt; {
+
+      at Object.&lt;anonymous&gt; (test/e2e/staff-lifecycle.e2e-spec.ts:18:149)
+
+  ● Staff property scope and tenant lifecycle (disposable database) › requires an explicit authorized property when staff browse tariff history
+
+    Use the disposable billing production runner.
+
+      16 |
+      17 |   beforeAll(async () =&gt; {
+    &gt; 18 |     if (process.env.NODE_ENV !== &#39;test&#39; || !/^rental_billing_test_\d+_[a-f0-9]+$/.test(new URL(process.env.DATABASE_URL!).pathname.slice(1))) throw new Error(&#39;Use the disposable billing production runner.&#39;);
+         |                                                                                                                                                     ^
+      19 |   });
+      20 |   afterEach(async () =&gt; { if (harness) await closeE2eHarness(harness); });
+      21 |   beforeEach(async () =&gt; {
+
+      at Object.&lt;anonymous&gt; (test/e2e/staff-lifecycle.e2e-spec.ts:18:149)
+
+  ● Staff property scope and tenant lifecycle (disposable database) › requires staff to propose tariffs rather than activating legacy room fees directly
+
+    Use the disposable billing production runner.
+
+      16 |
+      17 |   beforeAll(async () =&gt; {
+    &gt; 18 |     if (process.env.NODE_ENV !== &#39;test&#39; || !/^rental_billing_test_\d+_[a-f0-9]+$/.test(new URL(process.env.DATABASE_URL!).pathname.slice(1))) throw new Error(&#39;Use the disposable billing production runner.&#39;);
+         |                                                                                                                                                     ^
+      19 |   });
+      20 |   afterEach(async () =&gt; { if (harness) await closeE2eHarness(harness); });
+      21 |   beforeEach(async () =&gt; {
+
+      at Object.&lt;anonymous&gt; (test/e2e/staff-lifecycle.e2e-spec.ts:18:149)
+
+  ● Staff property scope and tenant lifecycle (disposable database) › revokes scopes on existing tokens, records scope audit atomically and cannot self-escalate
+
+    Use the disposable billing production runner.
+
+      16 |
+      17 |   beforeAll(async () =&gt; {
+    &gt; 18 |     if (process.env.NODE_ENV !== &#39;test&#39; || !/^rental_billing_test_\d+_[a-f0-9]+$/.test(new URL(process.env.DATABASE_URL!).pathname.slice(1))) throw new Error(&#39;Use the disposable billing production runner.&#39;);
+         |                                                                                                                                                     ^
+      19 |   });
+      20 |   afterEach(async () =&gt; { if (harness) await closeE2eHarness(harness); });
+      21 |   beforeEach(async () =&gt; {
+
+      at Object.&lt;anonymous&gt; (test/e2e/staff-lifecycle.e2e-spec.ts:18:149)
+
+  ● Staff property scope and tenant lifecycle (disposable database) › does not expose shared tenant financial history or receipts outside the assigned scope
+
+    Use the disposable billing production runner.
+
+      16 |
+      17 |   beforeAll(async () =&gt; {
+    &gt; 18 |     if (process.env.NODE_ENV !== &#39;test&#39; || !/^rental_billing_test_\d+_[a-f0-9]+$/.test(new URL(process.env.DATABASE_URL!).pathname.slice(1))) throw new Error(&#39;Use the disposable billing production runner.&#39;);
+         |                                                                                                                                                     ^
+      19 |   });
+      20 |   afterEach(async () =&gt; { if (harness) await closeE2eHarness(harness); });
+      21 |   beforeEach(async () =&gt; {
+
+      at Object.&lt;anonymous&gt; (test/e2e/staff-lifecycle.e2e-spec.ts:18:149)
+
+  ● Staff property scope and tenant lifecycle (disposable database) › creates and reviews tenant requests without silently modifying leases or settlement balances
+
+    Use the disposable billing production runner.
+
+      16 |
+      17 |   beforeAll(async () =&gt; {
+    &gt; 18 |     if (process.env.NODE_ENV !== &#39;test&#39; || !/^rental_billing_test_\d+_[a-f0-9]+$/.test(new URL(process.env.DATABASE_URL!).pathname.slice(1))) throw new Error(&#39;Use the disposable billing production runner.&#39;);
+         |                                                                                                                                                     ^
+      19 |   });
+      20 |   afterEach(async () =&gt; { if (harness) await closeE2eHarness(harness); });
+      21 |   beforeEach(async () =&gt; {
+
+      at Object.&lt;anonymous&gt; (test/e2e/staff-lifecycle.e2e-spec.ts:18:149)
+
+  ● Staff property scope and tenant lifecycle (disposable database) › validates target rooms, supports cancellation and scopes lifecycle review to the staff property
+
+    Use the disposable billing production runner.
+
+      16 |
+      17 |   beforeAll(async () =&gt; {
+    &gt; 18 |     if (process.env.NODE_ENV !== &#39;test&#39; || !/^rental_billing_test_\d+_[a-f0-9]+$/.test(new URL(process.env.DATABASE_URL!).pathname.slice(1))) throw new Error(&#39;Use the disposable billing production runner.&#39;);
+         |                                                                                                                                                     ^
+      19 |   });
+      20 |   afterEach(async () =&gt; { if (harness) await closeE2eHarness(harness); });
+      21 |   beforeEach(async () =&gt; {
+
+      at Object.&lt;anonymous&gt; (test/e2e/staff-lifecycle.e2e-spec.ts:18:149)
+
+  ● Staff property scope and tenant lifecycle (disposable database) › enforces co-occupant room capacity under concurrency and never returns identity numbers
+
+    Use the disposable billing production runner.
+
+      16 |
+      17 |   beforeAll(async () =&gt; {
+    &gt; 18 |     if (process.env.NODE_ENV !== &#39;test&#39; || !/^rental_billing_test_\d+_[a-f0-9]+$/.test(new URL(process.env.DATABASE_URL!).pathname.slice(1))) throw new Error(&#39;Use the disposable billing production runner.&#39;);
+         |                                                                                                                                                     ^
+      19 |   });
+      20 |   afterEach(async () =&gt; { if (harness) await closeE2eHarness(harness); });
+      21 |   beforeEach(async () =&gt; {
+
+      at Object.&lt;anonymous&gt; (test/e2e/staff-lifecycle.e2e-spec.ts:18:149)
+
+  ● Staff property scope and tenant lifecycle (disposable database) › checks tenant channel opt-out both before enqueue and again immediately before delivery
+
+    Use the disposable billing production runner.
+
+      16 |
+      17 |   beforeAll(async () =&gt; {
+    &gt; 18 |     if (process.env.NODE_ENV !== &#39;test&#39; || !/^rental_billing_test_\d+_[a-f0-9]+$/.test(new URL(process.env.DATABASE_URL!).pathname.slice(1))) throw new Error(&#39;Use the disposable billing production runner.&#39;);
+         |                                                                                                                                                     ^
+      19 |   });
+      20 |   afterEach(async () =&gt; { if (harness) await closeE2eHarness(harness); });
+      21 |   beforeEach(async () =&gt; {
+
+      at Object.&lt;anonymous&gt; (test/e2e/staff-lifecycle.e2e-spec.ts:18:149)
+
+
+Test Suites: 9 failed, 27 passed, 36 total
+Tests:       79 failed, 190 passed, 269 total
+Snapshots:   0 total
+Time:        71.395 s
+Ran all test suites.
+
+    at ChildProcess.&lt;anonymous&gt; (file:///Users/hoang/Rental_room_management/test/system_demo/system_demo.mjs:136:44)
+    at ChildProcess.emit (node:events:508:28)
+    at maybeClose (node:internal/child_process:1101:16)
+    at ChildProcess._handle.onexit (node:internal/child_process:305:5)</pre></td></tr><tr><td>regression:api:admin-completion.e2e-spec.ts</td><td>regression</td><td class="failed">failed</td><td><pre>Error: npm failed (1)
+Object.&lt;anonymous&gt; (test/e2e/admin-inventory.e2e-spec.ts:12:13)
+
+  ● Admin inventory database acceptance › preserves authorized property creation/update with audit and masked bounded detail
+
+    Use npm run test:admin-inventory:e2e with a disposable database.
+
+      10 |     if (process.env.NODE_ENV !== &#39;test&#39; || ![&#39;localhost&#39;, &#39;127.0.0.1&#39;, &#39;[::1]&#39;].includes(target.hostname) ||
+      11 |         !/^\/rental_admin_accounts_test_\d+_[a-f0-9]{12}$/.test(target.pathname)) {
+    &gt; 12 |       throw new Error(&#39;Use npm run test:admin-inventory:e2e with a disposable database.&#39;);
+         |             ^
+      13 |     }
+      14 |     harness = await createE2eHarness();
+      15 |     const database = await harness.prisma.$queryRaw&lt;Array&lt;{ name: string }&gt;&gt;`SELECT current_database() AS name`;
+
+      at Object.&lt;anonymous&gt; (test/e2e/admin-inventory.e2e-spec.ts:12:13)
+
+FAIL test/e2e/admin-accounts.e2e-spec.ts
+  ● Admin accounts database acceptance › combines trimmed search, role, status and inclusive Vietnam dates with stable pagination
+
+    Use npm run test:admin-accounts:e2e with a disposable database.
+
+      15 |         ![&#39;localhost&#39;, &#39;127.0.0.1&#39;, &#39;[::1]&#39;].includes(target.hostname) ||
+      16 |         !/^\/rental_admin_accounts_test_\d+_[a-f0-9]{12}$/.test(target.pathname)) {
+    &gt; 17 |       throw new Error(&#39;Use npm run test:admin-accounts:e2e with a disposable database.&#39;);
+         |             ^
+      18 |     }
+      19 |     harness = await createE2eHarness();
+      20 |     const database = await harness.prisma.$queryRaw&lt;Array&lt;{ name: string }&gt;&gt;`SELECT current_database() AS name`;
+
+      at Object.&lt;anonymous&gt; (test/e2e/admin-accounts.e2e-spec.ts:17:13)
+
+  ● Admin accounts database acceptance › returns masked detail, real counts/history and enforces live permission and target boundaries
+
+    Use npm run test:admin-accounts:e2e with a disposable database.
+
+      15 |         ![&#39;localhost&#39;, &#39;127.0.0.1&#39;, &#39;[::1]&#39;].includes(target.hostname) ||
+      16 |         !/^\/rental_admin_accounts_test_\d+_[a-f0-9]{12}$/.test(target.pathname)) {
+    &gt; 17 |       throw new Error(&#39;Use npm run test:admin-accounts:e2e with a disposable database.&#39;);
+         |             ^
+      18 |     }
+      19 |     harness = await createE2eHarness();
+      20 |     const database = await harness.prisma.$queryRaw&lt;Array&lt;{ name: string }&gt;&gt;`SELECT current_database() AS name`;
+
+      at Object.&lt;anonymous&gt; (test/e2e/admin-accounts.e2e-spec.ts:17:13)
+
+  ● Admin accounts database acceptance › physically revokes landlord and dependent staff sessions without restoring old tokens
+
+    Use npm run test:admin-accounts:e2e with a disposable database.
+
+      15 |         ![&#39;localhost&#39;, &#39;127.0.0.1&#39;, &#39;[::1]&#39;].includes(target.hostname) ||
+      16 |         !/^\/rental_admin_accounts_test_\d+_[a-f0-9]{12}$/.test(target.pathname)) {
+    &gt; 17 |       throw new Error(&#39;Use npm run test:admin-accounts:e2e with a disposable database.&#39;);
+         |             ^
+      18 |     }
+      19 |     harness = await createE2eHarness();
+      20 |     const database = await harness.prisma.$queryRaw&lt;Array&lt;{ name: string }&gt;&gt;`SELECT current_database() AS name`;
+
+      at Object.&lt;anonymous&gt; (test/e2e/admin-accounts.e2e-spec.ts:17:13)
+
+  ● Admin accounts database acceptance › counts only newly revoked session rows, including expired rows, and audits each version
+
+    Use npm run test:admin-accounts:e2e with a disposable database.
+
+      15 |         ![&#39;localhost&#39;, &#39;127.0.0.1&#39;, &#39;[::1]&#39;].includes(target.hostname) ||
+      16 |         !/^\/rental_admin_accounts_test_\d+_[a-f0-9]{12}$/.test(target.pathname)) {
+    &gt; 17 |       throw new Error(&#39;Use npm run test:admin-accounts:e2e with a disposable database.&#39;);
+         |             ^
+      18 |     }
+      19 |     harness = await createE2eHarness();
+      20 |     const database = await harness.prisma.$queryRaw&lt;Array&lt;{ name: string }&gt;&gt;`SELECT current_database() AS name`;
+
+      at Object.&lt;anonymous&gt; (test/e2e/admin-accounts.e2e-spec.ts:17:13)
+
+  ● Admin accounts database acceptance › rolls back status, dependent sessions and tokens, and fails closed on PII when audit insertion fails
+
+    Use npm run test:admin-accounts:e2e with a disposable database.
+
+      15 |         ![&#39;localhost&#39;, &#39;127.0.0.1&#39;, &#39;[::1]&#39;].includes(target.hostname) ||
+      16 |         !/^\/rental_admin_accounts_test_\d+_[a-f0-9]{12}$/.test(target.pathname)) {
+    &gt; 17 |       throw new Error(&#39;Use npm run test:admin-accounts:e2e with a disposable database.&#39;);
+         |             ^
+      18 |     }
+      19 |     harness = await createE2eHarness();
+      20 |     const database = await harness.prisma.$queryRaw&lt;Array&lt;{ name: string }&gt;&gt;`SELECT current_database() AS name`;
+
+      at Object.&lt;anonymous&gt; (test/e2e/admin-accounts.e2e-spec.ts:17:13)
+
+  ● Admin accounts database acceptance › reports missing recovery delivery truthfully and only acknowledges a persisted encrypted queue job
+
+    Use npm run test:admin-accounts:e2e with a disposable database.
+
+      15 |         ![&#39;localhost&#39;, &#39;127.0.0.1&#39;, &#39;[::1]&#39;].includes(target.hostname) ||
+      16 |         !/^\/rental_admin_accounts_test_\d+_[a-f0-9]{12}$/.test(target.pathname)) {
+    &gt; 17 |       throw new Error(&#39;Use npm run test:admin-accounts:e2e with a disposable database.&#39;);
+         |             ^
+      18 |     }
+      19 |     harness = await createE2eHarness();
+      20 |     const database = await harness.prisma.$queryRaw&lt;Array&lt;{ name: string }&gt;&gt;`SELECT current_database() AS name`;
+
+      at Object.&lt;anonymous&gt; (test/e2e/admin-accounts.e2e-spec.ts:17:13)
+
+  ● Admin accounts database acceptance › preserves MFA, self-change, stale-version and last-super-admin protections on the real database
+
+    Use npm run test:admin-accounts:e2e with a disposable database.
+
+      15 |         ![&#39;localhost&#39;, &#39;127.0.0.1&#39;, &#39;[::1]&#39;].includes(target.hostname) ||
+      16 |         !/^\/rental_admin_accounts_test_\d+_[a-f0-9]{12}$/.test(target.pathname)) {
+    &gt; 17 |       throw new Error(&#39;Use npm run test:admin-accounts:e2e with a disposable database.&#39;);
+         |             ^
+      18 |     }
+      19 |     harness = await createE2eHarness();
+      20 |     const database = await harness.prisma.$queryRaw&lt;Array&lt;{ name: string }&gt;&gt;`SELECT current_database() AS name`;
+
+      at Object.&lt;anonymous&gt; (test/e2e/admin-accounts.e2e-spec.ts:17:13)
+
+  ● Admin accounts database acceptance › reads and explicitly grants capabilities with validation, session revocation and no self-escalation
+
+    Use npm run test:admin-accounts:e2e with a disposable database.
+
+      15 |         ![&#39;localhost&#39;, &#39;127.0.0.1&#39;, &#39;[::1]&#39;].includes(target.hostname) ||
+      16 |         !/^\/rental_admin_accounts_test_\d+_[a-f0-9]{12}$/.test(target.pathname)) {
+    &gt; 17 |       throw new Error(&#39;Use npm run test:admin-accounts:e2e with a disposable database.&#39;);
+         |             ^
+      18 |     }
+      19 |     harness = await createE2eHarness();
+      20 |     const database = await harness.prisma.$queryRaw&lt;Array&lt;{ name: string }&gt;&gt;`SELECT current_database() AS name`;
+
+      at Object.&lt;anonymous&gt; (test/e2e/admin-accounts.e2e-spec.ts:17:13)
+
+FAIL test/e2e/manual-transfers.e2e-spec.ts
+  ● Manual transfer: recipient, tenant proof and landlord confirmation › binds account updates to the landlord and rejects stale versions and malformed inputs
+
+    Use the disposable manual transfer runner.
+
+      25 |   beforeAll(async () =&gt; {
+      26 |     if (process.env.NODE_ENV !== &#39;test&#39; || !/^rental_admin_accounts_test_\d+_[a-f0-9]{12}$/.test(new URL(process.env.DATABASE_URL!).pathname.slice(1))) {
+    &gt; 27 |       throw new Error(&#39;Use the disposable manual transfer runner.&#39;);
+         |             ^
+      28 |     }
+      29 |   });
+      30 |   beforeEach(async () =&gt; {
+
+      at Object.&lt;anonymous&gt; (test/e2e/manual-transfers.e2e-spec.ts:27:13)
+
+  ● Manual transfer: recipient, tenant proof and landlord confirmation › shows only owned payable invoice instructions; never creates a payment or demo session
+
+    Use the disposable manual transfer runner.
+
+      25 |   beforeAll(async () =&gt; {
+      26 |     if (process.env.NODE_ENV !== &#39;test&#39; || !/^rental_admin_accounts_test_\d+_[a-f0-9]{12}$/.test(new URL(process.env.DATABASE_URL!).pathname.slice(1))) {
+    &gt; 27 |       throw new Error(&#39;Use the disposable manual transfer runner.&#39;);
+         |             ^
+      28 |     }
+      29 |   });
+      30 |   beforeEach(async () =&gt; {
+
+      at Object.&lt;anonymous&gt; (test/e2e/manual-transfers.e2e-spec.ts:27:13)
+
+  ● Manual transfer: recipient, tenant proof and landlord confirmation › reserves pending proofs without reducing debt, then records exactly one receipt on confirmation
+
+    Use the disposable manual transfer runner.
+
+      25 |   beforeAll(async () =&gt; {
+      26 |     if (process.env.NODE_ENV !== &#39;test&#39; || !/^rental_admin_accounts_test_\d+_[a-f0-9]{12}$/.test(new URL(process.env.DATABASE_URL!).pathname.slice(1))) {
+    &gt; 27 |       throw new Error(&#39;Use the disposable manual transfer runner.&#39;);
+         |             ^
+      28 |     }
+      29 |   });
+      30 |   beforeEach(async () =&gt; {
+
+      at Object.&lt;anonymous&gt; (test/e2e/manual-transfers.e2e-spec.ts:27:13)
+
+  ● Manual transfer: recipient, tenant proof and landlord confirmation › rejection leaves the ledger unchanged and permits a corrected proof
+
+    Use the disposable manual transfer runner.
+
+      25 |   beforeAll(async () =&gt; {
+      26 |     if (process.env.NODE_ENV !== &#39;test&#39; || !/^rental_admin_accounts_test_\d+_[a-f0-9]{12}$/.test(new URL(process.env.DATABASE_URL!).pathname.slice(1))) {
+    &gt; 27 |       throw new Error(&#39;Use the disposable manual transfer runner.&#39;);
+         |             ^
+      28 |     }
+      29 |   });
+      30 |   beforeEach(async () =&gt; {
+
+      at Object.&lt;anonymous&gt; (test/e2e/manual-transfers.e2e-spec.ts:27:13)
+
+  ● Manual transfer: recipient, tenant proof and landlord confirmation › preserves partial balance and replays a proof request without duplicate receipt creation
+
+    Use the disposable manual transfer runner.
+
+      25 |   beforeAll(async () =&gt; {
+      26 |     if (process.env.NODE_ENV !== &#39;test&#39; || !/^rental_admin_accounts_test_\d+_[a-f0-9]{12}$/.test(new URL(process.env.DATABASE_URL!).pathname.slice(1))) {
+    &gt; 27 |       throw new Error(&#39;Use the disposable manual transfer runner.&#39;);
+         |             ^
+      28 |     }
+      29 |   });
+      30 |   beforeEach(async () =&gt; {
+
+      at Object.&lt;anonymous&gt; (test/e2e/manual-transfers.e2e-spec.ts:27:13)
+
+  ● Manual transfer: recipient, tenant proof and landlord confirmation › grants private QR access only to the recipient owner and related tenants while enabled
+
+    Use the disposable manual transfer runner.
+
+      25 |   beforeAll(async () =&gt; {
+      26 |     if (process.env.NODE_ENV !== &#39;test&#39; || !/^rental_admin_accounts_test_\d+_[a-f0-9]{12}$/.test(new URL(process.env.DATABASE_URL!).pathname.slice(1))) {
+    &gt; 27 |       throw new Error(&#39;Use the disposable manual transfer runner.&#39;);
+         |             ^
+      28 |     }
+      29 |   });
+      30 |   beforeEach(async () =&gt; {
+
+      at Object.&lt;anonymous&gt; (test/e2e/manual-transfers.e2e-spec.ts:27:13)
+
+FAIL test/e2e/admin-registry.e2e-spec.ts
+  ● Admin registry acceptance › keeps plan administration non-financial and protects stale revisions
+
+    Use the disposable admin E2E runner.
+
+       7 |   beforeEach(async () =&gt; {
+       8 |     const target = new URL(process.env.DATABASE_URL ?? &#39;&#39;);
+    &gt;  9 |     if (process.env.NODE_ENV !== &#39;test&#39; || !/^\/rental_admin_accounts_test_\d+_[a-f0-9]{12}$/.test(target.pathname)) throw new Error(&#39;Use the disposable admin E2E runner.&#39;);
+         |                                                                                                                            ^
+      10 |     harness = await createE2eHarness();
+      11 |     await resetDatabase(harness.prisma);
+      12 |   });
+
+      at Object.&lt;anonymous&gt; (test/e2e/admin-registry.e2e-spec.ts:9:124)
+
+  ● Admin registry acceptance › assigns a snapshot only to an active landlord
+
+    Use the disposable admin E2E runner.
+
+       7 |   beforeEach(async () =&gt; {
+       8 |     const target = new URL(process.env.DATABASE_URL ?? &#39;&#39;);
+    &gt;  9 |     if (process.env.NODE_ENV !== &#39;test&#39; || !/^\/rental_admin_accounts_test_\d+_[a-f0-9]{12}$/.test(target.pathname)) throw new Error(&#39;Use the disposable admin E2E runner.&#39;);
+         |                                                                                                                            ^
+      10 |     harness = await createE2eHarness();
+      11 |     await resetDatabase(harness.prisma);
+      12 |   });
+
+      at Object.&lt;anonymous&gt; (test/e2e/admin-registry.e2e-spec.ts:9:124)
+
+  ● Admin registry acceptance › owner verification is private, requires scanned evidence and has versioned audited decisions
+
+    Use the disposable admin E2E runner.
+
+       7 |   beforeEach(async () =&gt; {
+       8 |     const target = new URL(process.env.DATABASE_URL ?? &#39;&#39;);
+    &gt;  9 |     if (process.env.NODE_ENV !== &#39;test&#39; || !/^\/rental_admin_accounts_test_\d+_[a-f0-9]{12}$/.test(target.pathname)) throw new Error(&#39;Use the disposable admin E2E runner.&#39;);
+         |                                                                                                                            ^
+      10 |     harness = await createE2eHarness();
+      11 |     await resetDatabase(harness.prisma);
+      12 |   });
+
+      at Object.&lt;anonymous&gt; (test/e2e/admin-registry.e2e-spec.ts:9:124)
+
+  ● Admin registry acceptance › exposes current property approval separately from archival and detects edited snapshots
+
+    Use the disposable admin E2E runner.
+
+       7 |   beforeEach(async () =&gt; {
+       8 |     const target = new URL(process.env.DATABASE_URL ?? &#39;&#39;);
+    &gt;  9 |     if (process.env.NODE_ENV !== &#39;test&#39; || !/^\/rental_admin_accounts_test_\d+_[a-f0-9]{12}$/.test(target.pathname)) throw new Error(&#39;Use the disposable admin E2E runner.&#39;);
+         |                                                                                                                            ^
+      10 |     harness = await createE2eHarness();
+      11 |     await resetDatabase(harness.prisma);
+      12 |   });
+
+      at Object.&lt;anonymous&gt; (test/e2e/admin-registry.e2e-spec.ts:9:124)
+
+  ● Admin registry acceptance › restricts transaction investigation and redacts payment secrets without ledger mutation
+
+    Use the disposable admin E2E runner.
+
+       7 |   beforeEach(async () =&gt; {
+       8 |     const target = new URL(process.env.DATABASE_URL ?? &#39;&#39;);
+    &gt;  9 |     if (process.env.NODE_ENV !== &#39;test&#39; || !/^\/rental_admin_accounts_test_\d+_[a-f0-9]{12}$/.test(target.pathname)) throw new Error(&#39;Use the disposable admin E2E runner.&#39;);
+         |                                                                                                                            ^
+      10 |     harness = await createE2eHarness();
+      11 |     await resetDatabase(harness.prisma);
+      12 |   });
+
+      at Object.&lt;anonymous&gt; (test/e2e/admin-registry.e2e-spec.ts:9:124)
+
+  ● Admin registry acceptance › serializes concurrent inventory growth against assigned quotas
+
+    Use the disposable admin E2E runner.
+
+       7 |   beforeEach(async () =&gt; {
+       8 |     const target = new URL(process.env.DATABASE_URL ?? &#39;&#39;);
+    &gt;  9 |     if (process.env.NODE_ENV !== &#39;test&#39; || !/^\/rental_admin_accounts_test_\d+_[a-f0-9]{12}$/.test(target.pathname)) throw new Error(&#39;Use the disposable admin E2E runner.&#39;);
+         |                                                                                                                            ^
+      10 |     harness = await createE2eHarness();
+      11 |     await resetDatabase(harness.prisma);
+      12 |   });
+
+      at Object.&lt;anonymous&gt; (test/e2e/admin-registry.e2e-spec.ts:9:124)
+
+
+Test Suites: 13 failed, 23 passed, 36 total
+Tests:       107 failed, 162 passed, 269 total
+Snapshots:   0 total
+Time:        57.069 s, estimated 72 s
+Ran all test suites.
+
+    at ChildProcess.&lt;anonymous&gt; (file:///Users/hoang/Rental_room_management/test/system_demo/system_demo.mjs:136:44)
+    at ChildProcess.emit (node:events:508:28)
+    at maybeClose (node:internal/child_process:1101:16)
+    at Socket.&lt;anonymous&gt; (node:internal/child_process:457:11)
+    at Socket.emit (node:events:508:28)
+    at Pipe.&lt;anonymous&gt; (node:net:346:12)</pre></td></tr><tr><td>regression:api:admin-console.e2e-spec.ts</td><td>regression</td><td class="failed">failed</td><td><pre>Error: npm failed (1)
+s disposable database.&#39;);
+         |             ^
+      35 |     }
+      36 |   });
+      37 |   beforeEach(async () =&gt; {
+
+      at Object.&lt;anonymous&gt; (test/e2e/invoice-tariffs.e2e-spec.ts:34:13)
+
+  ● Invoice lines and service tariffs (disposable database) › rejects database-level mutations of published snapshots
+
+    Use scripts/run-invoice-tariffs-e2e.mjs with its disposable database.
+
+      32 |     const name = new URL(process.env.DATABASE_URL!).pathname.slice(1);
+      33 |     if (process.env.NODE_ENV !== &#39;test&#39; || !/^rental_(invoice|billing)_test_\d+_[a-f0-9]+$/.test(name)) {
+    &gt; 34 |       throw new Error(&#39;Use scripts/run-invoice-tariffs-e2e.mjs with its disposable database.&#39;);
+         |             ^
+      35 |     }
+      36 |   });
+      37 |   beforeEach(async () =&gt; {
+
+      at Object.&lt;anonymous&gt; (test/e2e/invoice-tariffs.e2e-spec.ts:34:13)
+
+FAIL test/e2e/admin-accounts.e2e-spec.ts
+  ● Admin accounts database acceptance › combines trimmed search, role, status and inclusive Vietnam dates with stable pagination
+
+    Use npm run test:admin-accounts:e2e with a disposable database.
+
+      15 |         ![&#39;localhost&#39;, &#39;127.0.0.1&#39;, &#39;[::1]&#39;].includes(target.hostname) ||
+      16 |         !/^\/rental_admin_accounts_test_\d+_[a-f0-9]{12}$/.test(target.pathname)) {
+    &gt; 17 |       throw new Error(&#39;Use npm run test:admin-accounts:e2e with a disposable database.&#39;);
+         |             ^
+      18 |     }
+      19 |     harness = await createE2eHarness();
+      20 |     const database = await harness.prisma.$queryRaw&lt;Array&lt;{ name: string }&gt;&gt;`SELECT current_database() AS name`;
+
+      at Object.&lt;anonymous&gt; (test/e2e/admin-accounts.e2e-spec.ts:17:13)
+
+  ● Admin accounts database acceptance › returns masked detail, real counts/history and enforces live permission and target boundaries
+
+    Use npm run test:admin-accounts:e2e with a disposable database.
+
+      15 |         ![&#39;localhost&#39;, &#39;127.0.0.1&#39;, &#39;[::1]&#39;].includes(target.hostname) ||
+      16 |         !/^\/rental_admin_accounts_test_\d+_[a-f0-9]{12}$/.test(target.pathname)) {
+    &gt; 17 |       throw new Error(&#39;Use npm run test:admin-accounts:e2e with a disposable database.&#39;);
+         |             ^
+      18 |     }
+      19 |     harness = await createE2eHarness();
+      20 |     const database = await harness.prisma.$queryRaw&lt;Array&lt;{ name: string }&gt;&gt;`SELECT current_database() AS name`;
+
+      at Object.&lt;anonymous&gt; (test/e2e/admin-accounts.e2e-spec.ts:17:13)
+
+  ● Admin accounts database acceptance › physically revokes landlord and dependent staff sessions without restoring old tokens
+
+    Use npm run test:admin-accounts:e2e with a disposable database.
+
+      15 |         ![&#39;localhost&#39;, &#39;127.0.0.1&#39;, &#39;[::1]&#39;].includes(target.hostname) ||
+      16 |         !/^\/rental_admin_accounts_test_\d+_[a-f0-9]{12}$/.test(target.pathname)) {
+    &gt; 17 |       throw new Error(&#39;Use npm run test:admin-accounts:e2e with a disposable database.&#39;);
+         |             ^
+      18 |     }
+      19 |     harness = await createE2eHarness();
+      20 |     const database = await harness.prisma.$queryRaw&lt;Array&lt;{ name: string }&gt;&gt;`SELECT current_database() AS name`;
+
+      at Object.&lt;anonymous&gt; (test/e2e/admin-accounts.e2e-spec.ts:17:13)
+
+  ● Admin accounts database acceptance › counts only newly revoked session rows, including expired rows, and audits each version
+
+    Use npm run test:admin-accounts:e2e with a disposable database.
+
+      15 |         ![&#39;localhost&#39;, &#39;127.0.0.1&#39;, &#39;[::1]&#39;].includes(target.hostname) ||
+      16 |         !/^\/rental_admin_accounts_test_\d+_[a-f0-9]{12}$/.test(target.pathname)) {
+    &gt; 17 |       throw new Error(&#39;Use npm run test:admin-accounts:e2e with a disposable database.&#39;);
+         |             ^
+      18 |     }
+      19 |     harness = await createE2eHarness();
+      20 |     const database = await harness.prisma.$queryRaw&lt;Array&lt;{ name: string }&gt;&gt;`SELECT current_database() AS name`;
+
+      at Object.&lt;anonymous&gt; (test/e2e/admin-accounts.e2e-spec.ts:17:13)
+
+  ● Admin accounts database acceptance › rolls back status, dependent sessions and tokens, and fails closed on PII when audit insertion fails
+
+    Use npm run test:admin-accounts:e2e with a disposable database.
+
+      15 |         ![&#39;localhost&#39;, &#39;127.0.0.1&#39;, &#39;[::1]&#39;].includes(target.hostname) ||
+      16 |         !/^\/rental_admin_accounts_test_\d+_[a-f0-9]{12}$/.test(target.pathname)) {
+    &gt; 17 |       throw new Error(&#39;Use npm run test:admin-accounts:e2e with a disposable database.&#39;);
+         |             ^
+      18 |     }
+      19 |     harness = await createE2eHarness();
+      20 |     const database = await harness.prisma.$queryRaw&lt;Array&lt;{ name: string }&gt;&gt;`SELECT current_database() AS name`;
+
+      at Object.&lt;anonymous&gt; (test/e2e/admin-accounts.e2e-spec.ts:17:13)
+
+  ● Admin accounts database acceptance › reports missing recovery delivery truthfully and only acknowledges a persisted encrypted queue job
+
+    Use npm run test:admin-accounts:e2e with a disposable database.
+
+      15 |         ![&#39;localhost&#39;, &#39;127.0.0.1&#39;, &#39;[::1]&#39;].includes(target.hostname) ||
+      16 |         !/^\/rental_admin_accounts_test_\d+_[a-f0-9]{12}$/.test(target.pathname)) {
+    &gt; 17 |       throw new Error(&#39;Use npm run test:admin-accounts:e2e with a disposable database.&#39;);
+         |             ^
+      18 |     }
+      19 |     harness = await createE2eHarness();
+      20 |     const database = await harness.prisma.$queryRaw&lt;Array&lt;{ name: string }&gt;&gt;`SELECT current_database() AS name`;
+
+      at Object.&lt;anonymous&gt; (test/e2e/admin-accounts.e2e-spec.ts:17:13)
+
+  ● Admin accounts database acceptance › preserves MFA, self-change, stale-version and last-super-admin protections on the real database
+
+    Use npm run test:admin-accounts:e2e with a disposable database.
+
+      15 |         ![&#39;localhost&#39;, &#39;127.0.0.1&#39;, &#39;[::1]&#39;].includes(target.hostname) ||
+      16 |         !/^\/rental_admin_accounts_test_\d+_[a-f0-9]{12}$/.test(target.pathname)) {
+    &gt; 17 |       throw new Error(&#39;Use npm run test:admin-accounts:e2e with a disposable database.&#39;);
+         |             ^
+      18 |     }
+      19 |     harness = await createE2eHarness();
+      20 |     const database = await harness.prisma.$queryRaw&lt;Array&lt;{ name: string }&gt;&gt;`SELECT current_database() AS name`;
+
+      at Object.&lt;anonymous&gt; (test/e2e/admin-accounts.e2e-spec.ts:17:13)
+
+  ● Admin accounts database acceptance › reads and explicitly grants capabilities with validation, session revocation and no self-escalation
+
+    Use npm run test:admin-accounts:e2e with a disposable database.
+
+      15 |         ![&#39;localhost&#39;, &#39;127.0.0.1&#39;, &#39;[::1]&#39;].includes(target.hostname) ||
+      16 |         !/^\/rental_admin_accounts_test_\d+_[a-f0-9]{12}$/.test(target.pathname)) {
+    &gt; 17 |       throw new Error(&#39;Use npm run test:admin-accounts:e2e with a disposable database.&#39;);
+         |             ^
+      18 |     }
+      19 |     harness = await createE2eHarness();
+      20 |     const database = await harness.prisma.$queryRaw&lt;Array&lt;{ name: string }&gt;&gt;`SELECT current_database() AS name`;
+
+      at Object.&lt;anonymous&gt; (test/e2e/admin-accounts.e2e-spec.ts:17:13)
+
+FAIL test/e2e/manual-transfers.e2e-spec.ts
+  ● Manual transfer: recipient, tenant proof and landlord confirmation › binds account updates to the landlord and rejects stale versions and malformed inputs
+
+    Use the disposable manual transfer runner.
+
+      25 |   beforeAll(async () =&gt; {
+      26 |     if (process.env.NODE_ENV !== &#39;test&#39; || !/^rental_admin_accounts_test_\d+_[a-f0-9]{12}$/.test(new URL(process.env.DATABASE_URL!).pathname.slice(1))) {
+    &gt; 27 |       throw new Error(&#39;Use the disposable manual transfer runner.&#39;);
+         |             ^
+      28 |     }
+      29 |   });
+      30 |   beforeEach(async () =&gt; {
+
+      at Object.&lt;anonymous&gt; (test/e2e/manual-transfers.e2e-spec.ts:27:13)
+
+  ● Manual transfer: recipient, tenant proof and landlord confirmation › shows only owned payable invoice instructions; never creates a payment or demo session
+
+    Use the disposable manual transfer runner.
+
+      25 |   beforeAll(async () =&gt; {
+      26 |     if (process.env.NODE_ENV !== &#39;test&#39; || !/^rental_admin_accounts_test_\d+_[a-f0-9]{12}$/.test(new URL(process.env.DATABASE_URL!).pathname.slice(1))) {
+    &gt; 27 |       throw new Error(&#39;Use the disposable manual transfer runner.&#39;);
+         |             ^
+      28 |     }
+      29 |   });
+      30 |   beforeEach(async () =&gt; {
+
+      at Object.&lt;anonymous&gt; (test/e2e/manual-transfers.e2e-spec.ts:27:13)
+
+  ● Manual transfer: recipient, tenant proof and landlord confirmation › reserves pending proofs without reducing debt, then records exactly one receipt on confirmation
+
+    Use the disposable manual transfer runner.
+
+      25 |   beforeAll(async () =&gt; {
+      26 |     if (process.env.NODE_ENV !== &#39;test&#39; || !/^rental_admin_accounts_test_\d+_[a-f0-9]{12}$/.test(new URL(process.env.DATABASE_URL!).pathname.slice(1))) {
+    &gt; 27 |       throw new Error(&#39;Use the disposable manual transfer runner.&#39;);
+         |             ^
+      28 |     }
+      29 |   });
+      30 |   beforeEach(async () =&gt; {
+
+      at Object.&lt;anonymous&gt; (test/e2e/manual-transfers.e2e-spec.ts:27:13)
+
+  ● Manual transfer: recipient, tenant proof and landlord confirmation › rejection leaves the ledger unchanged and permits a corrected proof
+
+    Use the disposable manual transfer runner.
+
+      25 |   beforeAll(async () =&gt; {
+      26 |     if (process.env.NODE_ENV !== &#39;test&#39; || !/^rental_admin_accounts_test_\d+_[a-f0-9]{12}$/.test(new URL(process.env.DATABASE_URL!).pathname.slice(1))) {
+    &gt; 27 |       throw new Error(&#39;Use the disposable manual transfer runner.&#39;);
+         |             ^
+      28 |     }
+      29 |   });
+      30 |   beforeEach(async () =&gt; {
+
+      at Object.&lt;anonymous&gt; (test/e2e/manual-transfers.e2e-spec.ts:27:13)
+
+  ● Manual transfer: recipient, tenant proof and landlord confirmation › preserves partial balance and replays a proof request without duplicate receipt creation
+
+    Use the disposable manual transfer runner.
+
+      25 |   beforeAll(async () =&gt; {
+      26 |     if (process.env.NODE_ENV !== &#39;test&#39; || !/^rental_admin_accounts_test_\d+_[a-f0-9]{12}$/.test(new URL(process.env.DATABASE_URL!).pathname.slice(1))) {
+    &gt; 27 |       throw new Error(&#39;Use the disposable manual transfer runner.&#39;);
+         |             ^
+      28 |     }
+      29 |   });
+      30 |   beforeEach(async () =&gt; {
+
+      at Object.&lt;anonymous&gt; (test/e2e/manual-transfers.e2e-spec.ts:27:13)
+
+  ● Manual transfer: recipient, tenant proof and landlord confirmation › grants private QR access only to the recipient owner and related tenants while enabled
+
+    Use the disposable manual transfer runner.
+
+      25 |   beforeAll(async () =&gt; {
+      26 |     if (process.env.NODE_ENV !== &#39;test&#39; || !/^rental_admin_accounts_test_\d+_[a-f0-9]{12}$/.test(new URL(process.env.DATABASE_URL!).pathname.slice(1))) {
+    &gt; 27 |       throw new Error(&#39;Use the disposable manual transfer runner.&#39;);
+         |             ^
+      28 |     }
+      29 |   });
+      30 |   beforeEach(async () =&gt; {
+
+      at Object.&lt;anonymous&gt; (test/e2e/manual-transfers.e2e-spec.ts:27:13)
+
+FAIL test/e2e/admin-registry.e2e-spec.ts
+  ● Admin registry acceptance › keeps plan administration non-financial and protects stale revisions
+
+    Use the disposable admin E2E runner.
+
+       7 |   beforeEach(async () =&gt; {
+       8 |     const target = new URL(process.env.DATABASE_URL ?? &#39;&#39;);
+    &gt;  9 |     if (process.env.NODE_ENV !== &#39;test&#39; || !/^\/rental_admin_accounts_test_\d+_[a-f0-9]{12}$/.test(target.pathname)) throw new Error(&#39;Use the disposable admin E2E runner.&#39;);
+         |                                                                                                                            ^
+      10 |     harness = await createE2eHarness();
+      11 |     await resetDatabase(harness.prisma);
+      12 |   });
+
+      at Object.&lt;anonymous&gt; (test/e2e/admin-registry.e2e-spec.ts:9:124)
+
+  ● Admin registry acceptance › assigns a snapshot only to an active landlord
+
+    Use the disposable admin E2E runner.
+
+       7 |   beforeEach(async () =&gt; {
+       8 |     const target = new URL(process.env.DATABASE_URL ?? &#39;&#39;);
+    &gt;  9 |     if (process.env.NODE_ENV !== &#39;test&#39; || !/^\/rental_admin_accounts_test_\d+_[a-f0-9]{12}$/.test(target.pathname)) throw new Error(&#39;Use the disposable admin E2E runner.&#39;);
+         |                                                                                                                            ^
+      10 |     harness = await createE2eHarness();
+      11 |     await resetDatabase(harness.prisma);
+      12 |   });
+
+      at Object.&lt;anonymous&gt; (test/e2e/admin-registry.e2e-spec.ts:9:124)
+
+  ● Admin registry acceptance › owner verification is private, requires scanned evidence and has versioned audited decisions
+
+    Use the disposable admin E2E runner.
+
+       7 |   beforeEach(async () =&gt; {
+       8 |     const target = new URL(process.env.DATABASE_URL ?? &#39;&#39;);
+    &gt;  9 |     if (process.env.NODE_ENV !== &#39;test&#39; || !/^\/rental_admin_accounts_test_\d+_[a-f0-9]{12}$/.test(target.pathname)) throw new Error(&#39;Use the disposable admin E2E runner.&#39;);
+         |                                                                                                                            ^
+      10 |     harness = await createE2eHarness();
+      11 |     await resetDatabase(harness.prisma);
+      12 |   });
+
+      at Object.&lt;anonymous&gt; (test/e2e/admin-registry.e2e-spec.ts:9:124)
+
+  ● Admin registry acceptance › exposes current property approval separately from archival and detects edited snapshots
+
+    Use the disposable admin E2E runner.
+
+       7 |   beforeEach(async () =&gt; {
+       8 |     const target = new URL(process.env.DATABASE_URL ?? &#39;&#39;);
+    &gt;  9 |     if (process.env.NODE_ENV !== &#39;test&#39; || !/^\/rental_admin_accounts_test_\d+_[a-f0-9]{12}$/.test(target.pathname)) throw new Error(&#39;Use the disposable admin E2E runner.&#39;);
+         |                                                                                                                            ^
+      10 |     harness = await createE2eHarness();
+      11 |     await resetDatabase(harness.prisma);
+      12 |   });
+
+      at Object.&lt;anonymous&gt; (test/e2e/admin-registry.e2e-spec.ts:9:124)
+
+  ● Admin registry acceptance › restricts transaction investigation and redacts payment secrets without ledger mutation
+
+    Use the disposable admin E2E runner.
+
+       7 |   beforeEach(async () =&gt; {
+       8 |     const target = new URL(process.env.DATABASE_URL ?? &#39;&#39;);
+    &gt;  9 |     if (process.env.NODE_ENV !== &#39;test&#39; || !/^\/rental_admin_accounts_test_\d+_[a-f0-9]{12}$/.test(target.pathname)) throw new Error(&#39;Use the disposable admin E2E runner.&#39;);
+         |                                                                                                                            ^
+      10 |     harness = await createE2eHarness();
+      11 |     await resetDatabase(harness.prisma);
+      12 |   });
+
+      at Object.&lt;anonymous&gt; (test/e2e/admin-registry.e2e-spec.ts:9:124)
+
+  ● Admin registry acceptance › serializes concurrent inventory growth against assigned quotas
+
+    Use the disposable admin E2E runner.
+
+       7 |   beforeEach(async () =&gt; {
+       8 |     const target = new URL(process.env.DATABASE_URL ?? &#39;&#39;);
+    &gt;  9 |     if (process.env.NODE_ENV !== &#39;test&#39; || !/^\/rental_admin_accounts_test_\d+_[a-f0-9]{12}$/.test(target.pathname)) throw new Error(&#39;Use the disposable admin E2E runner.&#39;);
+         |                                                                                                                            ^
+      10 |     harness = await createE2eHarness();
+      11 |     await resetDatabase(harness.prisma);
+      12 |   });
+
+      at Object.&lt;anonymous&gt; (test/e2e/admin-registry.e2e-spec.ts:9:124)
+
+
+Test Suites: 13 failed, 23 passed, 36 total
+Tests:       107 failed, 162 passed, 269 total
+Snapshots:   0 total
+Time:        50.903 s, estimated 57 s
+Ran all test suites.
+
+    at ChildProcess.&lt;anonymous&gt; (file:///Users/hoang/Rental_room_management/test/system_demo/system_demo.mjs:136:44)
+    at ChildProcess.emit (node:events:508:28)
+    at maybeClose (node:internal/child_process:1101:16)
+    at ChildProcess._handle.onexit (node:internal/child_process:305:5)</pre></td></tr><tr><td>regression:api:admin-inventory.e2e-spec.ts</td><td>regression</td><td class="failed">failed</td><td><pre>Error: npm failed (1)
+billing production runner.
+
+      35 |   };
+      36 |   beforeAll(async () =&gt; {
+    &gt; 37 |     if (process.env.NODE_ENV !== &#39;test&#39; || !/^rental_billing_test_\d+_[a-f0-9]+$/.test(new URL(process.env.DATABASE_URL!).pathname.slice(1))) throw new Error(&#39;Use the disposable billing production runner.&#39;);
+         |                                                                                                                                                     ^
+      38 |   });
+      39 |   beforeEach(async () =&gt; {
+      40 |     harness = await createE2eHarness();
+
+      at Object.&lt;anonymous&gt; (test/e2e/billing-production.e2e-spec.ts:37:149)
+
+  ● Production billing ledger (disposable database) › links exactly one repair expense when completion is retried concurrently
+
+    Use the disposable billing production runner.
+
+      35 |   };
+      36 |   beforeAll(async () =&gt; {
+    &gt; 37 |     if (process.env.NODE_ENV !== &#39;test&#39; || !/^rental_billing_test_\d+_[a-f0-9]+$/.test(new URL(process.env.DATABASE_URL!).pathname.slice(1))) throw new Error(&#39;Use the disposable billing production runner.&#39;);
+         |                                                                                                                                                     ^
+      38 |   });
+      39 |   beforeEach(async () =&gt; {
+      40 |     harness = await createE2eHarness();
+
+      at Object.&lt;anonymous&gt; (test/e2e/billing-production.e2e-spec.ts:37:149)
+
+  ● Production billing ledger (disposable database) › passes the release readiness gate with the actual migrated columns and immutable/SLA triggers
+
+    Use the disposable billing production runner.
+
+      35 |   };
+      36 |   beforeAll(async () =&gt; {
+    &gt; 37 |     if (process.env.NODE_ENV !== &#39;test&#39; || !/^rental_billing_test_\d+_[a-f0-9]+$/.test(new URL(process.env.DATABASE_URL!).pathname.slice(1))) throw new Error(&#39;Use the disposable billing production runner.&#39;);
+         |                                                                                                                                                     ^
+      38 |   });
+      39 |   beforeEach(async () =&gt; {
+      40 |     harness = await createE2eHarness();
+
+      at Object.&lt;anonymous&gt; (test/e2e/billing-production.e2e-spec.ts:37:149)
+
+PASS test/e2e/admin-inventory.e2e-spec.ts
+[Nest] 264  - 10/30/2026, 7:45:24 AM   ERROR [ApiErrorFilter] {&quot;event&quot;:&quot;request_failed&quot;,&quot;requestId&quot;:&quot;f5dabad4-0550-4135-b63f-c9d7161c4295&quot;,&quot;method&quot;:&quot;POST&quot;,&quot;route&quot;:&quot;/api/v1/admin/accounts/:id/suspend&quot;,&quot;status&quot;:500,&quot;code&quot;:&quot;INTERNAL_SERVER_ERROR&quot;}
+[Nest] 264  - 10/30/2026, 7:45:24 AM   ERROR [ApiErrorFilter] {&quot;event&quot;:&quot;request_failed&quot;,&quot;requestId&quot;:&quot;dce1dc5f-a2a5-40bb-9123-47f41553c260&quot;,&quot;method&quot;:&quot;POST&quot;,&quot;route&quot;:&quot;/api/v1/admin/accounts/:id/revoke-sessions&quot;,&quot;status&quot;:500,&quot;code&quot;:&quot;INTERNAL_SERVER_ERROR&quot;}
+[Nest] 264  - 10/30/2026, 7:45:24 AM   ERROR [ApiErrorFilter] {&quot;event&quot;:&quot;request_failed&quot;,&quot;requestId&quot;:&quot;1f3b92cd-24c4-4ef7-ad7c-b73e33409f7a&quot;,&quot;method&quot;:&quot;POST&quot;,&quot;route&quot;:&quot;/api/v1/admin/accounts/:id/reveal&quot;,&quot;status&quot;:500,&quot;code&quot;:&quot;INTERNAL_SERVER_ERROR&quot;}
+[Nest] 264  - 10/30/2026, 7:45:24 AM   ERROR [ApiErrorFilter] {&quot;event&quot;:&quot;request_failed&quot;,&quot;requestId&quot;:&quot;4082efd0-4bda-4f7d-9646-c8ecab1a2317&quot;,&quot;method&quot;:&quot;POST&quot;,&quot;route&quot;:&quot;/api/v1/admin/accounts/:id/reset-password&quot;,&quot;status&quot;:503,&quot;code&quot;:&quot;INTERNAL_SERVER_ERROR&quot;}
+[Nest] 264  - 10/30/2026, 7:45:24 AM   ERROR [ApiErrorFilter] {&quot;event&quot;:&quot;request_failed&quot;,&quot;requestId&quot;:&quot;d38f4b06-fb18-4b0a-aa01-7b939593eec3&quot;,&quot;method&quot;:&quot;POST&quot;,&quot;route&quot;:&quot;/api/v1/admin/account-invites&quot;,&quot;status&quot;:503,&quot;code&quot;:&quot;INTERNAL_SERVER_ERROR&quot;}
+PASS test/e2e/admin-accounts.e2e-spec.ts
+PASS test/e2e/admin-registry.e2e-spec.ts
+FAIL test/e2e/invoice-tariffs.e2e-spec.ts
+  ● Invoice lines and service tariffs (disposable database) › stores atomic line snapshots and never reprices issued invoices
+
+    Use scripts/run-invoice-tariffs-e2e.mjs with its disposable database.
+
+      32 |     const name = new URL(process.env.DATABASE_URL!).pathname.slice(1);
+      33 |     if (process.env.NODE_ENV !== &#39;test&#39; || !/^rental_(invoice|billing)_test_\d+_[a-f0-9]+$/.test(name)) {
+    &gt; 34 |       throw new Error(&#39;Use scripts/run-invoice-tariffs-e2e.mjs with its disposable database.&#39;);
+         |             ^
+      35 |     }
+      36 |   });
+      37 |   beforeEach(async () =&gt; {
+
+      at Object.&lt;anonymous&gt; (test/e2e/invoice-tariffs.e2e-spec.ts:34:13)
+
+  ● Invoice lines and service tariffs (disposable database) › uses the same effective tariffs in preflight, bulk and single creation, including retries
+
+    Use scripts/run-invoice-tariffs-e2e.mjs with its disposable database.
+
+      32 |     const name = new URL(process.env.DATABASE_URL!).pathname.slice(1);
+      33 |     if (process.env.NODE_ENV !== &#39;test&#39; || !/^rental_(invoice|billing)_test_\d+_[a-f0-9]+$/.test(name)) {
+    &gt; 34 |       throw new Error(&#39;Use scripts/run-invoice-tariffs-e2e.mjs with its disposable database.&#39;);
+         |             ^
+      35 |     }
+      36 |   });
+      37 |   beforeEach(async () =&gt; {
+
+      at Object.&lt;anonymous&gt; (test/e2e/invoice-tariffs.e2e-spec.ts:34:13)
+
+  ● Invoice lines and service tariffs (disposable database) › schedules fee retirement without deleting historical charges
+
+    Use scripts/run-invoice-tariffs-e2e.mjs with its disposable database.
+
+      32 |     const name = new URL(process.env.DATABASE_URL!).pathname.slice(1);
+      33 |     if (process.env.NODE_ENV !== &#39;test&#39; || !/^rental_(invoice|billing)_test_\d+_[a-f0-9]+$/.test(name)) {
+    &gt; 34 |       throw new Error(&#39;Use scripts/run-invoice-tariffs-e2e.mjs with its disposable database.&#39;);
+         |             ^
+      35 |     }
+      36 |   });
+      37 |   beforeEach(async () =&gt; {
+
+      at Object.&lt;anonymous&gt; (test/e2e/invoice-tariffs.e2e-spec.ts:34:13)
+
+  ● Invoice lines and service tariffs (disposable database) › rejects retroactive, duplicate, stale, blank and already-invoiced changes
+
+    Use scripts/run-invoice-tariffs-e2e.mjs with its disposable database.
+
+      32 |     const name = new URL(process.env.DATABASE_URL!).pathname.slice(1);
+      33 |     if (process.env.NODE_ENV !== &#39;test&#39; || !/^rental_(invoice|billing)_test_\d+_[a-f0-9]+$/.test(name)) {
+    &gt; 34 |       throw new Error(&#39;Use scripts/run-invoice-tariffs-e2e.mjs with its disposable database.&#39;);
+         |             ^
+      35 |     }
+      36 |   });
+      37 |   beforeEach(async () =&gt; {
+
+      at Object.&lt;anonymous&gt; (test/e2e/invoice-tariffs.e2e-spec.ts:34:13)
+
+  ● Invoice lines and service tariffs (disposable database) › serializes concurrent tariff edits and rejects stale versions
+
+    Use scripts/run-invoice-tariffs-e2e.mjs with its disposable database.
+
+      32 |     const name = new URL(process.env.DATABASE_URL!).pathname.slice(1);
+      33 |     if (process.env.NODE_ENV !== &#39;test&#39; || !/^rental_(invoice|billing)_test_\d+_[a-f0-9]+$/.test(name)) {
+    &gt; 34 |       throw new Error(&#39;Use scripts/run-invoice-tariffs-e2e.mjs with its disposable database.&#39;);
+         |             ^
+      35 |     }
+      36 |   });
+      37 |   beforeEach(async () =&gt; {
+
+      at Object.&lt;anonymous&gt; (test/e2e/invoice-tariffs.e2e-spec.ts:34:13)
+
+  ● Invoice lines and service tariffs (disposable database) › blocks legacy tariff creation and version changes across a locked period
+
+    Use scripts/run-invoice-tariffs-e2e.mjs with its disposable database.
+
+      32 |     const name = new URL(process.env.DATABASE_URL!).pathname.slice(1);
+      33 |     if (process.env.NODE_ENV !== &#39;test&#39; || !/^rental_(invoice|billing)_test_\d+_[a-f0-9]+$/.test(name)) {
+    &gt; 34 |       throw new Error(&#39;Use scripts/run-invoice-tariffs-e2e.mjs with its disposable database.&#39;);
+         |             ^
+      35 |     }
+      36 |   });
+      37 |   beforeEach(async () =&gt; {
+
+      at Object.&lt;anonymous&gt; (test/e2e/invoice-tariffs.e2e-spec.ts:34:13)
+
+  ● Invoice lines and service tariffs (disposable database) › enforces ownership and exposes identical line snapshots to the tenant
+
+    Use scripts/run-invoice-tariffs-e2e.mjs with its disposable database.
+
+      32 |     const name = new URL(process.env.DATABASE_URL!).pathname.slice(1);
+      33 |     if (process.env.NODE_ENV !== &#39;test&#39; || !/^rental_(invoice|billing)_test_\d+_[a-f0-9]+$/.test(name)) {
+    &gt; 34 |       throw new Error(&#39;Use scripts/run-invoice-tariffs-e2e.mjs with its disposable database.&#39;);
+         |             ^
+      35 |     }
+      36 |   });
+      37 |   beforeEach(async () =&gt; {
+
+      at Object.&lt;anonymous&gt; (test/e2e/invoice-tariffs.e2e-spec.ts:34:13)
+
+  ● Invoice lines and service tariffs (disposable database) › rejects database-level mutations of published snapshots
+
+    Use scripts/run-invoice-tariffs-e2e.mjs with its disposable database.
+
+      32 |     const name = new URL(process.env.DATABASE_URL!).pathname.slice(1);
+      33 |     if (process.env.NODE_ENV !== &#39;test&#39; || !/^rental_(invoice|billing)_test_\d+_[a-f0-9]+$/.test(name)) {
+    &gt; 34 |       throw new Error(&#39;Use scripts/run-invoice-tariffs-e2e.mjs with its disposable database.&#39;);
+         |             ^
+      35 |     }
+      36 |   });
+      37 |   beforeEach(async () =&gt; {
+
+      at Object.&lt;anonymous&gt; (test/e2e/invoice-tariffs.e2e-spec.ts:34:13)
+
+PASS test/e2e/manual-transfers.e2e-spec.ts
+FAIL test/e2e/lease-settlement.e2e-spec.ts
+  ● Move-out settlement E2E (isolated database only) › settles a lease, starts turnover, and records the actual refund exactly once
+
+    Use scripts/run-settlement-e2e.mjs with its disposable database.
+
+      19 |     const name = decodeURIComponent(new URL(process.env.DATABASE_URL!).pathname.slice(1));
+      20 |     if (process.env.NODE_ENV !== &#39;test&#39; || !/^rental_settlement_test_\d+_[a-f0-9]+$/.test(name)) {
+    &gt; 21 |       throw new Error(&#39;Use scripts/run-settlement-e2e.mjs with its disposable database.&#39;);
+         |             ^
+      22 |     }
+      23 |   });
+      24 |
+
+      at Object.&lt;anonymous&gt; (test/e2e/lease-settlement.e2e-spec.ts:21:13)
+
+  ● Move-out settlement E2E (isolated database only) › rejects a stale preview without persisting any settlement or turnover
+
+    Use scripts/run-settlement-e2e.mjs with its disposable database.
+
+      19 |     const name = decodeURIComponent(new URL(process.env.DATABASE_URL!).pathname.slice(1));
+      20 |     if (process.env.NODE_ENV !== &#39;test&#39; || !/^rental_settlement_test_\d+_[a-f0-9]+$/.test(name)) {
+    &gt; 21 |       throw new Error(&#39;Use scripts/run-settlement-e2e.mjs with its disposable database.&#39;);
+         |             ^
+      22 |     }
+      23 |   });
+      24 |
+
+      at Object.&lt;anonymous&gt; (test/e2e/lease-settlement.e2e-spec.ts:21:13)
+
+  ● Move-out settlement E2E (isolated database only) › prevents post-settlement edits, renewals and manual deposit changes
+
+    Use scripts/run-settlement-e2e.mjs with its disposable database.
+
+      19 |     const name = decodeURIComponent(new URL(process.env.DATABASE_URL!).pathname.slice(1));
+      20 |     if (process.env.NODE_ENV !== &#39;test&#39; || !/^rental_settlement_test_\d+_[a-f0-9]+$/.test(name)) {
+    &gt; 21 |       throw new Error(&#39;Use scripts/run-settlement-e2e.mjs with its disposable database.&#39;);
+         |             ^
+      22 |     }
+      23 |   });
+      24 |
+
+      at Object.&lt;anonymous&gt; (test/e2e/lease-settlement.e2e-spec.ts:21:13)
+
+  ● Move-out settlement E2E (isolated database only) › does not charge rent already present on a non-demo invoice
+
+    Use scripts/run-settlement-e2e.mjs with its disposable database.
+
+      19 |     const name = decodeURIComponent(new URL(process.env.DATABASE_URL!).pathname.slice(1));
+      20 |     if (process.env.NODE_ENV !== &#39;test&#39; || !/^rental_settlement_test_\d+_[a-f0-9]+$/.test(name)) {
+    &gt; 21 |       throw new Error(&#39;Use scripts/run-settlement-e2e.mjs with its disposable database.&#39;);
+         |             ^
+      22 |     }
+      23 |   });
+      24 |
+
+      at Object.&lt;anonymous&gt; (test/e2e/lease-settlement.e2e-spec.ts:21:13)
+
+  ● Move-out settlement E2E (isolated database only) › rolls back settlement and deposit deductions if turnover creation fails
+
+    Use scripts/run-settlement-e2e.mjs with its disposable database.
+
+      19 |     const name = decodeURIComponent(new URL(process.env.DATABASE_URL!).pathname.slice(1));
+      20 |     if (process.env.NODE_ENV !== &#39;test&#39; || !/^rental_settlement_test_\d+_[a-f0-9]+$/.test(name)) {
+    &gt; 21 |       throw new Error(&#39;Use scripts/run-settlement-e2e.mjs with its disposable database.&#39;);
+         |             ^
+      22 |     }
+      23 |   });
+      24 |
+
+      at Object.&lt;anonymous&gt; (test/e2e/lease-settlement.e2e-spec.ts:21:13)
+
+  ● Move-out settlement E2E (isolated database only) › enforces ownership and DTO validation over HTTP
+
+    Use scripts/run-settlement-e2e.mjs with its disposable database.
+
+      19 |     const name = decodeURIComponent(new URL(process.env.DATABASE_URL!).pathname.slice(1));
+      20 |     if (process.env.NODE_ENV !== &#39;test&#39; || !/^rental_settlement_test_\d+_[a-f0-9]+$/.test(name)) {
+    &gt; 21 |       throw new Error(&#39;Use scripts/run-settlement-e2e.mjs with its disposable database.&#39;);
+         |             ^
+      22 |     }
+      23 |   });
+      24 |
+
+      at Object.&lt;anonymous&gt; (test/e2e/lease-settlement.e2e-spec.ts:21:13)
+
+  ● Move-out settlement E2E (isolated database only) › cannot create an invoice from stale lease state during settlement
+
+    Use scripts/run-settlement-e2e.mjs with its disposable database.
+
+      19 |     const name = decodeURIComponent(new URL(process.env.DATABASE_URL!).pathname.slice(1));
+      20 |     if (process.env.NODE_ENV !== &#39;test&#39; || !/^rental_settlement_test_\d+_[a-f0-9]+$/.test(name)) {
+    &gt; 21 |       throw new Error(&#39;Use scripts/run-settlement-e2e.mjs with its disposable database.&#39;);
+         |             ^
+      22 |     }
+      23 |   });
+      24 |
+
+      at Object.&lt;anonymous&gt; (test/e2e/lease-settlement.e2e-spec.ts:21:13)
+
+  ● Move-out settlement E2E (isolated database only) › cannot double-record concurrent refunds
+
+    Use scripts/run-settlement-e2e.mjs with its disposable database.
+
+      19 |     const name = decodeURIComponent(new URL(process.env.DATABASE_URL!).pathname.slice(1));
+      20 |     if (process.env.NODE_ENV !== &#39;test&#39; || !/^rental_settlement_test_\d+_[a-f0-9]+$/.test(name)) {
+    &gt; 21 |       throw new Error(&#39;Use scripts/run-settlement-e2e.mjs with its disposable database.&#39;);
+         |             ^
+      22 |     }
+      23 |   });
+      24 |
+
+      at Object.&lt;anonymous&gt; (test/e2e/lease-settlement.e2e-spec.ts:21:13)
+
+PASS test/e2e/housing.e2e-spec.ts (7.402 s)
+[Nest] 264  - 10/30/2026, 7:45:40 AM   ERROR [ApiErrorFilter] {&quot;event&quot;:&quot;request_failed&quot;,&quot;requestId&quot;:&quot;a0538583-82ea-4279-8e88-90f9bbe53b9b&quot;,&quot;method&quot;:&quot;POST&quot;,&quot;route&quot;:&quot;/api/v1/support/tickets&quot;,&quot;status&quot;:503,&quot;code&quot;:&quot;INTERNAL_SERVER_ERROR&quot;}
+PASS test/e2e/admin-sprints.e2e-spec.ts
+PASS test/e2e/admin-operations-release.e2e-spec.ts
+PASS test/e2e/admin-console.e2e-spec.ts
+PASS test/e2e/reviews.e2e-spec.ts
+PASS test/e2e/listings.e2e-spec.ts
+PASS test/e2e/explore-preview-images.e2e-spec.ts
+PASS test/e2e/admin-completion.e2e-spec.ts
+PASS test/e2e/admin-workspace.e2e-spec.ts
+PASS test/e2e/lease-billing-dashboard.e2e-spec.ts
+PASS test/e2e/admin-roadmap-inboxes.e2e-spec.ts
+PASS test/e2e/admin.e2e-spec.ts
+PASS test/e2e/maintenance-audit.e2e-spec.ts
+[Nest] 264  - 10/30/2026, 7:46:05 AM   ERROR [ApiErrorFilter] {&quot;event&quot;:&quot;request_failed&quot;,&quot;requestId&quot;:&quot;cb429150-8973-4926-accd-f894f44eef08&quot;,&quot;method&quot;:&quot;POST&quot;,&quot;route&quot;:&quot;/api/v1/tenant/invoices/:id/payment-link&quot;,&quot;status&quot;:503,&quot;code&quot;:&quot;INTERNAL_SERVER_ERROR&quot;}
+[Nest] 264  - 10/30/2026, 7:46:05 AM   ERROR [ApiErrorFilter] {&quot;event&quot;:&quot;request_failed&quot;,&quot;requestId&quot;:&quot;dfdae24f-3da0-49ff-bb3a-5f1a696fe05f&quot;,&quot;method&quot;:&quot;POST&quot;,&quot;route&quot;:&quot;/api/v1/tenant/invoices/:id/payment-link&quot;,&quot;status&quot;:503,&quot;code&quot;:&quot;INTERNAL_SERVER_ERROR&quot;}
+PASS test/e2e/demo-card-payments.e2e-spec.ts
+PASS test/e2e/resource-lifecycle.e2e-spec.ts
+PASS test/e2e/authorization-ownership.e2e-spec.ts
+PASS test/e2e/tenant-portal-priority.e2e-spec.ts
+PASS test/e2e/auth.e2e-spec.ts
+PASS test/e2e/p1-operations.e2e-spec.ts
+PASS test/e2e/admin-search.e2e-spec.ts
+
+    at ChildProcess.&lt;anonymous&gt; (file:///Users/hoang/Rental_room_management/test/system_demo/system_demo.mjs:136:44)
+    at ChildProcess.emit (node:events:508:28)
+    at maybeClose (node:internal/child_process:1101:16)
+    at Socket.&lt;anonymous&gt; (node:internal/child_process:457:11)
+    at Socket.emit (node:events:508:28)
+    at Pipe.&lt;anonymous&gt; (node:net:346:12)</pre></td></tr><tr><td>interrupted</td><td>infrastructure</td><td class="failed">failed</td><td><pre>Stopped by SIGINT/SIGTERM.</pre></td></tr></table>
+    <h2>Phạm vi cần bổ sung/kiểm tra thủ công</h2><pre>[]</pre>
+    <h2>Danh mục route từ mã nguồn</h2><pre>[
+  {
+    &quot;name&quot;: &quot;housingFavoritesRoute&quot;,
+    &quot;path&quot;: &quot;/housing/favorites&quot;,
+    &quot;role&quot;: &quot;public&quot;,
+    &quot;level&quot;: &quot;screen-only; business assertions listed separately&quot;
+  },
+  {
+    &quot;name&quot;: &quot;housingViewingsRoute&quot;,
+    &quot;path&quot;: &quot;/housing/viewings&quot;,
+    &quot;role&quot;: &quot;public&quot;,
+    &quot;level&quot;: &quot;screen-only; business assertions listed separately&quot;
+  },
+  {
+    &quot;name&quot;: &quot;housingNoticesRoute&quot;,
+    &quot;path&quot;: &quot;/housing/notifications&quot;,
+    &quot;role&quot;: &quot;public&quot;,
+    &quot;level&quot;: &quot;screen-only; business assertions listed separately&quot;
+  },
+  {
+    &quot;name&quot;: &quot;rentalPilotRoute&quot;,
+    &quot;path&quot;: &quot;/housing/pilot&quot;,
+    &quot;role&quot;: &quot;public&quot;,
+    &quot;level&quot;: &quot;screen-only; business assertions listed separately&quot;
+  },
+  {
+    &quot;name&quot;: &quot;pilotFeedbackRoute&quot;,
+    &quot;path&quot;: &quot;/admin/pilot-feedback&quot;,
+    &quot;role&quot;: &quot;admin&quot;,
+    &quot;level&quot;: &quot;screen-only; business assertions listed separately&quot;
+  },
+  {
+    &quot;name&quot;: &quot;exploreRoute&quot;,
+    &quot;path&quot;: &quot;/explore&quot;,
+    &quot;role&quot;: &quot;public&quot;,
+    &quot;level&quot;: &quot;screen-only; business assertions listed separately&quot;
+  },
+  {
+    &quot;name&quot;: &quot;tenantPortalRoute&quot;,
+    &quot;path&quot;: &quot;/tenant&quot;,
+    &quot;role&quot;: &quot;tenant&quot;,
+    &quot;level&quot;: &quot;screen-only; business assertions listed separately&quot;
+  },
+  {
+    &quot;name&quot;: &quot;seekerAccountRoute&quot;,
+    &quot;path&quot;: &quot;/explore/account&quot;,
+    &quot;role&quot;: &quot;public&quot;,
+    &quot;level&quot;: &quot;screen-only; business assertions listed separately&quot;
+  },
+  {
+    &quot;name&quot;: &quot;publicListingRoute&quot;,
+    &quot;path&quot;: &quot;/explore/listings/:id&quot;,
+    &quot;role&quot;: &quot;public&quot;,
+    &quot;level&quot;: &quot;screen-only; business assertions listed separately&quot;
+  },
+  {
+    &quot;name&quot;: &quot;landlordListingsRoute&quot;,
+    &quot;path&quot;: &quot;/listings&quot;,
+    &quot;role&quot;: &quot;landlord&quot;,
+    &quot;level&quot;: &quot;screen-only; business assertions listed separately&quot;
+  },
+  {
+    &quot;name&quot;: &quot;adminListingsRoute&quot;,
+    &quot;path&quot;: &quot;/admin/listings&quot;,
+    &quot;role&quot;: &quot;admin&quot;,
+    &quot;level&quot;: &quot;screen-only; business assertions listed separately&quot;
+  },
+  {
+    &quot;name&quot;: &quot;landlordReviewsRoute&quot;,
+    &quot;path&quot;: &quot;/listings/reviews&quot;,
+    &quot;role&quot;: &quot;landlord&quot;,
+    &quot;level&quot;: &quot;screen-only; business assertions listed separately&quot;
+  },
+  {
+    &quot;name&quot;: &quot;adminReviewsRoute&quot;,
+    &quot;path&quot;: &quot;/admin/room-reviews&quot;,
+    &quot;role&quot;: &quot;admin&quot;,
+    &quot;level&quot;: &quot;screen-only; business assertions listed separately&quot;
+  },
+  {
+    &quot;name&quot;: &quot;splashRoute&quot;,
+    &quot;path&quot;: &quot;/splash&quot;,
+    &quot;role&quot;: &quot;public&quot;,
+    &quot;level&quot;: &quot;screen-only; business assertions listed separately&quot;
+  },
+  {
+    &quot;name&quot;: &quot;onboardingRoute&quot;,
+    &quot;path&quot;: &quot;/onboarding&quot;,
+    &quot;role&quot;: &quot;public&quot;,
+    &quot;level&quot;: &quot;screen-only; business assertions listed separately&quot;
+  },
+  {
+    &quot;name&quot;: &quot;loginRoute&quot;,
+    &quot;path&quot;: &quot;/auth/login&quot;,
+    &quot;role&quot;: &quot;public&quot;,
+    &quot;level&quot;: &quot;screen-only; business assertions listed separately&quot;
+  },
+  {
+    &quot;name&quot;: &quot;registerRoute&quot;,
+    &quot;path&quot;: &quot;/auth/register&quot;,
+    &quot;role&quot;: &quot;public&quot;,
+    &quot;level&quot;: &quot;screen-only; business assertions listed separately&quot;
+  },
+  {
+    &quot;name&quot;: &quot;tenantInviteRoute&quot;,
+    &quot;path&quot;: &quot;/tenant/activate&quot;,
+    &quot;role&quot;: &quot;tenant&quot;,
+    &quot;level&quot;: &quot;screen-only; business assertions listed separately&quot;
+  },
+  {
+    &quot;name&quot;: &quot;staffInviteRoute&quot;,
+    &quot;path&quot;: &quot;/staff/activate&quot;,
+    &quot;role&quot;: &quot;public&quot;,
+    &quot;level&quot;: &quot;screen-only; business assertions listed separately&quot;
+  },
+  {
+    &quot;name&quot;: &quot;dashboardRoute&quot;,
+    &quot;path&quot;: &quot;/dashboard&quot;,
+    &quot;role&quot;: &quot;landlord&quot;,
+    &quot;level&quot;: &quot;screen-only; business assertions listed separately&quot;
+  },
+  {
+    &quot;name&quot;: &quot;chatbotRoute&quot;,
+    &quot;path&quot;: &quot;/chatbot&quot;,
+    &quot;role&quot;: &quot;landlord&quot;,
+    &quot;level&quot;: &quot;screen-only; business assertions listed separately&quot;
+  },
+  {
+    &quot;name&quot;: &quot;settingsRoute&quot;,
+    &quot;path&quot;: &quot;/settings&quot;,
+    &quot;role&quot;: &quot;landlord&quot;,
+    &quot;level&quot;: &quot;screen-only; business assertions listed separately&quot;
+  },
+  {
+    &quot;name&quot;: &quot;settingsPasswordRoute&quot;,
+    &quot;path&quot;: &quot;/settings/password&quot;,
+    &quot;role&quot;: &quot;landlord&quot;,
+    &quot;level&quot;: &quot;screen-only; business assertions listed separately&quot;
+  },
+  {
+    &quot;name&quot;: &quot;fakeZaloRoute&quot;,
+    &quot;path&quot;: &quot;/settings/fake-zalo&quot;,
+    &quot;role&quot;: &quot;landlord&quot;,
+    &quot;level&quot;: &quot;screen-only; business assertions listed separately&quot;
+  },
+  {
+    &quot;name&quot;: &quot;tenantPasswordRoute&quot;,
+    &quot;path&quot;: &quot;/tenant/password&quot;,
+    &quot;role&quot;: &quot;tenant&quot;,
+    &quot;level&quot;: &quot;screen-only; business assertions listed separately&quot;
+  },
+  {
+    &quot;name&quot;: &quot;tenantZaloRoute&quot;,
+    &quot;path&quot;: &quot;/tenant/zalo&quot;,
+    &quot;role&quot;: &quot;tenant&quot;,
+    &quot;level&quot;: &quot;screen-only; business assertions listed separately&quot;
+  },
+  {
+    &quot;name&quot;: &quot;tenantNotificationsRoute&quot;,
+    &quot;path&quot;: &quot;/tenant/notifications&quot;,
+    &quot;role&quot;: &quot;tenant&quot;,
+    &quot;level&quot;: &quot;screen-only; business assertions listed separately&quot;
+  },
+  {
+    &quot;name&quot;: &quot;tenantLeasesRoute&quot;,
+    &quot;path&quot;: &quot;/tenant/leases&quot;,
+    &quot;role&quot;: &quot;tenant&quot;,
+    &quot;level&quot;: &quot;screen-only; business assertions listed separately&quot;
+  },
+  {
+    &quot;name&quot;: &quot;tenantInvoicesRoute&quot;,
+    &quot;path&quot;: &quot;/tenant/invoices&quot;,
+    &quot;role&quot;: &quot;tenant&quot;,
+    &quot;level&quot;: &quot;screen-only; business assertions listed separately&quot;
+  },
+  {
+    &quot;name&quot;: &quot;tenantInvoiceDetailRoute&quot;,
+    &quot;path&quot;: &quot;/tenant/invoices/:id&quot;,
+    &quot;role&quot;: &quot;tenant&quot;,
+    &quot;level&quot;: &quot;screen-only; business assertions listed separately&quot;
+  },
+  {
+    &quot;name&quot;: &quot;tenantMaintenanceRoute&quot;,
+    &quot;path&quot;: &quot;/tenant/maintenance&quot;,
+    &quot;role&quot;: &quot;tenant&quot;,
+    &quot;level&quot;: &quot;screen-only; business assertions listed separately&quot;
+  },
+  {
+    &quot;name&quot;: &quot;accountAccessRoute&quot;,
+    &quot;path&quot;: &quot;/account/activate&quot;,
+    &quot;role&quot;: &quot;public&quot;,
+    &quot;level&quot;: &quot;screen-only; business assertions listed separately&quot;
+  },
+  {
+    &quot;name&quot;: &quot;supportCenterRoute&quot;,
+    &quot;path&quot;: &quot;/support-center&quot;,
+    &quot;role&quot;: &quot;landlord&quot;,
+    &quot;level&quot;: &quot;screen-only; business assertions listed separately&quot;
+  },
+  {
+    &quot;name&quot;: &quot;adminRoute&quot;,
+    &quot;path&quot;: &quot;/admin&quot;,
+    &quot;role&quot;: &quot;admin&quot;,
+    &quot;level&quot;: &quot;screen-only; business assertions listed separately&quot;
+  },
+  {
+    &quot;name&quot;: &quot;adminVerificationsRoute&quot;,
+    &quot;path&quot;: &quot;/admin/landlord-verifications&quot;,
+    &quot;role&quot;: &quot;admin&quot;,
+    &quot;level&quot;: &quot;screen-only; business assertions listed separately&quot;
+  },
+  {
+    &quot;name&quot;: &quot;adminPropertyReviewsRoute&quot;,
+    &quot;path&quot;: &quot;/admin/property-reviews&quot;,
+    &quot;role&quot;: &quot;admin&quot;,
+    &quot;level&quot;: &quot;screen-only; business assertions listed separately&quot;
+  },
+  {
+    &quot;name&quot;: &quot;adminPlansRoute&quot;,
+    &quot;path&quot;: &quot;/admin/service-plans&quot;,
+    &quot;role&quot;: &quot;admin&quot;,
+    &quot;level&quot;: &quot;screen-only; business assertions listed separately&quot;
+  },
+  {
+    &quot;name&quot;: &quot;adminSubscriptionsRoute&quot;,
+    &quot;path&quot;: &quot;/admin/subscriptions&quot;,
+    &quot;role&quot;: &quot;admin&quot;,
+    &quot;level&quot;: &quot;screen-only; business assertions listed separately&quot;
+  },
+  {
+    &quot;name&quot;: &quot;adminAccountsRoute&quot;,
+    &quot;path&quot;: &quot;/admin/accounts&quot;,
+    &quot;role&quot;: &quot;admin&quot;,
+    &quot;level&quot;: &quot;screen-only; business assertions listed separately&quot;
+  },
+  {
+    &quot;name&quot;: &quot;adminAuditLogsRoute&quot;,
+    &quot;path&quot;: &quot;/admin/audit-logs&quot;,
+    &quot;role&quot;: &quot;admin&quot;,
+    &quot;level&quot;: &quot;screen-only; business assertions listed separately&quot;
+  },
+  {
+    &quot;name&quot;: &quot;adminOperationsRoute&quot;,
+    &quot;path&quot;: &quot;/admin/operations&quot;,
+    &quot;role&quot;: &quot;admin&quot;,
+    &quot;level&quot;: &quot;screen-only; business assertions listed separately&quot;
+  },
+  {
+    &quot;name&quot;: &quot;adminModerationRoute&quot;,
+    &quot;path&quot;: &quot;/admin/moderation&quot;,
+    &quot;role&quot;: &quot;admin&quot;,
+    &quot;level&quot;: &quot;screen-only; business assertions listed separately&quot;
+  },
+  {
+    &quot;name&quot;: &quot;adminSecurityRoute&quot;,
+    &quot;path&quot;: &quot;/admin/security&quot;,
+    &quot;role&quot;: &quot;admin&quot;,
+    &quot;level&quot;: &quot;screen-only; business assertions listed separately&quot;
+  },
+  {
+    &quot;name&quot;: &quot;adminSessionsRoute&quot;,
+    &quot;path&quot;: &quot;/admin/sessions&quot;,
+    &quot;role&quot;: &quot;admin&quot;,
+    &quot;level&quot;: &quot;screen-only; business assertions listed separately&quot;
+  },
+  {
+    &quot;name&quot;: &quot;adminSearchRoute&quot;,
+    &quot;path&quot;: &quot;/admin/search&quot;,
+    &quot;role&quot;: &quot;admin&quot;,
+    &quot;level&quot;: &quot;screen-only; business assertions listed separately&quot;
+  },
+  {
+    &quot;name&quot;: &quot;adminPoliciesRoute&quot;,
+    &quot;path&quot;: &quot;/admin/moderation-policies&quot;,
+    &quot;role&quot;: &quot;admin&quot;,
+    &quot;level&quot;: &quot;screen-only; business assertions listed separately&quot;
+  },
+  {
+    &quot;name&quot;: &quot;adminSupportRoute&quot;,
+    &quot;path&quot;: &quot;/admin/support&quot;,
+    &quot;role&quot;: &quot;admin&quot;,
+    &quot;level&quot;: &quot;screen-only; business assertions listed separately&quot;
+  },
+  {
+    &quot;name&quot;: &quot;adminSupportCenterRoute&quot;,
+    &quot;path&quot;: &quot;/admin/support-center&quot;,
+    &quot;role&quot;: &quot;admin&quot;,
+    &quot;level&quot;: &quot;screen-only; business assertions listed separately&quot;
+  },
+  {
+    &quot;name&quot;: &quot;adminTicketsRoute&quot;,
+    &quot;path&quot;: &quot;/admin/tickets&quot;,
+    &quot;role&quot;: &quot;admin&quot;,
+    &quot;level&quot;: &quot;screen-only; business assertions listed separately&quot;
+  },
+  {
+    &quot;name&quot;: &quot;adminModerationV2Route&quot;,
+    &quot;path&quot;: &quot;/admin/moderation-v2&quot;,
+    &quot;role&quot;: &quot;admin&quot;,
+    &quot;level&quot;: &quot;screen-only; business assertions listed separately&quot;
+  },
+  {
+    &quot;name&quot;: &quot;adminNotificationsRoute&quot;,
+    &quot;path&quot;: &quot;/admin/notifications&quot;,
+    &quot;role&quot;: &quot;admin&quot;,
+    &quot;level&quot;: &quot;screen-only; business assertions listed separately&quot;
+  },
+  {
+    &quot;name&quot;: &quot;adminGovernanceRoute&quot;,
+    &quot;path&quot;: &quot;/admin/governance&quot;,
+    &quot;role&quot;: &quot;admin&quot;,
+    &quot;level&quot;: &quot;screen-only; business assertions listed separately&quot;
+  },
+  {
+    &quot;name&quot;: &quot;adminFinanceReconciliationRoute&quot;,
+    &quot;path&quot;: &quot;/admin/finance-reconciliation&quot;,
+    &quot;role&quot;: &quot;admin&quot;,
+    &quot;level&quot;: &quot;screen-only; business assertions listed separately&quot;
+  },
+  {
+    &quot;name&quot;: &quot;adminReportSchedulesRoute&quot;,
+    &quot;path&quot;: &quot;/admin/report-schedules&quot;,
+    &quot;role&quot;: &quot;admin&quot;,
+    &quot;level&quot;: &quot;screen-only; business assertions listed separately&quot;
+  },
+  {
+    &quot;name&quot;: &quot;adminReportsRoute&quot;,
+    &quot;path&quot;: &quot;/admin/reports&quot;,
+    &quot;role&quot;: &quot;admin&quot;,
+    &quot;level&quot;: &quot;screen-only; business assertions listed separately&quot;
+  },
+  {
+    &quot;name&quot;: &quot;adminTeamsRoute&quot;,
+    &quot;path&quot;: &quot;/admin/teams&quot;,
+    &quot;role&quot;: &quot;admin&quot;,
+    &quot;level&quot;: &quot;screen-only; business assertions listed separately&quot;
+  },
+  {
+    &quot;name&quot;: &quot;adminPermissionSimulatorRoute&quot;,
+    &quot;path&quot;: &quot;/admin/permission-simulator&quot;,
+    &quot;role&quot;: &quot;admin&quot;,
+    &quot;level&quot;: &quot;screen-only; business assertions listed separately&quot;
+  },
+  {
+    &quot;name&quot;: &quot;adminAdminsRoute&quot;,
+    &quot;path&quot;: &quot;/admin/admins&quot;,
+    &quot;role&quot;: &quot;admin&quot;,
+    &quot;level&quot;: &quot;screen-only; business assertions listed separately&quot;
+  },
+  {
+    &quot;name&quot;: &quot;adminLandlordsRoute&quot;,
+    &quot;path&quot;: &quot;/admin/landlords&quot;,
+    &quot;role&quot;: &quot;admin&quot;,
+    &quot;level&quot;: &quot;screen-only; business assertions listed separately&quot;
+  },
+  {
+    &quot;name&quot;: &quot;adminLandlordFormRoute&quot;,
+    &quot;path&quot;: &quot;/admin/landlords/form&quot;,
+    &quot;role&quot;: &quot;admin&quot;,
+    &quot;level&quot;: &quot;screen-only; business assertions listed separately&quot;
+  },
+  {
+    &quot;name&quot;: &quot;adminLandlordDetailRoute&quot;,
+    &quot;path&quot;: &quot;/admin/landlords/:id&quot;,
+    &quot;role&quot;: &quot;admin&quot;,
+    &quot;level&quot;: &quot;screen-only; business assertions listed separately&quot;
+  },
+  {
+    &quot;name&quot;: &quot;adminPropertiesRoute&quot;,
+    &quot;path&quot;: &quot;/admin/properties&quot;,
+    &quot;role&quot;: &quot;admin&quot;,
+    &quot;level&quot;: &quot;screen-only; business assertions listed separately&quot;
+  },
+  {
+    &quot;name&quot;: &quot;adminRoomsRoute&quot;,
+    &quot;path&quot;: &quot;/admin/rooms&quot;,
+    &quot;role&quot;: &quot;admin&quot;,
+    &quot;level&quot;: &quot;screen-only; business assertions listed separately&quot;
+  },
+  {
+    &quot;name&quot;: &quot;adminPropertyFormRoute&quot;,
+    &quot;path&quot;: &quot;/admin/properties/form&quot;,
+    &quot;role&quot;: &quot;admin&quot;,
+    &quot;level&quot;: &quot;screen-only; business assertions listed separately&quot;
+  },
+  {
+    &quot;name&quot;: &quot;adminPropertyDetailRoute&quot;,
+    &quot;path&quot;: &quot;/admin/properties/:id&quot;,
+    &quot;role&quot;: &quot;admin&quot;,
+    &quot;level&quot;: &quot;screen-only; business assertions listed separately&quot;
+  },
+  {
+    &quot;name&quot;: &quot;propertiesRoute&quot;,
+    &quot;path&quot;: &quot;/properties&quot;,
+    &quot;role&quot;: &quot;landlord&quot;,
+    &quot;level&quot;: &quot;screen-only; business assertions listed separately&quot;
+  },
+  {
+    &quot;name&quot;: &quot;propertyFormRoute&quot;,
+    &quot;path&quot;: &quot;/properties/form&quot;,
+    &quot;role&quot;: &quot;landlord&quot;,
+    &quot;level&quot;: &quot;screen-only; business assertions listed separately&quot;
+  },
+  {
+    &quot;name&quot;: &quot;roomFormRoute&quot;,
+    &quot;path&quot;: &quot;/rooms/form&quot;,
+    &quot;role&quot;: &quot;landlord&quot;,
+    &quot;level&quot;: &quot;screen-only; business assertions listed separately&quot;
+  },
+  {
+    &quot;name&quot;: &quot;roomDetailRoute&quot;,
+    &quot;path&quot;: &quot;/rooms/:id&quot;,
+    &quot;role&quot;: &quot;landlord&quot;,
+    &quot;level&quot;: &quot;screen-only; business assertions listed separately&quot;
+  },
+  {
+    &quot;name&quot;: &quot;tenantsRoute&quot;,
+    &quot;path&quot;: &quot;/tenants&quot;,
+    &quot;role&quot;: &quot;landlord&quot;,
+    &quot;level&quot;: &quot;screen-only; business assertions listed separately&quot;
+  },
+  {
+    &quot;name&quot;: &quot;tenantFormRoute&quot;,
+    &quot;path&quot;: &quot;/tenants/form&quot;,
+    &quot;role&quot;: &quot;landlord&quot;,
+    &quot;level&quot;: &quot;screen-only; business assertions listed separately&quot;
+  },
+  {
+    &quot;name&quot;: &quot;tenantDetailRoute&quot;,
+    &quot;path&quot;: &quot;/tenants/:id&quot;,
+    &quot;role&quot;: &quot;landlord&quot;,
+    &quot;level&quot;: &quot;screen-only; business assertions listed separately&quot;
+  },
+  {
+    &quot;name&quot;: &quot;leaseFormRoute&quot;,
+    &quot;path&quot;: &quot;/leases/form&quot;,
+    &quot;role&quot;: &quot;landlord&quot;,
+    &quot;level&quot;: &quot;screen-only; business assertions listed separately&quot;
+  },
+  {
+    &quot;name&quot;: &quot;billingRoute&quot;,
+    &quot;path&quot;: &quot;/billing&quot;,
+    &quot;role&quot;: &quot;landlord&quot;,
+    &quot;level&quot;: &quot;screen-only; business assertions listed separately&quot;
+  },
+  {
+    &quot;name&quot;: &quot;bulkBillingRoute&quot;,
+    &quot;path&quot;: &quot;/billing/bulk&quot;,
+    &quot;role&quot;: &quot;landlord&quot;,
+    &quot;level&quot;: &quot;screen-only; business assertions listed separately&quot;
+  },
+  {
+    &quot;name&quot;: &quot;billingFormRoute&quot;,
+    &quot;path&quot;: &quot;/billing/form&quot;,
+    &quot;role&quot;: &quot;landlord&quot;,
+    &quot;level&quot;: &quot;screen-only; business assertions listed separately&quot;
+  },
+  {
+    &quot;name&quot;: &quot;billingTariffsRoute&quot;,
+    &quot;path&quot;: &quot;/billing/tariffs&quot;,
+    &quot;role&quot;: &quot;landlord&quot;,
+    &quot;level&quot;: &quot;screen-only; business assertions listed separately&quot;
+  },
+  {
+    &quot;name&quot;: &quot;billingDetailRoute&quot;,
+    &quot;path&quot;: &quot;/billing/:id&quot;,
+    &quot;role&quot;: &quot;landlord&quot;,
+    &quot;level&quot;: &quot;screen-only; business assertions listed separately&quot;
+  },
+  {
+    &quot;name&quot;: &quot;expensesRoute&quot;,
+    &quot;path&quot;: &quot;/expenses&quot;,
+    &quot;role&quot;: &quot;landlord&quot;,
+    &quot;level&quot;: &quot;screen-only; business assertions listed separately&quot;
+  },
+  {
+    &quot;name&quot;: &quot;expenseFormRoute&quot;,
+    &quot;path&quot;: &quot;/expenses/form&quot;,
+    &quot;role&quot;: &quot;landlord&quot;,
+    &quot;level&quot;: &quot;screen-only; business assertions listed separately&quot;
+  },
+  {
+    &quot;name&quot;: &quot;maintenanceRoute&quot;,
+    &quot;path&quot;: &quot;/maintenance&quot;,
+    &quot;role&quot;: &quot;landlord&quot;,
+    &quot;level&quot;: &quot;screen-only; business assertions listed separately&quot;
+  },
+  {
+    &quot;name&quot;: &quot;maintenanceFormRoute&quot;,
+    &quot;path&quot;: &quot;/maintenance/form&quot;,
+    &quot;role&quot;: &quot;landlord&quot;,
+    &quot;level&quot;: &quot;screen-only; business assertions listed separately&quot;
+  },
+  {
+    &quot;name&quot;: &quot;reportsRoute&quot;,
+    &quot;path&quot;: &quot;/reports&quot;,
+    &quot;role&quot;: &quot;landlord&quot;,
+    &quot;level&quot;: &quot;screen-only; business assertions listed separately&quot;
+  },
+  {
+    &quot;name&quot;: &quot;staffRoute&quot;,
+    &quot;path&quot;: &quot;/staff&quot;,
+    &quot;role&quot;: &quot;landlord&quot;,
+    &quot;level&quot;: &quot;screen-only; business assertions listed separately&quot;
+  },
+  {
+    &quot;name&quot;: &quot;auditRoute&quot;,
+    &quot;path&quot;: &quot;/audit&quot;,
+    &quot;role&quot;: &quot;landlord&quot;,
+    &quot;level&quot;: &quot;screen-only; business assertions listed separately&quot;
+  },
+  {
+    &quot;name&quot;: &quot;notificationsRoute&quot;,
+    &quot;path&quot;: &quot;/notifications&quot;,
+    &quot;role&quot;: &quot;landlord&quot;,
+    &quot;level&quot;: &quot;screen-only; business assertions listed separately&quot;
+  },
+  {
+    &quot;name&quot;: &quot;actionItemsRoute&quot;,
+    &quot;path&quot;: &quot;/actions&quot;,
+    &quot;role&quot;: &quot;landlord&quot;,
+    &quot;level&quot;: &quot;screen-only; business assertions listed separately&quot;
+  },
+  {
+    &quot;name&quot;: &quot;p1OperationsRoute&quot;,
+    &quot;path&quot;: &quot;/operations/p1&quot;,
+    &quot;role&quot;: &quot;landlord&quot;,
+    &quot;level&quot;: &quot;screen-only; business assertions listed separately&quot;
+  },
+  {
+    &quot;name&quot;: &quot;leaseExpiryRoute&quot;,
+    &quot;path&quot;: &quot;/lease-expiry&quot;,
+    &quot;role&quot;: &quot;landlord&quot;,
+    &quot;level&quot;: &quot;screen-only; business assertions listed separately&quot;
+  }
+]</pre></html>

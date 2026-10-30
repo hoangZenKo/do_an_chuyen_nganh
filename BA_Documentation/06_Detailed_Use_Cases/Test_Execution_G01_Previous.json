@@ -1,0 +1,151 @@
+{
+  "executedAt": "2026-10-29T00:30:21.390Z",
+  "kind": "unit/mock — không DB E2E",
+  "workingDirectory": "/Users/hoang/Rental_room_management/backend",
+  "command": "node node_modules/jest/bin/jest.js --runInBand --runTestsByPath src/auth/auth.service.spec.ts src/auth/account-access.service.spec.ts src/auth/admin-mfa.service.spec.ts src/auth/jwt.strategy.spec.ts src/tenants/tenant-invites.service.spec.ts src/common/api-error.filter.spec.ts --json --outputFile=/tmp/ba-stage4-unit-tests.json",
+  "success": true,
+  "passedSuites": 6,
+  "totalSuites": 6,
+  "passedTests": 24,
+  "totalTests": 24,
+  "suites": [
+    {
+      "file": "backend/src/auth/auth.service.spec.ts",
+      "status": "passed",
+      "tests": [
+        {
+          "name": "AuthService registers as a landlord and normalizes the email",
+          "status": "passed"
+        },
+        {
+          "name": "AuthService maps concurrent duplicate email errors to conflict",
+          "status": "passed"
+        },
+        {
+          "name": "AuthService rejects inactive users at login",
+          "status": "passed"
+        },
+        {
+          "name": "AuthService changes password after verifying the current password",
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "file": "backend/src/auth/jwt.strategy.spec.ts",
+      "status": "passed",
+      "tests": [
+        {
+          "name": "JwtStrategy maps an active landlord to a typed auth user",
+          "status": "passed"
+        },
+        {
+          "name": "JwtStrategy maps an active admin to a typed auth user",
+          "status": "passed"
+        },
+        {
+          "name": "JwtStrategy rejects non-access tokens",
+          "status": "passed"
+        },
+        {
+          "name": "JwtStrategy rejects missing or inactive users",
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "file": "backend/src/auth/account-access.service.spec.ts",
+      "status": "passed",
+      "tests": [
+        {
+          "name": "AccountAccessService rate-limits repeated non-admin account access sends",
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "file": "backend/src/tenants/tenant-invites.service.spec.ts",
+      "status": "passed",
+      "tests": [
+        {
+          "name": "TenantInvitesService creates a hashed activation invite for an active tenant",
+          "status": "passed"
+        },
+        {
+          "name": "TenantInvitesService rejects invite creation when the tenant is missing",
+          "status": "passed"
+        },
+        {
+          "name": "TenantInvitesService rejects invite creation when tenant already has an account",
+          "status": "passed"
+        },
+        {
+          "name": "TenantInvitesService rejects invite creation when the email is already registered",
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "file": "backend/src/auth/admin-mfa.service.spec.ts",
+      "status": "passed",
+      "tests": [
+        {
+          "name": "Admin TOTP primitives matches RFC 6238 SHA1 vector at 59",
+          "status": "passed"
+        },
+        {
+          "name": "Admin TOTP primitives matches RFC 6238 SHA1 vector at 1111111109",
+          "status": "passed"
+        },
+        {
+          "name": "Admin TOTP primitives matches RFC 6238 SHA1 vector at 1111111111",
+          "status": "passed"
+        },
+        {
+          "name": "Admin TOTP primitives matches RFC 6238 SHA1 vector at 1234567890",
+          "status": "passed"
+        },
+        {
+          "name": "Admin TOTP primitives matches RFC 6238 SHA1 vector at 2000000000",
+          "status": "passed"
+        },
+        {
+          "name": "Admin TOTP primitives matches RFC 6238 SHA1 vector at 20000000000",
+          "status": "passed"
+        },
+        {
+          "name": "Admin TOTP primitives encodes authenticator secrets as unpadded base32",
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "file": "backend/src/common/api-error.filter.spec.ts",
+      "status": "passed",
+      "tests": [
+        {
+          "name": "ApiErrorFilter preserves stable application error codes",
+          "status": "passed"
+        },
+        {
+          "name": "ApiErrorFilter normalizes validation messages without reflecting request payloads",
+          "status": "passed"
+        },
+        {
+          "name": "ApiErrorFilter redacts unknown and server errors from clients and logs",
+          "status": "passed"
+        },
+        {
+          "name": "ApiErrorFilter redacts unknown and server errors from clients and logs",
+          "status": "passed"
+        }
+      ]
+    }
+  ],
+  "notExecuted": [
+    "Flutter tests: chỉ đọc assertions để truy vết",
+    "HTTP E2E và DB thực: không chạy; auth E2E có resetDatabase trong beforeEach",
+    "Provider/email/TOTP app thực: chưa kiểm chứng"
+  ],
+  "limits": "24 test unit/mock đạt không chứng minh đủ mọi nhánh 11 UC, transaction PostgreSQL, UI runtime hoặc nhà cung cấp thật."
+}

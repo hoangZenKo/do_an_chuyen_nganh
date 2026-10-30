@@ -5,6 +5,7 @@ import 'package:go_router/go_router.dart';
 import '../../core/theme/app_theme.dart';
 import '../../models/tenant.dart';
 import '../auth/auth_navigation.dart';
+import 'tenant_management_theme.dart';
 import 'tenant_providers.dart';
 
 /// List of tenants for the signed-in landlord with search, category filtering,
@@ -33,16 +34,18 @@ class _TenantsListScreenState extends ConsumerState<TenantsListScreen> {
     final tenantsAsync = ref.watch(provider);
 
     return Scaffold(
-      backgroundColor: const Color(0xFF22263A),
+      backgroundColor: TenantManagementTheme.background,
       floatingActionButton: _showInactive
           ? null
           : FloatingActionButton.extended(
               backgroundColor: AppTheme.primary,
               onPressed: () => context.push(tenantFormPath()),
-              icon: const Icon(Icons.person_add_alt_1_rounded, color: Colors.white),
+              icon: const Icon(Icons.person_add_alt_1_rounded,
+                  color: Colors.white),
               label: const Text(
                 'Thêm người thuê',
-                style: TextStyle(color: Colors.white, fontWeight: FontWeight.w700),
+                style:
+                    TextStyle(color: Colors.white, fontWeight: FontWeight.w700),
               ),
             ),
       body: SafeArea(
@@ -52,7 +55,8 @@ class _TenantsListScreenState extends ConsumerState<TenantsListScreen> {
             _HeaderSection(
               showInactive: _showInactive,
               searchController: _searchController,
-              onSearchChanged: (val) => setState(() => _searchQuery = val.trim().toLowerCase()),
+              onSearchChanged: (val) =>
+                  setState(() => _searchQuery = val.trim().toLowerCase()),
               onFilterChanged: (val) => setState(() => _showInactive = val),
             ),
             // ── Tenants List ──────────────────────────────────────────────
@@ -101,7 +105,9 @@ class _TenantsListScreenState extends ConsumerState<TenantsListScreen> {
       final name = t.fullName.toLowerCase();
       final phone = (t.phone ?? '').toLowerCase();
       final room = (t.activeLease?.roomName ?? '').toLowerCase();
-      return name.contains(query) || phone.contains(query) || room.contains(query);
+      return name.contains(query) ||
+          phone.contains(query) ||
+          room.contains(query);
     }).toList();
   }
 }
@@ -134,7 +140,8 @@ class _HeaderSection extends StatelessWidget {
             children: [
               IconButton(
                 onPressed: () => context.pop(),
-                icon: const Icon(Icons.arrow_back_rounded, color: Color(0xFF1E293B)),
+                icon: const Icon(Icons.arrow_back_rounded,
+                    color: Color(0xFF1E293B)),
                 visualDensity: VisualDensity.compact,
               ),
               const SizedBox(width: 4),
@@ -162,11 +169,16 @@ class _HeaderSection extends StatelessWidget {
               style: const TextStyle(fontSize: 14, color: Color(0xFF0F172A)),
               decoration: InputDecoration(
                 hintText: 'Tìm theo tên, SĐT, số phòng...',
-                hintStyle: const TextStyle(color: Color(0xFF94A3B8), fontSize: 14),
-                prefixIcon: const Icon(Icons.search_rounded, color: Color(0xFF64748B), size: 20),
+                hintStyle: const TextStyle(
+                    color: TenantManagementTheme.muted, fontSize: 14),
+                filled: true,
+                fillColor: TenantManagementTheme.surfaceAlt,
+                prefixIcon: const Icon(Icons.search_rounded,
+                    color: Color(0xFF64748B), size: 20),
                 suffixIcon: searchController.text.isNotEmpty
                     ? IconButton(
-                        icon: const Icon(Icons.close_rounded, color: Color(0xFF64748B), size: 18),
+                        icon: const Icon(Icons.close_rounded,
+                            color: Color(0xFF64748B), size: 18),
                         onPressed: () {
                           searchController.clear();
                           onSearchChanged('');
@@ -174,6 +186,12 @@ class _HeaderSection extends StatelessWidget {
                       )
                     : null,
                 border: InputBorder.none,
+                enabledBorder: InputBorder.none,
+                focusedBorder: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(12),
+                  borderSide:
+                      const BorderSide(color: AppTheme.primary, width: 1.5),
+                ),
                 contentPadding: const EdgeInsets.symmetric(vertical: 12),
               ),
             ),
@@ -304,7 +322,8 @@ class _TenantCard extends StatelessWidget {
                         if (!tenant.isActive) ...[
                           const SizedBox(width: 6),
                           Container(
-                            padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
+                            padding: const EdgeInsets.symmetric(
+                                horizontal: 6, vertical: 2),
                             decoration: BoxDecoration(
                               color: const Color(0xFFF1F5F9),
                               borderRadius: BorderRadius.circular(6),
@@ -324,7 +343,8 @@ class _TenantCard extends StatelessWidget {
                     const SizedBox(height: 4),
                     Row(
                       children: [
-                        const Icon(Icons.phone_outlined, size: 14, color: Color(0xFF64748B)),
+                        const Icon(Icons.phone_outlined,
+                            size: 14, color: Color(0xFF64748B)),
                         const SizedBox(width: 4),
                         Text(
                           tenant.phone ?? 'Chưa có SĐT',
@@ -343,7 +363,8 @@ class _TenantCard extends StatelessWidget {
               // Room Status Chip
               if (active != null)
                 Container(
-                  padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
                   decoration: BoxDecoration(
                     color: AppTheme.primary.withValues(alpha: 0.10),
                     borderRadius: BorderRadius.circular(12),
@@ -351,10 +372,13 @@ class _TenantCard extends StatelessWidget {
                   child: Row(
                     mainAxisSize: MainAxisSize.min,
                     children: [
-                      const Icon(Icons.meeting_room_rounded, size: 14, color: AppTheme.primary),
+                      const Icon(Icons.meeting_room_rounded,
+                          size: 14, color: AppTheme.primary),
                       const SizedBox(width: 4),
                       Text(
-                        active.roomName != null ? active.roomName! : 'Đang thuê',
+                        active.roomName != null
+                            ? active.roomName!
+                            : 'Đang thuê',
                         style: const TextStyle(
                           fontSize: 12,
                           fontWeight: FontWeight.w700,
@@ -366,7 +390,8 @@ class _TenantCard extends StatelessWidget {
                 )
               else
                 Container(
-                  padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
                   decoration: BoxDecoration(
                     color: const Color(0xFFF1F5F9),
                     borderRadius: BorderRadius.circular(12),
@@ -376,12 +401,13 @@ class _TenantCard extends StatelessWidget {
                     style: TextStyle(
                       fontSize: 11,
                       fontWeight: FontWeight.w600,
-                      color: Color(0xFF94A3B8),
+                      color: TenantManagementTheme.muted,
                     ),
                   ),
                 ),
               const SizedBox(width: 4),
-              const Icon(Icons.chevron_right_rounded, color: Color(0xFFCBD5E1), size: 20),
+              const Icon(Icons.chevron_right_rounded,
+                  color: Color(0xFFCBD5E1), size: 20),
             ],
           ),
         ),
@@ -430,7 +456,9 @@ class _EmptyView extends StatelessWidget {
               child: Icon(
                 hasQuery
                     ? Icons.search_off_rounded
-                    : (inactive ? Icons.person_off_outlined : Icons.people_outline_rounded),
+                    : (inactive
+                        ? Icons.person_off_outlined
+                        : Icons.people_outline_rounded),
                 size: 36,
                 color: AppTheme.primary,
               ),
@@ -439,7 +467,9 @@ class _EmptyView extends StatelessWidget {
             Text(
               hasQuery
                   ? 'Không tìm thấy kết quả'
-                  : (inactive ? 'Chưa có người thuê ngưng hoạt động' : 'Chưa có người thuê'),
+                  : (inactive
+                      ? 'Chưa có người thuê ngưng hoạt động'
+                      : 'Chưa có người thuê'),
               style: const TextStyle(
                 fontSize: 17,
                 fontWeight: FontWeight.w800,
@@ -479,13 +509,18 @@ class _ErrorView extends StatelessWidget {
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            const Icon(Icons.cloud_off_rounded, size: 52, color: Color(0xFFCBD5E1)),
+            const Icon(Icons.cloud_off_rounded,
+                size: 52, color: Color(0xFFCBD5E1)),
             const SizedBox(height: 16),
-            Text(message, textAlign: TextAlign.center, style: const TextStyle(color: Color(0xFF64748B))),
+            Text(message,
+                textAlign: TextAlign.center,
+                style: const TextStyle(color: Color(0xFF64748B))),
             const SizedBox(height: 16),
             TextButton(
               onPressed: onRetry,
-              child: const Text('Thử lại', style: TextStyle(color: AppTheme.primary, fontWeight: FontWeight.w700)),
+              child: const Text('Thử lại',
+                  style: TextStyle(
+                      color: AppTheme.primary, fontWeight: FontWeight.w700)),
             ),
           ],
         ),

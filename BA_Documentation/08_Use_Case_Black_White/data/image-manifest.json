@@ -1,0 +1,7538 @@
+[
+  {
+    "id": "Overall_Use_Case",
+    "file": "Overall_Use_Case.puml",
+    "kind": "overall",
+    "groupId": null,
+    "title": "TỔNG THỂ · HỆ THỐNG QUẢN LÝ NHÀ TRỌ",
+    "ucIds": [
+      "UC-SYS-03",
+      "UC-DIS-01",
+      "UC-DIS-09",
+      "UC-TEN-03",
+      "UC-TNT-05",
+      "UC-TNT-08",
+      "UC-BIL-16",
+      "UC-OPT-03.1",
+      "UC-OPT-01",
+      "UC-ADM-02",
+      "UC-ADM-11",
+      "UC-ADM-15"
+    ],
+    "actorIds": [
+      "A01",
+      "A02",
+      "A03",
+      "A04",
+      "A05"
+    ],
+    "order": 1,
+    "caption": "Hình 2.3",
+    "png": "PNG/01_Hinh_2_03_Overall_Use_Case.png",
+    "svg": "SVG/01_Hinh_2_03_Overall_Use_Case.svg",
+    "sourceSha256": "2425c0bbddf5967e980173d1bccb4252e8f0be26aaf286e87729a8ea0b36e6b5",
+    "width": 5840,
+    "height": 4480,
+    "links": [
+      {
+        "actorId": "A01",
+        "ucId": "UC-SYS-03",
+        "label": "",
+        "limited": false
+      },
+      {
+        "actorId": "A01",
+        "ucId": "UC-DIS-01",
+        "label": "",
+        "limited": false
+      },
+      {
+        "actorId": "A04",
+        "ucId": "UC-DIS-01",
+        "label": "",
+        "limited": false
+      },
+      {
+        "actorId": "A04",
+        "ucId": "UC-DIS-09",
+        "label": "",
+        "limited": false
+      },
+      {
+        "actorId": "A04",
+        "ucId": "UC-TEN-03",
+        "label": "",
+        "limited": false
+      },
+      {
+        "actorId": "A02",
+        "ucId": "UC-TNT-05",
+        "label": "",
+        "limited": false
+      },
+      {
+        "actorId": "A03",
+        "ucId": "UC-TNT-05",
+        "label": "",
+        "limited": false
+      },
+      {
+        "actorId": "A02",
+        "ucId": "UC-TNT-08",
+        "label": "",
+        "limited": false
+      },
+      {
+        "actorId": "A02",
+        "ucId": "UC-BIL-16",
+        "label": "",
+        "limited": false
+      },
+      {
+        "actorId": "A02",
+        "ucId": "UC-OPT-03.1",
+        "label": "",
+        "limited": false
+      },
+      {
+        "actorId": "A02",
+        "ucId": "UC-OPT-01",
+        "label": "",
+        "limited": false
+      },
+      {
+        "actorId": "A03",
+        "ucId": "UC-OPT-01",
+        "label": "",
+        "limited": false
+      },
+      {
+        "actorId": "A05",
+        "ucId": "UC-ADM-02",
+        "label": "",
+        "limited": false
+      },
+      {
+        "actorId": "A05",
+        "ucId": "UC-ADM-11",
+        "label": "",
+        "limited": false
+      },
+      {
+        "actorId": "A05",
+        "ucId": "UC-ADM-15",
+        "label": "",
+        "limited": false
+      }
+    ],
+    "nodes": {
+      "UC-SYS-03": [
+        580,
+        408,
+        1420,
+        592
+      ],
+      "UC-TNT-05": [
+        580,
+        708,
+        1420,
+        892
+      ],
+      "UC-TNT-08": [
+        580,
+        988,
+        1420,
+        1172
+      ],
+      "UC-BIL-16": [
+        580,
+        1268,
+        1420,
+        1452
+      ],
+      "UC-OPT-03.1": [
+        580,
+        1548,
+        1420,
+        1732
+      ],
+      "UC-OPT-01": [
+        580,
+        1828,
+        1420,
+        2012
+      ],
+      "UC-DIS-01": [
+        1580,
+        168,
+        2420,
+        352
+      ],
+      "UC-DIS-09": [
+        1580,
+        448,
+        2420,
+        632
+      ],
+      "UC-TEN-03": [
+        1580,
+        728,
+        2420,
+        912
+      ],
+      "UC-ADM-02": [
+        1580,
+        1268,
+        2420,
+        1452
+      ],
+      "UC-ADM-11": [
+        1580,
+        1548,
+        2420,
+        1732
+      ],
+      "UC-ADM-15": [
+        1580,
+        1828,
+        2420,
+        2012
+      ]
+    },
+    "notes": [
+      "Tổng quan: 12 mục tiêu đại diện; các hình nhóm trình bày đầy đủ 162 Use Case."
+    ],
+    "associationSegments": [
+      {
+        "actorId": "A01",
+        "ucId": "UC-SYS-03",
+        "points": [
+          [
+            240,
+            260
+          ],
+          [
+            580,
+            500.0
+          ]
+        ]
+      },
+      {
+        "actorId": "A01",
+        "ucId": "UC-DIS-01",
+        "points": [
+          [
+            240,
+            260
+          ],
+          [
+            1580,
+            260.0
+          ]
+        ]
+      },
+      {
+        "actorId": "A04",
+        "ucId": "UC-DIS-01",
+        "points": [
+          [
+            2680,
+            540
+          ],
+          [
+            2420,
+            260.0
+          ]
+        ]
+      },
+      {
+        "actorId": "A04",
+        "ucId": "UC-DIS-09",
+        "points": [
+          [
+            2680,
+            540
+          ],
+          [
+            2420,
+            540.0
+          ]
+        ]
+      },
+      {
+        "actorId": "A04",
+        "ucId": "UC-TEN-03",
+        "points": [
+          [
+            2680,
+            540
+          ],
+          [
+            2420,
+            820.0
+          ]
+        ]
+      },
+      {
+        "actorId": "A02",
+        "ucId": "UC-TNT-05",
+        "points": [
+          [
+            240,
+            1000
+          ],
+          [
+            580,
+            800.0
+          ]
+        ]
+      },
+      {
+        "actorId": "A03",
+        "ucId": "UC-TNT-05",
+        "points": [
+          [
+            240,
+            1700
+          ],
+          [
+            580,
+            800.0
+          ]
+        ]
+      },
+      {
+        "actorId": "A02",
+        "ucId": "UC-TNT-08",
+        "points": [
+          [
+            240,
+            1000
+          ],
+          [
+            580,
+            1080.0
+          ]
+        ]
+      },
+      {
+        "actorId": "A02",
+        "ucId": "UC-BIL-16",
+        "points": [
+          [
+            240,
+            1000
+          ],
+          [
+            580,
+            1360.0
+          ]
+        ]
+      },
+      {
+        "actorId": "A02",
+        "ucId": "UC-OPT-03.1",
+        "points": [
+          [
+            240,
+            1000
+          ],
+          [
+            580,
+            1640.0
+          ]
+        ]
+      },
+      {
+        "actorId": "A02",
+        "ucId": "UC-OPT-01",
+        "points": [
+          [
+            240,
+            1000
+          ],
+          [
+            580,
+            1920.0
+          ]
+        ]
+      },
+      {
+        "actorId": "A03",
+        "ucId": "UC-OPT-01",
+        "points": [
+          [
+            240,
+            1700
+          ],
+          [
+            580,
+            1920.0
+          ]
+        ]
+      },
+      {
+        "actorId": "A05",
+        "ucId": "UC-ADM-02",
+        "points": [
+          [
+            2680,
+            1590
+          ],
+          [
+            2420,
+            1360.0
+          ]
+        ]
+      },
+      {
+        "actorId": "A05",
+        "ucId": "UC-ADM-11",
+        "points": [
+          [
+            2680,
+            1590
+          ],
+          [
+            2420,
+            1640.0
+          ]
+        ]
+      },
+      {
+        "actorId": "A05",
+        "ucId": "UC-ADM-15",
+        "points": [
+          [
+            2680,
+            1590
+          ],
+          [
+            2420,
+            1920.0
+          ]
+        ]
+      }
+    ],
+    "layout": "two-column-independent-links"
+  },
+  {
+    "id": "UC_G01_01_SYS_Public",
+    "file": "UC_G01_01_SYS_Public.puml",
+    "kind": "module",
+    "groupId": "G01",
+    "title": "G01 Đăng ký và tiếp nhận lời mời",
+    "ucIds": [
+      "UC-SYS-01",
+      "UC-SYS-02",
+      "UC-SYS-03",
+      "UC-SYS-06",
+      "UC-SYS-08",
+      "UC-SYS-09",
+      "UC-SYS-10"
+    ],
+    "actorIds": [
+      "A01",
+      "E01"
+    ],
+    "order": 2,
+    "caption": "Hình 2.4",
+    "png": "PNG/02_Hinh_2_04_UC_G01_01_SYS_Public.png",
+    "svg": "SVG/02_Hinh_2_04_UC_G01_01_SYS_Public.svg",
+    "sourceSha256": "0bca2961eb48677c0c450c3b64da3a06688e370414cb6540ae51db8ce446ec83",
+    "width": 3840,
+    "height": 3370,
+    "links": [
+      {
+        "actorId": "A01",
+        "ucId": "UC-SYS-01",
+        "label": "",
+        "limited": false
+      },
+      {
+        "actorId": "A01",
+        "ucId": "UC-SYS-02",
+        "label": "",
+        "limited": false
+      },
+      {
+        "actorId": "A01",
+        "ucId": "UC-SYS-03",
+        "label": "",
+        "limited": false
+      },
+      {
+        "actorId": "A01",
+        "ucId": "UC-SYS-06",
+        "label": "",
+        "limited": false
+      },
+      {
+        "actorId": "E01",
+        "ucId": "UC-SYS-06",
+        "label": "khi sử dụng kênh này",
+        "limited": false
+      },
+      {
+        "actorId": "A01",
+        "ucId": "UC-SYS-08",
+        "label": "",
+        "limited": false
+      },
+      {
+        "actorId": "A01",
+        "ucId": "UC-SYS-09",
+        "label": "",
+        "limited": false
+      },
+      {
+        "actorId": "A01",
+        "ucId": "UC-SYS-10",
+        "label": "",
+        "limited": false
+      }
+    ],
+    "nodes": {
+      "UC-SYS-01": [
+        595,
+        157,
+        1325,
+        313
+      ],
+      "UC-SYS-02": [
+        595,
+        362,
+        1325,
+        518
+      ],
+      "UC-SYS-03": [
+        595,
+        567,
+        1325,
+        723
+      ],
+      "UC-SYS-06": [
+        595,
+        772,
+        1325,
+        928
+      ],
+      "UC-SYS-08": [
+        595,
+        977,
+        1325,
+        1133
+      ],
+      "UC-SYS-09": [
+        595,
+        1182,
+        1325,
+        1338
+      ],
+      "UC-SYS-10": [
+        595,
+        1387,
+        1325,
+        1543
+      ]
+    },
+    "notes": [],
+    "associationSegments": [
+      {
+        "actorId": "A01",
+        "ucId": "UC-SYS-01",
+        "points": [
+          [
+            240,
+            825.0
+          ],
+          [
+            595,
+            235.0
+          ]
+        ]
+      },
+      {
+        "actorId": "A01",
+        "ucId": "UC-SYS-02",
+        "points": [
+          [
+            240,
+            825.0
+          ],
+          [
+            595,
+            440.0
+          ]
+        ]
+      },
+      {
+        "actorId": "A01",
+        "ucId": "UC-SYS-03",
+        "points": [
+          [
+            240,
+            825.0
+          ],
+          [
+            595,
+            645.0
+          ]
+        ]
+      },
+      {
+        "actorId": "A01",
+        "ucId": "UC-SYS-06",
+        "points": [
+          [
+            240,
+            825.0
+          ],
+          [
+            595,
+            850.0
+          ]
+        ]
+      },
+      {
+        "actorId": "E01",
+        "ucId": "UC-SYS-06",
+        "points": [
+          [
+            1680,
+            825.0
+          ],
+          [
+            1325,
+            850.0
+          ]
+        ]
+      },
+      {
+        "actorId": "A01",
+        "ucId": "UC-SYS-08",
+        "points": [
+          [
+            240,
+            825.0
+          ],
+          [
+            595,
+            1055.0
+          ]
+        ]
+      },
+      {
+        "actorId": "A01",
+        "ucId": "UC-SYS-09",
+        "points": [
+          [
+            240,
+            825.0
+          ],
+          [
+            595,
+            1260.0
+          ]
+        ]
+      },
+      {
+        "actorId": "A01",
+        "ucId": "UC-SYS-10",
+        "points": [
+          [
+            240,
+            825.0
+          ],
+          [
+            595,
+            1465.0
+          ]
+        ]
+      }
+    ],
+    "layout": "independent-direct-links"
+  },
+  {
+    "id": "UC_G01_02_SYS_Sessions",
+    "file": "UC_G01_02_SYS_Sessions.puml",
+    "kind": "module",
+    "groupId": "G01",
+    "title": "G01 Đăng nhập và bảo vệ tài khoản",
+    "ucIds": [
+      "UC-SYS-05.1",
+      "UC-SYS-05.2",
+      "UC-SYS-07",
+      "UC-ADM-07.1"
+    ],
+    "actorIds": [
+      "A02",
+      "A03",
+      "A04",
+      "A05"
+    ],
+    "order": 3,
+    "caption": "Hình 2.5",
+    "png": "PNG/03_Hinh_2_05_UC_G01_02_SYS_Sessions.png",
+    "svg": "SVG/03_Hinh_2_05_UC_G01_02_SYS_Sessions.svg",
+    "sourceSha256": "f222f6961dd750abdd2d5c8105f8c0abf6a31212924b715e061e0a9f0c924403",
+    "width": 3840,
+    "height": 2160,
+    "links": [
+      {
+        "actorId": "A02",
+        "ucId": "UC-SYS-05.1",
+        "label": "",
+        "limited": false
+      },
+      {
+        "actorId": "A03",
+        "ucId": "UC-SYS-05.1",
+        "label": "",
+        "limited": false
+      },
+      {
+        "actorId": "A04",
+        "ucId": "UC-SYS-05.1",
+        "label": "",
+        "limited": false
+      },
+      {
+        "actorId": "A05",
+        "ucId": "UC-SYS-05.1",
+        "label": "",
+        "limited": false
+      },
+      {
+        "actorId": "A02",
+        "ucId": "UC-SYS-05.2",
+        "label": "",
+        "limited": false
+      },
+      {
+        "actorId": "A03",
+        "ucId": "UC-SYS-05.2",
+        "label": "",
+        "limited": false
+      },
+      {
+        "actorId": "A04",
+        "ucId": "UC-SYS-05.2",
+        "label": "",
+        "limited": false
+      },
+      {
+        "actorId": "A05",
+        "ucId": "UC-SYS-05.2",
+        "label": "",
+        "limited": false
+      },
+      {
+        "actorId": "A02",
+        "ucId": "UC-SYS-07",
+        "label": "",
+        "limited": false
+      },
+      {
+        "actorId": "A03",
+        "ucId": "UC-SYS-07",
+        "label": "",
+        "limited": false
+      },
+      {
+        "actorId": "A04",
+        "ucId": "UC-SYS-07",
+        "label": "",
+        "limited": false
+      },
+      {
+        "actorId": "A05",
+        "ucId": "UC-SYS-07",
+        "label": "",
+        "limited": false
+      },
+      {
+        "actorId": "A05",
+        "ucId": "UC-ADM-07.1",
+        "label": "",
+        "limited": false
+      }
+    ],
+    "nodes": {
+      "UC-SYS-05.1": [
+        595,
+        157,
+        1325,
+        313
+      ],
+      "UC-SYS-05.2": [
+        595,
+        362,
+        1325,
+        518
+      ],
+      "UC-SYS-07": [
+        595,
+        567,
+        1325,
+        723
+      ],
+      "UC-ADM-07.1": [
+        595,
+        772,
+        1325,
+        928
+      ]
+    },
+    "notes": [],
+    "associationSegments": [
+      {
+        "actorId": "A02",
+        "ucId": "UC-SYS-05.1",
+        "points": [
+          [
+            240,
+            250.0
+          ],
+          [
+            595,
+            235.0
+          ]
+        ]
+      },
+      {
+        "actorId": "A03",
+        "ucId": "UC-SYS-05.1",
+        "points": [
+          [
+            1680,
+            250.0
+          ],
+          [
+            1325,
+            235.0
+          ]
+        ]
+      },
+      {
+        "actorId": "A04",
+        "ucId": "UC-SYS-05.1",
+        "points": [
+          [
+            240,
+            660.0
+          ],
+          [
+            595,
+            235.0
+          ]
+        ]
+      },
+      {
+        "actorId": "A05",
+        "ucId": "UC-SYS-05.1",
+        "points": [
+          [
+            1680,
+            660.0
+          ],
+          [
+            1325,
+            235.0
+          ]
+        ]
+      },
+      {
+        "actorId": "A02",
+        "ucId": "UC-SYS-05.2",
+        "points": [
+          [
+            240,
+            250.0
+          ],
+          [
+            595,
+            440.0
+          ]
+        ]
+      },
+      {
+        "actorId": "A03",
+        "ucId": "UC-SYS-05.2",
+        "points": [
+          [
+            1680,
+            250.0
+          ],
+          [
+            1325,
+            440.0
+          ]
+        ]
+      },
+      {
+        "actorId": "A04",
+        "ucId": "UC-SYS-05.2",
+        "points": [
+          [
+            240,
+            660.0
+          ],
+          [
+            595,
+            440.0
+          ]
+        ]
+      },
+      {
+        "actorId": "A05",
+        "ucId": "UC-SYS-05.2",
+        "points": [
+          [
+            1680,
+            660.0
+          ],
+          [
+            1325,
+            440.0
+          ]
+        ]
+      },
+      {
+        "actorId": "A02",
+        "ucId": "UC-SYS-07",
+        "points": [
+          [
+            240,
+            250.0
+          ],
+          [
+            595,
+            645.0
+          ]
+        ]
+      },
+      {
+        "actorId": "A03",
+        "ucId": "UC-SYS-07",
+        "points": [
+          [
+            1680,
+            250.0
+          ],
+          [
+            1325,
+            645.0
+          ]
+        ]
+      },
+      {
+        "actorId": "A04",
+        "ucId": "UC-SYS-07",
+        "points": [
+          [
+            240,
+            660.0
+          ],
+          [
+            595,
+            645.0
+          ]
+        ]
+      },
+      {
+        "actorId": "A05",
+        "ucId": "UC-SYS-07",
+        "points": [
+          [
+            1680,
+            660.0
+          ],
+          [
+            1325,
+            645.0
+          ]
+        ]
+      },
+      {
+        "actorId": "A05",
+        "ucId": "UC-ADM-07.1",
+        "points": [
+          [
+            1680,
+            660.0
+          ],
+          [
+            1325,
+            850.0
+          ]
+        ]
+      }
+    ],
+    "layout": "independent-direct-links"
+  },
+  {
+    "id": "UC_G02",
+    "file": "UC_G02.puml",
+    "kind": "module",
+    "groupId": "G02",
+    "title": "G02 · Tìm và lựa chọn phòng",
+    "ucIds": [
+      "UC-DIS-01",
+      "UC-DIS-02",
+      "UC-DIS-03",
+      "UC-DIS-04",
+      "UC-DIS-16",
+      "UC-DIS-17"
+    ],
+    "actorIds": [
+      "A01",
+      "A04"
+    ],
+    "order": 4,
+    "caption": "Hình 2.6",
+    "png": "PNG/04_Hinh_2_06_UC_G02.png",
+    "svg": "SVG/04_Hinh_2_06_UC_G02.svg",
+    "sourceSha256": "b762e99433ab0f054ead48d66c0715c4e5e60b2f4572a95d1e6e9cae23e4cde6",
+    "width": 3840,
+    "height": 2960,
+    "links": [
+      {
+        "actorId": "A01",
+        "ucId": "UC-DIS-01",
+        "label": "",
+        "limited": false
+      },
+      {
+        "actorId": "A04",
+        "ucId": "UC-DIS-01",
+        "label": "",
+        "limited": false
+      },
+      {
+        "actorId": "A01",
+        "ucId": "UC-DIS-02",
+        "label": "",
+        "limited": false
+      },
+      {
+        "actorId": "A04",
+        "ucId": "UC-DIS-02",
+        "label": "",
+        "limited": false
+      },
+      {
+        "actorId": "A04",
+        "ucId": "UC-DIS-03",
+        "label": "",
+        "limited": false
+      },
+      {
+        "actorId": "A04",
+        "ucId": "UC-DIS-04",
+        "label": "",
+        "limited": false
+      },
+      {
+        "actorId": "A01",
+        "ucId": "UC-DIS-16",
+        "label": "",
+        "limited": false
+      },
+      {
+        "actorId": "A04",
+        "ucId": "UC-DIS-16",
+        "label": "",
+        "limited": false
+      },
+      {
+        "actorId": "A01",
+        "ucId": "UC-DIS-17",
+        "label": "",
+        "limited": false
+      },
+      {
+        "actorId": "A04",
+        "ucId": "UC-DIS-17",
+        "label": "",
+        "limited": false
+      }
+    ],
+    "nodes": {
+      "UC-DIS-01": [
+        595,
+        157,
+        1325,
+        313
+      ],
+      "UC-DIS-02": [
+        595,
+        362,
+        1325,
+        518
+      ],
+      "UC-DIS-03": [
+        595,
+        567,
+        1325,
+        723
+      ],
+      "UC-DIS-04": [
+        595,
+        772,
+        1325,
+        928
+      ],
+      "UC-DIS-16": [
+        595,
+        977,
+        1325,
+        1133
+      ],
+      "UC-DIS-17": [
+        595,
+        1182,
+        1325,
+        1338
+      ]
+    },
+    "notes": [],
+    "associationSegments": [
+      {
+        "actorId": "A01",
+        "ucId": "UC-DIS-01",
+        "points": [
+          [
+            240,
+            722.5
+          ],
+          [
+            595,
+            235.0
+          ]
+        ]
+      },
+      {
+        "actorId": "A04",
+        "ucId": "UC-DIS-01",
+        "points": [
+          [
+            1680,
+            722.5
+          ],
+          [
+            1325,
+            235.0
+          ]
+        ]
+      },
+      {
+        "actorId": "A01",
+        "ucId": "UC-DIS-02",
+        "points": [
+          [
+            240,
+            722.5
+          ],
+          [
+            595,
+            440.0
+          ]
+        ]
+      },
+      {
+        "actorId": "A04",
+        "ucId": "UC-DIS-02",
+        "points": [
+          [
+            1680,
+            722.5
+          ],
+          [
+            1325,
+            440.0
+          ]
+        ]
+      },
+      {
+        "actorId": "A04",
+        "ucId": "UC-DIS-03",
+        "points": [
+          [
+            1680,
+            722.5
+          ],
+          [
+            1325,
+            645.0
+          ]
+        ]
+      },
+      {
+        "actorId": "A04",
+        "ucId": "UC-DIS-04",
+        "points": [
+          [
+            1680,
+            722.5
+          ],
+          [
+            1325,
+            850.0
+          ]
+        ]
+      },
+      {
+        "actorId": "A01",
+        "ucId": "UC-DIS-16",
+        "points": [
+          [
+            240,
+            722.5
+          ],
+          [
+            595,
+            1055.0
+          ]
+        ]
+      },
+      {
+        "actorId": "A04",
+        "ucId": "UC-DIS-16",
+        "points": [
+          [
+            1680,
+            722.5
+          ],
+          [
+            1325,
+            1055.0
+          ]
+        ]
+      },
+      {
+        "actorId": "A01",
+        "ucId": "UC-DIS-17",
+        "points": [
+          [
+            240,
+            722.5
+          ],
+          [
+            595,
+            1260.0
+          ]
+        ]
+      },
+      {
+        "actorId": "A04",
+        "ucId": "UC-DIS-17",
+        "points": [
+          [
+            1680,
+            722.5
+          ],
+          [
+            1325,
+            1260.0
+          ]
+        ]
+      }
+    ],
+    "layout": "independent-direct-links"
+  },
+  {
+    "id": "UC_G03",
+    "file": "UC_G03.puml",
+    "kind": "module",
+    "groupId": "G03",
+    "title": "G03 · Đăng tin, lịch xem và nhận phòng",
+    "ucIds": [
+      "UC-DIS-05",
+      "UC-DIS-06.2",
+      "UC-DIS-08",
+      "UC-DIS-09",
+      "UC-DIS-10",
+      "UC-TNT-12.2",
+      "UC-TNT-12.3"
+    ],
+    "actorIds": [
+      "A02",
+      "A04"
+    ],
+    "order": 5,
+    "caption": "Hình 2.7",
+    "png": "PNG/05_Hinh_2_07_UC_G03.png",
+    "svg": "SVG/05_Hinh_2_07_UC_G03.svg",
+    "sourceSha256": "374b8e64ded6f5d89a1cd0052b50ce98aba190e864f8defb3611967e29c62731",
+    "width": 3840,
+    "height": 3506,
+    "links": [
+      {
+        "actorId": "A02",
+        "ucId": "UC-DIS-05",
+        "label": "",
+        "limited": false
+      },
+      {
+        "actorId": "A02",
+        "ucId": "UC-DIS-06.2",
+        "label": "",
+        "limited": false
+      },
+      {
+        "actorId": "A02",
+        "ucId": "UC-DIS-08",
+        "label": "",
+        "limited": false
+      },
+      {
+        "actorId": "A04",
+        "ucId": "UC-DIS-08",
+        "label": "chỉ xem khung giờ",
+        "limited": true
+      },
+      {
+        "actorId": "A04",
+        "ucId": "UC-DIS-09",
+        "label": "",
+        "limited": false
+      },
+      {
+        "actorId": "A02",
+        "ucId": "UC-DIS-10",
+        "label": "",
+        "limited": false
+      },
+      {
+        "actorId": "A02",
+        "ucId": "UC-TNT-12.2",
+        "label": "",
+        "limited": false
+      },
+      {
+        "actorId": "A04",
+        "ucId": "UC-TNT-12.2",
+        "label": "chỉ xem biên bản",
+        "limited": true
+      },
+      {
+        "actorId": "A04",
+        "ucId": "UC-TNT-12.3",
+        "label": "",
+        "limited": false
+      }
+    ],
+    "nodes": {
+      "UC-DIS-05": [
+        595,
+        157,
+        1325,
+        313
+      ],
+      "UC-DIS-06.2": [
+        595,
+        362,
+        1325,
+        518
+      ],
+      "UC-DIS-08": [
+        595,
+        567,
+        1325,
+        723
+      ],
+      "UC-DIS-09": [
+        595,
+        772,
+        1325,
+        928
+      ],
+      "UC-DIS-10": [
+        595,
+        977,
+        1325,
+        1133
+      ],
+      "UC-TNT-12.2": [
+        595,
+        1182,
+        1325,
+        1338
+      ],
+      "UC-TNT-12.3": [
+        595,
+        1387,
+        1325,
+        1543
+      ]
+    },
+    "notes": [
+      "[1] A04 - UC-DIS-08: chỉ xem khung giờ.",
+      "[2] A04 - UC-TNT-12.2: chỉ xem biên bản."
+    ],
+    "associationSegments": [
+      {
+        "actorId": "A02",
+        "ucId": "UC-DIS-05",
+        "points": [
+          [
+            240,
+            702.0
+          ],
+          [
+            595,
+            235.0
+          ]
+        ]
+      },
+      {
+        "actorId": "A02",
+        "ucId": "UC-DIS-06.2",
+        "points": [
+          [
+            240,
+            702.0
+          ],
+          [
+            595,
+            440.0
+          ]
+        ]
+      },
+      {
+        "actorId": "A02",
+        "ucId": "UC-DIS-08",
+        "points": [
+          [
+            240,
+            702.0
+          ],
+          [
+            595,
+            645.0
+          ]
+        ]
+      },
+      {
+        "actorId": "A04",
+        "ucId": "UC-DIS-08",
+        "points": [
+          [
+            1680,
+            1030.0
+          ],
+          [
+            1325,
+            645.0
+          ]
+        ]
+      },
+      {
+        "actorId": "A04",
+        "ucId": "UC-DIS-09",
+        "points": [
+          [
+            1680,
+            1030.0
+          ],
+          [
+            1325,
+            850.0
+          ]
+        ]
+      },
+      {
+        "actorId": "A02",
+        "ucId": "UC-DIS-10",
+        "points": [
+          [
+            240,
+            702.0
+          ],
+          [
+            595,
+            1055.0
+          ]
+        ]
+      },
+      {
+        "actorId": "A02",
+        "ucId": "UC-TNT-12.2",
+        "points": [
+          [
+            240,
+            702.0
+          ],
+          [
+            595,
+            1260.0
+          ]
+        ]
+      },
+      {
+        "actorId": "A04",
+        "ucId": "UC-TNT-12.2",
+        "points": [
+          [
+            1680,
+            1030.0
+          ],
+          [
+            1325,
+            1260.0
+          ]
+        ]
+      },
+      {
+        "actorId": "A04",
+        "ucId": "UC-TNT-12.3",
+        "points": [
+          [
+            1680,
+            1030.0
+          ],
+          [
+            1325,
+            1465.0
+          ]
+        ]
+      }
+    ],
+    "layout": "independent-direct-links"
+  },
+  {
+    "id": "UC_G04_BA_1",
+    "file": "UC_G04_BA_1.puml",
+    "kind": "module",
+    "groupId": "G04",
+    "title": "G04 · Khu trọ và cơ sở vật chất phần 1",
+    "ucIds": [
+      "UC-OPT-02",
+      "UC-OPT-03.1",
+      "UC-OPT-03.2",
+      "UC-OPT-04.1",
+      "UC-OPT-04.3",
+      "UC-OPT-05",
+      "UC-OPT-06.1"
+    ],
+    "actorIds": [
+      "A02",
+      "A03"
+    ],
+    "order": 6,
+    "caption": "Hình 2.8",
+    "png": "PNG/06_Hinh_2_08_UC_G04_BA_1.png",
+    "svg": "SVG/06_Hinh_2_08_UC_G04_BA_1.svg",
+    "sourceSha256": "f55798a5f5fa8043b1854f549d9e432f456e19df1d85ece7fe855ad6cf30b408",
+    "width": 3840,
+    "height": 3370,
+    "links": [
+      {
+        "actorId": "A02",
+        "ucId": "UC-OPT-02",
+        "label": "",
+        "limited": false
+      },
+      {
+        "actorId": "A03",
+        "ucId": "UC-OPT-02",
+        "label": "",
+        "limited": false
+      },
+      {
+        "actorId": "A02",
+        "ucId": "UC-OPT-03.1",
+        "label": "",
+        "limited": false
+      },
+      {
+        "actorId": "A02",
+        "ucId": "UC-OPT-03.2",
+        "label": "",
+        "limited": false
+      },
+      {
+        "actorId": "A03",
+        "ucId": "UC-OPT-03.2",
+        "label": "",
+        "limited": false
+      },
+      {
+        "actorId": "A02",
+        "ucId": "UC-OPT-04.1",
+        "label": "",
+        "limited": false
+      },
+      {
+        "actorId": "A03",
+        "ucId": "UC-OPT-04.1",
+        "label": "",
+        "limited": false
+      },
+      {
+        "actorId": "A02",
+        "ucId": "UC-OPT-04.3",
+        "label": "",
+        "limited": false
+      },
+      {
+        "actorId": "A03",
+        "ucId": "UC-OPT-04.3",
+        "label": "",
+        "limited": false
+      },
+      {
+        "actorId": "A02",
+        "ucId": "UC-OPT-05",
+        "label": "",
+        "limited": false
+      },
+      {
+        "actorId": "A03",
+        "ucId": "UC-OPT-05",
+        "label": "",
+        "limited": false
+      },
+      {
+        "actorId": "A02",
+        "ucId": "UC-OPT-06.1",
+        "label": "",
+        "limited": false
+      },
+      {
+        "actorId": "A03",
+        "ucId": "UC-OPT-06.1",
+        "label": "",
+        "limited": false
+      }
+    ],
+    "nodes": {
+      "UC-OPT-02": [
+        595,
+        157,
+        1325,
+        313
+      ],
+      "UC-OPT-03.1": [
+        595,
+        362,
+        1325,
+        518
+      ],
+      "UC-OPT-03.2": [
+        595,
+        567,
+        1325,
+        723
+      ],
+      "UC-OPT-04.1": [
+        595,
+        772,
+        1325,
+        928
+      ],
+      "UC-OPT-04.3": [
+        595,
+        977,
+        1325,
+        1133
+      ],
+      "UC-OPT-05": [
+        595,
+        1182,
+        1325,
+        1338
+      ],
+      "UC-OPT-06.1": [
+        595,
+        1387,
+        1325,
+        1543
+      ]
+    },
+    "notes": [],
+    "associationSegments": [
+      {
+        "actorId": "A02",
+        "ucId": "UC-OPT-02",
+        "points": [
+          [
+            240,
+            825.0
+          ],
+          [
+            595,
+            235.0
+          ]
+        ]
+      },
+      {
+        "actorId": "A03",
+        "ucId": "UC-OPT-02",
+        "points": [
+          [
+            1680,
+            893.3333333333334
+          ],
+          [
+            1325,
+            235.0
+          ]
+        ]
+      },
+      {
+        "actorId": "A02",
+        "ucId": "UC-OPT-03.1",
+        "points": [
+          [
+            240,
+            825.0
+          ],
+          [
+            595,
+            440.0
+          ]
+        ]
+      },
+      {
+        "actorId": "A02",
+        "ucId": "UC-OPT-03.2",
+        "points": [
+          [
+            240,
+            825.0
+          ],
+          [
+            595,
+            645.0
+          ]
+        ]
+      },
+      {
+        "actorId": "A03",
+        "ucId": "UC-OPT-03.2",
+        "points": [
+          [
+            1680,
+            893.3333333333334
+          ],
+          [
+            1325,
+            645.0
+          ]
+        ]
+      },
+      {
+        "actorId": "A02",
+        "ucId": "UC-OPT-04.1",
+        "points": [
+          [
+            240,
+            825.0
+          ],
+          [
+            595,
+            850.0
+          ]
+        ]
+      },
+      {
+        "actorId": "A03",
+        "ucId": "UC-OPT-04.1",
+        "points": [
+          [
+            1680,
+            893.3333333333334
+          ],
+          [
+            1325,
+            850.0
+          ]
+        ]
+      },
+      {
+        "actorId": "A02",
+        "ucId": "UC-OPT-04.3",
+        "points": [
+          [
+            240,
+            825.0
+          ],
+          [
+            595,
+            1055.0
+          ]
+        ]
+      },
+      {
+        "actorId": "A03",
+        "ucId": "UC-OPT-04.3",
+        "points": [
+          [
+            1680,
+            893.3333333333334
+          ],
+          [
+            1325,
+            1055.0
+          ]
+        ]
+      },
+      {
+        "actorId": "A02",
+        "ucId": "UC-OPT-05",
+        "points": [
+          [
+            240,
+            825.0
+          ],
+          [
+            595,
+            1260.0
+          ]
+        ]
+      },
+      {
+        "actorId": "A03",
+        "ucId": "UC-OPT-05",
+        "points": [
+          [
+            1680,
+            893.3333333333334
+          ],
+          [
+            1325,
+            1260.0
+          ]
+        ]
+      },
+      {
+        "actorId": "A02",
+        "ucId": "UC-OPT-06.1",
+        "points": [
+          [
+            240,
+            825.0
+          ],
+          [
+            595,
+            1465.0
+          ]
+        ]
+      },
+      {
+        "actorId": "A03",
+        "ucId": "UC-OPT-06.1",
+        "points": [
+          [
+            1680,
+            893.3333333333334
+          ],
+          [
+            1325,
+            1465.0
+          ]
+        ]
+      }
+    ],
+    "layout": "independent-direct-links"
+  },
+  {
+    "id": "UC_G04_BA_2",
+    "file": "UC_G04_BA_2.puml",
+    "kind": "module",
+    "groupId": "G04",
+    "title": "G04 · Khu trọ và cơ sở vật chất phần 2",
+    "ucIds": [
+      "UC-OPT-06.2",
+      "UC-OPT-07.1",
+      "UC-OPT-07.2",
+      "UC-OPT-07.3",
+      "UC-OPT-08.1",
+      "UC-OPT-08.2",
+      "UC-OPT-09"
+    ],
+    "actorIds": [
+      "A02",
+      "A03"
+    ],
+    "order": 7,
+    "caption": "Hình 2.9",
+    "png": "PNG/07_Hinh_2_09_UC_G04_BA_2.png",
+    "svg": "SVG/07_Hinh_2_09_UC_G04_BA_2.svg",
+    "sourceSha256": "358b789ce79f1fea7a1c1eebbd99f1e34463692942a218251151a0d106fe115a",
+    "width": 3840,
+    "height": 3438,
+    "links": [
+      {
+        "actorId": "A02",
+        "ucId": "UC-OPT-06.2",
+        "label": "",
+        "limited": false
+      },
+      {
+        "actorId": "A03",
+        "ucId": "UC-OPT-06.2",
+        "label": "",
+        "limited": false
+      },
+      {
+        "actorId": "A02",
+        "ucId": "UC-OPT-07.1",
+        "label": "",
+        "limited": false
+      },
+      {
+        "actorId": "A03",
+        "ucId": "UC-OPT-07.1",
+        "label": "",
+        "limited": false
+      },
+      {
+        "actorId": "A02",
+        "ucId": "UC-OPT-07.2",
+        "label": "",
+        "limited": false
+      },
+      {
+        "actorId": "A03",
+        "ucId": "UC-OPT-07.2",
+        "label": "",
+        "limited": false
+      },
+      {
+        "actorId": "A02",
+        "ucId": "UC-OPT-07.3",
+        "label": "",
+        "limited": false
+      },
+      {
+        "actorId": "A03",
+        "ucId": "UC-OPT-07.3",
+        "label": "",
+        "limited": false
+      },
+      {
+        "actorId": "A02",
+        "ucId": "UC-OPT-08.1",
+        "label": "",
+        "limited": false
+      },
+      {
+        "actorId": "A03",
+        "ucId": "UC-OPT-08.1",
+        "label": "",
+        "limited": false
+      },
+      {
+        "actorId": "A02",
+        "ucId": "UC-OPT-08.2",
+        "label": "",
+        "limited": false
+      },
+      {
+        "actorId": "A03",
+        "ucId": "UC-OPT-08.2",
+        "label": "",
+        "limited": false
+      },
+      {
+        "actorId": "A02",
+        "ucId": "UC-OPT-09",
+        "label": "",
+        "limited": false
+      },
+      {
+        "actorId": "A03",
+        "ucId": "UC-OPT-09",
+        "label": "chỉ đọc phí/phiên bản",
+        "limited": true
+      }
+    ],
+    "nodes": {
+      "UC-OPT-06.2": [
+        595,
+        157,
+        1325,
+        313
+      ],
+      "UC-OPT-07.1": [
+        595,
+        362,
+        1325,
+        518
+      ],
+      "UC-OPT-07.2": [
+        595,
+        567,
+        1325,
+        723
+      ],
+      "UC-OPT-07.3": [
+        595,
+        772,
+        1325,
+        928
+      ],
+      "UC-OPT-08.1": [
+        595,
+        977,
+        1325,
+        1133
+      ],
+      "UC-OPT-08.2": [
+        595,
+        1182,
+        1325,
+        1338
+      ],
+      "UC-OPT-09": [
+        595,
+        1387,
+        1325,
+        1543
+      ]
+    },
+    "notes": [
+      "[1] A03 - UC-OPT-09: chỉ đọc phí/phiên bản."
+    ],
+    "associationSegments": [
+      {
+        "actorId": "A02",
+        "ucId": "UC-OPT-06.2",
+        "points": [
+          [
+            240,
+            825.0
+          ],
+          [
+            595,
+            235.0
+          ]
+        ]
+      },
+      {
+        "actorId": "A03",
+        "ucId": "UC-OPT-06.2",
+        "points": [
+          [
+            1680,
+            825.0
+          ],
+          [
+            1325,
+            235.0
+          ]
+        ]
+      },
+      {
+        "actorId": "A02",
+        "ucId": "UC-OPT-07.1",
+        "points": [
+          [
+            240,
+            825.0
+          ],
+          [
+            595,
+            440.0
+          ]
+        ]
+      },
+      {
+        "actorId": "A03",
+        "ucId": "UC-OPT-07.1",
+        "points": [
+          [
+            1680,
+            825.0
+          ],
+          [
+            1325,
+            440.0
+          ]
+        ]
+      },
+      {
+        "actorId": "A02",
+        "ucId": "UC-OPT-07.2",
+        "points": [
+          [
+            240,
+            825.0
+          ],
+          [
+            595,
+            645.0
+          ]
+        ]
+      },
+      {
+        "actorId": "A03",
+        "ucId": "UC-OPT-07.2",
+        "points": [
+          [
+            1680,
+            825.0
+          ],
+          [
+            1325,
+            645.0
+          ]
+        ]
+      },
+      {
+        "actorId": "A02",
+        "ucId": "UC-OPT-07.3",
+        "points": [
+          [
+            240,
+            825.0
+          ],
+          [
+            595,
+            850.0
+          ]
+        ]
+      },
+      {
+        "actorId": "A03",
+        "ucId": "UC-OPT-07.3",
+        "points": [
+          [
+            1680,
+            825.0
+          ],
+          [
+            1325,
+            850.0
+          ]
+        ]
+      },
+      {
+        "actorId": "A02",
+        "ucId": "UC-OPT-08.1",
+        "points": [
+          [
+            240,
+            825.0
+          ],
+          [
+            595,
+            1055.0
+          ]
+        ]
+      },
+      {
+        "actorId": "A03",
+        "ucId": "UC-OPT-08.1",
+        "points": [
+          [
+            1680,
+            825.0
+          ],
+          [
+            1325,
+            1055.0
+          ]
+        ]
+      },
+      {
+        "actorId": "A02",
+        "ucId": "UC-OPT-08.2",
+        "points": [
+          [
+            240,
+            825.0
+          ],
+          [
+            595,
+            1260.0
+          ]
+        ]
+      },
+      {
+        "actorId": "A03",
+        "ucId": "UC-OPT-08.2",
+        "points": [
+          [
+            1680,
+            825.0
+          ],
+          [
+            1325,
+            1260.0
+          ]
+        ]
+      },
+      {
+        "actorId": "A02",
+        "ucId": "UC-OPT-09",
+        "points": [
+          [
+            240,
+            825.0
+          ],
+          [
+            595,
+            1465.0
+          ]
+        ]
+      },
+      {
+        "actorId": "A03",
+        "ucId": "UC-OPT-09",
+        "points": [
+          [
+            1680,
+            825.0
+          ],
+          [
+            1325,
+            1465.0
+          ]
+        ]
+      }
+    ],
+    "layout": "independent-direct-links"
+  },
+  {
+    "id": "UC_G05",
+    "file": "UC_G05.puml",
+    "kind": "module",
+    "groupId": "G05",
+    "title": "G05 · Nhân sự và ủy quyền vận hành",
+    "ucIds": [
+      "UC-STF-01",
+      "UC-STF-02",
+      "UC-STF-04",
+      "UC-STF-03"
+    ],
+    "actorIds": [
+      "A02",
+      "A03"
+    ],
+    "order": 8,
+    "caption": "Hình 2.10",
+    "png": "PNG/08_Hinh_2_10_UC_G05.png",
+    "svg": "SVG/08_Hinh_2_10_UC_G05.svg",
+    "sourceSha256": "88531208715ad2572f655c7b887ae78254e7846efaa34acb32f85d5c58411502",
+    "width": 3840,
+    "height": 2208,
+    "links": [
+      {
+        "actorId": "A02",
+        "ucId": "UC-STF-01",
+        "label": "",
+        "limited": false
+      },
+      {
+        "actorId": "A03",
+        "ucId": "UC-STF-01",
+        "label": "chỉ xem nhân viên và bộ quyền mẫu",
+        "limited": true
+      },
+      {
+        "actorId": "A02",
+        "ucId": "UC-STF-02",
+        "label": "",
+        "limited": false
+      },
+      {
+        "actorId": "A02",
+        "ucId": "UC-STF-04",
+        "label": "",
+        "limited": false
+      },
+      {
+        "actorId": "A03",
+        "ucId": "UC-STF-04",
+        "label": "",
+        "limited": false
+      },
+      {
+        "actorId": "A02",
+        "ucId": "UC-STF-03",
+        "label": "",
+        "limited": false
+      }
+    ],
+    "nodes": {
+      "UC-STF-01": [
+        595,
+        157,
+        1325,
+        313
+      ],
+      "UC-STF-02": [
+        595,
+        362,
+        1325,
+        518
+      ],
+      "UC-STF-04": [
+        595,
+        567,
+        1325,
+        723
+      ],
+      "UC-STF-03": [
+        595,
+        772,
+        1325,
+        928
+      ]
+    },
+    "notes": [
+      "[1] A03 - UC-STF-01: chỉ xem nhân viên và bộ quyền mẫu."
+    ],
+    "associationSegments": [
+      {
+        "actorId": "A02",
+        "ucId": "UC-STF-01",
+        "points": [
+          [
+            240,
+            517.5
+          ],
+          [
+            595,
+            235.0
+          ]
+        ]
+      },
+      {
+        "actorId": "A03",
+        "ucId": "UC-STF-01",
+        "points": [
+          [
+            1680,
+            415.0
+          ],
+          [
+            1325,
+            235.0
+          ]
+        ]
+      },
+      {
+        "actorId": "A02",
+        "ucId": "UC-STF-02",
+        "points": [
+          [
+            240,
+            517.5
+          ],
+          [
+            595,
+            440.0
+          ]
+        ]
+      },
+      {
+        "actorId": "A02",
+        "ucId": "UC-STF-04",
+        "points": [
+          [
+            240,
+            517.5
+          ],
+          [
+            595,
+            645.0
+          ]
+        ]
+      },
+      {
+        "actorId": "A03",
+        "ucId": "UC-STF-04",
+        "points": [
+          [
+            1680,
+            415.0
+          ],
+          [
+            1325,
+            645.0
+          ]
+        ]
+      },
+      {
+        "actorId": "A02",
+        "ucId": "UC-STF-03",
+        "points": [
+          [
+            240,
+            517.5
+          ],
+          [
+            595,
+            850.0
+          ]
+        ]
+      }
+    ],
+    "layout": "independent-direct-links"
+  },
+  {
+    "id": "UC_G06_01_Tenant_Records",
+    "file": "UC_G06_01_Tenant_Records.puml",
+    "kind": "module",
+    "groupId": "G06",
+    "title": "G06 Hồ sơ người thuê và quyền truy cập",
+    "ucIds": [
+      "UC-TNT-01",
+      "UC-TNT-02.1",
+      "UC-TNT-02.2",
+      "UC-TNT-02.3",
+      "UC-TNT-02.4",
+      "UC-TNT-03",
+      "UC-TNT-03.1",
+      "UC-TEN-01"
+    ],
+    "actorIds": [
+      "A02",
+      "A03",
+      "A04"
+    ],
+    "order": 9,
+    "caption": "Hình 2.11",
+    "png": "PNG/09_Hinh_2_11_UC_G06_01_Tenant_Records.png",
+    "svg": "SVG/09_Hinh_2_11_UC_G06_01_Tenant_Records.svg",
+    "sourceSha256": "040c9685973b6abe2b52c2878116d64c52253eb0cea1fd2d8434b62e53dc72ff",
+    "width": 3840,
+    "height": 3800,
+    "links": [
+      {
+        "actorId": "A02",
+        "ucId": "UC-TNT-01",
+        "label": "",
+        "limited": false
+      },
+      {
+        "actorId": "A03",
+        "ucId": "UC-TNT-01",
+        "label": "",
+        "limited": false
+      },
+      {
+        "actorId": "A02",
+        "ucId": "UC-TNT-02.1",
+        "label": "",
+        "limited": false
+      },
+      {
+        "actorId": "A03",
+        "ucId": "UC-TNT-02.1",
+        "label": "",
+        "limited": false
+      },
+      {
+        "actorId": "A02",
+        "ucId": "UC-TNT-02.2",
+        "label": "",
+        "limited": false
+      },
+      {
+        "actorId": "A03",
+        "ucId": "UC-TNT-02.2",
+        "label": "",
+        "limited": false
+      },
+      {
+        "actorId": "A02",
+        "ucId": "UC-TNT-02.3",
+        "label": "",
+        "limited": false
+      },
+      {
+        "actorId": "A03",
+        "ucId": "UC-TNT-02.3",
+        "label": "",
+        "limited": false
+      },
+      {
+        "actorId": "A02",
+        "ucId": "UC-TNT-02.4",
+        "label": "",
+        "limited": false
+      },
+      {
+        "actorId": "A03",
+        "ucId": "UC-TNT-02.4",
+        "label": "",
+        "limited": false
+      },
+      {
+        "actorId": "A02",
+        "ucId": "UC-TNT-03",
+        "label": "",
+        "limited": false
+      },
+      {
+        "actorId": "A02",
+        "ucId": "UC-TNT-03.1",
+        "label": "",
+        "limited": false
+      },
+      {
+        "actorId": "A03",
+        "ucId": "UC-TNT-03.1",
+        "label": "",
+        "limited": false
+      },
+      {
+        "actorId": "A04",
+        "ucId": "UC-TEN-01",
+        "label": "",
+        "limited": false
+      }
+    ],
+    "nodes": {
+      "UC-TNT-01": [
+        595,
+        157,
+        1325,
+        313
+      ],
+      "UC-TNT-02.1": [
+        595,
+        362,
+        1325,
+        518
+      ],
+      "UC-TNT-02.2": [
+        595,
+        567,
+        1325,
+        723
+      ],
+      "UC-TNT-02.3": [
+        595,
+        772,
+        1325,
+        928
+      ],
+      "UC-TNT-02.4": [
+        595,
+        977,
+        1325,
+        1133
+      ],
+      "UC-TNT-03": [
+        595,
+        1182,
+        1325,
+        1338
+      ],
+      "UC-TNT-03.1": [
+        595,
+        1387,
+        1325,
+        1543
+      ],
+      "UC-TEN-01": [
+        595,
+        1592,
+        1325,
+        1748
+      ]
+    },
+    "notes": [],
+    "associationSegments": [
+      {
+        "actorId": "A02",
+        "ucId": "UC-TNT-01",
+        "points": [
+          [
+            240,
+            660.0
+          ],
+          [
+            595,
+            235.0
+          ]
+        ]
+      },
+      {
+        "actorId": "A03",
+        "ucId": "UC-TNT-01",
+        "points": [
+          [
+            1680,
+            756.6666666666666
+          ],
+          [
+            1325,
+            235.0
+          ]
+        ]
+      },
+      {
+        "actorId": "A02",
+        "ucId": "UC-TNT-02.1",
+        "points": [
+          [
+            240,
+            660.0
+          ],
+          [
+            595,
+            440.0
+          ]
+        ]
+      },
+      {
+        "actorId": "A03",
+        "ucId": "UC-TNT-02.1",
+        "points": [
+          [
+            1680,
+            756.6666666666666
+          ],
+          [
+            1325,
+            440.0
+          ]
+        ]
+      },
+      {
+        "actorId": "A02",
+        "ucId": "UC-TNT-02.2",
+        "points": [
+          [
+            240,
+            660.0
+          ],
+          [
+            595,
+            645.0
+          ]
+        ]
+      },
+      {
+        "actorId": "A03",
+        "ucId": "UC-TNT-02.2",
+        "points": [
+          [
+            1680,
+            756.6666666666666
+          ],
+          [
+            1325,
+            645.0
+          ]
+        ]
+      },
+      {
+        "actorId": "A02",
+        "ucId": "UC-TNT-02.3",
+        "points": [
+          [
+            240,
+            660.0
+          ],
+          [
+            595,
+            850.0
+          ]
+        ]
+      },
+      {
+        "actorId": "A03",
+        "ucId": "UC-TNT-02.3",
+        "points": [
+          [
+            1680,
+            756.6666666666666
+          ],
+          [
+            1325,
+            850.0
+          ]
+        ]
+      },
+      {
+        "actorId": "A02",
+        "ucId": "UC-TNT-02.4",
+        "points": [
+          [
+            240,
+            660.0
+          ],
+          [
+            595,
+            1055.0
+          ]
+        ]
+      },
+      {
+        "actorId": "A03",
+        "ucId": "UC-TNT-02.4",
+        "points": [
+          [
+            1680,
+            756.6666666666666
+          ],
+          [
+            1325,
+            1055.0
+          ]
+        ]
+      },
+      {
+        "actorId": "A02",
+        "ucId": "UC-TNT-03",
+        "points": [
+          [
+            240,
+            660.0
+          ],
+          [
+            595,
+            1260.0
+          ]
+        ]
+      },
+      {
+        "actorId": "A02",
+        "ucId": "UC-TNT-03.1",
+        "points": [
+          [
+            240,
+            660.0
+          ],
+          [
+            595,
+            1465.0
+          ]
+        ]
+      },
+      {
+        "actorId": "A03",
+        "ucId": "UC-TNT-03.1",
+        "points": [
+          [
+            1680,
+            756.6666666666666
+          ],
+          [
+            1325,
+            1465.0
+          ]
+        ]
+      },
+      {
+        "actorId": "A04",
+        "ucId": "UC-TEN-01",
+        "points": [
+          [
+            240,
+            1480.0
+          ],
+          [
+            595,
+            1670.0
+          ]
+        ]
+      }
+    ],
+    "layout": "independent-direct-links"
+  },
+  {
+    "id": "UC_G06_02_Leases_Deposits_BA_1",
+    "file": "UC_G06_02_Leases_Deposits_BA_1.puml",
+    "kind": "module",
+    "groupId": "G06",
+    "title": "G06 Hợp đồng và tiền cọc phần 1",
+    "ucIds": [
+      "UC-TNT-04",
+      "UC-TNT-05",
+      "UC-TNT-06.1",
+      "UC-TNT-06.2",
+      "UC-TNT-06.3"
+    ],
+    "actorIds": [
+      "A02",
+      "A03"
+    ],
+    "order": 10,
+    "caption": "Hình 2.12",
+    "png": "PNG/10_Hinh_2_12_UC_G06_02_Leases_Deposits_BA_1.png",
+    "svg": "SVG/10_Hinh_2_12_UC_G06_02_Leases_Deposits_BA_1.svg",
+    "sourceSha256": "de659cff9a12384e1a329726ae368ce79a6a08726f23f5eae5d526e3007f3a88",
+    "width": 3840,
+    "height": 2550,
+    "links": [
+      {
+        "actorId": "A02",
+        "ucId": "UC-TNT-04",
+        "label": "",
+        "limited": false
+      },
+      {
+        "actorId": "A03",
+        "ucId": "UC-TNT-04",
+        "label": "",
+        "limited": false
+      },
+      {
+        "actorId": "A02",
+        "ucId": "UC-TNT-05",
+        "label": "",
+        "limited": false
+      },
+      {
+        "actorId": "A03",
+        "ucId": "UC-TNT-05",
+        "label": "",
+        "limited": false
+      },
+      {
+        "actorId": "A02",
+        "ucId": "UC-TNT-06.1",
+        "label": "",
+        "limited": false
+      },
+      {
+        "actorId": "A03",
+        "ucId": "UC-TNT-06.1",
+        "label": "",
+        "limited": false
+      },
+      {
+        "actorId": "A02",
+        "ucId": "UC-TNT-06.2",
+        "label": "",
+        "limited": false
+      },
+      {
+        "actorId": "A03",
+        "ucId": "UC-TNT-06.2",
+        "label": "",
+        "limited": false
+      },
+      {
+        "actorId": "A02",
+        "ucId": "UC-TNT-06.3",
+        "label": "",
+        "limited": false
+      },
+      {
+        "actorId": "A03",
+        "ucId": "UC-TNT-06.3",
+        "label": "",
+        "limited": false
+      }
+    ],
+    "nodes": {
+      "UC-TNT-04": [
+        595,
+        157,
+        1325,
+        313
+      ],
+      "UC-TNT-05": [
+        595,
+        362,
+        1325,
+        518
+      ],
+      "UC-TNT-06.1": [
+        595,
+        567,
+        1325,
+        723
+      ],
+      "UC-TNT-06.2": [
+        595,
+        772,
+        1325,
+        928
+      ],
+      "UC-TNT-06.3": [
+        595,
+        977,
+        1325,
+        1133
+      ]
+    },
+    "notes": [],
+    "associationSegments": [
+      {
+        "actorId": "A02",
+        "ucId": "UC-TNT-04",
+        "points": [
+          [
+            240,
+            620.0
+          ],
+          [
+            595,
+            235.0
+          ]
+        ]
+      },
+      {
+        "actorId": "A03",
+        "ucId": "UC-TNT-04",
+        "points": [
+          [
+            1680,
+            620.0
+          ],
+          [
+            1325,
+            235.0
+          ]
+        ]
+      },
+      {
+        "actorId": "A02",
+        "ucId": "UC-TNT-05",
+        "points": [
+          [
+            240,
+            620.0
+          ],
+          [
+            595,
+            440.0
+          ]
+        ]
+      },
+      {
+        "actorId": "A03",
+        "ucId": "UC-TNT-05",
+        "points": [
+          [
+            1680,
+            620.0
+          ],
+          [
+            1325,
+            440.0
+          ]
+        ]
+      },
+      {
+        "actorId": "A02",
+        "ucId": "UC-TNT-06.1",
+        "points": [
+          [
+            240,
+            620.0
+          ],
+          [
+            595,
+            645.0
+          ]
+        ]
+      },
+      {
+        "actorId": "A03",
+        "ucId": "UC-TNT-06.1",
+        "points": [
+          [
+            1680,
+            620.0
+          ],
+          [
+            1325,
+            645.0
+          ]
+        ]
+      },
+      {
+        "actorId": "A02",
+        "ucId": "UC-TNT-06.2",
+        "points": [
+          [
+            240,
+            620.0
+          ],
+          [
+            595,
+            850.0
+          ]
+        ]
+      },
+      {
+        "actorId": "A03",
+        "ucId": "UC-TNT-06.2",
+        "points": [
+          [
+            1680,
+            620.0
+          ],
+          [
+            1325,
+            850.0
+          ]
+        ]
+      },
+      {
+        "actorId": "A02",
+        "ucId": "UC-TNT-06.3",
+        "points": [
+          [
+            240,
+            620.0
+          ],
+          [
+            595,
+            1055.0
+          ]
+        ]
+      },
+      {
+        "actorId": "A03",
+        "ucId": "UC-TNT-06.3",
+        "points": [
+          [
+            1680,
+            620.0
+          ],
+          [
+            1325,
+            1055.0
+          ]
+        ]
+      }
+    ],
+    "layout": "independent-direct-links"
+  },
+  {
+    "id": "UC_G06_02_Leases_Deposits_BA_2",
+    "file": "UC_G06_02_Leases_Deposits_BA_2.puml",
+    "kind": "module",
+    "groupId": "G06",
+    "title": "G06 Hợp đồng và tiền cọc phần 2",
+    "ucIds": [
+      "UC-TEN-02",
+      "UC-TNT-07",
+      "UC-TNT-12.1",
+      "UC-TEN-08.1"
+    ],
+    "actorIds": [
+      "A02",
+      "A03",
+      "A04"
+    ],
+    "order": 11,
+    "caption": "Hình 2.13",
+    "png": "PNG/11_Hinh_2_13_UC_G06_02_Leases_Deposits_BA_2.png",
+    "svg": "SVG/11_Hinh_2_13_UC_G06_02_Leases_Deposits_BA_2.svg",
+    "sourceSha256": "3ec700f0bd9cb5eb13ec6fcb1370e38ad48d4eb5e5b157f9eb18fc31c906346f",
+    "width": 3840,
+    "height": 2160,
+    "links": [
+      {
+        "actorId": "A04",
+        "ucId": "UC-TEN-02",
+        "label": "",
+        "limited": false
+      },
+      {
+        "actorId": "A02",
+        "ucId": "UC-TNT-07",
+        "label": "",
+        "limited": false
+      },
+      {
+        "actorId": "A03",
+        "ucId": "UC-TNT-07",
+        "label": "",
+        "limited": false
+      },
+      {
+        "actorId": "A02",
+        "ucId": "UC-TNT-12.1",
+        "label": "",
+        "limited": false
+      },
+      {
+        "actorId": "A03",
+        "ucId": "UC-TNT-12.1",
+        "label": "",
+        "limited": false
+      },
+      {
+        "actorId": "A04",
+        "ucId": "UC-TEN-08.1",
+        "label": "",
+        "limited": false
+      }
+    ],
+    "nodes": {
+      "UC-TEN-02": [
+        595,
+        157,
+        1325,
+        313
+      ],
+      "UC-TNT-07": [
+        595,
+        362,
+        1325,
+        518
+      ],
+      "UC-TNT-12.1": [
+        595,
+        567,
+        1325,
+        723
+      ],
+      "UC-TEN-08.1": [
+        595,
+        772,
+        1325,
+        928
+      ]
+    },
+    "notes": [],
+    "associationSegments": [
+      {
+        "actorId": "A04",
+        "ucId": "UC-TEN-02",
+        "points": [
+          [
+            240,
+            660.0
+          ],
+          [
+            595,
+            235.0
+          ]
+        ]
+      },
+      {
+        "actorId": "A02",
+        "ucId": "UC-TNT-07",
+        "points": [
+          [
+            240,
+            250.0
+          ],
+          [
+            595,
+            440.0
+          ]
+        ]
+      },
+      {
+        "actorId": "A03",
+        "ucId": "UC-TNT-07",
+        "points": [
+          [
+            1680,
+            517.5
+          ],
+          [
+            1325,
+            440.0
+          ]
+        ]
+      },
+      {
+        "actorId": "A02",
+        "ucId": "UC-TNT-12.1",
+        "points": [
+          [
+            240,
+            250.0
+          ],
+          [
+            595,
+            645.0
+          ]
+        ]
+      },
+      {
+        "actorId": "A03",
+        "ucId": "UC-TNT-12.1",
+        "points": [
+          [
+            1680,
+            517.5
+          ],
+          [
+            1325,
+            645.0
+          ]
+        ]
+      },
+      {
+        "actorId": "A04",
+        "ucId": "UC-TEN-08.1",
+        "points": [
+          [
+            240,
+            660.0
+          ],
+          [
+            595,
+            850.0
+          ]
+        ]
+      }
+    ],
+    "layout": "independent-direct-links"
+  },
+  {
+    "id": "UC_G07",
+    "file": "UC_G07.puml",
+    "kind": "module",
+    "groupId": "G07",
+    "title": "G07 · Vòng đời thuê và quyết toán",
+    "ucIds": [
+      "UC-TEN-07.1",
+      "UC-TEN-07.2",
+      "UC-TEN-07.3",
+      "UC-TNT-10",
+      "UC-TNT-11",
+      "UC-TNT-08",
+      "UC-TNT-09"
+    ],
+    "actorIds": [
+      "A02",
+      "A03",
+      "A04"
+    ],
+    "order": 12,
+    "caption": "Hình 2.14",
+    "png": "PNG/12_Hinh_2_14_UC_G07.png",
+    "svg": "SVG/12_Hinh_2_14_UC_G07.svg",
+    "sourceSha256": "b4efe9dabefcab09269de9440638c7d10cbafe5c6e1204d574000a3568bf8bf4",
+    "width": 3840,
+    "height": 3370,
+    "links": [
+      {
+        "actorId": "A04",
+        "ucId": "UC-TEN-07.1",
+        "label": "",
+        "limited": false
+      },
+      {
+        "actorId": "A04",
+        "ucId": "UC-TEN-07.2",
+        "label": "",
+        "limited": false
+      },
+      {
+        "actorId": "A04",
+        "ucId": "UC-TEN-07.3",
+        "label": "",
+        "limited": false
+      },
+      {
+        "actorId": "A02",
+        "ucId": "UC-TNT-10",
+        "label": "",
+        "limited": false
+      },
+      {
+        "actorId": "A03",
+        "ucId": "UC-TNT-10",
+        "label": "",
+        "limited": false
+      },
+      {
+        "actorId": "A02",
+        "ucId": "UC-TNT-11",
+        "label": "",
+        "limited": false
+      },
+      {
+        "actorId": "A03",
+        "ucId": "UC-TNT-11",
+        "label": "",
+        "limited": false
+      },
+      {
+        "actorId": "A02",
+        "ucId": "UC-TNT-08",
+        "label": "",
+        "limited": false
+      },
+      {
+        "actorId": "A02",
+        "ucId": "UC-TNT-09",
+        "label": "",
+        "limited": false
+      }
+    ],
+    "nodes": {
+      "UC-TEN-07.1": [
+        595,
+        157,
+        1325,
+        313
+      ],
+      "UC-TEN-07.2": [
+        595,
+        362,
+        1325,
+        518
+      ],
+      "UC-TEN-07.3": [
+        595,
+        567,
+        1325,
+        723
+      ],
+      "UC-TNT-10": [
+        595,
+        772,
+        1325,
+        928
+      ],
+      "UC-TNT-11": [
+        595,
+        977,
+        1325,
+        1133
+      ],
+      "UC-TNT-08": [
+        595,
+        1182,
+        1325,
+        1338
+      ],
+      "UC-TNT-09": [
+        595,
+        1387,
+        1325,
+        1543
+      ]
+    },
+    "notes": [],
+    "associationSegments": [
+      {
+        "actorId": "A04",
+        "ucId": "UC-TEN-07.1",
+        "points": [
+          [
+            240,
+            415.0
+          ],
+          [
+            595,
+            235.0
+          ]
+        ]
+      },
+      {
+        "actorId": "A04",
+        "ucId": "UC-TEN-07.2",
+        "points": [
+          [
+            240,
+            415.0
+          ],
+          [
+            595,
+            440.0
+          ]
+        ]
+      },
+      {
+        "actorId": "A04",
+        "ucId": "UC-TEN-07.3",
+        "points": [
+          [
+            240,
+            415.0
+          ],
+          [
+            595,
+            645.0
+          ]
+        ]
+      },
+      {
+        "actorId": "A02",
+        "ucId": "UC-TNT-10",
+        "points": [
+          [
+            240,
+            1132.5
+          ],
+          [
+            595,
+            850.0
+          ]
+        ]
+      },
+      {
+        "actorId": "A03",
+        "ucId": "UC-TNT-10",
+        "points": [
+          [
+            1680,
+            927.5
+          ],
+          [
+            1325,
+            850.0
+          ]
+        ]
+      },
+      {
+        "actorId": "A02",
+        "ucId": "UC-TNT-11",
+        "points": [
+          [
+            240,
+            1132.5
+          ],
+          [
+            595,
+            1055.0
+          ]
+        ]
+      },
+      {
+        "actorId": "A03",
+        "ucId": "UC-TNT-11",
+        "points": [
+          [
+            1680,
+            927.5
+          ],
+          [
+            1325,
+            1055.0
+          ]
+        ]
+      },
+      {
+        "actorId": "A02",
+        "ucId": "UC-TNT-08",
+        "points": [
+          [
+            240,
+            1132.5
+          ],
+          [
+            595,
+            1260.0
+          ]
+        ]
+      },
+      {
+        "actorId": "A02",
+        "ucId": "UC-TNT-09",
+        "points": [
+          [
+            240,
+            1132.5
+          ],
+          [
+            595,
+            1465.0
+          ]
+        ]
+      }
+    ],
+    "layout": "independent-direct-links"
+  },
+  {
+    "id": "UC_G08_01_Invoices_BA_1",
+    "file": "UC_G08_01_Invoices_BA_1.puml",
+    "kind": "module",
+    "groupId": "G08",
+    "title": "G08 Chỉ số và hóa đơn phần 1",
+    "ucIds": [
+      "UC-BIL-01",
+      "UC-BIL-02",
+      "UC-BIL-03",
+      "UC-BIL-17.1",
+      "UC-BIL-17.2",
+      "UC-BIL-04"
+    ],
+    "actorIds": [
+      "A02",
+      "A03"
+    ],
+    "order": 13,
+    "caption": "Hình 2.15",
+    "png": "PNG/13_Hinh_2_15_UC_G08_01_Invoices_BA_1.png",
+    "svg": "SVG/13_Hinh_2_15_UC_G08_01_Invoices_BA_1.svg",
+    "sourceSha256": "0e427266d6586c60485f9b1df5f8addba86c675c76cd7cb559d9623725618973",
+    "width": 3840,
+    "height": 2960,
+    "links": [
+      {
+        "actorId": "A02",
+        "ucId": "UC-BIL-01",
+        "label": "",
+        "limited": false
+      },
+      {
+        "actorId": "A03",
+        "ucId": "UC-BIL-01",
+        "label": "",
+        "limited": false
+      },
+      {
+        "actorId": "A02",
+        "ucId": "UC-BIL-02",
+        "label": "",
+        "limited": false
+      },
+      {
+        "actorId": "A03",
+        "ucId": "UC-BIL-02",
+        "label": "",
+        "limited": false
+      },
+      {
+        "actorId": "A02",
+        "ucId": "UC-BIL-03",
+        "label": "",
+        "limited": false
+      },
+      {
+        "actorId": "A03",
+        "ucId": "UC-BIL-03",
+        "label": "",
+        "limited": false
+      },
+      {
+        "actorId": "A02",
+        "ucId": "UC-BIL-17.1",
+        "label": "",
+        "limited": false
+      },
+      {
+        "actorId": "A03",
+        "ucId": "UC-BIL-17.1",
+        "label": "",
+        "limited": false
+      },
+      {
+        "actorId": "A02",
+        "ucId": "UC-BIL-17.2",
+        "label": "",
+        "limited": false
+      },
+      {
+        "actorId": "A03",
+        "ucId": "UC-BIL-17.2",
+        "label": "",
+        "limited": false
+      },
+      {
+        "actorId": "A02",
+        "ucId": "UC-BIL-04",
+        "label": "",
+        "limited": false
+      },
+      {
+        "actorId": "A03",
+        "ucId": "UC-BIL-04",
+        "label": "",
+        "limited": false
+      }
+    ],
+    "nodes": {
+      "UC-BIL-01": [
+        595,
+        157,
+        1325,
+        313
+      ],
+      "UC-BIL-02": [
+        595,
+        362,
+        1325,
+        518
+      ],
+      "UC-BIL-03": [
+        595,
+        567,
+        1325,
+        723
+      ],
+      "UC-BIL-17.1": [
+        595,
+        772,
+        1325,
+        928
+      ],
+      "UC-BIL-17.2": [
+        595,
+        977,
+        1325,
+        1133
+      ],
+      "UC-BIL-04": [
+        595,
+        1182,
+        1325,
+        1338
+      ]
+    },
+    "notes": [],
+    "associationSegments": [
+      {
+        "actorId": "A02",
+        "ucId": "UC-BIL-01",
+        "points": [
+          [
+            240,
+            722.5
+          ],
+          [
+            595,
+            235.0
+          ]
+        ]
+      },
+      {
+        "actorId": "A03",
+        "ucId": "UC-BIL-01",
+        "points": [
+          [
+            1680,
+            722.5
+          ],
+          [
+            1325,
+            235.0
+          ]
+        ]
+      },
+      {
+        "actorId": "A02",
+        "ucId": "UC-BIL-02",
+        "points": [
+          [
+            240,
+            722.5
+          ],
+          [
+            595,
+            440.0
+          ]
+        ]
+      },
+      {
+        "actorId": "A03",
+        "ucId": "UC-BIL-02",
+        "points": [
+          [
+            1680,
+            722.5
+          ],
+          [
+            1325,
+            440.0
+          ]
+        ]
+      },
+      {
+        "actorId": "A02",
+        "ucId": "UC-BIL-03",
+        "points": [
+          [
+            240,
+            722.5
+          ],
+          [
+            595,
+            645.0
+          ]
+        ]
+      },
+      {
+        "actorId": "A03",
+        "ucId": "UC-BIL-03",
+        "points": [
+          [
+            1680,
+            722.5
+          ],
+          [
+            1325,
+            645.0
+          ]
+        ]
+      },
+      {
+        "actorId": "A02",
+        "ucId": "UC-BIL-17.1",
+        "points": [
+          [
+            240,
+            722.5
+          ],
+          [
+            595,
+            850.0
+          ]
+        ]
+      },
+      {
+        "actorId": "A03",
+        "ucId": "UC-BIL-17.1",
+        "points": [
+          [
+            1680,
+            722.5
+          ],
+          [
+            1325,
+            850.0
+          ]
+        ]
+      },
+      {
+        "actorId": "A02",
+        "ucId": "UC-BIL-17.2",
+        "points": [
+          [
+            240,
+            722.5
+          ],
+          [
+            595,
+            1055.0
+          ]
+        ]
+      },
+      {
+        "actorId": "A03",
+        "ucId": "UC-BIL-17.2",
+        "points": [
+          [
+            1680,
+            722.5
+          ],
+          [
+            1325,
+            1055.0
+          ]
+        ]
+      },
+      {
+        "actorId": "A02",
+        "ucId": "UC-BIL-04",
+        "points": [
+          [
+            240,
+            722.5
+          ],
+          [
+            595,
+            1260.0
+          ]
+        ]
+      },
+      {
+        "actorId": "A03",
+        "ucId": "UC-BIL-04",
+        "points": [
+          [
+            1680,
+            722.5
+          ],
+          [
+            1325,
+            1260.0
+          ]
+        ]
+      }
+    ],
+    "layout": "independent-direct-links"
+  },
+  {
+    "id": "UC_G08_01_Invoices_BA_2",
+    "file": "UC_G08_01_Invoices_BA_2.puml",
+    "kind": "module",
+    "groupId": "G08",
+    "title": "G08 Chỉ số và hóa đơn phần 2",
+    "ucIds": [
+      "UC-BIL-05",
+      "UC-BIL-06",
+      "UC-BIL-07",
+      "UC-BIL-08.1",
+      "UC-TEN-03"
+    ],
+    "actorIds": [
+      "A02",
+      "A03",
+      "A04"
+    ],
+    "order": 14,
+    "caption": "Hình 2.16",
+    "png": "PNG/14_Hinh_2_16_UC_G08_01_Invoices_BA_2.png",
+    "svg": "SVG/14_Hinh_2_16_UC_G08_01_Invoices_BA_2.svg",
+    "sourceSha256": "9243bc78baf9c32d9d7de95eb9aefe6cb077ca432c9f52f679d9e2e3f07f3de0",
+    "width": 3840,
+    "height": 2570,
+    "links": [
+      {
+        "actorId": "A02",
+        "ucId": "UC-BIL-05",
+        "label": "",
+        "limited": false
+      },
+      {
+        "actorId": "A03",
+        "ucId": "UC-BIL-05",
+        "label": "",
+        "limited": false
+      },
+      {
+        "actorId": "A02",
+        "ucId": "UC-BIL-06",
+        "label": "",
+        "limited": false
+      },
+      {
+        "actorId": "A03",
+        "ucId": "UC-BIL-06",
+        "label": "",
+        "limited": false
+      },
+      {
+        "actorId": "A02",
+        "ucId": "UC-BIL-07",
+        "label": "",
+        "limited": false
+      },
+      {
+        "actorId": "A03",
+        "ucId": "UC-BIL-07",
+        "label": "",
+        "limited": false
+      },
+      {
+        "actorId": "A02",
+        "ucId": "UC-BIL-08.1",
+        "label": "",
+        "limited": false
+      },
+      {
+        "actorId": "A03",
+        "ucId": "UC-BIL-08.1",
+        "label": "",
+        "limited": false
+      },
+      {
+        "actorId": "A04",
+        "ucId": "UC-TEN-03",
+        "label": "",
+        "limited": false
+      }
+    ],
+    "nodes": {
+      "UC-BIL-05": [
+        595,
+        157,
+        1325,
+        313
+      ],
+      "UC-BIL-06": [
+        595,
+        362,
+        1325,
+        518
+      ],
+      "UC-BIL-07": [
+        595,
+        567,
+        1325,
+        723
+      ],
+      "UC-BIL-08.1": [
+        595,
+        772,
+        1325,
+        928
+      ],
+      "UC-TEN-03": [
+        595,
+        977,
+        1325,
+        1133
+      ]
+    },
+    "notes": [],
+    "associationSegments": [
+      {
+        "actorId": "A02",
+        "ucId": "UC-BIL-05",
+        "points": [
+          [
+            240,
+            352.5
+          ],
+          [
+            595,
+            235.0
+          ]
+        ]
+      },
+      {
+        "actorId": "A03",
+        "ucId": "UC-BIL-05",
+        "points": [
+          [
+            1680,
+            517.5
+          ],
+          [
+            1325,
+            235.0
+          ]
+        ]
+      },
+      {
+        "actorId": "A02",
+        "ucId": "UC-BIL-06",
+        "points": [
+          [
+            240,
+            352.5
+          ],
+          [
+            595,
+            440.0
+          ]
+        ]
+      },
+      {
+        "actorId": "A03",
+        "ucId": "UC-BIL-06",
+        "points": [
+          [
+            1680,
+            517.5
+          ],
+          [
+            1325,
+            440.0
+          ]
+        ]
+      },
+      {
+        "actorId": "A02",
+        "ucId": "UC-BIL-07",
+        "points": [
+          [
+            240,
+            352.5
+          ],
+          [
+            595,
+            645.0
+          ]
+        ]
+      },
+      {
+        "actorId": "A03",
+        "ucId": "UC-BIL-07",
+        "points": [
+          [
+            1680,
+            517.5
+          ],
+          [
+            1325,
+            645.0
+          ]
+        ]
+      },
+      {
+        "actorId": "A02",
+        "ucId": "UC-BIL-08.1",
+        "points": [
+          [
+            240,
+            352.5
+          ],
+          [
+            595,
+            850.0
+          ]
+        ]
+      },
+      {
+        "actorId": "A03",
+        "ucId": "UC-BIL-08.1",
+        "points": [
+          [
+            1680,
+            517.5
+          ],
+          [
+            1325,
+            850.0
+          ]
+        ]
+      },
+      {
+        "actorId": "A04",
+        "ucId": "UC-TEN-03",
+        "points": [
+          [
+            240,
+            865.0
+          ],
+          [
+            595,
+            1055.0
+          ]
+        ]
+      }
+    ],
+    "layout": "independent-direct-links"
+  },
+  {
+    "id": "UC_G08_02_Collections_BA_1",
+    "file": "UC_G08_02_Collections_BA_1.puml",
+    "kind": "module",
+    "groupId": "G08",
+    "title": "G08 Thu tiền và thanh toán phần 1",
+    "ucIds": [
+      "UC-BIL-09",
+      "UC-BIL-10",
+      "UC-BIL-11",
+      "UC-BIL-12.1",
+      "UC-BIL-12.2"
+    ],
+    "actorIds": [
+      "A02",
+      "A03"
+    ],
+    "order": 15,
+    "caption": "Hình 2.17",
+    "png": "PNG/15_Hinh_2_17_UC_G08_02_Collections_BA_1.png",
+    "svg": "SVG/15_Hinh_2_17_UC_G08_02_Collections_BA_1.svg",
+    "sourceSha256": "2b1685273afca519a5660650144f1cf2bff98ba5c204b281ebad47dc39c920c4",
+    "width": 3840,
+    "height": 2550,
+    "links": [
+      {
+        "actorId": "A02",
+        "ucId": "UC-BIL-09",
+        "label": "",
+        "limited": false
+      },
+      {
+        "actorId": "A03",
+        "ucId": "UC-BIL-09",
+        "label": "",
+        "limited": false
+      },
+      {
+        "actorId": "A02",
+        "ucId": "UC-BIL-10",
+        "label": "",
+        "limited": false
+      },
+      {
+        "actorId": "A03",
+        "ucId": "UC-BIL-10",
+        "label": "",
+        "limited": false
+      },
+      {
+        "actorId": "A02",
+        "ucId": "UC-BIL-11",
+        "label": "",
+        "limited": false
+      },
+      {
+        "actorId": "A03",
+        "ucId": "UC-BIL-11",
+        "label": "",
+        "limited": false
+      },
+      {
+        "actorId": "A02",
+        "ucId": "UC-BIL-12.1",
+        "label": "",
+        "limited": false
+      },
+      {
+        "actorId": "A03",
+        "ucId": "UC-BIL-12.1",
+        "label": "",
+        "limited": false
+      },
+      {
+        "actorId": "A02",
+        "ucId": "UC-BIL-12.2",
+        "label": "",
+        "limited": false
+      },
+      {
+        "actorId": "A03",
+        "ucId": "UC-BIL-12.2",
+        "label": "",
+        "limited": false
+      }
+    ],
+    "nodes": {
+      "UC-BIL-09": [
+        595,
+        157,
+        1325,
+        313
+      ],
+      "UC-BIL-10": [
+        595,
+        362,
+        1325,
+        518
+      ],
+      "UC-BIL-11": [
+        595,
+        567,
+        1325,
+        723
+      ],
+      "UC-BIL-12.1": [
+        595,
+        772,
+        1325,
+        928
+      ],
+      "UC-BIL-12.2": [
+        595,
+        977,
+        1325,
+        1133
+      ]
+    },
+    "notes": [],
+    "associationSegments": [
+      {
+        "actorId": "A02",
+        "ucId": "UC-BIL-09",
+        "points": [
+          [
+            240,
+            620.0
+          ],
+          [
+            595,
+            235.0
+          ]
+        ]
+      },
+      {
+        "actorId": "A03",
+        "ucId": "UC-BIL-09",
+        "points": [
+          [
+            1680,
+            620.0
+          ],
+          [
+            1325,
+            235.0
+          ]
+        ]
+      },
+      {
+        "actorId": "A02",
+        "ucId": "UC-BIL-10",
+        "points": [
+          [
+            240,
+            620.0
+          ],
+          [
+            595,
+            440.0
+          ]
+        ]
+      },
+      {
+        "actorId": "A03",
+        "ucId": "UC-BIL-10",
+        "points": [
+          [
+            1680,
+            620.0
+          ],
+          [
+            1325,
+            440.0
+          ]
+        ]
+      },
+      {
+        "actorId": "A02",
+        "ucId": "UC-BIL-11",
+        "points": [
+          [
+            240,
+            620.0
+          ],
+          [
+            595,
+            645.0
+          ]
+        ]
+      },
+      {
+        "actorId": "A03",
+        "ucId": "UC-BIL-11",
+        "points": [
+          [
+            1680,
+            620.0
+          ],
+          [
+            1325,
+            645.0
+          ]
+        ]
+      },
+      {
+        "actorId": "A02",
+        "ucId": "UC-BIL-12.1",
+        "points": [
+          [
+            240,
+            620.0
+          ],
+          [
+            595,
+            850.0
+          ]
+        ]
+      },
+      {
+        "actorId": "A03",
+        "ucId": "UC-BIL-12.1",
+        "points": [
+          [
+            1680,
+            620.0
+          ],
+          [
+            1325,
+            850.0
+          ]
+        ]
+      },
+      {
+        "actorId": "A02",
+        "ucId": "UC-BIL-12.2",
+        "points": [
+          [
+            240,
+            620.0
+          ],
+          [
+            595,
+            1055.0
+          ]
+        ]
+      },
+      {
+        "actorId": "A03",
+        "ucId": "UC-BIL-12.2",
+        "points": [
+          [
+            1680,
+            620.0
+          ],
+          [
+            1325,
+            1055.0
+          ]
+        ]
+      }
+    ],
+    "layout": "independent-direct-links"
+  },
+  {
+    "id": "UC_G08_02_Collections_BA_2",
+    "file": "UC_G08_02_Collections_BA_2.puml",
+    "kind": "module",
+    "groupId": "G08",
+    "title": "G08 Thu tiền và thanh toán phần 2",
+    "ucIds": [
+      "UC-BIL-13",
+      "UC-BIL-14",
+      "UC-BIL-23",
+      "UC-TEN-04",
+      "UC-TEN-05"
+    ],
+    "actorIds": [
+      "A01",
+      "A02",
+      "A03",
+      "A04"
+    ],
+    "order": 16,
+    "caption": "Hình 2.18",
+    "png": "PNG/16_Hinh_2_18_UC_G08_02_Collections_BA_2.png",
+    "svg": "SVG/16_Hinh_2_18_UC_G08_02_Collections_BA_2.svg",
+    "sourceSha256": "4aecc22179bba4f9403c3cf42422e34f8fc2b68312a82e8698376cbd469b9168",
+    "width": 3840,
+    "height": 2638,
+    "links": [
+      {
+        "actorId": "A02",
+        "ucId": "UC-BIL-13",
+        "label": "",
+        "limited": false
+      },
+      {
+        "actorId": "A03",
+        "ucId": "UC-BIL-13",
+        "label": "",
+        "limited": false
+      },
+      {
+        "actorId": "A02",
+        "ucId": "UC-BIL-14",
+        "label": "",
+        "limited": false
+      },
+      {
+        "actorId": "A03",
+        "ucId": "UC-BIL-14",
+        "label": "",
+        "limited": false
+      },
+      {
+        "actorId": "A02",
+        "ucId": "UC-BIL-23",
+        "label": "",
+        "limited": false
+      },
+      {
+        "actorId": "A04",
+        "ucId": "UC-TEN-04",
+        "label": "",
+        "limited": false
+      },
+      {
+        "actorId": "A04",
+        "ucId": "UC-TEN-05",
+        "label": "",
+        "limited": false
+      },
+      {
+        "actorId": "A01",
+        "ucId": "UC-TEN-05",
+        "label": "chỉ mở liên kết thanh toán thử nghiệm còn hiệu lực",
+        "limited": true
+      }
+    ],
+    "nodes": {
+      "UC-BIL-13": [
+        595,
+        157,
+        1325,
+        313
+      ],
+      "UC-BIL-14": [
+        595,
+        362,
+        1325,
+        518
+      ],
+      "UC-BIL-23": [
+        595,
+        567,
+        1325,
+        723
+      ],
+      "UC-TEN-04": [
+        595,
+        772,
+        1325,
+        928
+      ],
+      "UC-TEN-05": [
+        595,
+        977,
+        1325,
+        1133
+      ]
+    },
+    "notes": [
+      "[1] A01 - UC-TEN-05: chỉ mở liên kết thanh toán thử nghiệm còn hiệu lực."
+    ],
+    "associationSegments": [
+      {
+        "actorId": "A02",
+        "ucId": "UC-BIL-13",
+        "points": [
+          [
+            240,
+            250.0
+          ],
+          [
+            595,
+            235.0
+          ]
+        ]
+      },
+      {
+        "actorId": "A03",
+        "ucId": "UC-BIL-13",
+        "points": [
+          [
+            1680,
+            250.0
+          ],
+          [
+            1325,
+            235.0
+          ]
+        ]
+      },
+      {
+        "actorId": "A02",
+        "ucId": "UC-BIL-14",
+        "points": [
+          [
+            240,
+            250.0
+          ],
+          [
+            595,
+            440.0
+          ]
+        ]
+      },
+      {
+        "actorId": "A03",
+        "ucId": "UC-BIL-14",
+        "points": [
+          [
+            1680,
+            250.0
+          ],
+          [
+            1325,
+            440.0
+          ]
+        ]
+      },
+      {
+        "actorId": "A02",
+        "ucId": "UC-BIL-23",
+        "points": [
+          [
+            240,
+            250.0
+          ],
+          [
+            595,
+            645.0
+          ]
+        ]
+      },
+      {
+        "actorId": "A04",
+        "ucId": "UC-TEN-04",
+        "points": [
+          [
+            1680,
+            865.0
+          ],
+          [
+            1325,
+            850.0
+          ]
+        ]
+      },
+      {
+        "actorId": "A04",
+        "ucId": "UC-TEN-05",
+        "points": [
+          [
+            1680,
+            865.0
+          ],
+          [
+            1325,
+            1055.0
+          ]
+        ]
+      },
+      {
+        "actorId": "A01",
+        "ucId": "UC-TEN-05",
+        "points": [
+          [
+            240,
+            865.0
+          ],
+          [
+            595,
+            1055.0
+          ]
+        ]
+      }
+    ],
+    "layout": "independent-direct-links"
+  },
+  {
+    "id": "UC_G08_03_Tariffs_Periods",
+    "file": "UC_G08_03_Tariffs_Periods.puml",
+    "kind": "module",
+    "groupId": "G08",
+    "title": "G08 Biểu phí và kỳ thanh toán",
+    "ucIds": [
+      "UC-BIL-15",
+      "UC-BIL-16",
+      "UC-BIL-22"
+    ],
+    "actorIds": [
+      "A02",
+      "A03"
+    ],
+    "order": 17,
+    "caption": "Hình 2.19",
+    "png": "PNG/17_Hinh_2_19_UC_G08_03_Tariffs_Periods.png",
+    "svg": "SVG/17_Hinh_2_19_UC_G08_03_Tariffs_Periods.svg",
+    "sourceSha256": "e875c5318354ac8f279f764e401734c400b445f33ba0dcfbe3c4e6183b5dee03",
+    "width": 3840,
+    "height": 1798,
+    "links": [
+      {
+        "actorId": "A02",
+        "ucId": "UC-BIL-15",
+        "label": "",
+        "limited": false
+      },
+      {
+        "actorId": "A03",
+        "ucId": "UC-BIL-15",
+        "label": "",
+        "limited": false
+      },
+      {
+        "actorId": "A02",
+        "ucId": "UC-BIL-16",
+        "label": "",
+        "limited": false
+      },
+      {
+        "actorId": "A03",
+        "ucId": "UC-BIL-16",
+        "label": "chỉ đọc tác động",
+        "limited": true
+      },
+      {
+        "actorId": "A02",
+        "ucId": "UC-BIL-22",
+        "label": "",
+        "limited": false
+      }
+    ],
+    "nodes": {
+      "UC-BIL-15": [
+        595,
+        157,
+        1325,
+        313
+      ],
+      "UC-BIL-16": [
+        595,
+        362,
+        1325,
+        518
+      ],
+      "UC-BIL-22": [
+        595,
+        567,
+        1325,
+        723
+      ]
+    },
+    "notes": [
+      "[1] A03 - UC-BIL-16: chỉ đọc tác động."
+    ],
+    "associationSegments": [
+      {
+        "actorId": "A02",
+        "ucId": "UC-BIL-15",
+        "points": [
+          [
+            240,
+            415.0
+          ],
+          [
+            595,
+            235.0
+          ]
+        ]
+      },
+      {
+        "actorId": "A03",
+        "ucId": "UC-BIL-15",
+        "points": [
+          [
+            1680,
+            312.5
+          ],
+          [
+            1325,
+            235.0
+          ]
+        ]
+      },
+      {
+        "actorId": "A02",
+        "ucId": "UC-BIL-16",
+        "points": [
+          [
+            240,
+            415.0
+          ],
+          [
+            595,
+            440.0
+          ]
+        ]
+      },
+      {
+        "actorId": "A03",
+        "ucId": "UC-BIL-16",
+        "points": [
+          [
+            1680,
+            312.5
+          ],
+          [
+            1325,
+            440.0
+          ]
+        ]
+      },
+      {
+        "actorId": "A02",
+        "ucId": "UC-BIL-22",
+        "points": [
+          [
+            240,
+            415.0
+          ],
+          [
+            595,
+            645.0
+          ]
+        ]
+      }
+    ],
+    "layout": "independent-direct-links"
+  },
+  {
+    "id": "UC_G08_04_Reminders",
+    "file": "UC_G08_04_Reminders.puml",
+    "kind": "module",
+    "groupId": "G08",
+    "title": "G08 Chính sách và thông báo nhắc nợ",
+    "ucIds": [
+      "UC-BIL-18.1",
+      "UC-BIL-18.2",
+      "UC-BIL-18.3",
+      "UC-TEN-08.2"
+    ],
+    "actorIds": [
+      "A02",
+      "A03",
+      "A04",
+      "E01",
+      "E02"
+    ],
+    "order": 18,
+    "caption": "Hình 2.20",
+    "png": "PNG/18_Hinh_2_20_UC_G08_04_Reminders.png",
+    "svg": "SVG/18_Hinh_2_20_UC_G08_04_Reminders.svg",
+    "sourceSha256": "4f174c53948677e2d7ce830658119c310d757e4ade01b14b4b62bec745f29803",
+    "width": 3840,
+    "height": 2820,
+    "links": [
+      {
+        "actorId": "A02",
+        "ucId": "UC-BIL-18.1",
+        "label": "",
+        "limited": false
+      },
+      {
+        "actorId": "A03",
+        "ucId": "UC-BIL-18.1",
+        "label": "",
+        "limited": false
+      },
+      {
+        "actorId": "A02",
+        "ucId": "UC-BIL-18.2",
+        "label": "",
+        "limited": false
+      },
+      {
+        "actorId": "A03",
+        "ucId": "UC-BIL-18.2",
+        "label": "",
+        "limited": false
+      },
+      {
+        "actorId": "E01",
+        "ucId": "UC-BIL-18.2",
+        "label": "khi sử dụng kênh này",
+        "limited": false
+      },
+      {
+        "actorId": "E02",
+        "ucId": "UC-BIL-18.2",
+        "label": "khi sử dụng kênh này",
+        "limited": false
+      },
+      {
+        "actorId": "A02",
+        "ucId": "UC-BIL-18.3",
+        "label": "",
+        "limited": false
+      },
+      {
+        "actorId": "A04",
+        "ucId": "UC-TEN-08.2",
+        "label": "",
+        "limited": false
+      }
+    ],
+    "nodes": {
+      "UC-BIL-18.1": [
+        595,
+        157,
+        1325,
+        313
+      ],
+      "UC-BIL-18.2": [
+        595,
+        362,
+        1325,
+        518
+      ],
+      "UC-BIL-18.3": [
+        595,
+        567,
+        1325,
+        723
+      ],
+      "UC-TEN-08.2": [
+        595,
+        772,
+        1325,
+        928
+      ]
+    },
+    "notes": [],
+    "associationSegments": [
+      {
+        "actorId": "A02",
+        "ucId": "UC-BIL-18.1",
+        "points": [
+          [
+            240,
+            415.0
+          ],
+          [
+            595,
+            235.0
+          ]
+        ]
+      },
+      {
+        "actorId": "A03",
+        "ucId": "UC-BIL-18.1",
+        "points": [
+          [
+            1680,
+            170
+          ],
+          [
+            1325,
+            235.0
+          ]
+        ]
+      },
+      {
+        "actorId": "A02",
+        "ucId": "UC-BIL-18.2",
+        "points": [
+          [
+            240,
+            415.0
+          ],
+          [
+            595,
+            440.0
+          ]
+        ]
+      },
+      {
+        "actorId": "A03",
+        "ucId": "UC-BIL-18.2",
+        "points": [
+          [
+            1680,
+            170
+          ],
+          [
+            1325,
+            440.0
+          ]
+        ]
+      },
+      {
+        "actorId": "E01",
+        "ucId": "UC-BIL-18.2",
+        "points": [
+          [
+            1680,
+            580
+          ],
+          [
+            1325,
+            440.0
+          ]
+        ]
+      },
+      {
+        "actorId": "E02",
+        "ucId": "UC-BIL-18.2",
+        "points": [
+          [
+            1680,
+            990
+          ],
+          [
+            1325,
+            440.0
+          ]
+        ]
+      },
+      {
+        "actorId": "A02",
+        "ucId": "UC-BIL-18.3",
+        "points": [
+          [
+            240,
+            415.0
+          ],
+          [
+            595,
+            645.0
+          ]
+        ]
+      },
+      {
+        "actorId": "A04",
+        "ucId": "UC-TEN-08.2",
+        "points": [
+          [
+            240,
+            825.0
+          ],
+          [
+            595,
+            850.0
+          ]
+        ]
+      }
+    ],
+    "layout": "independent-direct-links"
+  },
+  {
+    "id": "UC_G09",
+    "file": "UC_G09.puml",
+    "kind": "module",
+    "groupId": "G09",
+    "title": "G09 · Bảo trì và chi phí vận hành",
+    "ucIds": [
+      "UC-TEN-06",
+      "UC-OPS-01",
+      "UC-OPS-02",
+      "UC-OPS-03",
+      "UC-BIL-19"
+    ],
+    "actorIds": [
+      "A02",
+      "A03",
+      "A04"
+    ],
+    "order": 19,
+    "caption": "Hình 2.21",
+    "png": "PNG/19_Hinh_2_21_UC_G09.png",
+    "svg": "SVG/19_Hinh_2_21_UC_G09.svg",
+    "sourceSha256": "6576c72058034dfe7b246a9fb5e10f07dccea15a0753a78be7bd0470a5442a89",
+    "width": 3840,
+    "height": 2550,
+    "links": [
+      {
+        "actorId": "A04",
+        "ucId": "UC-TEN-06",
+        "label": "",
+        "limited": false
+      },
+      {
+        "actorId": "A02",
+        "ucId": "UC-OPS-01",
+        "label": "",
+        "limited": false
+      },
+      {
+        "actorId": "A03",
+        "ucId": "UC-OPS-01",
+        "label": "",
+        "limited": false
+      },
+      {
+        "actorId": "A02",
+        "ucId": "UC-OPS-02",
+        "label": "",
+        "limited": false
+      },
+      {
+        "actorId": "A03",
+        "ucId": "UC-OPS-02",
+        "label": "",
+        "limited": false
+      },
+      {
+        "actorId": "A02",
+        "ucId": "UC-OPS-03",
+        "label": "",
+        "limited": false
+      },
+      {
+        "actorId": "A03",
+        "ucId": "UC-OPS-03",
+        "label": "",
+        "limited": false
+      },
+      {
+        "actorId": "A02",
+        "ucId": "UC-BIL-19",
+        "label": "",
+        "limited": false
+      },
+      {
+        "actorId": "A03",
+        "ucId": "UC-BIL-19",
+        "label": "",
+        "limited": false
+      }
+    ],
+    "nodes": {
+      "UC-TEN-06": [
+        595,
+        157,
+        1325,
+        313
+      ],
+      "UC-OPS-01": [
+        595,
+        362,
+        1325,
+        518
+      ],
+      "UC-OPS-02": [
+        595,
+        567,
+        1325,
+        723
+      ],
+      "UC-OPS-03": [
+        595,
+        772,
+        1325,
+        928
+      ],
+      "UC-BIL-19": [
+        595,
+        977,
+        1325,
+        1133
+      ]
+    },
+    "notes": [],
+    "associationSegments": [
+      {
+        "actorId": "A04",
+        "ucId": "UC-TEN-06",
+        "points": [
+          [
+            240,
+            210.0
+          ],
+          [
+            595,
+            235.0
+          ]
+        ]
+      },
+      {
+        "actorId": "A02",
+        "ucId": "UC-OPS-01",
+        "points": [
+          [
+            240,
+            722.5
+          ],
+          [
+            595,
+            440.0
+          ]
+        ]
+      },
+      {
+        "actorId": "A03",
+        "ucId": "UC-OPS-01",
+        "points": [
+          [
+            1680,
+            722.5
+          ],
+          [
+            1325,
+            440.0
+          ]
+        ]
+      },
+      {
+        "actorId": "A02",
+        "ucId": "UC-OPS-02",
+        "points": [
+          [
+            240,
+            722.5
+          ],
+          [
+            595,
+            645.0
+          ]
+        ]
+      },
+      {
+        "actorId": "A03",
+        "ucId": "UC-OPS-02",
+        "points": [
+          [
+            1680,
+            722.5
+          ],
+          [
+            1325,
+            645.0
+          ]
+        ]
+      },
+      {
+        "actorId": "A02",
+        "ucId": "UC-OPS-03",
+        "points": [
+          [
+            240,
+            722.5
+          ],
+          [
+            595,
+            850.0
+          ]
+        ]
+      },
+      {
+        "actorId": "A03",
+        "ucId": "UC-OPS-03",
+        "points": [
+          [
+            1680,
+            722.5
+          ],
+          [
+            1325,
+            850.0
+          ]
+        ]
+      },
+      {
+        "actorId": "A02",
+        "ucId": "UC-BIL-19",
+        "points": [
+          [
+            240,
+            722.5
+          ],
+          [
+            595,
+            1055.0
+          ]
+        ]
+      },
+      {
+        "actorId": "A03",
+        "ucId": "UC-BIL-19",
+        "points": [
+          [
+            1680,
+            722.5
+          ],
+          [
+            1325,
+            1055.0
+          ]
+        ]
+      }
+    ],
+    "layout": "independent-direct-links"
+  },
+  {
+    "id": "UC_G10_BA_1",
+    "file": "UC_G10_BA_1.puml",
+    "kind": "module",
+    "groupId": "G10",
+    "title": "G10 · Công việc, thông tin và hỗ trợ sử dụng phần 1",
+    "ucIds": [
+      "UC-OPS-04",
+      "UC-OPS-05",
+      "UC-OPS-06",
+      "UC-OPS-06.1",
+      "UC-OPS-07"
+    ],
+    "actorIds": [
+      "A02"
+    ],
+    "order": 20,
+    "caption": "Hình 2.22",
+    "png": "PNG/20_Hinh_2_22_UC_G10_BA_1.png",
+    "svg": "SVG/20_Hinh_2_22_UC_G10_BA_1.svg",
+    "sourceSha256": "ee8e5043836174e588666788feeadbf8b5d2f1f9e25378d833c3b7dd49d78011",
+    "width": 3840,
+    "height": 2550,
+    "links": [
+      {
+        "actorId": "A02",
+        "ucId": "UC-OPS-04",
+        "label": "",
+        "limited": false
+      },
+      {
+        "actorId": "A02",
+        "ucId": "UC-OPS-05",
+        "label": "",
+        "limited": false
+      },
+      {
+        "actorId": "A02",
+        "ucId": "UC-OPS-06",
+        "label": "",
+        "limited": false
+      },
+      {
+        "actorId": "A02",
+        "ucId": "UC-OPS-06.1",
+        "label": "",
+        "limited": false
+      },
+      {
+        "actorId": "A02",
+        "ucId": "UC-OPS-07",
+        "label": "",
+        "limited": false
+      }
+    ],
+    "nodes": {
+      "UC-OPS-04": [
+        595,
+        157,
+        1325,
+        313
+      ],
+      "UC-OPS-05": [
+        595,
+        362,
+        1325,
+        518
+      ],
+      "UC-OPS-06": [
+        595,
+        567,
+        1325,
+        723
+      ],
+      "UC-OPS-06.1": [
+        595,
+        772,
+        1325,
+        928
+      ],
+      "UC-OPS-07": [
+        595,
+        977,
+        1325,
+        1133
+      ]
+    },
+    "notes": [],
+    "associationSegments": [
+      {
+        "actorId": "A02",
+        "ucId": "UC-OPS-04",
+        "points": [
+          [
+            240,
+            620.0
+          ],
+          [
+            595,
+            235.0
+          ]
+        ]
+      },
+      {
+        "actorId": "A02",
+        "ucId": "UC-OPS-05",
+        "points": [
+          [
+            240,
+            620.0
+          ],
+          [
+            595,
+            440.0
+          ]
+        ]
+      },
+      {
+        "actorId": "A02",
+        "ucId": "UC-OPS-06",
+        "points": [
+          [
+            240,
+            620.0
+          ],
+          [
+            595,
+            645.0
+          ]
+        ]
+      },
+      {
+        "actorId": "A02",
+        "ucId": "UC-OPS-06.1",
+        "points": [
+          [
+            240,
+            620.0
+          ],
+          [
+            595,
+            850.0
+          ]
+        ]
+      },
+      {
+        "actorId": "A02",
+        "ucId": "UC-OPS-07",
+        "points": [
+          [
+            240,
+            620.0
+          ],
+          [
+            595,
+            1055.0
+          ]
+        ]
+      }
+    ],
+    "layout": "independent-direct-links"
+  },
+  {
+    "id": "UC_G10_BA_2",
+    "file": "UC_G10_BA_2.puml",
+    "kind": "module",
+    "groupId": "G10",
+    "title": "G10 · Công việc, thông tin và hỗ trợ sử dụng phần 2",
+    "ucIds": [
+      "UC-SUP-04",
+      "UC-TEN-09.2",
+      "UC-TEN-09.3",
+      "UC-SUP-06"
+    ],
+    "actorIds": [
+      "A02",
+      "A04",
+      "A05",
+      "E04"
+    ],
+    "order": 21,
+    "caption": "Hình 2.23",
+    "png": "PNG/21_Hinh_2_23_UC_G10_BA_2.png",
+    "svg": "SVG/21_Hinh_2_23_UC_G10_BA_2.svg",
+    "sourceSha256": "a378f36bd6b0e7d2875ad595480c9b89129e5e8bc69715376244e0e8a94c1537",
+    "width": 3840,
+    "height": 2160,
+    "links": [
+      {
+        "actorId": "A02",
+        "ucId": "UC-SUP-04",
+        "label": "",
+        "limited": false
+      },
+      {
+        "actorId": "A04",
+        "ucId": "UC-SUP-04",
+        "label": "",
+        "limited": false
+      },
+      {
+        "actorId": "A05",
+        "ucId": "UC-SUP-04",
+        "label": "",
+        "limited": false
+      },
+      {
+        "actorId": "A02",
+        "ucId": "UC-TEN-09.2",
+        "label": "",
+        "limited": false
+      },
+      {
+        "actorId": "A04",
+        "ucId": "UC-TEN-09.2",
+        "label": "",
+        "limited": false
+      },
+      {
+        "actorId": "A04",
+        "ucId": "UC-TEN-09.3",
+        "label": "",
+        "limited": false
+      },
+      {
+        "actorId": "A02",
+        "ucId": "UC-SUP-06",
+        "label": "",
+        "limited": false
+      },
+      {
+        "actorId": "E04",
+        "ucId": "UC-SUP-06",
+        "label": "khi sử dụng kênh này",
+        "limited": false
+      }
+    ],
+    "nodes": {
+      "UC-SUP-04": [
+        595,
+        157,
+        1325,
+        313
+      ],
+      "UC-TEN-09.2": [
+        595,
+        362,
+        1325,
+        518
+      ],
+      "UC-TEN-09.3": [
+        595,
+        567,
+        1325,
+        723
+      ],
+      "UC-SUP-06": [
+        595,
+        772,
+        1325,
+        928
+      ]
+    },
+    "notes": [],
+    "associationSegments": [
+      {
+        "actorId": "A02",
+        "ucId": "UC-SUP-04",
+        "points": [
+          [
+            240,
+            660.0
+          ],
+          [
+            595,
+            235.0
+          ]
+        ]
+      },
+      {
+        "actorId": "A04",
+        "ucId": "UC-SUP-04",
+        "points": [
+          [
+            240,
+            250.0
+          ],
+          [
+            595,
+            235.0
+          ]
+        ]
+      },
+      {
+        "actorId": "A05",
+        "ucId": "UC-SUP-04",
+        "points": [
+          [
+            1680,
+            170
+          ],
+          [
+            1325,
+            235.0
+          ]
+        ]
+      },
+      {
+        "actorId": "A02",
+        "ucId": "UC-TEN-09.2",
+        "points": [
+          [
+            240,
+            660.0
+          ],
+          [
+            595,
+            440.0
+          ]
+        ]
+      },
+      {
+        "actorId": "A04",
+        "ucId": "UC-TEN-09.2",
+        "points": [
+          [
+            240,
+            250.0
+          ],
+          [
+            595,
+            440.0
+          ]
+        ]
+      },
+      {
+        "actorId": "A04",
+        "ucId": "UC-TEN-09.3",
+        "points": [
+          [
+            240,
+            250.0
+          ],
+          [
+            595,
+            645.0
+          ]
+        ]
+      },
+      {
+        "actorId": "A02",
+        "ucId": "UC-SUP-06",
+        "points": [
+          [
+            240,
+            660.0
+          ],
+          [
+            595,
+            850.0
+          ]
+        ]
+      },
+      {
+        "actorId": "E04",
+        "ucId": "UC-SUP-06",
+        "points": [
+          [
+            1680,
+            580
+          ],
+          [
+            1325,
+            850.0
+          ]
+        ]
+      }
+    ],
+    "layout": "independent-direct-links"
+  },
+  {
+    "id": "UC_G11",
+    "file": "UC_G11.puml",
+    "kind": "module",
+    "groupId": "G11",
+    "title": "G11 · Báo cáo và giám sát vận hành",
+    "ucIds": [
+      "UC-OPT-01",
+      "UC-BIL-20",
+      "UC-ADM-01",
+      "UC-OPS-09",
+      "UC-ADM-14",
+      "UC-ADM-16",
+      "UC-SUP-05.1",
+      "UC-SUP-05.2"
+    ],
+    "actorIds": [
+      "A02",
+      "A03",
+      "A05",
+      "E01",
+      "E05"
+    ],
+    "order": 22,
+    "caption": "Hình 2.24",
+    "png": "PNG/22_Hinh_2_24_UC_G11.png",
+    "svg": "SVG/22_Hinh_2_24_UC_G11.svg",
+    "sourceSha256": "99182866337df4d0d160d130814a67846b2062996330bb2450d28060fa9be3aa",
+    "width": 3840,
+    "height": 3800,
+    "links": [
+      {
+        "actorId": "A02",
+        "ucId": "UC-OPT-01",
+        "label": "",
+        "limited": false
+      },
+      {
+        "actorId": "A03",
+        "ucId": "UC-OPT-01",
+        "label": "",
+        "limited": false
+      },
+      {
+        "actorId": "A02",
+        "ucId": "UC-BIL-20",
+        "label": "",
+        "limited": false
+      },
+      {
+        "actorId": "A03",
+        "ucId": "UC-BIL-20",
+        "label": "",
+        "limited": false
+      },
+      {
+        "actorId": "A05",
+        "ucId": "UC-ADM-01",
+        "label": "",
+        "limited": false
+      },
+      {
+        "actorId": "A02",
+        "ucId": "UC-OPS-09",
+        "label": "",
+        "limited": false
+      },
+      {
+        "actorId": "A05",
+        "ucId": "UC-ADM-14",
+        "label": "",
+        "limited": false
+      },
+      {
+        "actorId": "A05",
+        "ucId": "UC-ADM-16",
+        "label": "",
+        "limited": false
+      },
+      {
+        "actorId": "E05",
+        "ucId": "UC-ADM-16",
+        "label": "khi sử dụng kênh này",
+        "limited": false
+      },
+      {
+        "actorId": "A05",
+        "ucId": "UC-SUP-05.1",
+        "label": "",
+        "limited": false
+      },
+      {
+        "actorId": "A05",
+        "ucId": "UC-SUP-05.2",
+        "label": "",
+        "limited": false
+      },
+      {
+        "actorId": "E01",
+        "ucId": "UC-SUP-05.2",
+        "label": "khi sử dụng kênh này",
+        "limited": false
+      }
+    ],
+    "nodes": {
+      "UC-OPT-01": [
+        595,
+        157,
+        1325,
+        313
+      ],
+      "UC-BIL-20": [
+        595,
+        362,
+        1325,
+        518
+      ],
+      "UC-ADM-01": [
+        595,
+        567,
+        1325,
+        723
+      ],
+      "UC-OPS-09": [
+        595,
+        772,
+        1325,
+        928
+      ],
+      "UC-ADM-14": [
+        595,
+        977,
+        1325,
+        1133
+      ],
+      "UC-ADM-16": [
+        595,
+        1182,
+        1325,
+        1338
+      ],
+      "UC-SUP-05.1": [
+        595,
+        1387,
+        1325,
+        1543
+      ],
+      "UC-SUP-05.2": [
+        595,
+        1592,
+        1325,
+        1748
+      ]
+    },
+    "notes": [],
+    "associationSegments": [
+      {
+        "actorId": "A02",
+        "ucId": "UC-OPT-01",
+        "points": [
+          [
+            240,
+            722.5
+          ],
+          [
+            595,
+            235.0
+          ]
+        ]
+      },
+      {
+        "actorId": "A03",
+        "ucId": "UC-OPT-01",
+        "points": [
+          [
+            240,
+            312.5
+          ],
+          [
+            595,
+            235.0
+          ]
+        ]
+      },
+      {
+        "actorId": "A02",
+        "ucId": "UC-BIL-20",
+        "points": [
+          [
+            240,
+            722.5
+          ],
+          [
+            595,
+            440.0
+          ]
+        ]
+      },
+      {
+        "actorId": "A03",
+        "ucId": "UC-BIL-20",
+        "points": [
+          [
+            240,
+            312.5
+          ],
+          [
+            595,
+            440.0
+          ]
+        ]
+      },
+      {
+        "actorId": "A05",
+        "ucId": "UC-ADM-01",
+        "points": [
+          [
+            1680,
+            660.0
+          ],
+          [
+            1325,
+            645.0
+          ]
+        ]
+      },
+      {
+        "actorId": "A02",
+        "ucId": "UC-OPS-09",
+        "points": [
+          [
+            240,
+            722.5
+          ],
+          [
+            595,
+            850.0
+          ]
+        ]
+      },
+      {
+        "actorId": "A05",
+        "ucId": "UC-ADM-14",
+        "points": [
+          [
+            1680,
+            660.0
+          ],
+          [
+            1325,
+            1055.0
+          ]
+        ]
+      },
+      {
+        "actorId": "A05",
+        "ucId": "UC-ADM-16",
+        "points": [
+          [
+            1680,
+            660.0
+          ],
+          [
+            1325,
+            1260.0
+          ]
+        ]
+      },
+      {
+        "actorId": "E05",
+        "ucId": "UC-ADM-16",
+        "points": [
+          [
+            1680,
+            1070.0
+          ],
+          [
+            1325,
+            1260.0
+          ]
+        ]
+      },
+      {
+        "actorId": "A05",
+        "ucId": "UC-SUP-05.1",
+        "points": [
+          [
+            1680,
+            660.0
+          ],
+          [
+            1325,
+            1465.0
+          ]
+        ]
+      },
+      {
+        "actorId": "A05",
+        "ucId": "UC-SUP-05.2",
+        "points": [
+          [
+            1680,
+            660.0
+          ],
+          [
+            1325,
+            1670.0
+          ]
+        ]
+      },
+      {
+        "actorId": "E01",
+        "ucId": "UC-SUP-05.2",
+        "points": [
+          [
+            1680,
+            1480.0
+          ],
+          [
+            1325,
+            1670.0
+          ]
+        ]
+      }
+    ],
+    "layout": "independent-direct-links"
+  },
+  {
+    "id": "UC_G12_BA_1",
+    "file": "UC_G12_BA_1.puml",
+    "kind": "module",
+    "groupId": "G12",
+    "title": "G12 · Tài khoản và tài nguyên nền tảng phần 1",
+    "ucIds": [
+      "UC-ADM-02",
+      "UC-ADM-03.1",
+      "UC-ADM-03.2",
+      "UC-ADM-04.1",
+      "UC-ADM-04.3",
+      "UC-ADM-05.1"
+    ],
+    "actorIds": [
+      "A05",
+      "E01"
+    ],
+    "order": 23,
+    "caption": "Hình 2.25",
+    "png": "PNG/23_Hinh_2_25_UC_G12_BA_1.png",
+    "svg": "SVG/23_Hinh_2_25_UC_G12_BA_1.svg",
+    "sourceSha256": "ddd4eba2e00720a75f6af6fd300d3efbaa2a13f5c890bf0cd04af6051f640ca7",
+    "width": 3840,
+    "height": 2960,
+    "links": [
+      {
+        "actorId": "A05",
+        "ucId": "UC-ADM-02",
+        "label": "",
+        "limited": false
+      },
+      {
+        "actorId": "A05",
+        "ucId": "UC-ADM-03.1",
+        "label": "",
+        "limited": false
+      },
+      {
+        "actorId": "E01",
+        "ucId": "UC-ADM-03.1",
+        "label": "khi sử dụng kênh này",
+        "limited": false
+      },
+      {
+        "actorId": "A05",
+        "ucId": "UC-ADM-03.2",
+        "label": "",
+        "limited": false
+      },
+      {
+        "actorId": "A05",
+        "ucId": "UC-ADM-04.1",
+        "label": "",
+        "limited": false
+      },
+      {
+        "actorId": "A05",
+        "ucId": "UC-ADM-04.3",
+        "label": "",
+        "limited": false
+      },
+      {
+        "actorId": "A05",
+        "ucId": "UC-ADM-05.1",
+        "label": "",
+        "limited": false
+      }
+    ],
+    "nodes": {
+      "UC-ADM-02": [
+        595,
+        157,
+        1325,
+        313
+      ],
+      "UC-ADM-03.1": [
+        595,
+        362,
+        1325,
+        518
+      ],
+      "UC-ADM-03.2": [
+        595,
+        567,
+        1325,
+        723
+      ],
+      "UC-ADM-04.1": [
+        595,
+        772,
+        1325,
+        928
+      ],
+      "UC-ADM-04.3": [
+        595,
+        977,
+        1325,
+        1133
+      ],
+      "UC-ADM-05.1": [
+        595,
+        1182,
+        1325,
+        1338
+      ]
+    },
+    "notes": [],
+    "associationSegments": [
+      {
+        "actorId": "A05",
+        "ucId": "UC-ADM-02",
+        "points": [
+          [
+            240,
+            722.5
+          ],
+          [
+            595,
+            235.0
+          ]
+        ]
+      },
+      {
+        "actorId": "A05",
+        "ucId": "UC-ADM-03.1",
+        "points": [
+          [
+            240,
+            722.5
+          ],
+          [
+            595,
+            440.0
+          ]
+        ]
+      },
+      {
+        "actorId": "E01",
+        "ucId": "UC-ADM-03.1",
+        "points": [
+          [
+            1680,
+            415.0
+          ],
+          [
+            1325,
+            440.0
+          ]
+        ]
+      },
+      {
+        "actorId": "A05",
+        "ucId": "UC-ADM-03.2",
+        "points": [
+          [
+            240,
+            722.5
+          ],
+          [
+            595,
+            645.0
+          ]
+        ]
+      },
+      {
+        "actorId": "A05",
+        "ucId": "UC-ADM-04.1",
+        "points": [
+          [
+            240,
+            722.5
+          ],
+          [
+            595,
+            850.0
+          ]
+        ]
+      },
+      {
+        "actorId": "A05",
+        "ucId": "UC-ADM-04.3",
+        "points": [
+          [
+            240,
+            722.5
+          ],
+          [
+            595,
+            1055.0
+          ]
+        ]
+      },
+      {
+        "actorId": "A05",
+        "ucId": "UC-ADM-05.1",
+        "points": [
+          [
+            240,
+            722.5
+          ],
+          [
+            595,
+            1260.0
+          ]
+        ]
+      }
+    ],
+    "layout": "independent-direct-links"
+  },
+  {
+    "id": "UC_G12_BA_2",
+    "file": "UC_G12_BA_2.puml",
+    "kind": "module",
+    "groupId": "G12",
+    "title": "G12 · Tài khoản và tài nguyên nền tảng phần 2",
+    "ucIds": [
+      "UC-ADM-05.2",
+      "UC-ADM-06.1",
+      "UC-ADM-06.2",
+      "UC-ADM-08",
+      "UC-ADM-09",
+      "UC-ADM-10"
+    ],
+    "actorIds": [
+      "A05",
+      "E01"
+    ],
+    "order": 24,
+    "caption": "Hình 2.26",
+    "png": "PNG/24_Hinh_2_26_UC_G12_BA_2.png",
+    "svg": "SVG/24_Hinh_2_26_UC_G12_BA_2.svg",
+    "sourceSha256": "2e077c510ca7dbf06ecf6db2ca94a68bd47c5d181c8924ebf82288bb59f173b1",
+    "width": 3840,
+    "height": 2960,
+    "links": [
+      {
+        "actorId": "A05",
+        "ucId": "UC-ADM-05.2",
+        "label": "",
+        "limited": false
+      },
+      {
+        "actorId": "E01",
+        "ucId": "UC-ADM-05.2",
+        "label": "khi sử dụng kênh này",
+        "limited": false
+      },
+      {
+        "actorId": "A05",
+        "ucId": "UC-ADM-06.1",
+        "label": "",
+        "limited": false
+      },
+      {
+        "actorId": "E01",
+        "ucId": "UC-ADM-06.1",
+        "label": "khi sử dụng kênh này",
+        "limited": false
+      },
+      {
+        "actorId": "A05",
+        "ucId": "UC-ADM-06.2",
+        "label": "",
+        "limited": false
+      },
+      {
+        "actorId": "A05",
+        "ucId": "UC-ADM-08",
+        "label": "",
+        "limited": false
+      },
+      {
+        "actorId": "A05",
+        "ucId": "UC-ADM-09",
+        "label": "",
+        "limited": false
+      },
+      {
+        "actorId": "A05",
+        "ucId": "UC-ADM-10",
+        "label": "",
+        "limited": false
+      }
+    ],
+    "nodes": {
+      "UC-ADM-05.2": [
+        595,
+        157,
+        1325,
+        313
+      ],
+      "UC-ADM-06.1": [
+        595,
+        362,
+        1325,
+        518
+      ],
+      "UC-ADM-06.2": [
+        595,
+        567,
+        1325,
+        723
+      ],
+      "UC-ADM-08": [
+        595,
+        772,
+        1325,
+        928
+      ],
+      "UC-ADM-09": [
+        595,
+        977,
+        1325,
+        1133
+      ],
+      "UC-ADM-10": [
+        595,
+        1182,
+        1325,
+        1338
+      ]
+    },
+    "notes": [],
+    "associationSegments": [
+      {
+        "actorId": "A05",
+        "ucId": "UC-ADM-05.2",
+        "points": [
+          [
+            240,
+            722.5
+          ],
+          [
+            595,
+            235.0
+          ]
+        ]
+      },
+      {
+        "actorId": "E01",
+        "ucId": "UC-ADM-05.2",
+        "points": [
+          [
+            1680,
+            312.5
+          ],
+          [
+            1325,
+            235.0
+          ]
+        ]
+      },
+      {
+        "actorId": "A05",
+        "ucId": "UC-ADM-06.1",
+        "points": [
+          [
+            240,
+            722.5
+          ],
+          [
+            595,
+            440.0
+          ]
+        ]
+      },
+      {
+        "actorId": "E01",
+        "ucId": "UC-ADM-06.1",
+        "points": [
+          [
+            1680,
+            312.5
+          ],
+          [
+            1325,
+            440.0
+          ]
+        ]
+      },
+      {
+        "actorId": "A05",
+        "ucId": "UC-ADM-06.2",
+        "points": [
+          [
+            240,
+            722.5
+          ],
+          [
+            595,
+            645.0
+          ]
+        ]
+      },
+      {
+        "actorId": "A05",
+        "ucId": "UC-ADM-08",
+        "points": [
+          [
+            240,
+            722.5
+          ],
+          [
+            595,
+            850.0
+          ]
+        ]
+      },
+      {
+        "actorId": "A05",
+        "ucId": "UC-ADM-09",
+        "points": [
+          [
+            240,
+            722.5
+          ],
+          [
+            595,
+            1055.0
+          ]
+        ]
+      },
+      {
+        "actorId": "A05",
+        "ucId": "UC-ADM-10",
+        "points": [
+          [
+            240,
+            722.5
+          ],
+          [
+            595,
+            1260.0
+          ]
+        ]
+      }
+    ],
+    "layout": "independent-direct-links"
+  },
+  {
+    "id": "UC_G13_BA_1",
+    "file": "UC_G13_BA_1.puml",
+    "kind": "module",
+    "groupId": "G13",
+    "title": "G13 · Kiểm duyệt và chất lượng nội dung phần 1",
+    "ucIds": [
+      "UC-DIS-07",
+      "UC-DIS-12",
+      "UC-DIS-13.1",
+      "UC-ADM-11",
+      "UC-ADM-11.1",
+      "UC-ADM-12"
+    ],
+    "actorIds": [
+      "A02",
+      "A04",
+      "A05"
+    ],
+    "order": 25,
+    "caption": "Hình 2.27",
+    "png": "PNG/25_Hinh_2_27_UC_G13_BA_1.png",
+    "svg": "SVG/25_Hinh_2_27_UC_G13_BA_1.svg",
+    "sourceSha256": "76ffc416610a7d6c4aca0ffe19418e773ed3edc1d6755ed873c8df2ae88fedc9",
+    "width": 3840,
+    "height": 2960,
+    "links": [
+      {
+        "actorId": "A04",
+        "ucId": "UC-DIS-07",
+        "label": "",
+        "limited": false
+      },
+      {
+        "actorId": "A04",
+        "ucId": "UC-DIS-12",
+        "label": "",
+        "limited": false
+      },
+      {
+        "actorId": "A02",
+        "ucId": "UC-DIS-13.1",
+        "label": "",
+        "limited": false
+      },
+      {
+        "actorId": "A05",
+        "ucId": "UC-ADM-11",
+        "label": "",
+        "limited": false
+      },
+      {
+        "actorId": "A05",
+        "ucId": "UC-ADM-11.1",
+        "label": "",
+        "limited": false
+      },
+      {
+        "actorId": "A05",
+        "ucId": "UC-ADM-12",
+        "label": "",
+        "limited": false
+      }
+    ],
+    "nodes": {
+      "UC-DIS-07": [
+        595,
+        157,
+        1325,
+        313
+      ],
+      "UC-DIS-12": [
+        595,
+        362,
+        1325,
+        518
+      ],
+      "UC-DIS-13.1": [
+        595,
+        567,
+        1325,
+        723
+      ],
+      "UC-ADM-11": [
+        595,
+        772,
+        1325,
+        928
+      ],
+      "UC-ADM-11.1": [
+        595,
+        977,
+        1325,
+        1133
+      ],
+      "UC-ADM-12": [
+        595,
+        1182,
+        1325,
+        1338
+      ]
+    },
+    "notes": [],
+    "associationSegments": [
+      {
+        "actorId": "A04",
+        "ucId": "UC-DIS-07",
+        "points": [
+          [
+            240,
+            312.5
+          ],
+          [
+            595,
+            235.0
+          ]
+        ]
+      },
+      {
+        "actorId": "A04",
+        "ucId": "UC-DIS-12",
+        "points": [
+          [
+            240,
+            312.5
+          ],
+          [
+            595,
+            440.0
+          ]
+        ]
+      },
+      {
+        "actorId": "A02",
+        "ucId": "UC-DIS-13.1",
+        "points": [
+          [
+            240,
+            722.5
+          ],
+          [
+            595,
+            645.0
+          ]
+        ]
+      },
+      {
+        "actorId": "A05",
+        "ucId": "UC-ADM-11",
+        "points": [
+          [
+            1680,
+            1030.0
+          ],
+          [
+            1325,
+            850.0
+          ]
+        ]
+      },
+      {
+        "actorId": "A05",
+        "ucId": "UC-ADM-11.1",
+        "points": [
+          [
+            1680,
+            1030.0
+          ],
+          [
+            1325,
+            1055.0
+          ]
+        ]
+      },
+      {
+        "actorId": "A05",
+        "ucId": "UC-ADM-12",
+        "points": [
+          [
+            1680,
+            1030.0
+          ],
+          [
+            1325,
+            1260.0
+          ]
+        ]
+      }
+    ],
+    "layout": "independent-direct-links"
+  },
+  {
+    "id": "UC_G13_BA_2",
+    "file": "UC_G13_BA_2.puml",
+    "kind": "module",
+    "groupId": "G13",
+    "title": "G13 · Kiểm duyệt và chất lượng nội dung phần 2",
+    "ucIds": [
+      "UC-ADM-12.1",
+      "UC-DIS-15",
+      "UC-ADM-13.1",
+      "UC-ADM-13.2",
+      "UC-ADM-13.3"
+    ],
+    "actorIds": [
+      "A02",
+      "A04",
+      "A05"
+    ],
+    "order": 26,
+    "caption": "Hình 2.28",
+    "png": "PNG/26_Hinh_2_28_UC_G13_BA_2.png",
+    "svg": "SVG/26_Hinh_2_28_UC_G13_BA_2.svg",
+    "sourceSha256": "66613b2b0571706e0bfdaaeb6d7452ec39b22f83860594af5de7a5555b216d69",
+    "width": 3840,
+    "height": 2618,
+    "links": [
+      {
+        "actorId": "A05",
+        "ucId": "UC-ADM-12.1",
+        "label": "",
+        "limited": false
+      },
+      {
+        "actorId": "A02",
+        "ucId": "UC-DIS-15",
+        "label": "",
+        "limited": false
+      },
+      {
+        "actorId": "A04",
+        "ucId": "UC-DIS-15",
+        "label": "",
+        "limited": false
+      },
+      {
+        "actorId": "A05",
+        "ucId": "UC-DIS-15",
+        "label": "chỉ xem thông tin liên quan đến mình",
+        "limited": true
+      },
+      {
+        "actorId": "A05",
+        "ucId": "UC-ADM-13.1",
+        "label": "",
+        "limited": false
+      },
+      {
+        "actorId": "A05",
+        "ucId": "UC-ADM-13.2",
+        "label": "",
+        "limited": false
+      },
+      {
+        "actorId": "A05",
+        "ucId": "UC-ADM-13.3",
+        "label": "",
+        "limited": false
+      }
+    ],
+    "nodes": {
+      "UC-ADM-12.1": [
+        595,
+        157,
+        1325,
+        313
+      ],
+      "UC-DIS-15": [
+        595,
+        362,
+        1325,
+        518
+      ],
+      "UC-ADM-13.1": [
+        595,
+        567,
+        1325,
+        723
+      ],
+      "UC-ADM-13.2": [
+        595,
+        772,
+        1325,
+        928
+      ],
+      "UC-ADM-13.3": [
+        595,
+        977,
+        1325,
+        1133
+      ]
+    },
+    "notes": [
+      "[1] A05 - UC-DIS-15: chỉ xem thông tin liên quan đến mình."
+    ],
+    "associationSegments": [
+      {
+        "actorId": "A05",
+        "ucId": "UC-ADM-12.1",
+        "points": [
+          [
+            1680,
+            620.0
+          ],
+          [
+            1325,
+            235.0
+          ]
+        ]
+      },
+      {
+        "actorId": "A02",
+        "ucId": "UC-DIS-15",
+        "points": [
+          [
+            240,
+            415.0
+          ],
+          [
+            595,
+            440.0
+          ]
+        ]
+      },
+      {
+        "actorId": "A04",
+        "ucId": "UC-DIS-15",
+        "points": [
+          [
+            240,
+            825.0
+          ],
+          [
+            595,
+            440.0
+          ]
+        ]
+      },
+      {
+        "actorId": "A05",
+        "ucId": "UC-DIS-15",
+        "points": [
+          [
+            1680,
+            620.0
+          ],
+          [
+            1325,
+            440.0
+          ]
+        ]
+      },
+      {
+        "actorId": "A05",
+        "ucId": "UC-ADM-13.1",
+        "points": [
+          [
+            1680,
+            620.0
+          ],
+          [
+            1325,
+            645.0
+          ]
+        ]
+      },
+      {
+        "actorId": "A05",
+        "ucId": "UC-ADM-13.2",
+        "points": [
+          [
+            1680,
+            620.0
+          ],
+          [
+            1325,
+            850.0
+          ]
+        ]
+      },
+      {
+        "actorId": "A05",
+        "ucId": "UC-ADM-13.3",
+        "points": [
+          [
+            1680,
+            620.0
+          ],
+          [
+            1325,
+            1055.0
+          ]
+        ]
+      }
+    ],
+    "layout": "independent-direct-links"
+  },
+  {
+    "id": "UC_G14",
+    "file": "UC_G14.puml",
+    "kind": "module",
+    "groupId": "G14",
+    "title": "G14 · Dịch vụ hỗ trợ khách hàng",
+    "ucIds": [
+      "UC-SUP-01",
+      "UC-SUP-01.1",
+      "UC-SUP-03.2.1",
+      "UC-SUP-03.2.2",
+      "UC-SUP-02.1",
+      "UC-SUP-02.2",
+      "UC-SUP-03.2",
+      "UC-SUP-03.3"
+    ],
+    "actorIds": [
+      "A02",
+      "A04",
+      "A05",
+      "E03"
+    ],
+    "order": 27,
+    "caption": "Hình 2.29",
+    "png": "PNG/27_Hinh_2_29_UC_G14.png",
+    "svg": "SVG/27_Hinh_2_29_UC_G14.svg",
+    "sourceSha256": "1ad30077517fb5fe4e8c7db97323222d969b3f35e4908c41a6f9d9f6fbcc930f",
+    "width": 3840,
+    "height": 3780,
+    "links": [
+      {
+        "actorId": "A02",
+        "ucId": "UC-SUP-01",
+        "label": "",
+        "limited": false
+      },
+      {
+        "actorId": "A04",
+        "ucId": "UC-SUP-01",
+        "label": "",
+        "limited": false
+      },
+      {
+        "actorId": "A05",
+        "ucId": "UC-SUP-01",
+        "label": "",
+        "limited": false
+      },
+      {
+        "actorId": "E03",
+        "ucId": "UC-SUP-01",
+        "label": "khi sử dụng kênh này",
+        "limited": false
+      },
+      {
+        "actorId": "A05",
+        "ucId": "UC-SUP-01.1",
+        "label": "",
+        "limited": false
+      },
+      {
+        "actorId": "E03",
+        "ucId": "UC-SUP-01.1",
+        "label": "khi sử dụng kênh này",
+        "limited": false
+      },
+      {
+        "actorId": "A05",
+        "ucId": "UC-SUP-03.2.1",
+        "label": "",
+        "limited": false
+      },
+      {
+        "actorId": "A02",
+        "ucId": "UC-SUP-03.2.2",
+        "label": "",
+        "limited": false
+      },
+      {
+        "actorId": "A04",
+        "ucId": "UC-SUP-03.2.2",
+        "label": "",
+        "limited": false
+      },
+      {
+        "actorId": "A05",
+        "ucId": "UC-SUP-03.2.2",
+        "label": "",
+        "limited": false
+      },
+      {
+        "actorId": "A05",
+        "ucId": "UC-SUP-02.1",
+        "label": "",
+        "limited": false
+      },
+      {
+        "actorId": "A05",
+        "ucId": "UC-SUP-02.2",
+        "label": "",
+        "limited": false
+      },
+      {
+        "actorId": "A05",
+        "ucId": "UC-SUP-03.2",
+        "label": "",
+        "limited": false
+      },
+      {
+        "actorId": "A05",
+        "ucId": "UC-SUP-03.3",
+        "label": "",
+        "limited": false
+      }
+    ],
+    "nodes": {
+      "UC-SUP-01": [
+        595,
+        157,
+        1325,
+        313
+      ],
+      "UC-SUP-01.1": [
+        595,
+        362,
+        1325,
+        518
+      ],
+      "UC-SUP-03.2.1": [
+        595,
+        567,
+        1325,
+        723
+      ],
+      "UC-SUP-03.2.2": [
+        595,
+        772,
+        1325,
+        928
+      ],
+      "UC-SUP-02.1": [
+        595,
+        977,
+        1325,
+        1133
+      ],
+      "UC-SUP-02.2": [
+        595,
+        1182,
+        1325,
+        1338
+      ],
+      "UC-SUP-03.2": [
+        595,
+        1387,
+        1325,
+        1543
+      ],
+      "UC-SUP-03.3": [
+        595,
+        1592,
+        1325,
+        1748
+      ]
+    },
+    "notes": [],
+    "associationSegments": [
+      {
+        "actorId": "A02",
+        "ucId": "UC-SUP-01",
+        "points": [
+          [
+            240,
+            517.5
+          ],
+          [
+            595,
+            235.0
+          ]
+        ]
+      },
+      {
+        "actorId": "A04",
+        "ucId": "UC-SUP-01",
+        "points": [
+          [
+            240,
+            927.5
+          ],
+          [
+            595,
+            235.0
+          ]
+        ]
+      },
+      {
+        "actorId": "A05",
+        "ucId": "UC-SUP-01",
+        "points": [
+          [
+            1680,
+            927.5
+          ],
+          [
+            1325,
+            235.0
+          ]
+        ]
+      },
+      {
+        "actorId": "E03",
+        "ucId": "UC-SUP-01",
+        "points": [
+          [
+            1680,
+            312.5
+          ],
+          [
+            1325,
+            235.0
+          ]
+        ]
+      },
+      {
+        "actorId": "A05",
+        "ucId": "UC-SUP-01.1",
+        "points": [
+          [
+            1680,
+            927.5
+          ],
+          [
+            1325,
+            440.0
+          ]
+        ]
+      },
+      {
+        "actorId": "E03",
+        "ucId": "UC-SUP-01.1",
+        "points": [
+          [
+            1680,
+            312.5
+          ],
+          [
+            1325,
+            440.0
+          ]
+        ]
+      },
+      {
+        "actorId": "A05",
+        "ucId": "UC-SUP-03.2.1",
+        "points": [
+          [
+            1680,
+            927.5
+          ],
+          [
+            1325,
+            645.0
+          ]
+        ]
+      },
+      {
+        "actorId": "A02",
+        "ucId": "UC-SUP-03.2.2",
+        "points": [
+          [
+            240,
+            517.5
+          ],
+          [
+            595,
+            850.0
+          ]
+        ]
+      },
+      {
+        "actorId": "A04",
+        "ucId": "UC-SUP-03.2.2",
+        "points": [
+          [
+            240,
+            927.5
+          ],
+          [
+            595,
+            850.0
+          ]
+        ]
+      },
+      {
+        "actorId": "A05",
+        "ucId": "UC-SUP-03.2.2",
+        "points": [
+          [
+            1680,
+            927.5
+          ],
+          [
+            1325,
+            850.0
+          ]
+        ]
+      },
+      {
+        "actorId": "A05",
+        "ucId": "UC-SUP-02.1",
+        "points": [
+          [
+            1680,
+            927.5
+          ],
+          [
+            1325,
+            1055.0
+          ]
+        ]
+      },
+      {
+        "actorId": "A05",
+        "ucId": "UC-SUP-02.2",
+        "points": [
+          [
+            1680,
+            927.5
+          ],
+          [
+            1325,
+            1260.0
+          ]
+        ]
+      },
+      {
+        "actorId": "A05",
+        "ucId": "UC-SUP-03.2",
+        "points": [
+          [
+            1680,
+            927.5
+          ],
+          [
+            1325,
+            1465.0
+          ]
+        ]
+      },
+      {
+        "actorId": "A05",
+        "ucId": "UC-SUP-03.3",
+        "points": [
+          [
+            1680,
+            927.5
+          ],
+          [
+            1325,
+            1670.0
+          ]
+        ]
+      }
+    ],
+    "layout": "independent-direct-links"
+  },
+  {
+    "id": "UC_G15",
+    "file": "UC_G15.puml",
+    "kind": "module",
+    "groupId": "G15",
+    "title": "G15 · Hồ sơ xác minh và gói dịch vụ",
+    "ucIds": [
+      "UC-ADM-18.1",
+      "UC-ADM-18",
+      "UC-ADM-19",
+      "UC-ADM-20",
+      "UC-ADM-21",
+      "UC-ADM-22"
+    ],
+    "actorIds": [
+      "A02",
+      "A05"
+    ],
+    "order": 28,
+    "caption": "Hình 2.30",
+    "png": "PNG/28_Hinh_2_30_UC_G15.png",
+    "svg": "SVG/28_Hinh_2_30_UC_G15.svg",
+    "sourceSha256": "398c6bb6241c930c61e40ee92de808245af09ca5f5164b8926e21f5109407dc3",
+    "width": 3840,
+    "height": 2960,
+    "links": [
+      {
+        "actorId": "A02",
+        "ucId": "UC-ADM-18.1",
+        "label": "",
+        "limited": false
+      },
+      {
+        "actorId": "A05",
+        "ucId": "UC-ADM-18.1",
+        "label": "",
+        "limited": false
+      },
+      {
+        "actorId": "A05",
+        "ucId": "UC-ADM-18",
+        "label": "",
+        "limited": false
+      },
+      {
+        "actorId": "A05",
+        "ucId": "UC-ADM-19",
+        "label": "",
+        "limited": false
+      },
+      {
+        "actorId": "A05",
+        "ucId": "UC-ADM-20",
+        "label": "",
+        "limited": false
+      },
+      {
+        "actorId": "A05",
+        "ucId": "UC-ADM-21",
+        "label": "",
+        "limited": false
+      },
+      {
+        "actorId": "A05",
+        "ucId": "UC-ADM-22",
+        "label": "",
+        "limited": false
+      }
+    ],
+    "nodes": {
+      "UC-ADM-18.1": [
+        595,
+        157,
+        1325,
+        313
+      ],
+      "UC-ADM-18": [
+        595,
+        362,
+        1325,
+        518
+      ],
+      "UC-ADM-19": [
+        595,
+        567,
+        1325,
+        723
+      ],
+      "UC-ADM-20": [
+        595,
+        772,
+        1325,
+        928
+      ],
+      "UC-ADM-21": [
+        595,
+        977,
+        1325,
+        1133
+      ],
+      "UC-ADM-22": [
+        595,
+        1182,
+        1325,
+        1338
+      ]
+    },
+    "notes": [],
+    "associationSegments": [
+      {
+        "actorId": "A02",
+        "ucId": "UC-ADM-18.1",
+        "points": [
+          [
+            240,
+            210.0
+          ],
+          [
+            595,
+            235.0
+          ]
+        ]
+      },
+      {
+        "actorId": "A05",
+        "ucId": "UC-ADM-18.1",
+        "points": [
+          [
+            1680,
+            722.5
+          ],
+          [
+            1325,
+            235.0
+          ]
+        ]
+      },
+      {
+        "actorId": "A05",
+        "ucId": "UC-ADM-18",
+        "points": [
+          [
+            1680,
+            722.5
+          ],
+          [
+            1325,
+            440.0
+          ]
+        ]
+      },
+      {
+        "actorId": "A05",
+        "ucId": "UC-ADM-19",
+        "points": [
+          [
+            1680,
+            722.5
+          ],
+          [
+            1325,
+            645.0
+          ]
+        ]
+      },
+      {
+        "actorId": "A05",
+        "ucId": "UC-ADM-20",
+        "points": [
+          [
+            1680,
+            722.5
+          ],
+          [
+            1325,
+            850.0
+          ]
+        ]
+      },
+      {
+        "actorId": "A05",
+        "ucId": "UC-ADM-21",
+        "points": [
+          [
+            1680,
+            722.5
+          ],
+          [
+            1325,
+            1055.0
+          ]
+        ]
+      },
+      {
+        "actorId": "A05",
+        "ucId": "UC-ADM-22",
+        "points": [
+          [
+            1680,
+            722.5
+          ],
+          [
+            1325,
+            1260.0
+          ]
+        ]
+      }
+    ],
+    "layout": "independent-direct-links"
+  },
+  {
+    "id": "UC_G16_BA_1",
+    "file": "UC_G16_BA_1.puml",
+    "kind": "module",
+    "groupId": "G16",
+    "title": "G16 · Quản trị chính sách và đối soát nền tảng phần 1",
+    "ucIds": [
+      "UC-ADM-15",
+      "UC-ADM-15.1",
+      "UC-ADM-24",
+      "UC-ADM-17.1",
+      "UC-ADM-17.2"
+    ],
+    "actorIds": [
+      "A05"
+    ],
+    "order": 29,
+    "caption": "Hình 2.31",
+    "png": "PNG/29_Hinh_2_31_UC_G16_BA_1.png",
+    "svg": "SVG/29_Hinh_2_31_UC_G16_BA_1.svg",
+    "sourceSha256": "fcb6055a027f460f07967b103a72dd46fae29962ac8751b58188d3924a06709b",
+    "width": 3840,
+    "height": 2550,
+    "links": [
+      {
+        "actorId": "A05",
+        "ucId": "UC-ADM-15",
+        "label": "",
+        "limited": false
+      },
+      {
+        "actorId": "A05",
+        "ucId": "UC-ADM-15.1",
+        "label": "",
+        "limited": false
+      },
+      {
+        "actorId": "A05",
+        "ucId": "UC-ADM-24",
+        "label": "",
+        "limited": false
+      },
+      {
+        "actorId": "A05",
+        "ucId": "UC-ADM-17.1",
+        "label": "",
+        "limited": false
+      },
+      {
+        "actorId": "A05",
+        "ucId": "UC-ADM-17.2",
+        "label": "",
+        "limited": false
+      }
+    ],
+    "nodes": {
+      "UC-ADM-15": [
+        595,
+        157,
+        1325,
+        313
+      ],
+      "UC-ADM-15.1": [
+        595,
+        362,
+        1325,
+        518
+      ],
+      "UC-ADM-24": [
+        595,
+        567,
+        1325,
+        723
+      ],
+      "UC-ADM-17.1": [
+        595,
+        772,
+        1325,
+        928
+      ],
+      "UC-ADM-17.2": [
+        595,
+        977,
+        1325,
+        1133
+      ]
+    },
+    "notes": [],
+    "associationSegments": [
+      {
+        "actorId": "A05",
+        "ucId": "UC-ADM-15",
+        "points": [
+          [
+            240,
+            620.0
+          ],
+          [
+            595,
+            235.0
+          ]
+        ]
+      },
+      {
+        "actorId": "A05",
+        "ucId": "UC-ADM-15.1",
+        "points": [
+          [
+            240,
+            620.0
+          ],
+          [
+            595,
+            440.0
+          ]
+        ]
+      },
+      {
+        "actorId": "A05",
+        "ucId": "UC-ADM-24",
+        "points": [
+          [
+            240,
+            620.0
+          ],
+          [
+            595,
+            645.0
+          ]
+        ]
+      },
+      {
+        "actorId": "A05",
+        "ucId": "UC-ADM-17.1",
+        "points": [
+          [
+            240,
+            620.0
+          ],
+          [
+            595,
+            850.0
+          ]
+        ]
+      },
+      {
+        "actorId": "A05",
+        "ucId": "UC-ADM-17.2",
+        "points": [
+          [
+            240,
+            620.0
+          ],
+          [
+            595,
+            1055.0
+          ]
+        ]
+      }
+    ],
+    "layout": "independent-direct-links"
+  },
+  {
+    "id": "UC_G16_BA_2",
+    "file": "UC_G16_BA_2.puml",
+    "kind": "module",
+    "groupId": "G16",
+    "title": "G16 · Quản trị chính sách và đối soát nền tảng phần 2",
+    "ucIds": [
+      "UC-ADM-26",
+      "UC-ADM-23",
+      "UC-DIS-13.2",
+      "UC-ADM-27"
+    ],
+    "actorIds": [
+      "A02",
+      "A04",
+      "A05"
+    ],
+    "order": 30,
+    "caption": "Hình 2.32",
+    "png": "PNG/30_Hinh_2_32_UC_G16_BA_2.png",
+    "svg": "SVG/30_Hinh_2_32_UC_G16_BA_2.svg",
+    "sourceSha256": "b590bf4c1811b3ef3ad224868376dc7751a4fed2d3c9f153671de542e518acc6",
+    "width": 3840,
+    "height": 2160,
+    "links": [
+      {
+        "actorId": "A05",
+        "ucId": "UC-ADM-26",
+        "label": "",
+        "limited": false
+      },
+      {
+        "actorId": "A05",
+        "ucId": "UC-ADM-23",
+        "label": "",
+        "limited": false
+      },
+      {
+        "actorId": "A02",
+        "ucId": "UC-DIS-13.2",
+        "label": "",
+        "limited": false
+      },
+      {
+        "actorId": "A04",
+        "ucId": "UC-DIS-13.2",
+        "label": "",
+        "limited": false
+      },
+      {
+        "actorId": "A05",
+        "ucId": "UC-ADM-27",
+        "label": "",
+        "limited": false
+      }
+    ],
+    "nodes": {
+      "UC-ADM-26": [
+        595,
+        157,
+        1325,
+        313
+      ],
+      "UC-ADM-23": [
+        595,
+        362,
+        1325,
+        518
+      ],
+      "UC-DIS-13.2": [
+        595,
+        567,
+        1325,
+        723
+      ],
+      "UC-ADM-27": [
+        595,
+        772,
+        1325,
+        928
+      ]
+    },
+    "notes": [],
+    "associationSegments": [
+      {
+        "actorId": "A05",
+        "ucId": "UC-ADM-26",
+        "points": [
+          [
+            1680,
+            483.3333333333333
+          ],
+          [
+            1325,
+            235.0
+          ]
+        ]
+      },
+      {
+        "actorId": "A05",
+        "ucId": "UC-ADM-23",
+        "points": [
+          [
+            1680,
+            483.3333333333333
+          ],
+          [
+            1325,
+            440.0
+          ]
+        ]
+      },
+      {
+        "actorId": "A02",
+        "ucId": "UC-DIS-13.2",
+        "points": [
+          [
+            240,
+            250.0
+          ],
+          [
+            595,
+            645.0
+          ]
+        ]
+      },
+      {
+        "actorId": "A04",
+        "ucId": "UC-DIS-13.2",
+        "points": [
+          [
+            240,
+            660.0
+          ],
+          [
+            595,
+            645.0
+          ]
+        ]
+      },
+      {
+        "actorId": "A05",
+        "ucId": "UC-ADM-27",
+        "points": [
+          [
+            1680,
+            483.3333333333333
+          ],
+          [
+            1325,
+            850.0
+          ]
+        ]
+      }
+    ],
+    "layout": "independent-direct-links"
+  }
+]

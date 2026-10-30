@@ -10,7 +10,7 @@ Cập nhật ngày 23/10/2026. Mở rộng hành trình hiện có, không thay 
 2. Sau lần mở đầu tiên, tin chỉ nhận các khung đã mở; xóa hết khung không tự mở lại chế độ chọn giờ tự do. Mỗi tin tối đa 200 khung sắp tới. API hỗ trợ thời lượng 15–120 phút, giao diện hiện mở khung 30 phút.
 3. Xem yêu cầu ở **Lịch xem phòng**. Lịch chờ xác nhận cũng giữ chỗ; lịch của cùng chủ trọ ở phòng khác hoặc của sinh viên ở chủ trọ khác đều được kiểm tra trùng thời gian.
 4. Khi sinh viên đổi giờ, yêu cầu trở về **Chờ xác nhận**. Xác nhận lại trước khi sinh viên tới. Hủy lịch có lý do hiển thị cho bên còn lại.
-5. Sau khi đánh dấu đã xem và tạo hợp đồng, mở **Bàn giao & tiền cọc** ngay trên lịch; hoặc vào hồ sơ người thuê, tại thẻ hợp đồng chọn cùng nút.
+5. Sau khi xác nhận lịch, có thể chọn **Đã xem phòng** ngay nếu hai bên đã thực sự xem sớm, không cần chờ tới giờ hẹn. Hộp thoại cảnh báo trước khi lưu; chỉ chủ trọ sở hữu được thực hiện. Với demo, dùng dữ liệu thử riêng. Tạo hợp đồng vẫn là thao tác riêng sau đó. Sau khi tạo hợp đồng, mở **Bàn giao & tiền cọc** ngay trên lịch; hoặc vào hồ sơ người thuê, tại thẻ hợp đồng chọn cùng nút.
 6. Nhập chỉ số điện/nước nguyên không âm, mô tả hiện trạng và tối đa 12 ảnh riêng tư, mỗi ảnh tối đa 8 MB. Lưu biên bản để người thuê kiểm tra. Chủ trọ không được xác nhận thay người thuê.
 
 ### Sinh viên

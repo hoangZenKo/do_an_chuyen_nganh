@@ -1,0 +1,15 @@
+@startwbs
+title Phân rã chức năng AS-IS — không phải sơ đồ Use Case
+* Hệ thống quản lý và tìm thuê nhà trọ
+** G07 — Vòng đời thuê và quyết toán
+*** G07.1 Đề nghị thay đổi quan hệ thuê
+**** UC-TEN-07.1 Đề nghị gia hạn thuê
+**** UC-TEN-07.2 Đề nghị chuyển phòng
+**** UC-TEN-07.3 Đề nghị trả phòng
+*** G07.2 Xét và thực hiện thay đổi
+**** UC-TNT-10 Xét duyệt yêu cầu vòng đời thuê
+**** UC-TNT-11 Thực thi yêu cầu vòng đời đã duyệt
+*** G07.3 Quyết toán và hoàn cọc
+**** UC-TNT-08 Xem trước và xác nhận quyết toán trả phòng
+**** UC-TNT-09 Ghi nhận đã hoàn cọc theo quyết toán
+@endwbs

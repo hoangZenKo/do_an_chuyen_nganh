@@ -1,0 +1,60 @@
+@startuml
+left to right direction
+skinparam defaultFontName SansSerif
+skinparam defaultFontSize 13
+skinparam backgroundColor #F8FAFC
+skinparam shadowing false
+skinparam ArrowColor #52647A
+skinparam ArrowThickness 1
+skinparam actorStyle stickman
+skinparam actorBorderColor #243A52
+skinparam actorFontColor #243A52
+skinparam actorBackgroundColor #FFFFFF
+skinparam usecase {
+  BackgroundColor #FFFFFF
+  BorderColor #327C83
+  FontColor #20354B
+  BackgroundColor<<Một phần>> #FFF0CE
+  BorderColor<<Một phần>> #B17917
+  BackgroundColor<<DEMO>> #FCE5DF
+  BorderColor<<DEMO>> #BC593A
+  BackgroundColor<<MÔ PHỎNG>> #E7EAF1
+  BorderColor<<MÔ PHỎNG>> #6C7488
+}
+skinparam rectangle {
+  BackgroundColor #EEF4F5
+  BorderColor #243A52
+  FontColor #243A52
+}
+skinparam titleFontColor #20354B
+skinparam titleFontSize 18
+skinparam nodesep 25
+skinparam ranksep 65
+title A03 · NHÂN VIÊN VẬN HÀNH\n<size:12>Trang 6/6 · Chứng từ, biểu phí và nhắc nợ</size>
+caption AS-IS · 29/10/2026 · Snapshot c565c29 · Không biểu diễn trình tự xử lý
+actor "A03\nNhân viên vận hành" as A03
+rectangle "Hệ thống quản lý nhà trọ" as SYSTEM {
+  usecase "UC-BIL-14\nXét duyệt chứng từ thanh toán" as UC_BIL_14
+  usecase "UC-BIL-15\nĐề xuất biểu phí theo kỳ hiệu\nlực" as UC_BIL_15
+  usecase "UC-BIL-18.1\nCấu hình chính sách nhắc nợ" as UC_BIL_18_1
+  usecase "UC-BIL-18.2\nGửi nhắc nợ theo chính sách" as UC_BIL_18_2 <<Một phần>>
+  usecase "UC-BIL-16\nPhân tích tác động và duyệt\nbiểu phí" as UC_BIL_16
+}
+actor "E01\nDịch vụ giao liên\nkết/thông báo bên ngoài\n(có điều kiện)" as E01
+A03 -- UC_BIL_14 : tùy handler: billing.view / billing.approve_payment_proof
+A03 -- UC_BIL_15 : tùy handler: billing.view / billing.create
+A03 -- UC_BIL_18_1 : tùy handler: billing.policy
+A03 -- UC_BIL_18_2 : tùy handler: billing.policy
+UC_BIL_18_2 -- E01 : nếu cấu hình/bật
+A03 -[#3975AA]- UC_BIL_16 : chỉ đọc tác động
+legend bottom left
+  Đường liền: tương tác; không biểu diễn luồng điều khiển.
+  STAFF: permission theo handler + khu được giao + whitelist controller; không mặc định toàn quyền.
+  Đường xanh có nhãn: biến thể giới hạn (V), không được toàn bộ mục tiêu UC.
+  Nhắc nợ: STAFF chỉ BillingController + billing.policy + propertyId; ZNS trực tiếp chỉ Chủ trọ.
+  E01–E05: hệ thống ngoài có adapter; chỉ tương tác ở nhánh cấu hình/bật tương ứng.
+  Mặc định: xác minh tĩnh, chưa nghiệm thu runtime; màu vàng: một phần, cam: DEMO, xám: mô phỏng.
+  Góc nhìn A03: nhãn liệt kê quyền tùy handler, KHÔNG yêu cầu đồng thời mọi quyền; giữ nguyên UC.
+  Quyền chi tiết, điều kiện và nguồn: Association_Traceability.md / data/diagram-manifest.json.
+endlegend
+@enduml

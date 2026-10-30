@@ -19,7 +19,7 @@
 
 - `CLASS_DIAGRAM_REPORT_SECTION.docx`: bản Word dành cho báo cáo, gồm sáu tiểu mục 2.4.3.1 đến 2.4.3.6; nội dung chính trình bày phạm vi, tổng quan, nhóm lớp, mô tả lớp, quan hệ và ví dụ đối tượng. Sơ đồ nhóm, ma trận đầy đủ và căn cứ đối chiếu được tách vào phụ lục. Dùng bản này khi đưa mục 2.4.3 vào báo cáo.
 - `CLASS_DIAGRAM_SPECIFICATION.docx`: bản phân tích chi tiết để tra cứu, gồm mô hình lớp, đối tượng minh họa, ma trận quan hệ và nhật ký hiệu chỉnh. Có thể nhập vào Google Docs để rà soát.
-- `CLASS_DIAGRAM_SPECIFICATION.md`: bản Markdown đồng bộ nội dung; mục 2.4.3 trong `../../PROPOSAL_QUAN_LY_TRO.md` cũng được cập nhật.
+- `CLASS_DIAGRAM_SPECIFICATION.md`: bản Markdown đồng bộ nội dung; mục 2.4.3 trong `../PROPOSAL_QUAN_LY_TRO.md` cũng được cập nhật.
 - `class-diagrams/CLASS_DIAGRAMS.drawio`: 11 trang sơ đồ có thể chỉnh sửa, gồm một tổng quan, tám sơ đồ lớp chi tiết và hai góc nhìn đối tượng.
 - `class-diagrams/README.md`: phạm vi, quy ước và danh mục tài nguyên PNG, SVG, PlantUML.
 - `CLASS_DIAGRAM_AUDIT.md`: audit năm phần ngày 7 tháng 10 năm 2026, source of truth, ma trận đủ 39 association và 3 IDRef, changelog, 11 nguồn PlantUML và checklist. CD-05 đã bố trí Expense dưới MaintenanceTicket; CD-06 không còn connector IDRef.

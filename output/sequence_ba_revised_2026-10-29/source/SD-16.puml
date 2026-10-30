@@ -1,0 +1,122 @@
+@startuml
+skinparam backgroundColor white
+skinparam shadowing false
+skinparam dpi 240
+skinparam defaultFontName "Times New Roman"
+skinparam defaultFontSize 17
+skinparam defaultFontColor black
+skinparam titleFontSize 21
+skinparam titleFontColor black
+skinparam roundcorner 0
+skinparam maxMessageSize 270
+skinparam ParticipantPadding 30
+skinparam sequence {
+  ArrowColor #800000
+  ArrowThickness 1.2
+  LifeLineBorderColor #999999
+  LifeLineBackgroundColor #FFFFB9
+  ParticipantBackgroundColor #FFFFB9
+  ParticipantBorderColor #800000
+  ParticipantFontColor black
+  ActorBackgroundColor #FFFFB9
+  ActorBorderColor #800000
+  ActorFontColor black
+  BoundaryBackgroundColor #FFFFB9
+  BoundaryBorderColor #800000
+  ControlBackgroundColor #FFFFB9
+  ControlBorderColor #800000
+  EntityBackgroundColor #FFFFB9
+  EntityBorderColor #800000
+  GroupBackgroundColor #FFFFB9
+  GroupBodyBackgroundColor white
+  GroupBorderColor #888888
+  GroupFontColor black
+  GroupHeaderFontColor black
+  GroupFontSize 15
+  GroupHeaderFontSize 16
+  MessageAlign center
+}
+hide footbox
+<style>
+sequenceDiagram {
+ actor { BackgroundColor #FFFFB9
+ LineColor #800000 }
+ boundary { BackgroundColor #FFFFB9
+ LineColor #800000 }
+ control { BackgroundColor #FFFFB9
+ LineColor #800000 }
+ entity { BackgroundColor #FFFFB9
+ LineColor #800000 }
+ activationBox { BackgroundColor #FFFFB9
+ LineColor #800000 }
+}
+</style>
+autonumber "<b>0.</b>"
+
+title SD-16. Đối soát khoản thu theo nguyên tắc hai người
+actor "Quản trị viên\nngười lập đề nghị" as A
+actor "Quản trị viên\nngười kiểm tra độc lập" as B
+boundary "<u>Giao diện</u>\n<u>đối soát</u>" as U #FFFFB9
+control "<u>Quản lý</u>\n<u>đối soát thu tiền</u>" as C #FFFFB9
+entity "<u>Sao kê, khoản thu</u>\n<u>và đề nghị đối soát</u>" as D #FFFFB9
+A -> U: Nhập sao kê CSV và chọn dòng cần đối soát
+activate U
+U -> C: Yêu cầu nhập sao kê và tìm khoản thu phù hợp
+activate C
+C -> D ++: Đối chiếu dữ liệu nhập; lưu sao kê hợp lệ; tìm khoản thu phù hợp
+D --> C --: Dòng sao kê và các khoản thu có thể ghép
+C --> U: Hiển thị kết quả nhập và gợi ý đối soát
+U --> A: Hiển thị kết quả nhập và gợi ý đối soát
+deactivate C
+deactivate U
+opt Có dòng sao kê hợp lệ; người lập chọn đề nghị ghép
+A -> U: Chọn khoản thu và gửi đề nghị ghép; nhập lý do
+activate U
+U -> C: Yêu cầu lập đề nghị đối soát khoản thu
+activate C
+C -> D ++: Đối chiếu dòng sao kê, số tiền và khoản thu chưa được ghép
+D --> C --: Điều kiện đề nghị và tình trạng đề nghị đang chờ
+alt Sai số tiền, sai phạm vi hoặc dòng đã có đề nghị chờ
+C --> U: Không lập đề nghị
+U --> A: Không lập đề nghị; thông báo lý do
+else Khoản thu và dòng sao kê đủ điều kiện
+C -> D ++: Lưu đề nghị chờ người khác xét duyệt
+D --> C --: Đề nghị chưa làm thay đổi kết quả đối soát
+C --> U: Đề nghị đang chờ kiểm tra độc lập
+U --> A: Đề nghị đang chờ kiểm tra độc lập
+end
+deactivate C
+deactivate U
+end
+opt Có đề nghị đang chờ; quản trị viên chọn kiểm tra
+B -> U: Gửi quyết định chấp thuận hoặc từ chối và lý do
+activate U
+U -> C: Yêu cầu xét duyệt đề nghị đối soát
+activate C
+C -> D ++: Đối chiếu người lập, đề nghị và dòng sao kê hiện hành
+D --> C --: Danh tính người lập và tình trạng đề nghị
+alt Người kiểm tra là người lập hoặc đề nghị, sao kê đã đổi
+C --> U: Không cho xét duyệt đề nghị
+U --> B: Không cho xét duyệt đề nghị
+else Người khác kiểm tra; chọn từ chối
+C -> D ++: Lưu quyết định từ chối và lý do
+D --> C --: Đề nghị bị từ chối; chưa ghép khoản thu
+C --> U: Đã từ chối đề nghị
+U --> B: Đã từ chối đề nghị
+else Người khác kiểm tra; chọn chấp thuận
+C -> D ++: Kiểm tra lại khoản thu, số tiền và tình trạng đã ghép
+D --> C --: Khoản thu còn phù hợp hoặc đã thay đổi
+alt Khoản thu không còn đủ điều kiện
+C --> U: Không chấp thuận
+U --> B: Không chấp thuận; chưa ghi kết quả ghép
+else Khoản thu còn hợp lệ
+C -> D ++: Ghi liên kết đối soát và quyết định chấp thuận
+D --> C --: Dòng sao kê được ghép một lần với khoản thu
+C --> U: Đối soát hoàn tất
+U --> B: Đối soát hoàn tất; không nhân tiền theo từng phân bổ
+end
+end
+deactivate C
+deactivate U
+end
+@enduml

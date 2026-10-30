@@ -1,0 +1,26 @@
+{
+  "route": "/tenant/password",
+  "apiBaseUrl": "http://127.0.0.1:58895/api/v1",
+  "texts": [
+    "Mật khẩu hiện tại",
+    "Mật khẩu mới",
+    "Đổi mật khẩu",
+    "Đổi mật khẩu",
+    "Bấm: Đổi mật khẩu"
+  ],
+  "fields": [
+    {
+      "label": null,
+      "hint": null,
+      "readOnly": false,
+      "obscure": false
+    },
+    {
+      "label": null,
+      "hint": null,
+      "readOnly": false,
+      "obscure": false
+    }
+  ],
+  "errors": []
+}

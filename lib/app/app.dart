@@ -51,6 +51,7 @@ import '../features/operations/action_items_screen.dart';
 import '../features/operations/p1_operations_screen.dart';
 import '../features/properties/properties_list_screen.dart';
 import '../features/properties/property_form_screen.dart';
+import '../features/properties/property_management_theme.dart';
 import '../features/reports/reports_screen.dart';
 import '../features/rooms/room_detail_screen.dart';
 import '../features/rooms/room_form_screen.dart';
@@ -61,6 +62,7 @@ import '../features/tenants/lease_expiry_screen.dart';
 import '../features/tenants/lease_form_screen.dart';
 import '../features/tenants/tenant_detail_screen.dart';
 import '../features/tenants/tenant_form_screen.dart';
+import '../features/tenants/tenant_management_theme.dart';
 import '../features/tenants/tenants_list_screen.dart';
 import '../features/listings/explore_screen.dart';
 import '../features/listings/listing_detail_screen.dart';
@@ -428,12 +430,18 @@ final appRouterProvider = Provider<GoRouter>((ref) {
       ),
       GoRoute(
         path: propertiesRoute,
-        builder: (_, __) => const PropertiesListScreen(),
+        builder: (_, __) => Theme(
+          data: PropertyManagementTheme.light,
+          child: const PropertiesListScreen(),
+        ),
       ),
       GoRoute(
         path: propertyFormRoute,
-        builder: (_, state) => PropertyFormScreen(
-          propertyId: state.uri.queryParameters['propertyId'],
+        builder: (_, state) => Theme(
+          data: PropertyManagementTheme.light,
+          child: PropertyFormScreen(
+            propertyId: state.uri.queryParameters['propertyId'],
+          ),
         ),
       ),
       // `/rooms/form` must precede `/rooms/:id` so it is not captured as an id.
@@ -449,20 +457,26 @@ final appRouterProvider = Provider<GoRouter>((ref) {
           initialTab: state.uri.queryParameters['tab'] == 'inspections' ? 2 : 0,
         ),
       ),
-      GoRoute(
-        path: tenantsRoute,
-        builder: (_, __) => const TenantsListScreen(),
-      ),
-      // `/tenants/form` must precede `/tenants/:id` so it is not captured as id.
-      GoRoute(
-        path: tenantFormRoute,
-        builder: (_, state) =>
-            TenantFormScreen(tenantId: state.uri.queryParameters['tenantId']),
-      ),
-      GoRoute(
-        path: tenantDetailRoute,
-        builder: (_, state) =>
-            TenantDetailScreen(tenantId: state.pathParameters['id']!),
+      ShellRoute(
+        builder: (_, __, child) =>
+            Theme(data: TenantManagementTheme.light, child: child),
+        routes: [
+          GoRoute(
+            path: tenantsRoute,
+            builder: (_, __) => const TenantsListScreen(),
+          ),
+          // `/tenants/form` must precede `/tenants/:id` so it is not captured as id.
+          GoRoute(
+            path: tenantFormRoute,
+            builder: (_, state) =>
+                TenantFormScreen(tenantId: state.uri.queryParameters['tenantId']),
+          ),
+          GoRoute(
+            path: tenantDetailRoute,
+            builder: (_, state) =>
+                TenantDetailScreen(tenantId: state.pathParameters['id']!),
+          ),
+        ],
       ),
       GoRoute(
         path: leaseFormRoute,

@@ -7,9 +7,11 @@ import {
   MinLength,
 } from 'class-validator';
 import { IsAttachmentUrl } from '../../common/attachment-url.validator';
+import { Transform } from 'class-transformer';
 
 export class CreateTenantMaintenanceDto {
   @IsString()
+  @Transform(({ value }) => typeof value === 'string' ? value.trim() : value)
   @MinLength(1)
   @MaxLength(120)
   title!: string;

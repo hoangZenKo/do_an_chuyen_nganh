@@ -1,0 +1,69 @@
+@startuml
+left to right direction
+skinparam defaultFontName SansSerif
+skinparam defaultFontSize 13
+skinparam backgroundColor #F8FAFC
+skinparam shadowing false
+skinparam ArrowColor #52647A
+skinparam ArrowThickness 1
+skinparam actorStyle stickman
+skinparam actorBorderColor #243A52
+skinparam actorFontColor #243A52
+skinparam actorBackgroundColor #FFFFFF
+skinparam usecase {
+  BackgroundColor #FFFFFF
+  BorderColor #327C83
+  FontColor #20354B
+  BackgroundColor<<Một phần>> #FFF0CE
+  BorderColor<<Một phần>> #B17917
+  BackgroundColor<<DEMO>> #FCE5DF
+  BorderColor<<DEMO>> #BC593A
+  BackgroundColor<<MÔ PHỎNG>> #E7EAF1
+  BorderColor<<MÔ PHỎNG>> #6C7488
+}
+skinparam rectangle {
+  BackgroundColor #EEF4F5
+  BorderColor #243A52
+  FontColor #243A52
+}
+skinparam titleFontColor #20354B
+skinparam titleFontSize 18
+skinparam nodesep 25
+skinparam ranksep 65
+title G06 · Hồ sơ thuê, hợp đồng và tiền cọc\n<size:12>Trang 1/2 · Hồ sơ và tài khoản người thuê</size>
+
+actor "A02\nChủ trọ" as A02
+actor "A03\nNhân viên vận hành" as A03
+actor "A04\nNgười tìm phòng\nhoặc người thuê" as A04
+rectangle "Hệ thống quản lý nhà trọ" as SYSTEM {
+  usecase "UC-TNT-01\nTra cứu hồ sơ người thuê và tổng\nquan" as UC_TNT_01
+  usecase "UC-TNT-02.1\nTạo hồ sơ người thuê" as UC_TNT_02_1
+  usecase "UC-TNT-02.2\nCập nhật hồ sơ người thuê" as UC_TNT_02_2
+  usecase "UC-TNT-02.3\nVô hiệu hóa hoặc khôi phục người\nthuê" as UC_TNT_02_3
+  usecase "UC-TNT-02.4\nXóa hồ sơ người thuê đủ điều\nkiện" as UC_TNT_02_4
+  usecase "UC-TNT-03\nTạo lời mời truy cập cổng người\nthuê" as UC_TNT_03
+  usecase "UC-TNT-03.1\nTạo trực tiếp tài khoản cho hồ\nsơ người thuê" as UC_TNT_03_1
+  usecase "UC-TEN-01\nXem hồ sơ và tổng quan thuê của\nmình" as UC_TEN_01
+}
+A02 -- UC_TNT_01
+UC_TNT_01 -- A03
+A02 -- UC_TNT_02_1
+UC_TNT_02_1 -- A03
+A02 -- UC_TNT_02_2
+UC_TNT_02_2 -- A03
+A02 -- UC_TNT_02_3
+UC_TNT_02_3 -- A03
+A02 -- UC_TNT_02_4
+UC_TNT_02_4 -- A03
+A02 -- UC_TNT_03
+A02 -- UC_TNT_03_1
+UC_TNT_03_1 -- A03
+A04 -- UC_TEN_01
+legend bottom left
+  Đường liền: tác nhân tham gia mục tiêu nghiệp vụ.
+  Đường xanh có nhãn: chỉ tham gia trong phạm vi giới hạn được nêu.
+  Nhân viên cần quyền phù hợp và khu được giao; quản trị viên cần đúng thẩm quyền.
+  Vàng: đáp ứng một phần. Cam: thanh toán thử nghiệm. Xám: trao đổi mô phỏng.
+  Không thể hiện thứ tự thực hiện; không suy ra quyền từ vị trí tác nhân.
+endlegend
+@enduml

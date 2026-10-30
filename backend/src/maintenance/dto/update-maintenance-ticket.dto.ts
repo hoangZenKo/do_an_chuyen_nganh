@@ -5,23 +5,26 @@ import {
   IsOptional,
   IsArray,
   IsString,
+  IsNotEmpty,
+  ValidateIf,
   IsUUID,
   MaxLength,
   Min,
   Max,
 } from 'class-validator';
 import { IsAttachmentUrl } from '../../common/attachment-url.validator';
+import { Transform } from 'class-transformer';
 
 export class UpdateMaintenanceTicketDto {
-  @IsOptional()
+  @ValidateIf((_, value) => value !== undefined)
   @IsUUID()
   propertyId?: string;
 
-  @IsOptional()
+  @ValidateIf((_, value) => value !== undefined)
   @IsUUID()
   roomId?: string;
 
-  @IsOptional()
+  @ValidateIf((_, value) => value !== undefined)
   @IsIn([
     'open',
     'in_progress',
@@ -34,29 +37,31 @@ export class UpdateMaintenanceTicketDto {
   ])
   status?: string;
 
-  @IsOptional()
+  @ValidateIf((_, value) => value !== undefined)
   @IsIn(['low', 'medium', 'urgent', 'LOW', 'MEDIUM', 'URGENT'])
   priority?: string;
 
-  @IsOptional()
+  @ValidateIf((_, value) => value !== undefined)
   @IsString()
+  @Transform(({ value }) => typeof value === 'string' ? value.trim() : value)
+  @IsNotEmpty()
   @MaxLength(120)
   title?: string;
 
-  @IsOptional()
+  @ValidateIf((_, value) => value !== undefined)
   @IsString()
   @MaxLength(1000)
   description?: string;
 
-  @IsOptional()
+  @ValidateIf((_, value) => value !== undefined)
   @IsDateString()
   reportedAt?: string;
 
-  @IsOptional()
+  @ValidateIf((_, value) => value !== undefined)
   @IsDateString()
   startedAt?: string;
 
-  @IsOptional()
+  @ValidateIf((_, value) => value !== undefined)
   @IsDateString()
   completedAt?: string;
 
@@ -68,24 +73,24 @@ export class UpdateMaintenanceTicketDto {
   @IsDateString()
   dueAt?: string;
 
-  @IsOptional()
+  @ValidateIf((_, value) => value !== undefined)
   @IsInt()
   @Min(0)
   @Max(2147483647)
   estimatedCost?: number;
 
-  @IsOptional()
+  @ValidateIf((_, value) => value !== undefined)
   @IsInt()
   @Min(0)
   @Max(2147483647)
   actualCost?: number;
 
-  @IsOptional()
+  @ValidateIf((_, value) => value !== undefined)
   @IsString()
   @MaxLength(500)
   note?: string;
 
-  @IsOptional()
+  @ValidateIf((_, value) => value !== undefined)
   @IsArray()
   @IsAttachmentUrl({ each: true })
   @MaxLength(1000, { each: true })

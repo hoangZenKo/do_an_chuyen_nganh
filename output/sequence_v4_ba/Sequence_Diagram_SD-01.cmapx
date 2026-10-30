@@ -1,0 +1,10 @@
+<map id="Sequence_Diagram_SD-01_map" name="Sequence_Diagram_SD-01_map">
+<area shape="rect" id="id1" href="Thông" title="Thông" alt="" coords="37,638,368,681"/>
+<area shape="rect" id="id2" href="Phiên" title="Phiên" alt="" coords="87,1811,478,1854"/>
+<area shape="rect" id="id3" href="Quản" title="Quản" alt="" coords="280,1322,884,1365"/>
+<area shape="rect" id="id4" href="Tài" title="Tài" alt="" coords="255,706,871,749"/>
+<area shape="rect" id="id5" href="Thông" title="Thông" alt="" coords="219,500,869,543"/>
+<area shape="rect" id="id6" href="Phiên" title="Phiên" alt="" coords="269,1673,929,1716"/>
+<area shape="rect" id="id7" href="Đã" title="Đã" alt="" coords="255,1515,963,1558"/>
+<area shape="rect" id="id8" href="Mã" title="Mã" alt="" coords="325,996,1103,1040"/>
+</map>
